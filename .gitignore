@@ -19,3 +19,6 @@ data/knowledge/pm-prevention/generated-links.json
 # Vinculos reproduziveis dos roteiros
 data/knowledge/diagnostic/generated-links.json
 data/knowledge/diagnostic/generated-player-preview.json
+
+# Relatorio reproduzivel de qualidade
+reports/quality-audit.generated.json

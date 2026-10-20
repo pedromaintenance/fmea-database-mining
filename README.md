@@ -1,8 +1,8 @@
 # FMEA Database Mining — Banco de Falhas de Equipamentos Móveis
 
-Banco de conhecimento **versionado** para investigar modos de falha, sintomas, evidências e causas em equipamentos móveis de mineração. O principal consumidor planejado é o jogo **[P.O.R.C.A.R.I.A. — Você Quebra, Eu Conserto](https://github.com/pedromaintenance/porcaria-voce-quebra-eu-conserto)**.
+Banco de conhecimento **versionado** para investigar modos de falha, sintomas, evidências e causas em equipamentos móveis de mineração. Um consumidor possível é o jogo **[P.O.R.C.A.R.I.A. — Você Quebra, Eu Conserto](https://github.com/pedromaintenance/porcaria-voce-quebra-eu-conserto)**, mas o banco é independente: **este repositório não altera os consumidores**.
 
-> **Status:** versão do catálogo **1.2.0** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
+> **Status:** versão do catálogo **1.3.0** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
 
 ## O que queremos construir
 
@@ -66,8 +66,18 @@ O gerador `scripts/generate-diagnostic-links.mjs` cruza os roteiros com vínculo
 
 Veja [Roadmap técnico](docs/ROADMAP.md) e [Pesquisa técnica e literatura OEM](docs/PESQUISA_TECNICA.md). A integração ao jogo depende de curadoria e do controle de gabaritos.
 
+## Ontologia e auditoria de qualidade (v1.3.0)
+
+- [Ontologia do domínio](data/ontology/concepts.v1.json): 10 falhas funcionais, 20 sintomas, 15 mecanismos, 16 métodos de evidência e quatro interpretações.
+- [12 roteiros anotados](data/ontology/playbook-annotations.v1.json): relações declaradas entre sintomas, perda de função e tipo de teste; classificação **didática e ainda não aprovada por OEM**.
+- [Arquitetura do conhecimento](docs/ARQUITETURA_DO_CONHECIMENTO.md): separação entre FMEA funcional, diagnóstico, evidência e proveniência.
+- [Roadmap vivo](docs/ROADMAP.md): tarefas exclusivamente de evolução do FMEA, pesquisa técnica e revisão de qualidade.
+- `npm run ontology:validate` verifica vocabulário e referências dos roteiros. `npm run quality:audit` produz relatório de cobertura, relações sem saída e lacunas em `reports/quality-audit.generated.json`, disponibilizado como artefato de CI.
+
+O banco não coleta evidências reais nem gera frequência observada de falhas a partir de candidatos.
+
 ## Comece por aqui
 
 Leia [Modelo de Dados](docs/MODELO_DE_DADOS.md), [Curadoria e Qualidade](docs/CURADORIA.md), [Roadmap](docs/ROADMAP.md) e [Histórico](CHANGELOG.md).
 
-Integração planejada com o jogo: **importar dados de um release estável**, com adaptador e testes, sem dar spoilers ao jogador antes de confirmar cada etapa do diagnóstico.
+Consumidores externos podem **ler releases estáveis**; desenvolvimento de jogos, adaptação de interface, salvamento e decisões de importação ficam fora deste repositório.

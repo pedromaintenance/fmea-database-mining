@@ -2,6 +2,15 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.0] — 2026-10-20 — Ontologia independente e auditoria do banco
+- Escopo editorial fixado: evolução exclusiva do FMEA; sistemas e jogos externos apenas consomem releases.
+- Nova ontologia com 10 falhas funcionais, 20 categorias de sintomas, 15 mecanismos, 16 técnicas de evidência e 4 estados de resultado.
+- Classificações didáticas em 12 roteiros: referência à função, sintomas e técnicas de teste, sem confirmação de posição/causa.
+- Criado `scripts/validate-ontology.mjs` com checagem de IDs, fontes, relações, duplicidade e separação de dado simulado.
+- Criado `scripts/audit-quality.mjs` com cobertura por modelo, regras PM sem saída, relações candidatas e roteiros órfãos, sem métricas falsas de confiabilidade.
+- Formalizada [Arquitetura do Conhecimento](docs/ARQUITETURA_DO_CONHECIMENTO.md) e revisado o [Roadmap](docs/ROADMAP.md) como plano exclusivo de curadoria e expansão FMEA.
+- Pacotes derivados e auditoria gerados no GitHub Actions; nenhuma alteração em repositórios consumidores.
+
 ## [1.2.1] — 2026-10-20 — Pesquisa e diagnóstico diferencial
 - Publicados 12 roteiros autorais para oito modelos/famílias, com 36 hipóteses alternativas e 24 testes com desfechos possíveis; nenhum resultado real.
 - Filtro de escopo por sistema-raiz nas regras preventivas: mesmo subgrupo não implica mesmo circuito.

@@ -38,6 +38,10 @@ jobs:
         run: npm run diagnostic:validate
       - name: Gerar prévia didática sem gabarito
         run: npm run diagnostic:preview
+      - name: Validar ontologia e classificacoes
+        run: npm run ontology:validate
+      - name: Gerar relatorio de cobertura e lacunas
+        run: npm run quality:audit
       - name: Publicar pacotes para testes
         uses: actions/upload-artifact@v4
         with:
@@ -48,4 +52,5 @@ jobs:
             data/knowledge/pm-prevention/generated-links.json
             data/knowledge/diagnostic/generated-links.json
             data/knowledge/diagnostic/generated-player-preview.json
+            reports/quality-audit.generated.json
           retention-days: 14
