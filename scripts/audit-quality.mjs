@@ -16,6 +16,7 @@ const oil=read('data/knowledge/oil/source-cases.json').records;
 const ontology=read('data/ontology/concepts.v1.json');
 const bibliographicSources=read('data/research/sources.v1.json').sources;
 const chains=read('data/knowledge/causal-chains.v1.json').records;
+const sapAudit=read('reports/causal-sap-audit.generated.json');
 const byModel=[];
 for(const model of db.models){
  const modelId=model.id;
@@ -50,9 +51,14 @@ const counts={
  causalChainsWithSourcesAndCounterHypotheses:chains.filter(x=>x.sourceClaims.length&&x.competingHypotheses.length>=2).length,
  ontologySymptoms:ontology.symptoms.length,bibliographicSources:bibliographicSources.length,
  causalChainsWithContextualPm:chains.filter(x=>['monitoramento_contextual_nao_alvo_exclusivo_de_ajuste','vinculo_preventivo_contextual_sem_alvo_direto'].includes(x.preventionAssociation)).length,
+ causalSapChainsAudited:sapAudit.summary.chainsAudited,
+ causalSapCandidatePairs:sapAudit.summary.catalogPairsCompatible,
+ causalSapPairsAbsent:sapAudit.summary.catalogPairsMissing,
+ causalSapChainsWithoutPart:sapAudit.summary.chainsWithoutProposedComponent,
+ causalSapLinksAcceptedByEngineering:sapAudit.summary.acceptedEngineeringLinks,
  evidenceValidatedInRealEquipment:0,technicallyApprovedPlaybooks:0
 };
-const report={schema:'fmea-mining.quality-audit.v1',version:'1.3.3',
+const report={schema:'fmea-mining.quality-audit.v1',version:'1.3.4',
  generatedFrom:'working_tree',status:'qualidade_cadastral_nao_taxa_de_falhas',
  meanings:{
   pmCandidateLinks:'vinculos gerados por regra e taxonomia, NAO falhas observadas',

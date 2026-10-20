@@ -2,6 +2,15 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.4] — 2026-10-20 — Auditoria de compatibilidade causal e taxonômica SAP
+- Auditadas 24 cadeias com pareceres individuais sobre componente, dano, causa e caminho funcional.
+- 8 categorias de impedimento/risco: ausência de local hidráulico, par inexistente, configuração não comprovada, efeito secundário, identidade ambígua, componente ausente, circularidade e candidatos não homologados.
+- Detectadas duas associações `RADI/1690/03.02/C2.09` não permitidas no catálogo e dois pares de afrouxamento com risco de circularidade `01.15/C1.17`.
+- Confirmado que `HSVV` se repete em diversos sistemas; caminhos sem o grupo de hidráulica de implementos permanecem sem ligação.
+- Criados `data/quality/causal-sap-assessment.v1.json` e `scripts/audit-causal-sap.mjs`; relatório derivado publicado em artefato CI, sem homologação automática.
+- Consultadas e indexadas fontes primárias IEC, ISO e SAP sobre FMEA, taxonomia, códigos de dano/causa.
+- Auditoria incluída no QA, relatório de qualidade, roadmap e changelog; nenhuma alteração em consumidores.
+
 ## [1.3.3] — 2026-10-20 — Fixações de sapata e circulação do arrefecimento
 - Oito novas cadeias: afrouxamento rotacional, perda de pré-carga sem rotação, fadiga de parafuso, deslocamento de sapata, termostato restritivo, termostato aberto precocemente, bomba com circulação insuficiente e vazamento na bomba.
 - Total acumulado: 24 cadeias causais e 48 investigações em quatro famílias; nenhuma homologação por série ou resultado de campo.

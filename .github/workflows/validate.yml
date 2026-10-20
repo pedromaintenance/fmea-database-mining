@@ -42,6 +42,8 @@ jobs:
         run: npm run ontology:validate
       - name: Validar cadeias causais e fontes
         run: npm run causal:validate
+      - name: Auditar 24 cadeias contra locais componentes danos e causas SAP
+        run: npm run causal:sap:audit
       - name: Gerar relatorio de cobertura e lacunas
         run: npm run quality:audit
       - name: Publicar pacotes para testes
@@ -55,4 +57,5 @@ jobs:
             data/knowledge/diagnostic/generated-links.json
             data/knowledge/diagnostic/generated-player-preview.json
             reports/quality-audit.generated.json
+            reports/causal-sap-audit.generated.json
           retention-days: 14

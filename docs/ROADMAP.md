@@ -1,6 +1,6 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 20/10/2026 · **Ciclo:** catálogo técnico v1.3.3 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 20/10/2026 · **Ciclo:** catálogo técnico v1.3.4 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
 
@@ -36,6 +36,23 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 | Enriquecimento | 12 roteiros classificados por falha funcional, sintomas e técnicas | Anotação manual, não prova de causa |
 
 **Observação:** as 159 tarefas de PM com subgrupo candidato foram obtidas em extração local anterior e **não** representam 159 associações homologadas. Contagens de vínculos estritos serão publicadas pelo relatório automático após cada alteração do gerador.
+
+## Ciclo concluído — 20/10/2026: integridade causal e compatibilidade SAP (v1.3.4)
+
+**Natureza do incremento: auditoria, não expansão combinatória.** As 24 cadeias foram confrontadas com o catálogo de componente/tipo de objeto, dano, causa e escopo de localização funcional; [relatório e decisões](CICLO_2026-10-20_AUDITORIA_CAUSAL_SAP.md).
+
+- [x] **24/24 cadeias avaliadas** em `data/quality/causal-sap-assessment.v1.json`, com justificativa e risco de generalização.
+- [x] Documentados **7 pares apenas candidatos, 4 sem local hidráulico, 2 com par dano/causa não permitido, 1 dependente de arquitetura, 1 com efeito secundário confundível, 1 com componente ambíguo, 6 sem componente-alvo e 2 com circularidade dano/causa**.
+- [x] Identificado `RADI/1690/03.02/C2.09` incompatível com o mapa de permissões do código de trocador, sem substituir por um dano inventado.
+- [x] Identificado `TRAK/0320/01.15/C1.17` como risco causal circular: afrouxamento não deve ser explicado somente por afrouxamento.
+- [x] Implementado `scripts/audit-causal-sap.mjs` para verificar tuplas e contar caminhos compatíveis com **modelo, sistema, grupo, subgrupo, objeto, dano e causa**.
+- [x] A checagem bloqueia alterações silenciosas que eliminem lacuna sem atualização do parecer e mantém **zero** homologações causais.
+- [x] Novas fontes [SAP Help](https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/e72f747389b340229f7fa343975bfa57/7d20ec545f356474e10000000a44538d.html) e IEC/ISO incorporadas como critérios metodológicos.
+- [ ] Revisar possíveis falsos positivos dos 7 pares com engenharia/OEM por posição e série, sem promover a `validado` automaticamente.
+- [ ] Verificar extensão dos locais de mangueiras hidráulicas em sistemas de implementos; vincular termostato, bomba e tensionador **somente se o cadastro/documentação suportar**.
+- [ ] Corrigir causa circular em fixação com hipótese mecanística específica e evidência independente.
+
+**Novo indicador de avanço:** percentual de cadeias com parecer explícito de compatibilidade cadastral (24/24) versus percentual de cadeias homologadas (0/24). Esses números são sobre curadoria, **não frequência de falha**.
 
 ## Ciclo concluído — 20/10/2026: fixações de esteira e circulação do arrefecimento (v1.3.3)
 
@@ -95,7 +112,8 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 - [x] Separar função, falha funcional, sintoma, mecanismo e método de evidência com IDs controlados.
 - [x] Classificar 12 roteiros por vocabulário, sem afirmar diagnóstico.
 - [x] Criar validador de ontologia e relatório reproduzível de cobertura/lacunas.
-- [ ] Inspecionar resultados de auditoria gerada em CI e decidir regras sem resultado; manter lacunas em lista explícita.
+- [x] Criar auditoria causal de 24 cadeias e classificar suas lacunas sem homologação automática.
+- [ ] Inspecionar os relatórios completos gerados em CI e decidir, com dados efetivos, as regras sem correspondência.
 - [ ] Auditar **25/25** padrões PM por subgrupo, composição, código de componente, dano, causa e contexto.
 - [ ] Revisar casos em que objeto SAP admite peças improváveis no conjunto (ex.: componentes estruturais genéricos ou peças inespecíficas).
 - [ ] Recuperar CAT 16 (.xls) com referência de célula confiável; descartar trechos ilegíveis.
