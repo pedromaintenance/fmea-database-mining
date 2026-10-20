@@ -58,6 +58,14 @@ A [extração em Python de sete planilhas](docs/EXTRACAO_PM_2026.md) mapeou 6.28
 
 **Não foi publicado o texto bruto das planilhas**: havia informações corporativas, procedimentos e registros de execução. A versão integral derivada, com 891 regras estruturadas e 159 candidatos estritos de subgrupo, fica no pacote de extração desta conversa até autorização de divulgação. Nenhum desses vínculos equivale a uma evidência real ou uma causa raiz confirmada.
 
+## Roteiros diagnósticos e pesquisa (v1.2.1)
+
+A [biblioteca de roteiros](data/knowledge/diagnostic/playbooks.v1.json) contém **12 situações fictícias**, 36 hipóteses concorrentes e 24 testes discriminantes, com interpretações favoráveis/desfavoráveis/inconclusivas. Nenhum teste foi realmente executado.
+
+O gerador `scripts/generate-diagnostic-links.mjs` cruza os roteiros com vínculos candidatos de PM/FMEA e **não escolhe automaticamente peça, posição, dano ou causa**. Também há filtro de sistema-raiz para impedir que um mesmo subgrupo reúna circuitos funcionalmente diferentes.
+
+Veja [Roadmap técnico](docs/ROADMAP.md) e [Pesquisa técnica e literatura OEM](docs/PESQUISA_TECNICA.md). A integração ao jogo depende de curadoria e do controle de gabaritos.
+
 ## Comece por aqui
 
 Leia [Modelo de Dados](docs/MODELO_DE_DADOS.md), [Curadoria e Qualidade](docs/CURADORIA.md), [Roadmap](docs/ROADMAP.md) e [Histórico](CHANGELOG.md).

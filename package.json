@@ -1,16 +1,18 @@
 {
   "name": "fmea-database-mining",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "private": true,
   "type": "module",
   "description": "Catálogo FMEA didático de equipamentos móveis para PORCARIA",
   "scripts": {
     "validate": "node scripts/validate.mjs",
     "generate": "node scripts/generate-models.mjs --all",
-    "qa": "node scripts/validate.mjs && node scripts/generate-models.mjs --all && node scripts/validate.mjs && node scripts/validate-knowledge.mjs && npm run pm:generate && npm run pm:validate",
+    "qa": "node scripts/validate.mjs && node scripts/generate-models.mjs --all && node scripts/validate.mjs && node scripts/validate-knowledge.mjs && npm run pm:generate && npm run pm:validate && npm run diagnostic:generate && npm run diagnostic:validate",
     "validate:knowledge": "node scripts/validate-knowledge.mjs",
     "pm:generate": "node scripts/generate-pm-links.mjs --require-results",
-    "pm:validate": "node scripts/validate-pm.mjs"
+    "pm:validate": "node scripts/validate-pm.mjs",
+    "diagnostic:generate": "node scripts/generate-diagnostic-links.mjs",
+    "diagnostic:validate": "node scripts/validate-diagnostic.mjs"
   },
   "engines": {
     "node": ">=18"

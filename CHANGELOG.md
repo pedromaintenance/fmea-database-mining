@@ -2,6 +2,13 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.2.1] — 2026-10-20 — Pesquisa e diagnóstico diferencial
+- Publicados 12 roteiros autorais para oito modelos/famílias, com 36 hipóteses alternativas e 24 testes com desfechos possíveis; nenhum resultado real.
+- Filtro de escopo por sistema-raiz nas regras preventivas: mesmo subgrupo não implica mesmo circuito.
+- Criado gerador de vínculos de roteiros por modelo/regra, sem atribuição automática de local, dano, componente ou causa.
+- Inseridas checagens automáticas de quantidade, chaves, hipóteses, testes e integridade dos vínculos.
+- Roadmap revisto: taxonomia, pesquisa ISO/IEC/SAE/ASTM/OEM, curadoria, integração e qualidade.
+
 ## [1.2.0] — 2026-10-20 — Planos preventivos e novas relações FMEA
 - Sete arquivos de manutenção, oito modelos/famílias; 6.281 ocorrências e 1.018 tarefas distintas extraídas localmente com Python.
 - Perfiles públicos agregados por modelo; sem texto integral, séries, tags, PNs ou procedimentos brutos.

@@ -32,6 +32,10 @@ jobs:
         run: npm run pm:generate
       - name: Validar relações preventivas
         run: npm run pm:validate
+      - name: Gerar vínculos diagnósticos por modelo
+        run: npm run diagnostic:generate
+      - name: Validar vínculos, hipóteses e evidências planejadas
+        run: npm run diagnostic:validate
       - name: Publicar pacotes para testes
         uses: actions/upload-artifact@v4
         with:
@@ -40,4 +44,5 @@ jobs:
             data/models/*.json
             data/manifest.json
             data/knowledge/pm-prevention/generated-links.json
+            data/knowledge/diagnostic/generated-links.json
           retention-days: 14
