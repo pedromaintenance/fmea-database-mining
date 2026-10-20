@@ -1,0 +1,1341 @@
+{
+  "schema": "fmea-mining.causal-levels.v1",
+  "version": "1.3.12",
+  "purpose": "Separar fenômeno, mecanismo imediato, fatores contribuintes e causa raiz sistêmica candidata, sem atribuir evento ou aprovação.",
+  "sourceBasis": [
+    "data/knowledge/causal-chains.v1.json",
+    "data/quality/diagnostic-pathways.v1.json",
+    "data/knowledge/causal-effects.v1.json"
+  ],
+  "policy": {
+    "rootCausesRequireIndependentEvidence": true,
+    "operationalEffectNotAutomaticallyObserved": true,
+    "preventOrganizationalBlameWithoutInvestigation": true,
+    "unknownOemEffectivityMustRemainNull": true,
+    "sourceScopeOnlyGeneralPrinciples": true
+  },
+  "records": [
+    {
+      "chainId": "FC-HOSE-001",
+      "family": "mangueiras_hidraulicas",
+      "operatingFunction": "Conduzir fluido pressurizado sem vazamento e mantendo resistência mecânica",
+      "functionalFailureId": "FF-06",
+      "causalLevels": {
+        "observedPhenomenon": "Abrasão e/ou vestígio de fluido na região da mangueira — ainda não observado neste banco.",
+        "immediatePhysicalMechanismCandidate": "Perda localizada de contenção ou simples transporte externo de óleo; a posição de origem ainda precisa ser comprovada.",
+        "contributingConditionCandidates": [
+          "Roteamento em contato com estrutura",
+          "Falta ou posicionamento inadequado de proteção",
+          "Vazamento em peça acima da mangueira"
+        ],
+        "rootCauseCandidates": [
+          "Deficiência de controle de roteamento na montagem",
+          "Falha de verificação da origem após intervenções anteriores"
+        ],
+        "rootCauseNotEstablishedBecause": "Não existem evidências de implementação de procedimento, ordem de serviço de montagem, desvio de padrão ou origem confirmada."
+      },
+      "localEffectReference": {
+        "chainId": "FC-HOSE-001",
+        "sourceFile": "data/knowledge/causal-effects.v1.json",
+        "status": "possible_unobserved"
+      },
+      "evidenceRequirementIds": [
+        "ER-FC-HOSE-001-I1",
+        "ER-FC-HOSE-001-I2"
+      ],
+      "sourceIds": [
+        "CAT-HYD-HOSE-INSPECT",
+        "CAT-HYD-HOSE-FAILURE"
+      ],
+      "editorialOrigin": "preservado_do_roteiro_v1.3.11",
+      "sourceScope": "principios_gerais_nao_efetividade_oem",
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "serialOrArrangement": null
+      },
+      "observation": {
+        "hasObservedEvent": false,
+        "observedValue": null,
+        "observedAt": null
+      },
+      "review": {
+        "status": "inferido_com_literatura_geral",
+        "reviewer": null,
+        "independentReviewer": null,
+        "decision": null
+      },
+      "claimStatus": "hipotese_tecnica_nao_homologada",
+      "confirmedRootCause": false,
+      "measuredSeverity": null
+    },
+    {
+      "chainId": "FC-HOSE-002",
+      "family": "mangueiras_hidraulicas",
+      "operatingFunction": "Transportar fluido pressurizado durante movimentos do equipamento",
+      "functionalFailureId": "FF-06",
+      "causalLevels": {
+        "observedPhenomenon": "Trajeto de mangueira com torção, curva acentuada ou fissura aparente; nenhuma inconformidade real foi medida.",
+        "immediatePhysicalMechanismCandidate": "Solicitações repetidas de flexão/torção podem degradar cobertura e reforço até perda de integridade, se fora do arranjo aplicável.",
+        "contributingConditionCandidates": [
+          "Raio de curvatura ou comprimento inadequados",
+          "Torção de montagem",
+          "Esforço cíclico durante movimento do implemento"
+        ],
+        "rootCauseCandidates": [
+          "Controle de projeto/roteamento inadequado — investigar somente com desenho efetivo e histórico de alterações.",
+          "Verificação de montagem ou proteção insuficiente — investigar evidências de instalação e inspeções anteriores."
+        ],
+        "rootCauseNotEstablishedBecause": "Raio mínimo, movimento real, posição da mangueira, desenho de montagem e origem de eventual fuga não foram verificados."
+      },
+      "localEffectReference": {
+        "chainId": "FC-HOSE-002",
+        "sourceFile": "data/knowledge/causal-effects.v1.json",
+        "status": "possible_unobserved"
+      },
+      "evidenceRequirementIds": [
+        "ER-FC-HOSE-002-I1",
+        "ER-FC-HOSE-002-I2"
+      ],
+      "sourceIds": [
+        "CAT-HYD-HOSE-INSPECT"
+      ],
+      "editorialOrigin": "analise_mecanistica_ampliada_v1.3.12",
+      "sourceScope": "principios_gerais_nao_efetividade_oem",
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "serialOrArrangement": null
+      },
+      "observation": {
+        "hasObservedEvent": false,
+        "observedValue": null,
+        "observedAt": null
+      },
+      "review": {
+        "status": "inferido_com_literatura_geral",
+        "reviewer": null,
+        "independentReviewer": null,
+        "decision": null
+      },
+      "claimStatus": "hipotese_tecnica_nao_homologada",
+      "confirmedRootCause": false,
+      "measuredSeverity": null
+    },
+    {
+      "chainId": "FC-HOSE-003",
+      "family": "mangueiras_hidraulicas",
+      "operatingFunction": "Conter fluido nos terminais sob regime nominal",
+      "functionalFailureId": "FF-06",
+      "causalLevels": {
+        "observedPhenomenon": "Indício de óleo em terminal/adaptador de mangueira ou desacoplamento suspeito, ainda não localizado em máquina real.",
+        "immediatePhysicalMechanismCandidate": "Interface mangueira–terminal ou outra conexão pode perder estanqueidade por retenção/vedação comprometida.",
+        "contributingConditionCandidates": [
+          "Prensagem inadequada",
+          "Terminal ou vedação incompatível",
+          "Montagem/posição incorreta",
+          "Perda de retenção"
+        ],
+        "rootCauseCandidates": [
+          "Especificação ou compatibilidade de conjunto terminal–mangueira inadequada — somente após conferir peças/arranjo e requisitos de prensagem.",
+          "Falha de controle de montagem/inspeção de conexão — exige registros e evidência de desvio do procedimento."
+        ],
+        "rootCauseNotEstablishedBecause": "Sem localização da fuga, identificação da interface, histórico de montagem nem confirmação de componente e vedação."
+      },
+      "localEffectReference": {
+        "chainId": "FC-HOSE-003",
+        "sourceFile": "data/knowledge/causal-effects.v1.json",
+        "status": "possible_unobserved"
+      },
+      "evidenceRequirementIds": [
+        "ER-FC-HOSE-003-I1",
+        "ER-FC-HOSE-003-I2"
+      ],
+      "sourceIds": [
+        "CAT-HYD-HOSE-INSPECT",
+        "CAT-HYD-HOSE-FAILURE"
+      ],
+      "editorialOrigin": "analise_mecanistica_ampliada_v1.3.12",
+      "sourceScope": "principios_gerais_nao_efetividade_oem",
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "serialOrArrangement": null
+      },
+      "observation": {
+        "hasObservedEvent": false,
+        "observedValue": null,
+        "observedAt": null
+      },
+      "review": {
+        "status": "inferido_com_literatura_geral",
+        "reviewer": null,
+        "independentReviewer": null,
+        "decision": null
+      },
+      "claimStatus": "hipotese_tecnica_nao_homologada",
+      "confirmedRootCause": false,
+      "measuredSeverity": null
+    },
+    {
+      "chainId": "FC-HOSE-004",
+      "family": "mangueiras_hidraulicas",
+      "operatingFunction": "Reter propriedades de vedação e flexibilidade na temperatura de projeto",
+      "functionalFailureId": "FF-06",
+      "causalLevels": {
+        "observedPhenomenon": "Endurecimento, fissura ou mudança de aparência na cobertura externa de mangueira, apenas como sinal possível.",
+        "immediatePhysicalMechanismCandidate": "Exposição térmica pode degradar elastômero e reduzir capacidade mecânica, se houver relação material-temperatura verificável.",
+        "contributingConditionCandidates": [
+          "Proximidade de superfície quente",
+          "Exposição térmica acima da capacidade do conjunto",
+          "Proteção térmica ausente/inadequada"
+        ],
+        "rootCauseCandidates": [
+          "Roteamento ou proteção térmica inadequados — confirmar exposição, especificação e condições de projeto.",
+          "Revisão insuficiente de compatibilidade do material ao regime — comprovar documentação de seleção e histórico térmico."
+        ],
+        "rootCauseNotEstablishedBecause": "Não foram medidas temperaturas, duração de exposição, compatibilidade do material nem impacto de ataque químico/abrasão."
+      },
+      "localEffectReference": {
+        "chainId": "FC-HOSE-004",
+        "sourceFile": "data/knowledge/causal-effects.v1.json",
+        "status": "possible_unobserved"
+      },
+      "evidenceRequirementIds": [
+        "ER-FC-HOSE-004-I1",
+        "ER-FC-HOSE-004-I2"
+      ],
+      "sourceIds": [
+        "CAT-HYD-HOSE-INSPECT"
+      ],
+      "editorialOrigin": "analise_mecanistica_ampliada_v1.3.12",
+      "sourceScope": "principios_gerais_nao_efetividade_oem",
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "serialOrArrangement": null
+      },
+      "observation": {
+        "hasObservedEvent": false,
+        "observedValue": null,
+        "observedAt": null
+      },
+      "review": {
+        "status": "inferido_com_literatura_geral",
+        "reviewer": null,
+        "independentReviewer": null,
+        "decision": null
+      },
+      "claimStatus": "hipotese_tecnica_nao_homologada",
+      "confirmedRootCause": false,
+      "measuredSeverity": null
+    },
+    {
+      "chainId": "FC-FD-001",
+      "family": "comando_final",
+      "operatingFunction": "Transmitir torque pelo conjunto de redução mantendo perdas e desgaste dentro do esperado",
+      "functionalFailureId": "FF-02",
+      "causalLevels": {
+        "observedPhenomenon": "Alteração potencial de metais/partículas em óleo de comando final — nenhum resultado observado neste banco.",
+        "immediatePhysicalMechanismCandidate": "Desgaste de contato ou contaminação circulante, sem componente ou direção causal comprovados.",
+        "contributingConditionCandidates": [
+          "Ingressos possíveis por vedação/respiro",
+          "Produto, horas e baseline do óleo",
+          "Desgaste inicial que passa a produzir partículas secundárias"
+        ],
+        "rootCauseCandidates": [
+          "Deficiência de vedação ou controle de contaminação",
+          "Estratégia de lubrificação e acompanhamento incompatível com condição real"
+        ],
+        "rootCauseNotEstablishedBecause": "Não foram verificados ingresso, condição interna, histórico da máquina, decisões de manutenção ou origem metalúrgica de partículas."
+      },
+      "localEffectReference": {
+        "chainId": "FC-FD-001",
+        "sourceFile": "data/knowledge/causal-effects.v1.json",
+        "status": "possible_unobserved"
+      },
+      "evidenceRequirementIds": [
+        "ER-FC-FD-001-I1",
+        "ER-FC-FD-001-I2"
+      ],
+      "sourceIds": [
+        "SKF-WEAR-SURFACE-FATIGUE",
+        "CAT-DRIVE-MAGNET-PLUG",
+        "CAT-FLUID-ANALYSIS-101"
+      ],
+      "editorialOrigin": "preservado_do_roteiro_v1.3.11",
+      "sourceScope": "principios_gerais_nao_efetividade_oem",
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "serialOrArrangement": null
+      },
+      "observation": {
+        "hasObservedEvent": false,
+        "observedValue": null,
+        "observedAt": null
+      },
+      "review": {
+        "status": "inferido_com_literatura_geral",
+        "reviewer": null,
+        "independentReviewer": null,
+        "decision": null
+      },
+      "claimStatus": "hipotese_tecnica_nao_homologada",
+      "confirmedRootCause": false,
+      "measuredSeverity": null
+    },
+    {
+      "chainId": "FC-FD-002",
+      "family": "comando_final",
+      "operatingFunction": "Manter superfícies lubrificadas protegidas de contaminação e corrosão",
+      "functionalFailureId": "FF-02",
+      "causalLevels": {
+        "observedPhenomenon": "Água identificável no lubrificante de comando final ou indícios de corrosão, ainda sem coleta ou inspeção realizada.",
+        "immediatePhysicalMechanismCandidate": "Presença persistente de água pode alterar filme lubrificante e favorecer corrosão/desgaste no contato entre superfícies.",
+        "contributingConditionCandidates": [
+          "Ingresso por vedação/respiro",
+          "Lavagem/exposição",
+          "Condensação ou contaminação na coleta"
+        ],
+        "rootCauseCandidates": [
+          "Controle inadequado de vedação/respiro ou exposição à lavagem — apurar caminho real de ingresso e manutenção anterior.",
+          "Procedimento de abastecimento/amostragem vulnerável a água — comprovar origem e cadeia de custódia antes de atribuir ao equipamento."
+        ],
+        "rootCauseNotEstablishedBecause": "É preciso diferenciar ingresso efetivo de contaminação de coleta, produto incorreto e corrosão já instalada."
+      },
+      "localEffectReference": {
+        "chainId": "FC-FD-002",
+        "sourceFile": "data/knowledge/causal-effects.v1.json",
+        "status": "possible_unobserved"
+      },
+      "evidenceRequirementIds": [
+        "ER-FC-FD-002-I1",
+        "ER-FC-FD-002-I2"
+      ],
+      "sourceIds": [
+        "SKF-ISO15243-BEARING",
+        "CAT-FLUID-ANALYSIS-101"
+      ],
+      "editorialOrigin": "analise_mecanistica_ampliada_v1.3.12",
+      "sourceScope": "principios_gerais_nao_efetividade_oem",
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "serialOrArrangement": null
+      },
+      "observation": {
+        "hasObservedEvent": false,
+        "observedValue": null,
+        "observedAt": null
+      },
+      "review": {
+        "status": "inferido_com_literatura_geral",
+        "reviewer": null,
+        "independentReviewer": null,
+        "decision": null
+      },
+      "claimStatus": "hipotese_tecnica_nao_homologada",
+      "confirmedRootCause": false,
+      "measuredSeverity": null
+    },
+    {
+      "chainId": "FC-FD-003",
+      "family": "comando_final",
+      "operatingFunction": "Manter filme lubrificante e contato mecânico funcional durante transmissão de torque",
+      "functionalFailureId": "FF-02",
+      "causalLevels": {
+        "observedPhenomenon": "Pressão/temperatura, nível ou perfil de óleo potencialmente incompatíveis com o requisito de lubrificação do redutor.",
+        "immediatePhysicalMechanismCandidate": "Filme lubrificante insuficiente pode aumentar contato metal-metal e desgaste, dependendo de carga, temperatura e propriedades reais.",
+        "contributingConditionCandidates": [
+          "Nível abaixo do requerido",
+          "Produto ou viscosidade não especificados",
+          "Degradação/mistura do óleo"
+        ],
+        "rootCauseCandidates": [
+          "Seleção/especificação de lubrificante inadequada — só após conferência OEM e histórico de trocas.",
+          "Controle de nível/reposição ou vedação insuficiente — exige demonstração de perda, nível e sequência de intervenção."
+        ],
+        "rootCauseNotEstablishedBecause": "Sem produto/horas/baseline, nível e condição de carga é impossível distinguir mudança autorizada de formulação de falha mecânica."
+      },
+      "localEffectReference": {
+        "chainId": "FC-FD-003",
+        "sourceFile": "data/knowledge/causal-effects.v1.json",
+        "status": "possible_unobserved"
+      },
+      "evidenceRequirementIds": [
+        "ER-FC-FD-003-I1",
+        "ER-FC-FD-003-I2"
+      ],
+      "sourceIds": [
+        "SKF-ISO15243-BEARING",
+        "CAT-DRIVE-MAGNET-PLUG",
+        "CAT-FLUID-ANALYSIS-101"
+      ],
+      "editorialOrigin": "analise_mecanistica_ampliada_v1.3.12",
+      "sourceScope": "principios_gerais_nao_efetividade_oem",
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "serialOrArrangement": null
+      },
+      "observation": {
+        "hasObservedEvent": false,
+        "observedValue": null,
+        "observedAt": null
+      },
+      "review": {
+        "status": "inferido_com_literatura_geral",
+        "reviewer": null,
+        "independentReviewer": null,
+        "decision": null
+      },
+      "claimStatus": "hipotese_tecnica_nao_homologada",
+      "confirmedRootCause": false,
+      "measuredSeverity": null
+    },
+    {
+      "chainId": "FC-FD-004",
+      "family": "comando_final",
+      "operatingFunction": "Sustentar e guiar os elementos rotativos sob carga especificada",
+      "functionalFailureId": "FF-02",
+      "causalLevels": {
+        "observedPhenomenon": "Possível descascamento em elemento rolante, partículas ou assinatura vibratória alterada, sem exame real.",
+        "immediatePhysicalMechanismCandidate": "Danos de fadiga de contato podem iniciar trincas superficiais/subsuperficiais e evoluir a destacamento de material.",
+        "contributingConditionCandidates": [
+          "Ciclos de carga e concentração de tensão",
+          "Contaminação com indentação",
+          "Lubrificação inadequada ou carregamento excessivo"
+        ],
+        "rootCauseCandidates": [
+          "Regime de carregamento fora do arranjo previsto — requer medição/histórico operacional e confirmação do rolamento.",
+          "Controle de lubrificação/contaminação inadequado — dependerá de evidências de fluido, vedação e desgaste."
+        ],
+        "rootCauseNotEstablishedBecause": "É necessário observar pista/elemento, separar partículas de engrenagem e ruído de componentes adjacentes e identificar arranjo."
+      },
+      "localEffectReference": {
+        "chainId": "FC-FD-004",
+        "sourceFile": "data/knowledge/causal-effects.v1.json",
+        "status": "possible_unobserved"
+      },
+      "evidenceRequirementIds": [
+        "ER-FC-FD-004-I1",
+        "ER-FC-FD-004-I2"
+      ],
+      "sourceIds": [
+        "SKF-ISO15243-BEARING",
+        "CAT-DRIVE-MAGNET-PLUG",
+        "SKF-WEAR-SURFACE-FATIGUE"
+      ],
+      "editorialOrigin": "analise_mecanistica_ampliada_v1.3.12",
+      "sourceScope": "principios_gerais_nao_efetividade_oem",
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "serialOrArrangement": null
+      },
+      "observation": {
+        "hasObservedEvent": false,
+        "observedValue": null,
+        "observedAt": null
+      },
+      "review": {
+        "status": "inferido_com_literatura_geral",
+        "reviewer": null,
+        "independentReviewer": null,
+        "decision": null
+      },
+      "claimStatus": "hipotese_tecnica_nao_homologada",
+      "confirmedRootCause": false,
+      "measuredSeverity": null
+    },
+    {
+      "chainId": "FC-COOL-001",
+      "family": "arrefecimento",
+      "operatingFunction": "Rejeitar calor do circuito do motor nas condições previstas de carga e ambiente",
+      "functionalFailureId": "FF-08",
+      "causalLevels": {
+        "observedPhenomenon": "Sujidade externa ou detritos entre aletas do pacote de radiadores, somente condição-alvo de inspeção.",
+        "immediatePhysicalMechanismCandidate": "Restrição de passagem de ar pode diminuir convecção no trocador e rejeição térmica sob determinada carga.",
+        "contributingConditionCandidates": [
+          "Acúmulo de poeira e detritos entre aletas ou módulos",
+          "Falta de limpeza apropriada",
+          "Condição ambiental muito carregada de partículas"
+        ],
+        "rootCauseCandidates": [
+          "Estratégia de limpeza insuficiente para poeira da operação — precisa de histórico de inspeções, carga e ambiente.",
+          "Proteção/arranjo de admissão de ar incompatível com ambiente — comprovar configuração e requisito OEM."
+        ],
+        "rootCauseNotEstablishedBecause": "Não se demonstraram temperatura fora de requisito, efeito de limpeza ou desempenho de ventilação/circulação; sujidade externa não é obstrução interna."
+      },
+      "localEffectReference": {
+        "chainId": "FC-COOL-001",
+        "sourceFile": "data/knowledge/causal-effects.v1.json",
+        "status": "possible_unobserved"
+      },
+      "evidenceRequirementIds": [
+        "ER-FC-COOL-001-I1",
+        "ER-FC-COOL-001-I2"
+      ],
+      "sourceIds": [
+        "CAT-RADIATOR-CARE",
+        "CAT-EXC-COOL-CHECKLIST"
+      ],
+      "editorialOrigin": "analise_mecanistica_ampliada_v1.3.12",
+      "sourceScope": "principios_gerais_nao_efetividade_oem",
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "serialOrArrangement": null
+      },
+      "observation": {
+        "hasObservedEvent": false,
+        "observedValue": null,
+        "observedAt": null
+      },
+      "review": {
+        "status": "inferido_com_literatura_geral",
+        "reviewer": null,
+        "independentReviewer": null,
+        "decision": null
+      },
+      "claimStatus": "hipotese_tecnica_nao_homologada",
+      "confirmedRootCause": false,
+      "measuredSeverity": null
+    },
+    {
+      "chainId": "FC-COOL-002",
+      "family": "arrefecimento",
+      "operatingFunction": "Conter e conduzir líquido no circuito de arrefecimento e manter volume circulante adequado",
+      "functionalFailureId": "FF-06",
+      "causalLevels": {
+        "observedPhenomenon": "Vestígio de líquido arrefecedor ou nível suspeito em mangueira/conexão, sem localização comprovada da origem.",
+        "immediatePhysicalMechanismCandidate": "Interface ou parede flexível pode perder estanqueidade, com perda de volume do circuito sob determinadas condições.",
+        "contributingConditionCandidates": [
+          "Vedação ou mangueira envelhecida",
+          "Abraçadeira ou conexão comprometida",
+          "Dano mecânico ou térmico em trecho da linha"
+        ],
+        "rootCauseCandidates": [
+          "Prática de montagem/aperto de conexão inadequada — exige confirmação de componente e histórico de intervenções.",
+          "Estratégia de substituição/proteção térmica de mangueiras inadequada — dependerá de idade, fluido e condição real."
+        ],
+        "rootCauseNotEstablishedBecause": "Origem da trilha, nível correto, estado do circuito e perdas por radiador, tampa ou bomba ainda não foram verificados."
+      },
+      "localEffectReference": {
+        "chainId": "FC-COOL-002",
+        "sourceFile": "data/knowledge/causal-effects.v1.json",
+        "status": "possible_unobserved"
+      },
+      "evidenceRequirementIds": [
+        "ER-FC-COOL-002-I1",
+        "ER-FC-COOL-002-I2"
+      ],
+      "sourceIds": [
+        "CAT-RADIATOR-CARE",
+        "CAT-EXC-COOL-CHECKLIST"
+      ],
+      "editorialOrigin": "analise_mecanistica_ampliada_v1.3.12",
+      "sourceScope": "principios_gerais_nao_efetividade_oem",
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "serialOrArrangement": null
+      },
+      "observation": {
+        "hasObservedEvent": false,
+        "observedValue": null,
+        "observedAt": null
+      },
+      "review": {
+        "status": "inferido_com_literatura_geral",
+        "reviewer": null,
+        "independentReviewer": null,
+        "decision": null
+      },
+      "claimStatus": "hipotese_tecnica_nao_homologada",
+      "confirmedRootCause": false,
+      "measuredSeverity": null
+    },
+    {
+      "chainId": "FC-COOL-003",
+      "family": "arrefecimento",
+      "operatingFunction": "Prover fluxo de ar para rejeitar calor do conjunto de arrefecimento",
+      "functionalFailureId": "FF-08",
+      "causalLevels": {
+        "observedPhenomenon": "Ventilação suspeita ou aumento de temperatura quando há demanda térmica, sem diagnóstico de acionamento.",
+        "immediatePhysicalMechanismCandidate": "Acionamento ou comando do ventilador pode fornecer fluxo de ar abaixo da demanda do pacote de trocadores.",
+        "contributingConditionCandidates": [
+          "Deslizamento de correia em arquitetura acionada por correia",
+          "Anomalia de comando ou acionamento do ventilador",
+          "Elemento de fixação ou transmissão de potência comprometido"
+        ],
+        "rootCauseCandidates": [
+          "Configuração/controle do acionamento incompatível com requisito — requer identificar arquitetura e parametrização OEM.",
+          "Inspeção/manutenção do mecanismo de acionamento insuficiente — comprovar desgaste, histórico e requisito."
+        ],
+        "rootCauseNotEstablishedBecause": "Não pressupor correia; faltam arquitetura, leitura de comando/resposta, fluxo de ar e distinção de circulação hidráulica."
+      },
+      "localEffectReference": {
+        "chainId": "FC-COOL-003",
+        "sourceFile": "data/knowledge/causal-effects.v1.json",
+        "status": "possible_unobserved"
+      },
+      "evidenceRequirementIds": [
+        "ER-FC-COOL-003-I1",
+        "ER-FC-COOL-003-I2"
+      ],
+      "sourceIds": [
+        "CAT-COOLING-HEAT-CHAIN",
+        "CAT-COOLING-FAN-REVERSE"
+      ],
+      "editorialOrigin": "analise_mecanistica_ampliada_v1.3.12",
+      "sourceScope": "principios_gerais_nao_efetividade_oem",
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "serialOrArrangement": null
+      },
+      "observation": {
+        "hasObservedEvent": false,
+        "observedValue": null,
+        "observedAt": null
+      },
+      "review": {
+        "status": "inferido_com_literatura_geral",
+        "reviewer": null,
+        "independentReviewer": null,
+        "decision": null
+      },
+      "claimStatus": "hipotese_tecnica_nao_homologada",
+      "confirmedRootCause": false,
+      "measuredSeverity": null
+    },
+    {
+      "chainId": "FC-COOL-004",
+      "family": "arrefecimento",
+      "operatingFunction": "Permitir circulação de líquido e transferência de calor pelos tubos do trocador",
+      "functionalFailureId": "FF-02",
+      "causalLevels": {
+        "observedPhenomenon": "Suspeita de redução do fluxo interno do radiador ou temperatura elevada sob carga; não há ensaio de circulação.",
+        "immediatePhysicalMechanismCandidate": "Depósitos em tubos/canais podem aumentar resistência à passagem do arrefecedor e prejudicar troca térmica.",
+        "contributingConditionCandidates": [
+          "Depósitos ou precipitados no circuito",
+          "Corrosão favorecida por condição de fluido não conforme",
+          "Partículas ou obstrução interna local"
+        ],
+        "rootCauseCandidates": [
+          "Tratamento/controle de qualidade do arrefecedor inadequado — necessita histórico, composição, produto e amostras.",
+          "Procedimento de manutenção ou limpeza do circuito insuficiente — requer histórico de intervenção e resíduos internos."
+        ],
+        "rootCauseNotEstablishedBecause": "Sem ensaio e inspeção OEM não separam depósitos internos, sujidade externa, termostato e bomba."
+      },
+      "localEffectReference": {
+        "chainId": "FC-COOL-004",
+        "sourceFile": "data/knowledge/causal-effects.v1.json",
+        "status": "possible_unobserved"
+      },
+      "evidenceRequirementIds": [
+        "ER-FC-COOL-004-I1",
+        "ER-FC-COOL-004-I2"
+      ],
+      "sourceIds": [
+        "CAT-RADIATOR-CARE",
+        "CAT-COOLING-HEAT-CHAIN"
+      ],
+      "editorialOrigin": "analise_mecanistica_ampliada_v1.3.12",
+      "sourceScope": "principios_gerais_nao_efetividade_oem",
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "serialOrArrangement": null
+      },
+      "observation": {
+        "hasObservedEvent": false,
+        "observedValue": null,
+        "observedAt": null
+      },
+      "review": {
+        "status": "inferido_com_literatura_geral",
+        "reviewer": null,
+        "independentReviewer": null,
+        "decision": null
+      },
+      "claimStatus": "hipotese_tecnica_nao_homologada",
+      "confirmedRootCause": false,
+      "measuredSeverity": null
+    },
+    {
+      "chainId": "FC-TRACK-001",
+      "family": "material_rodante",
+      "operatingFunction": "Suportar e guiar a esteira com rotação compatível e atrito controlado",
+      "functionalFailureId": "FF-02",
+      "causalLevels": {
+        "observedPhenomenon": "Rolete aparentemente quente ou com dificuldade de rotação, ainda sem observação instrumental de campo.",
+        "immediatePhysicalMechanismCandidate": "Material compactado pode restringir a rotação e provocar deslizamento relativo, atrito e desgaste da superfície.",
+        "contributingConditionCandidates": [
+          "Material compacto acumulado no chassi/entorno do rolete",
+          "Impedimento externo por rocha/solo",
+          "Limpeza inadequada do conjunto"
+        ],
+        "rootCauseCandidates": [
+          "Controle de acúmulo de material no rodante inadequado ao ambiente — avaliar condições de frente e rotina de limpeza.",
+          "Arranjo de proteção/inspeção do chassi insuficiente — exigir evidência de projeto e histórico, sem presumir deficiência."
+        ],
+        "rootCauseNotEstablishedBecause": "Termometria isolada não distingue detritos de falha de rolamento/vedação ou tensão inadequada da esteira."
+      },
+      "localEffectReference": {
+        "chainId": "FC-TRACK-001",
+        "sourceFile": "data/knowledge/causal-effects.v1.json",
+        "status": "possible_unobserved"
+      },
+      "evidenceRequirementIds": [
+        "ER-FC-TRACK-001-I1",
+        "ER-FC-TRACK-001-I2"
+      ],
+      "sourceIds": [
+        "CAT-DOZER-UC-MAINT",
+        "CAT-STEEL-TRACKS"
+      ],
+      "editorialOrigin": "analise_mecanistica_ampliada_v1.3.12",
+      "sourceScope": "principios_gerais_nao_efetividade_oem",
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "serialOrArrangement": null
+      },
+      "observation": {
+        "hasObservedEvent": false,
+        "observedValue": null,
+        "observedAt": null
+      },
+      "review": {
+        "status": "inferido_com_literatura_geral",
+        "reviewer": null,
+        "independentReviewer": null,
+        "decision": null
+      },
+      "claimStatus": "hipotese_tecnica_nao_homologada",
+      "confirmedRootCause": false,
+      "measuredSeverity": null
+    },
+    {
+      "chainId": "FC-TRACK-002",
+      "family": "material_rodante",
+      "operatingFunction": "Sustentar e guiar esteira preservando integridade do lubrificante e das superfícies",
+      "functionalFailureId": "FF-02",
+      "causalLevels": {
+        "observedPhenomenon": "Indício de fluido próximo à vedação de rolete ou aquecimento, sem origem do material identificada.",
+        "immediatePhysicalMechanismCandidate": "Falha de vedação pode reduzir retenção de lubrificante e favorecer desgaste interno, se o fluido realmente vier do rolete.",
+        "contributingConditionCandidates": [
+          "Deterioração de vedação",
+          "Impacto/movimento relativo fora do esperado",
+          "Ingresso de abrasivos"
+        ],
+        "rootCauseCandidates": [
+          "Controle de contaminação/vedação inadequado para a condição operacional — necessita identificação e histórico OEM.",
+          "Prática de inspeção/substituição de vedadores insuficiente — comprovar cronologia e procedimento aplicado."
+        ],
+        "rootCauseNotEstablishedBecause": "Fuga aparente pode provir de outro componente; não foram verificados volume de fluido, vedação ou giro."
+      },
+      "localEffectReference": {
+        "chainId": "FC-TRACK-002",
+        "sourceFile": "data/knowledge/causal-effects.v1.json",
+        "status": "possible_unobserved"
+      },
+      "evidenceRequirementIds": [
+        "ER-FC-TRACK-002-I1",
+        "ER-FC-TRACK-002-I2"
+      ],
+      "sourceIds": [
+        "CAT-STEEL-TRACKS",
+        "CAT-DOZER-UC-MAINT"
+      ],
+      "editorialOrigin": "analise_mecanistica_ampliada_v1.3.12",
+      "sourceScope": "principios_gerais_nao_efetividade_oem",
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "serialOrArrangement": null
+      },
+      "observation": {
+        "hasObservedEvent": false,
+        "observedValue": null,
+        "observedAt": null
+      },
+      "review": {
+        "status": "inferido_com_literatura_geral",
+        "reviewer": null,
+        "independentReviewer": null,
+        "decision": null
+      },
+      "claimStatus": "hipotese_tecnica_nao_homologada",
+      "confirmedRootCause": false,
+      "measuredSeverity": null
+    },
+    {
+      "chainId": "FC-TRACK-003",
+      "family": "material_rodante",
+      "operatingFunction": "Guiar e apoiar a esteira mantendo posição e geometria dentro do requerido",
+      "functionalFailureId": "FF-02",
+      "causalLevels": {
+        "observedPhenomenon": "Roda-guia com geometria ou padrão de contato aparente irregular, sem comparação CTS efetiva.",
+        "immediatePhysicalMechanismCandidate": "Guiamento/desalinhamento pode concentrar esforços e produzir desgaste lateral de roda-guia e corrente.",
+        "contributingConditionCandidates": [
+          "Desajuste de guiamento ou desgaste de apoio",
+          "Contato por desalinhamento de conjunto",
+          "Carregamento lateral/terreno desfavorável"
+        ],
+        "rootCauseCandidates": [
+          "Ajuste de alinhamento ou tensionamento inadequado — exige valores OEM e histórico de configuração.",
+          "Controle de desgaste/medições CTS insuficiente — exige evidência de inspeções e limite aplicado."
+        ],
+        "rootCauseNotEstablishedBecause": "É preciso medir dimensão/posição e separar tensionamento ou rolete adjacente defeituoso de desgaste da roda-guia."
+      },
+      "localEffectReference": {
+        "chainId": "FC-TRACK-003",
+        "sourceFile": "data/knowledge/causal-effects.v1.json",
+        "status": "possible_unobserved"
+      },
+      "evidenceRequirementIds": [
+        "ER-FC-TRACK-003-I1",
+        "ER-FC-TRACK-003-I2"
+      ],
+      "sourceIds": [
+        "CAT-DOZER-UC-MAINT",
+        "CAT-CTS-UNDERCARRIAGE"
+      ],
+      "editorialOrigin": "analise_mecanistica_ampliada_v1.3.12",
+      "sourceScope": "principios_gerais_nao_efetividade_oem",
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "serialOrArrangement": null
+      },
+      "observation": {
+        "hasObservedEvent": false,
+        "observedValue": null,
+        "observedAt": null
+      },
+      "review": {
+        "status": "inferido_com_literatura_geral",
+        "reviewer": null,
+        "independentReviewer": null,
+        "decision": null
+      },
+      "claimStatus": "hipotese_tecnica_nao_homologada",
+      "confirmedRootCause": false,
+      "measuredSeverity": null
+    },
+    {
+      "chainId": "FC-TRACK-004",
+      "family": "material_rodante",
+      "operatingFunction": "Manter tensão da esteira compatível com guiamento, transferência de força e ambiente",
+      "functionalFailureId": "FF-02",
+      "causalLevels": {
+        "observedPhenomenon": "Flecha/tensionamento da esteira potencialmente fora do requisito, sem medida por configuração.",
+        "immediatePhysicalMechanismCandidate": "Tensão excessiva ou insuficiente altera carga, atrito e engrenamento entre elos, rodas-guia e roletes.",
+        "contributingConditionCandidates": [
+          "Ajuste incompatível com condições do solo",
+          "Material acumulado alterando tensão efetiva",
+          "Falha de ajuste ou perda de retenção do tensionador"
+        ],
+        "rootCauseCandidates": [
+          "Critério operacional de ajuste da esteira inadequado — só após confirmar procedimento por condição de terreno.",
+          "Gestão de inspeção do tensionador insuficiente — exigir registros e confirmação de falha mecânica."
+        ],
+        "rootCauseNotEstablishedBecause": "Sem referência CTS/OMM e estado de acúmulo de solo, tensão medida e desgaste podem representar outros mecanismos."
+      },
+      "localEffectReference": {
+        "chainId": "FC-TRACK-004",
+        "sourceFile": "data/knowledge/causal-effects.v1.json",
+        "status": "possible_unobserved"
+      },
+      "evidenceRequirementIds": [
+        "ER-FC-TRACK-004-I1",
+        "ER-FC-TRACK-004-I2"
+      ],
+      "sourceIds": [
+        "CAT-STEEL-TRACKS",
+        "CAT-DOZER-UC-MAINT"
+      ],
+      "editorialOrigin": "analise_mecanistica_ampliada_v1.3.12",
+      "sourceScope": "principios_gerais_nao_efetividade_oem",
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "serialOrArrangement": null
+      },
+      "observation": {
+        "hasObservedEvent": false,
+        "observedValue": null,
+        "observedAt": null
+      },
+      "review": {
+        "status": "inferido_com_literatura_geral",
+        "reviewer": null,
+        "independentReviewer": null,
+        "decision": null
+      },
+      "claimStatus": "hipotese_tecnica_nao_homologada",
+      "confirmedRootCause": false,
+      "measuredSeverity": null
+    },
+    {
+      "chainId": "FC-TRACK-005",
+      "family": "material_rodante",
+      "operatingFunction": "Manter sapata fixada ao elo de corrente com pré-carga adequada",
+      "functionalFailureId": "FF-09",
+      "causalLevels": {
+        "observedPhenomenon": "Fixador potencialmente afrouxado (SAP dano 01.15); nenhuma ocorrência real inserida.",
+        "immediatePhysicalMechanismCandidate": "Redução da pré-carga por rotação ou relaxação/assentamento, ainda não diferenciado.",
+        "contributingConditionCandidates": [
+          "Vibração e solicitação transversal",
+          "Rugosidade/assentamento da interface",
+          "Procedimento/força de montagem efetivos desconhecidos"
+        ],
+        "rootCauseCandidates": [
+          "Controle de montagem e rastreamento de aperto inadequado",
+          "Seleção/reutilização de fixadores incompatível com procedimento vigente"
+        ],
+        "rootCauseNotEstablishedBecause": "Par 01.15/C1.17 é descritivamente circular; não há evidência de processo, histórico ou efetividade OEM da fixação."
+      },
+      "localEffectReference": {
+        "chainId": "FC-TRACK-005",
+        "sourceFile": "data/knowledge/causal-effects.v1.json",
+        "status": "possible_unobserved"
+      },
+      "evidenceRequirementIds": [
+        "ER-FC-TRACK-005-I1",
+        "ER-FC-TRACK-005-I2"
+      ],
+      "sourceIds": [
+        "CAT-UC-DOZER-GUIDE",
+        "NORDLOCK-BOLT-LOOSENING"
+      ],
+      "editorialOrigin": "preservado_do_roteiro_v1.3.11",
+      "sourceScope": "principios_gerais_nao_efetividade_oem",
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "serialOrArrangement": null
+      },
+      "observation": {
+        "hasObservedEvent": false,
+        "observedValue": null,
+        "observedAt": null
+      },
+      "review": {
+        "status": "inferido_com_literatura_geral",
+        "reviewer": null,
+        "independentReviewer": null,
+        "decision": null
+      },
+      "claimStatus": "hipotese_tecnica_nao_homologada",
+      "confirmedRootCause": false,
+      "measuredSeverity": null
+    },
+    {
+      "chainId": "FC-TRACK-006",
+      "family": "material_rodante",
+      "operatingFunction": "Comprimir interface sapata–elo de forma suficiente para transmitir cargas por contato",
+      "functionalFailureId": "FF-09",
+      "causalLevels": {
+        "observedPhenomenon": "Fixador da sapata aparentemente frouxo ou junta com perda de retenção, sem registro de giro.",
+        "immediatePhysicalMechanismCandidate": "Assentamento, deformação permanente ou relaxação da interface pode reduzir força de aperto sem auto-rotação necessária.",
+        "contributingConditionCandidates": [
+          "Assentamento das superfícies de contato",
+          "Alteração de revestimento ou rugosidade",
+          "Relaxação ou deformação da junta"
+        ],
+        "rootCauseCandidates": [
+          "Preparação das superfícies/seleção da junta inadequada — confirmar contato, revestimento e desenho efetivo.",
+          "Inspeção de pré-carga/controle de montagem insuficiente — conferir sequência e histórico de aperto autorizado."
+        ],
+        "rootCauseNotEstablishedBecause": "Torque residual não é pré-carga inicial; sem marcação confiável é impossível excluir giro relativo."
+      },
+      "localEffectReference": {
+        "chainId": "FC-TRACK-006",
+        "sourceFile": "data/knowledge/causal-effects.v1.json",
+        "status": "possible_unobserved"
+      },
+      "evidenceRequirementIds": [
+        "ER-FC-TRACK-006-I1",
+        "ER-FC-TRACK-006-I2"
+      ],
+      "sourceIds": [
+        "NORDLOCK-BOLT-LOOSENING",
+        "NORDLOCK-PRELOAD-GUIDANCE"
+      ],
+      "editorialOrigin": "analise_mecanistica_ampliada_v1.3.12",
+      "sourceScope": "principios_gerais_nao_efetividade_oem",
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "serialOrArrangement": null
+      },
+      "observation": {
+        "hasObservedEvent": false,
+        "observedValue": null,
+        "observedAt": null
+      },
+      "review": {
+        "status": "inferido_com_literatura_geral",
+        "reviewer": null,
+        "independentReviewer": null,
+        "decision": null
+      },
+      "claimStatus": "hipotese_tecnica_nao_homologada",
+      "confirmedRootCause": false,
+      "measuredSeverity": null
+    },
+    {
+      "chainId": "FC-TRACK-007",
+      "family": "material_rodante",
+      "operatingFunction": "Preservar integridade dos elementos roscados durante carregamento cíclico de esteira",
+      "functionalFailureId": "FF-09",
+      "causalLevels": {
+        "observedPhenomenon": "Parafuso ausente ou fraturado e possível trinca, sem análise de superfície de fratura.",
+        "immediatePhysicalMechanismCandidate": "Carregamento repetido pode iniciar e propagar trincas de fadiga até redução da seção resistente e ruptura.",
+        "contributingConditionCandidates": [
+          "Perda prévia de pré-carga e escorregamento da junta",
+          "Carregamento cíclico ou impactos repetidos",
+          "Geometria/montagem incompatível ou concentração de tensão"
+        ],
+        "rootCauseCandidates": [
+          "Controle de pré-carga/escorregamento da junta inadequado — necessita registros e análise de solicitação.",
+          "Seleção ou integridade de fixador fora do requisito — confirmar PN, lote, tratamento e procedimento efetivo."
+        ],
+        "rootCauseNotEstablishedBecause": "Fragmentos/fractografia e histórico são necessários para distinguir fadiga, sobrecarga única e montagem incompleta."
+      },
+      "localEffectReference": {
+        "chainId": "FC-TRACK-007",
+        "sourceFile": "data/knowledge/causal-effects.v1.json",
+        "status": "possible_unobserved"
+      },
+      "evidenceRequirementIds": [
+        "ER-FC-TRACK-007-I1",
+        "ER-FC-TRACK-007-I2"
+      ],
+      "sourceIds": [
+        "NORDLOCK-BOLTING-FAILURE",
+        "CAT-UC-DOZER-GUIDE"
+      ],
+      "editorialOrigin": "analise_mecanistica_ampliada_v1.3.12",
+      "sourceScope": "principios_gerais_nao_efetividade_oem",
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "serialOrArrangement": null
+      },
+      "observation": {
+        "hasObservedEvent": false,
+        "observedValue": null,
+        "observedAt": null
+      },
+      "review": {
+        "status": "inferido_com_literatura_geral",
+        "reviewer": null,
+        "independentReviewer": null,
+        "decision": null
+      },
+      "claimStatus": "hipotese_tecnica_nao_homologada",
+      "confirmedRootCause": false,
+      "measuredSeverity": null
+    },
+    {
+      "chainId": "FC-TRACK-008",
+      "family": "material_rodante",
+      "operatingFunction": "Transferir esforço entre sapata e elo preservando o contato e a geometria da junta",
+      "functionalFailureId": "FF-09",
+      "causalLevels": {
+        "observedPhenomenon": "Marcas de deslocamento, desgaste ou ovalização na interface sapata–elo, sem medição de dimensão.",
+        "immediatePhysicalMechanismCandidate": "Movimento repetido entre faces de contato pode produzir desgaste por microdeslizamento e deformação dos furos.",
+        "contributingConditionCandidates": [
+          "Perda de pré-carga em um ou mais fixadores",
+          "Contato insuficiente entre as faces",
+          "Carga transversal associada a impactos e terreno"
+        ],
+        "rootCauseCandidates": [
+          "Controle de retenção e reaperto de sapatas inadequado — requer inspeções e história de montagem.",
+          "Seleção/estado de sapatas, elos e fixadores inadequados — dependerá de limites e configuração OEM."
+        ],
+        "rootCauseNotEstablishedBecause": "Impacto externo e desgaste normal são concorrentes; não há dimensões, pré-carga nem cronologia."
+      },
+      "localEffectReference": {
+        "chainId": "FC-TRACK-008",
+        "sourceFile": "data/knowledge/causal-effects.v1.json",
+        "status": "possible_unobserved"
+      },
+      "evidenceRequirementIds": [
+        "ER-FC-TRACK-008-I1",
+        "ER-FC-TRACK-008-I2"
+      ],
+      "sourceIds": [
+        "CAT-TRACK-BOLT-FUNCTION",
+        "NORDLOCK-BOLT-LOOSENING"
+      ],
+      "editorialOrigin": "analise_mecanistica_ampliada_v1.3.12",
+      "sourceScope": "principios_gerais_nao_efetividade_oem",
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "serialOrArrangement": null
+      },
+      "observation": {
+        "hasObservedEvent": false,
+        "observedValue": null,
+        "observedAt": null
+      },
+      "review": {
+        "status": "inferido_com_literatura_geral",
+        "reviewer": null,
+        "independentReviewer": null,
+        "decision": null
+      },
+      "claimStatus": "hipotese_tecnica_nao_homologada",
+      "confirmedRootCause": false,
+      "measuredSeverity": null
+    },
+    {
+      "chainId": "FC-COOL-005",
+      "family": "arrefecimento",
+      "operatingFunction": "Regular a distribuição do líquido arrefecedor entre bypass e radiador conforme temperatura",
+      "functionalFailureId": "FF-08",
+      "causalLevels": {
+        "observedPhenomenon": "Temperatura elevada ou circulação reduzida suspeita em radiador, sem posição de abertura do termostato verificada.",
+        "immediatePhysicalMechanismCandidate": "Termostato com curso insuficiente pode restringir fluxo de arrefecedor para o radiador sob demanda térmica.",
+        "contributingConditionCandidates": [
+          "Elemento termostático travado ou com curso inadequado",
+          "Depósitos ou dano no mecanismo de movimentação",
+          "Montagem/peça incompatível com circuito"
+        ],
+        "rootCauseCandidates": [
+          "Uso de termostato/arranjo incompatível com configuração — verificar peça e circuito por série.",
+          "Controle de qualidade/manutenção do fluido insuficiente — comprovar depósito e efeito no termostato."
+        ],
+        "rootCauseNotEstablishedBecause": "Sem ensaio de abertura e circulação não diferencia bomba insuficiente, restrição de ar ou sensores."
+      },
+      "localEffectReference": {
+        "chainId": "FC-COOL-005",
+        "sourceFile": "data/knowledge/causal-effects.v1.json",
+        "status": "possible_unobserved"
+      },
+      "evidenceRequirementIds": [
+        "ER-FC-COOL-005-I1",
+        "ER-FC-COOL-005-I2"
+      ],
+      "sourceIds": [
+        "CAT-THERMOSTAT-REPLACEMENT",
+        "CAT-WATER-PUMP-REPLACEMENT"
+      ],
+      "editorialOrigin": "analise_mecanistica_ampliada_v1.3.12",
+      "sourceScope": "principios_gerais_nao_efetividade_oem",
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "serialOrArrangement": null
+      },
+      "observation": {
+        "hasObservedEvent": false,
+        "observedValue": null,
+        "observedAt": null
+      },
+      "review": {
+        "status": "inferido_com_literatura_geral",
+        "reviewer": null,
+        "independentReviewer": null,
+        "decision": null
+      },
+      "claimStatus": "hipotese_tecnica_nao_homologada",
+      "confirmedRootCause": false,
+      "measuredSeverity": null
+    },
+    {
+      "chainId": "FC-COOL-006",
+      "family": "arrefecimento",
+      "operatingFunction": "Restringir o fluxo ao radiador na condição fria e permitir abertura controlada ao aquecer",
+      "functionalFailureId": "FF-08",
+      "causalLevels": {
+        "observedPhenomenon": "Aquecimento aparentemente lento do motor ou indicação térmica baixa, sem critério de regime e ambiente.",
+        "immediatePhysicalMechanismCandidate": "Termostato aberto prematuramente pode aumentar fluxo para radiador no aquecimento e alterar regulação.",
+        "contributingConditionCandidates": [
+          "Desajuste ou travamento do mecanismo termostático",
+          "Elemento ou calibração incompatível",
+          "Anomalia de montagem que altera fluxo/bypass"
+        ],
+        "rootCauseCandidates": [
+          "Seleção de elemento/temperatura de abertura não conforme — somente com peça e dados OEM aplicáveis.",
+          "Controle de montagem/regulação inadequado — comprovar procedimento e teste do circuito termostático."
+        ],
+        "rootCauseNotEstablishedBecause": "Baixa carga/ambiente frio ou sensor errado podem explicar o sinal; não houve ensaio de termostato."
+      },
+      "localEffectReference": {
+        "chainId": "FC-COOL-006",
+        "sourceFile": "data/knowledge/causal-effects.v1.json",
+        "status": "possible_unobserved"
+      },
+      "evidenceRequirementIds": [
+        "ER-FC-COOL-006-I1",
+        "ER-FC-COOL-006-I2"
+      ],
+      "sourceIds": [
+        "CAT-THERMOSTAT-REPLACEMENT",
+        "CAT-EXC-COOL-CHECKLIST"
+      ],
+      "editorialOrigin": "analise_mecanistica_ampliada_v1.3.12",
+      "sourceScope": "principios_gerais_nao_efetividade_oem",
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "serialOrArrangement": null
+      },
+      "observation": {
+        "hasObservedEvent": false,
+        "observedValue": null,
+        "observedAt": null
+      },
+      "review": {
+        "status": "inferido_com_literatura_geral",
+        "reviewer": null,
+        "independentReviewer": null,
+        "decision": null
+      },
+      "claimStatus": "hipotese_tecnica_nao_homologada",
+      "confirmedRootCause": false,
+      "measuredSeverity": null
+    },
+    {
+      "chainId": "FC-COOL-007",
+      "family": "arrefecimento",
+      "operatingFunction": "Manter circulação de líquido arrefecedor suficiente sob regime de carga e rotação",
+      "functionalFailureId": "FF-02",
+      "causalLevels": {
+        "observedPhenomenon": "Indício de baixa circulação ou aquecimento em carga, sem vazão medida na bomba.",
+        "immediatePhysicalMechanismCandidate": "Comando ou componentes da bomba podem não gerar circulação suficiente para o circuito efetivo.",
+        "contributingConditionCandidates": [
+          "Desgaste de componentes internos ou acionamento deficiente",
+          "Dano ou restrição de alimentação da bomba",
+          "Problemas de montagem/acionamento específicos da configuração"
+        ],
+        "rootCauseCandidates": [
+          "Manutenção/controle do acionamento do conjunto inadequado — requer prova de desgaste ou mau funcionamento.",
+          "Controle de qualidade do fluido/proteção do circuito inadequado — investigar restrições e condição da bomba."
+        ],
+        "rootCauseNotEstablishedBecause": "Temperatura alta não identifica rotor nem separa termostato, restrição de passagem e ventilador."
+      },
+      "localEffectReference": {
+        "chainId": "FC-COOL-007",
+        "sourceFile": "data/knowledge/causal-effects.v1.json",
+        "status": "possible_unobserved"
+      },
+      "evidenceRequirementIds": [
+        "ER-FC-COOL-007-I1",
+        "ER-FC-COOL-007-I2"
+      ],
+      "sourceIds": [
+        "CAT-WATER-PUMP-REPLACEMENT",
+        "CAT-THERMOSTAT-REPLACEMENT"
+      ],
+      "editorialOrigin": "analise_mecanistica_ampliada_v1.3.12",
+      "sourceScope": "principios_gerais_nao_efetividade_oem",
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "serialOrArrangement": null
+      },
+      "observation": {
+        "hasObservedEvent": false,
+        "observedValue": null,
+        "observedAt": null
+      },
+      "review": {
+        "status": "inferido_com_literatura_geral",
+        "reviewer": null,
+        "independentReviewer": null,
+        "decision": null
+      },
+      "claimStatus": "hipotese_tecnica_nao_homologada",
+      "confirmedRootCause": false,
+      "measuredSeverity": null
+    },
+    {
+      "chainId": "FC-COOL-008",
+      "family": "arrefecimento",
+      "operatingFunction": "Conter líquido arrefecedor no conjunto rotativo e preservar reserva do circuito",
+      "functionalFailureId": "FF-06",
+      "causalLevels": {
+        "observedPhenomenon": "Vestígio de líquido em região da bomba d'água, com origem ainda não localizada.",
+        "immediatePhysicalMechanismCandidate": "Junta, vedação ou interface da bomba pode deixar de conter arrefecedor, levando a fuga externa.",
+        "contributingConditionCandidates": [
+          "Vedação deteriorada",
+          "Dano mecânico em interface/carcaça",
+          "Montagem ou junta incompatível"
+        ],
+        "rootCauseCandidates": [
+          "Montagem de junta/vedação em desacordo com procedimento — confirmar por série, peças e histórico.",
+          "Controle de fluido ou vida do vedador insuficiente — exigir inspeção de material, uso e intervenções."
+        ],
+        "rootCauseNotEstablishedBecause": "Líquido pode ter escorrido de conexão superior; precisa identificar a origem e testar estanqueidade com método seguro."
+      },
+      "localEffectReference": {
+        "chainId": "FC-COOL-008",
+        "sourceFile": "data/knowledge/causal-effects.v1.json",
+        "status": "possible_unobserved"
+      },
+      "evidenceRequirementIds": [
+        "ER-FC-COOL-008-I1",
+        "ER-FC-COOL-008-I2"
+      ],
+      "sourceIds": [
+        "CAT-WATER-PUMP-REPLACEMENT",
+        "CAT-RADIATOR-CARE"
+      ],
+      "editorialOrigin": "analise_mecanistica_ampliada_v1.3.12",
+      "sourceScope": "principios_gerais_nao_efetividade_oem",
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "serialOrArrangement": null
+      },
+      "observation": {
+        "hasObservedEvent": false,
+        "observedValue": null,
+        "observedAt": null
+      },
+      "review": {
+        "status": "inferido_com_literatura_geral",
+        "reviewer": null,
+        "independentReviewer": null,
+        "decision": null
+      },
+      "claimStatus": "hipotese_tecnica_nao_homologada",
+      "confirmedRootCause": false,
+      "measuredSeverity": null
+    }
+  ]
+}
