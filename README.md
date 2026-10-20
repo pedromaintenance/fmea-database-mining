@@ -2,7 +2,7 @@
 
 Banco de conhecimento **versionado** para investigar modos de falha, sintomas, evidências e causas em equipamentos móveis de mineração. Um consumidor possível é o jogo **[P.O.R.C.A.R.I.A. — Você Quebra, Eu Conserto](https://github.com/pedromaintenance/porcaria-voce-quebra-eu-conserto)**, mas o banco é independente: **este repositório não altera os consumidores**.
 
-> **Status:** versão do catálogo **1.3.2** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
+> **Status:** versão do catálogo **1.3.3** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
 
 ## O que queremos construir
 
@@ -91,6 +91,16 @@ Ampliação com [oito novas cadeias](data/knowledge/causal-chains.v1.json) para 
 Total acumulado: **16 cadeias causais, 4 famílias e 32 investigações propostas**. [Relatório de pesquisa e limites](docs/CICLO_2026-10-20_ARREFECIMENTO_RODANTE.md).
 
 Nada foi promovido a diagnóstico de máquina real. A configuração, os limites OEM por série e os resultados de testes seguem pendentes.
+
+## Terceiro ciclo causal (v1.3.3)
+
+Pesquisados mecanismos de **fixação de sapatas** (autoafrouxamento, assentamento/relaxação, fadiga do parafuso e movimentação de interface) e **circulação do arrefecimento** (termostato com regulação incorreta, insuficiência da bomba e vedação da bomba).
+
+- [24 cadeias causais com 48 investigações](data/knowledge/causal-chains.v1.json): quatro famílias, nenhuma causa raiz/efetividade por série homologada.
+- [Ontologia ampliada para 22 sintomas](data/ontology/concepts.v1.json), incluindo aquecimento lento e desacordo de medição.
+- [Fontes, limitações e revisão do ciclo](docs/CICLO_2026-10-20_FIXACOES_TERMOSTATO_BOMBA.md): sete referências Caterpillar/Nord-Lock.
+- Regras PM de radiador associadas a termostato/bomba são **contextuais**, não uma inspeção específica homologada do componente.
+- Os dados são hipóteses técnico-didáticas com contraprovas, **não ocorrências em campo**.
 
 ## Comece por aqui
 

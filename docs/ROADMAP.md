@@ -1,6 +1,6 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 20/10/2026 · **Ciclo:** catálogo técnico v1.3.2 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 20/10/2026 · **Ciclo:** catálogo técnico v1.3.3 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
 
@@ -36,6 +36,24 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 | Enriquecimento | 12 roteiros classificados por falha funcional, sintomas e técnicas | Anotação manual, não prova de causa |
 
 **Observação:** as 159 tarefas de PM com subgrupo candidato foram obtidas em extração local anterior e **não** representam 159 associações homologadas. Contagens de vínculos estritos serão publicadas pelo relatório automático após cada alteração do gerador.
+
+## Ciclo concluído — 20/10/2026: fixações de esteira e circulação do arrefecimento (v1.3.3)
+
+**Entrega:** oito novas cadeias autorais, distinguindo autoafrouxamento rotacional, perda de pré-carga por assentamento, fratura por fadiga e desgaste das interfaces sapata–elo; no arrefecimento, termostato restringindo a passagem, termostato abrindo prematuramente, bomba com circulação insuficiente e fuga externa na bomba.
+
+- [x] Pesquisar e indexar **sete** referências Caterpillar/Nord-Lock com ressalvas sobre modelo, PN, limiares e procedimento.
+- [x] Expandir de **16 para 24 cadeias** e de 32 para **48 investigações**, mantendo 4 famílias e nenhuma causa confirmada.
+- [x] Acrescentar `SY-21` (tempo de aquecimento prolongado) e `SY-22` (divergência entre medição e indicação): ontologia com **22 sintomas**.
+- [x] Exigir no validador de cadeias a preservação de pelo menos 24 mecanismos e a natureza contextual das PMs ligadas a termostato/bomba.
+- [x] Documentar distinção entre fixador solto por rotação, perda de pré-carga sem rotação e ruptura por fadiga.
+- [x] Publicar [relatório do ciclo](CICLO_2026-10-20_FIXACOES_TERMOSTATO_BOMBA.md), literatura e contraprovas.
+- [ ] Auditoria de cada cadeia contra danos/causas do catálogo SAP **por tipo de objeto** e posição funcional.
+- [ ] Conferir efetividade OEM e critérios de inspeção, primeiro para CAT D9 e uma configuração de motor CAT.
+- [ ] Revisar 24 cadeias por especialista mecânico/eletricista conforme disciplina; nenhuma cadeia homologada ainda.
+
+**Total atual:** 24 cadeias causais, 4 famílias, 48 testes propostos, **zero** ocorrências empíricas confirmadas, **zero** validações por número de série e **zero** causas raiz homologadas.
+
+**Próximo ciclo técnico:** deixar de apenas acrescentar registros e passar a auditar **consistência causal e especificidade**: distinguir a cadeia de danos/efeitos de suas causas e comparar cada modo candidato com os códigos do catálogo SAP. Prioridade à lista de incompatibilidades e falta de vínculo OEM, nunca a atribuição automática.
 
 ## Ciclo concluído — 20/10/2026: arrefecimento e material rodante (v1.3.2)
 
@@ -96,7 +114,7 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 - [ ] Criar matriz função → falha funcional → efeitos por sistema: motor, arrefecimento, combustível, hidráulico, transmissão, freios, rodante, direção, elétrico/controle, compressor, mastro e cabeça rotativa.
 - [ ] Registrar condições necessárias de manifestação: temperatura, carga, rotação, esforço, tipo de fluido, ambiente e configuração.
 - [ ] Distinguir **prevenção do mecanismo** de **detecção do dano já existente**, com tarefa PM/CBM correspondente.
-- [ ] Revisar pelo menos **20 cadeias causais autorais** como primeiro lote controlado (16 hipóteses inseridas, **0 aprovadas**); ampliar somente após auditoria.
+- [ ] Revisar pelo menos **20 cadeias causais autorais** como primeiro lote controlado (24 hipóteses inseridas, **0 aprovadas**); ampliar somente após auditoria.
 
 **Aceite:** cada cadeia aponta para função, falha, componente, mecanismo/dano, efeito e pelo menos um sintoma observável, com origem e limites. Sem probabilidades não fundamentadas.
 

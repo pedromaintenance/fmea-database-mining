@@ -13,6 +13,8 @@ const diagnostic=read('data/knowledge/diagnostic/generated-links.json').records;
 const annotated=read('data/ontology/playbook-annotations.v1.json').records;
 const codes=read('data/knowledge/electronic/code-index.json').records;
 const oil=read('data/knowledge/oil/source-cases.json').records;
+const ontology=read('data/ontology/concepts.v1.json');
+const bibliographicSources=read('data/research/sources.v1.json').sources;
 const chains=read('data/knowledge/causal-chains.v1.json').records;
 const byModel=[];
 for(const model of db.models){
@@ -46,9 +48,11 @@ const counts={
  peerReviewedCausalChains:chains.filter(x=>x.review.status==='revisado_por_especialista').length,
  causalChainCoverageByFamily:Object.fromEntries([...new Set(chains.map(x=>x.family))].sort().map(f=>[f,chains.filter(x=>x.family===f).length])),
  causalChainsWithSourcesAndCounterHypotheses:chains.filter(x=>x.sourceClaims.length&&x.competingHypotheses.length>=2).length,
+ ontologySymptoms:ontology.symptoms.length,bibliographicSources:bibliographicSources.length,
+ causalChainsWithContextualPm:chains.filter(x=>['monitoramento_contextual_nao_alvo_exclusivo_de_ajuste','vinculo_preventivo_contextual_sem_alvo_direto'].includes(x.preventionAssociation)).length,
  evidenceValidatedInRealEquipment:0,technicallyApprovedPlaybooks:0
 };
-const report={schema:'fmea-mining.quality-audit.v1',version:'1.3.2',
+const report={schema:'fmea-mining.quality-audit.v1',version:'1.3.3',
  generatedFrom:'working_tree',status:'qualidade_cadastral_nao_taxa_de_falhas',
  meanings:{
   pmCandidateLinks:'vinculos gerados por regra e taxonomia, NAO falhas observadas',

@@ -2,6 +2,15 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.3] — 2026-10-20 — Fixações de sapata e circulação do arrefecimento
+- Oito novas cadeias: afrouxamento rotacional, perda de pré-carga sem rotação, fadiga de parafuso, deslocamento de sapata, termostato restritivo, termostato aberto precocemente, bomba com circulação insuficiente e vazamento na bomba.
+- Total acumulado: 24 cadeias causais e 48 investigações em quatro famílias; nenhuma homologação por série ou resultado de campo.
+- Fontes: sete novos documentos Caterpillar/Nord-Lock, indexados com escopo geral e limites de extrapolação.
+- Ontologia adiciona SY-21 (tempo de aquecimento prolongado) e SY-22 (leitura divergente de medida independente), totalizando 22 sintomas.
+- Regras preventivas do radiador ligadas a termostato/bomba marcadas contextuais; a validação impede assumir correspondência de componente.
+- Validador passa a exigir 24 cadeias e a restrição das ligações contextuais de arrefecimento.
+- Relatório técnico e roadmap atualizados, sem modificar nenhum repositório consumidor.
+
 ## [1.3.2] — 2026-10-20 — Arrefecimento e material rodante
 - Incorporadas oito cadeias de falha generalistas com fontes OEM Caterpillar, contraprovas e dois métodos por cadeia.
 - Catálogo acumulado: 16 cadeias, quatro famílias de sistemas, 32 investigações propostas.
