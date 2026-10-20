@@ -56,6 +56,12 @@ jobs:
         run: npm run differential:validate
       - name: Validar três roteiros diferenciais e causalidade segregada
         run: npm run pathways:validate
+      - name: Validar quatro niveis causais em 24 cadeias
+        run: npm run causal:levels:validate
+      - name: Gerar preview publico versionado
+        run: npm run public:export
+      - name: Validar preview publico e checksum
+        run: npm run public:validate
       - name: Auditar 24 cadeias contra locais componentes danos e causas SAP
         run: npm run causal:sap:audit
       - name: Gerar relatorio de cobertura e lacunas
@@ -73,4 +79,6 @@ jobs:
             reports/quality-audit.generated.json
             reports/causal-sap-audit.generated.json
             reports/pm-gap-audit.generated.json
+            reports/public-knowledge.v1.json
+            reports/public-manifest.v1.json
           retention-days: 14

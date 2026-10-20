@@ -24,3 +24,5 @@ data/knowledge/diagnostic/generated-player-preview.json
 reports/quality-audit.generated.json
 reports/causal-sap-audit.generated.json
 reports/pm-gap-audit.generated.json
+reports/public-knowledge.v1.json
+reports/public-manifest.v1.json
