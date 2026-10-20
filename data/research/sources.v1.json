@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.research.sources.v1",
-  "version": "1.3.11",
+  "version": "1.3.13",
   "status": "literatura_de_referencia_nao_casos_empiricos",
   "rights": "somente_titulos_links_e_resumos_originais",
   "sources": [
@@ -530,6 +530,17 @@
       "role": "oem_condition_monitoring_overview",
       "limitation": "Recomenda integrar inspeção, análise de fluido, eletrônica e histórico; não define algoritmo de confirmação automática de causa raiz.",
       "reviewStatus": "pagina_publica_consultada_sem_reproducao_integral",
+      "lastReviewed": "2026-10-20"
+    },
+    {
+      "id": "SEMVER-2-0-0",
+      "organization": "Semantic Versioning",
+      "title": "Semantic Versioning 2.0.0 — Versionamento Semântico",
+      "url": "https://semver.org/lang/pt-BR/spec/v2.0.0.html",
+      "area": "public_contract_api_compatibility",
+      "role": "public_software_versioning_specification",
+      "limitation": "SemVer se aplica a interface pública definida; este projeto usa seus princípios em contrato JSON autoral. Não comprova estabilidade de conteúdo FMEA, causas físicas ou adequação OEM.",
+      "reviewStatus": "especificacao_publica_consultada",
       "lastReviewed": "2026-10-20"
     }
   ]
