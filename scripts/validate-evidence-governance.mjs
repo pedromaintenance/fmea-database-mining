@@ -56,14 +56,14 @@ for(const r of review.records){
  check(chainIds.has(r.chainId),'Cadeia orfa no registro de revisao '+r.chainId);
  check(!reviews.has(r.chainId),'Revisao duplicada '+r.chainId);reviews.add(r.chainId);
  check(r.currentStage==='inferido_com_literatura_geral'&&r.nextGate==='revisado_por_especialista'&&r.reviewDecision==='pending','Promocao indevida '+r.chainId);
- check(r.reviewerPrimary===null&&r.reviewerIndependent===null&&r.reviewDate===null&&r.revisionReason===null,'Parecer humano inventado '+r.chainId);
+ check(r.authorId===null&&r.reviewerPrimary===null&&r.reviewerIndependent===null&&r.reviewDate===null&&r.revisionReason===null,'Parecer humano inventado '+r.chainId);
  check(r.oemSourceId===null&&r.manualRevision===null&&r.applicableModelId===null&&r.serialOrArrangement===null&&r.confirmedSapLocationId===null,'Homologacao de serie inventada '+r.chainId);
  check(r.publicationClearance==='not_evaluated'&&r.empiricalFailureConfirmed===false,'Autorizacao ou falha real inventada '+r.chainId);
  check(r.technicalEvidenceIds.length===0&&r.verifiedEvidenceIds.length===0&&r.approvedEffectIds.length===0,'Aprovacoes de evidencias inventadas '+r.chainId);
  check(r.blockers.length>=3,'Bloqueios editoriais nao registrados '+r.chainId);
 }
 check(reviews.size===chains.length,'Fila de revisao nao cobre as cadeias');
-function reviewEligible(f){return typeof f.primaryReviewer==='string'&&f.primaryReviewer.length>0&&typeof f.independentReviewer==='string'&&f.independentReviewer.length>0&&f.primaryReviewer!==f.independentReviewer&&f.decision==='approved'&&typeof f.rationale==='string'&&f.rationale.length>30}
+function reviewEligible(f){return typeof f.authorId==='string'&&f.authorId.length>0&&typeof f.primaryReviewer==='string'&&f.primaryReviewer.length>0&&typeof f.independentReviewer==='string'&&f.independentReviewer.length>0&&f.primaryReviewer!==f.independentReviewer&&f.primaryReviewer!==f.authorId&&f.independentReviewer!==f.authorId&&f.decision==='approved'&&typeof f.rationale==='string'&&f.rationale.length>30}
 function evidenceInterpretable(f){return Array.isArray(f.metadataPresent)&&f.requiredFields.every(field=>f.metadataPresent.includes(field))&&f.baselinePresent===true&&f.oemApplicable===true}
 check(regression.nature==='synthetic_only_never_authorized_field_evidence','Fixture na natureza de dado real');
 const fixtureIds=new Set();
