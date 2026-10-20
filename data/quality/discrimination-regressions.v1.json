@@ -1,0 +1,128 @@
+{
+  "schema": "fmea-mining.discrimination-regressions.v1",
+  "version": "1.3.9",
+  "nature": "synthetic_only_not_measured",
+  "testPolicy": "Os casos verificam classificação sem resultados reais ou cálculo de força estatística.",
+  "cases": [
+    {
+      "id": "REG-01",
+      "testId": "DISC-FC-HOSE-001-I1",
+      "hypotheticalOutcome": "supports",
+      "contextComparable": true,
+      "baselineDocumented": true,
+      "expectedDisposition": "condition_supported_only",
+      "explanation": "Cobertura abrasada e ponto de contato visível, mas não comprova vazamento.",
+      "observedInRealMachine": false
+    },
+    {
+      "id": "REG-02",
+      "testId": "DISC-FC-HOSE-001-I1",
+      "hypotheticalOutcome": "supports",
+      "contextComparable": false,
+      "baselineDocumented": true,
+      "expectedDisposition": "inconclusive",
+      "explanation": "Sem contexto fotográfico e origem da trilha não é possível sustentar causalidade.",
+      "observedInRealMachine": false
+    },
+    {
+      "id": "REG-03",
+      "testId": "DISC-FC-FD-001-I2",
+      "hypotheticalOutcome": "supports",
+      "contextComparable": true,
+      "baselineDocumented": true,
+      "expectedDisposition": "condition_supported_only",
+      "explanation": "Tendência anormal confirma sinal de monitoramento, não engrenagem ou rolamento.",
+      "observedInRealMachine": false
+    },
+    {
+      "id": "REG-04",
+      "testId": "DISC-FC-FD-001-I2",
+      "hypotheticalOutcome": "supports",
+      "contextComparable": true,
+      "baselineDocumented": false,
+      "expectedDisposition": "inconclusive",
+      "explanation": "Sem baseline e comparabilidade amostral não se interpreta tendência.",
+      "observedInRealMachine": false
+    },
+    {
+      "id": "REG-05",
+      "testId": "DISC-FC-COOL-001-I1",
+      "hypotheticalOutcome": "supports",
+      "contextComparable": true,
+      "baselineDocumented": true,
+      "expectedDisposition": "condition_supported_only",
+      "explanation": "Sujidade externa não significa obstrução interna ou superaquecimento confirmado.",
+      "observedInRealMachine": false
+    },
+    {
+      "id": "REG-06",
+      "testId": "DISC-FC-TRACK-001-I2",
+      "hypotheticalOutcome": "supports",
+      "contextComparable": true,
+      "baselineDocumented": true,
+      "expectedDisposition": "condition_supported_only",
+      "explanation": "Termometria detecta diferença de temperatura, não origem do atrito.",
+      "observedInRealMachine": false
+    },
+    {
+      "id": "REG-07",
+      "testId": "DISC-FC-TRACK-001-I2",
+      "hypotheticalOutcome": "weakens",
+      "contextComparable": true,
+      "baselineDocumented": true,
+      "expectedDisposition": "weakens_not_eliminates",
+      "explanation": "Temperaturas semelhantes podem enfraquecer anomalia ativa, não excluir defeito intermitente.",
+      "observedInRealMachine": false
+    },
+    {
+      "id": "REG-08",
+      "testId": "DISC-FC-TRACK-005-I2",
+      "hypotheticalOutcome": "supports",
+      "contextComparable": true,
+      "baselineDocumented": true,
+      "expectedDisposition": "condition_supported_only",
+      "explanation": "Parafuso solto documenta condição, não o mecanismo de perda de pré-carga.",
+      "observedInRealMachine": false
+    },
+    {
+      "id": "REG-09",
+      "testId": "DISC-FC-TRACK-005-I2",
+      "hypotheticalOutcome": "supports",
+      "contextComparable": false,
+      "baselineDocumented": true,
+      "expectedDisposition": "inconclusive",
+      "explanation": "Falta histórico de marcação da junta para distinguir rotação.",
+      "observedInRealMachine": false
+    },
+    {
+      "id": "REG-10",
+      "testId": "DISC-FC-COOL-007-I2",
+      "hypotheticalOutcome": "supports",
+      "contextComparable": true,
+      "baselineDocumented": true,
+      "expectedDisposition": "condition_supported_only",
+      "explanation": "Teste OEM pode confirmar circulação insuficiente, não necessariamente defeito interno de bomba.",
+      "observedInRealMachine": false
+    },
+    {
+      "id": "REG-11",
+      "testId": "DISC-FC-COOL-007-I2",
+      "hypotheticalOutcome": "inconclusive",
+      "contextComparable": true,
+      "baselineDocumented": true,
+      "expectedDisposition": "inconclusive",
+      "explanation": "Um resultado inconclusivo nunca deve alterar hipóteses automaticamente.",
+      "observedInRealMachine": false
+    },
+    {
+      "id": "REG-12",
+      "testId": "DISC-FC-FD-001-I2",
+      "hypotheticalOutcome": "weakens",
+      "contextComparable": true,
+      "baselineDocumented": true,
+      "expectedDisposition": "weakens_not_eliminates",
+      "explanation": "Óleo estável não exclui danos localizados ou fragmentos grosseiros.",
+      "observedInRealMachine": false
+    }
+  ]
+}
