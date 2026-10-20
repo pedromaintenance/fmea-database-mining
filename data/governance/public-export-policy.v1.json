@@ -1,0 +1,62 @@
+{
+  "schema": "fmea-mining.public-export-policy.v1",
+  "version": "1.3.12",
+  "name": "Public Knowledge Preview — hypotheses only",
+  "sourceDatasets": [
+    "data/knowledge/causal-chains.v1.json",
+    "data/knowledge/causal-effects.v1.json",
+    "data/ontology/causal-levels.v1.json",
+    "data/research/sources.v1.json"
+  ],
+  "allowedChainFields": [
+    "id",
+    "title",
+    "family",
+    "operatingFunction",
+    "functionalFailureId",
+    "failureMode",
+    "mechanismIds",
+    "sourceIds",
+    "causalLevels",
+    "localEffect",
+    "systemEffect",
+    "competingHypotheses",
+    "investigations",
+    "applicability",
+    "reviewStatus",
+    "nature",
+    "confirmedRootCause",
+    "empiricalOccurrences"
+  ],
+  "allowedSourceFields": [
+    "id",
+    "title",
+    "organization",
+    "url",
+    "role",
+    "limitation"
+  ],
+  "prohibitedData": [
+    "plantEquipmentIdentifiers",
+    "realSamples",
+    "corporateWorkOrders",
+    "serialNumbers",
+    "privatePmText",
+    "internalSchematics",
+    "oemLicensedText",
+    "actualOperatingThresholds",
+    "unapprovedSapAssignments"
+  ],
+  "reviewRules": {
+    "allEntriesRemainInferred": true,
+    "noRealObservations": true,
+    "zeroConfirmedRootCauses": true,
+    "serialEffectivityMustBeNull": true,
+    "approvedForOperationalUse": false
+  },
+  "artifacts": [
+    "reports/public-knowledge.v1.json",
+    "reports/public-manifest.v1.json"
+  ],
+  "note": "Prévia pública reprodutível por whitelist; jamais substitui manual, engenharia ou revisão por série."
+}
