@@ -61,6 +61,33 @@ Ausência de componente, par ou caminho não significa que a máquina não possu
 
 **Interpretação dos contadores:** número de caminhos cadastrais é cobertura de cadastro, não número de falhas prováveis, falhas reais, FMEAs homologadas ou frequência operacional.
 
+## Resultado efetivamente medido pelo GitHub Actions
+
+A execução [39466590729](https://github.com/pedromaintenance/fmea-database-mining/actions/runs/39466590729) terminou **success**, incluindo a auditoria nova e a auditoria geral. Métricas extraídas dos logs, não estimadas:
+
+| Métrica | Resultado | Interpretação |
+| --- | ---: | --- |
+| Cadeias analisadas | 24/24 | Todas possuem parecer manual rastreável |
+| Pares componente–dano–causa permitidos | 18 | Apenas permissão cadastral; não são homologações |
+| Pares previstos não permitidos | 2 | Ambos envolvem `RADI/1690/03.02/C2.09` |
+| Cadeias sem tupla de componente sequer proposta | 4 | Termostato/bomba, sem inventar código |
+| Cadeias com ao menos um caminho estrutural possível | 15 | Ainda depende de efetividade OEM e coerência mecânica |
+| Soma de caminhos estruturais candidatos | 108 | **Soma com possibilidades repetidas entre cadeias, não 108 máquinas nem falhas** |
+| Regras PM com vínculo candidato estrito | 15/25 | As outras 10 precisam investigação cadastral |
+| Vínculos PM candidatos após filtros atuais | 115 | Não são modos de falha aprovados |
+| Locais funcionais distintos alcançados pelas PMs | 65 | Apenas cobertura de catálogo |
+| Roteiros de diagnóstico com algum vínculo candidato | 7/12 | Cinco continuam sem correspondência |
+| Relações aceitas por engenharia | **0** | Não houve revisão individual de efetividade |
+| Eventos de falha empíricos confirmados | **0** | Base não recebeu históricos reais autorizados |
+
+A categoria **`sem_componente_alvo` contém 6 pareceres sem alvo físico específico**, enquanto apenas **4** não têm nenhuma tupla genérica proposta: duas incluem códigos amplos (ex.: esteira) que não representam o tensionador ou a interface sapata–elo. Essa diferença é deliberada.
+
+### Dez regras preventivas ainda sem vínculo estrito
+
+`cooling-radiator-blockage`, `engine-oil-filter`, `fuel-filter-contamination`, `fuel-tank-water`, `track-idler-wear`, `hydraulic-hose-leak`, `hydraulic-hose-abrasion`, `drill-rotary-bearing`, `drill-compressor-pressure` e `drill-compressor-filter`.
+
+Esses nomes identificam **lacunas da junção estrita ao catálogo**, não comprovam que o equipamento não possui o componente. Investigar a taxonomia antes de criar um caminho.
+
 ## Correção de processo a partir deste ciclo
 
 **Não promover registros por junção simples.** O processo formal passa a ser:

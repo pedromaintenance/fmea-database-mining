@@ -52,7 +52,7 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 - [ ] Verificar extensão dos locais de mangueiras hidráulicas em sistemas de implementos; vincular termostato, bomba e tensionador **somente se o cadastro/documentação suportar**.
 - [ ] Corrigir causa circular em fixação com hipótese mecanística específica e evidência independente.
 
-**Novo indicador de avanço:** percentual de cadeias com parecer explícito de compatibilidade cadastral (24/24) versus percentual de cadeias homologadas (0/24). Esses números são sobre curadoria, **não frequência de falha**.
+**Novo indicador de avanço:** percentual de cadeias com parecer explícito de compatibilidade cadastral (24/24) versus percentual de cadeias homologadas (0/24). **CI v1.3.4:** 18 pares taxonômicos permitidos; 2 pares ausentes; 15 cadeias com caminhos estruturais; 108 combinações estruturais (com repetição, não falhas); 10/25 regras PM sem candidato estrito. Esses números são sobre curadoria, **não frequência de falha**.
 
 ## Ciclo concluído — 20/10/2026: fixações de esteira e circulação do arrefecimento (v1.3.3)
 
