@@ -17,6 +17,7 @@ const ontology=read('data/ontology/concepts.v1.json');
 const bibliographicSources=read('data/research/sources.v1.json').sources;
 const chains=read('data/knowledge/causal-chains.v1.json').records;
 const sapAudit=read('reports/causal-sap-audit.generated.json');
+const pmGaps=read('reports/pm-gap-audit.generated.json');
 const byModel=[];
 for(const model of db.models){
  const modelId=model.id;
@@ -56,9 +57,12 @@ const counts={
  causalSapPairsAbsent:sapAudit.summary.catalogPairsMissing,
  causalSapChainsWithoutPart:sapAudit.summary.chainsWithoutProposedComponent,
  causalSapLinksAcceptedByEngineering:sapAudit.summary.acceptedEngineeringLinks,
+ pmGapRulesReviewed:pmGaps.summary.withoutStrictCandidates,
+ pmGapBlockers:pmGaps.summary.blockerCounts,
+ pmGapApprovedRemaps:pmGaps.summary.approvedEngineeringLinks,
  evidenceValidatedInRealEquipment:0,technicallyApprovedPlaybooks:0
 };
-const report={schema:'fmea-mining.quality-audit.v1',version:'1.3.4',
+const report={schema:'fmea-mining.quality-audit.v1',version:'1.3.5',
  generatedFrom:'working_tree',status:'qualidade_cadastral_nao_taxa_de_falhas',
  meanings:{
   pmCandidateLinks:'vinculos gerados por regra e taxonomia, NAO falhas observadas',
