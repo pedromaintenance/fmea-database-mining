@@ -1,0 +1,255 @@
+{
+  "schema": "fmea-mining.playbook-concept-annotations.v1",
+  "version": "1.3.0",
+  "provenance": {
+    "classification": "classificacao_didatica_manual_das_descricoes_publicas_v1.2.1",
+    "source": "data/knowledge/diagnostic/playbooks.v1.json",
+    "review": "pendente"
+  },
+  "records": [
+    {
+      "playbookId": "PB-EXC-HOSE-01",
+      "functionalFailureIds": [
+        "FF-06",
+        "FF-02"
+      ],
+      "symptomIds": [
+        "SY-03",
+        "SY-08"
+      ],
+      "evidenceMethodIds": [
+        "EV-01",
+        "EV-15"
+      ],
+      "ambiguity": "Vazamento e perda de resposta não confirmam a mesma origem",
+      "nature": "hipotese_didatica_sem_resultado",
+      "mappingReview": "requer_revisao_de_engenharia",
+      "confirmedSapPaths": [],
+      "confirmedRootCauses": []
+    },
+    {
+      "playbookId": "PB-SHOVEL-COOL-01",
+      "functionalFailureIds": [
+        "FF-08",
+        "FF-02"
+      ],
+      "symptomIds": [
+        "SY-04",
+        "SY-15"
+      ],
+      "evidenceMethodIds": [
+        "EV-01",
+        "EV-14"
+      ],
+      "ambiguity": "Verificar qual motor foi afetado e a condição de carga",
+      "nature": "hipotese_didatica_sem_resultado",
+      "mappingReview": "requer_revisao_de_engenharia",
+      "confirmedSapPaths": [],
+      "confirmedRootCauses": []
+    },
+    {
+      "playbookId": "PB-TRUCK-FINAL-01",
+      "functionalFailureIds": [
+        "FF-02"
+      ],
+      "symptomIds": [
+        "SY-01",
+        "SY-14",
+        "SY-04"
+      ],
+      "evidenceMethodIds": [
+        "EV-08",
+        "EV-11",
+        "EV-01"
+      ],
+      "ambiguity": "ICP sem partículas grandes não descarta dano; amostragem deve ser representativa",
+      "nature": "hipotese_didatica_sem_resultado",
+      "mappingReview": "requer_revisao_de_engenharia",
+      "confirmedSapPaths": [],
+      "confirmedRootCauses": []
+    },
+    {
+      "playbookId": "PB-LOADER-CYL-01",
+      "functionalFailureIds": [
+        "FF-05",
+        "FF-06"
+      ],
+      "symptomIds": [
+        "SY-10",
+        "SY-03"
+      ],
+      "evidenceMethodIds": [
+        "EV-01",
+        "EV-12"
+      ],
+      "ambiguity": "Deriva exige sustentação mecânica do implemento e teste OEM",
+      "nature": "hipotese_didatica_sem_resultado",
+      "mappingReview": "requer_revisao_de_engenharia",
+      "confirmedSapPaths": [],
+      "confirmedRootCauses": []
+    },
+    {
+      "playbookId": "PB-DOZER-TRACK-01",
+      "functionalFailureIds": [
+        "FF-02",
+        "FF-09"
+      ],
+      "symptomIds": [
+        "SY-01",
+        "SY-04",
+        "SY-11"
+      ],
+      "evidenceMethodIds": [
+        "EV-01",
+        "EV-02",
+        "EV-15"
+      ],
+      "ambiguity": "Distinguir rolete, roda-guia e ajuste da esteira",
+      "nature": "hipotese_didatica_sem_resultado",
+      "mappingReview": "requer_revisao_de_engenharia",
+      "confirmedSapPaths": [],
+      "confirmedRootCauses": []
+    },
+    {
+      "playbookId": "PB-DRILL-DR410-FEED-01",
+      "functionalFailureIds": [
+        "FF-02",
+        "FF-03"
+      ],
+      "symptomIds": [
+        "SY-08",
+        "SY-01"
+      ],
+      "evidenceMethodIds": [
+        "EV-01",
+        "EV-12"
+      ],
+      "ambiguity": "Arquitetura do avanço precisa de confirmação Sandvik por modelo",
+      "nature": "hipotese_didatica_sem_resultado",
+      "mappingReview": "requer_revisao_de_engenharia",
+      "confirmedSapPaths": [],
+      "confirmedRootCauses": []
+    },
+    {
+      "playbookId": "PB-DRILL-DI650-COMP-01",
+      "functionalFailureIds": [
+        "FF-02",
+        "FF-08"
+      ],
+      "symptomIds": [
+        "SY-06",
+        "SY-09"
+      ],
+      "evidenceMethodIds": [
+        "EV-01",
+        "EV-05"
+      ],
+      "ambiguity": "Verificar pontos de pressão e controle de carga reais da DI650i",
+      "nature": "hipotese_didatica_sem_resultado",
+      "mappingReview": "requer_revisao_de_engenharia",
+      "confirmedSapPaths": [],
+      "confirmedRootCauses": []
+    },
+    {
+      "playbookId": "PB-GRADER-TIRE-01",
+      "functionalFailureIds": [
+        "FF-02"
+      ],
+      "symptomIds": [
+        "SY-11",
+        "SY-20"
+      ],
+      "evidenceMethodIds": [
+        "EV-01",
+        "EV-02"
+      ],
+      "ambiguity": "Histórico de rodízio e especificação de pneu necessários",
+      "nature": "hipotese_didatica_sem_resultado",
+      "mappingReview": "requer_revisao_de_engenharia",
+      "confirmedSapPaths": [],
+      "confirmedRootCauses": []
+    },
+    {
+      "playbookId": "PB-TRUCK-FUEL-01",
+      "functionalFailureIds": [
+        "FF-02"
+      ],
+      "symptomIds": [
+        "SY-09",
+        "SY-13"
+      ],
+      "evidenceMethodIds": [
+        "EV-09",
+        "EV-05"
+      ],
+      "ambiguity": "Perda de torque admite causa elétrica, pneumática ou de combustível",
+      "nature": "hipotese_didatica_sem_resultado",
+      "mappingReview": "requer_revisao_de_engenharia",
+      "confirmedSapPaths": [],
+      "confirmedRootCauses": []
+    },
+    {
+      "playbookId": "PB-EXC-PUMP-01",
+      "functionalFailureIds": [
+        "FF-02",
+        "FF-06",
+        "FF-08"
+      ],
+      "symptomIds": [
+        "SY-08",
+        "SY-03",
+        "SY-06"
+      ],
+      "evidenceMethodIds": [
+        "EV-01",
+        "EV-05",
+        "EV-08"
+      ],
+      "ambiguity": "Não condenar bomba com base somente em partículas ou baixa pressão",
+      "nature": "hipotese_didatica_sem_resultado",
+      "mappingReview": "requer_revisao_de_engenharia",
+      "confirmedSapPaths": [],
+      "confirmedRootCauses": []
+    },
+    {
+      "playbookId": "PB-SHOVEL-MOTOR-OIL-01",
+      "functionalFailureIds": [
+        "FF-07",
+        "FF-08"
+      ],
+      "symptomIds": [
+        "SY-16",
+        "SY-13",
+        "SY-06"
+      ],
+      "evidenceMethodIds": [
+        "EV-07",
+        "EV-08",
+        "EV-05"
+      ],
+      "ambiguity": "Aviso de pressão precisa de medição independente e referência OEM",
+      "nature": "hipotese_didatica_sem_resultado",
+      "mappingReview": "requer_revisao_de_engenharia",
+      "confirmedSapPaths": [],
+      "confirmedRootCauses": []
+    },
+    {
+      "playbookId": "PB-LOADER-RADIATOR-01",
+      "functionalFailureIds": [
+        "FF-08"
+      ],
+      "symptomIds": [
+        "SY-04"
+      ],
+      "evidenceMethodIds": [
+        "EV-01",
+        "EV-14"
+      ],
+      "ambiguity": "Somente tendência térmica não identifica termostato ou bomba",
+      "nature": "hipotese_didatica_sem_resultado",
+      "mappingReview": "requer_revisao_de_engenharia",
+      "confirmedSapPaths": [],
+      "confirmedRootCauses": []
+    }
+  ]
+}
