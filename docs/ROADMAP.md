@@ -1,6 +1,6 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 20/10/2026 · **Ciclo:** catálogo técnico v1.3.7 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 20/10/2026 · **Ciclo:** catálogo técnico v1.3.8 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
 
@@ -39,6 +39,25 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 
 **Observação:** as 159 tarefas de PM com subgrupo candidato foram obtidas em extração local anterior e **não** representam 159 associações homologadas. Contagens de vínculos estritos serão publicadas pelo relatório automático após cada alteração do gerador.
 
+## Ciclo concluído — 20/10/2026: requisitos de evidência e revisão técnica (v1.3.8)
+
+**Foco:** fortalecer a capacidade de **sustentar, enfraquecer ou declarar inconclusiva** cada hipótese, sem transformar teste planejado em medição nem correspondência cadastral em causa raiz.
+
+- [x] Definidos [48 requisitos de investigação](../data/quality/evidence-requirements.v1.json) com origem na cadeia e seus testes, preservando três interpretações existentes.
+- [x] Criado glossário de **67 campos de metadados**, selecionados por método; exigência de ponto, condição operacional, instrumento, amostra, método, baseline e referência aplicável quando relevantes.
+- [x] Priorizados **6 testes P0** para revisão de qualidade; sem gravidade/ocorrência quantitativa.
+- [x] Criado [registro de curadoria de 24 cadeias](../data/governance/technical-review-register.v1.json), todas pendentes: inferido → revisado por especialista → aplicabilidade OEM confirmada → evidência validada.
+- [x] Exigidos **dois revisores diferentes e independentes do autor**, decisão explícita, fonte, efetividade por configuração e autorização de publicação antes da promoção apropriada.
+- [x] Criados [8 testes de regressão sintética](../data/quality/evidence-gate-regressions.v1.json) com evidência incompleta, baseline ausente, revisores repetidos e elegibilidade formal simulada.
+- [x] Adicionado [JSON Schema](../schemas/evidence-requirements.schema.json), validador `scripts/validate-evidence-governance.mjs` e etapa `npm run evidence:validate` no CI.
+- [x] Catalogada fonte Caterpillar sobre qualidade e rotulagem de amostras; [relatório metodológico](CICLO_2026-10-20_EVIDENCIAS_GOVERNANCA.md) documenta limites de ISO e OEM.
+- [ ] **P0 — v1.3.9:** executar revisão crítica documental dos seis casos prioritários, preenchendo apenas decisões respaldadas por fontes; revisor humano e OEM efetivo continuam necessários para homologação.
+- [ ] **P0 — v1.3.9:** criar matriz de força discriminante de cada teste e falsos positivos/negativos por condição.
+- [ ] **P1 — v1.3.9:** resolver circularidade `Afrouxado / Folga ou afrouxamento` e verificar efetividade OEM de uma configuração piloto.
+- [ ] **P1:** evoluir o modelo para armazenamento restrito de observações reais autorizadas fora do repositório público.
+
+**Indicadores:** 48/48 testes com contrato de evidência, 24/24 cadeias em fila editorial, **0** testes observados, **0** homologações OEM, **0** causas raízes reais confirmadas. Mantêm-se os 10 bloqueios PM.
+
 ## Ciclo concluído — 20/10/2026: motor, hidráulica, rodante e efeitos (v1.3.7)
 
 **Objetivo:** avançar da lista de sintomas e danos candidatos para consequências funcionais estruturadas, sem equiparar condição detectável a diagnóstico ou impacto observado.
@@ -51,8 +70,8 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 - [x] Ampliar de 7 para **14 cenários sintéticos** que bloqueiam confirmação de dano por troca de filtro, pressão baixa, abrasão de mangueira, óleo contaminado, rolete quente ou CTS planejado.
 - [x] Integrar `npm run effects:validate` e `npm run semantics:validate` ao pipeline e ao relatório de qualidade.
 - [x] Registrar quatro fontes públicas Caterpillar adicionais com ressalvas e publicar [relatório completo de pesquisa](CICLO_2026-10-20_EFEITOS_MOTOR_HIDRAULICA_RODANTE.md).
-- [ ] **P0 — próximo ciclo:** modelar `evidenceRequirement`, contexto de amostragem, critérios de contraprova e aceitação de evidência.
-- [ ] **P0 — próximo ciclo:** formalizar revisão humana de `causalEffect` por engenharia e técnico de campo, com fonte OEM efetiva por número de série.
+- [x] Modelar `evidenceRequirement` e metadados de teste para 48 investigações na v1.3.8.
+- [x] Instituir registro e gates de revisão independente para 24 cadeias (v1.3.8); avaliações humanas e confirmação OEM ainda pendentes.
 - [ ] **P1:** revisar as 10 lacunas SAP de componentes e grupos; não relaxar junção para inflar vínculos.
 - [ ] **P1:** refinar causas circulares no catálogo sem criar código de causa ou probabilidade fictício.
 

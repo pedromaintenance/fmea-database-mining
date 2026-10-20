@@ -123,3 +123,15 @@ Não confundir **mecanismo** (processo material), **dano local**, **falha funcio
 Todos os efeitos possuem `status=possible_unobserved`, `severityRank=null`, `probability=null`, `oemSerialEffectivity=null` e `actualEventCount=0`. Não calcular RPN com hipóteses qualitativas. O validador exige correspondência 1:1 com as 24 cadeias e fontes preexistentes.
 
 [Contrato de efeitos](../schemas/causal-effects.schema.json) · [Teste de efeitos](../scripts/validate-causal-effects.mjs) · [Ciclo técnico](CICLO_2026-10-20_EFEITOS_MOTOR_HIDRAULICA_RODANTE.md)
+
+## 12. Critérios de evidência e gates editoriais (v1.3.8)
+
+A [camada de requisitos](../data/quality/evidence-requirements.v1.json) relaciona cada par `chainId/investigationId` a um método do vocabulário, critérios de documentação da coleta/ensaio, contexto operativo, baseline aplicável, qualidade do instrumento, três possíveis interpretações e limitações. Há **48 requisitos e nenhum resultado observado**.
+
+O glossário de 67 campos **não significa 67 campos obrigatórios em todos os testes**: `EV-01` exige localização e observação; análise de óleo exige produto/compartimento/ponto/horas/método; medição de pressão exige ponto/carga/temperatura/instrumento. Os procedimentos e limites por série são **`null`** até confirmação OEM. Filtro removido, pressão baixa, rolete quente e código ativo nunca são provas isoladas de causa raiz.
+
+O [registro de governança](../data/governance/technical-review-register.v1.json) especifica os gates de revisão de plausibilidade, verificação técnica independente, efetividade OEM e validação de evidência. Autor e revisores devem ser identificados; a elegibilidade do gate não executa a promoção de status. `reviewerPrimary`, `reviewerIndependent`, `oemSourceId`, `manualRevision`, `verifiedEvidenceIds` estão vazios enquanto não houver revisão real.
+
+A [regressão de qualidade](../data/quality/evidence-gate-regressions.v1.json) é inteiramente sintética e não autoriza eventos reais ou dados privados em repositório público.
+
+[Relatório da v1.3.8](CICLO_2026-10-20_EVIDENCIAS_GOVERNANCA.md) · [Validador](../scripts/validate-evidence-governance.mjs)

@@ -3,7 +3,7 @@
   "version": "1.3.8",
   "private": true,
   "type": "module",
-  "description": "Catálogo FMEA didático de equipamentos móveis para PORCARIA",
+  "description": "Banco independente de conhecimento de FMEA, evidencias e confiabilidade de equipamentos moveis de mineracao",
   "scripts": {
     "validate": "node scripts/validate.mjs",
     "generate": "node scripts/generate-models.mjs --all",

@@ -2,7 +2,7 @@
 
 Banco de conhecimento **versionado** para investigar modos de falha, sintomas, evidências e causas em equipamentos móveis de mineração. Um consumidor possível é o jogo **[P.O.R.C.A.R.I.A. — Você Quebra, Eu Conserto](https://github.com/pedromaintenance/porcaria-voce-quebra-eu-conserto)**, mas o banco é independente: **este repositório não altera os consumidores**.
 
-> **Status:** versão do catálogo **1.3.7** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
+> **Status:** versão do catálogo **1.3.8** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
 
 ## O que queremos construir
 
@@ -140,6 +140,19 @@ A nova [base de efeitos](data/knowledge/causal-effects.v1.json) diferencia **24 
 - `npm run semantics:validate` e `npm run effects:validate` rodam no CI.
 
 **Situação de curadoria:** as 10 lacunas de PM e as 24 cadeias sem homologação continuam abertas. Nenhum código SAP foi preenchido por aproximação.
+
+## Qualidade das evidências e governança técnica (v1.3.8)
+
+O banco agora dispõe de [48 requisitos de evidência](data/quality/evidence-requirements.v1.json) para os dois testes de cada uma das 24 cadeias causais, com **67 campos possíveis de metadados**, interpretações favoráveis/desfavoráveis/inconclusivas, critérios de qualidade e baseline OEM pendente. **Nenhum teste foi executado.**
+
+A [fila de curadoria](data/governance/technical-review-register.v1.json) tem **24 cadeias aguardando revisão**, seis delas priorizadas para análise P0. O fluxo diferencia revisão mecânica, confirmação de efetividade OEM e evidência diagnóstica. **Não existe homologação automática**; a revisão requer avaliadores independentes do autor.
+
+- [Relatório técnico do ciclo](docs/CICLO_2026-10-20_EVIDENCIAS_GOVERNANCA.md)
+- [Contrato de dados dos requisitos](schemas/evidence-requirements.schema.json)
+- [Oito testes sintéticos de qualidade e independência](data/quality/evidence-gate-regressions.v1.json)
+- `npm run evidence:validate`: integridade de 48/48 testes, 24/24 revisões e ausência de resultados/limites OEM fictícios.
+
+Os **10 bloqueios preventivos SAP anteriores permanecem**. Não foram aprovadas causas, peças, limites, gravidades ou eventos de campo.
 
 ## Comece por aqui
 

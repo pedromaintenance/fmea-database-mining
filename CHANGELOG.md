@@ -2,6 +2,16 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.8] — 2026-10-20 — Qualidade de evidência e governança independente
+- Definidos **48 requisitos de investigação** correspondentes às 24 cadeias × 2 testes, com metadados de execução, contexto, contraprova e interpretação preservada.
+- Criado glossário de **67 campos técnicos em português**, selecionados por método sem impor o mesmo checklist a todas as técnicas.
+- Prioridade P0 estabelecida para seis verificações de mangueira, comando final, radiador, rolete, fixadores e bomba de arrefecimento.
+- Registro editorial estruturado com **24 cadeias aguardando revisão**, duas avaliações independentes do autor e gates de efetividade OEM.
+- Adicionados oito cenários sintéticos de regressão de qualidade de dados/revisão; nenhuma aprovação automática ou observação real.
+- Novo contrato JSON Schema, validador de integridade e rotina `npm run evidence:validate` no CI.
+- Catalogada fonte Caterpillar de procedimentos gerais de amostragem, com ressalva de efetividade por máquina.
+- Documentação e roadmap revisados; nenhuma alteração em consumidores externos.
+
 ## [1.3.7] — 2026-10-20 — Efeitos locais/sistêmicos e motor, hidráulica e rodante
 - Ampliada a semântica para **18 condições, 18 atividades, 9 danos candidatos, 9 bundles preventivos e 53 relações**.
 - Foram incluídos filtro e lubrificação do motor, vazamento/pressão/óleo hidráulico, desgaste e temperatura de roletes e roda-guia.
