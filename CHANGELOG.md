@@ -2,6 +2,16 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.13] — 2026-10-20 — Auditoria de 42 hipóteses sistêmicas e contrato público
+- Revisão editorial crítica das 21 cadeias causais ampliadas anteriormente e de suas **42 alegações sistêmicas**; cada hipótese com evidência mínima necessária e contraprova não organizacional.
+- Nenhum desvio de processo, culpa de equipe/pessoa ou causa raiz foi considerado confirmado sem evidências efetivas e revisão independente.
+- Preservados os três roteiros aprofundados v1.3.11, sem atribuição de aprovação fictícia.
+- Formalizado contrato público `contractVersion=1.0.0`, **independente** da versão interna `1.3.13`; preview público anterior `1.3.12` preservado no mesmo hash SHA-256.
+- Oito regressões sintéticas de mudança **major/minor/patch** e proibição de promoção automática de hipótese para causa validada.
+- Criados dois validadores, dois JSON Schemas, documentação e novas contagens no auditor de qualidade.
+- Índice bibliográfico expandido para **49 fontes** com a especificação SemVer 2.0.0.
+- Mantidos 10 bloqueios preventivos SAP, 24 cadeias sem homologação OEM, 48 investigações não realizadas e zero alteração de consumidores.
+
 ## [1.3.12] — 2026-10-20 — Causalidade em quatro níveis e preview público reproduzível
 - Ampliada a segregação de **fenômeno, mecanismo físico imediato, fatores contribuintes e causa raiz candidata** às 21 cadeias restantes; agora são 24/24 (três originais preservadas).
 - As causas sistêmicas são condicionais e possuem justificativa de não confirmação, evitando atribuição automática de responsabilidade a projeto, manutenção ou operação.

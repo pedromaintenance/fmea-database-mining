@@ -179,3 +179,13 @@ A [política pública](../data/governance/public-export-policy.v1.json) declara 
 O preview é publicado apenas como artefato do CI, separado dos dados originais. Este repositório não executa instalação, integração ou atualização em jogos consumidores.
 
 [Relatório do ciclo](CICLO_2026-10-20_CAUSALIDADE_EXPORTACAO.md).
+
+## 17. Alegações sistêmicas e SemVer do contrato público (v1.3.13)
+
+**Causa sistêmica candidata não é atribuição de falha de processo.** A [auditoria](../data/governance/systemic-root-audit.v1.json) preserva as 42 alegações das 21 cadeias ampliadas, exigindo duas fontes de prova do processo e uma explicação física/operacional alternativa antes de qualquer inferência sistêmica. O valor `nao_demonstrada` é distinto de `refutada`: significa **evidência insuficiente**, não validação nem falsificação do mecanismo.
+
+O [contrato público](../data/governance/public-contract.v1.json) possui `contractVersion=1.0.0` **separado** da versão de pacote. A exportação anterior permanece `1.3.12`, com o mesmo conjunto de 24 registros, 20 fontes e SHA-256. Adições de contratos incompatíveis exigirão MAJOR; campos opcionais compatíveis podem exigir MINOR; correções sem mudança semântica podem usar PATCH, mediante liberação explícita. A segurança causal tem prioridade sobre a numeração: nenhuma mudança autoriza confirmação automatizada de falha.
+
+O [validador](../scripts/validate-public-compatibility.mjs) compara whitelist, snapshot e oito regressões sintéticas. Este controle verifica compatibilidade de **dados**, não aprovação OEM, precisão diagnóstica ou responsabilidade organizacional.
+
+[Relatório do ciclo](CICLO_2026-10-20_AUDITORIA_SISTEMICA_CONTRATO.md).

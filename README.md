@@ -2,7 +2,7 @@
 
 Banco de conhecimento **versionado** para investigar modos de falha, sintomas, evidências e causas em equipamentos móveis de mineração. Um consumidor possível é o jogo **[P.O.R.C.A.R.I.A. — Você Quebra, Eu Conserto](https://github.com/pedromaintenance/porcaria-voce-quebra-eu-conserto)**, mas o banco é independente: **este repositório não altera os consumidores**.
 
-> **Status:** versão do catálogo **1.3.12** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
+> **Status:** versão do catálogo **1.3.13** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
 
 ## O que queremos construir
 
@@ -202,6 +202,19 @@ A [política de publicação](data/governance/public-export-policy.v1.json) perm
 - [Esquemas JSON](schemas/causal-levels.schema.json) e [preview](schemas/public-knowledge-preview.schema.json)
 
 Comandos: `npm run causal:levels:validate`, `npm run public:export` e `npm run public:validate`. **O preview não é liberado para uso operacional ou diagnóstico causal automático.** Nenhum consumidor foi modificado.
+
+## Auditoria de causas sistêmicas e compatibilidade (v1.3.13)
+
+Foram avaliadas editorialmente **42 hipóteses de causas sistêmicas** das 21 cadeias ampliadas na v1.3.12. O [registro de auditoria](data/governance/systemic-root-audit.v1.json) exige **duas fontes de evidência de processo e uma explicação alternativa não organizacional** para cada alegação, mantendo `causalConclusion=nao_demonstrada`. **Nenhum desvio de processo, causa raiz ou responsabilidade pessoal foi comprovado.**
+
+A interface pública mantém [contrato SemVer 1.0.0](data/governance/public-contract.v1.json), desacoplado da versão interna do banco. O **preview público permanece na versão 1.3.12** e conserva o mesmo checksum; as novas informações de auditoria não foram acrescentadas silenciosamente ao pacote já publicado.
+
+- [Relatório técnico e decisões](docs/CICLO_2026-10-20_AUDITORIA_SISTEMICA_CONTRATO.md)
+- [Validador causal](scripts/validate-systemic-root-audit.mjs) e [contrato JSON](schemas/systemic-root-audit.schema.json)
+- [Validador da compatibilidade pública](scripts/validate-public-compatibility.mjs) e [oito regressões sintéticas](data/quality/contract-compatibility-regressions.v1.json)
+- `npm run systemic:audit:validate` e `npm run public:compatibility` no CI
+
+As 24 cadeias e 48 investigações continuam sem execução/validação OEM por série. **Nenhum consumidor foi alterado.**
 
 ## Comece por aqui
 

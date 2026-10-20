@@ -1,6 +1,6 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 20/10/2026 · **Ciclo:** catálogo técnico v1.3.12 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 20/10/2026 · **Ciclo:** catálogo técnico v1.3.13 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
 
@@ -39,6 +39,25 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 
 **Observação:** as 159 tarefas de PM com subgrupo candidato foram obtidas em extração local anterior e **não** representam 159 associações homologadas. Contagens de vínculos estritos serão publicadas pelo relatório automático após cada alteração do gerador.
 
+## Ciclo concluído — 20/10/2026: auditoria sistêmica e contrato público (v1.3.13)
+
+**Objetivo:** impedir a promoção de modo de falha físico plausível a causa raiz organizacional sem prova e bloquear mudanças incompatíveis na exportação pública.
+
+- [x] **21 cadeias revisadas editorialmente** com [42 possíveis causas sistêmicas](../data/governance/systemic-root-audit.v1.json), preservando seus textos originais.
+- [x] Exigidos **dois elementos documentais independentes** e uma explicação concorrente **não organizacional** por hipótese.
+- [x] Registrado `causalConclusion=nao_demonstrada`, `processRecordsExamined=false`, `attributedFaultToPeopleOrTeam=false`; nenhum desvio de processo ou causa raiz comprovado.
+- [x] Os três roteiros v1.3.11 permanecem sem parecer especializado inventado.
+- [x] Criado [contrato público SemVer 1.0.0](../data/governance/public-contract.v1.json), distinto da versão interna do banco.
+- [x] Preservado preview público `1.3.12` e seu checksum, com 24 registros, 20 referências efetivamente exportadas e `approvedForOperationalUse=false`.
+- [x] Criadas [oito regressões de compatibilidade](../data/quality/contract-compatibility-regressions.v1.json), validadores `scripts/validate-systemic-root-audit.mjs` e `scripts/validate-public-compatibility.mjs` e contratos JSON Schema próprios.
+- [x] Integração ao GitHub Actions e às métricas de qualidade; [relatório completo](CICLO_2026-10-20_AUDITORIA_SISTEMICA_CONTRATO.md).
+- [ ] **P0 — próximo ciclo:** auditar as seis alegações sistêmicas dos três roteiros antigos (`FC-HOSE-001`, `FC-FD-001`, `FC-TRACK-005`) com evidência/contraprova equivalente.
+- [ ] **P0:** especificar fluxo de lançamento de nova versão pública por mudança de conteúdo, distinta de mudança de contrato.
+- [ ] **P1:** avançar documentação OEM por prefixo/série e CTS do piloto CAT D9, sem presumir números de peça, torque ou limites.
+- [ ] **P1:** revisar as 10 regras preventivas SAP sem vínculo estrito, sem relaxamento cadastral impróprio.
+
+**Estado:** 24 cadeias causais inferidas; 21 auditadas editorialmente nesta versão, três preservadas; **42 causas sistêmicas candidatas não confirmadas** e **0 causas raízes homologadas**. O pacote público e os consumidores permanecem estáveis.
+
 ## Ciclo concluído — 20/10/2026: cobertura causal total e preview público (v1.3.12)
 
 **Objetivo:** expandir segregação de níveis causais às 21 cadeias ainda sem estrutura própria e entregar um formato público versionado com limites de validade explícitos.
@@ -50,8 +69,8 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 - [x] [Gerador de preview público](../scripts/export-public-knowledge.mjs) com dados ordenados, referência a fontes públicas e [validação de SHA-256](../scripts/validate-public-knowledge.mjs) no CI.
 - [x] Criados [contrato de níveis](../schemas/causal-levels.schema.json), [contrato de preview](../schemas/public-knowledge-preview.schema.json) e artefatos `reports/public-knowledge.v1.json` / `reports/public-manifest.v1.json`.
 - [x] [Relatório completo](CICLO_2026-10-20_CAUSALIDADE_EXPORTACAO.md) e indicadores no relatório geral de qualidade.
-- [ ] **P0 — próxima versão:** submeter 21 causas sistêmicas candidatas a avaliação técnica crítica de plausibilidade, sem fingir parecer de especialista.
-- [ ] **P0 — próxima versão:** especificar convenções de compatibilidade de esquema/semântica para consumidores independentes.
+- [x] **v1.3.13:** auditar editorialmente 42 candidatas sistêmicas das 21 cadeias, com contraprova e documentação necessária; parecer de especialista independente ainda pendente.
+- [x] **v1.3.13:** estabelecer contrato público SemVer 1.0.0 e regressões de compatibilidade, sem alterar consumidores.
 - [ ] **P1:** conferir prefixo e arranjo CAT D9 com documentação OEM e tabelas CTS de origem autorizada antes de promover qualquer vínculo.
 - [ ] **P1:** perseguir as 10 lacunas preventivas SAP e os 12 complementos diagnósticos pendentes, sem construir combinações apenas para inflar cobertura.
 
