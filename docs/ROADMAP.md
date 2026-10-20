@@ -1,6 +1,6 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 20/10/2026 · **Ciclo:** catálogo técnico v1.3.8 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 20/10/2026 · **Ciclo:** catálogo técnico v1.3.9 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
 
@@ -39,6 +39,23 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 
 **Observação:** as 159 tarefas de PM com subgrupo candidato foram obtidas em extração local anterior e **não** representam 159 associações homologadas. Contagens de vínculos estritos serão publicadas pelo relatório automático após cada alteração do gerador.
 
+## Ciclo concluído — 20/10/2026: discriminabilidade dos seis testes P0 (v1.3.9)
+
+**Objetivo:** distinguir métodos que identificam **uma condição** daqueles que podem discriminar uma **hipótese causal**, sem pressupor que o teste foi executado ou que uma peça foi condenada.
+
+- [x] Criada [matriz técnica de seis testes P0](../data/quality/discriminative-tests.v1.json) com condição detectável, capacidade, limitações e fatores de confusão.
+- [x] Avaliadas **12 hipóteses concorrentes**, todas mantidas abertas até evidência independente, e propostas **12 verificações complementares** com métodos cadastrados.
+- [x] Classificadas quatro capacidades metodológicas **editoriais**: condição, tendência, indício compartilhado e desempenho funcional condicionado; nenhuma é métrica probabilística.
+- [x] Preservados campos `sensitivity`, `specificity`, `likelihoodRatio` e `confidence` como `null`, sem taxas de acerto inventadas.
+- [x] Criado [contrato JSON Schema](../schemas/discriminative-tests.schema.json), [validador](../scripts/validate-discriminative-tests.mjs) e [12 regressões sintéticas](../data/quality/discrimination-regressions.v1.json).
+- [x] Adicionada etapa `npm run discrimination:validate` ao CI e novos indicadores ao relatório de qualidade.
+- [x] Pesquisadas fontes Caterpillar, Nord-Lock e o resumo oficial da ISO 13379-1:2025, sem extrapolar parâmetros por modelo/série. [Relatório completo](CICLO_2026-10-20_DISCRIMINACAO_TESTES.md).
+- [ ] **Próximo ciclo:** estruturar a cobertura de alternativas pelas verificações complementares, sem falsa certeza de exclusão de hipótese.
+- [ ] **Próximo ciclo:** revisão causal dos pares SAP circulares e piloto de efetividade OEM da família D9 ou CAT 777.
+- [ ] Solicitar revisão independente dos seis P0 a especialistas com documentação do arranjo efetivo. Sem parecer humano real, **0 estados promovidos**.
+
+**Estado:** 24 cadeias, 48 investigações, 6 métodos P0 auditados quanto à discriminabilidade, **0** testes realizados, **0** causas homologadas, **10** lacunas PM pendentes. O objetivo foi a qualidade da inferência, não a expansão combinatória.
+
 ## Ciclo concluído — 20/10/2026: requisitos de evidência e revisão técnica (v1.3.8)
 
 **Foco:** fortalecer a capacidade de **sustentar, enfraquecer ou declarar inconclusiva** cada hipótese, sem transformar teste planejado em medição nem correspondência cadastral em causa raiz.
@@ -52,7 +69,7 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 - [x] Adicionado [JSON Schema](../schemas/evidence-requirements.schema.json), validador `scripts/validate-evidence-governance.mjs` e etapa `npm run evidence:validate` no CI.
 - [x] Catalogada fonte Caterpillar sobre qualidade e rotulagem de amostras; [relatório metodológico](CICLO_2026-10-20_EVIDENCIAS_GOVERNANCA.md) documenta limites de ISO e OEM.
 - [ ] **P0 — v1.3.9:** executar revisão crítica documental dos seis casos prioritários, preenchendo apenas decisões respaldadas por fontes; revisor humano e OEM efetivo continuam necessários para homologação.
-- [ ] **P0 — v1.3.9:** criar matriz de força discriminante de cada teste e falsos positivos/negativos por condição.
+- [x] **P0 — v1.3.9:** classificar qualitativamente a capacidade discriminante dos seis testes e seus fatores de confusão; sensibilidade/especificidade seguem indisponíveis.
 - [ ] **P1 — v1.3.9:** resolver circularidade `Afrouxado / Folga ou afrouxamento` e verificar efetividade OEM de uma configuração piloto.
 - [ ] **P1:** evoluir o modelo para armazenamento restrito de observações reais autorizadas fora do repositório público.
 

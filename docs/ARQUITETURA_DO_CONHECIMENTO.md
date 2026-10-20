@@ -135,3 +135,13 @@ O [registro de governança](../data/governance/technical-review-register.v1.json
 A [regressão de qualidade](../data/quality/evidence-gate-regressions.v1.json) é inteiramente sintética e não autoriza eventos reais ou dados privados em repositório público.
 
 [Relatório da v1.3.8](CICLO_2026-10-20_EVIDENCIAS_GOVERNANCA.md) · [Validador](../scripts/validate-evidence-governance.mjs)
+
+## 13. Capacidade discriminante dos testes (v1.3.9)
+
+A [matriz de discriminabilidade](../data/quality/discriminative-tests.v1.json) liga os **seis requisitos P0** aos testes, registrando o sinal observável, fatores de confusão, hipóteses concorrentes e métodos complementares. É uma classificação **qualitativa editorial**, não um teste científico de sensibilidade ou especificidade.
+
+Detectar abrasão de cobertura, partículas no óleo, aletas sujas, aquecimento de rolete ou pré-carga alterada **não prova por si só a causa raiz**. Mesmo o teste funcional de circulação de arrefecedor não isola rotor, termostato e restrição interna sem diagnóstico diferencial.
+
+Nenhuma hipótese alternativa é eliminada automaticamente. Campos quantitativos de confiança permanecem nulos; nenhuma medição foi realizada e **nenhum resultado de equipamento foi registrado**.
+
+[Relatório do ciclo](CICLO_2026-10-20_DISCRIMINACAO_TESTES.md) · [Validador](../scripts/validate-discriminative-tests.mjs)

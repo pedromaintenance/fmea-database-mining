@@ -24,6 +24,8 @@ const effects=read('data/knowledge/causal-effects.v1.json');
 const evidence=read('data/quality/evidence-requirements.v1.json');
 const review=read('data/governance/technical-review-register.v1.json');
 const evidenceFixtures=read('data/quality/evidence-gate-regressions.v1.json');
+const differential=read('data/quality/discriminative-tests.v1.json');
+const differentialFixtures=read('data/quality/discrimination-regressions.v1.json');
 const byModel=[];
 for(const model of db.models){
  const modelId=model.id;
@@ -69,6 +71,11 @@ const counts={
  pendingIndependentReview:review.records.filter(x=>x.reviewDecision==='pending').length,
  confirmedOemEffectiveReviews:0,
  approvedEvidenceBasedDiagnoses:0,
+ discriminationPriorityTests:differential.records.length,
+ discriminationAlternativesStillOpen:differential.records.reduce((n,x)=>n+x.competingHypothesisAssessments.length,0),
+ discriminationComplementaryChecks:differential.records.reduce((n,x)=>n+x.complementaryInvestigations.length,0),
+ discriminationSyntheticRegressions:differentialFixtures.cases.length,
+ discriminationConfirmedCauses:0,
  causalChainsWithContextualPm:chains.filter(x=>['monitoramento_contextual_nao_alvo_exclusivo_de_ajuste','vinculo_preventivo_contextual_sem_alvo_direto'].includes(x.preventionAssociation)).length,
  causalSapChainsAudited:sapAudit.summary.chainsAudited,
  causalSapCandidatePairs:sapAudit.summary.catalogPairsCompatible,
@@ -81,7 +88,7 @@ const counts={
  semanticDamageConfirmations:semantic.confirmedComponentDamages.length,
  evidenceValidatedInRealEquipment:0,technicallyApprovedPlaybooks:0
 };
-const report={schema:'fmea-mining.quality-audit.v1',version:'1.3.8',
+const report={schema:'fmea-mining.quality-audit.v1',version:'1.3.9',
  generatedFrom:'working_tree',status:'qualidade_cadastral_nao_taxa_de_falhas',
  meanings:{
   pmCandidateLinks:'vinculos gerados por regra e taxonomia, NAO falhas observadas',

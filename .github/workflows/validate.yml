@@ -50,6 +50,8 @@ jobs:
         run: npm run effects:validate
       - name: Validar 48 requisitos de evidencia e 24 gates de curadoria
         run: npm run evidence:validate
+      - name: Validar capacidade discriminante de seis testes P0
+        run: npm run discrimination:validate
       - name: Auditar 24 cadeias contra locais componentes danos e causas SAP
         run: npm run causal:sap:audit
       - name: Gerar relatorio de cobertura e lacunas

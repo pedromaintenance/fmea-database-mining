@@ -2,6 +2,15 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.9] — 2026-10-20 — Diagnóstico diferencial e testes P0
+- Revisada a capacidade discriminante dos seis testes P0 (mangueira hidráulica, óleo do comando final, radiador, rolete, fixação de sapata e circulação da bomba).
+- Matriz com quatro classes qualitativas editoriais: condição sem causa, tendência sem origem, indício inespecífico e desempenho condicionado.
+- **12 avaliações de hipóteses concorrentes**, todas ainda plausíveis após o teste isolado, e **12 verificações complementares** propostas.
+- Fatores de confusão e campos `canDiscriminate/cannotDiscriminate` documentados para cada teste.
+- Criados JSON Schema, validador `npm run discrimination:validate` e **12 regressões sintéticas**; a automação proíbe conclusões causais ou números de sensibilidade/especificidade inventados.
+- Literatura primária e técnica Caterpillar, Nord-Lock e resumo ISO 13379-1:2025 confrontados; sem valores OEM importados.
+- Atualizados arquitetura, roadmap, relatório de qualidade e CI; nenhuma revisão humana fingida e nenhuma alteração no PORCARIA.
+
 ## [1.3.8] — 2026-10-20 — Qualidade de evidência e governança independente
 - Definidos **48 requisitos de investigação** correspondentes às 24 cadeias × 2 testes, com metadados de execução, contexto, contraprova e interpretação preservada.
 - Criado glossário de **67 campos técnicos em português**, selecionados por método sem impor o mesmo checklist a todas as técnicas.

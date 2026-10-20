@@ -2,7 +2,7 @@
 
 Banco de conhecimento **versionado** para investigar modos de falha, sintomas, evidências e causas em equipamentos móveis de mineração. Um consumidor possível é o jogo **[P.O.R.C.A.R.I.A. — Você Quebra, Eu Conserto](https://github.com/pedromaintenance/porcaria-voce-quebra-eu-conserto)**, mas o banco é independente: **este repositório não altera os consumidores**.
 
-> **Status:** versão do catálogo **1.3.8** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
+> **Status:** versão do catálogo **1.3.9** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
 
 ## O que queremos construir
 
@@ -153,6 +153,19 @@ A [fila de curadoria](data/governance/technical-review-register.v1.json) tem **2
 - `npm run evidence:validate`: integridade de 48/48 testes, 24/24 revisões e ausência de resultados/limites OEM fictícios.
 
 Os **10 bloqueios preventivos SAP anteriores permanecem**. Não foram aprovadas causas, peças, limites, gravidades ou eventos de campo.
+
+## Capacidade discriminante dos testes prioritários (v1.3.9)
+
+A [matriz de seis testes P0](data/quality/discriminative-tests.v1.json) distingue **o que cada método detecta**, **o que não consegue determinar**, fatores de confusão e hipóteses alternativas que continuam em aberto. Possui **12 análises de alternativas** e **12 verificações complementares** sugeridas — nenhuma executada.
+
+As quatro classes qualitativas são **taxonomia editorial própria**, não sensibilidade/especificidade ISO nem probabilidade validada. Nenhum teste confirma causa automaticamente.
+
+- [Pesquisa e relatório do ciclo](docs/CICLO_2026-10-20_DISCRIMINACAO_TESTES.md)
+- [Contrato JSON Schema](schemas/discriminative-tests.schema.json)
+- [12 casos sintéticos de regressão](data/quality/discrimination-regressions.v1.json)
+- `npm run discrimination:validate` verifica cobertura dos seis P0, hipóteses concorrentes, fontes e ausência de medições inventadas.
+
+Mantêm-se **24 cadeias, 48 investigações propostas, 10 regras PM bloqueadas e zero casos reais ou OEM homologados**.
 
 ## Comece por aqui
 
