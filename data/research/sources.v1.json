@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.research.sources.v1",
-  "version": "1.3.7",
+  "version": "1.3.8",
   "status": "literatura_de_referencia_nao_casos_empiricos",
   "rights": "somente_titulos_links_e_resumos_originais",
   "sources": [
@@ -475,6 +475,17 @@
       "role": "oem_general_maintenance",
       "limitation": "Inspeções de rolamentos, rodas-guia, roletes, vedação e CTS descritas de maneira geral; nenhuma condenação/limite aplicável à configuração D9 individual.",
       "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
+      "lastReviewed": "2026-10-20"
+    },
+    {
+      "id": "CAT-SOS-SAMPLING-GUIDE-PT",
+      "organization": "Caterpillar",
+      "title": "Como Retirar uma Amostra e Interpretar Resultados",
+      "url": "https://www.cat.com/pt_BR/support/maintenance/sos-services/take-sample.html",
+      "area": "fluid_sampling_procedure_identification_and_interpretation",
+      "role": "oem_general_sampling",
+      "limitation": "Guia geral de coleta e identificação de amostras; pontos, períodos, volumes e critérios dependem de compartimento, modelo e procedimentos OEM efetivos.",
+      "reviewStatus": "pagina_publica_consultada_sem_reproducao_integral",
       "lastReviewed": "2026-10-20"
     }
   ]
