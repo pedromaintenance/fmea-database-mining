@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.research.sources.v1",
-  "version": "1.3.3",
+  "version": "1.3.4",
   "status": "literatura_de_referencia_nao_casos_empiricos",
   "rights": "somente_titulos_links_e_resumos_originais",
   "sources": [
@@ -364,6 +364,28 @@
       "area": "bolt_preload_under_over",
       "role": "manufacturer_bolted_joint_principles",
       "limitation": "Distingue pré-carga excessiva de insuficiente e consequências possíveis; não implica adoção de produto de travamento nem fornece especificação para CAT.",
+      "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
+      "lastReviewed": "2026-10-20"
+    },
+    {
+      "id": "SAP-PM-CODES-OFFICIAL",
+      "organization": "SAP",
+      "title": "Working with Notification Codes — SAP Help Portal",
+      "url": "https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/e72f747389b340229f7fa343975bfa57/7d20ec545f356474e10000000a44538d.html",
+      "area": "maintenance_notification_damage_causes_activities",
+      "role": "software_vendor_primary",
+      "limitation": "A presença de um código SAP não demonstra que o fato foi observado ou que a atribuição causal é correta; grupos e selected sets dependem da configuração do cliente.",
+      "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
+      "lastReviewed": "2026-10-20"
+    },
+    {
+      "id": "SAP-PM-CAUSE-OFFICIAL",
+      "organization": "SAP",
+      "title": "Cause — Maintenance Notifications",
+      "url": "https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/7f05ca069f8744759f48892c6d307fab/986eb6535fe6b74ce10000000a174cb4.html",
+      "area": "sap_notification_cause_definition",
+      "role": "software_vendor_primary",
+      "limitation": "O cadastro admite múltiplas causas por item; uma combinação code group/code permitida não constitui causa raiz validada.",
       "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
       "lastReviewed": "2026-10-20"
     }
