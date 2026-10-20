@@ -1,39 +1,53 @@
 #!/usr/bin/env node
-// Valida integridade e referências dos catálogos da versão 1.
-// Node.js >= 18, sem dependências.
 import fs from 'node:fs';
 import path from 'node:path';
-const ROOT=path.resolve(new URL('..',import.meta.url).pathname);
-const file=(p)=>JSON.parse(fs.readFileSync(path.join(ROOT,p),'utf8'));
-const fail=(message)=>{console.error('ERRO:',message);process.exitCode=1;};
-const main='data/catalog/failure-db.v1.json';
-if(!fs.existsSync(path.join(ROOT,main))){
-  console.error('Catálogo principal ainda não importado: data/catalog/failure-db.v1.json');
-  process.exit(2);
+import {fileURLToPath} from 'node:url';
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
+const read=(p)=>JSON.parse(fs.readFileSync(path.join(root,p),'utf8'));
+const db=read('data/catalog/failure-db.v1.json');
+let issues=0;
+const assert=(ok,msg)=>{if(!ok){console.error('ERRO:',msg);issues++;}};
+const ids=(arr)=>new Set(arr.map(x=>x.id));
+const locations=new Map(db.locations.map(x=>[x.id,x]));
+const damages=ids(db.damages),causes=ids(db.causes);
+const modelIds=ids(db.models);
+assert(locations.size===db.locations.length,'locais duplicados');
+assert(damages.size===db.damages.length,'danos duplicados');
+assert(causes.size===db.causes.length,'causas duplicadas');
+const typeParts=new Map(Object.entries(db.partsByObjectType).map(([type,items])=>[type,new Set(items.map(x=>x.code))]));
+for(const l of db.locations){
+ assert(modelIds.has(l.modelo),'modelo desconhecido: '+l.id);
+ assert(l.id.startsWith(l.modelo+'|'),'prefixo do local incoerente: '+l.id);
 }
-const db=file(main);
-for(const key of ['models','locations','partsByObjectType','damages','causes','compatibleFailureModesByPart'])
-  if(!db[key]) fail('campo ausente: '+key);
-const ids=(arr,key='id')=>new Set(arr.map(x=>x[key]));
-const locIds=ids(db.locations),damageIds=ids(db.damages),causeIds=ids(db.causes);
-if(locIds.size!==db.locations.length)fail('IDs de locais duplicados');
-if(damageIds.size!==db.damages.length)fail('IDs de dano duplicados');
-if(causeIds.size!==db.causes.length)fail('IDs de causa duplicados');
-let candidates=0,models=0;
-const folder=path.join(ROOT,'data/models');
-for(const filename of (fs.existsSync(folder)?fs.readdirSync(folder):[]).filter(x=>x.endsWith('.json'))){
- const obj=file('data/models/'+filename);
- const rows=Array.isArray(obj)?obj:(obj.combinations??obj.combinacoes??[]);
- if(!Array.isArray(rows)){fail('formato de combinações não reconhecido: '+filename);continue;}
- for(const row of rows){
-  if(!Array.isArray(row)||row.length!==4){fail('tupla inválida em '+filename);continue;}
-  const [l,c,d,a]=row;
-  if(!locIds.has(l))fail('local inexistente em '+filename+': '+l);
-  if(!damageIds.has(d)||!causeIds.has(a))fail('dano ou causa inexistente em '+filename);
-  const loc=db.locations.find(x=>x.id===l);
-  if(loc&&!db.partsByObjectType[loc.objetoTipoSAP]?.some(x=>x.code===c))fail('componente fora do tipo SAP em '+filename);
+for(const [component,rule] of Object.entries(db.compatibleFailureModesByPart)){
+ for(const [damageId,causeIds] of Object.entries(rule.damageCauses||{})){
+  assert(damages.has(damageId),'dano invalido '+component+'/'+damageId);
+  for(const causeId of causeIds)assert(causes.has(causeId),'causa invalida '+component+'/'+causeId);
  }
- candidates+=rows.length;models++;
 }
-console.log(JSON.stringify({version:db.version,models:db.models?.length,locations:db.locations.length,damages:db.damages.length,causes:db.causes.length,packs:models,candidateCombinations:candidates},null,2));
-if(process.exitCode)process.exit(process.exitCode);
+const folder=path.join(root,'data/models');
+let total=0,packs=0;
+for(const filename of (fs.existsSync(folder)?fs.readdirSync(folder):[]).filter(x=>x.endsWith('.json'))){
+ const obj=read('data/models/'+filename);
+ const rows=obj.records||[];
+ assert(Array.isArray(rows),'faltam records em '+filename);
+ if(!Array.isArray(rows))continue;
+ for(const row of rows){
+  if(!Array.isArray(row)||row.length!==4){assert(false,'tupla malformada '+filename);continue;}
+  const [locationId,componentCode,damageId,causeId]=row;
+  const loc=locations.get(locationId);
+  assert(!!loc,'local desconhecido '+locationId);
+  if(loc){
+   assert(loc.profundidade===3,'caminho sem tres niveis '+locationId);
+   assert(obj.modelId===loc.modelo,'modelo do arquivo divergente '+filename);
+   assert(typeParts.get(loc.objetoTipoSAP)?.has(componentCode),'tipo SAP nao admite componente '+locationId+'/'+componentCode);
+  }
+  assert(damages.has(damageId)&&causes.has(causeId),'dano/causa invalidos '+filename);
+  assert(db.compatibleFailureModesByPart[componentCode]?.damageCauses?.[damageId]?.includes(causeId),'associacao sem regra '+filename);
+ }
+ packs++;total+=rows.length;
+}
+if(packs===17)assert(total===518832,'esperado 518832 registros, encontrado '+total);
+console.log(JSON.stringify({status:issues?'FALHOU':'OK',issues,models:db.models.length,locations:db.locations.length,
+ damages:db.damages.length,causes:db.causes.length,modelPacks:packs,candidates:total},null,2));
+process.exit(issues?1:0);

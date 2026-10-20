@@ -1,0 +1,31 @@
+{
+  "schema": "porcaria.catalog-manifest.v1",
+  "version": "1.0.0",
+  "source": "data/catalog/failure-db.v1.json",
+  "candidateStatus": "hipotese_inferida_nao_confirmada",
+  "candidateGeneration": "node scripts/generate-models.mjs --all",
+  "fields": [
+    "locationId",
+    "componentCode",
+    "damageId",
+    "causeId"
+  ],
+  "counts": {
+    "models": 19,
+    "locations": 1466,
+    "completePaths": 670,
+    "components": 486,
+    "damages": 66,
+    "causes": 81,
+    "candidateCombinations": 518832,
+    "expandedModelPacks": 17
+  },
+  "missingFullPaths": [
+    "CAT320",
+    "CAT3035"
+  ],
+  "validationNotes": [
+    "Dados derivados de catalogo, nao registros empiricos.",
+    "Candidatos exigem curadoria tecnica antes de gerar casos jogaveis."
+  ]
+}
