@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.research.sources.v1",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "status": "literatura_de_referencia_nao_casos_empiricos",
   "rights": "somente_titulos_links_e_resumos_originais",
   "sources": [
@@ -287,6 +287,83 @@
       "area": "track_tension_debris_seals",
       "role": "oem_general_maintenance",
       "limitation": "Verificar sentidos das operações de tensionamento e aplicar somente OMM efetivo; sem instruções de campo extrapoladas",
+      "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
+      "lastReviewed": "2026-10-20"
+    },
+    {
+      "id": "CAT-UC-DOZER-GUIDE",
+      "organization": "Caterpillar",
+      "title": "Undercarriage for Dozers — Maintenance Tips",
+      "url": "https://www.cat.com/en_US/support/maintenance/undercarriage/dozers/",
+      "area": "track_bolts_clamping_torque_turn",
+      "role": "oem_general_maintenance",
+      "limitation": "Caterpillar recomenda inspecionar parafusos soltos e apertar componentes de esteiras pelo método torque-turn. Não fornece valores e sequências para o D9 individual.",
+      "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
+      "lastReviewed": "2026-10-20"
+    },
+    {
+      "id": "CAT-TRACK-BOLT-FUNCTION",
+      "organization": "Caterpillar",
+      "title": "Cat Track Bolt — Track shoe attachment function",
+      "url": "https://parts.cat.com/en/catcorp/product/093-0261",
+      "area": "track_shoe_fastener_function",
+      "role": "oem_component_function_other_model",
+      "limitation": "Página de uma peça específica, compatível com outros modelos: sustenta função geral do parafuso de sapata, NÃO efetividade, número de peça ou montagem da frota D9.",
+      "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
+      "lastReviewed": "2026-10-20"
+    },
+    {
+      "id": "CAT-THERMOSTAT-REPLACEMENT",
+      "organization": "Caterpillar",
+      "title": "Opção de Autoatendimento Cat para substituição do termostato",
+      "url": "https://www.cat.com/pt_BR/support/maintenance/self-service-options/thermostat.html",
+      "area": "engine_thermostat_coolant_diversion",
+      "role": "oem_general_maintenance",
+      "limitation": "Documento OEM descreve regulagem e desvio de fluxo ao radiador; não confirma arquitetura exata, temperatura de abertura nem falha de modelo específico.",
+      "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
+      "lastReviewed": "2026-10-20"
+    },
+    {
+      "id": "CAT-WATER-PUMP-REPLACEMENT",
+      "organization": "Caterpillar",
+      "title": "Opção de Autoatendimento Cat para substituição da bomba d'água",
+      "url": "https://www.cat.com/pt_BR/support/maintenance/self-service-options/water-pump.html",
+      "area": "coolant_pump_function_leaks_overheat",
+      "role": "oem_general_maintenance",
+      "limitation": "O fabricante descreve circulação de fluido e sintomas gerais: superaquecimento e vazamento. Não define vazão/pressão/PN de 395, 6030 ou D9.",
+      "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
+      "lastReviewed": "2026-10-20"
+    },
+    {
+      "id": "NORDLOCK-BOLT-LOOSENING",
+      "organization": "Nord-Lock Group",
+      "title": "Why do bolts loosen?",
+      "url": "https://www.nord-lock.com/learnings/knowledge/2018/why-do-bolts-loosen/?cachebreak=true",
+      "area": "bolt_preload_rotational_vs_nonrotational",
+      "role": "manufacturer_bolted_joint_principles",
+      "limitation": "Explica autoafrouxamento rotacional e perda de pré-carga por assentamento/relaxação. Princípios de parafusos, não receita OEM para sapatas de esteira.",
+      "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
+      "lastReviewed": "2026-10-20"
+    },
+    {
+      "id": "NORDLOCK-BOLTING-FAILURE",
+      "organization": "Nord-Lock Group",
+      "title": "Bolting Failure Analysis",
+      "url": "https://www.nord-lock.com/fr-ch/apercu/knowledge/2015/bolting-failure-analysis/",
+      "area": "bolted_fastener_fatigue_fracture",
+      "role": "manufacturer_bolted_joint_principles",
+      "limitation": "Explica fadiga por carregamento cíclico e perda de pré-carga. Não estabelece esforço, torque ou vida de um parafuso da frota.",
+      "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
+      "lastReviewed": "2026-10-20"
+    },
+    {
+      "id": "NORDLOCK-PRELOAD-GUIDANCE",
+      "organization": "Nord-Lock Group",
+      "title": "What is preload and why is it important?",
+      "url": "https://www.nord-lock.com/nb-no/innsikt/bolting-tips/2025/what-is-preload-and-why-is-it-important/",
+      "area": "bolt_preload_under_over",
+      "role": "manufacturer_bolted_joint_principles",
+      "limitation": "Distingue pré-carga excessiva de insuficiente e consequências possíveis; não implica adoção de produto de travamento nem fornece especificação para CAT.",
       "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
       "lastReviewed": "2026-10-20"
     }
