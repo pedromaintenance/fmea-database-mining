@@ -1,0 +1,205 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FMEA diagnostic pathways v1",
+  "type": "object",
+  "required": [
+    "schema",
+    "version",
+    "nature",
+    "policy",
+    "records"
+  ],
+  "properties": {
+    "schema": {
+      "const": "fmea-mining.diagnostic-pathways.v1"
+    },
+    "version": {
+      "type": "string"
+    },
+    "nature": {
+      "const": "didatico_tecnico_sem_inspecao_executada"
+    },
+    "policy": {
+      "type": "object"
+    },
+    "records": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "$ref": "#/$defs/path"
+      }
+    }
+  },
+  "$defs": {
+    "step": {
+      "type": "object",
+      "required": [
+        "id",
+        "methodId",
+        "question",
+        "supportsA",
+        "supportsB",
+        "notDiscriminating",
+        "requiredMetadata",
+        "safeBoundary"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "methodId": {
+          "type": "string",
+          "pattern": "^EV-"
+        },
+        "question": {
+          "type": "string"
+        },
+        "supportsA": {
+          "type": "string"
+        },
+        "supportsB": {
+          "type": "string"
+        },
+        "notDiscriminating": {
+          "type": "string"
+        },
+        "requiredMetadata": {
+          "type": "array",
+          "minItems": 3,
+          "items": {
+            "type": "string"
+          }
+        },
+        "safeBoundary": {
+          "type": "string"
+        }
+      }
+    },
+    "path": {
+      "type": "object",
+      "required": [
+        "id",
+        "chainId",
+        "focusAlternativeId",
+        "originCrossRefId",
+        "title",
+        "detection",
+        "comparison",
+        "steps",
+        "causalLevels",
+        "evidenceGate",
+        "sourceIds",
+        "executionStatus",
+        "resultObserved",
+        "diagnosticConclusion",
+        "reviewStatus",
+        "fieldEvents",
+        "rootCauseConfirmed",
+        "independentEvidenceVerified"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^PATH-"
+        },
+        "chainId": {
+          "type": "string",
+          "pattern": "^FC-"
+        },
+        "originCrossRefId": {
+          "type": "string",
+          "pattern": "^XREF-"
+        },
+        "focusAlternativeId": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "detection": {
+          "type": "string"
+        },
+        "comparison": {
+          "type": "object",
+          "required": [
+            "hypothesisA",
+            "hypothesisB"
+          ]
+        },
+        "steps": {
+          "type": "array",
+          "minItems": 3,
+          "items": {
+            "$ref": "#/$defs/step"
+          }
+        },
+        "causalLevels": {
+          "type": "object",
+          "required": [
+            "observedPhenomenon",
+            "immediatePhysicalMechanismCandidate",
+            "contributingConditionCandidates",
+            "rootCauseCandidates",
+            "rootCauseNotEstablishedBecause"
+          ]
+        },
+        "evidenceGate": {
+          "type": "object",
+          "required": [
+            "requires",
+            "decisionWithoutEvidence"
+          ],
+          "properties": {
+            "requires": {
+              "type": "array",
+              "minItems": 4
+            },
+            "decisionWithoutEvidence": {
+              "const": "inconclusivo"
+            }
+          }
+        },
+        "sourceIds": {
+          "type": "array",
+          "minItems": 3,
+          "items": {
+            "type": "string"
+          }
+        },
+        "applicableModelId": {
+          "type": "null"
+        },
+        "applicableSapLocationId": {
+          "type": "null"
+        },
+        "confirmedPartCode": {
+          "type": "null"
+        },
+        "applicableSerialOrArrangement": {
+          "type": "null"
+        },
+        "executionStatus": {
+          "const": "not_performed"
+        },
+        "resultObserved": {
+          "type": "null"
+        },
+        "diagnosticConclusion": {
+          "type": "null"
+        },
+        "fieldEvents": {
+          "const": 0
+        },
+        "rootCauseConfirmed": {
+          "const": false
+        },
+        "independentEvidenceVerified": {
+          "const": false
+        },
+        "reviewStatus": {
+          "const": "proposta_editorial_nao_homologada"
+        }
+      }
+    }
+  }
+}
