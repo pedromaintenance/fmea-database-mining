@@ -1,0 +1,204 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FMEA — Complementary discrimination per alternative hypothesis",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "version",
+    "purpose",
+    "policy",
+    "values",
+    "counts",
+    "records"
+  ],
+  "properties": {
+    "schema": {
+      "const": "fmea-mining.complementary-discrimination.v1"
+    },
+    "version": {
+      "type": "string"
+    },
+    "purpose": {
+      "type": "string"
+    },
+    "policy": {
+      "type": "object",
+      "required": [
+        "allHypothesesRemainOpen",
+        "technicalReviewRequired",
+        "autoExclusionAllowed",
+        "numericalConfidenceAllowed",
+        "manualEffectivityRequired",
+        "onlyInferPotential"
+      ]
+    },
+    "values": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "string"
+      }
+    },
+    "counts": {
+      "type": "object",
+      "required": [
+        "baseTests",
+        "alternativeHypotheses",
+        "complementAssessments",
+        "unresolvedGaps"
+      ]
+    },
+    "records": {
+      "type": "array",
+      "minItems": 12,
+      "items": {
+        "$ref": "#/$defs/assessment"
+      }
+    }
+  },
+  "$defs": {
+    "method": {
+      "type": "object",
+      "required": [
+        "complementaryMethodId",
+        "discriminativeValue",
+        "potentialSupport",
+        "potentialWeakening",
+        "remainingAmbiguity",
+        "performed",
+        "oemEffective",
+        "isolationProof"
+      ],
+      "properties": {
+        "complementaryMethodId": {
+          "type": "string",
+          "pattern": "^EV-"
+        },
+        "discriminativeValue": {
+          "enum": [
+            "nao_discrimina",
+            "indicio_parcial",
+            "potencialmente_discriminante_condicional"
+          ]
+        },
+        "potentialSupport": {
+          "type": "string",
+          "minLength": 40
+        },
+        "potentialWeakening": {
+          "type": "string",
+          "minLength": 40
+        },
+        "remainingAmbiguity": {
+          "type": "string",
+          "minLength": 40
+        },
+        "performed": {
+          "const": false
+        },
+        "oemEffective": {
+          "const": false
+        },
+        "isolationProof": {
+          "const": false
+        }
+      }
+    },
+    "assessment": {
+      "type": "object",
+      "required": [
+        "id",
+        "testId",
+        "chainId",
+        "alternativeHypothesisId",
+        "alternativeDescription",
+        "complementAssessments",
+        "remainingGap",
+        "closureRule",
+        "reviews",
+        "confirmedRootCause",
+        "claimStatus"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^XREF-FC-"
+        },
+        "testId": {
+          "type": "string",
+          "pattern": "^DISC-FC-"
+        },
+        "chainId": {
+          "type": "string",
+          "pattern": "^FC-"
+        },
+        "alternativeHypothesisId": {
+          "type": "string"
+        },
+        "alternativeDescription": {
+          "type": "string"
+        },
+        "complementAssessments": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "$ref": "#/$defs/method"
+          }
+        },
+        "remainingGap": {
+          "type": "object",
+          "required": [
+            "methodId",
+            "neededInvestigation",
+            "unresolvedReason",
+            "status"
+          ],
+          "properties": {
+            "methodId": {
+              "type": "string",
+              "pattern": "^EV-"
+            },
+            "neededInvestigation": {
+              "type": "string"
+            },
+            "unresolvedReason": {
+              "type": "string"
+            },
+            "status": {
+              "const": "pendente"
+            }
+          }
+        },
+        "closureRule": {
+          "type": "string"
+        },
+        "reviews": {
+          "type": "object",
+          "required": [
+            "mechanical",
+            "oem",
+            "evidence"
+          ],
+          "properties": {
+            "mechanical": {
+              "const": "pending"
+            },
+            "oem": {
+              "const": "pending"
+            },
+            "evidence": {
+              "const": "not_collected"
+            }
+          }
+        },
+        "confirmedRootCause": {
+          "const": false
+        },
+        "claimStatus": {
+          "const": "proposta_de_discriminacao_sem_resultado_empirico"
+        }
+      }
+    }
+  }
+}
