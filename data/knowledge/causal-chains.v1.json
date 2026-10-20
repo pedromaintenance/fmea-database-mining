@@ -1,12 +1,12 @@
 {
   "schema": "fmea-mining.causal-chains.v1",
-  "version": "1.3.1",
+  "version": "1.3.2",
   "language": "pt-BR",
   "scope": "padroes_de_falha_genéricos_nao_equivalentes_a_efetividade_por_numero_de_serie",
   "sourcePolicy": "conceitos_parafraseados_de_fontes_OEM_e_fabricantes;sem_texto_original_de_manual",
   "counts": {
-    "families": 2,
-    "chains": 8
+    "families": 4,
+    "chains": 16
   },
   "records": [
     {
@@ -768,6 +768,774 @@
         }
       ],
       "limitations": "Classificação ISO 15243 é referência para rolamentos em geral; não afirmar rolamento avariado em CAT 777 com bujão sozinho.",
+      "review": {
+        "status": "inferido_com_literatura_geral",
+        "reviewer": null
+      },
+      "sapMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageId": null,
+        "causeId": null
+      },
+      "factualNature": "hipotese_de_mecanismo",
+      "empiricalOccurrences": 0,
+      "confirmedRootCause": false
+    },
+    {
+      "id": "FC-COOL-001",
+      "family": "arrefecimento",
+      "title": "Restrição de escoamento de ar pela colmeia do radiador",
+      "operatingFunction": "Rejeitar calor do circuito do motor nas condições previstas de carga e ambiente",
+      "functionalFailureId": "FF-08",
+      "failureMode": "Capacidade de rejeição térmica insuficiente pela resistência ao fluxo de ar no pacote de trocadores",
+      "mechanismIds": [
+        "ME-12"
+      ],
+      "initiatingConditionCandidates": [
+        "Acúmulo de poeira e detritos entre aletas ou módulos",
+        "Falta de limpeza apropriada",
+        "Condição ambiental muito carregada de partículas"
+      ],
+      "possibleDamage": "Obstrução superficial entre aletas e possível diminuição da transferência térmica, sem comprovação de dano interno",
+      "symptomIds": [
+        "SY-04",
+        "SY-20"
+      ],
+      "evidenceMethodIds": [
+        "EV-01",
+        "EV-14"
+      ],
+      "preventionRuleIds": [
+        "cooling-radiator-blockage"
+      ],
+      "preventionAssociation": "alvo_de_inspecao_candidato",
+      "sourceClaims": [
+        {
+          "sourceId": "CAT-RADIATOR-CARE",
+          "claim": "A Caterpillar recomenda remover sujidade das aletas do radiador para prevenir obstrução e aquecimento.",
+          "scope": "principio_geral"
+        },
+        {
+          "sourceId": "CAT-EXC-COOL-CHECKLIST",
+          "claim": "A literatura OEM relaciona fluxo de ar adequado e limpeza dos trocadores com eficiência do arrefecimento.",
+          "scope": "principio_geral"
+        }
+      ],
+      "competingHypotheses": [
+        {
+          "id": "ALT1",
+          "description": "Baixo nível ou circulação deficiente de líquido de arrefecimento",
+          "discriminator": "Nível e condição do circuito diferenciam hipótese de perda de fluido"
+        },
+        {
+          "id": "ALT2",
+          "description": "Ventilador não produzindo fluxo de ar requerido",
+          "discriminator": "Resposta do ventilador fora do comportamento especificado em condições comparáveis"
+        }
+      ],
+      "investigations": [
+        {
+          "id": "I1",
+          "methodId": "EV-01",
+          "purpose": "Verificar em condição segura colmeia, espaços entre módulos e obstruções visíveis",
+          "interpretations": {
+            "supports": "Obstrução relevante no fluxo de ar é compatível com essa hipótese",
+            "weakens": "Passagens desobstruídas e sem depósitos visíveis reduzem plausibilidade da obstrução externa",
+            "inconclusive": "Regiões internas não podem ser acessadas ou inspecionadas"
+          },
+          "status": "apenas_proposto",
+          "resultObserved": null
+        },
+        {
+          "id": "I2",
+          "methodId": "EV-14",
+          "purpose": "Correlacionar registros de temperatura, carga, ambiente e histórico de limpeza",
+          "interpretations": {
+            "supports": "Elevação de temperatura em carga e melhoria após limpeza documentada reforçam restrição de ar",
+            "weakens": "Temperatura anormal persiste com fluxo limpo e ventilação confirmada, exigindo investigar outras causas",
+            "inconclusive": "Não há baseline de temperatura ou condição de carga comparável"
+          },
+          "status": "apenas_proposto",
+          "resultObserved": null
+        }
+      ],
+      "limitations": "Sem critérios quantitativos de troca térmica por modelo, ventilador ou superfície da colmeia; não condenar radiador ou bomba com base apenas em temperatura.",
+      "review": {
+        "status": "inferido_com_literatura_geral",
+        "reviewer": null
+      },
+      "sapMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageId": null,
+        "causeId": null
+      },
+      "factualNature": "hipotese_de_mecanismo",
+      "empiricalOccurrences": 0,
+      "confirmedRootCause": false
+    },
+    {
+      "id": "FC-COOL-002",
+      "family": "arrefecimento",
+      "title": "Perda externa de líquido de arrefecimento em mangueira ou conexão",
+      "operatingFunction": "Conter e conduzir líquido no circuito de arrefecimento e manter volume circulante adequado",
+      "functionalFailureId": "FF-06",
+      "failureMode": "Perda de estanqueidade e redução possível da capacidade de remoção de calor",
+      "mechanismIds": [
+        "ME-15",
+        "ME-07"
+      ],
+      "initiatingConditionCandidates": [
+        "Vedação ou mangueira envelhecida",
+        "Abraçadeira ou conexão comprometida",
+        "Dano mecânico ou térmico em trecho da linha"
+      ],
+      "possibleDamage": "Fissura, deslocamento de conexão ou falha de vedação; a localização não está confirmada pelo sintoma",
+      "symptomIds": [
+        "SY-03",
+        "SY-15",
+        "SY-04"
+      ],
+      "evidenceMethodIds": [
+        "EV-01",
+        "EV-13"
+      ],
+      "preventionRuleIds": [
+        "cooling-radiator-leak"
+      ],
+      "preventionAssociation": "alvo_de_inspecao_candidato",
+      "sourceClaims": [
+        {
+          "sourceId": "CAT-RADIATOR-CARE",
+          "claim": "A inspeção recomendada pela Caterpillar abrange mangueiras, tampa e sinais de fuga de líquido.",
+          "scope": "principio_geral"
+        },
+        {
+          "sourceId": "CAT-EXC-COOL-CHECKLIST",
+          "claim": "Adequação do nível de líquido e inspeção de vazamentos são pontos gerais de inspeção OEM.",
+          "scope": "principio_geral"
+        }
+      ],
+      "competingHypotheses": [
+        {
+          "id": "ALT1",
+          "description": "Fuga proveniente do radiador, tampa ou bomba e não da mangueira",
+          "discriminator": "Trilha de fluido começa fora da união suspeita"
+        },
+        {
+          "id": "ALT2",
+          "description": "Redução de nível por procedimento de enchimento ou diferença de condição de leitura",
+          "discriminator": "Nível varia somente por condição de medição ou serviço anterior sem fuga demonstrada"
+        }
+      ],
+      "investigations": [
+        {
+          "id": "I1",
+          "methodId": "EV-01",
+          "purpose": "Com sistema frio, despressurizado e isolado segundo OMM, identificar origem da trilha de líquido",
+          "interpretations": {
+            "supports": "Origem localizada na mangueira ou união sustenta perda de estanqueidade na linha",
+            "weakens": "Fonte identificada no radiador/bomba enfraquece falha da mangueira",
+            "inconclusive": "Resíduo espalhado e acesso insuficiente impedem localizar a origem"
+          },
+          "status": "apenas_proposto",
+          "resultObserved": null
+        },
+        {
+          "id": "I2",
+          "methodId": "EV-13",
+          "purpose": "Revisar histórico de reposição de fluido, intervenções e variações de nível em condições comparáveis",
+          "interpretations": {
+            "supports": "Reposição recorrente com fuga visual localizada reforça perda externa",
+            "weakens": "Histórico estável de nível com leitura consistente reduz suspeita de perda progressiva",
+            "inconclusive": "Registros não discriminam consumo, drenagem ou diferenças de leitura"
+          },
+          "status": "apenas_proposto",
+          "resultObserved": null
+        }
+      ],
+      "limitations": "Jamais abrir sistema pressurizado e quente; teste de pressão, dosagem e limites requerem procedimento OEM efetivo para aquele circuito.",
+      "review": {
+        "status": "inferido_com_literatura_geral",
+        "reviewer": null
+      },
+      "sapMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageId": null,
+        "causeId": null
+      },
+      "factualNature": "hipotese_de_mecanismo",
+      "empiricalOccurrences": 0,
+      "confirmedRootCause": false
+    },
+    {
+      "id": "FC-COOL-003",
+      "family": "arrefecimento",
+      "title": "Ventilação insuficiente por anomalia de acionamento do ventilador",
+      "operatingFunction": "Prover fluxo de ar para rejeitar calor do conjunto de arrefecimento",
+      "functionalFailureId": "FF-08",
+      "failureMode": "Vazão de ar através do pacote de trocadores abaixo da requerida quando demandada",
+      "mechanismIds": [
+        "ME-14",
+        "ME-09"
+      ],
+      "initiatingConditionCandidates": [
+        "Deslizamento de correia em arquitetura acionada por correia",
+        "Anomalia de comando ou acionamento do ventilador",
+        "Elemento de fixação ou transmissão de potência comprometido"
+      ],
+      "possibleDamage": "Dano ou desajuste potencial no acionamento, não necessariamente no ventilador ou nos rolamentos",
+      "symptomIds": [
+        "SY-04",
+        "SY-20",
+        "SY-02"
+      ],
+      "evidenceMethodIds": [
+        "EV-01",
+        "EV-14"
+      ],
+      "preventionRuleIds": [
+        "cooling-fan-belt",
+        "cooling-fan-bearing"
+      ],
+      "preventionAssociation": "alvo_de_inspecao_candidato",
+      "sourceClaims": [
+        {
+          "sourceId": "CAT-COOLING-HEAT-CHAIN",
+          "claim": "A fonte OEM descreve problemas em acionamento de ventilador e sua correlação com perda de capacidade térmica.",
+          "scope": "principio_geral"
+        },
+        {
+          "sourceId": "CAT-COOLING-FAN-REVERSE",
+          "claim": "A reversão de ventilador atua no controle de detritos quando o recurso existe na configuração da máquina.",
+          "scope": "principio_geral"
+        }
+      ],
+      "competingHypotheses": [
+        {
+          "id": "ALT1",
+          "description": "Radiador/colmeia com restrição externa independente da resposta do ventilador",
+          "discriminator": "Obstrução física relevante nas passagens de ar"
+        },
+        {
+          "id": "ALT2",
+          "description": "Fluxo de líquido de arrefecimento insuficiente",
+          "discriminator": "Avaliação do circuito hidráulico de arrefecimento aponta para bomba, nível ou termorregulação"
+        }
+      ],
+      "investigations": [
+        {
+          "id": "I1",
+          "methodId": "EV-01",
+          "purpose": "Inspecionar correias, acoplamentos e acionamentos somente se existentes na configuração e com máquina segura",
+          "interpretations": {
+            "supports": "Anomalia visível em elemento presente reforça falha do acionamento",
+            "weakens": "Arquitetura sem correia invalida a hipótese específica de patinamento dessa correia",
+            "inconclusive": "Acesso insuficiente ao ventilador ou impossibilidade de identificar arquitetura"
+          },
+          "status": "apenas_proposto",
+          "resultObserved": null
+        },
+        {
+          "id": "I2",
+          "methodId": "EV-14",
+          "purpose": "Revisar demanda e resposta do ventilador em parâmetros disponíveis e condição operacional compatível",
+          "interpretations": {
+            "supports": "Resposta não condizente com comando documentado sustenta insuficiência de ventilação",
+            "weakens": "Resposta documentada conforme OMM enfraquece falha de acionamento naquela condição",
+            "inconclusive": "Ausência de canal confiável ou procedimento de teste da configuração"
+          },
+          "status": "apenas_proposto",
+          "resultObserved": null
+        }
+      ],
+      "limitations": "Não assumir ventilador por correia, hidráulico ou reversível em todos os modelos; efetividade por série e controles de segurança devem preceder diagnóstico.",
+      "review": {
+        "status": "inferido_com_literatura_geral",
+        "reviewer": null
+      },
+      "sapMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageId": null,
+        "causeId": null
+      },
+      "factualNature": "hipotese_de_mecanismo",
+      "empiricalOccurrences": 0,
+      "confirmedRootCause": false
+    },
+    {
+      "id": "FC-COOL-004",
+      "family": "arrefecimento",
+      "title": "Restrição interna de circulação no núcleo/tubos do radiador",
+      "operatingFunction": "Permitir circulação de líquido e transferência de calor pelos tubos do trocador",
+      "functionalFailureId": "FF-02",
+      "failureMode": "Resistência interna elevada à passagem de fluido e eficiência térmica potencialmente reduzida",
+      "mechanismIds": [
+        "ME-12",
+        "ME-05"
+      ],
+      "initiatingConditionCandidates": [
+        "Depósitos ou precipitados no circuito",
+        "Corrosão favorecida por condição de fluido não conforme",
+        "Partículas ou obstrução interna local"
+      ],
+      "possibleDamage": "Obstrução em passagens internas; corrosão pode estar presente, mas requer inspeção ou ensaio para ser afirmada",
+      "symptomIds": [
+        "SY-04",
+        "SY-08"
+      ],
+      "evidenceMethodIds": [
+        "EV-10",
+        "EV-12"
+      ],
+      "preventionRuleIds": [
+        "cooling-radiator-blockage"
+      ],
+      "preventionAssociation": "alvo_de_inspecao_candidato",
+      "sourceClaims": [
+        {
+          "sourceId": "CAT-RADIATOR-CARE",
+          "claim": "A Caterpillar associa contaminação de líquido de arrefecimento a corrosão e redução da capacidade de funcionamento do radiador.",
+          "scope": "principio_geral"
+        },
+        {
+          "sourceId": "CAT-COOLING-HEAT-CHAIN",
+          "claim": "A literatura OEM recomenda inspeção de conjunto térmico e investigação de componentes do fluxo e circulação.",
+          "scope": "principio_geral"
+        }
+      ],
+      "competingHypotheses": [
+        {
+          "id": "ALT1",
+          "description": "Colmeia obstruída externamente por poeira e detritos",
+          "discriminator": "Inspeção de passagem de ar identifica depósito externo"
+        },
+        {
+          "id": "ALT2",
+          "description": "Termorregulador ou bomba de circulação com funcionamento inadequado",
+          "discriminator": "Verificação da regulação/circulação localiza limitação fora do radiador"
+        }
+      ],
+      "investigations": [
+        {
+          "id": "I1",
+          "methodId": "EV-10",
+          "purpose": "Examinar histórico e análise do fluido de arrefecimento por método e referência adequados",
+          "interpretations": {
+            "supports": "Contaminação e condição fora da especificação sustentam risco de depósito/corrosão, mas não comprovam obstrução",
+            "weakens": "Amostras e histórico estáveis reduzem hipótese de fluido inadequado",
+            "inconclusive": "Amostra é não representativa ou faltam referência e evolução"
+          },
+          "status": "apenas_proposto",
+          "resultObserved": null
+        },
+        {
+          "id": "I2",
+          "methodId": "EV-12",
+          "purpose": "Investigar vazão ou transferência térmica apenas por procedimento OEM efetivo e seguro",
+          "interpretations": {
+            "supports": "Queda de desempenho especificamente atribuída à passagem do radiador sustenta restrição interna",
+            "weakens": "Circulação e passagem adequadas enfraquecem hipótese de restrição interna",
+            "inconclusive": "Sem referência OEM não há conclusão possível por diferença térmica isolada"
+          },
+          "status": "apenas_proposto",
+          "resultObserved": null
+        }
+      ],
+      "limitations": "Temperatura de saída ou pH isolados não comprovam obstrução interna; não sugerir desmontagem, limpeza química ou mudança de fluido sem OMM.",
+      "review": {
+        "status": "inferido_com_literatura_geral",
+        "reviewer": null
+      },
+      "sapMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageId": null,
+        "causeId": null
+      },
+      "factualNature": "hipotese_de_mecanismo",
+      "empiricalOccurrences": 0,
+      "confirmedRootCause": false
+    },
+    {
+      "id": "FC-TRACK-001",
+      "family": "material_rodante",
+      "title": "Rolete de esteira com rotação dificultada por detritos compactados",
+      "operatingFunction": "Suportar e guiar a esteira com rotação compatível e atrito controlado",
+      "functionalFailureId": "FF-02",
+      "failureMode": "Rolete deixa de girar livremente, gerando arrasto e desgaste localizado",
+      "mechanismIds": [
+        "ME-12",
+        "ME-01"
+      ],
+      "initiatingConditionCandidates": [
+        "Material compacto acumulado no chassi/entorno do rolete",
+        "Impedimento externo por rocha/solo",
+        "Limpeza inadequada do conjunto"
+      ],
+      "possibleDamage": "Marcas de deslizamento no rolete/sapata e possível desgaste acelerado; travamento interno ainda não confirmado",
+      "symptomIds": [
+        "SY-11",
+        "SY-01",
+        "SY-04"
+      ],
+      "evidenceMethodIds": [
+        "EV-01",
+        "EV-03"
+      ],
+      "preventionRuleIds": [
+        "track-roller-wear"
+      ],
+      "preventionAssociation": "alvo_de_inspecao_candidato",
+      "sourceClaims": [
+        {
+          "sourceId": "CAT-DOZER-UC-MAINT",
+          "claim": "A Caterpillar descreve acúmulo de detritos capaz de impedir a rotação de roletes, acelerando o desgaste.",
+          "scope": "principio_geral"
+        },
+        {
+          "sourceId": "CAT-STEEL-TRACKS",
+          "claim": "A limpeza do rodante facilita a inspeção de desgaste, vazamentos, ruído e ausência de fixadores.",
+          "scope": "principio_geral"
+        }
+      ],
+      "competingHypotheses": [
+        {
+          "id": "ALT1",
+          "description": "Falha interna de rolamento/vedação no rolete",
+          "discriminator": "Atrito permanece localizado após retirar impedimento externo sem risco"
+        },
+        {
+          "id": "ALT2",
+          "description": "Tensionamento inadequado da esteira gera contato e desgaste anormais",
+          "discriminator": "Medição conforme OMM identifica tensão fora da faixa"
+        }
+      ],
+      "investigations": [
+        {
+          "id": "I1",
+          "methodId": "EV-01",
+          "purpose": "Inspecionar em condição imobilizada e segura acúmulos e áreas de contato do rolete",
+          "interpretations": {
+            "supports": "Material compactado impedindo movimento reforça hipótese externa",
+            "weakens": "Região desobstruída sem marcas reduz hipótese de travamento por detritos",
+            "inconclusive": "A região está inacessível ou não é seguro remover material"
+          },
+          "status": "apenas_proposto",
+          "resultObserved": null
+        },
+        {
+          "id": "I2",
+          "methodId": "EV-03",
+          "purpose": "Comparar temperatura de elementos semelhantes com termometria sem contato e condição documentada",
+          "interpretations": {
+            "supports": "Aquecimento localizado sugere atrito, mas não diferencia automaticamente causa interna e externa",
+            "weakens": "Temperaturas comparáveis reduzem suspeita de arrasto persistente naquela condição",
+            "inconclusive": "Máquina parada há muito tempo ou emissividades diferentes invalidam comparação"
+          },
+          "status": "apenas_proposto",
+          "resultObserved": null
+        }
+      ],
+      "limitations": "Não tocar diretamente pinos ou roletes quentes, não entrar sob estrutura sustentada por hidráulico; procedimento de inspeção depende do OMM.",
+      "review": {
+        "status": "inferido_com_literatura_geral",
+        "reviewer": null
+      },
+      "sapMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageId": null,
+        "causeId": null
+      },
+      "factualNature": "hipotese_de_mecanismo",
+      "empiricalOccurrences": 0,
+      "confirmedRootCause": false
+    },
+    {
+      "id": "FC-TRACK-002",
+      "family": "material_rodante",
+      "title": "Rolete com perda de estanqueidade e deterioração de lubrificação",
+      "operatingFunction": "Sustentar e guiar esteira preservando integridade do lubrificante e das superfícies",
+      "functionalFailureId": "FF-02",
+      "failureMode": "Perda de retenção de lubrificante com progressão possível para desgaste/ruído",
+      "mechanismIds": [
+        "ME-15",
+        "ME-13",
+        "ME-03"
+      ],
+      "initiatingConditionCandidates": [
+        "Deterioração de vedação",
+        "Impacto/movimento relativo fora do esperado",
+        "Ingresso de abrasivos"
+      ],
+      "possibleDamage": "Fuga na vedação ou dano de contato secundário, não identificável por ruído isolado",
+      "symptomIds": [
+        "SY-03",
+        "SY-04",
+        "SY-01"
+      ],
+      "evidenceMethodIds": [
+        "EV-01",
+        "EV-03"
+      ],
+      "preventionRuleIds": [
+        "track-roller-wear"
+      ],
+      "preventionAssociation": "alvo_de_inspecao_candidato",
+      "sourceClaims": [
+        {
+          "sourceId": "CAT-STEEL-TRACKS",
+          "claim": "A inspeção OEM de esteiras de aço inclui vazamentos e desgaste desigual em roletes/rodas-guia.",
+          "scope": "principio_geral"
+        },
+        {
+          "sourceId": "CAT-DOZER-UC-MAINT",
+          "claim": "A prática OEM orienta examinar fixação, detritos e roletes, observando sinais anormais.",
+          "scope": "principio_geral"
+        }
+      ],
+      "competingHypotheses": [
+        {
+          "id": "ALT1",
+          "description": "Óleo é proveniente de sistema superior, não da vedação do rolete",
+          "discriminator": "Trilha externa tem origem superior ao rolete"
+        },
+        {
+          "id": "ALT2",
+          "description": "Rolete aquecido pelo impedimento externo, sem vazamento de lubrificante",
+          "discriminator": "Detritos e marcas de arrasto explicam aquecimento sem fuga local"
+        }
+      ],
+      "investigations": [
+        {
+          "id": "I1",
+          "methodId": "EV-01",
+          "purpose": "Inspecionar a região de vedação e diferenciar origem de resíduos oleosos sem desmontagem",
+          "interpretations": {
+            "supports": "Trilha originada na vedação reforça perda de estanqueidade",
+            "weakens": "Vedação sem fuga e origem externa documentada enfraquecem essa hipótese",
+            "inconclusive": "Solo e graxa ocultam a origem do líquido"
+          },
+          "status": "apenas_proposto",
+          "resultObserved": null
+        },
+        {
+          "id": "I2",
+          "methodId": "EV-03",
+          "purpose": "Comparar temperatura sem contato entre roletes e históricos equivalentes",
+          "interpretations": {
+            "supports": "Temperatura localizada associada a fuga independente fortalece suspeita de atrito interno",
+            "weakens": "Sem aquecimento ou fuga reduz suporte, mas não elimina dano incipiente",
+            "inconclusive": "Operação e condição ambiental não são comparáveis"
+          },
+          "status": "apenas_proposto",
+          "resultObserved": null
+        }
+      ],
+      "limitations": "Verificar se o rolete é lubrificado/selado conforme modelo; não aplicar política de reposição genérica de lubrificante nem inferir rolamento específico.",
+      "review": {
+        "status": "inferido_com_literatura_geral",
+        "reviewer": null
+      },
+      "sapMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageId": null,
+        "causeId": null
+      },
+      "factualNature": "hipotese_de_mecanismo",
+      "empiricalOccurrences": 0,
+      "confirmedRootCause": false
+    },
+    {
+      "id": "FC-TRACK-003",
+      "family": "material_rodante",
+      "title": "Desgaste ou guiamento anormal da roda-guia",
+      "operatingFunction": "Guiar e apoiar a esteira mantendo posição e geometria dentro do requerido",
+      "functionalFailureId": "FF-02",
+      "failureMode": "Contato e guiamento anormais provocam desgaste geométrico ou esforço lateral fora do esperado",
+      "mechanismIds": [
+        "ME-01",
+        "ME-14"
+      ],
+      "initiatingConditionCandidates": [
+        "Desajuste de guiamento ou desgaste de apoio",
+        "Contato por desalinhamento de conjunto",
+        "Carregamento lateral/terreno desfavorável"
+      ],
+      "possibleDamage": "Desgaste desigual/ressaltos ou deslocamento de ajuste no conjunto da roda-guia",
+      "symptomIds": [
+        "SY-11",
+        "SY-01",
+        "SY-20"
+      ],
+      "evidenceMethodIds": [
+        "EV-01",
+        "EV-02"
+      ],
+      "preventionRuleIds": [
+        "track-idler-wear"
+      ],
+      "preventionAssociation": "alvo_de_inspecao_candidato",
+      "sourceClaims": [
+        {
+          "sourceId": "CAT-DOZER-UC-MAINT",
+          "claim": "A Caterpillar recomenda verificar rodas-guia quanto a ressaltos, desgaste desigual e condição de ajuste.",
+          "scope": "principio_geral"
+        },
+        {
+          "sourceId": "CAT-CTS-UNDERCARRIAGE",
+          "claim": "O CTS usa medição de padrões e percentuais de desgaste para apoiar decisões de manutenção do rodante.",
+          "scope": "principio_geral"
+        }
+      ],
+      "competingHypotheses": [
+        {
+          "id": "ALT1",
+          "description": "Tensão de esteira inadequada gera padrão de contato anormal",
+          "discriminator": "Medição de flecha/tensão conforme OMM identifica desvio"
+        },
+        {
+          "id": "ALT2",
+          "description": "Rolete adjacente travado ou desalinhado muda trajetória da esteira",
+          "discriminator": "Evidência localizada no rolete e não no conjunto de guiamento"
+        }
+      ],
+      "investigations": [
+        {
+          "id": "I1",
+          "methodId": "EV-01",
+          "purpose": "Inspecionar ressaltos, desgaste desigual e posição aparente da roda-guia",
+          "interpretations": {
+            "supports": "Padrão anormal concentrado na roda-guia reforça hipótese de guiamento/desgaste",
+            "weakens": "Guiamento íntegro e desgaste uniforme reduzem hipótese nessa área",
+            "inconclusive": "Material compactado impede observar a superfície de contato"
+          },
+          "status": "apenas_proposto",
+          "resultObserved": null
+        },
+        {
+          "id": "I2",
+          "methodId": "EV-02",
+          "purpose": "Medir dimensões/folgas com CTS ou referência OEM para o arranjo e desgaste vigentes",
+          "interpretations": {
+            "supports": "Geometria fora da referência confirma desvio dimensional, não sua causa raiz",
+            "weakens": "Dimensões dentro dos limites diminuem suspeita de desgaste excessivo",
+            "inconclusive": "Ausente manual, ponto de medição ou instrumento apropriado"
+          },
+          "status": "apenas_proposto",
+          "resultObserved": null
+        }
+      ],
+      "limitations": "Não importar limites da D4 ou escavadeiras para D9/6030/395; CTS documenta desgaste e não determina sozinho mecanismo causal.",
+      "review": {
+        "status": "inferido_com_literatura_geral",
+        "reviewer": null
+      },
+      "sapMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageId": null,
+        "causeId": null
+      },
+      "factualNature": "hipotese_de_mecanismo",
+      "empiricalOccurrences": 0,
+      "confirmedRootCause": false
+    },
+    {
+      "id": "FC-TRACK-004",
+      "family": "material_rodante",
+      "title": "Tensionamento excessivo ou insuficiente da esteira acelerando desgaste",
+      "operatingFunction": "Manter tensão da esteira compatível com guiamento, transferência de força e ambiente",
+      "functionalFailureId": "FF-02",
+      "failureMode": "Tensão fora da faixa de projeto com esforço adicional ou guiamento/engrenamento irregular",
+      "mechanismIds": [
+        "ME-14",
+        "ME-01"
+      ],
+      "initiatingConditionCandidates": [
+        "Ajuste incompatível com condições do solo",
+        "Material acumulado alterando tensão efetiva",
+        "Falha de ajuste ou perda de retenção do tensionador"
+      ],
+      "possibleDamage": "Desgaste acelerado em elos, buchas, rodas-guia e roletes; tensão incorreta pode existir sem dano já estabelecido",
+      "symptomIds": [
+        "SY-11",
+        "SY-01",
+        "SY-20"
+      ],
+      "evidenceMethodIds": [
+        "EV-02",
+        "EV-01"
+      ],
+      "preventionRuleIds": [
+        "track-idler-wear",
+        "track-roller-wear"
+      ],
+      "preventionAssociation": "monitoramento_contextual_nao_alvo_exclusivo_de_ajuste",
+      "sourceClaims": [
+        {
+          "sourceId": "CAT-STEEL-TRACKS",
+          "claim": "A Caterpillar descreve desgaste acelerado com esteira excessivamente tensionada e risco de desengrenamento quando frouxa.",
+          "scope": "principio_geral"
+        },
+        {
+          "sourceId": "CAT-DOZER-UC-MAINT",
+          "claim": "O tensionamento e a limpeza do rodante são práticas gerais para preservar roletes e rodas-guia.",
+          "scope": "principio_geral"
+        }
+      ],
+      "competingHypotheses": [
+        {
+          "id": "ALT1",
+          "description": "Desgaste ou travamento de rolete sem desvio mensurado na tensão da esteira",
+          "discriminator": "Roletes anormais com flecha/tensão dentro do limite aplicável"
+        },
+        {
+          "id": "ALT2",
+          "description": "Desgaste de roda-guia por desalinhamento independente da tensão",
+          "discriminator": "Geometria lateral e desgaste da roda-guia explicam padrão"
+        }
+      ],
+      "investigations": [
+        {
+          "id": "I1",
+          "methodId": "EV-02",
+          "purpose": "Medir flecha/tensão somente com procedimento específico de máquina e configuração",
+          "interpretations": {
+            "supports": "Medida fora do OMM sustenta desajuste, mas não confirma dano em um rolete",
+            "weakens": "Medida dentro do limite especificado enfraquece tensão como causa atual",
+            "inconclusive": "Não há limite aplicável ou a máquina está em condição inadequada à medição"
+          },
+          "status": "apenas_proposto",
+          "resultObserved": null
+        },
+        {
+          "id": "I2",
+          "methodId": "EV-01",
+          "purpose": "Inspecionar trajetória da esteira, detritos, desgaste e padrão de contato",
+          "interpretations": {
+            "supports": "Desgaste compatível e detritos reforçam investigar tensão/ajuste",
+            "weakens": "Trajeto e superfície íntegros diminuem suspeita de efeito relevante",
+            "inconclusive": "Desgaste anterior e falta de histórico impedem atribuir causa"
+          },
+          "status": "apenas_proposto",
+          "resultObserved": null
+        }
+      ],
+      "limitations": "As tarefas PM de rolete e roda-guia são monitoramento contextual; não significam procedimento validado de ajuste de tensão. Manipulação de tensionador pressurizado requer OMM e controle de riscos.",
       "review": {
         "status": "inferido_com_literatura_geral",
         "reviewer": null
