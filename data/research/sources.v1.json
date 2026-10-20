@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.research.sources.v1",
-  "version": "1.3.4",
+  "version": "1.3.5",
   "status": "literatura_de_referencia_nao_casos_empiricos",
   "rights": "somente_titulos_links_e_resumos_originais",
   "sources": [
@@ -386,6 +386,39 @@
       "area": "sap_notification_cause_definition",
       "role": "software_vendor_primary",
       "limitation": "O cadastro admite múltiplas causas por item; uma combinação code group/code permitida não constitui causa raiz validada.",
+      "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
+      "lastReviewed": "2026-10-20"
+    },
+    {
+      "id": "SAP-FUNCTIONAL-LOCATION-STRUCTURE",
+      "organization": "SAP",
+      "title": "Functional Locations (CS-BD/PM-EQM-FL)",
+      "url": "https://help.sap.com/docs/SAP_ERP_SPV/f0e0dd7850e64947aa66a647f8d3af09/0ab7b853dcfcb44ce10000000a174cb4.html?locale=en-US&state=PRODUCTION&version=6.18.24",
+      "area": "functional_location_hierarchy_and_equipment",
+      "role": "software_vendor_primary",
+      "limitation": "Um local funcional modela onde a manutenção ocorre; não implica que todas as peças existam como subgrupos próprios, nem prova instalação efetiva.",
+      "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
+      "lastReviewed": "2026-10-20"
+    },
+    {
+      "id": "CAT-FILTERS-FLUIDS-GUIDE",
+      "organization": "Caterpillar",
+      "title": "Guide to Checking Filters & Fluids on Cat Equipment",
+      "url": "https://www.cat.com/en_US/blog/check-filters-fluids-equipment.html",
+      "area": "filter_service_water_separator_cooler_hose_checks",
+      "role": "oem_general_maintenance",
+      "limitation": "A orientação cita drenagem do separador de água e inspeção de filtros/fluídos, mas a tarefa não confirma falha de filtro/dreno ou código de dano SAP nem periodicidade específica.",
+      "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
+      "lastReviewed": "2026-10-20"
+    },
+    {
+      "id": "CAT-FUEL-WATER-SEPARATOR-PURPOSE",
+      "organization": "Caterpillar",
+      "title": "Fuel and Water Separator Filter — Cat Parts",
+      "url": "https://parts.cat.com/en/catcorp/product/483-1002",
+      "area": "fuel_water_separator_function",
+      "role": "oem_component_function_other_model",
+      "limitation": "Referência técnica de função do separador, não PN aplicável à frota nem indicação de peça danificada na presença de água no combustível.",
       "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
       "lastReviewed": "2026-10-20"
     }
