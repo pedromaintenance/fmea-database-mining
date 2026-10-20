@@ -1,0 +1,423 @@
+{
+  "schema": "fmea-mining.discriminative-tests.v1",
+  "version": "1.3.9",
+  "purpose": "Auditar quanto cada um dos seis testes P0 realmente diferencia modos concorrentes; não inferir sensibilidade ou especificidade.",
+  "classificationGlossary": {
+    "detecta_condicao_sem_isolar_causa": "Evidência direta de uma condição observável, sem identificar causa raiz e sem provar consequência.",
+    "detecta_tendencia_sem_atribuir_origem": "Mudança de parâmetro ou contaminante útil para monitorar, mas não isola o componente causador.",
+    "detecta_indicio_nao_discriminante": "Sinal inespecífico compartilhado por mecanismos diferentes.",
+    "discrimina_desempenho_funcional_condicionado": "Teste de função pode distinguir perda de desempenho sob procedimento OEM e condições controladas; não identifica necessariamente peça interna."
+  },
+  "policy": {
+    "autoDiagnosisForbidden": true,
+    "withoutIndependentEvidenceMayBeConfirmed": false,
+    "unreviewedRecordsMustRemainProposed": true,
+    "noNumericalLikelihoodWithoutEmpiricalValidation": true,
+    "confoundersMustBeExplicit": true,
+    "alternativesMustRemainOpenByDefault": true
+  },
+  "counts": {
+    "priorityTests": 6,
+    "distinctChains": 6
+  },
+  "records": [
+    {
+      "id": "DISC-FC-HOSE-001-I1",
+      "evidenceRequirementId": "ER-FC-HOSE-001-I1",
+      "chainId": "FC-HOSE-001",
+      "investigationId": "I1",
+      "methodId": "EV-01",
+      "targetMode": "Redução da integridade da cobertura/reforço, com possibilidade de perda de contenção",
+      "reviewPriority": "P0",
+      "scope": "diagnostico_qualitativo_geral_sem_dados_de_campo",
+      "discriminativeCapability": "detecta_condicao_sem_isolar_causa",
+      "detectedCondition": "Desgaste físico na cobertura nos trechos acessíveis e possível contato com estrutura.",
+      "canDiscriminate": "Distingue cobertura com sinais visíveis de abrasão de cobertura sem sinais nos trechos examinados; orienta pontos de fricção e extensão aparente.",
+      "cannotDiscriminate": "Não demonstra perda de contenção, falha da união prensada, origem de um vazamento ou integridade dos reforços internos.",
+      "confoundingFactors": [
+        "Óleo escorrendo de conexão acima da mangueira",
+        "Trecho encoberto não inspecionado",
+        "Marcas antigas sem progressão ativa",
+        "Contato em condição dinâmica não reproduzido"
+      ],
+      "competingHypothesisAssessments": [
+        {
+          "hypothesisId": "ALT1",
+          "description": "Vazamento na união/conexão sem desgaste estrutural do tubo",
+          "remainsPlausibleAfterSingleTest": true,
+          "why": "Vazamento na conexão pode coexistir com abrasão superficial; somente localização da origem, em procedimento seguro, reduz a ambiguidade."
+        },
+        {
+          "hypothesisId": "ALT2",
+          "description": "Óleo proveniente de outro ponto escorre sobre a mangueira",
+          "remainsPlausibleAfterSingleTest": true,
+          "why": "Óleo de outro ponto permanece plausível enquanto a trilha da fuga não for rastreada à fonte."
+        }
+      ],
+      "complementaryInvestigations": [
+        {
+          "methodId": "EV-15",
+          "purpose": "Comparar roteamento, suporte e folgas com arranjo documentado para a mangueira identificada.",
+          "status": "proposto_nao_executado"
+        },
+        {
+          "methodId": "EV-13",
+          "purpose": "Consultar histórico de montagem, substituição e ocorrências anteriores na região.",
+          "status": "proposto_nao_executado"
+        }
+      ],
+      "interpretationWhenSupports": "O achado favorece apenas a condição descrita, sob metadados e baseline adequados; não confirma a causa nem exclui alternativas.",
+      "interpretationWhenWeakens": "A ausência ou resultado normal na condição examinada reduz plausibilidade localizada; não exclui dano intermitente, oculto ou fora da condição testada.",
+      "interpretationWhenInconclusive": "Não ranquear hipóteses quando faltam posição, referência, qualidade amostral, segurança, instrumento ou controle de variáveis.",
+      "validationPrerequisites": "Preservar fotos, ponto de contato, trajetória do fluido e documentação de montagem; inspeção visual não justifica teste improvisado com circuito pressurizado.",
+      "sourceIds": [
+        "CAT-HYD-HOSE-INSPECT",
+        "CAT-HYD-HOSE-FAILURE"
+      ],
+      "resultObserved": null,
+      "numericalDiscriminationMetrics": {
+        "sensitivity": null,
+        "specificity": null,
+        "likelihoodRatio": null,
+        "confidence": null
+      },
+      "oemProcedureEffectiveForFleet": false,
+      "inspectedActualEquipment": false,
+      "reviewStatus": "analise_metodologica_nao_homologada",
+      "automaticallyConfirmRootCause": false,
+      "automaticallyRejectAlternatives": false
+    },
+    {
+      "id": "DISC-FC-FD-001-I2",
+      "evidenceRequirementId": "ER-FC-FD-001-I2",
+      "chainId": "FC-FD-001",
+      "investigationId": "I2",
+      "methodId": "EV-08",
+      "targetMode": "Desgaste prematuro por partículas em contato, com potencial degradação de engrenagens ou rolamentos",
+      "reviewPriority": "P0",
+      "scope": "diagnostico_qualitativo_geral_sem_dados_de_campo",
+      "discriminativeCapability": "detecta_tendencia_sem_atribuir_origem",
+      "detectedCondition": "Tendência de materiais de desgaste e possíveis contaminantes no lubrificante de um compartimento identificado.",
+      "canDiscriminate": "Distingue tendência alterada de condição estável quando produto, ponto, método e tempo de óleo são comparáveis.",
+      "cannotDiscriminate": "Não identifica engrenagem ou rolamento causador, e não prova se as partículas são abrasivo que ingressou ou desgaste produzido dentro do redutor.",
+      "confoundingFactors": [
+        "Mudança autorizada de formulação ou baseline",
+        "Coleta contaminada por equipamento ou recipiente",
+        "Horas de óleo ou temperatura não comparáveis",
+        "Partículas maiores não capturadas pelo método de análise"
+      ],
+      "competingHypothesisAssessments": [
+        {
+          "hypothesisId": "ALT1",
+          "description": "Desgaste de regime/assentamento sem falha evolutiva comprovada",
+          "remainsPlausibleAfterSingleTest": true,
+          "why": "Assentamento/depósito de regime permanece possível sem série histórica e exame de partículas."
+        },
+        {
+          "hypothesisId": "ALT2",
+          "description": "Partículas produzidas por falha já existente de engrenagem/rolamento",
+          "remainsPlausibleAfterSingleTest": true,
+          "why": "Dano interno prévio produzindo partículas pode gerar o mesmo laudo; requer morfologia e inspeção convergentes."
+        }
+      ],
+      "complementaryInvestigations": [
+        {
+          "methodId": "EV-11",
+          "purpose": "Analisar depósito de bujão magnético/filtro, morfologia e sua evolução conforme procedimento e rastreio OEM.",
+          "status": "proposto_nao_executado"
+        },
+        {
+          "methodId": "EV-10",
+          "purpose": "Verificar presença de água/contaminantes por amostra representativa e ensaio pertinente.",
+          "status": "proposto_nao_executado"
+        }
+      ],
+      "interpretationWhenSupports": "O achado favorece apenas a condição descrita, sob metadados e baseline adequados; não confirma a causa nem exclui alternativas.",
+      "interpretationWhenWeakens": "A ausência ou resultado normal na condição examinada reduz plausibilidade localizada; não exclui dano intermitente, oculto ou fora da condição testada.",
+      "interpretationWhenInconclusive": "Não ranquear hipóteses quando faltam posição, referência, qualidade amostral, segurança, instrumento ou controle de variáveis.",
+      "validationPrerequisites": "Exigir identificação do compartimento, fluido, amostragem, horas, método laboratorial e histórico; não transportar classes/limites genéricos de bujão a uma série não confirmada.",
+      "sourceIds": [
+        "CAT-DRIVE-MAGNET-PLUG",
+        "SKF-WEAR-SURFACE-FATIGUE",
+        "CAT-FLUID-ANALYSIS-101"
+      ],
+      "resultObserved": null,
+      "numericalDiscriminationMetrics": {
+        "sensitivity": null,
+        "specificity": null,
+        "likelihoodRatio": null,
+        "confidence": null
+      },
+      "oemProcedureEffectiveForFleet": false,
+      "inspectedActualEquipment": false,
+      "reviewStatus": "analise_metodologica_nao_homologada",
+      "automaticallyConfirmRootCause": false,
+      "automaticallyRejectAlternatives": false
+    },
+    {
+      "id": "DISC-FC-COOL-001-I1",
+      "evidenceRequirementId": "ER-FC-COOL-001-I1",
+      "chainId": "FC-COOL-001",
+      "investigationId": "I1",
+      "methodId": "EV-01",
+      "targetMode": "Capacidade de rejeição térmica insuficiente pela resistência ao fluxo de ar no pacote de trocadores",
+      "reviewPriority": "P0",
+      "scope": "diagnostico_qualitativo_geral_sem_dados_de_campo",
+      "discriminativeCapability": "detecta_condicao_sem_isolar_causa",
+      "detectedCondition": "Acúmulo visível de poeira e detritos nas aletas ou entre módulos de troca térmica.",
+      "canDiscriminate": "Distingue passagens externamente sujas de passagens visivelmente limpas na área acessível.",
+      "cannotDiscriminate": "Não quantifica redução térmica, não demonstra obstrução interna e não exclui falha de ventilador ou circulação de fluido.",
+      "confoundingFactors": [
+        "Trocador parcialmente inacessível e sujeira oculta",
+        "Obstrução insuficiente para afetar desempenho",
+        "Carga e ambiente distintos da queixa de aquecimento",
+        "Falha concomitante de ventilação ou termorregulação"
+      ],
+      "competingHypothesisAssessments": [
+        {
+          "hypothesisId": "ALT1",
+          "description": "Baixo nível ou circulação deficiente de líquido de arrefecimento",
+          "remainsPlausibleAfterSingleTest": true,
+          "why": "Baixo nível/circulação deficiente segue possível mesmo com detritos no radiador; verificar fluido e circuito."
+        },
+        {
+          "hypothesisId": "ALT2",
+          "description": "Ventilador não produzindo fluxo de ar requerido",
+          "remainsPlausibleAfterSingleTest": true,
+          "why": "Ventilação inadequada pode coexistir com a sujeira externa; demanda e resposta do ventilador exigem verificação própria."
+        }
+      ],
+      "complementaryInvestigations": [
+        {
+          "methodId": "EV-14",
+          "purpose": "Correlacionar temperatura, carga, ambiente e evento com referência aplicável antes/depois da condição documentada.",
+          "status": "proposto_nao_executado"
+        },
+        {
+          "methodId": "EV-12",
+          "purpose": "Investigar circulação/ventilação de acordo com procedimento OEM se a anomalia persistir.",
+          "status": "proposto_nao_executado"
+        }
+      ],
+      "interpretationWhenSupports": "O achado favorece apenas a condição descrita, sob metadados e baseline adequados; não confirma a causa nem exclui alternativas.",
+      "interpretationWhenWeakens": "A ausência ou resultado normal na condição examinada reduz plausibilidade localizada; não exclui dano intermitente, oculto ou fora da condição testada.",
+      "interpretationWhenInconclusive": "Não ranquear hipóteses quando faltam posição, referência, qualidade amostral, segurança, instrumento ou controle de variáveis.",
+      "validationPrerequisites": "Não chamar limpeza de prova de reparo. Fotos antes/depois não substituem medição de temperatura na mesma condição.",
+      "sourceIds": [
+        "CAT-RADIATOR-CARE",
+        "CAT-EXC-COOL-CHECKLIST"
+      ],
+      "resultObserved": null,
+      "numericalDiscriminationMetrics": {
+        "sensitivity": null,
+        "specificity": null,
+        "likelihoodRatio": null,
+        "confidence": null
+      },
+      "oemProcedureEffectiveForFleet": false,
+      "inspectedActualEquipment": false,
+      "reviewStatus": "analise_metodologica_nao_homologada",
+      "automaticallyConfirmRootCause": false,
+      "automaticallyRejectAlternatives": false
+    },
+    {
+      "id": "DISC-FC-TRACK-001-I2",
+      "evidenceRequirementId": "ER-FC-TRACK-001-I2",
+      "chainId": "FC-TRACK-001",
+      "investigationId": "I2",
+      "methodId": "EV-03",
+      "targetMode": "Rolete deixa de girar livremente, gerando arrasto e desgaste localizado",
+      "reviewPriority": "P0",
+      "scope": "diagnostico_qualitativo_geral_sem_dados_de_campo",
+      "discriminativeCapability": "detecta_indicio_nao_discriminante",
+      "detectedCondition": "Temperatura localizada ou tendência térmica diferente entre roletes efetivamente comparáveis.",
+      "canDiscriminate": "Sinaliza possível atrito adicional/localizado quando carga, emissividade, ponto, tempo após deslocamento e ambiente são comparáveis.",
+      "cannotDiscriminate": "Não distingue detritos compactados de atrito em rolamento/vedação, tensão da esteira ou aquecimento por outro contato.",
+      "confoundingFactors": [
+        "Superfícies com emissividades ou contaminação distintas",
+        "Equipamento parado por períodos diferentes",
+        "Posição de rolete e carga mecânica não equivalentes",
+        "Carga de operação ou lama compactada não controlada"
+      ],
+      "competingHypothesisAssessments": [
+        {
+          "hypothesisId": "ALT1",
+          "description": "Falha interna de rolamento/vedação no rolete",
+          "remainsPlausibleAfterSingleTest": true,
+          "why": "Rolamento ou vedação internos continuam possíveis; termometria isolada não diferencia causa."
+        },
+        {
+          "hypothesisId": "ALT2",
+          "description": "Tensionamento inadequado da esteira gera contato e desgaste anormais",
+          "remainsPlausibleAfterSingleTest": true,
+          "why": "Tensão inadequada pode provocar esforço adicional; medir tensão/geometria por OMM específico."
+        }
+      ],
+      "complementaryInvestigations": [
+        {
+          "methodId": "EV-01",
+          "purpose": "Inspecionar detritos, vazamentos e evidências de arrasto na posição identificada e isolada.",
+          "status": "proposto_nao_executado"
+        },
+        {
+          "methodId": "EV-02",
+          "purpose": "Conferir padrão de desgaste/medidas CTS e tensão por posição e configuração efetiva.",
+          "status": "proposto_nao_executado"
+        }
+      ],
+      "interpretationWhenSupports": "O achado favorece apenas a condição descrita, sob metadados e baseline adequados; não confirma a causa nem exclui alternativas.",
+      "interpretationWhenWeakens": "A ausência ou resultado normal na condição examinada reduz plausibilidade localizada; não exclui dano intermitente, oculto ou fora da condição testada.",
+      "interpretationWhenInconclusive": "Não ranquear hipóteses quando faltam posição, referência, qualidade amostral, segurança, instrumento ou controle de variáveis.",
+      "validationPrerequisites": "Não usar valores universais de temperatura ou diferença entre roletes; inspeção visual segura e comparação instrumental são complementares.",
+      "sourceIds": [
+        "CAT-DOZER-UC-MAINT",
+        "CAT-MINING-UC-WEAR-MANAGEMENT"
+      ],
+      "resultObserved": null,
+      "numericalDiscriminationMetrics": {
+        "sensitivity": null,
+        "specificity": null,
+        "likelihoodRatio": null,
+        "confidence": null
+      },
+      "oemProcedureEffectiveForFleet": false,
+      "inspectedActualEquipment": false,
+      "reviewStatus": "analise_metodologica_nao_homologada",
+      "automaticallyConfirmRootCause": false,
+      "automaticallyRejectAlternatives": false
+    },
+    {
+      "id": "DISC-FC-TRACK-005-I2",
+      "evidenceRequirementId": "ER-FC-TRACK-005-I2",
+      "chainId": "FC-TRACK-005",
+      "investigationId": "I2",
+      "methodId": "EV-15",
+      "targetMode": "Perda de força de aperto por rotação progressiva da fixação sob solicitações transversais",
+      "reviewPriority": "P0",
+      "scope": "diagnostico_qualitativo_geral_sem_dados_de_campo",
+      "discriminativeCapability": "detecta_indicio_nao_discriminante",
+      "detectedCondition": "Montagem, estado atual da junta, possível movimento relativo e documentação prévia de fixação.",
+      "canDiscriminate": "Pode identificar ausência de fixadores, soltura atual, falha evidente de montagem ou sinais de deslocamento na interface.",
+      "cannotDiscriminate": "Não determina força de aperto inicial por torque de desaperto, nem distingue sem rastreamento autoafrouxamento rotacional de assentamento/relaxação.",
+      "confoundingFactors": [
+        "Ausência de marcação de referência anterior",
+        "Pintura ou tratamento superficial com assentamento",
+        "Troca de fixador sem rastreio de montagem",
+        "Fratura de fixador confundida com desaparecimento por perda de retenção"
+      ],
+      "competingHypothesisAssessments": [
+        {
+          "hypothesisId": "ALT1",
+          "description": "Assentamento da junta sem rotação do fixador",
+          "remainsPlausibleAfterSingleTest": true,
+          "why": "Assentamento sem rotação permanece possível mesmo quando há folga; exige evidência de giro ou análise documentada da junta."
+        },
+        {
+          "hypothesisId": "ALT2",
+          "description": "Ruptura de um parafuso previamente íntegro por sobrecarga",
+          "remainsPlausibleAfterSingleTest": true,
+          "why": "Ruptura por sobrecarga exige examinar fragmento/face de fratura, não apenas contar fixadores ausentes."
+        }
+      ],
+      "complementaryInvestigations": [
+        {
+          "methodId": "EV-01",
+          "purpose": "Inspecionar fisicamente parafusos, cabeças, porcas, roscas e fraturas preservando documentação.",
+          "status": "proposto_nao_executado"
+        },
+        {
+          "methodId": "EV-13",
+          "purpose": "Reconciliar registros de instalação, aperto especificado, substituições e cronologia das alterações.",
+          "status": "proposto_nao_executado"
+        }
+      ],
+      "interpretationWhenSupports": "O achado favorece apenas a condição descrita, sob metadados e baseline adequados; não confirma a causa nem exclui alternativas.",
+      "interpretationWhenWeakens": "A ausência ou resultado normal na condição examinada reduz plausibilidade localizada; não exclui dano intermitente, oculto ou fora da condição testada.",
+      "interpretationWhenInconclusive": "Não ranquear hipóteses quando faltam posição, referência, qualidade amostral, segurança, instrumento ou controle de variáveis.",
+      "validationPrerequisites": "Jamais deduzir torque-turn de outro modelo ou reapertar como teste diagnóstico em junta suspeita; procedimento e parafuso precisam ser OEM efetivos.",
+      "sourceIds": [
+        "NORDLOCK-BOLT-LOOSENING",
+        "CAT-UC-DOZER-GUIDE"
+      ],
+      "resultObserved": null,
+      "numericalDiscriminationMetrics": {
+        "sensitivity": null,
+        "specificity": null,
+        "likelihoodRatio": null,
+        "confidence": null
+      },
+      "oemProcedureEffectiveForFleet": false,
+      "inspectedActualEquipment": false,
+      "reviewStatus": "analise_metodologica_nao_homologada",
+      "automaticallyConfirmRootCause": false,
+      "automaticallyRejectAlternatives": false
+    },
+    {
+      "id": "DISC-FC-COOL-007-I2",
+      "evidenceRequirementId": "ER-FC-COOL-007-I2",
+      "chainId": "FC-COOL-007",
+      "investigationId": "I2",
+      "methodId": "EV-12",
+      "targetMode": "Conjunto de bombeamento fornece fluxo insuficiente para remover calor",
+      "reviewPriority": "P0",
+      "scope": "diagnostico_qualitativo_geral_sem_dados_de_campo",
+      "discriminativeCapability": "discrimina_desempenho_funcional_condicionado",
+      "detectedCondition": "Desempenho de circulação comparado com referência do conjunto de bombeamento e circuito sob regime documentado.",
+      "canDiscriminate": "Se o método OEM conseguir isolar o bombeamento de restrições externas, pode sustentar ou enfraquecer insuficiência funcional do conjunto naquela condição.",
+      "cannotDiscriminate": "Não identifica rotor, selo, cavitação ou desgaste específico sem inspeção; medir somente temperatura do motor não discrimina bomba/termostato/ar.",
+      "confoundingFactors": [
+        "Arquitetura de bypass/termostato distinta da assumida",
+        "Vazão influenciada por restrição de mangueira/radiador",
+        "Instrumento/posição inadequados",
+        "Rotação, temperatura ou demanda térmica não comparáveis"
+      ],
+      "competingHypothesisAssessments": [
+        {
+          "hypothesisId": "ALT1",
+          "description": "Termostato restringe passagem ao radiador com bomba adequada",
+          "remainsPlausibleAfterSingleTest": true,
+          "why": "Termostato restringindo passagem pode produzir fluxo aparente baixo; ensaio de regulação deve isolar esse ramo."
+        },
+        {
+          "hypothesisId": "ALT2",
+          "description": "Ar insuficiente através do radiador com circulação hidráulica adequada",
+          "remainsPlausibleAfterSingleTest": true,
+          "why": "Restrição de ar ou ventilador com insuficiência explica temperatura alta mesmo quando circulação está conforme."
+        }
+      ],
+      "complementaryInvestigations": [
+        {
+          "methodId": "EV-14",
+          "purpose": "Comparar temperatura, controle e carga para separar demanda térmica de deficiência de fluxo.",
+          "status": "proposto_nao_executado"
+        },
+        {
+          "methodId": "EV-01",
+          "purpose": "Verificar condição de colmeia, nível aparente, vazamentos e ventilação de forma segura.",
+          "status": "proposto_nao_executado"
+        }
+      ],
+      "interpretationWhenSupports": "O achado favorece apenas a condição descrita, sob metadados e baseline adequados; não confirma a causa nem exclui alternativas.",
+      "interpretationWhenWeakens": "A ausência ou resultado normal na condição examinada reduz plausibilidade localizada; não exclui dano intermitente, oculto ou fora da condição testada.",
+      "interpretationWhenInconclusive": "Não ranquear hipóteses quando faltam posição, referência, qualidade amostral, segurança, instrumento ou controle de variáveis.",
+      "validationPrerequisites": "Resultado de vazão ou pressão sem curva/procedimento OEM não autoriza condenar bomba; não abrir sistema quente ou pressurizado.",
+      "sourceIds": [
+        "CAT-WATER-PUMP-REPLACEMENT",
+        "CAT-THERMOSTAT-REPLACEMENT",
+        "CAT-RADIATOR-CARE"
+      ],
+      "resultObserved": null,
+      "numericalDiscriminationMetrics": {
+        "sensitivity": null,
+        "specificity": null,
+        "likelihoodRatio": null,
+        "confidence": null
+      },
+      "oemProcedureEffectiveForFleet": false,
+      "inspectedActualEquipment": false,
+      "reviewStatus": "analise_metodologica_nao_homologada",
+      "automaticallyConfirmRootCause": false,
+      "automaticallyRejectAlternatives": false
+    }
+  ]
+}
