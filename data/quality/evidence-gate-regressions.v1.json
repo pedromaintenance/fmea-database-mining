@@ -1,0 +1,146 @@
+{
+  "schema": "fmea-mining.evidence-gate-regressions.v1",
+  "version": "1.3.8",
+  "nature": "synthetic_only_never_authorized_field_evidence",
+  "cases": [
+    {
+      "id": "GATE-01",
+      "purpose": "Amostra sem compartimento não deve ser interpretável",
+      "kind": "evidence",
+      "metadataPresent": [
+        "equipmentContext",
+        "samplePoint",
+        "laboratoryMethod",
+        "fluidProduct",
+        "fluidHours",
+        "collectionMethod",
+        "baselineReference",
+        "dateTime"
+      ],
+      "requiredFields": [
+        "equipmentContext",
+        "compartment",
+        "fluidProduct",
+        "fluidHours",
+        "samplePoint",
+        "collectionMethod",
+        "laboratoryMethod",
+        "baselineReference",
+        "dateTime"
+      ],
+      "baselinePresent": true,
+      "oemApplicable": true,
+      "expectedEligible": false
+    },
+    {
+      "id": "GATE-02",
+      "purpose": "Pressão sem temperatura ou carga não deve sustentar conclusão",
+      "kind": "evidence",
+      "metadataPresent": [
+        "equipmentContext",
+        "circuitOrTestPoint",
+        "instrumentId",
+        "instrumentCalibrationStatus",
+        "unit",
+        "oemTestReference",
+        "dateTime"
+      ],
+      "requiredFields": [
+        "equipmentContext",
+        "circuitOrTestPoint",
+        "instrumentId",
+        "instrumentCalibrationStatus",
+        "operatingLoad",
+        "fluidTemperature",
+        "unit",
+        "oemTestReference",
+        "dateTime"
+      ],
+      "baselinePresent": true,
+      "oemApplicable": true,
+      "expectedEligible": false
+    },
+    {
+      "id": "GATE-03",
+      "purpose": "Todas as informações sem referência aplicável não permitem confronto OEM",
+      "kind": "evidence",
+      "metadataPresent": [
+        "equipmentContext",
+        "samplePoint",
+        "compartment",
+        "laboratoryMethod"
+      ],
+      "requiredFields": [
+        "equipmentContext",
+        "samplePoint",
+        "compartment",
+        "laboratoryMethod"
+      ],
+      "baselinePresent": false,
+      "oemApplicable": false,
+      "expectedEligible": false
+    },
+    {
+      "id": "GATE-04",
+      "purpose": "Dois revisores com mesma identidade não constituem revisão independente",
+      "kind": "review",
+      "primaryReviewer": "r1",
+      "independentReviewer": "r1",
+      "decision": "approved",
+      "rationale": "Justificativa sintética apenas para testar o gate.",
+      "expectedEligible": false
+    },
+    {
+      "id": "GATE-05",
+      "purpose": "Sem segundo revisor não há aprovação",
+      "kind": "review",
+      "primaryReviewer": "r1",
+      "independentReviewer": null,
+      "decision": "approved",
+      "rationale": "Justificativa sintética apenas para testar o gate.",
+      "expectedEligible": false
+    },
+    {
+      "id": "GATE-06",
+      "purpose": "Reviewers distintos mas decisão pendente não é aprovação",
+      "kind": "review",
+      "primaryReviewer": "r1",
+      "independentReviewer": "r2",
+      "decision": "pending",
+      "rationale": "Justificativa sintética apenas para testar o gate.",
+      "expectedEligible": false
+    },
+    {
+      "id": "GATE-07",
+      "purpose": "Gate formal pode ser elegível sem promover automaticamente um registro",
+      "kind": "review",
+      "primaryReviewer": "r1",
+      "independentReviewer": "r2",
+      "decision": "approved",
+      "rationale": "Parecer sintético de teste, não aprovação de um modo real.",
+      "expectedEligible": true
+    },
+    {
+      "id": "GATE-08",
+      "purpose": "Evidência completa é avaliável, mas ainda exige revisão e autorização",
+      "kind": "evidence",
+      "metadataPresent": [
+        "equipmentContext",
+        "samplePoint",
+        "compartment",
+        "laboratoryMethod",
+        "baselineReference"
+      ],
+      "requiredFields": [
+        "equipmentContext",
+        "samplePoint",
+        "compartment",
+        "laboratoryMethod",
+        "baselineReference"
+      ],
+      "baselinePresent": true,
+      "oemApplicable": true,
+      "expectedEligible": true
+    }
+  ]
+}
