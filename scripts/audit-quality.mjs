@@ -21,6 +21,9 @@ const pmGaps=read('reports/pm-gap-audit.generated.json');
 const semantic=read('data/ontology/condition-action-damage.v1.json');
 const semanticFixtures=read('data/quality/semantic-regression-fixtures.v1.json');
 const effects=read('data/knowledge/causal-effects.v1.json');
+const evidence=read('data/quality/evidence-requirements.v1.json');
+const review=read('data/governance/technical-review-register.v1.json');
+const evidenceFixtures=read('data/quality/evidence-gate-regressions.v1.json');
 const byModel=[];
 for(const model of db.models){
  const modelId=model.id;
@@ -59,6 +62,13 @@ const counts={
  semanticRuleBundles:semantic.bundles.length,semanticTypedRelations:semantic.relations.length,
  semanticRegressionCases:semanticFixtures.cases.length,
  causalLocalEffects:effects.records.length,causalSystemEffects:effects.records.length,verifiedEffects:0,
+ evidenceRequiredTests:evidence.records.length,
+ evidencePriorityReviews:evidence.statistics.priorityCases,
+ evidenceMetadataDictionaryFields:Object.keys(evidence.methodFieldGlossary).length,
+ evidenceGateSyntheticCases:evidenceFixtures.cases.length,
+ pendingIndependentReview:review.records.filter(x=>x.reviewDecision==='pending').length,
+ confirmedOemEffectiveReviews:0,
+ approvedEvidenceBasedDiagnoses:0,
  causalChainsWithContextualPm:chains.filter(x=>['monitoramento_contextual_nao_alvo_exclusivo_de_ajuste','vinculo_preventivo_contextual_sem_alvo_direto'].includes(x.preventionAssociation)).length,
  causalSapChainsAudited:sapAudit.summary.chainsAudited,
  causalSapCandidatePairs:sapAudit.summary.catalogPairsCompatible,
@@ -71,7 +81,7 @@ const counts={
  semanticDamageConfirmations:semantic.confirmedComponentDamages.length,
  evidenceValidatedInRealEquipment:0,technicallyApprovedPlaybooks:0
 };
-const report={schema:'fmea-mining.quality-audit.v1',version:'1.3.7',
+const report={schema:'fmea-mining.quality-audit.v1',version:'1.3.8',
  generatedFrom:'working_tree',status:'qualidade_cadastral_nao_taxa_de_falhas',
  meanings:{
   pmCandidateLinks:'vinculos gerados por regra e taxonomia, NAO falhas observadas',
