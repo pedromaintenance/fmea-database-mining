@@ -1,0 +1,108 @@
+{
+  "schema": "fmea-mining.knowledge.v1",
+  "version": "1.1.0",
+  "kind": "fmi_index_original",
+  "provenance": {
+    "repository": "pedromaintenance/porcaria-codigos-de-falha",
+    "originalPath": "js/data.js",
+    "blobSha": "c605b4a80323641e73bc2f64513f1266f3356377",
+    "sourceVersion": "1.0.0",
+    "evidenceNature": "simulated",
+    "effectiveModelConfirmed": false
+  },
+  "description": "23 definicoes resumidas FMI do proprio jogo",
+  "records": [
+    {
+      "id": 0,
+      "description": "Dado válido acima do limite — gravidade máxima"
+    },
+    {
+      "id": 1,
+      "description": "Dado válido abaixo do limite — gravidade máxima"
+    },
+    {
+      "id": 2,
+      "description": "Dado errático, intermitente ou incorreto"
+    },
+    {
+      "id": 3,
+      "description": "Tensão acima do normal ou curto para positivo"
+    },
+    {
+      "id": 4,
+      "description": "Tensão abaixo do normal ou curto para baixo"
+    },
+    {
+      "id": 5,
+      "description": "Corrente abaixo do normal ou circuito aberto"
+    },
+    {
+      "id": 6,
+      "description": "Corrente acima do normal ou curto para terra"
+    },
+    {
+      "id": 7,
+      "description": "Sistema mecânico não responde adequadamente"
+    },
+    {
+      "id": 8,
+      "description": "Frequência, largura de pulso ou período anormal"
+    },
+    {
+      "id": 9,
+      "description": "Atualização de dados anormal / mensagem ausente"
+    },
+    {
+      "id": 10,
+      "description": "Taxa de mudança anormal"
+    },
+    {
+      "id": 11,
+      "description": "Modo de falha não identificado / outro"
+    },
+    {
+      "id": 12,
+      "description": "Dispositivo ou componente defeituoso"
+    },
+    {
+      "id": 13,
+      "description": "Fora de calibração"
+    },
+    {
+      "id": 14,
+      "description": "Instruções especiais"
+    },
+    {
+      "id": 15,
+      "description": "Dado válido acima do limite — baixa gravidade"
+    },
+    {
+      "id": 16,
+      "description": "Dado válido acima do limite — gravidade moderada"
+    },
+    {
+      "id": 17,
+      "description": "Dado válido abaixo do limite — baixa gravidade"
+    },
+    {
+      "id": 18,
+      "description": "Dado válido abaixo do limite — gravidade moderada"
+    },
+    {
+      "id": 19,
+      "description": "Erro nos dados recebidos pela rede"
+    },
+    {
+      "id": 20,
+      "description": "Dado desviou acima"
+    },
+    {
+      "id": 21,
+      "description": "Dado desviou abaixo"
+    },
+    {
+      "id": 31,
+      "description": "Condição existente / indicação especial de fabricante"
+    }
+  ]
+}

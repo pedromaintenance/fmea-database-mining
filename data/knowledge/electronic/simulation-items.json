@@ -1,0 +1,107 @@
+{
+  "schema": "fmea-mining.knowledge.v1",
+  "version": "1.1.0",
+  "kind": "fictional_game_assets_original",
+  "provenance": {
+    "repository": "pedromaintenance/porcaria-codigos-de-falha",
+    "originalPath": "js/data.js",
+    "blobSha": "c605b4a80323641e73bc2f64513f1266f3356377",
+    "sourceVersion": "1.0.0",
+    "evidenceNature": "simulated",
+    "effectiveModelConfirmed": false
+  },
+  "description": "13 itens: nao equivalem a materiais, PNs nem precos reais",
+  "records": [
+    {
+      "id": "multimetro",
+      "group": "tool",
+      "name": "Multímetro digital de bancada",
+      "price": 350,
+      "desc": "Habilita medições elétricas econômicas nas missões. Sem ele, teste pode ser alugado."
+    },
+    {
+      "id": "scanner",
+      "group": "tool",
+      "name": "Interface de diagnóstico simulada",
+      "price": 480,
+      "desc": "Desconto no uso do terminal ECM e registros. Não se conecta a equipamentos reais."
+    },
+    {
+      "id": "osciloscopio",
+      "group": "tool",
+      "name": "Osciloscópio de treinamento",
+      "price": 700,
+      "desc": "Permite observar sinal, PWM e frequência com baixo custo por teste."
+    },
+    {
+      "id": "kit_rede_ferr",
+      "group": "tool",
+      "name": "Kit para análise de CAN",
+      "price": 570,
+      "desc": "Terminadores didáticos e instrumentos para rede desenergizada."
+    },
+    {
+      "id": "manometro",
+      "group": "tool",
+      "name": "Manômetro / termômetro independente",
+      "price": 420,
+      "desc": "Compara indicação eletrônica com grandeza física no simulador."
+    },
+    {
+      "id": "kit_conect",
+      "group": "tool",
+      "name": "Ferramenta de inspeção de terminais",
+      "price": 240,
+      "desc": "Melhora custo de inspeções de conectores e chicotes."
+    },
+    {
+      "id": "kit_sensor",
+      "group": "part",
+      "name": "Sensor eletrônico sobressalente",
+      "price": 410,
+      "desc": "Usado apenas quando substituição do sensor é sustentada."
+    },
+    {
+      "id": "kit_atuador",
+      "group": "part",
+      "name": "Bobina / solenoide sobressalente",
+      "price": 520,
+      "desc": "Usado quando a bobina está comprovadamente defeituosa."
+    },
+    {
+      "id": "kit_alvo",
+      "group": "part",
+      "name": "Alvo mecânico / roda fônica",
+      "price": 620,
+      "desc": "Para dano comprovado em elemento de leitura mecânico."
+    },
+    {
+      "id": "kit_rede",
+      "group": "part",
+      "name": "Conjunto de terminação de rede",
+      "price": 260,
+      "desc": "Sobressalente para falha diagnosticada na terminação."
+    },
+    {
+      "id": "kit_ajuste",
+      "group": "part",
+      "name": "Kit de reparo e calibração",
+      "price": 230,
+      "desc": "Reparos locais e montagem. Não é licença OEM."
+    },
+    {
+      "id": "ecm",
+      "group": "part",
+      "name": "Módulo ECM recondicionado (fictício)",
+      "price": 3800,
+      "desc": "Altíssimo custo. Condenar sem evidência gera penalidade severa."
+    },
+    {
+      "id": "credito_teste",
+      "group": "service",
+      "name": "Pacote de 3 testes adicionais",
+      "price": 200,
+      "desc": "Créditos para consultas, instrumentos e testes virtuais; missão nunca fica bloqueada por compra."
+    }
+  ]
+}

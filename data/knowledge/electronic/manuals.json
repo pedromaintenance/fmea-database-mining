@@ -1,0 +1,192 @@
+{
+  "schema": "fmea-mining.knowledge.v1",
+  "version": "1.1.0",
+  "kind": "manuals_original",
+  "provenance": {
+    "repository": "pedromaintenance/porcaria-codigos-de-falha",
+    "originalPath": "js/data.js",
+    "blobSha": "c605b4a80323641e73bc2f64513f1266f3356377",
+    "sourceVersion": "1.0.0",
+    "evidenceNature": "simulated",
+    "effectiveModelConfirmed": false
+  },
+  "description": "22 textos didaticos autorais do repositorio de origem",
+  "records": [
+    {
+      "id": "fundamentos",
+      "title": "Código não é peça",
+      "subtitle": "Entenda a diferença entre sintoma, evento e falha eletrônica.",
+      "body": "Toda leitura de ECM precisa ser correlacionada com o sintoma observado, histórico e testes independentes. MID identifica o módulo na nomenclatura Caterpillar; CID identifica o componente/circuito; FMI descreve o tipo de falha detectada. No J1939, SPN identifica o parâmetro e FMI o modo de falha. Um DTC restringe hipóteses, mas não prova sozinho que uma peça falhou.\n\nROTEIRO DE RACIOCÍNIO\nClassifique primeiro a mensagem: falha elétrica, desempenho da função, condição física ou comunicação. Uma mesma peça pode gerar tanto evento de proteção quanto erro de circuito, com diferentes prioridades.\n\nERRO A EVITAR\nPense em ordem causal: alimentação do módulo, informação recebida, lógica de controle e resposta do sistema. Um código registrado depois da parada pode ser consequência, não causa.",
+      "source": "cat_method",
+      "price": 0
+    },
+    {
+      "id": "fmi",
+      "title": "Como ler o FMI",
+      "subtitle": "Interprete 0 a 21 e 31 sem confundir condição e defeito.",
+      "body": "FMI 03 sugere tensão alta no circuito; FMI 04 sugere tensão baixa; 05 corrente baixa/circuito aberto; 06 corrente alta/possível curto; 08 frequência/período anormal; 09 ausência de atualização; 13 falta de calibração. FMI 0/1/15/16/17/18 sinalizam grandeza real fora de faixa em diferentes gravidades. Os limites dependem da aplicação.\n\nROTEIRO DE RACIOCÍNIO\nPara FMI 03/04, descubra a topologia da entrada: pull-up, pull-down, fonte de referência e tipo de sensor mudam a interpretação. Para FMI 05/06, foque comando de saída e corrente efetiva.\n\nERRO A EVITAR\nA classificação de severidade do FMI não substitui avaliação de risco da máquina: determine funções bloqueadas, condição real do parâmetro e reação programada no ECM.",
+      "source": "cat_training",
+      "price": 0
+    },
+    {
+      "id": "cdl",
+      "title": "CDL: MID, CID e FMI",
+      "subtitle": "O trio na família Caterpillar.",
+      "body": "Registre os três campos completos, versão de software e serial antes de procurar uma tabela. O mesmo CID em ECMs diferentes pode exigir interpretação/procedimento distintos; parte de códigos de componente aparece também em tabelas de outros fabricantes. Use a documentação efetiva da máquina.\n\nROTEIRO DE RACIOCÍNIO\nO caminho CID/FMI é incompleto se você omitir o módulo que emitiu o código. Registre pelo menos código completo, ECM, família, software e ocorrência ativa/registrada.\n\nERRO A EVITAR\nAo cruzar compilações, se dois documentos divergirem, prevalece o documento OEM válido para o número de série e a revisão do controlador. O gabarito deste jogo sempre indica sua fonte.",
+      "source": "cat_sis",
+      "price": 0
+    },
+    {
+      "id": "j1939",
+      "title": "J1939: SPN, FMI, OC e DM1",
+      "subtitle": "Como diagnosticar redes pesadas.",
+      "body": "Um DTC J1939 inclui SPN, FMI, contagem de ocorrências (OC) e método de conversão. DM1 comunica DTCs ativos e luzes; DM2 concentra DTCs previamente ativos, quando suportado. PGN identifica o grupo da mensagem, source address identifica quem enviou. Não confunda SPN com MID nem com CID.\n\nROTEIRO DE RACIOCÍNIO\nDM1 é diagnóstico ativo; o sistema pode comunicar códigos com SPN, FMI e contagem por endereço de origem. Uma mesma rede tem diversos controladores e os códigos podem aparecer em módulos diferentes.\n\nERRO A EVITAR\nSe vários controladores registram falta de mensagens de um mesmo nó, investigue alimentação, terminação e conectividade do nó transmissor antes de condenar sensores aparentemente independentes.",
+      "source": "css_dm",
+      "price": 0
+    },
+    {
+      "id": "eventos",
+      "title": "Eventos não são sensores condenados",
+      "subtitle": "Quando E360/E361 revelam uma condição operacional.",
+      "body": "Eventos de pressão ou temperatura requerem investigação do estado físico do equipamento. Um sensor pode medir corretamente uma condição perigosa: trocar o sensor não corrige a causa. Compare instrumento independente, condições de carga, fluido, fluxo, histórico e ações de proteção. Em situação grave, a condição segura tem prioridade.\n\nROTEIRO DE RACIOCÍNIO\nUma indicação de baixa pressão do óleo requer comparar condição física, nível, viscosidade adequada, histórico operacional e instrumento independente conforme procedimento seguro. Nunca deixe motor girando somente para reproduzir evento severo.\n\nERRO A EVITAR\nApós reparo, valide temperatura/pressão em condição controlada e documente o efeito; apagar EID não garante que a condição física deixou de existir.",
+      "source": "cat_event",
+      "price": 220
+    },
+    {
+      "id": "et",
+      "title": "Fluxo de leitura em Cat ET",
+      "subtitle": "Ativos, registrados, eventos e parâmetros.",
+      "body": "A ferramenta permite visualizar códigos e eventos ativos/registrados e parâmetros atuais, executar testes autorizados e registrar o estado do produto. Salvar o relatório antes de apagar código é indispensável para preservar evidência. Esta interface do jogo é original e simulada; não é o Cat ET.\n\nROTEIRO DE RACIOCÍNIO\nAntes de limpar registros, salve relatório de condição. Agrupe códigos por ECM e ordene primeiro/último registro, frequência, estado atual e contexto do operador.\n\nERRO A EVITAR\nTestes como corte de cilindro, solenoide e calibração são específicos da aplicação e devem ser executados apenas por pessoas qualificadas e conforme literatura oficial vigente.",
+      "source": "cat_status",
+      "price": 140
+    },
+    {
+      "id": "inspecao",
+      "title": "Inspeção elétrica segura",
+      "subtitle": "Antes do multímetro, conheça o circuito.",
+      "body": "Identifique fontes de energia e siga as regras de bloqueio. Inspecione conectores, oxidação, travamento, pinos recuados, abraçadeiras e abrasão. Medidas de continuidade e resistência devem ser feitas com circuito na condição segura prevista pelo fabricante; não aplique testes cegos em ECM energizado.\n\nROTEIRO DE RACIOCÍNIO\nObserve travamento de terminal, poeira, umidade, aquecimento, vibração, abrasão e suporte de chicote. Fotos antes de movimentar ou limpar conectores preservam evidências.\n\nERRO A EVITAR\nNunca teste continuidade em circuito energizado sem procedimento aprovado. Não crie curto com pontas de prova; alta energia e sistemas de direção/freio exigem controles específicos de segurança.",
+      "source": "cat_method",
+      "price": 160
+    },
+    {
+      "id": "sensores",
+      "title": "Diagnóstico de entradas",
+      "subtitle": "Alimentação, terra, sinal e comportamento.",
+      "body": "Um sinal elevado pode resultar de circuito aberto em entradas com pull-up, de curto para tensão ou de defeito do sensor. Meça conforme a topologia do circuito, compare grandeza física independente e registre variação por vibração, calor e umidade.\n\nROTEIRO DE RACIOCÍNIO\nSepare três perguntas: o fenômeno físico ocorreu? A alimentação e referência estão presentes? A saída do sensor corresponde à grandeza medida por outro método?\n\nERRO A EVITAR\nO sensor pode estar correto e a máquina com falha real. Um fio rompido pode parecer sobre-tensão pela lógica de pull-up do ECM; valores absolutos de tensão dependem do esquema.",
+      "source": "cat_mss",
+      "price": 180
+    },
+    {
+      "id": "solenoides",
+      "title": "Diagnóstico de saídas",
+      "subtitle": "Bobinas, chicotes, terminais e comandos.",
+      "body": "FMI 05 costuma indicar corrente baixa; as hipóteses incluem circuito aberto na bobina, fio interrompido ou terminal com alta resistência. FMI 06 aponta corrente elevada/curto conforme controlador. Teste bobina e chicote separadamente sob procedimento autorizado; não condene ECM primeiro.\n\nROTEIRO DE RACIOCÍNIO\nProcure comando elétrico, circuito contínuo, resistência de bobina, condição do conector e ação hidráulica/mecânica. Diferencie problema de circuito de uma válvula travada fisicamente.\n\nERRO A EVITAR\nNão substitua uma válvula inteira quando defeito comprovado é um terminal. Também não mantenha uma bobina aberta quando medida no procedimento seguro e validada a avaria.",
+      "source": "cat_training",
+      "price": 200
+    },
+    {
+      "id": "can",
+      "title": "Barramento CAN",
+      "subtitle": "Terminação, alimentação e silêncio dos módulos.",
+      "body": "FMI 09 é ausência/anormalidade de atualização, não afirma automaticamente que a rede inteira foi rompida. Avalie qual módulo deixou de transmitir, sua alimentação, terminadores e chicote. Resistências e tensões de referência dependem de arquitetura, conectividade e procedimento OEM.\n\nROTEIRO DE RACIOCÍNIO\nO diagnóstico começa pelo mapa de rede e pelos módulos que perderam comunicação. Inspecione alimentação, massa, terminadores e ramificações, correlacionando quais mensagens desapareceram.\n\nERRO A EVITAR\nNão aplique um valor genérico de resistência à rede sem conhecer a arquitetura, dispositivos ligados e condição de medição. J1939 CAN e Cat Data Link não são sinônimos.",
+      "source": "css_guide",
+      "price": 220
+    },
+    {
+      "id": "ocorrencias",
+      "title": "Ativo versus registrado",
+      "subtitle": "Rastreamento temporal e reincidência.",
+      "body": "Um código registrado pode ser histórico e não atual. Registre primeira e última ocorrência, frequências, horas, carga, ocorrências simultâneas e sequência de ativação. Não apague códigos antes de documentá-los e não substitua peças baseado somente em código antigo.\n\nROTEIRO DE RACIOCÍNIO\nCódigo ativo: presente agora, conforme a condição de detecção do ECM. Registrado: ocorreu anteriormente; pode ou não continuar relevante. Mais ocorrências não equivalem necessariamente a maior gravidade.\n\nERRO A EVITAR\nDocumente o contexto de carga, horímetro, primeiro/último registro e intervenções recentes. O apagamento antes do registro é uma falha de método e destrói pistas.",
+      "source": "cat_status",
+      "price": 140
+    },
+    {
+      "id": "derate",
+      "title": "Proteção, derate e shutdown",
+      "subtitle": "Como diferenciar severidade.",
+      "body": "Eventos severos podem exigir interrupção imediata e encaminhamento ao procedimento oficial. O jogo premia isolar e investigar anomalias críticas, mesmo quando isso reduz disponibilidade imediata. Nunca use missão como autorização de liberação.\n\nROTEIRO DE RACIOCÍNIO\nDerate pode proteger o equipamento por redução de potência; shutdown é estratégia de proteção mais severa. Ambos exigem investigação causal e decisão segura.\n\nERRO A EVITAR\nUm desarme de pressão lubrificante não se trata como simples alerta de produtividade. A primeira obrigação é garantir condição segura, preservar pessoas e ativos e comunicar responsáveis.",
+      "source": "cat_event",
+      "price": 160
+    },
+    {
+      "id": "calibracao",
+      "title": "FMI 13 e pós-reparo",
+      "subtitle": "Aprendizagem e referência mecânica.",
+      "body": "FMI 13 geralmente indica fora de calibração. Confirme posição neutra, alimentação, montagem correta e efetividade da rotina; após troca de componente ou software o controlador pode requerer calibração autorizada. Não ajuste parâmetros reais a partir de exemplos didáticos.\n\nROTEIRO DE RACIOCÍNIO\nFMI 13 não autoriza calibrar às cegas. Confirme a integridade do sensor, referência mecânica, condições de implementação e necessidade de ferramentas/licença autorizadas.\n\nERRO A EVITAR\nNão use valores de calibração de máquinas diferentes. Registre dados anteriores quando possível, execute rotina validada e confirme comportamento de cada comando após intervenção.",
+      "source": "danfoss_joy",
+      "price": 180
+    },
+    {
+      "id": "direcao",
+      "title": "Direção eletro-hidráulica",
+      "subtitle": "Exemplos oficiais da Danfoss.",
+      "body": "O manual PVED-CL mostra SPN 627 para alimentação e SPN 1079 para alimentação de sensores, ambos com FMI 3/4 conforme condição. Esses exemplos se aplicam ao controlador específico, e não diretamente a todas as máquinas do jogo.\n\nROTEIRO DE RACIOCÍNIO\nNo PVED-CL, a tabela SPN 627/FMI 3 ou 4 se relaciona ao limite de alimentação; SPN 1079 trata da fonte para sensores. Esses mapeamentos pertencem ao módulo específico.\n\nERRO A EVITAR\nAo investigar direção, o risco operacional e a energia hidráulica são prioritários. Um alerta não deve ser normalizado sem investigar comando, alimentação e resposta real.",
+      "source": "danfoss_steer",
+      "price": 200
+    },
+    {
+      "id": "joystick",
+      "title": "Joysticks J1939",
+      "subtitle": "Sinais e redundância.",
+      "body": "A documentação Danfoss JS1 associa eixos a SPNs, incluindo 2660 (eixo X), com FMIs 3/4 para tensão e 13 para calibração. Outros fabricantes podem usar números e estruturas diferentes.\n\nROTEIRO DE RACIOCÍNIO\nSPN 2660 foi usado no material Danfoss JS1 para o eixo X. Outros eixos recebem identificadores próprios; a mesma numeração não deve ser transportada para outro controle.\n\nERRO A EVITAR\nComparar sinais redundantes, referência neutra e consistência do movimento é mais robusto do que confiar em uma leitura única. Calibração deve respeitar estado mecânico e eletroeletrônico.",
+      "source": "danfoss_joy",
+      "price": 220
+    },
+    {
+      "id": "diesel",
+      "title": "Falhas de motores eletrônicos",
+      "subtitle": "Acompanhe grandezas e interpretação.",
+      "body": "Motores eletrônicos podem relatar pressão de lubrificação baixa, temperatura alta, perda de pressão de admissão ou velocidade instável. Busque correlacionar registros de ECM com teste independente, condição de operação, histórico e procedimentos da aplicação. A lista DEUTZ MD1 é específica para aquele controle.\n\nROTEIRO DE RACIOCÍNIO\nPressão do óleo, temperatura de arrefecimento, pressão de admissão e velocidade de rotação têm instrumentos de comparação específicos. DTC eletrônico é uma fonte de evidência, não medição independente por si só.\n\nERRO A EVITAR\nO controle de emissões, dados de CAN e a versão de ECM podem alterar códigos disponíveis. Evite equivalências não verificadas entre motores Cummins, Perkins, CAT e DEUTZ.",
+      "source": "deutz_list",
+      "price": 140
+    },
+    {
+      "id": "metodo",
+      "title": "Roteiro diagnóstico fundamentado",
+      "subtitle": "Um método que serve para várias plataformas.",
+      "body": "1) Segurança e criticidade. 2) Identificar equipamento, ECM, software e tipo do código. 3) Registrar ativo/registrado e contexto. 4) Estudar esquema. 5) Reproduzir sob condições seguras. 6) Inspecionar primeiro o simples. 7) Medir e comparar grandezas. 8) Corrigir causa sustentada. 9) Validar teste pós-serviço. 10) Registrar evidências.\n\nROTEIRO DE RACIOCÍNIO\nUse uma árvore estruturada: sintoma > evidências existentes > hipóteses discrimináveis > teste menos invasivo > medição independente > intervenção > validação.\n\nERRO A EVITAR\nPlaneje testes que excluam causas concorrentes. Um teste que apenas confirma o código ativo e não diferencia sensor, chicote e defeito real produz pouca informação.",
+      "source": "cat_method",
+      "price": 160
+    },
+    {
+      "id": "falso",
+      "title": "Falsos positivos e alarmes múltiplos",
+      "subtitle": "Não troque cinco sensores por uma alimentação comum.",
+      "body": "Falhas simultâneas de diversos sensores podem ter uma origem compartilhada, como fonte regulada, massa, cabo comum, rede ou alimentação do ECM. É preciso analisar a cronologia e buscar o primeiro evento, não assumir causalidade pela quantidade de códigos.\n\nROTEIRO DE RACIOCÍNIO\nQuando vários códigos aparecem próximos no tempo, procure primeiro um evento comum: alimentação regulada, conectores compartilhados, terra, módulo principal e barramento.\n\nERRO A EVITAR\nDepois de corrigir possível causa comum, observe se os códigos secundários desaparecem sob condições verificáveis; evite trocar em cascata componentes sem evidência individual.",
+      "source": "danfoss_steer",
+      "price": 180
+    },
+    {
+      "id": "rastreio",
+      "title": "Relatório técnico",
+      "subtitle": "O que deve ficar no histórico.",
+      "body": "Descreva sintoma, condição, código completo, ECM, status, contexto, teste e resultado, hipótese confirmada ou pendente, peça realmente avariada, intervenção, teste de validação e risco residual. A causa raiz só é confirmada quando existem evidências adequadas.\n\nROTEIRO DE RACIOCÍNIO\nUm laudo útil descreve o que era conhecido antes do teste, o que mudou, a evidência que justificou substituir ou manter e o teste de aceitação.\n\nERRO A EVITAR\nO relatório deve separar hipótese inicial de causa confirmada. Sempre inclua limitações e pendências quando a inspeção não bastar.",
+      "source": "cat_method",
+      "price": 200
+    },
+    {
+      "id": "referencias",
+      "title": "Fontes primárias versus índices",
+      "subtitle": "Como ler o catálogo deste jogo.",
+      "body": "OEMs e normas são a fonte de validação técnica por modelo/serial. Compilações públicas ajudam a descobrir o significado inicial de um código, mas podem misturar plataformas e revisões. Nunca atribua a mesma trinca a toda a frota sem conferir a efetividade.\n\nROTEIRO DE RACIOCÍNIO\nFontes OEM são as mais adequadas para limites, pinagem, medições e procedimentos por número de série. Compilações de terceiros ajudam na pesquisa inicial, mas podem misturar uma grande variedade de ECMs.\n\nERRO A EVITAR\nSe você não tem acesso à documentação aplicável, a solução correta é solicitar literatura ou apoio técnico, não estimar parâmetros críticos a partir de material genérico.",
+      "source": "cat_sis",
+      "price": 220
+    },
+    {
+      "id": "sandvik",
+      "title": "Diagnóstico em perfuratrizes Sandvik",
+      "subtitle": "CAN, módulos e relatório de alarmes sem códigos inventados.",
+      "body": "Soluções Sandvik utilizam monitoramento de sensores, relatórios de alarmes, status de módulos CAN e interfaces próprias. Não foi encontrada tabela pública confiável específica de DR410i/DI650i. Uma missão genérica J1939 em perfuratriz fictícia não equivale ao sistema proprietário dessas máquinas.\n\nROTEIRO DE RACIOCÍNIO\nMonitores inteligentes podem fornecer alarmes, medidas de sensores e estado dos módulos, mas nem sempre há tabelas públicas de codificação para cada máquina.\n\nERRO A EVITAR\nPara diagnóstico específico de DR410i/DI650i, obter o manual efetivo do controle e o software da máquina, além do histórico dos alarmes, é requisito antes de montar missão com código proprietário.",
+      "source": "sandvik_hm",
+      "price": 140
+    },
+    {
+      "id": "cummins",
+      "title": "Diagnóstico assistido Cummins",
+      "subtitle": "INSITE, Guidanz e priorização de múltiplos códigos.",
+      "body": "Guidanz disponibiliza leitura J1939 e análise imediata; INSITE documenta agrupamentos de códigos primários e relacionados. A priorização importa: uma falha de alimentação/rede pode produzir códigos secundários. Não transplante códigos Cummins para controladores de outra marca.\n\nROTEIRO DE RACIOCÍNIO\nFerramentas de leitura de motor diferenciam códigos primários, secundários e ocorrências históricas. Agrupar falhas por contexto reduz substituições por tentativa.\n\nERRO A EVITAR\nO sistema Cummins Guidanz oferece priorização de códigos e relatórios de avaliação; a licença, ECM e especificação do motor determinam funções disponíveis.",
+      "source": "cummins_guidanz",
+      "price": 160
+    }
+  ]
+}

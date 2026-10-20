@@ -1,0 +1,394 @@
+{
+  "schema": "fmea-mining.knowledge.v1",
+  "version": "1.1.0",
+  "kind": "code_index_original",
+  "provenance": {
+    "repository": "pedromaintenance/porcaria-codigos-de-falha",
+    "originalPath": "js/data.js",
+    "blobSha": "c605b4a80323641e73bc2f64513f1266f3356377",
+    "sourceVersion": "1.0.0",
+    "evidenceNature": "simulated",
+    "effectiveModelConfirmed": false
+  },
+  "description": "54 entradas, exemplos publicos nao validam aplicabilidade universal",
+  "records": [
+    {
+      "kind": "FMI",
+      "code": "0",
+      "title": "Dado válido acima do limite — gravidade máxima",
+      "source": "clue_fmi",
+      "note": "Definição resumida; consultar SAE J1939-73 e documentação OEM."
+    },
+    {
+      "kind": "FMI",
+      "code": "1",
+      "title": "Dado válido abaixo do limite — gravidade máxima",
+      "source": "clue_fmi",
+      "note": "Definição resumida; consultar SAE J1939-73 e documentação OEM."
+    },
+    {
+      "kind": "FMI",
+      "code": "2",
+      "title": "Dado errático, intermitente ou incorreto",
+      "source": "clue_fmi",
+      "note": "Definição resumida; consultar SAE J1939-73 e documentação OEM."
+    },
+    {
+      "kind": "FMI",
+      "code": "3",
+      "title": "Tensão acima do normal ou curto para positivo",
+      "source": "clue_fmi",
+      "note": "Definição resumida; consultar SAE J1939-73 e documentação OEM."
+    },
+    {
+      "kind": "FMI",
+      "code": "4",
+      "title": "Tensão abaixo do normal ou curto para baixo",
+      "source": "clue_fmi",
+      "note": "Definição resumida; consultar SAE J1939-73 e documentação OEM."
+    },
+    {
+      "kind": "FMI",
+      "code": "5",
+      "title": "Corrente abaixo do normal ou circuito aberto",
+      "source": "clue_fmi",
+      "note": "Definição resumida; consultar SAE J1939-73 e documentação OEM."
+    },
+    {
+      "kind": "FMI",
+      "code": "6",
+      "title": "Corrente acima do normal ou curto para terra",
+      "source": "clue_fmi",
+      "note": "Definição resumida; consultar SAE J1939-73 e documentação OEM."
+    },
+    {
+      "kind": "FMI",
+      "code": "7",
+      "title": "Sistema mecânico não responde adequadamente",
+      "source": "clue_fmi",
+      "note": "Definição resumida; consultar SAE J1939-73 e documentação OEM."
+    },
+    {
+      "kind": "FMI",
+      "code": "8",
+      "title": "Frequência, largura de pulso ou período anormal",
+      "source": "clue_fmi",
+      "note": "Definição resumida; consultar SAE J1939-73 e documentação OEM."
+    },
+    {
+      "kind": "FMI",
+      "code": "9",
+      "title": "Atualização de dados anormal / mensagem ausente",
+      "source": "clue_fmi",
+      "note": "Definição resumida; consultar SAE J1939-73 e documentação OEM."
+    },
+    {
+      "kind": "FMI",
+      "code": "10",
+      "title": "Taxa de mudança anormal",
+      "source": "clue_fmi",
+      "note": "Definição resumida; consultar SAE J1939-73 e documentação OEM."
+    },
+    {
+      "kind": "FMI",
+      "code": "11",
+      "title": "Modo de falha não identificado / outro",
+      "source": "clue_fmi",
+      "note": "Definição resumida; consultar SAE J1939-73 e documentação OEM."
+    },
+    {
+      "kind": "FMI",
+      "code": "12",
+      "title": "Dispositivo ou componente defeituoso",
+      "source": "clue_fmi",
+      "note": "Definição resumida; consultar SAE J1939-73 e documentação OEM."
+    },
+    {
+      "kind": "FMI",
+      "code": "13",
+      "title": "Fora de calibração",
+      "source": "clue_fmi",
+      "note": "Definição resumida; consultar SAE J1939-73 e documentação OEM."
+    },
+    {
+      "kind": "FMI",
+      "code": "14",
+      "title": "Instruções especiais",
+      "source": "clue_fmi",
+      "note": "Definição resumida; consultar SAE J1939-73 e documentação OEM."
+    },
+    {
+      "kind": "FMI",
+      "code": "15",
+      "title": "Dado válido acima do limite — baixa gravidade",
+      "source": "clue_fmi",
+      "note": "Definição resumida; consultar SAE J1939-73 e documentação OEM."
+    },
+    {
+      "kind": "FMI",
+      "code": "16",
+      "title": "Dado válido acima do limite — gravidade moderada",
+      "source": "clue_fmi",
+      "note": "Definição resumida; consultar SAE J1939-73 e documentação OEM."
+    },
+    {
+      "kind": "FMI",
+      "code": "17",
+      "title": "Dado válido abaixo do limite — baixa gravidade",
+      "source": "clue_fmi",
+      "note": "Definição resumida; consultar SAE J1939-73 e documentação OEM."
+    },
+    {
+      "kind": "FMI",
+      "code": "18",
+      "title": "Dado válido abaixo do limite — gravidade moderada",
+      "source": "clue_fmi",
+      "note": "Definição resumida; consultar SAE J1939-73 e documentação OEM."
+    },
+    {
+      "kind": "FMI",
+      "code": "19",
+      "title": "Erro nos dados recebidos pela rede",
+      "source": "clue_fmi",
+      "note": "Definição resumida; consultar SAE J1939-73 e documentação OEM."
+    },
+    {
+      "kind": "FMI",
+      "code": "20",
+      "title": "Dado desviou acima",
+      "source": "clue_fmi",
+      "note": "Definição resumida; consultar SAE J1939-73 e documentação OEM."
+    },
+    {
+      "kind": "FMI",
+      "code": "21",
+      "title": "Dado desviou abaixo",
+      "source": "clue_fmi",
+      "note": "Definição resumida; consultar SAE J1939-73 e documentação OEM."
+    },
+    {
+      "kind": "FMI",
+      "code": "31",
+      "title": "Condição existente / indicação especial de fabricante",
+      "source": "clue_fmi",
+      "note": "Definição resumida; consultar SAE J1939-73 e documentação OEM."
+    },
+    {
+      "kind": "CAT",
+      "code": "MID 390 · CID 0168 · FMI 04",
+      "title": "Tensão geral de alimentação abaixo do normal",
+      "source": "clue_combo",
+      "note": "Associação ilustrativa de publicação/catálogo indicado. Confirmar efetividade OEM por ECM, modelo, série e software."
+    },
+    {
+      "kind": "CAT",
+      "code": "MID 272 · CID 0168 · FMI 03",
+      "title": "Tensão de sistema acima do normal",
+      "source": "clue_combo",
+      "note": "Associação ilustrativa de publicação/catálogo indicado. Confirmar efetividade OEM por ECM, modelo, série e software."
+    },
+    {
+      "kind": "CAT",
+      "code": "MID 036 · CID 0100 · FMI 04",
+      "title": "Sinal do sensor de pressão do óleo do motor em baixa tensão",
+      "source": "clue_combo",
+      "note": "Associação ilustrativa de publicação/catálogo indicado. Confirmar efetividade OEM por ECM, modelo, série e software."
+    },
+    {
+      "kind": "CAT",
+      "code": "MID 263 · CID 0274 · FMI 03",
+      "title": "Sensor de pressão atmosférica, tensão acima do normal",
+      "source": "clue_combo",
+      "note": "Associação ilustrativa de publicação/catálogo indicado. Confirmar efetividade OEM por ECM, modelo, série e software."
+    },
+    {
+      "kind": "CAT",
+      "code": "MID 389 · CID 0585 · FMI 08",
+      "title": "Sensor de velocidade de saída da transmissão com frequência anormal",
+      "source": "clue_combo",
+      "note": "Associação ilustrativa de publicação/catálogo indicado. Confirmar efetividade OEM por ECM, modelo, série e software."
+    },
+    {
+      "kind": "CAT",
+      "code": "MID 390 · CID 1402 · FMI 05",
+      "title": "Circuito do solenoide da transmissão com corrente abaixo",
+      "source": "clue_combo",
+      "note": "Associação ilustrativa de publicação/catálogo indicado. Confirmar efetividade OEM por ECM, modelo, série e software."
+    },
+    {
+      "kind": "CAT",
+      "code": "MID 299 · CID 1143 · FMI 05",
+      "title": "Solenoide de giro à direita com corrente abaixo",
+      "source": "clue_combo",
+      "note": "Associação ilustrativa de publicação/catálogo indicado. Confirmar efetividade OEM por ECM, modelo, série e software."
+    },
+    {
+      "kind": "CAT",
+      "code": "MID 299 · CID 1598 · FMI 05",
+      "title": "Solenoide da válvula de implemento, corrente abaixo",
+      "source": "clue_combo",
+      "note": "Associação ilustrativa de publicação/catálogo indicado. Confirmar efetividade OEM por ECM, modelo, série e software."
+    },
+    {
+      "kind": "CAT",
+      "code": "MID 082 · CID 0430 · FMI 03",
+      "title": "Sensor de pressão de direção com tensão acima",
+      "source": "clue_combo",
+      "note": "Associação ilustrativa de publicação/catálogo indicado. Confirmar efetividade OEM por ECM, modelo, série e software."
+    },
+    {
+      "kind": "CAT",
+      "code": "MID 116 · CID 2201 · FMI 08",
+      "title": "Sinal de posição do cilindro de direção com frequência anormal",
+      "source": "clue_combo",
+      "note": "Associação ilustrativa de publicação/catálogo indicado. Confirmar efetividade OEM por ECM, modelo, série e software."
+    },
+    {
+      "kind": "CAT",
+      "code": "MID 299 · CID 2994 · FMI 08",
+      "title": "Sensor do seletor de direção com frequência anormal",
+      "source": "clue_combo",
+      "note": "Associação ilustrativa de publicação/catálogo indicado. Confirmar efetividade OEM por ECM, modelo, série e software."
+    },
+    {
+      "kind": "CAT",
+      "code": "MID 390 · CID 2671 · FMI 05",
+      "title": "Solenoide de embreagem do ar-condicionado com corrente abaixo",
+      "source": "clue_combo",
+      "note": "Associação ilustrativa de publicação/catálogo indicado. Confirmar efetividade OEM por ECM, modelo, série e software."
+    },
+    {
+      "kind": "CAT",
+      "code": "MID 464 · CID 0247 · FMI 09",
+      "title": "J1939: taxa anormal de atualização",
+      "source": "clue_combo",
+      "note": "Associação ilustrativa de publicação/catálogo indicado. Confirmar efetividade OEM por ECM, modelo, série e software."
+    },
+    {
+      "kind": "J1939",
+      "code": "SPN 100 · FMI 18",
+      "title": "Pressão real de óleo do motor baixa — severidade moderada",
+      "source": "cat_code",
+      "note": "Associação ilustrativa de publicação/catálogo indicado. Confirmar efetividade OEM por ECM, modelo, série e software."
+    },
+    {
+      "kind": "J1939",
+      "code": "SPN 100 · FMI 01",
+      "title": "Pressão real de óleo do motor muito baixa",
+      "source": "cat_code",
+      "note": "Associação ilustrativa de publicação/catálogo indicado. Confirmar efetividade OEM por ECM, modelo, série e software."
+    },
+    {
+      "kind": "J1939",
+      "code": "SPN 110 · FMI 16",
+      "title": "Temperatura do arrefecimento alta, moderada",
+      "source": "cat_code",
+      "note": "Associação ilustrativa de publicação/catálogo indicado. Confirmar efetividade OEM por ECM, modelo, série e software."
+    },
+    {
+      "kind": "J1939",
+      "code": "SPN 102 · FMI 18",
+      "title": "Pressão do coletor de admissão baixa, moderada",
+      "source": "cat_code",
+      "note": "Associação ilustrativa de publicação/catálogo indicado. Confirmar efetividade OEM por ECM, modelo, série e software."
+    },
+    {
+      "kind": "J1939",
+      "code": "SPN 105 · FMI 15",
+      "title": "Temperatura do coletor de admissão acima do normal",
+      "source": "cat_code",
+      "note": "Associação ilustrativa de publicação/catálogo indicado. Confirmar efetividade OEM por ECM, modelo, série e software."
+    },
+    {
+      "kind": "J1939",
+      "code": "SPN 101 · FMI 16",
+      "title": "Pressão do cárter elevada, moderada",
+      "source": "cat_code",
+      "note": "Associação ilustrativa de publicação/catálogo indicado. Confirmar efetividade OEM por ECM, modelo, série e software."
+    },
+    {
+      "kind": "J1939",
+      "code": "SPN 190 · FMI 02",
+      "title": "Rotação do motor com dado errático",
+      "source": "deutz_pdf",
+      "note": "Associação ilustrativa de publicação/catálogo indicado. Confirmar efetividade OEM por ECM, modelo, série e software."
+    },
+    {
+      "kind": "J1939",
+      "code": "SPN 627 · FMI 04",
+      "title": "Fonte de alimentação do controlador abaixo do limite",
+      "source": "danfoss_steer",
+      "note": "Associação ilustrativa de publicação/catálogo indicado. Confirmar efetividade OEM por ECM, modelo, série e software."
+    },
+    {
+      "kind": "J1939",
+      "code": "SPN 1079 · FMI 04",
+      "title": "Alimentação de sensor abaixo do limite",
+      "source": "danfoss_steer",
+      "note": "Associação ilustrativa de publicação/catálogo indicado. Confirmar efetividade OEM por ECM, modelo, série e software."
+    },
+    {
+      "kind": "J1939",
+      "code": "SPN 2660 · FMI 03",
+      "title": "Eixo X do joystick, tensão acima",
+      "source": "danfoss_joy",
+      "note": "Associação ilustrativa de publicação/catálogo indicado. Confirmar efetividade OEM por ECM, modelo, série e software."
+    },
+    {
+      "kind": "J1939",
+      "code": "SPN 2660 · FMI 13",
+      "title": "Eixo X do joystick fora de calibração",
+      "source": "danfoss_joy",
+      "note": "Associação ilustrativa de publicação/catálogo indicado. Confirmar efetividade OEM por ECM, modelo, série e software."
+    },
+    {
+      "kind": "Adicional",
+      "code": "E360 (3)",
+      "title": "Pressão de óleo baixa — gravidade máxima",
+      "source": "cat_event",
+      "note": "Referência dependente da plataforma indicada; não generalizar."
+    },
+    {
+      "kind": "Adicional",
+      "code": "E361 (2)",
+      "title": "Temperatura do arrefecimento alta — moderada",
+      "source": "cat_event",
+      "note": "Referência dependente da plataforma indicada; não generalizar."
+    },
+    {
+      "kind": "Adicional",
+      "code": "E362 (3)",
+      "title": "Excesso de rotação — severo",
+      "source": "cat_event",
+      "note": "Referência dependente da plataforma indicada; não generalizar."
+    },
+    {
+      "kind": "Adicional",
+      "code": "P119E / SPN 190 FMI 2",
+      "title": "Rotação do motor errática em controle DEUTZ MD1",
+      "source": "deutz_pdf",
+      "note": "Referência dependente da plataforma indicada; não generalizar."
+    },
+    {
+      "kind": "Adicional",
+      "code": "SPN 614 FMI 14",
+      "title": "Posicionamento/carretel de direção: falha especial PVED-CL",
+      "source": "danfoss_steer",
+      "note": "Referência dependente da plataforma indicada; não generalizar."
+    },
+    {
+      "kind": "Adicional",
+      "code": "SPN 2661 FMI 4",
+      "title": "Joystick JS1 eixo Y: tensão abaixo",
+      "source": "danfoss_joy",
+      "note": "Referência dependente da plataforma indicada; não generalizar."
+    },
+    {
+      "kind": "Adicional",
+      "code": "SPN 2660 FMI 14",
+      "title": "Joystick JS1 eixo X: verificação especial de redundância",
+      "source": "danfoss_joy",
+      "note": "Referência dependente da plataforma indicada; não generalizar."
+    }
+  ]
+}

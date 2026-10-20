@@ -1,0 +1,880 @@
+{
+  "schema": "fmea-mining.knowledge.v1",
+  "version": "1.1.0",
+  "kind": "fault_code_differentials",
+  "provenance": {
+    "repository": "pedromaintenance/porcaria-codigos-de-falha",
+    "originalPath": "js/data.js",
+    "blobSha": "c605b4a80323641e73bc2f64513f1266f3356377",
+    "sourceVersion": "1.0.0",
+    "evidenceNature": "simulated",
+    "effectiveModelConfirmed": false
+  },
+  "description": "24 codigos situacionais com tres causas alternativas cada",
+  "records": [
+    {
+      "id": "A01",
+      "exampleCode": "MID 390 · CID 0168 · FMI 04",
+      "protocol": "CAT",
+      "hypotheses": [
+        {
+          "id": "ELEC-CF-01-1",
+          "cause": "Mau contato/oxidação no conector do circuito",
+          "evidenceIds": [
+            "CF-01-1-VIS",
+            "CF-01-1-ELE",
+            "CF-01-1-HIS"
+          ]
+        },
+        {
+          "id": "ELEC-CF-01-2",
+          "cause": "Falha de isolamento, curto ou interrupção no chicote",
+          "evidenceIds": [
+            "CF-01-2-VIS",
+            "CF-01-2-ELE",
+            "CF-01-2-HIS"
+          ]
+        },
+        {
+          "id": "ELEC-CF-01-3",
+          "cause": "Defeito interno ou deriva do sensor",
+          "evidenceIds": [
+            "CF-01-3-VIS",
+            "CF-01-3-ELE",
+            "CF-01-3-HIS"
+          ]
+        }
+      ],
+      "principle": "mesmo codigo pode decorrer de causas diferentes; inspecao, medicao e historico discriminam",
+      "nature": "didatico"
+    },
+    {
+      "id": "A02",
+      "exampleCode": "MID 272 · CID 0168 · FMI 03",
+      "protocol": "CAT",
+      "hypotheses": [
+        {
+          "id": "ELEC-CF-02-1",
+          "cause": "Mau contato/oxidação no conector do circuito",
+          "evidenceIds": [
+            "CF-02-1-VIS",
+            "CF-02-1-ELE",
+            "CF-02-1-HIS"
+          ]
+        },
+        {
+          "id": "ELEC-CF-02-2",
+          "cause": "Falha de isolamento, curto ou interrupção no chicote",
+          "evidenceIds": [
+            "CF-02-2-VIS",
+            "CF-02-2-ELE",
+            "CF-02-2-HIS"
+          ]
+        },
+        {
+          "id": "ELEC-CF-02-3",
+          "cause": "Defeito interno ou deriva do sensor",
+          "evidenceIds": [
+            "CF-02-3-VIS",
+            "CF-02-3-ELE",
+            "CF-02-3-HIS"
+          ]
+        }
+      ],
+      "principle": "mesmo codigo pode decorrer de causas diferentes; inspecao, medicao e historico discriminam",
+      "nature": "didatico"
+    },
+    {
+      "id": "A03",
+      "exampleCode": "MID 036 · CID 0100 · FMI 04",
+      "protocol": "CAT",
+      "hypotheses": [
+        {
+          "id": "ELEC-CF-03-1",
+          "cause": "Mau contato/oxidação no conector do circuito",
+          "evidenceIds": [
+            "CF-03-1-VIS",
+            "CF-03-1-ELE",
+            "CF-03-1-HIS"
+          ]
+        },
+        {
+          "id": "ELEC-CF-03-2",
+          "cause": "Falha de isolamento, curto ou interrupção no chicote",
+          "evidenceIds": [
+            "CF-03-2-VIS",
+            "CF-03-2-ELE",
+            "CF-03-2-HIS"
+          ]
+        },
+        {
+          "id": "ELEC-CF-03-3",
+          "cause": "Defeito interno ou deriva do sensor",
+          "evidenceIds": [
+            "CF-03-3-VIS",
+            "CF-03-3-ELE",
+            "CF-03-3-HIS"
+          ]
+        }
+      ],
+      "principle": "mesmo codigo pode decorrer de causas diferentes; inspecao, medicao e historico discriminam",
+      "nature": "didatico"
+    },
+    {
+      "id": "A04",
+      "exampleCode": "MID 263 · CID 0274 · FMI 03",
+      "protocol": "CAT",
+      "hypotheses": [
+        {
+          "id": "ELEC-CF-04-1",
+          "cause": "Mau contato/oxidação no conector do circuito",
+          "evidenceIds": [
+            "CF-04-1-VIS",
+            "CF-04-1-ELE",
+            "CF-04-1-HIS"
+          ]
+        },
+        {
+          "id": "ELEC-CF-04-2",
+          "cause": "Falha de isolamento, curto ou interrupção no chicote",
+          "evidenceIds": [
+            "CF-04-2-VIS",
+            "CF-04-2-ELE",
+            "CF-04-2-HIS"
+          ]
+        },
+        {
+          "id": "ELEC-CF-04-3",
+          "cause": "Defeito interno ou deriva do sensor",
+          "evidenceIds": [
+            "CF-04-3-VIS",
+            "CF-04-3-ELE",
+            "CF-04-3-HIS"
+          ]
+        }
+      ],
+      "principle": "mesmo codigo pode decorrer de causas diferentes; inspecao, medicao e historico discriminam",
+      "nature": "didatico"
+    },
+    {
+      "id": "A05",
+      "exampleCode": "MID 389 · CID 0585 · FMI 08",
+      "protocol": "CAT",
+      "hypotheses": [
+        {
+          "id": "ELEC-CF-05-1",
+          "cause": "Sensor com folga/posicionamento inadequado",
+          "evidenceIds": [
+            "CF-05-1-VIS",
+            "CF-05-1-ELE",
+            "CF-05-1-HIS"
+          ]
+        },
+        {
+          "id": "ELEC-CF-05-2",
+          "cause": "Alvo de leitura ou roda fônica danificada",
+          "evidenceIds": [
+            "CF-05-2-VIS",
+            "CF-05-2-ELE",
+            "CF-05-2-HIS"
+          ]
+        },
+        {
+          "id": "ELEC-CF-05-3",
+          "cause": "Falha intermitente em cabo blindado/conector",
+          "evidenceIds": [
+            "CF-05-3-VIS",
+            "CF-05-3-ELE",
+            "CF-05-3-HIS"
+          ]
+        }
+      ],
+      "principle": "mesmo codigo pode decorrer de causas diferentes; inspecao, medicao e historico discriminam",
+      "nature": "didatico"
+    },
+    {
+      "id": "A06",
+      "exampleCode": "MID 390 · CID 1402 · FMI 05",
+      "protocol": "CAT",
+      "hypotheses": [
+        {
+          "id": "ELEC-CF-06-1",
+          "cause": "Bobina do atuador com circuito aberto",
+          "evidenceIds": [
+            "CF-06-1-VIS",
+            "CF-06-1-ELE",
+            "CF-06-1-HIS"
+          ]
+        },
+        {
+          "id": "ELEC-CF-06-2",
+          "cause": "Condutor rompido entre ECM e solenoide",
+          "evidenceIds": [
+            "CF-06-2-VIS",
+            "CF-06-2-ELE",
+            "CF-06-2-HIS"
+          ]
+        },
+        {
+          "id": "ELEC-CF-06-3",
+          "cause": "Terminal solto com alta resistência de contato",
+          "evidenceIds": [
+            "CF-06-3-VIS",
+            "CF-06-3-ELE",
+            "CF-06-3-HIS"
+          ]
+        }
+      ],
+      "principle": "mesmo codigo pode decorrer de causas diferentes; inspecao, medicao e historico discriminam",
+      "nature": "didatico"
+    },
+    {
+      "id": "A07",
+      "exampleCode": "MID 299 · CID 1143 · FMI 05",
+      "protocol": "CAT",
+      "hypotheses": [
+        {
+          "id": "ELEC-CF-07-1",
+          "cause": "Bobina do atuador com circuito aberto",
+          "evidenceIds": [
+            "CF-07-1-VIS",
+            "CF-07-1-ELE",
+            "CF-07-1-HIS"
+          ]
+        },
+        {
+          "id": "ELEC-CF-07-2",
+          "cause": "Condutor rompido entre ECM e solenoide",
+          "evidenceIds": [
+            "CF-07-2-VIS",
+            "CF-07-2-ELE",
+            "CF-07-2-HIS"
+          ]
+        },
+        {
+          "id": "ELEC-CF-07-3",
+          "cause": "Terminal solto com alta resistência de contato",
+          "evidenceIds": [
+            "CF-07-3-VIS",
+            "CF-07-3-ELE",
+            "CF-07-3-HIS"
+          ]
+        }
+      ],
+      "principle": "mesmo codigo pode decorrer de causas diferentes; inspecao, medicao e historico discriminam",
+      "nature": "didatico"
+    },
+    {
+      "id": "A08",
+      "exampleCode": "MID 299 · CID 1598 · FMI 05",
+      "protocol": "CAT",
+      "hypotheses": [
+        {
+          "id": "ELEC-CF-08-1",
+          "cause": "Bobina do atuador com circuito aberto",
+          "evidenceIds": [
+            "CF-08-1-VIS",
+            "CF-08-1-ELE",
+            "CF-08-1-HIS"
+          ]
+        },
+        {
+          "id": "ELEC-CF-08-2",
+          "cause": "Condutor rompido entre ECM e solenoide",
+          "evidenceIds": [
+            "CF-08-2-VIS",
+            "CF-08-2-ELE",
+            "CF-08-2-HIS"
+          ]
+        },
+        {
+          "id": "ELEC-CF-08-3",
+          "cause": "Terminal solto com alta resistência de contato",
+          "evidenceIds": [
+            "CF-08-3-VIS",
+            "CF-08-3-ELE",
+            "CF-08-3-HIS"
+          ]
+        }
+      ],
+      "principle": "mesmo codigo pode decorrer de causas diferentes; inspecao, medicao e historico discriminam",
+      "nature": "didatico"
+    },
+    {
+      "id": "A09",
+      "exampleCode": "MID 082 · CID 0430 · FMI 03",
+      "protocol": "CAT",
+      "hypotheses": [
+        {
+          "id": "ELEC-CF-09-1",
+          "cause": "Mau contato/oxidação no conector do circuito",
+          "evidenceIds": [
+            "CF-09-1-VIS",
+            "CF-09-1-ELE",
+            "CF-09-1-HIS"
+          ]
+        },
+        {
+          "id": "ELEC-CF-09-2",
+          "cause": "Falha de isolamento, curto ou interrupção no chicote",
+          "evidenceIds": [
+            "CF-09-2-VIS",
+            "CF-09-2-ELE",
+            "CF-09-2-HIS"
+          ]
+        },
+        {
+          "id": "ELEC-CF-09-3",
+          "cause": "Defeito interno ou deriva do sensor",
+          "evidenceIds": [
+            "CF-09-3-VIS",
+            "CF-09-3-ELE",
+            "CF-09-3-HIS"
+          ]
+        }
+      ],
+      "principle": "mesmo codigo pode decorrer de causas diferentes; inspecao, medicao e historico discriminam",
+      "nature": "didatico"
+    },
+    {
+      "id": "A10",
+      "exampleCode": "MID 116 · CID 2201 · FMI 08",
+      "protocol": "CAT",
+      "hypotheses": [
+        {
+          "id": "ELEC-CF-10-1",
+          "cause": "Sensor com folga/posicionamento inadequado",
+          "evidenceIds": [
+            "CF-10-1-VIS",
+            "CF-10-1-ELE",
+            "CF-10-1-HIS"
+          ]
+        },
+        {
+          "id": "ELEC-CF-10-2",
+          "cause": "Alvo de leitura ou roda fônica danificada",
+          "evidenceIds": [
+            "CF-10-2-VIS",
+            "CF-10-2-ELE",
+            "CF-10-2-HIS"
+          ]
+        },
+        {
+          "id": "ELEC-CF-10-3",
+          "cause": "Falha intermitente em cabo blindado/conector",
+          "evidenceIds": [
+            "CF-10-3-VIS",
+            "CF-10-3-ELE",
+            "CF-10-3-HIS"
+          ]
+        }
+      ],
+      "principle": "mesmo codigo pode decorrer de causas diferentes; inspecao, medicao e historico discriminam",
+      "nature": "didatico"
+    },
+    {
+      "id": "A11",
+      "exampleCode": "MID 299 · CID 2994 · FMI 08",
+      "protocol": "CAT",
+      "hypotheses": [
+        {
+          "id": "ELEC-CF-11-1",
+          "cause": "Sensor com folga/posicionamento inadequado",
+          "evidenceIds": [
+            "CF-11-1-VIS",
+            "CF-11-1-ELE",
+            "CF-11-1-HIS"
+          ]
+        },
+        {
+          "id": "ELEC-CF-11-2",
+          "cause": "Alvo de leitura ou roda fônica danificada",
+          "evidenceIds": [
+            "CF-11-2-VIS",
+            "CF-11-2-ELE",
+            "CF-11-2-HIS"
+          ]
+        },
+        {
+          "id": "ELEC-CF-11-3",
+          "cause": "Falha intermitente em cabo blindado/conector",
+          "evidenceIds": [
+            "CF-11-3-VIS",
+            "CF-11-3-ELE",
+            "CF-11-3-HIS"
+          ]
+        }
+      ],
+      "principle": "mesmo codigo pode decorrer de causas diferentes; inspecao, medicao e historico discriminam",
+      "nature": "didatico"
+    },
+    {
+      "id": "A12",
+      "exampleCode": "MID 390 · CID 2671 · FMI 05",
+      "protocol": "CAT",
+      "hypotheses": [
+        {
+          "id": "ELEC-CF-12-1",
+          "cause": "Bobina do atuador com circuito aberto",
+          "evidenceIds": [
+            "CF-12-1-VIS",
+            "CF-12-1-ELE",
+            "CF-12-1-HIS"
+          ]
+        },
+        {
+          "id": "ELEC-CF-12-2",
+          "cause": "Condutor rompido entre ECM e solenoide",
+          "evidenceIds": [
+            "CF-12-2-VIS",
+            "CF-12-2-ELE",
+            "CF-12-2-HIS"
+          ]
+        },
+        {
+          "id": "ELEC-CF-12-3",
+          "cause": "Terminal solto com alta resistência de contato",
+          "evidenceIds": [
+            "CF-12-3-VIS",
+            "CF-12-3-ELE",
+            "CF-12-3-HIS"
+          ]
+        }
+      ],
+      "principle": "mesmo codigo pode decorrer de causas diferentes; inspecao, medicao e historico discriminam",
+      "nature": "didatico"
+    },
+    {
+      "id": "A13",
+      "exampleCode": "MID 464 · CID 0247 · FMI 09",
+      "protocol": "CAT",
+      "hypotheses": [
+        {
+          "id": "ELEC-CF-13-1",
+          "cause": "Terminação da rede comprometida",
+          "evidenceIds": [
+            "CF-13-1-VIS",
+            "CF-13-1-ELE",
+            "CF-13-1-HIS"
+          ]
+        },
+        {
+          "id": "ELEC-CF-13-2",
+          "cause": "Módulo da rede sem alimentação confiável",
+          "evidenceIds": [
+            "CF-13-2-VIS",
+            "CF-13-2-ELE",
+            "CF-13-2-HIS"
+          ]
+        },
+        {
+          "id": "ELEC-CF-13-3",
+          "cause": "Conexão de dados intermitente no barramento",
+          "evidenceIds": [
+            "CF-13-3-VIS",
+            "CF-13-3-ELE",
+            "CF-13-3-HIS"
+          ]
+        }
+      ],
+      "principle": "mesmo codigo pode decorrer de causas diferentes; inspecao, medicao e historico discriminam",
+      "nature": "didatico"
+    },
+    {
+      "id": "A14",
+      "exampleCode": "SPN 100 · FMI 18",
+      "protocol": "J1939",
+      "hypotheses": [
+        {
+          "id": "ELEC-CF-14-1",
+          "cause": "Condição física efetivamente fora da faixa segura",
+          "evidenceIds": [
+            "CF-14-1-VIS",
+            "CF-14-1-ELE",
+            "CF-14-1-HIS"
+          ]
+        },
+        {
+          "id": "ELEC-CF-14-2",
+          "cause": "Medição eletrônica incoerente com a grandeza real",
+          "evidenceIds": [
+            "CF-14-2-VIS",
+            "CF-14-2-ELE",
+            "CF-14-2-HIS"
+          ]
+        },
+        {
+          "id": "ELEC-CF-14-3",
+          "cause": "Condição operacional transitória e sobrecarga identificada",
+          "evidenceIds": [
+            "CF-14-3-VIS",
+            "CF-14-3-ELE",
+            "CF-14-3-HIS"
+          ]
+        }
+      ],
+      "principle": "mesmo codigo pode decorrer de causas diferentes; inspecao, medicao e historico discriminam",
+      "nature": "didatico"
+    },
+    {
+      "id": "A15",
+      "exampleCode": "SPN 100 · FMI 01",
+      "protocol": "J1939",
+      "hypotheses": [
+        {
+          "id": "ELEC-CF-15-1",
+          "cause": "Condição física efetivamente fora da faixa segura",
+          "evidenceIds": [
+            "CF-15-1-VIS",
+            "CF-15-1-ELE",
+            "CF-15-1-HIS"
+          ]
+        },
+        {
+          "id": "ELEC-CF-15-2",
+          "cause": "Medição eletrônica incoerente com a grandeza real",
+          "evidenceIds": [
+            "CF-15-2-VIS",
+            "CF-15-2-ELE",
+            "CF-15-2-HIS"
+          ]
+        },
+        {
+          "id": "ELEC-CF-15-3",
+          "cause": "Condição operacional transitória e sobrecarga identificada",
+          "evidenceIds": [
+            "CF-15-3-VIS",
+            "CF-15-3-ELE",
+            "CF-15-3-HIS"
+          ]
+        }
+      ],
+      "principle": "mesmo codigo pode decorrer de causas diferentes; inspecao, medicao e historico discriminam",
+      "nature": "didatico"
+    },
+    {
+      "id": "A16",
+      "exampleCode": "SPN 110 · FMI 16",
+      "protocol": "J1939",
+      "hypotheses": [
+        {
+          "id": "ELEC-CF-16-1",
+          "cause": "Condição física efetivamente fora da faixa segura",
+          "evidenceIds": [
+            "CF-16-1-VIS",
+            "CF-16-1-ELE",
+            "CF-16-1-HIS"
+          ]
+        },
+        {
+          "id": "ELEC-CF-16-2",
+          "cause": "Medição eletrônica incoerente com a grandeza real",
+          "evidenceIds": [
+            "CF-16-2-VIS",
+            "CF-16-2-ELE",
+            "CF-16-2-HIS"
+          ]
+        },
+        {
+          "id": "ELEC-CF-16-3",
+          "cause": "Condição operacional transitória e sobrecarga identificada",
+          "evidenceIds": [
+            "CF-16-3-VIS",
+            "CF-16-3-ELE",
+            "CF-16-3-HIS"
+          ]
+        }
+      ],
+      "principle": "mesmo codigo pode decorrer de causas diferentes; inspecao, medicao e historico discriminam",
+      "nature": "didatico"
+    },
+    {
+      "id": "A17",
+      "exampleCode": "SPN 102 · FMI 18",
+      "protocol": "J1939",
+      "hypotheses": [
+        {
+          "id": "ELEC-CF-17-1",
+          "cause": "Condição física efetivamente fora da faixa segura",
+          "evidenceIds": [
+            "CF-17-1-VIS",
+            "CF-17-1-ELE",
+            "CF-17-1-HIS"
+          ]
+        },
+        {
+          "id": "ELEC-CF-17-2",
+          "cause": "Medição eletrônica incoerente com a grandeza real",
+          "evidenceIds": [
+            "CF-17-2-VIS",
+            "CF-17-2-ELE",
+            "CF-17-2-HIS"
+          ]
+        },
+        {
+          "id": "ELEC-CF-17-3",
+          "cause": "Condição operacional transitória e sobrecarga identificada",
+          "evidenceIds": [
+            "CF-17-3-VIS",
+            "CF-17-3-ELE",
+            "CF-17-3-HIS"
+          ]
+        }
+      ],
+      "principle": "mesmo codigo pode decorrer de causas diferentes; inspecao, medicao e historico discriminam",
+      "nature": "didatico"
+    },
+    {
+      "id": "A18",
+      "exampleCode": "SPN 105 · FMI 15",
+      "protocol": "J1939",
+      "hypotheses": [
+        {
+          "id": "ELEC-CF-18-1",
+          "cause": "Condição física efetivamente fora da faixa segura",
+          "evidenceIds": [
+            "CF-18-1-VIS",
+            "CF-18-1-ELE",
+            "CF-18-1-HIS"
+          ]
+        },
+        {
+          "id": "ELEC-CF-18-2",
+          "cause": "Medição eletrônica incoerente com a grandeza real",
+          "evidenceIds": [
+            "CF-18-2-VIS",
+            "CF-18-2-ELE",
+            "CF-18-2-HIS"
+          ]
+        },
+        {
+          "id": "ELEC-CF-18-3",
+          "cause": "Condição operacional transitória e sobrecarga identificada",
+          "evidenceIds": [
+            "CF-18-3-VIS",
+            "CF-18-3-ELE",
+            "CF-18-3-HIS"
+          ]
+        }
+      ],
+      "principle": "mesmo codigo pode decorrer de causas diferentes; inspecao, medicao e historico discriminam",
+      "nature": "didatico"
+    },
+    {
+      "id": "A19",
+      "exampleCode": "SPN 101 · FMI 16",
+      "protocol": "J1939",
+      "hypotheses": [
+        {
+          "id": "ELEC-CF-19-1",
+          "cause": "Condição física efetivamente fora da faixa segura",
+          "evidenceIds": [
+            "CF-19-1-VIS",
+            "CF-19-1-ELE",
+            "CF-19-1-HIS"
+          ]
+        },
+        {
+          "id": "ELEC-CF-19-2",
+          "cause": "Medição eletrônica incoerente com a grandeza real",
+          "evidenceIds": [
+            "CF-19-2-VIS",
+            "CF-19-2-ELE",
+            "CF-19-2-HIS"
+          ]
+        },
+        {
+          "id": "ELEC-CF-19-3",
+          "cause": "Condição operacional transitória e sobrecarga identificada",
+          "evidenceIds": [
+            "CF-19-3-VIS",
+            "CF-19-3-ELE",
+            "CF-19-3-HIS"
+          ]
+        }
+      ],
+      "principle": "mesmo codigo pode decorrer de causas diferentes; inspecao, medicao e historico discriminam",
+      "nature": "didatico"
+    },
+    {
+      "id": "A20",
+      "exampleCode": "SPN 190 · FMI 02",
+      "protocol": "J1939",
+      "hypotheses": [
+        {
+          "id": "ELEC-CF-20-1",
+          "cause": "Sensor com folga/posicionamento inadequado",
+          "evidenceIds": [
+            "CF-20-1-VIS",
+            "CF-20-1-ELE",
+            "CF-20-1-HIS"
+          ]
+        },
+        {
+          "id": "ELEC-CF-20-2",
+          "cause": "Alvo de leitura ou roda fônica danificada",
+          "evidenceIds": [
+            "CF-20-2-VIS",
+            "CF-20-2-ELE",
+            "CF-20-2-HIS"
+          ]
+        },
+        {
+          "id": "ELEC-CF-20-3",
+          "cause": "Falha intermitente em cabo blindado/conector",
+          "evidenceIds": [
+            "CF-20-3-VIS",
+            "CF-20-3-ELE",
+            "CF-20-3-HIS"
+          ]
+        }
+      ],
+      "principle": "mesmo codigo pode decorrer de causas diferentes; inspecao, medicao e historico discriminam",
+      "nature": "didatico"
+    },
+    {
+      "id": "A21",
+      "exampleCode": "SPN 627 · FMI 04",
+      "protocol": "J1939",
+      "hypotheses": [
+        {
+          "id": "ELEC-CF-21-1",
+          "cause": "Mau contato/oxidação no conector do circuito",
+          "evidenceIds": [
+            "CF-21-1-VIS",
+            "CF-21-1-ELE",
+            "CF-21-1-HIS"
+          ]
+        },
+        {
+          "id": "ELEC-CF-21-2",
+          "cause": "Falha de isolamento, curto ou interrupção no chicote",
+          "evidenceIds": [
+            "CF-21-2-VIS",
+            "CF-21-2-ELE",
+            "CF-21-2-HIS"
+          ]
+        },
+        {
+          "id": "ELEC-CF-21-3",
+          "cause": "Defeito interno ou deriva do sensor",
+          "evidenceIds": [
+            "CF-21-3-VIS",
+            "CF-21-3-ELE",
+            "CF-21-3-HIS"
+          ]
+        }
+      ],
+      "principle": "mesmo codigo pode decorrer de causas diferentes; inspecao, medicao e historico discriminam",
+      "nature": "didatico"
+    },
+    {
+      "id": "A22",
+      "exampleCode": "SPN 1079 · FMI 04",
+      "protocol": "J1939",
+      "hypotheses": [
+        {
+          "id": "ELEC-CF-22-1",
+          "cause": "Mau contato/oxidação no conector do circuito",
+          "evidenceIds": [
+            "CF-22-1-VIS",
+            "CF-22-1-ELE",
+            "CF-22-1-HIS"
+          ]
+        },
+        {
+          "id": "ELEC-CF-22-2",
+          "cause": "Falha de isolamento, curto ou interrupção no chicote",
+          "evidenceIds": [
+            "CF-22-2-VIS",
+            "CF-22-2-ELE",
+            "CF-22-2-HIS"
+          ]
+        },
+        {
+          "id": "ELEC-CF-22-3",
+          "cause": "Defeito interno ou deriva do sensor",
+          "evidenceIds": [
+            "CF-22-3-VIS",
+            "CF-22-3-ELE",
+            "CF-22-3-HIS"
+          ]
+        }
+      ],
+      "principle": "mesmo codigo pode decorrer de causas diferentes; inspecao, medicao e historico discriminam",
+      "nature": "didatico"
+    },
+    {
+      "id": "A23",
+      "exampleCode": "SPN 2660 · FMI 03",
+      "protocol": "J1939",
+      "hypotheses": [
+        {
+          "id": "ELEC-CF-23-1",
+          "cause": "Mau contato/oxidação no conector do circuito",
+          "evidenceIds": [
+            "CF-23-1-VIS",
+            "CF-23-1-ELE",
+            "CF-23-1-HIS"
+          ]
+        },
+        {
+          "id": "ELEC-CF-23-2",
+          "cause": "Falha de isolamento, curto ou interrupção no chicote",
+          "evidenceIds": [
+            "CF-23-2-VIS",
+            "CF-23-2-ELE",
+            "CF-23-2-HIS"
+          ]
+        },
+        {
+          "id": "ELEC-CF-23-3",
+          "cause": "Defeito interno ou deriva do sensor",
+          "evidenceIds": [
+            "CF-23-3-VIS",
+            "CF-23-3-ELE",
+            "CF-23-3-HIS"
+          ]
+        }
+      ],
+      "principle": "mesmo codigo pode decorrer de causas diferentes; inspecao, medicao e historico discriminam",
+      "nature": "didatico"
+    },
+    {
+      "id": "A24",
+      "exampleCode": "SPN 2660 · FMI 13",
+      "protocol": "J1939",
+      "hypotheses": [
+        {
+          "id": "ELEC-CF-24-1",
+          "cause": "Calibração requerida após substituição/atualização",
+          "evidenceIds": [
+            "CF-24-1-VIS",
+            "CF-24-1-ELE",
+            "CF-24-1-HIS"
+          ]
+        },
+        {
+          "id": "ELEC-CF-24-2",
+          "cause": "Referência mecânica incorreta antes da calibração",
+          "evidenceIds": [
+            "CF-24-2-VIS",
+            "CF-24-2-ELE",
+            "CF-24-2-HIS"
+          ]
+        },
+        {
+          "id": "ELEC-CF-24-3",
+          "cause": "Sensor/elemento de posição fisicamente defeituoso",
+          "evidenceIds": [
+            "CF-24-3-VIS",
+            "CF-24-3-ELE",
+            "CF-24-3-HIS"
+          ]
+        }
+      ],
+      "principle": "mesmo codigo pode decorrer de causas diferentes; inspecao, medicao e historico discriminam",
+      "nature": "didatico"
+    }
+  ]
+}

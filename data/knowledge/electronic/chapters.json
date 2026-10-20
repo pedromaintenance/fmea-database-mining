@@ -1,0 +1,64 @@
+{
+  "schema": "fmea-mining.knowledge.v1",
+  "version": "1.1.0",
+  "kind": "chapters_original",
+  "provenance": {
+    "repository": "pedromaintenance/porcaria-codigos-de-falha",
+    "originalPath": "js/data.js",
+    "blobSha": "c605b4a80323641e73bc2f64513f1266f3356377",
+    "sourceVersion": "1.0.0",
+    "evidenceNature": "simulated",
+    "effectiveModelConfirmed": false
+  },
+  "description": "8 capitulos",
+  "records": [
+    {
+      "id": "01",
+      "title": "Elétrica de potência",
+      "subtitle": "Tensão, sensores e alimentação",
+      "icon": "⚡"
+    },
+    {
+      "id": "02",
+      "title": "Atuadores e hidráulica",
+      "subtitle": "Solenoides, implementos e giro",
+      "icon": "⌁"
+    },
+    {
+      "id": "03",
+      "title": "Transmissão e movimento",
+      "subtitle": "Velocidade, sinal e sincronização",
+      "icon": "⚙"
+    },
+    {
+      "id": "04",
+      "title": "Comunicação CAN/J1939",
+      "subtitle": "Mensagens, módulos e terminação",
+      "icon": "◈"
+    },
+    {
+      "id": "05",
+      "title": "Eventos de motor",
+      "subtitle": "Pressão, temperatura e proteção",
+      "icon": "◉"
+    },
+    {
+      "id": "06",
+      "title": "Admissão e operação",
+      "subtitle": "Pressão de coletor e condições reais",
+      "icon": "◌"
+    },
+    {
+      "id": "07",
+      "title": "Controles especiais",
+      "subtitle": "Direção, joystick e calibração",
+      "icon": "◎"
+    },
+    {
+      "id": "08",
+      "title": "Perícia avançada",
+      "subtitle": "Diagnóstico integrado e casos difíceis",
+      "icon": "◇"
+    }
+  ]
+}
