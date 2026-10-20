@@ -1,0 +1,271 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Discriminative diagnostic tests — qualitative, unvalidated",
+  "type": "object",
+  "required": [
+    "schema",
+    "version",
+    "purpose",
+    "classificationGlossary",
+    "policy",
+    "counts",
+    "records"
+  ],
+  "properties": {
+    "schema": {
+      "const": "fmea-mining.discriminative-tests.v1"
+    },
+    "version": {
+      "type": "string"
+    },
+    "purpose": {
+      "type": "string"
+    },
+    "classificationGlossary": {
+      "type": "object",
+      "minProperties": 4
+    },
+    "policy": {
+      "type": "object",
+      "required": [
+        "autoDiagnosisForbidden",
+        "withoutIndependentEvidenceMayBeConfirmed",
+        "unreviewedRecordsMustRemainProposed",
+        "noNumericalLikelihoodWithoutEmpiricalValidation",
+        "confoundersMustBeExplicit",
+        "alternativesMustRemainOpenByDefault"
+      ]
+    },
+    "counts": {
+      "type": "object",
+      "properties": {
+        "priorityTests": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "distinctChains": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "records": {
+      "type": "array",
+      "minItems": 6,
+      "items": {
+        "$ref": "#/$defs/test"
+      }
+    }
+  },
+  "$defs": {
+    "nonempty": {
+      "type": "string",
+      "minLength": 1
+    },
+    "alt": {
+      "type": "object",
+      "required": [
+        "hypothesisId",
+        "description",
+        "remainsPlausibleAfterSingleTest",
+        "why"
+      ],
+      "properties": {
+        "hypothesisId": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "remainsPlausibleAfterSingleTest": {
+          "const": true
+        },
+        "why": {
+          "type": "string",
+          "minLength": 40
+        }
+      }
+    },
+    "followup": {
+      "type": "object",
+      "required": [
+        "methodId",
+        "purpose",
+        "status"
+      ],
+      "properties": {
+        "methodId": {
+          "type": "string",
+          "pattern": "^EV-"
+        },
+        "purpose": {
+          "type": "string",
+          "minLength": 30
+        },
+        "status": {
+          "const": "proposto_nao_executado"
+        }
+      }
+    },
+    "test": {
+      "type": "object",
+      "required": [
+        "id",
+        "evidenceRequirementId",
+        "chainId",
+        "investigationId",
+        "methodId",
+        "targetMode",
+        "reviewPriority",
+        "scope",
+        "discriminativeCapability",
+        "detectedCondition",
+        "canDiscriminate",
+        "cannotDiscriminate",
+        "confoundingFactors",
+        "competingHypothesisAssessments",
+        "complementaryInvestigations",
+        "interpretationWhenSupports",
+        "interpretationWhenWeakens",
+        "interpretationWhenInconclusive",
+        "validationPrerequisites",
+        "sourceIds",
+        "resultObserved",
+        "numericalDiscriminationMetrics",
+        "oemProcedureEffectiveForFleet",
+        "inspectedActualEquipment",
+        "reviewStatus",
+        "automaticallyConfirmRootCause",
+        "automaticallyRejectAlternatives"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^DISC-FC-"
+        },
+        "evidenceRequirementId": {
+          "type": "string",
+          "pattern": "^ER-FC-"
+        },
+        "chainId": {
+          "type": "string",
+          "pattern": "^FC-"
+        },
+        "investigationId": {
+          "type": "string"
+        },
+        "methodId": {
+          "type": "string",
+          "pattern": "^EV-"
+        },
+        "targetMode": {
+          "type": "string"
+        },
+        "reviewPriority": {
+          "const": "P0"
+        },
+        "scope": {
+          "const": "diagnostico_qualitativo_geral_sem_dados_de_campo"
+        },
+        "discriminativeCapability": {
+          "enum": [
+            "detecta_condicao_sem_isolar_causa",
+            "detecta_tendencia_sem_atribuir_origem",
+            "detecta_indicio_nao_discriminante",
+            "discrimina_desempenho_funcional_condicionado"
+          ]
+        },
+        "detectedCondition": {
+          "type": "string"
+        },
+        "canDiscriminate": {
+          "type": "string"
+        },
+        "cannotDiscriminate": {
+          "type": "string"
+        },
+        "confoundingFactors": {
+          "type": "array",
+          "minItems": 3,
+          "items": {
+            "type": "string"
+          }
+        },
+        "competingHypothesisAssessments": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "$ref": "#/$defs/alt"
+          }
+        },
+        "complementaryInvestigations": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "$ref": "#/$defs/followup"
+          }
+        },
+        "interpretationWhenSupports": {
+          "type": "string"
+        },
+        "interpretationWhenWeakens": {
+          "type": "string"
+        },
+        "interpretationWhenInconclusive": {
+          "type": "string"
+        },
+        "validationPrerequisites": {
+          "type": "string"
+        },
+        "sourceIds": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "type": "string"
+          }
+        },
+        "resultObserved": {
+          "type": "null"
+        },
+        "numericalDiscriminationMetrics": {
+          "type": "object",
+          "required": [
+            "sensitivity",
+            "specificity",
+            "likelihoodRatio",
+            "confidence"
+          ],
+          "properties": {
+            "sensitivity": {
+              "type": "null"
+            },
+            "specificity": {
+              "type": "null"
+            },
+            "likelihoodRatio": {
+              "type": "null"
+            },
+            "confidence": {
+              "type": "null"
+            }
+          }
+        },
+        "oemProcedureEffectiveForFleet": {
+          "const": false
+        },
+        "inspectedActualEquipment": {
+          "const": false
+        },
+        "reviewStatus": {
+          "const": "analise_metodologica_nao_homologada"
+        },
+        "automaticallyConfirmRootCause": {
+          "const": false
+        },
+        "automaticallyRejectAlternatives": {
+          "const": false
+        }
+      }
+    }
+  }
+}
