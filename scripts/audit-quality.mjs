@@ -19,6 +19,9 @@ const chains=read('data/knowledge/causal-chains.v1.json').records;
 const sapAudit=read('reports/causal-sap-audit.generated.json');
 const pmGaps=read('reports/pm-gap-audit.generated.json');
 const semantic=read('data/ontology/condition-action-damage.v1.json');
+const fixtures=read('data/quality/semantic-regression-fixtures.v1.json');
+const effects=read('data/knowledge/causal-effects.v1.json');
+const semantic=read('data/ontology/condition-action-damage.v1.json');
 const semanticFixtures=read('data/quality/semantic-regression-fixtures.v1.json');
 const byModel=[];
 for(const model of db.models){
@@ -53,6 +56,11 @@ const counts={
  causalChainCoverageByFamily:Object.fromEntries([...new Set(chains.map(x=>x.family))].sort().map(f=>[f,chains.filter(x=>x.family===f).length])),
  causalChainsWithSourcesAndCounterHypotheses:chains.filter(x=>x.sourceClaims.length&&x.competingHypotheses.length>=2).length,
  ontologySymptoms:ontology.symptoms.length,bibliographicSources:bibliographicSources.length,
+ semanticConditions:semantic.conditions.length,semanticActions:semantic.actions.length,
+ semanticDamageHypotheses:semantic.damageHypotheses.length,
+ semanticRuleBundles:semantic.bundles.length,semanticTypedRelations:semantic.relations.length,
+ semanticRegressionCases:fixtures.cases.length,
+ causalLocalEffects:effects.records.length,causalSystemEffects:effects.records.length,verifiedEffects:0,
  causalChainsWithContextualPm:chains.filter(x=>['monitoramento_contextual_nao_alvo_exclusivo_de_ajuste','vinculo_preventivo_contextual_sem_alvo_direto'].includes(x.preventionAssociation)).length,
  causalSapChainsAudited:sapAudit.summary.chainsAudited,
  causalSapCandidatePairs:sapAudit.summary.catalogPairsCompatible,
@@ -71,7 +79,7 @@ const counts={
  semanticDamageConfirmations:semantic.confirmedComponentDamages.length,
  evidenceValidatedInRealEquipment:0,technicallyApprovedPlaybooks:0
 };
-const report={schema:'fmea-mining.quality-audit.v1',version:'1.3.6',
+const report={schema:'fmea-mining.quality-audit.v1',version:'1.3.7',
  generatedFrom:'working_tree',status:'qualidade_cadastral_nao_taxa_de_falhas',
  meanings:{
   pmCandidateLinks:'vinculos gerados por regra e taxonomia, NAO falhas observadas',
