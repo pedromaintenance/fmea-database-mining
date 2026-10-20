@@ -137,7 +137,7 @@
           "originalClaim": "Roteamento ou proteção térmica inadequados — confirmar exposição, especificação e condições de projeto.",
           "hypothesisCategory": "engineering_configuration",
           "minimumIndependentEvidence": [
-            "Temperatura medida, especificação térmica e desenho de proteção/roteamento",
+            "Relatório do desenho de roteamento e medição da temperatura durante o regime de operação aplicável, com histórico de revisões e da proteção térmica instalada.",
             "Histórico de alterações no entorno da linha"
           ],
           "nonOrganizationalAlternative": "Ataque químico pode provocar aparência similar sem desvio térmico",
@@ -554,7 +554,7 @@
           "originalClaim": "Controle de acúmulo de material no rodante inadequado ao ambiente — avaliar condições de frente e rotina de limpeza.",
           "hypothesisCategory": "environmental_control",
           "minimumIndependentEvidence": [
-            "Condição operacional de solo e acúmulo junto ao rolete",
+            "Registro de turno sobre acúmulo de solo por frente operacional e histórico datado de inspeção/limpeza do conjunto, em condições de carregamento comparáveis.",
             "Histórico de limpeza e duração da exposição"
           ],
           "nonOrganizationalAlternative": "Detrito compactado pode acumular após uma única passagem",
@@ -572,7 +572,7 @@
             "Desenho de proteção do conjunto rodante e ajustes por arranjo",
             "Registro de alterações, estado de acessórios e inspeção em campo"
           ],
-          "nonOrganizationalAlternative": "Rolamento danificado pode aquecer sem acúmulo externo",
+          "nonOrganizationalAlternative": "Rolete com dano interno de vedação ou rolamento pode aquecer e perder rotação mesmo que a proteção do chassi e a inspeção estejam em conformidade.",
           "presentProofOfProcessDeviation": false,
           "processRecordsExamined": false,
           "attributedFaultToPeopleOrTeam": false,
@@ -661,7 +661,7 @@
             "Geometria e limites CTS por posição e arranjo",
             "Registros de alinhamento e tensionamento anteriores"
           ],
-          "nonOrganizationalAlternative": "Rolete adjacente travado pode provocar contato anormal",
+          "nonOrganizationalAlternative": "Rolete adjacente danificado ou desgaste progressivo da corrente pode modificar a trajetória da esteira sem que o ajuste original da roda-guia esteja incorreto.",
           "presentProofOfProcessDeviation": false,
           "processRecordsExamined": false,
           "attributedFaultToPeopleOrTeam": false,
@@ -780,7 +780,7 @@
             "Sequência, ferramenta, método de aperto e autorização OEM",
             "Evidência de rotação relativa e histórico de montagem"
           ],
-          "nonOrganizationalAlternative": "Torque residual não equivale à força de aperto inicial",
+          "nonOrganizationalAlternative": "Rotação relativa da fixação durante serviço pode reduzir a pré-carga mesmo com o método original de instalação adequado e documentado.",
           "presentProofOfProcessDeviation": false,
           "processRecordsExamined": false,
           "attributedFaultToPeopleOrTeam": false,
@@ -884,7 +884,7 @@
             "PNs e dimensões de sapata, elo e fixadores por arranjo",
             "Inspeção dimensional e padrão de desgaste CTS"
           ],
-          "nonOrganizationalAlternative": "Desgaste de serviço pode ocorrer em conjunto correto",
+          "nonOrganizationalAlternative": "O desgaste esperado por contato abrasivo sob carga e terreno severo pode ocorrer com a seleção correta das peças e sem desvio de especificação de montagem.",
           "presentProofOfProcessDeviation": false,
           "processRecordsExamined": false,
           "attributedFaultToPeopleOrTeam": false,
@@ -970,7 +970,7 @@
           "originalClaim": "Seleção de elemento/temperatura de abertura não conforme — somente com peça e dados OEM aplicáveis.",
           "hypothesisCategory": "component_compatibility",
           "minimumIndependentEvidence": [
-            "Identificação do termostato, temperatura de regulação OEM e instalação",
+            "Registros de identificação da peça, tabela OEM de temperatura e curso de abertura, histórico de montagem e resultado de teste funcional controlado do elemento instalado.",
             "Teste controlado e rastreio de substituição"
           ],
           "nonOrganizationalAlternative": "Baixa carga e ambiente frio podem retardar aquecimento normalmente",
@@ -1074,7 +1074,7 @@
           "originalClaim": "Montagem de junta/vedação em desacordo com procedimento — confirmar por série, peças e histórico.",
           "hypothesisCategory": "installation_quality",
           "minimumIndependentEvidence": [
-            "Procedimento, PN, tipo de vedação e histórico da bomba",
+            "Registro da substituição com PN e material da junta, procedimento por prefixo de série e inspeção documentada da origem física da perda de fluido.",
             "Origem física de perda e inspeção de junta"
           ],
           "nonOrganizationalAlternative": "Mangueira adjacente pode escorrer sobre bomba sem falha de instalação",
