@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.semantic-regression.v1",
-  "version": "1.3.6",
+  "version": "1.3.7",
   "status": "synthetic_assertions_not_real_events",
   "cases": [
     {
@@ -96,6 +96,104 @@
       "independentComponentTest": "not_performed",
       "expectedConfirmedDamageIds": [],
       "why": "Vazamento aparente não identifica radiador em vez de linha superior."
+    },
+    {
+      "id": "SEM-08",
+      "title": "Elemento filtrante substituído",
+      "ruleId": "engine-oil-filter",
+      "observedConditionIds": [
+        "COND-ENGINE-OIL-PARTICLES"
+      ],
+      "performedActionIds": [
+        "ACT-ENGINE-FILTER-REPLACE-INSPECT"
+      ],
+      "independentComponentTest": "not_performed",
+      "expectedConfirmedDamageIds": [],
+      "why": "Trocar e examinar filtro não confirma que estava previamente restrito."
+    },
+    {
+      "id": "SEM-09",
+      "title": "Pressão de óleo do motor indicada abaixo do requisito",
+      "ruleId": "engine-oil-filter",
+      "observedConditionIds": [
+        "COND-ENGINE-LOW-OIL-PRESSURE"
+      ],
+      "performedActionIds": [
+        "ACT-ENGINE-OIL-PRESSURE-VERIFY"
+      ],
+      "independentComponentTest": "not_performed",
+      "expectedConfirmedDamageIds": [],
+      "why": "Pressão baixa não isola restrição do filtro, bomba ou sensor sem discriminação."
+    },
+    {
+      "id": "SEM-10",
+      "title": "Vazamento superficial sobre mangueira hidráulica",
+      "ruleId": "hydraulic-hose-leak",
+      "observedConditionIds": [
+        "COND-HYD-EXTERNAL-LEAK"
+      ],
+      "performedActionIds": [
+        "ACT-HYD-HOSE-ROUTING-INSPECT"
+      ],
+      "independentComponentTest": "not_performed",
+      "expectedConfirmedDamageIds": [],
+      "why": "Óleo no corpo da mangueira pode ter origem em conexão superior."
+    },
+    {
+      "id": "SEM-11",
+      "title": "Óleo hidráulico contaminado",
+      "ruleId": "hydraulic-pump-seal",
+      "observedConditionIds": [
+        "COND-HYD-OIL-CONTAMINATION"
+      ],
+      "performedActionIds": [
+        "ACT-HYD-CLEANLINESS-SAMPLE"
+      ],
+      "independentComponentTest": "not_performed",
+      "expectedConfirmedDamageIds": [],
+      "why": "Contaminação do óleo não confirma defeito de vedação de bomba."
+    },
+    {
+      "id": "SEM-12",
+      "title": "Rolete quente em termografia",
+      "ruleId": "track-roller-wear",
+      "observedConditionIds": [
+        "COND-TRACK-ROLLER-HEAT"
+      ],
+      "performedActionIds": [
+        "ACT-TRACK-ROLLER-CTS"
+      ],
+      "independentComponentTest": "not_performed",
+      "expectedConfirmedDamageIds": [],
+      "why": "Calor isolado pode decorrer de detritos ou carga e não confirma dano interno."
+    },
+    {
+      "id": "SEM-13",
+      "title": "Roda-guia com marcas e CTS planejado",
+      "ruleId": "track-idler-wear",
+      "observedConditionIds": [
+        "COND-TRACK-IDLER-WEAR"
+      ],
+      "performedActionIds": [
+        "ACT-TRACK-IDLER-CTS"
+      ],
+      "independentComponentTest": "not_performed",
+      "expectedConfirmedDamageIds": [],
+      "why": "Inspeção de desgaste e medição planejada não comprovam rolamento condenado."
+    },
+    {
+      "id": "SEM-14",
+      "title": "Mangueira hidráulica com capa abrasada",
+      "ruleId": "hydraulic-hose-leak",
+      "observedConditionIds": [
+        "COND-HYD-HOSE-COVER-DAMAGE"
+      ],
+      "performedActionIds": [
+        "ACT-HYD-HOSE-ROUTING-INSPECT"
+      ],
+      "independentComponentTest": "not_performed",
+      "expectedConfirmedDamageIds": [],
+      "why": "Abrasão externa não demonstra rompimento de reforço nem perda de estanqueidade."
     }
   ]
 }
