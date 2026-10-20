@@ -1,0 +1,101 @@
+{
+  "schema": "fmea-mining.semantic-regression.v1",
+  "version": "1.3.6",
+  "status": "synthetic_assertions_not_real_events",
+  "cases": [
+    {
+      "id": "SEM-01",
+      "title": "Água localizada no separador",
+      "ruleId": "fuel-tank-water",
+      "observedConditionIds": [
+        "COND-FUEL-WATER"
+      ],
+      "performedActionIds": [],
+      "independentComponentTest": "not_performed",
+      "expectedConfirmedDamageIds": [],
+      "why": "Presença de água não comprova defeito do dreno."
+    },
+    {
+      "id": "SEM-02",
+      "title": "Água drenada em cenário simulado",
+      "ruleId": "fuel-tank-water",
+      "observedConditionIds": [
+        "COND-FUEL-WATER"
+      ],
+      "performedActionIds": [
+        "ACT-FUEL-DRAIN-SEPARATOR"
+      ],
+      "independentComponentTest": "not_performed",
+      "expectedConfirmedDamageIds": [],
+      "why": "Drenagem foi ação, não prova de falha mecânica."
+    },
+    {
+      "id": "SEM-03",
+      "title": "Finos sólidos coletados no tanque",
+      "ruleId": "fuel-filter-contamination",
+      "observedConditionIds": [
+        "COND-FUEL-SEDIMENT"
+      ],
+      "performedActionIds": [
+        "ACT-FUEL-REPRESENTATIVE-SAMPLE"
+      ],
+      "independentComponentTest": "not_performed",
+      "expectedConfirmedDamageIds": [],
+      "why": "Sólidos não confirmam restrição do filtro sem ensaio."
+    },
+    {
+      "id": "SEM-04",
+      "title": "Radiador sujo externamente",
+      "ruleId": "cooling-radiator-blockage",
+      "observedConditionIds": [
+        "COND-COOL-EXTERNAL-DEBRIS"
+      ],
+      "performedActionIds": [
+        "ACT-COOL-FINS-INSPECT"
+      ],
+      "independentComponentTest": "not_performed",
+      "expectedConfirmedDamageIds": [],
+      "why": "Material nas aletas não comprova obstrução interna."
+    },
+    {
+      "id": "SEM-05",
+      "title": "Radiador limpo depois de inspeção",
+      "ruleId": "cooling-radiator-blockage",
+      "observedConditionIds": [
+        "COND-COOL-EXTERNAL-DEBRIS"
+      ],
+      "performedActionIds": [
+        "ACT-COOL-FINS-CLEAN"
+      ],
+      "independentComponentTest": "not_performed",
+      "expectedConfirmedDamageIds": [],
+      "why": "Limpeza não comprova falha nem cura do problema térmico."
+    },
+    {
+      "id": "SEM-06",
+      "title": "Temperatura elevada sem origem",
+      "ruleId": "cooling-radiator-blockage",
+      "observedConditionIds": [
+        "COND-COOL-HIGH-TEMPERATURE"
+      ],
+      "performedActionIds": [],
+      "independentComponentTest": "not_performed",
+      "expectedConfirmedDamageIds": [],
+      "why": "Temperatura é manifestação, não prova de radiador avariado."
+    },
+    {
+      "id": "SEM-07",
+      "title": "Vestígio de líquido não localizado",
+      "ruleId": "cooling-radiator-leak",
+      "observedConditionIds": [
+        "COND-COOL-EXTERNAL-LEAK"
+      ],
+      "performedActionIds": [
+        "ACT-COOL-LEAK-TRACE"
+      ],
+      "independentComponentTest": "not_performed",
+      "expectedConfirmedDamageIds": [],
+      "why": "Vazamento aparente não identifica radiador em vez de linha superior."
+    }
+  ]
+}
