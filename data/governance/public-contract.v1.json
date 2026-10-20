@@ -1,0 +1,70 @@
+{
+  "schema": "fmea-mining.public-contract.v1",
+  "version": "1.3.13",
+  "contractVersion": "1.0.0",
+  "existingPreviewSchema": "fmea-mining.public-knowledge-preview.v1",
+  "existingPreviewVersion": "1.3.12",
+  "existingManifestSchema": "fmea-mining.public-knowledge-manifest.v1",
+  "compatibilityReference": {
+    "sourceRelease": "1.3.12",
+    "sha256": "b780a1c95e6f2ab5b3fb1f9acd20a63a1a5abd0e3f3ed111f61052b2e8c59c65",
+    "recordCount": 24,
+    "sourceCount": 20,
+    "publicChainFields": [
+      "id",
+      "title",
+      "family",
+      "operatingFunction",
+      "functionalFailureId",
+      "failureMode",
+      "mechanismIds",
+      "sourceIds",
+      "causalLevels",
+      "localEffect",
+      "systemEffect",
+      "competingHypotheses",
+      "investigations",
+      "applicability",
+      "reviewStatus",
+      "nature",
+      "confirmedRootCause",
+      "empiricalOccurrences"
+    ],
+    "publicSourceFields": [
+      "id",
+      "title",
+      "organization",
+      "url",
+      "role",
+      "limitation"
+    ]
+  },
+  "versioningPolicy": {
+    "major": "Renomear/remover campo público, mudar tipo, retirar ID previamente exposto ou alterar significado da classe ou do estado exige nova versão major com migração.",
+    "minor": "Adicionar campo opcional claramente documentado, preservando campos e significados existentes, exige minor do contrato; consumidores antigos devem ignorar campos desconhecidos somente onde o contrato permitir.",
+    "patch": "Correção editorial ou de bug que preserve campos, tipos, IDs, significado causal e regras de segurança admite patch, com registro explícito da alteração.",
+    "independentFromPackageRelease": true,
+    "noSilentSchemaDrift": true,
+    "noAutomaticEvidencePromotion": true,
+    "enforceFormerPreviewByteIdentityUntilExplicitRevision": true
+  },
+  "independentCompatibilityTestPolicy": {
+    "checks": [
+      "contractFieldWhitelist",
+      "publicSchemaAndVersion",
+      "recordAndSourceCount",
+      "manifestHash",
+      "recordIdContinuity",
+      "noPromotionToConfirmedCause"
+    ],
+    "testNature": "synthetic_and_snapshot_not_operational",
+    "ifBreakingChangeDetected": "reject_change_until_new_contract_major_and_migration"
+  },
+  "unsafeSemanticChanges": [
+    "hypothesis_not_event_to_confirmed_failure",
+    "possible_unobserved_to_measured_effect",
+    "unknown_serial_to_approved_oem_effectivity",
+    "unreviewed_cause_to_verified_root_cause"
+  ],
+  "note": "Contrato é estável em 1.0.0 nesta versão. O preview produzido continua na versão 1.3.12 e no hash da release original; o novo ledger de auditoria sistêmica permanece camada editorial separada."
+}
