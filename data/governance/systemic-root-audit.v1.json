@@ -138,7 +138,7 @@
           "hypothesisCategory": "engineering_configuration",
           "minimumIndependentEvidence": [
             "Relatório do desenho de roteamento e medição da temperatura durante o regime de operação aplicável, com histórico de revisões e da proteção térmica instalada.",
-            "Histórico de alterações no entorno da linha"
+            "Histórico de alterações no entorno da linha com datas, condição térmica medida e identificação da proteção instalada."
           ],
           "nonOrganizationalAlternative": "Ataque químico pode provocar aparência similar sem desvio térmico",
           "presentProofOfProcessDeviation": false,
@@ -555,7 +555,7 @@
           "hypothesisCategory": "environmental_control",
           "minimumIndependentEvidence": [
             "Registro de turno sobre acúmulo de solo por frente operacional e histórico datado de inspeção/limpeza do conjunto, em condições de carregamento comparáveis.",
-            "Histórico de limpeza e duração da exposição"
+            "Histórico de limpeza e duração da exposição documentado por posição do rolete e condições do terreno."
           ],
           "nonOrganizationalAlternative": "Detrito compactado pode acumular após uma única passagem",
           "presentProofOfProcessDeviation": false,
@@ -971,7 +971,7 @@
           "hypothesisCategory": "component_compatibility",
           "minimumIndependentEvidence": [
             "Registros de identificação da peça, tabela OEM de temperatura e curso de abertura, histórico de montagem e resultado de teste funcional controlado do elemento instalado.",
-            "Teste controlado e rastreio de substituição"
+            "Teste controlado e rastreio de substituição incluindo serial/arranjo do circuito e método OEM."
           ],
           "nonOrganizationalAlternative": "Baixa carga e ambiente frio podem retardar aquecimento normalmente",
           "presentProofOfProcessDeviation": false,
@@ -1075,7 +1075,7 @@
           "hypothesisCategory": "installation_quality",
           "minimumIndependentEvidence": [
             "Registro da substituição com PN e material da junta, procedimento por prefixo de série e inspeção documentada da origem física da perda de fluido.",
-            "Origem física de perda e inspeção de junta"
+            "Origem física de perda e inspeção de junta e apontamento de intervenções anteriores na bomba e conexões."
           ],
           "nonOrganizationalAlternative": "Mangueira adjacente pode escorrer sobre bomba sem falha de instalação",
           "presentProofOfProcessDeviation": false,
