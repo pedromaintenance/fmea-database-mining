@@ -14,15 +14,20 @@ const refs={sources:ids(sources),functions:ids(ont.functionalFailures),symptoms:
  mechanisms:ids(ont.mechanismFamilies),methods:ids(ont.evidenceMethods),pm:ids(pm)};
 const errors=[];const ok=(b,m)=>{if(!b)errors.push(m)};
 const chainIds=new Set(),families=new Set();
+const allowedSystems={mangueiras_hidraulicas:['hidraulico'],comando_final:['comando_final'],arrefecimento:['arrefecimento'],material_rodante:['rodante']};
+const familyCounts=new Map();
 for(const c of db.records){
- ok(!chainIds.has(c.id),'ID de cadeia duplicado '+c.id);chainIds.add(c.id);families.add(c.family);
+ ok(!chainIds.has(c.id),'ID de cadeia duplicado '+c.id);chainIds.add(c.id);families.add(c.family);familyCounts.set(c.family,(familyCounts.get(c.family)||0)+1);
+ ok(!!allowedSystems[c.family],'familia nao catalogada '+c.id);
  ok(refs.functions.has(c.functionalFailureId),'falha funcional invalida '+c.id);
  ok(c.mechanismIds.length>=1&&c.mechanismIds.every(x=>refs.mechanisms.has(x)),'mecanismo invalido '+c.id);
  ok(c.symptomIds.length>=2&&c.symptomIds.every(x=>refs.symptoms.has(x)),'sintomas invalidos '+c.id);
  ok(c.evidenceMethodIds.length>=2&&c.evidenceMethodIds.every(x=>refs.methods.has(x)),'metodos invalidos '+c.id);
  ok(c.preventionRuleIds.length>=1&&c.preventionRuleIds.every(x=>refs.pm.has(x)),'PM invalida '+c.id);
  const ruleSystems=new Set(pm.filter(x=>c.preventionRuleIds.includes(x.id)).map(x=>x.system));
- ok(c.family==='mangueiras_hidraulicas'?ruleSystems.has('hidraulico'):ruleSystems.has('comando_final'),'regras PM nao condizem com familia '+c.id);
+ ok((allowedSystems[c.family]||[]).some(s=>ruleSystems.has(s)),'regras PM nao condizem com familia '+c.id);
+ ok(c.preventionRuleIds.every(id=>{const r=pm.find(x=>x.id===id);return r&&(allowedSystems[c.family]||[]).includes(r.system)}),'PM de outro sistema '+c.id);
+ if(c.preventionAssociation)ok(['alvo_de_inspecao_candidato','monitoramento_contextual_nao_alvo_exclusivo_de_ajuste'].includes(c.preventionAssociation),'tipo de ligacao preventiva nao reconhecido '+c.id);
  ok(c.competingHypotheses.length>=2,'menos de duas alternativas '+c.id);
  ok(c.sourceClaims.length>=1&&c.sourceClaims.every(x=>refs.sources.has(x.sourceId)&&x.claim.length>25&&x.scope==='principio_geral'),'fonte sem escopo geral '+c.id);
  ok(c.investigations.length>=2,'menos de dois metodos '+c.id);
@@ -40,9 +45,10 @@ for(const c of db.records){
 }
 ok(db.counts.chains===db.records.length,'contagem no manifesto');
 ok(db.counts.families===families.size,'contagem de familias');
-ok(chainIds.size===8&&families.size===2,'regressao de ciclo curto');
+for(const family of Object.keys(allowedSystems))ok((familyCounts.get(family)||0)>=4,'regressao de cobertura da familia '+family);
+ok(chainIds.size>=16&&families.size>=4,'regressao de cobertura acumulada');
 const report={status:errors.length?'FALHOU':'OK',chains:db.records.length,families:[...families],
- suggestedTests:db.records.reduce((n,c)=>n+c.investigations.length,0),reviewedChains:0,
+ suggestedTests:db.records.reduce((n,c)=>n+c.investigations.length,0),familyCounts:Object.fromEntries(familyCounts),reviewedChains:db.records.filter(x=>x.review.status==='revisado_por_especialista').length,
  verifiedOemConfigurationLinks:0,errors:errors.length};
 console.log(JSON.stringify(report,null,2));for(const e of errors)console.error('ERRO: '+e);
 process.exit(errors.length?1:0);
