@@ -6,403 +6,403 @@
     "equipmentContext": {
       "id": "equipmentContext",
       "type": "required_when_executed",
-      "descriptionPt": "equipment context",
+      "descriptionPt": "Identificação da configuração/equipamento e condição de observação",
       "requiredForInterpretation": true
     },
     "inspectionLocation": {
       "id": "inspectionLocation",
       "type": "required_when_executed",
-      "descriptionPt": "inspection location",
+      "descriptionPt": "Local físico inspecionado",
       "requiredForInterpretation": true
     },
     "isolationStatus": {
       "id": "isolationStatus",
       "type": "required_when_executed",
-      "descriptionPt": "isolation status",
+      "descriptionPt": "Condição de bloqueio e isolamento de energias",
       "requiredForInterpretation": true
     },
     "surfaceCondition": {
       "id": "surfaceCondition",
       "type": "required_when_executed",
-      "descriptionPt": "surface condition",
+      "descriptionPt": "Estado da superfície e interferências",
       "requiredForInterpretation": true
     },
     "visualDocumentation": {
       "id": "visualDocumentation",
       "type": "required_when_executed",
-      "descriptionPt": "visual documentation",
+      "descriptionPt": "Registro visual e escala quando aplicável",
       "requiredForInterpretation": true
     },
     "dateTime": {
       "id": "dateTime",
       "type": "required_when_executed",
-      "descriptionPt": "date time",
+      "descriptionPt": "Data e hora do registro",
       "requiredForInterpretation": true
     },
     "measurementLocation": {
       "id": "measurementLocation",
       "type": "required_when_executed",
-      "descriptionPt": "measurement location",
+      "descriptionPt": "Ponto ou posição de medição",
       "requiredForInterpretation": true
     },
     "instrumentId": {
       "id": "instrumentId",
       "type": "required_when_executed",
-      "descriptionPt": "instrument id",
+      "descriptionPt": "Identificador do instrumento",
       "requiredForInterpretation": true
     },
     "instrumentCalibrationStatus": {
       "id": "instrumentCalibrationStatus",
       "type": "required_when_executed",
-      "descriptionPt": "instrument calibration status",
+      "descriptionPt": "Estado de calibração/verificação do instrumento",
       "requiredForInterpretation": true
     },
     "measuredGeometry": {
       "id": "measuredGeometry",
       "type": "required_when_executed",
-      "descriptionPt": "measured geometry",
+      "descriptionPt": "Dimensão ou geometria efetivamente medida",
       "requiredForInterpretation": true
     },
     "unit": {
       "id": "unit",
       "type": "required_when_executed",
-      "descriptionPt": "unit",
+      "descriptionPt": "Unidade da medição",
       "requiredForInterpretation": true
     },
     "applicableToleranceReference": {
       "id": "applicableToleranceReference",
       "type": "required_when_executed",
-      "descriptionPt": "applicable tolerance reference",
+      "descriptionPt": "Tolerância aplicável e fonte técnica",
       "requiredForInterpretation": true
     },
     "surfaceEmissivityOrLimitation": {
       "id": "surfaceEmissivityOrLimitation",
       "type": "required_when_executed",
-      "descriptionPt": "surface emissivity or limitation",
+      "descriptionPt": "Emissividade da superfície ou limitação térmica",
       "requiredForInterpretation": true
     },
     "ambientTemperature": {
       "id": "ambientTemperature",
       "type": "required_when_executed",
-      "descriptionPt": "ambient temperature",
+      "descriptionPt": "Temperatura do ambiente",
       "requiredForInterpretation": true
     },
     "loadOrOperatingState": {
       "id": "loadOrOperatingState",
       "type": "required_when_executed",
-      "descriptionPt": "load or operating state",
+      "descriptionPt": "Carga e estado operacional",
       "requiredForInterpretation": true
     },
     "comparisonBasis": {
       "id": "comparisonBasis",
       "type": "required_when_executed",
-      "descriptionPt": "comparison basis",
+      "descriptionPt": "Referência de comparação sob condição equivalente",
       "requiredForInterpretation": true
     },
     "sensorLocation": {
       "id": "sensorLocation",
       "type": "required_when_executed",
-      "descriptionPt": "sensor location",
+      "descriptionPt": "Posição do sensor",
       "requiredForInterpretation": true
     },
     "rotationalSpeed": {
       "id": "rotationalSpeed",
       "type": "required_when_executed",
-      "descriptionPt": "rotational speed",
+      "descriptionPt": "Velocidade de rotação durante a medição",
       "requiredForInterpretation": true
     },
     "operatingLoad": {
       "id": "operatingLoad",
       "type": "required_when_executed",
-      "descriptionPt": "operating load",
+      "descriptionPt": "Carga/regime aplicado",
       "requiredForInterpretation": true
     },
     "frequencyContentOrSignal": {
       "id": "frequencyContentOrSignal",
       "type": "required_when_executed",
-      "descriptionPt": "frequency content or signal",
+      "descriptionPt": "Espectro, frequência ou forma de sinal",
       "requiredForInterpretation": true
     },
     "baselineReference": {
       "id": "baselineReference",
       "type": "required_when_executed",
-      "descriptionPt": "baseline reference",
+      "descriptionPt": "Referência histórica ou limite de referência",
       "requiredForInterpretation": true
     },
     "circuitOrTestPoint": {
       "id": "circuitOrTestPoint",
       "type": "required_when_executed",
-      "descriptionPt": "circuit or test point",
+      "descriptionPt": "Circuito e ponto físico de teste",
       "requiredForInterpretation": true
     },
     "fluidTemperature": {
       "id": "fluidTemperature",
       "type": "required_when_executed",
-      "descriptionPt": "fluid temperature",
+      "descriptionPt": "Temperatura do fluido no teste",
       "requiredForInterpretation": true
     },
     "oemTestReference": {
       "id": "oemTestReference",
       "type": "required_when_executed",
-      "descriptionPt": "oem test reference",
+      "descriptionPt": "Referência OEM do procedimento e limites",
       "requiredForInterpretation": true
     },
     "circuitOrPin": {
       "id": "circuitOrPin",
       "type": "required_when_executed",
-      "descriptionPt": "circuit or pin",
+      "descriptionPt": "Circuito, terminal ou pino de teste",
       "requiredForInterpretation": true
     },
     "electricalState": {
       "id": "electricalState",
       "type": "required_when_executed",
-      "descriptionPt": "electrical state",
+      "descriptionPt": "Estado de energização e condições elétricas",
       "requiredForInterpretation": true
     },
     "controllerIdentity": {
       "id": "controllerIdentity",
       "type": "required_when_executed",
-      "descriptionPt": "controller identity",
+      "descriptionPt": "Identificação do módulo de controle",
       "requiredForInterpretation": true
     },
     "activeOrLogged": {
       "id": "activeOrLogged",
       "type": "required_when_executed",
-      "descriptionPt": "active or logged",
+      "descriptionPt": "Estado ativo ou registrado do diagnóstico",
       "requiredForInterpretation": true
     },
     "eventTimestamp": {
       "id": "eventTimestamp",
       "type": "required_when_executed",
-      "descriptionPt": "event timestamp",
+      "descriptionPt": "Data e hora do evento/código",
       "requiredForInterpretation": true
     },
     "operatingState": {
       "id": "operatingState",
       "type": "required_when_executed",
-      "descriptionPt": "operating state",
+      "descriptionPt": "Regime de funcionamento no evento",
       "requiredForInterpretation": true
     },
     "codeFamily": {
       "id": "codeFamily",
       "type": "required_when_executed",
-      "descriptionPt": "code family",
+      "descriptionPt": "Protocolo e família de código",
       "requiredForInterpretation": true
     },
     "compartment": {
       "id": "compartment",
       "type": "required_when_executed",
-      "descriptionPt": "compartment",
+      "descriptionPt": "Compartimento identificado",
       "requiredForInterpretation": true
     },
     "fluidProduct": {
       "id": "fluidProduct",
       "type": "required_when_executed",
-      "descriptionPt": "fluid product",
+      "descriptionPt": "Produto/graduação do fluido",
       "requiredForInterpretation": true
     },
     "fluidHours": {
       "id": "fluidHours",
       "type": "required_when_executed",
-      "descriptionPt": "fluid hours",
+      "descriptionPt": "Horas de uso do fluido",
       "requiredForInterpretation": true
     },
     "samplePoint": {
       "id": "samplePoint",
       "type": "required_when_executed",
-      "descriptionPt": "sample point",
+      "descriptionPt": "Ponto exato de coleta",
       "requiredForInterpretation": true
     },
     "collectionMethod": {
       "id": "collectionMethod",
       "type": "required_when_executed",
-      "descriptionPt": "collection method",
+      "descriptionPt": "Método de coleta e preservação da amostra",
       "requiredForInterpretation": true
     },
     "laboratoryMethod": {
       "id": "laboratoryMethod",
       "type": "required_when_executed",
-      "descriptionPt": "laboratory method",
+      "descriptionPt": "Método de ensaio laboratorial",
       "requiredForInterpretation": true
     },
     "cleanSamplingControls": {
       "id": "cleanSamplingControls",
       "type": "required_when_executed",
-      "descriptionPt": "clean sampling controls",
+      "descriptionPt": "Controle de contaminação durante coleta",
       "requiredForInterpretation": true
     },
     "particleMeasurementMethod": {
       "id": "particleMeasurementMethod",
       "type": "required_when_executed",
-      "descriptionPt": "particle measurement method",
+      "descriptionPt": "Método de contagem/classificação de partículas",
       "requiredForInterpretation": true
     },
     "testMethod": {
       "id": "testMethod",
       "type": "required_when_executed",
-      "descriptionPt": "test method",
+      "descriptionPt": "Método analítico ou diagnóstico utilizado",
       "requiredForInterpretation": true
     },
     "interferenceOrQualityCheck": {
       "id": "interferenceOrQualityCheck",
       "type": "required_when_executed",
-      "descriptionPt": "interference or quality check",
+      "descriptionPt": "Interferências e verificação de qualidade do ensaio",
       "requiredForInterpretation": true
     },
     "componentOrFilterId": {
       "id": "componentOrFilterId",
       "type": "required_when_executed",
-      "descriptionPt": "component or filter id",
+      "descriptionPt": "Identificação do componente, filtro ou bujão removido",
       "requiredForInterpretation": true
     },
     "removalAndHandlingMethod": {
       "id": "removalAndHandlingMethod",
       "type": "required_when_executed",
-      "descriptionPt": "removal and handling method",
+      "descriptionPt": "Procedimento de retirada, abertura e manuseio",
       "requiredForInterpretation": true
     },
     "residueMorphology": {
       "id": "residueMorphology",
       "type": "required_when_executed",
-      "descriptionPt": "residue morphology",
+      "descriptionPt": "Morfologia, tamanho e aspecto do resíduo",
       "requiredForInterpretation": true
     },
     "photographOrRecord": {
       "id": "photographOrRecord",
       "type": "required_when_executed",
-      "descriptionPt": "photograph or record",
+      "descriptionPt": "Fotografia, ficha ou registro rastreável",
       "requiredForInterpretation": true
     },
     "baselineOrHistory": {
       "id": "baselineOrHistory",
       "type": "required_when_executed",
-      "descriptionPt": "baseline or history",
+      "descriptionPt": "Histórico ou amostra/condição de referência",
       "requiredForInterpretation": true
     },
     "testConfiguration": {
       "id": "testConfiguration",
       "type": "required_when_executed",
-      "descriptionPt": "test configuration",
+      "descriptionPt": "Arranjo e pré-condições do ensaio",
       "requiredForInterpretation": true
     },
     "safetyAndIsolationStatus": {
       "id": "safetyAndIsolationStatus",
       "type": "required_when_executed",
-      "descriptionPt": "safety and isolation status",
+      "descriptionPt": "Medidas de segurança, isolamento e permissivos",
       "requiredForInterpretation": true
     },
     "fluidTemperatureIfApplicable": {
       "id": "fluidTemperatureIfApplicable",
       "type": "required_when_executed",
-      "descriptionPt": "fluid temperature if applicable",
+      "descriptionPt": "Temperatura do fluido quando pertinente",
       "requiredForInterpretation": true
     },
     "measurementInstrument": {
       "id": "measurementInstrument",
       "type": "required_when_executed",
-      "descriptionPt": "measurement instrument",
+      "descriptionPt": "Instrumento empregado no ensaio",
       "requiredForInterpretation": true
     },
     "oemProcedureReference": {
       "id": "oemProcedureReference",
       "type": "required_when_executed",
-      "descriptionPt": "oem procedure reference",
+      "descriptionPt": "Manual e procedimento OEM efetivos",
       "requiredForInterpretation": true
     },
     "baselineOrAcceptanceCriterion": {
       "id": "baselineOrAcceptanceCriterion",
       "type": "required_when_executed",
-      "descriptionPt": "baseline or acceptance criterion",
+      "descriptionPt": "Baseline ou critério de aceitação aplicável",
       "requiredForInterpretation": true
     },
     "sourceWorkOrderOrEvent": {
       "id": "sourceWorkOrderOrEvent",
       "type": "required_when_executed",
-      "descriptionPt": "source work order or event",
+      "descriptionPt": "Ordem, evento ou registro de origem",
       "requiredForInterpretation": true
     },
     "componentServiceHistory": {
       "id": "componentServiceHistory",
       "type": "required_when_executed",
-      "descriptionPt": "component service history",
+      "descriptionPt": "Histórico de manutenção do componente",
       "requiredForInterpretation": true
     },
     "fluidOrPartChangeHistory": {
       "id": "fluidOrPartChangeHistory",
       "type": "required_when_executed",
-      "descriptionPt": "fluid or part change history",
+      "descriptionPt": "Troca anterior de fluido ou peça",
       "requiredForInterpretation": true
     },
     "chronology": {
       "id": "chronology",
       "type": "required_when_executed",
-      "descriptionPt": "chronology",
+      "descriptionPt": "Cronologia dos eventos",
       "requiredForInterpretation": true
     },
     "signalId": {
       "id": "signalId",
       "type": "required_when_executed",
-      "descriptionPt": "signal id",
+      "descriptionPt": "Identificação da variável ou canal",
       "requiredForInterpretation": true
     },
     "measurementWindow": {
       "id": "measurementWindow",
       "type": "required_when_executed",
-      "descriptionPt": "measurement window",
+      "descriptionPt": "Janela e frequência dos dados",
       "requiredForInterpretation": true
     },
     "sensorHealth": {
       "id": "sensorHealth",
       "type": "required_when_executed",
-      "descriptionPt": "sensor health",
+      "descriptionPt": "Estado e confiabilidade do sensor",
       "requiredForInterpretation": true
     },
     "dataCompleteness": {
       "id": "dataCompleteness",
       "type": "required_when_executed",
-      "descriptionPt": "data completeness",
+      "descriptionPt": "Integridade/cobertura temporal dos dados",
       "requiredForInterpretation": true
     },
     "fixationOrClearanceFeature": {
       "id": "fixationOrClearanceFeature",
       "type": "required_when_executed",
-      "descriptionPt": "fixation or clearance feature",
+      "descriptionPt": "Fixação, contato ou folga avaliada",
       "requiredForInterpretation": true
     },
     "measurementToolIfApplicable": {
       "id": "measurementToolIfApplicable",
       "type": "required_when_executed",
-      "descriptionPt": "measurement tool if applicable",
+      "descriptionPt": "Ferramenta ou instrumento, quando aplicável",
       "requiredForInterpretation": true
     },
     "oemInspectionReference": {
       "id": "oemInspectionReference",
       "type": "required_when_executed",
-      "descriptionPt": "oem inspection reference",
+      "descriptionPt": "Critério de inspeção OEM por arranjo",
       "requiredForInterpretation": true
     },
     "oemManualId": {
       "id": "oemManualId",
       "type": "required_when_executed",
-      "descriptionPt": "oem manual id",
+      "descriptionPt": "Identificação do manual OEM",
       "requiredForInterpretation": true
     },
     "oemRevision": {
       "id": "oemRevision",
       "type": "required_when_executed",
-      "descriptionPt": "oem revision",
+      "descriptionPt": "Edição ou revisão do documento técnico",
       "requiredForInterpretation": true
     },
     "effectiveSerialOrArrangement": {
       "id": "effectiveSerialOrArrangement",
       "type": "required_when_executed",
-      "descriptionPt": "effective serial or arrangement",
+      "descriptionPt": "Série/prefixo e arranjo abrangidos",
       "requiredForInterpretation": true
     },
     "citationScope": {
       "id": "citationScope",
       "type": "required_when_executed",
-      "descriptionPt": "citation scope",
+      "descriptionPt": "Trecho e escopo do conceito citado",
       "requiredForInterpretation": true
     }
   },
