@@ -1,0 +1,567 @@
+{
+  "schema": "fmea-mining.knowledge.v1",
+  "version": "1.1.0",
+  "kind": "oil_archetypes",
+  "provenance": {
+    "repository": "pedromaintenance/porcaria-analise-de-oleo",
+    "originalPath": "js/cases.js",
+    "blobSha": "a29b06749d2f0dab9457daac5108d82cbb6510fd",
+    "evidenceNature": "simulated",
+    "actualSamplesPresent": false
+  },
+  "description": "24 mecanismos, cada um com tres variacoes ficticias",
+  "records": [
+    {
+      "id": "agua-final",
+      "topic": "água e emulsão",
+      "chapter": 0,
+      "scenarios": [
+        {
+          "id": "OIL-CASE-001",
+          "variation": 0,
+          "decision": "repair"
+        },
+        {
+          "id": "OIL-CASE-005",
+          "variation": 1,
+          "decision": "repair"
+        },
+        {
+          "id": "OIL-CASE-009",
+          "variation": 2,
+          "decision": "repair"
+        }
+      ],
+      "kind": "arquetipo_ficticio_com_tres_variacoes_nao_amostras_de_campo"
+    },
+    {
+      "id": "ferro-final",
+      "topic": "desgaste ferrometálico",
+      "chapter": 0,
+      "scenarios": [
+        {
+          "id": "OIL-CASE-002",
+          "variation": 0,
+          "decision": "hold"
+        },
+        {
+          "id": "OIL-CASE-006",
+          "variation": 1,
+          "decision": "hold"
+        },
+        {
+          "id": "OIL-CASE-010",
+          "variation": 2,
+          "decision": "replace"
+        }
+      ],
+      "kind": "arquetipo_ficticio_com_tres_variacoes_nao_amostras_de_campo"
+    },
+    {
+      "id": "oleo-misturado",
+      "topic": "mudança de formulação",
+      "chapter": 0,
+      "scenarios": [
+        {
+          "id": "OIL-CASE-003",
+          "variation": 0,
+          "decision": "save"
+        },
+        {
+          "id": "OIL-CASE-007",
+          "variation": 1,
+          "decision": "save"
+        },
+        {
+          "id": "OIL-CASE-011",
+          "variation": 2,
+          "decision": "save"
+        }
+      ],
+      "kind": "arquetipo_ficticio_com_tres_variacoes_nao_amostras_de_campo"
+    },
+    {
+      "id": "poeira-final",
+      "topic": "contaminação abrasiva",
+      "chapter": 0,
+      "scenarios": [
+        {
+          "id": "OIL-CASE-004",
+          "variation": 0,
+          "decision": "repair"
+        },
+        {
+          "id": "OIL-CASE-008",
+          "variation": 1,
+          "decision": "repair"
+        },
+        {
+          "id": "OIL-CASE-012",
+          "variation": 2,
+          "decision": "repair"
+        }
+      ],
+      "kind": "arquetipo_ficticio_com_tres_variacoes_nao_amostras_de_campo"
+    },
+    {
+      "id": "roda-agua",
+      "topic": "água no mancal",
+      "chapter": 1,
+      "scenarios": [
+        {
+          "id": "OIL-CASE-013",
+          "variation": 0,
+          "decision": "repair"
+        },
+        {
+          "id": "OIL-CASE-017",
+          "variation": 1,
+          "decision": "repair"
+        },
+        {
+          "id": "OIL-CASE-021",
+          "variation": 2,
+          "decision": "repair"
+        }
+      ],
+      "kind": "arquetipo_ficticio_com_tres_variacoes_nao_amostras_de_campo"
+    },
+    {
+      "id": "roda-niquel",
+      "topic": "rolamentos",
+      "chapter": 1,
+      "scenarios": [
+        {
+          "id": "OIL-CASE-014",
+          "variation": 0,
+          "decision": "hold"
+        },
+        {
+          "id": "OIL-CASE-018",
+          "variation": 1,
+          "decision": "hold"
+        },
+        {
+          "id": "OIL-CASE-022",
+          "variation": 2,
+          "decision": "replace"
+        }
+      ],
+      "kind": "arquetipo_ficticio_com_tres_variacoes_nao_amostras_de_campo"
+    },
+    {
+      "id": "roda-normal",
+      "topic": "tendência normal",
+      "chapter": 1,
+      "scenarios": [
+        {
+          "id": "OIL-CASE-015",
+          "variation": 0,
+          "decision": "save"
+        },
+        {
+          "id": "OIL-CASE-019",
+          "variation": 1,
+          "decision": "save"
+        },
+        {
+          "id": "OIL-CASE-023",
+          "variation": 2,
+          "decision": "save"
+        }
+      ],
+      "kind": "arquetipo_ficticio_com_tres_variacoes_nao_amostras_de_campo"
+    },
+    {
+      "id": "roda-poeira",
+      "topic": "roda dianteira",
+      "chapter": 1,
+      "scenarios": [
+        {
+          "id": "OIL-CASE-016",
+          "variation": 0,
+          "decision": "repair"
+        },
+        {
+          "id": "OIL-CASE-020",
+          "variation": 1,
+          "decision": "repair"
+        },
+        {
+          "id": "OIL-CASE-024",
+          "variation": 2,
+          "decision": "repair"
+        }
+      ],
+      "kind": "arquetipo_ficticio_com_tres_variacoes_nao_amostras_de_campo"
+    },
+    {
+      "id": "giro-metal",
+      "topic": "redutor de giro",
+      "chapter": 2,
+      "scenarios": [
+        {
+          "id": "OIL-CASE-025",
+          "variation": 0,
+          "decision": "hold"
+        },
+        {
+          "id": "OIL-CASE-027",
+          "variation": 1,
+          "decision": "hold"
+        },
+        {
+          "id": "OIL-CASE-029",
+          "variation": 2,
+          "decision": "replace"
+        }
+      ],
+      "kind": "arquetipo_ficticio_com_tres_variacoes_nao_amostras_de_campo"
+    },
+    {
+      "id": "giro-poeira",
+      "topic": "redutor poeira",
+      "chapter": 2,
+      "scenarios": [
+        {
+          "id": "OIL-CASE-026",
+          "variation": 0,
+          "decision": "repair"
+        },
+        {
+          "id": "OIL-CASE-028",
+          "variation": 1,
+          "decision": "repair"
+        },
+        {
+          "id": "OIL-CASE-030",
+          "variation": 2,
+          "decision": "repair"
+        }
+      ],
+      "kind": "arquetipo_ficticio_com_tres_variacoes_nao_amostras_de_campo"
+    },
+    {
+      "id": "trans-formula",
+      "topic": "baseline transmissão",
+      "chapter": 3,
+      "scenarios": [
+        {
+          "id": "OIL-CASE-031",
+          "variation": 0,
+          "decision": "save"
+        },
+        {
+          "id": "OIL-CASE-034",
+          "variation": 1,
+          "decision": "save"
+        },
+        {
+          "id": "OIL-CASE-037",
+          "variation": 2,
+          "decision": "save"
+        }
+      ],
+      "kind": "arquetipo_ficticio_com_tres_variacoes_nao_amostras_de_campo"
+    },
+    {
+      "id": "trans-metal",
+      "topic": "metais transmissão",
+      "chapter": 3,
+      "scenarios": [
+        {
+          "id": "OIL-CASE-032",
+          "variation": 0,
+          "decision": "hold"
+        },
+        {
+          "id": "OIL-CASE-035",
+          "variation": 1,
+          "decision": "hold"
+        },
+        {
+          "id": "OIL-CASE-038",
+          "variation": 2,
+          "decision": "replace"
+        }
+      ],
+      "kind": "arquetipo_ficticio_com_tres_variacoes_nao_amostras_de_campo"
+    },
+    {
+      "id": "trans-part",
+      "topic": "ISO e partículas",
+      "chapter": 3,
+      "scenarios": [
+        {
+          "id": "OIL-CASE-033",
+          "variation": 0,
+          "decision": "repair"
+        },
+        {
+          "id": "OIL-CASE-036",
+          "variation": 1,
+          "decision": "repair"
+        },
+        {
+          "id": "OIL-CASE-039",
+          "variation": 2,
+          "decision": "repair"
+        }
+      ],
+      "kind": "arquetipo_ficticio_com_tres_variacoes_nao_amostras_de_campo"
+    },
+    {
+      "id": "hidro-limalha",
+      "topic": "partículas ferrosas",
+      "chapter": 4,
+      "scenarios": [
+        {
+          "id": "OIL-CASE-040",
+          "variation": 0,
+          "decision": "hold"
+        },
+        {
+          "id": "OIL-CASE-043",
+          "variation": 1,
+          "decision": "hold"
+        },
+        {
+          "id": "OIL-CASE-046",
+          "variation": 2,
+          "decision": "replace"
+        }
+      ],
+      "kind": "arquetipo_ficticio_com_tres_variacoes_nao_amostras_de_campo"
+    },
+    {
+      "id": "hidro-particle",
+      "topic": "controle de contaminação",
+      "chapter": 4,
+      "scenarios": [
+        {
+          "id": "OIL-CASE-041",
+          "variation": 0,
+          "decision": "repair"
+        },
+        {
+          "id": "OIL-CASE-044",
+          "variation": 1,
+          "decision": "repair"
+        },
+        {
+          "id": "OIL-CASE-047",
+          "variation": 2,
+          "decision": "repair"
+        }
+      ],
+      "kind": "arquetipo_ficticio_com_tres_variacoes_nao_amostras_de_campo"
+    },
+    {
+      "id": "hidro-visc",
+      "topic": "viscosidade hidráulica",
+      "chapter": 4,
+      "scenarios": [
+        {
+          "id": "OIL-CASE-042",
+          "variation": 0,
+          "decision": "save"
+        },
+        {
+          "id": "OIL-CASE-045",
+          "variation": 1,
+          "decision": "save"
+        },
+        {
+          "id": "OIL-CASE-048",
+          "variation": 2,
+          "decision": "save"
+        }
+      ],
+      "kind": "arquetipo_ficticio_com_tres_variacoes_nao_amostras_de_campo"
+    },
+    {
+      "id": "motor-metais",
+      "topic": "metais no motor",
+      "chapter": 5,
+      "scenarios": [
+        {
+          "id": "OIL-CASE-049",
+          "variation": 0,
+          "decision": "hold"
+        },
+        {
+          "id": "OIL-CASE-052",
+          "variation": 1,
+          "decision": "hold"
+        },
+        {
+          "id": "OIL-CASE-055",
+          "variation": 2,
+          "decision": "replace"
+        }
+      ],
+      "kind": "arquetipo_ficticio_com_tres_variacoes_nao_amostras_de_campo"
+    },
+    {
+      "id": "motor-soot",
+      "topic": "degradação óleo motor",
+      "chapter": 5,
+      "scenarios": [
+        {
+          "id": "OIL-CASE-050",
+          "variation": 0,
+          "decision": "repair"
+        },
+        {
+          "id": "OIL-CASE-053",
+          "variation": 1,
+          "decision": "repair"
+        },
+        {
+          "id": "OIL-CASE-056",
+          "variation": 2,
+          "decision": "repair"
+        }
+      ],
+      "kind": "arquetipo_ficticio_com_tres_variacoes_nao_amostras_de_campo"
+    },
+    {
+      "id": "motor-visc",
+      "topic": "diluição por combustível",
+      "chapter": 5,
+      "scenarios": [
+        {
+          "id": "OIL-CASE-051",
+          "variation": 0,
+          "decision": "repair"
+        },
+        {
+          "id": "OIL-CASE-054",
+          "variation": 1,
+          "decision": "repair"
+        },
+        {
+          "id": "OIL-CASE-057",
+          "variation": 2,
+          "decision": "repair"
+        }
+      ],
+      "kind": "arquetipo_ficticio_com_tres_variacoes_nao_amostras_de_campo"
+    },
+    {
+      "id": "arref-glicol",
+      "topic": "concentração arrefecimento",
+      "chapter": 6,
+      "scenarios": [
+        {
+          "id": "OIL-CASE-058",
+          "variation": 0,
+          "decision": "repair"
+        },
+        {
+          "id": "OIL-CASE-061",
+          "variation": 1,
+          "decision": "repair"
+        },
+        {
+          "id": "OIL-CASE-064",
+          "variation": 2,
+          "decision": "repair"
+        }
+      ],
+      "kind": "arquetipo_ficticio_com_tres_variacoes_nao_amostras_de_campo"
+    },
+    {
+      "id": "arref-nitrito",
+      "topic": "ELC e alumínio",
+      "chapter": 6,
+      "scenarios": [
+        {
+          "id": "OIL-CASE-059",
+          "variation": 0,
+          "decision": "repair"
+        },
+        {
+          "id": "OIL-CASE-062",
+          "variation": 1,
+          "decision": "repair"
+        },
+        {
+          "id": "OIL-CASE-065",
+          "variation": 2,
+          "decision": "repair"
+        }
+      ],
+      "kind": "arquetipo_ficticio_com_tres_variacoes_nao_amostras_de_campo"
+    },
+    {
+      "id": "arref-ph",
+      "topic": "pH do arrefecimento",
+      "chapter": 6,
+      "scenarios": [
+        {
+          "id": "OIL-CASE-060",
+          "variation": 0,
+          "decision": "hold"
+        },
+        {
+          "id": "OIL-CASE-063",
+          "variation": 1,
+          "decision": "hold"
+        },
+        {
+          "id": "OIL-CASE-066",
+          "variation": 2,
+          "decision": "hold"
+        }
+      ],
+      "kind": "arquetipo_ficticio_com_tres_variacoes_nao_amostras_de_campo"
+    },
+    {
+      "id": "dif-cont",
+      "topic": "contaminação diferencial",
+      "chapter": 7,
+      "scenarios": [
+        {
+          "id": "OIL-CASE-067",
+          "variation": 0,
+          "decision": "repair"
+        },
+        {
+          "id": "OIL-CASE-069",
+          "variation": 1,
+          "decision": "repair"
+        },
+        {
+          "id": "OIL-CASE-071",
+          "variation": 2,
+          "decision": "repair"
+        }
+      ],
+      "kind": "arquetipo_ficticio_com_tres_variacoes_nao_amostras_de_campo"
+    },
+    {
+      "id": "dif-metal",
+      "topic": "metais no diferencial",
+      "chapter": 7,
+      "scenarios": [
+        {
+          "id": "OIL-CASE-068",
+          "variation": 0,
+          "decision": "hold"
+        },
+        {
+          "id": "OIL-CASE-070",
+          "variation": 1,
+          "decision": "hold"
+        },
+        {
+          "id": "OIL-CASE-072",
+          "variation": 2,
+          "decision": "replace"
+        }
+      ],
+      "kind": "arquetipo_ficticio_com_tres_variacoes_nao_amostras_de_campo"
+    }
+  ]
+}

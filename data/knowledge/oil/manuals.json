@@ -1,0 +1,396 @@
+{
+  "schema": "fmea-mining.knowledge.v1",
+  "version": "1.1.0",
+  "kind": "manuals_original",
+  "provenance": {
+    "repository": "pedromaintenance/porcaria-analise-de-oleo",
+    "originalPath": "js/library.js",
+    "blobSha": "c3a4d75ac5cc7498cc949b4d63de5ab9768c8ecf",
+    "evidenceNature": "didactic_articles"
+  },
+  "description": "17 artigos didaticos autorais sobre fluidos, inspecao e decisoes",
+  "records": [
+    {
+      "id": "vedacoes",
+      "title": "Vedações, poeira e respiros",
+      "price": 175,
+      "subject": "Tribologia",
+      "chapters": [
+        0,
+        2,
+        7
+      ],
+      "summary": "Silício e alumínio podem indicar sujeira ambiental, mas a origem deve ser confirmada.",
+      "body": [
+        "Em compartimentos lubrificados, vedações, respiros e tampas controlam a entrada de contaminantes. Partículas duras podem acelerar abrasão em engrenagens e rolamentos. Um valor isolado de silício não identifica o caminho de ingresso nem prova que o componente está inutilizado.",
+        "Compare a tendência histórica, o tipo de lubrificante, as horas do óleo, o método de coleta e os sinais de campo. Inspecione respiro, interface de vedações, bujões e práticas de lavagem. Poeira no exterior da máquina não é o mesmo que contaminação confirmada do óleo.",
+        "O plano correto precisa eliminar a fonte do ingresso e verificar dano secundário. Recoleta representativa e retorno técnico são tão importantes quanto a intervenção. Não confunda limpeza superficial com solução da causa."
+      ],
+      "check": [
+        "Qual evidência diferencia contaminação da amostra e entrada real de poeira?",
+        "O que deverá ser verificado antes de substituir o conjunto completo?"
+      ]
+    },
+    {
+      "id": "agua",
+      "title": "Água livre, emulsão e corrosão",
+      "price": 170,
+      "subject": "Análise de fluidos",
+      "chapters": [
+        0,
+        1,
+        7
+      ],
+      "summary": "Água reduz margens de lubrificação e pode provocar corrosão e emulsão.",
+      "body": [
+        "A entrada de água pode ocorrer por lavagem, vedação, respiro ou falha de procedimento. Dependendo do fluido, da quantidade e do tempo de exposição, pode reduzir a resistência da película lubrificante e produzir corrosão, emulsificação e alterações químicas.",
+        "É indispensável diferenciar água livre, umidade dispersa, condensação e contaminação da coleta. Verifique tampas, juntas, vedadores, exposição da máquina e qualidade da amostra. Avalie também ruído, aquecimento, limalhas e condição do componente.",
+        "Trocar óleo sem eliminar o ingresso pode produzir reincidência. Em situação grave, a proteção do ativo pode exigir retirada de serviço e ação imediata, conforme avaliação, fabricante e laudo."
+      ],
+      "check": [
+        "Que inspeções tornam mais provável um caminho de ingresso?",
+        "Quando o risco deixa de permitir simples monitoramento?"
+      ]
+    },
+    {
+      "id": "desgaste",
+      "title": "Metais de desgaste: Fe, Cu, Cr, Pb, Sn e Ni",
+      "price": 210,
+      "subject": "Tribologia",
+      "chapters": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        7
+      ],
+      "summary": "Metais indicam mecanismos possíveis, não a identificação automática de uma peça.",
+      "body": [
+        "Ferro pode estar associado a engrenagens, eixos, cilindros ou outros componentes ferrosos; cobre a ligas de mancais, buchas ou outras fontes; cromo, níquel, chumbo e estanho também demandam interpretação contextual. A arquitetura do sistema determina as fontes possíveis.",
+        "A concentração absoluta importa menos quando isolada do histórico, da vida do óleo, do tipo de amostra, da evolução e dos sintomas. A presença de limalhas e partículas visíveis pode justificar resposta mais imediata que pequenas variações químicas. Magnetismo, morfologia e tamanho das partículas agregam evidência.",
+        "Não extrapole a causa raiz de uma leitura laboratorial. Verifique histórico de falha, operações recentes, intervenções e inspeções. Use a documentação técnica da configuração para determinar o que pode ser desmontado com segurança."
+      ],
+      "check": [
+        "Qual dado transforma um metal isolado em um padrão convergente?",
+        "Por que não é possível condenar uma bucha apenas pelo cobre?"
+      ]
+    },
+    {
+      "id": "baseline",
+      "title": "Baseline de lubrificantes e falsos alarmes",
+      "price": 160,
+      "subject": "Qualidade do dado",
+      "chapters": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "summary": "Uma formulação nova pode deslocar FTIR e aditivos sem indicar quebra.",
+      "body": [
+        "A mudança documentada do óleo pode alterar a assinatura por infravermelho, concentração de certos elementos e propriedades da base. É necessário confirmar que a formulação nova atende à especificação OEM e ao componente particular; nome comercial não basta.",
+        "Compare os lotes, registros de troca, tipo de amostra e dados da coleta. Se não há tendência anormal de metais, água, partículas ou sintoma mecânico, a hipótese de novo baseline deve ser considerada antes de desmontagem. Uma divergência não verificada também pode esconder erro de fluido: não a ignore.",
+        "Após validação, registre a mudança de produto e peça ao laboratório adequação da referência. Inicie histórico coerente para o novo produto e acompanhe tendências."
+      ],
+      "check": [
+        "Uma assinatura química diferente prova dano?",
+        "O que precisa constar no histórico para validar novo baseline?"
+      ]
+    },
+    {
+      "id": "roda",
+      "title": "Roda dianteira: rolamentos e selo Duo-Cone",
+      "price": 260,
+      "subject": "Rodas",
+      "chapters": [
+        1
+      ],
+      "summary": "Critérios de inspeção associados a evidências, não abertura rotineira sem gatilho.",
+      "body": [
+        "A documentação técnica sobre rodas dianteiras identifica sinais que justificam investigação de rolamentos: grande quantidade de metal em bujão magnético, níquel elevado em S·O·S, crescimento de partículas ou vazamentos na área da ponta de eixo. Esses sinais devem ser correlacionados; não são equivalentes a laudo conclusivo sobre uma pista específica.",
+        "A desmontagem envolve massa elevada, sustentação, retirada de pneu/aro, freio e procedimentos de segurança. Não se deve avançar apenas com um recorte parcial de manual. A abertura deve seguir efetividade do número de série e instrução completa e vigente.",
+        "No treinamento, a remoção de tampa para inspeção é decisão distinta da retirada da roda, dos mancais e dos selos. Cada ampliação exige escopo, ferramentas, controles de risco e justificativa."
+      ],
+      "check": [
+        "Quais quatro sinais podem motivar inspeção da roda?",
+        "Que documento é indispensável antes de desmontar o conjunto?"
+      ]
+    },
+    {
+      "id": "particulas",
+      "title": "Partículas, filtros e limpeza ISO",
+      "price": 195,
+      "subject": "Contaminação",
+      "chapters": [
+        3,
+        4
+      ],
+      "summary": "Contagem e aparência precisam ser lidas junto da cadeia de amostragem.",
+      "body": [
+        "A limpeza do fluido é relevante para válvulas, bombas e superfícies de deslizamento. Uma contagem elevada exige contexto: tamanho de partícula, tendência, componente, fluido, coleta e método do laboratório. Impurezas podem impedir uma contagem representativa; resultado inválido não é contagem igual a zero.",
+        "Investigue filtros, indicação de saturação, reservatório, respiro, vedação, enchimento e reparos anteriores. Retorne a amostrar em condições controladas. Uma análise isolada não prova qual bomba gerou partículas.",
+        "A filtragem adicional e a troca devem considerar a arquitetura do circuito. Compartimentos fechados de engrenagens não herdam automaticamente os filtros do circuito hidráulico que os aciona."
+      ],
+      "check": [
+        "O que significa contagem de partículas indisponível?",
+        "Como priorizar entre coletar novamente e abrir a bomba?"
+      ]
+    },
+    {
+      "id": "viscosidade",
+      "title": "Viscosidade, mistura e condição operacional",
+      "price": 180,
+      "subject": "Fluidos",
+      "chapters": [
+        3,
+        4,
+        5,
+        7
+      ],
+      "summary": "Viscosidade fora do esperado pode ter mais de uma origem.",
+      "body": [
+        "Viscosidade inadequada pode comprometer a espessura da película e a eficiência de circuitos. Diluição com combustível, mistura de óleos, oxidação, cisalhamento ou erro de identificação estão entre as hipóteses possíveis. É importante distinguir medição em temperatura de referência e sensação tátil.",
+        "Confira o tipo de compartimento, o produto aplicado, a amostra anterior e o relatório. Mudança de lubrificante aprovada pode explicar diferenças; mistura incorreta também pode exigir intervenção.",
+        "Evite completar com outro grau de óleo sem indicação e não condene bomba, engrenagem ou mancal antes de consolidar evidências. Use limites e especificações do manual do equipamento."
+      ],
+      "check": [
+        "Quais variáveis precisam acompanhar uma medição de viscosidade?",
+        "Como distinguir mistura inadequada e baseline novo?"
+      ]
+    },
+    {
+      "id": "motor",
+      "title": "Motor diesel: óleo, filtro e combustível",
+      "price": 240,
+      "subject": "Motores",
+      "chapters": [
+        5
+      ],
+      "summary": "Combinar laudo, sintomas, inspeção do elemento filtrante e retorno.",
+      "body": [
+        "Em motores, metais, fuligem, diluição por combustível e viscosidade não devem ser interpretados independentemente do regime de serviço, injeção, temperaturas e consumo. Um aumento de cobre pode ter múltiplas origens; partículas e sinais mecânicos elevam a necessidade de investigação.",
+        "Quando a inspeção interna exigir retirar e abrir o filtro de óleo, o elemento não deve voltar para o motor. A intervenção deve contemplar substituição do filtro e a gestão do óleo conforme procedimento. Não use o filtro cortado como peça reaproveitável.",
+        "Em suspeita de combustível no óleo, examine possíveis fontes no sistema de injeção e confirme analiticamente a diluição. Não tente corrigir uma mistura com óleo mais espesso sem atuar no mecanismo de entrada."
+      ],
+      "check": [
+        "Por que filtro removido e aberto não deve ser reinstalado?",
+        "Quais indícios aumentam a urgência de suspeita de diluição?"
+      ]
+    },
+    {
+      "id": "nitrito",
+      "title": "Nitrito, ELC e radiadores de alumínio",
+      "price": 260,
+      "subject": "Arrefecimento",
+      "chapters": [
+        6
+      ],
+      "summary": "A depleção de nitrito em radiadores de alumínio não equivale por si a dano do radiador.",
+      "body": [
+        "Alguns sistemas que utilizam ELC com nitrito e radiadores de alumínio podem apresentar consumo de nitrito, elevação de pH e odor de amônia, devido a reações químicas. A literatura técnica especifica S·O·S nível 2 para confirmar o caso; uma leitura isolada de nitrito não basta.",
+        "A orientação depende também da configuração: motores com ou sem camisas úmidas têm necessidades diferentes de proteção secundária. A referência para condicionador de componentes de alumínio exige verificar o fluido, o radiador e as instruções vigentes antes de dosar.",
+        "Em certas aplicações a orientação inclui adicionar condicionador apropriado, aguardar 50–200 horas antes do extender, e repetir S·O·S nível 2 dentro de 500 horas após a ação. Essas condições são específicas da publicação; não são regra geral para todo sistema."
+      ],
+      "check": [
+        "Nitrito reduzido prova vazamento ou corrosão?",
+        "Por que o tipo de camisa do motor altera a decisão?"
+      ]
+    },
+    {
+      "id": "arrefecimento",
+      "title": "Arrefecimento: temperatura, pH e fluidos",
+      "price": 220,
+      "subject": "Arrefecimento",
+      "chapters": [
+        6
+      ],
+      "summary": "Gerenciamento térmico, concentração e segurança do sistema pressurizado.",
+      "body": [
+        "O circuito de arrefecimento deve remover calor suficiente sem super-resfriar o motor. Bomba d’água, termostatos, radiador, ventilador, tampas e trocadores interagem. Sobrecarga, ar externo quente, restrição da colmeia, concentração inadequada e baixa vazão podem provocar superaquecimento.",
+        "A análise química pode apontar baixa proteção, variação de pH ou concentração de glicol. O mesmo sintoma admite causas diferentes; os testes devem distinguir química inadequada, gás de combustão, vazamento e transferência de calor insuficiente.",
+        "Nunca abra um sistema quente ou pressurizado. Antes de medição ou intervenção, aguarde o resfriamento, adote isolamento e siga o manual vigente. Não use aditivos genéricos em substituição à especificação do equipamento."
+      ],
+      "check": [
+        "pH fora do padrão prova junta queimada?",
+        "Quais verificações antecedem abertura de tampa pressurizada?"
+      ]
+    },
+    {
+      "id": "amostragem",
+      "title": "Coleta representativa e rastreabilidade",
+      "price": 0,
+      "subject": "Fundamentos",
+      "chapters": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "summary": "Identificar corretamente ativo, compartimento, fluido e histórico é parte do diagnóstico.",
+      "body": [
+        "Uma boa amostra precisa representar o fluido real do compartimento, sem mistura entre pontos ou influência de recipientes contaminados. Registre o tipo de componente, horas do ativo e do óleo, data, produto e eventuais intervenções. Para o jogo, a amostra adicional nunca substitui avaliação de risco de segurança.",
+        "A orientação para amostragem de roda dianteira determina que óleo e líquido arrefecedor utilizem bombas de coleta distintas. Usar a mesma bomba pode gerar contaminação cruzada, falso alerta e decisões erradas.",
+        "Quando há troca de fluido, a amostra de referência deve ser coletada antes da intervenção. Após o serviço, o acompanhamento por nova coleta precisa ter critério, responsável, registro e intervalo ajustado ao risco."
+      ],
+      "check": [
+        "Por que utilizar bombas diferentes para água e óleo?",
+        "Qual é o efeito de coletar só depois de trocar o óleo?"
+      ]
+    },
+    {
+      "id": "seguranca",
+      "title": "Barreiras de segurança em diagnóstico",
+      "price": 0,
+      "subject": "Segurança",
+      "chapters": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "summary": "A necessidade de dado nunca autoriza teste inseguro.",
+      "body": [
+        "Antes de coletar, abrir, movimentar, aquecer ou desmontar, aplique os requisitos de isolamento e controle de energias do equipamento e da área. Óleo quente, fluidos pressurizados, peças elevadas e risco de movimento inesperado podem causar lesões graves.",
+        "Em cenário de falha progressiva grave, a disponibilidade imediata não supera a segurança. A escolha de parar, restringir ou monitorar é parte da engenharia, não mero atraso na operação.",
+        "O jogo avalia decisões e não ensina um passo a passo completo de desmontagem. Procedimento operacional real exige literatura OEM vigente e autorização de pessoas habilitadas."
+      ],
+      "check": [
+        "Uma amostra justifica operar máquina com risco crítico?",
+        "Que limite há entre simulação e procedimento real?"
+      ]
+    },
+    {
+      "id": "planejamento",
+      "title": "Ordem de serviço e retorno técnico",
+      "price": 95,
+      "subject": "Gestão",
+      "chapters": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "summary": "De um indício de laudo a uma intervenção rastreável.",
+      "body": [
+        "O diagnóstico precisa produzir uma tratativa clara: equipamento e componente, sintoma observado, evidência, ação, prioridade, condições de operação, materiais, mão de obra e critério de fechamento. Registre incertezas em vez de inventar causa raiz.",
+        "Verifique se já existe ordem para o evento. Duplicar uma demanda pode aumentar backlog sem melhorar a confiabilidade. Uma inspeção inconclusiva exige retorno para Engenharia e programação de testes, não encerramento artificial.",
+        "A qualidade do registro é tão importante quanto a execução: permite tendências, perfis de perdas e revisão de estratégia de manutenção."
+      ],
+      "check": [
+        "Qual é a diferença entre sintoma, mecanismo e causa raiz?",
+        "O que constitui um retorno técnico útil?"
+      ]
+    },
+    {
+      "id": "economia",
+      "title": "Economia da confiabilidade",
+      "price": 95,
+      "subject": "Estratégia",
+      "chapters": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "summary": "Evitar uma substituição injustificada também é recuperar valor operacional.",
+      "body": [
+        "Intervir cedo e com evidência pode evitar danos secundários e perda de disponibilidade. Contudo, trocar um componente caro sem diagnóstico suficiente também destrói recursos: horas, estoque, risco de montagem e prazo. A decisão economicamente ótima deve permanecer subordinada à segurança.",
+        "No jogo, os créditos representam pontuação pedagógica fictícia, não preços reais ou taxas de falha extraídas das ordens. O ganho é maior quando o jogador preserva com segurança um componente sem defeito irreversível; a substituição prematura desconta uma penalidade fictícia.",
+        "Não confunda postergar manutenção com economizar. A boa estratégia define inspeção, prazos, acompanhamento e critérios de parada, evitando tanto a negligência quanto a substituição arbitrária."
+      ],
+      "check": [
+        "Por que a troca sem causa confirmada gera custo sistêmico?",
+        "Quando parar é mais importante que manter disponibilidade?"
+      ]
+    },
+    {
+      "id": "diferencial",
+      "title": "Trem de força: diferencial e comandos",
+      "price": 190,
+      "subject": "Trem de força",
+      "chapters": [
+        0,
+        7
+      ],
+      "summary": "Metais, temperatura, nível do fluido e folgas em conjuntos fechados.",
+      "body": [
+        "Diferenciais e reduções finais convertem torque e dependem de lubrificação adequada para engrenagens e mancais. Poluição do óleo, água ou carga excessiva aceleram desgaste. Partículas no bujão magnético, ruído novo, vibração ou temperatura crescente reforçam hipóteses de dano ativo.",
+        "O nível do óleo e o procedimento de enchimento devem seguir a geometria e o manual do compartimento. Sobreenchimento em certas aplicações pode causar problemas de vedação e ingresso de outros fluidos, segundo documentação específica da configuração.",
+        "Sem evidência de falha interna confirmada, não conclua que a coroa, pinhão ou rolamento específico está condenado. Defina inspeção e amplie escopo somente após indícios consistentes."
+      ],
+      "check": [
+        "Qual é o papel do bujão magnético?",
+        "Por que o nível incorreto do óleo pode agravar a falha?"
+      ]
+    },
+    {
+      "id": "laboratorio",
+      "title": "Laboratório: avaliação de confiança",
+      "price": 120,
+      "subject": "Análises",
+      "chapters": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "summary": "Decidir com informação incompleta sem inventar certezas.",
+      "body": [
+        "Um laudo de fluidos pode conter interpretação e recomendações, mas a amostra é uma observação indireta do componente. Viscosidade, contagem de partículas, desgaste elementar e química dos aditivos são indicadores sujeitos a limitações de coleta, análise e baseline.",
+        "Sinais convergentes aumentam plausibilidade de hipóteses; nenhum indicador isolado garante origem ou extensão do dano. Diferencie indício, provável mecanismo, causa imediata e causa raiz confirmada por teste.",
+        "A decisão correta muitas vezes é pedir inspeção segura e acompanhamento, mesmo quando o gabarito não fornece “peça defeituosa”. Não atribua probabilidade quantitativa sem histórico confiável."
+      ],
+      "check": [
+        "Qual é a diferença entre evidência e hipótese?",
+        "Como registrar limitação do laudo sem perder rastreabilidade?"
+      ]
+    },
+    {
+      "id": "historia",
+      "title": "Histórico de ordens como evidência",
+      "price": 155,
+      "subject": "Análises",
+      "chapters": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "summary": "Ler intervenções passadas sem transformar correlação em causalidade.",
+      "body": [
+        "Ordens antigas ajudam a identificar substituições de fluidos, filtro, manutenção repetida, falhas recorrentes, peças trocadas e recomendações não executadas. Entretanto, os títulos das ordens não fornecem automaticamente o resultado de campo ou a causa raiz.",
+        "Antes de vincular laudos a intervenções, confirme ativo, componente, evento e cronologia. Um mesmo equipamento pode ter vários componentes lubrificados: cruzar apenas pelo modelo pode associar a intervenção errada ao fluido.",
+        "Os casos deste jogo foram anonimizados por temas e sistemas. Nenhum número de ordem, funcionário, etiqueta corporativa, número de série ou histórico comercial bruto está dentro do aplicativo."
+      ],
+      "check": [
+        "Por que a coincidência de datas não confirma causa?",
+        "Quais chaves precisam coincidir para relacionar ordens e laudos?"
+      ]
+    }
+  ]
+}

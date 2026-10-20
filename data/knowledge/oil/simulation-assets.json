@@ -1,0 +1,138 @@
+{
+  "schema": "fmea-mining.knowledge.v1",
+  "version": "1.1.0",
+  "kind": "fictional_game_assets_original",
+  "provenance": {
+    "repository": "pedromaintenance/porcaria-analise-de-oleo",
+    "originalPath": "js/library.js",
+    "blobSha": "c3a4d75ac5cc7498cc949b4d63de5ab9768c8ecf",
+    "evidenceNature": "didactic_articles"
+  },
+  "description": "Ferramentas, pecas e custos somente do jogo",
+  "records": {
+    "tools": [
+      {
+        "id": "lanterna",
+        "name": "Kit de inspeção de vedações",
+        "price": 220,
+        "detail": "Lanterna, espelho e recursos básicos para examinar tampas, respiros e pontos de ingresso."
+      },
+      {
+        "id": "iman",
+        "name": "Kit de partículas ferrosas",
+        "price": 310,
+        "detail": "Simulação de inspeção por magnetismo e coleta de partículas sem procedimentos invasivos."
+      },
+      {
+        "id": "contaminometro",
+        "name": "Contador de partículas portátil",
+        "price": 430,
+        "detail": "Consulta simulada de limpeza e verificação de contaminação."
+      },
+      {
+        "id": "teste-coolant",
+        "name": "Kit S·O·S Nível 2 / arrefecimento",
+        "price": 355,
+        "detail": "Habilita testes químicos de arrefecimento simulados."
+      },
+      {
+        "id": "refratometro",
+        "name": "Refratômetro e testes de concentração",
+        "price": 230,
+        "detail": "Medição simulada de glicol e concentração."
+      },
+      {
+        "id": "manometro",
+        "name": "Kit de pressão e teste de injeção",
+        "price": 410,
+        "detail": "Apoia a triagem simulada de falhas associadas a óleo combustível."
+      },
+      {
+        "id": "biblioteca",
+        "name": "Terminal de consulta de especificações",
+        "price": 150,
+        "detail": "Ferramenta de consulta e comparação de fluido identificado com OMM."
+      }
+    ],
+    "parts": [
+      {
+        "id": "kit-vedacao",
+        "name": "Kit de vedação e O-rings",
+        "price": 230,
+        "detail": "Reparo de ponto de ingresso identificado. Uso exige efetividade no cenário."
+      },
+      {
+        "id": "kit-respiro",
+        "name": "Conjunto de respiro e tampa",
+        "price": 145,
+        "detail": "Reparos de respiração e vedação do compartimento."
+      },
+      {
+        "id": "kit-filtro",
+        "name": "Elemento filtrante do circuito",
+        "price": 175,
+        "detail": "Somente para circuitos com filtragem dedicada."
+      },
+      {
+        "id": "kit-injecao",
+        "name": "Conjunto de reparo de injeção",
+        "price": 420,
+        "detail": "Substituição condicionada a diagnóstico de sistema de combustível."
+      },
+      {
+        "id": "ccac",
+        "name": "Condicionador de alumínio (didático)",
+        "price": 170,
+        "detail": "A aplicação real depende da literatura vigente, fluido e geometria do radiador."
+      },
+      {
+        "id": "coolant",
+        "name": "Fluido arrefecedor correto (simulado)",
+        "price": 225,
+        "detail": "Repor ou corrigir apenas conforme especificação OEM."
+      },
+      {
+        "id": "rolamento",
+        "name": "Conjunto de rolamentos",
+        "price": 890,
+        "detail": "Peça cara: não comprar sem evidência de falha e manual aplicável."
+      },
+      {
+        "id": "conjunto-giro",
+        "name": "Redutor de giro completo",
+        "price": 2100,
+        "detail": "Reposição de alto custo, condicionada à confirmação de defeito."
+      },
+      {
+        "id": "diferencial",
+        "name": "Diferencial completo",
+        "price": 2300,
+        "detail": "Substituição complexa, exige diagnóstico confirmatório."
+      },
+      {
+        "id": "motor-completo",
+        "name": "Motor diesel completo",
+        "price": 3500,
+        "detail": "Reposição de alto custo, não é solução de primeira escolha sem confirmação."
+      },
+      {
+        "id": "radiador",
+        "name": "Radiador completo",
+        "price": 1600,
+        "detail": "Não condenar por nitrito baixo ou pH isolado."
+      },
+      {
+        "id": "bomba-hidraulica",
+        "name": "Bomba hidráulica",
+        "price": 1250,
+        "detail": "Partículas no sistema não provam origem na bomba."
+      },
+      {
+        "id": "kit-transmissao",
+        "name": "Kit interno de transmissão",
+        "price": 1150,
+        "detail": "Aplicação somente após inspeção e determinação de escopo."
+      }
+    ]
+  }
+}

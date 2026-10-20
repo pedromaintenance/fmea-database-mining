@@ -1,0 +1,54 @@
+{
+  "schema": "fmea-mining.knowledge.v1",
+  "version": "1.1.0",
+  "kind": "chapters_original",
+  "provenance": {
+    "repository": "pedromaintenance/porcaria-analise-de-oleo",
+    "originalPath": "js/library.js",
+    "blobSha": "c3a4d75ac5cc7498cc949b4d63de5ab9768c8ecf",
+    "evidenceNature": "didactic_articles"
+  },
+  "description": "8 capitulos de ensino",
+  "records": [
+    {
+      "name": "Comandos finais",
+      "subtitle": "Contaminação, lubrificação e degradação de engrenagens",
+      "icon": "⚙️"
+    },
+    {
+      "name": "Rodas e rolamentos",
+      "subtitle": "Amostragem, Ni, partículas, selos e inspeção",
+      "icon": "🛞"
+    },
+    {
+      "name": "Redutores de giro",
+      "subtitle": "Metais de desgaste e compartimentos fechados",
+      "icon": "🔄"
+    },
+    {
+      "name": "Transmissões",
+      "subtitle": "Pacotes de aditivos, desgaste e limpeza do fluido",
+      "icon": "🦾"
+    },
+    {
+      "name": "Sistemas hidráulicos",
+      "subtitle": "Contagem de partículas, filtros, viscosidade e bombas",
+      "icon": "💧"
+    },
+    {
+      "name": "Motores diesel",
+      "subtitle": "Diluição, oxidação, metais e inspeção de filtros",
+      "icon": "🔥"
+    },
+    {
+      "name": "Arrefecimento",
+      "subtitle": "ELC, nitrito, pH, glicol e radiadores de alumínio",
+      "icon": "🌡️"
+    },
+    {
+      "name": "Diferenciais",
+      "subtitle": "Trem de força, vedações e desgaste",
+      "icon": "🔩"
+    }
+  ]
+}
