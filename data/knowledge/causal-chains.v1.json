@@ -1,0 +1,787 @@
+{
+  "schema": "fmea-mining.causal-chains.v1",
+  "version": "1.3.1",
+  "language": "pt-BR",
+  "scope": "padroes_de_falha_genéricos_nao_equivalentes_a_efetividade_por_numero_de_serie",
+  "sourcePolicy": "conceitos_parafraseados_de_fontes_OEM_e_fabricantes;sem_texto_original_de_manual",
+  "counts": {
+    "families": 2,
+    "chains": 8
+  },
+  "records": [
+    {
+      "id": "FC-HOSE-001",
+      "family": "mangueiras_hidraulicas",
+      "title": "Desgaste externo por abrasão em mangueira hidráulica",
+      "operatingFunction": "Conduzir fluido pressurizado sem vazamento e mantendo resistência mecânica",
+      "functionalFailureId": "FF-06",
+      "failureMode": "Redução da integridade da cobertura/reforço, com possibilidade de perda de contenção",
+      "mechanismIds": [
+        "ME-01",
+        "ME-15"
+      ],
+      "initiatingConditionCandidates": [
+        "Contato repetido com suporte/estrutura",
+        "Proteção inadequada",
+        "Movimentação entre componentes adjacentes"
+      ],
+      "possibleDamage": "Cobertura desgastada e possível exposição do reforço; vazamento só se houver perda da barreira hidráulica",
+      "symptomIds": [
+        "SY-11",
+        "SY-03"
+      ],
+      "evidenceMethodIds": [
+        "EV-01",
+        "EV-15"
+      ],
+      "preventionRuleIds": [
+        "hydraulic-hose-abrasion",
+        "hydraulic-hose-leak"
+      ],
+      "sourceClaims": [
+        {
+          "sourceId": "CAT-HYD-HOSE-INSPECT",
+          "claim": "Abrasão é mecanismo relevante de falha prematura; inspeção deve procurar desgaste, torção e vazamentos.",
+          "scope": "principio_geral"
+        },
+        {
+          "sourceId": "CAT-HYD-HOSE-FAILURE",
+          "claim": "Atrito e problemas de instalação figuram entre condições que exigem manutenção de conjuntos de mangueira.",
+          "scope": "principio_geral"
+        }
+      ],
+      "competingHypotheses": [
+        {
+          "id": "ALT1",
+          "description": "Vazamento na união/conexão sem desgaste estrutural do tubo",
+          "discriminator": "Umidade começa no terminal e a cobertura está íntegra"
+        },
+        {
+          "id": "ALT2",
+          "description": "Óleo proveniente de outro ponto escorre sobre a mangueira",
+          "discriminator": "Trilha do óleo tem início acima da linha suspeita"
+        }
+      ],
+      "investigations": [
+        {
+          "id": "I1",
+          "methodId": "EV-01",
+          "purpose": "Inspecionar em condição segura a cobertura, suportes e trajetória de fluido",
+          "interpretations": {
+            "supports": "Contato mecânico com perda de cobertura reforça abrasão; origem de fuga ainda precisa ser confirmada",
+            "weakens": "Ausência de desgaste na linha enfraquece abrasão como origem naquele ponto",
+            "inconclusive": "Não é possível acessar os trechos encobertos"
+          },
+          "status": "apenas_proposto",
+          "resultObserved": null
+        },
+        {
+          "id": "I2",
+          "methodId": "EV-15",
+          "purpose": "Verificar roteamento e pontos de contato segundo montagem aplicável",
+          "interpretations": {
+            "supports": "Interferência localizada e marcas coincidentes aumentam suporte à abrasão",
+            "weakens": "Folgas e suportes íntegras no trajeto verificável reduzem essa hipótese",
+            "inconclusive": "Movimento dinâmico não pode ser reproduzido com segurança"
+          },
+          "status": "apenas_proposto",
+          "resultObserved": null
+        }
+      ],
+      "limitations": "Não procurar vazamento de alta pressão com as mãos. OMM e identificação efetiva do conjunto são necessários; abrasão sem vazamento não comprova ruptura.",
+      "review": {
+        "status": "inferido_com_literatura_geral",
+        "reviewer": null
+      },
+      "sapMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageId": null,
+        "causeId": null
+      },
+      "factualNature": "hipotese_de_mecanismo",
+      "empiricalOccurrences": 0,
+      "confirmedRootCause": false
+    },
+    {
+      "id": "FC-HOSE-002",
+      "family": "mangueiras_hidraulicas",
+      "title": "Roteamento, raio ou torção inadequados da mangueira",
+      "operatingFunction": "Transportar fluido pressurizado durante movimentos do equipamento",
+      "functionalFailureId": "FF-06",
+      "failureMode": "Perda de integridade por solicitações mecânicas de flexão/torção incompatíveis com a montagem",
+      "mechanismIds": [
+        "ME-07",
+        "ME-04"
+      ],
+      "initiatingConditionCandidates": [
+        "Raio de curvatura ou comprimento inadequados",
+        "Torção de montagem",
+        "Esforço cíclico durante movimento do implemento"
+      ],
+      "possibleDamage": "Deformação localizada, fissuração da cobertura ou dano progressivo, cuja origem precisa ser inspecionada",
+      "symptomIds": [
+        "SY-12",
+        "SY-03",
+        "SY-20"
+      ],
+      "evidenceMethodIds": [
+        "EV-01",
+        "EV-15"
+      ],
+      "preventionRuleIds": [
+        "hydraulic-hose-abrasion",
+        "hydraulic-hose-leak"
+      ],
+      "sourceClaims": [
+        {
+          "sourceId": "CAT-HYD-HOSE-INSPECT",
+          "claim": "Comprimento, roteamento, raio de curvatura e torção inadequados podem produzir trincas e danos em conjuntos de mangueiras.",
+          "scope": "principio_geral"
+        }
+      ],
+      "competingHypotheses": [
+        {
+          "id": "ALT1",
+          "description": "Abrasion por contato externo, independentemente do raio",
+          "discriminator": "Marcas localizadas coincidem com ponto rígido de fricção"
+        },
+        {
+          "id": "ALT2",
+          "description": "Degradação por calor e fluido, não por montagem",
+          "discriminator": "Dano generalizado associado a exposição térmica ou química"
+        }
+      ],
+      "investigations": [
+        {
+          "id": "I1",
+          "methodId": "EV-01",
+          "purpose": "Observar orientação dos terminais, regiões de curvatura e marcas de torção",
+          "interpretations": {
+            "supports": "Twist/curvatura incompatíveis no trecho danificado sustentam a hipótese",
+            "weakens": "Roteamento coerente e sem torção visível enfraquece hipótese de montagem",
+            "inconclusive": "Não há desenho de instalação efetiva"
+          },
+          "status": "apenas_proposto",
+          "resultObserved": null
+        },
+        {
+          "id": "I2",
+          "methodId": "EV-15",
+          "purpose": "Conferir raio/rota e movimento permissível com desenho e procedimento OEM",
+          "interpretations": {
+            "supports": "Interferência/dobra excede o requisito especificado",
+            "weakens": "Inspeção documenta geometria dentro do requisito",
+            "inconclusive": "A condição dinâmica é inacessível ou não há especificação aplicável"
+          },
+          "status": "apenas_proposto",
+          "resultObserved": null
+        }
+      ],
+      "limitations": "Não atribuir um valor de raio mínimo sem ficha exata da mangueira. Termos de fadiga são interpretação causal, não conclusão de fratura.",
+      "review": {
+        "status": "inferido_com_literatura_geral",
+        "reviewer": null
+      },
+      "sapMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageId": null,
+        "causeId": null
+      },
+      "factualNature": "hipotese_de_mecanismo",
+      "empiricalOccurrences": 0,
+      "confirmedRootCause": false
+    },
+    {
+      "id": "FC-HOSE-003",
+      "family": "mangueiras_hidraulicas",
+      "title": "Perda de estanqueidade na interface mangueira–terminal",
+      "operatingFunction": "Conter fluido nos terminais sob regime nominal",
+      "functionalFailureId": "FF-06",
+      "failureMode": "Vazamento pela conexão ou desacoplamento do conjunto",
+      "mechanismIds": [
+        "ME-15",
+        "ME-09"
+      ],
+      "initiatingConditionCandidates": [
+        "Prensagem inadequada",
+        "Terminal ou vedação incompatível",
+        "Montagem/posição incorreta",
+        "Perda de retenção"
+      ],
+      "possibleDamage": "Perda de estanqueidade localizada na extremidade, potencial afrouxamento ou migração do terminal",
+      "symptomIds": [
+        "SY-03",
+        "SY-15"
+      ],
+      "evidenceMethodIds": [
+        "EV-01",
+        "EV-15"
+      ],
+      "preventionRuleIds": [
+        "hydraulic-hose-leak"
+      ],
+      "sourceClaims": [
+        {
+          "sourceId": "CAT-HYD-HOSE-INSPECT",
+          "claim": "Prensagem excessiva ou insuficiente pode comprometer o conjunto; terminais e orientação de montagem requerem inspeção.",
+          "scope": "principio_geral"
+        },
+        {
+          "sourceId": "CAT-HYD-HOSE-FAILURE",
+          "claim": "Conjuntos de mangueira danificados exigem reparo apropriado, não condenação prematura de bomba.",
+          "scope": "principio_geral"
+        }
+      ],
+      "competingHypotheses": [
+        {
+          "id": "ALT1",
+          "description": "Ruptura do tubo flexível próxima ao terminal",
+          "discriminator": "Origem física está no corpo/cobertura imediatamente adjacente"
+        },
+        {
+          "id": "ALT2",
+          "description": "Vazamento em adaptador/porta hidráulica, não na união prensada",
+          "discriminator": "Origem aparece fora da interface tubo/terminal"
+        }
+      ],
+      "investigations": [
+        {
+          "id": "I1",
+          "methodId": "EV-01",
+          "purpose": "Localizar a trilha do fluido após isolamento e resfriamento",
+          "interpretations": {
+            "supports": "Origem na interface sustenta perda local de estanqueidade",
+            "weakens": "Fluxo inicia em porta ou tubo e enfraquece a interface como origem",
+            "inconclusive": "A superfície foi impregnada por vazamento secundário"
+          },
+          "status": "apenas_proposto",
+          "resultObserved": null
+        },
+        {
+          "id": "I2",
+          "methodId": "EV-15",
+          "purpose": "Comparar montagem, identificação e retenção do terminal com especificação do conjunto",
+          "interpretations": {
+            "supports": "Montagem não conforme sustenta hipótese de defeito de conexão",
+            "weakens": "Montagem documentada conforme não descarta defeito oculto, mas reduz suspeita",
+            "inconclusive": "Sem histórico/identificação da montagem não se pode avaliar"
+          },
+          "status": "apenas_proposto",
+          "resultObserved": null
+        }
+      ],
+      "limitations": "Não recomendar reaperto com circuito pressurizado; confirmar intervenção por OMM e ficha do conjunto.",
+      "review": {
+        "status": "inferido_com_literatura_geral",
+        "reviewer": null
+      },
+      "sapMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageId": null,
+        "causeId": null
+      },
+      "factualNature": "hipotese_de_mecanismo",
+      "empiricalOccurrences": 0,
+      "confirmedRootCause": false
+    },
+    {
+      "id": "FC-HOSE-004",
+      "family": "mangueiras_hidraulicas",
+      "title": "Degradação por exposição térmica na mangueira",
+      "operatingFunction": "Reter propriedades de vedação e flexibilidade na temperatura de projeto",
+      "functionalFailureId": "FF-06",
+      "failureMode": "Perda de flexibilidade e possível fissuração/perda de contenção",
+      "mechanismIds": [
+        "ME-06",
+        "ME-07"
+      ],
+      "initiatingConditionCandidates": [
+        "Proximidade de superfície quente",
+        "Exposição térmica acima da capacidade do conjunto",
+        "Proteção térmica ausente/inadequada"
+      ],
+      "possibleDamage": "Endurecimento/fissuras ou dano térmico aparente; evidência visual não quantifica a temperatura experimentada",
+      "symptomIds": [
+        "SY-12",
+        "SY-03"
+      ],
+      "evidenceMethodIds": [
+        "EV-01",
+        "EV-03",
+        "EV-15"
+      ],
+      "preventionRuleIds": [
+        "hydraulic-hose-leak"
+      ],
+      "sourceClaims": [
+        {
+          "sourceId": "CAT-HYD-HOSE-INSPECT",
+          "claim": "Roteamento incompatível ou raio incorreto pode expor mangueira a dano térmico; inspeções procuram trincas e bolhas.",
+          "scope": "principio_geral"
+        }
+      ],
+      "competingHypotheses": [
+        {
+          "id": "ALT1",
+          "description": "Ataque químico/incompatibilidade do fluido",
+          "discriminator": "Histórico de produto e aspecto não coincidem com exposição térmica"
+        },
+        {
+          "id": "ALT2",
+          "description": "Abrasion mecânica localizada",
+          "discriminator": "Marcas de contato e desgaste superficial, sem evidências térmicas"
+        }
+      ],
+      "investigations": [
+        {
+          "id": "I1",
+          "methodId": "EV-01",
+          "purpose": "Examinar cobertura, pontos quentes adjacentes, suportes e proteção existente",
+          "interpretations": {
+            "supports": "Dano concentrado próximo a calor aumenta plausibilidade",
+            "weakens": "Ausência de exposição identificável enfraquece calor como causa predominante",
+            "inconclusive": "A fonte de calor é intermitente ou não foi observada"
+          },
+          "status": "apenas_proposto",
+          "resultObserved": null
+        },
+        {
+          "id": "I2",
+          "methodId": "EV-03",
+          "purpose": "Rever tendência de temperatura sob condições aprovadas e limites de material",
+          "interpretations": {
+            "supports": "Temperatura medida, se exceder a especificação do conjunto, corrobora exposição inadequada",
+            "weakens": "Exposição dentro dos limites enfraquece hipótese térmica",
+            "inconclusive": "Não há medição confiável ou especificação de temperatura"
+          },
+          "status": "apenas_proposto",
+          "resultObserved": null
+        }
+      ],
+      "limitations": "Não atribuir limite térmico genérico; não concluir incompatibilidade química sem informações do composto e fluido.",
+      "review": {
+        "status": "inferido_com_literatura_geral",
+        "reviewer": null
+      },
+      "sapMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageId": null,
+        "causeId": null
+      },
+      "factualNature": "hipotese_de_mecanismo",
+      "empiricalOccurrences": 0,
+      "confirmedRootCause": false
+    },
+    {
+      "id": "FC-FD-001",
+      "family": "comando_final",
+      "title": "Ingresso de partículas sólidas e desgaste abrasivo em contato lubrificado",
+      "operatingFunction": "Transmitir torque pelo conjunto de redução mantendo perdas e desgaste dentro do esperado",
+      "functionalFailureId": "FF-02",
+      "failureMode": "Desgaste prematuro por partículas em contato, com potencial degradação de engrenagens ou rolamentos",
+      "mechanismIds": [
+        "ME-01",
+        "ME-03"
+      ],
+      "initiatingConditionCandidates": [
+        "Ingresso de poeira",
+        "Contaminação durante manutenção",
+        "Partículas geradas por desgaste interno"
+      ],
+      "possibleDamage": "Marcas de abrasão e possível indentação/fadiga de contato; peça exata não identificada por química do óleo",
+      "symptomIds": [
+        "SY-14",
+        "SY-01",
+        "SY-13"
+      ],
+      "evidenceMethodIds": [
+        "EV-08",
+        "EV-09",
+        "EV-11"
+      ],
+      "preventionRuleIds": [
+        "final-drive-gear",
+        "final-drive-bearing"
+      ],
+      "sourceClaims": [
+        {
+          "sourceId": "SKF-WEAR-SURFACE-FATIGUE",
+          "claim": "Contaminantes sólidos e lubrificação inadequada podem gerar desgaste/alterar pistas de rolamentos, contribuindo para fadiga de contato.",
+          "scope": "principio_geral"
+        },
+        {
+          "sourceId": "CAT-DRIVE-MAGNET-PLUG",
+          "claim": "A natureza e quantidade de partículas retidas por bujão magnético ajudam a caracterizar a condição do trem de força.",
+          "scope": "principio_geral"
+        },
+        {
+          "sourceId": "CAT-FLUID-ANALYSIS-101",
+          "claim": "Amostras de óleo indicam metais e contaminantes, e devem ser interpretadas no contexto do compartimento.",
+          "scope": "principio_geral"
+        }
+      ],
+      "competingHypotheses": [
+        {
+          "id": "ALT1",
+          "description": "Desgaste de regime/assentamento sem falha evolutiva comprovada",
+          "discriminator": "Depósitos finos estáveis no tempo, sem evidências convergentes"
+        },
+        {
+          "id": "ALT2",
+          "description": "Partículas produzidas por falha já existente de engrenagem/rolamento",
+          "discriminator": "Inspeção física e morfologia mostram origem endógena"
+        }
+      ],
+      "investigations": [
+        {
+          "id": "I1",
+          "methodId": "EV-11",
+          "purpose": "Comparar evolução, tamanho e aspecto do depósito magnético sob procedimento OEM",
+          "interpretations": {
+            "supports": "Crescimento de partículas grosseiras reforça falha ativa, mas não identifica peça nem origem do ingresso",
+            "weakens": "Depósito fino e estável enfraquece desgaste progressivo severo nessa verificação",
+            "inconclusive": "Sem histórico, foto ou material representativo"
+          },
+          "status": "apenas_proposto",
+          "resultObserved": null
+        },
+        {
+          "id": "I2",
+          "methodId": "EV-08",
+          "purpose": "Confrontar análise de fluido e histórico de coleta, óleo e contaminação",
+          "interpretations": {
+            "supports": "Tendência de contaminantes/desgaste com condições consistentes aumenta suspeita",
+            "weakens": "Amostra controlada estável diminui suspeita mas não exclui fragmentos maiores",
+            "inconclusive": "Mudança de lubrificante, coleta contaminada ou histórico insuficiente"
+          },
+          "status": "apenas_proposto",
+          "resultObserved": null
+        }
+      ],
+      "limitations": "Não inferir rolamento específico, lado da roda, limite de partículas ou criticidade por um resultado isolado.",
+      "review": {
+        "status": "inferido_com_literatura_geral",
+        "reviewer": null
+      },
+      "sapMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageId": null,
+        "causeId": null
+      },
+      "factualNature": "hipotese_de_mecanismo",
+      "empiricalOccurrences": 0,
+      "confirmedRootCause": false
+    },
+    {
+      "id": "FC-FD-002",
+      "family": "comando_final",
+      "title": "Água no lubrificante contribuindo para corrosão e desgaste",
+      "operatingFunction": "Manter superfícies lubrificadas protegidas de contaminação e corrosão",
+      "functionalFailureId": "FF-02",
+      "failureMode": "Degradação da condição do contato lubrificado por água/corrosão com potencial evolução de desgaste",
+      "mechanismIds": [
+        "ME-05",
+        "ME-13"
+      ],
+      "initiatingConditionCandidates": [
+        "Ingresso por vedação/respiro",
+        "Lavagem/exposição",
+        "Condensação ou contaminação na coleta"
+      ],
+      "possibleDamage": "Corrosão nas superfícies e possível dano de contato em evolução; água no relatório não prova peça corroída",
+      "symptomIds": [
+        "SY-13",
+        "SY-14",
+        "SY-01"
+      ],
+      "evidenceMethodIds": [
+        "EV-10",
+        "EV-11",
+        "EV-01"
+      ],
+      "preventionRuleIds": [
+        "final-drive-bearing",
+        "final-drive-gear"
+      ],
+      "sourceClaims": [
+        {
+          "sourceId": "SKF-ISO15243-BEARING",
+          "claim": "Umidade no lubrificante reduz sua capacidade de formar filme protetor; corrosão pode favorecer dano superficial em rolamentos.",
+          "scope": "principio_geral"
+        },
+        {
+          "sourceId": "CAT-FLUID-ANALYSIS-101",
+          "claim": "Amostragem de óleo identifica água e outros contaminantes nos compartimentos lubrificados.",
+          "scope": "principio_geral"
+        }
+      ],
+      "competingHypotheses": [
+        {
+          "id": "ALT1",
+          "description": "Contaminação durante coleta, não dentro do comando",
+          "discriminator": "Recoleta controlada e inspeção não reproduzem indício de água"
+        },
+        {
+          "id": "ALT2",
+          "description": "Mudança de formulação ou erro de identificação da amostra",
+          "discriminator": "Documentos de óleo e compartimento contradizem a amostra inicial"
+        }
+      ],
+      "investigations": [
+        {
+          "id": "I1",
+          "methodId": "EV-10",
+          "purpose": "Confirmar presença de água por método aplicável e amostra representativa",
+          "interpretations": {
+            "supports": "Água confirmada reforça contaminação real, não condena rolamento",
+            "weakens": "Amostras representativas limpas enfraquecem ingresso ativo",
+            "inconclusive": "Amostragem inadequada ou método com interferência"
+          },
+          "status": "apenas_proposto",
+          "resultObserved": null
+        },
+        {
+          "id": "I2",
+          "methodId": "EV-01",
+          "purpose": "Verificar respiro, tampas, vedação e contexto de lavagem após isolamento",
+          "interpretations": {
+            "supports": "Caminho de ingresso encontrado corrobora mecanismo externo",
+            "weakens": "Interfaces íntegras reduzem plausibilidade dessa via mas não eliminam origem alternativa",
+            "inconclusive": "Vedação oculta ou sem condição de inspeção"
+          },
+          "status": "apenas_proposto",
+          "resultObserved": null
+        }
+      ],
+      "limitations": "Não afirmar água por laudo inconclusivo; separar ingresso, consequência e dano secundário.",
+      "review": {
+        "status": "inferido_com_literatura_geral",
+        "reviewer": null
+      },
+      "sapMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageId": null,
+        "causeId": null
+      },
+      "factualNature": "hipotese_de_mecanismo",
+      "empiricalOccurrences": 0,
+      "confirmedRootCause": false
+    },
+    {
+      "id": "FC-FD-003",
+      "family": "comando_final",
+      "title": "Lubrificação inadequada e deterioração de superfícies de contato",
+      "operatingFunction": "Manter filme lubrificante e contato mecânico funcional durante transmissão de torque",
+      "functionalFailureId": "FF-02",
+      "failureMode": "Desgaste acelerado por filme insuficiente ou propriedades do óleo incompatíveis com o requisito",
+      "mechanismIds": [
+        "ME-13",
+        "ME-02",
+        "ME-03"
+      ],
+      "initiatingConditionCandidates": [
+        "Nível abaixo do requerido",
+        "Produto ou viscosidade não especificados",
+        "Degradação/mistura do óleo"
+      ],
+      "possibleDamage": "Desgaste superficial, escoriação e possível fadiga, condicionados à arquitetura e condição de serviço",
+      "symptomIds": [
+        "SY-01",
+        "SY-04",
+        "SY-14",
+        "SY-15"
+      ],
+      "evidenceMethodIds": [
+        "EV-08",
+        "EV-11",
+        "EV-13"
+      ],
+      "preventionRuleIds": [
+        "final-drive-bearing",
+        "final-drive-gear"
+      ],
+      "sourceClaims": [
+        {
+          "sourceId": "SKF-ISO15243-BEARING",
+          "claim": "Lubrificação deficiente e limpeza inadequada podem provocar desgaste e fadiga iniciada na superfície.",
+          "scope": "principio_geral"
+        },
+        {
+          "sourceId": "CAT-DRIVE-MAGNET-PLUG",
+          "claim": "A avaliação dos depósitos magnéticos é útil à inspeção dos componentes lubrificados.",
+          "scope": "principio_geral"
+        },
+        {
+          "sourceId": "CAT-FLUID-ANALYSIS-101",
+          "claim": "A condição do óleo e a presença de contaminantes devem ser verificadas na análise de fluidos.",
+          "scope": "principio_geral"
+        }
+      ],
+      "competingHypotheses": [
+        {
+          "id": "ALT1",
+          "description": "Óleo mudou de formulação autorizada e baseline não foi atualizado",
+          "discriminator": "Documento de troca confirma especificação compatível e ausência de outras evidências adversas"
+        },
+        {
+          "id": "ALT2",
+          "description": "Falha mecânica preexistente gerando calor e metais, com óleo ainda especificado",
+          "discriminator": "Histórico de nível/produto correto e inspeção mecânica mostram dano independente"
+        }
+      ],
+      "investigations": [
+        {
+          "id": "I1",
+          "methodId": "EV-13",
+          "purpose": "Reconciliar produto, horas de óleo, registros de abastecimento e trocas",
+          "interpretations": {
+            "supports": "Produto inadequado ou histórico de nível incompatível reforça a hipótese",
+            "weakens": "Produto especificado e nível estável reduzem causa por erro de fluido",
+            "inconclusive": "O registro não identifica produto, compartimento ou volume"
+          },
+          "status": "apenas_proposto",
+          "resultObserved": null
+        },
+        {
+          "id": "I2",
+          "methodId": "EV-08",
+          "purpose": "Comparar viscosidade/condição e tendências de desgaste com baseline adequado",
+          "interpretations": {
+            "supports": "Degradação consistente fortalece hipótese, mas não explica por si causa raiz",
+            "weakens": "Tendência e viscosidade estáveis diminuem suspeita de fluido inadequado",
+            "inconclusive": "Mudança de produto, amostra não representativa ou método diverso"
+          },
+          "status": "apenas_proposto",
+          "resultObserved": null
+        }
+      ],
+      "limitations": "Não deduzir quantidades, óleo OEM ou viscosidade exata sem especificação e temperatura de ensaio.",
+      "review": {
+        "status": "inferido_com_literatura_geral",
+        "reviewer": null
+      },
+      "sapMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageId": null,
+        "causeId": null
+      },
+      "factualNature": "hipotese_de_mecanismo",
+      "empiricalOccurrences": 0,
+      "confirmedRootCause": false
+    },
+    {
+      "id": "FC-FD-004",
+      "family": "comando_final",
+      "title": "Fadiga de contato em rolamentos do conjunto de redução",
+      "operatingFunction": "Sustentar e guiar os elementos rotativos sob carga especificada",
+      "functionalFailureId": "FF-02",
+      "failureMode": "Descascamento progressivo (spalling) de pista/elemento rolante com potencial aumento de folga/ruído",
+      "mechanismIds": [
+        "ME-03"
+      ],
+      "initiatingConditionCandidates": [
+        "Ciclos de carga e concentração de tensão",
+        "Contaminação com indentação",
+        "Lubrificação inadequada ou carregamento excessivo"
+      ],
+      "possibleDamage": "Descascamento e fragmentos metálicos; o diagnóstico definitivo de peça exige acesso/inspeção apropriada",
+      "symptomIds": [
+        "SY-01",
+        "SY-02",
+        "SY-14"
+      ],
+      "evidenceMethodIds": [
+        "EV-11",
+        "EV-04",
+        "EV-01"
+      ],
+      "preventionRuleIds": [
+        "final-drive-bearing"
+      ],
+      "sourceClaims": [
+        {
+          "sourceId": "SKF-ISO15243-BEARING",
+          "claim": "Fadiga por contato rolante pode iniciar sob a superfície ou na superfície; contaminação e lubrificação influenciam o processo.",
+          "scope": "principio_geral"
+        },
+        {
+          "sourceId": "CAT-DRIVE-MAGNET-PLUG",
+          "claim": "Fragmentos maiores em bujão magnético podem indicar degradação do trem de força, mas não isolam um rolamento.",
+          "scope": "principio_geral"
+        },
+        {
+          "sourceId": "SKF-WEAR-SURFACE-FATIGUE",
+          "claim": "Desgaste desigual pode modificar a pista de rolamento e elevar concentração de tensão, favorecendo fadiga.",
+          "scope": "principio_geral"
+        }
+      ],
+      "competingHypotheses": [
+        {
+          "id": "ALT1",
+          "description": "Desgaste/falha de engrenagens produzindo limalha semelhante",
+          "discriminator": "Morfologia e inspeção local associam fonte aos dentes"
+        },
+        {
+          "id": "ALT2",
+          "description": "Ruído proveniente de freio, pneu ou outro componente",
+          "discriminator": "Análise de localização aponta origem externa ao rolamento"
+        }
+      ],
+      "investigations": [
+        {
+          "id": "I1",
+          "methodId": "EV-11",
+          "purpose": "Inspecionar bujão/fragmentos e tendência anterior mantendo rastreabilidade",
+          "interpretations": {
+            "supports": "Fragmentos crescentes sustentam anomalia interna mas não a pista específica",
+            "weakens": "Ausência de fragmentos reduz sinal naquela coleta, não exclui spalling",
+            "inconclusive": "Não há procedimento seguro ou acesso ao bujão no momento"
+          },
+          "status": "apenas_proposto",
+          "resultObserved": null
+        },
+        {
+          "id": "I2",
+          "methodId": "EV-04",
+          "purpose": "Examinar tendência de ruído/vibração com método aplicável e localização",
+          "interpretations": {
+            "supports": "Assinatura compatível e reprodutível em conjunto com outras evidências sustenta dano rotativo",
+            "weakens": "Origem demonstrada fora do comando enfraquece essa hipótese",
+            "inconclusive": "Não há sensor, baseline ou condições de operação comparáveis"
+          },
+          "status": "apenas_proposto",
+          "resultObserved": null
+        }
+      ],
+      "limitations": "Classificação ISO 15243 é referência para rolamentos em geral; não afirmar rolamento avariado em CAT 777 com bujão sozinho.",
+      "review": {
+        "status": "inferido_com_literatura_geral",
+        "reviewer": null
+      },
+      "sapMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageId": null,
+        "causeId": null
+      },
+      "factualNature": "hipotese_de_mecanismo",
+      "empiricalOccurrences": 0,
+      "confirmedRootCause": false
+    }
+  ]
+}
