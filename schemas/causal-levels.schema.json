@@ -1,0 +1,237 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FMEA Mining — four causal levels (hypotheses only)",
+  "type": "object",
+  "required": [
+    "schema",
+    "version",
+    "purpose",
+    "sourceBasis",
+    "policy",
+    "records"
+  ],
+  "properties": {
+    "schema": {
+      "const": "fmea-mining.causal-levels.v1"
+    },
+    "version": {
+      "type": "string"
+    },
+    "purpose": {
+      "type": "string"
+    },
+    "sourceBasis": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "string"
+      }
+    },
+    "policy": {
+      "type": "object"
+    },
+    "records": {
+      "type": "array",
+      "minItems": 24,
+      "items": {
+        "$ref": "#/$defs/causalRecord"
+      }
+    }
+  },
+  "$defs": {
+    "causalLevels": {
+      "type": "object",
+      "required": [
+        "observedPhenomenon",
+        "immediatePhysicalMechanismCandidate",
+        "contributingConditionCandidates",
+        "rootCauseCandidates",
+        "rootCauseNotEstablishedBecause"
+      ],
+      "properties": {
+        "observedPhenomenon": {
+          "type": "string",
+          "minLength": 30
+        },
+        "immediatePhysicalMechanismCandidate": {
+          "type": "string",
+          "minLength": 30
+        },
+        "contributingConditionCandidates": {
+          "type": "array",
+          "minItems": 3,
+          "items": {
+            "type": "string"
+          }
+        },
+        "rootCauseCandidates": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "type": "string"
+          }
+        },
+        "rootCauseNotEstablishedBecause": {
+          "type": "string",
+          "minLength": 30
+        }
+      }
+    },
+    "causalRecord": {
+      "type": "object",
+      "required": [
+        "chainId",
+        "family",
+        "operatingFunction",
+        "functionalFailureId",
+        "causalLevels",
+        "localEffectReference",
+        "evidenceRequirementIds",
+        "sourceIds",
+        "editorialOrigin",
+        "sourceScope",
+        "applicability",
+        "observation",
+        "review",
+        "claimStatus",
+        "confirmedRootCause",
+        "measuredSeverity"
+      ],
+      "properties": {
+        "chainId": {
+          "type": "string",
+          "pattern": "^FC-"
+        },
+        "family": {
+          "type": "string"
+        },
+        "operatingFunction": {
+          "type": "string"
+        },
+        "functionalFailureId": {
+          "type": "string"
+        },
+        "causalLevels": {
+          "$ref": "#/$defs/causalLevels"
+        },
+        "localEffectReference": {
+          "type": "object",
+          "required": [
+            "chainId",
+            "sourceFile",
+            "status"
+          ],
+          "properties": {
+            "chainId": {
+              "type": "string"
+            },
+            "sourceFile": {
+              "type": "string"
+            },
+            "status": {
+              "const": "possible_unobserved"
+            }
+          }
+        },
+        "evidenceRequirementIds": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "type": "string",
+            "pattern": "^ER-FC-"
+          }
+        },
+        "sourceIds": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        },
+        "editorialOrigin": {
+          "enum": [
+            "preservado_do_roteiro_v1.3.11",
+            "analise_mecanistica_ampliada_v1.3.12"
+          ]
+        },
+        "sourceScope": {
+          "const": "principios_gerais_nao_efetividade_oem"
+        },
+        "applicability": {
+          "type": "object",
+          "required": [
+            "modelId",
+            "locationId",
+            "componentCode",
+            "serialOrArrangement"
+          ],
+          "properties": {
+            "modelId": {
+              "type": "null"
+            },
+            "locationId": {
+              "type": "null"
+            },
+            "componentCode": {
+              "type": "null"
+            },
+            "serialOrArrangement": {
+              "type": "null"
+            }
+          }
+        },
+        "observation": {
+          "type": "object",
+          "required": [
+            "hasObservedEvent",
+            "observedValue",
+            "observedAt"
+          ],
+          "properties": {
+            "hasObservedEvent": {
+              "const": false
+            },
+            "observedValue": {
+              "type": "null"
+            },
+            "observedAt": {
+              "type": "null"
+            }
+          }
+        },
+        "review": {
+          "type": "object",
+          "required": [
+            "status",
+            "reviewer",
+            "independentReviewer",
+            "decision"
+          ],
+          "properties": {
+            "status": {
+              "const": "inferido_com_literatura_geral"
+            },
+            "reviewer": {
+              "type": "null"
+            },
+            "independentReviewer": {
+              "type": "null"
+            },
+            "decision": {
+              "type": "null"
+            }
+          }
+        },
+        "claimStatus": {
+          "const": "hipotese_tecnica_nao_homologada"
+        },
+        "confirmedRootCause": {
+          "const": false
+        },
+        "measuredSeverity": {
+          "type": "null"
+        }
+      }
+    }
+  }
+}
