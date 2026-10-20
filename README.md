@@ -2,7 +2,7 @@
 
 Banco de conhecimento **versionado** para investigar modos de falha, sintomas, evidências e causas em equipamentos móveis de mineração. Um consumidor possível é o jogo **[P.O.R.C.A.R.I.A. — Você Quebra, Eu Conserto](https://github.com/pedromaintenance/porcaria-voce-quebra-eu-conserto)**, mas o banco é independente: **este repositório não altera os consumidores**.
 
-> **Status:** versão do catálogo **1.3.11** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
+> **Status:** versão do catálogo **1.3.12** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
 
 ## O que queremos construir
 
@@ -189,6 +189,19 @@ Os roteiros distinguem **fenômeno observado, mecanismo imediato candidato, fato
 - [9 cenários sintéticos](data/quality/pathway-regressions.v1.json) e `npm run pathways:validate` para impedir promoção causal indevida.
 
 As 24 cadeias causais e 10 bloqueios preventivos SAP permanecem, sem dados OEM/ocorrência inventados e sem alterações em consumidores.
+
+## Quatro níveis causais e exportação pública (v1.3.12)
+
+As **24 cadeias causais** agora têm [camada de causalidade em quatro níveis](data/ontology/causal-levels.v1.json): fenômeno potencialmente observável, mecanismo físico imediato, fatores contribuintes e hipóteses condicionais de causa raiz. Foram ampliadas **21 cadeias** e preservadas as 3 documentadas na v1.3.11, sem declarar ocorrência real.
+
+A [política de publicação](data/governance/public-export-policy.v1.json) permite produzir um **preview público** com somente campos aprovados, fonte bibliográfica, status de revisão e aplicabilidade nula quando não confirmada. O gerador cria `reports/public-knowledge.v1.json` e `reports/public-manifest.v1.json` (artefatos do CI, não conteúdo commitado). O manifesto contém **hash SHA-256** do JSON exportado.
+
+- [Relatório técnico do ciclo](docs/CICLO_2026-10-20_CAUSALIDADE_EXPORTACAO.md)
+- [Validação das 24 cadeias](scripts/validate-causal-levels.mjs)
+- [Exportador público determinístico](scripts/export-public-knowledge.mjs) e [validador](scripts/validate-public-knowledge.mjs)
+- [Esquemas JSON](schemas/causal-levels.schema.json) e [preview](schemas/public-knowledge-preview.schema.json)
+
+Comandos: `npm run causal:levels:validate`, `npm run public:export` e `npm run public:validate`. **O preview não é liberado para uso operacional ou diagnóstico causal automático.** Nenhum consumidor foi modificado.
 
 ## Comece por aqui
 

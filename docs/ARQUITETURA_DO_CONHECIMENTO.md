@@ -167,3 +167,15 @@ Cada roteiro distingue quatro níveis: **fenômeno observável**, **mecanismo f�
 A [regressão](../data/quality/pathway-regressions.v1.json) testa exclusivamente *prontidão de informações*, não precisão de diagnóstico. Uma simulação com checklist completo é classificada como `apto_para_revisao_nao_confirmado`, nunca como causa confirmada.
 
 [Relatório de decisões](CICLO_2026-10-20_ROTEIROS_CAUSALIDADE.md) · [Validador](../scripts/validate-diagnostic-pathways.mjs) · [Contrato](../schemas/diagnostic-pathways.schema.json)
+
+## 16. Quatro níveis em todas as cadeias e contrato de publicação (v1.3.12)
+
+O [catálogo de níveis causais](../data/ontology/causal-levels.v1.json) mantém uma ligação 1:1 com as **24 cadeias originais**, e exige separação de: **fenômeno observável potencial**, **mecanismo físico imediato candidato**, **fatores contribuintes candidatos**, **causas raízes candidatas** e a justificativa de não confirmação.
+
+O nome `observedPhenomenon` é preservado por compatibilidade com os três roteiros, mas significa **fenômeno possível, não evento observado**: `observation.hasObservedEvent=false`. Nenhuma causa sistêmica é atribuída ao operador, mantenedor, projeto ou organização sem documentação e revisão de dados pertinentes.
+
+A [política pública](../data/governance/public-export-policy.v1.json) declara campos permitidos, dados proibidos e `approvedForOperationalUse=false`. O [exportador](../scripts/export-public-knowledge.mjs) produz JSON determinístico de hipóteses com status, referências de fonte, efeitos possíveis e investigações não realizadas. O [manifesto](../scripts/validate-public-knowledge.mjs) usa SHA-256 para confirmar integridade binária do preview, **não** homologação técnica.
+
+O preview é publicado apenas como artefato do CI, separado dos dados originais. Este repositório não executa instalação, integração ou atualização em jogos consumidores.
+
+[Relatório do ciclo](CICLO_2026-10-20_CAUSALIDADE_EXPORTACAO.md).

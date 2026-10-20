@@ -1,6 +1,6 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 20/10/2026 · **Ciclo:** catálogo técnico v1.3.11 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 20/10/2026 · **Ciclo:** catálogo técnico v1.3.12 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
 
@@ -39,6 +39,24 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 
 **Observação:** as 159 tarefas de PM com subgrupo candidato foram obtidas em extração local anterior e **não** representam 159 associações homologadas. Contagens de vínculos estritos serão publicadas pelo relatório automático após cada alteração do gerador.
 
+## Ciclo concluído — 20/10/2026: cobertura causal total e preview público (v1.3.12)
+
+**Objetivo:** expandir segregação de níveis causais às 21 cadeias ainda sem estrutura própria e entregar um formato público versionado com limites de validade explícitos.
+
+- [x] **24/24 cadeias** documentadas com [quatro níveis causais](../data/ontology/causal-levels.v1.json); 21 classificações novas e três preservadas dos roteiros v1.3.11.
+- [x] Cada registro explica por que as hipóteses **não** podem ser consideradas causas raízes confirmadas sem evidência de arranjo, histórico, medições e revisão humana.
+- [x] [Validador de níveis causais](../scripts/validate-causal-levels.mjs) exige fontes, evidências, quatro dimensões completas, sem ocorrências reais ou atribuição automática de causa organizacional.
+- [x] [Allowlist de exportação pública](../data/governance/public-export-policy.v1.json) com 18 campos de hipótese por cadeia, evitando dados corporativos, medições e mapeamento de peças por série.
+- [x] [Gerador de preview público](../scripts/export-public-knowledge.mjs) com dados ordenados, referência a fontes públicas e [validação de SHA-256](../scripts/validate-public-knowledge.mjs) no CI.
+- [x] Criados [contrato de níveis](../schemas/causal-levels.schema.json), [contrato de preview](../schemas/public-knowledge-preview.schema.json) e artefatos `reports/public-knowledge.v1.json` / `reports/public-manifest.v1.json`.
+- [x] [Relatório completo](CICLO_2026-10-20_CAUSALIDADE_EXPORTACAO.md) e indicadores no relatório geral de qualidade.
+- [ ] **P0 — próxima versão:** submeter 21 causas sistêmicas candidatas a avaliação técnica crítica de plausibilidade, sem fingir parecer de especialista.
+- [ ] **P0 — próxima versão:** especificar convenções de compatibilidade de esquema/semântica para consumidores independentes.
+- [ ] **P1:** conferir prefixo e arranjo CAT D9 com documentação OEM e tabelas CTS de origem autorizada antes de promover qualquer vínculo.
+- [ ] **P1:** perseguir as 10 lacunas preventivas SAP e os 12 complementos diagnósticos pendentes, sem construir combinações apenas para inflar cobertura.
+
+**Estado:** 24 cadeias com quatro níveis, 48 investigações ainda propostas, **0** causas confirmadas e **0** liberações para uso operacional do pacote; 10 regras PM permanecem sem vínculo estrito.
+
 ## Ciclo concluído — 20/10/2026: três roteiros de diagnóstico e níveis causais (v1.3.11)
 
 **Objetivo:** aprofundar três das doze lacunas P0, organizando testes que confrontam duas hipóteses concorrentes e separando níveis causais sem fabricar resultados.
@@ -49,9 +67,9 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 - [x] Dois novos documentos Caterpillar indexados sobre interpretação de detritos do trem de força e triangulação de inspeção, fluido, dados e histórico.
 - [x] [Nove regressões sintéticas](../data/quality/pathway-regressions.v1.json), [JSON Schema](../schemas/diagnostic-pathways.schema.json) e `npm run pathways:validate` integrados ao CI.
 - [x] [Relatório técnico](CICLO_2026-10-20_ROTEIROS_CAUSALIDADE.md), documentação e métricas atualizados.
-- [ ] **P0 — v1.3.12:** estender segregação causal às 21 cadeias ainda sem roteiro específico, sem promover hipóteses a causas raízes.
+- [x] **v1.3.12:** estender segregação causal às 21 cadeias restantes, sem promover hipóteses a causas raízes.
 - [ ] **P0:** obter documentação OEM por configuração para piloto CAT D9 e encaminhar revisão independente de especialistas.
-- [ ] **P1:** elaborar contrato público de exportação para consumidores, com status, fonte e aplicabilidade, sem editar consumidores.
+- [x] **v1.3.12:** implementar contrato público por whitelist e manifesto SHA-256; consumidores não alterados.
 - [ ] **P1:** ampliar avaliação diferencial de ventilação, termostato e circulação no arrefecimento.
 - [ ] Manter as nove outras lacunas diagnósticas abertas e as três selecionadas **sem fechamento por falta de ensaio**; cobertura técnica aumentou, não houve confirmação causal.
 

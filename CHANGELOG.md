@@ -2,6 +2,16 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.12] — 2026-10-20 — Causalidade em quatro níveis e preview público reproduzível
+- Ampliada a segregação de **fenômeno, mecanismo físico imediato, fatores contribuintes e causa raiz candidata** às 21 cadeias restantes; agora são 24/24 (três originais preservadas).
+- As causas sistêmicas são condicionais e possuem justificativa de não confirmação, evitando atribuição automática de responsabilidade a projeto, manutenção ou operação.
+- Criados `data/ontology/causal-levels.v1.json` e `scripts/validate-causal-levels.mjs` com integridade de referências, ausência de medições reais e gate de revisão.
+- Criada política pública `data/governance/public-export-policy.v1.json` de allowlist, excluindo dados reais, conteúdo interno e mapeamentos SAP/OEM não validados.
+- Criados gerador determinístico de preview das 24 hipóteses e manifesto com SHA-256, verificados por `scripts/validate-public-knowledge.mjs`.
+- Novos JSON Schemas, integração ao CI e ao relatório de qualidade; preview e manifesto disponíveis como artefatos, não versionados em `main`.
+- Fontes IEC 60812, ISO 14224 e JSON Schema Draft 2020-12 consultadas como base de método/estrutura, sem alegar conformidade ou acesso ao conteúdo integral de normas.
+- Permanecem 48 investigações não realizadas, 10 bloqueios preventivos e 0 causas raízes confirmadas. Consumidores externos não alterados.
+
 ## [1.3.11] — 2026-10-20 — Roteiros diferenciais e níveis causais
 - Detalhados três caminhos diagnósticos para mangueiras hidráulicas, comando final e fixadores sapata–elo, com **nove etapas planejadas**.
 - Cada etapa distingue evidências favoráveis a duas hipóteses, resultados inconclusivos, metadados e cuidados de segurança.
