@@ -1,0 +1,327 @@
+{
+  "schema": "fmea-mining.diagnostic-pathways.v1",
+  "version": "1.3.11",
+  "nature": "didatico_tecnico_sem_inspecao_executada",
+  "policy": {
+    "pathsRequireIndependentEvidence": true,
+    "rootCauseCannotBeConfirmedByCode": true,
+    "oemProcedureRequiredBeforeExecution": true,
+    "reviewerNeeded": true,
+    "noSerialAssumed": true,
+    "noSourceDocumentsRepublished": true,
+    "confidenceIsNotNumerical": true
+  },
+  "records": [
+    {
+      "id": "PATH-HOSE-ORIGIN-001",
+      "chainId": "FC-HOSE-001",
+      "focusAlternativeId": "ALT2",
+      "originCrossRefId": "XREF-FC-HOSE-001-ALT2",
+      "title": "Distinguir abrasão da mangueira de óleo proveniente de componente superior",
+      "detection": "Cobertura de mangueira apresenta abrasão e/ou óleo superficial. Isso não determina perda de estanqueidade no corpo.",
+      "comparison": {
+        "hypothesisA": "Abrasão com possível comprometimento da mangueira identificada",
+        "hypothesisB": "Óleo de outra conexão ou equipamento situado acima da mangueira"
+      },
+      "steps": [
+        {
+          "id": "S1",
+          "methodId": "EV-01",
+          "question": "A origem da trilha e os primeiros pontos molhados foram localizados em condição segura e documentados?",
+          "supportsA": "Trilha parece iniciar em ponto de perda de contenção da própria mangueira identificada; exige confirmação por método OEM.",
+          "supportsB": "Trilha é contínua desde uma conexão ou componente posicionado acima, com cobertura inferior apenas molhada.",
+          "notDiscriminating": "Linha lavada, óleo espalhado, origem inacessível ou movimento anterior não registrado.",
+          "requiredMetadata": [
+            "equipmentContext",
+            "inspectionLocation",
+            "isolationStatus",
+            "visualDocumentation",
+            "dateTime"
+          ],
+          "safeBoundary": "Isolar e aliviar pressões conforme OEM; nunca aproximar a pele, tocar vazamento pressurizado nem provocar fuga para investigar."
+        },
+        {
+          "id": "S2",
+          "methodId": "EV-15",
+          "question": "Há contato efetivo, desvio de roteamento ou proteção ausente na região de abrasão?",
+          "supportsA": "Marcas coincidentes, contato e trajetória de movimento corroboram mecanismo de desgaste externo.",
+          "supportsB": "Roteamento sem anomalia no trecho inspecionado não refuta vazamento em outro componente, e pouco contribui para B.",
+          "notDiscriminating": "Contato ocorre apenas em movimento que não pode ser reproduzido com segurança ou sem referência de montagem.",
+          "requiredMetadata": [
+            "equipmentContext",
+            "inspectionLocation",
+            "oemInspectionReference",
+            "dateTime"
+          ],
+          "safeBoundary": "Avaliar configuração instalada sem energizar implementos ou introduzir pessoas na zona de movimento."
+        },
+        {
+          "id": "S3",
+          "methodId": "EV-13",
+          "question": "Os registros anteriores de intervenção identificam mangueira, terminal ou conexão adjacente como origem de vazamentos?",
+          "supportsA": "Repetição documentada de desgaste no mesmo trajeto favorece mecanismo de contato.",
+          "supportsB": "Evento anterior rastreado à conexão superior orienta inspeção, mas não prova recorrência atual.",
+          "notDiscriminating": "Sem histórico por posição/peça ou sem cronologia após limpeza e substituições.",
+          "requiredMetadata": [
+            "equipmentContext",
+            "sourceWorkOrderOrEvent",
+            "chronology",
+            "dateTime"
+          ],
+          "safeBoundary": "Consultar registros sem manipular circuito; adotar procedimento OEM se surgirem indícios atuais de fuga."
+        }
+      ],
+      "causalLevels": {
+        "observedPhenomenon": "Abrasão e/ou vestígio de fluido na região da mangueira — ainda não observado neste banco.",
+        "immediatePhysicalMechanismCandidate": "Perda localizada de contenção ou simples transporte externo de óleo; a posição de origem ainda precisa ser comprovada.",
+        "contributingConditionCandidates": [
+          "Roteamento em contato com estrutura",
+          "Falta ou posicionamento inadequado de proteção",
+          "Vazamento em peça acima da mangueira"
+        ],
+        "rootCauseCandidates": [
+          "Deficiência de controle de roteamento na montagem",
+          "Falha de verificação da origem após intervenções anteriores"
+        ],
+        "rootCauseNotEstablishedBecause": "Não existem evidências de implementação de procedimento, ordem de serviço de montagem, desvio de padrão ou origem confirmada."
+      },
+      "evidenceGate": {
+        "requires": [
+          "Origem física de fluido documentada",
+          "Identificação de componente/posição OEM",
+          "Contraprova da hipótese de óleo escorrido",
+          "Revisão técnica independente"
+        ],
+        "decisionWithoutEvidence": "inconclusivo"
+      },
+      "sourceIds": [
+        "CAT-HYD-HOSE-INSPECT",
+        "ISO-14224-2016",
+        "IEC-60812-2018"
+      ],
+      "applicableModelId": null,
+      "applicableSapLocationId": null,
+      "confirmedPartCode": null,
+      "applicableSerialOrArrangement": null,
+      "executionStatus": "not_performed",
+      "resultObserved": null,
+      "diagnosticConclusion": null,
+      "reviewStatus": "proposta_editorial_nao_homologada",
+      "fieldEvents": 0,
+      "rootCauseConfirmed": false,
+      "independentEvidenceVerified": false
+    },
+    {
+      "id": "PATH-FD-PARTICLES-001",
+      "chainId": "FC-FD-001",
+      "focusAlternativeId": "ALT2",
+      "originCrossRefId": "XREF-FC-FD-001-ALT2",
+      "title": "Diferenciar partículas de desgaste interno e ingresso de contaminante no comando final",
+      "detection": "Tendência de metais e partículas no fluido; a composição pode refletir desgaste, ingresso externo e/ou coleta não representativa.",
+      "comparison": {
+        "hypothesisA": "Partículas abrasivas ingressaram e aceleraram desgaste",
+        "hypothesisB": "Partículas metálicas foram geradas por dano interno em engrenagens ou rolamentos"
+      },
+      "steps": [
+        {
+          "id": "S1",
+          "methodId": "EV-08",
+          "question": "A amostragem e a tendência são comparáveis em compartimento, óleo, horas e método?",
+          "supportsA": "Sujeira/contaminante acompanha tendência de desgaste, sob amostra confiável; sugere investigar ingresso sem atribuir peça.",
+          "supportsB": "Tendência crescente de metais de desgaste sem contaminante externo identificado reforça investigação de origem interna.",
+          "notDiscriminating": "Mudança de formulação conhecida, laboratório/ponto diferentes, amostra contaminada ou série insuficiente.",
+          "requiredMetadata": [
+            "equipmentContext",
+            "compartment",
+            "fluidProduct",
+            "fluidHours",
+            "samplePoint",
+            "collectionMethod",
+            "laboratoryMethod",
+            "baselineReference",
+            "dateTime"
+          ],
+          "safeBoundary": "Coleta apenas em pontos e condições autorizados; evitar amostragem que altere a condição ou contamine o fluido."
+        },
+        {
+          "id": "S2",
+          "methodId": "EV-11",
+          "question": "Resíduos de bujão/filtro e morfologia apontam desgaste anormal, mantendo origem não atribuída?",
+          "supportsA": "Partículas predominantemente externas e sujeira compatível com ingresso podem reforçar avaliação do caminho de entrada.",
+          "supportsB": "Fragmentos metálicos, morfologia e evolução de depósitos podem indicar geração de material por contato interno.",
+          "notDiscriminating": "Sem identificação de componente, registro fotográfico ou condição do filtro; partículas finas e grossas têm sensibilidades distintas de captura.",
+          "requiredMetadata": [
+            "equipmentContext",
+            "compartment",
+            "componentOrFilterId",
+            "removalAndHandlingMethod",
+            "residueMorphology",
+            "photographOrRecord",
+            "dateTime"
+          ],
+          "safeBoundary": "Retirar e examinar somente conforme procedimento; não reinstalar elemento filtrante cortado ou danificado."
+        },
+        {
+          "id": "S3",
+          "methodId": "EV-10",
+          "question": "Água ou outros contaminantes foram investigados com método independente?",
+          "supportsA": "Contaminante comprovado sustenta investigação de vedação/respiro/entrada de sujeira, mas não identifica origem da partícula metálica.",
+          "supportsB": "Contaminante ausente reduz uma explicação concorrente, mas não confirma engrenagem ou rolamento específico.",
+          "notDiscriminating": "Método não sensível ao contaminante pertinente, ponto de coleta inadequado ou mudança de produto.",
+          "requiredMetadata": [
+            "equipmentContext",
+            "compartment",
+            "samplePoint",
+            "collectionMethod",
+            "testMethod",
+            "baselineReference",
+            "dateTime"
+          ],
+          "safeBoundary": "Registrar procedimento e integridade da coleta; não abrir compartimento energizado, quente ou sob pressão."
+        }
+      ],
+      "causalLevels": {
+        "observedPhenomenon": "Alteração potencial de metais/partículas em óleo de comando final — nenhum resultado observado neste banco.",
+        "immediatePhysicalMechanismCandidate": "Desgaste de contato ou contaminação circulante, sem componente ou direção causal comprovados.",
+        "contributingConditionCandidates": [
+          "Ingressos possíveis por vedação/respiro",
+          "Produto, horas e baseline do óleo",
+          "Desgaste inicial que passa a produzir partículas secundárias"
+        ],
+        "rootCauseCandidates": [
+          "Deficiência de vedação ou controle de contaminação",
+          "Estratégia de lubrificação e acompanhamento incompatível com condição real"
+        ],
+        "rootCauseNotEstablishedBecause": "Não foram verificados ingresso, condição interna, histórico da máquina, decisões de manutenção ou origem metalúrgica de partículas."
+      },
+      "evidenceGate": {
+        "requires": [
+          "Duas condições de amostragem comparáveis",
+          "Exame de depósitos com rastreabilidade",
+          "Inspeção independente de origem/ingresso quando indicada",
+          "Revisão de fabricante por série"
+        ],
+        "decisionWithoutEvidence": "inconclusivo"
+      },
+      "sourceIds": [
+        "CAT-DRIVE-MAGNET-PLUG",
+        "CAT-SOS-SAMPLING-GUIDE-PT",
+        "CAT-DRIVE-MAINT-PRACTICES",
+        "ISO-14224-2016"
+      ],
+      "applicableModelId": null,
+      "applicableSapLocationId": null,
+      "confirmedPartCode": null,
+      "applicableSerialOrArrangement": null,
+      "executionStatus": "not_performed",
+      "resultObserved": null,
+      "diagnosticConclusion": null,
+      "reviewStatus": "proposta_editorial_nao_homologada",
+      "fieldEvents": 0,
+      "rootCauseConfirmed": false,
+      "independentEvidenceVerified": false
+    },
+    {
+      "id": "PATH-TRACK-BOLT-001",
+      "chainId": "FC-TRACK-005",
+      "focusAlternativeId": "ALT1",
+      "originCrossRefId": "XREF-FC-TRACK-005-ALT1",
+      "title": "Diferenciar giro de fixador e perda de pré-carga sem rotação",
+      "detection": "Parafuso de sapata solto ou marcas de movimento, sem mecanismo causal comprovado.",
+      "comparison": {
+        "hypothesisA": "Perda de aperto por autoafrouxamento rotacional",
+        "hypothesisB": "Perda de aperto por assentamento, relaxação ou deformação sem rotação do fixador"
+      },
+      "steps": [
+        {
+          "id": "S1",
+          "methodId": "EV-01",
+          "question": "Há evidência temporal rastreável de rotação relativa e estado físico de superfícies/fixadores?",
+          "supportsA": "Registro comparável de marcações antes e depois demonstra rotação relativa sob condições conhecidas.",
+          "supportsB": "Alterações de contato e assentamento são compatíveis com perda sem giro, mas ausência de marcas não prova que não ocorreu rotação.",
+          "notDiscriminating": "Sem registro inicial, pintura alterada, peça substituída ou elementos já removidos.",
+          "requiredMetadata": [
+            "equipmentContext",
+            "inspectionLocation",
+            "isolationStatus",
+            "visualDocumentation",
+            "dateTime"
+          ],
+          "safeBoundary": "Acesso apenas após bloqueio e segurança do rodante; não ajustar aperto como experimento diagnóstico."
+        },
+        {
+          "id": "S2",
+          "methodId": "EV-13",
+          "question": "Há histórico de montagem, procedimento OEM, torque-turn e alterações do estado da junta?",
+          "supportsA": "Documentação de giro progressivo após montagem suporta investigação de rotação.",
+          "supportsB": "Assentamento temporal e deformação de interfaces após montagem podem apoiar relaxação sem rotação.",
+          "notDiscriminating": "Torque de desaperto isolado, documento de montagem ausente ou sequência alterada por reaperto não registrado.",
+          "requiredMetadata": [
+            "equipmentContext",
+            "sourceWorkOrderOrEvent",
+            "componentServiceHistory",
+            "chronology",
+            "dateTime"
+          ],
+          "safeBoundary": "Não utilizar torque genérico nem critérios de reutilização de outra série; verificar OEM e integridade da junta."
+        },
+        {
+          "id": "S3",
+          "methodId": "EV-15",
+          "question": "As superfícies da junta sapata–elo apresentam indícios de assentamento/deformação e folga geométrica?",
+          "supportsA": "Marcas de giro comprovadas juntamente com movimento da interface tornam autoafrouxamento plausível.",
+          "supportsB": "Acomodação e deformação comprovadas com monitoramento confiável sem giro apoiam hipótese de assentamento.",
+          "notDiscriminating": "Sem acesso, método de medição OEM ou rastreio de estado inicial, ambos mecanismos continuam em aberto.",
+          "requiredMetadata": [
+            "equipmentContext",
+            "inspectionLocation",
+            "fixationOrClearanceFeature",
+            "oemInspectionReference",
+            "dateTime"
+          ],
+          "safeBoundary": "Não desmontar ou reapertar junta de esteira sem procedimento CAT efetivo e controle de energia acumulada."
+        }
+      ],
+      "causalLevels": {
+        "observedPhenomenon": "Fixador potencialmente afrouxado (SAP dano 01.15); nenhuma ocorrência real inserida.",
+        "immediatePhysicalMechanismCandidate": "Redução da pré-carga por rotação ou relaxação/assentamento, ainda não diferenciado.",
+        "contributingConditionCandidates": [
+          "Vibração e solicitação transversal",
+          "Rugosidade/assentamento da interface",
+          "Procedimento/força de montagem efetivos desconhecidos"
+        ],
+        "rootCauseCandidates": [
+          "Controle de montagem e rastreamento de aperto inadequado",
+          "Seleção/reutilização de fixadores incompatível com procedimento vigente"
+        ],
+        "rootCauseNotEstablishedBecause": "Par 01.15/C1.17 é descritivamente circular; não há evidência de processo, histórico ou efetividade OEM da fixação."
+      },
+      "evidenceGate": {
+        "requires": [
+          "Componente de fixação por série/arranjo",
+          "Registro comparável de rotação ou assentamento",
+          "Histórico documentado de montagem",
+          "Exame da junta e decisão de especialista independente"
+        ],
+        "decisionWithoutEvidence": "inconclusivo"
+      },
+      "sourceIds": [
+        "CAT-UC-DOZER-GUIDE",
+        "NORDLOCK-BOLT-LOOSENING",
+        "NORDLOCK-ROTATIONAL-LOOSENING",
+        "IEC-60812-2018"
+      ],
+      "applicableModelId": null,
+      "applicableSapLocationId": null,
+      "confirmedPartCode": null,
+      "applicableSerialOrArrangement": null,
+      "executionStatus": "not_performed",
+      "resultObserved": null,
+      "diagnosticConclusion": null,
+      "reviewStatus": "proposta_editorial_nao_homologada",
+      "fieldEvents": 0,
+      "rootCauseConfirmed": false,
+      "independentEvidenceVerified": false
+    }
+  ]
+}
