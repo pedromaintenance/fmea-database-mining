@@ -2,15 +2,19 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
+import {matchesRoot} from './pm-system-scope.mjs';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const read=p=>JSON.parse(fs.readFileSync(path.join(root,p),'utf8'));
 const data=read('data/catalog/failure-db.v1.json');
 const {records}=read('data/knowledge/pm-prevention/generated-links.json');
+const pmRules=new Map(read('data/knowledge/pm-prevention/seed-rules.json').records.map(r=>[r.id,r]));
 const paths=new Map(data.locations.map(x=>[x.id,x]));
 const errors=[];
 for(const row of records){
  const loc=paths.get(row.locationId);
  if(!loc||loc.modelo!==row.modelId||loc.profundidade!==3)errors.push('path '+row.id);
+ const rule=pmRules.get(row.originRule);
+ if(!rule||!loc||!matchesRoot(rule,loc))errors.push('root '+row.id);
  if(!data.partsByObjectType[loc?.objetoTipoSAP]?.some(p=>p.code===row.componentCode))errors.push('part '+row.id);
  if(!data.compatibleFailureModesByPart[row.componentCode]?.damageCauses?.[row.damageId]?.includes(row.causeId))errors.push('damage cause '+row.id);
  if(row.occurrence!=='nao_observada'||row.evidenceStatus!=='metodo_planejado_sem_resultado'||row.associationStatus!=='inferido_nao_validado')errors.push('false evidence '+row.id);
