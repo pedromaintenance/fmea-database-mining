@@ -94,3 +94,18 @@ O relatório `reports/quality-audit.generated.json` é gerado em CI e **não con
 ## 9. Fontes de trabalho e controle de direitos
 
 Os sete planos preventivos e os catálogos SAP de origem contêm materiais de trabalho e informações possivelmente confidenciais. Os registros íntegros permanecem fora do GitHub público; os padrões genéricos autorais e contagens agregadas já disponíveis são tratados separadamente. A liberação de novos derivados exige autorização de divulgação.
+
+## 10. Separação semântica de condição, ação e dano (v1.3.6)
+
+A nova [camada estruturada](../data/ontology/condition-action-damage.v1.json) explicita três entidades que não são intercambiáveis:
+
+- `condition`: valor/estado de fluido, ambiente ou desempenho que uma inspeção procura observar; sem evidência, é apenas **condição-alvo**.
+- `action`: inspeção, coleta, teste ou serviço proposto; executar a tarefa não demonstra automaticamente que um componente falhou.
+- `damageHypothesis`: dano físico/funcional cuja confirmação depende de prova específica e da identificação do componente; nunca é criado por uma condição ou ação isolada.
+
+As relações são tipadas como `rule_monitors_condition`, `rule_proposes_action` e `rule_lists_differential_damage`. A terceira significa **apenas alternativa que merece investigação** — não `confirms_damage` nem `causes_damage`. Este último vínculo não existe no esquema conceitual. Valores, testes executados e medições de campo permanecem vazios.
+
+O [JSON Schema](../schemas/condition-action-damage.schema.json) documenta o contrato público; os [testes](../scripts/validate-condition-action-damage.mjs) verificam referências e as sete regressões sintéticas. Esses controles não substituem curadoria OEM/mecânica nem autorizam publicação de ocorrências corporativas.
+
+**Exemplos restritivos:** água drenada do separador não prova dreno avariado; colmeia externamente limpa não prova que o radiador esteve obstruído internamente; aumento de temperatura não condena bomba ou termostato.
+
