@@ -40,6 +40,8 @@ jobs:
         run: npm run diagnostic:preview
       - name: Validar ontologia e classificacoes
         run: npm run ontology:validate
+      - name: Validar oito cadeias causais e fontes
+        run: npm run causal:validate
       - name: Gerar relatorio de cobertura e lacunas
         run: npm run quality:audit
       - name: Publicar pacotes para testes

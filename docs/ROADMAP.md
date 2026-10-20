@@ -1,6 +1,6 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 20/10/2026 · **Ciclo:** catálogo técnico v1.3 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 20/10/2026 · **Ciclo:** catálogo técnico v1.3.1 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
 
@@ -37,6 +37,22 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 
 **Observação:** as 159 tarefas de PM com subgrupo candidato foram obtidas em extração local anterior e **não** representam 159 associações homologadas. Contagens de vínculos estritos serão publicadas pelo relatório automático após cada alteração do gerador.
 
+## Ciclo fechado — 20/10/2026: mangueiras hidráulicas e comandos finais (v1.3.1)
+
+**Entrega implementada:** [oito cadeias causais candidatas](../data/knowledge/causal-chains.v1.json), divididas em quatro relacionadas a mangueiras hidráulicas e quatro a desgaste, contaminação e fadiga de comandos finais. Cada uma tem função, falha funcional, mecanismos, dano possível, condições candidatas, sintomas, **duas hipóteses concorrentes**, **duas investigações com interpretações favorável/desfavorável/inconclusiva**, tarefa preventiva e fonte bibliográfica. Resultado: **8 cadeias, 16 investigações, 0 configurações OEM validadas, 0 causas raízes confirmadas**.
+
+- [x] Pesquisar fabricante OEM e literatura de rolamentos: Caterpillar (mangueiras, bujões magnéticos, análise de fluidos); SKF (ISO 15243, desgaste e fadiga).
+- [x] Atualizar `data/research/sources.v1.json` com fontes primárias/industriais e limites explícitos de generalização.
+- [x] Criar `data/knowledge/causal-chains.v1.json` separado dos casos simulados e das tuplas heurísticas.
+- [x] Implementar `scripts/validate-causal-chains.mjs`, barrando referências inválidas, testes sem contraprova e alegações de inspeção realizada.
+- [x] Acrescentar ao relatório de qualidade contagens de cadeias e investigações sem apresentá-las como falhas empíricas.
+- [ ] Revisar uma amostra de cada família com engenheiro mecânico e especialista de oficina.
+- [ ] Verificar local, peça e efétividade por modelo/serial em OEM antes de promover códigos SAP e causas.
+
+**Documentação rastreável:** [pesquisa e decisões do ciclo](CICLO_2026-10-20_MANGUEIRAS_COMANDOS.md).
+
+**Fila objetiva para o próximo ciclo:** (1) arrefecimento: restrição de ar no radiador versus vazamento de fluido versus ventilação insuficiente; (2) rodante: rolete versus roda-guia versus tensão/fixação de esteira. Prioridade à pesquisa OEM e à validação de escopo por grupo.
+
 ## Etapa A — Integridade e semântica (v1.3, agora)
 
 **Objetivo:** evitar conhecimento contaminado por ligações falsas. **Issues correlatas:** [#7](https://github.com/pedromaintenance/fmea-database-mining/issues/7), [#8](https://github.com/pedromaintenance/fmea-database-mining/issues/8).
@@ -58,12 +74,13 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 
 **Objetivo:** ir além dos seis códigos e explicar a física da perda de função.
 
-- [ ] Construir entidades independentes: função/requisito, falha funcional, modo, mecanismo, dano, causa imediata, causa contribuinte, falha sistêmica, efeito local e operacional.
+- [x] Iniciar entidade independente de cadeia causal com função, modo, mecanismo, dano possível, sintomas, testes e fontes (8 registros gerais).
+- [ ] Construir entidades definitivas de causa imediata, contribuinte, raiz sistêmica, efeito local e operacional; revisão efetiva por modelo.
 - [ ] Ligar mecanismos a classes de componentes **somente por plausibilidade revisada** (desgaste abrasivo em engrenagem, perda de vedação em cilindro etc.).
 - [ ] Criar matriz função → falha funcional → efeitos por sistema: motor, arrefecimento, combustível, hidráulico, transmissão, freios, rodante, direção, elétrico/controle, compressor, mastro e cabeça rotativa.
 - [ ] Registrar condições necessárias de manifestação: temperatura, carga, rotação, esforço, tipo de fluido, ambiente e configuração.
 - [ ] Distinguir **prevenção do mecanismo** de **detecção do dano já existente**, com tarefa PM/CBM correspondente.
-- [ ] Revisar pelo menos **20 cadeias causais autorais** como primeiro lote controlado; ampliar somente após auditoria.
+- [ ] Revisar pelo menos **20 cadeias causais autorais** como primeiro lote controlado (8 hipóteses inseridas, **0 aprovadas**); ampliar somente após auditoria.
 
 **Aceite:** cada cadeia aponta para função, falha, componente, mecanismo/dano, efeito e pelo menos um sintoma observável, com origem e limites. Sem probabilidades não fundamentadas.
 

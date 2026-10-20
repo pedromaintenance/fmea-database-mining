@@ -2,6 +2,14 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.1] — 2026-10-20 — Pesquisa curta e novas cadeias causais
+- Pesquisadas e catalogadas seis fontes gerais: CAT (mangueiras, bujões magnéticos, radiador), SKF (classificação de danos e fadiga de rolamentos).
+- Oito cadeias causais novas: quatro mangueiras hidráulicas, quatro comandos finais, com 16 investigações propostas e hipóteses concorrentes.
+- As relações têm funções, mecanismos, sintomas, métodos de detecção, efeitos, fontes, alternativas e limitações; aplicação por serial não verificada.
+- Validação automatizada de fontes, integridade, alternativas, desfechos e flags que impedem evidência ou causa confirmada fictícia.
+- Auditoria de qualidade ampliada com indicadores de cadeias, investigações e revisão, sem confundir com taxa de falhas.
+- Documentação técnica do ciclo e atualização do roadmap; nenhum repositório consumidor alterado.
+
 ## [1.3.0] — 2026-10-20 — Ontologia independente e auditoria do banco
 - Escopo editorial fixado: evolução exclusiva do FMEA; sistemas e jogos externos apenas consomem releases.
 - Nova ontologia com 10 falhas funcionais, 20 categorias de sintomas, 15 mecanismos, 16 técnicas de evidência e 4 estados de resultado.

@@ -2,7 +2,7 @@
 
 Banco de conhecimento **versionado** para investigar modos de falha, sintomas, evidências e causas em equipamentos móveis de mineração. Um consumidor possível é o jogo **[P.O.R.C.A.R.I.A. — Você Quebra, Eu Conserto](https://github.com/pedromaintenance/porcaria-voce-quebra-eu-conserto)**, mas o banco é independente: **este repositório não altera os consumidores**.
 
-> **Status:** versão do catálogo **1.3.0** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
+> **Status:** versão do catálogo **1.3.1** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
 
 ## O que queremos construir
 
@@ -75,6 +75,14 @@ Veja [Roadmap técnico](docs/ROADMAP.md) e [Pesquisa técnica e literatura OEM](
 - `npm run ontology:validate` verifica vocabulário e referências dos roteiros. `npm run quality:audit` produz relatório de cobertura, relações sem saída e lacunas em `reports/quality-audit.generated.json`, disponibilizado como artefato de CI.
 
 O banco não coleta evidências reais nem gera frequência observada de falhas a partir de candidatos.
+
+## Primeiro ciclo de pesquisa causal (v1.3.1)
+
+Pesquisados dois conjuntos com fontes Caterpillar e SKF: **mangueiras hidráulicas** e **comandos finais**. O banco recebeu [8 cadeias causais candidatas](data/knowledge/causal-chains.v1.json), com 16 investigações propostas, sintomas, mecanismos, falhas funcionais, hipóteses concorrentes e contraprovas. São **conceitos gerais referenciados**, não confirmações de defeitos de equipamentos.
+
+- [Fontes e decisões do ciclo](docs/CICLO_2026-10-20_MANGUEIRAS_COMANDOS.md)
+- `npm run causal:validate` valida IDs, fontes, causas candidatas e separação entre teste planejado e evidência observada.
+- O audit report inclui quantidade e cobertura dessa família; **zero** causas raízes ou efetividades OEM confirmadas.
 
 ## Comece por aqui
 
