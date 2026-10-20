@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.research.sources.v1",
-  "version": "1.3.5",
+  "version": "1.3.6",
   "status": "literatura_de_referencia_nao_casos_empiricos",
   "rights": "somente_titulos_links_e_resumos_originais",
   "sources": [
@@ -420,6 +420,17 @@
       "role": "oem_component_function_other_model",
       "limitation": "Referência técnica de função do separador, não PN aplicável à frota nem indicação de peça danificada na presença de água no combustível.",
       "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
+      "lastReviewed": "2026-10-20"
+    },
+    {
+      "id": "ISO-13379-1-2025",
+      "organization": "ISO",
+      "title": "ISO 13379-1:2025 — Condition monitoring and diagnostics of machine systems — Data interpretation and diagnostics techniques — Part 1: General guidelines",
+      "url": "https://www.iso.org/standard/88027.html",
+      "area": "condition_monitoring_data_interpretation_diagnostic_approach",
+      "role": "standards_methodology",
+      "limitation": "Resumo público descreve conceitos e orientação de interpretação diagnóstica; não foram obtidos requisitos integrais da norma nem valores OEM de máquina.",
+      "reviewStatus": "resumo_oficial_consultado_sem_acesso_ao_texto_integral",
       "lastReviewed": "2026-10-20"
     }
   ]
