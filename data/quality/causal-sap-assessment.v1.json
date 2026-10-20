@@ -1,0 +1,387 @@
+{
+  "schema": "fmea-mining.causal-sap-assessment.v1",
+  "version": "1.3.4",
+  "purpose": "Auditoria de correspondência taxonômica; não é mapeamento validado nem causa raiz comprovada",
+  "sourceBasis": [
+    "data/catalog/failure-db.v1.json",
+    "data/knowledge/causal-chains.v1.json",
+    "data/knowledge/pm-prevention/seed-rules.json"
+  ],
+  "references": [
+    "IEC-60812-2018",
+    "ISO-14224-2016",
+    "SAP-PM-CODES-OFFICIAL",
+    "SAP-PM-CAUSE-OFFICIAL"
+  ],
+  "qualityPolicy": {
+    "approvedLinks": 0,
+    "manualEngineeringReviewPending": true,
+    "serialEffectivityConfirmed": 0
+  },
+  "records": [
+    {
+      "chainId": "FC-HOSE-001",
+      "issueCode": "sem_local_hidraulico",
+      "explanation": "HSVV no catálogo aparece sobretudo em motor, arrefecimento, freios, direção e compressor; falta caminho hidráulico coerente para mangueira de implementos.",
+      "proposedCatalogTuple": {
+        "objectType": "HSVV",
+        "componentCode": "1750",
+        "damageId": "02.02",
+        "causeId": "C5.08"
+      },
+      "status": "analise_taxonomica_nao_homologada",
+      "effectiveSerial": null,
+      "confirmedLocationId": null,
+      "confirmedCause": false,
+      "caveat": "Mesmo um par permitido em catálogo pode estar incorreto como relação de causalidade."
+    },
+    {
+      "chainId": "FC-HOSE-002",
+      "issueCode": "sem_local_hidraulico",
+      "explanation": "Código geral de deformação não comprova que o roteamento ou a torção sejam a causa; falta localização hidráulica.",
+      "proposedCatalogTuple": {
+        "objectType": "HSVV",
+        "componentCode": "1750",
+        "damageId": "01.11",
+        "causeId": "C5.06"
+      },
+      "status": "analise_taxonomica_nao_homologada",
+      "effectiveSerial": null,
+      "confirmedLocationId": null,
+      "confirmedCause": false,
+      "caveat": "Mesmo um par permitido em catálogo pode estar incorreto como relação de causalidade."
+    },
+    {
+      "chainId": "FC-HOSE-003",
+      "issueCode": "sem_local_hidraulico",
+      "explanation": "Conexão de mangueira está no tipo de objeto, mas vínculo à linha hidráulica de implemento não se resolve no catálogo atual.",
+      "proposedCatalogTuple": {
+        "objectType": "HSVV",
+        "componentCode": "1370",
+        "damageId": "03.01",
+        "causeId": "C2.13"
+      },
+      "status": "analise_taxonomica_nao_homologada",
+      "effectiveSerial": null,
+      "confirmedLocationId": null,
+      "confirmedCause": false,
+      "caveat": "Mesmo um par permitido em catálogo pode estar incorreto como relação de causalidade."
+    },
+    {
+      "chainId": "FC-HOSE-004",
+      "issueCode": "sem_local_hidraulico",
+      "explanation": "Degradação e temperatura alta são plausíveis; falta caminho de linha hidráulica e fonte sobre temperatura da mangueira.",
+      "proposedCatalogTuple": {
+        "objectType": "HSVV",
+        "componentCode": "1750",
+        "damageId": "02.11",
+        "causeId": "C2.05"
+      },
+      "status": "analise_taxonomica_nao_homologada",
+      "effectiveSerial": null,
+      "confirmedLocationId": null,
+      "confirmedCause": false,
+      "caveat": "Mesmo um par permitido em catálogo pode estar incorreto como relação de causalidade."
+    },
+    {
+      "chainId": "FC-FD-001",
+      "issueCode": "candidato_nao_homologado",
+      "explanation": "Engrenagem/pinhão como classe candidata, mas partículas podem ser produto da falha e não necessariamente causa primária.",
+      "proposedCatalogTuple": {
+        "objectType": "FIDR",
+        "componentCode": "1541",
+        "damageId": "02.01",
+        "causeId": "C2.09"
+      },
+      "status": "analise_taxonomica_nao_homologada",
+      "effectiveSerial": null,
+      "confirmedLocationId": null,
+      "confirmedCause": false,
+      "caveat": "Mesmo um par permitido em catálogo pode estar incorreto como relação de causalidade."
+    },
+    {
+      "chainId": "FC-FD-002",
+      "issueCode": "candidato_nao_homologado",
+      "explanation": "Rolamento de rolos cônicos como classe possível; presença de água não demonstra corrosão instalada no rolamento.",
+      "proposedCatalogTuple": {
+        "objectType": "FIDR",
+        "componentCode": "0211",
+        "damageId": "02.04",
+        "causeId": "C1.07"
+      },
+      "status": "analise_taxonomica_nao_homologada",
+      "effectiveSerial": null,
+      "confirmedLocationId": null,
+      "confirmedCause": false,
+      "caveat": "Mesmo um par permitido em catálogo pode estar incorreto como relação de causalidade."
+    },
+    {
+      "chainId": "FC-FD-003",
+      "issueCode": "candidato_nao_homologado",
+      "explanation": "Desgaste e lubrificação insuficiente são possíveis, não distinguidos de falta de lubrificação causada pelo dano.",
+      "proposedCatalogTuple": {
+        "objectType": "FIDR",
+        "componentCode": "0211",
+        "damageId": "02.01",
+        "causeId": "C2.11"
+      },
+      "status": "analise_taxonomica_nao_homologada",
+      "effectiveSerial": null,
+      "confirmedLocationId": null,
+      "confirmedCause": false,
+      "caveat": "Mesmo um par permitido em catálogo pode estar incorreto como relação de causalidade."
+    },
+    {
+      "chainId": "FC-FD-004",
+      "issueCode": "candidato_nao_homologado",
+      "explanation": "Piteado pode representar múltiplos mecanismos; partículas não comprovam fadiga de contato.",
+      "proposedCatalogTuple": {
+        "objectType": "FIDR",
+        "componentCode": "0211",
+        "damageId": "02.05",
+        "causeId": "C2.09"
+      },
+      "status": "analise_taxonomica_nao_homologada",
+      "effectiveSerial": null,
+      "confirmedLocationId": null,
+      "confirmedCause": false,
+      "caveat": "Mesmo um par permitido em catálogo pode estar incorreto como relação de causalidade."
+    },
+    {
+      "chainId": "FC-COOL-001",
+      "issueCode": "par_dano_causa_ausente",
+      "explanation": "Trocador catalogado mas restrição por depósito externo não corresponde a dano 03.02/C2.09 permitido para o código 1690; não criar par.",
+      "proposedCatalogTuple": {
+        "objectType": "RADI",
+        "componentCode": "1690",
+        "damageId": "03.02",
+        "causeId": "C2.09"
+      },
+      "status": "analise_taxonomica_nao_homologada",
+      "effectiveSerial": null,
+      "confirmedLocationId": null,
+      "confirmedCause": false,
+      "caveat": "Mesmo um par permitido em catálogo pode estar incorreto como relação de causalidade."
+    },
+    {
+      "chainId": "FC-COOL-002",
+      "issueCode": "candidato_nao_homologado",
+      "explanation": "Mangueira de arrefecimento e perda de estanqueidade têm compatibilidade taxonômica; identificar ponto e origem do fluido.",
+      "proposedCatalogTuple": {
+        "objectType": "RADI",
+        "componentCode": "1750",
+        "damageId": "03.01",
+        "causeId": "C2.13"
+      },
+      "status": "analise_taxonomica_nao_homologada",
+      "effectiveSerial": null,
+      "confirmedLocationId": null,
+      "confirmedCause": false,
+      "caveat": "Mesmo um par permitido em catálogo pode estar incorreto como relação de causalidade."
+    },
+    {
+      "chainId": "FC-COOL-003",
+      "issueCode": "arquitetura_a_confirmar",
+      "explanation": "Correia é uma opção de acionamento do ventilador, mas a máquina pode utilizar outro arranjo; não presumir presença de correia.",
+      "proposedCatalogTuple": {
+        "objectType": "FANN",
+        "componentCode": "0230",
+        "damageId": "06.03",
+        "causeId": "C1.24"
+      },
+      "status": "analise_taxonomica_nao_homologada",
+      "effectiveSerial": null,
+      "confirmedLocationId": null,
+      "confirmedCause": false,
+      "caveat": "Mesmo um par permitido em catálogo pode estar incorreto como relação de causalidade."
+    },
+    {
+      "chainId": "FC-COOL-004",
+      "issueCode": "par_dano_causa_ausente",
+      "explanation": "Obstrução interna não está autorizada no mapa de dano/causa do trocador 1690; não presumir entupimento por laudo de arrefecedor.",
+      "proposedCatalogTuple": {
+        "objectType": "RADI",
+        "componentCode": "1690",
+        "damageId": "03.02",
+        "causeId": "C2.09"
+      },
+      "status": "analise_taxonomica_nao_homologada",
+      "effectiveSerial": null,
+      "confirmedLocationId": null,
+      "confirmedCause": false,
+      "caveat": "Mesmo um par permitido em catálogo pode estar incorreto como relação de causalidade."
+    },
+    {
+      "chainId": "FC-TRACK-001",
+      "issueCode": "efeito_secundario_nao_mecanismo",
+      "explanation": "Desgaste do rolete pode ser consequência de detritos que impedem giro; par não representa travamento diretamente.",
+      "proposedCatalogTuple": {
+        "objectType": "ROLL",
+        "componentCode": "3404",
+        "damageId": "02.01",
+        "causeId": "C2.09"
+      },
+      "status": "analise_taxonomica_nao_homologada",
+      "effectiveSerial": null,
+      "confirmedLocationId": null,
+      "confirmedCause": false,
+      "caveat": "Mesmo um par permitido em catálogo pode estar incorreto como relação de causalidade."
+    },
+    {
+      "chainId": "FC-TRACK-002",
+      "issueCode": "candidato_nao_homologado",
+      "explanation": "Código de vedação genérico pode estar no conjunto de rolete, mas a composição do rolete efetivo requer confirmação.",
+      "proposedCatalogTuple": {
+        "objectType": "ROLL",
+        "componentCode": "3521",
+        "damageId": "03.01",
+        "causeId": "C2.13"
+      },
+      "status": "analise_taxonomica_nao_homologada",
+      "effectiveSerial": null,
+      "confirmedLocationId": null,
+      "confirmedCause": false,
+      "caveat": "Mesmo um par permitido em catálogo pode estar incorreto como relação de causalidade."
+    },
+    {
+      "chainId": "FC-TRACK-003",
+      "issueCode": "identidade_componente_ambigua",
+      "explanation": "Código 1620 = Guia, não afirma roda-guia completa; revisar cadastro e tipo de componente.",
+      "proposedCatalogTuple": {
+        "objectType": "IDLE",
+        "componentCode": "1620",
+        "damageId": "02.01",
+        "causeId": "C1.04"
+      },
+      "status": "analise_taxonomica_nao_homologada",
+      "effectiveSerial": null,
+      "confirmedLocationId": null,
+      "confirmedCause": false,
+      "caveat": "Mesmo um par permitido em catálogo pode estar incorreto como relação de causalidade."
+    },
+    {
+      "chainId": "FC-TRACK-004",
+      "issueCode": "sem_componente_alvo",
+      "explanation": "Esteira desgastada é efeito possível da tensão, mas não identifica o dispositivo tensor nem o desajuste.",
+      "proposedCatalogTuple": {
+        "objectType": "TRAK",
+        "componentCode": "4230",
+        "damageId": "02.01",
+        "causeId": "C1.04"
+      },
+      "status": "analise_taxonomica_nao_homologada",
+      "effectiveSerial": null,
+      "confirmedLocationId": null,
+      "confirmedCause": false,
+      "caveat": "Mesmo um par permitido em catálogo pode estar incorreto como relação de causalidade."
+    },
+    {
+      "chainId": "FC-TRACK-005",
+      "issueCode": "circularidade_dano_causa",
+      "explanation": "Dano Afrouxado e causa Folga ou afrouxamento descrevem fenômeno semelhante; não prova auto-rotação.",
+      "proposedCatalogTuple": {
+        "objectType": "TRAK",
+        "componentCode": "0320",
+        "damageId": "01.15",
+        "causeId": "C1.17"
+      },
+      "status": "analise_taxonomica_nao_homologada",
+      "effectiveSerial": null,
+      "confirmedLocationId": null,
+      "confirmedCause": false,
+      "caveat": "Mesmo um par permitido em catálogo pode estar incorreto como relação de causalidade."
+    },
+    {
+      "chainId": "FC-TRACK-006",
+      "issueCode": "circularidade_dano_causa",
+      "explanation": "Mesmo par da anterior não distingue assentamento/relaxação de autoafrouxamento rotacional.",
+      "proposedCatalogTuple": {
+        "objectType": "TRAK",
+        "componentCode": "0320",
+        "damageId": "01.15",
+        "causeId": "C1.17"
+      },
+      "status": "analise_taxonomica_nao_homologada",
+      "effectiveSerial": null,
+      "confirmedLocationId": null,
+      "confirmedCause": false,
+      "caveat": "Mesmo um par permitido em catálogo pode estar incorreto como relação de causalidade."
+    },
+    {
+      "chainId": "FC-TRACK-007",
+      "issueCode": "candidato_nao_homologado",
+      "explanation": "Parafuso quebrado por fadiga é taxonomicamente possível, mas só fractografia/histórico pode discriminar mecanismo.",
+      "proposedCatalogTuple": {
+        "objectType": "TRAK",
+        "componentCode": "0320",
+        "damageId": "01.01",
+        "causeId": "C1.03"
+      },
+      "status": "analise_taxonomica_nao_homologada",
+      "effectiveSerial": null,
+      "confirmedLocationId": null,
+      "confirmedCause": false,
+      "caveat": "Mesmo um par permitido em catálogo pode estar incorreto como relação de causalidade."
+    },
+    {
+      "chainId": "FC-TRACK-008",
+      "issueCode": "sem_componente_alvo",
+      "explanation": "Esteira como item global não equivale a interface sapata–elo; desgaste secundário não identifica local da causa.",
+      "proposedCatalogTuple": {
+        "objectType": "TRAK",
+        "componentCode": "4230",
+        "damageId": "02.01",
+        "causeId": "C1.04"
+      },
+      "status": "analise_taxonomica_nao_homologada",
+      "effectiveSerial": null,
+      "confirmedLocationId": null,
+      "confirmedCause": false,
+      "caveat": "Mesmo um par permitido em catálogo pode estar incorreto como relação de causalidade."
+    },
+    {
+      "chainId": "FC-COOL-005",
+      "issueCode": "sem_componente_alvo",
+      "explanation": "Termostato não representado explicitamente no grupo ENS*/COSY das localizações mapeadas; radiador é relação preventiva contextual.",
+      "proposedCatalogTuple": null,
+      "status": "analise_taxonomica_nao_homologada",
+      "effectiveSerial": null,
+      "confirmedLocationId": null,
+      "confirmedCause": false,
+      "caveat": "Mesmo um par permitido em catálogo pode estar incorreto como relação de causalidade."
+    },
+    {
+      "chainId": "FC-COOL-006",
+      "issueCode": "sem_componente_alvo",
+      "explanation": "Sem termostato em grupo de arrefecimento com identificação funcional e configuração comprovadas.",
+      "proposedCatalogTuple": null,
+      "status": "analise_taxonomica_nao_homologada",
+      "effectiveSerial": null,
+      "confirmedLocationId": null,
+      "confirmedCause": false,
+      "caveat": "Mesmo um par permitido em catálogo pode estar incorreto como relação de causalidade."
+    },
+    {
+      "chainId": "FC-COOL-007",
+      "issueCode": "sem_componente_alvo",
+      "explanation": "Existe objeto HYPU em alguns circuitos de arrefecimento, mas o catálogo não identifica bomba d'água efetiva ou seu rotor; evitar escolher hidráulica genérica.",
+      "proposedCatalogTuple": null,
+      "status": "analise_taxonomica_nao_homologada",
+      "effectiveSerial": null,
+      "confirmedLocationId": null,
+      "confirmedCause": false,
+      "caveat": "Mesmo um par permitido em catálogo pode estar incorreto como relação de causalidade."
+    },
+    {
+      "chainId": "FC-COOL-008",
+      "issueCode": "sem_componente_alvo",
+      "explanation": "Vedação de bomba d'água não é identificável por objeto radiador RADI; falta cadastro OEM do conjunto de bombeamento.",
+      "proposedCatalogTuple": null,
+      "status": "analise_taxonomica_nao_homologada",
+      "effectiveSerial": null,
+      "confirmedLocationId": null,
+      "confirmedCause": false,
+      "caveat": "Mesmo um par permitido em catálogo pode estar incorreto como relação de causalidade."
+    }
+  ]
+}
