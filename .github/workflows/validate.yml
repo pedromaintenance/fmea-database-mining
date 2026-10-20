@@ -54,6 +54,8 @@ jobs:
         run: npm run discrimination:validate
       - name: Validar avaliacao cruzada de 24 testes e revisao SAP/OEM
         run: npm run differential:validate
+      - name: Validar três roteiros diferenciais e causalidade segregada
+        run: npm run pathways:validate
       - name: Auditar 24 cadeias contra locais componentes danos e causas SAP
         run: npm run causal:sap:audit
       - name: Gerar relatorio de cobertura e lacunas
