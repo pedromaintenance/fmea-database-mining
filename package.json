@@ -7,12 +7,13 @@
   "scripts": {
     "validate": "node scripts/validate.mjs",
     "generate": "node scripts/generate-models.mjs --all",
-    "qa": "node scripts/validate.mjs && node scripts/generate-models.mjs --all && node scripts/validate.mjs && node scripts/validate-knowledge.mjs && npm run pm:generate && npm run pm:validate && npm run diagnostic:generate && npm run diagnostic:validate",
+    "qa": "node scripts/validate.mjs && node scripts/generate-models.mjs --all && node scripts/validate.mjs && node scripts/validate-knowledge.mjs && npm run pm:generate && npm run pm:validate && npm run diagnostic:generate && npm run diagnostic:validate && npm run diagnostic:preview",
     "validate:knowledge": "node scripts/validate-knowledge.mjs",
     "pm:generate": "node scripts/generate-pm-links.mjs --require-results",
     "pm:validate": "node scripts/validate-pm.mjs",
     "diagnostic:generate": "node scripts/generate-diagnostic-links.mjs",
-    "diagnostic:validate": "node scripts/validate-diagnostic.mjs"
+    "diagnostic:validate": "node scripts/validate-diagnostic.mjs",
+    "diagnostic:preview": "node scripts/export-diagnostic-preview.mjs"
   },
   "engines": {
     "node": ">=18"

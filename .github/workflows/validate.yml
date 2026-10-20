@@ -36,6 +36,8 @@ jobs:
         run: npm run diagnostic:generate
       - name: Validar vínculos, hipóteses e evidências planejadas
         run: npm run diagnostic:validate
+      - name: Gerar prévia didática sem gabarito
+        run: npm run diagnostic:preview
       - name: Publicar pacotes para testes
         uses: actions/upload-artifact@v4
         with:
@@ -45,4 +47,5 @@ jobs:
             data/manifest.json
             data/knowledge/pm-prevention/generated-links.json
             data/knowledge/diagnostic/generated-links.json
+            data/knowledge/diagnostic/generated-player-preview.json
           retention-days: 14
