@@ -1,0 +1,12 @@
+node_modules/
+.DS_Store
+*.log
+*.xlsx
+*.xls
+*.pdf
+*.pptx
+*.docx
+.env
+*.pem
+data/private/
+data/raw/
