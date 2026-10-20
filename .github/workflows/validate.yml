@@ -58,10 +58,14 @@ jobs:
         run: npm run pathways:validate
       - name: Validar quatro niveis causais em 24 cadeias
         run: npm run causal:levels:validate
+      - name: Auditar causalidade sistemica em 21 cadeias
+        run: npm run systemic:audit:validate
       - name: Gerar preview publico versionado
         run: npm run public:export
       - name: Validar preview publico e checksum
         run: npm run public:validate
+      - name: Verificar contrato publico e compatibilidade SemVer
+        run: npm run public:compatibility
       - name: Auditar 24 cadeias contra locais componentes danos e causas SAP
         run: npm run causal:sap:audit
       - name: Gerar relatorio de cobertura e lacunas
