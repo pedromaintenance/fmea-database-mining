@@ -89,7 +89,8 @@
         "revisao_mecanica_independente_pendente",
         "oem_aplicabilidade_nao_confirmada",
         "evidencias_nao_executadas"
-      ]
+      ],
+      "authorId": null
     },
     {
       "chainId": "FC-HOSE-002",
@@ -115,7 +116,8 @@
         "revisao_mecanica_independente_pendente",
         "oem_aplicabilidade_nao_confirmada",
         "evidencias_nao_executadas"
-      ]
+      ],
+      "authorId": null
     },
     {
       "chainId": "FC-HOSE-003",
@@ -141,7 +143,8 @@
         "revisao_mecanica_independente_pendente",
         "oem_aplicabilidade_nao_confirmada",
         "evidencias_nao_executadas"
-      ]
+      ],
+      "authorId": null
     },
     {
       "chainId": "FC-HOSE-004",
@@ -167,7 +170,8 @@
         "revisao_mecanica_independente_pendente",
         "oem_aplicabilidade_nao_confirmada",
         "evidencias_nao_executadas"
-      ]
+      ],
+      "authorId": null
     },
     {
       "chainId": "FC-FD-001",
@@ -193,7 +197,8 @@
         "revisao_mecanica_independente_pendente",
         "oem_aplicabilidade_nao_confirmada",
         "evidencias_nao_executadas"
-      ]
+      ],
+      "authorId": null
     },
     {
       "chainId": "FC-FD-002",
@@ -219,7 +224,8 @@
         "revisao_mecanica_independente_pendente",
         "oem_aplicabilidade_nao_confirmada",
         "evidencias_nao_executadas"
-      ]
+      ],
+      "authorId": null
     },
     {
       "chainId": "FC-FD-003",
@@ -245,7 +251,8 @@
         "revisao_mecanica_independente_pendente",
         "oem_aplicabilidade_nao_confirmada",
         "evidencias_nao_executadas"
-      ]
+      ],
+      "authorId": null
     },
     {
       "chainId": "FC-FD-004",
@@ -271,7 +278,8 @@
         "revisao_mecanica_independente_pendente",
         "oem_aplicabilidade_nao_confirmada",
         "evidencias_nao_executadas"
-      ]
+      ],
+      "authorId": null
     },
     {
       "chainId": "FC-COOL-001",
@@ -297,7 +305,8 @@
         "revisao_mecanica_independente_pendente",
         "oem_aplicabilidade_nao_confirmada",
         "evidencias_nao_executadas"
-      ]
+      ],
+      "authorId": null
     },
     {
       "chainId": "FC-COOL-002",
@@ -323,7 +332,8 @@
         "revisao_mecanica_independente_pendente",
         "oem_aplicabilidade_nao_confirmada",
         "evidencias_nao_executadas"
-      ]
+      ],
+      "authorId": null
     },
     {
       "chainId": "FC-COOL-003",
@@ -349,7 +359,8 @@
         "revisao_mecanica_independente_pendente",
         "oem_aplicabilidade_nao_confirmada",
         "evidencias_nao_executadas"
-      ]
+      ],
+      "authorId": null
     },
     {
       "chainId": "FC-COOL-004",
@@ -375,7 +386,8 @@
         "revisao_mecanica_independente_pendente",
         "oem_aplicabilidade_nao_confirmada",
         "evidencias_nao_executadas"
-      ]
+      ],
+      "authorId": null
     },
     {
       "chainId": "FC-TRACK-001",
@@ -401,7 +413,8 @@
         "revisao_mecanica_independente_pendente",
         "oem_aplicabilidade_nao_confirmada",
         "evidencias_nao_executadas"
-      ]
+      ],
+      "authorId": null
     },
     {
       "chainId": "FC-TRACK-002",
@@ -427,7 +440,8 @@
         "revisao_mecanica_independente_pendente",
         "oem_aplicabilidade_nao_confirmada",
         "evidencias_nao_executadas"
-      ]
+      ],
+      "authorId": null
     },
     {
       "chainId": "FC-TRACK-003",
@@ -453,7 +467,8 @@
         "revisao_mecanica_independente_pendente",
         "oem_aplicabilidade_nao_confirmada",
         "evidencias_nao_executadas"
-      ]
+      ],
+      "authorId": null
     },
     {
       "chainId": "FC-TRACK-004",
@@ -479,7 +494,8 @@
         "revisao_mecanica_independente_pendente",
         "oem_aplicabilidade_nao_confirmada",
         "evidencias_nao_executadas"
-      ]
+      ],
+      "authorId": null
     },
     {
       "chainId": "FC-TRACK-005",
@@ -505,7 +521,8 @@
         "revisao_mecanica_independente_pendente",
         "oem_aplicabilidade_nao_confirmada",
         "evidencias_nao_executadas"
-      ]
+      ],
+      "authorId": null
     },
     {
       "chainId": "FC-TRACK-006",
@@ -531,7 +548,8 @@
         "revisao_mecanica_independente_pendente",
         "oem_aplicabilidade_nao_confirmada",
         "evidencias_nao_executadas"
-      ]
+      ],
+      "authorId": null
     },
     {
       "chainId": "FC-TRACK-007",
@@ -557,7 +575,8 @@
         "revisao_mecanica_independente_pendente",
         "oem_aplicabilidade_nao_confirmada",
         "evidencias_nao_executadas"
-      ]
+      ],
+      "authorId": null
     },
     {
       "chainId": "FC-TRACK-008",
@@ -583,7 +602,8 @@
         "revisao_mecanica_independente_pendente",
         "oem_aplicabilidade_nao_confirmada",
         "evidencias_nao_executadas"
-      ]
+      ],
+      "authorId": null
     },
     {
       "chainId": "FC-COOL-005",
@@ -609,7 +629,8 @@
         "revisao_mecanica_independente_pendente",
         "oem_aplicabilidade_nao_confirmada",
         "evidencias_nao_executadas"
-      ]
+      ],
+      "authorId": null
     },
     {
       "chainId": "FC-COOL-006",
@@ -635,7 +656,8 @@
         "revisao_mecanica_independente_pendente",
         "oem_aplicabilidade_nao_confirmada",
         "evidencias_nao_executadas"
-      ]
+      ],
+      "authorId": null
     },
     {
       "chainId": "FC-COOL-007",
@@ -661,7 +683,8 @@
         "revisao_mecanica_independente_pendente",
         "oem_aplicabilidade_nao_confirmada",
         "evidencias_nao_executadas"
-      ]
+      ],
+      "authorId": null
     },
     {
       "chainId": "FC-COOL-008",
@@ -687,7 +710,8 @@
         "revisao_mecanica_independente_pendente",
         "oem_aplicabilidade_nao_confirmada",
         "evidencias_nao_executadas"
-      ]
+      ],
+      "authorId": null
     }
   ]
 }
