@@ -1,0 +1,83 @@
+{
+  "schema": "fmea-mining.circular-sap-causality.v1",
+  "version": "1.3.10",
+  "purpose": "Preservar dado SAP original e impedir atribuição de mecanismo causal tautológico.",
+  "sourceCatalog": "data/catalog/failure-db.v1.json",
+  "sourceAssessment": "data/quality/causal-sap-assessment.v1.json",
+  "disputedCatalogPair": {
+    "objectType": "TRAK",
+    "partCode": "0320",
+    "damageId": "01.15",
+    "damageMeaning": "Afrouxado",
+    "causeId": "C1.17",
+    "causeMeaning": "Folga ou afrouxamento",
+    "catalogPairPresence": "permitido_estruturalmente",
+    "causalInformationValue": "circularidade_descritiva_sem_causa_fisica_especifica",
+    "observedEvent": false
+  },
+  "policy": {
+    "retainOriginalCatalogValues": true,
+    "writeBackToSAP": false,
+    "automaticCausalApproval": false,
+    "changeCauseCodeWithoutOEM": false,
+    "explainMechanismSeparately": true
+  },
+  "records": [
+    {
+      "chainId": "FC-TRACK-005",
+      "targetMechanism": "autoafrouxamento_rotacional",
+      "observedDamage": "nao_observado",
+      "physicalMechanismCandidate": "Giro relativo do fixador sob carregamento transversal e deslocamentos da interface da junta",
+      "initiatingConditions": [
+        "pré-carga insuficiente ou perdida",
+        "solicitação cíclica transversal",
+        "geometria/fricção e montagem da junta"
+      ],
+      "independentEvidenceNeeded": [
+        "Evidência rastreável de rotação relativa de fixador",
+        "Histórico e efetividade de montagem/aperto",
+        "Inspeção de interface sapata–elo e condição atual"
+      ],
+      "competingExplanation": "FC-TRACK-006",
+      "sourceIds": [
+        "NORDLOCK-ROTATIONAL-LOOSENING",
+        "CAT-UC-DOZER-GUIDE"
+      ],
+      "status": "inferido_nao_homologado",
+      "confirmedSAPCause": null,
+      "revisionDecision": "pending",
+      "reviewer": null
+    },
+    {
+      "chainId": "FC-TRACK-006",
+      "targetMechanism": "assentamento_relaxacao_sem_rotacao",
+      "observedDamage": "nao_observado",
+      "physicalMechanismCandidate": "Diminuição da força de aperto por assentamento, fluência ou relaxação sem giro comprovado do elemento roscado",
+      "initiatingConditions": [
+        "acomodação superficial",
+        "deformação permanente da interface",
+        "carregamento/ciclo térmico conforme junta efetiva"
+      ],
+      "independentEvidenceNeeded": [
+        "Exame documentado de superfícies de contato",
+        "Cronologia de serviço, aperto e substituições",
+        "Evidência de rotação ou ausência de rotação com monitoramento adequado"
+      ],
+      "competingExplanation": "FC-TRACK-005",
+      "sourceIds": [
+        "NORDLOCK-ROTATIONAL-LOOSENING",
+        "NORDLOCK-BOLT-LOOSENING"
+      ],
+      "status": "inferido_nao_homologado",
+      "confirmedSAPCause": null,
+      "revisionDecision": "pending",
+      "reviewer": null
+    }
+  ],
+  "decisions": {
+    "risk": "Dano 01.15 e causa C1.17 não discriminam autoafrouxamento rotacional de assentamento. Não concluir causa raiz apenas pela combinação sintaticamente permitida.",
+    "nextAction": "Revisar catálogo de causas com responsável SAP PM e engenharia de manutenção antes de propor novos códigos ou hierarquia de mecanismos.",
+    "noRealFailuresObserved": true,
+    "technicalApprovals": 0
+  }
+}
