@@ -1,0 +1,90 @@
+{
+  "schema": "fmea-mining.oem-applicability-pilot.v1",
+  "version": "1.3.10",
+  "pilotId": "OEM-PILOT-D9-UNDERCARRIAGE",
+  "family": "material_rodante",
+  "machineFamily": "Caterpillar D9",
+  "status": "bloqueado_sem_efetividade_documental",
+  "candidateCatalogModel": "EQ07",
+  "scope": [
+    "parafusos_e_sapatas",
+    "roletes",
+    "roda_guia",
+    "tensionamento_esteira"
+  ],
+  "relatedChainIds": [
+    "FC-TRACK-001",
+    "FC-TRACK-002",
+    "FC-TRACK-003",
+    "FC-TRACK-004",
+    "FC-TRACK-005",
+    "FC-TRACK-006",
+    "FC-TRACK-007",
+    "FC-TRACK-008"
+  ],
+  "publiclyReviewedSources": [
+    "CAT-DOZER-UC-MAINT",
+    "CAT-UC-DOZER-GUIDE",
+    "CAT-EXC-UNDERCARRIAGE-WEAR"
+  ],
+  "requiredInputs": [
+    {
+      "id": "serial-prefix",
+      "label": "Prefixo e número de série da configuração exata ou arranjo homologado",
+      "status": "not_supplied",
+      "value": null
+    },
+    {
+      "id": "oem-omm",
+      "label": "OMM Cat efetivo, identificação e revisão",
+      "status": "not_supplied",
+      "value": null
+    },
+    {
+      "id": "oem-parts",
+      "label": "Identificação de parafuso, sapata, elo, rolete, roda-guia por arranjo",
+      "status": "not_verified",
+      "value": null
+    },
+    {
+      "id": "oem-bolting",
+      "label": "Procedimento de torque-turn ou equivalente para junta aplicável, inclusive reutilização de fixadores",
+      "status": "not_verified",
+      "value": null
+    },
+    {
+      "id": "oem-cts",
+      "label": "Tabela de medição CTS e limites por componente/posição",
+      "status": "not_verified",
+      "value": null
+    },
+    {
+      "id": "sap-master",
+      "label": "Local funcional e objeto SAP corretos confirmados com responsável de cadastro",
+      "status": "not_verified",
+      "value": null
+    },
+    {
+      "id": "field-review",
+      "label": "Parecer independente de oficina/engenharia sobre aplicabilidade e sintomas",
+      "status": "not_performed",
+      "value": null
+    }
+  ],
+  "verificationSteps": [
+    "Identificar a configuração por fonte OEM autorizada e conferir coerência com o cadastro SAP.",
+    "Conferir componente e procedimento sem transplantar código de peça e tolerância entre máquinas.",
+    "Revisar cada cadeia e hipótese concorrente com especialista mecânico e segundo revisor independente.",
+    "Publicar apenas metadados de efetividade permitidos, sem reproduzir integralmente literatura proprietária."
+  ],
+  "constraints": {
+    "catalogLocationsApproved": 0,
+    "proceduresValidated": 0,
+    "realEvents": 0,
+    "noUniversalTorque": true,
+    "noUnverifiedCTSThreshold": true,
+    "noPartNumberGuessing": true,
+    "noInternalDocumentPublication": true
+  },
+  "releaseGate": "Bloquear aplicação operacional até haver configuração OEM e revisão humana efetivamente rastreáveis."
+}
