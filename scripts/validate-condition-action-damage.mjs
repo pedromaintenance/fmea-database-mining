@@ -32,7 +32,7 @@ const blockerMap=new Map(blocked.map(x=>[x.ruleId,x]));
 check(model.safetyInvariant==='condition!=action!=damage','Invariante de separacao ausente');
 check(model.evidenceNature==='no_field_observation','Dado de campo inventado');
 check(model.observations.length===0&&model.workOrderExecutions.length===0&&model.confirmedComponentDamages.length===0,'Amostras ou danos reais introduzidos');
-check(model.conditions.length>=7&&model.actions.length>=8&&model.damageHypotheses.length>=4&&model.bundles.length>=4,'Regressao de cardinalidade');
+check(model.conditions.length>=18&&model.actions.length>=18&&model.damageHypotheses.length>=9&&model.bundles.length>=9,'Regressao de cardinalidade');
 check(new Set([...conditions.keys(),...actions.keys(),...damages.keys(),...bundles.keys()]).size===conditions.size+actions.size+damages.size+bundles.size,'IDs de naturezas distintas colidem');
 const validateRefs=(refList,eligible,context)=>check(refList.length>0&&refList.every(id=>eligible.has(id)), 'Referencia invalida em '+context);
 for(const c of model.conditions){
@@ -95,6 +95,6 @@ for(const f of fixtures.cases){
  const automaticConfirmed=b.automaticDamagePromotion?b.differentialDamageIds:[];
  check(automaticConfirmed.length===0,'Regra inferiu dano automaticamente '+f.id);
 }
-check(model.relations.length>=22&&fixtures.cases.length>=7,'Cobertura regressao insuficiente');
+check(model.relations.length>=53&&fixtures.cases.length>=14,'Cobertura regressao insuficiente');
 console.log(JSON.stringify({status:errors.length?'FAIL':'OK',conditions:conditions.size,actions:actions.size,damageHypotheses:damages.size,bundles:bundles.size,typedRelations:edges.size,syntheticRegressionCases:fixtures.cases.length,confirmedDamageLinks:0,errors:errors.slice(0,40)},null,2));
 process.exit(errors.length?1:0);
