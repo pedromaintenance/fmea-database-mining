@@ -2,7 +2,7 @@
 
 Banco de conhecimento **versionado** para investigar modos de falha, sintomas, evidências e causas em equipamentos móveis de mineração. Um consumidor possível é o jogo **[P.O.R.C.A.R.I.A. — Você Quebra, Eu Conserto](https://github.com/pedromaintenance/porcaria-voce-quebra-eu-conserto)**, mas o banco é independente: **este repositório não altera os consumidores**.
 
-> **Status:** versão do catálogo **1.3.4** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
+> **Status:** versão do catálogo **1.3.5** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
 
 ## O que queremos construir
 
@@ -109,6 +109,14 @@ A [matriz de revisão das 24 cadeias](data/quality/causal-sap-assessment.v1.json
 O comando `npm run causal:sap:audit` gera `reports/causal-sap-audit.generated.json` como artefato do CI. Foram registradas lacunas como ausência de subgrupo hidráulico de implementos para `HSVV`, falta de componente específico de termostato/bomba, par de obstrução do trocador não autorizado e circularidade em dano/causa de fixador.
 
 [Leia o relatório de auditoria e os próximos passos](docs/CICLO_2026-10-20_AUDITORIA_CAUSAL_SAP.md).
+
+## Saneamento das dez lacunas de PM (v1.3.5)
+
+A [revisão das dez regras sem correspondência](data/quality/pm-gap-review.v1.json) separa **três bloqueios de subgrupo**, **cinco de componente** e **dois de par dano/causa**. Todos exigem curadoria, sem remapeamento automático.
+
+O [auditor](scripts/audit-pm-gaps.mjs) reproduz as etapas modelo → sistema → grupo → subgrupo → componente → dano/causa. O comando `npm run pm:gaps:audit` gera `reports/pm-gap-audit.generated.json` como artefato do CI e falha quando uma classificação deixa de refletir o cadastro.
+
+[Relatório técnico e plano de saneamento](docs/CICLO_2026-10-20_LACUNAS_PM.md). Contagem de candidatos **não é** validação de componente real, falha ou causa.
 
 ## Comece por aqui
 
