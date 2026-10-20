@@ -1,0 +1,170 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FMEA Mining Causal Local and System Effects v1",
+  "type": "object",
+  "required": [
+    "schema",
+    "version",
+    "status",
+    "policy",
+    "records"
+  ],
+  "properties": {
+    "schema": {
+      "const": "fmea-mining.effects.v1"
+    },
+    "version": {
+      "type": "string"
+    },
+    "status": {
+      "const": "local_and_system_effect_hypotheses_only"
+    },
+    "policy": {
+      "type": "object",
+      "required": [
+        "noEmpiricalEvents",
+        "noSeverityWithoutEvidence",
+        "noAutomaticCausalValidation"
+      ],
+      "properties": {
+        "noEmpiricalEvents": {
+          "const": true
+        },
+        "noSeverityWithoutEvidence": {
+          "const": true
+        },
+        "noAutomaticCausalValidation": {
+          "const": true
+        }
+      }
+    },
+    "records": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/effect"
+      }
+    }
+  },
+  "$defs": {
+    "effect": {
+      "type": "object",
+      "required": [
+        "chainId",
+        "family",
+        "functionalFailureId",
+        "localEffect",
+        "systemEffect",
+        "propagationCondition",
+        "diagnosticCaveat",
+        "sourceIds",
+        "causalityStatus",
+        "severityRank",
+        "probability",
+        "actualEventCount",
+        "applicableModelId",
+        "applicableLocationId",
+        "oemSerialEffectivity",
+        "reviewer"
+      ],
+      "properties": {
+        "chainId": {
+          "type": "string",
+          "pattern": "^FC-"
+        },
+        "family": {
+          "type": "string"
+        },
+        "functionalFailureId": {
+          "type": "string"
+        },
+        "localEffect": {
+          "$ref": "#/$defs/local"
+        },
+        "systemEffect": {
+          "$ref": "#/$defs/system"
+        },
+        "propagationCondition": {
+          "type": "string",
+          "minLength": 45
+        },
+        "diagnosticCaveat": {
+          "type": "string",
+          "minLength": 20
+        },
+        "sourceIds": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        },
+        "causalityStatus": {
+          "const": "engineering_inference_unreviewed"
+        },
+        "severityRank": {
+          "type": "null"
+        },
+        "probability": {
+          "type": "null"
+        },
+        "actualEventCount": {
+          "const": 0
+        },
+        "applicableModelId": {
+          "type": "null"
+        },
+        "applicableLocationId": {
+          "type": "null"
+        },
+        "oemSerialEffectivity": {
+          "type": "null"
+        },
+        "reviewer": {
+          "type": "null"
+        }
+      }
+    },
+    "local": {
+      "type": "object",
+      "required": [
+        "description",
+        "status",
+        "componentVerified"
+      ],
+      "properties": {
+        "description": {
+          "type": "string",
+          "minLength": 20
+        },
+        "status": {
+          "const": "possible_unobserved"
+        },
+        "componentVerified": {
+          "const": false
+        }
+      }
+    },
+    "system": {
+      "type": "object",
+      "required": [
+        "description",
+        "status",
+        "operationalImpactVerified"
+      ],
+      "properties": {
+        "description": {
+          "type": "string",
+          "minLength": 20
+        },
+        "status": {
+          "const": "possible_unobserved"
+        },
+        "operationalImpactVerified": {
+          "const": false
+        }
+      }
+    }
+  }
+}
