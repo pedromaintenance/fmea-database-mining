@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.condition-action-damage.v1",
-  "version": "1.3.6",
+  "version": "1.3.7",
   "status": "conceptual_unvalidated",
   "semantics": {
     "condition": "Estado de fluido, superfície ou desempenho; ocorrência requer medição/observação",
@@ -143,6 +143,213 @@
       "status": "condition_hypothesis_not_observed",
       "observedValue": null,
       "observedAt": null
+    },
+    {
+      "id": "COND-ENGINE-FILTER-DP",
+      "label": "Restrição diferencial suspeita no filtro de óleo do motor",
+      "system": "motor_diesel",
+      "medium": "oleo_motor",
+      "observation": "Diferencial de pressão ou indicador do elemento fora da referência para temperatura, rotação e configuração comparáveis",
+      "methods": [
+        "EV-05",
+        "EV-14"
+      ],
+      "sourceIds": [
+        "CAT-ENGINE-OIL-FILTER-SERVICE",
+        "CAT-FLUID-ANALYSIS-101"
+      ],
+      "limitations": "Indicador isolado pode estar incorreto e não comprova por si obstrução física do elemento.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-ENGINE-OIL-PARTICLES",
+      "label": "Partículas ou resíduos suspeitos no lubrificante do motor",
+      "system": "motor_diesel",
+      "medium": "oleo_motor",
+      "observation": "Resultado representativo de análise do óleo ou resíduo observado no elemento de filtro removido",
+      "methods": [
+        "EV-08",
+        "EV-11"
+      ],
+      "sourceIds": [
+        "CAT-ENGINE-OIL-FILTER-SERVICE",
+        "CAT-FLUID-ANALYSIS-101"
+      ],
+      "limitations": "Partículas não identificam automaticamente rolamento, anel ou bomba de óleo; diferenciar desgaste interno de contaminação introduzida.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-ENGINE-LOW-OIL-PRESSURE",
+      "label": "Pressão de lubrificação indicada abaixo do requisito",
+      "system": "motor_diesel",
+      "medium": "oleo_motor",
+      "observation": "Indicação e medição independente de pressão sob condição definida e limite OEM aplicável",
+      "methods": [
+        "EV-05",
+        "EV-07"
+      ],
+      "sourceIds": [
+        "CAT-ENGINE-OIL-FILTER-SERVICE",
+        "CAT-FLUID-ANALYSIS-101"
+      ],
+      "limitations": "Pressão baixa pode decorrer de leitura, nível, temperatura, folga ou bomba; não atribuir ao filtro por default.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-HYD-OIL-CONTAMINATION",
+      "label": "Contaminação por partículas suspeita no óleo hidráulico",
+      "system": "hidraulico",
+      "medium": "oleo_hidraulico",
+      "observation": "Análise de amostra identificada e representativa, considerando limpeza e histórico do sistema",
+      "methods": [
+        "EV-09",
+        "EV-08"
+      ],
+      "sourceIds": [
+        "CAT-HYD-TECHNICAL-ANALYSIS",
+        "CAT-HYD-OIL-CLEANLINESS",
+        "CAT-HYD-HOSE-INSPECT"
+      ],
+      "limitations": "Partículas medidas não confirmam automaticamente dano de bomba, válvula ou vedação.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-HYD-EXTERNAL-LEAK",
+      "label": "Vestígio de óleo hidráulico na região de linha ou bomba",
+      "system": "hidraulico",
+      "medium": "oleo_hidraulico",
+      "observation": "Origem do fluido deve ser localizada após isolamento e procedimentos OEM",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "CAT-HYD-TECHNICAL-ANALYSIS",
+        "CAT-HYD-OIL-CLEANLINESS",
+        "CAT-HYD-HOSE-INSPECT"
+      ],
+      "limitations": "Óleo sobre uma bomba pode ter escorrido de mangueira superior; não confirma vedação avariada.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-HYD-LOW-FUNCTIONAL-PRESSURE",
+      "label": "Desempenho de pressão hidráulica potencialmente insuficiente",
+      "system": "hidraulico",
+      "medium": "oleo_hidraulico",
+      "observation": "Resposta e pressão medidas em ponto autorizado, com temperatura, comando e carga comparáveis",
+      "methods": [
+        "EV-05",
+        "EV-14"
+      ],
+      "sourceIds": [
+        "CAT-HYD-TECHNICAL-ANALYSIS",
+        "CAT-HYD-OIL-CLEANLINESS",
+        "CAT-HYD-HOSE-INSPECT"
+      ],
+      "limitations": "Pressão aparente baixa não isola bomba: verificar comando, válvulas, fluxo e instrumento.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-HYD-HOSE-COVER-DAMAGE",
+      "label": "Abrasion ou fissura aparente na cobertura da mangueira",
+      "system": "hidraulico",
+      "medium": "mangueira_hidraulica",
+      "observation": "Marcas visíveis de contato, fissura ou exposição externa em linha identificada",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "CAT-HYD-HOSE-INSPECT"
+      ],
+      "limitations": "Dano superficial da capa não significa necessariamente vazamento ou ruptura do reforço.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-TRACK-ROLLER-WEAR",
+      "label": "Desgaste geométrico aparente no rolete",
+      "system": "rodante",
+      "medium": "conjunto_rodante",
+      "observation": "Geometria, desgaste ou marcas observadas no rolete e comparadas com referência efetiva",
+      "methods": [
+        "EV-01",
+        "EV-02"
+      ],
+      "sourceIds": [
+        "CAT-MINING-UC-WEAR-MANAGEMENT",
+        "CAT-CTS-UNDERCARRIAGE"
+      ],
+      "limitations": "Desgaste aparente pode estar dentro de tolerância e não demonstra rolamento interno avariado.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-TRACK-ROLLER-HEAT",
+      "label": "Aquecimento localizado suspeito em rolete",
+      "system": "rodante",
+      "medium": "conjunto_rodante",
+      "observation": "Comparação termométrica sem contato, com emissividade, carga e condição ambiental documentadas",
+      "methods": [
+        "EV-03"
+      ],
+      "sourceIds": [
+        "CAT-MINING-UC-WEAR-MANAGEMENT",
+        "CAT-CTS-UNDERCARRIAGE"
+      ],
+      "limitations": "Aquecimento pode decorrer de detritos restringindo giro ou dano interno; não identifica causa.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-TRACK-ROLLER-SEAL-LEAK",
+      "label": "Vestígio oleoso junto à vedação do rolete",
+      "system": "rodante",
+      "medium": "conjunto_rodante",
+      "observation": "Identificação visual da possível origem de fuga na vedação de rolete isolado e seguro",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "CAT-MINING-UC-WEAR-MANAGEMENT",
+        "CAT-CTS-UNDERCARRIAGE"
+      ],
+      "limitations": "Óleo transportado de outro conjunto pode imitar vazamento de vedação.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-TRACK-IDLER-WEAR",
+      "label": "Desgaste ou guiamento irregular aparente na roda-guia",
+      "system": "rodante",
+      "medium": "conjunto_rodante",
+      "observation": "Desvio de geometria, ressaltos ou padrão de contato em roda-guia identificada",
+      "methods": [
+        "EV-01",
+        "EV-02"
+      ],
+      "sourceIds": [
+        "CAT-MINING-UC-WEAR-MANAGEMENT",
+        "CAT-CTS-UNDERCARRIAGE"
+      ],
+      "limitations": "Sem critérios CTS e posição efetiva não condenar roda-guia ou rolamento.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
     }
   ],
   "actions": [
@@ -265,6 +472,159 @@
       "executionStatus": "not_performed",
       "observedResults": [],
       "intervalHours": null
+    },
+    {
+      "id": "ACT-ENGINE-OIL-SAMPLE",
+      "label": "Coletar amostra representativa de óleo do motor",
+      "kind": "sampling",
+      "intent": "Separar condição do óleo, horas e sinais de desgaste dos mecanismos físicos candidatos",
+      "sourceIds": [
+        "CAT-ENGINE-OIL-FILTER-SERVICE",
+        "CAT-FLUID-ANALYSIS-101"
+      ],
+      "safety": "Coletar no ponto e sequência previstos; evitar contaminação da amostra e não inventar limites de concentração.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
+    },
+    {
+      "id": "ACT-ENGINE-FILTER-REPLACE-INSPECT",
+      "label": "Substituir e inspecionar filtro de óleo removido conforme OEM",
+      "kind": "servicing",
+      "intent": "Durante troca autorizada, examinar resíduos do elemento sem reinstalá-lo após abertura",
+      "sourceIds": [
+        "CAT-ENGINE-OIL-FILTER-SERVICE",
+        "CAT-FLUID-ANALYSIS-101"
+      ],
+      "safety": "Coletar amostra antes da troca; drenar, remover, substituir e descartar filtro seguindo procedimento específico.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
+    },
+    {
+      "id": "ACT-ENGINE-OIL-PRESSURE-VERIFY",
+      "label": "Verificar pressão de lubrificação por procedimento OEM",
+      "kind": "test",
+      "intent": "Diferenciar leitura incorreta de pressão realmente incompatível com o motor e condição",
+      "sourceIds": [
+        "CAT-ENGINE-OIL-FILTER-SERVICE",
+        "CAT-FLUID-ANALYSIS-101"
+      ],
+      "safety": "Não remover conexões de linhas de óleo aquecidas e pressurizadas; testes usam pontos autorizados e instrumento compatível.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
+    },
+    {
+      "id": "ACT-HYD-CLEANLINESS-SAMPLE",
+      "label": "Analisar condição e limpeza do óleo hidráulico",
+      "kind": "sampling",
+      "intent": "Verificar água, partículas, método e tendência sem identificar peça condenada",
+      "sourceIds": [
+        "CAT-HYD-TECHNICAL-ANALYSIS",
+        "CAT-HYD-OIL-CLEANLINESS",
+        "CAT-HYD-HOSE-INSPECT"
+      ],
+      "safety": "Respeitar limpeza do ponto e controle de fluido; amostragem não permite tocar circuito pressurizado.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
+    },
+    {
+      "id": "ACT-HYD-HOSE-ROUTING-INSPECT",
+      "label": "Inspecionar integridade e roteamento de mangueira hidráulica",
+      "kind": "inspection",
+      "intent": "Diferenciar abrasão externa, perda de vedação e óleo proveniente de outro ponto",
+      "sourceIds": [
+        "CAT-HYD-HOSE-INSPECT",
+        "CAT-HYD-TECHNICAL-ANALYSIS"
+      ],
+      "safety": "Aliviar energia hidráulica conforme OEM; não procurar vazamento pressurizado com mãos ou corpo.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
+    },
+    {
+      "id": "ACT-HYD-PRESSURE-VERIFY",
+      "label": "Verificar pressão e resposta hidráulica com teste aplicável",
+      "kind": "test",
+      "intent": "Diferenciar limitação real, comando e indicador na condição de carga especificada",
+      "sourceIds": [
+        "CAT-HYD-TECHNICAL-ANALYSIS",
+        "CAT-HYD-OIL-CLEANLINESS",
+        "CAT-HYD-HOSE-INSPECT"
+      ],
+      "safety": "Somente teste OEM efetivo, bloqueio de área, controle de implementos e pontos de conexão autorizados.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
+    },
+    {
+      "id": "ACT-HYD-PUMP-LEAK-TRACE",
+      "label": "Rastrear origem da perda de óleo próxima à bomba",
+      "kind": "inspection",
+      "intent": "Separar junta/corpo da bomba, conexão e mangueira que conduz fluido para a região",
+      "sourceIds": [
+        "CAT-HYD-TECHNICAL-ANALYSIS",
+        "CAT-HYD-OIL-CLEANLINESS",
+        "CAT-HYD-HOSE-INSPECT"
+      ],
+      "safety": "Inspecionar com sistema seguro, isolado e temperatura adequada; evitar exposição a injeção de fluido.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
+    },
+    {
+      "id": "ACT-TRACK-ROLLER-CTS",
+      "label": "Medir desgaste de roletes pelo CTS ou equivalente aplicável",
+      "kind": "inspection",
+      "intent": "Comparar geometria e tendência por posição com limites da configuração real",
+      "sourceIds": [
+        "CAT-MINING-UC-WEAR-MANAGEMENT",
+        "CAT-CTS-UNDERCARRIAGE"
+      ],
+      "safety": "Estabilizar máquina; usar instrumento, posição e referência CTS específicos, sem aplicar critérios de outra família.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
+    },
+    {
+      "id": "ACT-TRACK-ROLLER-SEAL-CHECK",
+      "label": "Inspecionar roletes, vedação e detritos",
+      "kind": "inspection",
+      "intent": "Localizar fuga, materiais compactados e sinais de impedimento de rotação",
+      "sourceIds": [
+        "CAT-MINING-UC-WEAR-MANAGEMENT",
+        "CAT-CTS-UNDERCARRIAGE"
+      ],
+      "safety": "Não tocar roletes quentes nem inspecionar sob equipamento sustentado por energia hidráulica.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
+    },
+    {
+      "id": "ACT-TRACK-IDLER-CTS",
+      "label": "Medir roda-guia e seu guiamento conforme CTS aplicável",
+      "kind": "inspection",
+      "intent": "Separar desgaste dimensional, desalinhamento e influência do tensionamento",
+      "sourceIds": [
+        "CAT-MINING-UC-WEAR-MANAGEMENT",
+        "CAT-CTS-UNDERCARRIAGE"
+      ],
+      "safety": "Acessar com máquina bloqueada e valores aplicáveis; não manipular tensionador sem procedimento.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
     }
   ],
   "damageHypotheses": [
@@ -335,6 +695,108 @@
       "requiredEvidence": "Origem de perda localizada fisicamente no conjunto específico e não em tubulação superior/adjacente",
       "sourceIds": [
         "CAT-RADIATOR-CARE"
+      ],
+      "kind": "candidate_component_damage",
+      "reviewStatus": "not_approved",
+      "catalogMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageCode": null,
+        "causeCode": null
+      },
+      "confirmed": false
+    },
+    {
+      "id": "DMG-ENGINE-OIL-FILTER-RESTRICTION",
+      "label": "Elemento do filtro de lubrificação fisicamente restringido",
+      "componentRole": "elemento_filtrante_oleo_motor",
+      "requiredEvidence": "Verificação de diferencial/elemento pelo procedimento OEM; troca de filtro ou resíduo isolado não confirma restrição.",
+      "sourceIds": [
+        "CAT-ENGINE-OIL-FILTER-SERVICE",
+        "CAT-FLUID-ANALYSIS-101"
+      ],
+      "kind": "candidate_component_damage",
+      "reviewStatus": "not_approved",
+      "catalogMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageCode": null,
+        "causeCode": null
+      },
+      "confirmed": false
+    },
+    {
+      "id": "DMG-HYD-HOSE-INTEGRITY",
+      "label": "Mangueira hidráulica com comprometimento da parede ou vedação",
+      "componentRole": "mangueira_ou_terminal_hidraulico",
+      "requiredEvidence": "Confirmar origem de óleo ou dano estrutural do conjunto; abrasão superficial não equivale à perda de estanqueidade.",
+      "sourceIds": [
+        "CAT-HYD-TECHNICAL-ANALYSIS",
+        "CAT-HYD-OIL-CLEANLINESS",
+        "CAT-HYD-HOSE-INSPECT"
+      ],
+      "kind": "candidate_component_damage",
+      "reviewStatus": "not_approved",
+      "catalogMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageCode": null,
+        "causeCode": null
+      },
+      "confirmed": false
+    },
+    {
+      "id": "DMG-HYD-PUMP-SEAL-LEAK",
+      "label": "Perda de estanqueidade atribuída à vedação da bomba hidráulica",
+      "componentRole": "vedacao_bomba_hidraulica",
+      "requiredEvidence": "Localizar fisicamente origem da fuga no conjunto de bomba, excluindo mangueira e conexão adjacentes.",
+      "sourceIds": [
+        "CAT-HYD-TECHNICAL-ANALYSIS",
+        "CAT-HYD-OIL-CLEANLINESS",
+        "CAT-HYD-HOSE-INSPECT"
+      ],
+      "kind": "candidate_component_damage",
+      "reviewStatus": "not_approved",
+      "catalogMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageCode": null,
+        "causeCode": null
+      },
+      "confirmed": false
+    },
+    {
+      "id": "DMG-TRACK-ROLLER-INTERNAL",
+      "label": "Deterioração interna candidata do rolete",
+      "componentRole": "rolete_ou_elemento_interno",
+      "requiredEvidence": "Inspeção e evidências específicas do conjunto; aquecimento/desgaste superficial não provam rolamento interno.",
+      "sourceIds": [
+        "CAT-MINING-UC-WEAR-MANAGEMENT",
+        "CAT-CTS-UNDERCARRIAGE"
+      ],
+      "kind": "candidate_component_damage",
+      "reviewStatus": "not_approved",
+      "catalogMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageCode": null,
+        "causeCode": null
+      },
+      "confirmed": false
+    },
+    {
+      "id": "DMG-TRACK-IDLER-WEAR",
+      "label": "Desgaste confirmado de roda-guia ou seu elemento interno",
+      "componentRole": "roda_guia",
+      "requiredEvidence": "Comparação dimensional e verificação de componente conforme CTS/OMM efetivo; código genérico 'guia' não comprova rolamento.",
+      "sourceIds": [
+        "CAT-MINING-UC-WEAR-MANAGEMENT",
+        "CAT-CTS-UNDERCARRIAGE"
       ],
       "kind": "candidate_component_damage",
       "reviewStatus": "not_approved",
@@ -467,6 +929,162 @@
         "CAT-RADIATOR-CARE",
         "CAT-FILTERS-FLUIDS-GUIDE"
       ],
+      "evidenceInterpretation": "sem_resultado_de_campo"
+    },
+    {
+      "id": "BUNDLE-05",
+      "ruleId": "engine-oil-filter",
+      "conditionIds": [
+        "COND-ENGINE-FILTER-DP",
+        "COND-ENGINE-OIL-PARTICLES",
+        "COND-ENGINE-LOW-OIL-PRESSURE"
+      ],
+      "actionIds": [
+        "ACT-ENGINE-OIL-SAMPLE",
+        "ACT-ENGINE-FILTER-REPLACE-INSPECT",
+        "ACT-ENGINE-OIL-PRESSURE-VERIFY"
+      ],
+      "differentialDamageIds": [
+        "DMG-ENGINE-OIL-FILTER-RESTRICTION"
+      ],
+      "chainIds": [],
+      "interpretation": "A troca de filtro e a presença de partículas são indícios distintos; somente teste OEM e inspeção do elemento podem apoiar a hipótese de restrição, sem confirmar sua causa.",
+      "sourceIds": [
+        "CAT-ENGINE-OIL-FILTER-SERVICE",
+        "CAT-FLUID-ANALYSIS-101"
+      ],
+      "mappingScope": "generic_only",
+      "status": "review_candidate",
+      "observedConditionIds": [],
+      "performedActionIds": [],
+      "confirmedDamageIds": [],
+      "automaticDamagePromotion": false,
+      "evidenceInterpretation": "sem_resultado_de_campo"
+    },
+    {
+      "id": "BUNDLE-06",
+      "ruleId": "hydraulic-hose-leak",
+      "conditionIds": [
+        "COND-HYD-EXTERNAL-LEAK",
+        "COND-HYD-HOSE-COVER-DAMAGE",
+        "COND-HYD-LOW-FUNCTIONAL-PRESSURE"
+      ],
+      "actionIds": [
+        "ACT-HYD-HOSE-ROUTING-INSPECT",
+        "ACT-HYD-PRESSURE-VERIFY"
+      ],
+      "differentialDamageIds": [
+        "DMG-HYD-HOSE-INTEGRITY"
+      ],
+      "chainIds": [
+        "FC-HOSE-001",
+        "FC-HOSE-003"
+      ],
+      "interpretation": "Mangueira danificada ou óleo presente na região não determina a origem do vazamento; localização e teste apropriado são necessários. Subgrupo HSVV hidráulico continua sem mapeamento.",
+      "sourceIds": [
+        "CAT-HYD-TECHNICAL-ANALYSIS",
+        "CAT-HYD-OIL-CLEANLINESS",
+        "CAT-HYD-HOSE-INSPECT"
+      ],
+      "mappingScope": "generic_only",
+      "status": "review_candidate",
+      "observedConditionIds": [],
+      "performedActionIds": [],
+      "confirmedDamageIds": [],
+      "automaticDamagePromotion": false,
+      "evidenceInterpretation": "sem_resultado_de_campo"
+    },
+    {
+      "id": "BUNDLE-07",
+      "ruleId": "hydraulic-pump-seal",
+      "conditionIds": [
+        "COND-HYD-EXTERNAL-LEAK",
+        "COND-HYD-LOW-FUNCTIONAL-PRESSURE",
+        "COND-HYD-OIL-CONTAMINATION"
+      ],
+      "actionIds": [
+        "ACT-HYD-PUMP-LEAK-TRACE",
+        "ACT-HYD-CLEANLINESS-SAMPLE",
+        "ACT-HYD-PRESSURE-VERIFY"
+      ],
+      "differentialDamageIds": [
+        "DMG-HYD-PUMP-SEAL-LEAK"
+      ],
+      "chainIds": [],
+      "interpretation": "Umidade sobre a bomba pode ter origem em linha vizinha e contaminação não comprova dano da bomba; nenhum teste foi executado.",
+      "sourceIds": [
+        "CAT-HYD-TECHNICAL-ANALYSIS",
+        "CAT-HYD-OIL-CLEANLINESS",
+        "CAT-HYD-HOSE-INSPECT"
+      ],
+      "mappingScope": "generic_only",
+      "status": "review_candidate",
+      "observedConditionIds": [],
+      "performedActionIds": [],
+      "confirmedDamageIds": [],
+      "automaticDamagePromotion": false,
+      "evidenceInterpretation": "sem_resultado_de_campo"
+    },
+    {
+      "id": "BUNDLE-08",
+      "ruleId": "track-roller-wear",
+      "conditionIds": [
+        "COND-TRACK-ROLLER-WEAR",
+        "COND-TRACK-ROLLER-HEAT",
+        "COND-TRACK-ROLLER-SEAL-LEAK"
+      ],
+      "actionIds": [
+        "ACT-TRACK-ROLLER-CTS",
+        "ACT-TRACK-ROLLER-SEAL-CHECK"
+      ],
+      "differentialDamageIds": [
+        "DMG-TRACK-ROLLER-INTERNAL"
+      ],
+      "chainIds": [
+        "FC-TRACK-001",
+        "FC-TRACK-002"
+      ],
+      "interpretation": "Aquecimento e desgaste geométrico não confirmam dano interno; medir desgaste do rolete, investigar detritos e vedação independentemente.",
+      "sourceIds": [
+        "CAT-MINING-UC-WEAR-MANAGEMENT",
+        "CAT-CTS-UNDERCARRIAGE"
+      ],
+      "mappingScope": "generic_only",
+      "status": "review_candidate",
+      "observedConditionIds": [],
+      "performedActionIds": [],
+      "confirmedDamageIds": [],
+      "automaticDamagePromotion": false,
+      "evidenceInterpretation": "sem_resultado_de_campo"
+    },
+    {
+      "id": "BUNDLE-09",
+      "ruleId": "track-idler-wear",
+      "conditionIds": [
+        "COND-TRACK-IDLER-WEAR",
+        "COND-TRACK-ROLLER-HEAT"
+      ],
+      "actionIds": [
+        "ACT-TRACK-IDLER-CTS",
+        "ACT-TRACK-ROLLER-SEAL-CHECK"
+      ],
+      "differentialDamageIds": [
+        "DMG-TRACK-IDLER-WEAR"
+      ],
+      "chainIds": [
+        "FC-TRACK-003"
+      ],
+      "interpretation": "Padrão irregular de contato não identifica rolamento de roda-guia; a peça permanece sem código SAP e exige verificação CTS/OEM.",
+      "sourceIds": [
+        "CAT-MINING-UC-WEAR-MANAGEMENT",
+        "CAT-CTS-UNDERCARRIAGE"
+      ],
+      "mappingScope": "generic_only",
+      "status": "review_candidate",
+      "observedConditionIds": [],
+      "performedActionIds": [],
+      "confirmedDamageIds": [],
+      "automaticDamagePromotion": false,
       "evidenceInterpretation": "sem_resultado_de_campo"
     }
   ],
@@ -666,6 +1284,285 @@
       "to": "DMG-COOL-LEAK-INTERFACE",
       "type": "rule_lists_differential_damage",
       "meaning": "Somente hipótese diferencial, nunca diagnóstico automático",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-023",
+      "from": "BUNDLE-05",
+      "to": "COND-ENGINE-FILTER-DP",
+      "type": "rule_monitors_condition",
+      "meaning": "Possível condição a investigar; não é observação real",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-024",
+      "from": "BUNDLE-05",
+      "to": "COND-ENGINE-OIL-PARTICLES",
+      "type": "rule_monitors_condition",
+      "meaning": "Possível condição a investigar; não é observação real",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-025",
+      "from": "BUNDLE-05",
+      "to": "COND-ENGINE-LOW-OIL-PRESSURE",
+      "type": "rule_monitors_condition",
+      "meaning": "Possível condição a investigar; não é observação real",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-026",
+      "from": "BUNDLE-05",
+      "to": "ACT-ENGINE-OIL-SAMPLE",
+      "type": "rule_proposes_action",
+      "meaning": "Atividade sugerida; não houve execução nem resultado",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-027",
+      "from": "BUNDLE-05",
+      "to": "ACT-ENGINE-FILTER-REPLACE-INSPECT",
+      "type": "rule_proposes_action",
+      "meaning": "Atividade sugerida; não houve execução nem resultado",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-028",
+      "from": "BUNDLE-05",
+      "to": "ACT-ENGINE-OIL-PRESSURE-VERIFY",
+      "type": "rule_proposes_action",
+      "meaning": "Atividade sugerida; não houve execução nem resultado",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-029",
+      "from": "BUNDLE-05",
+      "to": "DMG-ENGINE-OIL-FILTER-RESTRICTION",
+      "type": "rule_lists_differential_damage",
+      "meaning": "Dano candidato que depende de inspeção independente",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-030",
+      "from": "BUNDLE-06",
+      "to": "COND-HYD-EXTERNAL-LEAK",
+      "type": "rule_monitors_condition",
+      "meaning": "Possível condição a investigar; não é observação real",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-031",
+      "from": "BUNDLE-06",
+      "to": "COND-HYD-HOSE-COVER-DAMAGE",
+      "type": "rule_monitors_condition",
+      "meaning": "Possível condição a investigar; não é observação real",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-032",
+      "from": "BUNDLE-06",
+      "to": "COND-HYD-LOW-FUNCTIONAL-PRESSURE",
+      "type": "rule_monitors_condition",
+      "meaning": "Possível condição a investigar; não é observação real",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-033",
+      "from": "BUNDLE-06",
+      "to": "ACT-HYD-HOSE-ROUTING-INSPECT",
+      "type": "rule_proposes_action",
+      "meaning": "Atividade sugerida; não houve execução nem resultado",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-034",
+      "from": "BUNDLE-06",
+      "to": "ACT-HYD-PRESSURE-VERIFY",
+      "type": "rule_proposes_action",
+      "meaning": "Atividade sugerida; não houve execução nem resultado",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-035",
+      "from": "BUNDLE-06",
+      "to": "DMG-HYD-HOSE-INTEGRITY",
+      "type": "rule_lists_differential_damage",
+      "meaning": "Dano candidato que depende de inspeção independente",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-036",
+      "from": "BUNDLE-07",
+      "to": "COND-HYD-EXTERNAL-LEAK",
+      "type": "rule_monitors_condition",
+      "meaning": "Possível condição a investigar; não é observação real",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-037",
+      "from": "BUNDLE-07",
+      "to": "COND-HYD-LOW-FUNCTIONAL-PRESSURE",
+      "type": "rule_monitors_condition",
+      "meaning": "Possível condição a investigar; não é observação real",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-038",
+      "from": "BUNDLE-07",
+      "to": "COND-HYD-OIL-CONTAMINATION",
+      "type": "rule_monitors_condition",
+      "meaning": "Possível condição a investigar; não é observação real",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-039",
+      "from": "BUNDLE-07",
+      "to": "ACT-HYD-PUMP-LEAK-TRACE",
+      "type": "rule_proposes_action",
+      "meaning": "Atividade sugerida; não houve execução nem resultado",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-040",
+      "from": "BUNDLE-07",
+      "to": "ACT-HYD-CLEANLINESS-SAMPLE",
+      "type": "rule_proposes_action",
+      "meaning": "Atividade sugerida; não houve execução nem resultado",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-041",
+      "from": "BUNDLE-07",
+      "to": "ACT-HYD-PRESSURE-VERIFY",
+      "type": "rule_proposes_action",
+      "meaning": "Atividade sugerida; não houve execução nem resultado",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-042",
+      "from": "BUNDLE-07",
+      "to": "DMG-HYD-PUMP-SEAL-LEAK",
+      "type": "rule_lists_differential_damage",
+      "meaning": "Dano candidato que depende de inspeção independente",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-043",
+      "from": "BUNDLE-08",
+      "to": "COND-TRACK-ROLLER-WEAR",
+      "type": "rule_monitors_condition",
+      "meaning": "Possível condição a investigar; não é observação real",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-044",
+      "from": "BUNDLE-08",
+      "to": "COND-TRACK-ROLLER-HEAT",
+      "type": "rule_monitors_condition",
+      "meaning": "Possível condição a investigar; não é observação real",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-045",
+      "from": "BUNDLE-08",
+      "to": "COND-TRACK-ROLLER-SEAL-LEAK",
+      "type": "rule_monitors_condition",
+      "meaning": "Possível condição a investigar; não é observação real",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-046",
+      "from": "BUNDLE-08",
+      "to": "ACT-TRACK-ROLLER-CTS",
+      "type": "rule_proposes_action",
+      "meaning": "Atividade sugerida; não houve execução nem resultado",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-047",
+      "from": "BUNDLE-08",
+      "to": "ACT-TRACK-ROLLER-SEAL-CHECK",
+      "type": "rule_proposes_action",
+      "meaning": "Atividade sugerida; não houve execução nem resultado",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-048",
+      "from": "BUNDLE-08",
+      "to": "DMG-TRACK-ROLLER-INTERNAL",
+      "type": "rule_lists_differential_damage",
+      "meaning": "Dano candidato que depende de inspeção independente",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-049",
+      "from": "BUNDLE-09",
+      "to": "COND-TRACK-IDLER-WEAR",
+      "type": "rule_monitors_condition",
+      "meaning": "Possível condição a investigar; não é observação real",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-050",
+      "from": "BUNDLE-09",
+      "to": "COND-TRACK-ROLLER-HEAT",
+      "type": "rule_monitors_condition",
+      "meaning": "Possível condição a investigar; não é observação real",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-051",
+      "from": "BUNDLE-09",
+      "to": "ACT-TRACK-IDLER-CTS",
+      "type": "rule_proposes_action",
+      "meaning": "Atividade sugerida; não houve execução nem resultado",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-052",
+      "from": "BUNDLE-09",
+      "to": "ACT-TRACK-ROLLER-SEAL-CHECK",
+      "type": "rule_proposes_action",
+      "meaning": "Atividade sugerida; não houve execução nem resultado",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-053",
+      "from": "BUNDLE-09",
+      "to": "DMG-TRACK-IDLER-WEAR",
+      "type": "rule_lists_differential_damage",
+      "meaning": "Dano candidato que depende de inspeção independente",
       "reviewStatus": "interpretacao_inferida",
       "observed": false
     }
