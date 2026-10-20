@@ -1,0 +1,100 @@
+{
+  "schema": "fmea-mining.contract-compatibility-regressions.v1",
+  "version": "1.3.13",
+  "nature": "synthetic_only",
+  "cases": [
+    {
+      "id": "COMP-01",
+      "changedPublicFields": [],
+      "removedPublicFields": [],
+      "changedMeanings": [],
+      "removedStableIds": [],
+      "safeOptionalAdditions": [],
+      "promotesCausalState": false,
+      "expected": "patch"
+    },
+    {
+      "id": "COMP-02",
+      "changedPublicFields": [],
+      "removedPublicFields": [],
+      "changedMeanings": [],
+      "removedStableIds": [],
+      "safeOptionalAdditions": [
+        "editorialComment"
+      ],
+      "promotesCausalState": false,
+      "expected": "minor"
+    },
+    {
+      "id": "COMP-03",
+      "changedPublicFields": [],
+      "removedPublicFields": [
+        "rootCauseCandidates"
+      ],
+      "changedMeanings": [],
+      "removedStableIds": [],
+      "safeOptionalAdditions": [],
+      "promotesCausalState": false,
+      "expected": "major"
+    },
+    {
+      "id": "COMP-04",
+      "changedPublicFields": [
+        "causalLevels"
+      ],
+      "removedPublicFields": [],
+      "changedMeanings": [],
+      "removedStableIds": [],
+      "safeOptionalAdditions": [],
+      "promotesCausalState": false,
+      "expected": "major"
+    },
+    {
+      "id": "COMP-05",
+      "changedPublicFields": [],
+      "removedPublicFields": [],
+      "changedMeanings": [
+        "observedPhenomenon_means_verified_event"
+      ],
+      "removedStableIds": [],
+      "safeOptionalAdditions": [],
+      "promotesCausalState": false,
+      "expected": "major"
+    },
+    {
+      "id": "COMP-06",
+      "changedPublicFields": [],
+      "removedPublicFields": [],
+      "changedMeanings": [],
+      "removedStableIds": [
+        "FC-HOSE-001"
+      ],
+      "safeOptionalAdditions": [],
+      "promotesCausalState": false,
+      "expected": "major"
+    },
+    {
+      "id": "COMP-07",
+      "changedPublicFields": [],
+      "removedPublicFields": [],
+      "changedMeanings": [],
+      "removedStableIds": [],
+      "safeOptionalAdditions": [],
+      "promotesCausalState": true,
+      "expected": "reject"
+    },
+    {
+      "id": "COMP-08",
+      "changedPublicFields": [],
+      "removedPublicFields": [],
+      "changedMeanings": [],
+      "removedStableIds": [],
+      "safeOptionalAdditions": [
+        "editorialComment",
+        "reviewNote"
+      ],
+      "promotesCausalState": false,
+      "expected": "minor"
+    }
+  ]
+}
