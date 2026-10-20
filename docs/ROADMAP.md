@@ -1,6 +1,6 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 20/10/2026 · **Ciclo:** catálogo técnico v1.3.5 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 20/10/2026 · **Ciclo:** catálogo técnico v1.3.6 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
 
@@ -32,10 +32,31 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 | Planos preventivos | 7 arquivos para 8 modelos; 6.281 ocorrências / 1.018 atividades distintas | Extraído; camada detalhada restrita |
 | Relações preventivas públicas | 25 regras genéricas, gerador estrito por sistema/grupo/subgrupo | Candidatas, nenhuma homologada |
 | Diagnóstico diferencial | 12 roteiros / 36 hipóteses / 24 testes propostos | Candidatos sem ensaio realizado |
-| Ontologia v1 | 10 falhas funcionais, 20 sintomas, 15 mecanismos, 16 métodos de evidência, 4 interpretações | Taxonomia inicial, pendente de revisão |
+| Ontologia v1 | 10 falhas funcionais, 22 sintomas, 15 mecanismos, 16 métodos de evidência, 4 interpretações | Taxonomia inicial, pendente de revisão |
+| Condição × ação × dano (v1.3.6) | 7 condições, 8 atividades, 4 danos candidatos, 4 bundles PM e 22 relações | Conceitual; nenhuma execução/condição real |
 | Enriquecimento | 12 roteiros classificados por falha funcional, sintomas e técnicas | Anotação manual, não prova de causa |
 
 **Observação:** as 159 tarefas de PM com subgrupo candidato foram obtidas em extração local anterior e **não** representam 159 associações homologadas. Contagens de vínculos estritos serão publicadas pelo relatório automático após cada alteração do gerador.
+
+## Ciclo concluído — 20/10/2026: separar condição, atividade e dano (v1.3.6)
+
+**Problema atacado:** no modelo anterior, água no combustível e restrição do radiador apareciam como tentativas de preencher pares de dano/causa de componentes, mesmo quando a preventiva apenas detectava condição de fluido ou sujidade externa.
+
+- [x] Criar [ontologia semântica v1.3.6](../data/ontology/condition-action-damage.v1.json) com **7 condições-alvo, 8 atividades, 4 danos candidatos e 22 relações**, distribuídos em quatro regras PM.
+- [x] Diferenciar `condition` (o que se pretende observar), `action` (o que se propõe executar) e `damageHypothesis` (alteração física que requer prova independente).
+- [x] Documentar divergência entre **água no combustível / drenagem / dano do dreno ou filtro** e entre **sujidade externa / limpeza / obstrução interna do radiador**.
+- [x] Registrar a ISO 13379-1:2025 como referência metodológica **com acesso apenas ao resumo oficial**; reutilizar Caterpillar/SAP já catalogados.
+- [x] Introduzir [JSON Schema](../schemas/condition-action-damage.schema.json), [validador semântico](../scripts/validate-condition-action-damage.mjs) e [7 cenários sintéticos de regressão](../data/quality/semantic-regression-fixtures.v1.json).
+- [x] Integrar validação e contadores da nova camada ao CI e ao relatório geral de qualidade.
+- [x] Publicar [relatório de pesquisa e decisões do ciclo](CICLO_2026-10-20_SEMANTICA_CONDICAO_ACAO_DANO.md).
+- [ ] Ampliar modelagem para filtro de óleo, desgaste do rodante, pressão hidráulica e condição do fluido.
+- [ ] Criar representação segregada de resultados observados autorizados, atos de manutenção executados e danos confirmados — **sem inserir dados reais confidenciais no repositório público**.
+- [ ] Registrar efeitos locais e efeitos sistêmicos e evidências discriminantes de cada cadeia.
+- [ ] Confrontar fontes OEM por modelo/série antes de homologar qualquer elo a um local funcional SAP.
+
+**Status de qualidade:** nenhum `conditionDetected` se torna `componentDamage` por simples importação; `actionPerformed` não substitui confirmação de avaria. A classificação dos **10 bloqueios de PM** permanece intacta: nenhum novo subgrupo ou peça foi inventado.
+
+**Próximo ciclo:** ampliar os três tipos a outros sistemas e introduzir `effectLocal/effectSystem`, sem misturar causa, dano, modo e consequência. Como alternativa de prioridade alta, criar estrutura de evidências revisáveis por revisor humano.
 
 ## Ciclo concluído — 20/10/2026: saneamento das 10 regras preventivas sem vínculo (v1.3.5)
 
@@ -47,7 +68,8 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 - [x] Novo `scripts/audit-pm-gaps.mjs` detecta o primeiro bloqueio, confronta quantidade com os vínculos produzidos e rejeita mudança de estado sem curadoria.
 - [x] Referências Caterpillar e SAP consolidadas: **local funcional não equivale à peça**, **água no combustível não é defeito do dreno**, **sujeira externa de radiador não é necessariamente entupimento interno**.
 - [x] Integração do relatório `reports/pm-gap-audit.generated.json` ao CI e ao indicador geral de qualidade.
-- [ ] **P0:** modelar separadamente `conditionDetected`, `preventiveAction`, `componentDamage` (começar por água no combustível e obstrução externa).
+- [x] **P0:** estabelecer ontologia própria `condition`, `preventiveAction` e `damageHypothesis` para água no combustível e radiador (v1.3.6).
+- [ ] **P0:** expandir semântica ao restante dos planos sem atribuir dano por inspeção planejada.
 - [ ] **P0:** investigar local e composição de linhas hidráulicas de implementos sem usar HSVV de circuitos estranhos.
 - [ ] **P1:** conferir efetividade OEM de filtro de óleo, filtro/separador diesel, componentes de roda-guia e conjuntos DR410i/DI650i.
 - [ ] Revisar uma a uma as 10 regras quando houver novo cadastro, sem aceitar equivalência textual como prova.
