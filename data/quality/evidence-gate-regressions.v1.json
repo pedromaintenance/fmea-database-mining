@@ -88,7 +88,8 @@
       "independentReviewer": "r1",
       "decision": "approved",
       "rationale": "Justificativa sintética apenas para testar o gate.",
-      "expectedEligible": false
+      "expectedEligible": false,
+      "authorId": "originalAuthor"
     },
     {
       "id": "GATE-05",
@@ -98,7 +99,8 @@
       "independentReviewer": null,
       "decision": "approved",
       "rationale": "Justificativa sintética apenas para testar o gate.",
-      "expectedEligible": false
+      "expectedEligible": false,
+      "authorId": "originalAuthor"
     },
     {
       "id": "GATE-06",
@@ -108,7 +110,8 @@
       "independentReviewer": "r2",
       "decision": "pending",
       "rationale": "Justificativa sintética apenas para testar o gate.",
-      "expectedEligible": false
+      "expectedEligible": false,
+      "authorId": "originalAuthor"
     },
     {
       "id": "GATE-07",
@@ -118,7 +121,8 @@
       "independentReviewer": "r2",
       "decision": "approved",
       "rationale": "Parecer sintético de teste, não aprovação de um modo real.",
-      "expectedEligible": true
+      "expectedEligible": true,
+      "authorId": "originalAuthor"
     },
     {
       "id": "GATE-08",
