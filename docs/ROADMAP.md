@@ -1,6 +1,6 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 20/10/2026 · **Ciclo:** catálogo técnico v1.3.10 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 20/10/2026 · **Ciclo:** catálogo técnico v1.3.11 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
 
@@ -39,6 +39,24 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 
 **Observação:** as 159 tarefas de PM com subgrupo candidato foram obtidas em extração local anterior e **não** representam 159 associações homologadas. Contagens de vínculos estritos serão publicadas pelo relatório automático após cada alteração do gerador.
 
+## Ciclo concluído — 20/10/2026: três roteiros de diagnóstico e níveis causais (v1.3.11)
+
+**Objetivo:** aprofundar três das doze lacunas P0, organizando testes que confrontam duas hipóteses concorrentes e separando níveis causais sem fabricar resultados.
+
+- [x] [Roteiros completos](../data/quality/diagnostic-pathways.v1.json) para origem da mancha na mangueira (`FC-HOSE-001`), partículas no comando final (`FC-FD-001`) e fixação de sapata (`FC-TRACK-005`).
+- [x] **9 investigações encadeadas**, com método, evidência que poderia favorecer hipóteses A/B, resultado inconclusivo, metadados mínimos e segurança.
+- [x] Quatro níveis editoriais em cada caso: **fenômeno, mecanismo imediato, condição contribuinte e possível causa sistêmica**, todos mantidos como hipóteses.
+- [x] Dois novos documentos Caterpillar indexados sobre interpretação de detritos do trem de força e triangulação de inspeção, fluido, dados e histórico.
+- [x] [Nove regressões sintéticas](../data/quality/pathway-regressions.v1.json), [JSON Schema](../schemas/diagnostic-pathways.schema.json) e `npm run pathways:validate` integrados ao CI.
+- [x] [Relatório técnico](CICLO_2026-10-20_ROTEIROS_CAUSALIDADE.md), documentação e métricas atualizados.
+- [ ] **P0 — v1.3.12:** estender segregação causal às 21 cadeias ainda sem roteiro específico, sem promover hipóteses a causas raízes.
+- [ ] **P0:** obter documentação OEM por configuração para piloto CAT D9 e encaminhar revisão independente de especialistas.
+- [ ] **P1:** elaborar contrato público de exportação para consumidores, com status, fonte e aplicabilidade, sem editar consumidores.
+- [ ] **P1:** ampliar avaliação diferencial de ventilação, termostato e circulação no arrefecimento.
+- [ ] Manter onze outras lacunas de hipóteses abertas e as três selecionadas **sem fechamento por falta de ensaio**; cobertura técnica aumentou, não houve confirmação causal.
+
+**Controles:** três roteiros, nove passos, nove cenários de gate, zero ensaios/pareceres homologados, **24 cadeias preexistentes e 10 PMs bloqueadas**.
+
 ## Ciclo concluído — 20/10/2026: matriz cruzada de diagnóstico diferencial (v1.3.10)
 
 **Entrega:** camada de ligação teste complementar ↔ hipótese alternativa, com avaliações qualitativas e lacunas declaradas, além de saneamento causal SAP e preparação documental de piloto D9.
@@ -50,7 +68,7 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 - [x] Duas fontes gerais Caterpillar/Nord-Lock indexadas com ressalvas de aplicabilidade.
 - [x] [Validador cruzado](../scripts/validate-complementary-discrimination.mjs) e [JSON Schema](../schemas/complementary-discrimination.schema.json) integrados ao CI e à auditoria.
 - [x] [Relatório de pesquisa e decisões](CICLO_2026-10-20_DISCRIMINACAO_COMPLEMENTAR.md).
-- [ ] **P0 — próximo ciclo:** selecionar três lacunas dos complementos que mereçam literatura OEM específica e formular comparação que diferencie hipótese A de B.
+- [x] **v1.3.11:** aprofundar três lacunas (mangueira, comando final, fixação) com roteiros de comparação, mantendo homologação OEM pendente.
 - [ ] **P0:** obter efetividade OEM de uma configuração D9 para validar posição, método CTS e especificações de fixação. Não publicar literatura proprietária na íntegra.
 - [ ] **P1:** melhorar separação entre **fenômeno detectado**, **mecanismo físico**, **causa contribuinte** e **causa raiz sistêmica** no cadastro SAP.
 - [ ] **P1:** preparar contrato de exportação com natureza, limites e aplicabilidade para consumidores independentes sem os editar.

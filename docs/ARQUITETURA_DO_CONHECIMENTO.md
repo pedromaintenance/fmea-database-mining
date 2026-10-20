@@ -157,3 +157,13 @@ A [revisão de circularidade](../data/quality/circular-sap-causality.v1.json) se
 O [piloto D9](../data/quality/oem-pilot-readiness.v1.json) é somente uma **lista de requisitos OEM ainda não cumpridos**: sem série, arranjo, procedimento, tabela de CTS e revisor, não existe aplicação tecnicamente homologada.
 
 [Relatório v1.3.10](CICLO_2026-10-20_DISCRIMINACAO_COMPLEMENTAR.md).
+
+## 15. Roteiros de diagnóstico e camadas causais (v1.3.11)
+
+A [camada de roteiros](../data/quality/diagnostic-pathways.v1.json) vincula três lacunas ao método `EV-*`, duas alternativas, resultados favoráveis/contrários e inconclusivos, contexto de segurança e requisitos de evidência. O status é **didático, não executado, não homologado por série**.
+
+Cada roteiro distingue quatro níveis: **fenômeno observável**, **mecanismo físico imediato candidato**, **condições contribuintes** e **causas raízes sistêmicas apenas candidatas**. Essa decomposição é uma **proposta editorial** e não deve ser apresentada como hierarquia oficial de normas IEC/ISO. Toda atribuição sistêmica exige evidências do processo, histórico, procedimento e revisão independente.
+
+A [regressão](../data/quality/pathway-regressions.v1.json) testa exclusivamente *prontidão de informações*, não precisão de diagnóstico. Uma simulação com checklist completo é classificada como `apto_para_revisao_nao_confirmado`, nunca como causa confirmada.
+
+[Relatório de decisões](CICLO_2026-10-20_ROTEIROS_CAUSALIDADE.md) · [Validador](../scripts/validate-diagnostic-pathways.mjs) · [Contrato](../schemas/diagnostic-pathways.schema.json)

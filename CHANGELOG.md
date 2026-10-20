@@ -2,6 +2,15 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.11] — 2026-10-20 — Roteiros diferenciais e níveis causais
+- Detalhados três caminhos diagnósticos para mangueiras hidráulicas, comando final e fixadores sapata–elo, com **nove etapas planejadas**.
+- Cada etapa distingue evidências favoráveis a duas hipóteses, resultados inconclusivos, metadados e cuidados de segurança.
+- Adotada separação editorial explícita de **fenômeno observável, mecanismo físico imediato, fator contribuinte e causa raiz candidata**.
+- Nove regressões sintéticas verificam prontidão documental sem confirmar falha; zero resultados de campo e zero causas homologadas.
+- Adicionados `data/quality/diagnostic-pathways.v1.json`, `schemas/diagnostic-pathways.schema.json` e `scripts/validate-diagnostic-pathways.mjs`.
+- Duas fontes primárias Caterpillar catalogadas sobre monitoramento por múltiplas evidências e sinais de trem de força, mantendo limites por série.
+- Documentação, roadmap, auditoria geral e GitHub Actions atualizados; sem tocar consumidores.
+
 ## [1.3.10] — 2026-10-20 — Complementos discriminantes, SAP e piloto OEM
 - Cruzados seis testes P0 com suas duas hipóteses concorrentes e dois complementos: **24 avaliações**; 7 não discriminantes, 12 parciais, 5 potencialmente discriminantes condicionais.
 - Mantidas **12 lacunas diagnósticas explícitas** e zero exclusões automáticas de alternativas.

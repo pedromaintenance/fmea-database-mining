@@ -2,7 +2,7 @@
 
 Banco de conhecimento **versionado** para investigar modos de falha, sintomas, evidências e causas em equipamentos móveis de mineração. Um consumidor possível é o jogo **[P.O.R.C.A.R.I.A. — Você Quebra, Eu Conserto](https://github.com/pedromaintenance/porcaria-voce-quebra-eu-conserto)**, mas o banco é independente: **este repositório não altera os consumidores**.
 
-> **Status:** versão do catálogo **1.3.10** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
+> **Status:** versão do catálogo **1.3.11** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
 
 ## O que queremos construir
 
@@ -177,6 +177,18 @@ A [matriz cruzada de verificações complementares](data/quality/complementary-d
 - `npm run differential:validate` verifica IDs, hipóteses, métodos, pertinência e ausência de falsa homologação.
 
 **Não alteramos o catálogo SAP de origem ou os consumidores.** Permanecem 24 cadeias, 48 investigações e 10 bloqueios de regras preventivas.
+
+## Diagnóstico diferencial aprofundado e hierarquia causal (v1.3.11)
+
+Três [roteiros diagnósticos](data/quality/diagnostic-pathways.v1.json) ampliam as lacunas prioritárias: **origem da mancha em mangueira**, **origem das partículas do comando final** e **perda de pré-carga de fixadores**. São **9 etapas planejadas**, cada uma com sinais favoráveis às duas hipóteses, condições inconclusivas, metadados e exigências de segurança.
+
+Os roteiros distinguem **fenômeno observado, mecanismo imediato candidato, fator contribuinte e causa raiz sistêmica apenas candidata**. Nenhuma causa raiz é declarada sem evidência. 
+
+- [Relatório técnico v1.3.11](docs/CICLO_2026-10-20_ROTEIROS_CAUSALIDADE.md)
+- [Contrato JSON Schema](schemas/diagnostic-pathways.schema.json)
+- [9 cenários sintéticos](data/quality/pathway-regressions.v1.json) e `npm run pathways:validate` para impedir promoção causal indevida.
+
+As 24 cadeias causais e 10 bloqueios preventivos SAP permanecem, sem dados OEM/ocorrência inventados e sem alterações em consumidores.
 
 ## Comece por aqui
 
