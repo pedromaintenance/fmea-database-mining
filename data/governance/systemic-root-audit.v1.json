@@ -1,0 +1,1114 @@
+{
+  "schema": "fmea-mining.systemic-root-audit.v1",
+  "version": "1.3.13",
+  "purpose": "Auditoria metodológica de 42 alegações sistêmicas candidatas em 21 cadeias, sem imputação causal não demonstrada.",
+  "evidenceModel": "Cada alegação requer rastreio de processo e comparação com explicação alternativa independente do processo.",
+  "excluded": "Os três roteiros da v1.3.11 estão preservados, sem novo parecer especializado.",
+  "policy": {
+    "mechanicalPlausibilityIsNotProcessProof": true,
+    "automaticBlameForbidden": true,
+    "noActualProcessRecords": true,
+    "noRootCauseApproval": true,
+    "independentReviewRequired": true
+  },
+  "counts": {
+    "expandedChains": 21,
+    "systemicClaims": 42,
+    "processDeviationsProven": 0,
+    "systemicRootCausesConfirmed": 0
+  },
+  "records": [
+    {
+      "chainId": "FC-HOSE-002",
+      "family": "mangueiras_hidraulicas",
+      "originVersion": "1.3.12",
+      "status": "revisao_critica_editorial_nao_homologacao",
+      "mechanicalHypothesisRetained": true,
+      "systemicCauseUnverified": true,
+      "reviewScope": "Critica de sustentação causal; não é parecer independente e não define culpabilidade.",
+      "documentedPhysicalMechanism": "Solicitações repetidas de flexão/torção podem degradar cobertura e reforço até perda de integridade, se fora do arranjo aplicável.",
+      "missingCausalBridge": "Raio mínimo, movimento real, posição da mangueira, desenho de montagem e origem de eventual fuga não foram verificados.",
+      "rootCandidateReviews": [
+        {
+          "id": "SYS-FC-HOSE-002-R1",
+          "originalClaim": "Controle de projeto/roteamento inadequado — investigar somente com desenho efetivo e histórico de alterações.",
+          "hypothesisCategory": "engineering_configuration",
+          "minimumIndependentEvidence": [
+            "Desenho e raio mínimo efetivos para o conjunto e movimento do implemento",
+            "Inspeção de montagem, PN e fotos de roteamento datadas"
+          ],
+          "nonOrganizationalAlternative": "Dano pode decorrer de interferência introduzida depois da montagem",
+          "presentProofOfProcessDeviation": false,
+          "processRecordsExamined": false,
+          "attributedFaultToPeopleOrTeam": false,
+          "causalConclusion": "nao_demonstrada",
+          "actionsUntilVerified": "Coletar documentação, investigar contraprovas e obter revisão humana independente; sem alteração de status causal."
+        },
+        {
+          "id": "SYS-FC-HOSE-002-R2",
+          "originalClaim": "Verificação de montagem ou proteção insuficiente — investigar evidências de instalação e inspeções anteriores.",
+          "hypothesisCategory": "installation_quality",
+          "minimumIndependentEvidence": [
+            "Critério OEM de montagem e registro de aceitação da linha",
+            "Histórico de intervenções/alterações após entrega"
+          ],
+          "nonOrganizationalAlternative": "Torção aparente pode ser efeito da posição atual, não da instalação original",
+          "presentProofOfProcessDeviation": false,
+          "processRecordsExamined": false,
+          "attributedFaultToPeopleOrTeam": false,
+          "causalConclusion": "nao_demonstrada",
+          "actionsUntilVerified": "Coletar documentação, investigar contraprovas e obter revisão humana independente; sem alteração de status causal."
+        }
+      ],
+      "sourcesGeneral": [
+        "CAT-HYD-HOSE-INSPECT"
+      ],
+      "applicabilityStatus": "nao_verificada_por_serie",
+      "reviewerPrimary": null,
+      "reviewerIndependent": null,
+      "reviewDecision": null,
+      "systemicRootCauseConfirmed": false
+    },
+    {
+      "chainId": "FC-HOSE-003",
+      "family": "mangueiras_hidraulicas",
+      "originVersion": "1.3.12",
+      "status": "revisao_critica_editorial_nao_homologacao",
+      "mechanicalHypothesisRetained": true,
+      "systemicCauseUnverified": true,
+      "reviewScope": "Critica de sustentação causal; não é parecer independente e não define culpabilidade.",
+      "documentedPhysicalMechanism": "Interface mangueira–terminal ou outra conexão pode perder estanqueidade por retenção/vedação comprometida.",
+      "missingCausalBridge": "Sem localização da fuga, identificação da interface, histórico de montagem nem confirmação de componente e vedação.",
+      "rootCandidateReviews": [
+        {
+          "id": "SYS-FC-HOSE-003-R1",
+          "originalClaim": "Especificação ou compatibilidade de conjunto terminal–mangueira inadequada — somente após conferir peças/arranjo e requisitos de prensagem.",
+          "hypothesisCategory": "engineering_configuration",
+          "minimumIndependentEvidence": [
+            "Compatibilidade documentada de terminal, mangueira e método de prensagem",
+            "Rastreabilidade do conjunto e exame da origem da fuga"
+          ],
+          "nonOrganizationalAlternative": "Vazamento pode ocorrer em adaptador ou vedação independente da prensagem",
+          "presentProofOfProcessDeviation": false,
+          "processRecordsExamined": false,
+          "attributedFaultToPeopleOrTeam": false,
+          "causalConclusion": "nao_demonstrada",
+          "actionsUntilVerified": "Coletar documentação, investigar contraprovas e obter revisão humana independente; sem alteração de status causal."
+        },
+        {
+          "id": "SYS-FC-HOSE-003-R2",
+          "originalClaim": "Falha de controle de montagem/inspeção de conexão — exige registros e evidência de desvio do procedimento.",
+          "hypothesisCategory": "installation_quality",
+          "minimumIndependentEvidence": [
+            "Ordem de instalação, ensaio de estanqueidade autorizado e inspeção de terminal",
+            "Histórico de reaperto/intervenção e identificação da peça"
+          ],
+          "nonOrganizationalAlternative": "Fuga pode ter início após fadiga, vibração ou dano externo",
+          "presentProofOfProcessDeviation": false,
+          "processRecordsExamined": false,
+          "attributedFaultToPeopleOrTeam": false,
+          "causalConclusion": "nao_demonstrada",
+          "actionsUntilVerified": "Coletar documentação, investigar contraprovas e obter revisão humana independente; sem alteração de status causal."
+        }
+      ],
+      "sourcesGeneral": [
+        "CAT-HYD-HOSE-INSPECT",
+        "CAT-HYD-HOSE-FAILURE"
+      ],
+      "applicabilityStatus": "nao_verificada_por_serie",
+      "reviewerPrimary": null,
+      "reviewerIndependent": null,
+      "reviewDecision": null,
+      "systemicRootCauseConfirmed": false
+    },
+    {
+      "chainId": "FC-HOSE-004",
+      "family": "mangueiras_hidraulicas",
+      "originVersion": "1.3.12",
+      "status": "revisao_critica_editorial_nao_homologacao",
+      "mechanicalHypothesisRetained": true,
+      "systemicCauseUnverified": true,
+      "reviewScope": "Critica de sustentação causal; não é parecer independente e não define culpabilidade.",
+      "documentedPhysicalMechanism": "Exposição térmica pode degradar elastômero e reduzir capacidade mecânica, se houver relação material-temperatura verificável.",
+      "missingCausalBridge": "Não foram medidas temperaturas, duração de exposição, compatibilidade do material nem impacto de ataque químico/abrasão.",
+      "rootCandidateReviews": [
+        {
+          "id": "SYS-FC-HOSE-004-R1",
+          "originalClaim": "Roteamento ou proteção térmica inadequados — confirmar exposição, especificação e condições de projeto.",
+          "hypothesisCategory": "engineering_configuration",
+          "minimumIndependentEvidence": [
+            "Temperatura medida, especificação térmica e desenho de proteção/roteamento",
+            "Histórico de alterações no entorno da linha"
+          ],
+          "nonOrganizationalAlternative": "Ataque químico pode provocar aparência similar sem desvio térmico",
+          "presentProofOfProcessDeviation": false,
+          "processRecordsExamined": false,
+          "attributedFaultToPeopleOrTeam": false,
+          "causalConclusion": "nao_demonstrada",
+          "actionsUntilVerified": "Coletar documentação, investigar contraprovas e obter revisão humana independente; sem alteração de status causal."
+        },
+        {
+          "id": "SYS-FC-HOSE-004-R2",
+          "originalClaim": "Revisão insuficiente de compatibilidade do material ao regime — comprovar documentação de seleção e histórico térmico.",
+          "hypothesisCategory": "material_selection",
+          "minimumIndependentEvidence": [
+            "Certificado da mangueira, limites de exposição e composição de fluido",
+            "Inspeção diferencial de calor, abrasão e compatibilidade química"
+          ],
+          "nonOrganizationalAlternative": "Envelhecimento esperado ou dano mecânico pode explicar fissuração",
+          "presentProofOfProcessDeviation": false,
+          "processRecordsExamined": false,
+          "attributedFaultToPeopleOrTeam": false,
+          "causalConclusion": "nao_demonstrada",
+          "actionsUntilVerified": "Coletar documentação, investigar contraprovas e obter revisão humana independente; sem alteração de status causal."
+        }
+      ],
+      "sourcesGeneral": [
+        "CAT-HYD-HOSE-INSPECT"
+      ],
+      "applicabilityStatus": "nao_verificada_por_serie",
+      "reviewerPrimary": null,
+      "reviewerIndependent": null,
+      "reviewDecision": null,
+      "systemicRootCauseConfirmed": false
+    },
+    {
+      "chainId": "FC-FD-002",
+      "family": "comando_final",
+      "originVersion": "1.3.12",
+      "status": "revisao_critica_editorial_nao_homologacao",
+      "mechanicalHypothesisRetained": true,
+      "systemicCauseUnverified": true,
+      "reviewScope": "Critica de sustentação causal; não é parecer independente e não define culpabilidade.",
+      "documentedPhysicalMechanism": "Presença persistente de água pode alterar filme lubrificante e favorecer corrosão/desgaste no contato entre superfícies.",
+      "missingCausalBridge": "É preciso diferenciar ingresso efetivo de contaminação de coleta, produto incorreto e corrosão já instalada.",
+      "rootCandidateReviews": [
+        {
+          "id": "SYS-FC-FD-002-R1",
+          "originalClaim": "Controle inadequado de vedação/respiro ou exposição à lavagem — apurar caminho real de ingresso e manutenção anterior.",
+          "hypothesisCategory": "contamination_control",
+          "minimumIndependentEvidence": [
+            "Trajetória de ingresso de água por vedação/respiro demonstrada",
+            "Histórico de lavagem, inspeção de selos e respiro por configuração"
+          ],
+          "nonOrganizationalAlternative": "Água pode ter entrado pelo frasco de coleta ou por condensação",
+          "presentProofOfProcessDeviation": false,
+          "processRecordsExamined": false,
+          "attributedFaultToPeopleOrTeam": false,
+          "causalConclusion": "nao_demonstrada",
+          "actionsUntilVerified": "Coletar documentação, investigar contraprovas e obter revisão humana independente; sem alteração de status causal."
+        },
+        {
+          "id": "SYS-FC-FD-002-R2",
+          "originalClaim": "Procedimento de abastecimento/amostragem vulnerável a água — comprovar origem e cadeia de custódia antes de atribuir ao equipamento.",
+          "hypothesisCategory": "sampling_process",
+          "minimumIndependentEvidence": [
+            "Método real de coleta, recipientes e cadeia de custódia",
+            "Contraprova por segunda amostra em ponto confiável"
+          ],
+          "nonOrganizationalAlternative": "Ingresso operacional pode existir apesar de coleta correta",
+          "presentProofOfProcessDeviation": false,
+          "processRecordsExamined": false,
+          "attributedFaultToPeopleOrTeam": false,
+          "causalConclusion": "nao_demonstrada",
+          "actionsUntilVerified": "Coletar documentação, investigar contraprovas e obter revisão humana independente; sem alteração de status causal."
+        }
+      ],
+      "sourcesGeneral": [
+        "SKF-ISO15243-BEARING",
+        "CAT-FLUID-ANALYSIS-101"
+      ],
+      "applicabilityStatus": "nao_verificada_por_serie",
+      "reviewerPrimary": null,
+      "reviewerIndependent": null,
+      "reviewDecision": null,
+      "systemicRootCauseConfirmed": false
+    },
+    {
+      "chainId": "FC-FD-003",
+      "family": "comando_final",
+      "originVersion": "1.3.12",
+      "status": "revisao_critica_editorial_nao_homologacao",
+      "mechanicalHypothesisRetained": true,
+      "systemicCauseUnverified": true,
+      "reviewScope": "Critica de sustentação causal; não é parecer independente e não define culpabilidade.",
+      "documentedPhysicalMechanism": "Filme lubrificante insuficiente pode aumentar contato metal-metal e desgaste, dependendo de carga, temperatura e propriedades reais.",
+      "missingCausalBridge": "Sem produto/horas/baseline, nível e condição de carga é impossível distinguir mudança autorizada de formulação de falha mecânica.",
+      "rootCandidateReviews": [
+        {
+          "id": "SYS-FC-FD-003-R1",
+          "originalClaim": "Seleção/especificação de lubrificante inadequada — só após conferência OEM e histórico de trocas.",
+          "hypothesisCategory": "lubrication_specification",
+          "minimumIndependentEvidence": [
+            "Produto utilizado, especificação por série e registros de troca",
+            "Horas, temperatura e comparação com baseline do produto vigente"
+          ],
+          "nonOrganizationalAlternative": "Mudança OEM autorizada de formulação pode explicar incompatibilidade química",
+          "presentProofOfProcessDeviation": false,
+          "processRecordsExamined": false,
+          "attributedFaultToPeopleOrTeam": false,
+          "causalConclusion": "nao_demonstrada",
+          "actionsUntilVerified": "Coletar documentação, investigar contraprovas e obter revisão humana independente; sem alteração de status causal."
+        },
+        {
+          "id": "SYS-FC-FD-003-R2",
+          "originalClaim": "Controle de nível/reposição ou vedação insuficiente — exige demonstração de perda, nível e sequência de intervenção.",
+          "hypothesisCategory": "lubrication_control",
+          "minimumIndependentEvidence": [
+            "Histórico de nível, consumo, vazamentos e inspeção de vedação",
+            "Relatos datados de abastecimento/retirada e condição de funcionamento"
+          ],
+          "nonOrganizationalAlternative": "Desgaste anterior pode produzir calor e metais com lubrificante conforme",
+          "presentProofOfProcessDeviation": false,
+          "processRecordsExamined": false,
+          "attributedFaultToPeopleOrTeam": false,
+          "causalConclusion": "nao_demonstrada",
+          "actionsUntilVerified": "Coletar documentação, investigar contraprovas e obter revisão humana independente; sem alteração de status causal."
+        }
+      ],
+      "sourcesGeneral": [
+        "SKF-ISO15243-BEARING",
+        "CAT-DRIVE-MAGNET-PLUG",
+        "CAT-FLUID-ANALYSIS-101"
+      ],
+      "applicabilityStatus": "nao_verificada_por_serie",
+      "reviewerPrimary": null,
+      "reviewerIndependent": null,
+      "reviewDecision": null,
+      "systemicRootCauseConfirmed": false
+    },
+    {
+      "chainId": "FC-FD-004",
+      "family": "comando_final",
+      "originVersion": "1.3.12",
+      "status": "revisao_critica_editorial_nao_homologacao",
+      "mechanicalHypothesisRetained": true,
+      "systemicCauseUnverified": true,
+      "reviewScope": "Critica de sustentação causal; não é parecer independente e não define culpabilidade.",
+      "documentedPhysicalMechanism": "Danos de fadiga de contato podem iniciar trincas superficiais/subsuperficiais e evoluir a destacamento de material.",
+      "missingCausalBridge": "É necessário observar pista/elemento, separar partículas de engrenagem e ruído de componentes adjacentes e identificar arranjo.",
+      "rootCandidateReviews": [
+        {
+          "id": "SYS-FC-FD-004-R1",
+          "originalClaim": "Regime de carregamento fora do arranjo previsto — requer medição/histórico operacional e confirmação do rolamento.",
+          "hypothesisCategory": "operational_loading",
+          "minimumIndependentEvidence": [
+            "Registro de carga e duty cycle versus envelope de projeto por arranjo",
+            "Inspeção metalúrgica de pista/rolamento e histórico de eventos"
+          ],
+          "nonOrganizationalAlternative": "Fadiga pode ocorrer após contaminação, sem sobrecarga operacional",
+          "presentProofOfProcessDeviation": false,
+          "processRecordsExamined": false,
+          "attributedFaultToPeopleOrTeam": false,
+          "causalConclusion": "nao_demonstrada",
+          "actionsUntilVerified": "Coletar documentação, investigar contraprovas e obter revisão humana independente; sem alteração de status causal."
+        },
+        {
+          "id": "SYS-FC-FD-004-R2",
+          "originalClaim": "Controle de lubrificação/contaminação inadequado — dependerá de evidências de fluido, vedação e desgaste.",
+          "hypothesisCategory": "lubrication_control",
+          "minimumIndependentEvidence": [
+            "Tendência de óleo, vedação, partículas e histórico de manutenção",
+            "Exame de dano de contato e origem de partículas"
+          ],
+          "nonOrganizationalAlternative": "Dano pode surgir por geometria ou alinhamento com lubrificação adequada",
+          "presentProofOfProcessDeviation": false,
+          "processRecordsExamined": false,
+          "attributedFaultToPeopleOrTeam": false,
+          "causalConclusion": "nao_demonstrada",
+          "actionsUntilVerified": "Coletar documentação, investigar contraprovas e obter revisão humana independente; sem alteração de status causal."
+        }
+      ],
+      "sourcesGeneral": [
+        "SKF-ISO15243-BEARING",
+        "CAT-DRIVE-MAGNET-PLUG",
+        "SKF-WEAR-SURFACE-FATIGUE"
+      ],
+      "applicabilityStatus": "nao_verificada_por_serie",
+      "reviewerPrimary": null,
+      "reviewerIndependent": null,
+      "reviewDecision": null,
+      "systemicRootCauseConfirmed": false
+    },
+    {
+      "chainId": "FC-COOL-001",
+      "family": "arrefecimento",
+      "originVersion": "1.3.12",
+      "status": "revisao_critica_editorial_nao_homologacao",
+      "mechanicalHypothesisRetained": true,
+      "systemicCauseUnverified": true,
+      "reviewScope": "Critica de sustentação causal; não é parecer independente e não define culpabilidade.",
+      "documentedPhysicalMechanism": "Restrição de passagem de ar pode diminuir convecção no trocador e rejeição térmica sob determinada carga.",
+      "missingCausalBridge": "Não se demonstraram temperatura fora de requisito, efeito de limpeza ou desempenho de ventilação/circulação; sujidade externa não é obstrução interna.",
+      "rootCandidateReviews": [
+        {
+          "id": "SYS-FC-COOL-001-R1",
+          "originalClaim": "Estratégia de limpeza insuficiente para poeira da operação — precisa de histórico de inspeções, carga e ambiente.",
+          "hypothesisCategory": "preventive_strategy",
+          "minimumIndependentEvidence": [
+            "Registros de limpeza/inspeção e carga de poeira em intervalos reais",
+            "Tendência térmica antes/depois sob carga e ambiente comparáveis"
+          ],
+          "nonOrganizationalAlternative": "Acúmulo rápido por condição severa pode ocorrer apesar de plano adequado",
+          "presentProofOfProcessDeviation": false,
+          "processRecordsExamined": false,
+          "attributedFaultToPeopleOrTeam": false,
+          "causalConclusion": "nao_demonstrada",
+          "actionsUntilVerified": "Coletar documentação, investigar contraprovas e obter revisão humana independente; sem alteração de status causal."
+        },
+        {
+          "id": "SYS-FC-COOL-001-R2",
+          "originalClaim": "Proteção/arranjo de admissão de ar incompatível com ambiente — comprovar configuração e requisito OEM.",
+          "hypothesisCategory": "engineering_configuration",
+          "minimumIndependentEvidence": [
+            "Arranjo do pacote de trocadores, proteções e requisitos de ventilação",
+            "Histórico de projeto, alteração e medição de fluxo"
+          ],
+          "nonOrganizationalAlternative": "Ventilador ou termostato deficiente explica aquecimento sem erro de projeto",
+          "presentProofOfProcessDeviation": false,
+          "processRecordsExamined": false,
+          "attributedFaultToPeopleOrTeam": false,
+          "causalConclusion": "nao_demonstrada",
+          "actionsUntilVerified": "Coletar documentação, investigar contraprovas e obter revisão humana independente; sem alteração de status causal."
+        }
+      ],
+      "sourcesGeneral": [
+        "CAT-RADIATOR-CARE",
+        "CAT-EXC-COOL-CHECKLIST"
+      ],
+      "applicabilityStatus": "nao_verificada_por_serie",
+      "reviewerPrimary": null,
+      "reviewerIndependent": null,
+      "reviewDecision": null,
+      "systemicRootCauseConfirmed": false
+    },
+    {
+      "chainId": "FC-COOL-002",
+      "family": "arrefecimento",
+      "originVersion": "1.3.12",
+      "status": "revisao_critica_editorial_nao_homologacao",
+      "mechanicalHypothesisRetained": true,
+      "systemicCauseUnverified": true,
+      "reviewScope": "Critica de sustentação causal; não é parecer independente e não define culpabilidade.",
+      "documentedPhysicalMechanism": "Interface ou parede flexível pode perder estanqueidade, com perda de volume do circuito sob determinadas condições.",
+      "missingCausalBridge": "Origem da trilha, nível correto, estado do circuito e perdas por radiador, tampa ou bomba ainda não foram verificados.",
+      "rootCandidateReviews": [
+        {
+          "id": "SYS-FC-COOL-002-R1",
+          "originalClaim": "Prática de montagem/aperto de conexão inadequada — exige confirmação de componente e histórico de intervenções.",
+          "hypothesisCategory": "installation_quality",
+          "minimumIndependentEvidence": [
+            "Procedimento efetivo de braçadeira/terminal e histórico de instalação",
+            "Localização independente da origem do vazamento"
+          ],
+          "nonOrganizationalAlternative": "Fuga em radiador/tampa/bomba pode molhar a mangueira intacta",
+          "presentProofOfProcessDeviation": false,
+          "processRecordsExamined": false,
+          "attributedFaultToPeopleOrTeam": false,
+          "causalConclusion": "nao_demonstrada",
+          "actionsUntilVerified": "Coletar documentação, investigar contraprovas e obter revisão humana independente; sem alteração de status causal."
+        },
+        {
+          "id": "SYS-FC-COOL-002-R2",
+          "originalClaim": "Estratégia de substituição/proteção térmica de mangueiras inadequada — dependerá de idade, fluido e condição real.",
+          "hypothesisCategory": "preventive_strategy",
+          "minimumIndependentEvidence": [
+            "Idade, especificação e inspeções efetivas da linha",
+            "Histórico de falhas comparáveis e critério de substituição aplicável"
+          ],
+          "nonOrganizationalAlternative": "Dano súbito por impacto não demonstra estratégia preventiva insuficiente",
+          "presentProofOfProcessDeviation": false,
+          "processRecordsExamined": false,
+          "attributedFaultToPeopleOrTeam": false,
+          "causalConclusion": "nao_demonstrada",
+          "actionsUntilVerified": "Coletar documentação, investigar contraprovas e obter revisão humana independente; sem alteração de status causal."
+        }
+      ],
+      "sourcesGeneral": [
+        "CAT-RADIATOR-CARE",
+        "CAT-EXC-COOL-CHECKLIST"
+      ],
+      "applicabilityStatus": "nao_verificada_por_serie",
+      "reviewerPrimary": null,
+      "reviewerIndependent": null,
+      "reviewDecision": null,
+      "systemicRootCauseConfirmed": false
+    },
+    {
+      "chainId": "FC-COOL-003",
+      "family": "arrefecimento",
+      "originVersion": "1.3.12",
+      "status": "revisao_critica_editorial_nao_homologacao",
+      "mechanicalHypothesisRetained": true,
+      "systemicCauseUnverified": true,
+      "reviewScope": "Critica de sustentação causal; não é parecer independente e não define culpabilidade.",
+      "documentedPhysicalMechanism": "Acionamento ou comando do ventilador pode fornecer fluxo de ar abaixo da demanda do pacote de trocadores.",
+      "missingCausalBridge": "Não pressupor correia; faltam arquitetura, leitura de comando/resposta, fluxo de ar e distinção de circulação hidráulica.",
+      "rootCandidateReviews": [
+        {
+          "id": "SYS-FC-COOL-003-R1",
+          "originalClaim": "Configuração/controle do acionamento incompatível com requisito — requer identificar arquitetura e parametrização OEM.",
+          "hypothesisCategory": "control_configuration",
+          "minimumIndependentEvidence": [
+            "Arquitetura do ventilador, demanda, comando e resposta medidos",
+            "Versão de controle e comparação com referência OEM"
+          ],
+          "nonOrganizationalAlternative": "Colmeia suja pode explicar alta temperatura com ventilador normal",
+          "presentProofOfProcessDeviation": false,
+          "processRecordsExamined": false,
+          "attributedFaultToPeopleOrTeam": false,
+          "causalConclusion": "nao_demonstrada",
+          "actionsUntilVerified": "Coletar documentação, investigar contraprovas e obter revisão humana independente; sem alteração de status causal."
+        },
+        {
+          "id": "SYS-FC-COOL-003-R2",
+          "originalClaim": "Inspeção/manutenção do mecanismo de acionamento insuficiente — comprovar desgaste, histórico e requisito.",
+          "hypothesisCategory": "preventive_strategy",
+          "minimumIndependentEvidence": [
+            "Inspeções do acionamento aplicável e histórico de manutenção",
+            "Teste funcional e evidência física de dano em transmissão/comando"
+          ],
+          "nonOrganizationalAlternative": "Falha eletrônica inesperada não comprova plano insuficiente",
+          "presentProofOfProcessDeviation": false,
+          "processRecordsExamined": false,
+          "attributedFaultToPeopleOrTeam": false,
+          "causalConclusion": "nao_demonstrada",
+          "actionsUntilVerified": "Coletar documentação, investigar contraprovas e obter revisão humana independente; sem alteração de status causal."
+        }
+      ],
+      "sourcesGeneral": [
+        "CAT-COOLING-HEAT-CHAIN",
+        "CAT-COOLING-FAN-REVERSE"
+      ],
+      "applicabilityStatus": "nao_verificada_por_serie",
+      "reviewerPrimary": null,
+      "reviewerIndependent": null,
+      "reviewDecision": null,
+      "systemicRootCauseConfirmed": false
+    },
+    {
+      "chainId": "FC-COOL-004",
+      "family": "arrefecimento",
+      "originVersion": "1.3.12",
+      "status": "revisao_critica_editorial_nao_homologacao",
+      "mechanicalHypothesisRetained": true,
+      "systemicCauseUnverified": true,
+      "reviewScope": "Critica de sustentação causal; não é parecer independente e não define culpabilidade.",
+      "documentedPhysicalMechanism": "Depósitos em tubos/canais podem aumentar resistência à passagem do arrefecedor e prejudicar troca térmica.",
+      "missingCausalBridge": "Sem ensaio e inspeção OEM não separam depósitos internos, sujidade externa, termostato e bomba.",
+      "rootCandidateReviews": [
+        {
+          "id": "SYS-FC-COOL-004-R1",
+          "originalClaim": "Tratamento/controle de qualidade do arrefecedor inadequado — necessita histórico, composição, produto e amostras.",
+          "hypothesisCategory": "coolant_chemistry_control",
+          "minimumIndependentEvidence": [
+            "Produto, proporção e amostras de arrefecedor com histórico",
+            "Depósitos internos efetivos e rastreio de reposições"
+          ],
+          "nonOrganizationalAlternative": "Restrição pode resultar de corpo estranho de reparo pontual",
+          "presentProofOfProcessDeviation": false,
+          "processRecordsExamined": false,
+          "attributedFaultToPeopleOrTeam": false,
+          "causalConclusion": "nao_demonstrada",
+          "actionsUntilVerified": "Coletar documentação, investigar contraprovas e obter revisão humana independente; sem alteração de status causal."
+        },
+        {
+          "id": "SYS-FC-COOL-004-R2",
+          "originalClaim": "Procedimento de manutenção ou limpeza do circuito insuficiente — requer histórico de intervenção e resíduos internos.",
+          "hypothesisCategory": "maintenance_process",
+          "minimumIndependentEvidence": [
+            "Histórico de limpeza/troca e procedimento efetivamente utilizado",
+            "Inspeção e análise do tipo de depósito no trocador"
+          ],
+          "nonOrganizationalAlternative": "Ventilação deficiente pode causar aquecimento sem bloqueio interno",
+          "presentProofOfProcessDeviation": false,
+          "processRecordsExamined": false,
+          "attributedFaultToPeopleOrTeam": false,
+          "causalConclusion": "nao_demonstrada",
+          "actionsUntilVerified": "Coletar documentação, investigar contraprovas e obter revisão humana independente; sem alteração de status causal."
+        }
+      ],
+      "sourcesGeneral": [
+        "CAT-RADIATOR-CARE",
+        "CAT-COOLING-HEAT-CHAIN"
+      ],
+      "applicabilityStatus": "nao_verificada_por_serie",
+      "reviewerPrimary": null,
+      "reviewerIndependent": null,
+      "reviewDecision": null,
+      "systemicRootCauseConfirmed": false
+    },
+    {
+      "chainId": "FC-TRACK-001",
+      "family": "material_rodante",
+      "originVersion": "1.3.12",
+      "status": "revisao_critica_editorial_nao_homologacao",
+      "mechanicalHypothesisRetained": true,
+      "systemicCauseUnverified": true,
+      "reviewScope": "Critica de sustentação causal; não é parecer independente e não define culpabilidade.",
+      "documentedPhysicalMechanism": "Material compactado pode restringir a rotação e provocar deslizamento relativo, atrito e desgaste da superfície.",
+      "missingCausalBridge": "Termometria isolada não distingue detritos de falha de rolamento/vedação ou tensão inadequada da esteira.",
+      "rootCandidateReviews": [
+        {
+          "id": "SYS-FC-TRACK-001-R1",
+          "originalClaim": "Controle de acúmulo de material no rodante inadequado ao ambiente — avaliar condições de frente e rotina de limpeza.",
+          "hypothesisCategory": "environmental_control",
+          "minimumIndependentEvidence": [
+            "Condição operacional de solo e acúmulo junto ao rolete",
+            "Histórico de limpeza e duração da exposição"
+          ],
+          "nonOrganizationalAlternative": "Detrito compactado pode acumular após uma única passagem",
+          "presentProofOfProcessDeviation": false,
+          "processRecordsExamined": false,
+          "attributedFaultToPeopleOrTeam": false,
+          "causalConclusion": "nao_demonstrada",
+          "actionsUntilVerified": "Coletar documentação, investigar contraprovas e obter revisão humana independente; sem alteração de status causal."
+        },
+        {
+          "id": "SYS-FC-TRACK-001-R2",
+          "originalClaim": "Arranjo de proteção/inspeção do chassi insuficiente — exigir evidência de projeto e histórico, sem presumir deficiência.",
+          "hypothesisCategory": "engineering_configuration",
+          "minimumIndependentEvidence": [
+            "Desenho de proteção do conjunto rodante e ajustes por arranjo",
+            "Registro de alterações, estado de acessórios e inspeção em campo"
+          ],
+          "nonOrganizationalAlternative": "Rolamento danificado pode aquecer sem acúmulo externo",
+          "presentProofOfProcessDeviation": false,
+          "processRecordsExamined": false,
+          "attributedFaultToPeopleOrTeam": false,
+          "causalConclusion": "nao_demonstrada",
+          "actionsUntilVerified": "Coletar documentação, investigar contraprovas e obter revisão humana independente; sem alteração de status causal."
+        }
+      ],
+      "sourcesGeneral": [
+        "CAT-DOZER-UC-MAINT",
+        "CAT-STEEL-TRACKS"
+      ],
+      "applicabilityStatus": "nao_verificada_por_serie",
+      "reviewerPrimary": null,
+      "reviewerIndependent": null,
+      "reviewDecision": null,
+      "systemicRootCauseConfirmed": false
+    },
+    {
+      "chainId": "FC-TRACK-002",
+      "family": "material_rodante",
+      "originVersion": "1.3.12",
+      "status": "revisao_critica_editorial_nao_homologacao",
+      "mechanicalHypothesisRetained": true,
+      "systemicCauseUnverified": true,
+      "reviewScope": "Critica de sustentação causal; não é parecer independente e não define culpabilidade.",
+      "documentedPhysicalMechanism": "Falha de vedação pode reduzir retenção de lubrificante e favorecer desgaste interno, se o fluido realmente vier do rolete.",
+      "missingCausalBridge": "Fuga aparente pode provir de outro componente; não foram verificados volume de fluido, vedação ou giro.",
+      "rootCandidateReviews": [
+        {
+          "id": "SYS-FC-TRACK-002-R1",
+          "originalClaim": "Controle de contaminação/vedação inadequado para a condição operacional — necessita identificação e histórico OEM.",
+          "hypothesisCategory": "contamination_control",
+          "minimumIndependentEvidence": [
+            "Especificação da vedação e mecanismo de entrada de abrasivos",
+            "Inspeções e origem física do óleo junto ao rolete"
+          ],
+          "nonOrganizationalAlternative": "Fluido escorrido de outro conjunto simula fuga de vedação",
+          "presentProofOfProcessDeviation": false,
+          "processRecordsExamined": false,
+          "attributedFaultToPeopleOrTeam": false,
+          "causalConclusion": "nao_demonstrada",
+          "actionsUntilVerified": "Coletar documentação, investigar contraprovas e obter revisão humana independente; sem alteração de status causal."
+        },
+        {
+          "id": "SYS-FC-TRACK-002-R2",
+          "originalClaim": "Prática de inspeção/substituição de vedadores insuficiente — comprovar cronologia e procedimento aplicado.",
+          "hypothesisCategory": "preventive_strategy",
+          "minimumIndependentEvidence": [
+            "Histórico de inspeções e critérios OEM para o rolete identificado",
+            "Condição interna/externa documentada após isolamento seguro"
+          ],
+          "nonOrganizationalAlternative": "Falha por impacto único pode ocorrer com inspeção adequada",
+          "presentProofOfProcessDeviation": false,
+          "processRecordsExamined": false,
+          "attributedFaultToPeopleOrTeam": false,
+          "causalConclusion": "nao_demonstrada",
+          "actionsUntilVerified": "Coletar documentação, investigar contraprovas e obter revisão humana independente; sem alteração de status causal."
+        }
+      ],
+      "sourcesGeneral": [
+        "CAT-STEEL-TRACKS",
+        "CAT-DOZER-UC-MAINT"
+      ],
+      "applicabilityStatus": "nao_verificada_por_serie",
+      "reviewerPrimary": null,
+      "reviewerIndependent": null,
+      "reviewDecision": null,
+      "systemicRootCauseConfirmed": false
+    },
+    {
+      "chainId": "FC-TRACK-003",
+      "family": "material_rodante",
+      "originVersion": "1.3.12",
+      "status": "revisao_critica_editorial_nao_homologacao",
+      "mechanicalHypothesisRetained": true,
+      "systemicCauseUnverified": true,
+      "reviewScope": "Critica de sustentação causal; não é parecer independente e não define culpabilidade.",
+      "documentedPhysicalMechanism": "Guiamento/desalinhamento pode concentrar esforços e produzir desgaste lateral de roda-guia e corrente.",
+      "missingCausalBridge": "É preciso medir dimensão/posição e separar tensionamento ou rolete adjacente defeituoso de desgaste da roda-guia.",
+      "rootCandidateReviews": [
+        {
+          "id": "SYS-FC-TRACK-003-R1",
+          "originalClaim": "Ajuste de alinhamento ou tensionamento inadequado — exige valores OEM e histórico de configuração.",
+          "hypothesisCategory": "adjustment_control",
+          "minimumIndependentEvidence": [
+            "Geometria e limites CTS por posição e arranjo",
+            "Registros de alinhamento e tensionamento anteriores"
+          ],
+          "nonOrganizationalAlternative": "Rolete adjacente travado pode provocar contato anormal",
+          "presentProofOfProcessDeviation": false,
+          "processRecordsExamined": false,
+          "attributedFaultToPeopleOrTeam": false,
+          "causalConclusion": "nao_demonstrada",
+          "actionsUntilVerified": "Coletar documentação, investigar contraprovas e obter revisão humana independente; sem alteração de status causal."
+        },
+        {
+          "id": "SYS-FC-TRACK-003-R2",
+          "originalClaim": "Controle de desgaste/medições CTS insuficiente — exige evidência de inspeções e limite aplicado.",
+          "hypothesisCategory": "condition_monitoring",
+          "minimumIndependentEvidence": [
+            "Histórico CTS comparável, frequência de medição e critérios usados",
+            "Medidas repetidas e condição atual do rodante"
+          ],
+          "nonOrganizationalAlternative": "Desgaste localizado pode ocorrer após evento de impacto súbito",
+          "presentProofOfProcessDeviation": false,
+          "processRecordsExamined": false,
+          "attributedFaultToPeopleOrTeam": false,
+          "causalConclusion": "nao_demonstrada",
+          "actionsUntilVerified": "Coletar documentação, investigar contraprovas e obter revisão humana independente; sem alteração de status causal."
+        }
+      ],
+      "sourcesGeneral": [
+        "CAT-DOZER-UC-MAINT",
+        "CAT-CTS-UNDERCARRIAGE"
+      ],
+      "applicabilityStatus": "nao_verificada_por_serie",
+      "reviewerPrimary": null,
+      "reviewerIndependent": null,
+      "reviewDecision": null,
+      "systemicRootCauseConfirmed": false
+    },
+    {
+      "chainId": "FC-TRACK-004",
+      "family": "material_rodante",
+      "originVersion": "1.3.12",
+      "status": "revisao_critica_editorial_nao_homologacao",
+      "mechanicalHypothesisRetained": true,
+      "systemicCauseUnverified": true,
+      "reviewScope": "Critica de sustentação causal; não é parecer independente e não define culpabilidade.",
+      "documentedPhysicalMechanism": "Tensão excessiva ou insuficiente altera carga, atrito e engrenamento entre elos, rodas-guia e roletes.",
+      "missingCausalBridge": "Sem referência CTS/OMM e estado de acúmulo de solo, tensão medida e desgaste podem representar outros mecanismos.",
+      "rootCandidateReviews": [
+        {
+          "id": "SYS-FC-TRACK-004-R1",
+          "originalClaim": "Critério operacional de ajuste da esteira inadequado — só após confirmar procedimento por condição de terreno.",
+          "hypothesisCategory": "operational_adjustment",
+          "minimumIndependentEvidence": [
+            "Critério de flecha para terreno e configuração efetiva",
+            "Registros de ajuste e verificação após operação"
+          ],
+          "nonOrganizationalAlternative": "Material compactado altera tensão efetiva sem ajuste incorreto",
+          "presentProofOfProcessDeviation": false,
+          "processRecordsExamined": false,
+          "attributedFaultToPeopleOrTeam": false,
+          "causalConclusion": "nao_demonstrada",
+          "actionsUntilVerified": "Coletar documentação, investigar contraprovas e obter revisão humana independente; sem alteração de status causal."
+        },
+        {
+          "id": "SYS-FC-TRACK-004-R2",
+          "originalClaim": "Gestão de inspeção do tensionador insuficiente — exigir registros e confirmação de falha mecânica.",
+          "hypothesisCategory": "preventive_strategy",
+          "minimumIndependentEvidence": [
+            "Inspeção do tensionador, histórico de falha e parâmetros OEM",
+            "Teste de retenção e evidência de perda de ajuste"
+          ],
+          "nonOrganizationalAlternative": "Desgaste pode vir de roda-guia ou rolete com tensão correta",
+          "presentProofOfProcessDeviation": false,
+          "processRecordsExamined": false,
+          "attributedFaultToPeopleOrTeam": false,
+          "causalConclusion": "nao_demonstrada",
+          "actionsUntilVerified": "Coletar documentação, investigar contraprovas e obter revisão humana independente; sem alteração de status causal."
+        }
+      ],
+      "sourcesGeneral": [
+        "CAT-STEEL-TRACKS",
+        "CAT-DOZER-UC-MAINT"
+      ],
+      "applicabilityStatus": "nao_verificada_por_serie",
+      "reviewerPrimary": null,
+      "reviewerIndependent": null,
+      "reviewDecision": null,
+      "systemicRootCauseConfirmed": false
+    },
+    {
+      "chainId": "FC-TRACK-006",
+      "family": "material_rodante",
+      "originVersion": "1.3.12",
+      "status": "revisao_critica_editorial_nao_homologacao",
+      "mechanicalHypothesisRetained": true,
+      "systemicCauseUnverified": true,
+      "reviewScope": "Critica de sustentação causal; não é parecer independente e não define culpabilidade.",
+      "documentedPhysicalMechanism": "Assentamento, deformação permanente ou relaxação da interface pode reduzir força de aperto sem auto-rotação necessária.",
+      "missingCausalBridge": "Torque residual não é pré-carga inicial; sem marcação confiável é impossível excluir giro relativo.",
+      "rootCandidateReviews": [
+        {
+          "id": "SYS-FC-TRACK-006-R1",
+          "originalClaim": "Preparação das superfícies/seleção da junta inadequada — confirmar contato, revestimento e desenho efetivo.",
+          "hypothesisCategory": "joint_surface_preparation",
+          "minimumIndependentEvidence": [
+            "Estado documentado das superfícies de contato e especificação de junta",
+            "Medição da deformação e rastreio do conjunto instalado"
+          ],
+          "nonOrganizationalAlternative": "Giro do fixador pode gerar folga sem falha de preparação",
+          "presentProofOfProcessDeviation": false,
+          "processRecordsExamined": false,
+          "attributedFaultToPeopleOrTeam": false,
+          "causalConclusion": "nao_demonstrada",
+          "actionsUntilVerified": "Coletar documentação, investigar contraprovas e obter revisão humana independente; sem alteração de status causal."
+        },
+        {
+          "id": "SYS-FC-TRACK-006-R2",
+          "originalClaim": "Inspeção de pré-carga/controle de montagem insuficiente — conferir sequência e histórico de aperto autorizado.",
+          "hypothesisCategory": "installation_quality",
+          "minimumIndependentEvidence": [
+            "Sequência, ferramenta, método de aperto e autorização OEM",
+            "Evidência de rotação relativa e histórico de montagem"
+          ],
+          "nonOrganizationalAlternative": "Torque residual não equivale à força de aperto inicial",
+          "presentProofOfProcessDeviation": false,
+          "processRecordsExamined": false,
+          "attributedFaultToPeopleOrTeam": false,
+          "causalConclusion": "nao_demonstrada",
+          "actionsUntilVerified": "Coletar documentação, investigar contraprovas e obter revisão humana independente; sem alteração de status causal."
+        }
+      ],
+      "sourcesGeneral": [
+        "NORDLOCK-BOLT-LOOSENING",
+        "NORDLOCK-PRELOAD-GUIDANCE"
+      ],
+      "applicabilityStatus": "nao_verificada_por_serie",
+      "reviewerPrimary": null,
+      "reviewerIndependent": null,
+      "reviewDecision": null,
+      "systemicRootCauseConfirmed": false
+    },
+    {
+      "chainId": "FC-TRACK-007",
+      "family": "material_rodante",
+      "originVersion": "1.3.12",
+      "status": "revisao_critica_editorial_nao_homologacao",
+      "mechanicalHypothesisRetained": true,
+      "systemicCauseUnverified": true,
+      "reviewScope": "Critica de sustentação causal; não é parecer independente e não define culpabilidade.",
+      "documentedPhysicalMechanism": "Carregamento repetido pode iniciar e propagar trincas de fadiga até redução da seção resistente e ruptura.",
+      "missingCausalBridge": "Fragmentos/fractografia e histórico são necessários para distinguir fadiga, sobrecarga única e montagem incompleta.",
+      "rootCandidateReviews": [
+        {
+          "id": "SYS-FC-TRACK-007-R1",
+          "originalClaim": "Controle de pré-carga/escorregamento da junta inadequado — necessita registros e análise de solicitação.",
+          "hypothesisCategory": "joint_preload_control",
+          "minimumIndependentEvidence": [
+            "Identificação de fixador, montagem, torque-turn e histórico de serviço",
+            "Fractografia e sinais de escorregamento da junta"
+          ],
+          "nonOrganizationalAlternative": "Sobrecarga única pode fraturar sem perda prévia de pré-carga",
+          "presentProofOfProcessDeviation": false,
+          "processRecordsExamined": false,
+          "attributedFaultToPeopleOrTeam": false,
+          "causalConclusion": "nao_demonstrada",
+          "actionsUntilVerified": "Coletar documentação, investigar contraprovas e obter revisão humana independente; sem alteração de status causal."
+        },
+        {
+          "id": "SYS-FC-TRACK-007-R2",
+          "originalClaim": "Seleção ou integridade de fixador fora do requisito — confirmar PN, lote, tratamento e procedimento efetivo.",
+          "hypothesisCategory": "material_selection",
+          "minimumIndependentEvidence": [
+            "Lote, PN, tratamento, características metalúrgicas e efetividade OEM",
+            "Exame da superfície de fratura e rastreabilidade da peça"
+          ],
+          "nonOrganizationalAlternative": "Fadiga por solicitação externa pode ocorrer em material conforme",
+          "presentProofOfProcessDeviation": false,
+          "processRecordsExamined": false,
+          "attributedFaultToPeopleOrTeam": false,
+          "causalConclusion": "nao_demonstrada",
+          "actionsUntilVerified": "Coletar documentação, investigar contraprovas e obter revisão humana independente; sem alteração de status causal."
+        }
+      ],
+      "sourcesGeneral": [
+        "NORDLOCK-BOLTING-FAILURE",
+        "CAT-UC-DOZER-GUIDE"
+      ],
+      "applicabilityStatus": "nao_verificada_por_serie",
+      "reviewerPrimary": null,
+      "reviewerIndependent": null,
+      "reviewDecision": null,
+      "systemicRootCauseConfirmed": false
+    },
+    {
+      "chainId": "FC-TRACK-008",
+      "family": "material_rodante",
+      "originVersion": "1.3.12",
+      "status": "revisao_critica_editorial_nao_homologacao",
+      "mechanicalHypothesisRetained": true,
+      "systemicCauseUnverified": true,
+      "reviewScope": "Critica de sustentação causal; não é parecer independente e não define culpabilidade.",
+      "documentedPhysicalMechanism": "Movimento repetido entre faces de contato pode produzir desgaste por microdeslizamento e deformação dos furos.",
+      "missingCausalBridge": "Impacto externo e desgaste normal são concorrentes; não há dimensões, pré-carga nem cronologia.",
+      "rootCandidateReviews": [
+        {
+          "id": "SYS-FC-TRACK-008-R1",
+          "originalClaim": "Controle de retenção e reaperto de sapatas inadequado — requer inspeções e história de montagem.",
+          "hypothesisCategory": "joint_retention_control",
+          "minimumIndependentEvidence": [
+            "Rastreamento de montagem e evidências de pré-carga da interface",
+            "Marcas de deslocamento e cronologia do desgaste"
+          ],
+          "nonOrganizationalAlternative": "Impacto externo pode deformar interface sem soltura prévia",
+          "presentProofOfProcessDeviation": false,
+          "processRecordsExamined": false,
+          "attributedFaultToPeopleOrTeam": false,
+          "causalConclusion": "nao_demonstrada",
+          "actionsUntilVerified": "Coletar documentação, investigar contraprovas e obter revisão humana independente; sem alteração de status causal."
+        },
+        {
+          "id": "SYS-FC-TRACK-008-R2",
+          "originalClaim": "Seleção/estado de sapatas, elos e fixadores inadequados — dependerá de limites e configuração OEM.",
+          "hypothesisCategory": "component_selection",
+          "minimumIndependentEvidence": [
+            "PNs e dimensões de sapata, elo e fixadores por arranjo",
+            "Inspeção dimensional e padrão de desgaste CTS"
+          ],
+          "nonOrganizationalAlternative": "Desgaste de serviço pode ocorrer em conjunto correto",
+          "presentProofOfProcessDeviation": false,
+          "processRecordsExamined": false,
+          "attributedFaultToPeopleOrTeam": false,
+          "causalConclusion": "nao_demonstrada",
+          "actionsUntilVerified": "Coletar documentação, investigar contraprovas e obter revisão humana independente; sem alteração de status causal."
+        }
+      ],
+      "sourcesGeneral": [
+        "CAT-TRACK-BOLT-FUNCTION",
+        "NORDLOCK-BOLT-LOOSENING"
+      ],
+      "applicabilityStatus": "nao_verificada_por_serie",
+      "reviewerPrimary": null,
+      "reviewerIndependent": null,
+      "reviewDecision": null,
+      "systemicRootCauseConfirmed": false
+    },
+    {
+      "chainId": "FC-COOL-005",
+      "family": "arrefecimento",
+      "originVersion": "1.3.12",
+      "status": "revisao_critica_editorial_nao_homologacao",
+      "mechanicalHypothesisRetained": true,
+      "systemicCauseUnverified": true,
+      "reviewScope": "Critica de sustentação causal; não é parecer independente e não define culpabilidade.",
+      "documentedPhysicalMechanism": "Termostato com curso insuficiente pode restringir fluxo de arrefecedor para o radiador sob demanda térmica.",
+      "missingCausalBridge": "Sem ensaio de abertura e circulação não diferencia bomba insuficiente, restrição de ar ou sensores.",
+      "rootCandidateReviews": [
+        {
+          "id": "SYS-FC-COOL-005-R1",
+          "originalClaim": "Uso de termostato/arranjo incompatível com configuração — verificar peça e circuito por série.",
+          "hypothesisCategory": "component_compatibility",
+          "minimumIndependentEvidence": [
+            "Part number e curva de abertura termostática OEM efetivos",
+            "Ensaio termostático distinto de verificação de bomba"
+          ],
+          "nonOrganizationalAlternative": "Baixa vazão pode decorrer de rotor ou restrição do radiador",
+          "presentProofOfProcessDeviation": false,
+          "processRecordsExamined": false,
+          "attributedFaultToPeopleOrTeam": false,
+          "causalConclusion": "nao_demonstrada",
+          "actionsUntilVerified": "Coletar documentação, investigar contraprovas e obter revisão humana independente; sem alteração de status causal."
+        },
+        {
+          "id": "SYS-FC-COOL-005-R2",
+          "originalClaim": "Controle de qualidade/manutenção do fluido insuficiente — comprovar depósito e efeito no termostato.",
+          "hypothesisCategory": "coolant_chemistry_control",
+          "minimumIndependentEvidence": [
+            "Inspeção de depósito no termostato e histórico químico do fluido",
+            "Amostra representativa e evolução da condição do componente"
+          ],
+          "nonOrganizationalAlternative": "Travamento mecânico também pode ocorrer sem fluido não conforme",
+          "presentProofOfProcessDeviation": false,
+          "processRecordsExamined": false,
+          "attributedFaultToPeopleOrTeam": false,
+          "causalConclusion": "nao_demonstrada",
+          "actionsUntilVerified": "Coletar documentação, investigar contraprovas e obter revisão humana independente; sem alteração de status causal."
+        }
+      ],
+      "sourcesGeneral": [
+        "CAT-THERMOSTAT-REPLACEMENT",
+        "CAT-WATER-PUMP-REPLACEMENT"
+      ],
+      "applicabilityStatus": "nao_verificada_por_serie",
+      "reviewerPrimary": null,
+      "reviewerIndependent": null,
+      "reviewDecision": null,
+      "systemicRootCauseConfirmed": false
+    },
+    {
+      "chainId": "FC-COOL-006",
+      "family": "arrefecimento",
+      "originVersion": "1.3.12",
+      "status": "revisao_critica_editorial_nao_homologacao",
+      "mechanicalHypothesisRetained": true,
+      "systemicCauseUnverified": true,
+      "reviewScope": "Critica de sustentação causal; não é parecer independente e não define culpabilidade.",
+      "documentedPhysicalMechanism": "Termostato aberto prematuramente pode aumentar fluxo para radiador no aquecimento e alterar regulação.",
+      "missingCausalBridge": "Baixa carga/ambiente frio ou sensor errado podem explicar o sinal; não houve ensaio de termostato.",
+      "rootCandidateReviews": [
+        {
+          "id": "SYS-FC-COOL-006-R1",
+          "originalClaim": "Seleção de elemento/temperatura de abertura não conforme — somente com peça e dados OEM aplicáveis.",
+          "hypothesisCategory": "component_compatibility",
+          "minimumIndependentEvidence": [
+            "Identificação do termostato, temperatura de regulação OEM e instalação",
+            "Teste controlado e rastreio de substituição"
+          ],
+          "nonOrganizationalAlternative": "Baixa carga e ambiente frio podem retardar aquecimento normalmente",
+          "presentProofOfProcessDeviation": false,
+          "processRecordsExamined": false,
+          "attributedFaultToPeopleOrTeam": false,
+          "causalConclusion": "nao_demonstrada",
+          "actionsUntilVerified": "Coletar documentação, investigar contraprovas e obter revisão humana independente; sem alteração de status causal."
+        },
+        {
+          "id": "SYS-FC-COOL-006-R2",
+          "originalClaim": "Controle de montagem/regulação inadequado — comprovar procedimento e teste do circuito termostático.",
+          "hypothesisCategory": "installation_quality",
+          "minimumIndependentEvidence": [
+            "Procedimento de montagem de bypass e histórico de serviço",
+            "Inspeção de circuito, ensaio e resposta de temperatura"
+          ],
+          "nonOrganizationalAlternative": "Sensor defeituoso pode indicar baixa temperatura com termostato correto",
+          "presentProofOfProcessDeviation": false,
+          "processRecordsExamined": false,
+          "attributedFaultToPeopleOrTeam": false,
+          "causalConclusion": "nao_demonstrada",
+          "actionsUntilVerified": "Coletar documentação, investigar contraprovas e obter revisão humana independente; sem alteração de status causal."
+        }
+      ],
+      "sourcesGeneral": [
+        "CAT-THERMOSTAT-REPLACEMENT",
+        "CAT-EXC-COOL-CHECKLIST"
+      ],
+      "applicabilityStatus": "nao_verificada_por_serie",
+      "reviewerPrimary": null,
+      "reviewerIndependent": null,
+      "reviewDecision": null,
+      "systemicRootCauseConfirmed": false
+    },
+    {
+      "chainId": "FC-COOL-007",
+      "family": "arrefecimento",
+      "originVersion": "1.3.12",
+      "status": "revisao_critica_editorial_nao_homologacao",
+      "mechanicalHypothesisRetained": true,
+      "systemicCauseUnverified": true,
+      "reviewScope": "Critica de sustentação causal; não é parecer independente e não define culpabilidade.",
+      "documentedPhysicalMechanism": "Comando ou componentes da bomba podem não gerar circulação suficiente para o circuito efetivo.",
+      "missingCausalBridge": "Temperatura alta não identifica rotor nem separa termostato, restrição de passagem e ventilador.",
+      "rootCandidateReviews": [
+        {
+          "id": "SYS-FC-COOL-007-R1",
+          "originalClaim": "Manutenção/controle do acionamento do conjunto inadequado — requer prova de desgaste ou mau funcionamento.",
+          "hypothesisCategory": "drive_maintenance",
+          "minimumIndependentEvidence": [
+            "Estado de acionamento da bomba, inspeções e histórico de substituição",
+            "Teste de circulação isolando termostato/restrição de circuito"
+          ],
+          "nonOrganizationalAlternative": "Temperatura alta com bomba normal pode vir de ventilador ou colmeia",
+          "presentProofOfProcessDeviation": false,
+          "processRecordsExamined": false,
+          "attributedFaultToPeopleOrTeam": false,
+          "causalConclusion": "nao_demonstrada",
+          "actionsUntilVerified": "Coletar documentação, investigar contraprovas e obter revisão humana independente; sem alteração de status causal."
+        },
+        {
+          "id": "SYS-FC-COOL-007-R2",
+          "originalClaim": "Controle de qualidade do fluido/proteção do circuito inadequado — investigar restrições e condição da bomba.",
+          "hypothesisCategory": "coolant_chemistry_control",
+          "minimumIndependentEvidence": [
+            "Produto, controle de mistura e histórico de contaminação/arrefecedor",
+            "Inspeção de bomba e restrições internas comparando fluido"
+          ],
+          "nonOrganizationalAlternative": "Desgaste mecânico pode não decorrer de composição do fluido",
+          "presentProofOfProcessDeviation": false,
+          "processRecordsExamined": false,
+          "attributedFaultToPeopleOrTeam": false,
+          "causalConclusion": "nao_demonstrada",
+          "actionsUntilVerified": "Coletar documentação, investigar contraprovas e obter revisão humana independente; sem alteração de status causal."
+        }
+      ],
+      "sourcesGeneral": [
+        "CAT-WATER-PUMP-REPLACEMENT",
+        "CAT-THERMOSTAT-REPLACEMENT"
+      ],
+      "applicabilityStatus": "nao_verificada_por_serie",
+      "reviewerPrimary": null,
+      "reviewerIndependent": null,
+      "reviewDecision": null,
+      "systemicRootCauseConfirmed": false
+    },
+    {
+      "chainId": "FC-COOL-008",
+      "family": "arrefecimento",
+      "originVersion": "1.3.12",
+      "status": "revisao_critica_editorial_nao_homologacao",
+      "mechanicalHypothesisRetained": true,
+      "systemicCauseUnverified": true,
+      "reviewScope": "Critica de sustentação causal; não é parecer independente e não define culpabilidade.",
+      "documentedPhysicalMechanism": "Junta, vedação ou interface da bomba pode deixar de conter arrefecedor, levando a fuga externa.",
+      "missingCausalBridge": "Líquido pode ter escorrido de conexão superior; precisa identificar a origem e testar estanqueidade com método seguro.",
+      "rootCandidateReviews": [
+        {
+          "id": "SYS-FC-COOL-008-R1",
+          "originalClaim": "Montagem de junta/vedação em desacordo com procedimento — confirmar por série, peças e histórico.",
+          "hypothesisCategory": "installation_quality",
+          "minimumIndependentEvidence": [
+            "Procedimento, PN, tipo de vedação e histórico da bomba",
+            "Origem física de perda e inspeção de junta"
+          ],
+          "nonOrganizationalAlternative": "Mangueira adjacente pode escorrer sobre bomba sem falha de instalação",
+          "presentProofOfProcessDeviation": false,
+          "processRecordsExamined": false,
+          "attributedFaultToPeopleOrTeam": false,
+          "causalConclusion": "nao_demonstrada",
+          "actionsUntilVerified": "Coletar documentação, investigar contraprovas e obter revisão humana independente; sem alteração de status causal."
+        },
+        {
+          "id": "SYS-FC-COOL-008-R2",
+          "originalClaim": "Controle de fluido ou vida do vedador insuficiente — exigir inspeção de material, uso e intervenções.",
+          "hypothesisCategory": "seal_lifecycle_control",
+          "minimumIndependentEvidence": [
+            "Histórico e horas do vedador, produto fluido e inspeção",
+            "Exame de material/estado do conjunto e regime de serviço"
+          ],
+          "nonOrganizationalAlternative": "Falha abrupta ou dano externo não comprovam estratégia insuficiente",
+          "presentProofOfProcessDeviation": false,
+          "processRecordsExamined": false,
+          "attributedFaultToPeopleOrTeam": false,
+          "causalConclusion": "nao_demonstrada",
+          "actionsUntilVerified": "Coletar documentação, investigar contraprovas e obter revisão humana independente; sem alteração de status causal."
+        }
+      ],
+      "sourcesGeneral": [
+        "CAT-WATER-PUMP-REPLACEMENT",
+        "CAT-RADIATOR-CARE"
+      ],
+      "applicabilityStatus": "nao_verificada_por_serie",
+      "reviewerPrimary": null,
+      "reviewerIndependent": null,
+      "reviewDecision": null,
+      "systemicRootCauseConfirmed": false
+    }
+  ]
+}
