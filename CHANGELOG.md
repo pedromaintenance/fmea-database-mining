@@ -2,6 +2,15 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.6] — 2026-10-20 — Condição detectada, atividade preventiva e dano físico separados
+- Criada ontologia semântica independente com **7 condições**, **8 atividades**, **4 danos candidatos**, **4 bundles de regras** e **22 relações tipadas**.
+- Casos-modelo: água/sedimentos no combustível e drenagem/filtragem; sujeira externa, restrição interna, temperatura e vazamento do radiador.
+- Nenhuma condição é convertida automaticamente em dano; limpar/drenar não prova que havia defeito no componente.
+- Publicado JSON Schema versionado, novo validador `npm run semantics:validate` e **7 casos sintéticos de regressão** que bloqueiam falsa promoção a falha observada.
+- A ISO 13379-1:2025 foi indexada com base em seu resumo oficial; não alegamos acesso ou conformidade ao texto completo.
+- Métricas de tipos semânticos incluídas no relatório de qualidade e validação integrada ao CI.
+- Relatório técnico e roadmap atualizados; preservados os 10 bloqueios PM, os 24 mecanismos causais e todos os consumidores externos.
+
 ## [1.3.5] — 2026-10-20 — Classificação causal das lacunas preventivas
 - Diagnosticadas as 25 regras PM com rastreamento de modelo, sistema, grupo, subgrupo, componente e par dano/causa.
 - As 10 regras sem vínculo foram classificadas: 3 sem subgrupo elegível, 5 sem componente no tipo cadastrado e 2 sem par permitido.
