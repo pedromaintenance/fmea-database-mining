@@ -109,3 +109,17 @@ O [JSON Schema](../schemas/condition-action-damage.schema.json) documenta o cont
 
 **Exemplos restritivos:** água drenada do separador não prova dreno avariado; colmeia externamente limpa não prova que o radiador esteve obstruído internamente; aumento de temperatura não condena bomba ou termostato.
 
+
+## 11. Efeitos locais e sistêmicos como entidades rastreáveis (v1.3.7)
+
+A [camada de efeitos](../data/knowledge/causal-effects.v1.json) acrescenta **duas manifestações funcionais potenciais** para cada uma das 24 cadeias:
+
+- `localEffect`: impacto possível em peça, vedação, engrenagem, rolete, conexão ou conjunto específico;
+- `systemEffect`: consequência **condicional** na função maior — resfriar, transmitir torque, sustentar rodante, manter pressão ou conter fluido;
+- `propagationCondition` e `diagnosticCaveat`: contexto causal e o que não pode ser concluído apenas pelo sintoma.
+
+Não confundir **mecanismo** (processo material), **dano local**, **falha funcional**, **efeito sistêmico** e **observação de campo**. Por exemplo, sujidade na colmeia pode reduzir fluxo de ar (condição), eventualmente reduzir capacidade térmica (efeito), mas não demonstra radiador internamente obstruído nem temperatura efetivamente fora da especificação.
+
+Todos os efeitos possuem `status=possible_unobserved`, `severityRank=null`, `probability=null`, `oemSerialEffectivity=null` e `actualEventCount=0`. Não calcular RPN com hipóteses qualitativas. O validador exige correspondência 1:1 com as 24 cadeias e fontes preexistentes.
+
+[Contrato de efeitos](../schemas/causal-effects.schema.json) · [Teste de efeitos](../scripts/validate-causal-effects.mjs) · [Ciclo técnico](CICLO_2026-10-20_EFEITOS_MOTOR_HIDRAULICA_RODANTE.md)

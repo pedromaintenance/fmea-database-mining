@@ -2,7 +2,7 @@
 
 Banco de conhecimento **versionado** para investigar modos de falha, sintomas, evidências e causas em equipamentos móveis de mineração. Um consumidor possível é o jogo **[P.O.R.C.A.R.I.A. — Você Quebra, Eu Conserto](https://github.com/pedromaintenance/porcaria-voce-quebra-eu-conserto)**, mas o banco é independente: **este repositório não altera os consumidores**.
 
-> **Status:** versão do catálogo **1.3.6** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
+> **Status:** versão do catálogo **1.3.7** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
 
 ## O que queremos construir
 
@@ -127,6 +127,19 @@ Nova [ontologia de condições, atividades e danos](data/ontology/condition-acti
 - [Pesquisa e relatório técnico](docs/CICLO_2026-10-20_SEMANTICA_CONDICAO_ACAO_DANO.md)
 
 O comando `npm run semantics:validate` impede transformar uma condição medida ou ação planejada em falha física confirmada. **Água no combustível ≠ defeito do dreno**; **sujeira externa do radiador ≠ obstrução interna**.
+
+## Ciclo de efeitos funcionais e ampliação semântica (v1.3.7)
+
+O [modelo de condições/ações/danos](data/ontology/condition-action-damage.v1.json) passa a cobrir **motor diesel, hidráulica e rodante**, além de combustível e arrefecimento: **18 condições**, **18 atividades**, **9 danos candidatos**, **9 agrupamentos PM** e **53 relações**. Mantém distinção entre observação possível, inspeção planejada e dano ainda não confirmado.
+
+A nova [base de efeitos](data/knowledge/causal-effects.v1.json) diferencia **24 efeitos locais e 24 efeitos sistêmicos potenciais**, com condições de propagação e ressalvas. Nenhum efeito foi observado no equipamento. Não há severidade, probabilidade ou efetividade OEM preenchidas.
+
+- [Relatório de pesquisa e decisões técnicas](docs/CICLO_2026-10-20_EFEITOS_MOTOR_HIDRAULICA_RODANTE.md)
+- [Contrato JSON Schema dos efeitos](schemas/causal-effects.schema.json)
+- [14 testes sintéticos contra inferências indevidas](data/quality/semantic-regression-fixtures.v1.json)
+- `npm run semantics:validate` e `npm run effects:validate` rodam no CI.
+
+**Situação de curadoria:** as 10 lacunas de PM e as 24 cadeias sem homologação continuam abertas. Nenhum código SAP foi preenchido por aproximação.
 
 ## Comece por aqui
 

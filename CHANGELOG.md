@@ -2,6 +2,15 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.7] — 2026-10-20 — Efeitos locais/sistêmicos e motor, hidráulica e rodante
+- Ampliada a semântica para **18 condições, 18 atividades, 9 danos candidatos, 9 bundles preventivos e 53 relações**.
+- Foram incluídos filtro e lubrificação do motor, vazamento/pressão/óleo hidráulico, desgaste e temperatura de roletes e roda-guia.
+- Criada `data/knowledge/causal-effects.v1.json`, com **24 efeitos locais e 24 possíveis efeitos no sistema**, ressalvas de propagação, gravidade/probabilidade nulas e 0 eventos de campo.
+- Regressões sintéticas ampliadas de 7 para **14**; o validador semântico proíbe confirmação de dano por condição ou execução de serviço.
+- Criados `schemas/causal-effects.schema.json` e `scripts/validate-causal-effects.mjs` com checagem de fontes e de todos os 24 modos.
+- Literatura Caterpillar adicionada para filtros de motor, inspeções hidráulicas e CTS/rodante, sem importar valores e procedimentos de série.
+- Relatório de qualidade, documentação, roadmap e CI atualizados. Nenhuma alteração de consumidores nem novos vínculos SAP homologados.
+
 ## [1.3.6] — 2026-10-20 — Condição detectada, atividade preventiva e dano físico separados
 - Criada ontologia semântica independente com **7 condições**, **8 atividades**, **4 danos candidatos**, **4 bundles de regras** e **22 relações tipadas**.
 - Casos-modelo: água/sedimentos no combustível e drenagem/filtragem; sujeira externa, restrição interna, temperatura e vazamento do radiador.

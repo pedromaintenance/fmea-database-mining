@@ -1,6 +1,6 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 20/10/2026 · **Ciclo:** catálogo técnico v1.3.6 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 20/10/2026 · **Ciclo:** catálogo técnico v1.3.7 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
 
@@ -33,10 +33,30 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 | Relações preventivas públicas | 25 regras genéricas, gerador estrito por sistema/grupo/subgrupo | Candidatas, nenhuma homologada |
 | Diagnóstico diferencial | 12 roteiros / 36 hipóteses / 24 testes propostos | Candidatos sem ensaio realizado |
 | Ontologia v1 | 10 falhas funcionais, 22 sintomas, 15 mecanismos, 16 métodos de evidência, 4 interpretações | Taxonomia inicial, pendente de revisão |
-| Condição × ação × dano (v1.3.6) | 7 condições, 8 atividades, 4 danos candidatos, 4 bundles PM e 22 relações | Conceitual; nenhuma execução/condição real |
+| Condição × ação × dano (v1.3.7) | 18 condições, 18 atividades, 9 danos candidatos, 9 bundles PM e 53 relações | Conceitual; nenhuma execução/condição real |
+| Efeitos funcionais (v1.3.7) | 24 efeitos locais + 24 sistêmicos possíveis | Inferidos; 0 impactos observados ou severidades calculadas |
 | Enriquecimento | 12 roteiros classificados por falha funcional, sintomas e técnicas | Anotação manual, não prova de causa |
 
 **Observação:** as 159 tarefas de PM com subgrupo candidato foram obtidas em extração local anterior e **não** representam 159 associações homologadas. Contagens de vínculos estritos serão publicadas pelo relatório automático após cada alteração do gerador.
+
+## Ciclo concluído — 20/10/2026: motor, hidráulica, rodante e efeitos (v1.3.7)
+
+**Objetivo:** avançar da lista de sintomas e danos candidatos para consequências funcionais estruturadas, sem equiparar condição detectável a diagnóstico ou impacto observado.
+
+- [x] Estender [semântica](../data/ontology/condition-action-damage.v1.json) a filtro/óleo do motor, linhas e bombas hidráulicas e conjuntos roletes/roda-guia.
+- [x] Cobertura acumulada: **18 condições-alvo, 18 ações planejadas, 9 danos candidatos, 9 regras agrupadas e 53 relações tipadas**.
+- [x] Documentar **efeitos locais e efeitos no sistema para 24/24 cadeias causais** em [causal-effects.v1.json](../data/knowledge/causal-effects.v1.json).
+- [x] Em cada efeito, registrar ressalva diagnóstica, condição de propagação e bibliografia já vinculada à cadeia.
+- [x] Preservar `severityRank=null`, `probability=null`, `actualEventCount=0` e nenhuma atribuição OEM/SAP.
+- [x] Ampliar de 7 para **14 cenários sintéticos** que bloqueiam confirmação de dano por troca de filtro, pressão baixa, abrasão de mangueira, óleo contaminado, rolete quente ou CTS planejado.
+- [x] Integrar `npm run effects:validate` e `npm run semantics:validate` ao pipeline e ao relatório de qualidade.
+- [x] Registrar quatro fontes públicas Caterpillar adicionais com ressalvas e publicar [relatório completo de pesquisa](CICLO_2026-10-20_EFEITOS_MOTOR_HIDRAULICA_RODANTE.md).
+- [ ] **P0 — próximo ciclo:** modelar `evidenceRequirement`, contexto de amostragem, critérios de contraprova e aceitação de evidência.
+- [ ] **P0 — próximo ciclo:** formalizar revisão humana de `causalEffect` por engenharia e técnico de campo, com fonte OEM efetiva por número de série.
+- [ ] **P1:** revisar as 10 lacunas SAP de componentes e grupos; não relaxar junção para inflar vínculos.
+- [ ] **P1:** refinar causas circulares no catálogo sem criar código de causa ou probabilidade fictício.
+
+**Resultado:** 24/24 cadeias receberam **possíveis efeitos locais e sistêmicos**, mas **0** deles foram observados, classificados em severidade ou homologados por modelo/série. Os 10 bloqueios preventivos anteriores permanecem.
 
 ## Ciclo concluído — 20/10/2026: separar condição, atividade e dano (v1.3.6)
 
@@ -49,9 +69,10 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 - [x] Introduzir [JSON Schema](../schemas/condition-action-damage.schema.json), [validador semântico](../scripts/validate-condition-action-damage.mjs) e [7 cenários sintéticos de regressão](../data/quality/semantic-regression-fixtures.v1.json).
 - [x] Integrar validação e contadores da nova camada ao CI e ao relatório geral de qualidade.
 - [x] Publicar [relatório de pesquisa e decisões do ciclo](CICLO_2026-10-20_SEMANTICA_CONDICAO_ACAO_DANO.md).
-- [ ] Ampliar modelagem para filtro de óleo, desgaste do rodante, pressão hidráulica e condição do fluido.
+- [x] Ampliar modelagem para filtro de óleo, desgaste do rodante, pressão hidráulica e condição do fluido (v1.3.7).
 - [ ] Criar representação segregada de resultados observados autorizados, atos de manutenção executados e danos confirmados — **sem inserir dados reais confidenciais no repositório público**.
-- [ ] Registrar efeitos locais e efeitos sistêmicos e evidências discriminantes de cada cadeia.
+- [x] Registrar efeitos locais e sistêmicos candidatos em 24/24 cadeias (v1.3.7).
+- [ ] Revisar tecnicamente a propagação desses efeitos e seus métodos de evidência por modelo OEM.
 - [ ] Confrontar fontes OEM por modelo/série antes de homologar qualquer elo a um local funcional SAP.
 
 **Status de qualidade:** nenhum `conditionDetected` se torna `componentDamage` por simples importação; `actionPerformed` não substitui confirmação de avaria. A classificação dos **10 bloqueios de PM** permanece intacta: nenhum novo subgrupo ou peça foi inventado.
