@@ -1,0 +1,104 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Roteiro de diagnóstico causal com evidências planejadas",
+  "type": "object",
+  "required": [
+    "id",
+    "title",
+    "target",
+    "reportedSymptom",
+    "hypotheses",
+    "tests",
+    "mapping",
+    "review",
+    "evidenceStatus"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^PB-"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 10
+    },
+    "target": {
+      "type": "object",
+      "required": [
+        "modelIds",
+        "pmRuleIds"
+      ],
+      "properties": {
+        "modelIds": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        },
+        "pmRuleIds": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "reportedSymptom": {
+      "type": "object",
+      "required": [
+        "text",
+        "operatingContext",
+        "source"
+      ]
+    },
+    "hypotheses": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "label",
+          "expectedSigns",
+          "counterSigns"
+        ]
+      }
+    },
+    "tests": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "method",
+          "question",
+          "differentiates",
+          "possibleOutcomes",
+          "status"
+        ]
+      }
+    },
+    "mapping": {
+      "type": "object",
+      "required": [
+        "mode",
+        "locationId",
+        "componentCode",
+        "damageId",
+        "causeId"
+      ]
+    },
+    "review": {
+      "type": "object",
+      "required": [
+        "status"
+      ]
+    },
+    "evidenceStatus": {
+      "const": "sem_resultado_observado"
+    }
+  }
+}
