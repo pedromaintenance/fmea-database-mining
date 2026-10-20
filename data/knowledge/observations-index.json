@@ -1,0 +1,2312 @@
+{
+  "schema": "fmea-mining.knowledge-index.v1",
+  "version": "1.1.0",
+  "kind": "observations",
+  "status": "material_simulado",
+  "records": [
+    {
+      "id": "CF-01-1-VIS",
+      "caseId": "ELEC-CF-01-1",
+      "type": "inspecao_visual_simulada",
+      "text": "Foi encontrada oxidação e retenção deficiente em um conector. Ao movimentar o chicote, o sinal muda abruptamente.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-01-1-ELE",
+      "caseId": "ELEC-CF-01-1",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "No ponto de teste simulado, a alimentação do sensor está presente, mas a referência do sinal oscila sob movimentação.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-01-1-HIS",
+      "caseId": "ELEC-CF-01-1",
+      "type": "historico_simulado",
+      "text": "O histórico simulado mostra código intermitente em dias úmidos, após lavagem e vibração intensa.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-01-2-VIS",
+      "caseId": "ELEC-CF-01-2",
+      "type": "inspecao_visual_simulada",
+      "text": "Chicote roçando um suporte metálico. Isolamento desgastado e marca de contato com estrutura.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-01-2-ELE",
+      "caseId": "ELEC-CF-01-2",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "O teste de continuidade/isolamento, feito no circuito isolado conforme roteiro fictício, revela falha no trecho entre os conectores.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-01-2-HIS",
+      "caseId": "ELEC-CF-01-2",
+      "type": "historico_simulado",
+      "text": "A falha aparece com vibração e desaparece quando o conjunto fica parado.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-01-3-VIS",
+      "caseId": "ELEC-CF-01-3",
+      "type": "inspecao_visual_simulada",
+      "text": "Conectores limpos, pinos firmes e chicote sem danos visíveis; nada indica anomalia física externa.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-01-3-ELE",
+      "caseId": "ELEC-CF-01-3",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "Alimentação, aterramento e continuidade estão adequados no circuito didático, porém a saída do sensor permanece anormal.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-01-3-HIS",
+      "caseId": "ELEC-CF-01-3",
+      "type": "historico_simulado",
+      "text": "O valor saiu progressivamente da faixa esperada e permaneceu incoerente após limpeza e reteste.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-02-1-VIS",
+      "caseId": "ELEC-CF-02-1",
+      "type": "inspecao_visual_simulada",
+      "text": "Foi encontrada oxidação e retenção deficiente em um conector. Ao movimentar o chicote, o sinal muda abruptamente.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-02-1-ELE",
+      "caseId": "ELEC-CF-02-1",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "No ponto de teste simulado, a alimentação do sensor está presente, mas a referência do sinal oscila sob movimentação.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-02-1-HIS",
+      "caseId": "ELEC-CF-02-1",
+      "type": "historico_simulado",
+      "text": "O histórico simulado mostra código intermitente em dias úmidos, após lavagem e vibração intensa.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-02-2-VIS",
+      "caseId": "ELEC-CF-02-2",
+      "type": "inspecao_visual_simulada",
+      "text": "Chicote roçando um suporte metálico. Isolamento desgastado e marca de contato com estrutura.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-02-2-ELE",
+      "caseId": "ELEC-CF-02-2",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "O teste de continuidade/isolamento, feito no circuito isolado conforme roteiro fictício, revela falha no trecho entre os conectores.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-02-2-HIS",
+      "caseId": "ELEC-CF-02-2",
+      "type": "historico_simulado",
+      "text": "A falha aparece com vibração e desaparece quando o conjunto fica parado.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-02-3-VIS",
+      "caseId": "ELEC-CF-02-3",
+      "type": "inspecao_visual_simulada",
+      "text": "Conectores limpos, pinos firmes e chicote sem danos visíveis; nada indica anomalia física externa.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-02-3-ELE",
+      "caseId": "ELEC-CF-02-3",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "Alimentação, aterramento e continuidade estão adequados no circuito didático, porém a saída do sensor permanece anormal.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-02-3-HIS",
+      "caseId": "ELEC-CF-02-3",
+      "type": "historico_simulado",
+      "text": "O valor saiu progressivamente da faixa esperada e permaneceu incoerente após limpeza e reteste.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-03-1-VIS",
+      "caseId": "ELEC-CF-03-1",
+      "type": "inspecao_visual_simulada",
+      "text": "Foi encontrada oxidação e retenção deficiente em um conector. Ao movimentar o chicote, o sinal muda abruptamente.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-03-1-ELE",
+      "caseId": "ELEC-CF-03-1",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "No ponto de teste simulado, a alimentação do sensor está presente, mas a referência do sinal oscila sob movimentação.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-03-1-HIS",
+      "caseId": "ELEC-CF-03-1",
+      "type": "historico_simulado",
+      "text": "O histórico simulado mostra código intermitente em dias úmidos, após lavagem e vibração intensa.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-03-2-VIS",
+      "caseId": "ELEC-CF-03-2",
+      "type": "inspecao_visual_simulada",
+      "text": "Chicote roçando um suporte metálico. Isolamento desgastado e marca de contato com estrutura.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-03-2-ELE",
+      "caseId": "ELEC-CF-03-2",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "O teste de continuidade/isolamento, feito no circuito isolado conforme roteiro fictício, revela falha no trecho entre os conectores.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-03-2-HIS",
+      "caseId": "ELEC-CF-03-2",
+      "type": "historico_simulado",
+      "text": "A falha aparece com vibração e desaparece quando o conjunto fica parado.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-03-3-VIS",
+      "caseId": "ELEC-CF-03-3",
+      "type": "inspecao_visual_simulada",
+      "text": "Conectores limpos, pinos firmes e chicote sem danos visíveis; nada indica anomalia física externa.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-03-3-ELE",
+      "caseId": "ELEC-CF-03-3",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "Alimentação, aterramento e continuidade estão adequados no circuito didático, porém a saída do sensor permanece anormal.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-03-3-HIS",
+      "caseId": "ELEC-CF-03-3",
+      "type": "historico_simulado",
+      "text": "O valor saiu progressivamente da faixa esperada e permaneceu incoerente após limpeza e reteste.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-04-1-VIS",
+      "caseId": "ELEC-CF-04-1",
+      "type": "inspecao_visual_simulada",
+      "text": "Foi encontrada oxidação e retenção deficiente em um conector. Ao movimentar o chicote, o sinal muda abruptamente.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-04-1-ELE",
+      "caseId": "ELEC-CF-04-1",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "No ponto de teste simulado, a alimentação do sensor está presente, mas a referência do sinal oscila sob movimentação.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-04-1-HIS",
+      "caseId": "ELEC-CF-04-1",
+      "type": "historico_simulado",
+      "text": "O histórico simulado mostra código intermitente em dias úmidos, após lavagem e vibração intensa.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-04-2-VIS",
+      "caseId": "ELEC-CF-04-2",
+      "type": "inspecao_visual_simulada",
+      "text": "Chicote roçando um suporte metálico. Isolamento desgastado e marca de contato com estrutura.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-04-2-ELE",
+      "caseId": "ELEC-CF-04-2",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "O teste de continuidade/isolamento, feito no circuito isolado conforme roteiro fictício, revela falha no trecho entre os conectores.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-04-2-HIS",
+      "caseId": "ELEC-CF-04-2",
+      "type": "historico_simulado",
+      "text": "A falha aparece com vibração e desaparece quando o conjunto fica parado.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-04-3-VIS",
+      "caseId": "ELEC-CF-04-3",
+      "type": "inspecao_visual_simulada",
+      "text": "Conectores limpos, pinos firmes e chicote sem danos visíveis; nada indica anomalia física externa.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-04-3-ELE",
+      "caseId": "ELEC-CF-04-3",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "Alimentação, aterramento e continuidade estão adequados no circuito didático, porém a saída do sensor permanece anormal.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-04-3-HIS",
+      "caseId": "ELEC-CF-04-3",
+      "type": "historico_simulado",
+      "text": "O valor saiu progressivamente da faixa esperada e permaneceu incoerente após limpeza e reteste.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-05-1-VIS",
+      "caseId": "ELEC-CF-05-1",
+      "type": "inspecao_visual_simulada",
+      "text": "Fixação do sensor frouxa; folga ao alvo está fora da referência didática.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-05-1-ELE",
+      "caseId": "ELEC-CF-05-1",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "Alimentação normal no simulador; a forma de onda fica irregular devido à distância variável sensor-alvo.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-05-1-HIS",
+      "caseId": "ELEC-CF-05-1",
+      "type": "historico_simulado",
+      "text": "Depois de intervenção mecânica, a falha passou a ocorrer em baixa velocidade.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-05-2-VIS",
+      "caseId": "ELEC-CF-05-2",
+      "type": "inspecao_visual_simulada",
+      "text": "Alvo tem dente ou referência danificada; superfície de leitura irregular.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-05-2-ELE",
+      "caseId": "ELEC-CF-05-2",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "Sensor e chicote respondem normalmente quando excitados em bancada didática; o padrão de pulsos apresenta lacunas por defeito mecânico do alvo.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-05-2-HIS",
+      "caseId": "ELEC-CF-05-2",
+      "type": "historico_simulado",
+      "text": "Código e ruído surgiram depois de impacto no conjunto.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-05-3-VIS",
+      "caseId": "ELEC-CF-05-3",
+      "type": "inspecao_visual_simulada",
+      "text": "Conector com vedação rompida e cabeamento tracionado próximo ao sensor.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-05-3-ELE",
+      "caseId": "ELEC-CF-05-3",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "O sinal digital do circuito fictício some ao movimentar a conexão, apesar de sensor e alvo estarem íntegros.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-05-3-HIS",
+      "caseId": "ELEC-CF-05-3",
+      "type": "historico_simulado",
+      "text": "Ocorre principalmente com vibração e movimento sob carga.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-06-1-VIS",
+      "caseId": "ELEC-CF-06-1",
+      "type": "inspecao_visual_simulada",
+      "text": "Conector firme e chicote preservado. O atuador tem aspecto externo normal.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-06-1-ELE",
+      "caseId": "ELEC-CF-06-1",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "Após isolamento seguro do circuito, a bobina apresenta resistência incompatível com a faixa do módulo simulado (circuito aberto).",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-06-1-HIS",
+      "caseId": "ELEC-CF-06-1",
+      "type": "historico_simulado",
+      "text": "O código tornou-se permanente após aquecimento repetido do atuador.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-06-2-VIS",
+      "caseId": "ELEC-CF-06-2",
+      "type": "inspecao_visual_simulada",
+      "text": "O chicote passa por região de flexão e um trecho está parcialmente rompido.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-06-2-ELE",
+      "caseId": "ELEC-CF-06-2",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "Bobina mede normalmente no instrumento didático; não há continuidade entre os pontos de teste do chicote isolado.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-06-2-HIS",
+      "caseId": "ELEC-CF-06-2",
+      "type": "historico_simulado",
+      "text": "Falha ocorria apenas durante movimento do implemento, depois tornou-se contínua.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-06-3-VIS",
+      "caseId": "ELEC-CF-06-3",
+      "type": "inspecao_visual_simulada",
+      "text": "Terminal recuado na caixa do conector; sinais de aquecimento localizado e travamento imperfeito.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-06-3-ELE",
+      "caseId": "ELEC-CF-06-3",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "A bobina está íntegra; a queda de tensão didática aparece no conjunto de terminais quando o circuito é acionado.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-06-3-HIS",
+      "caseId": "ELEC-CF-06-3",
+      "type": "historico_simulado",
+      "text": "Falha intermitente recorrente após manutenção recente em conectores.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-07-1-VIS",
+      "caseId": "ELEC-CF-07-1",
+      "type": "inspecao_visual_simulada",
+      "text": "Conector firme e chicote preservado. O atuador tem aspecto externo normal.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-07-1-ELE",
+      "caseId": "ELEC-CF-07-1",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "Após isolamento seguro do circuito, a bobina apresenta resistência incompatível com a faixa do módulo simulado (circuito aberto).",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-07-1-HIS",
+      "caseId": "ELEC-CF-07-1",
+      "type": "historico_simulado",
+      "text": "O código tornou-se permanente após aquecimento repetido do atuador.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-07-2-VIS",
+      "caseId": "ELEC-CF-07-2",
+      "type": "inspecao_visual_simulada",
+      "text": "O chicote passa por região de flexão e um trecho está parcialmente rompido.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-07-2-ELE",
+      "caseId": "ELEC-CF-07-2",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "Bobina mede normalmente no instrumento didático; não há continuidade entre os pontos de teste do chicote isolado.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-07-2-HIS",
+      "caseId": "ELEC-CF-07-2",
+      "type": "historico_simulado",
+      "text": "Falha ocorria apenas durante movimento do implemento, depois tornou-se contínua.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-07-3-VIS",
+      "caseId": "ELEC-CF-07-3",
+      "type": "inspecao_visual_simulada",
+      "text": "Terminal recuado na caixa do conector; sinais de aquecimento localizado e travamento imperfeito.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-07-3-ELE",
+      "caseId": "ELEC-CF-07-3",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "A bobina está íntegra; a queda de tensão didática aparece no conjunto de terminais quando o circuito é acionado.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-07-3-HIS",
+      "caseId": "ELEC-CF-07-3",
+      "type": "historico_simulado",
+      "text": "Falha intermitente recorrente após manutenção recente em conectores.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-08-1-VIS",
+      "caseId": "ELEC-CF-08-1",
+      "type": "inspecao_visual_simulada",
+      "text": "Conector firme e chicote preservado. O atuador tem aspecto externo normal.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-08-1-ELE",
+      "caseId": "ELEC-CF-08-1",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "Após isolamento seguro do circuito, a bobina apresenta resistência incompatível com a faixa do módulo simulado (circuito aberto).",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-08-1-HIS",
+      "caseId": "ELEC-CF-08-1",
+      "type": "historico_simulado",
+      "text": "O código tornou-se permanente após aquecimento repetido do atuador.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-08-2-VIS",
+      "caseId": "ELEC-CF-08-2",
+      "type": "inspecao_visual_simulada",
+      "text": "O chicote passa por região de flexão e um trecho está parcialmente rompido.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-08-2-ELE",
+      "caseId": "ELEC-CF-08-2",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "Bobina mede normalmente no instrumento didático; não há continuidade entre os pontos de teste do chicote isolado.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-08-2-HIS",
+      "caseId": "ELEC-CF-08-2",
+      "type": "historico_simulado",
+      "text": "Falha ocorria apenas durante movimento do implemento, depois tornou-se contínua.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-08-3-VIS",
+      "caseId": "ELEC-CF-08-3",
+      "type": "inspecao_visual_simulada",
+      "text": "Terminal recuado na caixa do conector; sinais de aquecimento localizado e travamento imperfeito.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-08-3-ELE",
+      "caseId": "ELEC-CF-08-3",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "A bobina está íntegra; a queda de tensão didática aparece no conjunto de terminais quando o circuito é acionado.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-08-3-HIS",
+      "caseId": "ELEC-CF-08-3",
+      "type": "historico_simulado",
+      "text": "Falha intermitente recorrente após manutenção recente em conectores.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-09-1-VIS",
+      "caseId": "ELEC-CF-09-1",
+      "type": "inspecao_visual_simulada",
+      "text": "Foi encontrada oxidação e retenção deficiente em um conector. Ao movimentar o chicote, o sinal muda abruptamente.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-09-1-ELE",
+      "caseId": "ELEC-CF-09-1",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "No ponto de teste simulado, a alimentação do sensor está presente, mas a referência do sinal oscila sob movimentação.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-09-1-HIS",
+      "caseId": "ELEC-CF-09-1",
+      "type": "historico_simulado",
+      "text": "O histórico simulado mostra código intermitente em dias úmidos, após lavagem e vibração intensa.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-09-2-VIS",
+      "caseId": "ELEC-CF-09-2",
+      "type": "inspecao_visual_simulada",
+      "text": "Chicote roçando um suporte metálico. Isolamento desgastado e marca de contato com estrutura.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-09-2-ELE",
+      "caseId": "ELEC-CF-09-2",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "O teste de continuidade/isolamento, feito no circuito isolado conforme roteiro fictício, revela falha no trecho entre os conectores.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-09-2-HIS",
+      "caseId": "ELEC-CF-09-2",
+      "type": "historico_simulado",
+      "text": "A falha aparece com vibração e desaparece quando o conjunto fica parado.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-09-3-VIS",
+      "caseId": "ELEC-CF-09-3",
+      "type": "inspecao_visual_simulada",
+      "text": "Conectores limpos, pinos firmes e chicote sem danos visíveis; nada indica anomalia física externa.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-09-3-ELE",
+      "caseId": "ELEC-CF-09-3",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "Alimentação, aterramento e continuidade estão adequados no circuito didático, porém a saída do sensor permanece anormal.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-09-3-HIS",
+      "caseId": "ELEC-CF-09-3",
+      "type": "historico_simulado",
+      "text": "O valor saiu progressivamente da faixa esperada e permaneceu incoerente após limpeza e reteste.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-10-1-VIS",
+      "caseId": "ELEC-CF-10-1",
+      "type": "inspecao_visual_simulada",
+      "text": "Fixação do sensor frouxa; folga ao alvo está fora da referência didática.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-10-1-ELE",
+      "caseId": "ELEC-CF-10-1",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "Alimentação normal no simulador; a forma de onda fica irregular devido à distância variável sensor-alvo.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-10-1-HIS",
+      "caseId": "ELEC-CF-10-1",
+      "type": "historico_simulado",
+      "text": "Depois de intervenção mecânica, a falha passou a ocorrer em baixa velocidade.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-10-2-VIS",
+      "caseId": "ELEC-CF-10-2",
+      "type": "inspecao_visual_simulada",
+      "text": "Alvo tem dente ou referência danificada; superfície de leitura irregular.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-10-2-ELE",
+      "caseId": "ELEC-CF-10-2",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "Sensor e chicote respondem normalmente quando excitados em bancada didática; o padrão de pulsos apresenta lacunas por defeito mecânico do alvo.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-10-2-HIS",
+      "caseId": "ELEC-CF-10-2",
+      "type": "historico_simulado",
+      "text": "Código e ruído surgiram depois de impacto no conjunto.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-10-3-VIS",
+      "caseId": "ELEC-CF-10-3",
+      "type": "inspecao_visual_simulada",
+      "text": "Conector com vedação rompida e cabeamento tracionado próximo ao sensor.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-10-3-ELE",
+      "caseId": "ELEC-CF-10-3",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "O sinal digital do circuito fictício some ao movimentar a conexão, apesar de sensor e alvo estarem íntegros.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-10-3-HIS",
+      "caseId": "ELEC-CF-10-3",
+      "type": "historico_simulado",
+      "text": "Ocorre principalmente com vibração e movimento sob carga.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-11-1-VIS",
+      "caseId": "ELEC-CF-11-1",
+      "type": "inspecao_visual_simulada",
+      "text": "Fixação do sensor frouxa; folga ao alvo está fora da referência didática.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-11-1-ELE",
+      "caseId": "ELEC-CF-11-1",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "Alimentação normal no simulador; a forma de onda fica irregular devido à distância variável sensor-alvo.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-11-1-HIS",
+      "caseId": "ELEC-CF-11-1",
+      "type": "historico_simulado",
+      "text": "Depois de intervenção mecânica, a falha passou a ocorrer em baixa velocidade.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-11-2-VIS",
+      "caseId": "ELEC-CF-11-2",
+      "type": "inspecao_visual_simulada",
+      "text": "Alvo tem dente ou referência danificada; superfície de leitura irregular.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-11-2-ELE",
+      "caseId": "ELEC-CF-11-2",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "Sensor e chicote respondem normalmente quando excitados em bancada didática; o padrão de pulsos apresenta lacunas por defeito mecânico do alvo.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-11-2-HIS",
+      "caseId": "ELEC-CF-11-2",
+      "type": "historico_simulado",
+      "text": "Código e ruído surgiram depois de impacto no conjunto.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-11-3-VIS",
+      "caseId": "ELEC-CF-11-3",
+      "type": "inspecao_visual_simulada",
+      "text": "Conector com vedação rompida e cabeamento tracionado próximo ao sensor.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-11-3-ELE",
+      "caseId": "ELEC-CF-11-3",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "O sinal digital do circuito fictício some ao movimentar a conexão, apesar de sensor e alvo estarem íntegros.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-11-3-HIS",
+      "caseId": "ELEC-CF-11-3",
+      "type": "historico_simulado",
+      "text": "Ocorre principalmente com vibração e movimento sob carga.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-12-1-VIS",
+      "caseId": "ELEC-CF-12-1",
+      "type": "inspecao_visual_simulada",
+      "text": "Conector firme e chicote preservado. O atuador tem aspecto externo normal.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-12-1-ELE",
+      "caseId": "ELEC-CF-12-1",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "Após isolamento seguro do circuito, a bobina apresenta resistência incompatível com a faixa do módulo simulado (circuito aberto).",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-12-1-HIS",
+      "caseId": "ELEC-CF-12-1",
+      "type": "historico_simulado",
+      "text": "O código tornou-se permanente após aquecimento repetido do atuador.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-12-2-VIS",
+      "caseId": "ELEC-CF-12-2",
+      "type": "inspecao_visual_simulada",
+      "text": "O chicote passa por região de flexão e um trecho está parcialmente rompido.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-12-2-ELE",
+      "caseId": "ELEC-CF-12-2",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "Bobina mede normalmente no instrumento didático; não há continuidade entre os pontos de teste do chicote isolado.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-12-2-HIS",
+      "caseId": "ELEC-CF-12-2",
+      "type": "historico_simulado",
+      "text": "Falha ocorria apenas durante movimento do implemento, depois tornou-se contínua.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-12-3-VIS",
+      "caseId": "ELEC-CF-12-3",
+      "type": "inspecao_visual_simulada",
+      "text": "Terminal recuado na caixa do conector; sinais de aquecimento localizado e travamento imperfeito.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-12-3-ELE",
+      "caseId": "ELEC-CF-12-3",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "A bobina está íntegra; a queda de tensão didática aparece no conjunto de terminais quando o circuito é acionado.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-12-3-HIS",
+      "caseId": "ELEC-CF-12-3",
+      "type": "historico_simulado",
+      "text": "Falha intermitente recorrente após manutenção recente em conectores.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-13-1-VIS",
+      "caseId": "ELEC-CF-13-1",
+      "type": "inspecao_visual_simulada",
+      "text": "Uma resistência de terminação do barramento do cenário está fisicamente danificada.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-13-1-ELE",
+      "caseId": "ELEC-CF-13-1",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "Com rede desenergizada e arquitetura simulada documentada, a resistência de terminação medida difere do valor esperado do circuito didático.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-13-1-HIS",
+      "caseId": "ELEC-CF-13-1",
+      "type": "historico_simulado",
+      "text": "Perda de comunicação acomete vários módulos simultaneamente ao iniciar o turno.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-13-2-VIS",
+      "caseId": "ELEC-CF-13-2",
+      "type": "inspecao_visual_simulada",
+      "text": "Fusível e conector do módulo apresentam marcas de aquecimento; parte da rede continua ativa.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-13-2-ELE",
+      "caseId": "ELEC-CF-13-2",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "Alimentação do módulo ausente durante o evento, embora os condutores CAN permaneçam contínuos.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-13-2-HIS",
+      "caseId": "ELEC-CF-13-2",
+      "type": "historico_simulado",
+      "text": "A falha coincide com queda de tensão em cargas auxiliares.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-13-3-VIS",
+      "caseId": "ELEC-CF-13-3",
+      "type": "inspecao_visual_simulada",
+      "text": "Conector de rede com pino retraído e entrada de umidade.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-13-3-ELE",
+      "caseId": "ELEC-CF-13-3",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "A continuidade de um dos condutores de comunicação varia ao movimentar o chicote.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-13-3-HIS",
+      "caseId": "ELEC-CF-13-3",
+      "type": "historico_simulado",
+      "text": "Mensagens se perdem em terreno irregular; falha some temporariamente parado.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-14-1-VIS",
+      "caseId": "ELEC-CF-14-1",
+      "type": "inspecao_visual_simulada",
+      "text": "Inspeção revela indícios materiais coerentes com o alerta: condição anormal observável no sistema e sem erro aparente do sensor.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-14-1-ELE",
+      "caseId": "ELEC-CF-14-1",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "Medição independente do circuito didático confirma a tendência indicada no monitoramento.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-14-1-HIS",
+      "caseId": "ELEC-CF-14-1",
+      "type": "historico_simulado",
+      "text": "A anomalia evoluiu sob carga e persistiu após operação estabilizada.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-14-2-VIS",
+      "caseId": "ELEC-CF-14-2",
+      "type": "inspecao_visual_simulada",
+      "text": "Sem anomalia física compatível e pontos de inspeção regulares; não há evidência de falha mecânica no primeiro exame.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-14-2-ELE",
+      "caseId": "ELEC-CF-14-2",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "Instrumento independente do simulador indica valor normal, enquanto o sensor eletrônico informa valor anormal; alimentação está conforme esquema didático.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-14-2-HIS",
+      "caseId": "ELEC-CF-14-2",
+      "type": "historico_simulado",
+      "text": "O evento surgiu após manutenção do conector do sensor, sem alteração real de operação.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-14-3-VIS",
+      "caseId": "ELEC-CF-14-3",
+      "type": "inspecao_visual_simulada",
+      "text": "Sistema preservado e nível/fluxo/inspeções compatíveis com estado normal; não há evidência de dano.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-14-3-ELE",
+      "caseId": "ELEC-CF-14-3",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "Medição independente acompanha corretamente o evento; os parâmetros normalizam com retirada da condição de operação anormal.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-14-3-HIS",
+      "caseId": "ELEC-CF-14-3",
+      "type": "historico_simulado",
+      "text": "O evento ocorre exclusivamente sob condição de carga/uso inadequada do cenário e desaparece após correção operacional.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-15-1-VIS",
+      "caseId": "ELEC-CF-15-1",
+      "type": "inspecao_visual_simulada",
+      "text": "Inspeção revela indícios materiais coerentes com o alerta: condição anormal observável no sistema e sem erro aparente do sensor.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-15-1-ELE",
+      "caseId": "ELEC-CF-15-1",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "Medição independente do circuito didático confirma a tendência indicada no monitoramento.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-15-1-HIS",
+      "caseId": "ELEC-CF-15-1",
+      "type": "historico_simulado",
+      "text": "A anomalia evoluiu sob carga e persistiu após operação estabilizada.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-15-2-VIS",
+      "caseId": "ELEC-CF-15-2",
+      "type": "inspecao_visual_simulada",
+      "text": "Sem anomalia física compatível e pontos de inspeção regulares; não há evidência de falha mecânica no primeiro exame.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-15-2-ELE",
+      "caseId": "ELEC-CF-15-2",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "Instrumento independente do simulador indica valor normal, enquanto o sensor eletrônico informa valor anormal; alimentação está conforme esquema didático.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-15-2-HIS",
+      "caseId": "ELEC-CF-15-2",
+      "type": "historico_simulado",
+      "text": "O evento surgiu após manutenção do conector do sensor, sem alteração real de operação.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-15-3-VIS",
+      "caseId": "ELEC-CF-15-3",
+      "type": "inspecao_visual_simulada",
+      "text": "Sistema preservado e nível/fluxo/inspeções compatíveis com estado normal; não há evidência de dano.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-15-3-ELE",
+      "caseId": "ELEC-CF-15-3",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "Medição independente acompanha corretamente o evento; os parâmetros normalizam com retirada da condição de operação anormal.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-15-3-HIS",
+      "caseId": "ELEC-CF-15-3",
+      "type": "historico_simulado",
+      "text": "O evento ocorre exclusivamente sob condição de carga/uso inadequada do cenário e desaparece após correção operacional.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-16-1-VIS",
+      "caseId": "ELEC-CF-16-1",
+      "type": "inspecao_visual_simulada",
+      "text": "Inspeção revela indícios materiais coerentes com o alerta: condição anormal observável no sistema e sem erro aparente do sensor.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-16-1-ELE",
+      "caseId": "ELEC-CF-16-1",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "Medição independente do circuito didático confirma a tendência indicada no monitoramento.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-16-1-HIS",
+      "caseId": "ELEC-CF-16-1",
+      "type": "historico_simulado",
+      "text": "A anomalia evoluiu sob carga e persistiu após operação estabilizada.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-16-2-VIS",
+      "caseId": "ELEC-CF-16-2",
+      "type": "inspecao_visual_simulada",
+      "text": "Sem anomalia física compatível e pontos de inspeção regulares; não há evidência de falha mecânica no primeiro exame.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-16-2-ELE",
+      "caseId": "ELEC-CF-16-2",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "Instrumento independente do simulador indica valor normal, enquanto o sensor eletrônico informa valor anormal; alimentação está conforme esquema didático.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-16-2-HIS",
+      "caseId": "ELEC-CF-16-2",
+      "type": "historico_simulado",
+      "text": "O evento surgiu após manutenção do conector do sensor, sem alteração real de operação.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-16-3-VIS",
+      "caseId": "ELEC-CF-16-3",
+      "type": "inspecao_visual_simulada",
+      "text": "Sistema preservado e nível/fluxo/inspeções compatíveis com estado normal; não há evidência de dano.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-16-3-ELE",
+      "caseId": "ELEC-CF-16-3",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "Medição independente acompanha corretamente o evento; os parâmetros normalizam com retirada da condição de operação anormal.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-16-3-HIS",
+      "caseId": "ELEC-CF-16-3",
+      "type": "historico_simulado",
+      "text": "O evento ocorre exclusivamente sob condição de carga/uso inadequada do cenário e desaparece após correção operacional.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-17-1-VIS",
+      "caseId": "ELEC-CF-17-1",
+      "type": "inspecao_visual_simulada",
+      "text": "Inspeção revela indícios materiais coerentes com o alerta: condição anormal observável no sistema e sem erro aparente do sensor.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-17-1-ELE",
+      "caseId": "ELEC-CF-17-1",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "Medição independente do circuito didático confirma a tendência indicada no monitoramento.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-17-1-HIS",
+      "caseId": "ELEC-CF-17-1",
+      "type": "historico_simulado",
+      "text": "A anomalia evoluiu sob carga e persistiu após operação estabilizada.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-17-2-VIS",
+      "caseId": "ELEC-CF-17-2",
+      "type": "inspecao_visual_simulada",
+      "text": "Sem anomalia física compatível e pontos de inspeção regulares; não há evidência de falha mecânica no primeiro exame.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-17-2-ELE",
+      "caseId": "ELEC-CF-17-2",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "Instrumento independente do simulador indica valor normal, enquanto o sensor eletrônico informa valor anormal; alimentação está conforme esquema didático.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-17-2-HIS",
+      "caseId": "ELEC-CF-17-2",
+      "type": "historico_simulado",
+      "text": "O evento surgiu após manutenção do conector do sensor, sem alteração real de operação.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-17-3-VIS",
+      "caseId": "ELEC-CF-17-3",
+      "type": "inspecao_visual_simulada",
+      "text": "Sistema preservado e nível/fluxo/inspeções compatíveis com estado normal; não há evidência de dano.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-17-3-ELE",
+      "caseId": "ELEC-CF-17-3",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "Medição independente acompanha corretamente o evento; os parâmetros normalizam com retirada da condição de operação anormal.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-17-3-HIS",
+      "caseId": "ELEC-CF-17-3",
+      "type": "historico_simulado",
+      "text": "O evento ocorre exclusivamente sob condição de carga/uso inadequada do cenário e desaparece após correção operacional.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-18-1-VIS",
+      "caseId": "ELEC-CF-18-1",
+      "type": "inspecao_visual_simulada",
+      "text": "Inspeção revela indícios materiais coerentes com o alerta: condição anormal observável no sistema e sem erro aparente do sensor.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-18-1-ELE",
+      "caseId": "ELEC-CF-18-1",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "Medição independente do circuito didático confirma a tendência indicada no monitoramento.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-18-1-HIS",
+      "caseId": "ELEC-CF-18-1",
+      "type": "historico_simulado",
+      "text": "A anomalia evoluiu sob carga e persistiu após operação estabilizada.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-18-2-VIS",
+      "caseId": "ELEC-CF-18-2",
+      "type": "inspecao_visual_simulada",
+      "text": "Sem anomalia física compatível e pontos de inspeção regulares; não há evidência de falha mecânica no primeiro exame.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-18-2-ELE",
+      "caseId": "ELEC-CF-18-2",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "Instrumento independente do simulador indica valor normal, enquanto o sensor eletrônico informa valor anormal; alimentação está conforme esquema didático.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-18-2-HIS",
+      "caseId": "ELEC-CF-18-2",
+      "type": "historico_simulado",
+      "text": "O evento surgiu após manutenção do conector do sensor, sem alteração real de operação.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-18-3-VIS",
+      "caseId": "ELEC-CF-18-3",
+      "type": "inspecao_visual_simulada",
+      "text": "Sistema preservado e nível/fluxo/inspeções compatíveis com estado normal; não há evidência de dano.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-18-3-ELE",
+      "caseId": "ELEC-CF-18-3",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "Medição independente acompanha corretamente o evento; os parâmetros normalizam com retirada da condição de operação anormal.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-18-3-HIS",
+      "caseId": "ELEC-CF-18-3",
+      "type": "historico_simulado",
+      "text": "O evento ocorre exclusivamente sob condição de carga/uso inadequada do cenário e desaparece após correção operacional.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-19-1-VIS",
+      "caseId": "ELEC-CF-19-1",
+      "type": "inspecao_visual_simulada",
+      "text": "Inspeção revela indícios materiais coerentes com o alerta: condição anormal observável no sistema e sem erro aparente do sensor.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-19-1-ELE",
+      "caseId": "ELEC-CF-19-1",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "Medição independente do circuito didático confirma a tendência indicada no monitoramento.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-19-1-HIS",
+      "caseId": "ELEC-CF-19-1",
+      "type": "historico_simulado",
+      "text": "A anomalia evoluiu sob carga e persistiu após operação estabilizada.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-19-2-VIS",
+      "caseId": "ELEC-CF-19-2",
+      "type": "inspecao_visual_simulada",
+      "text": "Sem anomalia física compatível e pontos de inspeção regulares; não há evidência de falha mecânica no primeiro exame.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-19-2-ELE",
+      "caseId": "ELEC-CF-19-2",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "Instrumento independente do simulador indica valor normal, enquanto o sensor eletrônico informa valor anormal; alimentação está conforme esquema didático.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-19-2-HIS",
+      "caseId": "ELEC-CF-19-2",
+      "type": "historico_simulado",
+      "text": "O evento surgiu após manutenção do conector do sensor, sem alteração real de operação.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-19-3-VIS",
+      "caseId": "ELEC-CF-19-3",
+      "type": "inspecao_visual_simulada",
+      "text": "Sistema preservado e nível/fluxo/inspeções compatíveis com estado normal; não há evidência de dano.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-19-3-ELE",
+      "caseId": "ELEC-CF-19-3",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "Medição independente acompanha corretamente o evento; os parâmetros normalizam com retirada da condição de operação anormal.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-19-3-HIS",
+      "caseId": "ELEC-CF-19-3",
+      "type": "historico_simulado",
+      "text": "O evento ocorre exclusivamente sob condição de carga/uso inadequada do cenário e desaparece após correção operacional.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-20-1-VIS",
+      "caseId": "ELEC-CF-20-1",
+      "type": "inspecao_visual_simulada",
+      "text": "Fixação do sensor frouxa; folga ao alvo está fora da referência didática.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-20-1-ELE",
+      "caseId": "ELEC-CF-20-1",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "Alimentação normal no simulador; a forma de onda fica irregular devido à distância variável sensor-alvo.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-20-1-HIS",
+      "caseId": "ELEC-CF-20-1",
+      "type": "historico_simulado",
+      "text": "Depois de intervenção mecânica, a falha passou a ocorrer em baixa velocidade.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-20-2-VIS",
+      "caseId": "ELEC-CF-20-2",
+      "type": "inspecao_visual_simulada",
+      "text": "Alvo tem dente ou referência danificada; superfície de leitura irregular.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-20-2-ELE",
+      "caseId": "ELEC-CF-20-2",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "Sensor e chicote respondem normalmente quando excitados em bancada didática; o padrão de pulsos apresenta lacunas por defeito mecânico do alvo.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-20-2-HIS",
+      "caseId": "ELEC-CF-20-2",
+      "type": "historico_simulado",
+      "text": "Código e ruído surgiram depois de impacto no conjunto.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-20-3-VIS",
+      "caseId": "ELEC-CF-20-3",
+      "type": "inspecao_visual_simulada",
+      "text": "Conector com vedação rompida e cabeamento tracionado próximo ao sensor.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-20-3-ELE",
+      "caseId": "ELEC-CF-20-3",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "O sinal digital do circuito fictício some ao movimentar a conexão, apesar de sensor e alvo estarem íntegros.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-20-3-HIS",
+      "caseId": "ELEC-CF-20-3",
+      "type": "historico_simulado",
+      "text": "Ocorre principalmente com vibração e movimento sob carga.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-21-1-VIS",
+      "caseId": "ELEC-CF-21-1",
+      "type": "inspecao_visual_simulada",
+      "text": "Foi encontrada oxidação e retenção deficiente em um conector. Ao movimentar o chicote, o sinal muda abruptamente.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-21-1-ELE",
+      "caseId": "ELEC-CF-21-1",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "No ponto de teste simulado, a alimentação do sensor está presente, mas a referência do sinal oscila sob movimentação.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-21-1-HIS",
+      "caseId": "ELEC-CF-21-1",
+      "type": "historico_simulado",
+      "text": "O histórico simulado mostra código intermitente em dias úmidos, após lavagem e vibração intensa.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-21-2-VIS",
+      "caseId": "ELEC-CF-21-2",
+      "type": "inspecao_visual_simulada",
+      "text": "Chicote roçando um suporte metálico. Isolamento desgastado e marca de contato com estrutura.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-21-2-ELE",
+      "caseId": "ELEC-CF-21-2",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "O teste de continuidade/isolamento, feito no circuito isolado conforme roteiro fictício, revela falha no trecho entre os conectores.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-21-2-HIS",
+      "caseId": "ELEC-CF-21-2",
+      "type": "historico_simulado",
+      "text": "A falha aparece com vibração e desaparece quando o conjunto fica parado.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-21-3-VIS",
+      "caseId": "ELEC-CF-21-3",
+      "type": "inspecao_visual_simulada",
+      "text": "Conectores limpos, pinos firmes e chicote sem danos visíveis; nada indica anomalia física externa.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-21-3-ELE",
+      "caseId": "ELEC-CF-21-3",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "Alimentação, aterramento e continuidade estão adequados no circuito didático, porém a saída do sensor permanece anormal.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-21-3-HIS",
+      "caseId": "ELEC-CF-21-3",
+      "type": "historico_simulado",
+      "text": "O valor saiu progressivamente da faixa esperada e permaneceu incoerente após limpeza e reteste.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-22-1-VIS",
+      "caseId": "ELEC-CF-22-1",
+      "type": "inspecao_visual_simulada",
+      "text": "Foi encontrada oxidação e retenção deficiente em um conector. Ao movimentar o chicote, o sinal muda abruptamente.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-22-1-ELE",
+      "caseId": "ELEC-CF-22-1",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "No ponto de teste simulado, a alimentação do sensor está presente, mas a referência do sinal oscila sob movimentação.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-22-1-HIS",
+      "caseId": "ELEC-CF-22-1",
+      "type": "historico_simulado",
+      "text": "O histórico simulado mostra código intermitente em dias úmidos, após lavagem e vibração intensa.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-22-2-VIS",
+      "caseId": "ELEC-CF-22-2",
+      "type": "inspecao_visual_simulada",
+      "text": "Chicote roçando um suporte metálico. Isolamento desgastado e marca de contato com estrutura.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-22-2-ELE",
+      "caseId": "ELEC-CF-22-2",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "O teste de continuidade/isolamento, feito no circuito isolado conforme roteiro fictício, revela falha no trecho entre os conectores.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-22-2-HIS",
+      "caseId": "ELEC-CF-22-2",
+      "type": "historico_simulado",
+      "text": "A falha aparece com vibração e desaparece quando o conjunto fica parado.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-22-3-VIS",
+      "caseId": "ELEC-CF-22-3",
+      "type": "inspecao_visual_simulada",
+      "text": "Conectores limpos, pinos firmes e chicote sem danos visíveis; nada indica anomalia física externa.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-22-3-ELE",
+      "caseId": "ELEC-CF-22-3",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "Alimentação, aterramento e continuidade estão adequados no circuito didático, porém a saída do sensor permanece anormal.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-22-3-HIS",
+      "caseId": "ELEC-CF-22-3",
+      "type": "historico_simulado",
+      "text": "O valor saiu progressivamente da faixa esperada e permaneceu incoerente após limpeza e reteste.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-23-1-VIS",
+      "caseId": "ELEC-CF-23-1",
+      "type": "inspecao_visual_simulada",
+      "text": "Foi encontrada oxidação e retenção deficiente em um conector. Ao movimentar o chicote, o sinal muda abruptamente.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-23-1-ELE",
+      "caseId": "ELEC-CF-23-1",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "No ponto de teste simulado, a alimentação do sensor está presente, mas a referência do sinal oscila sob movimentação.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-23-1-HIS",
+      "caseId": "ELEC-CF-23-1",
+      "type": "historico_simulado",
+      "text": "O histórico simulado mostra código intermitente em dias úmidos, após lavagem e vibração intensa.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-23-2-VIS",
+      "caseId": "ELEC-CF-23-2",
+      "type": "inspecao_visual_simulada",
+      "text": "Chicote roçando um suporte metálico. Isolamento desgastado e marca de contato com estrutura.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-23-2-ELE",
+      "caseId": "ELEC-CF-23-2",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "O teste de continuidade/isolamento, feito no circuito isolado conforme roteiro fictício, revela falha no trecho entre os conectores.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-23-2-HIS",
+      "caseId": "ELEC-CF-23-2",
+      "type": "historico_simulado",
+      "text": "A falha aparece com vibração e desaparece quando o conjunto fica parado.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-23-3-VIS",
+      "caseId": "ELEC-CF-23-3",
+      "type": "inspecao_visual_simulada",
+      "text": "Conectores limpos, pinos firmes e chicote sem danos visíveis; nada indica anomalia física externa.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-23-3-ELE",
+      "caseId": "ELEC-CF-23-3",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "Alimentação, aterramento e continuidade estão adequados no circuito didático, porém a saída do sensor permanece anormal.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-23-3-HIS",
+      "caseId": "ELEC-CF-23-3",
+      "type": "historico_simulado",
+      "text": "O valor saiu progressivamente da faixa esperada e permaneceu incoerente após limpeza e reteste.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-24-1-VIS",
+      "caseId": "ELEC-CF-24-1",
+      "type": "inspecao_visual_simulada",
+      "text": "Componente e conectores íntegros, sem travamentos; etiqueta de serviço indica substituição recente.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-24-1-ELE",
+      "caseId": "ELEC-CF-24-1",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "Sinais e alimentações dentro da faixa didática; sistema acusa rotina de aprendizagem não concluída.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-24-1-HIS",
+      "caseId": "ELEC-CF-24-1",
+      "type": "historico_simulado",
+      "text": "O código apareceu imediatamente após instalação do novo joystick.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-24-2-VIS",
+      "caseId": "ELEC-CF-24-2",
+      "type": "inspecao_visual_simulada",
+      "text": "O conjunto não está na posição neutra/geométrica prevista para a rotina simulada.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-24-2-ELE",
+      "caseId": "ELEC-CF-24-2",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "Circuitos estáveis; o procedimento de calibração não converge até ajustar condição mecânica.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-24-2-HIS",
+      "caseId": "ELEC-CF-24-2",
+      "type": "historico_simulado",
+      "text": "Intervenção mecânica recente alterou a posição de referência.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-24-3-VIS",
+      "caseId": "ELEC-CF-24-3",
+      "type": "inspecao_visual_simulada",
+      "text": "Há dano visível no conjunto de sensoriamento e movimento irregular da peça.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-24-3-ELE",
+      "caseId": "ELEC-CF-24-3",
+      "type": "medicao_ou_teste_eletrico_simulado",
+      "text": "Leituras incoerentes persistem apesar de alimentação estável e tentativas autorizadas de calibração.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CF-24-3-HIS",
+      "caseId": "ELEC-CF-24-3",
+      "type": "historico_simulado",
+      "text": "Antes do código de calibração, foram registradas oscilações de sinal.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-001-EVD",
+      "caseId": "OIL-CASE-001",
+      "type": "observacao_ou_teste_adicional",
+      "text": "Avaliação segura revela deterioração de anel de vedação e histórico de lavagem em alta pressão.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-002-EVD",
+      "caseId": "OIL-CASE-002",
+      "type": "observacao_ou_teste_adicional",
+      "text": "No cenário simulado, o bujão magnético retém partículas e há ruído novo relatado sob carga.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-003-EVD",
+      "caseId": "OIL-CASE-003",
+      "type": "observacao_ou_teste_adicional",
+      "text": "O controle de manutenção confirma alteração documentada do lubrificante de referência e não há outros indícios adversos.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-004-EVD",
+      "caseId": "OIL-CASE-004",
+      "type": "observacao_ou_teste_adicional",
+      "text": "Inspeção simulada encontra sujeira acumulada junto ao respiro e vedação externa comprometida.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-005-EVD",
+      "caseId": "OIL-CASE-005",
+      "type": "observacao_ou_teste_adicional",
+      "text": "Consulta retrospectiva simulada mostra que houve evolução do indicador após uma intervenção de rotina. É necessário confrontar condição de coleta, comportamento mecânico e produto aplicado. Avaliação segura revela deterioração de anel de vedação e histórico de lavagem em alta pressão.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-006-EVD",
+      "caseId": "OIL-CASE-006",
+      "type": "observacao_ou_teste_adicional",
+      "text": "Consulta retrospectiva simulada mostra que houve evolução do indicador após uma intervenção de rotina. É necessário confrontar condição de coleta, comportamento mecânico e produto aplicado. No cenário simulado, o bujão magnético retém partículas e há ruído novo relatado sob carga.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-007-EVD",
+      "caseId": "OIL-CASE-007",
+      "type": "observacao_ou_teste_adicional",
+      "text": "Consulta retrospectiva simulada mostra que houve evolução do indicador após uma intervenção de rotina. É necessário confrontar condição de coleta, comportamento mecânico e produto aplicado. O controle de manutenção confirma alteração documentada do lubrificante de referência e não há outros indícios adversos.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-008-EVD",
+      "caseId": "OIL-CASE-008",
+      "type": "observacao_ou_teste_adicional",
+      "text": "Consulta retrospectiva simulada mostra que houve evolução do indicador após uma intervenção de rotina. É necessário confrontar condição de coleta, comportamento mecânico e produto aplicado. Inspeção simulada encontra sujeira acumulada junto ao respiro e vedação externa comprometida.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-009-EVD",
+      "caseId": "OIL-CASE-009",
+      "type": "observacao_ou_teste_adicional",
+      "text": "Relato fictício de campo: a inspeção foi conduzida em condição segura, com registro visual e avaliação do estado externo. Avaliação segura revela deterioração de anel de vedação e histórico de lavagem em alta pressão.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-010-EVD",
+      "caseId": "OIL-CASE-010",
+      "type": "observacao_ou_teste_adicional",
+      "text": "Inspeção interna virtual autorizada e concluída por equipe qualificada: há dano estrutural confirmado, incompatível com reutilização do item afetado. No cenário simulado, o bujão magnético retém partículas e há ruído novo relatado sob carga.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-011-EVD",
+      "caseId": "OIL-CASE-011",
+      "type": "observacao_ou_teste_adicional",
+      "text": "Relato fictício de campo: a inspeção foi conduzida em condição segura, com registro visual e avaliação do estado externo. O controle de manutenção confirma alteração documentada do lubrificante de referência e não há outros indícios adversos.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-012-EVD",
+      "caseId": "OIL-CASE-012",
+      "type": "observacao_ou_teste_adicional",
+      "text": "Relato fictício de campo: a inspeção foi conduzida em condição segura, com registro visual e avaliação do estado externo. Inspeção simulada encontra sujeira acumulada junto ao respiro e vedação externa comprometida.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-013-EVD",
+      "caseId": "OIL-CASE-013",
+      "type": "observacao_ou_teste_adicional",
+      "text": "O caso simulado indica ponto de vedação contaminado após lavagem; avaliar folgas e danos antes de decidir troca do mancal.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-014-EVD",
+      "caseId": "OIL-CASE-014",
+      "type": "observacao_ou_teste_adicional",
+      "text": "No cenário simulado, a análise complementar sugere risco em rolamento; é necessário avaliar limalhas, Ni e vazamentos.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-015-EVD",
+      "caseId": "OIL-CASE-015",
+      "type": "observacao_ou_teste_adicional",
+      "text": "Comparação do histórico e inspeção sensitiva não revelam piora consistente.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-016-EVD",
+      "caseId": "OIL-CASE-016",
+      "type": "observacao_ou_teste_adicional",
+      "text": "A inspeção simulada identifica possível caminho de ingresso na região de vedação; a condição do rolamento requer avaliação complementar.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-017-EVD",
+      "caseId": "OIL-CASE-017",
+      "type": "observacao_ou_teste_adicional",
+      "text": "Consulta retrospectiva simulada mostra que houve evolução do indicador após uma intervenção de rotina. É necessário confrontar condição de coleta, comportamento mecânico e produto aplicado. O caso simulado indica ponto de vedação contaminado após lavagem; avaliar folgas e danos antes de decidir troca do mancal.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-018-EVD",
+      "caseId": "OIL-CASE-018",
+      "type": "observacao_ou_teste_adicional",
+      "text": "Consulta retrospectiva simulada mostra que houve evolução do indicador após uma intervenção de rotina. É necessário confrontar condição de coleta, comportamento mecânico e produto aplicado. No cenário simulado, a análise complementar sugere risco em rolamento; é necessário avaliar limalhas, Ni e vazamentos.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-019-EVD",
+      "caseId": "OIL-CASE-019",
+      "type": "observacao_ou_teste_adicional",
+      "text": "Consulta retrospectiva simulada mostra que houve evolução do indicador após uma intervenção de rotina. É necessário confrontar condição de coleta, comportamento mecânico e produto aplicado. Comparação do histórico e inspeção sensitiva não revelam piora consistente.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-020-EVD",
+      "caseId": "OIL-CASE-020",
+      "type": "observacao_ou_teste_adicional",
+      "text": "Consulta retrospectiva simulada mostra que houve evolução do indicador após uma intervenção de rotina. É necessário confrontar condição de coleta, comportamento mecânico e produto aplicado. A inspeção simulada identifica possível caminho de ingresso na região de vedação; a condição do rolamento requer avaliação complementar.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-021-EVD",
+      "caseId": "OIL-CASE-021",
+      "type": "observacao_ou_teste_adicional",
+      "text": "Relato fictício de campo: a inspeção foi conduzida em condição segura, com registro visual e avaliação do estado externo. O caso simulado indica ponto de vedação contaminado após lavagem; avaliar folgas e danos antes de decidir troca do mancal.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-022-EVD",
+      "caseId": "OIL-CASE-022",
+      "type": "observacao_ou_teste_adicional",
+      "text": "Inspeção interna virtual autorizada e concluída por equipe qualificada: há dano estrutural confirmado, incompatível com reutilização do item afetado. No cenário simulado, a análise complementar sugere risco em rolamento; é necessário avaliar limalhas, Ni e vazamentos.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-023-EVD",
+      "caseId": "OIL-CASE-023",
+      "type": "observacao_ou_teste_adicional",
+      "text": "Relato fictício de campo: a inspeção foi conduzida em condição segura, com registro visual e avaliação do estado externo. Comparação do histórico e inspeção sensitiva não revelam piora consistente.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-024-EVD",
+      "caseId": "OIL-CASE-024",
+      "type": "observacao_ou_teste_adicional",
+      "text": "Relato fictício de campo: a inspeção foi conduzida em condição segura, com registro visual e avaliação do estado externo. A inspeção simulada identifica possível caminho de ingresso na região de vedação; a condição do rolamento requer avaliação complementar.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-025-EVD",
+      "caseId": "OIL-CASE-025",
+      "type": "observacao_ou_teste_adicional",
+      "text": "Inspeção simulada identifica partículas e ruído intermitente. Um metal não identifica sozinho a peça danificada.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-026-EVD",
+      "caseId": "OIL-CASE-026",
+      "type": "observacao_ou_teste_adicional",
+      "text": "Respiro e vedações são pontos prioritários de inspeção; um filtro de outro circuito não trata o fluido do redutor.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-027-EVD",
+      "caseId": "OIL-CASE-027",
+      "type": "observacao_ou_teste_adicional",
+      "text": "Consulta retrospectiva simulada mostra que houve evolução do indicador após uma intervenção de rotina. É necessário confrontar condição de coleta, comportamento mecânico e produto aplicado. Inspeção simulada identifica partículas e ruído intermitente. Um metal não identifica sozinho a peça danificada.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-028-EVD",
+      "caseId": "OIL-CASE-028",
+      "type": "observacao_ou_teste_adicional",
+      "text": "Consulta retrospectiva simulada mostra que houve evolução do indicador após uma intervenção de rotina. É necessário confrontar condição de coleta, comportamento mecânico e produto aplicado. Respiro e vedações são pontos prioritários de inspeção; um filtro de outro circuito não trata o fluido do redutor.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-029-EVD",
+      "caseId": "OIL-CASE-029",
+      "type": "observacao_ou_teste_adicional",
+      "text": "Inspeção interna virtual autorizada e concluída por equipe qualificada: há dano estrutural confirmado, incompatível com reutilização do item afetado. Inspeção simulada identifica partículas e ruído intermitente. Um metal não identifica sozinho a peça danificada.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-030-EVD",
+      "caseId": "OIL-CASE-030",
+      "type": "observacao_ou_teste_adicional",
+      "text": "Relato fictício de campo: a inspeção foi conduzida em condição segura, com registro visual e avaliação do estado externo. Respiro e vedações são pontos prioritários de inspeção; um filtro de outro circuito não trata o fluido do redutor.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-031-EVD",
+      "caseId": "OIL-CASE-031",
+      "type": "observacao_ou_teste_adicional",
+      "text": "A evidência complementar não mostra progressão de metais e o produto aplicado precisa ser confrontado com a especificação.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-032-EVD",
+      "caseId": "OIL-CASE-032",
+      "type": "observacao_ou_teste_adicional",
+      "text": "Confrontar histórico de intervenções, filtros, operação e magnetismo das partículas.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-033-EVD",
+      "caseId": "OIL-CASE-033",
+      "type": "observacao_ou_teste_adicional",
+      "text": "O laboratório não conseguiu fornecer contagem confiável; verificar filtragem, coleta, limpeza e histórico.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-034-EVD",
+      "caseId": "OIL-CASE-034",
+      "type": "observacao_ou_teste_adicional",
+      "text": "Consulta retrospectiva simulada mostra que houve evolução do indicador após uma intervenção de rotina. É necessário confrontar condição de coleta, comportamento mecânico e produto aplicado. A evidência complementar não mostra progressão de metais e o produto aplicado precisa ser confrontado com a especificação.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-035-EVD",
+      "caseId": "OIL-CASE-035",
+      "type": "observacao_ou_teste_adicional",
+      "text": "Consulta retrospectiva simulada mostra que houve evolução do indicador após uma intervenção de rotina. É necessário confrontar condição de coleta, comportamento mecânico e produto aplicado. Confrontar histórico de intervenções, filtros, operação e magnetismo das partículas.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-036-EVD",
+      "caseId": "OIL-CASE-036",
+      "type": "observacao_ou_teste_adicional",
+      "text": "Consulta retrospectiva simulada mostra que houve evolução do indicador após uma intervenção de rotina. É necessário confrontar condição de coleta, comportamento mecânico e produto aplicado. O laboratório não conseguiu fornecer contagem confiável; verificar filtragem, coleta, limpeza e histórico.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-037-EVD",
+      "caseId": "OIL-CASE-037",
+      "type": "observacao_ou_teste_adicional",
+      "text": "Relato fictício de campo: a inspeção foi conduzida em condição segura, com registro visual e avaliação do estado externo. A evidência complementar não mostra progressão de metais e o produto aplicado precisa ser confrontado com a especificação.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-038-EVD",
+      "caseId": "OIL-CASE-038",
+      "type": "observacao_ou_teste_adicional",
+      "text": "Inspeção interna virtual autorizada e concluída por equipe qualificada: há dano estrutural confirmado, incompatível com reutilização do item afetado. Confrontar histórico de intervenções, filtros, operação e magnetismo das partículas.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-039-EVD",
+      "caseId": "OIL-CASE-039",
+      "type": "observacao_ou_teste_adicional",
+      "text": "Relato fictício de campo: a inspeção foi conduzida em condição segura, com registro visual e avaliação do estado externo. O laboratório não conseguiu fornecer contagem confiável; verificar filtragem, coleta, limpeza e histórico.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-040-EVD",
+      "caseId": "OIL-CASE-040",
+      "type": "observacao_ou_teste_adicional",
+      "text": "Verificar imediatamente filtros e possibilidades de geração de partículas; confirmar componente fonte é outra etapa.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-041-EVD",
+      "caseId": "OIL-CASE-041",
+      "type": "observacao_ou_teste_adicional",
+      "text": "Filtros, respiração do reservatório e procedimentos de abastecimento entram na investigação.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-042-EVD",
+      "caseId": "OIL-CASE-042",
+      "type": "observacao_ou_teste_adicional",
+      "text": "O histórico revela uma troca recente de produto e deixa dúvidas sobre identificação da amostra.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-043-EVD",
+      "caseId": "OIL-CASE-043",
+      "type": "observacao_ou_teste_adicional",
+      "text": "Consulta retrospectiva simulada mostra que houve evolução do indicador após uma intervenção de rotina. É necessário confrontar condição de coleta, comportamento mecânico e produto aplicado. Verificar imediatamente filtros e possibilidades de geração de partículas; confirmar componente fonte é outra etapa.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-044-EVD",
+      "caseId": "OIL-CASE-044",
+      "type": "observacao_ou_teste_adicional",
+      "text": "Consulta retrospectiva simulada mostra que houve evolução do indicador após uma intervenção de rotina. É necessário confrontar condição de coleta, comportamento mecânico e produto aplicado. Filtros, respiração do reservatório e procedimentos de abastecimento entram na investigação.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-045-EVD",
+      "caseId": "OIL-CASE-045",
+      "type": "observacao_ou_teste_adicional",
+      "text": "Consulta retrospectiva simulada mostra que houve evolução do indicador após uma intervenção de rotina. É necessário confrontar condição de coleta, comportamento mecânico e produto aplicado. O histórico revela uma troca recente de produto e deixa dúvidas sobre identificação da amostra.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-046-EVD",
+      "caseId": "OIL-CASE-046",
+      "type": "observacao_ou_teste_adicional",
+      "text": "Inspeção interna virtual autorizada e concluída por equipe qualificada: há dano estrutural confirmado, incompatível com reutilização do item afetado. Verificar imediatamente filtros e possibilidades de geração de partículas; confirmar componente fonte é outra etapa.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-047-EVD",
+      "caseId": "OIL-CASE-047",
+      "type": "observacao_ou_teste_adicional",
+      "text": "Relato fictício de campo: a inspeção foi conduzida em condição segura, com registro visual e avaliação do estado externo. Filtros, respiração do reservatório e procedimentos de abastecimento entram na investigação.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-048-EVD",
+      "caseId": "OIL-CASE-048",
+      "type": "observacao_ou_teste_adicional",
+      "text": "Relato fictício de campo: a inspeção foi conduzida em condição segura, com registro visual e avaliação do estado externo. O histórico revela uma troca recente de produto e deixa dúvidas sobre identificação da amostra.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-049-EVD",
+      "caseId": "OIL-CASE-049",
+      "type": "observacao_ou_teste_adicional",
+      "text": "Teste adicional simulado encontra partículas no elemento filtrante. A origem interna exata permanece incerta.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-050-EVD",
+      "caseId": "OIL-CASE-050",
+      "type": "observacao_ou_teste_adicional",
+      "text": "As condições de operação e intervalos de troca precisam ser confrontados com o laudo e documentação.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-051-EVD",
+      "caseId": "OIL-CASE-051",
+      "type": "observacao_ou_teste_adicional",
+      "text": "Inspeção de campo confirma necessidade de verificar sistema de injeção, histórico de consumo e operação.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-052-EVD",
+      "caseId": "OIL-CASE-052",
+      "type": "observacao_ou_teste_adicional",
+      "text": "Consulta retrospectiva simulada mostra que houve evolução do indicador após uma intervenção de rotina. É necessário confrontar condição de coleta, comportamento mecânico e produto aplicado. Teste adicional simulado encontra partículas no elemento filtrante. A origem interna exata permanece incerta.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-053-EVD",
+      "caseId": "OIL-CASE-053",
+      "type": "observacao_ou_teste_adicional",
+      "text": "Consulta retrospectiva simulada mostra que houve evolução do indicador após uma intervenção de rotina. É necessário confrontar condição de coleta, comportamento mecânico e produto aplicado. As condições de operação e intervalos de troca precisam ser confrontados com o laudo e documentação.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-054-EVD",
+      "caseId": "OIL-CASE-054",
+      "type": "observacao_ou_teste_adicional",
+      "text": "Consulta retrospectiva simulada mostra que houve evolução do indicador após uma intervenção de rotina. É necessário confrontar condição de coleta, comportamento mecânico e produto aplicado. Inspeção de campo confirma necessidade de verificar sistema de injeção, histórico de consumo e operação.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-055-EVD",
+      "caseId": "OIL-CASE-055",
+      "type": "observacao_ou_teste_adicional",
+      "text": "Inspeção interna virtual autorizada e concluída por equipe qualificada: há dano estrutural confirmado, incompatível com reutilização do item afetado. Teste adicional simulado encontra partículas no elemento filtrante. A origem interna exata permanece incerta.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-056-EVD",
+      "caseId": "OIL-CASE-056",
+      "type": "observacao_ou_teste_adicional",
+      "text": "Relato fictício de campo: a inspeção foi conduzida em condição segura, com registro visual e avaliação do estado externo. As condições de operação e intervalos de troca precisam ser confrontados com o laudo e documentação.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-057-EVD",
+      "caseId": "OIL-CASE-057",
+      "type": "observacao_ou_teste_adicional",
+      "text": "Relato fictício de campo: a inspeção foi conduzida em condição segura, com registro visual e avaliação do estado externo. Inspeção de campo confirma necessidade de verificar sistema de injeção, histórico de consumo e operação.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-058-EVD",
+      "caseId": "OIL-CASE-058",
+      "type": "observacao_ou_teste_adicional",
+      "text": "É preciso medir concentração, conferir produto aplicado e verificar tendência térmica.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-059-EVD",
+      "caseId": "OIL-CASE-059",
+      "type": "observacao_ou_teste_adicional",
+      "text": "A literatura informa possível reação química sem dano imediato do radiador; configuração do motor e do ELC deve ser confirmada.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-060-EVD",
+      "caseId": "OIL-CASE-060",
+      "type": "observacao_ou_teste_adicional",
+      "text": "Falhas de composição, superaquecimento, diluição ou gases de combustão são hipóteses a investigar.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-061-EVD",
+      "caseId": "OIL-CASE-061",
+      "type": "observacao_ou_teste_adicional",
+      "text": "Consulta retrospectiva simulada mostra que houve evolução do indicador após uma intervenção de rotina. É necessário confrontar condição de coleta, comportamento mecânico e produto aplicado. É preciso medir concentração, conferir produto aplicado e verificar tendência térmica.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-062-EVD",
+      "caseId": "OIL-CASE-062",
+      "type": "observacao_ou_teste_adicional",
+      "text": "Consulta retrospectiva simulada mostra que houve evolução do indicador após uma intervenção de rotina. É necessário confrontar condição de coleta, comportamento mecânico e produto aplicado. A literatura informa possível reação química sem dano imediato do radiador; configuração do motor e do ELC deve ser confirmada.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-063-EVD",
+      "caseId": "OIL-CASE-063",
+      "type": "observacao_ou_teste_adicional",
+      "text": "Consulta retrospectiva simulada mostra que houve evolução do indicador após uma intervenção de rotina. É necessário confrontar condição de coleta, comportamento mecânico e produto aplicado. Falhas de composição, superaquecimento, diluição ou gases de combustão são hipóteses a investigar.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-064-EVD",
+      "caseId": "OIL-CASE-064",
+      "type": "observacao_ou_teste_adicional",
+      "text": "Relato fictício de campo: a inspeção foi conduzida em condição segura, com registro visual e avaliação do estado externo. É preciso medir concentração, conferir produto aplicado e verificar tendência térmica.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-065-EVD",
+      "caseId": "OIL-CASE-065",
+      "type": "observacao_ou_teste_adicional",
+      "text": "Relato fictício de campo: a inspeção foi conduzida em condição segura, com registro visual e avaliação do estado externo. A literatura informa possível reação química sem dano imediato do radiador; configuração do motor e do ELC deve ser confirmada.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-066-EVD",
+      "caseId": "OIL-CASE-066",
+      "type": "observacao_ou_teste_adicional",
+      "text": "Relato fictício de campo: a inspeção foi conduzida em condição segura, com registro visual e avaliação do estado externo. Falhas de composição, superaquecimento, diluição ou gases de combustão são hipóteses a investigar.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-067-EVD",
+      "caseId": "OIL-CASE-067",
+      "type": "observacao_ou_teste_adicional",
+      "text": "Bujões, respiros, vedações e histórico de coleta devem ser verificados.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-068-EVD",
+      "caseId": "OIL-CASE-068",
+      "type": "observacao_ou_teste_adicional",
+      "text": "A análise indica verificar ruído, folgas e partículas, mas não permite nomear o elemento interno com segurança.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-069-EVD",
+      "caseId": "OIL-CASE-069",
+      "type": "observacao_ou_teste_adicional",
+      "text": "Consulta retrospectiva simulada mostra que houve evolução do indicador após uma intervenção de rotina. É necessário confrontar condição de coleta, comportamento mecânico e produto aplicado. Bujões, respiros, vedações e histórico de coleta devem ser verificados.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-070-EVD",
+      "caseId": "OIL-CASE-070",
+      "type": "observacao_ou_teste_adicional",
+      "text": "Consulta retrospectiva simulada mostra que houve evolução do indicador após uma intervenção de rotina. É necessário confrontar condição de coleta, comportamento mecânico e produto aplicado. A análise indica verificar ruído, folgas e partículas, mas não permite nomear o elemento interno com segurança.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-071-EVD",
+      "caseId": "OIL-CASE-071",
+      "type": "observacao_ou_teste_adicional",
+      "text": "Relato fictício de campo: a inspeção foi conduzida em condição segura, com registro visual e avaliação do estado externo. Bujões, respiros, vedações e histórico de coleta devem ser verificados.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    },
+    {
+      "id": "CASE-072-EVD",
+      "caseId": "OIL-CASE-072",
+      "type": "observacao_ou_teste_adicional",
+      "text": "Inspeção interna virtual autorizada e concluída por equipe qualificada: há dano estrutural confirmado, incompatível com reutilização do item afetado. A análise indica verificar ruído, folgas e partículas, mas não permite nomear o elemento interno com segurança.",
+      "origin": "simulado",
+      "validatedInEquipment": false
+    }
+  ]
+}

@@ -26,6 +26,8 @@ jobs:
         run: node scripts/generate-models.mjs --all
       - name: Validar combinacões geradas
         run: node scripts/validate.mjs
+      - name: Validar biblioteca extraida
+        run: node scripts/validate-knowledge.mjs
       - name: Publicar pacotes para testes
         uses: actions/upload-artifact@v4
         with:

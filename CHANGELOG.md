@@ -2,6 +2,13 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.1.0] — 2026-10-19 — Extração dos simuladores
+- Importados 72 casos eletrônicos e 72 casos de fluidos com chaves para seus arquivos de origem.
+- Catalogados 24 conjuntos de hipóteses concorrentes eletrônicas, 24 arquétipos de fluidos, 54 entradas de códigos (23 FMI incluídos), 39 textos e 27 fontes citadas.
+- Gerados índices separados com 144 sintomas, 288 evidências simuladas e 144 gabaritos/hipóteses; valores de videogame segregados.
+- Nenhum dado de laboratório real, código proprietário Sandvik não documentado, confirmação de causa ou localização SAP foi inventado.
+- Inclusão de verificação estrutural específica da biblioteca no GitHub Actions.
+
 ## [1.0.1] — 2026-10-19 — Rastreabilidade e automação
 - Publicado catálogo normalizado `data/catalog/failure-db.v1.json` com validação de integridade de códigos e vínculos.
 - Gerador determinístico reproduz 518.832 combinações candidatas em 17 pacotes por modelo.

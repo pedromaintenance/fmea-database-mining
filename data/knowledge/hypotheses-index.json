@@ -1,0 +1,1952 @@
+{
+  "schema": "fmea-mining.knowledge-index.v1",
+  "version": "1.1.0",
+  "kind": "hypotheses",
+  "status": "material_simulado",
+  "records": [
+    {
+      "id": "HYP-ELEC-CF-01-1",
+      "caseId": "ELEC-CF-01-1",
+      "hypothesis": "Mau contato/oxidação no conector do circuito",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-01-2",
+          "cause": "Falha de isolamento, curto ou interrupção no chicote"
+        },
+        {
+          "sourceId": "CF-01-3",
+          "cause": "Defeito interno ou deriva do sensor"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-ELEC-CF-01-2",
+      "caseId": "ELEC-CF-01-2",
+      "hypothesis": "Falha de isolamento, curto ou interrupção no chicote",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-01-1",
+          "cause": "Mau contato/oxidação no conector do circuito"
+        },
+        {
+          "sourceId": "CF-01-3",
+          "cause": "Defeito interno ou deriva do sensor"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-ELEC-CF-01-3",
+      "caseId": "ELEC-CF-01-3",
+      "hypothesis": "Defeito interno ou deriva do sensor",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-01-1",
+          "cause": "Mau contato/oxidação no conector do circuito"
+        },
+        {
+          "sourceId": "CF-01-2",
+          "cause": "Falha de isolamento, curto ou interrupção no chicote"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-ELEC-CF-02-1",
+      "caseId": "ELEC-CF-02-1",
+      "hypothesis": "Mau contato/oxidação no conector do circuito",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-02-2",
+          "cause": "Falha de isolamento, curto ou interrupção no chicote"
+        },
+        {
+          "sourceId": "CF-02-3",
+          "cause": "Defeito interno ou deriva do sensor"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-ELEC-CF-02-2",
+      "caseId": "ELEC-CF-02-2",
+      "hypothesis": "Falha de isolamento, curto ou interrupção no chicote",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-02-1",
+          "cause": "Mau contato/oxidação no conector do circuito"
+        },
+        {
+          "sourceId": "CF-02-3",
+          "cause": "Defeito interno ou deriva do sensor"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-ELEC-CF-02-3",
+      "caseId": "ELEC-CF-02-3",
+      "hypothesis": "Defeito interno ou deriva do sensor",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-02-1",
+          "cause": "Mau contato/oxidação no conector do circuito"
+        },
+        {
+          "sourceId": "CF-02-2",
+          "cause": "Falha de isolamento, curto ou interrupção no chicote"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-ELEC-CF-03-1",
+      "caseId": "ELEC-CF-03-1",
+      "hypothesis": "Mau contato/oxidação no conector do circuito",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-03-2",
+          "cause": "Falha de isolamento, curto ou interrupção no chicote"
+        },
+        {
+          "sourceId": "CF-03-3",
+          "cause": "Defeito interno ou deriva do sensor"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-ELEC-CF-03-2",
+      "caseId": "ELEC-CF-03-2",
+      "hypothesis": "Falha de isolamento, curto ou interrupção no chicote",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-03-1",
+          "cause": "Mau contato/oxidação no conector do circuito"
+        },
+        {
+          "sourceId": "CF-03-3",
+          "cause": "Defeito interno ou deriva do sensor"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-ELEC-CF-03-3",
+      "caseId": "ELEC-CF-03-3",
+      "hypothesis": "Defeito interno ou deriva do sensor",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-03-1",
+          "cause": "Mau contato/oxidação no conector do circuito"
+        },
+        {
+          "sourceId": "CF-03-2",
+          "cause": "Falha de isolamento, curto ou interrupção no chicote"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-ELEC-CF-04-1",
+      "caseId": "ELEC-CF-04-1",
+      "hypothesis": "Mau contato/oxidação no conector do circuito",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-04-2",
+          "cause": "Falha de isolamento, curto ou interrupção no chicote"
+        },
+        {
+          "sourceId": "CF-04-3",
+          "cause": "Defeito interno ou deriva do sensor"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-ELEC-CF-04-2",
+      "caseId": "ELEC-CF-04-2",
+      "hypothesis": "Falha de isolamento, curto ou interrupção no chicote",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-04-1",
+          "cause": "Mau contato/oxidação no conector do circuito"
+        },
+        {
+          "sourceId": "CF-04-3",
+          "cause": "Defeito interno ou deriva do sensor"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-ELEC-CF-04-3",
+      "caseId": "ELEC-CF-04-3",
+      "hypothesis": "Defeito interno ou deriva do sensor",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-04-1",
+          "cause": "Mau contato/oxidação no conector do circuito"
+        },
+        {
+          "sourceId": "CF-04-2",
+          "cause": "Falha de isolamento, curto ou interrupção no chicote"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-ELEC-CF-05-1",
+      "caseId": "ELEC-CF-05-1",
+      "hypothesis": "Sensor com folga/posicionamento inadequado",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-05-2",
+          "cause": "Alvo de leitura ou roda fônica danificada"
+        },
+        {
+          "sourceId": "CF-05-3",
+          "cause": "Falha intermitente em cabo blindado/conector"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-ELEC-CF-05-2",
+      "caseId": "ELEC-CF-05-2",
+      "hypothesis": "Alvo de leitura ou roda fônica danificada",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-05-1",
+          "cause": "Sensor com folga/posicionamento inadequado"
+        },
+        {
+          "sourceId": "CF-05-3",
+          "cause": "Falha intermitente em cabo blindado/conector"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-ELEC-CF-05-3",
+      "caseId": "ELEC-CF-05-3",
+      "hypothesis": "Falha intermitente em cabo blindado/conector",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-05-1",
+          "cause": "Sensor com folga/posicionamento inadequado"
+        },
+        {
+          "sourceId": "CF-05-2",
+          "cause": "Alvo de leitura ou roda fônica danificada"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-ELEC-CF-06-1",
+      "caseId": "ELEC-CF-06-1",
+      "hypothesis": "Bobina do atuador com circuito aberto",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-06-2",
+          "cause": "Condutor rompido entre ECM e solenoide"
+        },
+        {
+          "sourceId": "CF-06-3",
+          "cause": "Terminal solto com alta resistência de contato"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-ELEC-CF-06-2",
+      "caseId": "ELEC-CF-06-2",
+      "hypothesis": "Condutor rompido entre ECM e solenoide",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-06-1",
+          "cause": "Bobina do atuador com circuito aberto"
+        },
+        {
+          "sourceId": "CF-06-3",
+          "cause": "Terminal solto com alta resistência de contato"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-ELEC-CF-06-3",
+      "caseId": "ELEC-CF-06-3",
+      "hypothesis": "Terminal solto com alta resistência de contato",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-06-1",
+          "cause": "Bobina do atuador com circuito aberto"
+        },
+        {
+          "sourceId": "CF-06-2",
+          "cause": "Condutor rompido entre ECM e solenoide"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-ELEC-CF-07-1",
+      "caseId": "ELEC-CF-07-1",
+      "hypothesis": "Bobina do atuador com circuito aberto",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-07-2",
+          "cause": "Condutor rompido entre ECM e solenoide"
+        },
+        {
+          "sourceId": "CF-07-3",
+          "cause": "Terminal solto com alta resistência de contato"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-ELEC-CF-07-2",
+      "caseId": "ELEC-CF-07-2",
+      "hypothesis": "Condutor rompido entre ECM e solenoide",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-07-1",
+          "cause": "Bobina do atuador com circuito aberto"
+        },
+        {
+          "sourceId": "CF-07-3",
+          "cause": "Terminal solto com alta resistência de contato"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-ELEC-CF-07-3",
+      "caseId": "ELEC-CF-07-3",
+      "hypothesis": "Terminal solto com alta resistência de contato",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-07-1",
+          "cause": "Bobina do atuador com circuito aberto"
+        },
+        {
+          "sourceId": "CF-07-2",
+          "cause": "Condutor rompido entre ECM e solenoide"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-ELEC-CF-08-1",
+      "caseId": "ELEC-CF-08-1",
+      "hypothesis": "Bobina do atuador com circuito aberto",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-08-2",
+          "cause": "Condutor rompido entre ECM e solenoide"
+        },
+        {
+          "sourceId": "CF-08-3",
+          "cause": "Terminal solto com alta resistência de contato"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-ELEC-CF-08-2",
+      "caseId": "ELEC-CF-08-2",
+      "hypothesis": "Condutor rompido entre ECM e solenoide",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-08-1",
+          "cause": "Bobina do atuador com circuito aberto"
+        },
+        {
+          "sourceId": "CF-08-3",
+          "cause": "Terminal solto com alta resistência de contato"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-ELEC-CF-08-3",
+      "caseId": "ELEC-CF-08-3",
+      "hypothesis": "Terminal solto com alta resistência de contato",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-08-1",
+          "cause": "Bobina do atuador com circuito aberto"
+        },
+        {
+          "sourceId": "CF-08-2",
+          "cause": "Condutor rompido entre ECM e solenoide"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-ELEC-CF-09-1",
+      "caseId": "ELEC-CF-09-1",
+      "hypothesis": "Mau contato/oxidação no conector do circuito",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-09-2",
+          "cause": "Falha de isolamento, curto ou interrupção no chicote"
+        },
+        {
+          "sourceId": "CF-09-3",
+          "cause": "Defeito interno ou deriva do sensor"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-ELEC-CF-09-2",
+      "caseId": "ELEC-CF-09-2",
+      "hypothesis": "Falha de isolamento, curto ou interrupção no chicote",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-09-1",
+          "cause": "Mau contato/oxidação no conector do circuito"
+        },
+        {
+          "sourceId": "CF-09-3",
+          "cause": "Defeito interno ou deriva do sensor"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-ELEC-CF-09-3",
+      "caseId": "ELEC-CF-09-3",
+      "hypothesis": "Defeito interno ou deriva do sensor",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-09-1",
+          "cause": "Mau contato/oxidação no conector do circuito"
+        },
+        {
+          "sourceId": "CF-09-2",
+          "cause": "Falha de isolamento, curto ou interrupção no chicote"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-ELEC-CF-10-1",
+      "caseId": "ELEC-CF-10-1",
+      "hypothesis": "Sensor com folga/posicionamento inadequado",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-10-2",
+          "cause": "Alvo de leitura ou roda fônica danificada"
+        },
+        {
+          "sourceId": "CF-10-3",
+          "cause": "Falha intermitente em cabo blindado/conector"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-ELEC-CF-10-2",
+      "caseId": "ELEC-CF-10-2",
+      "hypothesis": "Alvo de leitura ou roda fônica danificada",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-10-1",
+          "cause": "Sensor com folga/posicionamento inadequado"
+        },
+        {
+          "sourceId": "CF-10-3",
+          "cause": "Falha intermitente em cabo blindado/conector"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-ELEC-CF-10-3",
+      "caseId": "ELEC-CF-10-3",
+      "hypothesis": "Falha intermitente em cabo blindado/conector",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-10-1",
+          "cause": "Sensor com folga/posicionamento inadequado"
+        },
+        {
+          "sourceId": "CF-10-2",
+          "cause": "Alvo de leitura ou roda fônica danificada"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-ELEC-CF-11-1",
+      "caseId": "ELEC-CF-11-1",
+      "hypothesis": "Sensor com folga/posicionamento inadequado",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-11-2",
+          "cause": "Alvo de leitura ou roda fônica danificada"
+        },
+        {
+          "sourceId": "CF-11-3",
+          "cause": "Falha intermitente em cabo blindado/conector"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-ELEC-CF-11-2",
+      "caseId": "ELEC-CF-11-2",
+      "hypothesis": "Alvo de leitura ou roda fônica danificada",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-11-1",
+          "cause": "Sensor com folga/posicionamento inadequado"
+        },
+        {
+          "sourceId": "CF-11-3",
+          "cause": "Falha intermitente em cabo blindado/conector"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-ELEC-CF-11-3",
+      "caseId": "ELEC-CF-11-3",
+      "hypothesis": "Falha intermitente em cabo blindado/conector",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-11-1",
+          "cause": "Sensor com folga/posicionamento inadequado"
+        },
+        {
+          "sourceId": "CF-11-2",
+          "cause": "Alvo de leitura ou roda fônica danificada"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-ELEC-CF-12-1",
+      "caseId": "ELEC-CF-12-1",
+      "hypothesis": "Bobina do atuador com circuito aberto",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-12-2",
+          "cause": "Condutor rompido entre ECM e solenoide"
+        },
+        {
+          "sourceId": "CF-12-3",
+          "cause": "Terminal solto com alta resistência de contato"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-ELEC-CF-12-2",
+      "caseId": "ELEC-CF-12-2",
+      "hypothesis": "Condutor rompido entre ECM e solenoide",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-12-1",
+          "cause": "Bobina do atuador com circuito aberto"
+        },
+        {
+          "sourceId": "CF-12-3",
+          "cause": "Terminal solto com alta resistência de contato"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-ELEC-CF-12-3",
+      "caseId": "ELEC-CF-12-3",
+      "hypothesis": "Terminal solto com alta resistência de contato",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-12-1",
+          "cause": "Bobina do atuador com circuito aberto"
+        },
+        {
+          "sourceId": "CF-12-2",
+          "cause": "Condutor rompido entre ECM e solenoide"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-ELEC-CF-13-1",
+      "caseId": "ELEC-CF-13-1",
+      "hypothesis": "Terminação da rede comprometida",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-13-2",
+          "cause": "Módulo da rede sem alimentação confiável"
+        },
+        {
+          "sourceId": "CF-13-3",
+          "cause": "Conexão de dados intermitente no barramento"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-ELEC-CF-13-2",
+      "caseId": "ELEC-CF-13-2",
+      "hypothesis": "Módulo da rede sem alimentação confiável",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-13-1",
+          "cause": "Terminação da rede comprometida"
+        },
+        {
+          "sourceId": "CF-13-3",
+          "cause": "Conexão de dados intermitente no barramento"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-ELEC-CF-13-3",
+      "caseId": "ELEC-CF-13-3",
+      "hypothesis": "Conexão de dados intermitente no barramento",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-13-1",
+          "cause": "Terminação da rede comprometida"
+        },
+        {
+          "sourceId": "CF-13-2",
+          "cause": "Módulo da rede sem alimentação confiável"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-ELEC-CF-14-1",
+      "caseId": "ELEC-CF-14-1",
+      "hypothesis": "Condição física efetivamente fora da faixa segura",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-14-2",
+          "cause": "Medição eletrônica incoerente com a grandeza real"
+        },
+        {
+          "sourceId": "CF-14-3",
+          "cause": "Condição operacional transitória e sobrecarga identificada"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-ELEC-CF-14-2",
+      "caseId": "ELEC-CF-14-2",
+      "hypothesis": "Medição eletrônica incoerente com a grandeza real",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-14-1",
+          "cause": "Condição física efetivamente fora da faixa segura"
+        },
+        {
+          "sourceId": "CF-14-3",
+          "cause": "Condição operacional transitória e sobrecarga identificada"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-ELEC-CF-14-3",
+      "caseId": "ELEC-CF-14-3",
+      "hypothesis": "Condição operacional transitória e sobrecarga identificada",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-14-1",
+          "cause": "Condição física efetivamente fora da faixa segura"
+        },
+        {
+          "sourceId": "CF-14-2",
+          "cause": "Medição eletrônica incoerente com a grandeza real"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-ELEC-CF-15-1",
+      "caseId": "ELEC-CF-15-1",
+      "hypothesis": "Condição física efetivamente fora da faixa segura",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-15-2",
+          "cause": "Medição eletrônica incoerente com a grandeza real"
+        },
+        {
+          "sourceId": "CF-15-3",
+          "cause": "Condição operacional transitória e sobrecarga identificada"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-ELEC-CF-15-2",
+      "caseId": "ELEC-CF-15-2",
+      "hypothesis": "Medição eletrônica incoerente com a grandeza real",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-15-1",
+          "cause": "Condição física efetivamente fora da faixa segura"
+        },
+        {
+          "sourceId": "CF-15-3",
+          "cause": "Condição operacional transitória e sobrecarga identificada"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-ELEC-CF-15-3",
+      "caseId": "ELEC-CF-15-3",
+      "hypothesis": "Condição operacional transitória e sobrecarga identificada",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-15-1",
+          "cause": "Condição física efetivamente fora da faixa segura"
+        },
+        {
+          "sourceId": "CF-15-2",
+          "cause": "Medição eletrônica incoerente com a grandeza real"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-ELEC-CF-16-1",
+      "caseId": "ELEC-CF-16-1",
+      "hypothesis": "Condição física efetivamente fora da faixa segura",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-16-2",
+          "cause": "Medição eletrônica incoerente com a grandeza real"
+        },
+        {
+          "sourceId": "CF-16-3",
+          "cause": "Condição operacional transitória e sobrecarga identificada"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-ELEC-CF-16-2",
+      "caseId": "ELEC-CF-16-2",
+      "hypothesis": "Medição eletrônica incoerente com a grandeza real",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-16-1",
+          "cause": "Condição física efetivamente fora da faixa segura"
+        },
+        {
+          "sourceId": "CF-16-3",
+          "cause": "Condição operacional transitória e sobrecarga identificada"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-ELEC-CF-16-3",
+      "caseId": "ELEC-CF-16-3",
+      "hypothesis": "Condição operacional transitória e sobrecarga identificada",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-16-1",
+          "cause": "Condição física efetivamente fora da faixa segura"
+        },
+        {
+          "sourceId": "CF-16-2",
+          "cause": "Medição eletrônica incoerente com a grandeza real"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-ELEC-CF-17-1",
+      "caseId": "ELEC-CF-17-1",
+      "hypothesis": "Condição física efetivamente fora da faixa segura",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-17-2",
+          "cause": "Medição eletrônica incoerente com a grandeza real"
+        },
+        {
+          "sourceId": "CF-17-3",
+          "cause": "Condição operacional transitória e sobrecarga identificada"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-ELEC-CF-17-2",
+      "caseId": "ELEC-CF-17-2",
+      "hypothesis": "Medição eletrônica incoerente com a grandeza real",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-17-1",
+          "cause": "Condição física efetivamente fora da faixa segura"
+        },
+        {
+          "sourceId": "CF-17-3",
+          "cause": "Condição operacional transitória e sobrecarga identificada"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-ELEC-CF-17-3",
+      "caseId": "ELEC-CF-17-3",
+      "hypothesis": "Condição operacional transitória e sobrecarga identificada",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-17-1",
+          "cause": "Condição física efetivamente fora da faixa segura"
+        },
+        {
+          "sourceId": "CF-17-2",
+          "cause": "Medição eletrônica incoerente com a grandeza real"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-ELEC-CF-18-1",
+      "caseId": "ELEC-CF-18-1",
+      "hypothesis": "Condição física efetivamente fora da faixa segura",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-18-2",
+          "cause": "Medição eletrônica incoerente com a grandeza real"
+        },
+        {
+          "sourceId": "CF-18-3",
+          "cause": "Condição operacional transitória e sobrecarga identificada"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-ELEC-CF-18-2",
+      "caseId": "ELEC-CF-18-2",
+      "hypothesis": "Medição eletrônica incoerente com a grandeza real",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-18-1",
+          "cause": "Condição física efetivamente fora da faixa segura"
+        },
+        {
+          "sourceId": "CF-18-3",
+          "cause": "Condição operacional transitória e sobrecarga identificada"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-ELEC-CF-18-3",
+      "caseId": "ELEC-CF-18-3",
+      "hypothesis": "Condição operacional transitória e sobrecarga identificada",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-18-1",
+          "cause": "Condição física efetivamente fora da faixa segura"
+        },
+        {
+          "sourceId": "CF-18-2",
+          "cause": "Medição eletrônica incoerente com a grandeza real"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-ELEC-CF-19-1",
+      "caseId": "ELEC-CF-19-1",
+      "hypothesis": "Condição física efetivamente fora da faixa segura",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-19-2",
+          "cause": "Medição eletrônica incoerente com a grandeza real"
+        },
+        {
+          "sourceId": "CF-19-3",
+          "cause": "Condição operacional transitória e sobrecarga identificada"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-ELEC-CF-19-2",
+      "caseId": "ELEC-CF-19-2",
+      "hypothesis": "Medição eletrônica incoerente com a grandeza real",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-19-1",
+          "cause": "Condição física efetivamente fora da faixa segura"
+        },
+        {
+          "sourceId": "CF-19-3",
+          "cause": "Condição operacional transitória e sobrecarga identificada"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-ELEC-CF-19-3",
+      "caseId": "ELEC-CF-19-3",
+      "hypothesis": "Condição operacional transitória e sobrecarga identificada",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-19-1",
+          "cause": "Condição física efetivamente fora da faixa segura"
+        },
+        {
+          "sourceId": "CF-19-2",
+          "cause": "Medição eletrônica incoerente com a grandeza real"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-ELEC-CF-20-1",
+      "caseId": "ELEC-CF-20-1",
+      "hypothesis": "Sensor com folga/posicionamento inadequado",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-20-2",
+          "cause": "Alvo de leitura ou roda fônica danificada"
+        },
+        {
+          "sourceId": "CF-20-3",
+          "cause": "Falha intermitente em cabo blindado/conector"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-ELEC-CF-20-2",
+      "caseId": "ELEC-CF-20-2",
+      "hypothesis": "Alvo de leitura ou roda fônica danificada",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-20-1",
+          "cause": "Sensor com folga/posicionamento inadequado"
+        },
+        {
+          "sourceId": "CF-20-3",
+          "cause": "Falha intermitente em cabo blindado/conector"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-ELEC-CF-20-3",
+      "caseId": "ELEC-CF-20-3",
+      "hypothesis": "Falha intermitente em cabo blindado/conector",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-20-1",
+          "cause": "Sensor com folga/posicionamento inadequado"
+        },
+        {
+          "sourceId": "CF-20-2",
+          "cause": "Alvo de leitura ou roda fônica danificada"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-ELEC-CF-21-1",
+      "caseId": "ELEC-CF-21-1",
+      "hypothesis": "Mau contato/oxidação no conector do circuito",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-21-2",
+          "cause": "Falha de isolamento, curto ou interrupção no chicote"
+        },
+        {
+          "sourceId": "CF-21-3",
+          "cause": "Defeito interno ou deriva do sensor"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-ELEC-CF-21-2",
+      "caseId": "ELEC-CF-21-2",
+      "hypothesis": "Falha de isolamento, curto ou interrupção no chicote",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-21-1",
+          "cause": "Mau contato/oxidação no conector do circuito"
+        },
+        {
+          "sourceId": "CF-21-3",
+          "cause": "Defeito interno ou deriva do sensor"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-ELEC-CF-21-3",
+      "caseId": "ELEC-CF-21-3",
+      "hypothesis": "Defeito interno ou deriva do sensor",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-21-1",
+          "cause": "Mau contato/oxidação no conector do circuito"
+        },
+        {
+          "sourceId": "CF-21-2",
+          "cause": "Falha de isolamento, curto ou interrupção no chicote"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-ELEC-CF-22-1",
+      "caseId": "ELEC-CF-22-1",
+      "hypothesis": "Mau contato/oxidação no conector do circuito",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-22-2",
+          "cause": "Falha de isolamento, curto ou interrupção no chicote"
+        },
+        {
+          "sourceId": "CF-22-3",
+          "cause": "Defeito interno ou deriva do sensor"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-ELEC-CF-22-2",
+      "caseId": "ELEC-CF-22-2",
+      "hypothesis": "Falha de isolamento, curto ou interrupção no chicote",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-22-1",
+          "cause": "Mau contato/oxidação no conector do circuito"
+        },
+        {
+          "sourceId": "CF-22-3",
+          "cause": "Defeito interno ou deriva do sensor"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-ELEC-CF-22-3",
+      "caseId": "ELEC-CF-22-3",
+      "hypothesis": "Defeito interno ou deriva do sensor",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-22-1",
+          "cause": "Mau contato/oxidação no conector do circuito"
+        },
+        {
+          "sourceId": "CF-22-2",
+          "cause": "Falha de isolamento, curto ou interrupção no chicote"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-ELEC-CF-23-1",
+      "caseId": "ELEC-CF-23-1",
+      "hypothesis": "Mau contato/oxidação no conector do circuito",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-23-2",
+          "cause": "Falha de isolamento, curto ou interrupção no chicote"
+        },
+        {
+          "sourceId": "CF-23-3",
+          "cause": "Defeito interno ou deriva do sensor"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-ELEC-CF-23-2",
+      "caseId": "ELEC-CF-23-2",
+      "hypothesis": "Falha de isolamento, curto ou interrupção no chicote",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-23-1",
+          "cause": "Mau contato/oxidação no conector do circuito"
+        },
+        {
+          "sourceId": "CF-23-3",
+          "cause": "Defeito interno ou deriva do sensor"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-ELEC-CF-23-3",
+      "caseId": "ELEC-CF-23-3",
+      "hypothesis": "Defeito interno ou deriva do sensor",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-23-1",
+          "cause": "Mau contato/oxidação no conector do circuito"
+        },
+        {
+          "sourceId": "CF-23-2",
+          "cause": "Falha de isolamento, curto ou interrupção no chicote"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-ELEC-CF-24-1",
+      "caseId": "ELEC-CF-24-1",
+      "hypothesis": "Calibração requerida após substituição/atualização",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-24-2",
+          "cause": "Referência mecânica incorreta antes da calibração"
+        },
+        {
+          "sourceId": "CF-24-3",
+          "cause": "Sensor/elemento de posição fisicamente defeituoso"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-ELEC-CF-24-2",
+      "caseId": "ELEC-CF-24-2",
+      "hypothesis": "Referência mecânica incorreta antes da calibração",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-24-1",
+          "cause": "Calibração requerida após substituição/atualização"
+        },
+        {
+          "sourceId": "CF-24-3",
+          "cause": "Sensor/elemento de posição fisicamente defeituoso"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-ELEC-CF-24-3",
+      "caseId": "ELEC-CF-24-3",
+      "hypothesis": "Sensor/elemento de posição fisicamente defeituoso",
+      "alternativeCauses": [
+        {
+          "sourceId": "CF-24-1",
+          "cause": "Calibração requerida após substituição/atualização"
+        },
+        {
+          "sourceId": "CF-24-2",
+          "cause": "Referência mecânica incorreta antes da calibração"
+        }
+      ],
+      "incorrectTrap": null,
+      "incompleteTrap": null,
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-001",
+      "caseId": "OIL-CASE-001",
+      "hypothesis": "Ingresso de água possível por vedação e procedimento de lavagem; a causa exata depende de inspeção.",
+      "alternativeCauses": [],
+      "incorrectTrap": "A água prova quebra de rolamento e exige troca completa imediata.",
+      "incompleteTrap": "Trocar óleo repetidamente é suficiente sem corrigir a entrada de água.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-002",
+      "caseId": "OIL-CASE-002",
+      "hypothesis": "Desgaste metálico ativo exige contenção e exame dirigido; a peça específica ainda não está identificada.",
+      "alternativeCauses": [],
+      "incorrectTrap": "O relatório identifica de forma definitiva a engrenagem quebrada.",
+      "incompleteTrap": "Realizar só uma recoleta no prazo normal apesar dos sinais convergentes.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-003",
+      "caseId": "OIL-CASE-003",
+      "hypothesis": "Mudança documentada de fluido pode explicar o novo perfil; falta validar compatibilidade e baseline.",
+      "alternativeCauses": [],
+      "incorrectTrap": "A diferença espectral confirma dano irreversível no diferencial.",
+      "incompleteTrap": "Ignorar histórico de óleo, pois o laboratório sempre está correto sobre a formulação.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-004",
+      "caseId": "OIL-CASE-004",
+      "hypothesis": "Entrada de contaminantes é plausível; inspecionar vedação e respiro, eliminar origem e acompanhar desgaste.",
+      "alternativeCauses": [],
+      "incorrectTrap": "O comando final inteiro está destruído somente porque há silício.",
+      "incompleteTrap": "Trata-se apenas de troca de óleo, sem investigar ingresso.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-005",
+      "caseId": "OIL-CASE-005",
+      "hypothesis": "Ingresso de água possível por vedação e procedimento de lavagem; a causa exata depende de inspeção.",
+      "alternativeCauses": [],
+      "incorrectTrap": "A água prova quebra de rolamento e exige troca completa imediata.",
+      "incompleteTrap": "Trocar óleo repetidamente é suficiente sem corrigir a entrada de água.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-006",
+      "caseId": "OIL-CASE-006",
+      "hypothesis": "Desgaste metálico ativo exige contenção e exame dirigido; a peça específica ainda não está identificada.",
+      "alternativeCauses": [],
+      "incorrectTrap": "O relatório identifica de forma definitiva a engrenagem quebrada.",
+      "incompleteTrap": "Realizar só uma recoleta no prazo normal apesar dos sinais convergentes.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-007",
+      "caseId": "OIL-CASE-007",
+      "hypothesis": "Mudança documentada de fluido pode explicar o novo perfil; falta validar compatibilidade e baseline.",
+      "alternativeCauses": [],
+      "incorrectTrap": "A diferença espectral confirma dano irreversível no diferencial.",
+      "incompleteTrap": "Ignorar histórico de óleo, pois o laboratório sempre está correto sobre a formulação.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-008",
+      "caseId": "OIL-CASE-008",
+      "hypothesis": "Entrada de contaminantes é plausível; inspecionar vedação e respiro, eliminar origem e acompanhar desgaste.",
+      "alternativeCauses": [],
+      "incorrectTrap": "O comando final inteiro está destruído somente porque há silício.",
+      "incompleteTrap": "Trata-se apenas de troca de óleo, sem investigar ingresso.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-009",
+      "caseId": "OIL-CASE-009",
+      "hypothesis": "Ingresso de água possível por vedação e procedimento de lavagem; a causa exata depende de inspeção.",
+      "alternativeCauses": [],
+      "incorrectTrap": "A água prova quebra de rolamento e exige troca completa imediata.",
+      "incompleteTrap": "Trocar óleo repetidamente é suficiente sem corrigir a entrada de água.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-010",
+      "caseId": "OIL-CASE-010",
+      "hypothesis": "Dano irreversível confirmado por inspeção interna virtual neste cenário; a substituição do componente afetado é tecnicamente justificada, com escopo validado.",
+      "alternativeCauses": [],
+      "incorrectTrap": "O relatório identifica de forma definitiva a engrenagem quebrada.",
+      "incompleteTrap": "Realizar só uma recoleta no prazo normal apesar dos sinais convergentes.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-011",
+      "caseId": "OIL-CASE-011",
+      "hypothesis": "Mudança documentada de fluido pode explicar o novo perfil; falta validar compatibilidade e baseline.",
+      "alternativeCauses": [],
+      "incorrectTrap": "A diferença espectral confirma dano irreversível no diferencial.",
+      "incompleteTrap": "Ignorar histórico de óleo, pois o laboratório sempre está correto sobre a formulação.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-012",
+      "caseId": "OIL-CASE-012",
+      "hypothesis": "Entrada de contaminantes é plausível; inspecionar vedação e respiro, eliminar origem e acompanhar desgaste.",
+      "alternativeCauses": [],
+      "incorrectTrap": "O comando final inteiro está destruído somente porque há silício.",
+      "incompleteTrap": "Trata-se apenas de troca de óleo, sem investigar ingresso.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-013",
+      "caseId": "OIL-CASE-013",
+      "hypothesis": "Ingresso de água deve ser investigado com controle de condição e vedação.",
+      "alternativeCauses": [],
+      "incorrectTrap": "Água sempre prova a necessidade de substituição da roda.",
+      "incompleteTrap": "Secar o frasco da amostra resolve a causa.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-014",
+      "caseId": "OIL-CASE-014",
+      "hypothesis": "Sinais convergentes justificam avaliação de rolamentos, sem presumir ajuste rotineiro quando não há sintoma.",
+      "alternativeCauses": [],
+      "incorrectTrap": "O níquel sozinho identifica qual rolamento e qual pista está trincada.",
+      "incompleteTrap": "O sistema deve seguir sem análise porque rodas não têm filtro.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-015",
+      "caseId": "OIL-CASE-015",
+      "hypothesis": "Não há evidência suficiente para diagnosticar falha funcional ou exigir abertura.",
+      "alternativeCauses": [],
+      "incorrectTrap": "A troca do rolamento é obrigatória em todo ciclo de amostragem.",
+      "incompleteTrap": "Qualquer ferro detectado significa engrenagem perdida.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-016",
+      "caseId": "OIL-CASE-016",
+      "hypothesis": "Contaminação por poeira com possibilidade de desgaste em evolução, ainda sem prova de rolamento destruído.",
+      "alternativeCauses": [],
+      "incorrectTrap": "Todo rolamento deve ser condenado pelo silício elevado.",
+      "incompleteTrap": "A poeira nunca interfere nos mancais e pode ser ignorada.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-017",
+      "caseId": "OIL-CASE-017",
+      "hypothesis": "Ingresso de água deve ser investigado com controle de condição e vedação.",
+      "alternativeCauses": [],
+      "incorrectTrap": "Água sempre prova a necessidade de substituição da roda.",
+      "incompleteTrap": "Secar o frasco da amostra resolve a causa.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-018",
+      "caseId": "OIL-CASE-018",
+      "hypothesis": "Sinais convergentes justificam avaliação de rolamentos, sem presumir ajuste rotineiro quando não há sintoma.",
+      "alternativeCauses": [],
+      "incorrectTrap": "O níquel sozinho identifica qual rolamento e qual pista está trincada.",
+      "incompleteTrap": "O sistema deve seguir sem análise porque rodas não têm filtro.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-019",
+      "caseId": "OIL-CASE-019",
+      "hypothesis": "Não há evidência suficiente para diagnosticar falha funcional ou exigir abertura.",
+      "alternativeCauses": [],
+      "incorrectTrap": "A troca do rolamento é obrigatória em todo ciclo de amostragem.",
+      "incompleteTrap": "Qualquer ferro detectado significa engrenagem perdida.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-020",
+      "caseId": "OIL-CASE-020",
+      "hypothesis": "Contaminação por poeira com possibilidade de desgaste em evolução, ainda sem prova de rolamento destruído.",
+      "alternativeCauses": [],
+      "incorrectTrap": "Todo rolamento deve ser condenado pelo silício elevado.",
+      "incompleteTrap": "A poeira nunca interfere nos mancais e pode ser ignorada.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-021",
+      "caseId": "OIL-CASE-021",
+      "hypothesis": "Ingresso de água deve ser investigado com controle de condição e vedação.",
+      "alternativeCauses": [],
+      "incorrectTrap": "Água sempre prova a necessidade de substituição da roda.",
+      "incompleteTrap": "Secar o frasco da amostra resolve a causa.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-022",
+      "caseId": "OIL-CASE-022",
+      "hypothesis": "Dano irreversível confirmado por inspeção interna virtual neste cenário; a substituição do componente afetado é tecnicamente justificada, com escopo validado.",
+      "alternativeCauses": [],
+      "incorrectTrap": "O níquel sozinho identifica qual rolamento e qual pista está trincada.",
+      "incompleteTrap": "O sistema deve seguir sem análise porque rodas não têm filtro.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-023",
+      "caseId": "OIL-CASE-023",
+      "hypothesis": "Não há evidência suficiente para diagnosticar falha funcional ou exigir abertura.",
+      "alternativeCauses": [],
+      "incorrectTrap": "A troca do rolamento é obrigatória em todo ciclo de amostragem.",
+      "incompleteTrap": "Qualquer ferro detectado significa engrenagem perdida.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-024",
+      "caseId": "OIL-CASE-024",
+      "hypothesis": "Contaminação por poeira com possibilidade de desgaste em evolução, ainda sem prova de rolamento destruído.",
+      "alternativeCauses": [],
+      "incorrectTrap": "Todo rolamento deve ser condenado pelo silício elevado.",
+      "incompleteTrap": "A poeira nunca interfere nos mancais e pode ser ignorada.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-025",
+      "caseId": "OIL-CASE-025",
+      "hypothesis": "Possível desgaste no redutor; direcionar exame de engrenagens, mancais e vedações.",
+      "alternativeCauses": [],
+      "incorrectTrap": "O cobre confirma necessariamente bucha rachada.",
+      "incompleteTrap": "Uma troca de filtro hidráulico sempre resolve redutor fechado.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-026",
+      "caseId": "OIL-CASE-026",
+      "hypothesis": "Ingresso de poeira a confirmar, risco de desgaste progressivo.",
+      "alternativeCauses": [],
+      "incorrectTrap": "O redutor usa obrigatoriamente filtro da bomba hidráulica principal.",
+      "incompleteTrap": "Toda contaminação significa falha de engrenagem confirmada.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-027",
+      "caseId": "OIL-CASE-027",
+      "hypothesis": "Possível desgaste no redutor; direcionar exame de engrenagens, mancais e vedações.",
+      "alternativeCauses": [],
+      "incorrectTrap": "O cobre confirma necessariamente bucha rachada.",
+      "incompleteTrap": "Uma troca de filtro hidráulico sempre resolve redutor fechado.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-028",
+      "caseId": "OIL-CASE-028",
+      "hypothesis": "Ingresso de poeira a confirmar, risco de desgaste progressivo.",
+      "alternativeCauses": [],
+      "incorrectTrap": "O redutor usa obrigatoriamente filtro da bomba hidráulica principal.",
+      "incompleteTrap": "Toda contaminação significa falha de engrenagem confirmada.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-029",
+      "caseId": "OIL-CASE-029",
+      "hypothesis": "Dano irreversível confirmado por inspeção interna virtual neste cenário; a substituição do componente afetado é tecnicamente justificada, com escopo validado.",
+      "alternativeCauses": [],
+      "incorrectTrap": "O cobre confirma necessariamente bucha rachada.",
+      "incompleteTrap": "Uma troca de filtro hidráulico sempre resolve redutor fechado.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-030",
+      "caseId": "OIL-CASE-030",
+      "hypothesis": "Ingresso de poeira a confirmar, risco de desgaste progressivo.",
+      "alternativeCauses": [],
+      "incorrectTrap": "O redutor usa obrigatoriamente filtro da bomba hidráulica principal.",
+      "incompleteTrap": "Toda contaminação significa falha de engrenagem confirmada.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-031",
+      "caseId": "OIL-CASE-031",
+      "hypothesis": "Mudança de formulação compatível com histórico, ainda sujeita à verificação da adequação.",
+      "alternativeCauses": [],
+      "incorrectTrap": "Novo infravermelho significa eixo danificado.",
+      "incompleteTrap": "Se o óleo é novo, nenhuma checagem é necessária.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-032",
+      "caseId": "OIL-CASE-032",
+      "hypothesis": "Desgaste possível de conjunto interno; não é possível identificar elemento exato sem confirmação.",
+      "alternativeCauses": [],
+      "incorrectTrap": "O metal isolado identifica um pacote de discos específico.",
+      "incompleteTrap": "Troca de filtro sem análise elimina a necessidade de diagnosticar.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-033",
+      "caseId": "OIL-CASE-033",
+      "hypothesis": "Alta contaminação ou problema de coleta: a interpretação exige evidências adicionais.",
+      "alternativeCauses": [],
+      "incorrectTrap": "Sem contagem válida, a transmissão está necessariamente quebrada.",
+      "incompleteTrap": "Interpretar contagem inexistente como zero partículas.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-034",
+      "caseId": "OIL-CASE-034",
+      "hypothesis": "Mudança de formulação compatível com histórico, ainda sujeita à verificação da adequação.",
+      "alternativeCauses": [],
+      "incorrectTrap": "Novo infravermelho significa eixo danificado.",
+      "incompleteTrap": "Se o óleo é novo, nenhuma checagem é necessária.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-035",
+      "caseId": "OIL-CASE-035",
+      "hypothesis": "Desgaste possível de conjunto interno; não é possível identificar elemento exato sem confirmação.",
+      "alternativeCauses": [],
+      "incorrectTrap": "O metal isolado identifica um pacote de discos específico.",
+      "incompleteTrap": "Troca de filtro sem análise elimina a necessidade de diagnosticar.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-036",
+      "caseId": "OIL-CASE-036",
+      "hypothesis": "Alta contaminação ou problema de coleta: a interpretação exige evidências adicionais.",
+      "alternativeCauses": [],
+      "incorrectTrap": "Sem contagem válida, a transmissão está necessariamente quebrada.",
+      "incompleteTrap": "Interpretar contagem inexistente como zero partículas.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-037",
+      "caseId": "OIL-CASE-037",
+      "hypothesis": "Mudança de formulação compatível com histórico, ainda sujeita à verificação da adequação.",
+      "alternativeCauses": [],
+      "incorrectTrap": "Novo infravermelho significa eixo danificado.",
+      "incompleteTrap": "Se o óleo é novo, nenhuma checagem é necessária.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-038",
+      "caseId": "OIL-CASE-038",
+      "hypothesis": "Dano irreversível confirmado por inspeção interna virtual neste cenário; a substituição do componente afetado é tecnicamente justificada, com escopo validado.",
+      "alternativeCauses": [],
+      "incorrectTrap": "O metal isolado identifica um pacote de discos específico.",
+      "incompleteTrap": "Troca de filtro sem análise elimina a necessidade de diagnosticar.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-039",
+      "caseId": "OIL-CASE-039",
+      "hypothesis": "Alta contaminação ou problema de coleta: a interpretação exige evidências adicionais.",
+      "alternativeCauses": [],
+      "incorrectTrap": "Sem contagem válida, a transmissão está necessariamente quebrada.",
+      "incompleteTrap": "Interpretar contagem inexistente como zero partículas.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-040",
+      "caseId": "OIL-CASE-040",
+      "hypothesis": "Partículas metálicas exigem diagnóstico e controle do risco de propagação.",
+      "alternativeCauses": [],
+      "incorrectTrap": "A bomba principal é culpada porque há ferro no reservatório.",
+      "incompleteTrap": "A ausência de alarme dispensa inspeção de filtro.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-041",
+      "caseId": "OIL-CASE-041",
+      "hypothesis": "Contaminação do fluido pode acelerar desgaste, mas ainda não identifica qual bomba falhou.",
+      "alternativeCauses": [],
+      "incorrectTrap": "O valor da contagem é diagnóstico definitivo de bomba quebrada.",
+      "incompleteTrap": "Apenas completar fluido resolve a contaminação.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-042",
+      "caseId": "OIL-CASE-042",
+      "hypothesis": "A divergência pode ser fluido incorreto ou cadastro de amostra impreciso; confirmar antes de substituir.",
+      "alternativeCauses": [],
+      "incorrectTrap": "Uma viscosidade diferente prova necessariamente bomba gripada.",
+      "incompleteTrap": "A divergência nunca importa em hidráulica.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-043",
+      "caseId": "OIL-CASE-043",
+      "hypothesis": "Partículas metálicas exigem diagnóstico e controle do risco de propagação.",
+      "alternativeCauses": [],
+      "incorrectTrap": "A bomba principal é culpada porque há ferro no reservatório.",
+      "incompleteTrap": "A ausência de alarme dispensa inspeção de filtro.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-044",
+      "caseId": "OIL-CASE-044",
+      "hypothesis": "Contaminação do fluido pode acelerar desgaste, mas ainda não identifica qual bomba falhou.",
+      "alternativeCauses": [],
+      "incorrectTrap": "O valor da contagem é diagnóstico definitivo de bomba quebrada.",
+      "incompleteTrap": "Apenas completar fluido resolve a contaminação.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-045",
+      "caseId": "OIL-CASE-045",
+      "hypothesis": "A divergência pode ser fluido incorreto ou cadastro de amostra impreciso; confirmar antes de substituir.",
+      "alternativeCauses": [],
+      "incorrectTrap": "Uma viscosidade diferente prova necessariamente bomba gripada.",
+      "incompleteTrap": "A divergência nunca importa em hidráulica.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-046",
+      "caseId": "OIL-CASE-046",
+      "hypothesis": "Dano irreversível confirmado por inspeção interna virtual neste cenário; a substituição do componente afetado é tecnicamente justificada, com escopo validado.",
+      "alternativeCauses": [],
+      "incorrectTrap": "A bomba principal é culpada porque há ferro no reservatório.",
+      "incompleteTrap": "A ausência de alarme dispensa inspeção de filtro.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-047",
+      "caseId": "OIL-CASE-047",
+      "hypothesis": "Contaminação do fluido pode acelerar desgaste, mas ainda não identifica qual bomba falhou.",
+      "alternativeCauses": [],
+      "incorrectTrap": "O valor da contagem é diagnóstico definitivo de bomba quebrada.",
+      "incompleteTrap": "Apenas completar fluido resolve a contaminação.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-048",
+      "caseId": "OIL-CASE-048",
+      "hypothesis": "A divergência pode ser fluido incorreto ou cadastro de amostra impreciso; confirmar antes de substituir.",
+      "alternativeCauses": [],
+      "incorrectTrap": "Uma viscosidade diferente prova necessariamente bomba gripada.",
+      "incompleteTrap": "A divergência nunca importa em hidráulica.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-049",
+      "caseId": "OIL-CASE-049",
+      "hypothesis": "Possível desgaste em componentes internos; correlacionar óleo, filtro, operação e histórico.",
+      "alternativeCauses": [],
+      "incorrectTrap": "O cobre prova definitivamente que uma bronzina específica falhou.",
+      "incompleteTrap": "Basta lavar o filtro e reinstalar após cortar o elemento.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-050",
+      "caseId": "OIL-CASE-050",
+      "hypothesis": "Degradação do lubrificante pode ter múltiplos mecanismos, exigindo verificação de combustão e manutenção.",
+      "alternativeCauses": [],
+      "incorrectTrap": "Oxidação significa que o virabrequim está rompido.",
+      "incompleteTrap": "É sempre correto alongar intervalo para economizar combustível.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-051",
+      "caseId": "OIL-CASE-051",
+      "hypothesis": "Possível ingresso de combustível, a confirmar com método analítico e inspeção.",
+      "alternativeCauses": [],
+      "incorrectTrap": "A análise isolada aponta o número do injetor defeituoso.",
+      "incompleteTrap": "Adicionar óleo mais grosso corrige qualquer diluição.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-052",
+      "caseId": "OIL-CASE-052",
+      "hypothesis": "Possível desgaste em componentes internos; correlacionar óleo, filtro, operação e histórico.",
+      "alternativeCauses": [],
+      "incorrectTrap": "O cobre prova definitivamente que uma bronzina específica falhou.",
+      "incompleteTrap": "Basta lavar o filtro e reinstalar após cortar o elemento.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-053",
+      "caseId": "OIL-CASE-053",
+      "hypothesis": "Degradação do lubrificante pode ter múltiplos mecanismos, exigindo verificação de combustão e manutenção.",
+      "alternativeCauses": [],
+      "incorrectTrap": "Oxidação significa que o virabrequim está rompido.",
+      "incompleteTrap": "É sempre correto alongar intervalo para economizar combustível.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-054",
+      "caseId": "OIL-CASE-054",
+      "hypothesis": "Possível ingresso de combustível, a confirmar com método analítico e inspeção.",
+      "alternativeCauses": [],
+      "incorrectTrap": "A análise isolada aponta o número do injetor defeituoso.",
+      "incompleteTrap": "Adicionar óleo mais grosso corrige qualquer diluição.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-055",
+      "caseId": "OIL-CASE-055",
+      "hypothesis": "Dano irreversível confirmado por inspeção interna virtual neste cenário; a substituição do componente afetado é tecnicamente justificada, com escopo validado.",
+      "alternativeCauses": [],
+      "incorrectTrap": "O cobre prova definitivamente que uma bronzina específica falhou.",
+      "incompleteTrap": "Basta lavar o filtro e reinstalar após cortar o elemento.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-056",
+      "caseId": "OIL-CASE-056",
+      "hypothesis": "Degradação do lubrificante pode ter múltiplos mecanismos, exigindo verificação de combustão e manutenção.",
+      "alternativeCauses": [],
+      "incorrectTrap": "Oxidação significa que o virabrequim está rompido.",
+      "incompleteTrap": "É sempre correto alongar intervalo para economizar combustível.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-057",
+      "caseId": "OIL-CASE-057",
+      "hypothesis": "Possível ingresso de combustível, a confirmar com método analítico e inspeção.",
+      "alternativeCauses": [],
+      "incorrectTrap": "A análise isolada aponta o número do injetor defeituoso.",
+      "incompleteTrap": "Adicionar óleo mais grosso corrige qualquer diluição.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-058",
+      "caseId": "OIL-CASE-058",
+      "hypothesis": "Mistura inadequada ou falha de identificação precisa ser investigada e corrigida.",
+      "alternativeCauses": [],
+      "incorrectTrap": "Toda mudança de glicol exige troca do cabeçote.",
+      "incompleteTrap": "Adicionar aditivo aleatório sem medir concentração.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-059",
+      "caseId": "OIL-CASE-059",
+      "hypothesis": "Possível interação nitrito–alumínio; requer S·O·S nível 2 e verificação da configuração antes de dosar.",
+      "alternativeCauses": [],
+      "incorrectTrap": "Nitrito zero significa que o radiador certamente está furado.",
+      "incompleteTrap": "O ELC deve ser substituído sempre que diminuir nitrito, sem investigação.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-060",
+      "caseId": "OIL-CASE-060",
+      "hypothesis": "Anomalia do fluido a caracterizar; pH não identifica isoladamente falha da junta do cabeçote.",
+      "alternativeCauses": [],
+      "incorrectTrap": "Baixo pH prova junta do cabeçote queimada.",
+      "incompleteTrap": "Completar com qualquer água resolve problema químico.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-061",
+      "caseId": "OIL-CASE-061",
+      "hypothesis": "Mistura inadequada ou falha de identificação precisa ser investigada e corrigida.",
+      "alternativeCauses": [],
+      "incorrectTrap": "Toda mudança de glicol exige troca do cabeçote.",
+      "incompleteTrap": "Adicionar aditivo aleatório sem medir concentração.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-062",
+      "caseId": "OIL-CASE-062",
+      "hypothesis": "Possível interação nitrito–alumínio; requer S·O·S nível 2 e verificação da configuração antes de dosar.",
+      "alternativeCauses": [],
+      "incorrectTrap": "Nitrito zero significa que o radiador certamente está furado.",
+      "incompleteTrap": "O ELC deve ser substituído sempre que diminuir nitrito, sem investigação.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-063",
+      "caseId": "OIL-CASE-063",
+      "hypothesis": "Anomalia do fluido a caracterizar; pH não identifica isoladamente falha da junta do cabeçote.",
+      "alternativeCauses": [],
+      "incorrectTrap": "Baixo pH prova junta do cabeçote queimada.",
+      "incompleteTrap": "Completar com qualquer água resolve problema químico.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-064",
+      "caseId": "OIL-CASE-064",
+      "hypothesis": "Mistura inadequada ou falha de identificação precisa ser investigada e corrigida.",
+      "alternativeCauses": [],
+      "incorrectTrap": "Toda mudança de glicol exige troca do cabeçote.",
+      "incompleteTrap": "Adicionar aditivo aleatório sem medir concentração.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-065",
+      "caseId": "OIL-CASE-065",
+      "hypothesis": "Possível interação nitrito–alumínio; requer S·O·S nível 2 e verificação da configuração antes de dosar.",
+      "alternativeCauses": [],
+      "incorrectTrap": "Nitrito zero significa que o radiador certamente está furado.",
+      "incompleteTrap": "O ELC deve ser substituído sempre que diminuir nitrito, sem investigação.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-066",
+      "caseId": "OIL-CASE-066",
+      "hypothesis": "Anomalia do fluido a caracterizar; pH não identifica isoladamente falha da junta do cabeçote.",
+      "alternativeCauses": [],
+      "incorrectTrap": "Baixo pH prova junta do cabeçote queimada.",
+      "incompleteTrap": "Completar com qualquer água resolve problema químico.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-067",
+      "caseId": "OIL-CASE-067",
+      "hypothesis": "Possível ingresso de contaminantes, sem confirmação de dano interno irreversível.",
+      "alternativeCauses": [],
+      "incorrectTrap": "Qualquer contaminante torna a coroa irrecuperável.",
+      "incompleteTrap": "Somente trocar óleo repetidamente sem vedar a entrada.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-068",
+      "caseId": "OIL-CASE-068",
+      "hypothesis": "Desgaste possível em engrenagens ou mancais, requer confirmação por inspeção.",
+      "alternativeCauses": [],
+      "incorrectTrap": "A concentração de cobre revela o rolamento exato danificado.",
+      "incompleteTrap": "Metais de desgaste são sempre normais em qualquer quantidade.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-069",
+      "caseId": "OIL-CASE-069",
+      "hypothesis": "Possível ingresso de contaminantes, sem confirmação de dano interno irreversível.",
+      "alternativeCauses": [],
+      "incorrectTrap": "Qualquer contaminante torna a coroa irrecuperável.",
+      "incompleteTrap": "Somente trocar óleo repetidamente sem vedar a entrada.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-070",
+      "caseId": "OIL-CASE-070",
+      "hypothesis": "Desgaste possível em engrenagens ou mancais, requer confirmação por inspeção.",
+      "alternativeCauses": [],
+      "incorrectTrap": "A concentração de cobre revela o rolamento exato danificado.",
+      "incompleteTrap": "Metais de desgaste são sempre normais em qualquer quantidade.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-071",
+      "caseId": "OIL-CASE-071",
+      "hypothesis": "Possível ingresso de contaminantes, sem confirmação de dano interno irreversível.",
+      "alternativeCauses": [],
+      "incorrectTrap": "Qualquer contaminante torna a coroa irrecuperável.",
+      "incompleteTrap": "Somente trocar óleo repetidamente sem vedar a entrada.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    },
+    {
+      "id": "HYP-OIL-CASE-072",
+      "caseId": "OIL-CASE-072",
+      "hypothesis": "Dano irreversível confirmado por inspeção interna virtual neste cenário; a substituição do componente afetado é tecnicamente justificada, com escopo validado.",
+      "alternativeCauses": [],
+      "incorrectTrap": "A concentração de cobre revela o rolamento exato danificado.",
+      "incompleteTrap": "Metais de desgaste são sempre normais em qualquer quantidade.",
+      "confirmationScope": "somente_no_cenario_ficticio"
+    }
+  ]
+}

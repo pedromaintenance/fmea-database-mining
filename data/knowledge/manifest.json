@@ -1,0 +1,36 @@
+{
+  "schema": "fmea-mining.knowledge-manifest.v1",
+  "version": "1.1.0",
+  "status": "extraido_de_simuladores_com_rastreabilidade",
+  "sources": [
+    {
+      "repository": "pedromaintenance/porcaria-codigos-de-falha",
+      "dataBlob": "c605b4a80323641e73bc2f64513f1266f3356377"
+    },
+    {
+      "repository": "pedromaintenance/porcaria-analise-de-oleo",
+      "casesBlob": "a29b06749d2f0dab9457daac5108d82cbb6510fd",
+      "libraryBlob": "c3a4d75ac5cc7498cc949b4d63de5ab9768c8ecf"
+    }
+  ],
+  "counts": {
+    "electronicCases": 72,
+    "oilCases": 72,
+    "totalCases": 144,
+    "electronicAnchors": 24,
+    "oilArchetypes": 24,
+    "codeIndex": 54,
+    "fmiEntriesIncludedInCodeIndex": 23,
+    "manuals": 39,
+    "sources": 27,
+    "symptoms": 144,
+    "evidence": 288,
+    "hypotheses": 144
+  },
+  "restrictions": [
+    "Todas evidencias de cenarios sao simuladas",
+    "Valores de jogo nao representam custos reais",
+    "Codigos exigem efetividade por equipamento/ECM",
+    "Local SAP e causa-raiz aguardam revisao"
+  ]
+}

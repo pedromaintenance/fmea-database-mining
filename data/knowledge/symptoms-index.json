@@ -1,0 +1,1928 @@
+{
+  "schema": "fmea-mining.knowledge-index.v1",
+  "version": "1.1.0",
+  "kind": "symptoms",
+  "status": "material_simulado",
+  "records": [
+    {
+      "id": "SYM-ELEC-CF-01-1",
+      "caseId": "ELEC-CF-01-1",
+      "domain": "eletronica",
+      "machine": "CAT 777 (simulado)",
+      "systemOrCompartment": "Elétrica",
+      "symptom": "A máquina registra baixa tensão intermitente durante acionamento de sistemas auxiliares.",
+      "context": "Caso de treinamento #01.1. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-ELEC-CF-01-2",
+      "caseId": "ELEC-CF-01-2",
+      "domain": "eletronica",
+      "machine": "CAT 777 (simulado)",
+      "systemOrCompartment": "Elétrica",
+      "symptom": "A máquina registra baixa tensão intermitente durante acionamento de sistemas auxiliares.",
+      "context": "Caso de treinamento #01.2. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-ELEC-CF-01-3",
+      "caseId": "ELEC-CF-01-3",
+      "domain": "eletronica",
+      "machine": "CAT 777 (simulado)",
+      "systemOrCompartment": "Elétrica",
+      "symptom": "A máquina registra baixa tensão intermitente durante acionamento de sistemas auxiliares.",
+      "context": "Caso de treinamento #01.3. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-ELEC-CF-02-1",
+      "caseId": "ELEC-CF-02-1",
+      "domain": "eletronica",
+      "machine": "Pá carregadeira 966 (simulado)",
+      "systemOrCompartment": "Elétrica",
+      "symptom": "Depois da partida aparecem alertas de alimentação superior ao esperado.",
+      "context": "Caso de treinamento #02.1. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-ELEC-CF-02-2",
+      "caseId": "ELEC-CF-02-2",
+      "domain": "eletronica",
+      "machine": "Pá carregadeira 966 (simulado)",
+      "systemOrCompartment": "Elétrica",
+      "symptom": "Depois da partida aparecem alertas de alimentação superior ao esperado.",
+      "context": "Caso de treinamento #02.2. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-ELEC-CF-02-3",
+      "caseId": "ELEC-CF-02-3",
+      "domain": "eletronica",
+      "machine": "Pá carregadeira 966 (simulado)",
+      "systemOrCompartment": "Elétrica",
+      "symptom": "Depois da partida aparecem alertas de alimentação superior ao esperado.",
+      "context": "Caso de treinamento #02.3. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-ELEC-CF-03-1",
+      "caseId": "ELEC-CF-03-1",
+      "domain": "eletronica",
+      "machine": "Caminhão de mineração (simulado)",
+      "systemOrCompartment": "Motor",
+      "symptom": "Alerta do circuito de pressão de óleo; pressão mecânica ainda não foi confirmada.",
+      "context": "Caso de treinamento #03.1. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-ELEC-CF-03-2",
+      "caseId": "ELEC-CF-03-2",
+      "domain": "eletronica",
+      "machine": "Caminhão de mineração (simulado)",
+      "systemOrCompartment": "Motor",
+      "symptom": "Alerta do circuito de pressão de óleo; pressão mecânica ainda não foi confirmada.",
+      "context": "Caso de treinamento #03.2. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-ELEC-CF-03-3",
+      "caseId": "ELEC-CF-03-3",
+      "domain": "eletronica",
+      "machine": "Caminhão de mineração (simulado)",
+      "systemOrCompartment": "Motor",
+      "symptom": "Alerta do circuito de pressão de óleo; pressão mecânica ainda não foi confirmada.",
+      "context": "Caso de treinamento #03.3. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-ELEC-CF-04-1",
+      "caseId": "ELEC-CF-04-1",
+      "domain": "eletronica",
+      "machine": "Escavadeira hidráulica (simulado)",
+      "systemOrCompartment": "Motor",
+      "symptom": "Motor reduz potência e a leitura de pressão atmosférica parece incoerente.",
+      "context": "Caso de treinamento #04.1. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-ELEC-CF-04-2",
+      "caseId": "ELEC-CF-04-2",
+      "domain": "eletronica",
+      "machine": "Escavadeira hidráulica (simulado)",
+      "systemOrCompartment": "Motor",
+      "symptom": "Motor reduz potência e a leitura de pressão atmosférica parece incoerente.",
+      "context": "Caso de treinamento #04.2. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-ELEC-CF-04-3",
+      "caseId": "ELEC-CF-04-3",
+      "domain": "eletronica",
+      "machine": "Escavadeira hidráulica (simulado)",
+      "systemOrCompartment": "Motor",
+      "symptom": "Motor reduz potência e a leitura de pressão atmosférica parece incoerente.",
+      "context": "Caso de treinamento #04.3. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-ELEC-CF-05-1",
+      "caseId": "ELEC-CF-05-1",
+      "domain": "eletronica",
+      "machine": "Caminhão de mineração (simulado)",
+      "systemOrCompartment": "Transmissão",
+      "symptom": "Indicação de velocidade de transmissão oscila nos relatórios.",
+      "context": "Caso de treinamento #05.1. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-ELEC-CF-05-2",
+      "caseId": "ELEC-CF-05-2",
+      "domain": "eletronica",
+      "machine": "Caminhão de mineração (simulado)",
+      "systemOrCompartment": "Transmissão",
+      "symptom": "Indicação de velocidade de transmissão oscila nos relatórios.",
+      "context": "Caso de treinamento #05.2. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-ELEC-CF-05-3",
+      "caseId": "ELEC-CF-05-3",
+      "domain": "eletronica",
+      "machine": "Caminhão de mineração (simulado)",
+      "systemOrCompartment": "Transmissão",
+      "symptom": "Indicação de velocidade de transmissão oscila nos relatórios.",
+      "context": "Caso de treinamento #05.3. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-ELEC-CF-06-1",
+      "caseId": "ELEC-CF-06-1",
+      "domain": "eletronica",
+      "machine": "Caminhão articulado (simulado)",
+      "systemOrCompartment": "Transmissão",
+      "symptom": "A função de mudança de marcha fica inibida após surgir um DTC do solenoide.",
+      "context": "Caso de treinamento #06.1. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-ELEC-CF-06-2",
+      "caseId": "ELEC-CF-06-2",
+      "domain": "eletronica",
+      "machine": "Caminhão articulado (simulado)",
+      "systemOrCompartment": "Transmissão",
+      "symptom": "A função de mudança de marcha fica inibida após surgir um DTC do solenoide.",
+      "context": "Caso de treinamento #06.2. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-ELEC-CF-06-3",
+      "caseId": "ELEC-CF-06-3",
+      "domain": "eletronica",
+      "machine": "Caminhão articulado (simulado)",
+      "systemOrCompartment": "Transmissão",
+      "symptom": "A função de mudança de marcha fica inibida após surgir um DTC do solenoide.",
+      "context": "Caso de treinamento #06.3. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-ELEC-CF-07-1",
+      "caseId": "ELEC-CF-07-1",
+      "domain": "eletronica",
+      "machine": "Escavadeira de produção (simulado)",
+      "systemOrCompartment": "Hidráulica",
+      "symptom": "Um comando de giro está indisponível e há falha elétrica do solenoide.",
+      "context": "Caso de treinamento #07.1. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-ELEC-CF-07-2",
+      "caseId": "ELEC-CF-07-2",
+      "domain": "eletronica",
+      "machine": "Escavadeira de produção (simulado)",
+      "systemOrCompartment": "Hidráulica",
+      "symptom": "Um comando de giro está indisponível e há falha elétrica do solenoide.",
+      "context": "Caso de treinamento #07.2. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-ELEC-CF-07-3",
+      "caseId": "ELEC-CF-07-3",
+      "domain": "eletronica",
+      "machine": "Escavadeira de produção (simulado)",
+      "systemOrCompartment": "Hidráulica",
+      "symptom": "Um comando de giro está indisponível e há falha elétrica do solenoide.",
+      "context": "Caso de treinamento #07.3. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-ELEC-CF-08-1",
+      "caseId": "ELEC-CF-08-1",
+      "domain": "eletronica",
+      "machine": "Escavadeira hidráulica (simulado)",
+      "systemOrCompartment": "Hidráulica",
+      "symptom": "Implemento apresenta bloqueio e código de circuito de bobina.",
+      "context": "Caso de treinamento #08.1. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-ELEC-CF-08-2",
+      "caseId": "ELEC-CF-08-2",
+      "domain": "eletronica",
+      "machine": "Escavadeira hidráulica (simulado)",
+      "systemOrCompartment": "Hidráulica",
+      "symptom": "Implemento apresenta bloqueio e código de circuito de bobina.",
+      "context": "Caso de treinamento #08.2. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-ELEC-CF-08-3",
+      "caseId": "ELEC-CF-08-3",
+      "domain": "eletronica",
+      "machine": "Escavadeira hidráulica (simulado)",
+      "systemOrCompartment": "Hidráulica",
+      "symptom": "Implemento apresenta bloqueio e código de circuito de bobina.",
+      "context": "Caso de treinamento #08.3. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-ELEC-CF-09-1",
+      "caseId": "ELEC-CF-09-1",
+      "domain": "eletronica",
+      "machine": "Motoniveladora (simulado)",
+      "systemOrCompartment": "Direção",
+      "symptom": "Leitura de pressão de direção permanece alta no display.",
+      "context": "Caso de treinamento #09.1. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-ELEC-CF-09-2",
+      "caseId": "ELEC-CF-09-2",
+      "domain": "eletronica",
+      "machine": "Motoniveladora (simulado)",
+      "systemOrCompartment": "Direção",
+      "symptom": "Leitura de pressão de direção permanece alta no display.",
+      "context": "Caso de treinamento #09.2. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-ELEC-CF-09-3",
+      "caseId": "ELEC-CF-09-3",
+      "domain": "eletronica",
+      "machine": "Motoniveladora (simulado)",
+      "systemOrCompartment": "Direção",
+      "symptom": "Leitura de pressão de direção permanece alta no display.",
+      "context": "Caso de treinamento #09.3. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-ELEC-CF-10-1",
+      "caseId": "ELEC-CF-10-1",
+      "domain": "eletronica",
+      "machine": "Equipamento articulado (simulado)",
+      "systemOrCompartment": "Direção",
+      "symptom": "Dados da posição do cilindro de direção ficam instáveis.",
+      "context": "Caso de treinamento #10.1. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-ELEC-CF-10-2",
+      "caseId": "ELEC-CF-10-2",
+      "domain": "eletronica",
+      "machine": "Equipamento articulado (simulado)",
+      "systemOrCompartment": "Direção",
+      "symptom": "Dados da posição do cilindro de direção ficam instáveis.",
+      "context": "Caso de treinamento #10.2. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-ELEC-CF-10-3",
+      "caseId": "ELEC-CF-10-3",
+      "domain": "eletronica",
+      "machine": "Equipamento articulado (simulado)",
+      "systemOrCompartment": "Direção",
+      "symptom": "Dados da posição do cilindro de direção ficam instáveis.",
+      "context": "Caso de treinamento #10.3. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-ELEC-CF-11-1",
+      "caseId": "ELEC-CF-11-1",
+      "domain": "eletronica",
+      "machine": "Pá carregadeira (simulado)",
+      "systemOrCompartment": "Controle",
+      "symptom": "O seletor falha intermitentemente no reconhecimento de posição.",
+      "context": "Caso de treinamento #11.1. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-ELEC-CF-11-2",
+      "caseId": "ELEC-CF-11-2",
+      "domain": "eletronica",
+      "machine": "Pá carregadeira (simulado)",
+      "systemOrCompartment": "Controle",
+      "symptom": "O seletor falha intermitentemente no reconhecimento de posição.",
+      "context": "Caso de treinamento #11.2. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-ELEC-CF-11-3",
+      "caseId": "ELEC-CF-11-3",
+      "domain": "eletronica",
+      "machine": "Pá carregadeira (simulado)",
+      "systemOrCompartment": "Controle",
+      "symptom": "O seletor falha intermitentemente no reconhecimento de posição.",
+      "context": "Caso de treinamento #11.3. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-ELEC-CF-12-1",
+      "caseId": "ELEC-CF-12-1",
+      "domain": "eletronica",
+      "machine": "Motoniveladora (simulado)",
+      "systemOrCompartment": "Auxiliares",
+      "symptom": "Ar-condicionado não aciona e há falha de circuito da embreagem.",
+      "context": "Caso de treinamento #12.1. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-ELEC-CF-12-2",
+      "caseId": "ELEC-CF-12-2",
+      "domain": "eletronica",
+      "machine": "Motoniveladora (simulado)",
+      "systemOrCompartment": "Auxiliares",
+      "symptom": "Ar-condicionado não aciona e há falha de circuito da embreagem.",
+      "context": "Caso de treinamento #12.2. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-ELEC-CF-12-3",
+      "caseId": "ELEC-CF-12-3",
+      "domain": "eletronica",
+      "machine": "Motoniveladora (simulado)",
+      "systemOrCompartment": "Auxiliares",
+      "symptom": "Ar-condicionado não aciona e há falha de circuito da embreagem.",
+      "context": "Caso de treinamento #12.3. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-ELEC-CF-13-1",
+      "caseId": "ELEC-CF-13-1",
+      "domain": "eletronica",
+      "machine": "Perfuratriz de superfície (simulado)",
+      "systemOrCompartment": "Rede CAN",
+      "symptom": "Vários sistemas deixam de atualizar dados ao mesmo tempo.",
+      "context": "Caso de treinamento #13.1. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-ELEC-CF-13-2",
+      "caseId": "ELEC-CF-13-2",
+      "domain": "eletronica",
+      "machine": "Perfuratriz de superfície (simulado)",
+      "systemOrCompartment": "Rede CAN",
+      "symptom": "Vários sistemas deixam de atualizar dados ao mesmo tempo.",
+      "context": "Caso de treinamento #13.2. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-ELEC-CF-13-3",
+      "caseId": "ELEC-CF-13-3",
+      "domain": "eletronica",
+      "machine": "Perfuratriz de superfície (simulado)",
+      "systemOrCompartment": "Rede CAN",
+      "symptom": "Vários sistemas deixam de atualizar dados ao mesmo tempo.",
+      "context": "Caso de treinamento #13.3. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-ELEC-CF-14-1",
+      "caseId": "ELEC-CF-14-1",
+      "domain": "eletronica",
+      "machine": "CAT C13/C15/C18 (referência de família)",
+      "systemOrCompartment": "Motor",
+      "symptom": "O motor acusa evento de pressão baixa; é preciso verificar se a condição é real.",
+      "context": "Caso de treinamento #14.1. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-ELEC-CF-14-2",
+      "caseId": "ELEC-CF-14-2",
+      "domain": "eletronica",
+      "machine": "CAT C13/C15/C18 (referência de família)",
+      "systemOrCompartment": "Motor",
+      "symptom": "O motor acusa evento de pressão baixa; é preciso verificar se a condição é real.",
+      "context": "Caso de treinamento #14.2. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-ELEC-CF-14-3",
+      "caseId": "ELEC-CF-14-3",
+      "domain": "eletronica",
+      "machine": "CAT C13/C15/C18 (referência de família)",
+      "systemOrCompartment": "Motor",
+      "symptom": "O motor acusa evento de pressão baixa; é preciso verificar se a condição é real.",
+      "context": "Caso de treinamento #14.3. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-ELEC-CF-15-1",
+      "caseId": "ELEC-CF-15-1",
+      "domain": "eletronica",
+      "machine": "CAT C13/C15/C18 (referência de família)",
+      "systemOrCompartment": "Motor",
+      "symptom": "Alerta de nível crítico de pressão do óleo; uma falha grave pode evoluir em segundos.",
+      "context": "Caso de treinamento #15.1. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-ELEC-CF-15-2",
+      "caseId": "ELEC-CF-15-2",
+      "domain": "eletronica",
+      "machine": "CAT C13/C15/C18 (referência de família)",
+      "systemOrCompartment": "Motor",
+      "symptom": "Alerta de nível crítico de pressão do óleo; uma falha grave pode evoluir em segundos.",
+      "context": "Caso de treinamento #15.2. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-ELEC-CF-15-3",
+      "caseId": "ELEC-CF-15-3",
+      "domain": "eletronica",
+      "machine": "CAT C13/C15/C18 (referência de família)",
+      "systemOrCompartment": "Motor",
+      "symptom": "Alerta de nível crítico de pressão do óleo; uma falha grave pode evoluir em segundos.",
+      "context": "Caso de treinamento #15.3. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-ELEC-CF-16-1",
+      "caseId": "ELEC-CF-16-1",
+      "domain": "eletronica",
+      "machine": "CAT C13/C15/C18 (referência de família)",
+      "systemOrCompartment": "Arrefecimento",
+      "symptom": "Evento térmico surge após trabalho sob carga.",
+      "context": "Caso de treinamento #16.1. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-ELEC-CF-16-2",
+      "caseId": "ELEC-CF-16-2",
+      "domain": "eletronica",
+      "machine": "CAT C13/C15/C18 (referência de família)",
+      "systemOrCompartment": "Arrefecimento",
+      "symptom": "Evento térmico surge após trabalho sob carga.",
+      "context": "Caso de treinamento #16.2. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-ELEC-CF-16-3",
+      "caseId": "ELEC-CF-16-3",
+      "domain": "eletronica",
+      "machine": "CAT C13/C15/C18 (referência de família)",
+      "systemOrCompartment": "Arrefecimento",
+      "symptom": "Evento térmico surge após trabalho sob carga.",
+      "context": "Caso de treinamento #16.3. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-ELEC-CF-17-1",
+      "caseId": "ELEC-CF-17-1",
+      "domain": "eletronica",
+      "machine": "Motor diesel eletrônico (simulado)",
+      "systemOrCompartment": "Admissão",
+      "symptom": "Motor apresenta baixo desempenho junto de baixa pressão no coletor.",
+      "context": "Caso de treinamento #17.1. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-ELEC-CF-17-2",
+      "caseId": "ELEC-CF-17-2",
+      "domain": "eletronica",
+      "machine": "Motor diesel eletrônico (simulado)",
+      "systemOrCompartment": "Admissão",
+      "symptom": "Motor apresenta baixo desempenho junto de baixa pressão no coletor.",
+      "context": "Caso de treinamento #17.2. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-ELEC-CF-17-3",
+      "caseId": "ELEC-CF-17-3",
+      "domain": "eletronica",
+      "machine": "Motor diesel eletrônico (simulado)",
+      "systemOrCompartment": "Admissão",
+      "symptom": "Motor apresenta baixo desempenho junto de baixa pressão no coletor.",
+      "context": "Caso de treinamento #17.3. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-ELEC-CF-18-1",
+      "caseId": "ELEC-CF-18-1",
+      "domain": "eletronica",
+      "machine": "Motor diesel eletrônico (simulado)",
+      "systemOrCompartment": "Admissão",
+      "symptom": "Temperatura da admissão aumenta em determinados ciclos.",
+      "context": "Caso de treinamento #18.1. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-ELEC-CF-18-2",
+      "caseId": "ELEC-CF-18-2",
+      "domain": "eletronica",
+      "machine": "Motor diesel eletrônico (simulado)",
+      "systemOrCompartment": "Admissão",
+      "symptom": "Temperatura da admissão aumenta em determinados ciclos.",
+      "context": "Caso de treinamento #18.2. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-ELEC-CF-18-3",
+      "caseId": "ELEC-CF-18-3",
+      "domain": "eletronica",
+      "machine": "Motor diesel eletrônico (simulado)",
+      "systemOrCompartment": "Admissão",
+      "symptom": "Temperatura da admissão aumenta em determinados ciclos.",
+      "context": "Caso de treinamento #18.3. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-ELEC-CF-19-1",
+      "caseId": "ELEC-CF-19-1",
+      "domain": "eletronica",
+      "machine": "Motor diesel eletrônico (simulado)",
+      "systemOrCompartment": "Motor",
+      "symptom": "Pressão do cárter elevada no monitoramento eletrônico.",
+      "context": "Caso de treinamento #19.1. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-ELEC-CF-19-2",
+      "caseId": "ELEC-CF-19-2",
+      "domain": "eletronica",
+      "machine": "Motor diesel eletrônico (simulado)",
+      "systemOrCompartment": "Motor",
+      "symptom": "Pressão do cárter elevada no monitoramento eletrônico.",
+      "context": "Caso de treinamento #19.2. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-ELEC-CF-19-3",
+      "caseId": "ELEC-CF-19-3",
+      "domain": "eletronica",
+      "machine": "Motor diesel eletrônico (simulado)",
+      "systemOrCompartment": "Motor",
+      "symptom": "Pressão do cárter elevada no monitoramento eletrônico.",
+      "context": "Caso de treinamento #19.3. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-ELEC-CF-20-1",
+      "caseId": "ELEC-CF-20-1",
+      "domain": "eletronica",
+      "machine": "Motor DEUTZ MD1 (referência)",
+      "systemOrCompartment": "Motor",
+      "symptom": "Leitura de rotação tem interrupções apesar do acionamento do motor.",
+      "context": "Caso de treinamento #20.1. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-ELEC-CF-20-2",
+      "caseId": "ELEC-CF-20-2",
+      "domain": "eletronica",
+      "machine": "Motor DEUTZ MD1 (referência)",
+      "systemOrCompartment": "Motor",
+      "symptom": "Leitura de rotação tem interrupções apesar do acionamento do motor.",
+      "context": "Caso de treinamento #20.2. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-ELEC-CF-20-3",
+      "caseId": "ELEC-CF-20-3",
+      "domain": "eletronica",
+      "machine": "Motor DEUTZ MD1 (referência)",
+      "systemOrCompartment": "Motor",
+      "symptom": "Leitura de rotação tem interrupções apesar do acionamento do motor.",
+      "context": "Caso de treinamento #20.3. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-ELEC-CF-21-1",
+      "caseId": "ELEC-CF-21-1",
+      "domain": "eletronica",
+      "machine": "Controlador Danfoss PVED-CL (referência)",
+      "systemOrCompartment": "Controle",
+      "symptom": "Alimentação eletrônica do módulo está instável.",
+      "context": "Caso de treinamento #21.1. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-ELEC-CF-21-2",
+      "caseId": "ELEC-CF-21-2",
+      "domain": "eletronica",
+      "machine": "Controlador Danfoss PVED-CL (referência)",
+      "systemOrCompartment": "Controle",
+      "symptom": "Alimentação eletrônica do módulo está instável.",
+      "context": "Caso de treinamento #21.2. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-ELEC-CF-21-3",
+      "caseId": "ELEC-CF-21-3",
+      "domain": "eletronica",
+      "machine": "Controlador Danfoss PVED-CL (referência)",
+      "systemOrCompartment": "Controle",
+      "symptom": "Alimentação eletrônica do módulo está instável.",
+      "context": "Caso de treinamento #21.3. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-ELEC-CF-22-1",
+      "caseId": "ELEC-CF-22-1",
+      "domain": "eletronica",
+      "machine": "Controlador Danfoss PVED-CL (referência)",
+      "systemOrCompartment": "Controle",
+      "symptom": "Falhas simultâneas de sensores compartilham alimentação.",
+      "context": "Caso de treinamento #22.1. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-ELEC-CF-22-2",
+      "caseId": "ELEC-CF-22-2",
+      "domain": "eletronica",
+      "machine": "Controlador Danfoss PVED-CL (referência)",
+      "systemOrCompartment": "Controle",
+      "symptom": "Falhas simultâneas de sensores compartilham alimentação.",
+      "context": "Caso de treinamento #22.2. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-ELEC-CF-22-3",
+      "caseId": "ELEC-CF-22-3",
+      "domain": "eletronica",
+      "machine": "Controlador Danfoss PVED-CL (referência)",
+      "systemOrCompartment": "Controle",
+      "symptom": "Falhas simultâneas de sensores compartilham alimentação.",
+      "context": "Caso de treinamento #22.3. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-ELEC-CF-23-1",
+      "caseId": "ELEC-CF-23-1",
+      "domain": "eletronica",
+      "machine": "Joystick Danfoss JS1 (referência)",
+      "systemOrCompartment": "Controle",
+      "symptom": "O eixo de comando X registra tensão anormal, com resposta de função bloqueada.",
+      "context": "Caso de treinamento #23.1. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-ELEC-CF-23-2",
+      "caseId": "ELEC-CF-23-2",
+      "domain": "eletronica",
+      "machine": "Joystick Danfoss JS1 (referência)",
+      "systemOrCompartment": "Controle",
+      "symptom": "O eixo de comando X registra tensão anormal, com resposta de função bloqueada.",
+      "context": "Caso de treinamento #23.2. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-ELEC-CF-23-3",
+      "caseId": "ELEC-CF-23-3",
+      "domain": "eletronica",
+      "machine": "Joystick Danfoss JS1 (referência)",
+      "systemOrCompartment": "Controle",
+      "symptom": "O eixo de comando X registra tensão anormal, com resposta de função bloqueada.",
+      "context": "Caso de treinamento #23.3. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-ELEC-CF-24-1",
+      "caseId": "ELEC-CF-24-1",
+      "domain": "eletronica",
+      "machine": "Joystick Danfoss JS1 (referência)",
+      "systemOrCompartment": "Controle",
+      "symptom": "Um joystick substituído deixou de responder por calibração não concluída.",
+      "context": "Caso de treinamento #24.1. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-ELEC-CF-24-2",
+      "caseId": "ELEC-CF-24-2",
+      "domain": "eletronica",
+      "machine": "Joystick Danfoss JS1 (referência)",
+      "systemOrCompartment": "Controle",
+      "symptom": "Um joystick substituído deixou de responder por calibração não concluída.",
+      "context": "Caso de treinamento #24.2. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-ELEC-CF-24-3",
+      "caseId": "ELEC-CF-24-3",
+      "domain": "eletronica",
+      "machine": "Joystick Danfoss JS1 (referência)",
+      "systemOrCompartment": "Controle",
+      "symptom": "Um joystick substituído deixou de responder por calibração não concluída.",
+      "context": "Caso de treinamento #24.3. A indicação eletrônica é verossímil, mas a cronologia e as medições a seguir são simulações didáticas. Não há associação comprovada a uma máquina específica da frota.",
+      "observed": [],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-001",
+      "caseId": "OIL-CASE-001",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo 777E",
+      "systemOrCompartment": "Comando Final Direito Traseiro",
+      "symptom": "O lubrificante apresenta indícios de umidade, com suspeita de perda de características protetivas.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: água e emulsão.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "O histórico não é confirmação de causa raiz."
+      ],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-002",
+      "caseId": "OIL-CASE-002",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo 777",
+      "systemOrCompartment": "Comando Final Direito Traseiro",
+      "symptom": "A análise visual indica partículas ferrosas e uma tendência de desgaste incomum.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: desgaste ferrometálico.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "O histórico não é confirmação de causa raiz."
+      ],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-003",
+      "caseId": "OIL-CASE-003",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo 966",
+      "systemOrCompartment": "Diferencial Dianteira",
+      "symptom": "O laboratório identifica diferença de aditivação frente ao histórico antigo.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: mudança de formulação.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "O histórico não é confirmação de causa raiz."
+      ],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-004",
+      "caseId": "OIL-CASE-004",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo D9",
+      "systemOrCompartment": "Comando Final Esquerda",
+      "symptom": "Traços de silício e alumínio acompanham aumento de partículas no óleo de um comando final.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: contaminação abrasiva.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "O histórico não é confirmação de causa raiz."
+      ],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-005",
+      "caseId": "OIL-CASE-005",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo genérico",
+      "systemOrCompartment": "Comando Final Esquerdo Traseiro",
+      "symptom": "A equipe retorna com uma amostra comparativa de outro período e pede reavaliação do caso. O lubrificante apresenta indícios de umidade, com suspeita de perda de características protetivas. A interpretação precisa considerar tendência e qualidade do histórico, não apenas o alerta mais recente.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: água e emulsão.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "Considere as horas de óleo, coleta e amostra anterior.",
+        "Novo dado: duas coletas comparáveis permitem observar direção da tendência, mas sem quantificação em ppm no arquivo público."
+      ],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-006",
+      "caseId": "OIL-CASE-006",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo 313",
+      "systemOrCompartment": "Comando Final Direita",
+      "symptom": "A equipe retorna com uma amostra comparativa de outro período e pede reavaliação do caso. A análise visual indica partículas ferrosas e uma tendência de desgaste incomum. A interpretação precisa considerar tendência e qualidade do histórico, não apenas o alerta mais recente.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: desgaste ferrometálico.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "Considere as horas de óleo, coleta e amostra anterior.",
+        "Novo dado: duas coletas comparáveis permitem observar direção da tendência, mas sem quantificação em ppm no arquivo público."
+      ],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-007",
+      "caseId": "OIL-CASE-007",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo 777",
+      "systemOrCompartment": "Diferencial",
+      "symptom": "A equipe retorna com uma amostra comparativa de outro período e pede reavaliação do caso. O laboratório identifica diferença de aditivação frente ao histórico antigo. A interpretação precisa considerar tendência e qualidade do histórico, não apenas o alerta mais recente.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: mudança de formulação.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "Considere as horas de óleo, coleta e amostra anterior.",
+        "Novo dado: duas coletas comparáveis permitem observar direção da tendência, mas sem quantificação em ppm no arquivo público."
+      ],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-008",
+      "caseId": "OIL-CASE-008",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo 395",
+      "systemOrCompartment": "Comando Final Direito Traseiro",
+      "symptom": "A equipe retorna com uma amostra comparativa de outro período e pede reavaliação do caso. Traços de silício e alumínio acompanham aumento de partículas no óleo de um comando final. A interpretação precisa considerar tendência e qualidade do histórico, não apenas o alerta mais recente.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: contaminação abrasiva.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "Considere as horas de óleo, coleta e amostra anterior.",
+        "Novo dado: duas coletas comparáveis permitem observar direção da tendência, mas sem quantificação em ppm no arquivo público."
+      ],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-009",
+      "caseId": "OIL-CASE-009",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo 395",
+      "systemOrCompartment": "Comando Final Esquerda",
+      "symptom": "Há retorno da oficina com inspeção preliminar executada sob controle operacional. O lubrificante apresenta indícios de umidade, com suspeita de perda de características protetivas. Agora a decisão deverá considerar o achado físico e decidir qual serviço possui justificativa.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: água e emulsão.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "Uma inspeção de campo muda a qualidade da decisão.",
+        "O retorno da inspeção virtual acrescenta evidência, mas a causa sistêmica exige investigação."
+      ],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-010",
+      "caseId": "OIL-CASE-010",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo 777",
+      "systemOrCompartment": "Comando Final Esquerdo Traseiro",
+      "symptom": "Há retorno da oficina com inspeção preliminar executada sob controle operacional. A análise visual indica partículas ferrosas e uma tendência de desgaste incomum. Agora a decisão deverá considerar o achado físico e decidir qual serviço possui justificativa. Neste terceiro episódio, existe retorno de inspeção interna fictícia disponível, cuja conclusão deve ser considerada antes da decisão.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: desgaste ferrometálico.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "Uma inspeção de campo muda a qualidade da decisão.",
+        "O retorno da inspeção virtual acrescenta evidência, mas a causa sistêmica exige investigação."
+      ],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-011",
+      "caseId": "OIL-CASE-011",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo 777",
+      "systemOrCompartment": "Comando Final Direito Traseiro",
+      "symptom": "Há retorno da oficina com inspeção preliminar executada sob controle operacional. O laboratório identifica diferença de aditivação frente ao histórico antigo. Agora a decisão deverá considerar o achado físico e decidir qual serviço possui justificativa.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: mudança de formulação.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "Uma inspeção de campo muda a qualidade da decisão.",
+        "O retorno da inspeção virtual acrescenta evidência, mas a causa sistêmica exige investigação."
+      ],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-012",
+      "caseId": "OIL-CASE-012",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo 420",
+      "systemOrCompartment": "Comando Final Direita, Dianteira",
+      "symptom": "Há retorno da oficina com inspeção preliminar executada sob controle operacional. Traços de silício e alumínio acompanham aumento de partículas no óleo de um comando final. Agora a decisão deverá considerar o achado físico e decidir qual serviço possui justificativa.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: contaminação abrasiva.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "Uma inspeção de campo muda a qualidade da decisão.",
+        "O retorno da inspeção virtual acrescenta evidência, mas a causa sistêmica exige investigação."
+      ],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-013",
+      "caseId": "OIL-CASE-013",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo 777E",
+      "systemOrCompartment": "Montagem Da Roda Frontal Esquerdo",
+      "symptom": "A amostra do conjunto dianteiro tem alteração de aspecto e suspeita de água.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: água no mancal.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "O histórico não é confirmação de causa raiz."
+      ],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-014",
+      "caseId": "OIL-CASE-014",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo 16",
+      "systemOrCompartment": "Montagem Da Roda Frontal Esquerdo",
+      "symptom": "O conjunto de roda apresenta alerta de material metálico e partículas crescentes.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: rolamentos.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "O histórico não é confirmação de causa raiz."
+      ],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-015",
+      "caseId": "OIL-CASE-015",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo 777E",
+      "systemOrCompartment": "Montagem Da Roda Direita, Dianteira",
+      "symptom": "O laboratório registra desgaste compatível com a tendência habitual e sem anomalia de campo.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: tendência normal.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "O histórico não é confirmação de causa raiz."
+      ],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-016",
+      "caseId": "OIL-CASE-016",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo 777",
+      "systemOrCompartment": "Montagem Da Roda Direita, Dianteira",
+      "symptom": "Uma roda dianteira apresenta partículas e elementos típicos de possível contaminação ambiental.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: roda dianteira.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "O histórico não é confirmação de causa raiz."
+      ],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-017",
+      "caseId": "OIL-CASE-017",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo 777E",
+      "systemOrCompartment": "Montagem Da Roda Direita, Dianteira",
+      "symptom": "A equipe retorna com uma amostra comparativa de outro período e pede reavaliação do caso. A amostra do conjunto dianteiro tem alteração de aspecto e suspeita de água. A interpretação precisa considerar tendência e qualidade do histórico, não apenas o alerta mais recente.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: água no mancal.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "Considere as horas de óleo, coleta e amostra anterior.",
+        "Novo dado: duas coletas comparáveis permitem observar direção da tendência, mas sem quantificação em ppm no arquivo público."
+      ],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-018",
+      "caseId": "OIL-CASE-018",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo 777E",
+      "systemOrCompartment": "Montagem Da Roda Frontal Esquerdo",
+      "symptom": "A equipe retorna com uma amostra comparativa de outro período e pede reavaliação do caso. O conjunto de roda apresenta alerta de material metálico e partículas crescentes. A interpretação precisa considerar tendência e qualidade do histórico, não apenas o alerta mais recente.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: rolamentos.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "Considere as horas de óleo, coleta e amostra anterior.",
+        "Novo dado: duas coletas comparáveis permitem observar direção da tendência, mas sem quantificação em ppm no arquivo público."
+      ],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-019",
+      "caseId": "OIL-CASE-019",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo 777E",
+      "systemOrCompartment": "Montagem Da Roda Frontal Esquerdo",
+      "symptom": "A equipe retorna com uma amostra comparativa de outro período e pede reavaliação do caso. O laboratório registra desgaste compatível com a tendência habitual e sem anomalia de campo. A interpretação precisa considerar tendência e qualidade do histórico, não apenas o alerta mais recente.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: tendência normal.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "Considere as horas de óleo, coleta e amostra anterior.",
+        "Novo dado: duas coletas comparáveis permitem observar direção da tendência, mas sem quantificação em ppm no arquivo público."
+      ],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-020",
+      "caseId": "OIL-CASE-020",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo 777",
+      "systemOrCompartment": "Montagem Da Roda Direita, Dianteira",
+      "symptom": "A equipe retorna com uma amostra comparativa de outro período e pede reavaliação do caso. Uma roda dianteira apresenta partículas e elementos típicos de possível contaminação ambiental. A interpretação precisa considerar tendência e qualidade do histórico, não apenas o alerta mais recente.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: roda dianteira.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "Considere as horas de óleo, coleta e amostra anterior.",
+        "Novo dado: duas coletas comparáveis permitem observar direção da tendência, mas sem quantificação em ppm no arquivo público."
+      ],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-021",
+      "caseId": "OIL-CASE-021",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo 777E",
+      "systemOrCompartment": "Montagem Da Roda Direita, Dianteira",
+      "symptom": "Há retorno da oficina com inspeção preliminar executada sob controle operacional. A amostra do conjunto dianteiro tem alteração de aspecto e suspeita de água. Agora a decisão deverá considerar o achado físico e decidir qual serviço possui justificativa.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: água no mancal.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "Uma inspeção de campo muda a qualidade da decisão.",
+        "O retorno da inspeção virtual acrescenta evidência, mas a causa sistêmica exige investigação."
+      ],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-022",
+      "caseId": "OIL-CASE-022",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo 777",
+      "systemOrCompartment": "Montagem Da Roda Direita, Dianteira",
+      "symptom": "Há retorno da oficina com inspeção preliminar executada sob controle operacional. O conjunto de roda apresenta alerta de material metálico e partículas crescentes. Agora a decisão deverá considerar o achado físico e decidir qual serviço possui justificativa. Neste terceiro episódio, existe retorno de inspeção interna fictícia disponível, cuja conclusão deve ser considerada antes da decisão.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: rolamentos.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "Uma inspeção de campo muda a qualidade da decisão.",
+        "O retorno da inspeção virtual acrescenta evidência, mas a causa sistêmica exige investigação."
+      ],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-023",
+      "caseId": "OIL-CASE-023",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo 16",
+      "systemOrCompartment": "Montagem Da Roda Direita, Dianteira",
+      "symptom": "Há retorno da oficina com inspeção preliminar executada sob controle operacional. O laboratório registra desgaste compatível com a tendência habitual e sem anomalia de campo. Agora a decisão deverá considerar o achado físico e decidir qual serviço possui justificativa.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: tendência normal.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "Uma inspeção de campo muda a qualidade da decisão.",
+        "O retorno da inspeção virtual acrescenta evidência, mas a causa sistêmica exige investigação."
+      ],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-024",
+      "caseId": "OIL-CASE-024",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo 777",
+      "systemOrCompartment": "Montagem Da Roda Direita, Dianteira",
+      "symptom": "Há retorno da oficina com inspeção preliminar executada sob controle operacional. Uma roda dianteira apresenta partículas e elementos típicos de possível contaminação ambiental. Agora a decisão deverá considerar o achado físico e decidir qual serviço possui justificativa.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: roda dianteira.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "Uma inspeção de campo muda a qualidade da decisão.",
+        "O retorno da inspeção virtual acrescenta evidência, mas a causa sistêmica exige investigação."
+      ],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-025",
+      "caseId": "OIL-CASE-025",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo 352",
+      "systemOrCompartment": "Redutor de Giro Direita",
+      "symptom": "Redutor de giro com elevação de metais e possível desgaste de superfícies internas.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: redutor de giro.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "O histórico não é confirmação de causa raiz."
+      ],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-026",
+      "caseId": "OIL-CASE-026",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo 6030",
+      "systemOrCompartment": "Diversos Comando Giro Esq",
+      "symptom": "Aparecem indícios de contaminação abrasiva no óleo do redutor de giro.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: redutor poeira.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "O histórico não é confirmação de causa raiz."
+      ],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-027",
+      "caseId": "OIL-CASE-027",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo 6030",
+      "systemOrCompartment": "Diversos Redutor de Giro Right",
+      "symptom": "A equipe retorna com uma amostra comparativa de outro período e pede reavaliação do caso. Redutor de giro com elevação de metais e possível desgaste de superfícies internas. A interpretação precisa considerar tendência e qualidade do histórico, não apenas o alerta mais recente.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: redutor de giro.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "Considere as horas de óleo, coleta e amostra anterior.",
+        "Novo dado: duas coletas comparáveis permitem observar direção da tendência, mas sem quantificação em ppm no arquivo público."
+      ],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-028",
+      "caseId": "OIL-CASE-028",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo 6030",
+      "systemOrCompartment": "Diversos Comando Giro Dir",
+      "symptom": "A equipe retorna com uma amostra comparativa de outro período e pede reavaliação do caso. Aparecem indícios de contaminação abrasiva no óleo do redutor de giro. A interpretação precisa considerar tendência e qualidade do histórico, não apenas o alerta mais recente.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: redutor poeira.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "Considere as horas de óleo, coleta e amostra anterior.",
+        "Novo dado: duas coletas comparáveis permitem observar direção da tendência, mas sem quantificação em ppm no arquivo público."
+      ],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-029",
+      "caseId": "OIL-CASE-029",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo 6030",
+      "systemOrCompartment": "Diversos Redutor de Giro Left",
+      "symptom": "Há retorno da oficina com inspeção preliminar executada sob controle operacional. Redutor de giro com elevação de metais e possível desgaste de superfícies internas. Agora a decisão deverá considerar o achado físico e decidir qual serviço possui justificativa. Neste terceiro episódio, existe retorno de inspeção interna fictícia disponível, cuja conclusão deve ser considerada antes da decisão.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: redutor de giro.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "Uma inspeção de campo muda a qualidade da decisão.",
+        "O retorno da inspeção virtual acrescenta evidência, mas a causa sistêmica exige investigação."
+      ],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-030",
+      "caseId": "OIL-CASE-030",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo 6030",
+      "systemOrCompartment": "Diversos Comando Giro Esq",
+      "symptom": "Há retorno da oficina com inspeção preliminar executada sob controle operacional. Aparecem indícios de contaminação abrasiva no óleo do redutor de giro. Agora a decisão deverá considerar o achado físico e decidir qual serviço possui justificativa.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: redutor poeira.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "Uma inspeção de campo muda a qualidade da decisão.",
+        "O retorno da inspeção virtual acrescenta evidência, mas a causa sistêmica exige investigação."
+      ],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-031",
+      "caseId": "OIL-CASE-031",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo 980",
+      "systemOrCompartment": "Transmissão",
+      "symptom": "O perfil do fluido mudou depois de uma intervenção documentada.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: baseline transmissão.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "O histórico não é confirmação de causa raiz."
+      ],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-032",
+      "caseId": "OIL-CASE-032",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo 777",
+      "systemOrCompartment": "Transmissão",
+      "symptom": "A tendência de metais da transmissão foge do padrão recente e merece investigação.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: metais transmissão.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "O histórico não é confirmação de causa raiz."
+      ],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-033",
+      "caseId": "OIL-CASE-033",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo 966",
+      "systemOrCompartment": "Transmissão",
+      "symptom": "A amostra da transmissão contém impurezas suficientes para comprometer a contagem de partículas.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: ISO e partículas.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "O histórico não é confirmação de causa raiz."
+      ],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-034",
+      "caseId": "OIL-CASE-034",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo 777E",
+      "systemOrCompartment": "Transmissão",
+      "symptom": "A equipe retorna com uma amostra comparativa de outro período e pede reavaliação do caso. O perfil do fluido mudou depois de uma intervenção documentada. A interpretação precisa considerar tendência e qualidade do histórico, não apenas o alerta mais recente.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: baseline transmissão.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "Considere as horas de óleo, coleta e amostra anterior.",
+        "Novo dado: duas coletas comparáveis permitem observar direção da tendência, mas sem quantificação em ppm no arquivo público."
+      ],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-035",
+      "caseId": "OIL-CASE-035",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo 777",
+      "systemOrCompartment": "Transmissão",
+      "symptom": "A equipe retorna com uma amostra comparativa de outro período e pede reavaliação do caso. A tendência de metais da transmissão foge do padrão recente e merece investigação. A interpretação precisa considerar tendência e qualidade do histórico, não apenas o alerta mais recente.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: metais transmissão.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "Considere as horas de óleo, coleta e amostra anterior.",
+        "Novo dado: duas coletas comparáveis permitem observar direção da tendência, mas sem quantificação em ppm no arquivo público."
+      ],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-036",
+      "caseId": "OIL-CASE-036",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo 777",
+      "systemOrCompartment": "Transmissão",
+      "symptom": "A equipe retorna com uma amostra comparativa de outro período e pede reavaliação do caso. A amostra da transmissão contém impurezas suficientes para comprometer a contagem de partículas. A interpretação precisa considerar tendência e qualidade do histórico, não apenas o alerta mais recente.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: ISO e partículas.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "Considere as horas de óleo, coleta e amostra anterior.",
+        "Novo dado: duas coletas comparáveis permitem observar direção da tendência, mas sem quantificação em ppm no arquivo público."
+      ],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-037",
+      "caseId": "OIL-CASE-037",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo 777",
+      "systemOrCompartment": "Transmissão",
+      "symptom": "Há retorno da oficina com inspeção preliminar executada sob controle operacional. O perfil do fluido mudou depois de uma intervenção documentada. Agora a decisão deverá considerar o achado físico e decidir qual serviço possui justificativa.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: baseline transmissão.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "Uma inspeção de campo muda a qualidade da decisão.",
+        "O retorno da inspeção virtual acrescenta evidência, mas a causa sistêmica exige investigação."
+      ],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-038",
+      "caseId": "OIL-CASE-038",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo 777E",
+      "systemOrCompartment": "Transmissão",
+      "symptom": "Há retorno da oficina com inspeção preliminar executada sob controle operacional. A tendência de metais da transmissão foge do padrão recente e merece investigação. Agora a decisão deverá considerar o achado físico e decidir qual serviço possui justificativa. Neste terceiro episódio, existe retorno de inspeção interna fictícia disponível, cuja conclusão deve ser considerada antes da decisão.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: metais transmissão.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "Uma inspeção de campo muda a qualidade da decisão.",
+        "O retorno da inspeção virtual acrescenta evidência, mas a causa sistêmica exige investigação."
+      ],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-039",
+      "caseId": "OIL-CASE-039",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo D9",
+      "systemOrCompartment": "Transmissão",
+      "symptom": "Há retorno da oficina com inspeção preliminar executada sob controle operacional. A amostra da transmissão contém impurezas suficientes para comprometer a contagem de partículas. Agora a decisão deverá considerar o achado físico e decidir qual serviço possui justificativa.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: ISO e partículas.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "Uma inspeção de campo muda a qualidade da decisão.",
+        "O retorno da inspeção virtual acrescenta evidência, mas a causa sistêmica exige investigação."
+      ],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-040",
+      "caseId": "OIL-CASE-040",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo D9",
+      "systemOrCompartment": "Sistema Hidráulico",
+      "symptom": "O laboratório registra limalhas no óleo do sistema hidráulico.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: partículas ferrosas.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "O histórico não é confirmação de causa raiz."
+      ],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-041",
+      "caseId": "OIL-CASE-041",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo 966",
+      "systemOrCompartment": "Sistema Hidráulico",
+      "symptom": "Há partículas acima do padrão esperado no circuito hidráulico.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: controle de contaminação.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "O histórico não é confirmação de causa raiz."
+      ],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-042",
+      "caseId": "OIL-CASE-042",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo 777",
+      "systemOrCompartment": "Sistema Hidráulico",
+      "symptom": "A viscosidade medida é diferente da referência inicial para o compartimento.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: viscosidade hidráulica.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "O histórico não é confirmação de causa raiz."
+      ],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-043",
+      "caseId": "OIL-CASE-043",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo 777",
+      "systemOrCompartment": "Sistema Hidráulico",
+      "symptom": "A equipe retorna com uma amostra comparativa de outro período e pede reavaliação do caso. O laboratório registra limalhas no óleo do sistema hidráulico. A interpretação precisa considerar tendência e qualidade do histórico, não apenas o alerta mais recente.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: partículas ferrosas.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "Considere as horas de óleo, coleta e amostra anterior.",
+        "Novo dado: duas coletas comparáveis permitem observar direção da tendência, mas sem quantificação em ppm no arquivo público."
+      ],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-044",
+      "caseId": "OIL-CASE-044",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo D6T",
+      "systemOrCompartment": "Sistema Hidráulico",
+      "symptom": "A equipe retorna com uma amostra comparativa de outro período e pede reavaliação do caso. Há partículas acima do padrão esperado no circuito hidráulico. A interpretação precisa considerar tendência e qualidade do histórico, não apenas o alerta mais recente.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: controle de contaminação.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "Considere as horas de óleo, coleta e amostra anterior.",
+        "Novo dado: duas coletas comparáveis permitem observar direção da tendência, mas sem quantificação em ppm no arquivo público."
+      ],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-045",
+      "caseId": "OIL-CASE-045",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo 6030",
+      "systemOrCompartment": "Diversos Sistema Hidráulico",
+      "symptom": "A equipe retorna com uma amostra comparativa de outro período e pede reavaliação do caso. A viscosidade medida é diferente da referência inicial para o compartimento. A interpretação precisa considerar tendência e qualidade do histórico, não apenas o alerta mais recente.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: viscosidade hidráulica.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "Considere as horas de óleo, coleta e amostra anterior.",
+        "Novo dado: duas coletas comparáveis permitem observar direção da tendência, mas sem quantificação em ppm no arquivo público."
+      ],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-046",
+      "caseId": "OIL-CASE-046",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo 777",
+      "systemOrCompartment": "Sistema Hidráulico",
+      "symptom": "Há retorno da oficina com inspeção preliminar executada sob controle operacional. O laboratório registra limalhas no óleo do sistema hidráulico. Agora a decisão deverá considerar o achado físico e decidir qual serviço possui justificativa. Neste terceiro episódio, existe retorno de inspeção interna fictícia disponível, cuja conclusão deve ser considerada antes da decisão.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: partículas ferrosas.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "Uma inspeção de campo muda a qualidade da decisão.",
+        "O retorno da inspeção virtual acrescenta evidência, mas a causa sistêmica exige investigação."
+      ],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-047",
+      "caseId": "OIL-CASE-047",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo 777",
+      "systemOrCompartment": "Sistema Hidráulico",
+      "symptom": "Há retorno da oficina com inspeção preliminar executada sob controle operacional. Há partículas acima do padrão esperado no circuito hidráulico. Agora a decisão deverá considerar o achado físico e decidir qual serviço possui justificativa.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: controle de contaminação.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "Uma inspeção de campo muda a qualidade da decisão.",
+        "O retorno da inspeção virtual acrescenta evidência, mas a causa sistêmica exige investigação."
+      ],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-048",
+      "caseId": "OIL-CASE-048",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo 777",
+      "systemOrCompartment": "Sistema Hidráulico",
+      "symptom": "Há retorno da oficina com inspeção preliminar executada sob controle operacional. A viscosidade medida é diferente da referência inicial para o compartimento. Agora a decisão deverá considerar o achado físico e decidir qual serviço possui justificativa.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: viscosidade hidráulica.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "Uma inspeção de campo muda a qualidade da decisão.",
+        "O retorno da inspeção virtual acrescenta evidência, mas a causa sistêmica exige investigação."
+      ],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-049",
+      "caseId": "OIL-CASE-049",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo 6030",
+      "systemOrCompartment": "Diversos Engine Left Diesel",
+      "symptom": "O laudo detecta metais de desgaste do motor além da condição habitual.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: metais no motor.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "O histórico não é confirmação de causa raiz."
+      ],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-050",
+      "caseId": "OIL-CASE-050",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo 950",
+      "systemOrCompartment": "Motor",
+      "symptom": "Tendência de degradação do lubrificante acompanhada de mudança de viscosidade.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: degradação óleo motor.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "O histórico não é confirmação de causa raiz."
+      ],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-051",
+      "caseId": "OIL-CASE-051",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo 966",
+      "systemOrCompartment": "Motor",
+      "symptom": "O óleo do motor mostra viscosidade reduzida e indícios compatíveis com diluição por combustível.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: diluição por combustível.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "O histórico não é confirmação de causa raiz."
+      ],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-052",
+      "caseId": "OIL-CASE-052",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo 395",
+      "systemOrCompartment": "Motor",
+      "symptom": "A equipe retorna com uma amostra comparativa de outro período e pede reavaliação do caso. O laudo detecta metais de desgaste do motor além da condição habitual. A interpretação precisa considerar tendência e qualidade do histórico, não apenas o alerta mais recente.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: metais no motor.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "Considere as horas de óleo, coleta e amostra anterior.",
+        "Novo dado: duas coletas comparáveis permitem observar direção da tendência, mas sem quantificação em ppm no arquivo público."
+      ],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-053",
+      "caseId": "OIL-CASE-053",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo 6030",
+      "systemOrCompartment": "Diversos Engine Right Diesel",
+      "symptom": "A equipe retorna com uma amostra comparativa de outro período e pede reavaliação do caso. Tendência de degradação do lubrificante acompanhada de mudança de viscosidade. A interpretação precisa considerar tendência e qualidade do histórico, não apenas o alerta mais recente.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: degradação óleo motor.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "Considere as horas de óleo, coleta e amostra anterior.",
+        "Novo dado: duas coletas comparáveis permitem observar direção da tendência, mas sem quantificação em ppm no arquivo público."
+      ],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-054",
+      "caseId": "OIL-CASE-054",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo 777",
+      "systemOrCompartment": "Motor",
+      "symptom": "A equipe retorna com uma amostra comparativa de outro período e pede reavaliação do caso. O óleo do motor mostra viscosidade reduzida e indícios compatíveis com diluição por combustível. A interpretação precisa considerar tendência e qualidade do histórico, não apenas o alerta mais recente.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: diluição por combustível.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "Considere as horas de óleo, coleta e amostra anterior.",
+        "Novo dado: duas coletas comparáveis permitem observar direção da tendência, mas sem quantificação em ppm no arquivo público."
+      ],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-055",
+      "caseId": "OIL-CASE-055",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo 950",
+      "systemOrCompartment": "Motor",
+      "symptom": "Há retorno da oficina com inspeção preliminar executada sob controle operacional. O laudo detecta metais de desgaste do motor além da condição habitual. Agora a decisão deverá considerar o achado físico e decidir qual serviço possui justificativa. Neste terceiro episódio, existe retorno de inspeção interna fictícia disponível, cuja conclusão deve ser considerada antes da decisão.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: metais no motor.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "Uma inspeção de campo muda a qualidade da decisão.",
+        "O retorno da inspeção virtual acrescenta evidência, mas a causa sistêmica exige investigação."
+      ],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-056",
+      "caseId": "OIL-CASE-056",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo 777E",
+      "systemOrCompartment": "Motor",
+      "symptom": "Há retorno da oficina com inspeção preliminar executada sob controle operacional. Tendência de degradação do lubrificante acompanhada de mudança de viscosidade. Agora a decisão deverá considerar o achado físico e decidir qual serviço possui justificativa.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: degradação óleo motor.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "Uma inspeção de campo muda a qualidade da decisão.",
+        "O retorno da inspeção virtual acrescenta evidência, mas a causa sistêmica exige investigação."
+      ],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-057",
+      "caseId": "OIL-CASE-057",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo 777",
+      "systemOrCompartment": "Motor",
+      "symptom": "Há retorno da oficina com inspeção preliminar executada sob controle operacional. O óleo do motor mostra viscosidade reduzida e indícios compatíveis com diluição por combustível. Agora a decisão deverá considerar o achado físico e decidir qual serviço possui justificativa.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: diluição por combustível.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "Uma inspeção de campo muda a qualidade da decisão.",
+        "O retorno da inspeção virtual acrescenta evidência, mas a causa sistêmica exige investigação."
+      ],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-058",
+      "caseId": "OIL-CASE-058",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo 777",
+      "systemOrCompartment": "Sistema De Arrefecimento Do Motor",
+      "symptom": "A composição da mistura está fora do padrão indicado no laudo.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: concentração arrefecimento.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "O histórico não é confirmação de causa raiz."
+      ],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-059",
+      "caseId": "OIL-CASE-059",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo 966",
+      "systemOrCompartment": "Sistema De Arrefecimento Do Motor",
+      "symptom": "A amostra do arrefecimento apresenta perda de nitrito e alteração de pH em um cenário com radiador de alumínio.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: ELC e alumínio.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "O histórico não é confirmação de causa raiz."
+      ],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-060",
+      "caseId": "OIL-CASE-060",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo 395",
+      "systemOrCompartment": "Sistema De Arrefecimento Do Motor",
+      "symptom": "O pH do fluido de arrefecimento deslocou-se para condição de atenção.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: pH do arrefecimento.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "O histórico não é confirmação de causa raiz."
+      ],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-061",
+      "caseId": "OIL-CASE-061",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo 777E",
+      "systemOrCompartment": "Sistema De Arrefecimento Do Motor",
+      "symptom": "A equipe retorna com uma amostra comparativa de outro período e pede reavaliação do caso. A composição da mistura está fora do padrão indicado no laudo. A interpretação precisa considerar tendência e qualidade do histórico, não apenas o alerta mais recente.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: concentração arrefecimento.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "Considere as horas de óleo, coleta e amostra anterior.",
+        "Novo dado: duas coletas comparáveis permitem observar direção da tendência, mas sem quantificação em ppm no arquivo público."
+      ],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-062",
+      "caseId": "OIL-CASE-062",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo D6T",
+      "systemOrCompartment": "Sistema De Arrefecimento Do Motor",
+      "symptom": "A equipe retorna com uma amostra comparativa de outro período e pede reavaliação do caso. A amostra do arrefecimento apresenta perda de nitrito e alteração de pH em um cenário com radiador de alumínio. A interpretação precisa considerar tendência e qualidade do histórico, não apenas o alerta mais recente.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: ELC e alumínio.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "Considere as horas de óleo, coleta e amostra anterior.",
+        "Novo dado: duas coletas comparáveis permitem observar direção da tendência, mas sem quantificação em ppm no arquivo público."
+      ],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-063",
+      "caseId": "OIL-CASE-063",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo 777",
+      "systemOrCompartment": "Sistema De Arrefecimento Do Motor",
+      "symptom": "A equipe retorna com uma amostra comparativa de outro período e pede reavaliação do caso. O pH do fluido de arrefecimento deslocou-se para condição de atenção. A interpretação precisa considerar tendência e qualidade do histórico, não apenas o alerta mais recente.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: pH do arrefecimento.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "Considere as horas de óleo, coleta e amostra anterior.",
+        "Novo dado: duas coletas comparáveis permitem observar direção da tendência, mas sem quantificação em ppm no arquivo público."
+      ],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-064",
+      "caseId": "OIL-CASE-064",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo 777",
+      "systemOrCompartment": "Sistema De Arrefecimento Do Motor",
+      "symptom": "Há retorno da oficina com inspeção preliminar executada sob controle operacional. A composição da mistura está fora do padrão indicado no laudo. Agora a decisão deverá considerar o achado físico e decidir qual serviço possui justificativa.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: concentração arrefecimento.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "Uma inspeção de campo muda a qualidade da decisão.",
+        "O retorno da inspeção virtual acrescenta evidência, mas a causa sistêmica exige investigação."
+      ],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-065",
+      "caseId": "OIL-CASE-065",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo 777",
+      "systemOrCompartment": "Sistema De Arrefecimento Do Motor",
+      "symptom": "Há retorno da oficina com inspeção preliminar executada sob controle operacional. A amostra do arrefecimento apresenta perda de nitrito e alteração de pH em um cenário com radiador de alumínio. Agora a decisão deverá considerar o achado físico e decidir qual serviço possui justificativa.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: ELC e alumínio.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "Uma inspeção de campo muda a qualidade da decisão.",
+        "O retorno da inspeção virtual acrescenta evidência, mas a causa sistêmica exige investigação."
+      ],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-066",
+      "caseId": "OIL-CASE-066",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo 966",
+      "systemOrCompartment": "Sistema De Arrefecimento Do Motor",
+      "symptom": "Há retorno da oficina com inspeção preliminar executada sob controle operacional. O pH do fluido de arrefecimento deslocou-se para condição de atenção. Agora a decisão deverá considerar o achado físico e decidir qual serviço possui justificativa.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: pH do arrefecimento.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "Uma inspeção de campo muda a qualidade da decisão.",
+        "O retorno da inspeção virtual acrescenta evidência, mas a causa sistêmica exige investigação."
+      ],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-067",
+      "caseId": "OIL-CASE-067",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo 950",
+      "systemOrCompartment": "Diferencial Dianteira",
+      "symptom": "O óleo do diferencial apresenta contaminação fora da tendência histórica.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: contaminação diferencial.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "O histórico não é confirmação de causa raiz."
+      ],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-068",
+      "caseId": "OIL-CASE-068",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo 730",
+      "systemOrCompartment": "Diferencial Traseiro",
+      "symptom": "O diferencial registra aumento de metais associados a contato e desgaste mecânico.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: metais no diferencial.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "O histórico não é confirmação de causa raiz."
+      ],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-069",
+      "caseId": "OIL-CASE-069",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo 16",
+      "systemOrCompartment": "Unidade de Diferencial e Transmissão",
+      "symptom": "A equipe retorna com uma amostra comparativa de outro período e pede reavaliação do caso. O óleo do diferencial apresenta contaminação fora da tendência histórica. A interpretação precisa considerar tendência e qualidade do histórico, não apenas o alerta mais recente.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: contaminação diferencial.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "Considere as horas de óleo, coleta e amostra anterior.",
+        "Novo dado: duas coletas comparáveis permitem observar direção da tendência, mas sem quantificação em ppm no arquivo público."
+      ],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-070",
+      "caseId": "OIL-CASE-070",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo 777",
+      "systemOrCompartment": "Diferencial",
+      "symptom": "A equipe retorna com uma amostra comparativa de outro período e pede reavaliação do caso. O diferencial registra aumento de metais associados a contato e desgaste mecânico. A interpretação precisa considerar tendência e qualidade do histórico, não apenas o alerta mais recente.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: metais no diferencial.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "Considere as horas de óleo, coleta e amostra anterior.",
+        "Novo dado: duas coletas comparáveis permitem observar direção da tendência, mas sem quantificação em ppm no arquivo público."
+      ],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-071",
+      "caseId": "OIL-CASE-071",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo 420",
+      "systemOrCompartment": "Diferencial Dianteira",
+      "symptom": "Há retorno da oficina com inspeção preliminar executada sob controle operacional. O óleo do diferencial apresenta contaminação fora da tendência histórica. Agora a decisão deverá considerar o achado físico e decidir qual serviço possui justificativa.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: contaminação diferencial.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "Uma inspeção de campo muda a qualidade da decisão.",
+        "O retorno da inspeção virtual acrescenta evidência, mas a causa sistêmica exige investigação."
+      ],
+      "origin": "simulado"
+    },
+    {
+      "id": "SYM-OIL-CASE-072",
+      "caseId": "OIL-CASE-072",
+      "domain": "analise_de_fluidos",
+      "machine": "Modelo 420",
+      "systemOrCompartment": "Diferencial Traseiro",
+      "symptom": "Há retorno da oficina com inspeção preliminar executada sob controle operacional. O diferencial registra aumento de metais associados a contato e desgaste mecânico. Agora a decisão deverá considerar o achado físico e decidir qual serviço possui justificativa. Neste terceiro episódio, existe retorno de inspeção interna fictícia disponível, cuja conclusão deve ser considerada antes da decisão.",
+      "context": null,
+      "observed": [
+        "Resultado sinalizado: metais no diferencial.",
+        "Classificação inicial: avaliar a urgência junto das evidências.",
+        "Uma inspeção de campo muda a qualidade da decisão.",
+        "O retorno da inspeção virtual acrescenta evidência, mas a causa sistêmica exige investigação."
+      ],
+      "origin": "simulado"
+    }
+  ]
+}
