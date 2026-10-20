@@ -46,6 +46,8 @@ jobs:
         run: npm run semantics:validate
       - name: Validar cadeias causais e fontes
         run: npm run causal:validate
+      - name: Validar 24 pares de efeitos locais e sistemicos
+        run: npm run effects:validate
       - name: Auditar 24 cadeias contra locais componentes danos e causas SAP
         run: npm run causal:sap:audit
       - name: Gerar relatorio de cobertura e lacunas
