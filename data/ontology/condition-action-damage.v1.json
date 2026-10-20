@@ -1,0 +1,673 @@
+{
+  "schema": "fmea-mining.condition-action-damage.v1",
+  "version": "1.3.6",
+  "status": "conceptual_unvalidated",
+  "semantics": {
+    "condition": "Estado de fluido, superfície ou desempenho; ocorrência requer medição/observação",
+    "action": "Atividade de inspeção, monitoramento ou serviço; executar não prova dano",
+    "damage": "Alteração física/funcional de componente; necessita prova independente"
+  },
+  "safetyInvariant": "condition!=action!=damage",
+  "evidenceNature": "no_field_observation",
+  "observations": [],
+  "workOrderExecutions": [],
+  "confirmedComponentDamages": [],
+  "conditions": [
+    {
+      "id": "COND-FUEL-WATER",
+      "label": "Água no combustível ou no separador de água",
+      "system": "combustivel",
+      "medium": "combustivel",
+      "observation": "Presença de fase aquosa ou resultado de análise apropriada em amostra representativa",
+      "methods": [
+        "EV-01",
+        "EV-10"
+      ],
+      "sourceIds": [
+        "CAT-FILTERS-FLUIDS-GUIDE",
+        "CAT-FUEL-WATER-SEPARATOR-PURPOSE"
+      ],
+      "limitations": "O indício não prova falha do dreno, do filtro ou do separador, nem determina a origem do ingresso.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-FUEL-SEDIMENT",
+      "label": "Sedimentos ou partículas no combustível",
+      "system": "combustivel",
+      "medium": "combustivel",
+      "observation": "Resíduo sólido identificado na coleta ou por análise de partículas com método documentado",
+      "methods": [
+        "EV-01",
+        "EV-09"
+      ],
+      "sourceIds": [
+        "CAT-FILTERS-FLUIDS-GUIDE",
+        "CAT-FUEL-WATER-SEPARATOR-PURPOSE"
+      ],
+      "limitations": "Resíduo no reservatório não comprova restrição do elemento filtrante sem inspeção diferencial.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-FUEL-FLOW-RESTRICTION",
+      "label": "Restrição funcional na alimentação de combustível",
+      "system": "combustivel",
+      "medium": "combustivel",
+      "observation": "Desempenho hidráulico de alimentação divergente de teste aplicável de fluxo ou pressão",
+      "methods": [
+        "EV-05",
+        "EV-12"
+      ],
+      "sourceIds": [
+        "CAT-FILTERS-FLUIDS-GUIDE",
+        "ISO-13379-1-2025"
+      ],
+      "limitations": "Não atribuir obstrução ao filtro apenas por perda de potência, água ou código eletrônico.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-COOL-EXTERNAL-DEBRIS",
+      "label": "Sujidade ou material entre aletas do radiador",
+      "system": "arrefecimento",
+      "medium": "ar",
+      "observation": "Depósito externo visualmente identificável nas passagens de ar do trocador",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "CAT-RADIATOR-CARE",
+        "CAT-FILTERS-FLUIDS-GUIDE"
+      ],
+      "limitations": "Sujidade externa pode restringir fluxo de ar sem existir dano físico nem obstrução interna.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-COOL-INTERNAL-FLOW-RESTRICTION",
+      "label": "Restrição interna suspeita à circulação no trocador",
+      "system": "arrefecimento",
+      "medium": "liquido_arrefecedor",
+      "observation": "Indício de resistência interna de circulação que requer teste OEM apropriado",
+      "methods": [
+        "EV-12",
+        "EV-10"
+      ],
+      "sourceIds": [
+        "CAT-RADIATOR-CARE",
+        "ISO-13379-1-2025"
+      ],
+      "limitations": "A presença de fluido degradado ou temperatura alta isoladamente não comprova obstrução interna.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-COOL-HIGH-TEMPERATURE",
+      "label": "Temperatura do arrefecimento acima do requisito",
+      "system": "arrefecimento",
+      "medium": "liquido_arrefecedor",
+      "observation": "Medição válida e comparável ao requisito OEM em carga/ambiente definidos",
+      "methods": [
+        "EV-03",
+        "EV-14"
+      ],
+      "sourceIds": [
+        "CAT-RADIATOR-CARE",
+        "ISO-17359-2018"
+      ],
+      "limitations": "Sem referência por modelo e condição de operação, não classificar aquecimento como comprovado.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-COOL-EXTERNAL-LEAK",
+      "label": "Vestígio de perda externa de líquido arrefecedor",
+      "system": "arrefecimento",
+      "medium": "liquido_arrefecedor",
+      "observation": "Trilha ou acúmulo de fluido cuja origem deve ser localizada com segurança",
+      "methods": [
+        "EV-01",
+        "EV-13"
+      ],
+      "sourceIds": [
+        "CAT-RADIATOR-CARE"
+      ],
+      "limitations": "Não atribuir automaticamente a origem ao radiador; linhas, conexões e outros componentes também podem vazar.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    }
+  ],
+  "actions": [
+    {
+      "id": "ACT-FUEL-DRAIN-SEPARATOR",
+      "label": "Drenar água do separador (quando previsto)",
+      "kind": "servicing",
+      "intent": "Identificar e retirar água acumulada no ponto de drenagem apropriado, conforme manual aplicável",
+      "sourceIds": [
+        "CAT-FILTERS-FLUIDS-GUIDE",
+        "CAT-FUEL-WATER-SEPARATOR-PURPOSE"
+      ],
+      "safety": "Identificar tanque, sistema e condição segura; executar conforme OMM, com gestão de resíduos.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
+    },
+    {
+      "id": "ACT-FUEL-REPRESENTATIVE-SAMPLE",
+      "label": "Coletar amostra representativa de combustível",
+      "kind": "sampling",
+      "intent": "Determinar se água ou sólidos estão presentes e registrar origem, recipiente e momento da coleta",
+      "sourceIds": [
+        "CAT-FILTERS-FLUIDS-GUIDE",
+        "CAT-FUEL-WATER-SEPARATOR-PURPOSE"
+      ],
+      "safety": "Seguir pontos e procedimento de coleta autorizados, evitando contaminação introduzida pela própria coleta.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
+    },
+    {
+      "id": "ACT-FUEL-FILTER-INSPECT",
+      "label": "Inspecionar filtro/separador de combustível",
+      "kind": "inspection",
+      "intent": "Verificar estado, integridade e indicadores de restrição do conjunto correto",
+      "sourceIds": [
+        "CAT-FILTERS-FLUIDS-GUIDE",
+        "CAT-FUEL-WATER-SEPARATOR-PURPOSE"
+      ],
+      "safety": "Utilizar identificação de série, peças e orientação de descarte/substituição OEM; não reinstalar elemento destruído na inspeção.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
+    },
+    {
+      "id": "ACT-FUEL-FLOW-TEST",
+      "label": "Verificar funcionalmente alimentação de combustível",
+      "kind": "test",
+      "intent": "Diferenciar restrição real de alimentação de indicação incorreta, em condição representativa",
+      "sourceIds": [
+        "ISO-13379-1-2025",
+        "CAT-FILTERS-FLUIDS-GUIDE"
+      ],
+      "safety": "Testes em linhas pressurizadas dependem de procedimento, isolamento e pontos OEM específicos.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
+    },
+    {
+      "id": "ACT-COOL-FINS-INSPECT",
+      "label": "Inspecionar limpeza e integridade da colmeia",
+      "kind": "inspection",
+      "intent": "Identificar sujeira externa, restrição de ar e dano geométrico visível",
+      "sourceIds": [
+        "CAT-RADIATOR-CARE",
+        "CAT-FILTERS-FLUIDS-GUIDE"
+      ],
+      "safety": "Máquina isolada; proteger aletas e evitar contato com ventiladores, partes quentes e energias armazenadas.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
+    },
+    {
+      "id": "ACT-COOL-FINS-CLEAN",
+      "label": "Limpar aletas conforme procedimento OEM",
+      "kind": "servicing",
+      "intent": "Remover acúmulo externo quando autorizado e documentar condição antes e depois",
+      "sourceIds": [
+        "CAT-RADIATOR-CARE",
+        "CAT-FILTERS-FLUIDS-GUIDE"
+      ],
+      "safety": "Não usar lavagem de alta pressão sem aprovação OEM; não presumir que limpeza resolveu outra causa térmica.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
+    },
+    {
+      "id": "ACT-COOL-CIRCULATION-TEST",
+      "label": "Verificar circulação e troca térmica conforme OEM",
+      "kind": "test",
+      "intent": "Investigar restrição interna, resposta de ventilador e circulação sem condenar um componente por temperatura isolada",
+      "sourceIds": [
+        "CAT-RADIATOR-CARE",
+        "ISO-13379-1-2025"
+      ],
+      "safety": "Não abrir sistema quente/pressurizado. Instrumentos, pontos e limites exigem documentação efetiva.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
+    },
+    {
+      "id": "ACT-COOL-LEAK-TRACE",
+      "label": "Localizar origem de vazamento do arrefecimento",
+      "kind": "inspection",
+      "intent": "Distinguir radiador, mangueira, conexão, tampa e bomba como origem aparente",
+      "sourceIds": [
+        "CAT-RADIATOR-CARE",
+        "CAT-FILTERS-FLUIDS-GUIDE"
+      ],
+      "safety": "Com sistema frio e isolado; não tocar nem abrir circuito sob pressão.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
+    }
+  ],
+  "damageHypotheses": [
+    {
+      "id": "DMG-FUEL-FILTER-RESTRICTION",
+      "label": "Elemento filtrante com restrição funcional",
+      "componentRole": "filtro_de_combustivel",
+      "requiredEvidence": "Teste de restrição e inspeção física sob condições OEM; água/sedimento na drenagem isoladamente não comprova",
+      "sourceIds": [
+        "CAT-FILTERS-FLUIDS-GUIDE",
+        "CAT-FUEL-WATER-SEPARATOR-PURPOSE"
+      ],
+      "kind": "candidate_component_damage",
+      "reviewStatus": "not_approved",
+      "catalogMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageCode": null,
+        "causeCode": null
+      },
+      "confirmed": false
+    },
+    {
+      "id": "DMG-FUEL-DRAIN-FAILURE",
+      "label": "Dreno/separador incapaz de cumprir função de descarga",
+      "componentRole": "dreno_de_separador",
+      "requiredEvidence": "Inspeção funcional independente do dreno e identificação real do componente; água encontrada não prova falha",
+      "sourceIds": [
+        "CAT-FILTERS-FLUIDS-GUIDE",
+        "CAT-FUEL-WATER-SEPARATOR-PURPOSE"
+      ],
+      "kind": "candidate_component_damage",
+      "reviewStatus": "not_approved",
+      "catalogMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageCode": null,
+        "causeCode": null
+      },
+      "confirmed": false
+    },
+    {
+      "id": "DMG-COOL-INTERNAL-BLOCKAGE",
+      "label": "Obstrução interna efetiva do trocador de calor",
+      "componentRole": "nucleo_do_radiador",
+      "requiredEvidence": "Teste OEM de circulação/restrição que diferencie colmeia externamente suja de passagens internas obstruídas",
+      "sourceIds": [
+        "CAT-RADIATOR-CARE",
+        "CAT-FILTERS-FLUIDS-GUIDE"
+      ],
+      "kind": "candidate_component_damage",
+      "reviewStatus": "not_approved",
+      "catalogMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageCode": null,
+        "causeCode": null
+      },
+      "confirmed": false
+    },
+    {
+      "id": "DMG-COOL-LEAK-INTERFACE",
+      "label": "Perda de estanqueidade do radiador ou sua interface",
+      "componentRole": "radiador_ou_interface",
+      "requiredEvidence": "Origem de perda localizada fisicamente no conjunto específico e não em tubulação superior/adjacente",
+      "sourceIds": [
+        "CAT-RADIATOR-CARE"
+      ],
+      "kind": "candidate_component_damage",
+      "reviewStatus": "not_approved",
+      "catalogMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageCode": null,
+        "causeCode": null
+      },
+      "confirmed": false
+    }
+  ],
+  "bundles": [
+    {
+      "id": "BUNDLE-01",
+      "ruleId": "fuel-tank-water",
+      "conditionIds": [
+        "COND-FUEL-WATER",
+        "COND-FUEL-SEDIMENT"
+      ],
+      "actionIds": [
+        "ACT-FUEL-DRAIN-SEPARATOR",
+        "ACT-FUEL-REPRESENTATIVE-SAMPLE"
+      ],
+      "differentialDamageIds": [
+        "DMG-FUEL-DRAIN-FAILURE"
+      ],
+      "chainIds": [],
+      "interpretation": "A drenagem permite detectar/remover água; não implica dano ao dreno, nem confirma mecanismo de ingresso.",
+      "mappingScope": "generic_only",
+      "status": "review_candidate",
+      "observedConditionIds": [],
+      "performedActionIds": [],
+      "confirmedDamageIds": [],
+      "automaticDamagePromotion": false,
+      "sourceIds": [
+        "CAT-FILTERS-FLUIDS-GUIDE",
+        "CAT-FUEL-WATER-SEPARATOR-PURPOSE"
+      ],
+      "evidenceInterpretation": "sem_resultado_de_campo"
+    },
+    {
+      "id": "BUNDLE-02",
+      "ruleId": "fuel-filter-contamination",
+      "conditionIds": [
+        "COND-FUEL-WATER",
+        "COND-FUEL-SEDIMENT",
+        "COND-FUEL-FLOW-RESTRICTION"
+      ],
+      "actionIds": [
+        "ACT-FUEL-FILTER-INSPECT",
+        "ACT-FUEL-REPRESENTATIVE-SAMPLE",
+        "ACT-FUEL-FLOW-TEST"
+      ],
+      "differentialDamageIds": [
+        "DMG-FUEL-FILTER-RESTRICTION"
+      ],
+      "chainIds": [],
+      "interpretation": "Contaminante e restrição são condições distintas: filtração danificada ou restrita precisa de teste/inspeção independente.",
+      "mappingScope": "generic_only",
+      "status": "review_candidate",
+      "observedConditionIds": [],
+      "performedActionIds": [],
+      "confirmedDamageIds": [],
+      "automaticDamagePromotion": false,
+      "sourceIds": [
+        "CAT-FILTERS-FLUIDS-GUIDE",
+        "CAT-FUEL-WATER-SEPARATOR-PURPOSE"
+      ],
+      "evidenceInterpretation": "sem_resultado_de_campo"
+    },
+    {
+      "id": "BUNDLE-03",
+      "ruleId": "cooling-radiator-blockage",
+      "conditionIds": [
+        "COND-COOL-EXTERNAL-DEBRIS",
+        "COND-COOL-INTERNAL-FLOW-RESTRICTION",
+        "COND-COOL-HIGH-TEMPERATURE"
+      ],
+      "actionIds": [
+        "ACT-COOL-FINS-INSPECT",
+        "ACT-COOL-FINS-CLEAN",
+        "ACT-COOL-CIRCULATION-TEST"
+      ],
+      "differentialDamageIds": [
+        "DMG-COOL-INTERNAL-BLOCKAGE"
+      ],
+      "chainIds": [
+        "FC-COOL-001",
+        "FC-COOL-004"
+      ],
+      "interpretation": "Sujeira externa não é o mesmo que passagem interna obstruída; alta temperatura não confirma nenhuma das duas.",
+      "mappingScope": "generic_only",
+      "status": "review_candidate",
+      "observedConditionIds": [],
+      "performedActionIds": [],
+      "confirmedDamageIds": [],
+      "automaticDamagePromotion": false,
+      "sourceIds": [
+        "CAT-RADIATOR-CARE",
+        "CAT-FILTERS-FLUIDS-GUIDE"
+      ],
+      "evidenceInterpretation": "sem_resultado_de_campo"
+    },
+    {
+      "id": "BUNDLE-04",
+      "ruleId": "cooling-radiator-leak",
+      "conditionIds": [
+        "COND-COOL-EXTERNAL-LEAK"
+      ],
+      "actionIds": [
+        "ACT-COOL-LEAK-TRACE"
+      ],
+      "differentialDamageIds": [
+        "DMG-COOL-LEAK-INTERFACE"
+      ],
+      "chainIds": [
+        "FC-COOL-002",
+        "FC-COOL-008"
+      ],
+      "interpretation": "Trilha externa pode vir de mangueira ou bomba; confirmação de defeito no radiador exige localizar a origem.",
+      "mappingScope": "generic_only",
+      "status": "review_candidate",
+      "observedConditionIds": [],
+      "performedActionIds": [],
+      "confirmedDamageIds": [],
+      "automaticDamagePromotion": false,
+      "sourceIds": [
+        "CAT-RADIATOR-CARE",
+        "CAT-FILTERS-FLUIDS-GUIDE"
+      ],
+      "evidenceInterpretation": "sem_resultado_de_campo"
+    }
+  ],
+  "relations": [
+    {
+      "id": "REL-001",
+      "from": "BUNDLE-01",
+      "to": "COND-FUEL-WATER",
+      "type": "rule_monitors_condition",
+      "meaning": "Regra sugere procurar esta condição; condição ainda não observada",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-002",
+      "from": "BUNDLE-01",
+      "to": "COND-FUEL-SEDIMENT",
+      "type": "rule_monitors_condition",
+      "meaning": "Regra sugere procurar esta condição; condição ainda não observada",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-003",
+      "from": "BUNDLE-01",
+      "to": "ACT-FUEL-DRAIN-SEPARATOR",
+      "type": "rule_proposes_action",
+      "meaning": "Regra pode orientar ação; nenhuma execução confirmada",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-004",
+      "from": "BUNDLE-01",
+      "to": "ACT-FUEL-REPRESENTATIVE-SAMPLE",
+      "type": "rule_proposes_action",
+      "meaning": "Regra pode orientar ação; nenhuma execução confirmada",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-005",
+      "from": "BUNDLE-01",
+      "to": "DMG-FUEL-DRAIN-FAILURE",
+      "type": "rule_lists_differential_damage",
+      "meaning": "Somente hipótese diferencial, nunca diagnóstico automático",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-006",
+      "from": "BUNDLE-02",
+      "to": "COND-FUEL-WATER",
+      "type": "rule_monitors_condition",
+      "meaning": "Regra sugere procurar esta condição; condição ainda não observada",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-007",
+      "from": "BUNDLE-02",
+      "to": "COND-FUEL-SEDIMENT",
+      "type": "rule_monitors_condition",
+      "meaning": "Regra sugere procurar esta condição; condição ainda não observada",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-008",
+      "from": "BUNDLE-02",
+      "to": "COND-FUEL-FLOW-RESTRICTION",
+      "type": "rule_monitors_condition",
+      "meaning": "Regra sugere procurar esta condição; condição ainda não observada",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-009",
+      "from": "BUNDLE-02",
+      "to": "ACT-FUEL-FILTER-INSPECT",
+      "type": "rule_proposes_action",
+      "meaning": "Regra pode orientar ação; nenhuma execução confirmada",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-010",
+      "from": "BUNDLE-02",
+      "to": "ACT-FUEL-REPRESENTATIVE-SAMPLE",
+      "type": "rule_proposes_action",
+      "meaning": "Regra pode orientar ação; nenhuma execução confirmada",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-011",
+      "from": "BUNDLE-02",
+      "to": "ACT-FUEL-FLOW-TEST",
+      "type": "rule_proposes_action",
+      "meaning": "Regra pode orientar ação; nenhuma execução confirmada",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-012",
+      "from": "BUNDLE-02",
+      "to": "DMG-FUEL-FILTER-RESTRICTION",
+      "type": "rule_lists_differential_damage",
+      "meaning": "Somente hipótese diferencial, nunca diagnóstico automático",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-013",
+      "from": "BUNDLE-03",
+      "to": "COND-COOL-EXTERNAL-DEBRIS",
+      "type": "rule_monitors_condition",
+      "meaning": "Regra sugere procurar esta condição; condição ainda não observada",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-014",
+      "from": "BUNDLE-03",
+      "to": "COND-COOL-INTERNAL-FLOW-RESTRICTION",
+      "type": "rule_monitors_condition",
+      "meaning": "Regra sugere procurar esta condição; condição ainda não observada",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-015",
+      "from": "BUNDLE-03",
+      "to": "COND-COOL-HIGH-TEMPERATURE",
+      "type": "rule_monitors_condition",
+      "meaning": "Regra sugere procurar esta condição; condição ainda não observada",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-016",
+      "from": "BUNDLE-03",
+      "to": "ACT-COOL-FINS-INSPECT",
+      "type": "rule_proposes_action",
+      "meaning": "Regra pode orientar ação; nenhuma execução confirmada",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-017",
+      "from": "BUNDLE-03",
+      "to": "ACT-COOL-FINS-CLEAN",
+      "type": "rule_proposes_action",
+      "meaning": "Regra pode orientar ação; nenhuma execução confirmada",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-018",
+      "from": "BUNDLE-03",
+      "to": "ACT-COOL-CIRCULATION-TEST",
+      "type": "rule_proposes_action",
+      "meaning": "Regra pode orientar ação; nenhuma execução confirmada",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-019",
+      "from": "BUNDLE-03",
+      "to": "DMG-COOL-INTERNAL-BLOCKAGE",
+      "type": "rule_lists_differential_damage",
+      "meaning": "Somente hipótese diferencial, nunca diagnóstico automático",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-020",
+      "from": "BUNDLE-04",
+      "to": "COND-COOL-EXTERNAL-LEAK",
+      "type": "rule_monitors_condition",
+      "meaning": "Regra sugere procurar esta condição; condição ainda não observada",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-021",
+      "from": "BUNDLE-04",
+      "to": "ACT-COOL-LEAK-TRACE",
+      "type": "rule_proposes_action",
+      "meaning": "Regra pode orientar ação; nenhuma execução confirmada",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-022",
+      "from": "BUNDLE-04",
+      "to": "DMG-COOL-LEAK-INTERFACE",
+      "type": "rule_lists_differential_damage",
+      "meaning": "Somente hipótese diferencial, nunca diagnóstico automático",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    }
+  ]
+}
