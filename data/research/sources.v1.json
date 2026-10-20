@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.research.sources.v1",
-  "version": "1.3.6",
+  "version": "1.3.7",
   "status": "literatura_de_referencia_nao_casos_empiricos",
   "rights": "somente_titulos_links_e_resumos_originais",
   "sources": [
@@ -431,6 +431,50 @@
       "role": "standards_methodology",
       "limitation": "Resumo público descreve conceitos e orientação de interpretação diagnóstica; não foram obtidos requisitos integrais da norma nem valores OEM de máquina.",
       "reviewStatus": "resumo_oficial_consultado_sem_acesso_ao_texto_integral",
+      "lastReviewed": "2026-10-20"
+    },
+    {
+      "id": "CAT-ENGINE-OIL-FILTER-SERVICE",
+      "organization": "Caterpillar",
+      "title": "How to Change a Cat Engine Oil Filter",
+      "url": "https://www.cat.com/en_US/blog/change-cat-engine-oil-filter.html",
+      "area": "engine_oil_filter_change_and_inspection",
+      "role": "oem_general_maintenance",
+      "limitation": "Procedimento genérico de filtro spin-on; investigar aplicação, PN, método de inspeção e critérios por motor/série no OMM. Elemento substituído não comprova restrição prévia.",
+      "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
+      "lastReviewed": "2026-10-20"
+    },
+    {
+      "id": "CAT-HYD-TECHNICAL-ANALYSIS",
+      "organization": "Caterpillar",
+      "title": "Your Guide to Cat Hydraulics Technical Analysis Tests",
+      "url": "https://www.cat.com/en_US/blog/cat-hydraulics-tests-hydraulic-system-inspection.html",
+      "area": "hydraulic_condition_tests_drift_cycle_times",
+      "role": "oem_general_maintenance",
+      "limitation": "Exemplos de teste hidráulico genérico. Não importar limites, distâncias, condições de carga, posições e arquitetura para escavadeiras 395/6030 sem OMM.",
+      "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
+      "lastReviewed": "2026-10-20"
+    },
+    {
+      "id": "CAT-HYD-OIL-CLEANLINESS",
+      "organization": "Caterpillar",
+      "title": "How Do You Replace Cat Coreless Hydraulic Filters?",
+      "url": "https://www.cat.com/en_US/blog/replace-cat-hydraulic-filters.html",
+      "area": "hydraulic_fluid_contamination_pumps_valves_filters",
+      "role": "oem_general_maintenance",
+      "limitation": "Exemplos de outro modelo (299D3); princípio de limpeza de óleo não determina restrição de filtro, dano de bomba ou especificação de partículas por frota.",
+      "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
+      "lastReviewed": "2026-10-20"
+    },
+    {
+      "id": "CAT-MINING-UC-WEAR-MANAGEMENT",
+      "organization": "Caterpillar",
+      "title": "Dozer Undercarriage Maintenance and Management",
+      "url": "https://www.cat.com/en_US/blog/mining/articles/dozer-undercarriage-maintenance-and-management.html",
+      "area": "undercarriage_rollers_idlers_bolts_cts_wear",
+      "role": "oem_general_maintenance",
+      "limitation": "Inspeções de rolamentos, rodas-guia, roletes, vedação e CTS descritas de maneira geral; nenhuma condenação/limite aplicável à configuração D9 individual.",
+      "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
       "lastReviewed": "2026-10-20"
     }
   ]
