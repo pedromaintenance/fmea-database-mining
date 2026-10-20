@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.research.sources.v1",
-  "version": "1.3.1",
+  "version": "1.3.2",
   "status": "literatura_de_referencia_nao_casos_empiricos",
   "rights": "somente_titulos_links_e_resumos_originais",
   "sources": [
@@ -199,6 +199,94 @@
       "area": "cooling_radiator_inspection",
       "role": "oem_general_maintenance",
       "limitation": "Reservada para ciclo futuro de arrefecimento; sem generalizar periodicidades ou identificar causa por temperatura alta.",
+      "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
+      "lastReviewed": "2026-10-20"
+    },
+    {
+      "id": "CAT-RADIATOR-CARE",
+      "organization": "Caterpillar",
+      "title": "Substituição do radiador Cat — Dicas de manutenção",
+      "url": "https://www.cat.com/pt_BR/support/maintenance/self-service-options/radiator.html",
+      "area": "cooling_fins_hoses_contamination",
+      "role": "oem_general_maintenance",
+      "limitation": "Obstrução de aletas, contaminação e fugas são riscos gerais; modelo e limite de operação dependem do OMM",
+      "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
+      "lastReviewed": "2026-10-20"
+    },
+    {
+      "id": "CAT-EXC-COOL-CHECKLIST",
+      "organization": "Caterpillar",
+      "title": "Your Six-Step Excavator Maintenance Checklist",
+      "url": "https://www.cat.com/en_US/articles/ci-articles/your-six-step-excavator-maintenance-checklist.html",
+      "area": "airflow_coolant_level_reversing_fan",
+      "role": "oem_general_maintenance",
+      "limitation": "Checklist geral: limpeza, níveis e perdas; ventilador reversível só se existente no modelo/arranjo",
+      "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
+      "lastReviewed": "2026-10-20"
+    },
+    {
+      "id": "CAT-COOLING-HEAT-CHAIN",
+      "organization": "Caterpillar",
+      "title": "Cat Truck Engine Repair Tips: Stop Summer Heat Damage",
+      "url": "https://www.cat.com/en_US/articles/IRF-Resource-Center/truck-engine-repair-tips-stop-heat-damage-irf.html",
+      "area": "fan_hub_thermostat_pump_hoses",
+      "role": "oem_general_maintenance",
+      "limitation": "Publicação sobre motores rodoviários; princípio térmico transferível, não aplicabilidade aos equipamentos de mina",
+      "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
+      "lastReviewed": "2026-10-20"
+    },
+    {
+      "id": "CAT-COOLING-FAN-REVERSE",
+      "organization": "Caterpillar",
+      "title": "Cut Downtime With Your Excavator’s Reversing Fan",
+      "url": "https://www.cat.com/en_US/articles/for-owners/cut-downtime-with-your-excavators-reversing-fan.html",
+      "area": "airflow_fan_reverse",
+      "role": "oem_general_maintenance",
+      "limitation": "Função e configuração de ventilador reversível não devem ser presumidas em 395, 6030 ou outras máquinas",
+      "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
+      "lastReviewed": "2026-10-20"
+    },
+    {
+      "id": "CAT-DOZER-UC-MAINT",
+      "organization": "Caterpillar",
+      "title": "Dozer Undercarriage Maintenance",
+      "url": "https://www.cat.com/en_US/articles/for-owners/dozer-undercarriage-maintenance.html",
+      "area": "roller_idler_debris_bolt_tension",
+      "role": "oem_general_maintenance",
+      "limitation": "Inspeção geral de rodantes de trator; não fornece medidas de desgaste e aperto para D9 específico",
+      "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
+      "lastReviewed": "2026-10-20"
+    },
+    {
+      "id": "CAT-STEEL-TRACKS",
+      "organization": "Caterpillar",
+      "title": "How to Maintain Cat Steel Tracks",
+      "url": "https://www.cat.com/en_US/blog/maintain-cat-steel-tracks.html",
+      "area": "track_tension_wear_cracks_loose",
+      "role": "oem_general_maintenance",
+      "limitation": "Distinção entre esteira tensionada demais/solta demais; processo físico generalista, medir por OMM",
+      "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
+      "lastReviewed": "2026-10-20"
+    },
+    {
+      "id": "CAT-CTS-UNDERCARRIAGE",
+      "organization": "Caterpillar",
+      "title": "Cat Undercarriage Maintenance Dealer Programs",
+      "url": "https://www.cat.com/en_US/blog/undercarriage-care-cat-dealer-programs.html",
+      "area": "cts_wear_trends",
+      "role": "oem_general_maintenance",
+      "limitation": "CTS é serviço de medição de desgaste; não valida automaticamente uma falha nem substitui o OMM",
+      "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
+      "lastReviewed": "2026-10-20"
+    },
+    {
+      "id": "CAT-TRACK-DOZER-TENSION",
+      "organization": "Caterpillar",
+      "title": "How to Check Dozer Track Tension",
+      "url": "https://www.cat.com/en_US/articles/for-owners/how-to-check-dozer-track-tension.html/",
+      "area": "track_tension_debris_seals",
+      "role": "oem_general_maintenance",
+      "limitation": "Verificar sentidos das operações de tensionamento e aplicar somente OMM efetivo; sem instruções de campo extrapoladas",
       "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
       "lastReviewed": "2026-10-20"
     }
