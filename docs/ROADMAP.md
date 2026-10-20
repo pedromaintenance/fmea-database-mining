@@ -1,6 +1,6 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 20/10/2026 · **Ciclo:** catálogo técnico v1.3.4 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 20/10/2026 · **Ciclo:** catálogo técnico v1.3.5 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
 
@@ -36,6 +36,25 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 | Enriquecimento | 12 roteiros classificados por falha funcional, sintomas e técnicas | Anotação manual, não prova de causa |
 
 **Observação:** as 159 tarefas de PM com subgrupo candidato foram obtidas em extração local anterior e **não** representam 159 associações homologadas. Contagens de vínculos estritos serão publicadas pelo relatório automático após cada alteração do gerador.
+
+## Ciclo concluído — 20/10/2026: saneamento das 10 regras preventivas sem vínculo (v1.3.5)
+
+**Avanço de qualidade, sem ampliação artificial de modos de falha.** A [auditoria de bloqueios](CICLO_2026-10-20_LACUNAS_PM.md) classificou as **25 regras** de prevenção em seis etapas de elegibilidade estrutural. As **10 regras sem candidato** agora têm parecer técnico, fonte, prioridade e ação de saneamento, registradas em [JSON de curadoria](../data/quality/pm-gap-review.v1.json).
+
+- [x] **3 falhas de subgrupo:** `hydraulic-hose-leak`, `hydraulic-hose-abrasion`, `drill-compressor-filter`.
+- [x] **5 falhas de componente:** `engine-oil-filter`, `fuel-filter-contamination`, `track-idler-wear`, `drill-rotary-bearing`, `drill-compressor-pressure`.
+- [x] **2 falhas de compatibilidade dano/causa:** `cooling-radiator-blockage`, `fuel-tank-water`.
+- [x] Novo `scripts/audit-pm-gaps.mjs` detecta o primeiro bloqueio, confronta quantidade com os vínculos produzidos e rejeita mudança de estado sem curadoria.
+- [x] Referências Caterpillar e SAP consolidadas: **local funcional não equivale à peça**, **água no combustível não é defeito do dreno**, **sujeira externa de radiador não é necessariamente entupimento interno**.
+- [x] Integração do relatório `reports/pm-gap-audit.generated.json` ao CI e ao indicador geral de qualidade.
+- [ ] **P0:** modelar separadamente `conditionDetected`, `preventiveAction`, `componentDamage` (começar por água no combustível e obstrução externa).
+- [ ] **P0:** investigar local e composição de linhas hidráulicas de implementos sem usar HSVV de circuitos estranhos.
+- [ ] **P1:** conferir efetividade OEM de filtro de óleo, filtro/separador diesel, componentes de roda-guia e conjuntos DR410i/DI650i.
+- [ ] Revisar uma a uma as 10 regras quando houver novo cadastro, sem aceitar equivalência textual como prova.
+
+**Resultado operacional:** 10/10 bloqueios explicados, 15/25 regras permanecem com vínculos candidatos, **zero** vínculos homologados e **zero** resultados de inspeção real atribuídos.
+
+**Próximo ciclo:** separar **condições detectadas por preventiva** de **modos de falha de componentes** e introduzir classes de evidência de contaminação/restrição, prevenindo circularidade no catálogo.
 
 ## Ciclo concluído — 20/10/2026: integridade causal e compatibilidade SAP (v1.3.4)
 
