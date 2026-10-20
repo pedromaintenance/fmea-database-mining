@@ -2,7 +2,7 @@
 
 Banco de conhecimento **versionado** para investigar modos de falha, sintomas, evidências e causas em equipamentos móveis de mineração. Um consumidor possível é o jogo **[P.O.R.C.A.R.I.A. — Você Quebra, Eu Conserto](https://github.com/pedromaintenance/porcaria-voce-quebra-eu-conserto)**, mas o banco é independente: **este repositório não altera os consumidores**.
 
-> **Status:** versão do catálogo **1.3.1** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
+> **Status:** versão do catálogo **1.3.2** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
 
 ## O que queremos construir
 
@@ -83,6 +83,14 @@ Pesquisados dois conjuntos com fontes Caterpillar e SKF: **mangueiras hidráulic
 - [Fontes e decisões do ciclo](docs/CICLO_2026-10-20_MANGUEIRAS_COMANDOS.md)
 - `npm run causal:validate` valida IDs, fontes, causas candidatas e separação entre teste planejado e evidência observada.
 - O audit report inclui quantidade e cobertura dessa família; **zero** causas raízes ou efetividades OEM confirmadas.
+
+## Segundo ciclo de pesquisa causal (v1.3.2)
+
+Ampliação com [oito novas cadeias](data/knowledge/causal-chains.v1.json) para **arrefecimento** (fluxo de ar, estanqueidade, ventilador, restrição interna) e **material rodante** (roletes, rodas-guia, tensão), com referências Caterpillar, contra-hipóteses e métodos de inspeção.
+
+Total acumulado: **16 cadeias causais, 4 famílias e 32 investigações propostas**. [Relatório de pesquisa e limites](docs/CICLO_2026-10-20_ARREFECIMENTO_RODANTE.md).
+
+Nada foi promovido a diagnóstico de máquina real. A configuração, os limites OEM por série e os resultados de testes seguem pendentes.
 
 ## Comece por aqui
 

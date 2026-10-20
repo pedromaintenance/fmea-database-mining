@@ -2,6 +2,15 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.2] — 2026-10-20 — Arrefecimento e material rodante
+- Incorporadas oito cadeias de falha generalistas com fontes OEM Caterpillar, contraprovas e dois métodos por cadeia.
+- Catálogo acumulado: 16 cadeias, quatro famílias de sistemas, 32 investigações propostas.
+- Arrefecimento: obstrução externa, perda externa de líquido, comando do ventilador e obstrução interna — causas alternativas separadas.
+- Rodante: restrição de rolete por detritos, fuga de lubrificante, desgaste da roda-guia e tensão incorreta — sem transportar medições entre modelos.
+- Vinculação de inspeção PM por contexto explicitada para a tensão de esteira; nenhum ajuste, código SAP ou efeito OEM confirmado.
+- Validação ampliada por famílias e coerência funcional da regra PM. Relatório e fontes do ciclo registrados no roadmap.
+- Nenhum repositório consumidor modificado e nenhum registro empírico inserido.
+
 ## [1.3.1] — 2026-10-20 — Pesquisa curta e novas cadeias causais
 - Pesquisadas e catalogadas seis fontes gerais: CAT (mangueiras, bujões magnéticos, radiador), SKF (classificação de danos e fadiga de rolamentos).
 - Oito cadeias causais novas: quatro mangueiras hidráulicas, quatro comandos finais, com 16 investigações propostas e hipóteses concorrentes.

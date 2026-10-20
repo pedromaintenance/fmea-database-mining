@@ -44,9 +44,11 @@ const counts={
  causalChains:chains.length,causalChainFamilies:new Set(chains.map(x=>x.family)).size,
  suggestedCausalInvestigations:chains.reduce((n,x)=>n+x.investigations.length,0),
  peerReviewedCausalChains:chains.filter(x=>x.review.status==='revisado_por_especialista').length,
+ causalChainCoverageByFamily:Object.fromEntries([...new Set(chains.map(x=>x.family))].sort().map(f=>[f,chains.filter(x=>x.family===f).length])),
+ causalChainsWithSourcesAndCounterHypotheses:chains.filter(x=>x.sourceClaims.length&&x.competingHypotheses.length>=2).length,
  evidenceValidatedInRealEquipment:0,technicallyApprovedPlaybooks:0
 };
-const report={schema:'fmea-mining.quality-audit.v1',version:'1.3.1',
+const report={schema:'fmea-mining.quality-audit.v1',version:'1.3.2',
  generatedFrom:'working_tree',status:'qualidade_cadastral_nao_taxa_de_falhas',
  meanings:{
   pmCandidateLinks:'vinculos gerados por regra e taxonomia, NAO falhas observadas',

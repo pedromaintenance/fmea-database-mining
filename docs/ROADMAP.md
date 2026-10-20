@@ -1,6 +1,6 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 20/10/2026 · **Ciclo:** catálogo técnico v1.3.1 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 20/10/2026 · **Ciclo:** catálogo técnico v1.3.2 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
 
@@ -36,6 +36,22 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 | Enriquecimento | 12 roteiros classificados por falha funcional, sintomas e técnicas | Anotação manual, não prova de causa |
 
 **Observação:** as 159 tarefas de PM com subgrupo candidato foram obtidas em extração local anterior e **não** representam 159 associações homologadas. Contagens de vínculos estritos serão publicadas pelo relatório automático após cada alteração do gerador.
+
+## Ciclo concluído — 20/10/2026: arrefecimento e material rodante (v1.3.2)
+
+**Pesquisado e publicado:** 8 cadeias causais autorais adicionais, quatro de arrefecimento (obstrução externa, perda de fluido, ventilação insuficiente e restrição interna) e quatro de material rodante (travamento por detritos, perda de vedação do rolete, desgaste de roda-guia e tensão anormal da esteira).
+
+- [x] Catalogar oito novas fontes Caterpillar, com limites de efetividade documentados.
+- [x] Expandir o catálogo de 8 para **16 cadeias causais em quatro famílias**, com 32 investigações e interpretação `sustenta/enfraquece/inconclusivo`.
+- [x] Ampliar o validador para exigir vínculo das regras PM ao **mesmo sistema funcional** da cadeia, além de IDs válidos e dados não observados.
+- [x] Separar relação preventiva direta da tarefa **contextual de monitoramento**, especialmente tensionamento e desgaste do rodante.
+- [x] Publicar [relatório técnico, fontes, limites e contraprovas](CICLO_2026-10-20_ARREFECIMENTO_RODANTE.md).
+- [ ] Revisar com especialista de campo os resultados simulados, modos e condições de medida; nenhum vínculo OEM/série é confirmado.
+- [ ] Inspecionar relatório automatizado de cobertura por família e restrições cadastrais.
+
+**Total atual:** 16 cadeias, 4 famílias, 32 investigações, **zero ocorrências empíricas** e **zero diagnósticos homologados**.
+
+**Próximas investigações técnicas:** fixações de esteiras e seus mecanismos (afrouxamento, perda de pré-carga, quebra), regulador de temperatura e circulação de líquido de arrefecimento com OMM aplicável; continuar a depurar relações de localização SAP.
 
 ## Ciclo fechado — 20/10/2026: mangueiras hidráulicas e comandos finais (v1.3.1)
 
@@ -80,7 +96,7 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 - [ ] Criar matriz função → falha funcional → efeitos por sistema: motor, arrefecimento, combustível, hidráulico, transmissão, freios, rodante, direção, elétrico/controle, compressor, mastro e cabeça rotativa.
 - [ ] Registrar condições necessárias de manifestação: temperatura, carga, rotação, esforço, tipo de fluido, ambiente e configuração.
 - [ ] Distinguir **prevenção do mecanismo** de **detecção do dano já existente**, com tarefa PM/CBM correspondente.
-- [ ] Revisar pelo menos **20 cadeias causais autorais** como primeiro lote controlado (8 hipóteses inseridas, **0 aprovadas**); ampliar somente após auditoria.
+- [ ] Revisar pelo menos **20 cadeias causais autorais** como primeiro lote controlado (16 hipóteses inseridas, **0 aprovadas**); ampliar somente após auditoria.
 
 **Aceite:** cada cadeia aponta para função, falha, componente, mecanismo/dano, efeito e pelo menos um sintoma observável, com origem e limites. Sem probabilidades não fundamentadas.
 
