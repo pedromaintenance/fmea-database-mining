@@ -1,12 +1,12 @@
 {
   "schema": "fmea-mining.causal-chains.v1",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "language": "pt-BR",
   "scope": "padroes_de_falha_genéricos_nao_equivalentes_a_efetividade_por_numero_de_serie",
   "sourcePolicy": "conceitos_parafraseados_de_fontes_OEM_e_fabricantes;sem_texto_original_de_manual",
   "counts": {
     "families": 4,
-    "chains": 16
+    "chains": 24
   },
   "records": [
     {
@@ -1536,6 +1536,765 @@
         }
       ],
       "limitations": "As tarefas PM de rolete e roda-guia são monitoramento contextual; não significam procedimento validado de ajuste de tensão. Manipulação de tensionador pressurizado requer OMM e controle de riscos.",
+      "review": {
+        "status": "inferido_com_literatura_geral",
+        "reviewer": null
+      },
+      "sapMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageId": null,
+        "causeId": null
+      },
+      "factualNature": "hipotese_de_mecanismo",
+      "empiricalOccurrences": 0,
+      "confirmedRootCause": false
+    },
+    {
+      "id": "FC-TRACK-005",
+      "family": "material_rodante",
+      "title": "Autoafrouxamento rotacional de parafuso de sapata",
+      "operatingFunction": "Manter sapata fixada ao elo de corrente com pré-carga adequada",
+      "functionalFailureId": "FF-09",
+      "failureMode": "Perda de força de aperto por rotação progressiva da fixação sob solicitações transversais",
+      "mechanismIds": [
+        "ME-09"
+      ],
+      "initiatingConditionCandidates": [
+        "Escorregamento relativo nas faces da junta",
+        "Solicitações alternadas e impactos",
+        "Montagem ou força de aperto inicial não conforme"
+      ],
+      "possibleDamage": "Deslocamento relativo da sapata e marcas de contato; eventual soltura do parafuso, sem presumir dano por fadiga",
+      "symptomIds": [
+        "SY-11",
+        "SY-02"
+      ],
+      "evidenceMethodIds": [
+        "EV-01",
+        "EV-15"
+      ],
+      "preventionRuleIds": [
+        "track-bolt-loose"
+      ],
+      "preventionAssociation": "alvo_de_inspecao_candidato",
+      "sourceClaims": [
+        {
+          "sourceId": "CAT-UC-DOZER-GUIDE",
+          "claim": "A Caterpillar orienta checar parafusos de esteira soltos e aplicar aperto pelo método torque-turn conforme especificação.",
+          "scope": "principio_geral"
+        },
+        {
+          "sourceId": "NORDLOCK-BOLT-LOOSENING",
+          "claim": "Movimento relativo da junta sob vibração e carga transversal pode produzir afrouxamento rotacional e perda de pré-carga.",
+          "scope": "principio_geral"
+        }
+      ],
+      "competingHypotheses": [
+        {
+          "id": "ALT1",
+          "description": "Assentamento da junta sem rotação do fixador",
+          "discriminator": "Ausência de evidência de rotação e histórico de deformação das superfícies de contato"
+        },
+        {
+          "id": "ALT2",
+          "description": "Ruptura de um parafuso previamente íntegro por sobrecarga",
+          "discriminator": "Inspeção distingue haste quebrada de porca/parafuso apenas solto"
+        }
+      ],
+      "investigations": [
+        {
+          "id": "I1",
+          "methodId": "EV-01",
+          "purpose": "Após isolamento e acesso autorizado, avaliar estado dos fixadores e marcas de movimento",
+          "interpretations": {
+            "supports": "Posição alterada e superfícies deslocadas são coerentes com perda de retenção",
+            "weakens": "Fixadores íntegros e sem deslocamento reduzem suspeita naquele trecho",
+            "inconclusive": "Sem marca de referência prévia não é possível provar rotação retrospectiva"
+          },
+          "status": "apenas_proposto",
+          "resultObserved": null
+        },
+        {
+          "id": "I2",
+          "methodId": "EV-15",
+          "purpose": "Conferir registro de montagem e condição da junta por método de inspeção OEM",
+          "interpretations": {
+            "supports": "Montagem anterior incorreta ou evidências independentes de perda de pré-carga sustentam hipótese",
+            "weakens": "Documentação de montagem adequada e sem anomalia atual enfraquece suspeita, sem refutar eventos passados",
+            "inconclusive": "Aplicabilidade e procedimento de avaliação de pré-carga não disponíveis"
+          },
+          "status": "apenas_proposto",
+          "resultObserved": null
+        }
+      ],
+      "limitations": "Jamais atribuir valor de torque ou reapertar aleatoriamente fixação danificada. Método torque-turn requer OMM, fixador e condição de uso específicos; marca de cabeça deslocada não constitui prova isolada.",
+      "review": {
+        "status": "inferido_com_literatura_geral",
+        "reviewer": null
+      },
+      "sapMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageId": null,
+        "causeId": null
+      },
+      "factualNature": "hipotese_de_mecanismo",
+      "empiricalOccurrences": 0,
+      "confirmedRootCause": false
+    },
+    {
+      "id": "FC-TRACK-006",
+      "family": "material_rodante",
+      "title": "Perda de pré-carga sem autoafrouxamento rotacional",
+      "operatingFunction": "Comprimir interface sapata–elo de forma suficiente para transmitir cargas por contato",
+      "functionalFailureId": "FF-09",
+      "failureMode": "Redução da força de aperto por assentamento das interfaces, relaxação ou deformação permanente",
+      "mechanismIds": [
+        "ME-09"
+      ],
+      "initiatingConditionCandidates": [
+        "Assentamento das superfícies de contato",
+        "Alteração de revestimento ou rugosidade",
+        "Relaxação ou deformação da junta"
+      ],
+      "possibleDamage": "Perda de aperto com possível micromovimento na interface e desgaste, mesmo sem rotação observável",
+      "symptomIds": [
+        "SY-11",
+        "SY-02"
+      ],
+      "evidenceMethodIds": [
+        "EV-15",
+        "EV-13"
+      ],
+      "preventionRuleIds": [
+        "track-bolt-loose"
+      ],
+      "preventionAssociation": "alvo_de_inspecao_candidato",
+      "sourceClaims": [
+        {
+          "sourceId": "NORDLOCK-BOLT-LOOSENING",
+          "claim": "Assentamento, fluência e relaxação podem reduzir força de aperto sem rotação do elemento roscado.",
+          "scope": "principio_geral"
+        },
+        {
+          "sourceId": "NORDLOCK-PRELOAD-GUIDANCE",
+          "claim": "Pré-carga insuficiente favorece escorregamento e falha por fadiga; excesso também pode causar dano.",
+          "scope": "principio_geral"
+        }
+      ],
+      "competingHypotheses": [
+        {
+          "id": "ALT1",
+          "description": "Autoafrouxamento devido a rotação",
+          "discriminator": "Marcas comparáveis demonstram giro relativo de cabeça/porca"
+        },
+        {
+          "id": "ALT2",
+          "description": "Dano geométrico anterior na sapata ou elo",
+          "discriminator": "Deformação independente do aperto mostra outra origem de movimento"
+        }
+      ],
+      "investigations": [
+        {
+          "id": "I1",
+          "methodId": "EV-15",
+          "purpose": "Inspecionar junta, superfícies e fixadores com método validado que não dependa de 'torque residual' isolado",
+          "interpretations": {
+            "supports": "Perda de retenção associada a sinais de assentamento pode sustentar hipótese",
+            "weakens": "Pré-carga determinada como íntegra na condição atual enfraquece hipótese de falha ativa",
+            "inconclusive": "Torque de desaperto não representa necessariamente a pré-carga original"
+          },
+          "status": "apenas_proposto",
+          "resultObserved": null
+        },
+        {
+          "id": "I2",
+          "methodId": "EV-13",
+          "purpose": "Reconciliar instalação, substituição de sapata, histórico de ajuste e observações anteriores",
+          "interpretations": {
+            "supports": "Alteração após montagem recente associada à acomodação da junta aumenta plausibilidade",
+            "weakens": "Sem histórico de montagem ou sem alteração de folga reduz inferência específica, não exclui perda anterior",
+            "inconclusive": "Registros não identificam fixador, lote, método e superfície de assentamento"
+          },
+          "status": "apenas_proposto",
+          "resultObserved": null
+        }
+      ],
+      "limitations": "Assentamento e relaxação não devem ser diagnosticados apenas por aparência de parafuso solto. Verificar documentação e aplicabilidade da conexão, sem procedimentos de reaperto improvisados.",
+      "review": {
+        "status": "inferido_com_literatura_geral",
+        "reviewer": null
+      },
+      "sapMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageId": null,
+        "causeId": null
+      },
+      "factualNature": "hipotese_de_mecanismo",
+      "empiricalOccurrences": 0,
+      "confirmedRootCause": false
+    },
+    {
+      "id": "FC-TRACK-007",
+      "family": "material_rodante",
+      "title": "Fratura de parafuso de sapata por fadiga de carregamento",
+      "operatingFunction": "Preservar integridade dos elementos roscados durante carregamento cíclico de esteira",
+      "functionalFailureId": "FF-09",
+      "failureMode": "Propagação de trinca sob solicitações repetidas até ruptura do fixador",
+      "mechanismIds": [
+        "ME-04",
+        "ME-09"
+      ],
+      "initiatingConditionCandidates": [
+        "Perda prévia de pré-carga e escorregamento da junta",
+        "Carregamento cíclico ou impactos repetidos",
+        "Geometria/montagem incompatível ou concentração de tensão"
+      ],
+      "possibleDamage": "Fratura do corpo ou região roscada; morfologia é necessária para diferenciar fadiga de sobrecarga",
+      "symptomIds": [
+        "SY-12",
+        "SY-11"
+      ],
+      "evidenceMethodIds": [
+        "EV-01",
+        "EV-13"
+      ],
+      "preventionRuleIds": [
+        "track-bolt-loose"
+      ],
+      "preventionAssociation": "alvo_de_inspecao_candidato",
+      "sourceClaims": [
+        {
+          "sourceId": "NORDLOCK-BOLTING-FAILURE",
+          "claim": "Fabricante técnico descreve trincas progressivas por fadiga de fixadores e efeito de perda de pré-carga.",
+          "scope": "principio_geral"
+        },
+        {
+          "sourceId": "CAT-UC-DOZER-GUIDE",
+          "claim": "Caterpillar recomenda inspeção de parafusos, danos e uso do método torque-turn no rodante.",
+          "scope": "principio_geral"
+        }
+      ],
+      "competingHypotheses": [
+        {
+          "id": "ALT1",
+          "description": "Ruptura por sobrecarga única ou impacto",
+          "discriminator": "Padrão de fratura e histórico de choque sem zona de propagação progressiva"
+        },
+        {
+          "id": "ALT2",
+          "description": "Perda/ausência de parafuso por montagem incompleta",
+          "discriminator": "Não há fragmento fraturado nem indicação física de ruptura"
+        }
+      ],
+      "investigations": [
+        {
+          "id": "I1",
+          "methodId": "EV-01",
+          "purpose": "Após isolamento, registrar e inspecionar visualmente fraturas sem alterar a superfície original",
+          "interpretations": {
+            "supports": "Presença de fragmentos e características de trinca progressiva é compatível com fadiga, sem confirmação metalográfica",
+            "weakens": "Superfície com deformação grosseira ou ausência de fratura não sustenta essa causa específica",
+            "inconclusive": "Superfície oxidada, deformada ou inacessível impede diferenciar mecanismos"
+          },
+          "status": "apenas_proposto",
+          "resultObserved": null
+        },
+        {
+          "id": "I2",
+          "methodId": "EV-13",
+          "purpose": "Revisar sequências de manutenção, substituições, condições de operação e múltiplas falhas na mesma junta",
+          "interpretations": {
+            "supports": "Falhas repetidas em localização semelhante e histórico de retenção inadequada sustentam investigação de fadiga",
+            "weakens": "Evento isolado de impacto forte reforça alternativa de sobrecarga, mas não a comprova",
+            "inconclusive": "Sem identificação das peças removidas e cronologia operacional"
+          },
+          "status": "apenas_proposto",
+          "resultObserved": null
+        }
+      ],
+      "limitations": "Atribuição de fadiga exige análise fractográfica/metalúrgica competente; ausência de parafuso não comprova fratura. Peças rompidas podem implicar parada/isolamento conforme avaliação de segurança.",
+      "review": {
+        "status": "inferido_com_literatura_geral",
+        "reviewer": null
+      },
+      "sapMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageId": null,
+        "causeId": null
+      },
+      "factualNature": "hipotese_de_mecanismo",
+      "empiricalOccurrences": 0,
+      "confirmedRootCause": false
+    },
+    {
+      "id": "FC-TRACK-008",
+      "family": "material_rodante",
+      "title": "Deslocamento relativo e desgaste da interface sapata–elo após perda de fixação",
+      "operatingFunction": "Transferir esforço entre sapata e elo preservando o contato e a geometria da junta",
+      "functionalFailureId": "FF-09",
+      "failureMode": "Deslocamento/impacto repetido das faces de contato com desgaste localizado e possível ovalização",
+      "mechanismIds": [
+        "ME-01",
+        "ME-09"
+      ],
+      "initiatingConditionCandidates": [
+        "Perda de pré-carga em um ou mais fixadores",
+        "Contato insuficiente entre as faces",
+        "Carga transversal associada a impactos e terreno"
+      ],
+      "possibleDamage": "Marcas de fretting/desgaste, mudança geométrica de contato e possível ovalização do furo",
+      "symptomIds": [
+        "SY-11",
+        "SY-02"
+      ],
+      "evidenceMethodIds": [
+        "EV-01",
+        "EV-02"
+      ],
+      "preventionRuleIds": [
+        "track-bolt-loose"
+      ],
+      "preventionAssociation": "alvo_de_inspecao_candidato",
+      "sourceClaims": [
+        {
+          "sourceId": "CAT-TRACK-BOLT-FUNCTION",
+          "claim": "Cat descreve a fixação sapata–elo como necessária à retenção e distribuição de cargas, em componente não identificado como aplicável ao D9.",
+          "scope": "principio_geral"
+        },
+        {
+          "sourceId": "NORDLOCK-BOLT-LOOSENING",
+          "claim": "Perda de força de aperto aumenta risco de escorregamento de faces e dano na junta.",
+          "scope": "principio_geral"
+        }
+      ],
+      "competingHypotheses": [
+        {
+          "id": "ALT1",
+          "description": "Impacto externo com deformação localizada, independentemente do aperto",
+          "discriminator": "Dano geométrico de origem externa sem marcas de deslizamento na junta"
+        },
+        {
+          "id": "ALT2",
+          "description": "Desgaste de corrente/sapata em serviço normal sem perda atual de aperto",
+          "discriminator": "Histórico dimensional e aperto atuais coerentes com o requisito do conjunto"
+        }
+      ],
+      "investigations": [
+        {
+          "id": "I1",
+          "methodId": "EV-01",
+          "purpose": "Inspecionar visualmente sapatas, cabeças de fixador, juntas e superfícies de contato com acesso seguro",
+          "interpretations": {
+            "supports": "Marcas coincidentes de deslocamento nas interfaces reforçam hipótese de perda de retenção",
+            "weakens": "Superfícies estáveis sem sinais de deslocamento reduzem suspeita de movimento atual",
+            "inconclusive": "É impossível acessar interfaces sem desmontagem autorizada"
+          },
+          "status": "apenas_proposto",
+          "resultObserved": null
+        },
+        {
+          "id": "I2",
+          "methodId": "EV-02",
+          "purpose": "Medir geometria de furos/faces e comparar com tolerância OEM da sapata e elo efetivos",
+          "interpretations": {
+            "supports": "Desvio geométrico e padrão de deformação sustentam dano de interface, mas não sua causa isolada",
+            "weakens": "Geometria conforme requisito reduz hipótese de desgaste avançado naquela posição",
+            "inconclusive": "Sem desenhos e critérios por série não classificar ovalização"
+          },
+          "status": "apenas_proposto",
+          "resultObserved": null
+        }
+      ],
+      "limitations": "Não concluir que parafusos devem ser reaproveitados nem aplicar torque genérico após desgaste de furo. Arestas entre dano secundário e perda de pré-carga seguem inferidas.",
+      "review": {
+        "status": "inferido_com_literatura_geral",
+        "reviewer": null
+      },
+      "sapMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageId": null,
+        "causeId": null
+      },
+      "factualNature": "hipotese_de_mecanismo",
+      "empiricalOccurrences": 0,
+      "confirmedRootCause": false
+    },
+    {
+      "id": "FC-COOL-005",
+      "family": "arrefecimento",
+      "title": "Termostato restringindo indevidamente fluxo para o radiador",
+      "operatingFunction": "Regular a distribuição do líquido arrefecedor entre bypass e radiador conforme temperatura",
+      "functionalFailureId": "FF-08",
+      "failureMode": "Passagem insuficiente para radiador por abertura anormalmente limitada do elemento termostático",
+      "mechanismIds": [
+        "ME-14",
+        "ME-12"
+      ],
+      "initiatingConditionCandidates": [
+        "Elemento termostático travado ou com curso inadequado",
+        "Depósitos ou dano no mecanismo de movimentação",
+        "Montagem/peça incompatível com circuito"
+      ],
+      "possibleDamage": "Restrição da passagem de líquido no circuito de arrefecimento, com possível aquecimento excessivo sob carga",
+      "symptomIds": [
+        "SY-04",
+        "SY-20"
+      ],
+      "evidenceMethodIds": [
+        "EV-14",
+        "EV-12"
+      ],
+      "preventionRuleIds": [
+        "cooling-radiator-blockage"
+      ],
+      "preventionAssociation": "alvo_de_inspecao_candidato",
+      "sourceClaims": [
+        {
+          "sourceId": "CAT-THERMOSTAT-REPLACEMENT",
+          "claim": "O fabricante descreve que termostato regula fluxo para o radiador e bypass; falha de abertura é hipótese física, não ocorrência observada.",
+          "scope": "principio_geral"
+        },
+        {
+          "sourceId": "CAT-WATER-PUMP-REPLACEMENT",
+          "claim": "A bomba participa da circulação do líquido; falta de fluxo pode ter outras causas além do termostato.",
+          "scope": "principio_geral"
+        }
+      ],
+      "competingHypotheses": [
+        {
+          "id": "ALT1",
+          "description": "Bomba com vazão insuficiente",
+          "discriminator": "Testes independentes de circulação identificam deficiência do conjunto de bombeamento"
+        },
+        {
+          "id": "ALT2",
+          "description": "Restrição externa de fluxo de ar na colmeia",
+          "discriminator": "Depósito visível em aletas e histórico térmico compatível com ventilação restrita"
+        }
+      ],
+      "investigations": [
+        {
+          "id": "I1",
+          "methodId": "EV-14",
+          "purpose": "Comparar comportamento térmico por fase de aquecimento e carga, com canal e referência OEM",
+          "interpretations": {
+            "supports": "Abertura de termostato incompatível com a demanda, quando testada de forma aplicável, sustenta hipótese",
+            "weakens": "Regime de controle térmico conforme especificação reduz hipótese de travamento presente",
+            "inconclusive": "Sem especificação térmica e condições comparáveis a tendência não diferencia"
+          },
+          "status": "apenas_proposto",
+          "resultObserved": null
+        },
+        {
+          "id": "I2",
+          "methodId": "EV-12",
+          "purpose": "Verificar atuação do termostato pelo procedimento OEM efetivo e em condição segura",
+          "interpretations": {
+            "supports": "Teste funcional demonstra curso insuficiente/abertura inadequada conforme especificação",
+            "weakens": "Componente atende teste de abertura em condições prescritas, enfraquecendo a falha no elemento",
+            "inconclusive": "Procedimento, instrumento ou ponto de acesso indisponível"
+          },
+          "status": "apenas_proposto",
+          "resultObserved": null
+        }
+      ],
+      "limitations": "Não remover termostato para operar equipamento: a Caterpillar informa que a remoção pode manter bypass aberto e agravar superaquecimento. O plano de inspeção de radiador é apenas relação preventiva CONTEXTUAL, não prova de tarefa específica para termostato.",
+      "review": {
+        "status": "inferido_com_literatura_geral",
+        "reviewer": null
+      },
+      "sapMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageId": null,
+        "causeId": null
+      },
+      "factualNature": "hipotese_de_mecanismo",
+      "empiricalOccurrences": 0,
+      "confirmedRootCause": false
+    },
+    {
+      "id": "FC-COOL-006",
+      "family": "arrefecimento",
+      "title": "Termostato permitindo fluxo ao radiador antes da regulação requerida",
+      "operatingFunction": "Restringir o fluxo ao radiador na condição fria e permitir abertura controlada ao aquecer",
+      "functionalFailureId": "FF-08",
+      "failureMode": "Desvio de regulação com abertura prematura ou travamento aberto, associado a aquecimento mais lento",
+      "mechanismIds": [
+        "ME-14"
+      ],
+      "initiatingConditionCandidates": [
+        "Desajuste ou travamento do mecanismo termostático",
+        "Elemento ou calibração incompatível",
+        "Anomalia de montagem que altera fluxo/bypass"
+      ],
+      "possibleDamage": "Circulação para radiador fora do regime previsto durante aquecimento inicial, sem comprovação de dano estrutural",
+      "symptomIds": [
+        "SY-05",
+        "SY-21"
+      ],
+      "evidenceMethodIds": [
+        "EV-14",
+        "EV-12"
+      ],
+      "preventionRuleIds": [
+        "cooling-radiator-blockage"
+      ],
+      "preventionAssociation": "alvo_de_inspecao_candidato",
+      "sourceClaims": [
+        {
+          "sourceId": "CAT-THERMOSTAT-REPLACEMENT",
+          "claim": "Caterpillar descreve retenção de fluxo ao radiador quando frio e abertura progressiva com aumento de temperatura.",
+          "scope": "principio_geral"
+        },
+        {
+          "sourceId": "CAT-EXC-COOL-CHECKLIST",
+          "claim": "O acompanhamento do nível e condição do sistema de arrefecimento integra a inspeção OEM geral, não é diagnóstico de termostato.",
+          "scope": "principio_geral"
+        }
+      ],
+      "competingHypotheses": [
+        {
+          "id": "ALT1",
+          "description": "Temperatura indicada baixa por sensor ou instrumento defeituoso",
+          "discriminator": "Medição independente diverge da leitura exibida"
+        },
+        {
+          "id": "ALT2",
+          "description": "Baixa carga/ambiente frio alterando evolução térmica sem defeito",
+          "discriminator": "Regime térmico normal quando reproduzido sob carga e ambiente comparáveis"
+        }
+      ],
+      "investigations": [
+        {
+          "id": "I1",
+          "methodId": "EV-14",
+          "purpose": "Confrontar curva de aquecimento desde condição fria, carga, ambiente e histórico confiável",
+          "interpretations": {
+            "supports": "Tempos térmicos consistentemente prolongados reforçam regulação anormal, sem identificar componente",
+            "weakens": "Evolução de aquecimento dentro da especificação reduz hipótese de abertura indevida",
+            "inconclusive": "Não há condição de partida e carga comparável"
+          },
+          "status": "apenas_proposto",
+          "resultObserved": null
+        },
+        {
+          "id": "I2",
+          "methodId": "EV-12",
+          "purpose": "Aplicar verificação de abertura e fechamento autorizada pelo procedimento OEM",
+          "interpretations": {
+            "supports": "Abertura prematura em teste prescrito sustenta falha do termostato",
+            "weakens": "Abertura em faixa e curso especificados enfraquece hipótese de elemento travado aberto",
+            "inconclusive": "Sem dados OEM por motor/circuito não se consegue classificar"
+          },
+          "status": "apenas_proposto",
+          "resultObserved": null
+        }
+      ],
+      "limitations": "A falha de 'aquecimento lento' é inferida do princípio de regulação, não constatação CAT neste modelo; não inventar temperatura, bypass, quantidade de termostatos ou aplicar resultados entre motores diferentes. PM radiador é apenas monitoramento contextual.",
+      "review": {
+        "status": "inferido_com_literatura_geral",
+        "reviewer": null
+      },
+      "sapMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageId": null,
+        "causeId": null
+      },
+      "factualNature": "hipotese_de_mecanismo",
+      "empiricalOccurrences": 0,
+      "confirmedRootCause": false
+    },
+    {
+      "id": "FC-COOL-007",
+      "family": "arrefecimento",
+      "title": "Circulação insuficiente de fluido por deficiência do conjunto de bomba",
+      "operatingFunction": "Manter circulação de líquido arrefecedor suficiente sob regime de carga e rotação",
+      "functionalFailureId": "FF-02",
+      "failureMode": "Conjunto de bombeamento fornece fluxo insuficiente para remover calor",
+      "mechanismIds": [
+        "ME-01",
+        "ME-12",
+        "ME-14"
+      ],
+      "initiatingConditionCandidates": [
+        "Desgaste de componentes internos ou acionamento deficiente",
+        "Dano ou restrição de alimentação da bomba",
+        "Problemas de montagem/acionamento específicos da configuração"
+      ],
+      "possibleDamage": "Redução funcional de vazão; falha do rotor, cavitação ou eixo só poderão ser afirmados com exame específico",
+      "symptomIds": [
+        "SY-04",
+        "SY-08"
+      ],
+      "evidenceMethodIds": [
+        "EV-14",
+        "EV-12"
+      ],
+      "preventionRuleIds": [
+        "cooling-radiator-blockage"
+      ],
+      "preventionAssociation": "alvo_de_inspecao_candidato",
+      "sourceClaims": [
+        {
+          "sourceId": "CAT-WATER-PUMP-REPLACEMENT",
+          "claim": "Cat identifica bomba d'água como responsável pela circulação de arrefecedor e cita superaquecimento entre sinais de investigação.",
+          "scope": "principio_geral"
+        },
+        {
+          "sourceId": "CAT-THERMOSTAT-REPLACEMENT",
+          "claim": "O fluxo distribuído pelo termostato e bypass pode imitar circulação insuficiente pela bomba.",
+          "scope": "principio_geral"
+        }
+      ],
+      "competingHypotheses": [
+        {
+          "id": "ALT1",
+          "description": "Termostato restringe passagem ao radiador com bomba adequada",
+          "discriminator": "Teste de termostato e circuito identifica restrição fora da bomba"
+        },
+        {
+          "id": "ALT2",
+          "description": "Ar insuficiente através do radiador com circulação hidráulica adequada",
+          "discriminator": "Restrições de passagem de ar e ventilador explicam temperatura elevada"
+        }
+      ],
+      "investigations": [
+        {
+          "id": "I1",
+          "methodId": "EV-14",
+          "purpose": "Analisar evolução de temperatura, rotação e carga sem atribuir falha pela telemetria isolada",
+          "interpretations": {
+            "supports": "Correlação anormal persistente com outras evidências de circulação sustenta investigar bomba",
+            "weakens": "Temperatura e fluxo operam na referência especificada, reduzindo hipótese nessa condição",
+            "inconclusive": "Sem dados/limites específicos da bomba o resultado não é discriminante"
+          },
+          "status": "apenas_proposto",
+          "resultObserved": null
+        },
+        {
+          "id": "I2",
+          "methodId": "EV-12",
+          "purpose": "Executar ensaio de circulação/capacidade de bomba somente com método OEM aplicável",
+          "interpretations": {
+            "supports": "Vazão/atuação fora do especificado em teste correto corrobora deficiência do conjunto",
+            "weakens": "Bombeamento demonstrado conforme OMM enfraquece bomba como origem",
+            "inconclusive": "Ausência de pontos de teste, instrumentação ou condição de segurança"
+          },
+          "status": "apenas_proposto",
+          "resultObserved": null
+        }
+      ],
+      "limitations": "Não assumir arquitetura, tipo de acionamento ou curva vazão-pressão da bomba. A relação com PM de radiador é contextual porque não existe regra preventiva específica de bomba neste lote.",
+      "review": {
+        "status": "inferido_com_literatura_geral",
+        "reviewer": null
+      },
+      "sapMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageId": null,
+        "causeId": null
+      },
+      "factualNature": "hipotese_de_mecanismo",
+      "empiricalOccurrences": 0,
+      "confirmedRootCause": false
+    },
+    {
+      "id": "FC-COOL-008",
+      "family": "arrefecimento",
+      "title": "Vazamento externo na vedação da bomba d'água",
+      "operatingFunction": "Conter líquido arrefecedor no conjunto rotativo e preservar reserva do circuito",
+      "functionalFailureId": "FF-06",
+      "failureMode": "Perda localizada de estanqueidade em vedação, junta ou interface do corpo da bomba",
+      "mechanismIds": [
+        "ME-15",
+        "ME-07"
+      ],
+      "initiatingConditionCandidates": [
+        "Vedação deteriorada",
+        "Dano mecânico em interface/carcaça",
+        "Montagem ou junta incompatível"
+      ],
+      "possibleDamage": "Trilha de líquido na bomba, com possível perda de nível e perda indireta de capacidade térmica",
+      "symptomIds": [
+        "SY-03",
+        "SY-15",
+        "SY-04"
+      ],
+      "evidenceMethodIds": [
+        "EV-01",
+        "EV-13"
+      ],
+      "preventionRuleIds": [
+        "cooling-radiator-leak"
+      ],
+      "preventionAssociation": "alvo_de_inspecao_candidato",
+      "sourceClaims": [
+        {
+          "sourceId": "CAT-WATER-PUMP-REPLACEMENT",
+          "claim": "Caterpillar cita vazamento, cheiro de líquido e superaquecimento entre sinais relevantes para o conjunto da bomba.",
+          "scope": "principio_geral"
+        },
+        {
+          "sourceId": "CAT-RADIATOR-CARE",
+          "claim": "Outros pontos do circuito, como radiador e conexões, também exigem inspeção visual de fugas.",
+          "scope": "principio_geral"
+        }
+      ],
+      "competingHypotheses": [
+        {
+          "id": "ALT1",
+          "description": "Mangueira/abraçadeira ou junta próxima vaza sobre a bomba",
+          "discriminator": "Trilha inicia antes da bomba, seguindo gravidade/fluxo externo"
+        },
+        {
+          "id": "ALT2",
+          "description": "Tampa/radiador perde líquido, sem falha de vedação da bomba",
+          "discriminator": "Ponto de origem comprovado em outro conjunto"
+        }
+      ],
+      "investigations": [
+        {
+          "id": "I1",
+          "methodId": "EV-01",
+          "purpose": "Com circuito frio, isolado e despressurizado, localizar origem de vestígios sem tocar em partes móveis",
+          "interpretations": {
+            "supports": "Origem localizada em junta/vedação da bomba sustenta perda de estanqueidade no conjunto",
+            "weakens": "Trilha começa na conexão superior ou radiador, enfraquecendo perda na bomba",
+            "inconclusive": "Fluido espalhado ou protetores impedem a localização segura"
+          },
+          "status": "apenas_proposto",
+          "resultObserved": null
+        },
+        {
+          "id": "I2",
+          "methodId": "EV-13",
+          "purpose": "Conferir histórico de nível/reabastecimento e trabalhos nas interfaces do circuito",
+          "interpretations": {
+            "supports": "Reabastecimentos coerentes com vazamento externo localizado reforçam a hipótese",
+            "weakens": "Histórico estável e nenhum vazamento em condição representativa reduzem plausibilidade",
+            "inconclusive": "Registros omitem origem, data, produto ou condição de leitura"
+          },
+          "status": "apenas_proposto",
+          "resultObserved": null
+        }
+      ],
+      "limitations": "Não diagnosticar selo mecânico interno apenas por fluido abaixo da bomba: pode haver junta, respiro, dreno de aviso ou vazamento de linha. Risco térmico/pressurização exige OMM, e PM do radiador é ligação contextual.",
       "review": {
         "status": "inferido_com_literatura_geral",
         "reviewer": null
