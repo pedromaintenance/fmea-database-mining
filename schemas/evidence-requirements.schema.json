@@ -1,0 +1,222 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FMEA Mining Evidence Requirements Contract v1",
+  "type": "object",
+  "required": [
+    "schema",
+    "version",
+    "status",
+    "methodFieldGlossary",
+    "allowedInterpretations",
+    "reviewRule",
+    "statistics",
+    "records"
+  ],
+  "properties": {
+    "schema": {
+      "const": "fmea-mining.evidence-requirements.v1"
+    },
+    "version": {
+      "type": "string"
+    },
+    "status": {
+      "const": "requirements_planned_not_observed"
+    },
+    "methodFieldGlossary": {
+      "type": "object",
+      "minProperties": 10
+    },
+    "allowedInterpretations": {
+      "type": "array",
+      "minItems": 4,
+      "items": {
+        "type": "string"
+      }
+    },
+    "reviewRule": {
+      "type": "string",
+      "minLength": 20
+    },
+    "statistics": {
+      "type": "object",
+      "required": [
+        "chains",
+        "investigations",
+        "priorityCases"
+      ]
+    },
+    "records": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/record"
+      }
+    }
+  },
+  "$defs": {
+    "record": {
+      "type": "object",
+      "required": [
+        "id",
+        "chainId",
+        "investigationId",
+        "methodId",
+        "intent",
+        "minimumMetadataFields",
+        "resultInterpretation",
+        "evidenceRequirements",
+        "priority",
+        "qualityRisk",
+        "sourceIds",
+        "applicability",
+        "threshold",
+        "plannedOnly",
+        "observedResult",
+        "engineeringReview",
+        "oemEffectiveProcedureVerified",
+        "independentReview",
+        "confirmsComponentDamage"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^ER-FC-"
+        },
+        "chainId": {
+          "type": "string",
+          "pattern": "^FC-"
+        },
+        "investigationId": {
+          "type": "string"
+        },
+        "methodId": {
+          "type": "string",
+          "pattern": "^EV-"
+        },
+        "intent": {
+          "type": "string",
+          "minLength": 20
+        },
+        "minimumMetadataFields": {
+          "type": "array",
+          "minItems": 4,
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        },
+        "resultInterpretation": {
+          "type": "object",
+          "required": [
+            "supports",
+            "weakens",
+            "inconclusive"
+          ],
+          "properties": {
+            "supports": {
+              "type": "string"
+            },
+            "weakens": {
+              "type": "string"
+            },
+            "inconclusive": {
+              "type": "string"
+            }
+          }
+        },
+        "evidenceRequirements": {
+          "type": "object",
+          "required": [
+            "collectionContext",
+            "sourceAndBaseline",
+            "qualityChecks",
+            "explicitCounterEvidence",
+            "safeMethod"
+          ]
+        },
+        "priority": {
+          "enum": [
+            "P0",
+            "P1"
+          ]
+        },
+        "qualityRisk": {
+          "type": "string",
+          "minLength": 40
+        },
+        "sourceIds": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        },
+        "applicability": {
+          "type": "object",
+          "required": [
+            "modelId",
+            "locationId",
+            "serialOrArrangement",
+            "manualRevision"
+          ],
+          "properties": {
+            "modelId": {
+              "type": "null"
+            },
+            "locationId": {
+              "type": "null"
+            },
+            "serialOrArrangement": {
+              "type": "null"
+            },
+            "manualRevision": {
+              "type": "null"
+            }
+          }
+        },
+        "threshold": {
+          "type": "object",
+          "required": [
+            "value",
+            "unit",
+            "sourceId",
+            "applicableConditions"
+          ],
+          "properties": {
+            "value": {
+              "type": "null"
+            },
+            "unit": {
+              "type": "null"
+            },
+            "sourceId": {
+              "type": "null"
+            },
+            "applicableConditions": {
+              "type": "null"
+            }
+          }
+        },
+        "plannedOnly": {
+          "const": true
+        },
+        "observedResult": {
+          "type": "null"
+        },
+        "engineeringReview": {
+          "const": "pending"
+        },
+        "oemEffectiveProcedureVerified": {
+          "const": false
+        },
+        "independentReview": {
+          "const": "pending"
+        },
+        "confirmsComponentDamage": {
+          "const": false
+        }
+      }
+    }
+  }
+}
