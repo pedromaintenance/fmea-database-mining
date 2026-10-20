@@ -2,6 +2,15 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.5] — 2026-10-20 — Classificação causal das lacunas preventivas
+- Diagnosticadas as 25 regras PM com rastreamento de modelo, sistema, grupo, subgrupo, componente e par dano/causa.
+- As 10 regras sem vínculo foram classificadas: 3 sem subgrupo elegível, 5 sem componente no tipo cadastrado e 2 sem par permitido.
+- Cada lacuna tem parecer, prioridade, referências OEM/SAP e próxima etapa de verificação em `data/quality/pm-gap-review.v1.json`.
+- Criado `scripts/audit-pm-gaps.mjs` para reconciliar resultado com o gerador PM; testes bloqueiam remapeamento silencioso e falsas homologações.
+- Reforçada a separação entre água no combustível (condição), drenagem (atividade preventiva) e dano de dreno (evento físico independente).
+- Três fontes públicas SAP/Caterpillar adicionadas; relatório e métricas do ciclo integrados ao CI.
+- Nenhuma mudança em repositórios consumidores ou na configuração real do SAP.
+
 ## [1.3.4] — 2026-10-20 — Auditoria de compatibilidade causal e taxonômica SAP
 - Auditadas 24 cadeias com pareceres individuais sobre componente, dano, causa e caminho funcional.
 - 8 categorias de impedimento/risco: ausência de local hidráulico, par inexistente, configuração não comprovada, efeito secundário, identidade ambígua, componente ausente, circularidade e candidatos não homologados.
