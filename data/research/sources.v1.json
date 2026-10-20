@@ -1,0 +1,140 @@
+{
+  "schema": "fmea-mining.research.sources.v1",
+  "version": "1.2.1",
+  "status": "literatura_de_referencia_nao_casos_empiricos",
+  "rights": "somente_titulos_links_e_resumos_originais",
+  "sources": [
+    {
+      "id": "IEC-60812-2018",
+      "organization": "IEC",
+      "title": "Failure modes and effects analysis (FMEA and FMECA)",
+      "url": "https://webstore.iec.ch/en/publication/26359",
+      "area": "fmea_structure",
+      "role": "reference_methodology",
+      "limitation": "Nenhuma falha de CAT ou Sandvik validada por esta norma",
+      "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
+      "lastReviewed": "2026-10-20"
+    },
+    {
+      "id": "ISO-14224-2016",
+      "organization": "ISO",
+      "title": "Collection and exchange of reliability and maintenance data for equipment",
+      "url": "https://www.iso.org/standard/64076.html",
+      "area": "reliability_taxonomy",
+      "role": "adapted_cross_industry",
+      "limitation": "Norma destinada a petroleo/gas; uso em mineracao como referencia conceitual",
+      "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
+      "lastReviewed": "2026-10-20"
+    },
+    {
+      "id": "ISO-17359-2018",
+      "organization": "ISO",
+      "title": "Condition monitoring and diagnostics of machines — General guidelines",
+      "url": "https://www.iso.org/standard/71194.html",
+      "area": "monitoring_strategy",
+      "role": "reference_methodology",
+      "limitation": "Limiares operacionais devem ser obtidos na fonte efetiva",
+      "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
+      "lastReviewed": "2026-10-20"
+    },
+    {
+      "id": "ISO-13374-1-2003",
+      "organization": "ISO",
+      "title": "Condition monitoring and diagnostics — Data processing communication and presentation",
+      "url": "https://www.iso.org/standard/21832.html",
+      "area": "condition_data_pipeline",
+      "role": "reference_methodology",
+      "limitation": "Nao valida automaticamente um diagnostico",
+      "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
+      "lastReviewed": "2026-10-20"
+    },
+    {
+      "id": "SAE-JA1011-2024",
+      "organization": "SAE International",
+      "title": "Evaluation Criteria for Reliability-Centered Maintenance Processes",
+      "url": "https://saemobilus.sae.org/standards/ja1011_202411-evaluation-criteria-reliability-centered-maintenance-rcm-processes",
+      "area": "functional_failure_rcm",
+      "role": "reference_methodology",
+      "limitation": "Nao informa periodicidade de manutencao por modelo",
+      "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
+      "lastReviewed": "2026-10-20"
+    },
+    {
+      "id": "ISO-4406-2021",
+      "organization": "ISO",
+      "title": "Hydraulic fluid power — Fluids — Method for coding the level of contamination by solid particles",
+      "url": "https://www.iso.org/standard/79716.html",
+      "area": "hydraulic_cleanliness",
+      "role": "measurement_reference",
+      "limitation": "Codigo de limpeza nao determina qual componente falhou",
+      "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
+      "lastReviewed": "2026-10-20"
+    },
+    {
+      "id": "ASTM-D5185-26",
+      "organization": "ASTM International",
+      "title": "Standard Test Method for Multielement Determination of Used and Unused Lubricating Oils",
+      "url": "https://store.astm.org/d5185-26.html",
+      "area": "oil_elemental_analysis",
+      "role": "measurement_reference",
+      "limitation": "Particulas grandes podem escapar a quantificacao ICP; usar evidencias complementares",
+      "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
+      "lastReviewed": "2026-10-20"
+    },
+    {
+      "id": "CAT-FLUID-ANALYSIS-101",
+      "organization": "Caterpillar",
+      "title": "Fluid Analysis 101",
+      "url": "https://www.cat.com/en_US/support/maintenance/sos-services/analysis-101.html/",
+      "area": "oil_coolant_fuel",
+      "role": "oem_general",
+      "limitation": "Sinais de desgaste/contaminacao exigem tendencia e amostragem representativa",
+      "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
+      "lastReviewed": "2026-10-20"
+    },
+    {
+      "id": "CAT-SIS2GO",
+      "organization": "Caterpillar",
+      "title": "Aplicativo SIS2GO",
+      "url": "https://www.cat.com/pt_BR/support/maintenance/sis2go-app.html",
+      "area": "serial_specific_diagnostics",
+      "role": "oem_document_access",
+      "limitation": "Procedimentos/licenca dependem de serial e produto",
+      "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
+      "lastReviewed": "2026-10-20"
+    },
+    {
+      "id": "SANDVIK-DR410i",
+      "organization": "Sandvik",
+      "title": "DR410i Rotary Blasthole Drill",
+      "url": "https://www.mining.sandvik/pt-br/produtos/equipamento/equipamentos-de-perfuracao-de-superficie/dr410i/",
+      "area": "drilling_machine_architecture",
+      "role": "oem_product_family",
+      "limitation": "Folha de especificacoes indica cabeca rotativa e compressor; arranjo especifico requer My Sandvik",
+      "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
+      "lastReviewed": "2026-10-20"
+    },
+    {
+      "id": "SANDVIK-DR410i-SPEC",
+      "organization": "Sandvik",
+      "title": "DR410i Specification Sheet",
+      "url": "https://www.rocktechnology.sandvik/siteassets/product-documents/surface-drill-rigs/rotary-blasthole-drill-rigs/dr410i-specification-sheet-english.pdf",
+      "area": "feed_chain_adjustment",
+      "role": "oem_product_family",
+      "limitation": "Documento menciona ajuste de corrente; nao autoriza inventar subgrupo FECH no cadastro SAP",
+      "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
+      "lastReviewed": "2026-10-20"
+    },
+    {
+      "id": "SANDVIK-ROCKPULSE",
+      "organization": "Sandvik",
+      "title": "RockPulse Drilling Sensor Technology",
+      "url": "https://www.mining.sandvik/en/products/technology/rockpulse/",
+      "area": "machine_monitoring_example",
+      "role": "other_model_not_applicable",
+      "limitation": "Aplicabilidade anunciada a modelos Ranger, nao inferir compatibilidade DR410i/DI650i",
+      "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
+      "lastReviewed": "2026-10-20"
+    }
+  ]
+}
