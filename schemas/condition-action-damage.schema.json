@@ -1,0 +1,399 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/pedromaintenance/fmea-database-mining/blob/main/schemas/condition-action-damage.schema.json",
+  "title": "FMEA Mining — Condition / Preventive Action / Component Damage",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "version",
+    "status",
+    "semantics",
+    "safetyInvariant",
+    "evidenceNature",
+    "observations",
+    "workOrderExecutions",
+    "confirmedComponentDamages",
+    "conditions",
+    "actions",
+    "damageHypotheses",
+    "bundles",
+    "relations"
+  ],
+  "properties": {
+    "schema": {
+      "const": "fmea-mining.condition-action-damage.v1"
+    },
+    "version": {
+      "type": "string"
+    },
+    "status": {
+      "const": "conceptual_unvalidated"
+    },
+    "semantics": {
+      "type": "object",
+      "required": [
+        "condition",
+        "action",
+        "damage"
+      ]
+    },
+    "safetyInvariant": {
+      "const": "condition!=action!=damage"
+    },
+    "evidenceNature": {
+      "const": "no_field_observation"
+    },
+    "observations": {
+      "type": "array",
+      "maxItems": 0
+    },
+    "workOrderExecutions": {
+      "type": "array",
+      "maxItems": 0
+    },
+    "confirmedComponentDamages": {
+      "type": "array",
+      "maxItems": 0
+    },
+    "conditions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/condition"
+      }
+    },
+    "actions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/action"
+      }
+    },
+    "damageHypotheses": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/damage"
+      }
+    },
+    "bundles": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/bundle"
+      }
+    },
+    "relations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/relationship"
+      }
+    }
+  },
+  "$defs": {
+    "string": {
+      "type": "string",
+      "minLength": 1
+    },
+    "refArray": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "condition": {
+      "type": "object",
+      "required": [
+        "id",
+        "label",
+        "system",
+        "medium",
+        "observation",
+        "methods",
+        "sourceIds",
+        "limitations",
+        "status",
+        "observedValue",
+        "observedAt"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^COND-"
+        },
+        "label": {
+          "$ref": "#/$defs/string"
+        },
+        "system": {
+          "$ref": "#/$defs/string"
+        },
+        "medium": {
+          "$ref": "#/$defs/string"
+        },
+        "observation": {
+          "$ref": "#/$defs/string"
+        },
+        "methods": {
+          "$ref": "#/$defs/refArray"
+        },
+        "sourceIds": {
+          "$ref": "#/$defs/refArray"
+        },
+        "limitations": {
+          "$ref": "#/$defs/string"
+        },
+        "status": {
+          "const": "condition_hypothesis_not_observed"
+        },
+        "observedValue": {
+          "type": "null"
+        },
+        "observedAt": {
+          "type": "null"
+        }
+      }
+    },
+    "action": {
+      "type": "object",
+      "required": [
+        "id",
+        "label",
+        "kind",
+        "intent",
+        "sourceIds",
+        "safety",
+        "requiresApplicableOemProcedure",
+        "executionStatus",
+        "observedResults",
+        "intervalHours"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^ACT-"
+        },
+        "label": {
+          "$ref": "#/$defs/string"
+        },
+        "kind": {
+          "enum": [
+            "inspection",
+            "servicing",
+            "sampling",
+            "test"
+          ]
+        },
+        "intent": {
+          "$ref": "#/$defs/string"
+        },
+        "sourceIds": {
+          "$ref": "#/$defs/refArray"
+        },
+        "safety": {
+          "$ref": "#/$defs/string"
+        },
+        "requiresApplicableOemProcedure": {
+          "const": true
+        },
+        "executionStatus": {
+          "const": "not_performed"
+        },
+        "observedResults": {
+          "type": "array",
+          "maxItems": 0
+        },
+        "intervalHours": {
+          "type": "null"
+        }
+      }
+    },
+    "damage": {
+      "type": "object",
+      "required": [
+        "id",
+        "label",
+        "componentRole",
+        "requiredEvidence",
+        "sourceIds",
+        "kind",
+        "reviewStatus",
+        "catalogMapping",
+        "confirmed"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^DMG-"
+        },
+        "label": {
+          "$ref": "#/$defs/string"
+        },
+        "componentRole": {
+          "$ref": "#/$defs/string"
+        },
+        "requiredEvidence": {
+          "$ref": "#/$defs/string"
+        },
+        "sourceIds": {
+          "$ref": "#/$defs/refArray"
+        },
+        "kind": {
+          "const": "candidate_component_damage"
+        },
+        "reviewStatus": {
+          "const": "not_approved"
+        },
+        "confirmed": {
+          "const": false
+        },
+        "catalogMapping": {
+          "type": "object",
+          "required": [
+            "modelId",
+            "locationId",
+            "componentCode",
+            "damageCode",
+            "causeCode"
+          ],
+          "properties": {
+            "modelId": {
+              "type": "null"
+            },
+            "locationId": {
+              "type": "null"
+            },
+            "componentCode": {
+              "type": "null"
+            },
+            "damageCode": {
+              "type": "null"
+            },
+            "causeCode": {
+              "type": "null"
+            }
+          }
+        }
+      }
+    },
+    "bundle": {
+      "type": "object",
+      "required": [
+        "id",
+        "ruleId",
+        "conditionIds",
+        "actionIds",
+        "differentialDamageIds",
+        "chainIds",
+        "interpretation",
+        "mappingScope",
+        "status",
+        "observedConditionIds",
+        "performedActionIds",
+        "confirmedDamageIds",
+        "automaticDamagePromotion",
+        "sourceIds",
+        "evidenceInterpretation"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^BUNDLE-"
+        },
+        "ruleId": {
+          "$ref": "#/$defs/string"
+        },
+        "conditionIds": {
+          "$ref": "#/$defs/refArray"
+        },
+        "actionIds": {
+          "$ref": "#/$defs/refArray"
+        },
+        "differentialDamageIds": {
+          "$ref": "#/$defs/refArray"
+        },
+        "chainIds": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/string"
+          }
+        },
+        "interpretation": {
+          "$ref": "#/$defs/string"
+        },
+        "mappingScope": {
+          "const": "generic_only"
+        },
+        "status": {
+          "const": "review_candidate"
+        },
+        "observedConditionIds": {
+          "type": "array",
+          "maxItems": 0
+        },
+        "performedActionIds": {
+          "type": "array",
+          "maxItems": 0
+        },
+        "confirmedDamageIds": {
+          "type": "array",
+          "maxItems": 0
+        },
+        "automaticDamagePromotion": {
+          "const": false
+        },
+        "sourceIds": {
+          "$ref": "#/$defs/refArray"
+        },
+        "evidenceInterpretation": {
+          "const": "sem_resultado_de_campo"
+        }
+      }
+    },
+    "relationship": {
+      "type": "object",
+      "required": [
+        "id",
+        "from",
+        "to",
+        "type",
+        "meaning",
+        "reviewStatus",
+        "observed"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^REL-"
+        },
+        "from": {
+          "$ref": "#/$defs/string"
+        },
+        "to": {
+          "$ref": "#/$defs/string"
+        },
+        "type": {
+          "enum": [
+            "rule_monitors_condition",
+            "rule_proposes_action",
+            "rule_lists_differential_damage"
+          ]
+        },
+        "meaning": {
+          "$ref": "#/$defs/string"
+        },
+        "reviewStatus": {
+          "const": "interpretacao_inferida"
+        },
+        "observed": {
+          "const": false
+        }
+      }
+    }
+  }
+}
