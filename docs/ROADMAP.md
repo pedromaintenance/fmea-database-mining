@@ -53,7 +53,7 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 - [ ] **P0:** obter documentação OEM por configuração para piloto CAT D9 e encaminhar revisão independente de especialistas.
 - [ ] **P1:** elaborar contrato público de exportação para consumidores, com status, fonte e aplicabilidade, sem editar consumidores.
 - [ ] **P1:** ampliar avaliação diferencial de ventilação, termostato e circulação no arrefecimento.
-- [ ] Manter onze outras lacunas de hipóteses abertas e as três selecionadas **sem fechamento por falta de ensaio**; cobertura técnica aumentou, não houve confirmação causal.
+- [ ] Manter as nove outras lacunas diagnósticas abertas e as três selecionadas **sem fechamento por falta de ensaio**; cobertura técnica aumentou, não houve confirmação causal.
 
 **Controles:** três roteiros, nove passos, nove cenários de gate, zero ensaios/pareceres homologados, **24 cadeias preexistentes e 10 PMs bloqueadas**.
 
