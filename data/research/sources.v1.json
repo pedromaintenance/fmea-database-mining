@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.research.sources.v1",
-  "version": "1.3.8",
+  "version": "1.3.10",
   "status": "literatura_de_referencia_nao_casos_empiricos",
   "rights": "somente_titulos_links_e_resumos_originais",
   "sources": [
@@ -486,6 +486,28 @@
       "role": "oem_general_sampling",
       "limitation": "Guia geral de coleta e identificação de amostras; pontos, períodos, volumes e critérios dependem de compartimento, modelo e procedimentos OEM efetivos.",
       "reviewStatus": "pagina_publica_consultada_sem_reproducao_integral",
+      "lastReviewed": "2026-10-20"
+    },
+    {
+      "id": "NORDLOCK-ROTATIONAL-LOOSENING",
+      "organization": "Nord-Lock Group",
+      "title": "The Experts: What Happens When Bolts Start to Rotate?",
+      "url": "https://www.nord-lock.com/learnings/bolting-tips/2022/bolt-rotation/",
+      "area": "rotational_self_loosen_vs_settlement",
+      "role": "manufacturer_bolted_joint_principles",
+      "limitation": "Explica fatores rotacionais, vibração, assentamento e relaxação; não define o aperto Cat por série nem identifica mecanismo de uma falha de campo.",
+      "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
+      "lastReviewed": "2026-10-20"
+    },
+    {
+      "id": "CAT-EXC-UNDERCARRIAGE-WEAR",
+      "organization": "Caterpillar",
+      "title": "What to Know About Excavator Undercarriage Maintenance",
+      "url": "https://www.cat.com/en_US/articles/for-owners/what-to-know-about-excavator-undercarriage-maintenance.html",
+      "area": "shoe_fixations_cts_idler_wear",
+      "role": "oem_general_maintenance",
+      "limitation": "Os exemplos de inspeção e CTS não fornecem tolerâncias, pré-carga, procedimento de ensaio nem efetividade para CAT D9 ou CAT 777.",
+      "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
       "lastReviewed": "2026-10-20"
     }
   ]
