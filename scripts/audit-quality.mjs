@@ -26,6 +26,9 @@ const review=read('data/governance/technical-review-register.v1.json');
 const evidenceFixtures=read('data/quality/evidence-gate-regressions.v1.json');
 const differential=read('data/quality/discriminative-tests.v1.json');
 const differentialFixtures=read('data/quality/discrimination-regressions.v1.json');
+const complementary=read('data/quality/complementary-discrimination.v1.json');
+const circularReview=read('data/quality/circular-sap-causality.v1.json');
+const oemPilot=read('data/quality/oem-pilot-readiness.v1.json');
 const byModel=[];
 for(const model of db.models){
  const modelId=model.id;
@@ -76,6 +79,15 @@ const counts={
  discriminationComplementaryChecks:differential.records.reduce((n,x)=>n+x.complementaryInvestigations.length,0),
  discriminationSyntheticRegressions:differentialFixtures.cases.length,
  discriminationConfirmedCauses:0,
+ complementaryHypothesesReviewed:complementary.records.length,
+ complementaryAssessmentCells:complementary.counts.complementAssessments,
+ complementaryNotDiscriminating:complementary.records.flatMap(x=>x.complementAssessments).filter(x=>x.discriminativeValue==='nao_discrimina').length,
+ complementaryPartial:complementary.records.flatMap(x=>x.complementAssessments).filter(x=>x.discriminativeValue==='indicio_parcial').length,
+ complementaryConditional:complementary.records.flatMap(x=>x.complementAssessments).filter(x=>x.discriminativeValue==='potencialmente_discriminante_condicional').length,
+ complementaryUnresolvedGaps:complementary.counts.unresolvedGaps,
+ circularSapCausalReviews:circularReview.records.length,
+ oemPilotMissingRequirements:oemPilot.requiredInputs.filter(x=>x.value===null).length,
+ oemPilotsApproved:0,
  causalChainsWithContextualPm:chains.filter(x=>['monitoramento_contextual_nao_alvo_exclusivo_de_ajuste','vinculo_preventivo_contextual_sem_alvo_direto'].includes(x.preventionAssociation)).length,
  causalSapChainsAudited:sapAudit.summary.chainsAudited,
  causalSapCandidatePairs:sapAudit.summary.catalogPairsCompatible,
@@ -88,7 +100,7 @@ const counts={
  semanticDamageConfirmations:semantic.confirmedComponentDamages.length,
  evidenceValidatedInRealEquipment:0,technicallyApprovedPlaybooks:0
 };
-const report={schema:'fmea-mining.quality-audit.v1',version:'1.3.9',
+const report={schema:'fmea-mining.quality-audit.v1',version:'1.3.10',
  generatedFrom:'working_tree',status:'qualidade_cadastral_nao_taxa_de_falhas',
  meanings:{
   pmCandidateLinks:'vinculos gerados por regra e taxonomia, NAO falhas observadas',
