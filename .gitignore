@@ -13,3 +13,5 @@ data/raw/
 # Tabelas derivadas: gerar com node scripts/generate-models.mjs --all
 data/models/*.json
 data/manifest.json
+# Ligações derivadas reconstruídas pelo gerador
+data/knowledge/pm-prevention/generated-links.json

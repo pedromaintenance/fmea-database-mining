@@ -2,7 +2,7 @@
 
 Banco de conhecimento **versionado** para investigar modos de falha, sintomas, evidências e causas em equipamentos móveis de mineração. O principal consumidor planejado é o jogo **[P.O.R.C.A.R.I.A. — Você Quebra, Eu Conserto](https://github.com/pedromaintenance/porcaria-voce-quebra-eu-conserto)**.
 
-> **Status:** versão de base **1.0.0** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
+> **Status:** versão do catálogo **1.2.0** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
 
 ## O que queremos construir
 
@@ -51,6 +51,12 @@ A base evoluirá por camadas: hierarquia funcional → componentes elegíveis �
 Importados dos simuladores **Códigos de Falha** e **Análise de Óleo**: [144 casos de treinamento, 288 registros de evidências simuladas, 54 entradas de códigos, 23 definições FMI, 39 textos técnicos e 27 referências](data/knowledge/manifest.json).
 
 Veja os [cenários eletrônicos](data/knowledge/electronic/diagnostic-records.json), os [cenários de óleo](data/knowledge/oil/diagnostic-records.json), o [índice de sintomas](data/knowledge/symptoms-index.json) e a [documentação da importação](docs/IMPORTACAO_SIMULADORES.md). Os dados são **didáticos**, não históricos nem validados para aplicação direta em máquinas.
+
+## Planos de manutenção preventiva (v1.2.0)
+
+A [extração em Python de sete planilhas](docs/EXTRACAO_PM_2026.md) mapeou 6.281 ocorrências de atividade e 1.018 tarefas distintas para oito equipamentos/famílias. A [camada pública de prevenção](data/knowledge/pm-prevention/) guarda **perfis agregados por máquina**, 25 padrões técnicos genéricos e o gerador de vínculos **sistema → subgrupo → componente → dano → causa**. O gerador verifica a compatibilidade dos códigos com o catálogo SAP.
+
+**Não foi publicado o texto bruto das planilhas**: havia informações corporativas, procedimentos e registros de execução. A versão integral derivada, com 891 regras estruturadas e 159 candidatos estritos de subgrupo, fica no pacote de extração desta conversa até autorização de divulgação. Nenhum desses vínculos equivale a uma evidência real ou uma causa raiz confirmada.
 
 ## Comece por aqui
 

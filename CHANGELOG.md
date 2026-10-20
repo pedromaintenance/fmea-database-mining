@@ -2,6 +2,14 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.2.0] — 2026-10-20 — Planos preventivos e novas relações FMEA
+- Sete arquivos de manutenção, oito modelos/famílias; 6.281 ocorrências e 1.018 tarefas distintas extraídas localmente com Python.
+- Perfiles públicos agregados por modelo; sem texto integral, séries, tags, PNs ou procedimentos brutos.
+- 891 regras derivadas mantidas no pacote local; 159 tarefas possuem subgrupos SAP candidatos estritos, nenhuma ligação homologada.
+- Criados 25 padrões preventivos genéricos de sintomas, danos, causas e inspeções; gerador só produz relações suportadas pelo catálogo atual.
+- Validação automática no CI, separando método de inspeção **planejado** de resultado/evidência de campo.
+- CAT 16: extração parcial do Excel legado; DR410i: fichas OLD não tratadas como vigentes.
+
 ## [1.1.0] — 2026-10-19 — Extração dos simuladores
 - Importados 72 casos eletrônicos e 72 casos de fluidos com chaves para seus arquivos de origem.
 - Catalogados 24 conjuntos de hipóteses concorrentes eletrônicas, 24 arquétipos de fluidos, 54 entradas de códigos (23 FMI incluídos), 39 textos e 27 fontes citadas.
