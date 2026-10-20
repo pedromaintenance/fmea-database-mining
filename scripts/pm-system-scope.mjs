@@ -14,8 +14,17 @@ export const ROOT_SCOPES=Object.freeze({
  cabeca_rotativa:['MAST'],
  ar_comprimido:['AISY']
 });
+const REQUIRED_GROUPS=Object.freeze({
+ arrefecimento:['COSY'],motor_diesel:['ENGN'],combustivel:['FUSY'],
+ ar_comprimido:['COMR'],avanco_perfuratriz:['DFAS','ROHE'],cabeca_rotativa:['CARO']
+});
 export function matchesRoot(rule,location){
  const roots=ROOT_SCOPES[rule.system];
  if(!roots)throw new Error('Sistema sem filtro definido: '+rule.system);
- return roots.includes(location.sistema?.codigo);
+ if(!roots.includes(location.sistema?.codigo))return false;
+ const group=location.grupo?.codigo;
+ if(REQUIRED_GROUPS[rule.system]&&!REQUIRED_GROUPS[rule.system].includes(group))return false;
+ // Brakes and steering have HSVV/HYPU but are not generic implement hydraulic circuits.
+ if(rule.system==='hidraulico'&&['BRSY','STSY'].includes(group))return false;
+ return true;
 }
