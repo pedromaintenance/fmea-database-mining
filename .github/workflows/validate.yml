@@ -1,0 +1,36 @@
+name: Validar catálogo FMEA
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Preparar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validar catálogo relacional
+        run: node scripts/validate.mjs
+      - name: Gerar pacotes por modelo
+        run: node scripts/generate-models.mjs --all
+      - name: Validar combinacões geradas
+        run: node scripts/validate.mjs
+      - name: Publicar pacotes para testes
+        uses: actions/upload-artifact@v4
+        with:
+          name: failure-candidates-${{ github.sha }}
+          path: |
+            data/models/*.json
+            data/manifest.json
+          retention-days: 14

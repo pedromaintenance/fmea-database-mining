@@ -1,0 +1,15 @@
+{
+  "name": "fmea-database-mining",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Catálogo FMEA didático de equipamentos móveis para PORCARIA",
+  "scripts": {
+    "validate": "node scripts/validate.mjs",
+    "generate": "node scripts/generate-models.mjs --all",
+    "qa": "node scripts/validate.mjs && node scripts/generate-models.mjs --all && node scripts/validate.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
