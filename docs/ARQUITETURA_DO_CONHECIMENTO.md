@@ -145,3 +145,15 @@ Detectar abrasão de cobertura, partículas no óleo, aletas sujas, aquecimento 
 Nenhuma hipótese alternativa é eliminada automaticamente. Campos quantitativos de confiança permanecem nulos; nenhuma medição foi realizada e **nenhum resultado de equipamento foi registrado**.
 
 [Relatório do ciclo](CICLO_2026-10-20_DISCRIMINACAO_TESTES.md) · [Validador](../scripts/validate-discriminative-tests.mjs)
+
+## 14. Cruzamento de hipóteses alternativas e verificações complementares (v1.3.10)
+
+O banco passou a manter [24 avaliações](../data/quality/complementary-discrimination.v1.json), uma para cada par **hipótese alternativa × teste complementar** da amostra P0. Cada avaliação registra possível apoio, possível enfraquecimento, **ambiguidade residual**, classificação qualitativa e a próxima investigação que ainda falta.
+
+**Limites semânticos:** `nao_discrimina`, `indicio_parcial` e `potencialmente_discriminante_condicional` são avaliações **inferidas**, não sensibilidade, especificidade ou percentuais de acerto. A alternativa concorrente permanece aberta. Nada é promovido por votação de testes, coincidência textual ou semelhança entre códigos SAP.
+
+A [revisão de circularidade](../data/quality/circular-sap-causality.v1.json) separa `damageId=01.15` (Afrouxado) de `causeId=C1.17` (Folga/afrouxamento), que por si só não estabelece mecanismo físico. `FC-TRACK-005` e `FC-TRACK-006` ilustram mecanismos que devem permanecer distintos.
+
+O [piloto D9](../data/quality/oem-pilot-readiness.v1.json) é somente uma **lista de requisitos OEM ainda não cumpridos**: sem série, arranjo, procedimento, tabela de CTS e revisor, não existe aplicação tecnicamente homologada.
+
+[Relatório v1.3.10](CICLO_2026-10-20_DISCRIMINACAO_COMPLEMENTAR.md).

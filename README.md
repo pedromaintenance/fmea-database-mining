@@ -2,7 +2,7 @@
 
 Banco de conhecimento **versionado** para investigar modos de falha, sintomas, evidências e causas em equipamentos móveis de mineração. Um consumidor possível é o jogo **[P.O.R.C.A.R.I.A. — Você Quebra, Eu Conserto](https://github.com/pedromaintenance/porcaria-voce-quebra-eu-conserto)**, mas o banco é independente: **este repositório não altera os consumidores**.
 
-> **Status:** versão do catálogo **1.3.9** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
+> **Status:** versão do catálogo **1.3.10** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
 
 ## O que queremos construir
 
@@ -166,6 +166,17 @@ As quatro classes qualitativas são **taxonomia editorial própria**, não sensi
 - `npm run discrimination:validate` verifica cobertura dos seis P0, hipóteses concorrentes, fontes e ausência de medições inventadas.
 
 Mantêm-se **24 cadeias, 48 investigações propostas, 10 regras PM bloqueadas e zero casos reais ou OEM homologados**.
+
+## Diagnóstico diferencial por hipótese e piloto OEM D9 (v1.3.10)
+
+A [matriz cruzada de verificações complementares](data/quality/complementary-discrimination.v1.json) avalia **12 hipóteses concorrentes × 2 métodos = 24 relações**. Destas, **7 não discriminam**, **12 oferecem apenas indício parcial** e **5 podem discriminar sob condições específicas**; permanecem **12 lacunas sem fechamento**. Nenhuma probabilidade ou evidência de campo foi calculada.
+
+- [Revisão SAP de causa circular](data/quality/circular-sap-causality.v1.json): o par `TRAK/0320/01.15/C1.17` não explica sozinho por que houve perda de pré-carga.
+- [Piloto CAT D9 bloqueado por falta de efetividade OEM](data/quality/oem-pilot-readiness.v1.json): requer arranjo/série, documentação aplicável e revisão de engenharia.
+- [Relatório técnico de pesquisa](docs/CICLO_2026-10-20_DISCRIMINACAO_COMPLEMENTAR.md) e [contrato JSON Schema](schemas/complementary-discrimination.schema.json).
+- `npm run differential:validate` verifica IDs, hipóteses, métodos, pertinência e ausência de falsa homologação.
+
+**Não alteramos o catálogo SAP de origem ou os consumidores.** Permanecem 24 cadeias, 48 investigações e 10 bloqueios de regras preventivas.
 
 ## Comece por aqui
 

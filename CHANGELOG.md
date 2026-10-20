@@ -2,6 +2,15 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.10] — 2026-10-20 — Complementos discriminantes, SAP e piloto OEM
+- Cruzados seis testes P0 com suas duas hipóteses concorrentes e dois complementos: **24 avaliações**; 7 não discriminantes, 12 parciais, 5 potencialmente discriminantes condicionais.
+- Mantidas **12 lacunas diagnósticas explícitas** e zero exclusões automáticas de alternativas.
+- Criados `data/quality/complementary-discrimination.v1.json`, contrato JSON Schema e `scripts/validate-complementary-discrimination.mjs`.
+- Revisada circularidade do par `TRAK/0320/01.15/C1.17`: códigos permanecem intactos; autoafrouxamento rotacional e assentamento sem rotação são mecanismos diferentes.
+- Piloto de efetividade CAT D9 formalizado, mas **bloqueado** até série/arranjo, OMM, identificação de componentes e pareceres técnicos.
+- Duas referências gerais Caterpillar/Nord-Lock acrescidas ao índice, sem extrapolar tolerâncias ou procedimentos de modelos diferentes.
+- Validação CI, auditoria de qualidade e roadmap atualizados. Zero testes reais, zero homologações, zero modificações no PORCARIA.
+
 ## [1.3.9] — 2026-10-20 — Diagnóstico diferencial e testes P0
 - Revisada a capacidade discriminante dos seis testes P0 (mangueira hidráulica, óleo do comando final, radiador, rolete, fixação de sapata e circulação da bomba).
 - Matriz com quatro classes qualitativas editoriais: condição sem causa, tendência sem origem, indício inespecífico e desempenho condicionado.

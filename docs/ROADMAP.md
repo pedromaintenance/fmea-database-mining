@@ -1,6 +1,6 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 20/10/2026 · **Ciclo:** catálogo técnico v1.3.9 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 20/10/2026 · **Ciclo:** catálogo técnico v1.3.10 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
 
@@ -39,6 +39,24 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 
 **Observação:** as 159 tarefas de PM com subgrupo candidato foram obtidas em extração local anterior e **não** representam 159 associações homologadas. Contagens de vínculos estritos serão publicadas pelo relatório automático após cada alteração do gerador.
 
+## Ciclo concluído — 20/10/2026: matriz cruzada de diagnóstico diferencial (v1.3.10)
+
+**Entrega:** camada de ligação teste complementar ↔ hipótese alternativa, com avaliações qualitativas e lacunas declaradas, além de saneamento causal SAP e preparação documental de piloto D9.
+
+- [x] [12 hipóteses × 2 complementos = 24 avaliações cruzadas](../data/quality/complementary-discrimination.v1.json) sobre os seis testes P0; **7 não discriminantes**, **12 parciais** e **5 potencialmente discriminantes se houver contexto/OMM aplicável**.
+- [x] Doze lacunas diagnósticas continuam explícitas: nenhum teste isolado exclui alternativas nem comprova causa raiz sem evidência independente.
+- [x] [Revisão causal SAP](../data/quality/circular-sap-causality.v1.json) para o par `TRAK / 0320 / 01.15 / C1.17`: dano Afrouxado e causa Folga ou afrouxamento são circularidade descritiva; distinguir auto-rotação de assentamento/relaxação por mecanismos/evidências diferentes, **sem editar códigos**.
+- [x] [Piloto OEM Caterpillar D9](../data/quality/oem-pilot-readiness.v1.json) aberto como **bloqueado**, com sete requisitos de série, OMM, peças, torque-turn, CTS, SAP e revisão humana.
+- [x] Duas fontes gerais Caterpillar/Nord-Lock indexadas com ressalvas de aplicabilidade.
+- [x] [Validador cruzado](../scripts/validate-complementary-discrimination.mjs) e [JSON Schema](../schemas/complementary-discrimination.schema.json) integrados ao CI e à auditoria.
+- [x] [Relatório de pesquisa e decisões](CICLO_2026-10-20_DISCRIMINACAO_COMPLEMENTAR.md).
+- [ ] **P0 — próximo ciclo:** selecionar três lacunas dos complementos que mereçam literatura OEM específica e formular comparação que diferencie hipótese A de B.
+- [ ] **P0:** obter efetividade OEM de uma configuração D9 para validar posição, método CTS e especificações de fixação. Não publicar literatura proprietária na íntegra.
+- [ ] **P1:** melhorar separação entre **fenômeno detectado**, **mecanismo físico**, **causa contribuinte** e **causa raiz sistêmica** no cadastro SAP.
+- [ ] **P1:** preparar contrato de exportação com natureza, limites e aplicabilidade para consumidores independentes sem os editar.
+
+**Condição de saída:** 24 cruzamentos documentados, 12 hipóteses não descartadas, **zero** ocorrências de campo, **zero** causas confirmadas e **zero** pilotos OEM aprovados. Persistem os 10 bloqueios preventivos.
+
 ## Ciclo concluído — 20/10/2026: discriminabilidade dos seis testes P0 (v1.3.9)
 
 **Objetivo:** distinguir métodos que identificam **uma condição** daqueles que podem discriminar uma **hipótese causal**, sem pressupor que o teste foi executado ou que uma peça foi condenada.
@@ -50,8 +68,9 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 - [x] Criado [contrato JSON Schema](../schemas/discriminative-tests.schema.json), [validador](../scripts/validate-discriminative-tests.mjs) e [12 regressões sintéticas](../data/quality/discrimination-regressions.v1.json).
 - [x] Adicionada etapa `npm run discrimination:validate` ao CI e novos indicadores ao relatório de qualidade.
 - [x] Pesquisadas fontes Caterpillar, Nord-Lock e o resumo oficial da ISO 13379-1:2025, sem extrapolar parâmetros por modelo/série. [Relatório completo](CICLO_2026-10-20_DISCRIMINACAO_TESTES.md).
-- [ ] **Próximo ciclo:** estruturar a cobertura de alternativas pelas verificações complementares, sem falsa certeza de exclusão de hipótese.
-- [ ] **Próximo ciclo:** revisão causal dos pares SAP circulares e piloto de efetividade OEM da família D9 ou CAT 777.
+- [x] **Ciclo v1.3.10:** mapear 24 avaliações complementares por hipótese, preservando 12 lacunas sem confirmação.
+- [x] **Ciclo v1.3.10:** identificar mecanismos distintos do par SAP circular e abrir piloto D9 com bloqueios OEM explícitos.
+- [ ] Concluir apenas após documentação específica e revisão humana real.
 - [ ] Solicitar revisão independente dos seis P0 a especialistas com documentação do arranjo efetivo. Sem parecer humano real, **0 estados promovidos**.
 
 **Estado:** 24 cadeias, 48 investigações, 6 métodos P0 auditados quanto à discriminabilidade, **0** testes realizados, **0** causas homologadas, **10** lacunas PM pendentes. O objetivo foi a qualidade da inferência, não a expansão combinatória.
