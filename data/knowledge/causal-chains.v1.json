@@ -1957,7 +1957,7 @@
       "preventionRuleIds": [
         "cooling-radiator-blockage"
       ],
-      "preventionAssociation": "monitoramento_contextual_nao_alvo_exclusivo_de_ajuste",
+      "preventionAssociation": "vinculo_preventivo_contextual_sem_alvo_direto",
       "sourceClaims": [
         {
           "sourceId": "CAT-THERMOSTAT-REPLACEMENT",
@@ -2051,7 +2051,7 @@
       "preventionRuleIds": [
         "cooling-radiator-blockage"
       ],
-      "preventionAssociation": "monitoramento_contextual_nao_alvo_exclusivo_de_ajuste",
+      "preventionAssociation": "vinculo_preventivo_contextual_sem_alvo_direto",
       "sourceClaims": [
         {
           "sourceId": "CAT-THERMOSTAT-REPLACEMENT",
@@ -2147,7 +2147,7 @@
       "preventionRuleIds": [
         "cooling-radiator-blockage"
       ],
-      "preventionAssociation": "monitoramento_contextual_nao_alvo_exclusivo_de_ajuste",
+      "preventionAssociation": "vinculo_preventivo_contextual_sem_alvo_direto",
       "sourceClaims": [
         {
           "sourceId": "CAT-WATER-PUMP-REPLACEMENT",
@@ -2243,7 +2243,7 @@
       "preventionRuleIds": [
         "cooling-radiator-leak"
       ],
-      "preventionAssociation": "monitoramento_contextual_nao_alvo_exclusivo_de_ajuste",
+      "preventionAssociation": "vinculo_preventivo_contextual_sem_alvo_direto",
       "sourceClaims": [
         {
           "sourceId": "CAT-WATER-PUMP-REPLACEMENT",

@@ -27,7 +27,7 @@ for(const c of db.records){
  const ruleSystems=new Set(pm.filter(x=>c.preventionRuleIds.includes(x.id)).map(x=>x.system));
  ok((allowedSystems[c.family]||[]).some(s=>ruleSystems.has(s)),'regras PM nao condizem com familia '+c.id);
  ok(c.preventionRuleIds.every(id=>{const r=pm.find(x=>x.id===id);return r&&(allowedSystems[c.family]||[]).includes(r.system)}),'PM de outro sistema '+c.id);
- if(c.preventionAssociation)ok(['alvo_de_inspecao_candidato','monitoramento_contextual_nao_alvo_exclusivo_de_ajuste'].includes(c.preventionAssociation),'tipo de ligacao preventiva nao reconhecido '+c.id);
+ if(c.preventionAssociation)ok(['alvo_de_inspecao_candidato','monitoramento_contextual_nao_alvo_exclusivo_de_ajuste','vinculo_preventivo_contextual_sem_alvo_direto'].includes(c.preventionAssociation),'tipo de ligacao preventiva nao reconhecido '+c.id);
  ok(c.competingHypotheses.length>=2,'menos de duas alternativas '+c.id);
  ok(c.sourceClaims.length>=1&&c.sourceClaims.every(x=>refs.sources.has(x.sourceId)&&x.claim.length>25&&x.scope==='principio_geral'),'fonte sem escopo geral '+c.id);
  ok(c.investigations.length>=2,'menos de dois metodos '+c.id);
@@ -46,7 +46,15 @@ for(const c of db.records){
 ok(db.counts.chains===db.records.length,'contagem no manifesto');
 ok(db.counts.families===families.size,'contagem de familias');
 for(const family of Object.keys(allowedSystems))ok((familyCounts.get(family)||0)>=4,'regressao de cobertura da familia '+family);
-ok(chainIds.size>=16&&families.size>=4,'regressao de cobertura acumulada');
+ok(chainIds.size>=24&&families.size>=4,'regressao de cobertura acumulada');
+for(const id of ['FC-COOL-005','FC-COOL-006','FC-COOL-007','FC-COOL-008']){
+ const record=db.records.find(x=>x.id===id);
+ ok(record?.preventionAssociation==='vinculo_preventivo_contextual_sem_alvo_direto','ligacao de PM do radiador foi apresentada como especifica: '+id);
+}
+for(const prefix of ['FC-TRACK-00','FC-COOL-00']){
+ const records=db.records.filter(x=>x.id.startsWith(prefix));
+ ok(records.length===8,'regressao de subfamilia '+prefix);
+}
 const report={status:errors.length?'FALHOU':'OK',chains:db.records.length,families:[...families],
  suggestedTests:db.records.reduce((n,c)=>n+c.investigations.length,0),familyCounts:Object.fromEntries(familyCounts),reviewedChains:db.records.filter(x=>x.review.status==='revisado_por_especialista').length,
  verifiedOemConfigurationLinks:0,errors:errors.length};
