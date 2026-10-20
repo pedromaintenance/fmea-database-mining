@@ -19,10 +19,8 @@ const chains=read('data/knowledge/causal-chains.v1.json').records;
 const sapAudit=read('reports/causal-sap-audit.generated.json');
 const pmGaps=read('reports/pm-gap-audit.generated.json');
 const semantic=read('data/ontology/condition-action-damage.v1.json');
-const fixtures=read('data/quality/semantic-regression-fixtures.v1.json');
-const effects=read('data/knowledge/causal-effects.v1.json');
-const semantic=read('data/ontology/condition-action-damage.v1.json');
 const semanticFixtures=read('data/quality/semantic-regression-fixtures.v1.json');
+const effects=read('data/knowledge/causal-effects.v1.json');
 const byModel=[];
 for(const model of db.models){
  const modelId=model.id;
@@ -59,7 +57,7 @@ const counts={
  semanticConditions:semantic.conditions.length,semanticActions:semantic.actions.length,
  semanticDamageHypotheses:semantic.damageHypotheses.length,
  semanticRuleBundles:semantic.bundles.length,semanticTypedRelations:semantic.relations.length,
- semanticRegressionCases:fixtures.cases.length,
+ semanticRegressionCases:semanticFixtures.cases.length,
  causalLocalEffects:effects.records.length,causalSystemEffects:effects.records.length,verifiedEffects:0,
  causalChainsWithContextualPm:chains.filter(x=>['monitoramento_contextual_nao_alvo_exclusivo_de_ajuste','vinculo_preventivo_contextual_sem_alvo_direto'].includes(x.preventionAssociation)).length,
  causalSapChainsAudited:sapAudit.summary.chainsAudited,
@@ -70,12 +68,6 @@ const counts={
  pmGapRulesReviewed:pmGaps.summary.withoutStrictCandidates,
  pmGapBlockers:pmGaps.summary.blockerCounts,
  pmGapApprovedRemaps:pmGaps.summary.approvedEngineeringLinks,
- semanticConditions:semantic.conditions.length,
- semanticActions:semantic.actions.length,
- semanticDamageHypotheses:semantic.damageHypotheses.length,
- semanticPmBundles:semantic.bundles.length,
- semanticTypedRelations:semantic.relations.length,
- semanticRegressionFixtures:semanticFixtures.cases.length,
  semanticDamageConfirmations:semantic.confirmedComponentDamages.length,
  evidenceValidatedInRealEquipment:0,technicallyApprovedPlaybooks:0
 };
