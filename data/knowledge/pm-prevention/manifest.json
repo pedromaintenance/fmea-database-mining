@@ -1,0 +1,10 @@
+{
+  "schema": "fmea-mining.pm-prevention.v1",
+  "version": "1.2.0",
+  "sourceProfiles": "source-profiles.json",
+  "ruleSet": "seed-rules.json",
+  "generate": "node scripts/generate-pm-links.mjs",
+  "output": "generated-links.json",
+  "status": "candidate_only",
+  "description": "Sinais, subgrupos e mecanismos que planos preventivos procuram detectar ou prevenir; nenhuma inspeção de campo foi executada"
+}

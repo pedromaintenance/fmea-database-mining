@@ -1,0 +1,154 @@
+{
+  "schema": "fmea-mining.preventive-source-profile.v1",
+  "version": "1.2.0",
+  "visibility": "public_aggregated_only",
+  "counts": {
+    "sourceFiles": 7,
+    "machines": 8,
+    "rawTaskOccurrences": 6281,
+    "distinctActivities": 1018,
+    "publicDerivedRulesAvailableInLocalPackage": 891,
+    "strictSubgroupCandidateTasksInLocalPackage": 159,
+    "fullyValidatedFmeaLinks": 0
+  },
+  "methodology": "Extração com Python: XLSX/XLSM por XML interno; XLS legado leitura textual parcial sem célula; remoção de duplicações por modelo e resumo de atividade",
+  "sourceRestrictions": "Planilhas originais, números de série, números de ordens, texto integral de procedimentos e detalhes de materiais não são publicados",
+  "profiles": [
+    {
+      "id": "EQ03",
+      "label": "CAT 395",
+      "occurrences": 961,
+      "unique": 109,
+      "sourceType": "xlsx",
+      "periodsHours": [
+        500,
+        1000,
+        2000,
+        3000,
+        5000,
+        6000,
+        10000,
+        12000,
+        15000
+      ],
+      "includesInspection": true
+    },
+    {
+      "id": "EQ02",
+      "label": "CAT 6030",
+      "occurrences": 986,
+      "unique": 141,
+      "sourceType": "xlsx",
+      "periodsHours": [
+        500,
+        1000,
+        2000,
+        3000,
+        5000,
+        6000,
+        10000,
+        12000
+      ],
+      "includesInspection": true
+    },
+    {
+      "id": "CAT777",
+      "label": "CAT 777",
+      "occurrences": 1322,
+      "unique": 169,
+      "sourceType": "xlsx",
+      "periodsHours": [
+        500,
+        1000,
+        2000,
+        3000,
+        4000,
+        6000,
+        10000,
+        12000
+      ],
+      "includesInspection": true
+    },
+    {
+      "id": "CAT980",
+      "label": "CAT 980",
+      "occurrences": 665,
+      "unique": 109,
+      "sourceType": "xlsx",
+      "periodsHours": [
+        500,
+        1000,
+        2000,
+        3000,
+        6000,
+        12000
+      ],
+      "includesInspection": true
+    },
+    {
+      "id": "EQ07",
+      "label": "CAT D9",
+      "occurrences": 776,
+      "unique": 127,
+      "sourceType": "xlsx",
+      "periodsHours": [
+        500,
+        1000,
+        2000,
+        3000,
+        6000,
+        12000
+      ],
+      "includesInspection": true
+    },
+    {
+      "id": "EQ09",
+      "label": "CAT 16",
+      "occurrences": 149,
+      "unique": 127,
+      "sourceType": "legacy_xls_partial_text_only",
+      "periodsHours": [],
+      "includesInspection": true,
+      "warning": "Leitura parcial de BIFF: caracteres truncados e sem célula/aba. NÃO usar como referência de intervalo nem procedimento."
+    },
+    {
+      "id": "EQ05",
+      "label": "Sandvik DR410i",
+      "occurrences": 1234,
+      "unique": 176,
+      "sourceType": "xlsm_xml_only",
+      "periodsHours": [
+        50,
+        250,
+        500,
+        1000,
+        2000,
+        4000
+      ],
+      "includesWeekly": true,
+      "includesLegacyOldSheets": true,
+      "warning": "Planos OLD identificados; registros OLD não definem plano vigente."
+    },
+    {
+      "id": "EQ06",
+      "label": "Sandvik DI650i",
+      "occurrences": 188,
+      "unique": 60,
+      "sourceType": "xlsm_xml_only",
+      "periodsHours": [
+        250,
+        500,
+        1000,
+        1500
+      ],
+      "includesWeekly": true
+    }
+  ],
+  "qualityNotes": [
+    "Planos descrevem o que prevenir/detectar, não resultados de inspeções efetuadas",
+    "PeriodicityHours documenta ocorrência no plano, não valida intervalo OEM",
+    "Aba OLD nas perfuratrizes requer revisão de vigência",
+    "Relacionamento ao nível de subgrupo exige confirmação por modelo e posição",
+    "Lista de regras de origem estruturada permanece no pacote local, não republicada neste repositório público sem autorização de divulgação"
+  ]
+}

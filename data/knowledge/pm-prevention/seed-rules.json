@@ -1,0 +1,484 @@
+{
+  "schema": "fmea-mining.pm-protection-rules.v1",
+  "version": "1.2.0",
+  "status": "curadoria_pendente",
+  "records": [
+    {
+      "id": "cooling-radiator-leak",
+      "system": "arrefecimento",
+      "subgroupCode": "RADI",
+      "partText": "Mangueira",
+      "damageId": "03.01",
+      "causeId": "C2.13",
+      "symptom": "Vestígio de fluido de arrefecimento em mangueira ou conexão",
+      "inspectionMethod": "inspecao_visual_de_vazamento",
+      "models": [
+        "EQ03",
+        "EQ02",
+        "CAT777",
+        "CAT980",
+        "EQ07",
+        "EQ05",
+        "EQ06"
+      ],
+      "status": "hipotese_de_protecao_preventiva",
+      "review": "pendente"
+    },
+    {
+      "id": "cooling-radiator-blockage",
+      "system": "arrefecimento",
+      "subgroupCode": "RADI",
+      "partText": "Trocador",
+      "damageId": "03.02",
+      "causeId": "C2.09",
+      "symptom": "Restrição de passagem ou sujidade em trocador de calor",
+      "inspectionMethod": "inspecao_limpeza_colmeias",
+      "models": [
+        "EQ03",
+        "EQ02",
+        "CAT777",
+        "CAT980",
+        "EQ07",
+        "EQ05",
+        "EQ06"
+      ],
+      "status": "hipotese_de_protecao_preventiva",
+      "review": "pendente"
+    },
+    {
+      "id": "cooling-fan-bearing",
+      "system": "arrefecimento",
+      "subgroupCode": "FANN",
+      "partText": "Rolamento",
+      "damageId": "06.05",
+      "causeId": "C2.11",
+      "symptom": "Ruído anormal no rolamento do ventilador",
+      "inspectionMethod": "inspecao_ruido_folga_lubrificacao",
+      "models": [
+        "EQ03",
+        "EQ02",
+        "CAT777",
+        "CAT980",
+        "EQ07",
+        "EQ05",
+        "EQ06"
+      ],
+      "status": "hipotese_de_protecao_preventiva",
+      "review": "pendente"
+    },
+    {
+      "id": "cooling-fan-belt",
+      "system": "arrefecimento",
+      "subgroupCode": "FANN",
+      "partText": "Correia",
+      "damageId": "06.03",
+      "causeId": "C1.24",
+      "symptom": "Patinamento ou tensão inadequada na correia",
+      "inspectionMethod": "medicao_tensao_e_inspecao",
+      "models": [
+        "EQ03",
+        "EQ02",
+        "CAT777",
+        "CAT980",
+        "EQ07"
+      ],
+      "status": "hipotese_de_protecao_preventiva",
+      "review": "pendente"
+    },
+    {
+      "id": "engine-oil-filter",
+      "system": "motor_diesel",
+      "subgroupCode": "LUSY",
+      "partText": "Filtro",
+      "damageId": "03.02",
+      "causeId": "C2.09",
+      "symptom": "Elemento filtrante de óleo restringido",
+      "inspectionMethod": "verificacao_diferencial_pressao_filtro",
+      "models": [
+        "EQ03",
+        "EQ02",
+        "CAT777",
+        "CAT980",
+        "EQ07",
+        "EQ05",
+        "EQ06"
+      ],
+      "status": "hipotese_de_protecao_preventiva",
+      "review": "pendente"
+    },
+    {
+      "id": "engine-exhaust",
+      "system": "motor_diesel",
+      "subgroupCode": "EXSY",
+      "partText": "Coletor",
+      "damageId": "01.02",
+      "causeId": "C1.03",
+      "symptom": "Trinca em coletor ou conexão do escape",
+      "inspectionMethod": "inspecao_visual_de_trincas_e_fuligem",
+      "models": [
+        "EQ03",
+        "EQ02",
+        "CAT777",
+        "CAT980",
+        "EQ07",
+        "EQ05",
+        "EQ06"
+      ],
+      "status": "hipotese_de_protecao_preventiva",
+      "review": "pendente"
+    },
+    {
+      "id": "fuel-filter-contamination",
+      "system": "combustivel",
+      "subgroupCode": "HSVV",
+      "partText": "Filtro",
+      "damageId": "02.10",
+      "causeId": "C2.09",
+      "symptom": "Indício de contaminantes na alimentação de combustível",
+      "inspectionMethod": "drenagem_separador_e_inspecao_de_elementos",
+      "models": [
+        "EQ03",
+        "EQ02",
+        "CAT777",
+        "CAT980",
+        "EQ07",
+        "EQ05",
+        "EQ06"
+      ],
+      "status": "hipotese_de_protecao_preventiva",
+      "review": "pendente"
+    },
+    {
+      "id": "fuel-tank-water",
+      "system": "combustivel",
+      "subgroupCode": "TVRE",
+      "partText": "Dreno",
+      "damageId": "02.10",
+      "causeId": "C2.09",
+      "symptom": "Presença de água ou sedimentos em tanque de combustível",
+      "inspectionMethod": "verificacao_drenagem_de_sedimentos",
+      "models": [
+        "EQ03",
+        "EQ02",
+        "CAT777",
+        "CAT980",
+        "EQ07",
+        "EQ05",
+        "EQ06"
+      ],
+      "status": "hipotese_de_protecao_preventiva",
+      "review": "pendente"
+    },
+    {
+      "id": "track-roller-wear",
+      "system": "rodante",
+      "subgroupCode": "ROLL",
+      "partText": "Rolamento",
+      "damageId": "02.01",
+      "causeId": "C2.11",
+      "symptom": "Desgaste anormal de rolete ou seu rolamento",
+      "inspectionMethod": "inspecao_de_folga_vedacao_e_desgaste",
+      "models": [
+        "EQ03",
+        "EQ02",
+        "EQ07",
+        "EQ05",
+        "EQ06"
+      ],
+      "status": "hipotese_de_protecao_preventiva",
+      "review": "pendente"
+    },
+    {
+      "id": "track-idler-wear",
+      "system": "rodante",
+      "subgroupCode": "IDLE",
+      "partText": "Rolamento",
+      "damageId": "02.01",
+      "causeId": "C1.04",
+      "symptom": "Desgaste de roda-guia e rolamento",
+      "inspectionMethod": "inspecao_de_desgaste_roda_guia",
+      "models": [
+        "EQ03",
+        "EQ02",
+        "EQ07",
+        "EQ05",
+        "EQ06"
+      ],
+      "status": "hipotese_de_protecao_preventiva",
+      "review": "pendente"
+    },
+    {
+      "id": "track-bolt-loose",
+      "system": "rodante",
+      "subgroupCode": "TRAK",
+      "partText": "Parafuso",
+      "damageId": "01.15",
+      "causeId": "C1.17",
+      "symptom": "Fixadores de sapata ou esteira afrouxados",
+      "inspectionMethod": "inspecao_de_fixacao_das_sapatas",
+      "models": [
+        "EQ03",
+        "EQ02",
+        "EQ07",
+        "EQ05",
+        "EQ06"
+      ],
+      "status": "hipotese_de_protecao_preventiva",
+      "review": "pendente"
+    },
+    {
+      "id": "final-drive-gear",
+      "system": "comando_final",
+      "subgroupCode": "FID1",
+      "partText": "Engrenagem",
+      "damageId": "02.01",
+      "causeId": "C2.11",
+      "symptom": "Desgaste de engrenagens do comando final",
+      "inspectionMethod": "inspecao_oleo_bujao_magnetico_e_ruido",
+      "models": [
+        "CAT777",
+        "CAT980",
+        "EQ03",
+        "EQ02",
+        "EQ07",
+        "EQ05",
+        "EQ06"
+      ],
+      "status": "hipotese_de_protecao_preventiva",
+      "review": "pendente"
+    },
+    {
+      "id": "final-drive-bearing",
+      "system": "comando_final",
+      "subgroupCode": "FID2",
+      "partText": "Rolamento",
+      "damageId": "06.05",
+      "causeId": "C2.11",
+      "symptom": "Ruído anormal no rolamento do comando final",
+      "inspectionMethod": "inspecao_nivel_de_oleo_e_ruido",
+      "models": [
+        "CAT777",
+        "CAT980",
+        "EQ03",
+        "EQ02",
+        "EQ07",
+        "EQ05",
+        "EQ06"
+      ],
+      "status": "hipotese_de_protecao_preventiva",
+      "review": "pendente"
+    },
+    {
+      "id": "differential-gear",
+      "system": "diferencial",
+      "subgroupCode": "DIFF",
+      "partText": "Engrenagem",
+      "damageId": "02.01",
+      "causeId": "C2.11",
+      "symptom": "Desgaste de engrenagem do diferencial",
+      "inspectionMethod": "analise_de_oleo_e_inspecao_de_ruido",
+      "models": [
+        "CAT777",
+        "CAT980"
+      ],
+      "status": "hipotese_de_protecao_preventiva",
+      "review": "pendente"
+    },
+    {
+      "id": "wheel-tire-damage",
+      "system": "pneus_rodas",
+      "subgroupCode": "TIR1",
+      "partText": "Pneu",
+      "damageId": "01.02",
+      "causeId": "C1.12",
+      "symptom": "Trinca ou corte na carcaça/banda do pneu",
+      "inspectionMethod": "inspecao_visual_de_pneus",
+      "models": [
+        "CAT777",
+        "CAT980",
+        "EQ09"
+      ],
+      "status": "hipotese_de_protecao_preventiva",
+      "review": "pendente"
+    },
+    {
+      "id": "wheel-tire-wear",
+      "system": "pneus_rodas",
+      "subgroupCode": "TIR3",
+      "partText": "Pneu",
+      "damageId": "02.01",
+      "causeId": "C1.04",
+      "symptom": "Desgaste anormal de pneu",
+      "inspectionMethod": "inspecao_de_banda_lateral_e_pressao",
+      "models": [
+        "CAT777",
+        "CAT980",
+        "EQ09"
+      ],
+      "status": "hipotese_de_protecao_preventiva",
+      "review": "pendente"
+    },
+    {
+      "id": "hydraulic-hose-leak",
+      "system": "hidraulico",
+      "subgroupCode": "HSVV",
+      "partText": "Mangueira",
+      "damageId": "03.01",
+      "causeId": "C2.13",
+      "symptom": "Vazamento em mangueira hidráulica",
+      "inspectionMethod": "inspecao_de_vedacao_atrito_e_fixacao",
+      "models": [
+        "EQ03",
+        "EQ02",
+        "CAT777",
+        "CAT980",
+        "EQ07",
+        "EQ05",
+        "EQ06"
+      ],
+      "status": "hipotese_de_protecao_preventiva",
+      "review": "pendente"
+    },
+    {
+      "id": "hydraulic-hose-abrasion",
+      "system": "hidraulico",
+      "subgroupCode": "HSVV",
+      "partText": "Mangueira",
+      "damageId": "02.02",
+      "causeId": "C5.08",
+      "symptom": "Marcas de fricção por roteamento ou interferência",
+      "inspectionMethod": "inspecao_de_roteamento_interferencia",
+      "models": [
+        "EQ03",
+        "EQ02",
+        "CAT777",
+        "CAT980",
+        "EQ07",
+        "EQ05",
+        "EQ06"
+      ],
+      "status": "hipotese_de_protecao_preventiva",
+      "review": "pendente"
+    },
+    {
+      "id": "hydraulic-pump-seal",
+      "system": "hidraulico",
+      "subgroupCode": "HYPU",
+      "partText": "Vedação",
+      "damageId": "03.01",
+      "causeId": "C2.13",
+      "symptom": "Vazamento na vedação de bomba hidráulica",
+      "inspectionMethod": "inspecao_visual_e_teste_de_pressao",
+      "models": [
+        "EQ03",
+        "EQ02",
+        "CAT777",
+        "CAT980",
+        "EQ07",
+        "EQ05",
+        "EQ06"
+      ],
+      "status": "hipotese_de_protecao_preventiva",
+      "review": "pendente"
+    },
+    {
+      "id": "implement-cylinder",
+      "system": "implementos",
+      "subgroupCode": "CYL1",
+      "partText": "Vedação",
+      "damageId": "03.01",
+      "causeId": "C2.13",
+      "symptom": "Vazamento por vedação do cilindro",
+      "inspectionMethod": "inspecao_de_haste_retracao_e_estanqueidade",
+      "models": [
+        "EQ03",
+        "EQ02",
+        "CAT980",
+        "EQ07"
+      ],
+      "status": "hipotese_de_protecao_preventiva",
+      "review": "pendente"
+    },
+    {
+      "id": "brake-disc",
+      "system": "freios",
+      "subgroupCode": "BRA1",
+      "partText": "Disco",
+      "damageId": "02.01",
+      "causeId": "C1.04",
+      "symptom": "Desgaste de disco de freio",
+      "inspectionMethod": "inspecao_de_folga_condicao_e_atrito",
+      "models": [
+        "CAT777",
+        "CAT980",
+        "EQ09"
+      ],
+      "status": "hipotese_de_protecao_preventiva",
+      "review": "pendente"
+    },
+    {
+      "id": "drill-feed-chain",
+      "system": "avanco_perfuratriz",
+      "subgroupCode": "FECH",
+      "partText": "Corrente",
+      "damageId": "02.01",
+      "causeId": "C1.04",
+      "symptom": "Desgaste da corrente do sistema de avanço",
+      "inspectionMethod": "inspecao_de_corrente_tensao_roda_dentada",
+      "models": [
+        "EQ05",
+        "EQ06"
+      ],
+      "status": "hipotese_de_protecao_preventiva",
+      "review": "pendente"
+    },
+    {
+      "id": "drill-rotary-bearing",
+      "system": "cabeca_rotativa",
+      "subgroupCode": "MORO",
+      "partText": "Rolamento",
+      "damageId": "06.05",
+      "causeId": "C2.11",
+      "symptom": "Ruído anormal no conjunto de rotação",
+      "inspectionMethod": "inspecao_de_lubrificacao_e_fixacao",
+      "models": [
+        "EQ05",
+        "EQ06"
+      ],
+      "status": "hipotese_de_protecao_preventiva",
+      "review": "pendente"
+    },
+    {
+      "id": "drill-compressor-pressure",
+      "system": "ar_comprimido",
+      "subgroupCode": "VPAR",
+      "partText": "Mangueira",
+      "damageId": "03.01",
+      "causeId": "C2.13",
+      "symptom": "Perda de estanqueidade em vaso/linha pneumática",
+      "inspectionMethod": "inspecao_de_conexoes_e_perda_de_pressao",
+      "models": [
+        "EQ05",
+        "EQ06"
+      ],
+      "status": "hipotese_de_protecao_preventiva",
+      "review": "pendente"
+    },
+    {
+      "id": "drill-compressor-filter",
+      "system": "ar_comprimido",
+      "subgroupCode": "COMR",
+      "partText": "Filtro",
+      "damageId": "03.02",
+      "causeId": "C2.09",
+      "symptom": "Restrição de filtragem no sistema pneumático",
+      "inspectionMethod": "inspecao_de_filtro_e_indicador_de_restricao",
+      "models": [
+        "EQ05",
+        "EQ06"
+      ],
+      "status": "hipotese_de_protecao_preventiva",
+      "review": "pendente"
+    }
+  ]
+}
