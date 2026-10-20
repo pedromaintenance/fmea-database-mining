@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.ontology.v1",
-  "version": "1.3.0",
+  "version": "1.3.3",
   "language": "pt-BR",
   "status": "vocabulário_controlado_autoral_pendente_de_revisao_por_familia",
   "intent": "Camada neutra que não conclui causas, não afirma aplicabilidade OEM e não representa eventos reais",
@@ -191,6 +191,18 @@
       "pt": "Desempenho irregular sob carga",
       "en": "Irregular loaded performance",
       "criteria": "Registrar regime, terreno, ciclo, duração e repetibilidade"
+    },
+    {
+      "id": "SY-21",
+      "pt": "Tempo de aquecimento prolongado",
+      "en": "Prolonged warm-up time",
+      "criteria": "Comparar evolução térmica desde partida fria com configuração, ambiente e condição operacional equivalentes; não pressupõe termostato aberto"
+    },
+    {
+      "id": "SY-22",
+      "pt": "Leitura indicada divergente de medição independente",
+      "en": "Indicated value differs from independent measurement",
+      "criteria": "Registra desacordo entre indicação e instrumento independente válido com unidade, ponto e condição; pode indicar erro de sensor, instrumento ou método"
     }
   ],
   "mechanismFamilies": [
