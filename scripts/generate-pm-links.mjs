@@ -2,13 +2,14 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
+import {matchesRoot} from './pm-system-scope.mjs';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const db=JSON.parse(fs.readFileSync(path.join(root,'data/catalog/failure-db.v1.json'),'utf8'));
 const rules=JSON.parse(fs.readFileSync(path.join(root,'data/knowledge/pm-prevention/seed-rules.json'),'utf8')).records;
 const result=[];
 for(const r of rules){
  for(const l of db.locations){
-  if(l.profundidade!==3||!r.models.includes(l.modelo)||l.subgrupo?.codigo!==r.subgroupCode)continue;
+  if(l.profundidade!==3||!r.models.includes(l.modelo)||l.subgrupo?.codigo!==r.subgroupCode||!matchesRoot(r,l))continue;
   const partList=db.partsByObjectType[l.objetoTipoSAP]||[];
   const matchingParts=partList.filter(p=>String(p.pt||'').toLowerCase().includes(r.partText.toLowerCase()));
   for(const p of matchingParts){
@@ -18,7 +19,7 @@ for(const r of rules){
       modelId:l.modelo,locationId:l.id,componentCode:p.code,damageId:r.damageId,causeId:r.causeId,
       symptomCandidate:r.symptom,inspectionMethod:r.inspectionMethod,
       occurrence:'nao_observada',evidenceStatus:'metodo_planejado_sem_resultado',
-      associationStatus:'inferido_nao_validado',originRule:r.id,
+      associationStatus:'inferido_nao_validado',systemScope:'filtro_de_sistema_candidato',originRule:r.id,
       warning:'Hipótese para treinamento; NÃO equivale a achado ou causa raiz confirmada'
     });
   }
