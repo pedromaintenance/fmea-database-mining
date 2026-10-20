@@ -1,0 +1,3026 @@
+{
+  "schema": "fmea-mining.evidence-requirements.v1",
+  "version": "1.3.8",
+  "status": "requirements_planned_not_observed",
+  "methodFieldGlossary": {
+    "equipmentContext": {
+      "id": "equipmentContext",
+      "type": "required_when_executed",
+      "descriptionPt": "equipment context",
+      "requiredForInterpretation": true
+    },
+    "inspectionLocation": {
+      "id": "inspectionLocation",
+      "type": "required_when_executed",
+      "descriptionPt": "inspection location",
+      "requiredForInterpretation": true
+    },
+    "isolationStatus": {
+      "id": "isolationStatus",
+      "type": "required_when_executed",
+      "descriptionPt": "isolation status",
+      "requiredForInterpretation": true
+    },
+    "surfaceCondition": {
+      "id": "surfaceCondition",
+      "type": "required_when_executed",
+      "descriptionPt": "surface condition",
+      "requiredForInterpretation": true
+    },
+    "visualDocumentation": {
+      "id": "visualDocumentation",
+      "type": "required_when_executed",
+      "descriptionPt": "visual documentation",
+      "requiredForInterpretation": true
+    },
+    "dateTime": {
+      "id": "dateTime",
+      "type": "required_when_executed",
+      "descriptionPt": "date time",
+      "requiredForInterpretation": true
+    },
+    "measurementLocation": {
+      "id": "measurementLocation",
+      "type": "required_when_executed",
+      "descriptionPt": "measurement location",
+      "requiredForInterpretation": true
+    },
+    "instrumentId": {
+      "id": "instrumentId",
+      "type": "required_when_executed",
+      "descriptionPt": "instrument id",
+      "requiredForInterpretation": true
+    },
+    "instrumentCalibrationStatus": {
+      "id": "instrumentCalibrationStatus",
+      "type": "required_when_executed",
+      "descriptionPt": "instrument calibration status",
+      "requiredForInterpretation": true
+    },
+    "measuredGeometry": {
+      "id": "measuredGeometry",
+      "type": "required_when_executed",
+      "descriptionPt": "measured geometry",
+      "requiredForInterpretation": true
+    },
+    "unit": {
+      "id": "unit",
+      "type": "required_when_executed",
+      "descriptionPt": "unit",
+      "requiredForInterpretation": true
+    },
+    "applicableToleranceReference": {
+      "id": "applicableToleranceReference",
+      "type": "required_when_executed",
+      "descriptionPt": "applicable tolerance reference",
+      "requiredForInterpretation": true
+    },
+    "surfaceEmissivityOrLimitation": {
+      "id": "surfaceEmissivityOrLimitation",
+      "type": "required_when_executed",
+      "descriptionPt": "surface emissivity or limitation",
+      "requiredForInterpretation": true
+    },
+    "ambientTemperature": {
+      "id": "ambientTemperature",
+      "type": "required_when_executed",
+      "descriptionPt": "ambient temperature",
+      "requiredForInterpretation": true
+    },
+    "loadOrOperatingState": {
+      "id": "loadOrOperatingState",
+      "type": "required_when_executed",
+      "descriptionPt": "load or operating state",
+      "requiredForInterpretation": true
+    },
+    "comparisonBasis": {
+      "id": "comparisonBasis",
+      "type": "required_when_executed",
+      "descriptionPt": "comparison basis",
+      "requiredForInterpretation": true
+    },
+    "sensorLocation": {
+      "id": "sensorLocation",
+      "type": "required_when_executed",
+      "descriptionPt": "sensor location",
+      "requiredForInterpretation": true
+    },
+    "rotationalSpeed": {
+      "id": "rotationalSpeed",
+      "type": "required_when_executed",
+      "descriptionPt": "rotational speed",
+      "requiredForInterpretation": true
+    },
+    "operatingLoad": {
+      "id": "operatingLoad",
+      "type": "required_when_executed",
+      "descriptionPt": "operating load",
+      "requiredForInterpretation": true
+    },
+    "frequencyContentOrSignal": {
+      "id": "frequencyContentOrSignal",
+      "type": "required_when_executed",
+      "descriptionPt": "frequency content or signal",
+      "requiredForInterpretation": true
+    },
+    "baselineReference": {
+      "id": "baselineReference",
+      "type": "required_when_executed",
+      "descriptionPt": "baseline reference",
+      "requiredForInterpretation": true
+    },
+    "circuitOrTestPoint": {
+      "id": "circuitOrTestPoint",
+      "type": "required_when_executed",
+      "descriptionPt": "circuit or test point",
+      "requiredForInterpretation": true
+    },
+    "fluidTemperature": {
+      "id": "fluidTemperature",
+      "type": "required_when_executed",
+      "descriptionPt": "fluid temperature",
+      "requiredForInterpretation": true
+    },
+    "oemTestReference": {
+      "id": "oemTestReference",
+      "type": "required_when_executed",
+      "descriptionPt": "oem test reference",
+      "requiredForInterpretation": true
+    },
+    "circuitOrPin": {
+      "id": "circuitOrPin",
+      "type": "required_when_executed",
+      "descriptionPt": "circuit or pin",
+      "requiredForInterpretation": true
+    },
+    "electricalState": {
+      "id": "electricalState",
+      "type": "required_when_executed",
+      "descriptionPt": "electrical state",
+      "requiredForInterpretation": true
+    },
+    "controllerIdentity": {
+      "id": "controllerIdentity",
+      "type": "required_when_executed",
+      "descriptionPt": "controller identity",
+      "requiredForInterpretation": true
+    },
+    "activeOrLogged": {
+      "id": "activeOrLogged",
+      "type": "required_when_executed",
+      "descriptionPt": "active or logged",
+      "requiredForInterpretation": true
+    },
+    "eventTimestamp": {
+      "id": "eventTimestamp",
+      "type": "required_when_executed",
+      "descriptionPt": "event timestamp",
+      "requiredForInterpretation": true
+    },
+    "operatingState": {
+      "id": "operatingState",
+      "type": "required_when_executed",
+      "descriptionPt": "operating state",
+      "requiredForInterpretation": true
+    },
+    "codeFamily": {
+      "id": "codeFamily",
+      "type": "required_when_executed",
+      "descriptionPt": "code family",
+      "requiredForInterpretation": true
+    },
+    "compartment": {
+      "id": "compartment",
+      "type": "required_when_executed",
+      "descriptionPt": "compartment",
+      "requiredForInterpretation": true
+    },
+    "fluidProduct": {
+      "id": "fluidProduct",
+      "type": "required_when_executed",
+      "descriptionPt": "fluid product",
+      "requiredForInterpretation": true
+    },
+    "fluidHours": {
+      "id": "fluidHours",
+      "type": "required_when_executed",
+      "descriptionPt": "fluid hours",
+      "requiredForInterpretation": true
+    },
+    "samplePoint": {
+      "id": "samplePoint",
+      "type": "required_when_executed",
+      "descriptionPt": "sample point",
+      "requiredForInterpretation": true
+    },
+    "collectionMethod": {
+      "id": "collectionMethod",
+      "type": "required_when_executed",
+      "descriptionPt": "collection method",
+      "requiredForInterpretation": true
+    },
+    "laboratoryMethod": {
+      "id": "laboratoryMethod",
+      "type": "required_when_executed",
+      "descriptionPt": "laboratory method",
+      "requiredForInterpretation": true
+    },
+    "cleanSamplingControls": {
+      "id": "cleanSamplingControls",
+      "type": "required_when_executed",
+      "descriptionPt": "clean sampling controls",
+      "requiredForInterpretation": true
+    },
+    "particleMeasurementMethod": {
+      "id": "particleMeasurementMethod",
+      "type": "required_when_executed",
+      "descriptionPt": "particle measurement method",
+      "requiredForInterpretation": true
+    },
+    "testMethod": {
+      "id": "testMethod",
+      "type": "required_when_executed",
+      "descriptionPt": "test method",
+      "requiredForInterpretation": true
+    },
+    "interferenceOrQualityCheck": {
+      "id": "interferenceOrQualityCheck",
+      "type": "required_when_executed",
+      "descriptionPt": "interference or quality check",
+      "requiredForInterpretation": true
+    },
+    "componentOrFilterId": {
+      "id": "componentOrFilterId",
+      "type": "required_when_executed",
+      "descriptionPt": "component or filter id",
+      "requiredForInterpretation": true
+    },
+    "removalAndHandlingMethod": {
+      "id": "removalAndHandlingMethod",
+      "type": "required_when_executed",
+      "descriptionPt": "removal and handling method",
+      "requiredForInterpretation": true
+    },
+    "residueMorphology": {
+      "id": "residueMorphology",
+      "type": "required_when_executed",
+      "descriptionPt": "residue morphology",
+      "requiredForInterpretation": true
+    },
+    "photographOrRecord": {
+      "id": "photographOrRecord",
+      "type": "required_when_executed",
+      "descriptionPt": "photograph or record",
+      "requiredForInterpretation": true
+    },
+    "baselineOrHistory": {
+      "id": "baselineOrHistory",
+      "type": "required_when_executed",
+      "descriptionPt": "baseline or history",
+      "requiredForInterpretation": true
+    },
+    "testConfiguration": {
+      "id": "testConfiguration",
+      "type": "required_when_executed",
+      "descriptionPt": "test configuration",
+      "requiredForInterpretation": true
+    },
+    "safetyAndIsolationStatus": {
+      "id": "safetyAndIsolationStatus",
+      "type": "required_when_executed",
+      "descriptionPt": "safety and isolation status",
+      "requiredForInterpretation": true
+    },
+    "fluidTemperatureIfApplicable": {
+      "id": "fluidTemperatureIfApplicable",
+      "type": "required_when_executed",
+      "descriptionPt": "fluid temperature if applicable",
+      "requiredForInterpretation": true
+    },
+    "measurementInstrument": {
+      "id": "measurementInstrument",
+      "type": "required_when_executed",
+      "descriptionPt": "measurement instrument",
+      "requiredForInterpretation": true
+    },
+    "oemProcedureReference": {
+      "id": "oemProcedureReference",
+      "type": "required_when_executed",
+      "descriptionPt": "oem procedure reference",
+      "requiredForInterpretation": true
+    },
+    "baselineOrAcceptanceCriterion": {
+      "id": "baselineOrAcceptanceCriterion",
+      "type": "required_when_executed",
+      "descriptionPt": "baseline or acceptance criterion",
+      "requiredForInterpretation": true
+    },
+    "sourceWorkOrderOrEvent": {
+      "id": "sourceWorkOrderOrEvent",
+      "type": "required_when_executed",
+      "descriptionPt": "source work order or event",
+      "requiredForInterpretation": true
+    },
+    "componentServiceHistory": {
+      "id": "componentServiceHistory",
+      "type": "required_when_executed",
+      "descriptionPt": "component service history",
+      "requiredForInterpretation": true
+    },
+    "fluidOrPartChangeHistory": {
+      "id": "fluidOrPartChangeHistory",
+      "type": "required_when_executed",
+      "descriptionPt": "fluid or part change history",
+      "requiredForInterpretation": true
+    },
+    "chronology": {
+      "id": "chronology",
+      "type": "required_when_executed",
+      "descriptionPt": "chronology",
+      "requiredForInterpretation": true
+    },
+    "signalId": {
+      "id": "signalId",
+      "type": "required_when_executed",
+      "descriptionPt": "signal id",
+      "requiredForInterpretation": true
+    },
+    "measurementWindow": {
+      "id": "measurementWindow",
+      "type": "required_when_executed",
+      "descriptionPt": "measurement window",
+      "requiredForInterpretation": true
+    },
+    "sensorHealth": {
+      "id": "sensorHealth",
+      "type": "required_when_executed",
+      "descriptionPt": "sensor health",
+      "requiredForInterpretation": true
+    },
+    "dataCompleteness": {
+      "id": "dataCompleteness",
+      "type": "required_when_executed",
+      "descriptionPt": "data completeness",
+      "requiredForInterpretation": true
+    },
+    "fixationOrClearanceFeature": {
+      "id": "fixationOrClearanceFeature",
+      "type": "required_when_executed",
+      "descriptionPt": "fixation or clearance feature",
+      "requiredForInterpretation": true
+    },
+    "measurementToolIfApplicable": {
+      "id": "measurementToolIfApplicable",
+      "type": "required_when_executed",
+      "descriptionPt": "measurement tool if applicable",
+      "requiredForInterpretation": true
+    },
+    "oemInspectionReference": {
+      "id": "oemInspectionReference",
+      "type": "required_when_executed",
+      "descriptionPt": "oem inspection reference",
+      "requiredForInterpretation": true
+    },
+    "oemManualId": {
+      "id": "oemManualId",
+      "type": "required_when_executed",
+      "descriptionPt": "oem manual id",
+      "requiredForInterpretation": true
+    },
+    "oemRevision": {
+      "id": "oemRevision",
+      "type": "required_when_executed",
+      "descriptionPt": "oem revision",
+      "requiredForInterpretation": true
+    },
+    "effectiveSerialOrArrangement": {
+      "id": "effectiveSerialOrArrangement",
+      "type": "required_when_executed",
+      "descriptionPt": "effective serial or arrangement",
+      "requiredForInterpretation": true
+    },
+    "citationScope": {
+      "id": "citationScope",
+      "type": "required_when_executed",
+      "descriptionPt": "citation scope",
+      "requiredForInterpretation": true
+    }
+  },
+  "allowedInterpretations": [
+    "supports",
+    "weakens",
+    "inconclusive",
+    "not_performed"
+  ],
+  "reviewRule": "Medição e comparação OEM efetiva precedem classificação de resultado; vínculo causal só pode ser promovido por revisão independente.",
+  "statistics": {
+    "chains": 24,
+    "investigations": 48,
+    "priorityCases": 6
+  },
+  "records": [
+    {
+      "id": "ER-FC-HOSE-001-I1",
+      "chainId": "FC-HOSE-001",
+      "investigationId": "I1",
+      "methodId": "EV-01",
+      "intent": "Inspecionar em condição segura a cobertura, suportes e trajetória de fluido",
+      "minimumMetadataFields": [
+        "equipmentContext",
+        "inspectionLocation",
+        "isolationStatus",
+        "surfaceCondition",
+        "visualDocumentation",
+        "dateTime"
+      ],
+      "resultInterpretation": {
+        "supports": "Contato mecânico com perda de cobertura reforça abrasão; origem de fuga ainda precisa ser confirmada",
+        "weakens": "Ausência de desgaste na linha enfraquece abrasão como origem naquele ponto",
+        "inconclusive": "Não é possível acessar os trechos encobertos"
+      },
+      "evidenceRequirements": {
+        "collectionContext": "Registrar arranjo de máquina, posição, horário, carga/estado, método, instrumento e condições ambientais que alterem interpretação.",
+        "sourceAndBaseline": "Referência técnica aplicável deve ser identificada antes de declarar fora de especificação; dado histórico deve ser comparável.",
+        "qualityChecks": "Verificar calibração e integridade do instrumento, amostra, registro, contexto de operação e possibilidade de interferências.",
+        "explicitCounterEvidence": "Descrever observação contrária plausível e avaliar hipóteses alternativas; ausência de sintoma não prova inexistência de dano.",
+        "safeMethod": "Testes devem seguir procedimento OEM e controle de energias específico, sem condições de execução assumidas pelo banco."
+      },
+      "priority": "P0",
+      "qualityRisk": "Vestígio de fluido e abrasão não localizam uma fuga; requer foto de origem e isolamento seguro.",
+      "sourceIds": [
+        "CAT-HYD-HOSE-INSPECT",
+        "CAT-HYD-HOSE-FAILURE",
+        "ISO-13379-1-2025",
+        "ISO-17359-2018"
+      ],
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "serialOrArrangement": null,
+        "manualRevision": null
+      },
+      "threshold": {
+        "value": null,
+        "unit": null,
+        "sourceId": null,
+        "applicableConditions": null
+      },
+      "plannedOnly": true,
+      "observedResult": null,
+      "engineeringReview": "pending",
+      "oemEffectiveProcedureVerified": false,
+      "independentReview": "pending",
+      "confirmsComponentDamage": false
+    },
+    {
+      "id": "ER-FC-HOSE-001-I2",
+      "chainId": "FC-HOSE-001",
+      "investigationId": "I2",
+      "methodId": "EV-15",
+      "intent": "Verificar roteamento e pontos de contato segundo montagem aplicável",
+      "minimumMetadataFields": [
+        "equipmentContext",
+        "inspectionLocation",
+        "isolationStatus",
+        "fixationOrClearanceFeature",
+        "measurementToolIfApplicable",
+        "oemInspectionReference",
+        "dateTime"
+      ],
+      "resultInterpretation": {
+        "supports": "Interferência localizada e marcas coincidentes aumentam suporte à abrasão",
+        "weakens": "Folgas e suportes íntegras no trajeto verificável reduzem essa hipótese",
+        "inconclusive": "Movimento dinâmico não pode ser reproduzido com segurança"
+      },
+      "evidenceRequirements": {
+        "collectionContext": "Registrar arranjo de máquina, posição, horário, carga/estado, método, instrumento e condições ambientais que alterem interpretação.",
+        "sourceAndBaseline": "Referência técnica aplicável deve ser identificada antes de declarar fora de especificação; dado histórico deve ser comparável.",
+        "qualityChecks": "Verificar calibração e integridade do instrumento, amostra, registro, contexto de operação e possibilidade de interferências.",
+        "explicitCounterEvidence": "Descrever observação contrária plausível e avaliar hipóteses alternativas; ausência de sintoma não prova inexistência de dano.",
+        "safeMethod": "Testes devem seguir procedimento OEM e controle de energias específico, sem condições de execução assumidas pelo banco."
+      },
+      "priority": "P1",
+      "qualityRisk": "Não inferir causa, componente ou efeito operacional sem evidência comparável e método OEM aplicável.",
+      "sourceIds": [
+        "CAT-HYD-HOSE-INSPECT",
+        "CAT-HYD-HOSE-FAILURE",
+        "ISO-13379-1-2025",
+        "ISO-17359-2018"
+      ],
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "serialOrArrangement": null,
+        "manualRevision": null
+      },
+      "threshold": {
+        "value": null,
+        "unit": null,
+        "sourceId": null,
+        "applicableConditions": null
+      },
+      "plannedOnly": true,
+      "observedResult": null,
+      "engineeringReview": "pending",
+      "oemEffectiveProcedureVerified": false,
+      "independentReview": "pending",
+      "confirmsComponentDamage": false
+    },
+    {
+      "id": "ER-FC-HOSE-002-I1",
+      "chainId": "FC-HOSE-002",
+      "investigationId": "I1",
+      "methodId": "EV-01",
+      "intent": "Observar orientação dos terminais, regiões de curvatura e marcas de torção",
+      "minimumMetadataFields": [
+        "equipmentContext",
+        "inspectionLocation",
+        "isolationStatus",
+        "surfaceCondition",
+        "visualDocumentation",
+        "dateTime"
+      ],
+      "resultInterpretation": {
+        "supports": "Twist/curvatura incompatíveis no trecho danificado sustentam a hipótese",
+        "weakens": "Roteamento coerente e sem torção visível enfraquece hipótese de montagem",
+        "inconclusive": "Não há desenho de instalação efetiva"
+      },
+      "evidenceRequirements": {
+        "collectionContext": "Registrar arranjo de máquina, posição, horário, carga/estado, método, instrumento e condições ambientais que alterem interpretação.",
+        "sourceAndBaseline": "Referência técnica aplicável deve ser identificada antes de declarar fora de especificação; dado histórico deve ser comparável.",
+        "qualityChecks": "Verificar calibração e integridade do instrumento, amostra, registro, contexto de operação e possibilidade de interferências.",
+        "explicitCounterEvidence": "Descrever observação contrária plausível e avaliar hipóteses alternativas; ausência de sintoma não prova inexistência de dano.",
+        "safeMethod": "Testes devem seguir procedimento OEM e controle de energias específico, sem condições de execução assumidas pelo banco."
+      },
+      "priority": "P1",
+      "qualityRisk": "Não inferir causa, componente ou efeito operacional sem evidência comparável e método OEM aplicável.",
+      "sourceIds": [
+        "CAT-HYD-HOSE-INSPECT",
+        "ISO-13379-1-2025",
+        "ISO-17359-2018"
+      ],
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "serialOrArrangement": null,
+        "manualRevision": null
+      },
+      "threshold": {
+        "value": null,
+        "unit": null,
+        "sourceId": null,
+        "applicableConditions": null
+      },
+      "plannedOnly": true,
+      "observedResult": null,
+      "engineeringReview": "pending",
+      "oemEffectiveProcedureVerified": false,
+      "independentReview": "pending",
+      "confirmsComponentDamage": false
+    },
+    {
+      "id": "ER-FC-HOSE-002-I2",
+      "chainId": "FC-HOSE-002",
+      "investigationId": "I2",
+      "methodId": "EV-15",
+      "intent": "Conferir raio/rota e movimento permissível com desenho e procedimento OEM",
+      "minimumMetadataFields": [
+        "equipmentContext",
+        "inspectionLocation",
+        "isolationStatus",
+        "fixationOrClearanceFeature",
+        "measurementToolIfApplicable",
+        "oemInspectionReference",
+        "dateTime"
+      ],
+      "resultInterpretation": {
+        "supports": "Interferência/dobra excede o requisito especificado",
+        "weakens": "Inspeção documenta geometria dentro do requisito",
+        "inconclusive": "A condição dinâmica é inacessível ou não há especificação aplicável"
+      },
+      "evidenceRequirements": {
+        "collectionContext": "Registrar arranjo de máquina, posição, horário, carga/estado, método, instrumento e condições ambientais que alterem interpretação.",
+        "sourceAndBaseline": "Referência técnica aplicável deve ser identificada antes de declarar fora de especificação; dado histórico deve ser comparável.",
+        "qualityChecks": "Verificar calibração e integridade do instrumento, amostra, registro, contexto de operação e possibilidade de interferências.",
+        "explicitCounterEvidence": "Descrever observação contrária plausível e avaliar hipóteses alternativas; ausência de sintoma não prova inexistência de dano.",
+        "safeMethod": "Testes devem seguir procedimento OEM e controle de energias específico, sem condições de execução assumidas pelo banco."
+      },
+      "priority": "P1",
+      "qualityRisk": "Não inferir causa, componente ou efeito operacional sem evidência comparável e método OEM aplicável.",
+      "sourceIds": [
+        "CAT-HYD-HOSE-INSPECT",
+        "ISO-13379-1-2025",
+        "ISO-17359-2018"
+      ],
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "serialOrArrangement": null,
+        "manualRevision": null
+      },
+      "threshold": {
+        "value": null,
+        "unit": null,
+        "sourceId": null,
+        "applicableConditions": null
+      },
+      "plannedOnly": true,
+      "observedResult": null,
+      "engineeringReview": "pending",
+      "oemEffectiveProcedureVerified": false,
+      "independentReview": "pending",
+      "confirmsComponentDamage": false
+    },
+    {
+      "id": "ER-FC-HOSE-003-I1",
+      "chainId": "FC-HOSE-003",
+      "investigationId": "I1",
+      "methodId": "EV-01",
+      "intent": "Localizar a trilha do fluido após isolamento e resfriamento",
+      "minimumMetadataFields": [
+        "equipmentContext",
+        "inspectionLocation",
+        "isolationStatus",
+        "surfaceCondition",
+        "visualDocumentation",
+        "dateTime"
+      ],
+      "resultInterpretation": {
+        "supports": "Origem na interface sustenta perda local de estanqueidade",
+        "weakens": "Fluxo inicia em porta ou tubo e enfraquece a interface como origem",
+        "inconclusive": "A superfície foi impregnada por vazamento secundário"
+      },
+      "evidenceRequirements": {
+        "collectionContext": "Registrar arranjo de máquina, posição, horário, carga/estado, método, instrumento e condições ambientais que alterem interpretação.",
+        "sourceAndBaseline": "Referência técnica aplicável deve ser identificada antes de declarar fora de especificação; dado histórico deve ser comparável.",
+        "qualityChecks": "Verificar calibração e integridade do instrumento, amostra, registro, contexto de operação e possibilidade de interferências.",
+        "explicitCounterEvidence": "Descrever observação contrária plausível e avaliar hipóteses alternativas; ausência de sintoma não prova inexistência de dano.",
+        "safeMethod": "Testes devem seguir procedimento OEM e controle de energias específico, sem condições de execução assumidas pelo banco."
+      },
+      "priority": "P1",
+      "qualityRisk": "Não inferir causa, componente ou efeito operacional sem evidência comparável e método OEM aplicável.",
+      "sourceIds": [
+        "CAT-HYD-HOSE-INSPECT",
+        "CAT-HYD-HOSE-FAILURE",
+        "ISO-13379-1-2025",
+        "ISO-17359-2018"
+      ],
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "serialOrArrangement": null,
+        "manualRevision": null
+      },
+      "threshold": {
+        "value": null,
+        "unit": null,
+        "sourceId": null,
+        "applicableConditions": null
+      },
+      "plannedOnly": true,
+      "observedResult": null,
+      "engineeringReview": "pending",
+      "oemEffectiveProcedureVerified": false,
+      "independentReview": "pending",
+      "confirmsComponentDamage": false
+    },
+    {
+      "id": "ER-FC-HOSE-003-I2",
+      "chainId": "FC-HOSE-003",
+      "investigationId": "I2",
+      "methodId": "EV-15",
+      "intent": "Comparar montagem, identificação e retenção do terminal com especificação do conjunto",
+      "minimumMetadataFields": [
+        "equipmentContext",
+        "inspectionLocation",
+        "isolationStatus",
+        "fixationOrClearanceFeature",
+        "measurementToolIfApplicable",
+        "oemInspectionReference",
+        "dateTime"
+      ],
+      "resultInterpretation": {
+        "supports": "Montagem não conforme sustenta hipótese de defeito de conexão",
+        "weakens": "Montagem documentada conforme não descarta defeito oculto, mas reduz suspeita",
+        "inconclusive": "Sem histórico/identificação da montagem não se pode avaliar"
+      },
+      "evidenceRequirements": {
+        "collectionContext": "Registrar arranjo de máquina, posição, horário, carga/estado, método, instrumento e condições ambientais que alterem interpretação.",
+        "sourceAndBaseline": "Referência técnica aplicável deve ser identificada antes de declarar fora de especificação; dado histórico deve ser comparável.",
+        "qualityChecks": "Verificar calibração e integridade do instrumento, amostra, registro, contexto de operação e possibilidade de interferências.",
+        "explicitCounterEvidence": "Descrever observação contrária plausível e avaliar hipóteses alternativas; ausência de sintoma não prova inexistência de dano.",
+        "safeMethod": "Testes devem seguir procedimento OEM e controle de energias específico, sem condições de execução assumidas pelo banco."
+      },
+      "priority": "P1",
+      "qualityRisk": "Não inferir causa, componente ou efeito operacional sem evidência comparável e método OEM aplicável.",
+      "sourceIds": [
+        "CAT-HYD-HOSE-INSPECT",
+        "CAT-HYD-HOSE-FAILURE",
+        "ISO-13379-1-2025",
+        "ISO-17359-2018"
+      ],
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "serialOrArrangement": null,
+        "manualRevision": null
+      },
+      "threshold": {
+        "value": null,
+        "unit": null,
+        "sourceId": null,
+        "applicableConditions": null
+      },
+      "plannedOnly": true,
+      "observedResult": null,
+      "engineeringReview": "pending",
+      "oemEffectiveProcedureVerified": false,
+      "independentReview": "pending",
+      "confirmsComponentDamage": false
+    },
+    {
+      "id": "ER-FC-HOSE-004-I1",
+      "chainId": "FC-HOSE-004",
+      "investigationId": "I1",
+      "methodId": "EV-01",
+      "intent": "Examinar cobertura, pontos quentes adjacentes, suportes e proteção existente",
+      "minimumMetadataFields": [
+        "equipmentContext",
+        "inspectionLocation",
+        "isolationStatus",
+        "surfaceCondition",
+        "visualDocumentation",
+        "dateTime"
+      ],
+      "resultInterpretation": {
+        "supports": "Dano concentrado próximo a calor aumenta plausibilidade",
+        "weakens": "Ausência de exposição identificável enfraquece calor como causa predominante",
+        "inconclusive": "A fonte de calor é intermitente ou não foi observada"
+      },
+      "evidenceRequirements": {
+        "collectionContext": "Registrar arranjo de máquina, posição, horário, carga/estado, método, instrumento e condições ambientais que alterem interpretação.",
+        "sourceAndBaseline": "Referência técnica aplicável deve ser identificada antes de declarar fora de especificação; dado histórico deve ser comparável.",
+        "qualityChecks": "Verificar calibração e integridade do instrumento, amostra, registro, contexto de operação e possibilidade de interferências.",
+        "explicitCounterEvidence": "Descrever observação contrária plausível e avaliar hipóteses alternativas; ausência de sintoma não prova inexistência de dano.",
+        "safeMethod": "Testes devem seguir procedimento OEM e controle de energias específico, sem condições de execução assumidas pelo banco."
+      },
+      "priority": "P1",
+      "qualityRisk": "Não inferir causa, componente ou efeito operacional sem evidência comparável e método OEM aplicável.",
+      "sourceIds": [
+        "CAT-HYD-HOSE-INSPECT",
+        "ISO-13379-1-2025",
+        "ISO-17359-2018"
+      ],
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "serialOrArrangement": null,
+        "manualRevision": null
+      },
+      "threshold": {
+        "value": null,
+        "unit": null,
+        "sourceId": null,
+        "applicableConditions": null
+      },
+      "plannedOnly": true,
+      "observedResult": null,
+      "engineeringReview": "pending",
+      "oemEffectiveProcedureVerified": false,
+      "independentReview": "pending",
+      "confirmsComponentDamage": false
+    },
+    {
+      "id": "ER-FC-HOSE-004-I2",
+      "chainId": "FC-HOSE-004",
+      "investigationId": "I2",
+      "methodId": "EV-03",
+      "intent": "Rever tendência de temperatura sob condições aprovadas e limites de material",
+      "minimumMetadataFields": [
+        "equipmentContext",
+        "measurementLocation",
+        "instrumentId",
+        "surfaceEmissivityOrLimitation",
+        "ambientTemperature",
+        "loadOrOperatingState",
+        "comparisonBasis",
+        "dateTime"
+      ],
+      "resultInterpretation": {
+        "supports": "Temperatura medida, se exceder a especificação do conjunto, corrobora exposição inadequada",
+        "weakens": "Exposição dentro dos limites enfraquece hipótese térmica",
+        "inconclusive": "Não há medição confiável ou especificação de temperatura"
+      },
+      "evidenceRequirements": {
+        "collectionContext": "Registrar arranjo de máquina, posição, horário, carga/estado, método, instrumento e condições ambientais que alterem interpretação.",
+        "sourceAndBaseline": "Referência técnica aplicável deve ser identificada antes de declarar fora de especificação; dado histórico deve ser comparável.",
+        "qualityChecks": "Verificar calibração e integridade do instrumento, amostra, registro, contexto de operação e possibilidade de interferências.",
+        "explicitCounterEvidence": "Descrever observação contrária plausível e avaliar hipóteses alternativas; ausência de sintoma não prova inexistência de dano.",
+        "safeMethod": "Testes devem seguir procedimento OEM e controle de energias específico, sem condições de execução assumidas pelo banco."
+      },
+      "priority": "P1",
+      "qualityRisk": "Não inferir causa, componente ou efeito operacional sem evidência comparável e método OEM aplicável.",
+      "sourceIds": [
+        "CAT-HYD-HOSE-INSPECT",
+        "ISO-13379-1-2025",
+        "ISO-17359-2018"
+      ],
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "serialOrArrangement": null,
+        "manualRevision": null
+      },
+      "threshold": {
+        "value": null,
+        "unit": null,
+        "sourceId": null,
+        "applicableConditions": null
+      },
+      "plannedOnly": true,
+      "observedResult": null,
+      "engineeringReview": "pending",
+      "oemEffectiveProcedureVerified": false,
+      "independentReview": "pending",
+      "confirmsComponentDamage": false
+    },
+    {
+      "id": "ER-FC-FD-001-I1",
+      "chainId": "FC-FD-001",
+      "investigationId": "I1",
+      "methodId": "EV-11",
+      "intent": "Comparar evolução, tamanho e aspecto do depósito magnético sob procedimento OEM",
+      "minimumMetadataFields": [
+        "equipmentContext",
+        "compartment",
+        "componentOrFilterId",
+        "removalAndHandlingMethod",
+        "residueMorphology",
+        "photographOrRecord",
+        "baselineOrHistory",
+        "dateTime"
+      ],
+      "resultInterpretation": {
+        "supports": "Crescimento de partículas grosseiras reforça falha ativa, mas não identifica peça nem origem do ingresso",
+        "weakens": "Depósito fino e estável enfraquece desgaste progressivo severo nessa verificação",
+        "inconclusive": "Sem histórico, foto ou material representativo"
+      },
+      "evidenceRequirements": {
+        "collectionContext": "Registrar arranjo de máquina, posição, horário, carga/estado, método, instrumento e condições ambientais que alterem interpretação.",
+        "sourceAndBaseline": "Referência técnica aplicável deve ser identificada antes de declarar fora de especificação; dado histórico deve ser comparável.",
+        "qualityChecks": "Verificar calibração e integridade do instrumento, amostra, registro, contexto de operação e possibilidade de interferências.",
+        "explicitCounterEvidence": "Descrever observação contrária plausível e avaliar hipóteses alternativas; ausência de sintoma não prova inexistência de dano.",
+        "safeMethod": "Testes devem seguir procedimento OEM e controle de energias específico, sem condições de execução assumidas pelo banco."
+      },
+      "priority": "P1",
+      "qualityRisk": "Não inferir causa, componente ou efeito operacional sem evidência comparável e método OEM aplicável.",
+      "sourceIds": [
+        "SKF-WEAR-SURFACE-FATIGUE",
+        "CAT-DRIVE-MAGNET-PLUG",
+        "CAT-FLUID-ANALYSIS-101",
+        "ISO-13379-1-2025",
+        "ISO-17359-2018"
+      ],
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "serialOrArrangement": null,
+        "manualRevision": null
+      },
+      "threshold": {
+        "value": null,
+        "unit": null,
+        "sourceId": null,
+        "applicableConditions": null
+      },
+      "plannedOnly": true,
+      "observedResult": null,
+      "engineeringReview": "pending",
+      "oemEffectiveProcedureVerified": false,
+      "independentReview": "pending",
+      "confirmsComponentDamage": false
+    },
+    {
+      "id": "ER-FC-FD-001-I2",
+      "chainId": "FC-FD-001",
+      "investigationId": "I2",
+      "methodId": "EV-08",
+      "intent": "Confrontar análise de fluido e histórico de coleta, óleo e contaminação",
+      "minimumMetadataFields": [
+        "equipmentContext",
+        "compartment",
+        "fluidProduct",
+        "fluidHours",
+        "samplePoint",
+        "collectionMethod",
+        "laboratoryMethod",
+        "baselineReference",
+        "dateTime"
+      ],
+      "resultInterpretation": {
+        "supports": "Tendência de contaminantes/desgaste com condições consistentes aumenta suspeita",
+        "weakens": "Amostra controlada estável diminui suspeita mas não exclui fragmentos maiores",
+        "inconclusive": "Mudança de lubrificante, coleta contaminada ou histórico insuficiente"
+      },
+      "evidenceRequirements": {
+        "collectionContext": "Registrar arranjo de máquina, posição, horário, carga/estado, método, instrumento e condições ambientais que alterem interpretação.",
+        "sourceAndBaseline": "Referência técnica aplicável deve ser identificada antes de declarar fora de especificação; dado histórico deve ser comparável.",
+        "qualityChecks": "Verificar calibração e integridade do instrumento, amostra, registro, contexto de operação e possibilidade de interferências.",
+        "explicitCounterEvidence": "Descrever observação contrária plausível e avaliar hipóteses alternativas; ausência de sintoma não prova inexistência de dano.",
+        "safeMethod": "Testes devem seguir procedimento OEM e controle de energias específico, sem condições de execução assumidas pelo banco."
+      },
+      "priority": "P0",
+      "qualityRisk": "Metais de óleo podem ser produzidos por falha anterior ou contaminação na coleta; requer produto, horas e tendência.",
+      "sourceIds": [
+        "SKF-WEAR-SURFACE-FATIGUE",
+        "CAT-DRIVE-MAGNET-PLUG",
+        "CAT-FLUID-ANALYSIS-101",
+        "ISO-13379-1-2025",
+        "ISO-17359-2018"
+      ],
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "serialOrArrangement": null,
+        "manualRevision": null
+      },
+      "threshold": {
+        "value": null,
+        "unit": null,
+        "sourceId": null,
+        "applicableConditions": null
+      },
+      "plannedOnly": true,
+      "observedResult": null,
+      "engineeringReview": "pending",
+      "oemEffectiveProcedureVerified": false,
+      "independentReview": "pending",
+      "confirmsComponentDamage": false
+    },
+    {
+      "id": "ER-FC-FD-002-I1",
+      "chainId": "FC-FD-002",
+      "investigationId": "I1",
+      "methodId": "EV-10",
+      "intent": "Confirmar presença de água por método aplicável e amostra representativa",
+      "minimumMetadataFields": [
+        "equipmentContext",
+        "compartment",
+        "samplePoint",
+        "collectionMethod",
+        "testMethod",
+        "interferenceOrQualityCheck",
+        "unit",
+        "baselineReference",
+        "dateTime"
+      ],
+      "resultInterpretation": {
+        "supports": "Água confirmada reforça contaminação real, não condena rolamento",
+        "weakens": "Amostras representativas limpas enfraquecem ingresso ativo",
+        "inconclusive": "Amostragem inadequada ou método com interferência"
+      },
+      "evidenceRequirements": {
+        "collectionContext": "Registrar arranjo de máquina, posição, horário, carga/estado, método, instrumento e condições ambientais que alterem interpretação.",
+        "sourceAndBaseline": "Referência técnica aplicável deve ser identificada antes de declarar fora de especificação; dado histórico deve ser comparável.",
+        "qualityChecks": "Verificar calibração e integridade do instrumento, amostra, registro, contexto de operação e possibilidade de interferências.",
+        "explicitCounterEvidence": "Descrever observação contrária plausível e avaliar hipóteses alternativas; ausência de sintoma não prova inexistência de dano.",
+        "safeMethod": "Testes devem seguir procedimento OEM e controle de energias específico, sem condições de execução assumidas pelo banco."
+      },
+      "priority": "P1",
+      "qualityRisk": "Não inferir causa, componente ou efeito operacional sem evidência comparável e método OEM aplicável.",
+      "sourceIds": [
+        "SKF-ISO15243-BEARING",
+        "CAT-FLUID-ANALYSIS-101",
+        "ISO-13379-1-2025",
+        "ISO-17359-2018"
+      ],
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "serialOrArrangement": null,
+        "manualRevision": null
+      },
+      "threshold": {
+        "value": null,
+        "unit": null,
+        "sourceId": null,
+        "applicableConditions": null
+      },
+      "plannedOnly": true,
+      "observedResult": null,
+      "engineeringReview": "pending",
+      "oemEffectiveProcedureVerified": false,
+      "independentReview": "pending",
+      "confirmsComponentDamage": false
+    },
+    {
+      "id": "ER-FC-FD-002-I2",
+      "chainId": "FC-FD-002",
+      "investigationId": "I2",
+      "methodId": "EV-01",
+      "intent": "Verificar respiro, tampas, vedação e contexto de lavagem após isolamento",
+      "minimumMetadataFields": [
+        "equipmentContext",
+        "inspectionLocation",
+        "isolationStatus",
+        "surfaceCondition",
+        "visualDocumentation",
+        "dateTime"
+      ],
+      "resultInterpretation": {
+        "supports": "Caminho de ingresso encontrado corrobora mecanismo externo",
+        "weakens": "Interfaces íntegras reduzem plausibilidade dessa via mas não eliminam origem alternativa",
+        "inconclusive": "Vedação oculta ou sem condição de inspeção"
+      },
+      "evidenceRequirements": {
+        "collectionContext": "Registrar arranjo de máquina, posição, horário, carga/estado, método, instrumento e condições ambientais que alterem interpretação.",
+        "sourceAndBaseline": "Referência técnica aplicável deve ser identificada antes de declarar fora de especificação; dado histórico deve ser comparável.",
+        "qualityChecks": "Verificar calibração e integridade do instrumento, amostra, registro, contexto de operação e possibilidade de interferências.",
+        "explicitCounterEvidence": "Descrever observação contrária plausível e avaliar hipóteses alternativas; ausência de sintoma não prova inexistência de dano.",
+        "safeMethod": "Testes devem seguir procedimento OEM e controle de energias específico, sem condições de execução assumidas pelo banco."
+      },
+      "priority": "P1",
+      "qualityRisk": "Não inferir causa, componente ou efeito operacional sem evidência comparável e método OEM aplicável.",
+      "sourceIds": [
+        "SKF-ISO15243-BEARING",
+        "CAT-FLUID-ANALYSIS-101",
+        "ISO-13379-1-2025",
+        "ISO-17359-2018"
+      ],
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "serialOrArrangement": null,
+        "manualRevision": null
+      },
+      "threshold": {
+        "value": null,
+        "unit": null,
+        "sourceId": null,
+        "applicableConditions": null
+      },
+      "plannedOnly": true,
+      "observedResult": null,
+      "engineeringReview": "pending",
+      "oemEffectiveProcedureVerified": false,
+      "independentReview": "pending",
+      "confirmsComponentDamage": false
+    },
+    {
+      "id": "ER-FC-FD-003-I1",
+      "chainId": "FC-FD-003",
+      "investigationId": "I1",
+      "methodId": "EV-13",
+      "intent": "Reconciliar produto, horas de óleo, registros de abastecimento e trocas",
+      "minimumMetadataFields": [
+        "equipmentContext",
+        "sourceWorkOrderOrEvent",
+        "componentServiceHistory",
+        "fluidOrPartChangeHistory",
+        "chronology",
+        "dateTime"
+      ],
+      "resultInterpretation": {
+        "supports": "Produto inadequado ou histórico de nível incompatível reforça a hipótese",
+        "weakens": "Produto especificado e nível estável reduzem causa por erro de fluido",
+        "inconclusive": "O registro não identifica produto, compartimento ou volume"
+      },
+      "evidenceRequirements": {
+        "collectionContext": "Registrar arranjo de máquina, posição, horário, carga/estado, método, instrumento e condições ambientais que alterem interpretação.",
+        "sourceAndBaseline": "Referência técnica aplicável deve ser identificada antes de declarar fora de especificação; dado histórico deve ser comparável.",
+        "qualityChecks": "Verificar calibração e integridade do instrumento, amostra, registro, contexto de operação e possibilidade de interferências.",
+        "explicitCounterEvidence": "Descrever observação contrária plausível e avaliar hipóteses alternativas; ausência de sintoma não prova inexistência de dano.",
+        "safeMethod": "Testes devem seguir procedimento OEM e controle de energias específico, sem condições de execução assumidas pelo banco."
+      },
+      "priority": "P1",
+      "qualityRisk": "Não inferir causa, componente ou efeito operacional sem evidência comparável e método OEM aplicável.",
+      "sourceIds": [
+        "SKF-ISO15243-BEARING",
+        "CAT-DRIVE-MAGNET-PLUG",
+        "CAT-FLUID-ANALYSIS-101",
+        "ISO-13379-1-2025",
+        "ISO-17359-2018"
+      ],
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "serialOrArrangement": null,
+        "manualRevision": null
+      },
+      "threshold": {
+        "value": null,
+        "unit": null,
+        "sourceId": null,
+        "applicableConditions": null
+      },
+      "plannedOnly": true,
+      "observedResult": null,
+      "engineeringReview": "pending",
+      "oemEffectiveProcedureVerified": false,
+      "independentReview": "pending",
+      "confirmsComponentDamage": false
+    },
+    {
+      "id": "ER-FC-FD-003-I2",
+      "chainId": "FC-FD-003",
+      "investigationId": "I2",
+      "methodId": "EV-08",
+      "intent": "Comparar viscosidade/condição e tendências de desgaste com baseline adequado",
+      "minimumMetadataFields": [
+        "equipmentContext",
+        "compartment",
+        "fluidProduct",
+        "fluidHours",
+        "samplePoint",
+        "collectionMethod",
+        "laboratoryMethod",
+        "baselineReference",
+        "dateTime"
+      ],
+      "resultInterpretation": {
+        "supports": "Degradação consistente fortalece hipótese, mas não explica por si causa raiz",
+        "weakens": "Tendência e viscosidade estáveis diminuem suspeita de fluido inadequado",
+        "inconclusive": "Mudança de produto, amostra não representativa ou método diverso"
+      },
+      "evidenceRequirements": {
+        "collectionContext": "Registrar arranjo de máquina, posição, horário, carga/estado, método, instrumento e condições ambientais que alterem interpretação.",
+        "sourceAndBaseline": "Referência técnica aplicável deve ser identificada antes de declarar fora de especificação; dado histórico deve ser comparável.",
+        "qualityChecks": "Verificar calibração e integridade do instrumento, amostra, registro, contexto de operação e possibilidade de interferências.",
+        "explicitCounterEvidence": "Descrever observação contrária plausível e avaliar hipóteses alternativas; ausência de sintoma não prova inexistência de dano.",
+        "safeMethod": "Testes devem seguir procedimento OEM e controle de energias específico, sem condições de execução assumidas pelo banco."
+      },
+      "priority": "P1",
+      "qualityRisk": "Não inferir causa, componente ou efeito operacional sem evidência comparável e método OEM aplicável.",
+      "sourceIds": [
+        "SKF-ISO15243-BEARING",
+        "CAT-DRIVE-MAGNET-PLUG",
+        "CAT-FLUID-ANALYSIS-101",
+        "ISO-13379-1-2025",
+        "ISO-17359-2018"
+      ],
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "serialOrArrangement": null,
+        "manualRevision": null
+      },
+      "threshold": {
+        "value": null,
+        "unit": null,
+        "sourceId": null,
+        "applicableConditions": null
+      },
+      "plannedOnly": true,
+      "observedResult": null,
+      "engineeringReview": "pending",
+      "oemEffectiveProcedureVerified": false,
+      "independentReview": "pending",
+      "confirmsComponentDamage": false
+    },
+    {
+      "id": "ER-FC-FD-004-I1",
+      "chainId": "FC-FD-004",
+      "investigationId": "I1",
+      "methodId": "EV-11",
+      "intent": "Inspecionar bujão/fragmentos e tendência anterior mantendo rastreabilidade",
+      "minimumMetadataFields": [
+        "equipmentContext",
+        "compartment",
+        "componentOrFilterId",
+        "removalAndHandlingMethod",
+        "residueMorphology",
+        "photographOrRecord",
+        "baselineOrHistory",
+        "dateTime"
+      ],
+      "resultInterpretation": {
+        "supports": "Fragmentos crescentes sustentam anomalia interna mas não a pista específica",
+        "weakens": "Ausência de fragmentos reduz sinal naquela coleta, não exclui spalling",
+        "inconclusive": "Não há procedimento seguro ou acesso ao bujão no momento"
+      },
+      "evidenceRequirements": {
+        "collectionContext": "Registrar arranjo de máquina, posição, horário, carga/estado, método, instrumento e condições ambientais que alterem interpretação.",
+        "sourceAndBaseline": "Referência técnica aplicável deve ser identificada antes de declarar fora de especificação; dado histórico deve ser comparável.",
+        "qualityChecks": "Verificar calibração e integridade do instrumento, amostra, registro, contexto de operação e possibilidade de interferências.",
+        "explicitCounterEvidence": "Descrever observação contrária plausível e avaliar hipóteses alternativas; ausência de sintoma não prova inexistência de dano.",
+        "safeMethod": "Testes devem seguir procedimento OEM e controle de energias específico, sem condições de execução assumidas pelo banco."
+      },
+      "priority": "P1",
+      "qualityRisk": "Não inferir causa, componente ou efeito operacional sem evidência comparável e método OEM aplicável.",
+      "sourceIds": [
+        "SKF-ISO15243-BEARING",
+        "CAT-DRIVE-MAGNET-PLUG",
+        "SKF-WEAR-SURFACE-FATIGUE",
+        "ISO-13379-1-2025",
+        "ISO-17359-2018"
+      ],
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "serialOrArrangement": null,
+        "manualRevision": null
+      },
+      "threshold": {
+        "value": null,
+        "unit": null,
+        "sourceId": null,
+        "applicableConditions": null
+      },
+      "plannedOnly": true,
+      "observedResult": null,
+      "engineeringReview": "pending",
+      "oemEffectiveProcedureVerified": false,
+      "independentReview": "pending",
+      "confirmsComponentDamage": false
+    },
+    {
+      "id": "ER-FC-FD-004-I2",
+      "chainId": "FC-FD-004",
+      "investigationId": "I2",
+      "methodId": "EV-04",
+      "intent": "Examinar tendência de ruído/vibração com método aplicável e localização",
+      "minimumMetadataFields": [
+        "equipmentContext",
+        "sensorLocation",
+        "rotationalSpeed",
+        "operatingLoad",
+        "instrumentId",
+        "frequencyContentOrSignal",
+        "baselineReference",
+        "dateTime"
+      ],
+      "resultInterpretation": {
+        "supports": "Assinatura compatível e reprodutível em conjunto com outras evidências sustenta dano rotativo",
+        "weakens": "Origem demonstrada fora do comando enfraquece essa hipótese",
+        "inconclusive": "Não há sensor, baseline ou condições de operação comparáveis"
+      },
+      "evidenceRequirements": {
+        "collectionContext": "Registrar arranjo de máquina, posição, horário, carga/estado, método, instrumento e condições ambientais que alterem interpretação.",
+        "sourceAndBaseline": "Referência técnica aplicável deve ser identificada antes de declarar fora de especificação; dado histórico deve ser comparável.",
+        "qualityChecks": "Verificar calibração e integridade do instrumento, amostra, registro, contexto de operação e possibilidade de interferências.",
+        "explicitCounterEvidence": "Descrever observação contrária plausível e avaliar hipóteses alternativas; ausência de sintoma não prova inexistência de dano.",
+        "safeMethod": "Testes devem seguir procedimento OEM e controle de energias específico, sem condições de execução assumidas pelo banco."
+      },
+      "priority": "P1",
+      "qualityRisk": "Não inferir causa, componente ou efeito operacional sem evidência comparável e método OEM aplicável.",
+      "sourceIds": [
+        "SKF-ISO15243-BEARING",
+        "CAT-DRIVE-MAGNET-PLUG",
+        "SKF-WEAR-SURFACE-FATIGUE",
+        "ISO-13379-1-2025",
+        "ISO-17359-2018"
+      ],
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "serialOrArrangement": null,
+        "manualRevision": null
+      },
+      "threshold": {
+        "value": null,
+        "unit": null,
+        "sourceId": null,
+        "applicableConditions": null
+      },
+      "plannedOnly": true,
+      "observedResult": null,
+      "engineeringReview": "pending",
+      "oemEffectiveProcedureVerified": false,
+      "independentReview": "pending",
+      "confirmsComponentDamage": false
+    },
+    {
+      "id": "ER-FC-COOL-001-I1",
+      "chainId": "FC-COOL-001",
+      "investigationId": "I1",
+      "methodId": "EV-01",
+      "intent": "Verificar em condição segura colmeia, espaços entre módulos e obstruções visíveis",
+      "minimumMetadataFields": [
+        "equipmentContext",
+        "inspectionLocation",
+        "isolationStatus",
+        "surfaceCondition",
+        "visualDocumentation",
+        "dateTime"
+      ],
+      "resultInterpretation": {
+        "supports": "Obstrução relevante no fluxo de ar é compatível com essa hipótese",
+        "weakens": "Passagens desobstruídas e sem depósitos visíveis reduzem plausibilidade da obstrução externa",
+        "inconclusive": "Regiões internas não podem ser acessadas ou inspecionadas"
+      },
+      "evidenceRequirements": {
+        "collectionContext": "Registrar arranjo de máquina, posição, horário, carga/estado, método, instrumento e condições ambientais que alterem interpretação.",
+        "sourceAndBaseline": "Referência técnica aplicável deve ser identificada antes de declarar fora de especificação; dado histórico deve ser comparável.",
+        "qualityChecks": "Verificar calibração e integridade do instrumento, amostra, registro, contexto de operação e possibilidade de interferências.",
+        "explicitCounterEvidence": "Descrever observação contrária plausível e avaliar hipóteses alternativas; ausência de sintoma não prova inexistência de dano.",
+        "safeMethod": "Testes devem seguir procedimento OEM e controle de energias específico, sem condições de execução assumidas pelo banco."
+      },
+      "priority": "P0",
+      "qualityRisk": "Detrito externo em colmeia é condição de fluxo de ar; não prova obstrução de passagens internas.",
+      "sourceIds": [
+        "CAT-RADIATOR-CARE",
+        "CAT-EXC-COOL-CHECKLIST",
+        "ISO-13379-1-2025",
+        "ISO-17359-2018"
+      ],
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "serialOrArrangement": null,
+        "manualRevision": null
+      },
+      "threshold": {
+        "value": null,
+        "unit": null,
+        "sourceId": null,
+        "applicableConditions": null
+      },
+      "plannedOnly": true,
+      "observedResult": null,
+      "engineeringReview": "pending",
+      "oemEffectiveProcedureVerified": false,
+      "independentReview": "pending",
+      "confirmsComponentDamage": false
+    },
+    {
+      "id": "ER-FC-COOL-001-I2",
+      "chainId": "FC-COOL-001",
+      "investigationId": "I2",
+      "methodId": "EV-14",
+      "intent": "Correlacionar registros de temperatura, carga, ambiente e histórico de limpeza",
+      "minimumMetadataFields": [
+        "equipmentContext",
+        "signalId",
+        "measurementWindow",
+        "operatingLoad",
+        "sensorHealth",
+        "dataCompleteness",
+        "baselineReference",
+        "dateTime"
+      ],
+      "resultInterpretation": {
+        "supports": "Elevação de temperatura em carga e melhoria após limpeza documentada reforçam restrição de ar",
+        "weakens": "Temperatura anormal persiste com fluxo limpo e ventilação confirmada, exigindo investigar outras causas",
+        "inconclusive": "Não há baseline de temperatura ou condição de carga comparável"
+      },
+      "evidenceRequirements": {
+        "collectionContext": "Registrar arranjo de máquina, posição, horário, carga/estado, método, instrumento e condições ambientais que alterem interpretação.",
+        "sourceAndBaseline": "Referência técnica aplicável deve ser identificada antes de declarar fora de especificação; dado histórico deve ser comparável.",
+        "qualityChecks": "Verificar calibração e integridade do instrumento, amostra, registro, contexto de operação e possibilidade de interferências.",
+        "explicitCounterEvidence": "Descrever observação contrária plausível e avaliar hipóteses alternativas; ausência de sintoma não prova inexistência de dano.",
+        "safeMethod": "Testes devem seguir procedimento OEM e controle de energias específico, sem condições de execução assumidas pelo banco."
+      },
+      "priority": "P1",
+      "qualityRisk": "Não inferir causa, componente ou efeito operacional sem evidência comparável e método OEM aplicável.",
+      "sourceIds": [
+        "CAT-RADIATOR-CARE",
+        "CAT-EXC-COOL-CHECKLIST",
+        "ISO-13379-1-2025",
+        "ISO-17359-2018"
+      ],
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "serialOrArrangement": null,
+        "manualRevision": null
+      },
+      "threshold": {
+        "value": null,
+        "unit": null,
+        "sourceId": null,
+        "applicableConditions": null
+      },
+      "plannedOnly": true,
+      "observedResult": null,
+      "engineeringReview": "pending",
+      "oemEffectiveProcedureVerified": false,
+      "independentReview": "pending",
+      "confirmsComponentDamage": false
+    },
+    {
+      "id": "ER-FC-COOL-002-I1",
+      "chainId": "FC-COOL-002",
+      "investigationId": "I1",
+      "methodId": "EV-01",
+      "intent": "Com sistema frio, despressurizado e isolado segundo OMM, identificar origem da trilha de líquido",
+      "minimumMetadataFields": [
+        "equipmentContext",
+        "inspectionLocation",
+        "isolationStatus",
+        "surfaceCondition",
+        "visualDocumentation",
+        "dateTime"
+      ],
+      "resultInterpretation": {
+        "supports": "Origem localizada na mangueira ou união sustenta perda de estanqueidade na linha",
+        "weakens": "Fonte identificada no radiador/bomba enfraquece falha da mangueira",
+        "inconclusive": "Resíduo espalhado e acesso insuficiente impedem localizar a origem"
+      },
+      "evidenceRequirements": {
+        "collectionContext": "Registrar arranjo de máquina, posição, horário, carga/estado, método, instrumento e condições ambientais que alterem interpretação.",
+        "sourceAndBaseline": "Referência técnica aplicável deve ser identificada antes de declarar fora de especificação; dado histórico deve ser comparável.",
+        "qualityChecks": "Verificar calibração e integridade do instrumento, amostra, registro, contexto de operação e possibilidade de interferências.",
+        "explicitCounterEvidence": "Descrever observação contrária plausível e avaliar hipóteses alternativas; ausência de sintoma não prova inexistência de dano.",
+        "safeMethod": "Testes devem seguir procedimento OEM e controle de energias específico, sem condições de execução assumidas pelo banco."
+      },
+      "priority": "P1",
+      "qualityRisk": "Não inferir causa, componente ou efeito operacional sem evidência comparável e método OEM aplicável.",
+      "sourceIds": [
+        "CAT-RADIATOR-CARE",
+        "CAT-EXC-COOL-CHECKLIST",
+        "ISO-13379-1-2025",
+        "ISO-17359-2018"
+      ],
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "serialOrArrangement": null,
+        "manualRevision": null
+      },
+      "threshold": {
+        "value": null,
+        "unit": null,
+        "sourceId": null,
+        "applicableConditions": null
+      },
+      "plannedOnly": true,
+      "observedResult": null,
+      "engineeringReview": "pending",
+      "oemEffectiveProcedureVerified": false,
+      "independentReview": "pending",
+      "confirmsComponentDamage": false
+    },
+    {
+      "id": "ER-FC-COOL-002-I2",
+      "chainId": "FC-COOL-002",
+      "investigationId": "I2",
+      "methodId": "EV-13",
+      "intent": "Revisar histórico de reposição de fluido, intervenções e variações de nível em condições comparáveis",
+      "minimumMetadataFields": [
+        "equipmentContext",
+        "sourceWorkOrderOrEvent",
+        "componentServiceHistory",
+        "fluidOrPartChangeHistory",
+        "chronology",
+        "dateTime"
+      ],
+      "resultInterpretation": {
+        "supports": "Reposição recorrente com fuga visual localizada reforça perda externa",
+        "weakens": "Histórico estável de nível com leitura consistente reduz suspeita de perda progressiva",
+        "inconclusive": "Registros não discriminam consumo, drenagem ou diferenças de leitura"
+      },
+      "evidenceRequirements": {
+        "collectionContext": "Registrar arranjo de máquina, posição, horário, carga/estado, método, instrumento e condições ambientais que alterem interpretação.",
+        "sourceAndBaseline": "Referência técnica aplicável deve ser identificada antes de declarar fora de especificação; dado histórico deve ser comparável.",
+        "qualityChecks": "Verificar calibração e integridade do instrumento, amostra, registro, contexto de operação e possibilidade de interferências.",
+        "explicitCounterEvidence": "Descrever observação contrária plausível e avaliar hipóteses alternativas; ausência de sintoma não prova inexistência de dano.",
+        "safeMethod": "Testes devem seguir procedimento OEM e controle de energias específico, sem condições de execução assumidas pelo banco."
+      },
+      "priority": "P1",
+      "qualityRisk": "Não inferir causa, componente ou efeito operacional sem evidência comparável e método OEM aplicável.",
+      "sourceIds": [
+        "CAT-RADIATOR-CARE",
+        "CAT-EXC-COOL-CHECKLIST",
+        "ISO-13379-1-2025",
+        "ISO-17359-2018"
+      ],
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "serialOrArrangement": null,
+        "manualRevision": null
+      },
+      "threshold": {
+        "value": null,
+        "unit": null,
+        "sourceId": null,
+        "applicableConditions": null
+      },
+      "plannedOnly": true,
+      "observedResult": null,
+      "engineeringReview": "pending",
+      "oemEffectiveProcedureVerified": false,
+      "independentReview": "pending",
+      "confirmsComponentDamage": false
+    },
+    {
+      "id": "ER-FC-COOL-003-I1",
+      "chainId": "FC-COOL-003",
+      "investigationId": "I1",
+      "methodId": "EV-01",
+      "intent": "Inspecionar correias, acoplamentos e acionamentos somente se existentes na configuração e com máquina segura",
+      "minimumMetadataFields": [
+        "equipmentContext",
+        "inspectionLocation",
+        "isolationStatus",
+        "surfaceCondition",
+        "visualDocumentation",
+        "dateTime"
+      ],
+      "resultInterpretation": {
+        "supports": "Anomalia visível em elemento presente reforça falha do acionamento",
+        "weakens": "Arquitetura sem correia invalida a hipótese específica de patinamento dessa correia",
+        "inconclusive": "Acesso insuficiente ao ventilador ou impossibilidade de identificar arquitetura"
+      },
+      "evidenceRequirements": {
+        "collectionContext": "Registrar arranjo de máquina, posição, horário, carga/estado, método, instrumento e condições ambientais que alterem interpretação.",
+        "sourceAndBaseline": "Referência técnica aplicável deve ser identificada antes de declarar fora de especificação; dado histórico deve ser comparável.",
+        "qualityChecks": "Verificar calibração e integridade do instrumento, amostra, registro, contexto de operação e possibilidade de interferências.",
+        "explicitCounterEvidence": "Descrever observação contrária plausível e avaliar hipóteses alternativas; ausência de sintoma não prova inexistência de dano.",
+        "safeMethod": "Testes devem seguir procedimento OEM e controle de energias específico, sem condições de execução assumidas pelo banco."
+      },
+      "priority": "P1",
+      "qualityRisk": "Não inferir causa, componente ou efeito operacional sem evidência comparável e método OEM aplicável.",
+      "sourceIds": [
+        "CAT-COOLING-HEAT-CHAIN",
+        "CAT-COOLING-FAN-REVERSE",
+        "ISO-13379-1-2025",
+        "ISO-17359-2018"
+      ],
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "serialOrArrangement": null,
+        "manualRevision": null
+      },
+      "threshold": {
+        "value": null,
+        "unit": null,
+        "sourceId": null,
+        "applicableConditions": null
+      },
+      "plannedOnly": true,
+      "observedResult": null,
+      "engineeringReview": "pending",
+      "oemEffectiveProcedureVerified": false,
+      "independentReview": "pending",
+      "confirmsComponentDamage": false
+    },
+    {
+      "id": "ER-FC-COOL-003-I2",
+      "chainId": "FC-COOL-003",
+      "investigationId": "I2",
+      "methodId": "EV-14",
+      "intent": "Revisar demanda e resposta do ventilador em parâmetros disponíveis e condição operacional compatível",
+      "minimumMetadataFields": [
+        "equipmentContext",
+        "signalId",
+        "measurementWindow",
+        "operatingLoad",
+        "sensorHealth",
+        "dataCompleteness",
+        "baselineReference",
+        "dateTime"
+      ],
+      "resultInterpretation": {
+        "supports": "Resposta não condizente com comando documentado sustenta insuficiência de ventilação",
+        "weakens": "Resposta documentada conforme OMM enfraquece falha de acionamento naquela condição",
+        "inconclusive": "Ausência de canal confiável ou procedimento de teste da configuração"
+      },
+      "evidenceRequirements": {
+        "collectionContext": "Registrar arranjo de máquina, posição, horário, carga/estado, método, instrumento e condições ambientais que alterem interpretação.",
+        "sourceAndBaseline": "Referência técnica aplicável deve ser identificada antes de declarar fora de especificação; dado histórico deve ser comparável.",
+        "qualityChecks": "Verificar calibração e integridade do instrumento, amostra, registro, contexto de operação e possibilidade de interferências.",
+        "explicitCounterEvidence": "Descrever observação contrária plausível e avaliar hipóteses alternativas; ausência de sintoma não prova inexistência de dano.",
+        "safeMethod": "Testes devem seguir procedimento OEM e controle de energias específico, sem condições de execução assumidas pelo banco."
+      },
+      "priority": "P1",
+      "qualityRisk": "Não inferir causa, componente ou efeito operacional sem evidência comparável e método OEM aplicável.",
+      "sourceIds": [
+        "CAT-COOLING-HEAT-CHAIN",
+        "CAT-COOLING-FAN-REVERSE",
+        "ISO-13379-1-2025",
+        "ISO-17359-2018"
+      ],
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "serialOrArrangement": null,
+        "manualRevision": null
+      },
+      "threshold": {
+        "value": null,
+        "unit": null,
+        "sourceId": null,
+        "applicableConditions": null
+      },
+      "plannedOnly": true,
+      "observedResult": null,
+      "engineeringReview": "pending",
+      "oemEffectiveProcedureVerified": false,
+      "independentReview": "pending",
+      "confirmsComponentDamage": false
+    },
+    {
+      "id": "ER-FC-COOL-004-I1",
+      "chainId": "FC-COOL-004",
+      "investigationId": "I1",
+      "methodId": "EV-10",
+      "intent": "Examinar histórico e análise do fluido de arrefecimento por método e referência adequados",
+      "minimumMetadataFields": [
+        "equipmentContext",
+        "compartment",
+        "samplePoint",
+        "collectionMethod",
+        "testMethod",
+        "interferenceOrQualityCheck",
+        "unit",
+        "baselineReference",
+        "dateTime"
+      ],
+      "resultInterpretation": {
+        "supports": "Contaminação e condição fora da especificação sustentam risco de depósito/corrosão, mas não comprovam obstrução",
+        "weakens": "Amostras e histórico estáveis reduzem hipótese de fluido inadequado",
+        "inconclusive": "Amostra é não representativa ou faltam referência e evolução"
+      },
+      "evidenceRequirements": {
+        "collectionContext": "Registrar arranjo de máquina, posição, horário, carga/estado, método, instrumento e condições ambientais que alterem interpretação.",
+        "sourceAndBaseline": "Referência técnica aplicável deve ser identificada antes de declarar fora de especificação; dado histórico deve ser comparável.",
+        "qualityChecks": "Verificar calibração e integridade do instrumento, amostra, registro, contexto de operação e possibilidade de interferências.",
+        "explicitCounterEvidence": "Descrever observação contrária plausível e avaliar hipóteses alternativas; ausência de sintoma não prova inexistência de dano.",
+        "safeMethod": "Testes devem seguir procedimento OEM e controle de energias específico, sem condições de execução assumidas pelo banco."
+      },
+      "priority": "P1",
+      "qualityRisk": "Não inferir causa, componente ou efeito operacional sem evidência comparável e método OEM aplicável.",
+      "sourceIds": [
+        "CAT-RADIATOR-CARE",
+        "CAT-COOLING-HEAT-CHAIN",
+        "ISO-13379-1-2025",
+        "ISO-17359-2018"
+      ],
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "serialOrArrangement": null,
+        "manualRevision": null
+      },
+      "threshold": {
+        "value": null,
+        "unit": null,
+        "sourceId": null,
+        "applicableConditions": null
+      },
+      "plannedOnly": true,
+      "observedResult": null,
+      "engineeringReview": "pending",
+      "oemEffectiveProcedureVerified": false,
+      "independentReview": "pending",
+      "confirmsComponentDamage": false
+    },
+    {
+      "id": "ER-FC-COOL-004-I2",
+      "chainId": "FC-COOL-004",
+      "investigationId": "I2",
+      "methodId": "EV-12",
+      "intent": "Investigar vazão ou transferência térmica apenas por procedimento OEM efetivo e seguro",
+      "minimumMetadataFields": [
+        "equipmentContext",
+        "testConfiguration",
+        "safetyAndIsolationStatus",
+        "operatingLoad",
+        "fluidTemperatureIfApplicable",
+        "measurementInstrument",
+        "oemProcedureReference",
+        "baselineOrAcceptanceCriterion",
+        "dateTime"
+      ],
+      "resultInterpretation": {
+        "supports": "Queda de desempenho especificamente atribuída à passagem do radiador sustenta restrição interna",
+        "weakens": "Circulação e passagem adequadas enfraquecem hipótese de restrição interna",
+        "inconclusive": "Sem referência OEM não há conclusão possível por diferença térmica isolada"
+      },
+      "evidenceRequirements": {
+        "collectionContext": "Registrar arranjo de máquina, posição, horário, carga/estado, método, instrumento e condições ambientais que alterem interpretação.",
+        "sourceAndBaseline": "Referência técnica aplicável deve ser identificada antes de declarar fora de especificação; dado histórico deve ser comparável.",
+        "qualityChecks": "Verificar calibração e integridade do instrumento, amostra, registro, contexto de operação e possibilidade de interferências.",
+        "explicitCounterEvidence": "Descrever observação contrária plausível e avaliar hipóteses alternativas; ausência de sintoma não prova inexistência de dano.",
+        "safeMethod": "Testes devem seguir procedimento OEM e controle de energias específico, sem condições de execução assumidas pelo banco."
+      },
+      "priority": "P1",
+      "qualityRisk": "Não inferir causa, componente ou efeito operacional sem evidência comparável e método OEM aplicável.",
+      "sourceIds": [
+        "CAT-RADIATOR-CARE",
+        "CAT-COOLING-HEAT-CHAIN",
+        "ISO-13379-1-2025",
+        "ISO-17359-2018"
+      ],
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "serialOrArrangement": null,
+        "manualRevision": null
+      },
+      "threshold": {
+        "value": null,
+        "unit": null,
+        "sourceId": null,
+        "applicableConditions": null
+      },
+      "plannedOnly": true,
+      "observedResult": null,
+      "engineeringReview": "pending",
+      "oemEffectiveProcedureVerified": false,
+      "independentReview": "pending",
+      "confirmsComponentDamage": false
+    },
+    {
+      "id": "ER-FC-TRACK-001-I1",
+      "chainId": "FC-TRACK-001",
+      "investigationId": "I1",
+      "methodId": "EV-01",
+      "intent": "Inspecionar em condição imobilizada e segura acúmulos e áreas de contato do rolete",
+      "minimumMetadataFields": [
+        "equipmentContext",
+        "inspectionLocation",
+        "isolationStatus",
+        "surfaceCondition",
+        "visualDocumentation",
+        "dateTime"
+      ],
+      "resultInterpretation": {
+        "supports": "Material compactado impedindo movimento reforça hipótese externa",
+        "weakens": "Região desobstruída sem marcas reduz hipótese de travamento por detritos",
+        "inconclusive": "A região está inacessível ou não é seguro remover material"
+      },
+      "evidenceRequirements": {
+        "collectionContext": "Registrar arranjo de máquina, posição, horário, carga/estado, método, instrumento e condições ambientais que alterem interpretação.",
+        "sourceAndBaseline": "Referência técnica aplicável deve ser identificada antes de declarar fora de especificação; dado histórico deve ser comparável.",
+        "qualityChecks": "Verificar calibração e integridade do instrumento, amostra, registro, contexto de operação e possibilidade de interferências.",
+        "explicitCounterEvidence": "Descrever observação contrária plausível e avaliar hipóteses alternativas; ausência de sintoma não prova inexistência de dano.",
+        "safeMethod": "Testes devem seguir procedimento OEM e controle de energias específico, sem condições de execução assumidas pelo banco."
+      },
+      "priority": "P1",
+      "qualityRisk": "Não inferir causa, componente ou efeito operacional sem evidência comparável e método OEM aplicável.",
+      "sourceIds": [
+        "CAT-DOZER-UC-MAINT",
+        "CAT-STEEL-TRACKS",
+        "ISO-13379-1-2025",
+        "ISO-17359-2018"
+      ],
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "serialOrArrangement": null,
+        "manualRevision": null
+      },
+      "threshold": {
+        "value": null,
+        "unit": null,
+        "sourceId": null,
+        "applicableConditions": null
+      },
+      "plannedOnly": true,
+      "observedResult": null,
+      "engineeringReview": "pending",
+      "oemEffectiveProcedureVerified": false,
+      "independentReview": "pending",
+      "confirmsComponentDamage": false
+    },
+    {
+      "id": "ER-FC-TRACK-001-I2",
+      "chainId": "FC-TRACK-001",
+      "investigationId": "I2",
+      "methodId": "EV-03",
+      "intent": "Comparar temperatura de elementos semelhantes com termometria sem contato e condição documentada",
+      "minimumMetadataFields": [
+        "equipmentContext",
+        "measurementLocation",
+        "instrumentId",
+        "surfaceEmissivityOrLimitation",
+        "ambientTemperature",
+        "loadOrOperatingState",
+        "comparisonBasis",
+        "dateTime"
+      ],
+      "resultInterpretation": {
+        "supports": "Aquecimento localizado sugere atrito, mas não diferencia automaticamente causa interna e externa",
+        "weakens": "Temperaturas comparáveis reduzem suspeita de arrasto persistente naquela condição",
+        "inconclusive": "Máquina parada há muito tempo ou emissividades diferentes invalidam comparação"
+      },
+      "evidenceRequirements": {
+        "collectionContext": "Registrar arranjo de máquina, posição, horário, carga/estado, método, instrumento e condições ambientais que alterem interpretação.",
+        "sourceAndBaseline": "Referência técnica aplicável deve ser identificada antes de declarar fora de especificação; dado histórico deve ser comparável.",
+        "qualityChecks": "Verificar calibração e integridade do instrumento, amostra, registro, contexto de operação e possibilidade de interferências.",
+        "explicitCounterEvidence": "Descrever observação contrária plausível e avaliar hipóteses alternativas; ausência de sintoma não prova inexistência de dano.",
+        "safeMethod": "Testes devem seguir procedimento OEM e controle de energias específico, sem condições de execução assumidas pelo banco."
+      },
+      "priority": "P0",
+      "qualityRisk": "Temperatura de rolete sem carga, emissividade e referência comparável não confirma dano.",
+      "sourceIds": [
+        "CAT-DOZER-UC-MAINT",
+        "CAT-STEEL-TRACKS",
+        "ISO-13379-1-2025",
+        "ISO-17359-2018"
+      ],
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "serialOrArrangement": null,
+        "manualRevision": null
+      },
+      "threshold": {
+        "value": null,
+        "unit": null,
+        "sourceId": null,
+        "applicableConditions": null
+      },
+      "plannedOnly": true,
+      "observedResult": null,
+      "engineeringReview": "pending",
+      "oemEffectiveProcedureVerified": false,
+      "independentReview": "pending",
+      "confirmsComponentDamage": false
+    },
+    {
+      "id": "ER-FC-TRACK-002-I1",
+      "chainId": "FC-TRACK-002",
+      "investigationId": "I1",
+      "methodId": "EV-01",
+      "intent": "Inspecionar a região de vedação e diferenciar origem de resíduos oleosos sem desmontagem",
+      "minimumMetadataFields": [
+        "equipmentContext",
+        "inspectionLocation",
+        "isolationStatus",
+        "surfaceCondition",
+        "visualDocumentation",
+        "dateTime"
+      ],
+      "resultInterpretation": {
+        "supports": "Trilha originada na vedação reforça perda de estanqueidade",
+        "weakens": "Vedação sem fuga e origem externa documentada enfraquecem essa hipótese",
+        "inconclusive": "Solo e graxa ocultam a origem do líquido"
+      },
+      "evidenceRequirements": {
+        "collectionContext": "Registrar arranjo de máquina, posição, horário, carga/estado, método, instrumento e condições ambientais que alterem interpretação.",
+        "sourceAndBaseline": "Referência técnica aplicável deve ser identificada antes de declarar fora de especificação; dado histórico deve ser comparável.",
+        "qualityChecks": "Verificar calibração e integridade do instrumento, amostra, registro, contexto de operação e possibilidade de interferências.",
+        "explicitCounterEvidence": "Descrever observação contrária plausível e avaliar hipóteses alternativas; ausência de sintoma não prova inexistência de dano.",
+        "safeMethod": "Testes devem seguir procedimento OEM e controle de energias específico, sem condições de execução assumidas pelo banco."
+      },
+      "priority": "P1",
+      "qualityRisk": "Não inferir causa, componente ou efeito operacional sem evidência comparável e método OEM aplicável.",
+      "sourceIds": [
+        "CAT-STEEL-TRACKS",
+        "CAT-DOZER-UC-MAINT",
+        "ISO-13379-1-2025",
+        "ISO-17359-2018"
+      ],
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "serialOrArrangement": null,
+        "manualRevision": null
+      },
+      "threshold": {
+        "value": null,
+        "unit": null,
+        "sourceId": null,
+        "applicableConditions": null
+      },
+      "plannedOnly": true,
+      "observedResult": null,
+      "engineeringReview": "pending",
+      "oemEffectiveProcedureVerified": false,
+      "independentReview": "pending",
+      "confirmsComponentDamage": false
+    },
+    {
+      "id": "ER-FC-TRACK-002-I2",
+      "chainId": "FC-TRACK-002",
+      "investigationId": "I2",
+      "methodId": "EV-03",
+      "intent": "Comparar temperatura sem contato entre roletes e históricos equivalentes",
+      "minimumMetadataFields": [
+        "equipmentContext",
+        "measurementLocation",
+        "instrumentId",
+        "surfaceEmissivityOrLimitation",
+        "ambientTemperature",
+        "loadOrOperatingState",
+        "comparisonBasis",
+        "dateTime"
+      ],
+      "resultInterpretation": {
+        "supports": "Temperatura localizada associada a fuga independente fortalece suspeita de atrito interno",
+        "weakens": "Sem aquecimento ou fuga reduz suporte, mas não elimina dano incipiente",
+        "inconclusive": "Operação e condição ambiental não são comparáveis"
+      },
+      "evidenceRequirements": {
+        "collectionContext": "Registrar arranjo de máquina, posição, horário, carga/estado, método, instrumento e condições ambientais que alterem interpretação.",
+        "sourceAndBaseline": "Referência técnica aplicável deve ser identificada antes de declarar fora de especificação; dado histórico deve ser comparável.",
+        "qualityChecks": "Verificar calibração e integridade do instrumento, amostra, registro, contexto de operação e possibilidade de interferências.",
+        "explicitCounterEvidence": "Descrever observação contrária plausível e avaliar hipóteses alternativas; ausência de sintoma não prova inexistência de dano.",
+        "safeMethod": "Testes devem seguir procedimento OEM e controle de energias específico, sem condições de execução assumidas pelo banco."
+      },
+      "priority": "P1",
+      "qualityRisk": "Não inferir causa, componente ou efeito operacional sem evidência comparável e método OEM aplicável.",
+      "sourceIds": [
+        "CAT-STEEL-TRACKS",
+        "CAT-DOZER-UC-MAINT",
+        "ISO-13379-1-2025",
+        "ISO-17359-2018"
+      ],
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "serialOrArrangement": null,
+        "manualRevision": null
+      },
+      "threshold": {
+        "value": null,
+        "unit": null,
+        "sourceId": null,
+        "applicableConditions": null
+      },
+      "plannedOnly": true,
+      "observedResult": null,
+      "engineeringReview": "pending",
+      "oemEffectiveProcedureVerified": false,
+      "independentReview": "pending",
+      "confirmsComponentDamage": false
+    },
+    {
+      "id": "ER-FC-TRACK-003-I1",
+      "chainId": "FC-TRACK-003",
+      "investigationId": "I1",
+      "methodId": "EV-01",
+      "intent": "Inspecionar ressaltos, desgaste desigual e posição aparente da roda-guia",
+      "minimumMetadataFields": [
+        "equipmentContext",
+        "inspectionLocation",
+        "isolationStatus",
+        "surfaceCondition",
+        "visualDocumentation",
+        "dateTime"
+      ],
+      "resultInterpretation": {
+        "supports": "Padrão anormal concentrado na roda-guia reforça hipótese de guiamento/desgaste",
+        "weakens": "Guiamento íntegro e desgaste uniforme reduzem hipótese nessa área",
+        "inconclusive": "Material compactado impede observar a superfície de contato"
+      },
+      "evidenceRequirements": {
+        "collectionContext": "Registrar arranjo de máquina, posição, horário, carga/estado, método, instrumento e condições ambientais que alterem interpretação.",
+        "sourceAndBaseline": "Referência técnica aplicável deve ser identificada antes de declarar fora de especificação; dado histórico deve ser comparável.",
+        "qualityChecks": "Verificar calibração e integridade do instrumento, amostra, registro, contexto de operação e possibilidade de interferências.",
+        "explicitCounterEvidence": "Descrever observação contrária plausível e avaliar hipóteses alternativas; ausência de sintoma não prova inexistência de dano.",
+        "safeMethod": "Testes devem seguir procedimento OEM e controle de energias específico, sem condições de execução assumidas pelo banco."
+      },
+      "priority": "P1",
+      "qualityRisk": "Não inferir causa, componente ou efeito operacional sem evidência comparável e método OEM aplicável.",
+      "sourceIds": [
+        "CAT-DOZER-UC-MAINT",
+        "CAT-CTS-UNDERCARRIAGE",
+        "ISO-13379-1-2025",
+        "ISO-17359-2018"
+      ],
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "serialOrArrangement": null,
+        "manualRevision": null
+      },
+      "threshold": {
+        "value": null,
+        "unit": null,
+        "sourceId": null,
+        "applicableConditions": null
+      },
+      "plannedOnly": true,
+      "observedResult": null,
+      "engineeringReview": "pending",
+      "oemEffectiveProcedureVerified": false,
+      "independentReview": "pending",
+      "confirmsComponentDamage": false
+    },
+    {
+      "id": "ER-FC-TRACK-003-I2",
+      "chainId": "FC-TRACK-003",
+      "investigationId": "I2",
+      "methodId": "EV-02",
+      "intent": "Medir dimensões/folgas com CTS ou referência OEM para o arranjo e desgaste vigentes",
+      "minimumMetadataFields": [
+        "equipmentContext",
+        "measurementLocation",
+        "instrumentId",
+        "instrumentCalibrationStatus",
+        "measuredGeometry",
+        "unit",
+        "applicableToleranceReference",
+        "dateTime"
+      ],
+      "resultInterpretation": {
+        "supports": "Geometria fora da referência confirma desvio dimensional, não sua causa raiz",
+        "weakens": "Dimensões dentro dos limites diminuem suspeita de desgaste excessivo",
+        "inconclusive": "Ausente manual, ponto de medição ou instrumento apropriado"
+      },
+      "evidenceRequirements": {
+        "collectionContext": "Registrar arranjo de máquina, posição, horário, carga/estado, método, instrumento e condições ambientais que alterem interpretação.",
+        "sourceAndBaseline": "Referência técnica aplicável deve ser identificada antes de declarar fora de especificação; dado histórico deve ser comparável.",
+        "qualityChecks": "Verificar calibração e integridade do instrumento, amostra, registro, contexto de operação e possibilidade de interferências.",
+        "explicitCounterEvidence": "Descrever observação contrária plausível e avaliar hipóteses alternativas; ausência de sintoma não prova inexistência de dano.",
+        "safeMethod": "Testes devem seguir procedimento OEM e controle de energias específico, sem condições de execução assumidas pelo banco."
+      },
+      "priority": "P1",
+      "qualityRisk": "Não inferir causa, componente ou efeito operacional sem evidência comparável e método OEM aplicável.",
+      "sourceIds": [
+        "CAT-DOZER-UC-MAINT",
+        "CAT-CTS-UNDERCARRIAGE",
+        "ISO-13379-1-2025",
+        "ISO-17359-2018"
+      ],
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "serialOrArrangement": null,
+        "manualRevision": null
+      },
+      "threshold": {
+        "value": null,
+        "unit": null,
+        "sourceId": null,
+        "applicableConditions": null
+      },
+      "plannedOnly": true,
+      "observedResult": null,
+      "engineeringReview": "pending",
+      "oemEffectiveProcedureVerified": false,
+      "independentReview": "pending",
+      "confirmsComponentDamage": false
+    },
+    {
+      "id": "ER-FC-TRACK-004-I1",
+      "chainId": "FC-TRACK-004",
+      "investigationId": "I1",
+      "methodId": "EV-02",
+      "intent": "Medir flecha/tensão somente com procedimento específico de máquina e configuração",
+      "minimumMetadataFields": [
+        "equipmentContext",
+        "measurementLocation",
+        "instrumentId",
+        "instrumentCalibrationStatus",
+        "measuredGeometry",
+        "unit",
+        "applicableToleranceReference",
+        "dateTime"
+      ],
+      "resultInterpretation": {
+        "supports": "Medida fora do OMM sustenta desajuste, mas não confirma dano em um rolete",
+        "weakens": "Medida dentro do limite especificado enfraquece tensão como causa atual",
+        "inconclusive": "Não há limite aplicável ou a máquina está em condição inadequada à medição"
+      },
+      "evidenceRequirements": {
+        "collectionContext": "Registrar arranjo de máquina, posição, horário, carga/estado, método, instrumento e condições ambientais que alterem interpretação.",
+        "sourceAndBaseline": "Referência técnica aplicável deve ser identificada antes de declarar fora de especificação; dado histórico deve ser comparável.",
+        "qualityChecks": "Verificar calibração e integridade do instrumento, amostra, registro, contexto de operação e possibilidade de interferências.",
+        "explicitCounterEvidence": "Descrever observação contrária plausível e avaliar hipóteses alternativas; ausência de sintoma não prova inexistência de dano.",
+        "safeMethod": "Testes devem seguir procedimento OEM e controle de energias específico, sem condições de execução assumidas pelo banco."
+      },
+      "priority": "P1",
+      "qualityRisk": "Não inferir causa, componente ou efeito operacional sem evidência comparável e método OEM aplicável.",
+      "sourceIds": [
+        "CAT-STEEL-TRACKS",
+        "CAT-DOZER-UC-MAINT",
+        "ISO-13379-1-2025",
+        "ISO-17359-2018"
+      ],
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "serialOrArrangement": null,
+        "manualRevision": null
+      },
+      "threshold": {
+        "value": null,
+        "unit": null,
+        "sourceId": null,
+        "applicableConditions": null
+      },
+      "plannedOnly": true,
+      "observedResult": null,
+      "engineeringReview": "pending",
+      "oemEffectiveProcedureVerified": false,
+      "independentReview": "pending",
+      "confirmsComponentDamage": false
+    },
+    {
+      "id": "ER-FC-TRACK-004-I2",
+      "chainId": "FC-TRACK-004",
+      "investigationId": "I2",
+      "methodId": "EV-01",
+      "intent": "Inspecionar trajetória da esteira, detritos, desgaste e padrão de contato",
+      "minimumMetadataFields": [
+        "equipmentContext",
+        "inspectionLocation",
+        "isolationStatus",
+        "surfaceCondition",
+        "visualDocumentation",
+        "dateTime"
+      ],
+      "resultInterpretation": {
+        "supports": "Desgaste compatível e detritos reforçam investigar tensão/ajuste",
+        "weakens": "Trajeto e superfície íntegros diminuem suspeita de efeito relevante",
+        "inconclusive": "Desgaste anterior e falta de histórico impedem atribuir causa"
+      },
+      "evidenceRequirements": {
+        "collectionContext": "Registrar arranjo de máquina, posição, horário, carga/estado, método, instrumento e condições ambientais que alterem interpretação.",
+        "sourceAndBaseline": "Referência técnica aplicável deve ser identificada antes de declarar fora de especificação; dado histórico deve ser comparável.",
+        "qualityChecks": "Verificar calibração e integridade do instrumento, amostra, registro, contexto de operação e possibilidade de interferências.",
+        "explicitCounterEvidence": "Descrever observação contrária plausível e avaliar hipóteses alternativas; ausência de sintoma não prova inexistência de dano.",
+        "safeMethod": "Testes devem seguir procedimento OEM e controle de energias específico, sem condições de execução assumidas pelo banco."
+      },
+      "priority": "P1",
+      "qualityRisk": "Não inferir causa, componente ou efeito operacional sem evidência comparável e método OEM aplicável.",
+      "sourceIds": [
+        "CAT-STEEL-TRACKS",
+        "CAT-DOZER-UC-MAINT",
+        "ISO-13379-1-2025",
+        "ISO-17359-2018"
+      ],
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "serialOrArrangement": null,
+        "manualRevision": null
+      },
+      "threshold": {
+        "value": null,
+        "unit": null,
+        "sourceId": null,
+        "applicableConditions": null
+      },
+      "plannedOnly": true,
+      "observedResult": null,
+      "engineeringReview": "pending",
+      "oemEffectiveProcedureVerified": false,
+      "independentReview": "pending",
+      "confirmsComponentDamage": false
+    },
+    {
+      "id": "ER-FC-TRACK-005-I1",
+      "chainId": "FC-TRACK-005",
+      "investigationId": "I1",
+      "methodId": "EV-01",
+      "intent": "Após isolamento e acesso autorizado, avaliar estado dos fixadores e marcas de movimento",
+      "minimumMetadataFields": [
+        "equipmentContext",
+        "inspectionLocation",
+        "isolationStatus",
+        "surfaceCondition",
+        "visualDocumentation",
+        "dateTime"
+      ],
+      "resultInterpretation": {
+        "supports": "Posição alterada e superfícies deslocadas são coerentes com perda de retenção",
+        "weakens": "Fixadores íntegros e sem deslocamento reduzem suspeita naquele trecho",
+        "inconclusive": "Sem marca de referência prévia não é possível provar rotação retrospectiva"
+      },
+      "evidenceRequirements": {
+        "collectionContext": "Registrar arranjo de máquina, posição, horário, carga/estado, método, instrumento e condições ambientais que alterem interpretação.",
+        "sourceAndBaseline": "Referência técnica aplicável deve ser identificada antes de declarar fora de especificação; dado histórico deve ser comparável.",
+        "qualityChecks": "Verificar calibração e integridade do instrumento, amostra, registro, contexto de operação e possibilidade de interferências.",
+        "explicitCounterEvidence": "Descrever observação contrária plausível e avaliar hipóteses alternativas; ausência de sintoma não prova inexistência de dano.",
+        "safeMethod": "Testes devem seguir procedimento OEM e controle de energias específico, sem condições de execução assumidas pelo banco."
+      },
+      "priority": "P1",
+      "qualityRisk": "Não inferir causa, componente ou efeito operacional sem evidência comparável e método OEM aplicável.",
+      "sourceIds": [
+        "CAT-UC-DOZER-GUIDE",
+        "NORDLOCK-BOLT-LOOSENING",
+        "ISO-13379-1-2025",
+        "ISO-17359-2018"
+      ],
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "serialOrArrangement": null,
+        "manualRevision": null
+      },
+      "threshold": {
+        "value": null,
+        "unit": null,
+        "sourceId": null,
+        "applicableConditions": null
+      },
+      "plannedOnly": true,
+      "observedResult": null,
+      "engineeringReview": "pending",
+      "oemEffectiveProcedureVerified": false,
+      "independentReview": "pending",
+      "confirmsComponentDamage": false
+    },
+    {
+      "id": "ER-FC-TRACK-005-I2",
+      "chainId": "FC-TRACK-005",
+      "investigationId": "I2",
+      "methodId": "EV-15",
+      "intent": "Conferir registro de montagem e condição da junta por método de inspeção OEM",
+      "minimumMetadataFields": [
+        "equipmentContext",
+        "inspectionLocation",
+        "isolationStatus",
+        "fixationOrClearanceFeature",
+        "measurementToolIfApplicable",
+        "oemInspectionReference",
+        "dateTime"
+      ],
+      "resultInterpretation": {
+        "supports": "Montagem anterior incorreta ou evidências independentes de perda de pré-carga sustentam hipótese",
+        "weakens": "Documentação de montagem adequada e sem anomalia atual enfraquece suspeita, sem refutar eventos passados",
+        "inconclusive": "Aplicabilidade e procedimento de avaliação de pré-carga não disponíveis"
+      },
+      "evidenceRequirements": {
+        "collectionContext": "Registrar arranjo de máquina, posição, horário, carga/estado, método, instrumento e condições ambientais que alterem interpretação.",
+        "sourceAndBaseline": "Referência técnica aplicável deve ser identificada antes de declarar fora de especificação; dado histórico deve ser comparável.",
+        "qualityChecks": "Verificar calibração e integridade do instrumento, amostra, registro, contexto de operação e possibilidade de interferências.",
+        "explicitCounterEvidence": "Descrever observação contrária plausível e avaliar hipóteses alternativas; ausência de sintoma não prova inexistência de dano.",
+        "safeMethod": "Testes devem seguir procedimento OEM e controle de energias específico, sem condições de execução assumidas pelo banco."
+      },
+      "priority": "P0",
+      "qualityRisk": "Torque residual não equivale a pré-carga inicial nem prova autoafrouxamento rotacional.",
+      "sourceIds": [
+        "CAT-UC-DOZER-GUIDE",
+        "NORDLOCK-BOLT-LOOSENING",
+        "ISO-13379-1-2025",
+        "ISO-17359-2018"
+      ],
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "serialOrArrangement": null,
+        "manualRevision": null
+      },
+      "threshold": {
+        "value": null,
+        "unit": null,
+        "sourceId": null,
+        "applicableConditions": null
+      },
+      "plannedOnly": true,
+      "observedResult": null,
+      "engineeringReview": "pending",
+      "oemEffectiveProcedureVerified": false,
+      "independentReview": "pending",
+      "confirmsComponentDamage": false
+    },
+    {
+      "id": "ER-FC-TRACK-006-I1",
+      "chainId": "FC-TRACK-006",
+      "investigationId": "I1",
+      "methodId": "EV-15",
+      "intent": "Inspecionar junta, superfícies e fixadores com método validado que não dependa de 'torque residual' isolado",
+      "minimumMetadataFields": [
+        "equipmentContext",
+        "inspectionLocation",
+        "isolationStatus",
+        "fixationOrClearanceFeature",
+        "measurementToolIfApplicable",
+        "oemInspectionReference",
+        "dateTime"
+      ],
+      "resultInterpretation": {
+        "supports": "Perda de retenção associada a sinais de assentamento pode sustentar hipótese",
+        "weakens": "Pré-carga determinada como íntegra na condição atual enfraquece hipótese de falha ativa",
+        "inconclusive": "Torque de desaperto não representa necessariamente a pré-carga original"
+      },
+      "evidenceRequirements": {
+        "collectionContext": "Registrar arranjo de máquina, posição, horário, carga/estado, método, instrumento e condições ambientais que alterem interpretação.",
+        "sourceAndBaseline": "Referência técnica aplicável deve ser identificada antes de declarar fora de especificação; dado histórico deve ser comparável.",
+        "qualityChecks": "Verificar calibração e integridade do instrumento, amostra, registro, contexto de operação e possibilidade de interferências.",
+        "explicitCounterEvidence": "Descrever observação contrária plausível e avaliar hipóteses alternativas; ausência de sintoma não prova inexistência de dano.",
+        "safeMethod": "Testes devem seguir procedimento OEM e controle de energias específico, sem condições de execução assumidas pelo banco."
+      },
+      "priority": "P1",
+      "qualityRisk": "Não inferir causa, componente ou efeito operacional sem evidência comparável e método OEM aplicável.",
+      "sourceIds": [
+        "NORDLOCK-BOLT-LOOSENING",
+        "NORDLOCK-PRELOAD-GUIDANCE",
+        "ISO-13379-1-2025",
+        "ISO-17359-2018"
+      ],
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "serialOrArrangement": null,
+        "manualRevision": null
+      },
+      "threshold": {
+        "value": null,
+        "unit": null,
+        "sourceId": null,
+        "applicableConditions": null
+      },
+      "plannedOnly": true,
+      "observedResult": null,
+      "engineeringReview": "pending",
+      "oemEffectiveProcedureVerified": false,
+      "independentReview": "pending",
+      "confirmsComponentDamage": false
+    },
+    {
+      "id": "ER-FC-TRACK-006-I2",
+      "chainId": "FC-TRACK-006",
+      "investigationId": "I2",
+      "methodId": "EV-13",
+      "intent": "Reconciliar instalação, substituição de sapata, histórico de ajuste e observações anteriores",
+      "minimumMetadataFields": [
+        "equipmentContext",
+        "sourceWorkOrderOrEvent",
+        "componentServiceHistory",
+        "fluidOrPartChangeHistory",
+        "chronology",
+        "dateTime"
+      ],
+      "resultInterpretation": {
+        "supports": "Alteração após montagem recente associada à acomodação da junta aumenta plausibilidade",
+        "weakens": "Sem histórico de montagem ou sem alteração de folga reduz inferência específica, não exclui perda anterior",
+        "inconclusive": "Registros não identificam fixador, lote, método e superfície de assentamento"
+      },
+      "evidenceRequirements": {
+        "collectionContext": "Registrar arranjo de máquina, posição, horário, carga/estado, método, instrumento e condições ambientais que alterem interpretação.",
+        "sourceAndBaseline": "Referência técnica aplicável deve ser identificada antes de declarar fora de especificação; dado histórico deve ser comparável.",
+        "qualityChecks": "Verificar calibração e integridade do instrumento, amostra, registro, contexto de operação e possibilidade de interferências.",
+        "explicitCounterEvidence": "Descrever observação contrária plausível e avaliar hipóteses alternativas; ausência de sintoma não prova inexistência de dano.",
+        "safeMethod": "Testes devem seguir procedimento OEM e controle de energias específico, sem condições de execução assumidas pelo banco."
+      },
+      "priority": "P1",
+      "qualityRisk": "Não inferir causa, componente ou efeito operacional sem evidência comparável e método OEM aplicável.",
+      "sourceIds": [
+        "NORDLOCK-BOLT-LOOSENING",
+        "NORDLOCK-PRELOAD-GUIDANCE",
+        "ISO-13379-1-2025",
+        "ISO-17359-2018"
+      ],
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "serialOrArrangement": null,
+        "manualRevision": null
+      },
+      "threshold": {
+        "value": null,
+        "unit": null,
+        "sourceId": null,
+        "applicableConditions": null
+      },
+      "plannedOnly": true,
+      "observedResult": null,
+      "engineeringReview": "pending",
+      "oemEffectiveProcedureVerified": false,
+      "independentReview": "pending",
+      "confirmsComponentDamage": false
+    },
+    {
+      "id": "ER-FC-TRACK-007-I1",
+      "chainId": "FC-TRACK-007",
+      "investigationId": "I1",
+      "methodId": "EV-01",
+      "intent": "Após isolamento, registrar e inspecionar visualmente fraturas sem alterar a superfície original",
+      "minimumMetadataFields": [
+        "equipmentContext",
+        "inspectionLocation",
+        "isolationStatus",
+        "surfaceCondition",
+        "visualDocumentation",
+        "dateTime"
+      ],
+      "resultInterpretation": {
+        "supports": "Presença de fragmentos e características de trinca progressiva é compatível com fadiga, sem confirmação metalográfica",
+        "weakens": "Superfície com deformação grosseira ou ausência de fratura não sustenta essa causa específica",
+        "inconclusive": "Superfície oxidada, deformada ou inacessível impede diferenciar mecanismos"
+      },
+      "evidenceRequirements": {
+        "collectionContext": "Registrar arranjo de máquina, posição, horário, carga/estado, método, instrumento e condições ambientais que alterem interpretação.",
+        "sourceAndBaseline": "Referência técnica aplicável deve ser identificada antes de declarar fora de especificação; dado histórico deve ser comparável.",
+        "qualityChecks": "Verificar calibração e integridade do instrumento, amostra, registro, contexto de operação e possibilidade de interferências.",
+        "explicitCounterEvidence": "Descrever observação contrária plausível e avaliar hipóteses alternativas; ausência de sintoma não prova inexistência de dano.",
+        "safeMethod": "Testes devem seguir procedimento OEM e controle de energias específico, sem condições de execução assumidas pelo banco."
+      },
+      "priority": "P1",
+      "qualityRisk": "Não inferir causa, componente ou efeito operacional sem evidência comparável e método OEM aplicável.",
+      "sourceIds": [
+        "NORDLOCK-BOLTING-FAILURE",
+        "CAT-UC-DOZER-GUIDE",
+        "ISO-13379-1-2025",
+        "ISO-17359-2018"
+      ],
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "serialOrArrangement": null,
+        "manualRevision": null
+      },
+      "threshold": {
+        "value": null,
+        "unit": null,
+        "sourceId": null,
+        "applicableConditions": null
+      },
+      "plannedOnly": true,
+      "observedResult": null,
+      "engineeringReview": "pending",
+      "oemEffectiveProcedureVerified": false,
+      "independentReview": "pending",
+      "confirmsComponentDamage": false
+    },
+    {
+      "id": "ER-FC-TRACK-007-I2",
+      "chainId": "FC-TRACK-007",
+      "investigationId": "I2",
+      "methodId": "EV-13",
+      "intent": "Revisar sequências de manutenção, substituições, condições de operação e múltiplas falhas na mesma junta",
+      "minimumMetadataFields": [
+        "equipmentContext",
+        "sourceWorkOrderOrEvent",
+        "componentServiceHistory",
+        "fluidOrPartChangeHistory",
+        "chronology",
+        "dateTime"
+      ],
+      "resultInterpretation": {
+        "supports": "Falhas repetidas em localização semelhante e histórico de retenção inadequada sustentam investigação de fadiga",
+        "weakens": "Evento isolado de impacto forte reforça alternativa de sobrecarga, mas não a comprova",
+        "inconclusive": "Sem identificação das peças removidas e cronologia operacional"
+      },
+      "evidenceRequirements": {
+        "collectionContext": "Registrar arranjo de máquina, posição, horário, carga/estado, método, instrumento e condições ambientais que alterem interpretação.",
+        "sourceAndBaseline": "Referência técnica aplicável deve ser identificada antes de declarar fora de especificação; dado histórico deve ser comparável.",
+        "qualityChecks": "Verificar calibração e integridade do instrumento, amostra, registro, contexto de operação e possibilidade de interferências.",
+        "explicitCounterEvidence": "Descrever observação contrária plausível e avaliar hipóteses alternativas; ausência de sintoma não prova inexistência de dano.",
+        "safeMethod": "Testes devem seguir procedimento OEM e controle de energias específico, sem condições de execução assumidas pelo banco."
+      },
+      "priority": "P1",
+      "qualityRisk": "Não inferir causa, componente ou efeito operacional sem evidência comparável e método OEM aplicável.",
+      "sourceIds": [
+        "NORDLOCK-BOLTING-FAILURE",
+        "CAT-UC-DOZER-GUIDE",
+        "ISO-13379-1-2025",
+        "ISO-17359-2018"
+      ],
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "serialOrArrangement": null,
+        "manualRevision": null
+      },
+      "threshold": {
+        "value": null,
+        "unit": null,
+        "sourceId": null,
+        "applicableConditions": null
+      },
+      "plannedOnly": true,
+      "observedResult": null,
+      "engineeringReview": "pending",
+      "oemEffectiveProcedureVerified": false,
+      "independentReview": "pending",
+      "confirmsComponentDamage": false
+    },
+    {
+      "id": "ER-FC-TRACK-008-I1",
+      "chainId": "FC-TRACK-008",
+      "investigationId": "I1",
+      "methodId": "EV-01",
+      "intent": "Inspecionar visualmente sapatas, cabeças de fixador, juntas e superfícies de contato com acesso seguro",
+      "minimumMetadataFields": [
+        "equipmentContext",
+        "inspectionLocation",
+        "isolationStatus",
+        "surfaceCondition",
+        "visualDocumentation",
+        "dateTime"
+      ],
+      "resultInterpretation": {
+        "supports": "Marcas coincidentes de deslocamento nas interfaces reforçam hipótese de perda de retenção",
+        "weakens": "Superfícies estáveis sem sinais de deslocamento reduzem suspeita de movimento atual",
+        "inconclusive": "É impossível acessar interfaces sem desmontagem autorizada"
+      },
+      "evidenceRequirements": {
+        "collectionContext": "Registrar arranjo de máquina, posição, horário, carga/estado, método, instrumento e condições ambientais que alterem interpretação.",
+        "sourceAndBaseline": "Referência técnica aplicável deve ser identificada antes de declarar fora de especificação; dado histórico deve ser comparável.",
+        "qualityChecks": "Verificar calibração e integridade do instrumento, amostra, registro, contexto de operação e possibilidade de interferências.",
+        "explicitCounterEvidence": "Descrever observação contrária plausível e avaliar hipóteses alternativas; ausência de sintoma não prova inexistência de dano.",
+        "safeMethod": "Testes devem seguir procedimento OEM e controle de energias específico, sem condições de execução assumidas pelo banco."
+      },
+      "priority": "P1",
+      "qualityRisk": "Não inferir causa, componente ou efeito operacional sem evidência comparável e método OEM aplicável.",
+      "sourceIds": [
+        "CAT-TRACK-BOLT-FUNCTION",
+        "NORDLOCK-BOLT-LOOSENING",
+        "ISO-13379-1-2025",
+        "ISO-17359-2018"
+      ],
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "serialOrArrangement": null,
+        "manualRevision": null
+      },
+      "threshold": {
+        "value": null,
+        "unit": null,
+        "sourceId": null,
+        "applicableConditions": null
+      },
+      "plannedOnly": true,
+      "observedResult": null,
+      "engineeringReview": "pending",
+      "oemEffectiveProcedureVerified": false,
+      "independentReview": "pending",
+      "confirmsComponentDamage": false
+    },
+    {
+      "id": "ER-FC-TRACK-008-I2",
+      "chainId": "FC-TRACK-008",
+      "investigationId": "I2",
+      "methodId": "EV-02",
+      "intent": "Medir geometria de furos/faces e comparar com tolerância OEM da sapata e elo efetivos",
+      "minimumMetadataFields": [
+        "equipmentContext",
+        "measurementLocation",
+        "instrumentId",
+        "instrumentCalibrationStatus",
+        "measuredGeometry",
+        "unit",
+        "applicableToleranceReference",
+        "dateTime"
+      ],
+      "resultInterpretation": {
+        "supports": "Desvio geométrico e padrão de deformação sustentam dano de interface, mas não sua causa isolada",
+        "weakens": "Geometria conforme requisito reduz hipótese de desgaste avançado naquela posição",
+        "inconclusive": "Sem desenhos e critérios por série não classificar ovalização"
+      },
+      "evidenceRequirements": {
+        "collectionContext": "Registrar arranjo de máquina, posição, horário, carga/estado, método, instrumento e condições ambientais que alterem interpretação.",
+        "sourceAndBaseline": "Referência técnica aplicável deve ser identificada antes de declarar fora de especificação; dado histórico deve ser comparável.",
+        "qualityChecks": "Verificar calibração e integridade do instrumento, amostra, registro, contexto de operação e possibilidade de interferências.",
+        "explicitCounterEvidence": "Descrever observação contrária plausível e avaliar hipóteses alternativas; ausência de sintoma não prova inexistência de dano.",
+        "safeMethod": "Testes devem seguir procedimento OEM e controle de energias específico, sem condições de execução assumidas pelo banco."
+      },
+      "priority": "P1",
+      "qualityRisk": "Não inferir causa, componente ou efeito operacional sem evidência comparável e método OEM aplicável.",
+      "sourceIds": [
+        "CAT-TRACK-BOLT-FUNCTION",
+        "NORDLOCK-BOLT-LOOSENING",
+        "ISO-13379-1-2025",
+        "ISO-17359-2018"
+      ],
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "serialOrArrangement": null,
+        "manualRevision": null
+      },
+      "threshold": {
+        "value": null,
+        "unit": null,
+        "sourceId": null,
+        "applicableConditions": null
+      },
+      "plannedOnly": true,
+      "observedResult": null,
+      "engineeringReview": "pending",
+      "oemEffectiveProcedureVerified": false,
+      "independentReview": "pending",
+      "confirmsComponentDamage": false
+    },
+    {
+      "id": "ER-FC-COOL-005-I1",
+      "chainId": "FC-COOL-005",
+      "investigationId": "I1",
+      "methodId": "EV-14",
+      "intent": "Comparar comportamento térmico por fase de aquecimento e carga, com canal e referência OEM",
+      "minimumMetadataFields": [
+        "equipmentContext",
+        "signalId",
+        "measurementWindow",
+        "operatingLoad",
+        "sensorHealth",
+        "dataCompleteness",
+        "baselineReference",
+        "dateTime"
+      ],
+      "resultInterpretation": {
+        "supports": "Abertura de termostato incompatível com a demanda, quando testada de forma aplicável, sustenta hipótese",
+        "weakens": "Regime de controle térmico conforme especificação reduz hipótese de travamento presente",
+        "inconclusive": "Sem especificação térmica e condições comparáveis a tendência não diferencia"
+      },
+      "evidenceRequirements": {
+        "collectionContext": "Registrar arranjo de máquina, posição, horário, carga/estado, método, instrumento e condições ambientais que alterem interpretação.",
+        "sourceAndBaseline": "Referência técnica aplicável deve ser identificada antes de declarar fora de especificação; dado histórico deve ser comparável.",
+        "qualityChecks": "Verificar calibração e integridade do instrumento, amostra, registro, contexto de operação e possibilidade de interferências.",
+        "explicitCounterEvidence": "Descrever observação contrária plausível e avaliar hipóteses alternativas; ausência de sintoma não prova inexistência de dano.",
+        "safeMethod": "Testes devem seguir procedimento OEM e controle de energias específico, sem condições de execução assumidas pelo banco."
+      },
+      "priority": "P1",
+      "qualityRisk": "Não inferir causa, componente ou efeito operacional sem evidência comparável e método OEM aplicável.",
+      "sourceIds": [
+        "CAT-THERMOSTAT-REPLACEMENT",
+        "CAT-WATER-PUMP-REPLACEMENT",
+        "ISO-13379-1-2025",
+        "ISO-17359-2018"
+      ],
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "serialOrArrangement": null,
+        "manualRevision": null
+      },
+      "threshold": {
+        "value": null,
+        "unit": null,
+        "sourceId": null,
+        "applicableConditions": null
+      },
+      "plannedOnly": true,
+      "observedResult": null,
+      "engineeringReview": "pending",
+      "oemEffectiveProcedureVerified": false,
+      "independentReview": "pending",
+      "confirmsComponentDamage": false
+    },
+    {
+      "id": "ER-FC-COOL-005-I2",
+      "chainId": "FC-COOL-005",
+      "investigationId": "I2",
+      "methodId": "EV-12",
+      "intent": "Verificar atuação do termostato pelo procedimento OEM efetivo e em condição segura",
+      "minimumMetadataFields": [
+        "equipmentContext",
+        "testConfiguration",
+        "safetyAndIsolationStatus",
+        "operatingLoad",
+        "fluidTemperatureIfApplicable",
+        "measurementInstrument",
+        "oemProcedureReference",
+        "baselineOrAcceptanceCriterion",
+        "dateTime"
+      ],
+      "resultInterpretation": {
+        "supports": "Teste funcional demonstra curso insuficiente/abertura inadequada conforme especificação",
+        "weakens": "Componente atende teste de abertura em condições prescritas, enfraquecendo a falha no elemento",
+        "inconclusive": "Procedimento, instrumento ou ponto de acesso indisponível"
+      },
+      "evidenceRequirements": {
+        "collectionContext": "Registrar arranjo de máquina, posição, horário, carga/estado, método, instrumento e condições ambientais que alterem interpretação.",
+        "sourceAndBaseline": "Referência técnica aplicável deve ser identificada antes de declarar fora de especificação; dado histórico deve ser comparável.",
+        "qualityChecks": "Verificar calibração e integridade do instrumento, amostra, registro, contexto de operação e possibilidade de interferências.",
+        "explicitCounterEvidence": "Descrever observação contrária plausível e avaliar hipóteses alternativas; ausência de sintoma não prova inexistência de dano.",
+        "safeMethod": "Testes devem seguir procedimento OEM e controle de energias específico, sem condições de execução assumidas pelo banco."
+      },
+      "priority": "P1",
+      "qualityRisk": "Não inferir causa, componente ou efeito operacional sem evidência comparável e método OEM aplicável.",
+      "sourceIds": [
+        "CAT-THERMOSTAT-REPLACEMENT",
+        "CAT-WATER-PUMP-REPLACEMENT",
+        "ISO-13379-1-2025",
+        "ISO-17359-2018"
+      ],
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "serialOrArrangement": null,
+        "manualRevision": null
+      },
+      "threshold": {
+        "value": null,
+        "unit": null,
+        "sourceId": null,
+        "applicableConditions": null
+      },
+      "plannedOnly": true,
+      "observedResult": null,
+      "engineeringReview": "pending",
+      "oemEffectiveProcedureVerified": false,
+      "independentReview": "pending",
+      "confirmsComponentDamage": false
+    },
+    {
+      "id": "ER-FC-COOL-006-I1",
+      "chainId": "FC-COOL-006",
+      "investigationId": "I1",
+      "methodId": "EV-14",
+      "intent": "Confrontar curva de aquecimento desde condição fria, carga, ambiente e histórico confiável",
+      "minimumMetadataFields": [
+        "equipmentContext",
+        "signalId",
+        "measurementWindow",
+        "operatingLoad",
+        "sensorHealth",
+        "dataCompleteness",
+        "baselineReference",
+        "dateTime"
+      ],
+      "resultInterpretation": {
+        "supports": "Tempos térmicos consistentemente prolongados reforçam regulação anormal, sem identificar componente",
+        "weakens": "Evolução de aquecimento dentro da especificação reduz hipótese de abertura indevida",
+        "inconclusive": "Não há condição de partida e carga comparável"
+      },
+      "evidenceRequirements": {
+        "collectionContext": "Registrar arranjo de máquina, posição, horário, carga/estado, método, instrumento e condições ambientais que alterem interpretação.",
+        "sourceAndBaseline": "Referência técnica aplicável deve ser identificada antes de declarar fora de especificação; dado histórico deve ser comparável.",
+        "qualityChecks": "Verificar calibração e integridade do instrumento, amostra, registro, contexto de operação e possibilidade de interferências.",
+        "explicitCounterEvidence": "Descrever observação contrária plausível e avaliar hipóteses alternativas; ausência de sintoma não prova inexistência de dano.",
+        "safeMethod": "Testes devem seguir procedimento OEM e controle de energias específico, sem condições de execução assumidas pelo banco."
+      },
+      "priority": "P1",
+      "qualityRisk": "Não inferir causa, componente ou efeito operacional sem evidência comparável e método OEM aplicável.",
+      "sourceIds": [
+        "CAT-THERMOSTAT-REPLACEMENT",
+        "CAT-EXC-COOL-CHECKLIST",
+        "ISO-13379-1-2025",
+        "ISO-17359-2018"
+      ],
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "serialOrArrangement": null,
+        "manualRevision": null
+      },
+      "threshold": {
+        "value": null,
+        "unit": null,
+        "sourceId": null,
+        "applicableConditions": null
+      },
+      "plannedOnly": true,
+      "observedResult": null,
+      "engineeringReview": "pending",
+      "oemEffectiveProcedureVerified": false,
+      "independentReview": "pending",
+      "confirmsComponentDamage": false
+    },
+    {
+      "id": "ER-FC-COOL-006-I2",
+      "chainId": "FC-COOL-006",
+      "investigationId": "I2",
+      "methodId": "EV-12",
+      "intent": "Aplicar verificação de abertura e fechamento autorizada pelo procedimento OEM",
+      "minimumMetadataFields": [
+        "equipmentContext",
+        "testConfiguration",
+        "safetyAndIsolationStatus",
+        "operatingLoad",
+        "fluidTemperatureIfApplicable",
+        "measurementInstrument",
+        "oemProcedureReference",
+        "baselineOrAcceptanceCriterion",
+        "dateTime"
+      ],
+      "resultInterpretation": {
+        "supports": "Abertura prematura em teste prescrito sustenta falha do termostato",
+        "weakens": "Abertura em faixa e curso especificados enfraquece hipótese de elemento travado aberto",
+        "inconclusive": "Sem dados OEM por motor/circuito não se consegue classificar"
+      },
+      "evidenceRequirements": {
+        "collectionContext": "Registrar arranjo de máquina, posição, horário, carga/estado, método, instrumento e condições ambientais que alterem interpretação.",
+        "sourceAndBaseline": "Referência técnica aplicável deve ser identificada antes de declarar fora de especificação; dado histórico deve ser comparável.",
+        "qualityChecks": "Verificar calibração e integridade do instrumento, amostra, registro, contexto de operação e possibilidade de interferências.",
+        "explicitCounterEvidence": "Descrever observação contrária plausível e avaliar hipóteses alternativas; ausência de sintoma não prova inexistência de dano.",
+        "safeMethod": "Testes devem seguir procedimento OEM e controle de energias específico, sem condições de execução assumidas pelo banco."
+      },
+      "priority": "P1",
+      "qualityRisk": "Não inferir causa, componente ou efeito operacional sem evidência comparável e método OEM aplicável.",
+      "sourceIds": [
+        "CAT-THERMOSTAT-REPLACEMENT",
+        "CAT-EXC-COOL-CHECKLIST",
+        "ISO-13379-1-2025",
+        "ISO-17359-2018"
+      ],
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "serialOrArrangement": null,
+        "manualRevision": null
+      },
+      "threshold": {
+        "value": null,
+        "unit": null,
+        "sourceId": null,
+        "applicableConditions": null
+      },
+      "plannedOnly": true,
+      "observedResult": null,
+      "engineeringReview": "pending",
+      "oemEffectiveProcedureVerified": false,
+      "independentReview": "pending",
+      "confirmsComponentDamage": false
+    },
+    {
+      "id": "ER-FC-COOL-007-I1",
+      "chainId": "FC-COOL-007",
+      "investigationId": "I1",
+      "methodId": "EV-14",
+      "intent": "Analisar evolução de temperatura, rotação e carga sem atribuir falha pela telemetria isolada",
+      "minimumMetadataFields": [
+        "equipmentContext",
+        "signalId",
+        "measurementWindow",
+        "operatingLoad",
+        "sensorHealth",
+        "dataCompleteness",
+        "baselineReference",
+        "dateTime"
+      ],
+      "resultInterpretation": {
+        "supports": "Correlação anormal persistente com outras evidências de circulação sustenta investigar bomba",
+        "weakens": "Temperatura e fluxo operam na referência especificada, reduzindo hipótese nessa condição",
+        "inconclusive": "Sem dados/limites específicos da bomba o resultado não é discriminante"
+      },
+      "evidenceRequirements": {
+        "collectionContext": "Registrar arranjo de máquina, posição, horário, carga/estado, método, instrumento e condições ambientais que alterem interpretação.",
+        "sourceAndBaseline": "Referência técnica aplicável deve ser identificada antes de declarar fora de especificação; dado histórico deve ser comparável.",
+        "qualityChecks": "Verificar calibração e integridade do instrumento, amostra, registro, contexto de operação e possibilidade de interferências.",
+        "explicitCounterEvidence": "Descrever observação contrária plausível e avaliar hipóteses alternativas; ausência de sintoma não prova inexistência de dano.",
+        "safeMethod": "Testes devem seguir procedimento OEM e controle de energias específico, sem condições de execução assumidas pelo banco."
+      },
+      "priority": "P1",
+      "qualityRisk": "Não inferir causa, componente ou efeito operacional sem evidência comparável e método OEM aplicável.",
+      "sourceIds": [
+        "CAT-WATER-PUMP-REPLACEMENT",
+        "CAT-THERMOSTAT-REPLACEMENT",
+        "ISO-13379-1-2025",
+        "ISO-17359-2018"
+      ],
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "serialOrArrangement": null,
+        "manualRevision": null
+      },
+      "threshold": {
+        "value": null,
+        "unit": null,
+        "sourceId": null,
+        "applicableConditions": null
+      },
+      "plannedOnly": true,
+      "observedResult": null,
+      "engineeringReview": "pending",
+      "oemEffectiveProcedureVerified": false,
+      "independentReview": "pending",
+      "confirmsComponentDamage": false
+    },
+    {
+      "id": "ER-FC-COOL-007-I2",
+      "chainId": "FC-COOL-007",
+      "investigationId": "I2",
+      "methodId": "EV-12",
+      "intent": "Executar ensaio de circulação/capacidade de bomba somente com método OEM aplicável",
+      "minimumMetadataFields": [
+        "equipmentContext",
+        "testConfiguration",
+        "safetyAndIsolationStatus",
+        "operatingLoad",
+        "fluidTemperatureIfApplicable",
+        "measurementInstrument",
+        "oemProcedureReference",
+        "baselineOrAcceptanceCriterion",
+        "dateTime"
+      ],
+      "resultInterpretation": {
+        "supports": "Vazão/atuação fora do especificado em teste correto corrobora deficiência do conjunto",
+        "weakens": "Bombeamento demonstrado conforme OMM enfraquece bomba como origem",
+        "inconclusive": "Ausência de pontos de teste, instrumentação ou condição de segurança"
+      },
+      "evidenceRequirements": {
+        "collectionContext": "Registrar arranjo de máquina, posição, horário, carga/estado, método, instrumento e condições ambientais que alterem interpretação.",
+        "sourceAndBaseline": "Referência técnica aplicável deve ser identificada antes de declarar fora de especificação; dado histórico deve ser comparável.",
+        "qualityChecks": "Verificar calibração e integridade do instrumento, amostra, registro, contexto de operação e possibilidade de interferências.",
+        "explicitCounterEvidence": "Descrever observação contrária plausível e avaliar hipóteses alternativas; ausência de sintoma não prova inexistência de dano.",
+        "safeMethod": "Testes devem seguir procedimento OEM e controle de energias específico, sem condições de execução assumidas pelo banco."
+      },
+      "priority": "P0",
+      "qualityRisk": "Insuficiência de circulação precisa de teste OEM; temperatura alta não condena bomba.",
+      "sourceIds": [
+        "CAT-WATER-PUMP-REPLACEMENT",
+        "CAT-THERMOSTAT-REPLACEMENT",
+        "ISO-13379-1-2025",
+        "ISO-17359-2018"
+      ],
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "serialOrArrangement": null,
+        "manualRevision": null
+      },
+      "threshold": {
+        "value": null,
+        "unit": null,
+        "sourceId": null,
+        "applicableConditions": null
+      },
+      "plannedOnly": true,
+      "observedResult": null,
+      "engineeringReview": "pending",
+      "oemEffectiveProcedureVerified": false,
+      "independentReview": "pending",
+      "confirmsComponentDamage": false
+    },
+    {
+      "id": "ER-FC-COOL-008-I1",
+      "chainId": "FC-COOL-008",
+      "investigationId": "I1",
+      "methodId": "EV-01",
+      "intent": "Com circuito frio, isolado e despressurizado, localizar origem de vestígios sem tocar em partes móveis",
+      "minimumMetadataFields": [
+        "equipmentContext",
+        "inspectionLocation",
+        "isolationStatus",
+        "surfaceCondition",
+        "visualDocumentation",
+        "dateTime"
+      ],
+      "resultInterpretation": {
+        "supports": "Origem localizada em junta/vedação da bomba sustenta perda de estanqueidade no conjunto",
+        "weakens": "Trilha começa na conexão superior ou radiador, enfraquecendo perda na bomba",
+        "inconclusive": "Fluido espalhado ou protetores impedem a localização segura"
+      },
+      "evidenceRequirements": {
+        "collectionContext": "Registrar arranjo de máquina, posição, horário, carga/estado, método, instrumento e condições ambientais que alterem interpretação.",
+        "sourceAndBaseline": "Referência técnica aplicável deve ser identificada antes de declarar fora de especificação; dado histórico deve ser comparável.",
+        "qualityChecks": "Verificar calibração e integridade do instrumento, amostra, registro, contexto de operação e possibilidade de interferências.",
+        "explicitCounterEvidence": "Descrever observação contrária plausível e avaliar hipóteses alternativas; ausência de sintoma não prova inexistência de dano.",
+        "safeMethod": "Testes devem seguir procedimento OEM e controle de energias específico, sem condições de execução assumidas pelo banco."
+      },
+      "priority": "P1",
+      "qualityRisk": "Não inferir causa, componente ou efeito operacional sem evidência comparável e método OEM aplicável.",
+      "sourceIds": [
+        "CAT-WATER-PUMP-REPLACEMENT",
+        "CAT-RADIATOR-CARE",
+        "ISO-13379-1-2025",
+        "ISO-17359-2018"
+      ],
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "serialOrArrangement": null,
+        "manualRevision": null
+      },
+      "threshold": {
+        "value": null,
+        "unit": null,
+        "sourceId": null,
+        "applicableConditions": null
+      },
+      "plannedOnly": true,
+      "observedResult": null,
+      "engineeringReview": "pending",
+      "oemEffectiveProcedureVerified": false,
+      "independentReview": "pending",
+      "confirmsComponentDamage": false
+    },
+    {
+      "id": "ER-FC-COOL-008-I2",
+      "chainId": "FC-COOL-008",
+      "investigationId": "I2",
+      "methodId": "EV-13",
+      "intent": "Conferir histórico de nível/reabastecimento e trabalhos nas interfaces do circuito",
+      "minimumMetadataFields": [
+        "equipmentContext",
+        "sourceWorkOrderOrEvent",
+        "componentServiceHistory",
+        "fluidOrPartChangeHistory",
+        "chronology",
+        "dateTime"
+      ],
+      "resultInterpretation": {
+        "supports": "Reabastecimentos coerentes com vazamento externo localizado reforçam a hipótese",
+        "weakens": "Histórico estável e nenhum vazamento em condição representativa reduzem plausibilidade",
+        "inconclusive": "Registros omitem origem, data, produto ou condição de leitura"
+      },
+      "evidenceRequirements": {
+        "collectionContext": "Registrar arranjo de máquina, posição, horário, carga/estado, método, instrumento e condições ambientais que alterem interpretação.",
+        "sourceAndBaseline": "Referência técnica aplicável deve ser identificada antes de declarar fora de especificação; dado histórico deve ser comparável.",
+        "qualityChecks": "Verificar calibração e integridade do instrumento, amostra, registro, contexto de operação e possibilidade de interferências.",
+        "explicitCounterEvidence": "Descrever observação contrária plausível e avaliar hipóteses alternativas; ausência de sintoma não prova inexistência de dano.",
+        "safeMethod": "Testes devem seguir procedimento OEM e controle de energias específico, sem condições de execução assumidas pelo banco."
+      },
+      "priority": "P1",
+      "qualityRisk": "Não inferir causa, componente ou efeito operacional sem evidência comparável e método OEM aplicável.",
+      "sourceIds": [
+        "CAT-WATER-PUMP-REPLACEMENT",
+        "CAT-RADIATOR-CARE",
+        "ISO-13379-1-2025",
+        "ISO-17359-2018"
+      ],
+      "applicability": {
+        "modelId": null,
+        "locationId": null,
+        "serialOrArrangement": null,
+        "manualRevision": null
+      },
+      "threshold": {
+        "value": null,
+        "unit": null,
+        "sourceId": null,
+        "applicableConditions": null
+      },
+      "plannedOnly": true,
+      "observedResult": null,
+      "engineeringReview": "pending",
+      "oemEffectiveProcedureVerified": false,
+      "independentReview": "pending",
+      "confirmsComponentDamage": false
+    }
+  ]
+}
