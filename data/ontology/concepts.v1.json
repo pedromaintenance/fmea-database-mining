@@ -1,0 +1,443 @@
+{
+  "schema": "fmea-mining.ontology.v1",
+  "version": "1.3.0",
+  "language": "pt-BR",
+  "status": "vocabulário_controlado_autoral_pendente_de_revisao_por_familia",
+  "intent": "Camada neutra que não conclui causas, não afirma aplicabilidade OEM e não representa eventos reais",
+  "references": [
+    "IEC-60812-2018",
+    "ISO-14224-2016",
+    "ISO-17359-2018"
+  ],
+  "functionalFailures": [
+    {
+      "id": "FF-01",
+      "pt": "Não executa a função",
+      "en": "Unable to perform function",
+      "criteria": "Perda total da função requerida na condição especificada"
+    },
+    {
+      "id": "FF-02",
+      "pt": "Desempenho abaixo do requerido",
+      "en": "Degraded performance",
+      "criteria": "Função entregue abaixo do requisito mensurável"
+    },
+    {
+      "id": "FF-03",
+      "pt": "Operação intermitente",
+      "en": "Intermittent operation",
+      "criteria": "Perdas de função alternadas com períodos de funcionamento"
+    },
+    {
+      "id": "FF-04",
+      "pt": "Operação involuntária",
+      "en": "Uncommanded actuation",
+      "criteria": "Movimento ou acionamento sem comando válido"
+    },
+    {
+      "id": "FF-05",
+      "pt": "Incapacidade de reter carga ou posição",
+      "en": "Unable to retain load or position",
+      "criteria": "A função de retenção não atende condição/tempo especificados"
+    },
+    {
+      "id": "FF-06",
+      "pt": "Falha de contenção ou estanqueidade",
+      "en": "Loss of containment",
+      "criteria": "Fluido ou material deixa o limite previsto do sistema"
+    },
+    {
+      "id": "FF-07",
+      "pt": "Falha de proteção",
+      "en": "Protective function failure",
+      "criteria": "Função de detecção, isolamento, alívio ou parada não atua como requerida"
+    },
+    {
+      "id": "FF-08",
+      "pt": "Regulação fora do requisito",
+      "en": "Out-of-spec regulation",
+      "criteria": "Controle de pressão, fluxo, tensão, temperatura ou velocidade não atende faixa aplicável"
+    },
+    {
+      "id": "FF-09",
+      "pt": "Falta de integridade estrutural",
+      "en": "Loss of structural integrity",
+      "criteria": "Componente não atende requisito mecânico de suporte/transferência de esforços"
+    },
+    {
+      "id": "FF-10",
+      "pt": "Falha de comunicação/controle",
+      "en": "Control or communication failure",
+      "criteria": "Perda de comando ou troca de informação necessária à função"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "SY-01",
+      "pt": "Ruído anormal",
+      "en": "Abnormal noise",
+      "criteria": "Registrar localização, frequência, carga e evolução; não supõe rolamento danificado"
+    },
+    {
+      "id": "SY-02",
+      "pt": "Vibração anormal",
+      "en": "Abnormal vibration",
+      "criteria": "Registrar frequência, magnitude, tendência e condições de medição"
+    },
+    {
+      "id": "SY-03",
+      "pt": "Vazamento externo",
+      "en": "External leak",
+      "criteria": "Registrar fluido, origem aparente, estado estático/dinâmico e volume apenas se medido"
+    },
+    {
+      "id": "SY-04",
+      "pt": "Temperatura elevada",
+      "en": "Elevated temperature",
+      "criteria": "Comparar com referência e condição de carga; não assumir causa térmica"
+    },
+    {
+      "id": "SY-05",
+      "pt": "Temperatura baixa indevida",
+      "en": "Undertemperature",
+      "criteria": "Pode indicar medição ou controle térmico anormal"
+    },
+    {
+      "id": "SY-06",
+      "pt": "Pressão baixa",
+      "en": "Low pressure",
+      "criteria": "Exige identificar ponto de medição, regime e referência"
+    },
+    {
+      "id": "SY-07",
+      "pt": "Pressão alta",
+      "en": "High pressure",
+      "criteria": "Exige identificar circuito, ponto e condição operacional"
+    },
+    {
+      "id": "SY-08",
+      "pt": "Baixa vazão ou resposta lenta",
+      "en": "Low flow or slow response",
+      "criteria": "Função executa com velocidade/fluxo abaixo do esperado"
+    },
+    {
+      "id": "SY-09",
+      "pt": "Perda de força/torque",
+      "en": "Loss of force or torque",
+      "criteria": "Registrar carga, rotação e condição de operação"
+    },
+    {
+      "id": "SY-10",
+      "pt": "Deriva ou perda de posição",
+      "en": "Position drift",
+      "criteria": "Depende de tempo, carga, posição e arquitetura de retenção"
+    },
+    {
+      "id": "SY-11",
+      "pt": "Desgaste visível",
+      "en": "Visible wear",
+      "criteria": "Observação geométrica, não necessariamente modo de falha confirmado"
+    },
+    {
+      "id": "SY-12",
+      "pt": "Trinca ou deformação aparente",
+      "en": "Apparent crack or deformation",
+      "criteria": "Requer inspeção e avaliação de integridade apropriadas"
+    },
+    {
+      "id": "SY-13",
+      "pt": "Contaminação aparente",
+      "en": "Apparent contamination",
+      "criteria": "Contaminante, fluido, método de coleta e origem precisam de confirmação"
+    },
+    {
+      "id": "SY-14",
+      "pt": "Partículas/fragmentos metálicos",
+      "en": "Metallic particles or fragments",
+      "criteria": "Tamanho, morfologia, magnetismo e histórico são relevantes"
+    },
+    {
+      "id": "SY-15",
+      "pt": "Perda ou variação de nível",
+      "en": "Level loss or fluctuation",
+      "criteria": "Medir em condição especificada; identificar fluido e compartimento"
+    },
+    {
+      "id": "SY-16",
+      "pt": "Código de diagnóstico ativo",
+      "en": "Active diagnostic code",
+      "criteria": "DTC/Evento é indício eletrônico, não falha mecânica confirmada"
+    },
+    {
+      "id": "SY-17",
+      "pt": "Código de diagnóstico registrado",
+      "en": "Logged diagnostic code",
+      "criteria": "Requer cronologia, frequência e relação com evento observado"
+    },
+    {
+      "id": "SY-18",
+      "pt": "Falha de partida/acionamento",
+      "en": "Start or actuation failure",
+      "criteria": "Separar fonte de energia, permissivos, comando, proteção e atuador"
+    },
+    {
+      "id": "SY-19",
+      "pt": "Consumo anormal de fluido",
+      "en": "Abnormal fluid consumption",
+      "criteria": "Exige base comparável e diferença entre consumo externo/interno"
+    },
+    {
+      "id": "SY-20",
+      "pt": "Desempenho irregular sob carga",
+      "en": "Irregular loaded performance",
+      "criteria": "Registrar regime, terreno, ciclo, duração e repetibilidade"
+    }
+  ],
+  "mechanismFamilies": [
+    {
+      "id": "ME-01",
+      "pt": "Desgaste abrasivo",
+      "en": "Abrasive wear",
+      "criteria": "Partículas ou asperezas removem material por interação mecânica"
+    },
+    {
+      "id": "ME-02",
+      "pt": "Desgaste adesivo",
+      "en": "Adhesive wear",
+      "criteria": "Interações de superfícies em contato produzem transferência/perda de material"
+    },
+    {
+      "id": "ME-03",
+      "pt": "Fadiga de contato",
+      "en": "Contact fatigue",
+      "criteria": "Carregamentos cíclicos em superfícies de contato podem gerar descascamento/trincas"
+    },
+    {
+      "id": "ME-04",
+      "pt": "Fadiga estrutural",
+      "en": "Structural fatigue",
+      "criteria": "Cargas cíclicas acumulam dano na estrutura"
+    },
+    {
+      "id": "ME-05",
+      "pt": "Corrosão",
+      "en": "Corrosion",
+      "criteria": "Alteração de material por interação química/eletroquímica"
+    },
+    {
+      "id": "ME-06",
+      "pt": "Degradação térmica",
+      "en": "Thermal degradation",
+      "criteria": "Exposição térmica altera propriedades ou acelera degradação"
+    },
+    {
+      "id": "ME-07",
+      "pt": "Degradação de elastômero",
+      "en": "Elastomer degradation",
+      "criteria": "Envelhecimento, ataque químico ou esforço afetam vedação/mangueira"
+    },
+    {
+      "id": "ME-08",
+      "pt": "Erosão/cavitação",
+      "en": "Erosion or cavitation",
+      "criteria": "Danos localizados associados a escoamento, impacto de partículas ou colapso de bolhas"
+    },
+    {
+      "id": "ME-09",
+      "pt": "Afrouxamento/perda de pré-carga",
+      "en": "Loosening or preload loss",
+      "criteria": "Fixação perde força de aperto ou retenção requerida"
+    },
+    {
+      "id": "ME-10",
+      "pt": "Ruptura de isolamento elétrico",
+      "en": "Electrical insulation breakdown",
+      "criteria": "Perda de isolação permite caminhos elétricos indevidos"
+    },
+    {
+      "id": "ME-11",
+      "pt": "Resistência de contato anormal",
+      "en": "Abnormal contact resistance",
+      "criteria": "Contato elétrico comprometido por estado de terminais, conexões ou materiais"
+    },
+    {
+      "id": "ME-12",
+      "pt": "Restrição de escoamento",
+      "en": "Flow restriction",
+      "criteria": "Obstrução ou resistência excessiva limita passagem de fluido ou ar"
+    },
+    {
+      "id": "ME-13",
+      "pt": "Lubrificação inadequada",
+      "en": "Inadequate lubrication",
+      "criteria": "Condição lubrificante/filme lubrificante não atende função; não identifica origem automaticamente"
+    },
+    {
+      "id": "ME-14",
+      "pt": "Desajuste/calibração inadequada",
+      "en": "Incorrect adjustment or calibration",
+      "criteria": "Parâmetro regulado ou posição de referência incompatível com requisito"
+    },
+    {
+      "id": "ME-15",
+      "pt": "Falha de vedação",
+      "en": "Sealing failure",
+      "criteria": "Interface deixa de manter estanqueidade requerida; mecanismo detalhado exige inspeção"
+    }
+  ],
+  "evidenceMethods": [
+    {
+      "id": "EV-01",
+      "pt": "Inspeção visual",
+      "en": "Visual inspection",
+      "criteria": "Registrar região, método, condição e imagem somente quando autorizada"
+    },
+    {
+      "id": "EV-02",
+      "pt": "Inspeção dimensional",
+      "en": "Dimensional inspection",
+      "criteria": "Registrar medida, instrumento, unidade, tolerância e condição"
+    },
+    {
+      "id": "EV-03",
+      "pt": "Termometria/termografia",
+      "en": "Thermometry or thermal imaging",
+      "criteria": "Registrar emissividade, ambiente, carga e ponto de referência"
+    },
+    {
+      "id": "EV-04",
+      "pt": "Análise de vibrações",
+      "en": "Vibration analysis",
+      "criteria": "Registrar posição do sensor, velocidade/rotação, espectro e baseline"
+    },
+    {
+      "id": "EV-05",
+      "pt": "Medição de pressão/fluxo",
+      "en": "Pressure or flow measurement",
+      "criteria": "Exige ponto, instrumento, calibração, carga e OEM"
+    },
+    {
+      "id": "EV-06",
+      "pt": "Medição elétrica",
+      "en": "Electrical measurement",
+      "criteria": "Registrar circuito, método, instrumento e estado de energização"
+    },
+    {
+      "id": "EV-07",
+      "pt": "Leitura de DTC/eventos",
+      "en": "DTC or event scan",
+      "criteria": "Registrar família, módulo, estado ativo/histórico e cronologia"
+    },
+    {
+      "id": "EV-08",
+      "pt": "Análise elementar de fluido",
+      "en": "Elemental fluid analysis",
+      "criteria": "Registrar método, compartimento, produto, tempo de uso e tendência"
+    },
+    {
+      "id": "EV-09",
+      "pt": "Contagem/classificação de partículas",
+      "en": "Particle counting or classification",
+      "criteria": "Registrar método, fluido, coleta, classe e limitações"
+    },
+    {
+      "id": "EV-10",
+      "pt": "Análise de água/glicol/combustível",
+      "en": "Water glycol fuel contamination analysis",
+      "criteria": "Método e interferências devem ser documentados"
+    },
+    {
+      "id": "EV-11",
+      "pt": "Inspeção de filtro/bujão",
+      "en": "Filter or magnetic plug inspection",
+      "criteria": "Registrar condições de coleta, imagem, morfologia e substituição do elemento quando aplicável"
+    },
+    {
+      "id": "EV-12",
+      "pt": "Teste funcional seguro",
+      "en": "Controlled functional test",
+      "criteria": "Exige pré-condições de isolamento, manual efetivo e critério de aceitação"
+    },
+    {
+      "id": "EV-13",
+      "pt": "Histórico de manutenção",
+      "en": "Maintenance history",
+      "criteria": "Registro documental; não comprova que o mecanismo está ativo"
+    },
+    {
+      "id": "EV-14",
+      "pt": "Telemetria/tendência",
+      "en": "Telemetry or trend review",
+      "criteria": "Registrar canal, frequência, validade, carga e perda de comunicação"
+    },
+    {
+      "id": "EV-15",
+      "pt": "Inspeção de fixação/folga",
+      "en": "Fastener or clearance check",
+      "criteria": "Comparar com limite de projeto e condição de operação"
+    },
+    {
+      "id": "EV-16",
+      "pt": "Consulta de literatura efetiva",
+      "en": "Applicable technical literature review",
+      "criteria": "Referência documental, não evidência física de defeito"
+    }
+  ],
+  "evidenceOutcomes": [
+    {
+      "id": "supports",
+      "pt": "Sustenta",
+      "en": "Supports",
+      "criteria": "Resultado aumenta plausibilidade relativa sem confirmar sozinho"
+    },
+    {
+      "id": "weakens",
+      "pt": "Enfraquece",
+      "en": "Weakens",
+      "criteria": "Resultado reduz plausibilidade sob pressupostos explicitados"
+    },
+    {
+      "id": "inconclusive",
+      "pt": "Inconclusivo",
+      "en": "Inconclusive",
+      "criteria": "Limite do teste, contexto ausente ou sinal ambíguo"
+    },
+    {
+      "id": "not_performed",
+      "pt": "Não realizado",
+      "en": "Not performed",
+      "criteria": "Método apenas planejado, sem resultado"
+    }
+  ],
+  "evidenceOrigin": [
+    "observacao_real_autorizada",
+    "simulacao_didatica",
+    "teste_planejado",
+    "informacao_documental"
+  ],
+  "relationKinds": [
+    "may_manifest_as",
+    "may_be_detected_by",
+    "consistent_with",
+    "inconsistent_with",
+    "may_cause",
+    "may_contribute_to",
+    "located_in",
+    "prevention_targets"
+  ],
+  "qualityLevels": [
+    "importado_sem_revisao",
+    "inferido",
+    "revisado_por_especialista",
+    "aplicabilidade_oem_confirmada",
+    "validado_com_evidencias"
+  ],
+  "safetyRules": [
+    "Não converter planejado em observado",
+    "Não atribuir limite sem fonte específica de modelo/série/software",
+    "Não atribuir probabilidade a partir da quantidade de combinações",
+    "Não tratar DTC, metal ou sintoma isolado como causa raiz",
+    "Não mapear posição ou lado por semelhança textual",
+    "Toda relação empírica exige permissão e proveniência"
+  ]
+}
