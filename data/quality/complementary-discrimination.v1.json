@@ -1,0 +1,542 @@
+{
+  "schema": "fmea-mining.complementary-discrimination.v1",
+  "version": "1.3.10",
+  "purpose": "Cruzar duas hipoteses alternativas com dois testes complementares de cada P0, identificando lacunas de poder discriminante.",
+  "policy": {
+    "allHypothesesRemainOpen": true,
+    "technicalReviewRequired": true,
+    "autoExclusionAllowed": false,
+    "numericalConfidenceAllowed": false,
+    "manualEffectivityRequired": true,
+    "onlyInferPotential": false
+  },
+  "values": [
+    "nao_discrimina",
+    "indicio_parcial",
+    "potencialmente_discriminante_condicional"
+  ],
+  "counts": {
+    "baseTests": 6,
+    "alternativeHypotheses": 12,
+    "complementAssessments": 24,
+    "unresolvedGaps": 12
+  },
+  "records": [
+    {
+      "id": "XREF-FC-HOSE-001-ALT1",
+      "testId": "DISC-FC-HOSE-001-I1",
+      "chainId": "FC-HOSE-001",
+      "alternativeHypothesisId": "ALT1",
+      "alternativeDescription": "Vazamento na união/conexão sem desgaste estrutural do tubo",
+      "complementAssessments": [
+        {
+          "complementaryMethodId": "EV-15",
+          "discriminativeValue": "indicio_parcial",
+          "potentialSupport": "Roteamento/cargas de contato podem explicar abrasão, mas não estabelecem se o terminal é origem de fuga.",
+          "potentialWeakening": "Folgas e posição compatíveis reduzem suspeita de atrito, sem excluir defeito de terminal.",
+          "remainingAmbiguity": "Roteamento pode estar incorreto e conexão vazar simultaneamente.",
+          "performed": false,
+          "oemEffective": false,
+          "isolationProof": false
+        },
+        {
+          "complementaryMethodId": "EV-13",
+          "discriminativeValue": "nao_discrimina",
+          "potentialSupport": "Histórico de montagem ou troca do terminal ajuda a formular hipótese, mas não localiza a fuga atual.",
+          "potentialWeakening": "Histórico sem intervenções não afasta falha de terminal.",
+          "remainingAmbiguity": "Ausência de relato não é evidência da estanqueidade.",
+          "performed": false,
+          "oemEffective": false,
+          "isolationProof": false
+        }
+      ],
+      "remainingGap": {
+        "methodId": "EV-01",
+        "neededInvestigation": "Inspeção localizada da origem da trilha, com sistema isolado e sem contato com fluido pressurizado, distinguindo terminal de cobertura.",
+        "unresolvedReason": "sem_resultado_ou_origem_rastreada",
+        "status": "pendente"
+      },
+      "closureRule": "A ausência de verificação independente e OEM específico impede descartar qualquer hipótese concorrente.",
+      "reviews": {
+        "mechanical": "pending",
+        "oem": "pending",
+        "evidence": "not_collected"
+      },
+      "confirmedRootCause": false,
+      "claimStatus": "proposta_de_discriminacao_sem_resultado_empirico"
+    },
+    {
+      "id": "XREF-FC-HOSE-001-ALT2",
+      "testId": "DISC-FC-HOSE-001-I1",
+      "chainId": "FC-HOSE-001",
+      "alternativeHypothesisId": "ALT2",
+      "alternativeDescription": "Óleo proveniente de outro ponto escorre sobre a mangueira",
+      "complementAssessments": [
+        {
+          "complementaryMethodId": "EV-15",
+          "discriminativeValue": "nao_discrimina",
+          "potentialSupport": "Inspeção de folga e suporte não demonstra de onde o óleo escorreu.",
+          "potentialWeakening": "Trajeto correto não exclui vazamento acima da mangueira.",
+          "remainingAmbiguity": "Traçado de uma mangueira não é traçado de fluido.",
+          "performed": false,
+          "oemEffective": false,
+          "isolationProof": false
+        },
+        {
+          "complementaryMethodId": "EV-13",
+          "discriminativeValue": "indicio_parcial",
+          "potentialSupport": "Histórico de fuga em conjunto superior ajuda a priorizar a investigação.",
+          "potentialWeakening": "Ausência de evento anterior não exclui fuga nova.",
+          "remainingAmbiguity": "Histórico pode estar incompleto e não registra vazamento atual.",
+          "performed": false,
+          "oemEffective": false,
+          "isolationProof": false
+        }
+      ],
+      "remainingGap": {
+        "methodId": "EV-01",
+        "neededInvestigation": "Rastrear origem física da trilha e examinar componentes posicionados acima da linha, em condição segura.",
+        "unresolvedReason": "origem_de_fluidos_nao_localizada",
+        "status": "pendente"
+      },
+      "closureRule": "A ausência de verificação independente e OEM específico impede descartar qualquer hipótese concorrente.",
+      "reviews": {
+        "mechanical": "pending",
+        "oem": "pending",
+        "evidence": "not_collected"
+      },
+      "confirmedRootCause": false,
+      "claimStatus": "proposta_de_discriminacao_sem_resultado_empirico"
+    },
+    {
+      "id": "XREF-FC-FD-001-ALT1",
+      "testId": "DISC-FC-FD-001-I2",
+      "chainId": "FC-FD-001",
+      "alternativeHypothesisId": "ALT1",
+      "alternativeDescription": "Desgaste de regime/assentamento sem falha evolutiva comprovada",
+      "complementAssessments": [
+        {
+          "complementaryMethodId": "EV-11",
+          "discriminativeValue": "indicio_parcial",
+          "potentialSupport": "Depósito fino, morfologia estável e histórico coerente são compatíveis com desgaste de regime.",
+          "potentialWeakening": "Fragmentos grosseiros ou tendência evolutiva enfraquecem a hipótese de estabilidade.",
+          "remainingAmbiguity": "Morfologia não identifica necessariamente mecanismo único e depende de coleta representativa.",
+          "performed": false,
+          "oemEffective": false,
+          "isolationProof": false
+        },
+        {
+          "complementaryMethodId": "EV-10",
+          "discriminativeValue": "nao_discrimina",
+          "potentialSupport": "Análise de água pode identificar contaminante concorrente, mas não define se partículas metálicas decorrem de assentamento.",
+          "potentialWeakening": "Resultado sem água não demonstra ausência de desgaste.",
+          "remainingAmbiguity": "Teste de água e análise de partículas medem propriedades diferentes.",
+          "performed": false,
+          "oemEffective": false,
+          "isolationProof": false
+        }
+      ],
+      "remainingGap": {
+        "methodId": "EV-13",
+        "neededInvestigation": "Reconstruir série histórica por compartimento, mudança de óleo, manutenção e horas de uso em condições comparáveis.",
+        "unresolvedReason": "serie_historica_comparavel_ausente",
+        "status": "pendente"
+      },
+      "closureRule": "A ausência de verificação independente e OEM específico impede descartar qualquer hipótese concorrente.",
+      "reviews": {
+        "mechanical": "pending",
+        "oem": "pending",
+        "evidence": "not_collected"
+      },
+      "confirmedRootCause": false,
+      "claimStatus": "proposta_de_discriminacao_sem_resultado_empirico"
+    },
+    {
+      "id": "XREF-FC-FD-001-ALT2",
+      "testId": "DISC-FC-FD-001-I2",
+      "chainId": "FC-FD-001",
+      "alternativeHypothesisId": "ALT2",
+      "alternativeDescription": "Partículas produzidas por falha já existente de engrenagem/rolamento",
+      "complementAssessments": [
+        {
+          "complementaryMethodId": "EV-11",
+          "discriminativeValue": "potencialmente_discriminante_condicional",
+          "potentialSupport": "Morfologia grosseira ou fragmentos de desgaste pode apoiar geração interna se a origem externa for controlada.",
+          "potentialWeakening": "Somente depósito estável e fino enfraquece dano interno progressivo naquele período.",
+          "remainingAmbiguity": "Bujão magnético não diferencia com certeza rolamento, engrenagem ou partícula de manutenção.",
+          "performed": false,
+          "oemEffective": false,
+          "isolationProof": false
+        },
+        {
+          "complementaryMethodId": "EV-10",
+          "discriminativeValue": "indicio_parcial",
+          "potentialSupport": "Água detectada reforça risco de ingresso/degradação, sem localizar fonte de partículas metálicas.",
+          "potentialWeakening": "Água ausente reduz apenas uma rota de contaminação.",
+          "remainingAmbiguity": "Partículas metálicas podem surgir sem água.",
+          "performed": false,
+          "oemEffective": false,
+          "isolationProof": false
+        }
+      ],
+      "remainingGap": {
+        "methodId": "EV-12",
+        "neededInvestigation": "Inspeção técnica dirigida à condição da engrenagem/rolamento conforme OEM, somente quando tecnicamente indicada e segura.",
+        "unresolvedReason": "origem_de_particulas_nao_comprovada",
+        "status": "pendente"
+      },
+      "closureRule": "A ausência de verificação independente e OEM específico impede descartar qualquer hipótese concorrente.",
+      "reviews": {
+        "mechanical": "pending",
+        "oem": "pending",
+        "evidence": "not_collected"
+      },
+      "confirmedRootCause": false,
+      "claimStatus": "proposta_de_discriminacao_sem_resultado_empirico"
+    },
+    {
+      "id": "XREF-FC-COOL-001-ALT1",
+      "testId": "DISC-FC-COOL-001-I1",
+      "chainId": "FC-COOL-001",
+      "alternativeHypothesisId": "ALT1",
+      "alternativeDescription": "Baixo nível ou circulação deficiente de líquido de arrefecimento",
+      "complementAssessments": [
+        {
+          "complementaryMethodId": "EV-14",
+          "discriminativeValue": "nao_discrimina",
+          "potentialSupport": "Tendência de temperatura demonstra comportamento térmico, não nível, vazão ou origem da perda de fluido.",
+          "potentialWeakening": "Temperatura normal em condição comparável enfraquece falha térmica ativa, não perda incipiente.",
+          "remainingAmbiguity": "Telemetria não substitui verificação de circuito e nível.",
+          "performed": false,
+          "oemEffective": false,
+          "isolationProof": false
+        },
+        {
+          "complementaryMethodId": "EV-12",
+          "discriminativeValue": "potencialmente_discriminante_condicional",
+          "potentialSupport": "Teste de circulação, se específico para o circuito, pode localizar deficiência hidráulica de arrefecimento.",
+          "potentialWeakening": "Circulação conforme OEM reduz plausibilidade de falha de fluxo, sem excluir vazamento intermitente.",
+          "remainingAmbiguity": "Baixo nível, termostato e bomba ainda exigem discriminação independente.",
+          "performed": false,
+          "oemEffective": false,
+          "isolationProof": false
+        }
+      ],
+      "remainingGap": {
+        "methodId": "EV-01",
+        "neededInvestigation": "Verificar nível e trilhas de fluido com sistema frio, sem abrir circuito pressurizado; identificar origem se houver perda.",
+        "unresolvedReason": "volume_e_estanqueidade_nao_verificados",
+        "status": "pendente"
+      },
+      "closureRule": "A ausência de verificação independente e OEM específico impede descartar qualquer hipótese concorrente.",
+      "reviews": {
+        "mechanical": "pending",
+        "oem": "pending",
+        "evidence": "not_collected"
+      },
+      "confirmedRootCause": false,
+      "claimStatus": "proposta_de_discriminacao_sem_resultado_empirico"
+    },
+    {
+      "id": "XREF-FC-COOL-001-ALT2",
+      "testId": "DISC-FC-COOL-001-I1",
+      "chainId": "FC-COOL-001",
+      "alternativeHypothesisId": "ALT2",
+      "alternativeDescription": "Ventilador não produzindo fluxo de ar requerido",
+      "complementAssessments": [
+        {
+          "complementaryMethodId": "EV-14",
+          "discriminativeValue": "indicio_parcial",
+          "potentialSupport": "Tendência de demanda/resposta do ventilador, quando disponível e válida, pode evidenciar insuficiência de ventilação.",
+          "potentialWeakening": "Resposta conforme especificação reduz suspeita de falha de comando nessa condição.",
+          "remainingAmbiguity": "Canal de temperatura sem variável de ventilador não é diagnóstico do acionamento.",
+          "performed": false,
+          "oemEffective": false,
+          "isolationProof": false
+        },
+        {
+          "complementaryMethodId": "EV-12",
+          "discriminativeValue": "indicio_parcial",
+          "potentialSupport": "Ensaio funcional do circuito térmico pode controlar condições e ajudar a isolar a contribuição do ventilador.",
+          "potentialWeakening": "Circulação conforme OEM não exclui falha de ventilação.",
+          "remainingAmbiguity": "A execução do teste depende de instrumentação e procedimentos do arranjo efetivo.",
+          "performed": false,
+          "oemEffective": false,
+          "isolationProof": false
+        }
+      ],
+      "remainingGap": {
+        "methodId": "EV-14",
+        "neededInvestigation": "Conferir canal de demanda e resposta do ventilador, seu tipo de acionamento e requisitos por arranjo e carga.",
+        "unresolvedReason": "resposta_do_ventilador_nao_verificada",
+        "status": "pendente"
+      },
+      "closureRule": "A ausência de verificação independente e OEM específico impede descartar qualquer hipótese concorrente.",
+      "reviews": {
+        "mechanical": "pending",
+        "oem": "pending",
+        "evidence": "not_collected"
+      },
+      "confirmedRootCause": false,
+      "claimStatus": "proposta_de_discriminacao_sem_resultado_empirico"
+    },
+    {
+      "id": "XREF-FC-TRACK-001-ALT1",
+      "testId": "DISC-FC-TRACK-001-I2",
+      "chainId": "FC-TRACK-001",
+      "alternativeHypothesisId": "ALT1",
+      "alternativeDescription": "Falha interna de rolamento/vedação no rolete",
+      "complementAssessments": [
+        {
+          "complementaryMethodId": "EV-01",
+          "discriminativeValue": "indicio_parcial",
+          "potentialSupport": "Vedação com fuga e rolete sem detritos visíveis deslocam atenção para dano interno.",
+          "potentialWeakening": "Detrito que bloqueia rotação favorece explicação externa, mas pode coexistir com dano interno.",
+          "remainingAmbiguity": "Inspeção externa não observa rolamento sem procedimentos específicos.",
+          "performed": false,
+          "oemEffective": false,
+          "isolationProof": false
+        },
+        {
+          "complementaryMethodId": "EV-02",
+          "discriminativeValue": "indicio_parcial",
+          "potentialSupport": "Desgaste localizado ou evolução CTS pode apoiar atrito persistente.",
+          "potentialWeakening": "Desgaste dentro do padrão reduz evidência de dano progressivo, não exclui falha incipiente.",
+          "remainingAmbiguity": "CTS não comprova a origem interna versus externa.",
+          "performed": false,
+          "oemEffective": false,
+          "isolationProof": false
+        }
+      ],
+      "remainingGap": {
+        "methodId": "EV-12",
+        "neededInvestigation": "Verificar rotação/condição interna do rolete conforme procedimento autorizado, se o conjunto puder ser avaliado sem risco.",
+        "unresolvedReason": "condicao_interna_do_rolete_nao_isolada",
+        "status": "pendente"
+      },
+      "closureRule": "A ausência de verificação independente e OEM específico impede descartar qualquer hipótese concorrente.",
+      "reviews": {
+        "mechanical": "pending",
+        "oem": "pending",
+        "evidence": "not_collected"
+      },
+      "confirmedRootCause": false,
+      "claimStatus": "proposta_de_discriminacao_sem_resultado_empirico"
+    },
+    {
+      "id": "XREF-FC-TRACK-001-ALT2",
+      "testId": "DISC-FC-TRACK-001-I2",
+      "chainId": "FC-TRACK-001",
+      "alternativeHypothesisId": "ALT2",
+      "alternativeDescription": "Tensionamento inadequado da esteira gera contato e desgaste anormais",
+      "complementAssessments": [
+        {
+          "complementaryMethodId": "EV-01",
+          "discriminativeValue": "nao_discrimina",
+          "potentialSupport": "Detritos e fugas observáveis não estabelecem tensão correta.",
+          "potentialWeakening": "Ausência de acúmulos não exclui tensão fora da especificação.",
+          "remainingAmbiguity": "Inspeção visual genérica não equivale à medição de flecha.",
+          "performed": false,
+          "oemEffective": false,
+          "isolationProof": false
+        },
+        {
+          "complementaryMethodId": "EV-02",
+          "discriminativeValue": "potencialmente_discriminante_condicional",
+          "potentialSupport": "Medição de tensão/flecha conforme OMM junto a CTS pode identificar desvio atual.",
+          "potentialWeakening": "Valor conforme OMM enfraquece tensão como causa ativa naquela condição.",
+          "remainingAmbiguity": "Desvio atual não prova causa do desgaste histórico.",
+          "performed": false,
+          "oemEffective": false,
+          "isolationProof": false
+        }
+      ],
+      "remainingGap": {
+        "methodId": "EV-02",
+        "neededInvestigation": "Registrar método de flecha/tensionamento, posição, terreno e limite OMM aplicável à máquina.",
+        "unresolvedReason": "tensao_por_omm_nao_medida",
+        "status": "pendente"
+      },
+      "closureRule": "A ausência de verificação independente e OEM específico impede descartar qualquer hipótese concorrente.",
+      "reviews": {
+        "mechanical": "pending",
+        "oem": "pending",
+        "evidence": "not_collected"
+      },
+      "confirmedRootCause": false,
+      "claimStatus": "proposta_de_discriminacao_sem_resultado_empirico"
+    },
+    {
+      "id": "XREF-FC-TRACK-005-ALT1",
+      "testId": "DISC-FC-TRACK-005-I2",
+      "chainId": "FC-TRACK-005",
+      "alternativeHypothesisId": "ALT1",
+      "alternativeDescription": "Assentamento da junta sem rotação do fixador",
+      "complementAssessments": [
+        {
+          "complementaryMethodId": "EV-01",
+          "discriminativeValue": "indicio_parcial",
+          "potentialSupport": "Marcas de acomodação e falta de rotação observável tornam assentamento plausível.",
+          "potentialWeakening": "Marcas inequívocas de giro relativo enfraquecem hipótese exclusivamente sem rotação.",
+          "remainingAmbiguity": "Ausência de marcação histórica não prova que o parafuso nunca girou.",
+          "performed": false,
+          "oemEffective": false,
+          "isolationProof": false
+        },
+        {
+          "complementaryMethodId": "EV-13",
+          "discriminativeValue": "indicio_parcial",
+          "potentialSupport": "Sequência de instalação, superfícies e tempo de serviço ajuda a investigar relaxação.",
+          "potentialWeakening": "Histórico de rotação registrada enfraquece mecanismo exclusivamente sem giro.",
+          "remainingAmbiguity": "Histórico incompleto e reaperto anterior ocultam mecanismos.",
+          "performed": false,
+          "oemEffective": false,
+          "isolationProof": false
+        }
+      ],
+      "remainingGap": {
+        "methodId": "EV-15",
+        "neededInvestigation": "Obter registro OEM de montagem e evidências rastreáveis de movimento relativo e assentamento sem converter torque residual em pré-carga.",
+        "unresolvedReason": "diferenciacao_rotacao_assentamento_inconclusiva",
+        "status": "pendente"
+      },
+      "closureRule": "A ausência de verificação independente e OEM específico impede descartar qualquer hipótese concorrente.",
+      "reviews": {
+        "mechanical": "pending",
+        "oem": "pending",
+        "evidence": "not_collected"
+      },
+      "confirmedRootCause": false,
+      "claimStatus": "proposta_de_discriminacao_sem_resultado_empirico"
+    },
+    {
+      "id": "XREF-FC-TRACK-005-ALT2",
+      "testId": "DISC-FC-TRACK-005-I2",
+      "chainId": "FC-TRACK-005",
+      "alternativeHypothesisId": "ALT2",
+      "alternativeDescription": "Ruptura de um parafuso previamente íntegro por sobrecarga",
+      "complementAssessments": [
+        {
+          "complementaryMethodId": "EV-01",
+          "discriminativeValue": "potencialmente_discriminante_condicional",
+          "potentialSupport": "Fragmento recuperado e examinado pode distinguir ruptura de simples ausência de fixador.",
+          "potentialWeakening": "Fixador presente, sem ruptura, reduz hipótese de fratura naquele ponto.",
+          "remainingAmbiguity": "Inspeção visual não distingue necessariamente fratura por sobrecarga de fadiga.",
+          "performed": false,
+          "oemEffective": false,
+          "isolationProof": false
+        },
+        {
+          "complementaryMethodId": "EV-13",
+          "discriminativeValue": "indicio_parcial",
+          "potentialSupport": "Histórico de choque único ou solicitação extrema apoia investigação de sobrecarga.",
+          "potentialWeakening": "Ausência de evento documentado não afasta choque não registrado.",
+          "remainingAmbiguity": "Cronologia não substitui fractografia.",
+          "performed": false,
+          "oemEffective": false,
+          "isolationProof": false
+        }
+      ],
+      "remainingGap": {
+        "methodId": "EV-11",
+        "neededInvestigation": "Examinar e preservar a superfície/fratura do fixador com procedimento autorizado e análise metalúrgica quando aplicável.",
+        "unresolvedReason": "fractografia_e_peca_nao_disponiveis",
+        "status": "pendente"
+      },
+      "closureRule": "A ausência de verificação independente e OEM específico impede descartar qualquer hipótese concorrente.",
+      "reviews": {
+        "mechanical": "pending",
+        "oem": "pending",
+        "evidence": "not_collected"
+      },
+      "confirmedRootCause": false,
+      "claimStatus": "proposta_de_discriminacao_sem_resultado_empirico"
+    },
+    {
+      "id": "XREF-FC-COOL-007-ALT1",
+      "testId": "DISC-FC-COOL-007-I2",
+      "chainId": "FC-COOL-007",
+      "alternativeHypothesisId": "ALT1",
+      "alternativeDescription": "Termostato restringe passagem ao radiador com bomba adequada",
+      "complementAssessments": [
+        {
+          "complementaryMethodId": "EV-14",
+          "discriminativeValue": "nao_discrimina",
+          "potentialSupport": "Tendência térmica reflete comportamento do circuito sem medir abertura do termostato.",
+          "potentialWeakening": "Temperatura normal não comprova abertura ou fechamento correto do termostato.",
+          "remainingAmbiguity": "Resposta térmica também depende de ventilação, carga e sensor.",
+          "performed": false,
+          "oemEffective": false,
+          "isolationProof": false
+        },
+        {
+          "complementaryMethodId": "EV-01",
+          "discriminativeValue": "nao_discrimina",
+          "potentialSupport": "Inspeção geral de colmeia e nível não mede atuação termostática.",
+          "potentialWeakening": "Colmeia limpa não afasta termostato com curso anormal.",
+          "remainingAmbiguity": "A inspeção visual externa não acessa o elemento termostático.",
+          "performed": false,
+          "oemEffective": false,
+          "isolationProof": false
+        }
+      ],
+      "remainingGap": {
+        "methodId": "EV-12",
+        "neededInvestigation": "Ensaio funcional do termostato e do bypass, distinto do ensaio da bomba, com referência OEM do circuito específico.",
+        "unresolvedReason": "termorregulador_nao_avaliado",
+        "status": "pendente"
+      },
+      "closureRule": "A ausência de verificação independente e OEM específico impede descartar qualquer hipótese concorrente.",
+      "reviews": {
+        "mechanical": "pending",
+        "oem": "pending",
+        "evidence": "not_collected"
+      },
+      "confirmedRootCause": false,
+      "claimStatus": "proposta_de_discriminacao_sem_resultado_empirico"
+    },
+    {
+      "id": "XREF-FC-COOL-007-ALT2",
+      "testId": "DISC-FC-COOL-007-I2",
+      "chainId": "FC-COOL-007",
+      "alternativeHypothesisId": "ALT2",
+      "alternativeDescription": "Ar insuficiente através do radiador com circulação hidráulica adequada",
+      "complementAssessments": [
+        {
+          "complementaryMethodId": "EV-14",
+          "discriminativeValue": "indicio_parcial",
+          "potentialSupport": "Temperatura e carga correlacionadas, com dados do ventilador, podem sustentar hipótese de rejeição de ar insuficiente.",
+          "potentialWeakening": "Ventilação confirmada sob comando e carga equivalentes reduz a hipótese.",
+          "remainingAmbiguity": "Telemetria isolada não separa fluxo de ar de eficiência do radiador.",
+          "performed": false,
+          "oemEffective": false,
+          "isolationProof": false
+        },
+        {
+          "complementaryMethodId": "EV-01",
+          "discriminativeValue": "potencialmente_discriminante_condicional",
+          "potentialSupport": "Colmeia com obstrução externa verificada favorece restrição de ar; limpeza e verificação da ventilação são complementares.",
+          "potentialWeakening": "Passagens livres e ventilação efetiva reduzem hipótese externa, sem excluir obstrução interna.",
+          "remainingAmbiguity": "Detritos visíveis não quantificam sua contribuição térmica.",
+          "performed": false,
+          "oemEffective": false,
+          "isolationProof": false
+        }
+      ],
+      "remainingGap": {
+        "methodId": "EV-14",
+        "neededInvestigation": "Testar resposta do ventilador na arquitetura instalada e comparar temperatura/carga antes de atribuir falha à bomba.",
+        "unresolvedReason": "ventilacao_nao_confirmada",
+        "status": "pendente"
+      },
+      "closureRule": "A ausência de verificação independente e OEM específico impede descartar qualquer hipótese concorrente.",
+      "reviews": {
+        "mechanical": "pending",
+        "oem": "pending",
+        "evidence": "not_collected"
+      },
+      "confirmedRootCause": false,
+      "claimStatus": "proposta_de_discriminacao_sem_resultado_empirico"
+    }
+  ]
+}
