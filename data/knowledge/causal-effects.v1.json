@@ -1,0 +1,709 @@
+{
+  "schema": "fmea-mining.effects.v1",
+  "version": "1.3.7",
+  "status": "local_and_system_effect_hypotheses_only",
+  "policy": {
+    "noEmpiricalEvents": true,
+    "noSeverityWithoutEvidence": true,
+    "noAutomaticCausalValidation": true
+  },
+  "records": [
+    {
+      "chainId": "FC-HOSE-001",
+      "family": "mangueiras_hidraulicas",
+      "functionalFailureId": "FF-06",
+      "localEffect": {
+        "description": "Abrasion da cobertura pode diminuir integridade da mangueira.",
+        "status": "possible_unobserved",
+        "componentVerified": false
+      },
+      "systemEffect": {
+        "description": "Se evoluir para fuga ou rompimento, pode comprometer fornecimento hidráulico.",
+        "status": "possible_unobserved",
+        "operationalImpactVerified": false
+      },
+      "propagationCondition": "O mecanismo deve existir e progredir sob condições reais de serviço; confirmar função, carga, duração e arquitetura OEM antes de atribuir consequência.",
+      "diagnosticCaveat": "Abrasão não comprova perda atual de contenção.",
+      "sourceIds": [
+        "CAT-HYD-HOSE-INSPECT",
+        "CAT-HYD-HOSE-FAILURE"
+      ],
+      "causalityStatus": "engineering_inference_unreviewed",
+      "severityRank": null,
+      "probability": null,
+      "actualEventCount": 0,
+      "applicableModelId": null,
+      "applicableLocationId": null,
+      "oemSerialEffectivity": null,
+      "reviewer": null
+    },
+    {
+      "chainId": "FC-HOSE-002",
+      "family": "mangueiras_hidraulicas",
+      "functionalFailureId": "FF-06",
+      "localEffect": {
+        "description": "Flexão ou torção inadequada pode produzir trincas/deformação no conjunto flexível.",
+        "status": "possible_unobserved",
+        "componentVerified": false
+      },
+      "systemEffect": {
+        "description": "Evolução do dano pode levar a vazamento e interrupção de movimentos de implementos.",
+        "status": "possible_unobserved",
+        "operationalImpactVerified": false
+      },
+      "propagationCondition": "O mecanismo deve existir e progredir sob condições reais de serviço; confirmar função, carga, duração e arquitetura OEM antes de atribuir consequência.",
+      "diagnosticCaveat": "Curva observada não prova raio fora da especificação.",
+      "sourceIds": [
+        "CAT-HYD-HOSE-INSPECT"
+      ],
+      "causalityStatus": "engineering_inference_unreviewed",
+      "severityRank": null,
+      "probability": null,
+      "actualEventCount": 0,
+      "applicableModelId": null,
+      "applicableLocationId": null,
+      "oemSerialEffectivity": null,
+      "reviewer": null
+    },
+    {
+      "chainId": "FC-HOSE-003",
+      "family": "mangueiras_hidraulicas",
+      "functionalFailureId": "FF-06",
+      "localEffect": {
+        "description": "Conexão ou terminal pode deixar de reter óleo pressurizado.",
+        "status": "possible_unobserved",
+        "componentVerified": false
+      },
+      "systemEffect": {
+        "description": "Perda de fluido pode limitar o circuito hidráulico e gerar parada corretiva.",
+        "status": "possible_unobserved",
+        "operationalImpactVerified": false
+      },
+      "propagationCondition": "O mecanismo deve existir e progredir sob condições reais de serviço; confirmar função, carga, duração e arquitetura OEM antes de atribuir consequência.",
+      "diagnosticCaveat": "Óleo próximo ao terminal não localiza a origem.",
+      "sourceIds": [
+        "CAT-HYD-HOSE-INSPECT",
+        "CAT-HYD-HOSE-FAILURE"
+      ],
+      "causalityStatus": "engineering_inference_unreviewed",
+      "severityRank": null,
+      "probability": null,
+      "actualEventCount": 0,
+      "applicableModelId": null,
+      "applicableLocationId": null,
+      "oemSerialEffectivity": null,
+      "reviewer": null
+    },
+    {
+      "chainId": "FC-HOSE-004",
+      "family": "mangueiras_hidraulicas",
+      "functionalFailureId": "FF-06",
+      "localEffect": {
+        "description": "Exposição térmica pode deteriorar a cobertura e reduzir flexibilidade.",
+        "status": "possible_unobserved",
+        "componentVerified": false
+      },
+      "systemEffect": {
+        "description": "Degradação progressiva pode produzir perda de estanqueidade hidráulica.",
+        "status": "possible_unobserved",
+        "operationalImpactVerified": false
+      },
+      "propagationCondition": "O mecanismo deve existir e progredir sob condições reais de serviço; confirmar função, carga, duração e arquitetura OEM antes de atribuir consequência.",
+      "diagnosticCaveat": "Endurecimento aparente não revela temperatura histórica.",
+      "sourceIds": [
+        "CAT-HYD-HOSE-INSPECT"
+      ],
+      "causalityStatus": "engineering_inference_unreviewed",
+      "severityRank": null,
+      "probability": null,
+      "actualEventCount": 0,
+      "applicableModelId": null,
+      "applicableLocationId": null,
+      "oemSerialEffectivity": null,
+      "reviewer": null
+    },
+    {
+      "chainId": "FC-FD-001",
+      "family": "comando_final",
+      "functionalFailureId": "FF-02",
+      "localEffect": {
+        "description": "Abrasivos podem remover material de dentes e superfícies do conjunto redutor.",
+        "status": "possible_unobserved",
+        "componentVerified": false
+      },
+      "systemEffect": {
+        "description": "Desgaste progressivo pode comprometer a transmissão de torque.",
+        "status": "possible_unobserved",
+        "operationalImpactVerified": false
+      },
+      "propagationCondition": "O mecanismo deve existir e progredir sob condições reais de serviço; confirmar função, carga, duração e arquitetura OEM antes de atribuir consequência.",
+      "diagnosticCaveat": "Metais no óleo não identificam engrenagem específica.",
+      "sourceIds": [
+        "SKF-WEAR-SURFACE-FATIGUE",
+        "CAT-DRIVE-MAGNET-PLUG",
+        "CAT-FLUID-ANALYSIS-101"
+      ],
+      "causalityStatus": "engineering_inference_unreviewed",
+      "severityRank": null,
+      "probability": null,
+      "actualEventCount": 0,
+      "applicableModelId": null,
+      "applicableLocationId": null,
+      "oemSerialEffectivity": null,
+      "reviewer": null
+    },
+    {
+      "chainId": "FC-FD-002",
+      "family": "comando_final",
+      "functionalFailureId": "FF-02",
+      "localEffect": {
+        "description": "Água no óleo pode favorecer corrosão e degradação de superfícies lubrificadas.",
+        "status": "possible_unobserved",
+        "componentVerified": false
+      },
+      "systemEffect": {
+        "description": "Dano interno evolutivo pode comprometer o comando final.",
+        "status": "possible_unobserved",
+        "operationalImpactVerified": false
+      },
+      "propagationCondition": "O mecanismo deve existir e progredir sob condições reais de serviço; confirmar função, carga, duração e arquitetura OEM antes de atribuir consequência.",
+      "diagnosticCaveat": "Água detectada não comprova corrosão já instalada.",
+      "sourceIds": [
+        "SKF-ISO15243-BEARING",
+        "CAT-FLUID-ANALYSIS-101"
+      ],
+      "causalityStatus": "engineering_inference_unreviewed",
+      "severityRank": null,
+      "probability": null,
+      "actualEventCount": 0,
+      "applicableModelId": null,
+      "applicableLocationId": null,
+      "oemSerialEffectivity": null,
+      "reviewer": null
+    },
+    {
+      "chainId": "FC-FD-003",
+      "family": "comando_final",
+      "functionalFailureId": "FF-02",
+      "localEffect": {
+        "description": "Filme lubrificante inadequado pode elevar atrito e dano superficial.",
+        "status": "possible_unobserved",
+        "componentVerified": false
+      },
+      "systemEffect": {
+        "description": "O redutor pode perder eficiência e confiabilidade conforme o desgaste avança.",
+        "status": "possible_unobserved",
+        "operationalImpactVerified": false
+      },
+      "propagationCondition": "O mecanismo deve existir e progredir sob condições reais de serviço; confirmar função, carga, duração e arquitetura OEM antes de atribuir consequência.",
+      "diagnosticCaveat": "Troca de baseline químico não demonstra dano físico.",
+      "sourceIds": [
+        "SKF-ISO15243-BEARING",
+        "CAT-DRIVE-MAGNET-PLUG",
+        "CAT-FLUID-ANALYSIS-101"
+      ],
+      "causalityStatus": "engineering_inference_unreviewed",
+      "severityRank": null,
+      "probability": null,
+      "actualEventCount": 0,
+      "applicableModelId": null,
+      "applicableLocationId": null,
+      "oemSerialEffectivity": null,
+      "reviewer": null
+    },
+    {
+      "chainId": "FC-FD-004",
+      "family": "comando_final",
+      "functionalFailureId": "FF-02",
+      "localEffect": {
+        "description": "Fadiga por contato pode gerar descascamento em pista/elemento rolante.",
+        "status": "possible_unobserved",
+        "componentVerified": false
+      },
+      "systemEffect": {
+        "description": "A progressão pode aumentar folga, ruído e risco de perda funcional do redutor.",
+        "status": "possible_unobserved",
+        "operationalImpactVerified": false
+      },
+      "propagationCondition": "O mecanismo deve existir e progredir sob condições reais de serviço; confirmar função, carga, duração e arquitetura OEM antes de atribuir consequência.",
+      "diagnosticCaveat": "Ruído ou limalha não comprovam fadiga do rolamento.",
+      "sourceIds": [
+        "SKF-ISO15243-BEARING",
+        "CAT-DRIVE-MAGNET-PLUG",
+        "SKF-WEAR-SURFACE-FATIGUE"
+      ],
+      "causalityStatus": "engineering_inference_unreviewed",
+      "severityRank": null,
+      "probability": null,
+      "actualEventCount": 0,
+      "applicableModelId": null,
+      "applicableLocationId": null,
+      "oemSerialEffectivity": null,
+      "reviewer": null
+    },
+    {
+      "chainId": "FC-COOL-001",
+      "family": "arrefecimento",
+      "functionalFailureId": "FF-08",
+      "localEffect": {
+        "description": "Depósitos externos nas aletas podem reduzir passagem de ar.",
+        "status": "possible_unobserved",
+        "componentVerified": false
+      },
+      "systemEffect": {
+        "description": "Rejeição insuficiente de calor pode prejudicar temperatura de operação do motor.",
+        "status": "possible_unobserved",
+        "operationalImpactVerified": false
+      },
+      "propagationCondition": "O mecanismo deve existir e progredir sob condições reais de serviço; confirmar função, carga, duração e arquitetura OEM antes de atribuir consequência.",
+      "diagnosticCaveat": "Sujidade externa não equivale a bloqueio interno.",
+      "sourceIds": [
+        "CAT-RADIATOR-CARE",
+        "CAT-EXC-COOL-CHECKLIST"
+      ],
+      "causalityStatus": "engineering_inference_unreviewed",
+      "severityRank": null,
+      "probability": null,
+      "actualEventCount": 0,
+      "applicableModelId": null,
+      "applicableLocationId": null,
+      "oemSerialEffectivity": null,
+      "reviewer": null
+    },
+    {
+      "chainId": "FC-COOL-002",
+      "family": "arrefecimento",
+      "functionalFailureId": "FF-06",
+      "localEffect": {
+        "description": "Mangueira/conexão pode perder estanqueidade e reduzir volume circulante.",
+        "status": "possible_unobserved",
+        "componentVerified": false
+      },
+      "systemEffect": {
+        "description": "Perda contínua pode limitar refrigeração e gerar aquecimento do motor.",
+        "status": "possible_unobserved",
+        "operationalImpactVerified": false
+      },
+      "propagationCondition": "O mecanismo deve existir e progredir sob condições reais de serviço; confirmar função, carga, duração e arquitetura OEM antes de atribuir consequência.",
+      "diagnosticCaveat": "Trilha de líquido pode iniciar em outra peça.",
+      "sourceIds": [
+        "CAT-RADIATOR-CARE",
+        "CAT-EXC-COOL-CHECKLIST"
+      ],
+      "causalityStatus": "engineering_inference_unreviewed",
+      "severityRank": null,
+      "probability": null,
+      "actualEventCount": 0,
+      "applicableModelId": null,
+      "applicableLocationId": null,
+      "oemSerialEffectivity": null,
+      "reviewer": null
+    },
+    {
+      "chainId": "FC-COOL-003",
+      "family": "arrefecimento",
+      "functionalFailureId": "FF-08",
+      "localEffect": {
+        "description": "Acionamento do ventilador pode fornecer vazão de ar abaixo da demanda.",
+        "status": "possible_unobserved",
+        "componentVerified": false
+      },
+      "systemEffect": {
+        "description": "Ventilação insuficiente pode causar perda de capacidade de rejeição térmica.",
+        "status": "possible_unobserved",
+        "operationalImpactVerified": false
+      },
+      "propagationCondition": "O mecanismo deve existir e progredir sob condições reais de serviço; confirmar função, carga, duração e arquitetura OEM antes de atribuir consequência.",
+      "diagnosticCaveat": "Tipo e acionamento do ventilador dependem do modelo.",
+      "sourceIds": [
+        "CAT-COOLING-HEAT-CHAIN",
+        "CAT-COOLING-FAN-REVERSE"
+      ],
+      "causalityStatus": "engineering_inference_unreviewed",
+      "severityRank": null,
+      "probability": null,
+      "actualEventCount": 0,
+      "applicableModelId": null,
+      "applicableLocationId": null,
+      "oemSerialEffectivity": null,
+      "reviewer": null
+    },
+    {
+      "chainId": "FC-COOL-004",
+      "family": "arrefecimento",
+      "functionalFailureId": "FF-02",
+      "localEffect": {
+        "description": "Passagens internas do radiador podem limitar circulação do arrefecedor.",
+        "status": "possible_unobserved",
+        "componentVerified": false
+      },
+      "systemEffect": {
+        "description": "Troca térmica reduzida pode prejudicar a regulação de temperatura do motor.",
+        "status": "possible_unobserved",
+        "operationalImpactVerified": false
+      },
+      "propagationCondition": "O mecanismo deve existir e progredir sob condições reais de serviço; confirmar função, carga, duração e arquitetura OEM antes de atribuir consequência.",
+      "diagnosticCaveat": "Temperatura alta não prova obstrução interna.",
+      "sourceIds": [
+        "CAT-RADIATOR-CARE",
+        "CAT-COOLING-HEAT-CHAIN"
+      ],
+      "causalityStatus": "engineering_inference_unreviewed",
+      "severityRank": null,
+      "probability": null,
+      "actualEventCount": 0,
+      "applicableModelId": null,
+      "applicableLocationId": null,
+      "oemSerialEffectivity": null,
+      "reviewer": null
+    },
+    {
+      "chainId": "FC-TRACK-001",
+      "family": "material_rodante",
+      "functionalFailureId": "FF-02",
+      "localEffect": {
+        "description": "Detritos podem impedir rotação e provocar arrasto no rolete.",
+        "status": "possible_unobserved",
+        "componentVerified": false
+      },
+      "systemEffect": {
+        "description": "O esforço adicional pode acelerar desgaste do rodante e restringir deslocamento.",
+        "status": "possible_unobserved",
+        "operationalImpactVerified": false
+      },
+      "propagationCondition": "O mecanismo deve existir e progredir sob condições reais de serviço; confirmar função, carga, duração e arquitetura OEM antes de atribuir consequência.",
+      "diagnosticCaveat": "Rolete quente não distingue sujeira de dano interno.",
+      "sourceIds": [
+        "CAT-DOZER-UC-MAINT",
+        "CAT-STEEL-TRACKS"
+      ],
+      "causalityStatus": "engineering_inference_unreviewed",
+      "severityRank": null,
+      "probability": null,
+      "actualEventCount": 0,
+      "applicableModelId": null,
+      "applicableLocationId": null,
+      "oemSerialEffectivity": null,
+      "reviewer": null
+    },
+    {
+      "chainId": "FC-TRACK-002",
+      "family": "material_rodante",
+      "functionalFailureId": "FF-02",
+      "localEffect": {
+        "description": "Vedação do rolete pode perder fluido e reduzir condição de lubrificação.",
+        "status": "possible_unobserved",
+        "componentVerified": false
+      },
+      "systemEffect": {
+        "description": "Deterioração progressiva pode afetar confiabilidade do rodante.",
+        "status": "possible_unobserved",
+        "operationalImpactVerified": false
+      },
+      "propagationCondition": "O mecanismo deve existir e progredir sob condições reais de serviço; confirmar função, carga, duração e arquitetura OEM antes de atribuir consequência.",
+      "diagnosticCaveat": "Óleo sobre rolete pode vir de outro componente.",
+      "sourceIds": [
+        "CAT-STEEL-TRACKS",
+        "CAT-DOZER-UC-MAINT"
+      ],
+      "causalityStatus": "engineering_inference_unreviewed",
+      "severityRank": null,
+      "probability": null,
+      "actualEventCount": 0,
+      "applicableModelId": null,
+      "applicableLocationId": null,
+      "oemSerialEffectivity": null,
+      "reviewer": null
+    },
+    {
+      "chainId": "FC-TRACK-003",
+      "family": "material_rodante",
+      "functionalFailureId": "FF-02",
+      "localEffect": {
+        "description": "Geometria/contato da roda-guia pode ficar fora do padrão requerido.",
+        "status": "possible_unobserved",
+        "componentVerified": false
+      },
+      "systemEffect": {
+        "description": "Mau guiamento pode acelerar desgaste da esteira e limitar deslocamento.",
+        "status": "possible_unobserved",
+        "operationalImpactVerified": false
+      },
+      "propagationCondition": "O mecanismo deve existir e progredir sob condições reais de serviço; confirmar função, carga, duração e arquitetura OEM antes de atribuir consequência.",
+      "diagnosticCaveat": "Sem valores CTS efetivos, desgaste visual não condena.",
+      "sourceIds": [
+        "CAT-DOZER-UC-MAINT",
+        "CAT-CTS-UNDERCARRIAGE"
+      ],
+      "causalityStatus": "engineering_inference_unreviewed",
+      "severityRank": null,
+      "probability": null,
+      "actualEventCount": 0,
+      "applicableModelId": null,
+      "applicableLocationId": null,
+      "oemSerialEffectivity": null,
+      "reviewer": null
+    },
+    {
+      "chainId": "FC-TRACK-004",
+      "family": "material_rodante",
+      "functionalFailureId": "FF-02",
+      "localEffect": {
+        "description": "Tensão incorreta altera contato e esforços nos elos da esteira.",
+        "status": "possible_unobserved",
+        "componentVerified": false
+      },
+      "systemEffect": {
+        "description": "Pode acelerar desgaste e favorecer engrenamento irregular ou desguiamento.",
+        "status": "possible_unobserved",
+        "operationalImpactVerified": false
+      },
+      "propagationCondition": "O mecanismo deve existir e progredir sob condições reais de serviço; confirmar função, carga, duração e arquitetura OEM antes de atribuir consequência.",
+      "diagnosticCaveat": "Tensão isolada não identifica componente danificado.",
+      "sourceIds": [
+        "CAT-STEEL-TRACKS",
+        "CAT-DOZER-UC-MAINT"
+      ],
+      "causalityStatus": "engineering_inference_unreviewed",
+      "severityRank": null,
+      "probability": null,
+      "actualEventCount": 0,
+      "applicableModelId": null,
+      "applicableLocationId": null,
+      "oemSerialEffectivity": null,
+      "reviewer": null
+    },
+    {
+      "chainId": "FC-TRACK-005",
+      "family": "material_rodante",
+      "functionalFailureId": "FF-09",
+      "localEffect": {
+        "description": "Rotação do fixador pode reduzir pré-carga na junta sapata–elo.",
+        "status": "possible_unobserved",
+        "componentVerified": false
+      },
+      "systemEffect": {
+        "description": "Movimento relativo pode prejudicar retenção de sapata e danificar interfaces.",
+        "status": "possible_unobserved",
+        "operationalImpactVerified": false
+      },
+      "propagationCondition": "O mecanismo deve existir e progredir sob condições reais de serviço; confirmar função, carga, duração e arquitetura OEM antes de atribuir consequência.",
+      "diagnosticCaveat": "Parafuso solto não comprova autoafrouxamento rotacional.",
+      "sourceIds": [
+        "CAT-UC-DOZER-GUIDE",
+        "NORDLOCK-BOLT-LOOSENING"
+      ],
+      "causalityStatus": "engineering_inference_unreviewed",
+      "severityRank": null,
+      "probability": null,
+      "actualEventCount": 0,
+      "applicableModelId": null,
+      "applicableLocationId": null,
+      "oemSerialEffectivity": null,
+      "reviewer": null
+    },
+    {
+      "chainId": "FC-TRACK-006",
+      "family": "material_rodante",
+      "functionalFailureId": "FF-09",
+      "localEffect": {
+        "description": "Assentamento/relaxação pode reduzir pré-carga sem rotação.",
+        "status": "possible_unobserved",
+        "componentVerified": false
+      },
+      "systemEffect": {
+        "description": "Falta de retenção pode favorecer micromovimentos e desgaste da junta.",
+        "status": "possible_unobserved",
+        "operationalImpactVerified": false
+      },
+      "propagationCondition": "O mecanismo deve existir e progredir sob condições reais de serviço; confirmar função, carga, duração e arquitetura OEM antes de atribuir consequência.",
+      "diagnosticCaveat": "Torque residual não indica necessariamente pré-carga inicial.",
+      "sourceIds": [
+        "NORDLOCK-BOLT-LOOSENING",
+        "NORDLOCK-PRELOAD-GUIDANCE"
+      ],
+      "causalityStatus": "engineering_inference_unreviewed",
+      "severityRank": null,
+      "probability": null,
+      "actualEventCount": 0,
+      "applicableModelId": null,
+      "applicableLocationId": null,
+      "oemSerialEffectivity": null,
+      "reviewer": null
+    },
+    {
+      "chainId": "FC-TRACK-007",
+      "family": "material_rodante",
+      "functionalFailureId": "FF-09",
+      "localEffect": {
+        "description": "Trincas de fadiga podem reduzir seção resistente de parafuso até ruptura.",
+        "status": "possible_unobserved",
+        "componentVerified": false
+      },
+      "systemEffect": {
+        "description": "Ruptura pode comprometer retenção da sapata e integridade da esteira.",
+        "status": "possible_unobserved",
+        "operationalImpactVerified": false
+      },
+      "propagationCondition": "O mecanismo deve existir e progredir sob condições reais de serviço; confirmar função, carga, duração e arquitetura OEM antes de atribuir consequência.",
+      "diagnosticCaveat": "Parafuso ausente não comprova ruptura por fadiga.",
+      "sourceIds": [
+        "NORDLOCK-BOLTING-FAILURE",
+        "CAT-UC-DOZER-GUIDE"
+      ],
+      "causalityStatus": "engineering_inference_unreviewed",
+      "severityRank": null,
+      "probability": null,
+      "actualEventCount": 0,
+      "applicableModelId": null,
+      "applicableLocationId": null,
+      "oemSerialEffectivity": null,
+      "reviewer": null
+    },
+    {
+      "chainId": "FC-TRACK-008",
+      "family": "material_rodante",
+      "functionalFailureId": "FF-09",
+      "localEffect": {
+        "description": "Movimento entre faces sapata–elo pode causar desgaste e ovalização.",
+        "status": "possible_unobserved",
+        "componentVerified": false
+      },
+      "systemEffect": {
+        "description": "Perda de retenção pode exigir reparo do conjunto sapata, elo e fixadores.",
+        "status": "possible_unobserved",
+        "operationalImpactVerified": false
+      },
+      "propagationCondition": "O mecanismo deve existir e progredir sob condições reais de serviço; confirmar função, carga, duração e arquitetura OEM antes de atribuir consequência.",
+      "diagnosticCaveat": "Ovalização aparente exige dimensão e limite OEM.",
+      "sourceIds": [
+        "CAT-TRACK-BOLT-FUNCTION",
+        "NORDLOCK-BOLT-LOOSENING"
+      ],
+      "causalityStatus": "engineering_inference_unreviewed",
+      "severityRank": null,
+      "probability": null,
+      "actualEventCount": 0,
+      "applicableModelId": null,
+      "applicableLocationId": null,
+      "oemSerialEffectivity": null,
+      "reviewer": null
+    },
+    {
+      "chainId": "FC-COOL-005",
+      "family": "arrefecimento",
+      "functionalFailureId": "FF-08",
+      "localEffect": {
+        "description": "Abertura insuficiente do termostato pode limitar fluxo para radiador.",
+        "status": "possible_unobserved",
+        "componentVerified": false
+      },
+      "systemEffect": {
+        "description": "Circulação desviada pode gerar aquecimento sob demanda térmica.",
+        "status": "possible_unobserved",
+        "operationalImpactVerified": false
+      },
+      "propagationCondition": "O mecanismo deve existir e progredir sob condições reais de serviço; confirmar função, carga, duração e arquitetura OEM antes de atribuir consequência.",
+      "diagnosticCaveat": "Temperatura elevada não confirma termostato travado.",
+      "sourceIds": [
+        "CAT-THERMOSTAT-REPLACEMENT",
+        "CAT-WATER-PUMP-REPLACEMENT"
+      ],
+      "causalityStatus": "engineering_inference_unreviewed",
+      "severityRank": null,
+      "probability": null,
+      "actualEventCount": 0,
+      "applicableModelId": null,
+      "applicableLocationId": null,
+      "oemSerialEffectivity": null,
+      "reviewer": null
+    },
+    {
+      "chainId": "FC-COOL-006",
+      "family": "arrefecimento",
+      "functionalFailureId": "FF-08",
+      "localEffect": {
+        "description": "Abertura prematura do termostato pode alterar desvio de fluido em frio.",
+        "status": "possible_unobserved",
+        "componentVerified": false
+      },
+      "systemEffect": {
+        "description": "Aquecimento inicial lento ou controle térmico fora do requisito pode ocorrer.",
+        "status": "possible_unobserved",
+        "operationalImpactVerified": false
+      },
+      "propagationCondition": "O mecanismo deve existir e progredir sob condições reais de serviço; confirmar função, carga, duração e arquitetura OEM antes de atribuir consequência.",
+      "diagnosticCaveat": "Ambiente e carga influenciam tempo de aquecimento.",
+      "sourceIds": [
+        "CAT-THERMOSTAT-REPLACEMENT",
+        "CAT-EXC-COOL-CHECKLIST"
+      ],
+      "causalityStatus": "engineering_inference_unreviewed",
+      "severityRank": null,
+      "probability": null,
+      "actualEventCount": 0,
+      "applicableModelId": null,
+      "applicableLocationId": null,
+      "oemSerialEffectivity": null,
+      "reviewer": null
+    },
+    {
+      "chainId": "FC-COOL-007",
+      "family": "arrefecimento",
+      "functionalFailureId": "FF-02",
+      "localEffect": {
+        "description": "Conjunto de bomba pode deixar de garantir circulação adequada.",
+        "status": "possible_unobserved",
+        "componentVerified": false
+      },
+      "systemEffect": {
+        "description": "Remoção insuficiente de calor pode comprometer regulação térmica do motor.",
+        "status": "possible_unobserved",
+        "operationalImpactVerified": false
+      },
+      "propagationCondition": "O mecanismo deve existir e progredir sob condições reais de serviço; confirmar função, carga, duração e arquitetura OEM antes de atribuir consequência.",
+      "diagnosticCaveat": "Não atribuir dano ao rotor por temperatura isolada.",
+      "sourceIds": [
+        "CAT-WATER-PUMP-REPLACEMENT",
+        "CAT-THERMOSTAT-REPLACEMENT"
+      ],
+      "causalityStatus": "engineering_inference_unreviewed",
+      "severityRank": null,
+      "probability": null,
+      "actualEventCount": 0,
+      "applicableModelId": null,
+      "applicableLocationId": null,
+      "oemSerialEffectivity": null,
+      "reviewer": null
+    },
+    {
+      "chainId": "FC-COOL-008",
+      "family": "arrefecimento",
+      "functionalFailureId": "FF-06",
+      "localEffect": {
+        "description": "Interface de vedação da bomba pode deixar escapar arrefecedor.",
+        "status": "possible_unobserved",
+        "componentVerified": false
+      },
+      "systemEffect": {
+        "description": "Perda persistente de fluido pode reduzir capacidade de resfriamento.",
+        "status": "possible_unobserved",
+        "operationalImpactVerified": false
+      },
+      "propagationCondition": "O mecanismo deve existir e progredir sob condições reais de serviço; confirmar função, carga, duração e arquitetura OEM antes de atribuir consequência.",
+      "diagnosticCaveat": "Trilha de fluido na bomba pode vir de conexão adjacente.",
+      "sourceIds": [
+        "CAT-WATER-PUMP-REPLACEMENT",
+        "CAT-RADIATOR-CARE"
+      ],
+      "causalityStatus": "engineering_inference_unreviewed",
+      "severityRank": null,
+      "probability": null,
+      "actualEventCount": 0,
+      "applicableModelId": null,
+      "applicableLocationId": null,
+      "oemSerialEffectivity": null,
+      "reviewer": null
+    }
+  ]
+}
