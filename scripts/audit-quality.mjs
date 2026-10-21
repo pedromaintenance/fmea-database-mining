@@ -34,6 +34,8 @@ const circularReview=read('data/quality/circular-sap-causality.v1.json');
 const oemPilot=read('data/quality/oem-pilot-readiness.v1.json');
 const pathways=read('data/quality/diagnostic-pathways.v1.json');
 const pathwayFixtures=read('data/quality/pathway-regressions.v1.json');
+const pathwayExpansion=read('data/quality/diagnostic-pathway-expansion.v1.json');
+const pathwayExpansionFixtures=read('data/quality/pathway-expansion-regressions.v1.json');
 const causalLevels=read('data/ontology/causal-levels.v1.json').records;
 const publicManifest=read('reports/public-manifest.v1.json');
 const systemicReview=read('data/governance/systemic-root-audit.v1.json');
@@ -100,10 +102,14 @@ const counts={
  circularSapCausalReviews:circularReview.records.length,
  oemPilotMissingRequirements:oemPilot.requiredInputs.filter(x=>x.value===null).length,
  oemPilotsApproved:0,
- reviewedDiagnosticPathways:pathways.records.length,
- proposedPathwaySteps:pathways.records.reduce((n,x)=>n+x.steps.length,0),
- distinguishedCausalLevels:pathways.records.length,
- pathwaySyntheticRegressions:pathwayFixtures.cases.length,
+ reviewedDiagnosticPathways:pathways.records.length+pathwayExpansion.records.length,
+ expandedDiagnosticPathways:pathwayExpansion.records.length,
+ untouchedOriginalPathways:pathways.records.length,
+ proposedPathwaySteps:[...pathways.records,...pathwayExpansion.records].reduce((n,x)=>n+x.steps.length,0),
+ distinguishedCausalLevels:pathways.records.length+pathwayExpansion.records.length,
+ pathwaySyntheticRegressions:pathwayFixtures.cases.length+pathwayExpansionFixtures.readinessCases.length+pathwayExpansionFixtures.mutationCases.length,
+ pathwayExpansionReadinessCases:pathwayExpansionFixtures.readinessCases.length,
+ pathwayExpansionMutationCases:pathwayExpansionFixtures.mutationCases.length,
  approvedPathwayRootCauses:0,
  causalFourLevelChains:causalLevels.length,
  causalFourLevelNewlyExtended:causalLevels.filter(x=>x.editorialOrigin==='analise_mecanistica_ampliada_v1.3.12').length,
@@ -136,7 +142,7 @@ const counts={
  semanticDamageConfirmations:semantic.confirmedComponentDamages.length,
  evidenceValidatedInRealEquipment:0,technicallyApprovedPlaybooks:0
 };
-const report={schema:'fmea-mining.quality-audit.v1',version:'1.3.16',
+const report={schema:'fmea-mining.quality-audit.v1',version:'1.3.17',
  generatedFrom:'working_tree',status:'qualidade_cadastral_nao_taxa_de_falhas',
  meanings:{
   pmCandidateLinks:'vinculos gerados por regra e taxonomia, NAO falhas observadas',
