@@ -1,0 +1,254 @@
+{
+  "schema": "fmea-mining.mechanism-refinements.v1",
+  "version": "1.3.22",
+  "nature": "candidate_only_no_oem_effectivity",
+  "context": {
+    "parentTaxonomyAudit": "data/quality/proposal-taxonomy-audit.v1.json",
+    "parentProposals": "data/quality/proposed-causal-chains.v1.json",
+    "ontology": "data/ontology/concepts.v1.json",
+    "core": "data/knowledge/causal-chains.v1.json",
+    "publicPreview": "1.3.12"
+  },
+  "policy": {
+    "doNotUpdateOntology": true,
+    "doNotCreateFC": true,
+    "doNotTransferVanePumpValuesToCAT395": true,
+    "doNotConfuseCaseDrainWithTotalInternalLeakage": true,
+    "doNotTreatISOTaxonomyAsRootCauseAnalysis": true,
+    "independentReviewRequired": true
+  },
+  "counts": {
+    "refinements": 4,
+    "internalLeakageCandidates": 1,
+    "gearSubmodes": 3,
+    "newApprovedMechanismIds": 0,
+    "newApprovedCoreChains": 0,
+    "fieldObservations": 0,
+    "OEMApprovals": 0
+  },
+  "records": [
+    {
+      "id": "ME-CAND-HYD-INTERNAL-LEAKAGE-001",
+      "kind": "candidate_mechanism_concept",
+      "parentProposalId": "CAND-HYD-PUMP-INTERNAL-001",
+      "family": "bombas_hidraulicas",
+      "parentMechanismId": null,
+      "label": "Perda volumétrica interna acima da referência aplicável em bomba hidráulica",
+      "physicalDefinition": "Desvio da vazão útil de bombeamento por fluxo interno através de folgas ou interfaces hidráulicas, excedendo a perda prevista pelo projeto em condições de rotação, pressão, deslocamento, temperatura e viscosidade definidas.",
+      "mechanicalFunction": "Entregar vazão útil ao circuito hidráulico de acordo com deslocamento, comando e regime requerido pelo arranjo instalado.",
+      "functionalFailureId": "FF-02",
+      "causalPosition": "candidate_physical_mechanism_not_root_cause",
+      "normalVersusAbnormal": "Algum vazamento interno é previsto para lubrificação e operação da bomba; somente comparação com a referência efetiva distingue condição normal de perda excessiva.",
+      "notEquivalent": [
+        {
+          "ontologyId": "ME-15",
+          "reason": "Fluxo por folgas de precisão não implica falha de retentor ou perda de estanqueidade de interface formalmente vedada."
+        },
+        {
+          "ontologyId": "ME-01",
+          "reason": "Desgaste abrasivo pode aumentar folgas, mas exige partículas e morfologia; não é consequência necessária da vazão interna medida."
+        },
+        {
+          "ontologyId": "ME-02",
+          "reason": "Desgaste adesivo é mecanismo de dano por contato de superfícies, distinto da mera passagem de fluido por folgas."
+        },
+        {
+          "ontologyId": "ME-14",
+          "reason": "Desajuste de compensador pode reduzir entrega de vazão sem existir perda volumétrica física interna excessiva."
+        }
+      ],
+      "alternativeHypotheses": [
+        "Comando de deslocamento ou compensador e válvula de controle limitam vazão de saída sem qualquer vazamento interno anormal.",
+        "Restrição na sucção, viscosidade/temperatura inadequadas ou instrumento impreciso simulam perda volumétrica interna.",
+        "Vazão de dreno de carcaça pode não representar todo o balanço volumétrico em arranjos com retornos internos ou trajetos diferentes."
+      ],
+      "discriminatingEvidence": [
+        {
+          "id": "G1",
+          "evidence": "Identificar modelo, série, arquitetura de dreno e esquema OEM, com referência do fabricante para fluxo útil e vazamentos por condição de ensaio.",
+          "interpretation": "Sem variante efetiva, nenhum número ou curva de bomba de palhetas pode ser aplicado à CAT 395."
+        },
+        {
+          "id": "G2",
+          "evidence": "Registrar rotação, deslocamento/comando, carga/pressão, temperatura, viscosidade e instrumentação calibrada em procedimento autorizado.",
+          "interpretation": "Pressão isolada, ciclo lento ou resposta deficiente não permitem atribuição automática ao bombeamento."
+        },
+        {
+          "id": "G3",
+          "evidence": "Confrontar vazão útil e, se previsto pela arquitetura, dreno de carcaça em balanço homologado, sem confundir dreno com toda a fuga interna.",
+          "interpretation": "O fluxo de dreno depende do desenho e não é um limite universal de aprovação/reprovação."
+        },
+        {
+          "id": "G4",
+          "evidence": "Diferenciar por contraprova falhas de válvula, compensador, sucção, fluido e instrumentação, com parecer técnico independente.",
+          "interpretation": "Somente após discriminar o conjunto pode-se investigar folgas e superfícies internas sem assumir desgaste abrasivo."
+        }
+      ],
+      "methodIds": [
+        "EV-05",
+        "EV-14"
+      ],
+      "safeBoundary": "Jamais bloquear dreno de carcaça, improvisar restrições, exigir pressão máxima ou instalar instrumentos com circuito energizado. Ensaios apenas com pessoal habilitado e procedimento OEM efetivo.",
+      "sourceIds": [
+        "CAT-HYD-TECHNICAL-ANALYSIS",
+        "PARKER-MOBILE-VANE-INTERNAL-LEAKAGE",
+        "ISO-13379-1-2025"
+      ],
+      "sourceUseLimit": "Parker demonstra princípio de fuga interna em bomba de palhetas, e a Caterpillar orienta o uso de SIS para critérios de teste; nenhuma publicação disponível confirma curva da bomba CAT 395.",
+      "observedParameterValues": null,
+      "approvedThreshold": null,
+      "applicableSerialOrArrangement": null,
+      "observedPhysicalDamage": null,
+      "actualFieldOccurrences": 0,
+      "independentReviewStatus": "not_reviewed",
+      "approvedNewOntologyId": null,
+      "approvedCoreChainId": null,
+      "confirmedRootCause": false,
+      "editorialState": "proposal_only"
+    },
+    {
+      "id": "SUB-GEAR-ABRASION-001",
+      "kind": "proposed_gear_damage_submode",
+      "parentProposalId": "CAND-FD-GEAR-TOOTH-001",
+      "family": "comando_final",
+      "parentMechanismId": "ME-01",
+      "label": "Desgaste abrasivo nos flancos do dente",
+      "physicalDefinition": "Remoção de material do flanco por partículas duras ou asperezas em movimento relativo; condição e mecanismo exigem confirmação de superfícies e fonte de partículas.",
+      "mechanicalFunction": "Conservar superfície e geometria de contato para transmitir torque no par de engrenagens do comando final.",
+      "functionalFailureId": "FF-02",
+      "causalPosition": "candidate_damage_mechanism_not_observed",
+      "morphologyHypothesis": "Riscos ou sulcos direcionais podem ser compatíveis com abrasão, mas não provam origem de partículas nem extensão do dano.",
+      "distinguishingFrom": [
+        "Fadiga de contato demanda avaliar cavidades/descascamento, não apenas riscos superficiais.",
+        "Marcas adesivas podem envolver transferência de material por contato, não remoção por terceiro corpo.",
+        "Abrasão no rolamento ou no óleo não equivale a desgaste localizado em dente."
+      ],
+      "competingCauses": [
+        "Partículas externas ingressadas, detritos internos e dano prévio têm origens distintas.",
+        "Alteração química de aditivos no óleo ou aumento de Fe isolado não localiza abrasão nos dentes."
+      ],
+      "evidenceNeeded": [
+        "Inspeção localizada dos flancos com identificação do par engrenado por arranjo OEM e documentação da morfologia.",
+        "Investigação de origem, tipo e trajetória das partículas; amostras de óleo e bujão correlacionadas à inspeção.",
+        "Exame independente para excluir fadiga, adesão e origem em rolamento."
+      ],
+      "methodIds": [
+        "EV-11",
+        "EV-08"
+      ],
+      "safeBoundary": "Não abrir conjunto quente ou energizado e não inspecionar dentes girando; seguir procedimento OEM e contenção de lubrificante.",
+      "sourceIds": [
+        "ISO-10825-1-2022",
+        "CAT-DRIVE-MAGNET-PLUG",
+        "CAT-DRIVE-MAINT-PRACTICES"
+      ],
+      "sourceUseLimit": "A ISO 10825-1 oferece nomenclatura de aparência; seu resumo público não atribui causas ou estratégias preventivas para dano específico.",
+      "observedParameterValues": null,
+      "approvedThreshold": null,
+      "applicableSerialOrArrangement": null,
+      "observedPhysicalDamage": null,
+      "actualFieldOccurrences": 0,
+      "independentReviewStatus": "not_reviewed",
+      "approvedNewOntologyId": null,
+      "approvedCoreChainId": null,
+      "confirmedRootCause": false,
+      "editorialState": "proposal_only"
+    },
+    {
+      "id": "SUB-GEAR-ADHESION-001",
+      "kind": "proposed_gear_damage_submode",
+      "parentProposalId": "CAND-FD-GEAR-TOOTH-001",
+      "family": "comando_final",
+      "parentMechanismId": "ME-02",
+      "label": "Desgaste adesivo nos flancos do dente",
+      "physicalDefinition": "Interação entre superfícies sob contato relativo capaz de produzir transferência e remoção de material, cuja confirmação exige inspeção morfológica e contexto de contato.",
+      "mechanicalFunction": "Conservar superfície e geometria de contato para transmitir torque no par de engrenagens do comando final.",
+      "functionalFailureId": "FF-02",
+      "causalPosition": "candidate_damage_mechanism_not_observed",
+      "morphologyHypothesis": "Marcas com aspecto de arraste, transferência ou gripagem podem sugerir adesão, mas não identificam condição de filme ou causa de lubrificação.",
+      "distinguishingFrom": [
+        "Riscos por terceiro corpo e contaminação podem sugerir abrasão, sem comprovar transferência adesiva.",
+        "Pitting por fadiga de contato tem mecanismos e evolução distintos de sulcamento adesivo.",
+        "Material transferido de rolamento não comprova perda de flanco do dente."
+      ],
+      "competingCauses": [
+        "Contato local agravado por filme inadequado ou carga fora do previsto requer demonstração independente.",
+        "Aumento de ruído ou temperatura isolado não discrimina adesão de defeito de rolamento."
+      ],
+      "evidenceNeeded": [
+        "Inspeção localizada do dente por método OEM com fotos e identificação do contato ou da transferência material.",
+        "Histórico de lubrificante, condição térmica, contato e alinhamento com comparação a referência aplicável.",
+        "Contraprova independente de abrasão por partículas, fadiga de contato e fonte externa das partículas."
+      ],
+      "methodIds": [
+        "EV-11",
+        "EV-13"
+      ],
+      "safeBoundary": "Não executar teste de carga intencional nem girar engrenagens expostas; respeitar isolamento e abertura segura do comando final.",
+      "sourceIds": [
+        "ISO-10825-1-2022",
+        "CAT-DRIVE-MAINT-PRACTICES",
+        "CAT-DRIVETRAIN-OIL-CARE"
+      ],
+      "sourceUseLimit": "Resumo público ISO 10825-1 descreve classificação de dano visível, sem demonstrar que película insuficiente causou adesão nesta frota.",
+      "observedParameterValues": null,
+      "approvedThreshold": null,
+      "applicableSerialOrArrangement": null,
+      "observedPhysicalDamage": null,
+      "actualFieldOccurrences": 0,
+      "independentReviewStatus": "not_reviewed",
+      "approvedNewOntologyId": null,
+      "approvedCoreChainId": null,
+      "confirmedRootCause": false,
+      "editorialState": "proposal_only"
+    },
+    {
+      "id": "SUB-GEAR-FATIGUE-001",
+      "kind": "proposed_gear_damage_submode",
+      "parentProposalId": "CAND-FD-GEAR-TOOTH-001",
+      "family": "comando_final",
+      "parentMechanismId": "ME-03",
+      "label": "Fadiga de contato nos flancos do dente",
+      "physicalDefinition": "Degradação superficial ou subsuperficial por solicitações cíclicas no contato engrenado, sujeita a confirmação de dano, localização e história de carga.",
+      "mechanicalFunction": "Conservar superfície e geometria de contato para transmitir torque no par de engrenagens do comando final.",
+      "functionalFailureId": "FF-02",
+      "causalPosition": "candidate_damage_mechanism_not_observed",
+      "morphologyHypothesis": "Cavidades superficiais e descascamento podem sugerir fadiga de contato, mas exigem discriminação frente a corrosão, abrasão e arrancamento de material.",
+      "distinguishingFrom": [
+        "Desgaste abrasivo pode produzir riscos, sem necessariamente formar cavidades por fadiga.",
+        "Desgaste adesivo pode transferir material e produzir dano superficial sem carregamento cíclico como mecanismo primário.",
+        "Spalling em pista de rolamento é componente diferente de flanco de engrenagem apesar de ME-03 comum."
+      ],
+      "competingCauses": [
+        "Carregamento cíclico e geometria de contato precisam ser confrontados com o par efetivo e a condição de lubrificação.",
+        "Partículas metálicas e ruído de rolamento podem surgir sem fadiga de dentes comprovada."
+      ],
+      "evidenceNeeded": [
+        "Inspeção documentada de flanco, par engrenado e distribuição da morfologia do dano sob procedimento autorizado.",
+        "Histórico de carga e lubrificação mais controle de alinhamento/superfície com referência OEM por série.",
+        "Parecer técnico independente que distinga contato de engrenagem de fadiga em rolamento e de outros mecanismos."
+      ],
+      "methodIds": [
+        "EV-11",
+        "EV-13"
+      ],
+      "safeBoundary": "Não liberar equipamento com dente ou engrenamento suspeito sem avaliação técnica; nunca operar conjunto com proteção aberta.",
+      "sourceIds": [
+        "ISO-10825-1-2022",
+        "CAT-DRIVE-MAINT-PRACTICES",
+        "CAT-DRIVE-MAGNET-PLUG"
+      ],
+      "sourceUseLimit": "O resumo ISO apenas nomeia/classifica condições e expressamente não discute causas ou prevenção; fadiga é hipótese física ainda não confirmada.",
+      "observedParameterValues": null,
+      "approvedThreshold": null,
+      "applicableSerialOrArrangement": null,
+      "observedPhysicalDamage": null,
+      "actualFieldOccurrences": 0,
+      "independentReviewStatus": "not_reviewed",
+      "approvedNewOntologyId": null,
+      "approvedCoreChainId": null,
+      "confirmedRootCause": false,
+      "editorialState": "proposal_only"
+    }
+  ]
+}

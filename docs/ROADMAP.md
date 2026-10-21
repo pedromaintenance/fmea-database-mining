@@ -1,6 +1,6 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 20/10/2026 · **Ciclo:** catálogo técnico v1.3.21 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 20/10/2026 · **Ciclo:** catálogo técnico v1.3.22 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
 
@@ -39,6 +39,20 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 
 **Observação:** as 159 tarefas de PM com subgrupo candidato foram obtidas em extração local anterior e **não** representam 159 associações homologadas. Contagens de vínculos estritos serão publicadas pelo relatório automático após cada alteração do gerador.
 
+## Ciclo concluído — 21/10/2026: desdobramento de mecanismos (v1.3.22)
+
+- [x] Proposta de **perda volumétrica interna acima da referência por arranjo**: distinguida de perdas internas normais, falha de vedação ME-15, desgaste ME-01/02 e regulação FF-08.
+- [x] Não extrapolar vazão de dreno para vazamento interno total ou usar números de bombas Parker de palhetas em bomba CAT 395 sem prova OEM efetiva.
+- [x] Três submodos **editoriais** de flanco do comando final CAT 777: abrasão (ME-01), adesão (ME-02) e fadiga de contato (ME-03), com morfologia candidata e provas para diferenciar.
+- [x] Restrição de interpretação da ISO 10825-1: nomenclatura de aparência **não é determinação de causa raiz**.
+- [x] Novo arquivo [mechanism-refinements.v1.json](../data/quality/mechanism-refinements.v1.json) com quatro propostas, JSON Schema, validador e **24 regressões sintéticas** adicionados ao CI/QA.
+- [x] [Relatório técnico e critérios de futuro aceite](CICLO_2026-10-21_REFINAMENTO_MECANISMOS.md).
+- [ ] **P0 próximo ciclo:** definir protocolo restrito de submissão, revisão e custódia de evidências reais para uma proposta por vez (OEM, inspeção, contraprova, parecer), sem publicação de laudos privados.
+- [ ] **P0 dependência:** obter a arquitetura da bomba CAT 395, limites efetivos e identificação do conjunto de engrenagens CAT 777; sem eles não liberar novo ME/FC.
+- [ ] Piloto D9 segue com sete requisitos documentais pendentes; dez regras preventivas PM × SAP continuam sem vínculo estrito.
+
+**Estado:** 15 ME e 24 FC mantidos; quatro refinamentos propostos, três cadeias CAND fora do núcleo, zero mecanismo ou caso OEM aprovado.
+
 ## Ciclo concluído — 21/10/2026: auditoria das candidatas FF/ME (v1.3.21)
 
 - [x] **3/3 candidatas** revisadas frente à função, falha funcional, mecanismo, efeito possível e 24 cadeias do núcleo, com **seis sobreposições conceituais** explicitadas.
@@ -48,8 +62,8 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 - [x] Criado [registro taxonômico](../data/quality/proposal-taxonomy-audit.v1.json), JSON Schema, `npm run taxonomy:proposals:validate` e **21 testes sintéticos** no CI/QA.
 - [x] Preservado núcleo de 24 cadeias, registros de efeitos, crosswalk, 12 playbooks e preview público.
 - [x] [Relatório técnico](CICLO_2026-10-21_AUDITORIA_TAXONOMICA.md).
-- [ ] **P0 próximo ciclo:** elaborar proposta de conceito ME específico para perdas internas, verificando aplicabilidade em bomba hidráulica de pistões e evitando duplicação com ME-15.
-- [ ] **P0:** separar em três submodos editoriais danos de flanco da engrenagem (abrasão, adesão, fadiga) com morfologia e testes seguros.
+- [x] **Preparação v1.3.22:** conceito candidato de perda interna separado de ME-15, sem inserção na ontologia nem efetividade OEM comprovada.
+- [x] **Preparação v1.3.22:** três submodos de flanco separados editorialmente por ME-01/02/03, aguardando evidência morfológica e revisão técnica.
 - [ ] **Dependência externa:** configuração OEM efetiva CAT 395/CAT 777 e revisão independente; sem elas não há incorporação ao núcleo.
 - [ ] Piloto CAT D9 mantém sete requisitos pendentes e dez regras PM × SAP permanecem sem vínculo.
 

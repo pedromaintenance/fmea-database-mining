@@ -68,6 +68,8 @@ jobs:
         run: npm run causal:gaps:validate
       - name: Auditar ontologia de 3 propostas e 18 mutacoes sinteticas
         run: npm run taxonomy:proposals:validate
+      - name: Validar conceito de perda interna e 3 submodos de engrenagem
+        run: npm run mechanisms:refinements:validate
       - name: Validar quatro niveis causais em 24 cadeias
         run: npm run causal:levels:validate
       - name: Auditar causalidade sistemica em 24 cadeias
