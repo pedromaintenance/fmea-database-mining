@@ -1,6 +1,6 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 21/10/2026 · **Ciclo:** catálogo técnico v1.3.34 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 21/10/2026 · **Ciclo:** catálogo técnico v1.3.35 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
 
@@ -38,6 +38,16 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 | Enriquecimento | 12 roteiros classificados por falha funcional, sintomas e técnicas | Anotação manual, não prova de causa |
 
 **Observação:** as 159 tarefas de PM com subgrupo candidato foram obtidas em extração local anterior e **não** representam 159 associações homologadas. Contagens de vínculos estritos serão publicadas pelo relatório automático após cada alteração do gerador.
+
+## Ciclo — 21/10/2026: revisão HSVV e COMR (v1.3.35)
+
+- [x] Nova porta de elegibilidade por modelo, nível, sistema/grupo e subgrupo, aplicada à geração de vínculos PM.
+- [x] Auditoria sobre a estrutura do catálogo, com 15 testes de colisão de função e oito mutações adversariais, integrada ao CI.
+- [ ] **P0 externo:** Engenharia/Dados Mestres fornecer hierarquia e BOM por modelo, e parecer sobre HSVV nos circuitos de implementos e filtro de combustível.
+- [ ] **P0 externo:** especialista Sandvik validar a árvore AISY/COMR e o componente de filtragem efetivo.
+- [ ] **Revisão independente:** somente após documentação OEM efetiva e evidências corporativas protegidas considerar qualquer remapeamento.
+
+**Estado:** 10 exceções PM-SAP seguem sem homologação. Não houve inspeção nem confirmação de falha por esta auditoria.
 
 ## Ciclo concluído — 21/10/2026: auditoria estrutural PM × SAP (v1.3.34)
 

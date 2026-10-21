@@ -2,6 +2,13 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.35] — 2026-10-21 — Fronteiras de classificação HSVV e COMR
+
+- Centralizada na geração PM a verificação de modelo, nível de local funcional, sistema/grupo e subgrupo, sem promover grupo a subgrupo.
+- Adicionada auditoria dinâmica de caminhos catalogados HSVV/COMR e 23 verificações sintéticas (15 casos de hierarquia e oito mutações adversariais).
+- Quatro bloqueios examinados permaneceram sem revisão homologada: duas mangueiras hidráulicas HSVV, filtro de combustível HSVV e filtro de compressor COMR.
+- Nenhum dado OEM, série, local SAP, PN, inspeção física, falha observada ou aprovação inventado. Preservados 24 FC / 15 ME, conteúdo e contrato públicos 1.0.0, preview 1.3.12 e consumidores.
+
 ## [1.3.34] — 2026-10-21 — Auditoria estrutural das 25 regras PM × SAP
 
 - **Endurecido** o `scripts/validate-pm.mjs`: cada vínculo gerado precisa coincidir com modelo elegível, raiz e grupo, subgrupo, localização SAP, tipo de objeto, componente e texto da regra, par dano/causa, sintoma, método e identidade da geração.
