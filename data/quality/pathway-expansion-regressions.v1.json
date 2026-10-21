@@ -1,0 +1,210 @@
+{
+  "schema": "fmea-mining.pathway-expansion-regressions.v1",
+  "version": "1.3.17",
+  "nature": "synthetic_only",
+  "readinessCases": [
+    {
+      "id": "READ-FC-COOL-001-01",
+      "pathwayId": "PATH-COOL-AIR-FAN-001",
+      "syntheticAvailableRequirements": [
+        "Passagens do pacote de trocadores identificadas e registradas antes de limpeza"
+      ],
+      "expectedDisposition": "inconclusivo",
+      "observedData": null,
+      "source": "synthetic_only"
+    },
+    {
+      "id": "READ-FC-COOL-001-02",
+      "pathwayId": "PATH-COOL-AIR-FAN-001",
+      "syntheticAvailableRequirements": [
+        "Passagens do pacote de trocadores identificadas e registradas antes de limpeza",
+        "Demanda e resposta do ventilador comparadas com critério OEM por arranjo",
+        "Nível e circulação do líquido avaliados independentemente em condição segura"
+      ],
+      "expectedDisposition": "inconclusivo",
+      "observedData": null,
+      "source": "synthetic_only"
+    },
+    {
+      "id": "READ-FC-COOL-001-03",
+      "pathwayId": "PATH-COOL-AIR-FAN-001",
+      "syntheticAvailableRequirements": [
+        "Passagens do pacote de trocadores identificadas e registradas antes de limpeza",
+        "Demanda e resposta do ventilador comparadas com critério OEM por arranjo",
+        "Nível e circulação do líquido avaliados independentemente em condição segura",
+        "Revisão independente com fontes, contexto e hipóteses concorrentes"
+      ],
+      "expectedDisposition": "apto_para_revisao_nao_confirmado",
+      "observedData": null,
+      "source": "synthetic_only"
+    },
+    {
+      "id": "READ-FC-TRACK-001-01",
+      "pathwayId": "PATH-TRACK-ROLLER-001",
+      "syntheticAvailableRequirements": [
+        "Detritos, posição do rolete e condição de vedações documentados antes da intervenção"
+      ],
+      "expectedDisposition": "inconclusivo",
+      "observedData": null,
+      "source": "synthetic_only"
+    },
+    {
+      "id": "READ-FC-TRACK-001-02",
+      "pathwayId": "PATH-TRACK-ROLLER-001",
+      "syntheticAvailableRequirements": [
+        "Detritos, posição do rolete e condição de vedações documentados antes da intervenção",
+        "Termometria comparável e válida por carga emissividade e intervalo da parada",
+        "Condição mecânica do rolete investigada por procedimento OEM sem induzir rotação perigosa"
+      ],
+      "expectedDisposition": "inconclusivo",
+      "observedData": null,
+      "source": "synthetic_only"
+    },
+    {
+      "id": "READ-FC-TRACK-001-03",
+      "pathwayId": "PATH-TRACK-ROLLER-001",
+      "syntheticAvailableRequirements": [
+        "Detritos, posição do rolete e condição de vedações documentados antes da intervenção",
+        "Termometria comparável e válida por carga emissividade e intervalo da parada",
+        "Condição mecânica do rolete investigada por procedimento OEM sem induzir rotação perigosa",
+        "Tensionamento por OMM e revisão técnica independente para excluir alternativa de tensão"
+      ],
+      "expectedDisposition": "apto_para_revisao_nao_confirmado",
+      "observedData": null,
+      "source": "synthetic_only"
+    },
+    {
+      "id": "READ-FC-COOL-007-01",
+      "pathwayId": "PATH-COOL-PUMP-THERMOSTAT-001",
+      "syntheticAvailableRequirements": [
+        "Tendência térmica registrada com carga rotação contexto e cronologia"
+      ],
+      "expectedDisposition": "inconclusivo",
+      "observedData": null,
+      "source": "synthetic_only"
+    },
+    {
+      "id": "READ-FC-COOL-007-02",
+      "pathwayId": "PATH-COOL-PUMP-THERMOSTAT-001",
+      "syntheticAvailableRequirements": [
+        "Tendência térmica registrada com carga rotação contexto e cronologia",
+        "Termostato e bypass verificados com arranjo procedimento e critérios OEM",
+        "Capacidade hidráulica da bomba avaliada com pontos instrumentação e referências OEM"
+      ],
+      "expectedDisposition": "inconclusivo",
+      "observedData": null,
+      "source": "synthetic_only"
+    },
+    {
+      "id": "READ-FC-COOL-007-03",
+      "pathwayId": "PATH-COOL-PUMP-THERMOSTAT-001",
+      "syntheticAvailableRequirements": [
+        "Tendência térmica registrada com carga rotação contexto e cronologia",
+        "Termostato e bypass verificados com arranjo procedimento e critérios OEM",
+        "Capacidade hidráulica da bomba avaliada com pontos instrumentação e referências OEM",
+        "Circulação e ventilação separadas por contraprova e revisão técnica independente"
+      ],
+      "expectedDisposition": "apto_para_revisao_nao_confirmado",
+      "observedData": null,
+      "source": "synthetic_only"
+    }
+  ],
+  "mutationCases": [
+    {
+      "id": "MUT-01",
+      "pathwayId": "PATH-COOL-AIR-FAN-001",
+      "mutation": "confirmCause",
+      "expectedDisposition": "reject",
+      "observedData": null,
+      "source": "synthetic_only"
+    },
+    {
+      "id": "MUT-02",
+      "pathwayId": "PATH-TRACK-ROLLER-001",
+      "mutation": "inventSerial",
+      "expectedDisposition": "reject",
+      "observedData": null,
+      "source": "synthetic_only"
+    },
+    {
+      "id": "MUT-03",
+      "pathwayId": "PATH-COOL-PUMP-THERMOSTAT-001",
+      "mutation": "inventObservedResult",
+      "expectedDisposition": "reject",
+      "observedData": null,
+      "source": "synthetic_only"
+    },
+    {
+      "id": "MUT-04",
+      "pathwayId": "PATH-COOL-AIR-FAN-001",
+      "mutation": "approveReview",
+      "expectedDisposition": "reject",
+      "observedData": null,
+      "source": "synthetic_only"
+    },
+    {
+      "id": "MUT-05",
+      "pathwayId": "PATH-TRACK-ROLLER-001",
+      "mutation": "replaceCrossRef",
+      "expectedDisposition": "reject",
+      "observedData": null,
+      "source": "synthetic_only"
+    },
+    {
+      "id": "MUT-06",
+      "pathwayId": "PATH-COOL-PUMP-THERMOSTAT-001",
+      "mutation": "changeRootLevel",
+      "expectedDisposition": "reject",
+      "observedData": null,
+      "source": "synthetic_only"
+    },
+    {
+      "id": "MUT-07",
+      "pathwayId": "PATH-COOL-AIR-FAN-001",
+      "mutation": "inventMethod",
+      "expectedDisposition": "reject",
+      "observedData": null,
+      "source": "synthetic_only"
+    },
+    {
+      "id": "MUT-08",
+      "pathwayId": "PATH-TRACK-ROLLER-001",
+      "mutation": "removeSafety",
+      "expectedDisposition": "reject",
+      "observedData": null,
+      "source": "synthetic_only"
+    },
+    {
+      "id": "MUT-09",
+      "pathwayId": "PATH-COOL-PUMP-THERMOSTAT-001",
+      "mutation": "omitMetadata",
+      "expectedDisposition": "reject",
+      "observedData": null,
+      "source": "synthetic_only"
+    },
+    {
+      "id": "MUT-10",
+      "pathwayId": "PATH-COOL-AIR-FAN-001",
+      "mutation": "omitGate",
+      "expectedDisposition": "reject",
+      "observedData": null,
+      "source": "synthetic_only"
+    },
+    {
+      "id": "MUT-11",
+      "pathwayId": "PATH-TRACK-ROLLER-001",
+      "mutation": "inventSource",
+      "expectedDisposition": "reject",
+      "observedData": null,
+      "source": "synthetic_only"
+    },
+    {
+      "id": "MUT-12",
+      "pathwayId": "PATH-COOL-PUMP-THERMOSTAT-001",
+      "mutation": "duplicateStep",
+      "expectedDisposition": "reject",
+      "observedData": null,
+      "source": "synthetic_only"
+    }
+  ]
+}

@@ -1,0 +1,341 @@
+{
+  "schema": "fmea-mining.diagnostic-pathway-expansion.v1",
+  "version": "1.3.17",
+  "nature": "didatico_tecnico_sem_inspecao_executada",
+  "strategy": "complemento_aditivo_preservando_os_tres_roteiros_originais",
+  "policy": {
+    "neverMergeObservedIntoSynthetic": true,
+    "rootCauseCannotBeConfirmedByCode": true,
+    "independentReviewRequired": true,
+    "oemProcedureRequiredBeforeExecution": true,
+    "applicabilityNotVerified": true,
+    "originalPathsImmutable": true
+  },
+  "counts": {
+    "previousPathways": 3,
+    "newPathways": 3,
+    "totalDetailedPathways": 6,
+    "proposedInvestigationStages": 9,
+    "observedEvents": 0,
+    "confirmedRootCauses": 0
+  },
+  "records": [
+    {
+      "id": "PATH-COOL-AIR-FAN-001",
+      "chainId": "FC-COOL-001",
+      "focusAlternativeId": "ALT2",
+      "originCrossRefId": "XREF-FC-COOL-001-ALT2",
+      "title": "Distinguir restrição externa na colmeia e deficiência de ventilação comandada",
+      "detection": "Sob carga, o motor apresenta indicação de elevação térmica; detritos no pacote de trocadores ainda não comprovam perda de capacidade por restrição de ar.",
+      "comparison": {
+        "hypothesisA": "Restrição do fluxo de ar por sujidade externa na colmeia do radiador",
+        "hypothesisB": "Ventilador não produzindo fluxo de ar requerido"
+      },
+      "steps": [
+        {
+          "id": "S1",
+          "methodId": "EV-01",
+          "question": "Com conjunto frio, bloqueado e sem aproximação de partes móveis, a obstrução entre aletas e módulos pode ser documentada com referência de posição?",
+          "supportsA": "Detritos cobrindo passagens coincidentes com a região de troca são compatíveis com restrição externa, sem quantificar a perda térmica.",
+          "supportsB": "Passagens acessíveis desobstruídas reduzem a hipótese A e orientam checar acionamento ou fluxo do ventilador, sem comprovar B.",
+          "notDiscriminating": "Detritos superficiais pouco extensos, áreas ocultas, fotografias depois da limpeza e ausência de referência não discriminam.",
+          "requiredMetadata": [
+            "equipmentContext",
+            "inspectionLocation",
+            "isolationStatus",
+            "visualDocumentation",
+            "ambientCondition",
+            "dateTime"
+          ],
+          "safeBoundary": "Aplicar LOTO e aguardar resfriamento; não introduzir mãos, água ou objetos na colmeia pressurizada ou em ventilador com partida automática."
+        },
+        {
+          "id": "S2",
+          "methodId": "EV-14",
+          "question": "Os canais identificados de demanda e resposta do ventilador, temperatura, carga e ambiente permitem comparação válida na configuração OEM instalada?",
+          "supportsA": "Com ventilador confirmado conforme referência e carga comparável, restrição material documentada fortalece A, mas não exclui falhas concomitantes.",
+          "supportsB": "Resposta do ventilador comprovadamente divergente do comando ou requisito OEM fortalece B, mesmo com alguma sujidade presente.",
+          "notDiscriminating": "Canal de temperatura isolado, ventilador reversível presumido ou valores sem calibração/configuração não permitem inferir acionamento.",
+          "requiredMetadata": [
+            "equipmentContext",
+            "telemetryChannel",
+            "fanArchitecture",
+            "loadCondition",
+            "ambientCondition",
+            "baselineReference",
+            "dateTime"
+          ],
+          "safeBoundary": "Consultar telemetria e manual efetivo sem comandar giro em zona acessível; intervenção física somente por procedimento OEM e pessoal autorizado."
+        },
+        {
+          "id": "S3",
+          "methodId": "EV-12",
+          "question": "Com procedimento OEM identificado, o exame independente de nível e circulação do líquido permite afastar deficiência hidráulica como explicação concorrente?",
+          "supportsA": "Nível e circulação conformes sob critério OEM reduzem uma terceira hipótese, deixando mais relevante a discriminação ar versus ventilador.",
+          "supportsB": "Baixo nível ou circulação inadequada pode explicar aquecimento sem demonstrar deficiência do ventilador, exigindo reabrir hipóteses.",
+          "notDiscriminating": "Apenas leitura térmica ou inspeção com motor quente, sem critério aplicável, não isola restrição de ar, ventilação e circuito hidráulico.",
+          "requiredMetadata": [
+            "equipmentContext",
+            "oemProcedureReference",
+            "coolantCondition",
+            "testCondition",
+            "independentReviewer",
+            "dateTime"
+          ],
+          "safeBoundary": "Nunca abrir tampa quente/pressurizada ou executar ensaio funcional improvisado; isolamento, PPE e método devem seguir OEM efetivo."
+        }
+      ],
+      "causalLevels": {
+        "observedPhenomenon": "Sujidade externa ou detritos entre aletas do pacote de radiadores, somente condição-alvo de inspeção.",
+        "immediatePhysicalMechanismCandidate": "Restrição de passagem de ar pode diminuir convecção no trocador e rejeição térmica sob determinada carga.",
+        "contributingConditionCandidates": [
+          "Acúmulo de poeira e detritos entre aletas ou módulos",
+          "Falta de limpeza apropriada",
+          "Condição ambiental muito carregada de partículas"
+        ],
+        "rootCauseCandidates": [
+          "Estratégia de limpeza insuficiente para poeira da operação — precisa de histórico de inspeções, carga e ambiente.",
+          "Proteção/arranjo de admissão de ar incompatível com ambiente — comprovar configuração e requisito OEM."
+        ],
+        "rootCauseNotEstablishedBecause": "Não se demonstraram temperatura fora de requisito, efeito de limpeza ou desempenho de ventilação/circulação; sujidade externa não é obstrução interna."
+      },
+      "evidenceGate": {
+        "requires": [
+          "Passagens do pacote de trocadores identificadas e registradas antes de limpeza",
+          "Demanda e resposta do ventilador comparadas com critério OEM por arranjo",
+          "Nível e circulação do líquido avaliados independentemente em condição segura",
+          "Revisão independente com fontes, contexto e hipóteses concorrentes"
+        ],
+        "decisionWithoutEvidence": "inconclusivo"
+      },
+      "sourceIds": [
+        "CAT-RADIATOR-CARE",
+        "CAT-EXC-COOL-CHECKLIST",
+        "CAT-COOLING-FAN-REVERSE",
+        "ISO-17359-2018"
+      ],
+      "applicableModelId": null,
+      "applicableSapLocationId": null,
+      "confirmedPartCode": null,
+      "applicableSerialOrArrangement": null,
+      "executionStatus": "not_performed",
+      "resultObserved": null,
+      "diagnosticConclusion": null,
+      "reviewStatus": "proposta_editorial_nao_homologada",
+      "fieldEvents": 0,
+      "rootCauseConfirmed": false,
+      "independentEvidenceVerified": false
+    },
+    {
+      "id": "PATH-TRACK-ROLLER-001",
+      "chainId": "FC-TRACK-001",
+      "focusAlternativeId": "ALT1",
+      "originCrossRefId": "XREF-FC-TRACK-001-ALT1",
+      "title": "Diferenciar travamento externo por detritos e anomalia interna de rolete",
+      "detection": "Rolete com suspeita de arrasto, aquecimento ou desgaste; termometria isolada não identifica origem externa ou interna da resistência à rotação.",
+      "comparison": {
+        "hypothesisA": "Detritos compactados restringem rotação do rolete de esteira",
+        "hypothesisB": "Falha interna de rolamento/vedação no rolete"
+      },
+      "steps": [
+        {
+          "id": "S1",
+          "methodId": "EV-01",
+          "question": "Com o material rodante imobilizado, há detritos compactados em contato com o rolete, marcas de deslizamento e condição documentada das vedações?",
+          "supportsA": "Obstrução externa atingindo a trajetória do rolete e marcas correspondentes sustentam a possibilidade de arrasto por detritos.",
+          "supportsB": "Ausência de impedimento externo e evidência de perda de vedação orientam investigar falha interna, sem estabelecer seu mecanismo.",
+          "notDiscriminating": "Detrito removido antes do registro, região inacessível ou superfície já danificada não permite determinar a origem temporal da resistência.",
+          "requiredMetadata": [
+            "equipmentContext",
+            "inspectionLocation",
+            "isolationStatus",
+            "visualDocumentation",
+            "trackPosition",
+            "dateTime"
+          ],
+          "safeBoundary": "Não ingressar sob equipamento não escorado, mover esteira, retirar material aprisionado ou soltar componente com energia acumulada."
+        },
+        {
+          "id": "S2",
+          "methodId": "EV-03",
+          "question": "Há comparação térmica de roletes equivalentes, com emissividade, carga, deslocamento prévio e intervalo após parada adequadamente documentados?",
+          "supportsA": "Hotspot compatível com atrito em região de detritos reforça necessidade de avaliar A, mas não isola o mecanismo externo.",
+          "supportsB": "Hotspot persistente com região externa limpa reforça investigação da condição interna do rolete, sem condenar rolamento.",
+          "notDiscriminating": "Emissividade, lama, resfriamento desigual e posição distinta dos roletes tornam a comparação não discriminante.",
+          "requiredMetadata": [
+            "equipmentContext",
+            "inspectionLocation",
+            "surfaceEmissivity",
+            "loadCondition",
+            "referenceRollers",
+            "dateTime"
+          ],
+          "safeBoundary": "Termografia sem aproximação de componentes quentes ou móveis; nunca reproduzir arrasto com pessoas dentro da zona de risco."
+        },
+        {
+          "id": "S3",
+          "methodId": "EV-12",
+          "question": "Somente em procedimento OEM autorizado, uma avaliação de rotação e condição do rolete após remoção controlada do impedimento externo distingue resistência persistente?",
+          "supportsA": "Se a anomalia cessar após liberação documentada dos detritos sem outra intervenção, A ganha plausibilidade condicionada.",
+          "supportsB": "Resistência ou vazamento persistente sem obstrução externa favorece suspeita interna e requer diagnóstico específico do conjunto.",
+          "notDiscriminating": "Ensaio não autorizado, peça desmontada sem rastreio, rolete danificado por arrasto prévio ou tensão desconhecida não isolam causa.",
+          "requiredMetadata": [
+            "equipmentContext",
+            "oemProcedureReference",
+            "trackTensionBaseline",
+            "rotationAssessment",
+            "postRemovalCondition",
+            "dateTime"
+          ],
+          "safeBoundary": "Não girar manualmente conjunto carregado, despressurizar esticador sem método ou realizar teste dinâmico fora de procedimento OEM seguro."
+        }
+      ],
+      "causalLevels": {
+        "observedPhenomenon": "Rolete aparentemente quente ou com dificuldade de rotação, ainda sem observação instrumental de campo.",
+        "immediatePhysicalMechanismCandidate": "Material compactado pode restringir a rotação e provocar deslizamento relativo, atrito e desgaste da superfície.",
+        "contributingConditionCandidates": [
+          "Material compacto acumulado no chassi/entorno do rolete",
+          "Impedimento externo por rocha/solo",
+          "Limpeza inadequada do conjunto"
+        ],
+        "rootCauseCandidates": [
+          "Controle de acúmulo de material no rodante inadequado ao ambiente — avaliar condições de frente e rotina de limpeza.",
+          "Arranjo de proteção/inspeção do chassi insuficiente — exigir evidência de projeto e histórico, sem presumir deficiência."
+        ],
+        "rootCauseNotEstablishedBecause": "Termometria isolada não distingue detritos de falha de rolamento/vedação ou tensão inadequada da esteira."
+      },
+      "evidenceGate": {
+        "requires": [
+          "Detritos, posição do rolete e condição de vedações documentados antes da intervenção",
+          "Termometria comparável e válida por carga emissividade e intervalo da parada",
+          "Condição mecânica do rolete investigada por procedimento OEM sem induzir rotação perigosa",
+          "Tensionamento por OMM e revisão técnica independente para excluir alternativa de tensão"
+        ],
+        "decisionWithoutEvidence": "inconclusivo"
+      },
+      "sourceIds": [
+        "CAT-DOZER-UC-MAINT",
+        "CAT-STEEL-TRACKS",
+        "CAT-MINING-UC-WEAR-MANAGEMENT",
+        "CAT-CTS-UNDERCARRIAGE"
+      ],
+      "applicableModelId": null,
+      "applicableSapLocationId": null,
+      "confirmedPartCode": null,
+      "applicableSerialOrArrangement": null,
+      "executionStatus": "not_performed",
+      "resultObserved": null,
+      "diagnosticConclusion": null,
+      "reviewStatus": "proposta_editorial_nao_homologada",
+      "fieldEvents": 0,
+      "rootCauseConfirmed": false,
+      "independentEvidenceVerified": false
+    },
+    {
+      "id": "PATH-COOL-PUMP-THERMOSTAT-001",
+      "chainId": "FC-COOL-007",
+      "focusAlternativeId": "ALT1",
+      "originCrossRefId": "XREF-FC-COOL-007-ALT1",
+      "title": "Diferenciar circulação insuficiente da bomba e restrição por termostato ou bypass",
+      "detection": "Aquecimento e possível baixa circulação no sistema de arrefecimento; não existe medição de vazão nem identificação da origem no banco.",
+      "comparison": {
+        "hypothesisA": "Circulação insuficiente pelo conjunto da bomba de arrefecimento",
+        "hypothesisB": "Termostato restringe passagem ao radiador com bomba adequada"
+      },
+      "steps": [
+        {
+          "id": "S1",
+          "methodId": "EV-14",
+          "question": "Tendências de temperatura, carga, rotação e cronologia são comparáveis e mostram condição de aquecimento sem atribuir falha a um componente?",
+          "supportsA": "Aquecimento em carga pode justificar investigação da circulação da bomba, sem evidência suficiente para concluir A.",
+          "supportsB": "Mudanças térmicas sob o regime de abertura do termostato também justificam investigar B, não a confirmam.",
+          "notDiscriminating": "Telemetria sem canais confiáveis de condição, ambiente e configuração não isola a bomba, o termostato ou o ventilador.",
+          "requiredMetadata": [
+            "equipmentContext",
+            "telemetryChannel",
+            "loadCondition",
+            "ambientCondition",
+            "chronology",
+            "dateTime"
+          ],
+          "safeBoundary": "Leitura apenas documental, sem provocar sobreaquecimento em máquina real ou desativar controles de proteção."
+        },
+        {
+          "id": "S2",
+          "methodId": "EV-12",
+          "question": "O teste autorizado do termostato e do circuito de bypass, pelo arranjo OEM aplicável, identifica restrição independente do estado da bomba?",
+          "supportsA": "Termostato e bypass comprovadamente conformes reduzem B e tornam relevante ensaio da bomba, mas não aprovam sua condenação.",
+          "supportsB": "Termorregulação fora da especificação OEM com circulação da bomba demonstrada conforme favorece B na condição testada.",
+          "notDiscriminating": "Teste em bancada sem identificação de peça, temperatura de referência ou arquitetura do bypass não distingue as hipóteses.",
+          "requiredMetadata": [
+            "equipmentContext",
+            "oemProcedureReference",
+            "thermostatArrangement",
+            "testCondition",
+            "instrumentCalibration",
+            "dateTime"
+          ],
+          "safeBoundary": "Não abrir circuito quente, pressurizado ou energizado; testar conforme OEM, respeitando produtos químicos e energia térmica."
+        },
+        {
+          "id": "S3",
+          "methodId": "EV-05",
+          "question": "Medição autorizada de vazão ou pressão diferencial, com pontos e regime especificados pelo OEM, permite confrontar a capacidade da bomba com o circuito?",
+          "supportsA": "Deficiência de capacidade atribuível à bomba só ganha suporte após isolar termostato, nível, sucção e restrições com referência OEM.",
+          "supportsB": "Bomba dentro da referência em condição válida, associada a falha verificada de termostato, enfraquece A e favorece B.",
+          "notDiscriminating": "Medição isolada fora do regime, sensor sem calibração ou obstrução em outra parte do circuito não identifica componente culpado.",
+          "requiredMetadata": [
+            "equipmentContext",
+            "oemProcedureReference",
+            "measurementLocation",
+            "instrumentCalibration",
+            "fluidCondition",
+            "loadCondition",
+            "dateTime"
+          ],
+          "safeBoundary": "Nunca improvisar derivação, manômetro ou abertura em circuito quente/pressurizado; ensaios apenas por pessoal habilitado e método OEM."
+        }
+      ],
+      "causalLevels": {
+        "observedPhenomenon": "Indício de baixa circulação ou aquecimento em carga, sem vazão medida na bomba.",
+        "immediatePhysicalMechanismCandidate": "Comando ou componentes da bomba podem não gerar circulação suficiente para o circuito efetivo.",
+        "contributingConditionCandidates": [
+          "Desgaste de componentes internos ou acionamento deficiente",
+          "Dano ou restrição de alimentação da bomba",
+          "Problemas de montagem/acionamento específicos da configuração"
+        ],
+        "rootCauseCandidates": [
+          "Manutenção/controle do acionamento do conjunto inadequado — requer prova de desgaste ou mau funcionamento.",
+          "Controle de qualidade do fluido/proteção do circuito inadequado — investigar restrições e condição da bomba."
+        ],
+        "rootCauseNotEstablishedBecause": "Temperatura alta não identifica rotor nem separa termostato, restrição de passagem e ventilador."
+      },
+      "evidenceGate": {
+        "requires": [
+          "Tendência térmica registrada com carga rotação contexto e cronologia",
+          "Termostato e bypass verificados com arranjo procedimento e critérios OEM",
+          "Capacidade hidráulica da bomba avaliada com pontos instrumentação e referências OEM",
+          "Circulação e ventilação separadas por contraprova e revisão técnica independente"
+        ],
+        "decisionWithoutEvidence": "inconclusivo"
+      },
+      "sourceIds": [
+        "CAT-WATER-PUMP-REPLACEMENT",
+        "CAT-THERMOSTAT-REPLACEMENT",
+        "CAT-RADIATOR-CARE",
+        "ISO-17359-2018"
+      ],
+      "applicableModelId": null,
+      "applicableSapLocationId": null,
+      "confirmedPartCode": null,
+      "applicableSerialOrArrangement": null,
+      "executionStatus": "not_performed",
+      "resultObserved": null,
+      "diagnosticConclusion": null,
+      "reviewStatus": "proposta_editorial_nao_homologada",
+      "fieldEvents": 0,
+      "rootCauseConfirmed": false,
+      "independentEvidenceVerified": false
+    }
+  ]
+}
