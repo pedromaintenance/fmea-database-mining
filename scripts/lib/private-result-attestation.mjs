@@ -75,6 +75,19 @@ export function makeSyntheticPrivateReceipt(contract,stagingPlan,scenarioId,auth
  for(const role of WHO)resignSyntheticPart(packet,authority,role);
  return packet;
 }
+/** Re-sign an intentionally altered synthetic fixture; never use this to forge real review. */
+export function refreshSyntheticProofs(packet,authority){
+ const s=digest(packet.statement);
+ packet.attestations.custody.claim.statementDigest=s;
+ const c=digest(packet.attestations.custody.claim);
+ packet.attestations.technical.claim.statementDigest=s;
+ packet.attestations.technical.claim.custodyDigest=c;
+ const t=digest(packet.attestations.technical.claim);
+ packet.attestations.independent.claim.statementDigest=s;
+ packet.attestations.independent.claim.custodyDigest=c;
+ packet.attestations.independent.claim.technicalDigest=t;
+ for(const type of WHO)resignSyntheticPart(packet,authority,type);
+}
 export function verifyPrivateReceipt(policy,contract,packet,trust,{publicHarness=true}={}){
  const errors=[],ck=(ok,msg)=>{if(!ok)errors.push(msg)};
  const isSynthetic=packet?.recordNature==='synthetic_test_only';
