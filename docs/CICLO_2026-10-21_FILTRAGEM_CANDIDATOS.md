@@ -19,7 +19,7 @@ O resultado é uma **lista de candidatos editoriais**, sem alteração do gerado
 | Filtro de combustível HSVV | 307 | 16 | 0 | Nenhuma descrição filtrante localizada em FUSY nos modelos da regra. Cadastro/grupo de filtragem e BOM ainda requerem revisão. |
 | Filtro do compressor COMR | 94 | 12 | 2 | Uma família candidata surge em **AISY / COMR / VPAR**, em EQ05 e EQ06, com descrições relacionadas a filtro/separador. **Não é aprovada.** |
 
-**Observação sobre o compressor:** o código VPAR é associado ao vaso/recipiente pressurizado em outra regra. O aparecimento de textos filtrantes em seu tipo de objeto não prova que o item pertença ao circuito específico, esteja instalado ou deva receber dano `03.02`/causa `C2.09`. A contagem de compatibilidades é produzida dinamicamente em `reports/pm-filtration-discovery.generated.json`.
+**Observação sobre o compressor:** o código VPAR é associado ao vaso/recipiente pressurizado em outra regra. O aparecimento de textos filtrantes em seu tipo de objeto não prova que o item pertença ao circuito específico, esteja instalado ou deva receber dano `03.02`/causa `C2.09`. A auditoria encontrou **quatro ocorrências de descrições relacionadas a filtragem/separação**, das quais **duas ocorrências** admitem o par catalogado `03.02/C2.09`. Essas contagens são por ocorrência de caminho/objeto, **não representam dois componentes físicos distintos**, instalação efetiva ou autorização de remapeamento. O detalhe reproduzível consta de `reports/pm-filtration-discovery.generated.json`.
 
 ## Fontes técnicas públicas e limites
 
