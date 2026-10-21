@@ -1,6 +1,6 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 21/10/2026 · **Ciclo:** catálogo técnico v1.3.28 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 21/10/2026 · **Ciclo:** catálogo técnico v1.3.29 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
 
@@ -39,6 +39,20 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 
 **Observação:** as 159 tarefas de PM com subgrupo candidato foram obtidas em extração local anterior e **não** representam 159 associações homologadas. Contagens de vínculos estritos serão publicadas pelo relatório automático após cada alteração do gerador.
 
+## Ciclo concluído — 21/10/2026: catálogo de remediação e desvios recorrentes (v1.3.29)
+
+- [x] [Catálogo v1.3.29](../data/governance/recurrent-remediation-catalog.v1.json): 4 perfis de remediação; ações corretivas propostas e elementos de prova, com responsabilidades de Segurança, Engenharia e TI.
+- [x] Lógica de reincidência **sintética**: execuções distintas por tenant/cenário/controle/classe; não misturar eventos de contexto diferente nem reutilizar IDs como novas falhas.
+- [x] [Biblioteca de avaliação](../scripts/lib/recurrent-remediation.mjs), [JSON Schema](../schemas/recurrent-remediation-plan.schema.json) e **52 regressões de contrato** incorporadas ao QA/CI.
+- [x] [Runbook](REMEDIACAO_DESVIOS_RECORRENTES.md) e [relatório](CICLO_2026-10-21_REMEDIACAO_RECORRENCIA.md) com fronteira explícita entre proposta de ação, teste de eficácia, aceite da segurança e encerramento.
+- [x] 24 cadeias FC, 15 mecanismos ME, consumidor, conteúdo público 1.0.0, contrato 1.0.0 e golden checksum preservados.
+- [ ] **P0 externo TI/Segurança:** institucionalizar prazos, severidades, owner de incidentes, autenticidade de registros, log protegido e critérios de encerramento **em ambiente corporativo privado**.
+- [ ] **P0 externo Engenharia:** definir método de verificação de eficácia, causas concorrentes e aceitabilidade de ações técnicas sem extrapolar a FMEA.
+- [ ] **P0 próximo ciclo:** apresentar visão consolidada dos bloqueios de homologação **sem falsa conclusão** e preparar critérios para priorizar dependências reais, evitando multiplicar processos somente documentais.
+- [ ] Ambiente de staging privado, seis assinaturas institucionais e qualquer piloto com caso real continuam pendentes.
+
+**Situação:** 4 perfis, 52 testes sintéticos, nenhum controle corporativo recuperado ou aprovado.
+
 ## Ciclo concluído — 21/10/2026: tratamento de exceções de staging (v1.3.28)
 
 - [x] [Política de exceções](../data/governance/staging-result-exception-workflow.v1.json) com três classes de problema, sete transições e três decisões possíveis sobre o **histórico de triagem**, sem confirmar resolução de não conformidade real.
@@ -48,7 +62,7 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 - [x] Mantidos contratos públicos, 24 FC, 15 ME e todos os gates históricos; nenhuma aprovação/observação real inventada.
 - [ ] **P0 externo — TI:** implementar o histórico transacional imutável, autenticação e vínculo de eventos a resultados verdadeiramente assinados e custodiados em ambiente privado.
 - [ ] **P0 externo — Segurança/Engenharia:** definir quem mantém não conformidade aberta, requisitos de aceitação de reteste, risco residual e evidência da correção de controle.
-- [ ] **P0 próximo ciclo:** definir catálogo de bloqueios e plano de remediação para desvios recorrentes, separando a decisão de retestar da correção técnica real.
+- [x] **Concluído na v1.3.29:** catálogo de remediação e reincidência, com separação explícita entre reteste, correção real, aceite corporativo e fechamento de desvio.
 - [ ] Infraestrutura de staging e seis assinaturas corporativas permanecem **pendentes**.
 
 **Estado:** 64 regressões de processo previstas; **zero casos reais**, zero assinatura de revisão humana e nenhuma FMEA promovida.

@@ -2,7 +2,7 @@
 
 Banco de conhecimento **versionado** para investigar modos de falha, sintomas, evidências e causas em equipamentos móveis de mineração. Um consumidor possível é o jogo **[P.O.R.C.A.R.I.A. — Você Quebra, Eu Conserto](https://github.com/pedromaintenance/porcaria-voce-quebra-eu-conserto)**, mas o banco é independente: **este repositório não altera os consumidores**.
 
-> **Status:** versão do catálogo **1.3.28** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
+> **Status:** versão do catálogo **1.3.29** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
 
 ## O que queremos construir
 
@@ -358,6 +358,16 @@ O comando `npm run staging:exceptions:validate` executa **64 regressões sintét
 O resultado máximo, mesmo após reteste fictício `pass`, é `retest_passed_needs_manual_security_review`: **não** é autorização de segurança, homologação de staging, causa raiz de equipamento, liberação operacional ou promoção de FMEA. Os estados de bloqueio ou inconclusão devem manter a não conformidade controlada fora deste mock público.
 
 [Runbook de tratamento](docs/TRATAMENTO_EXCECOES_STAGING.md) · [Relatório v1.3.28](docs/CICLO_2026-10-21_TRATAMENTO_EXCECOES.md) · [Schema dos históricos](schemas/staging-exception-case.schema.json).
+
+## Catálogo de remediação e reincidência — v1.3.29
+
+O [catálogo de remediação](data/governance/recurrent-remediation-catalog.v1.json) separa **quatro frentes**: falha de controle de segurança, qualidade de evidência inconclusiva, erro do verificador/ambiente e escalonamento transversal da **reincidência**. Cada frente define cinco ações e cinco evidências que deverão ser avaliadas antes de qualquer conclusão corporativa.
+
+O [validador](scripts/validate-recurrent-remediation.mjs) executa **52 testes inteiramente sintéticos**: 12 históricos e 40 alterações indevidas. A correlação de reincidência só agrupa o mesmo tenant, cenário, controle e classe de problema, com *runs distintos*; **dois runs em 30 dias são apenas parâmetros de demonstração**, não um SLA ou limiar aprovado pela empresa.
+
+O resultado `eligible_for_manual_review` significa somente que a **proposta documental** passou nas verificações do mock. Não certifica que o reparo foi feito, que um controle ficou conforme, que o incidente foi encerrado ou que surgiu nova causa de falha mecânica.
+
+[Runbook de remediação](docs/REMEDIACAO_DESVIOS_RECORRENTES.md) · [Relatório do ciclo](docs/CICLO_2026-10-21_REMEDIACAO_RECORRENCIA.md) · [Schema de proposta](schemas/recurrent-remediation-plan.schema.json).
 
 ## Comece por aqui
 

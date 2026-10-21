@@ -2,6 +2,15 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.29] — 2026-10-21 — Catálogo de remediação e recorrência
+
+- Criados **4 perfis editoriais** para controle reprovado, evidência inconclusiva, erro de infraestrutura/verificador e reincidência transversal.
+- Cada perfil tem cinco atividades e cinco classes de evidência, sem declarar que a ação foi executada ou que a causa material foi confirmada.
+- Reincidência no mock: **≥2 runs distintos em 30 dias**, no mesmo tenant, cenário, probe e classificação; limiar **exclusivamente sintético**, sem aprovação de SLA corporativo.
+- Preservado o resultado negativo original; impedidos recontagem de run, mistura de escopos, autorização de segurança fictícia, encerramento de incidente e liberação operacional/SAP/FMEA.
+- Criados JSON Schema, biblioteca offline de correlação e propostas, **52 regressões sintéticas** (12 históricos + 40 tentativas adversariais), QA/CI, métricas e runbook.
+- **Zero** ações reais, revisores efetivos, incidentes corporativos ou causas homologadas. Contrato e conteúdo público 1.0.0, preview 1.3.12, checksum histórico e consumidores preservados.
+
 ## [1.3.28] — 2026-10-21 — Triagem de resultados falhos e inconclusivos
 
 - Diferenciadas três naturezas de resultado: **controle reprovado**, **prova insuficiente** e **erro de infraestrutura/verificador**, nenhuma interpretada como causa mecânica.
