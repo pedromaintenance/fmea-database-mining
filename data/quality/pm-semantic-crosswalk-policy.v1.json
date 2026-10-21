@@ -1,0 +1,116 @@
+{
+  "schema": "fmea-mining.semantic-crosswalk-policy.v1",
+  "version": "1.3.43",
+  "nature": "documented_generic_overlap_without_field_observations_or_component_approval",
+  "sourceOntologyVersion": "1.3.8",
+  "expectedBundles": 9,
+  "expectedSeedRules": 25,
+  "expectedUnmodeledRules": 16,
+  "sharedNodes": [
+    {
+      "id": "COND-FUEL-WATER",
+      "kind": "condition",
+      "system": "combustivel",
+      "ruleIds": [
+        "fuel-tank-water",
+        "fuel-filter-contamination"
+      ],
+      "sharingMeaning": "Condição genérica do fluido, não evidência de falha de dreno ou elemento filtrante",
+      "requiredDiscrimination": "Determinar origem da água, eficiência de separação e função dos componentes separadamente"
+    },
+    {
+      "id": "COND-FUEL-SEDIMENT",
+      "kind": "condition",
+      "system": "combustivel",
+      "ruleIds": [
+        "fuel-tank-water",
+        "fuel-filter-contamination"
+      ],
+      "sharingMeaning": "Sedimentos no circuito não estabelecem posição nem mecanismo de restrição do filtro",
+      "requiredDiscrimination": "Confirmar contaminação na coleta e rastrear abastecimento, tanque e filtro"
+    },
+    {
+      "id": "ACT-FUEL-REPRESENTATIVE-SAMPLE",
+      "kind": "action",
+      "system": "combustivel",
+      "ruleIds": [
+        "fuel-tank-water",
+        "fuel-filter-contamination"
+      ],
+      "sharingMeaning": "Mesma classe de proposta de amostragem, não execução nem efeito de correção",
+      "requiredDiscrimination": "Aplicar ponto, sequência, recipiente e OMM efetivos a cada equipamento"
+    },
+    {
+      "id": "COND-HYD-EXTERNAL-LEAK",
+      "kind": "condition",
+      "system": "hidraulico",
+      "ruleIds": [
+        "hydraulic-hose-leak",
+        "hydraulic-pump-seal"
+      ],
+      "sharingMeaning": "Óleo na região de mangueira ou bomba não identifica origem física da fuga",
+      "requiredDiscrimination": "Rastrear com segurança a origem por componente e excluir óleo migrado de conexões adjacentes"
+    },
+    {
+      "id": "COND-HYD-LOW-FUNCTIONAL-PRESSURE",
+      "kind": "condition",
+      "system": "hidraulico",
+      "ruleIds": [
+        "hydraulic-hose-leak",
+        "hydraulic-pump-seal"
+      ],
+      "sharingMeaning": "Pressão funcional reduzida pode resultar de múltiplas causas além de mangueira ou vedação da bomba",
+      "requiredDiscrimination": "Confrontar pressão, carga, temperatura, vazamento, válvulas, bomba e sensores conforme OEM"
+    },
+    {
+      "id": "ACT-HYD-PRESSURE-VERIFY",
+      "kind": "action",
+      "system": "hidraulico",
+      "ruleIds": [
+        "hydraulic-hose-leak",
+        "hydraulic-pump-seal"
+      ],
+      "sharingMeaning": "Proposta de teste hidráulico compartilhada não é medição realizada nem prova do componente",
+      "requiredDiscrimination": "Definir pontos de ensaio e limites por circuito, com isolação e procedimento OEM autorizado"
+    }
+  ],
+  "domainSeparation": [
+    {
+      "left": "track-roller-wear",
+      "right": "track-idler-wear",
+      "forbidCrossComponentRefs": true
+    },
+    {
+      "left": "fuel-tank-water",
+      "right": "fuel-filter-contamination",
+      "genericOnly": true
+    },
+    {
+      "left": "hydraulic-hose-leak",
+      "right": "hydraulic-pump-seal",
+      "genericOnly": true
+    }
+  ],
+  "evidenceRequirements": [
+    "oem_configuration",
+    "component_identity_and_function",
+    "discriminative_test",
+    "independent_engineering_review"
+  ],
+  "policy": {
+    "noObservedConditions": true,
+    "noExecutedActions": true,
+    "noConfirmedDamage": true,
+    "noImplicitSapRemap": true,
+    "noAutomaticCauseAttribution": true,
+    "noCrossMediumReferences": true,
+    "noUndocumentedSharedNodes": true,
+    "noCrossComponentRollerIdler": true,
+    "noPretendedFull25RuleOntologyCoverage": true,
+    "noOemEffectivityAssumption": true
+  },
+  "fieldObservations": 0,
+  "performedInspections": 0,
+  "confirmedDamages": 0,
+  "approvedSapMappings": 0
+}
