@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.public-contract.v1",
-  "version": "1.3.22",
+  "version": "1.3.23",
   "contractVersion": "1.0.0",
   "existingPreviewSchema": "fmea-mining.public-knowledge-preview.v1",
   "existingPreviewVersion": "1.3.12",
@@ -66,5 +66,5 @@
     "unknown_serial_to_approved_oem_effectivity",
     "unreviewed_cause_to_verified_root_cause"
   ],
-  "note": "O pacote 1.3.22 documenta proposta de perda volumétrica interna de bomba e três submodos editoriais ME-01/02/03 para flancos de engrenagem, sem inserir novo ME/FC no núcleo. Contrato público 1.0.0, conteúdo 1.0.0 e preview legado 1.3.12 e SHA-256 preservados."
+  "note": "A versão interna 1.3.23 introduz protocolo de custódia restrita e validador puro, sem persistir documentos/casos reais, aprovar evidência ou alterar fontes/consumidores. Contrato público 1.0.0, conteúdo 1.0.0, preview 1.3.12 e checksum imutáveis."
 }
