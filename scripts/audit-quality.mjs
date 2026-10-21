@@ -106,7 +106,8 @@ const counts={
  publicPreviewSourceCount:publicManifest.sourceCount,
  publicPreviewOperationalApprovals:0,
  systemicRootClaimsAudited:systemicReview.counts.systemicClaims,
- systemicRootChainsAudited:systemicReview.counts.expandedChains,
+ systemicRootChainsAudited:systemicReview.counts.totalAuditedChains,
+ systemicRootPriorPathwaysAudited:systemicReview.counts.priorPathwayChains,
  systemicProcessDeviationsProven:systemicReview.counts.processDeviationsProven,
  publicContractVersion:publicContract.contractVersion,
  publicCompatibilitySyntheticCases:publicCompatFixtures.cases.length,
@@ -122,7 +123,7 @@ const counts={
  semanticDamageConfirmations:semantic.confirmedComponentDamages.length,
  evidenceValidatedInRealEquipment:0,technicallyApprovedPlaybooks:0
 };
-const report={schema:'fmea-mining.quality-audit.v1',version:'1.3.13',
+const report={schema:'fmea-mining.quality-audit.v1',version:'1.3.14',
  generatedFrom:'working_tree',status:'qualidade_cadastral_nao_taxa_de_falhas',
  meanings:{
   pmCandidateLinks:'vinculos gerados por regra e taxonomia, NAO falhas observadas',

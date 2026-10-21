@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.public-contract.v1",
-  "version": "1.3.13",
+  "version": "1.3.14",
   "contractVersion": "1.0.0",
   "existingPreviewSchema": "fmea-mining.public-knowledge-preview.v1",
   "existingPreviewVersion": "1.3.12",
@@ -66,5 +66,5 @@
     "unknown_serial_to_approved_oem_effectivity",
     "unreviewed_cause_to_verified_root_cause"
   ],
-  "note": "Contrato é estável em 1.0.0 nesta versão. O preview produzido continua na versão 1.3.12 e no hash da release original; o novo ledger de auditoria sistêmica permanece camada editorial separada."
+  "note": "Contrato público 1.0.0 permanece estável; preview 1.3.12 com 24 cadeias/20 fontes e SHA-256 original preservado. A auditoria editorial interna contempla 24 cadeias/48 alegações sem promoção causal."
 }

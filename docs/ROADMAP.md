@@ -1,6 +1,6 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 20/10/2026 · **Ciclo:** catálogo técnico v1.3.13 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 20/10/2026 · **Ciclo:** catálogo técnico v1.3.14 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
 
@@ -39,6 +39,17 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 
 **Observação:** as 159 tarefas de PM com subgrupo candidato foram obtidas em extração local anterior e **não** representam 159 associações homologadas. Contagens de vínculos estritos serão publicadas pelo relatório automático após cada alteração do gerador.
 
+## Ciclo concluído — 20/10/2026: completar os três roteiros da auditoria sistêmica (v1.3.14)
+
+- [x] Auditar duas hipóteses por roteiro de mangueira, comando final e fixação de sapata, com prova e contraprova física.
+- [x] Alcançar **24 cadeias/48 alegações**, sem eventos reais, **0 desvios organizacionais comprovados** e **0 causas raízes homologadas**.
+- [x] Validar origens 1.3.11 e 1.3.12 e preservar contrato público 1.0.0 e preview 1.3.12 com SHA-256 original.
+- [x] [Relatório técnico do ciclo](CICLO_2026-10-20_AUDITORIA_TRES_ROTEIROS.md).
+- [ ] **P0 próximo ciclo:** política de release do conteúdo público independente do SemVer do contrato, com golden snapshot e migração.
+- [ ] **P1:** validar efetividade OEM por prefixo/arranjo, executar revisão independente e resolver lacunas SAP.
+
+**Condição de saída:** cobertura metodológica completa, sem aprovação operacional ou modificação em consumidores.
+
 ## Ciclo concluído — 20/10/2026: auditoria sistêmica e contrato público (v1.3.13)
 
 **Objetivo:** impedir a promoção de modo de falha físico plausível a causa raiz organizacional sem prova e bloquear mudanças incompatíveis na exportação pública.
@@ -51,7 +62,7 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 - [x] Preservado preview público `1.3.12` e seu checksum, com 24 registros, 20 referências efetivamente exportadas e `approvedForOperationalUse=false`.
 - [x] Criadas [oito regressões de compatibilidade](../data/quality/contract-compatibility-regressions.v1.json), validadores `scripts/validate-systemic-root-audit.mjs` e `scripts/validate-public-compatibility.mjs` e contratos JSON Schema próprios.
 - [x] Integração ao GitHub Actions e às métricas de qualidade; [relatório completo](CICLO_2026-10-20_AUDITORIA_SISTEMICA_CONTRATO.md).
-- [ ] **P0 — próximo ciclo:** auditar as seis alegações sistêmicas dos três roteiros antigos (`FC-HOSE-001`, `FC-FD-001`, `FC-TRACK-005`) com evidência/contraprova equivalente.
+- [x] **Concluído na v1.3.14:** auditar as seis alegações sistêmicas dos três roteiros antigos (`FC-HOSE-001`, `FC-FD-001`, `FC-TRACK-005`) com evidência/contraprova equivalente.
 - [ ] **P0:** especificar fluxo de lançamento de nova versão pública por mudança de conteúdo, distinta de mudança de contrato.
 - [ ] **P1:** avançar documentação OEM por prefixo/série e CTS do piloto CAT D9, sem presumir números de peça, torque ou limites.
 - [ ] **P1:** revisar as 10 regras preventivas SAP sem vínculo estrito, sem relaxamento cadastral impróprio.
