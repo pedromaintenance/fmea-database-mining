@@ -2,7 +2,7 @@
 
 Banco de conhecimento **versionado** para investigar modos de falha, sintomas, evidências e causas em equipamentos móveis de mineração. Um consumidor possível é o jogo **[P.O.R.C.A.R.I.A. — Você Quebra, Eu Conserto](https://github.com/pedromaintenance/porcaria-voce-quebra-eu-conserto)**, mas o banco é independente: **este repositório não altera os consumidores**.
 
-> **Status:** versão do catálogo **1.3.27** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
+> **Status:** versão do catálogo **1.3.28** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
 
 ## O que queremos construir
 
@@ -348,6 +348,16 @@ A biblioteca [`private-result-attestation.mjs`](scripts/lib/private-result-attes
 **Não há assinatura ou autenticação corporativa real.** O script não confirma que um fato foi observado nem substitui governança humana. Nenhum resultado privado, laudo OEM, número de série, chave privada, credencial ou URL corporativa é armazenado aqui; recibos reais, verificação de certificados e registro de replay precisam existir **exclusivamente em infraestrutura restrita aprovada pela empresa**.
 
 [Runbook de resultados e cadeia de confiança](docs/CUSTODIA_RESULTADOS_STAGING.md) · [Relatório v1.3.27](docs/CICLO_2026-10-21_ATESTACAO_RESULTADOS_STAGING.md) · [JSON Schema de recibo privado](schemas/private-staging-result-attestation.schema.json).
+
+## Triagem de resultados reprovados e inconclusivos — v1.3.28
+
+A [política de tratamento de exceções](data/governance/staging-result-exception-workflow.v1.json) diferencia **falha de controle**, **evidência inconclusiva** e **erro do verificador/infraestrutura**. Exige esclarecimento, novo run de teste, histórico preservado e segunda revisão antes de encerrar a **triagem**, sem confundir isso com resolução do desvio original.
+
+O comando `npm run staging:exceptions:validate` executa **64 regressões sintéticas** (24 históricos válidos e 40 alterações rejeitadas), com validação de sequência, papéis, independência dos revisores, evidências `TEST-*`, encadeamento SHA-256 e âncora externa **simulada**. Nenhum dado real é coletado ou validado.
+
+O resultado máximo, mesmo após reteste fictício `pass`, é `retest_passed_needs_manual_security_review`: **não** é autorização de segurança, homologação de staging, causa raiz de equipamento, liberação operacional ou promoção de FMEA. Os estados de bloqueio ou inconclusão devem manter a não conformidade controlada fora deste mock público.
+
+[Runbook de tratamento](docs/TRATAMENTO_EXCECOES_STAGING.md) · [Relatório v1.3.28](docs/CICLO_2026-10-21_TRATAMENTO_EXCECOES.md) · [Schema dos históricos](schemas/staging-exception-case.schema.json).
 
 ## Comece por aqui
 
