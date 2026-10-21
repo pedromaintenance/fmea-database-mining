@@ -1,6 +1,6 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 21/10/2026 · **Ciclo:** catálogo técnico v1.3.23 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 21/10/2026 · **Ciclo:** catálogo técnico v1.3.24 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
 
@@ -39,6 +39,21 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 
 **Observação:** as 159 tarefas de PM com subgrupo candidato foram obtidas em extração local anterior e **não** representam 159 associações homologadas. Contagens de vínculos estritos serão publicadas pelo relatório automático após cada alteração do gerador.
 
+## Ciclo concluído — 21/10/2026: arquitetura corporativa restrita (v1.3.24)
+
+- [x] Blueprint [v1.3.24](../data/governance/restricted-infrastructure-design.v1.json): 7 componentes para identidade corporativa, autorização backend, cofre, metadados, trilha de auditoria, retenção e governança de mudanças.
+- [x] Modelo de **8 papéis / 11 operações** com negação por padrão, autorização por atribuição ao caso e proibição expressa de exportação pública automática.
+- [x] Demonstração sintética de cadeia hash SHA-256 com âncora independente, registrando limites de resistência a adulteração sem armazenamento imutável externo.
+- [x] Simulação de retenção e descarte sujeito a *legal hold*, política corporativa, backup e dupla revisão — nenhum prazo inventado ou rotina de exclusão executada.
+- [x] **42 cenários sintéticos** e `npm run infrastructure:restricted:validate` no QA/CI, mais [schema](../schemas/restricted-infrastructure-design.schema.json).
+- [x] [Especificação e threat model](ARQUITETURA_RESTRITA_IMPLANTACAO.md) e [relatório técnico](CICLO_2026-10-21_ARQUITETURA_CORPORATIVA_RESTRITA.md).
+- [ ] **P0 externo — TI/Segurança:** aprovar provedor de identidade/MFA, proteção de rede, KMS/chaves, cofre privado, logs assinados/ancorados, SIEM e autorização backend.
+- [ ] **P0 externo — Jurídico/Privacidade/Gestão Documental:** fixar retenção aprovada, revisão de licença OEM, legal hold, cópias de segurança e evidências de sanitização.
+- [ ] **P0 próximo ciclo:** planejar prova de conceito *em staging privado autorizado*, com usuários de teste, sem documentos reais e com exercícios de negação por tenant/role, auditoria e recuperação.
+- [ ] Nenhum piloto com dados reais até implantação, avaliação de segurança, dupla revisão e autorização explícita da organização.
+
+**Estado:** 7 componentes especificados, **0 provisionados**; 42 regressões sintéticas, 0 casos reais, 0 aprovação OEM ou de causa e nenhuma mudança no núcleo/público.
+
 ## Ciclo concluído — 21/10/2026: especificação de custódia e revisão de evidências (v1.3.23)
 
 - [x] Política [v1.3.23](../data/governance/restricted-evidence-workflow.v1.json) com seis estados, cinco papéis segregados e cinco categorias documentais.
@@ -46,7 +61,7 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 - [x] Validador `npm run evidence:restricted:validate`, integrado ao CI, QA e métricas, sem ingestão de casos ou documentos reais.
 - [x] [Procedimento operacional de governança](PROCEDIMENTO_EVIDENCIAS_RESTRITAS.md) e [relatório do ciclo](CICLO_2026-10-21_CUSTODIA_EVIDENCIAS.md).
 - [x] Preservadas 24 cadeias, 15 mecanismos, 3 propostas, 4 refinamentos, contrato público 1.0.0 e preview congelado.
-- [ ] **P0 próximo ciclo:** especificar implantação de um cofre/revisão realmente restritos e auditáveis com TI, mínimo privilégio, event sourcing e aprovação por papéis; este repositório público não é esse sistema.
+- [x] **Especificação v1.3.24 concluída:** blueprint de implantação de cofre/RBAC/auditoria/retenção, mas provisionamento real por TI/Segurança continua pendente.
 - [ ] **P0 externo:** documentação OEM efetiva CAT 395, CAT 777 e D9, acessível sob licença e confidencialidade; não a solicitar/publicar no GitHub.
 - [ ] **P1:** somente após homologação da infraestrutura, submeter um caso piloto autorizado e obter dupla revisão real; nenhum caso criado neste ciclo.
 
