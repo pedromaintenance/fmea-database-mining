@@ -1,6 +1,6 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 20/10/2026 · **Ciclo:** catálogo técnico v1.3.20 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 20/10/2026 · **Ciclo:** catálogo técnico v1.3.21 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
 
@@ -39,6 +39,22 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 
 **Observação:** as 159 tarefas de PM com subgrupo candidato foram obtidas em extração local anterior e **não** representam 159 associações homologadas. Contagens de vínculos estritos serão publicadas pelo relatório automático após cada alteração do gerador.
 
+## Ciclo concluído — 21/10/2026: auditoria das candidatas FF/ME (v1.3.21)
+
+- [x] **3/3 candidatas** revisadas frente à função, falha funcional, mecanismo, efeito possível e 24 cadeias do núcleo, com **seis sobreposições conceituais** explicitadas.
+- [x] Bomba hidráulica, vedação externa: FF-06 e ME-15 conceitualmente coerentes; limite entre vedação da bomba e conexão de linha permanece essencial.
+- [x] Bomba hidráulica, perdas internas: FF-02; nova definição ontológica a avaliar para fuga volumétrica por folgas sem presumir vedação defeituosa ou desgaste.
+- [x] Engrenagem de comando final: FF-02; separar ME-01, ME-02 e ME-03 em propostas coerentes, evitando um único mecanismo polimórfico.
+- [x] Criado [registro taxonômico](../data/quality/proposal-taxonomy-audit.v1.json), JSON Schema, `npm run taxonomy:proposals:validate` e **21 testes sintéticos** no CI/QA.
+- [x] Preservado núcleo de 24 cadeias, registros de efeitos, crosswalk, 12 playbooks e preview público.
+- [x] [Relatório técnico](CICLO_2026-10-21_AUDITORIA_TAXONOMICA.md).
+- [ ] **P0 próximo ciclo:** elaborar proposta de conceito ME específico para perdas internas, verificando aplicabilidade em bomba hidráulica de pistões e evitando duplicação com ME-15.
+- [ ] **P0:** separar em três submodos editoriais danos de flanco da engrenagem (abrasão, adesão, fadiga) com morfologia e testes seguros.
+- [ ] **Dependência externa:** configuração OEM efetiva CAT 395/CAT 777 e revisão independente; sem elas não há incorporação ao núcleo.
+- [ ] Piloto CAT D9 mantém sete requisitos pendentes e dez regras PM × SAP permanecem sem vínculo.
+
+**Estado:** três propostas mantidas fora do núcleo; uma lacuna de conceito ME, uma de desdobramento mecânico e zero revisões OEM ou dados de campo.
+
 ## Ciclo concluído — 20/10/2026: revisão de cinco lacunas causais (v1.3.20)
 
 - [x] Reavaliadas **5/5 lacunas PB–FC**: 3 justificam propostas de investigação de modo de falha (vedação externa de bomba hidráulica, perdas internas e superfície de dentes); 2 representam hipótese de origem ou condição do fluido, não modo de falha.
@@ -47,7 +63,7 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 - [x] Criado gate `npm run causal:gaps:validate`, JSON Schemas, **21 regressões sintéticas** e integração CI/QA.
 - [x] Preservadas as 24 cadeias `FC-*`, as 18 correspondências candidatas do crosswalk, o contrato 1.0.0, o conteúdo público 1.0.0 e o preview legado 1.3.12.
 - [x] [Relatório técnico e plano de promoção condicionada](CICLO_2026-10-20_TRIAGEM_LACUNAS_CAUSAIS.md).
-- [ ] **P0 próximo ciclo:** revisar coerência e duplicidades das três propostas contra ontologia de falhas funcionais, métodos e efeitos antes de admitir qualquer novo ID `FC-*`; exigência de revisão técnica independente.
+- [x] **Concluído editorialmente na v1.3.21:** auditoria FF/ME, efeitos e sobreposições das três candidatas; revisão técnica independente permanece necessária.
 - [ ] **P0 externo:** obter OMM/SIS e arranjo do sistema hidráulico CAT 395 e comando final CAT 777, sem publicar arquivos corporativos.
 - [ ] **P0 externo D9:** sete documentos OEM ainda bloqueados; **P1:** dez regras de preventiva × SAP ainda sem vínculo estrito.
 

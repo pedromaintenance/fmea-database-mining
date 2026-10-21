@@ -2,7 +2,7 @@
 
 Banco de conhecimento **versionado** para investigar modos de falha, sintomas, evidências e causas em equipamentos móveis de mineração. Um consumidor possível é o jogo **[P.O.R.C.A.R.I.A. — Você Quebra, Eu Conserto](https://github.com/pedromaintenance/porcaria-voce-quebra-eu-conserto)**, mas o banco é independente: **este repositório não altera os consumidores**.
 
-> **Status:** versão do catálogo **1.3.20** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
+> **Status:** versão do catálogo **1.3.21** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
 
 ## O que queremos construir
 
@@ -284,6 +284,18 @@ O comando `npm run causal:gaps:validate` verifica escopo, fontes, hipótese alte
 [Relatório técnico do ciclo](docs/CICLO_2026-10-20_TRIAGEM_LACUNAS_CAUSAIS.md) · [Schema das propostas](schemas/proposed-causal-chains.schema.json) · [Schema da triagem](schemas/causal-gap-triage.schema.json).
 
 O contrato público **1.0.0**, release de conteúdo **1.0.0**, preview **1.3.12** e hash histórico continuam congelados; repositórios consumidores não foram alterados.
+
+## Auditoria taxonômica das três candidatas (v1.3.21)
+
+A [auditoria de coerência](data/quality/proposal-taxonomy-audit.v1.json) verificou as três propostas `CAND-*` frente à ontologia de funções `FF-*`, mecanismos `ME-*`, efeitos possíveis e **seis sobreposições conceituais** com cadeias `FC-*`. **Nenhuma cadeia ou novo mecanismo foi homologado**.
+
+- Vedação externa de bomba hidráulica: **FF-06 / ME-15**, compatibilidade *conceitual* existente; não atribuir ao terminal de mangueira ou à bomba de água.
+- Perdas internas de bomba: **FF-02**; ME-15 não descreve automaticamente fuga por folgas; o conceito ontológico de perda volumétrica exige refinamento separado de desgaste e comando.
+- Dano nos dentes do comando final: **FF-02**, mas as famílias ME-01 (abrasão), ME-02 (adesão) e ME-03 (fadiga de contato) requerem **desdobramento de mecanismos** antes de um novo `FC-*`.
+
+O comando `npm run taxonomy:proposals:validate` e o pipeline completo executam **3 verificações de baseline e 18 mutações sintéticas**, bloqueando aprovação, local SAP, série, dano medido ou efeito observado artificialmente. [Relatório técnico](docs/CICLO_2026-10-21_AUDITORIA_TAXONOMICA.md).
+
+**Estado:** 24 cadeias no núcleo, três candidatas fora dele, nenhuma homologação OEM, contrato público 1.0.0 e conteúdo 1.0.0 inalterados. O preview legado 1.3.12 não foi modificado.
 
 ## Comece por aqui
 
