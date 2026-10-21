@@ -64,6 +64,8 @@ jobs:
         run: npm run custody:results:validate
       - name: Validar triagem de excecoes e 64 historicos sinteticos
         run: npm run staging:exceptions:validate
+      - name: Validar catalogo de remediacao e 52 regressoes sinteticas
+        run: npm run remediation:recurrence:validate
       - name: Validar capacidade discriminante de seis testes P0
         run: npm run discrimination:validate
       - name: Validar avaliacao cruzada de 24 testes e revisao SAP/OEM
