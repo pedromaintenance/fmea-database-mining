@@ -20,6 +20,7 @@ const no=['requested','received','sourceVerified','approved'],nullFields=['priva
 const routingNull=['recipientIdentity','authorizedChannel','requestSentAt','trackingTicket'];
 const exact=(x,keys)=>x&&typeof x==='object'&&!Array.isArray(x)&&Object.keys(x).length===keys.length&&keys.every(k=>Object.hasOwn(x,k));
 const allowStatuses=['not_supplied','not_verified','not_performed'];
+const EVIDENCE_CLASSES={'serial-prefix':'identification','oem-omm':'oem_manual','oem-parts':'oem_parts_arrangement','oem-bolting':'oem_service_procedure','oem-cts':'oem_measurement_method','sap-master':'corporate_master_data','field-review':'technical_field_review'};
 function verify(m){
  const errs=[],check=(yes,msg)=>{if(!yes)errs.push(msg)};
  check(exact(m,upper),'top_level_fields_changed');
@@ -43,7 +44,7 @@ function verify(m){
   check(q.ownerDiscipline===src.responsibleDiscipline&&q.originalPrimaryEvidence===src.primaryEvidence&&q.independentCrossCheck===src.independentCrossCheck,'source_crosscheck_changed_'+i);
   check(no.every(k=>q[k]===false)&&nullFields.every(k=>q[k]===null)&&q.reviewDecision==='pending','fictitious_receipt_or_approval_'+i);
   check(typeof q.requestText==='string'&&q.requestText.length>=100&&typeof q.acceptanceEvidence==='string'&&q.acceptanceEvidence.length>=60&&typeof q.publicationRestriction==='string'&&q.publicationRestriction.length>=65,'actionability_or_rights_omitted_'+i);
-  check(typeof q.evidenceClass==='string'&&q.evidenceClass.length>=10,'document_class_missing_'+i);
+  check(q.evidenceClass===EVIDENCE_CLASSES[src.id],'document_class_mismatch_'+i);
  }
  check(ids.size===7&&origin.requiredInputs.every(x=>ids.has(x.id)),'source_request_coverage_incomplete');
  check(origin.requiredInputs.filter(x=>x.sourceStatus==='not_supplied').length===2&&origin.requiredInputs.filter(x=>x.sourceStatus==='not_verified').length===4&&origin.requiredInputs.filter(x=>x.sourceStatus==='not_performed').length===1,'upstream_changed_review_required');
