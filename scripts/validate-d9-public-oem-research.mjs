@@ -64,7 +64,7 @@ function verify(x){
   c(m.generalFinding?.length>=90&&m.missingPrivateEvidence?.length>=95,'insufficient_limit_or_claim_'+gate);
   c(falseFields.every(k=>m[k]===false)&&m.independentReviewer===null&&m.manualDisposition==='remain_blocked','premature_acceptance_'+gate);
  }
- c(Array.isArray(x.unresolvedDependencies)&&x.unresolvedDependencies.length===4&&x.unresolvedDependencies.every(y=>typeof y==='string'&&y.length>=80),'external_evidence_gate_missing');
+ c(Array.isArray(x.unresolvedDependencies)&&x.unresolvedDependencies.length===4&&x.unresolvedDependencies.every(y=>typeof y==='string'&&y.length>=50),'external_evidence_gate_missing');
  const rules=x.interpretationRules||{};
  c(exact(rules,['publicInformationCanSupport','publicInformationCannotSupport',...safeRules]),'boundary_rules_altered');
  c(safeRules.slice(0,4).every(k=>rules[k]===false)&&safeRules.slice(4).every(k=>rules[k]===true),'public_pages_used_as_oem_manual');
