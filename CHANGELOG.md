@@ -2,6 +2,14 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.37] — 2026-10-21 — Proveniência de componentes de filtragem em VPAR
+
+- Reconciliados os **2 códigos distintos** com descrições filtrantes de 1 tipo de objeto SAP, repetido em **2 caminhos AISY/COMR/VPAR** (EQ05/EQ06): **4 ocorrências** de descrição não significam quatro componentes diferentes.
+- Dos 2 códigos distintos, **1 permite** o par catalogado 03.02/C2.09, contabilizado duas vezes por localização; **zero causas/instalações homologadas**.
+- Verificado que o tipo de objeto aparece apenas nos dois caminhos VPAR do catálogo disponível (**0 outras localizações de nível 3**); inexistência de reutilização transversal no lote não prova composição BOM nem efetividade OEM.
+- Classificador textual conservador separa pistas de admissão, filtragem de óleo, separação ar/óleo, água e ambiguidade sem deduzir função; fontes públicas Sandvik CAT C18/Cummins registradas como contexto sem aplicabilidade por série.
+- Auditor de proveniência, verificador de campos proibidos e 22 verificações sintéticas (6 de hierarquia, 7 linguísticas e 9 promoções adversariais), integrado ao QA/CI. Não alterados os 115 vínculos PM, 10 bloqueios, 24 FC, 15 ME, contrato/conteúdo públicos 1.0.0, preview 1.3.12 e consumidores.
+
 ## [1.3.36] — 2026-10-21 — Triagem estrutural de filtragem FUSY e COMR
 
 - Implementada varredura real dos locais de 3º nível e componentes por tipo de objeto em `scripts/pm-filtration-scan.mjs`, preservando modelo, raiz e grupo, para detectar descrições de filtro/separador fora do subgrupo original **sem gerar vínculo**.
