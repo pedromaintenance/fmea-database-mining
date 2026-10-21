@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.semantic-regression.v1",
-  "version": "1.3.7",
+  "version": "1.3.8",
   "status": "synthetic_assertions_not_real_events",
   "cases": [
     {
@@ -194,6 +194,32 @@
       "independentComponentTest": "not_performed",
       "expectedConfirmedDamageIds": [],
       "why": "Abrasão externa não demonstra rompimento de reforço nem perda de estanqueidade."
+    },
+    {
+      "id": "SEM-15",
+      "title": "Roda-guia aquecida em cenário sintético sem diagnóstico de apoio",
+      "ruleId": "track-idler-wear",
+      "observedConditionIds": [
+        "COND-TRACK-IDLER-HEAT"
+      ],
+      "performedActionIds": [],
+      "independentComponentTest": "not_performed",
+      "expectedConfirmedDamageIds": [],
+      "why": "Temperatura da roda-guia, sem ensaio independente e verificação de detritos e tensionamento, não prova falha do apoio interno."
+    },
+    {
+      "id": "SEM-16",
+      "title": "Vestígio no ponto de vedação da roda-guia em cenário sintético",
+      "ruleId": "track-idler-wear",
+      "observedConditionIds": [
+        "COND-TRACK-IDLER-SEAL-LEAK"
+      ],
+      "performedActionIds": [
+        "ACT-TRACK-IDLER-SEAL-CHECK"
+      ],
+      "independentComponentTest": "not_performed",
+      "expectedConfirmedDamageIds": [],
+      "why": "Inspeção simulada de vedação da roda-guia não prova defeito da vedação nem ocorrência executada na frota real."
     }
   ]
 }
