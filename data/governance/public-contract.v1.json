@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.public-contract.v1",
-  "version": "1.3.32",
+  "version": "1.3.33",
   "contractVersion": "1.0.0",
   "existingPreviewSchema": "fmea-mining.public-knowledge-preview.v1",
   "existingPreviewVersion": "1.3.12",
@@ -66,5 +66,5 @@
     "unknown_serial_to_approved_oem_effectivity",
     "unreviewed_cause_to_verified_root_cause"
   ],
-  "note": "Versão interna 1.3.32 revisa cinco páginas públicas Caterpillar e sua cobertura limitada dos sete requisitos OEM do D9, com 31 regressões que proíbem declarar série, CTS, torque, PN, SAP e inspeção efetivos sem documentação. Nenhuma solicitação enviada ou evidência real incluída. Conteúdo e contrato públicos 1.0.0, preview 1.3.12 e checksum preservados."
+  "note": "Catálogo interno 1.3.33 registra a issue pública #31 para encaminhamento OEM do D9 e organiza quatro marcos externos com 27 validações sintéticas, sem afirmar envio corporativo, recebimento OEM, inspeção de campo ou aprovação por série. Contrato/conteúdo públicos 1.0.0, preview 1.3.12 e checksum preservados."
 }
