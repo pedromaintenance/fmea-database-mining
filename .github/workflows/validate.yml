@@ -68,6 +68,8 @@ jobs:
         run: npm run remediation:recurrence:validate
       - name: Consolidar oito bloqueios com 40 testes sinteticos de procedencia
         run: npm run blockers:validate
+      - name: Conferir sete requisicoes D9 e 35 cenarios sinteticos
+        run: npm run d9:oem:request:validate
       - name: Validar capacidade discriminante de seis testes P0
         run: npm run discrimination:validate
       - name: Validar avaliacao cruzada de 24 testes e revisao SAP/OEM

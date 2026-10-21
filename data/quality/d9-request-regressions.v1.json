@@ -1,0 +1,192 @@
+{
+  "schema": "fmea-mining.d9-request-regressions.v1",
+  "version": "1.3.31",
+  "nature": "synthetic_mutations_only",
+  "baselineCases": [
+    {
+      "id": "TEST-REQ-D9-01",
+      "gateId": "REQ-D9-01",
+      "expected": "request_ready_not_sent"
+    },
+    {
+      "id": "TEST-REQ-D9-02",
+      "gateId": "REQ-D9-02",
+      "expected": "request_ready_not_sent"
+    },
+    {
+      "id": "TEST-REQ-D9-03",
+      "gateId": "REQ-D9-03",
+      "expected": "request_ready_not_sent"
+    },
+    {
+      "id": "TEST-REQ-D9-04",
+      "gateId": "REQ-D9-04",
+      "expected": "request_ready_not_sent"
+    },
+    {
+      "id": "TEST-REQ-D9-05",
+      "gateId": "REQ-D9-05",
+      "expected": "request_ready_not_sent"
+    },
+    {
+      "id": "TEST-REQ-D9-06",
+      "gateId": "REQ-D9-06",
+      "expected": "request_ready_not_sent"
+    },
+    {
+      "id": "TEST-REQ-D9-07",
+      "gateId": "REQ-D9-07",
+      "expected": "request_ready_not_sent"
+    }
+  ],
+  "mutationCases": [
+    {
+      "id": "TEST-MUT-01",
+      "mutation": "fake_sent",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-02",
+      "mutation": "fake_received",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-03",
+      "mutation": "fake_verified",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-04",
+      "mutation": "fake_approved",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-05",
+      "mutation": "fake_serial",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-06",
+      "mutation": "fake_manual_revision",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-07",
+      "mutation": "fake_torque",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-08",
+      "mutation": "fake_cts_limit",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-09",
+      "mutation": "fake_part_number",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-10",
+      "mutation": "fake_sap_location",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-11",
+      "mutation": "fake_assignee",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-12",
+      "mutation": "fake_deadline",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-13",
+      "mutation": "fake_ticket",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-14",
+      "mutation": "fake_literature_link",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-15",
+      "mutation": "drop_request",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-16",
+      "mutation": "duplicate_request",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-17",
+      "mutation": "wrong_origin_status",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-18",
+      "mutation": "wrong_source_gate",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-19",
+      "mutation": "relax_safety_policy",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-20",
+      "mutation": "approve_field_review",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-21",
+      "mutation": "mark_field_work",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-22",
+      "mutation": "drop_independent_check",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-23",
+      "mutation": "invent_reviewer",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-24",
+      "mutation": "replace_evidence_class",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-25",
+      "mutation": "inject_raw_oem",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-26",
+      "mutation": "change_pilot",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-27",
+      "mutation": "change_core_links",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-28",
+      "mutation": "promote_core",
+      "expected": "reject"
+    }
+  ],
+  "counts": {
+    "baselines": 7,
+    "unsafeMutationsRejected": 28,
+    "total": 35,
+    "realRequestsSent": 0,
+    "realDocumentsReceived": 0,
+    "realInspections": 0
+  }
+}

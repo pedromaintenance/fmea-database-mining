@@ -2,7 +2,7 @@
 
 Banco de conhecimento **versionado** para investigar modos de falha, sintomas, evidências e causas em equipamentos móveis de mineração. Um consumidor possível é o jogo **[P.O.R.C.A.R.I.A. — Você Quebra, Eu Conserto](https://github.com/pedromaintenance/porcaria-voce-quebra-eu-conserto)**, mas o banco é independente: **este repositório não altera os consumidores**.
 
-> **Status:** versão do catálogo **1.3.30** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
+> **Status:** versão do catálogo **1.3.31** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
 
 ## O que queremos construir
 
@@ -380,6 +380,16 @@ A [matriz de bloqueios](data/governance/consolidated-blockers.v1.json) reúne **
 **Essas contagens representam conjuntos de fontes diferentes, com sobreposições. Não somar como tarefas independentes.** Todas as frentes permanecem bloqueadas; este repositório não recebeu dados corporativos, documentos OEM restritos, certificados humanos ou limites de equipamento.
 
 O comando `npm run blockers:validate` reconcilia os oito arquivos originais e executa **40 testes sintéticos** (8 baselines e 32 tentativas de criar desbloqueios fictícios). A [matriz executiva](docs/MATRIZ_CONSOLIDADA_BLOQUEIOS.md) explica caminhos críticos, responsabilidades institucionais, prioridade editorial e o próximo passo para obter evidência real com segurança.
+
+## Solicitação OEM D9 preparada — v1.3.31
+
+O [pedido técnico D9](data/governance/d9-oem-evidence-request.v1.json) relaciona **sete requisitos** ao piloto de material rodante: configuração efetiva, OMM, lista OEM de peças/arranjos, junta sapata–elo, método CTS, dados mestres SAP e revisão independente de campo. Os arquivos originais permanecem na condição de **2 não fornecidos, 4 não verificados e 1 não executado**.
+
+O [texto para encaminhamento interno](docs/SOLICITACAO_TECNICA_OEM_D9.md) separa o que a equipe de documentação deve obter daquilo que Engenharia/Inspeção só poderá verificar presencialmente mediante procedimento seguro. O pedido está **pronto para envio**, não foi enviado; nenhum manual, número de série, PN, torque, limite CTS, código SAP, credencial ou laudo real consta no repositório.
+
+O comando `npm run d9:oem:request:validate` realiza **35 testes sintéticos**: sete verificações de origem e 28 adulterações rejeitadas, preservando bloqueios e direitos de publicação.
+
+[Relatório do ciclo](docs/CICLO_2026-10-21_SOLICITACAO_OEM_D9.md) · [Schema de solicitação](schemas/d9-oem-evidence-request.schema.json).
 
 ## Comece por aqui
 

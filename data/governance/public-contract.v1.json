@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.public-contract.v1",
-  "version": "1.3.30",
+  "version": "1.3.31",
   "contractVersion": "1.0.0",
   "existingPreviewSchema": "fmea-mining.public-knowledge-preview.v1",
   "existingPreviewVersion": "1.3.12",
@@ -66,5 +66,5 @@
     "unknown_serial_to_approved_oem_effectivity",
     "unreviewed_cause_to_verified_root_cause"
   ],
-  "note": "Versão interna 1.3.30 consolida 8 frentes de bloqueios com procedência e contagens específicas nas fontes, sem somá-las como itens independentes, sem OEM, parecer humano, implementação de TI ou dados de campo inventados. Contrato/conteúdo públicos 1.0.0, preview 1.3.12 e checksum preservados."
+  "note": "Versão interna 1.3.31 prepara pedido técnico OEM para 7 evidências D9, com 35 regressões de fonte/estado, sem envio efetivo, série, literatura licenciada, torque, CTS, dado SAP ou revisão de campo real. Contrato público e conteúdo 1.0.0, preview 1.3.12 e checksum histórico preservados."
 }

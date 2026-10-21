@@ -1,0 +1,343 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "D9 OEM technical request — public metadata only v1.3.31",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "version",
+    "requestId",
+    "pilotId",
+    "modelId",
+    "maturity",
+    "sourceOfTruth",
+    "relatedBlocker",
+    "classification",
+    "scope",
+    "purpose",
+    "requestRouting",
+    "gates",
+    "applicabilityPrerequisite",
+    "fieldVerificationProtocol",
+    "linkedCoreChains",
+    "releaseConstraints",
+    "counts",
+    "technicalDisposition",
+    "externalNextAction"
+  ],
+  "properties": {
+    "schema": {
+      "const": "fmea-mining.d9-oem-evidence-request.v1"
+    },
+    "version": {
+      "const": "1.3.31"
+    },
+    "requestId": {
+      "const": "OEM-REQ-D9-UNDERCARRIAGE-001"
+    },
+    "pilotId": {
+      "const": "OEM-PILOT-D9-UNDERCARRIAGE"
+    },
+    "modelId": {
+      "const": "EQ07"
+    },
+    "maturity": {
+      "const": "ready_to_send_request_not_sent"
+    },
+    "sourceOfTruth": {
+      "const": "data/quality/oem-d9-evidence-intake.v1.json"
+    },
+    "relatedBlocker": {
+      "const": "BLK-D9-OEM"
+    },
+    "classification": {
+      "const": "public_metadata_only_no_equipment_identifier_or_oem_content"
+    },
+    "scope": {
+      "type": "string"
+    },
+    "purpose": {
+      "type": "string"
+    },
+    "requestRouting": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "initiatorDiscipline",
+        "oemLiteratureCustody",
+        "assetVerification",
+        "materialsVerification",
+        "sapCustody",
+        "independentReviewer",
+        "recipientIdentity",
+        "authorizedChannel",
+        "requestSentAt",
+        "trackingTicket"
+      ],
+      "properties": {
+        "initiatorDiscipline": {
+          "type": "string"
+        },
+        "oemLiteratureCustody": {
+          "type": "string"
+        },
+        "assetVerification": {
+          "type": "string"
+        },
+        "materialsVerification": {
+          "type": "string"
+        },
+        "sapCustody": {
+          "type": "string"
+        },
+        "independentReviewer": {
+          "type": "string"
+        },
+        "recipientIdentity": {
+          "type": "null"
+        },
+        "authorizedChannel": {
+          "type": "null"
+        },
+        "requestSentAt": {
+          "type": "null"
+        },
+        "trackingTicket": {
+          "type": "null"
+        }
+      }
+    },
+    "gates": {
+      "type": "array",
+      "minItems": 7,
+      "maxItems": 7,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "originInputId",
+          "originSourceStatus",
+          "originRelevance",
+          "evidenceClass",
+          "ownerDiscipline",
+          "requestText",
+          "originalPrimaryEvidence",
+          "independentCrossCheck",
+          "acceptanceEvidence",
+          "publicationRestriction",
+          "requested",
+          "received",
+          "sourceVerified",
+          "approved",
+          "privateEvidenceReference",
+          "sourceRevision",
+          "sourceEffectivity",
+          "applicableSerialOrArrangement",
+          "reviewerPrimary",
+          "reviewerIndependent",
+          "reviewDecision",
+          "evidenceOwnerAssigned",
+          "corporateDueDate"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^REQ-D9-"
+          },
+          "originInputId": {
+            "enum": [
+              "serial-prefix",
+              "oem-omm",
+              "oem-parts",
+              "oem-bolting",
+              "oem-cts",
+              "sap-master",
+              "field-review"
+            ]
+          },
+          "originSourceStatus": {
+            "enum": [
+              "not_supplied",
+              "not_verified",
+              "not_performed"
+            ]
+          },
+          "originRelevance": {
+            "type": "string"
+          },
+          "evidenceClass": {
+            "type": "string"
+          },
+          "ownerDiscipline": {
+            "type": "string"
+          },
+          "requestText": {
+            "type": "string",
+            "minLength": 100
+          },
+          "originalPrimaryEvidence": {
+            "type": "string"
+          },
+          "independentCrossCheck": {
+            "type": "string"
+          },
+          "acceptanceEvidence": {
+            "type": "string",
+            "minLength": 60
+          },
+          "publicationRestriction": {
+            "type": "string",
+            "minLength": 65
+          },
+          "requested": {
+            "const": false
+          },
+          "received": {
+            "const": false
+          },
+          "sourceVerified": {
+            "const": false
+          },
+          "approved": {
+            "const": false
+          },
+          "privateEvidenceReference": {
+            "type": "null"
+          },
+          "sourceRevision": {
+            "type": "null"
+          },
+          "sourceEffectivity": {
+            "type": "null"
+          },
+          "applicableSerialOrArrangement": {
+            "type": "null"
+          },
+          "reviewerPrimary": {
+            "type": "null"
+          },
+          "reviewerIndependent": {
+            "type": "null"
+          },
+          "reviewDecision": {
+            "const": "pending"
+          },
+          "evidenceOwnerAssigned": {
+            "type": "null"
+          },
+          "corporateDueDate": {
+            "type": "null"
+          }
+        }
+      }
+    },
+    "applicabilityPrerequisite": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "string",
+        "minLength": 130
+      }
+    },
+    "fieldVerificationProtocol": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "context",
+          "safeRequirement",
+          "evidenceStatus"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^FIELD-"
+          },
+          "context": {
+            "type": "string"
+          },
+          "safeRequirement": {
+            "type": "string",
+            "minLength": 115
+          },
+          "evidenceStatus": {
+            "const": "not_performed"
+          }
+        }
+      }
+    },
+    "linkedCoreChains": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 8,
+      "items": {
+        "type": "string",
+        "pattern": "^FC-TRACK-"
+      }
+    },
+    "releaseConstraints": {
+      "type": "object",
+      "minProperties": 9,
+      "additionalProperties": {
+        "const": true
+      }
+    },
+    "counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "originalRequiredInputs",
+        "requestItems",
+        "notSupplied",
+        "notVerified",
+        "notPerformed",
+        "actualOEMDocumentsObtained",
+        "actualEquipmentInspections",
+        "approvedRequests",
+        "confirmedFailureEvents"
+      ],
+      "properties": {
+        "originalRequiredInputs": {
+          "const": 7
+        },
+        "requestItems": {
+          "const": 7
+        },
+        "notSupplied": {
+          "const": 2
+        },
+        "notVerified": {
+          "const": 4
+        },
+        "notPerformed": {
+          "const": 1
+        },
+        "actualOEMDocumentsObtained": {
+          "const": 0
+        },
+        "actualEquipmentInspections": {
+          "const": 0
+        },
+        "approvedRequests": {
+          "const": 0
+        },
+        "confirmedFailureEvents": {
+          "const": 0
+        }
+      }
+    },
+    "technicalDisposition": {
+      "const": "documentation_request_only_awaiting_authorized_submission"
+    },
+    "externalNextAction": {
+      "type": "string",
+      "minLength": 160
+    }
+  }
+}
