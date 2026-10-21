@@ -2,6 +2,13 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.19] — 2026-10-20 — Cobertura documental 12/12 playbooks e crosswalk PB–FC
+- Concluídos seis deepdives por ID: CAT 395 bomba hidráulica e mangueira; CAT 6030 arrefecimento; CAT 777 comando final; CAT D9 material rodante; CAT 980 radiador. Total documental **12/12 playbooks**, sem casos executados.
+- Adicionadas **18 etapas discriminantes** e **24 condições de prontidão**, mantendo H1/H2/H3 e testes T1/T2 literalmente rastreáveis à origem.
+- Criada matriz PB–FC de **18 hipóteses**, **18 vínculos mecanísticos candidatos** em 13 hipóteses, **5 lacunas explícitas** e **0 vínculos homologados**; proibido transformar bomba d’água em bomba hidráulica por semelhança lexical.
+- Incorporadas **46 regressões sintéticas** de prontidão, mutações de segurança e vínculo falso; validador, CI, indicadores, documentação e schemas.
+- Nenhuma série, PN, medida OEM, evidência de campo, causa raiz ou consumidor alterado. Contrato público 1.0.0 e conteúdo 1.0.0, com preview original preservado byte a byte.
+
 ## [1.3.18] — 2026-10-20 — Seis playbooks com diagnóstico diferencial rastreável
 - Construídos **6 roteiros técnicos vinculados aos IDs reais `PB-*`**, com comparação H1/H2/H3 preservada integralmente em relação aos cenários originais, 18 estágios propostos e 24 requisitos documentais de prontidão.
 - Escopos: cilindro CAT 980; avanço DR410i; compressor/pneumática DI650i; pneus CAT 16; combustível CAT 777; lubrificação do motor CAT 6030.

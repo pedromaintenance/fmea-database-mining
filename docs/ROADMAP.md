@@ -1,6 +1,6 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 20/10/2026 · **Ciclo:** catálogo técnico v1.3.18 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 20/10/2026 · **Ciclo:** catálogo técnico v1.3.19 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
 
@@ -39,6 +39,19 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 
 **Observação:** as 159 tarefas de PM com subgrupo candidato foram obtidas em extração local anterior e **não** representam 159 associações homologadas. Contagens de vínculos estritos serão publicadas pelo relatório automático após cada alteração do gerador.
 
+## Ciclo concluído — 20/10/2026: finalizar 12 PBs e matriz PB–FC (v1.3.19)
+
+- [x] **12/12 playbooks aprofundados por ID**, com 6 registros de v1.3.18 preservados e 6 criados na v1.3.19; estes não equivalem a procedimentos OEM ou FMEA aprovada.
+- [x] Novos roteiros para bomba e mangueiras CAT 395, arrefecimento CAT 6030, comando final CAT 777, material rodante D9 e radiador CAT 980: **18 etapas e 24 requisitos documentais**.
+- [x] Matriz [PB–FC](../data/quality/playbook-causal-crosswalk.v1.json): 18 hipóteses do lote, 18 vínculos candidatos, 5 lacunas de equivalência, 0 vínculos operacionais aceitos.
+- [x] `npm run playbooks:remaining:validate`: **46 regressões** (18 prontidão, 16 alterações proibidas no PB, 12 alterações proibidas no crosswalk), integrado a CI/QA.
+- [x] [Relatório técnico](CICLO_2026-10-20_PLAYBOOKS_COMPLETOS_PB_FC.md), documentação e schemas.
+- [ ] **P0 próximo ciclo:** examinar cinco lacunas sem cadeia equivalente; selecionar possíveis novas cadeias com literatura OEM sem inventar medições e aprovar somente taxonomia editorial, não causas de campo.
+- [ ] **P0 dependência externa:** sete entradas documentais do D9 (prefixo/série, OMM, peças, torque, CTS, SAP e revisão) continuam bloqueadas.
+- [ ] **P1:** padronizar workflow restrito de coleta de dados de campo e pareceres técnicos antes de produzir conhecimento operacional validado.
+
+**Estado:** 12 PBs documentalmente aprofundados, 6 PATHs por cadeia; 24 cadeias FC, 48 alegações sistêmicas não confirmadas, 10 regras PM sem vínculo SAP mantidas, 0 homologação OEM, 0 causas raízes confirmadas.
+
 ## Ciclo concluído — 20/10/2026: seis deepdives por playbook didático (v1.3.18)
 
 - [x] Auditados os 12 IDs de playbook e identificada lacuna de cobertura: os seis roteiros `PATH-*` prévios são **por cadeia causal**, não revisão formal de seis playbooks individuais.
@@ -47,7 +60,7 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 - [x] Adicionados [validador](../scripts/validate-playbook-deepdives.mjs), [Schema](../schemas/playbook-deepdives.schema.json) e **34 regressões sintéticas**, com CI e indicadores integrados.
 - [x] Preservadas origens dos 12 playbooks, 24 cadeias, 6 roteiros PATH e contrato/conteúdo públicos sem promoção causal.
 - [x] [Relatório técnico](CICLO_2026-10-20_PLAYBOOKS_DIFERENCIAIS.md).
-- [ ] **P0 próximo ciclo:** aprofundar **os seis IDs `PB-*` ainda sem deepdive próprio**, com verificação de sobreposição aos `PATH-*` existentes; dar prioridade ao circuito hidráulico de pressão da CAT 395.
+- [x] **Concluído na v1.3.19:** seis PBs restantes receberam deepdive por ID e matriz de vínculos candidatos com os FCs.
 - [ ] **P0 dependente de terceiros:** obter prefixo/OMM/CTS efetivos da CAT D9 e executar revisão de campo independente; sete requisitos seguem pendentes.
 - [ ] **P1:** modelar fluxo de revisão de evidências reais com isolamento de repositório privado e governança de acesso, sem adicionar documentação interna ao GitHub público.
 

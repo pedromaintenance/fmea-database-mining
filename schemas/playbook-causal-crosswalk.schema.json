@@ -1,0 +1,148 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FMEA Mining playbook crosswalk candidate 1.3.19",
+  "type": "object",
+  "required": [
+    "schema",
+    "version",
+    "nature",
+    "sourceDeepDive",
+    "counts",
+    "records"
+  ],
+  "properties": {
+    "schema": {
+      "const": "fmea-mining.playbook-causal-crosswalk.v1"
+    },
+    "version": {
+      "const": "1.3.19"
+    },
+    "nature": {
+      "const": "editorial_candidate_mapping_not_sap_or_oem_approved"
+    },
+    "sourceDeepDive": {
+      "const": "data/quality/playbook-deepdives-remaining.v1.json"
+    },
+    "counts": {
+      "type": "object",
+      "properties": {
+        "playbookHypothesesReviewed": {
+          "const": 18
+        },
+        "hypothesesWithCandidates": {
+          "const": 13
+        },
+        "hypothesesWithoutEquivalent": {
+          "const": 5
+        },
+        "candidateLinks": {
+          "const": 18
+        },
+        "confirmedMappings": {
+          "const": 0
+        }
+      }
+    },
+    "records": {
+      "type": "array",
+      "minItems": 18,
+      "maxItems": 18,
+      "items": {
+        "$ref": "#/$defs/link"
+      }
+    }
+  },
+  "$defs": {
+    "link": {
+      "type": "object",
+      "required": [
+        "id",
+        "playbookId",
+        "hypothesisId",
+        "hypothesisLabel",
+        "deepDiveId",
+        "candidates",
+        "assessment",
+        "confirmedMapping",
+        "approvedSerialOrArrangement",
+        "approvedSapLocation",
+        "independentReviewStatus",
+        "observedCase",
+        "unmappedRationale"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^XW-"
+        },
+        "playbookId": {
+          "type": "string",
+          "pattern": "^PB-"
+        },
+        "hypothesisId": {
+          "enum": [
+            "H1",
+            "H2",
+            "H3"
+          ]
+        },
+        "candidates": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "chainId",
+              "relationship",
+              "mechanicalBasis",
+              "applicabilityLimitation"
+            ],
+            "properties": {
+              "chainId": {
+                "type": "string",
+                "pattern": "^FC-"
+              },
+              "relationship": {
+                "const": "candidate_mechanism_overlap_only"
+              },
+              "mechanicalBasis": {
+                "type": "string",
+                "minLength": 70
+              },
+              "applicabilityLimitation": {
+                "type": "string",
+                "minLength": 50
+              }
+            }
+          }
+        },
+        "assessment": {
+          "enum": [
+            "candidatos_conceituais_nao_aprovados",
+            "sem_cadeia_equivalente_demonstrada"
+          ]
+        },
+        "confirmedMapping": {
+          "const": false
+        },
+        "approvedSerialOrArrangement": {
+          "type": "null"
+        },
+        "approvedSapLocation": {
+          "type": "null"
+        },
+        "independentReviewStatus": {
+          "const": "pendente"
+        },
+        "observedCase": {
+          "type": "null"
+        },
+        "unmappedRationale": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    }
+  }
+}

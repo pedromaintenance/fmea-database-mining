@@ -2,7 +2,7 @@
 
 Banco de conhecimento **versionado** para investigar modos de falha, sintomas, evidências e causas em equipamentos móveis de mineração. Um consumidor possível é o jogo **[P.O.R.C.A.R.I.A. — Você Quebra, Eu Conserto](https://github.com/pedromaintenance/porcaria-voce-quebra-eu-conserto)**, mas o banco é independente: **este repositório não altera os consumidores**.
 
-> **Status:** versão do catálogo **1.3.18** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
+> **Status:** versão do catálogo **1.3.19** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
 
 ## O que queremos construir
 
@@ -262,6 +262,16 @@ O [lote de seis análises](data/quality/playbook-deepdives.v1.json) confronta ex
 - Três referências gerais adicionadas ao índice: segurança de pressão/desgaste de pneus Michelin e especificação de arquitetura DI650i S5 da Sandvik, **sem presumir aplicação por série**.
 
 O contrato 1.0.0, release público 1.0.0, preview original 1.3.12 e checksum permanecem congelados, sem alterações no jogo.
+
+## V1.3.19 — 12/12 playbooks aprofundados por ID, sem homologação
+
+A [segunda metade dos deepdives](data/quality/playbook-deepdives-remaining.v1.json) desenvolve os seis cenários `PB-*` ainda sem revisão individual: **bomba hidráulica CAT 395**, mangueiras CAT 395, arrefecimento CAT 6030, comando final CAT 777, rodante D9 e radiador CAT 980. Os seis [deepdives anteriores](data/quality/playbook-deepdives.v1.json) permanecem intactos. O total é agora **12/12 playbooks documentados**, sem observações de campo.
+
+A [matriz PB × FC](data/quality/playbook-causal-crosswalk.v1.json) documenta **18 hipóteses examinadas**, **18 propostas de vínculo em 13 hipóteses**, cinco hipóteses sem correspondência suficiente e **zero vínculos confirmados**. Nenhuma cadeia de bomba d’água foi convertida em bomba hidráulica de implemento. Referência de modelo/série, local SAP, PN, medição e aprovação OEM permanecem pendentes.
+
+São 18 novas etapas técnicas, 24 requisitos de evidência e **46 testes sintéticos** (18 de prontidão, 16 mutações de deepdive, 12 mutações de crosswalk). Execute `npm run playbooks:remaining:validate` para conferir a segunda metade ou `npm run qa` para todos os gates. [Relatório técnico](docs/CICLO_2026-10-20_PLAYBOOKS_COMPLETOS_PB_FC.md).
+
+O contrato público 1.0.0, conteúdo 1.0.0, preview legado 1.3.12 e hash anterior não foram alterados, nem os repositórios consumidores.
 
 ## Comece por aqui
 
