@@ -2,7 +2,7 @@
 
 Banco de conhecimento **versionado** para investigar modos de falha, sintomas, evidências e causas em equipamentos móveis de mineração. Um consumidor possível é o jogo **[P.O.R.C.A.R.I.A. — Você Quebra, Eu Conserto](https://github.com/pedromaintenance/porcaria-voce-quebra-eu-conserto)**, mas o banco é independente: **este repositório não altera os consumidores**.
 
-> **Status:** versão do catálogo **1.3.32** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
+> **Status:** versão do catálogo **1.3.33** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
 
 ## O que queremos construir
 
@@ -400,6 +400,14 @@ A pesquisa sustenta práticas **gerais** (configurações alternativas D9–D11,
 O [guia técnico de fronteiras de evidência](docs/PESQUISA_PUBLICA_OEM_D9.md) discrimina o que pode ser apresentado na solicitação [v1.3.31](docs/SOLICITACAO_TECNICA_OEM_D9.md) e o que obrigatoriamente requer SIS/OMM licenciado, verificação de campo e revisão independente.
 
 `npm run d9:public:oem:validate` executa **31 regressões sintéticas** (7 vínculos e 24 alterações indevidas), impedindo promover conhecimento geral a especificação de máquina. **O pedido corporativo continua não enviado**; o CI público não homologa equipamentos.
+
+## Encaminhamento externo D9 — v1.3.33
+
+O próximo avanço é **institucional**, não mais uma pesquisa pública: foi aberta a [issue #31](https://github.com/pedromaintenance/fmea-database-mining/issues/31) como fila de acompanhamento do pedido OEM do D9. Ela não equivale a envio por e-mail, à consulta efetiva do SIS ou à aprovação de engenharia.
+
+O [controle de encaminhamento](data/governance/d9-external-handoff.v1.json) vincula a issue aos **sete requisitos originais** e separa: definir canal/destinatário privado, encaminhar solicitação, obter referências sob licença e verificar efetividade com revisão humana. O [guia operacional de handoff](docs/D9_HANDOFF_ENVIO_OEM.md) informa exatamente o que enviar, o que deve permanecer no sistema corporativo e quais estados podem ser atualizados com evidência.
+
+O comando `npm run d9:handoff:validate` executa **27 verificações sintéticas** (7 vínculos + 20 adulterações bloqueadas) no QA/CI. **Estado verdadeiro: issue pública criada; nenhum destinatário corporativo confirmado, nenhuma solicitação enviada, nenhum documento recebido e nenhuma inspeção executada.**
 
 ## Comece por aqui
 

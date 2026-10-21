@@ -72,6 +72,8 @@ jobs:
         run: npm run d9:oem:request:validate
       - name: Validar cinco fontes CAT publicas e 31 regressoes D9
         run: npm run d9:public:oem:validate
+      - name: Conferir issue publica D9 e 27 controles de handoff
+        run: npm run d9:handoff:validate
       - name: Validar capacidade discriminante de seis testes P0
         run: npm run discrimination:validate
       - name: Validar avaliacao cruzada de 24 testes e revisao SAP/OEM

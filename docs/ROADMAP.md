@@ -1,6 +1,6 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 21/10/2026 · **Ciclo:** catálogo técnico v1.3.32 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 21/10/2026 · **Ciclo:** catálogo técnico v1.3.33 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
 
@@ -39,6 +39,20 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 
 **Observação:** as 159 tarefas de PM com subgrupo candidato foram obtidas em extração local anterior e **não** representam 159 associações homologadas. Contagens de vínculos estritos serão publicadas pelo relatório automático após cada alteração do gerador.
 
+## Ciclo concluído — 21/10/2026: handoff externo para solicitação OEM D9 (v1.3.33)
+
+- [x] Criada [issue pública #31](https://github.com/pedromaintenance/fmea-database-mining/issues/31) como ponto de acompanhamento **sem informação OEM/SAP/ativo restrita**.
+- [x] [Registro de handoff](../data/governance/d9-external-handoff.v1.json) vinculado aos sete gates originais, com quatro decisões externas e nenhum envio/comprovação falsa.
+- [x] [Guia operacional de envio](D9_HANDOFF_ENVIO_OEM.md) e [relatório](CICLO_2026-10-21_HANDOFF_EXTERNO_D9.md), com fronteiras para canal interno licenciado, evidência de entrega e revisão independente.
+- [x] [Validador](../scripts/validate-d9-handoff.mjs), JSON Schema e **27 testes** de consistência e antiafimações não comprovadas incorporados ao QA/CI.
+- [x] Sem alteração de FC/ME, fontes CAT, conteúdo público, consumidor ou índices SAP.
+- [ ] **P0 externo:** designar no sistema corporativo destinatário com acesso SIS/OMM, proprietário da configuração D9 e canal de encaminhamento autorizado. Não armazenar identidade, série ou protocolo restrito no GitHub.
+- [ ] **P0 externo:** encaminhar [solicitação D9](SOLICITACAO_TECNICA_OEM_D9.md), conservar confirmação/recebimento no meio restrito e atualizar o estado com evidência efetiva.
+- [ ] **P0 Engenharia:** após consulta licenciada, conferir revisão, efetividade, arranjo instalado, método CTS e controle de energias antes da inspeção e parecer independente.
+- [ ] **Próximo avanço:** não avançar em mais ciclos de simulações de envio. A prioridade é comprovar a ação externa real e a obtenção de documentos ou registrar impedimento organizacional sem encerramento fictício.
+
+**Estado:** issue externa pública aberta; **zero solicitações corporativas enviadas, zero documentos OEM recebidos e zero revisões de campo efetuadas**.
+
 ## Ciclo concluído — 21/10/2026: confronto de fontes OEM públicas D9 (v1.3.32)
 
 - [x] [Matriz de pesquisa Caterpillar](../data/research/d9-public-oem-literature.v1.json): cinco fontes públicas auditáveis, sete mapeamentos ao pedido v1.3.31 e limites de utilização de cada informação.
@@ -48,7 +62,7 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 - [ ] **P0 externo — responsável por Engenharia de Ativos:** selecionar o D9 físico por série/arranjo em sistema privado e encaminhar o [pedido v1.3.31](SOLICITACAO_TECNICA_OEM_D9.md) via canal institucional autorizado.
 - [ ] **P0 externo — literatura OEM licenciada:** localizar OMM/BOM/Service Information e procedimento CTS realmente efetivos, incluindo revisão, aplicabilidade e alterações instaladas, sem compartilhar material proprietário publicamente.
 - [ ] **P0 externo — Engenharia/Inspeção:** validar método, instrumento e condição segura antes de registrar resultado de inspeção/medição ou emitir parecer técnico independente.
-- [ ] **Próximo ciclo real:** dependerá da identificação de responsável/canal e do status de envio. Evitar produção de novos mocks enquanto o bloqueio externo não for resolvido.
+- [x] **Handoff público criado (v1.3.33):** issue #31 e guia operacional de encaminhamento. **Envio corporativo efetivo segue pendente**, sem marcar documentação recebida ou inspeção executada.
 
 **Estado:** cinco fontes gerais revisadas; 7 requisitos de aplicação OEM continuam bloqueados e **0 solicitações enviadas**.
 

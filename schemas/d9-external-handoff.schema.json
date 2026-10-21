@@ -1,0 +1,282 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "D9 External Handoff v1.3.33 — public metadata only",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "version",
+    "pilotId",
+    "purpose",
+    "github",
+    "sourceRequest",
+    "sourceEvidence",
+    "sourcePublicResearch",
+    "maturity",
+    "routing",
+    "processGates",
+    "originalGateSnapshot",
+    "releaseBoundary",
+    "publicProgress",
+    "externalNextDecision",
+    "coreFmeaChainsPreserved",
+    "ontologyMechanismsPreserved"
+  ],
+  "properties": {
+    "schema": {
+      "const": "fmea-mining.d9-external-handoff.v1"
+    },
+    "version": {
+      "const": "1.3.33"
+    },
+    "pilotId": {
+      "type": "string"
+    },
+    "purpose": {
+      "type": "string"
+    },
+    "maturity": {
+      "const": "public_handoff_prepared_external_dispatch_pending"
+    },
+    "github": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "repository",
+        "issueNumber",
+        "issueUrl",
+        "issueRole",
+        "createdIssueIsNotDispatch"
+      ],
+      "properties": {
+        "repository": {
+          "const": "pedromaintenance/fmea-database-mining"
+        },
+        "issueNumber": {
+          "const": 31
+        },
+        "issueUrl": {
+          "const": "https://github.com/pedromaintenance/fmea-database-mining/issues/31"
+        },
+        "issueRole": {
+          "const": "public_pending_action_tracker_not_an_internal_oem_request"
+        },
+        "createdIssueIsNotDispatch": {
+          "const": true
+        }
+      }
+    },
+    "sourceRequest": {
+      "type": "string"
+    },
+    "sourceEvidence": {
+      "type": "string"
+    },
+    "sourcePublicResearch": {
+      "type": "string"
+    },
+    "routing": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "internalRecipientSelected",
+        "authorizedCorporateChannelConfirmed",
+        "privateTrackingSystemConfirmed",
+        "requestSent",
+        "documentReceived",
+        "independentTechnicalReviewPerformed",
+        "corporateIdentity",
+        "privateProtocolId",
+        "sentAt",
+        "receivedAt"
+      ],
+      "properties": {
+        "internalRecipientSelected": {
+          "const": false
+        },
+        "authorizedCorporateChannelConfirmed": {
+          "const": false
+        },
+        "privateTrackingSystemConfirmed": {
+          "const": false
+        },
+        "requestSent": {
+          "const": false
+        },
+        "documentReceived": {
+          "const": false
+        },
+        "independentTechnicalReviewPerformed": {
+          "const": false
+        },
+        "corporateIdentity": {
+          "type": "null"
+        },
+        "privateProtocolId": {
+          "type": "null"
+        },
+        "sentAt": {
+          "type": "null"
+        },
+        "receivedAt": {
+          "type": "null"
+        }
+      }
+    },
+    "processGates": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "state",
+          "ownerDiscipline",
+          "action",
+          "evidenceRequirement"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          },
+          "ownerDiscipline": {
+            "type": "string"
+          },
+          "action": {
+            "type": "string"
+          },
+          "evidenceRequirement": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "originalGateSnapshot": {
+      "type": "array",
+      "minItems": 7,
+      "maxItems": 7,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "evidenceInputId",
+          "requestId",
+          "originalSourceStatus",
+          "privateEvidenceVerified",
+          "publicReleaseAllowed"
+        ],
+        "properties": {
+          "evidenceInputId": {
+            "type": "string"
+          },
+          "requestId": {
+            "type": "string"
+          },
+          "originalSourceStatus": {
+            "enum": [
+              "not_supplied",
+              "not_verified",
+              "not_performed"
+            ]
+          },
+          "privateEvidenceVerified": {
+            "const": false
+          },
+          "publicReleaseAllowed": {
+            "const": false
+          }
+        }
+      }
+    },
+    "releaseBoundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "githubIssueCannotStoreLicensedOEM",
+        "githubIssueCannotStoreMachineSerial",
+        "githubIssueCannotStoreSapIdentifiers",
+        "closingDispatchIssueDoesNotApproveSevenOemGates",
+        "publicStatusCannotClaimActualDispatchBeforePrivateReceipt",
+        "fieldWorkNeedsOemEffectivityAndSafePermit",
+        "knowledgeCoreCannotBePromotedAutomatically",
+        "requiredHumanReviewRemainsExternal"
+      ],
+      "properties": {
+        "githubIssueCannotStoreLicensedOEM": {
+          "const": true
+        },
+        "githubIssueCannotStoreMachineSerial": {
+          "const": true
+        },
+        "githubIssueCannotStoreSapIdentifiers": {
+          "const": true
+        },
+        "closingDispatchIssueDoesNotApproveSevenOemGates": {
+          "const": true
+        },
+        "publicStatusCannotClaimActualDispatchBeforePrivateReceipt": {
+          "const": true
+        },
+        "fieldWorkNeedsOemEffectivityAndSafePermit": {
+          "const": true
+        },
+        "knowledgeCoreCannotBePromotedAutomatically": {
+          "const": true
+        },
+        "requiredHumanReviewRemainsExternal": {
+          "const": true
+        }
+      }
+    },
+    "publicProgress": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "preparedRequest",
+        "publicTrackingIssueCreated",
+        "externalRecipientConfirmed",
+        "requestActuallySent",
+        "sourceDocsActuallyObtained",
+        "fieldInspectionsActuallyPerformed",
+        "independentOEMApprovals"
+      ],
+      "properties": {
+        "preparedRequest": {
+          "const": true
+        },
+        "publicTrackingIssueCreated": {
+          "const": true
+        },
+        "externalRecipientConfirmed": {
+          "const": false
+        },
+        "requestActuallySent": {
+          "const": false
+        },
+        "sourceDocsActuallyObtained": {
+          "const": 0
+        },
+        "fieldInspectionsActuallyPerformed": {
+          "const": 0
+        },
+        "independentOEMApprovals": {
+          "const": 0
+        }
+      }
+    },
+    "externalNextDecision": {
+      "type": "string"
+    },
+    "coreFmeaChainsPreserved": {
+      "const": 24
+    },
+    "ontologyMechanismsPreserved": {
+      "const": 15
+    }
+  }
+}
