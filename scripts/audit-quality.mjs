@@ -41,6 +41,8 @@ const stagingExceptions=read('data/governance/staging-result-exception-workflow.
 const stagingExceptionTests=read('data/quality/staging-exception-regressions.v1.json');
 const remediationCatalog=read('data/governance/recurrent-remediation-catalog.v1.json');
 const remediationRegressions=read('data/quality/recurrent-remediation-regressions.v1.json');
+const blockerMatrix=read('data/governance/consolidated-blockers.v1.json');
+const blockerFixtures=read('data/quality/consolidated-blocker-regressions.v1.json');
 const differential=read('data/quality/discriminative-tests.v1.json');
 const differentialFixtures=read('data/quality/discrimination-regressions.v1.json');
 const complementary=read('data/quality/complementary-discrimination.v1.json');
@@ -130,6 +132,10 @@ const counts={
  remediationSyntheticRegressionCases:remediationRegressions.baselines.length+remediationRegressions.mutations.length,
  remediationRealCorrectiveActions:remediationCatalog.scope.realCorrectiveActions,
  remediationRealCorporateEscalations:remediationCatalog.scope.realCorporateEscalations,
+ consolidatedUnresolvedWorkstreams:blockerMatrix.workstreams.length,
+ consolidatedSourceItemCounts:blockerMatrix.workstreams.map(x=>x.sourceItemCount),
+ consolidatedBlockerSyntheticTests:blockerFixtures.baselineCases.length+blockerFixtures.mutationCases.length,
+ consolidatedActualExternalApprovals:blockerMatrix.overview.approvedItems,
  actualCorporateStagingApprovals:stagingAcceptance.counts.actualCorporateApprovals,
  productionControlsActuallyProvisioned:Object.values(restrictedInfrastructure.deployment).filter(Boolean).length,
  restrictedEvidenceKinds:restrictedEvidencePolicy.evidenceKinds.length,
@@ -220,7 +226,7 @@ const counts={
  semanticDamageConfirmations:semantic.confirmedComponentDamages.length,
  evidenceValidatedInRealEquipment:0,technicallyApprovedPlaybooks:0
 };
-const report={schema:'fmea-mining.quality-audit.v1',version:'1.3.29',
+const report={schema:'fmea-mining.quality-audit.v1',version:'1.3.30',
  generatedFrom:'working_tree',status:'qualidade_cadastral_nao_taxa_de_falhas',
  meanings:{
   pmCandidateLinks:'vinculos gerados por regra e taxonomia, NAO falhas observadas',
