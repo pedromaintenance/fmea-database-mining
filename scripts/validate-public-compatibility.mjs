@@ -20,7 +20,7 @@ function categorize(c){
  if(c.safeOptionalAdditions.length)return 'minor';
  return 'patch';
 }
-check(contract.schema==='fmea-mining.public-contract.v1'&&contract.version==='1.3.19'&&contract.contractVersion==='1.0.0','Versões contratuais inválidas');
+check(contract.schema==='fmea-mining.public-contract.v1'&&contract.version==='1.3.20'&&contract.contractVersion==='1.0.0','Versões contratuais inválidas');
 check(contract.existingPreviewSchema===pub.schema&&contract.existingPreviewVersion===pub.version,'Contrato congelado mudou');
 check(contract.existingManifestSchema===manifest.schema,'Schema do manifesto alterado');
 check(contract.versioningPolicy.independentFromPackageRelease===true&&contract.versioningPolicy.noSilentSchemaDrift===true&&contract.versioningPolicy.enforceFormerPreviewByteIdentityUntilExplicitRevision===true,'Mudança silenciosa habilitada');

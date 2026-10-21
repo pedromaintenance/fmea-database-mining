@@ -2,6 +2,14 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.20] — 2026-10-20 — Triagem de cinco lacunas e propostas mecânicas não homologadas
+- Reclassificadas as cinco hipóteses PB–FC sem equivalência: **três candidatas a cadeia física** e **duas interpretações que não configuram modos de falha**.
+- Propostos em coleção interna separada mecanismos de vedação externa e perda interna de entrega de bomba hidráulica, e degradação superficial de dentes de engrenagem de comando final; sem incorporação às 24 cadeias existentes.
+- Óleo escorrido permanece hipótese de localização da origem; perfil químico de óleo sem dano permanece condição de fluido/baseline, não causa raiz.
+- Adicionadas quatro referências técnicas públicas (Caterpillar bombas e lubrificação de transmissão, Parker bombas de palhetas com restrição de transferência, ISO 10825-1 somente resumo público).
+- Criados JSON Schemas e validador `causal:gaps:validate` com **21 regressões sintéticas**; integrados ao CI, QA, métricas e documentação.
+- **0 cadeias promovidas, 0 pareceres OEM, 0 evidências de campo, 0 vínculos SAP aprovados**, contrato e conteúdo públicos intactos, sem alterações de consumidores.
+
 ## [1.3.19] — 2026-10-20 — Cobertura documental 12/12 playbooks e crosswalk PB–FC
 - Concluídos seis deepdives por ID: CAT 395 bomba hidráulica e mangueira; CAT 6030 arrefecimento; CAT 777 comando final; CAT D9 material rodante; CAT 980 radiador. Total documental **12/12 playbooks**, sem casos executados.
 - Adicionadas **18 etapas discriminantes** e **24 condições de prontidão**, mantendo H1/H2/H3 e testes T1/T2 literalmente rastreáveis à origem.

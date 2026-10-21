@@ -1,0 +1,90 @@
+{
+  "schema": "fmea-mining.causal-gap-triage.v1",
+  "version": "1.3.20",
+  "sourceCrosswalk": "data/quality/playbook-causal-crosswalk.v1.json",
+  "classification": "editorial_decisions_not_observed_failure_events",
+  "counts": {
+    "examinedGaps": 5,
+    "mechanicalCandidatesProposed": 3,
+    "nonFailureInterpretations": 2,
+    "coreChainsAdded": 0,
+    "crosswalkMappingsApproved": 0
+  },
+  "records": [
+    {
+      "gapId": "XW-PB-EXC-PUMP-01-H1",
+      "classification": "missing_physical_failure_mode",
+      "decision": "propor_cadeia_mecanica_condicional",
+      "proposalId": "CAND-HYD-PUMP-SEAL-001",
+      "reason": "Perda de estanqueidade externa da bomba tem componente/função distintos de tubulação e de bomba d'água.",
+      "requiredDiscriminator": "Trilha de fuga na interface do conjunto de bomba versus linha adjacente, documentada com SIS/OMM efetivo e inspeção segura.",
+      "competingExplanation": "Óleo originado de conexão adjacente pode migrar sobre corpo da bomba.",
+      "baselineCandidateCount": 0,
+      "independentEvidenceReviewed": false,
+      "sapLinkApproved": false,
+      "oemEffectivityVerified": false,
+      "fieldEvents": 0,
+      "approvedRootCause": false
+    },
+    {
+      "gapId": "XW-PB-EXC-PUMP-01-H3",
+      "classification": "symptom_requiring_mechanism_split",
+      "decision": "propor_cadeia_mecanica_condicional",
+      "proposalId": "CAND-HYD-PUMP-INTERNAL-001",
+      "reason": "Pressão baixa é falha funcional/sintoma; somente perda interna de vazão sob ensaio específico seria mecanismo candidato de bomba.",
+      "requiredDiscriminator": "Ensaios OEM de fluxo, pressão, controle e sucção para separar bomba de válvula e sensor.",
+      "competingExplanation": "Válvula, compensador ou sucção podem explicar perda de pressão sem falha de bombeamento.",
+      "baselineCandidateCount": 0,
+      "independentEvidenceReviewed": false,
+      "sapLinkApproved": false,
+      "oemEffectivityVerified": false,
+      "fieldEvents": 0,
+      "approvedRootCause": false
+    },
+    {
+      "gapId": "XW-PB-EXC-HOSE-01-H3",
+      "classification": "source_localization_not_failure_mode",
+      "decision": "nao_gerar_cadeia",
+      "proposalId": null,
+      "reason": "Óleo escorrido de cima descreve interpretação da origem do vestígio, não falha funcional nem dano da mangueira.",
+      "requiredDiscriminator": "Rastrear primeiro ponto úmido da origem real e atribuir modo de falha apenas ao componente identificado.",
+      "competingExplanation": "Trilha de óleo na mangueira sem vazamento da sua parede ou conexão.",
+      "baselineCandidateCount": 0,
+      "independentEvidenceReviewed": false,
+      "sapLinkApproved": false,
+      "oemEffectivityVerified": false,
+      "fieldEvents": 0,
+      "approvedRootCause": false
+    },
+    {
+      "gapId": "XW-PB-TRUCK-FINAL-01-H2",
+      "classification": "missing_physical_failure_mode",
+      "decision": "propor_cadeia_mecanica_condicional",
+      "proposalId": "CAND-FD-GEAR-TOOTH-001",
+      "reason": "Degeneração localizada de flancos de dentes deve ser distinta de spalling de rolamento e de desgaste por partículas indiferenciado.",
+      "requiredDiscriminator": "Observação física de flancos e morfologia, reconciliada com laudos e origem de ruído sob condição OEM segura.",
+      "competingExplanation": "Ruído, Fe elevado e partículas podem vir de rolamento, contato externo ou coleta.",
+      "baselineCandidateCount": 0,
+      "independentEvidenceReviewed": false,
+      "sapLinkApproved": false,
+      "oemEffectivityVerified": false,
+      "fieldEvents": 0,
+      "approvedRootCause": false
+    },
+    {
+      "gapId": "XW-PB-TRUCK-FINAL-01-H3",
+      "classification": "fluid_condition_not_mechanical_failure",
+      "decision": "nao_gerar_cadeia",
+      "proposalId": null,
+      "reason": "Lubrificante ou aditivo incompatível sem dano físico confirmado é condição de óleo/baseline, não modo de falha mecânico.",
+      "requiredDiscriminator": "Confirmar histórico de produto e compatibilidade, amostragem representativa e tendência de desgaste antes de criar nota de dano.",
+      "competingExplanation": "Troca controlada Shell para FDAO pode alterar perfil químico sem indicar engrenagem danificada.",
+      "baselineCandidateCount": 0,
+      "independentEvidenceReviewed": false,
+      "sapLinkApproved": false,
+      "oemEffectivityVerified": false,
+      "fieldEvents": 0,
+      "approvedRootCause": false
+    }
+  ]
+}

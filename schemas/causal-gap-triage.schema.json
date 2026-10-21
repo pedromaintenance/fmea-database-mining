@@ -1,0 +1,114 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Triagem editorial de cinco lacunas causais PB-FC",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "version",
+    "sourceCrosswalk",
+    "classification",
+    "counts",
+    "records"
+  ],
+  "properties": {
+    "schema": {
+      "const": "fmea-mining.causal-gap-triage.v1"
+    },
+    "version": {
+      "const": "1.3.20"
+    },
+    "sourceCrosswalk": {
+      "const": "data/quality/playbook-causal-crosswalk.v1.json"
+    },
+    "classification": {
+      "const": "editorial_decisions_not_observed_failure_events"
+    },
+    "counts": {
+      "type": "object",
+      "required": [
+        "examinedGaps",
+        "mechanicalCandidatesProposed",
+        "nonFailureInterpretations",
+        "coreChainsAdded",
+        "crosswalkMappingsApproved"
+      ],
+      "properties": {
+        "examinedGaps": {
+          "const": 5
+        },
+        "mechanicalCandidatesProposed": {
+          "const": 3
+        },
+        "nonFailureInterpretations": {
+          "const": 2
+        },
+        "coreChainsAdded": {
+          "const": 0
+        },
+        "crosswalkMappingsApproved": {
+          "const": 0
+        }
+      }
+    },
+    "records": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "required": [
+          "gapId",
+          "classification",
+          "decision",
+          "proposalId",
+          "reason",
+          "requiredDiscriminator",
+          "competingExplanation",
+          "baselineCandidateCount",
+          "independentEvidenceReviewed",
+          "sapLinkApproved",
+          "oemEffectivityVerified",
+          "fieldEvents",
+          "approvedRootCause"
+        ],
+        "properties": {
+          "gapId": {
+            "type": "string",
+            "pattern": "^XW-"
+          },
+          "decision": {
+            "enum": [
+              "propor_cadeia_mecanica_condicional",
+              "nao_gerar_cadeia"
+            ]
+          },
+          "proposalId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "baselineCandidateCount": {
+            "const": 0
+          },
+          "independentEvidenceReviewed": {
+            "const": false
+          },
+          "sapLinkApproved": {
+            "const": false
+          },
+          "oemEffectivityVerified": {
+            "const": false
+          },
+          "fieldEvents": {
+            "const": 0
+          },
+          "approvedRootCause": {
+            "const": false
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.public-contract.v1",
-  "version": "1.3.19",
+  "version": "1.3.20",
   "contractVersion": "1.0.0",
   "existingPreviewSchema": "fmea-mining.public-knowledge-preview.v1",
   "existingPreviewVersion": "1.3.12",
@@ -66,5 +66,5 @@
     "unknown_serial_to_approved_oem_effectivity",
     "unreviewed_cause_to_verified_root_cause"
   ],
-  "note": "O pacote interno 1.3.19 conclui 12/12 deepdives por playbook sintético e introduz correspondências PB-FC conceituais não aprovadas. Contrato público 1.0.0, conteúdo 1.0.0, preview 1.3.12 e SHA-256 legado permanecem imutáveis; sem alterar consumidores ou aprovar causas."
+  "note": "O catálogo interno 1.3.20 tria cinco lacunas PB–FC em três propostas de mecanismo físico separadas e duas interpretações não mecânicas; nenhum registro adicionado às 24 cadeias do núcleo. Contrato 1.0.0, conteúdo 1.0.0 e preview legado 1.3.12 imutáveis."
 }

@@ -2,7 +2,7 @@
 
 Banco de conhecimento **versionado** para investigar modos de falha, sintomas, evidências e causas em equipamentos móveis de mineração. Um consumidor possível é o jogo **[P.O.R.C.A.R.I.A. — Você Quebra, Eu Conserto](https://github.com/pedromaintenance/porcaria-voce-quebra-eu-conserto)**, mas o banco é independente: **este repositório não altera os consumidores**.
 
-> **Status:** versão do catálogo **1.3.19** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
+> **Status:** versão do catálogo **1.3.20** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
 
 ## O que queremos construir
 
@@ -272,6 +272,18 @@ A [matriz PB × FC](data/quality/playbook-causal-crosswalk.v1.json) documenta **
 São 18 novas etapas técnicas, 24 requisitos de evidência e **46 testes sintéticos** (18 de prontidão, 16 mutações de deepdive, 12 mutações de crosswalk). Execute `npm run playbooks:remaining:validate` para conferir a segunda metade ou `npm run qa` para todos os gates. [Relatório técnico](docs/CICLO_2026-10-20_PLAYBOOKS_COMPLETOS_PB_FC.md).
 
 O contrato público 1.0.0, conteúdo 1.0.0, preview legado 1.3.12 e hash anterior não foram alterados, nem os repositórios consumidores.
+
+## v1.3.20 — triagem das cinco lacunas PB–FC
+
+As **cinco hipóteses sem mecanismo equivalente** da matriz PB–FC foram reavaliadas. Três exigem possível ampliação do catálogo de mecanismos: **vedação externa de bomba hidráulica**, **perdas hidráulicas internas de bomba** e **deterioração superficial de dentes de engrenagens**. Outras duas **não são modos de falha**: óleo escorrido de uma fonte superior e mudança/contaminação de lubrificante sem dano demonstrado.
+
+Os [três candidatos](data/quality/proposed-causal-chains.v1.json) permanecem em **coleção editorial independente**, sem IDs `FC-*`, e a [matriz de decisões](data/quality/causal-gap-triage.v1.json) registra as cinco justificativas e contraprovas. **Continuam 24 cadeias no núcleo; não houve criação de novas FMEAs aprovadas.**
+
+O comando `npm run causal:gaps:validate` verifica escopo, fontes, hipótese alternativa, aplicação OEM, ausência de resultado de campo e **21 regressões sintéticas** (cinco decisões e 16 alterações perigosas). O `npm run qa` e o GitHub Actions aplicam o mesmo gate.
+
+[Relatório técnico do ciclo](docs/CICLO_2026-10-20_TRIAGEM_LACUNAS_CAUSAIS.md) · [Schema das propostas](schemas/proposed-causal-chains.schema.json) · [Schema da triagem](schemas/causal-gap-triage.schema.json).
+
+O contrato público **1.0.0**, release de conteúdo **1.0.0**, preview **1.3.12** e hash histórico continuam congelados; repositórios consumidores não foram alterados.
 
 ## Comece por aqui
 
