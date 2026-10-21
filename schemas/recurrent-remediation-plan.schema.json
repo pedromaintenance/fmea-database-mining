@@ -1,0 +1,281 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FMEA — synthetic-only remediation proposal (v1.3.29)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "caseToken",
+    "tenantToken",
+    "scenarioId",
+    "probeId",
+    "classification",
+    "profileId",
+    "history",
+    "originalEvidenceToken",
+    "ownerRole",
+    "actions",
+    "expectedEvidence",
+    "review",
+    "release",
+    "syntheticClassification",
+    "recurrence"
+  ],
+  "properties": {
+    "caseToken": {
+      "type": "string",
+      "pattern": "^TEST-[A-Z0-9-]{3,120}$"
+    },
+    "tenantToken": {
+      "type": "string",
+      "pattern": "^TEST-[A-Z0-9-]{3,120}$"
+    },
+    "scenarioId": {
+      "type": "string",
+      "pattern": "^STG-"
+    },
+    "probeId": {
+      "type": "string",
+      "minLength": 8
+    },
+    "classification": {
+      "enum": [
+        "control_failure",
+        "inconclusive_evidence",
+        "verifier_infrastructure_error"
+      ]
+    },
+    "profileId": {
+      "enum": [
+        "REM-CONTROL-001",
+        "REM-EVIDENCE-001",
+        "REM-INFRA-001"
+      ]
+    },
+    "history": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "tenantToken",
+          "caseToken",
+          "scenarioId",
+          "probeId",
+          "classification",
+          "runToken",
+          "observedAt",
+          "outcome",
+          "evidenceToken",
+          "sourceTriageId"
+        ],
+        "properties": {
+          "tenantToken": {
+            "type": "string",
+            "pattern": "^TEST-[A-Z0-9-]{3,120}$"
+          },
+          "caseToken": {
+            "type": "string",
+            "pattern": "^TEST-[A-Z0-9-]{3,120}$"
+          },
+          "scenarioId": {
+            "type": "string",
+            "pattern": "^STG-"
+          },
+          "probeId": {
+            "type": "string",
+            "minLength": 8
+          },
+          "classification": {
+            "enum": [
+              "control_failure",
+              "inconclusive_evidence",
+              "verifier_infrastructure_error"
+            ]
+          },
+          "runToken": {
+            "type": "string",
+            "pattern": "^TEST-[A-Z0-9-]{3,120}$"
+          },
+          "observedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "outcome": {
+            "enum": [
+              "fail",
+              "inconclusive",
+              "blocked"
+            ]
+          },
+          "evidenceToken": {
+            "type": "string",
+            "pattern": "^TEST-[A-Z0-9-]{3,120}$"
+          },
+          "sourceTriageId": {
+            "type": "string",
+            "pattern": "^TEST-[A-Z0-9-]{3,120}$"
+          }
+        }
+      }
+    },
+    "originalEvidenceToken": {
+      "type": "string",
+      "pattern": "^TEST-[A-Z0-9-]{3,120}$"
+    },
+    "ownerRole": {
+      "enum": [
+        "security_it",
+        "maintenance_engineering",
+        "platform_it"
+      ]
+    },
+    "actions": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 10,
+      "items": {
+        "type": "string",
+        "minLength": 10
+      }
+    },
+    "expectedEvidence": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 10,
+      "items": {
+        "type": "string",
+        "minLength": 10
+      }
+    },
+    "review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "originatorToken",
+        "technicalReviewerToken",
+        "independentReviewerToken",
+        "independentAssessment",
+        "actualReviewPerformed",
+        "negativeEvidenceRetained",
+        "riskAccepted",
+        "actionExecuted",
+        "closureApproved",
+        "manualEscalationPending",
+        "recurrenceOverlayApplied",
+        "corporateThresholdApproved"
+      ],
+      "properties": {
+        "originatorToken": {
+          "type": "string",
+          "pattern": "^TEST-[A-Z0-9-]{3,120}$"
+        },
+        "technicalReviewerToken": {
+          "type": "string",
+          "pattern": "^TEST-[A-Z0-9-]{3,120}$"
+        },
+        "independentReviewerToken": {
+          "type": "string",
+          "pattern": "^TEST-[A-Z0-9-]{3,120}$"
+        },
+        "independentAssessment": {
+          "const": "pending_real_review"
+        },
+        "actualReviewPerformed": {
+          "const": false
+        },
+        "negativeEvidenceRetained": {
+          "const": true
+        },
+        "riskAccepted": {
+          "const": false
+        },
+        "actionExecuted": {
+          "const": false
+        },
+        "closureApproved": {
+          "const": false
+        },
+        "manualEscalationPending": {
+          "type": "boolean"
+        },
+        "recurrenceOverlayApplied": {
+          "type": "boolean"
+        },
+        "corporateThresholdApproved": {
+          "const": false
+        }
+      }
+    },
+    "release": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "securityApproved",
+        "publicationAuthorized",
+        "operationalReleaseApproved",
+        "sapNoteOpened",
+        "mechanicalRootCauseConfirmed",
+        "fmeaCorePromoted"
+      ],
+      "properties": {
+        "securityApproved": {
+          "const": false
+        },
+        "publicationAuthorized": {
+          "const": false
+        },
+        "operationalReleaseApproved": {
+          "const": false
+        },
+        "sapNoteOpened": {
+          "const": false
+        },
+        "mechanicalRootCauseConfirmed": {
+          "const": false
+        },
+        "fmeaCorePromoted": {
+          "const": false
+        }
+      }
+    },
+    "syntheticClassification": {
+      "enum": [
+        "candidate_remediation_plan_only",
+        "candidate_recurrent_escalation_plan_only"
+      ]
+    },
+    "recurrence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "observed",
+        "distinctRuns",
+        "fingerprint",
+        "syntheticWindowDays",
+        "realSlaApproved"
+      ],
+      "properties": {
+        "observed": {
+          "type": "boolean"
+        },
+        "distinctRuns": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2
+        },
+        "fingerprint": {
+          "type": "string",
+          "minLength": 25
+        },
+        "syntheticWindowDays": {
+          "const": 30
+        },
+        "realSlaApproved": {
+          "const": false
+        }
+      }
+    }
+  }
+}
