@@ -2,6 +2,15 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.41] — 2026-10-21 — Roda-guia IDLE: desgaste externo, rolamento interno, vedação e CTS
+
+- Escopo real `track-idler-wear`: **221 caminhos** nos modelos da regra, 40 em UNCR, oito em IDLE. O tipo de objeto IDLE contém oito ocorrências de eixo e oito de guia genérica, mas **zero ocorrências de Rolamento**.
+- Em subgrupos UNCR adjacentes, oito ocorrências de Rolamento pertencem a `TRF1/ROLL` e `TRF2/ROLL`, com combinação cadastral 02.01/C1.04 permitida; **rolamento de rolete não pode ser remapeado para roda-guia**.
+- A análise revelou empréstimo semântico no bundle IDLE: condição `COND-TRACK-ROLLER-HEAT` e atividade `ACT-TRACK-ROLLER-SEAL-CHECK` referem-se a roletes e não são prova nem inspeção efetiva da roda-guia.
+- Plano com quatro mecanismos diferenciais e seis requisitos CTS/OEM/BOM/SAP/segurança/revisão independente. Rótulo `DMG-TRACK-IDLER-WEAR` usa a palavra “confirmado” em hipótese não confirmada; pendência editorial identificada sem promover estado.
+- Scanner de descrições e tipo de objeto, 10 casos lexicais e 14 mutações adversariais, adicionados ao QA/CI, com relatório agregado, sem PN, percentual CTS ou evidências falsas.
+- Preservados 25 padrões PM, 115 vínculos candidatos, 10 bloqueios, 24 FC/15 ME, contrato e conteúdo públicos 1.0.0, preview 1.3.12 e consumidores.
+
 ## [1.3.40] — 2026-10-21 — Filtro de óleo do motor: LUSY × ETBE/IKSY
 
 - Verificada no catálogo real a ausência de componentes com texto de filtragem em **8 caminhos ENGN/LUSY**, embora o subgrupo exista nos modelos de destino.
