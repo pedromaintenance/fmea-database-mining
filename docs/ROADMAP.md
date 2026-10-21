@@ -1,6 +1,6 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 21/10/2026 · **Ciclo:** catálogo técnico v1.3.41 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 21/10/2026 · **Ciclo:** catálogo técnico v1.3.42 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
 
@@ -38,6 +38,18 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 | Enriquecimento | 12 roteiros classificados por falha funcional, sintomas e técnicas | Anotação manual, não prova de causa |
 
 **Observação:** as 159 tarefas de PM com subgrupo candidato foram obtidas em extração local anterior e **não** representam 159 associações homologadas. Contagens de vínculos estritos serão publicadas pelo relatório automático após cada alteração do gerador.
+
+## Ciclo — 21/10/2026: separação de roda-guia e rolete na ontologia (v1.3.42)
+
+- [x] Criadas `COND-TRACK-IDLER-HEAT`, `COND-TRACK-IDLER-SEAL-LEAK` e `ACT-TRACK-IDLER-SEAL-CHECK`, sem resultados observados ou atividades executadas.
+- [x] Reestruturadas as relações ativas de `BUNDLE-09` para conceitos exclusivos de roda-guia, mantendo `BUNDLE-08` e os conceitos legados exclusivos de roletes.
+- [x] Corrigido rótulo de dano idler que mencionava “confirmado”, preservando o identificador de conceito, estado não aprovado e todas as limitações OEM/SAP.
+- [x] Incrementada ontologia para 1.3.8 com 16 fixtures de semântica e 24 ataques sintéticos rejeitados; relatórios reproduzíveis e CI.
+- [ ] **Engenharia/OEM e Dados Mestres:** obter desenho e BOM por série da roda-guia e confirmar se há rolamento/apoio substituível, sem reaproveitar códigos ROLL.
+- [ ] **Inspeção CTS:** coletar desgaste, calor e condições de vedação apenas com metodologia, segurança e critérios OEM efetivos.
+- [ ] **Revisão de produto:** decidir eventual exportação adicional de conceitos semânticos para consumidores via versionamento explícito, quando houver necessidade validada; preview público de cadeias permanece congelado.
+
+**Estado:** sem novas peças, medições, falhas confirmadas ou aprovações; 115 vínculos PM candidatos e dez exceções bloqueadas.
 
 ## Ciclo — 21/10/2026: roda-guia IDLE e discriminação CTS (v1.3.41)
 

@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.condition-action-damage.v1",
-  "version": "1.3.7",
+  "version": "1.3.8",
   "status": "conceptual_unvalidated",
   "semantics": {
     "condition": "Estado de fluido, superfície ou desempenho; ocorrência requer medição/observação",
@@ -350,6 +350,42 @@
       "status": "condition_hypothesis_not_observed",
       "observedValue": null,
       "observedAt": null
+    },
+    {
+      "id": "COND-TRACK-IDLER-HEAT",
+      "label": "Aquecimento localizado suspeito na roda-guia",
+      "system": "rodante",
+      "medium": "conjunto_rodante",
+      "observation": "Comparação térmica controlada no corpo da roda-guia identificada, com posição, carga, emissividade e ambiente documentados",
+      "methods": [
+        "EV-03"
+      ],
+      "sourceIds": [
+        "CAT-MINING-UC-WEAR-MANAGEMENT",
+        "CAT-CTS-UNDERCARRIAGE"
+      ],
+      "limitations": "Temperatura anormal pode decorrer de atrito por detritos, desalinhamento, tensão ou condição de operação; não comprova rolamento ou apoio interno danificado.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-TRACK-IDLER-SEAL-LEAK",
+      "label": "Vestígio oleoso suspeito junto à vedação da roda-guia",
+      "system": "rodante",
+      "medium": "conjunto_rodante",
+      "observation": "Vestígio e origem de fluido a localizar na roda-guia específica, verificando previamente se há conjunto lubrificado e vedação na configuração efetiva",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "CAT-MINING-UC-WEAR-MANAGEMENT",
+        "CAT-CTS-UNDERCARRIAGE"
+      ],
+      "limitations": "Não confundir fuga de rolete adjacente, contaminação superficial ou lubrificante transportado com defeito da vedação da roda-guia; depende de arranjo OEM.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
     }
   ],
   "actions": [
@@ -625,6 +661,21 @@
       "executionStatus": "not_performed",
       "observedResults": [],
       "intervalHours": null
+    },
+    {
+      "id": "ACT-TRACK-IDLER-SEAL-CHECK",
+      "label": "Inspecionar vedação e detritos da roda-guia conforme OEM",
+      "kind": "inspection",
+      "intent": "Diferenciar possíveis fugas, sujeira externa, interferência de detritos e estado da vedação apenas se prevista na configuração efetiva",
+      "sourceIds": [
+        "CAT-MINING-UC-WEAR-MANAGEMENT",
+        "CAT-CTS-UNDERCARRIAGE"
+      ],
+      "safety": "Isolar e estabilizar máquina; não acessar pontos de esmagamento nem liberar energia do tensionador ou abrir componente pressurizado sem procedimento OEM autorizado.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
     }
   ],
   "damageHypotheses": [
@@ -791,7 +842,7 @@
     },
     {
       "id": "DMG-TRACK-IDLER-WEAR",
-      "label": "Desgaste confirmado de roda-guia ou seu elemento interno",
+      "label": "Desgaste da roda-guia ou dano do apoio interno sob investigação",
       "componentRole": "roda_guia",
       "requiredEvidence": "Comparação dimensional e verificação de componente conforme CTS/OMM efetivo; código genérico 'guia' não comprova rolamento.",
       "sourceIds": [
@@ -1062,11 +1113,12 @@
       "ruleId": "track-idler-wear",
       "conditionIds": [
         "COND-TRACK-IDLER-WEAR",
-        "COND-TRACK-ROLLER-HEAT"
+        "COND-TRACK-IDLER-HEAT",
+        "COND-TRACK-IDLER-SEAL-LEAK"
       ],
       "actionIds": [
         "ACT-TRACK-IDLER-CTS",
-        "ACT-TRACK-ROLLER-SEAL-CHECK"
+        "ACT-TRACK-IDLER-SEAL-CHECK"
       ],
       "differentialDamageIds": [
         "DMG-TRACK-IDLER-WEAR"
@@ -1074,7 +1126,7 @@
       "chainIds": [
         "FC-TRACK-003"
       ],
-      "interpretation": "Padrão irregular de contato não identifica rolamento de roda-guia; a peça permanece sem código SAP e exige verificação CTS/OEM.",
+      "interpretation": "Desgaste, calor e possível vestígio oleoso na roda-guia são condições independentes, não falha comprovada do apoio interno; exige verificação CTS, arranjo OEM e diagnóstico da origem. Não transferir observações ou intervenções de roletes para a roda-guia.",
       "sourceIds": [
         "CAT-MINING-UC-WEAR-MANAGEMENT",
         "CAT-CTS-UNDERCARRIAGE"
@@ -1533,7 +1585,7 @@
     {
       "id": "REL-050",
       "from": "BUNDLE-09",
-      "to": "COND-TRACK-ROLLER-HEAT",
+      "to": "COND-TRACK-IDLER-HEAT",
       "type": "rule_monitors_condition",
       "meaning": "Possível condição a investigar; não é observação real",
       "reviewStatus": "interpretacao_inferida",
@@ -1551,7 +1603,7 @@
     {
       "id": "REL-052",
       "from": "BUNDLE-09",
-      "to": "ACT-TRACK-ROLLER-SEAL-CHECK",
+      "to": "ACT-TRACK-IDLER-SEAL-CHECK",
       "type": "rule_proposes_action",
       "meaning": "Atividade sugerida; não houve execução nem resultado",
       "reviewStatus": "interpretacao_inferida",
@@ -1563,6 +1615,15 @@
       "to": "DMG-TRACK-IDLER-WEAR",
       "type": "rule_lists_differential_damage",
       "meaning": "Dano candidato que depende de inspeção independente",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-054",
+      "from": "BUNDLE-09",
+      "to": "COND-TRACK-IDLER-SEAL-LEAK",
+      "type": "rule_monitors_condition",
+      "meaning": "Possível vestígio de fluido na roda-guia, não vazamento nem falha de vedação confirmados",
       "reviewStatus": "interpretacao_inferida",
       "observed": false
     }

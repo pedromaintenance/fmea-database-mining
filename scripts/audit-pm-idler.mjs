@@ -34,8 +34,9 @@ const sourceIds=new Set(sources.map(x=>x.id));
 check(review.sourceIds.length===4&&review.sourceIds.every(x=>sourceIds.has(x)),'unregistered_cat_or_sap_sources');
 const bundle=semantic.bundles.find(x=>x.ruleId===rule.id);
 check(bundle?.mappingScope==='generic_only'&&bundle.automaticDamagePromotion===false&&bundle.confirmedDamageIds.length===0&&bundle.observedConditionIds.length===0&&bundle.performedActionIds.length===0,'idler_semantics_promoted');
-check(bundle?.conditionIds.includes('COND-TRACK-IDLER-WEAR')&&bundle.conditionIds.includes('COND-TRACK-ROLLER-HEAT'),'unexpected_idler_bundle_conditions');
-check(bundle?.actionIds.includes('ACT-TRACK-IDLER-CTS')&&bundle.actionIds.includes('ACT-TRACK-ROLLER-SEAL-CHECK'),'unexpected_idler_bundle_actions');
+check(JSON.stringify(bundle?.conditionIds)===JSON.stringify(['COND-TRACK-IDLER-WEAR','COND-TRACK-IDLER-HEAT','COND-TRACK-IDLER-SEAL-LEAK']),'unexpected_idler_bundle_conditions');
+check(JSON.stringify(bundle?.actionIds)===JSON.stringify(['ACT-TRACK-IDLER-CTS','ACT-TRACK-IDLER-SEAL-CHECK']),'unexpected_idler_bundle_actions');
+check(!bundle?.conditionIds.some(x=>x.includes('ROLLER'))&&!bundle?.actionIds.some(x=>x.includes('ROLLER')),'roller_contamination_in_idler_bundle');
 check(bundle?.differentialDamageIds.includes('DMG-TRACK-IDLER-WEAR'),'missing_idler_differential');
 check(review.crossComponentOntologyRefs.some(x=>x.refId==='COND-TRACK-ROLLER-HEAT'&&x.decision==='reference_only_not_idler_observation')&&
  review.crossComponentOntologyRefs.some(x=>x.refId==='ACT-TRACK-ROLLER-SEAL-CHECK'&&x.decision==='review_action_scope_before_training_or_execution'),'roller_borrowing_not_disclosed');
@@ -112,7 +113,7 @@ const result={...report,engineeringReview:{
  differentialModes:review.differentialModes,
  evidenceRequirements:review.necessaryEvidence,
  crossComponentOntologyRefs:review.crossComponentOntologyRefs,
- notes:'Roller heat and roller seal task in idler semantic bundle are not measurements or repairs of idler; require independent review.',
+ notes:'Roller heat and roller seal references were removed from active IDLE bundle in ontology 1.3.8; historical review retains the original cross-component finding.',
  ctsFieldMeasurements:0,inspectionsExecuted:0,installedBearingValidated:false,sapMappingApproved:false},
  audit:{lexicalCases:lexical.length,syntheticGeometryCases:5,unsafeMutationsRejected:rejected,
  seedRules:seed.length,generatedCandidateLinks:links.length,pmExceptionsBlocked:gaps.length,
