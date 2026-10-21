@@ -2,6 +2,15 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.30] — 2026-10-21 — Consolidação de bloqueios e dependências reais
+
+- Consolidada uma matriz de **8 frentes**, com ponteiros verificados a documentos existentes: 7 insumos D9, 10 regras PM × SAP, 24 revisões FC, 48 alegações sistêmicas, 3 CAND, 4 refinamentos ME, 7 componentes de TI e 6 aceites de staging.
+- Mantidas **unidades distintas** e ressaltadas sobreposições: não há afirmação de 109 tarefas independentes.
+- Identificadas disciplinas proprietárias **institucionais**, próximos passos verificáveis e requisitos de liberação, sem inventar engenheiros responsáveis, prazos de empresa, números OEM, aplicações SAP ou pareceres realizados.
+- Separados cinco caminhos lógicos: documentação/OEM, mecanismos físicos, aderência SAP, causa sistêmica e staging privado; prioridades P0/P1 são **sugestões editoriais**, não SLA oficial.
+- Adicionado [validador](scripts/validate-consolidated-blockers.mjs) de procedência com **40 regressões sintéticas** (8 baselines + 32 tentativas adversariais), JSON Schema e integração QA/CI.
+- Nenhuma evidência de campo, responsável nomeado, autorização corporativa, nova cadeia FC/ME ou consumidor foi alterado; contrato/conteúdo público 1.0.0, preview 1.3.12 e golden checksum preservados.
+
 ## [1.3.29] — 2026-10-21 — Catálogo de remediação e recorrência
 
 - Criados **4 perfis editoriais** para controle reprovado, evidência inconclusiva, erro de infraestrutura/verificador e reincidência transversal.

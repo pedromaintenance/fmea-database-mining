@@ -1,6 +1,6 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 21/10/2026 · **Ciclo:** catálogo técnico v1.3.29 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 21/10/2026 · **Ciclo:** catálogo técnico v1.3.30 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
 
@@ -39,6 +39,21 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 
 **Observação:** as 159 tarefas de PM com subgrupo candidato foram obtidas em extração local anterior e **não** representam 159 associações homologadas. Contagens de vínculos estritos serão publicadas pelo relatório automático após cada alteração do gerador.
 
+## Ciclo concluído — 21/10/2026: matriz única de bloqueios externos e técnicos (v1.3.30)
+
+- [x] [Matriz consolidada](../data/governance/consolidated-blockers.v1.json): 8 frentes, contagens e status ligados diretamente às fontes de origem, ações delimitadas, responsáveis institucionais e evidências de liberação.
+- [x] Separados os números 7 D9 / 10 PM-SAP / 24 FC / 48 causas sistêmicas / 3 CAND / 4 submodos candidatos / 7 serviços de infraestrutura / 6 aceites humanos. **Não são 109 casos independentes.**
+- [x] [Validador](../scripts/validate-consolidated-blockers.mjs), [schema](../schemas/consolidated-blockers.schema.json) e **40 regressões sintéticas** incluídos no CI/QA para detectar drift, falsas aprovações e dependências circulares.
+- [x] [Matriz executiva e próximos passos](MATRIZ_CONSOLIDADA_BLOQUEIOS.md) e [relatório do ciclo](CICLO_2026-10-21_MATRIZ_DE_BLOQUEIOS.md) disponibilizados.
+- [x] Inalterados os 24 FC e 15 ME, contrato e conteúdo público 1.0.0, preview 1.3.12, snapshot golden e consumidores.
+- [ ] **P0 externo — Engenharia:** levantar documentação OEM **por configuração efetiva** (D9, bombas hidráulicas e comando final) em sistemas privados licenciados, com revisão independente e dados suficientes para métodos seguros de inspeção.
+- [ ] **P0 externo — SAP/Engenharia:** revisar cada uma das dez regras PM-SAP sem criar aliases automáticos ou inventar PN/localização.
+- [ ] **P0 externo — TI/Segurança/Privacidade:** designar responsáveis institucionais e deliberar sobre custódia restrita, autenticação, retenção e seis gates de aceite de staging.
+- [ ] **P0 próximo ciclo:** reduzir o trabalho editorial repetitivo; priorizar uma *primeira evidência OEM real, autorizada e revisável* para uma lacuna de alto valor técnico, ou preparar pacote para decisão formal de TI sem publicar documentos restritos.
+- [ ] Revisão de cadeias, causas sistêmicas e três candidatas físicas segue sem comprovação empírica, sem afirmação de causa raiz.
+
+**Estado:** oito frentes bloqueadas, zero liberações reais. O próximo avanço dependerá de insumos OEM e decisão institucional, não apenas de novos testes sintéticos.
+
 ## Ciclo concluído — 21/10/2026: catálogo de remediação e desvios recorrentes (v1.3.29)
 
 - [x] [Catálogo v1.3.29](../data/governance/recurrent-remediation-catalog.v1.json): 4 perfis de remediação; ações corretivas propostas e elementos de prova, com responsabilidades de Segurança, Engenharia e TI.
@@ -48,7 +63,7 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 - [x] 24 cadeias FC, 15 mecanismos ME, consumidor, conteúdo público 1.0.0, contrato 1.0.0 e golden checksum preservados.
 - [ ] **P0 externo TI/Segurança:** institucionalizar prazos, severidades, owner de incidentes, autenticidade de registros, log protegido e critérios de encerramento **em ambiente corporativo privado**.
 - [ ] **P0 externo Engenharia:** definir método de verificação de eficácia, causas concorrentes e aceitabilidade de ações técnicas sem extrapolar a FMEA.
-- [ ] **P0 próximo ciclo:** apresentar visão consolidada dos bloqueios de homologação **sem falsa conclusão** e preparar critérios para priorizar dependências reais, evitando multiplicar processos somente documentais.
+- [x] **Concluído v1.3.30:** quadro consolidado com procedência, dependências e critérios de liberação. A coleta de evidência OEM e a decisão institucional permanecem externas.
 - [ ] Ambiente de staging privado, seis assinaturas institucionais e qualquer piloto com caso real continuam pendentes.
 
 **Situação:** 4 perfis, 52 testes sintéticos, nenhum controle corporativo recuperado ou aprovado.
