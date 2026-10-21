@@ -1,0 +1,217 @@
+{
+  "schema": "fmea-mining.proposal-taxonomy-audit.v1",
+  "version": "1.3.21",
+  "nature": "editorial_ontology_coherence_only",
+  "references": {
+    "sourceProposals": "data/quality/proposed-causal-chains.v1.json",
+    "core": "data/knowledge/causal-chains.v1.json",
+    "ontology": "data/ontology/concepts.v1.json"
+  },
+  "counts": {
+    "reviewedCandidates": 3,
+    "functionClassifications": 3,
+    "mechanismOntologyGap": 1,
+    "mechanismsRequiringSplit": 1,
+    "approvedCorePromotions": 0,
+    "observedEvents": 0,
+    "existingCoreChains": 24
+  },
+  "records": [
+    {
+      "proposalId": "CAND-HYD-PUMP-SEAL-001",
+      "originPlaybookId": "PB-EXC-PUMP-01",
+      "originHypothesisId": "H1",
+      "sourceProposalVersion": "1.3.20",
+      "originalMechanismText": "Degradação de lábio, junta ou interface de vedação permite migração de fluido; identificar a arquitetura real antes de atribuir uma peça.",
+      "originalFunctionText": "Conter o fluido dentro do conjunto de bombeamento e manter a interface externa estanque",
+      "functionAudit": {
+        "existingFunctionalFailureId": "FF-06",
+        "criterionFromOntology": "Fluido ou material deixa o limite previsto do sistema",
+        "rationale": "Vedação externa da bomba significa falha de contenção; não deve ser tratada como mau desempenho hidráulico sem outro teste.",
+        "classification": "proposed_not_verified"
+      },
+      "mechanismAudit": [
+        {
+          "mechanismId": "ME-15",
+          "fit": "conditional",
+          "limit": "Vedação do próprio conjunto hidráulico, não conexão de mangueira. ME-07 dependeria de elastômero comprovado."
+        }
+      ],
+      "ontologyGap": null,
+      "coreOverlaps": [
+        {
+          "coreId": "FC-HOSE-003",
+          "relation": "shared_sealing_mechanism_different_part",
+          "distinction": "Terminal externo da mangueira e interface de bomba são componentes distintos; primeiro ponto molhado precisa ser identificado."
+        },
+        {
+          "coreId": "FC-COOL-008",
+          "relation": "similar_function_different_system",
+          "distinction": "Vedação da bomba d'água do arrefecimento não demonstra falha na bomba hidráulica de implementos."
+        }
+      ],
+      "possibleEffects": {
+        "local": "Perda externa de óleo hidráulico e possível diminuição do volume disponível, dependendo da duração da fuga.",
+        "system": "Se confirmada, a perda de fluido pode degradar a alimentação de implementos, conforme volume e função do arranjo.",
+        "status": "possible_unobserved",
+        "severity": null,
+        "probability": null
+      },
+      "alternativeExplanation": "A perda pode iniciar no terminal adjacente e escorrer pela carcaça da bomba, sem avaria na vedação.",
+      "auditFinding": "Ontologia FF-06/ME-15 cobre função e mecanismo genérico, mas falta o objeto bomba hidráulica e efetividade da arquitetura; não reutilizar cadeia da bomba de água.",
+      "disposition": "hold_for_oem_boundary_and_independent_review",
+      "requiredBeforePromotion": [
+        "Obter BOM/desenho e série do conjunto, distinguindo vedação, junta e terminal da linha.",
+        "Localizar origem por método OEM seguro e contraprova de óleo escorrido ou conexão adjacente.",
+        "Obter parecer técnico independente e revisão de hierarquia antes de solicitar nova família FC/SAP."
+      ],
+      "approvedCoreId": null,
+      "approvedSapLocation": null,
+      "applicableSerial": null,
+      "observedEffect": null,
+      "reviewerTechnical": null,
+      "reviewerIndependent": null,
+      "reviewDecision": null,
+      "confirmedRootCause": false
+    },
+    {
+      "proposalId": "CAND-HYD-PUMP-INTERNAL-001",
+      "originPlaybookId": "PB-EXC-PUMP-01",
+      "originHypothesisId": "H3",
+      "sourceProposalVersion": "1.3.20",
+      "originalMechanismText": "Fuga volumétrica interna através de folgas ou interfaces do conjunto pode reduzir vazão útil conforme temperatura, carga e comando.",
+      "originalFunctionText": "Fornecer vazão útil ao circuito de implementos conforme comando e regime da configuração OEM",
+      "functionAudit": {
+        "existingFunctionalFailureId": "FF-02",
+        "criterionFromOntology": "Função entregue abaixo do requisito mensurável",
+        "rationale": "Perda de entrega de vazão é desempenho degradado; FF-08 seria apenas a falha de comando/regulação, que continua explicação concorrente.",
+        "classification": "proposed_not_verified"
+      },
+      "mechanismAudit": [
+        {
+          "mechanismId": "ME-15",
+          "fit": "not_equivalent_without_seal",
+          "limit": "Vazão de fuga interna por folgas não implica necessariamente falha de vedação física."
+        },
+        {
+          "mechanismId": "ME-01",
+          "fit": "possible_causal_wear_only",
+          "limit": "Desgaste abrasivo requer partículas e dano demonstrado, não pressão baixa isolada."
+        },
+        {
+          "mechanismId": "ME-02",
+          "fit": "possible_causal_wear_only",
+          "limit": "Desgaste adesivo requer observação de transferência ou dano das superfícies."
+        }
+      ],
+      "ontologyGap": {
+        "label": "Perda volumétrica interna por folgas na bomba hidráulica",
+        "conceptId": null,
+        "status": "needs_ontology_definition",
+        "rationale": "ME-15 pressupõe falha de vedação e ME-01/02 nomeiam causas de desgaste; nenhum representa inequivocamente vazamento interno por folgas."
+      },
+      "coreOverlaps": [
+        {
+          "coreId": "FC-COOL-007",
+          "relation": "shared_performance_failure_different_system",
+          "distinction": "Bomba de circulação de água não é bomba de pistões hidráulicos; critérios, fluido e circuito diferentes."
+        }
+      ],
+      "possibleEffects": {
+        "local": "Vazão útil potencialmente inferior ao requisito sob carga e comando corretamente identificados.",
+        "system": "A função dos implementos pode ficar lenta ou insuficiente, mas também por válvula, sucção, comando ou óleo.",
+        "status": "possible_unobserved",
+        "severity": null,
+        "probability": null
+      },
+      "alternativeExplanation": "Sensor, compensador, válvula, restrição de sucção ou temperatura podem produzir o sintoma sem fuga interna na bomba.",
+      "auditFinding": "FF-02 é plausível; falta conceito inequívoco de perda volumétrica interna na ontologia; não usar FF-08 nem ME-15 por conveniência.",
+      "disposition": "hold_for_mechanism_definition_and_oem_review",
+      "requiredBeforePromotion": [
+        "Definir a fronteira ontológica entre folga interna, desgaste causal e falha de vedação sem atribuir ME-15 automaticamente.",
+        "Conferir arranjo OEM, pontos e curvas de medição de vazão/pressão com instrumento calibrado.",
+        "Excluir válvula, compensador, comando e sucção por ensaios independentes antes de atribuir falha à bomba."
+      ],
+      "approvedCoreId": null,
+      "approvedSapLocation": null,
+      "applicableSerial": null,
+      "observedEffect": null,
+      "reviewerTechnical": null,
+      "reviewerIndependent": null,
+      "reviewDecision": null,
+      "confirmedRootCause": false
+    },
+    {
+      "proposalId": "CAND-FD-GEAR-TOOTH-001",
+      "originPlaybookId": "PB-TRUCK-FINAL-01",
+      "originHypothesisId": "H2",
+      "sourceProposalVersion": "1.3.20",
+      "originalMechanismText": "Deterioração superficial dos flancos pode resultar de fadiga de contato, desgaste abrasivo ou adesivo; mecanismo específico depende da morfologia real.",
+      "originalFunctionText": "Transmitir torque pelo engrenamento de dentes mantendo integridade superficial e geometria de contato",
+      "functionAudit": {
+        "existingFunctionalFailureId": "FF-02",
+        "criterionFromOntology": "Função entregue abaixo do requisito mensurável",
+        "rationale": "Dano de superfície em dentes pode degradar transmissão de torque; FF-09 exigiria perda estrutural demonstrada por inspeção específica.",
+        "classification": "proposed_not_verified"
+      },
+      "mechanismAudit": [
+        {
+          "mechanismId": "ME-03",
+          "fit": "separate_contact_fatigue_submode",
+          "limit": "Pitting/spalling em flanco exigem morfologia de fadiga de contato."
+        },
+        {
+          "mechanismId": "ME-01",
+          "fit": "separate_abrasive_submode",
+          "limit": "Desgaste abrasivo por contaminantes não é automaticamente fadiga."
+        },
+        {
+          "mechanismId": "ME-02",
+          "fit": "separate_adhesive_submode",
+          "limit": "Adesão ou transferência de material exigem prova distinta."
+        }
+      ],
+      "ontologyGap": null,
+      "coreOverlaps": [
+        {
+          "coreId": "FC-FD-001",
+          "relation": "abrasion_overlap_but_component_unspecified",
+          "distinction": "Cadeia de partículas abrange rolamentos e engrenagens; nova hipótese só se justifica com dano localizado nos dentes."
+        },
+        {
+          "coreId": "FC-FD-003",
+          "relation": "lubrication_mechanism_overlap",
+          "distinction": "Filme inadequado pode explicar vários danos; não equivale à morfologia de engrenamento."
+        },
+        {
+          "coreId": "FC-FD-004",
+          "relation": "same_contact_fatigue_different_component",
+          "distinction": "Descascamento de rolamento não demonstra descascamento em flanco de engrenagem."
+        }
+      ],
+      "possibleEffects": {
+        "local": "Deterioração dos flancos pode gerar vibração, ruído ou partículas; a extensão permanece desconhecida.",
+        "system": "A degradação pode comprometer o torque do comando final, somente se danos progredirem sob carga real.",
+        "status": "possible_unobserved",
+        "severity": null,
+        "probability": null
+      },
+      "alternativeExplanation": "Partículas e ruído podem partir do rolamento, ou refletir contaminação e mudança de formulação do óleo.",
+      "auditFinding": "Uma única proposta agrega três mecanismos diferentes; desdobrar em hipóteses de dano ao dente antes de qualquer novo identificador FC.",
+      "disposition": "hold_for_split_gear_mechanisms_and_oem",
+      "requiredBeforePromotion": [
+        "Separar fadiga, abrasão e adesão em submodos de engrenagem, sem criar um FC que misture etiologias.",
+        "Identificar conjunto, engrenagens e configuração CAT 777 pela documentação OEM e a origem das partículas.",
+        "Inspecionar morfologia dos flancos e correlacionar laudo, histórico e parecer independente."
+      ],
+      "approvedCoreId": null,
+      "approvedSapLocation": null,
+      "applicableSerial": null,
+      "observedEffect": null,
+      "reviewerTechnical": null,
+      "reviewerIndependent": null,
+      "reviewDecision": null,
+      "confirmedRootCause": false
+    }
+  ]
+}
