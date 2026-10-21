@@ -1,0 +1,133 @@
+{
+  "schema": "fmea-mining.staging-result-exception-workflow.v1",
+  "version": "1.3.28",
+  "kind": "public_synthetic_exception_workflow_no_private_case_storage",
+  "sourceReceiptContract": "data/governance/private-result-custody-contract.v1.json",
+  "sourceStagingPlan": "data/governance/staging-acceptance-plan.v1.json",
+  "sourceIntegrationContract": "data/governance/staging-integration-contract.v1.json",
+  "classification": {
+    "control_failure": {
+      "initialOutcome": "fail",
+      "meaning": "Failed staging control, not physical equipment failure"
+    },
+    "inconclusive_evidence": {
+      "initialOutcome": "inconclusive",
+      "meaning": "Insufficient discrimination, not an approved pass"
+    },
+    "verifier_infrastructure_error": {
+      "initialOutcome": "blocked",
+      "meaning": "Infrastructure or verifier problem, not proof of equipment cause"
+    }
+  },
+  "roles": [
+    "originator",
+    "technical_reviewer",
+    "custodian",
+    "independent_reviewer"
+  ],
+  "states": [
+    "triage_open",
+    "clarification_requested",
+    "clarification_received",
+    "retest_requested",
+    "retest_received",
+    "independent_review_pending",
+    "closed_blocked",
+    "closed_inconclusive",
+    "retest_passed_needs_manual_security_review"
+  ],
+  "transitions": [
+    {
+      "action": "open_triage",
+      "from": null,
+      "to": "triage_open",
+      "role": "originator"
+    },
+    {
+      "action": "request_clarification",
+      "from": "triage_open",
+      "to": "clarification_requested",
+      "role": "technical_reviewer"
+    },
+    {
+      "action": "receive_clarification",
+      "from": "clarification_requested",
+      "to": "clarification_received",
+      "role": "originator"
+    },
+    {
+      "action": "order_retest",
+      "from": "clarification_received",
+      "to": "retest_requested",
+      "role": "technical_reviewer"
+    },
+    {
+      "action": "receive_retest",
+      "from": "retest_requested",
+      "to": "retest_received",
+      "role": "custodian"
+    },
+    {
+      "action": "request_independent_review",
+      "from": "retest_received",
+      "to": "independent_review_pending",
+      "role": "technical_reviewer"
+    },
+    {
+      "action": "conclude_review",
+      "from": "independent_review_pending",
+      "to": "derived_from_retest",
+      "role": "independent_reviewer"
+    }
+  ],
+  "allowedRetestOutcomes": [
+    "pass",
+    "fail",
+    "inconclusive"
+  ],
+  "resolutionByRetest": {
+    "pass": "retest_passed_needs_manual_security_review",
+    "fail": "closed_blocked",
+    "inconclusive": "closed_inconclusive"
+  },
+  "resolutionCodes": {
+    "pass": "retest_passed_requires_manual_security_gate",
+    "fail": "control_not_remediated",
+    "inconclusive": "insufficient_discriminating_evidence"
+  },
+  "restrictions": {
+    "syntheticOnlyInPublic": true,
+    "noRealEvidenceInPublic": true,
+    "noAutomaticSecurityApproval": true,
+    "noMechanicalRootCause": true,
+    "noFmeaPromotion": true,
+    "noSapAction": true,
+    "noPublicRelease": true,
+    "noOperationalRelease": true,
+    "distinctRetestRun": true,
+    "independentReviewerDistinct": true,
+    "clarificationMandatory": true,
+    "appendOnlyInProduction": true
+  },
+  "ledger": {
+    "format": "sha256_offline_demonstration",
+    "syntheticPrefix": "TEST-",
+    "externalAnchorRequired": true,
+    "realImmutabilityProvided": false,
+    "realIdentityVerified": false,
+    "realReplayPreventionProvided": false,
+    "realStorageProvided": false
+  },
+  "evidenceRequired": [
+    "initial_run",
+    "clarification",
+    "retest_result",
+    "independent_decision"
+  ],
+  "realCases": 0,
+  "realCorporateReviews": 0,
+  "realSecurityApprovals": 0,
+  "confirmedMechanicalCauses": 0,
+  "coreChainsUnchanged": 24,
+  "ontologyMechanismsUnchanged": 15
+}
