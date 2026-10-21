@@ -1,0 +1,406 @@
+{
+  "schema": "fmea-mining.playbook-causal-crosswalk.v1",
+  "version": "1.3.19",
+  "nature": "editorial_candidate_mapping_not_sap_or_oem_approved",
+  "sourceDeepDive": "data/quality/playbook-deepdives-remaining.v1.json",
+  "counts": {
+    "playbookHypothesesReviewed": 18,
+    "hypothesesWithCandidates": 13,
+    "hypothesesWithoutEquivalent": 5,
+    "candidateLinks": 18,
+    "confirmedMappings": 0
+  },
+  "records": [
+    {
+      "id": "XW-PB-EXC-PUMP-01-H1",
+      "playbookId": "PB-EXC-PUMP-01",
+      "hypothesisId": "H1",
+      "hypothesisLabel": "Vazamento externo em vedação da bomba",
+      "deepDiveId": "DEEP-EXC395-PUMP-001",
+      "candidates": [],
+      "assessment": "sem_cadeia_equivalente_demonstrada",
+      "confirmedMapping": false,
+      "approvedSerialOrArrangement": null,
+      "approvedSapLocation": null,
+      "independentReviewStatus": "pendente",
+      "observedCase": null,
+      "unmappedRationale": "O catálogo de 24 cadeias não cobre mecanismo específico de vedação ou eficiência de bomba hidráulica; vedação de bomba d’água não é equivalente."
+    },
+    {
+      "id": "XW-PB-EXC-PUMP-01-H2",
+      "playbookId": "PB-EXC-PUMP-01",
+      "hypothesisId": "H2",
+      "hypothesisLabel": "Vazamento de linha ou conexão próximo à bomba",
+      "deepDiveId": "DEEP-EXC395-PUMP-001",
+      "candidates": [
+        {
+          "chainId": "FC-HOSE-003",
+          "relationship": "candidate_mechanism_overlap_only",
+          "mechanicalBasis": "Fuga em interface mangueira–terminal é mecanismo concorrente quando a conexão adjacente for identificada como parte da linha suspeita.",
+          "applicabilityLimitation": "Não comprova que uma mangueira específica da CAT 395 esteja instalada junto à bomba nem uma fuga física."
+        }
+      ],
+      "assessment": "candidatos_conceituais_nao_aprovados",
+      "confirmedMapping": false,
+      "approvedSerialOrArrangement": null,
+      "approvedSapLocation": null,
+      "independentReviewStatus": "pendente",
+      "observedCase": null,
+      "unmappedRationale": null
+    },
+    {
+      "id": "XW-PB-EXC-PUMP-01-H3",
+      "playbookId": "PB-EXC-PUMP-01",
+      "hypothesisId": "H3",
+      "hypothesisLabel": "Limitação de desempenho sem vazamento físico confirmado",
+      "deepDiveId": "DEEP-EXC395-PUMP-001",
+      "candidates": [],
+      "assessment": "sem_cadeia_equivalente_demonstrada",
+      "confirmedMapping": false,
+      "approvedSerialOrArrangement": null,
+      "approvedSapLocation": null,
+      "independentReviewStatus": "pendente",
+      "observedCase": null,
+      "unmappedRationale": "O catálogo de 24 cadeias não cobre mecanismo específico de vedação ou eficiência de bomba hidráulica; vedação de bomba d’água não é equivalente."
+    },
+    {
+      "id": "XW-PB-EXC-HOSE-01-H1",
+      "playbookId": "PB-EXC-HOSE-01",
+      "hypothesisId": "H1",
+      "hypothesisLabel": "Vazamento em interface de vedação ou conexão",
+      "deepDiveId": "DEEP-EXC395-HOSE-001",
+      "candidates": [
+        {
+          "chainId": "FC-HOSE-003",
+          "relationship": "candidate_mechanism_overlap_only",
+          "mechanicalBasis": "Perda pela interface mangueira–terminal coincide conceitualmente com vazamento de conexão do playbook.",
+          "applicabilityLimitation": "Não presume terminal efetivo, montagem, PN nem ponto real da fuga."
+        }
+      ],
+      "assessment": "candidatos_conceituais_nao_aprovados",
+      "confirmedMapping": false,
+      "approvedSerialOrArrangement": null,
+      "approvedSapLocation": null,
+      "independentReviewStatus": "pendente",
+      "observedCase": null,
+      "unmappedRationale": null
+    },
+    {
+      "id": "XW-PB-EXC-HOSE-01-H2",
+      "playbookId": "PB-EXC-HOSE-01",
+      "hypothesisId": "H2",
+      "hypothesisLabel": "Deterioração da mangueira por abrasão externa",
+      "deepDiveId": "DEEP-EXC395-HOSE-001",
+      "candidates": [
+        {
+          "chainId": "FC-HOSE-001",
+          "relationship": "candidate_mechanism_overlap_only",
+          "mechanicalBasis": "Abrasão externa e possível perda de contenção são explicitamente o mecanismo catalogado na cadeia de mangueira.",
+          "applicabilityLimitation": "Contato visual e óleo superficial não demonstram perfuração ou falha funcional."
+        }
+      ],
+      "assessment": "candidatos_conceituais_nao_aprovados",
+      "confirmedMapping": false,
+      "approvedSerialOrArrangement": null,
+      "approvedSapLocation": null,
+      "independentReviewStatus": "pendente",
+      "observedCase": null,
+      "unmappedRationale": null
+    },
+    {
+      "id": "XW-PB-EXC-HOSE-01-H3",
+      "playbookId": "PB-EXC-HOSE-01",
+      "hypothesisId": "H3",
+      "hypothesisLabel": "Óleo proveniente de outro ponto e transportado por gravidade",
+      "deepDiveId": "DEEP-EXC395-HOSE-001",
+      "candidates": [],
+      "assessment": "sem_cadeia_equivalente_demonstrada",
+      "confirmedMapping": false,
+      "approvedSerialOrArrangement": null,
+      "approvedSapLocation": null,
+      "independentReviewStatus": "pendente",
+      "observedCase": null,
+      "unmappedRationale": "Óleo proveniente de peça situada acima é hipótese de localização, não modo de falha definido para a mangueira."
+    },
+    {
+      "id": "XW-PB-SHOVEL-COOL-01-H1",
+      "playbookId": "PB-SHOVEL-COOL-01",
+      "hypothesisId": "H1",
+      "hypothesisLabel": "Fluxo de ar restringido na colmeia ou pacote de radiadores",
+      "deepDiveId": "DEEP-CAT6030-COOL-001",
+      "candidates": [
+        {
+          "chainId": "FC-COOL-001",
+          "relationship": "candidate_mechanism_overlap_only",
+          "mechanicalBasis": "Depósito externo que restringe passagem de ar pela colmeia coincide com mecanismo de dissipação térmica.",
+          "applicabilityLimitation": "Sem efetividade para a arquitetura CAT 6030 ou medida de vazão térmica."
+        }
+      ],
+      "assessment": "candidatos_conceituais_nao_aprovados",
+      "confirmedMapping": false,
+      "approvedSerialOrArrangement": null,
+      "approvedSapLocation": null,
+      "independentReviewStatus": "pendente",
+      "observedCase": null,
+      "unmappedRationale": null
+    },
+    {
+      "id": "XW-PB-SHOVEL-COOL-01-H2",
+      "playbookId": "PB-SHOVEL-COOL-01",
+      "hypothesisId": "H2",
+      "hypothesisLabel": "Perda de fluido do circuito de arrefecimento",
+      "deepDiveId": "DEEP-CAT6030-COOL-001",
+      "candidates": [
+        {
+          "chainId": "FC-COOL-002",
+          "relationship": "candidate_mechanism_overlap_only",
+          "mechanicalBasis": "Perda externa por mangueira ou conexão no arrefecimento coincide com condição funcional catalogada.",
+          "applicabilityLimitation": "Nível baixo não localiza fuga nem confirma componente."
+        }
+      ],
+      "assessment": "candidatos_conceituais_nao_aprovados",
+      "confirmedMapping": false,
+      "approvedSerialOrArrangement": null,
+      "approvedSapLocation": null,
+      "independentReviewStatus": "pendente",
+      "observedCase": null,
+      "unmappedRationale": null
+    },
+    {
+      "id": "XW-PB-SHOVEL-COOL-01-H3",
+      "playbookId": "PB-SHOVEL-COOL-01",
+      "hypothesisId": "H3",
+      "hypothesisLabel": "Ventilação insuficiente por anomalia de ventilador/acionamento",
+      "deepDiveId": "DEEP-CAT6030-COOL-001",
+      "candidates": [
+        {
+          "chainId": "FC-COOL-003",
+          "relationship": "candidate_mechanism_overlap_only",
+          "mechanicalBasis": "Ventilação deficiente quando demandada coincide com hipótese de falha de acionamento ventilador.",
+          "applicabilityLimitation": "Ventilador, arquitetura e canais de comando dependem da série efetiva."
+        }
+      ],
+      "assessment": "candidatos_conceituais_nao_aprovados",
+      "confirmedMapping": false,
+      "approvedSerialOrArrangement": null,
+      "approvedSapLocation": null,
+      "independentReviewStatus": "pendente",
+      "observedCase": null,
+      "unmappedRationale": null
+    },
+    {
+      "id": "XW-PB-TRUCK-FINAL-01-H1",
+      "playbookId": "PB-TRUCK-FINAL-01",
+      "hypothesisId": "H1",
+      "hypothesisLabel": "Deterioração de rolamento em comando final",
+      "deepDiveId": "DEEP-CAT777-FINAL-001",
+      "candidates": [
+        {
+          "chainId": "FC-FD-004",
+          "relationship": "candidate_mechanism_overlap_only",
+          "mechanicalBasis": "Spalling e desgaste de contato em rolamentos são mecanismos candidatos para deterioração de rolamento.",
+          "applicabilityLimitation": "Ruído e metal em óleo não localizam dano no rolamento do comando final específico."
+        }
+      ],
+      "assessment": "candidatos_conceituais_nao_aprovados",
+      "confirmedMapping": false,
+      "approvedSerialOrArrangement": null,
+      "approvedSapLocation": null,
+      "independentReviewStatus": "pendente",
+      "observedCase": null,
+      "unmappedRationale": null
+    },
+    {
+      "id": "XW-PB-TRUCK-FINAL-01-H2",
+      "playbookId": "PB-TRUCK-FINAL-01",
+      "hypothesisId": "H2",
+      "hypothesisLabel": "Desgaste de engrenagens do comando final",
+      "deepDiveId": "DEEP-CAT777-FINAL-001",
+      "candidates": [],
+      "assessment": "sem_cadeia_equivalente_demonstrada",
+      "confirmedMapping": false,
+      "approvedSerialOrArrangement": null,
+      "approvedSapLocation": null,
+      "independentReviewStatus": "pendente",
+      "observedCase": null,
+      "unmappedRationale": "Cadeias disponíveis descrevem desgaste ou ingresso com dano possível; esta hipótese não demonstra o mecanismo e exige nova curadoria."
+    },
+    {
+      "id": "XW-PB-TRUCK-FINAL-01-H3",
+      "playbookId": "PB-TRUCK-FINAL-01",
+      "hypothesisId": "H3",
+      "hypothesisLabel": "Contaminação ou lubrificante não conforme sem falha mecânica confirmada",
+      "deepDiveId": "DEEP-CAT777-FINAL-001",
+      "candidates": [],
+      "assessment": "sem_cadeia_equivalente_demonstrada",
+      "confirmedMapping": false,
+      "approvedSerialOrArrangement": null,
+      "approvedSapLocation": null,
+      "independentReviewStatus": "pendente",
+      "observedCase": null,
+      "unmappedRationale": "Cadeias disponíveis descrevem desgaste ou ingresso com dano possível; esta hipótese não demonstra o mecanismo e exige nova curadoria."
+    },
+    {
+      "id": "XW-PB-DOZER-TRACK-01-H1",
+      "playbookId": "PB-DOZER-TRACK-01",
+      "hypothesisId": "H1",
+      "hypothesisLabel": "Rolete com dano ou restrição de rotação",
+      "deepDiveId": "DEEP-CATD9-TRACK-001",
+      "candidates": [
+        {
+          "chainId": "FC-TRACK-001",
+          "relationship": "candidate_mechanism_overlap_only",
+          "mechanicalBasis": "Arrasto de rolete por detritos é subconjunto possível da hipótese de rolete com rotação restrita.",
+          "applicabilityLimitation": "A H1 mais ampla também admite vedação e dano interno não cobertos por essa cadeia."
+        },
+        {
+          "chainId": "FC-TRACK-002",
+          "relationship": "candidate_mechanism_overlap_only",
+          "mechanicalBasis": "Perda de estanqueidade do rolete e lubrificação degradada é outra parte possível de H1.",
+          "applicabilityLimitation": "Não confirma a vedação, lubrificante ou condição de operação da máquina D9."
+        }
+      ],
+      "assessment": "candidatos_conceituais_nao_aprovados",
+      "confirmedMapping": false,
+      "approvedSerialOrArrangement": null,
+      "approvedSapLocation": null,
+      "independentReviewStatus": "pendente",
+      "observedCase": null,
+      "unmappedRationale": null
+    },
+    {
+      "id": "XW-PB-DOZER-TRACK-01-H2",
+      "playbookId": "PB-DOZER-TRACK-01",
+      "hypothesisId": "H2",
+      "hypothesisLabel": "Roda-guia desgastada ou desalinhada",
+      "deepDiveId": "DEEP-CATD9-TRACK-001",
+      "candidates": [
+        {
+          "chainId": "FC-TRACK-003",
+          "relationship": "candidate_mechanism_overlap_only",
+          "mechanicalBasis": "Desgaste geométrico e esforço lateral de roda-guia coincidem com o modo cadastrado.",
+          "applicabilityLimitation": "Requer CTS e medição efetiva por arranjo, não apenas inspeção visual."
+        }
+      ],
+      "assessment": "candidatos_conceituais_nao_aprovados",
+      "confirmedMapping": false,
+      "approvedSerialOrArrangement": null,
+      "approvedSapLocation": null,
+      "independentReviewStatus": "pendente",
+      "observedCase": null,
+      "unmappedRationale": null
+    },
+    {
+      "id": "XW-PB-DOZER-TRACK-01-H3",
+      "playbookId": "PB-DOZER-TRACK-01",
+      "hypothesisId": "H3",
+      "hypothesisLabel": "Tensão/ajuste ou fixação inadequados da esteira",
+      "deepDiveId": "DEEP-CATD9-TRACK-001",
+      "candidates": [
+        {
+          "chainId": "FC-TRACK-004",
+          "relationship": "candidate_mechanism_overlap_only",
+          "mechanicalBasis": "Tensão fora de referência pode elevar esforços e desregular o guiamento da esteira.",
+          "applicabilityLimitation": "A categoria fixação da H3 não equivale automaticamente a tensão fora de faixa."
+        },
+        {
+          "chainId": "FC-TRACK-005",
+          "relationship": "candidate_mechanism_overlap_only",
+          "mechanicalBasis": "Afrouxamento rotacional de sapata cobre somente uma das causas possíveis de fixação da H3.",
+          "applicabilityLimitation": "Não provar rotação por folga, nem aplicar torque sem documentação específica."
+        },
+        {
+          "chainId": "FC-TRACK-006",
+          "relationship": "candidate_mechanism_overlap_only",
+          "mechanicalBasis": "Perda de pré-carga por assentamento cobre alternativa à rotação dos fixadores de sapata.",
+          "applicabilityLimitation": "Não atribuir relaxação nem erro de montagem sem observação de pré-carga ou deslocamento."
+        }
+      ],
+      "assessment": "candidatos_conceituais_nao_aprovados",
+      "confirmedMapping": false,
+      "approvedSerialOrArrangement": null,
+      "approvedSapLocation": null,
+      "independentReviewStatus": "pendente",
+      "observedCase": null,
+      "unmappedRationale": null
+    },
+    {
+      "id": "XW-PB-LOADER-RADIATOR-01-H1",
+      "playbookId": "PB-LOADER-RADIATOR-01",
+      "hypothesisId": "H1",
+      "hypothesisLabel": "Colmeia/pacote de radiadores obstruído externamente",
+      "deepDiveId": "DEEP-CAT980-RADIATOR-001",
+      "candidates": [
+        {
+          "chainId": "FC-COOL-001",
+          "relationship": "candidate_mechanism_overlap_only",
+          "mechanicalBasis": "Obstrução externa por detritos da passagem de ar é o mecanismo básico da H1.",
+          "applicabilityLimitation": "Não fornece extensão da obstrução ou capacidade térmica da CAT 980."
+        }
+      ],
+      "assessment": "candidatos_conceituais_nao_aprovados",
+      "confirmedMapping": false,
+      "approvedSerialOrArrangement": null,
+      "approvedSapLocation": null,
+      "independentReviewStatus": "pendente",
+      "observedCase": null,
+      "unmappedRationale": null
+    },
+    {
+      "id": "XW-PB-LOADER-RADIATOR-01-H2",
+      "playbookId": "PB-LOADER-RADIATOR-01",
+      "hypothesisId": "H2",
+      "hypothesisLabel": "Perda de líquido por mangueira ou interface",
+      "deepDiveId": "DEEP-CAT980-RADIATOR-001",
+      "candidates": [
+        {
+          "chainId": "FC-COOL-002",
+          "relationship": "candidate_mechanism_overlap_only",
+          "mechanicalBasis": "Perda externa de líquido no circuito de arrefecimento é candidata para H2.",
+          "applicabilityLimitation": "Não comprova que a mangueira e a interface estejam avariadas."
+        }
+      ],
+      "assessment": "candidatos_conceituais_nao_aprovados",
+      "confirmedMapping": false,
+      "approvedSerialOrArrangement": null,
+      "approvedSapLocation": null,
+      "independentReviewStatus": "pendente",
+      "observedCase": null,
+      "unmappedRationale": null
+    },
+    {
+      "id": "XW-PB-LOADER-RADIATOR-01-H3",
+      "playbookId": "PB-LOADER-RADIATOR-01",
+      "hypothesisId": "H3",
+      "hypothesisLabel": "Outras causas do controle térmico (termostato, bomba, ventilação)",
+      "deepDiveId": "DEEP-CAT980-RADIATOR-001",
+      "candidates": [
+        {
+          "chainId": "FC-COOL-003",
+          "relationship": "candidate_mechanism_overlap_only",
+          "mechanicalBasis": "Ventilação insuficiente representa um subconjunto da hipótese múltipla H3.",
+          "applicabilityLimitation": "H3 agrega também bomba e termostato; não reduzir o conjunto à ventilação."
+        },
+        {
+          "chainId": "FC-COOL-005",
+          "relationship": "candidate_mechanism_overlap_only",
+          "mechanicalBasis": "Termostato restringindo passagem ao radiador representa outro subconjunto de H3.",
+          "applicabilityLimitation": "Abertura depende da referência OEM da CAT 980 efetivamente instalada."
+        },
+        {
+          "chainId": "FC-COOL-007",
+          "relationship": "candidate_mechanism_overlap_only",
+          "mechanicalBasis": "Circulação hidráulica insuficiente pela bomba representa outro subconjunto da H3.",
+          "applicabilityLimitation": "Temperatura elevada por si só não demonstra falha de bomba."
+        }
+      ],
+      "assessment": "candidatos_conceituais_nao_aprovados",
+      "confirmedMapping": false,
+      "approvedSerialOrArrangement": null,
+      "approvedSapLocation": null,
+      "independentReviewStatus": "pendente",
+      "observedCase": null,
+      "unmappedRationale": null
+    }
+  ]
+}
