@@ -41,7 +41,7 @@ const findings=FILTER_RULE_IDS.map(id=>{
  return f;
 });
 const mk=(model,root,group,sub,object)=>({profundidade:3,modelo:model,sistema:{codigo:root},grupo:{codigo:group},subgrupo:{codigo:sub},objetoTipoSAP:object,id:sub+'-'+model});
-const fake={locations:[
+const fake={compatibleFailureModesByPart:{'SYNTH-1':{damageCauses:{'03.02':['C2.09']}}},locations:[
  mk('A','ENSY','FUSY','FIL1','O-FILT'),
  mk('A','ENSY','FUSY','HSVV','O-HOSE'),
  mk('A','ENSY','COSY','FIL2','O-FILT'),
@@ -54,10 +54,11 @@ const fake={locations:[
  'O-HOSE':[{code:'SYNTH-2',pt:'Mangueira'}],
  'O-SEP':[{code:'SYNTH-3',pt:'Separador'}]
 }};
-const fr={id:'fuel-filter-contamination',system:'combustivel',models:['A'],subgroupCode:'HSVV'};
-const cr={id:'drill-compressor-filter',system:'ar_comprimido',models:['A'],subgroupCode:'COMR'};
+const fr={id:'fuel-filter-contamination',system:'combustivel',models:['A'],subgroupCode:'HSVV',damageId:'03.02',causeId:'C2.09'};
+const cr={id:'drill-compressor-filter',system:'ar_comprimido',models:['A'],subgroupCode:'COMR',damageId:'03.02',causeId:'C2.09'};
 const fuel=discoverFiltration(fake,fr),comp=discoverFiltration(fake,cr);
 require(fuel.totals.withFilterTextInObjectType===2,'wrong_fuel_candidate_count');
+require(fuel.totals.damageCauseCompatibleDescriptions===1&&comp.totals.damageCauseCompatibleDescriptions===1,'compatible_pairs_not_reconciled');
 require(fuel.candidates.every(x=>x.groupCode==='FUSY'&&x.models.length===1&&x.models[0]==='A'),'wrong_fuel_group_or_model');
 require(fuel.candidates.some(x=>x.subgroupCode==='FIL1')&&fuel.candidates.some(x=>x.subgroupCode==='FIL4'),'missing_filter_or_separator_discovery');
 require(comp.candidates.length===1&&comp.candidates[0].subgroupCode==='C-FILT','wrong_compressor_hierarchy');
@@ -85,6 +86,6 @@ fs.mkdirSync(path.join(base,'reports'),{recursive:true});
 fs.writeFileSync(path.join(base,'reports/pm-filtration-discovery.generated.json'),JSON.stringify(result,null,2)+'\n');
 console.log(JSON.stringify({status:errors.length?'FAIL':'OK',counts:result.counts,
  findings:findings.map(f=>({ruleId:f.ruleId,candidates:f.candidates.map(c=>({systemCode:c.systemCode,groupCode:c.groupCode,
- subgroupCode:c.subgroupCode,models:c.models,leafPaths:c.eligibleLeafPaths,descriptorClasses:c.descriptorClasses})),
+ subgroupCode:c.subgroupCode,models:c.models,leafPaths:c.eligibleLeafPaths,compatibleDamageCauseDescriptions:c.damageCauseCompatibleDescriptions,descriptorClasses:c.descriptorClasses})),
  totals:f.totals})),errors},null,2));
 process.exit(errors.length?1:0);
