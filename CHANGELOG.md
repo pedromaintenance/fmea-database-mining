@@ -2,6 +2,15 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.36] — 2026-10-21 — Triagem estrutural de filtragem FUSY e COMR
+
+- Implementada varredura real dos locais de 3º nível e componentes por tipo de objeto em `scripts/pm-filtration-scan.mjs`, preservando modelo, raiz e grupo, para detectar descrições de filtro/separador fora do subgrupo original **sem gerar vínculo**.
+- **Combustível:** 307 caminhos elegíveis por modelo, 16 no grupo FUSY, **0 componentes com descrição de filtragem**, nenhuma indicação de mapeamento aprovado.
+- **Compressor:** 94 caminhos por modelo, 12 em AISY/COMR; caminho candidato **VPAR** em EQ05/EQ06, com 4 ocorrências de descrição de filtragem/separação e 2 ocorrências de compatibilidade de código dano/causa. As contagens não representam peças instaladas ou estados de falha.
+- Catalogadas quatro fontes públicas primárias Cat/Sandvik; evitada interpretação indevida da atualização de **módulo de bombas** como mudança no compressor de ar.
+- Adicionado auditor `pm:filtration:audit` com provas de limite de evidência, testes de filtragem por grupo e verificações adversariais, executado no CI.
+- Dez exceções PM-SAP permanecem bloqueadas. Inalterados 115 vínculos candidatos, 24 FC / 15 ME, contrato e conteúdo públicos 1.0.0, preview 1.3.12 e consumidores.
+
 ## [1.3.35] — 2026-10-21 — Fronteiras de classificação HSVV e COMR
 
 - Centralizada na geração PM a verificação de modelo, nível de local funcional, sistema/grupo e subgrupo, sem promover grupo a subgrupo.

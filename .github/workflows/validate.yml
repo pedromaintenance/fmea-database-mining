@@ -38,6 +38,8 @@ jobs:
         run: npm run pm:gaps:audit
       - name: Auditar fronteiras HSVV COMR e 23 regressões PM
         run: npm run pm:boundaries:audit
+      - name: Identificar candidatos de filtragem por funcao sem homologar SAP OEM
+        run: npm run pm:filtration:audit
       - name: Validar 10 bloqueios PM e 7 requisitos de efetividade OEM D9
         run: npm run pm:exceptions:validate
       - name: Gerar vínculos diagnósticos por modelo
@@ -128,6 +130,7 @@ jobs:
             reports/causal-sap-audit.generated.json
             reports/pm-gap-audit.generated.json
             reports/pm-functional-boundaries.generated.json
+            reports/pm-filtration-discovery.generated.json
             reports/public-knowledge.v1.json
             reports/public-manifest.v1.json
             data/governance/public-content-releases.v1.json
