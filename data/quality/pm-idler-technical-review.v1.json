@@ -1,0 +1,122 @@
+{
+  "schema": "fmea-mining.pm-idler-technical-review.v1",
+  "version": "1.3.41",
+  "reviewNature": "catalogue_and_oem_general_technical_requirements_not_real_inspection",
+  "target": {
+    "ruleId": "track-idler-wear",
+    "subgroup": "IDLE",
+    "system": "rodante",
+    "damageId": "02.01",
+    "causeId": "C1.04",
+    "requestedPartText": "Rolamento"
+  },
+  "sourceIds": [
+    "CAT-MINING-UC-WEAR-MANAGEMENT",
+    "CAT-CTS-UNDERCARRIAGE",
+    "CAT-DOZER-UC-MAINT",
+    "SAP-FUNCTIONAL-LOCATION-STRUCTURE"
+  ],
+  "differentialModes": [
+    {
+      "id": "external_idler_tread_wear",
+      "component": "roda_guia_superficie_externa",
+      "condition": "Desgaste dimensional, ressalto ou contato irregular na pista da roda-guia",
+      "question": "A geometria do aro/roda-guia excede o critério CTS específico por posição e sistema de rodante?",
+      "alternative": "Contato, tensão da esteira, alinhamento, posição e material abrasivo podem alterar padrões sem rolamento interno defeituoso",
+      "verification": "Medição CTS/OMM aplicável com identificação de modelo, posição lado, série, perfil e referência"
+    },
+    {
+      "id": "internal_idler_support",
+      "component": "elemento_interno_do_apoio",
+      "condition": "Suspeita de comprometimento do apoio interno, não equivalente a desgaste externo",
+      "question": "Existe rolamento ou bucha reparável nesta configuração, ou apenas conjunto fechado de roda-guia?",
+      "alternative": "Resistência ao giro ou ruído pode resultar de detritos, contato externo, tensão ou interface do conjunto",
+      "verification": "Desenho OEM efetivo, BOM por série e ensaio independente do conjunto conforme procedimento autorizado"
+    },
+    {
+      "id": "idler_seal_integrity",
+      "component": "vedacao_roda_guia",
+      "condition": "Vestígio de óleo ou suspeita de perda de estanqueidade na roda-guia",
+      "question": "A vedação é fisicamente identificada na roda-guia e a origem da fuga foi localizada?",
+      "alternative": "Fluido migrado de outros pontos e sujeira úmida podem produzir aparência de fuga sem avaria da vedação da roda-guia",
+      "verification": "Identificação do conjunto e inspeção segura da origem, vedação e lubrificação sob referência OEM"
+    },
+    {
+      "id": "undercarriage_kinematic_misalignment",
+      "component": "conjunto_rodante_tensionamento",
+      "condition": "Padrão de guiamento irregular ou desgaste assimétrico",
+      "question": "A configuração do tensionamento, alinhamento e detritos explica o padrão antes de atribuir falha interna?",
+      "alternative": "A própria banda externa ou uma interferência no guiamento pode gerar desgaste e calor sem falha de apoio",
+      "verification": "Inspeção de posição, tensão, alinhamento, detritos e desgaste em referência OMM/CTS efetiva"
+    }
+  ],
+  "crossComponentOntologyRefs": [
+    {
+      "refId": "COND-TRACK-ROLLER-HEAT",
+      "owner": "rolete",
+      "usedInRule": "track-idler-wear",
+      "risk": "Aquecimento em rolete não demonstra aquecimento localizado na roda-guia nem rolamento interno da roda-guia danificado",
+      "decision": "reference_only_not_idler_observation"
+    },
+    {
+      "refId": "ACT-TRACK-ROLLER-SEAL-CHECK",
+      "owner": "rolete",
+      "usedInRule": "track-idler-wear",
+      "risk": "Inspeção de vedação do rolete não substitui inspeção efetiva de vedação da roda-guia",
+      "decision": "review_action_scope_before_training_or_execution"
+    }
+  ],
+  "necessaryEvidence": [
+    {
+      "id": "cts_measurement",
+      "discipline": "inspecao_rodante",
+      "proof": "Medição dimensional com posição, lado, instrumento, perfil, horas e critério CTS da configuração",
+      "restriction": "Não importar limite ou porcentagem de desgaste de outro rodante/modelo"
+    },
+    {
+      "id": "oem_configuration",
+      "discipline": "engenharia_oem",
+      "proof": "Desenho e BOM efetivos identificando roda-guia, eixo, bucha, rolamento quando existir e vedação",
+      "restriction": "Produto genérico Cat com rolamento não confirma rolamento separado na máquina-alvo"
+    },
+    {
+      "id": "sap_inventory",
+      "discipline": "dados_mestres_sap",
+      "proof": "Composição por tipo de objeto, montagem, localização IDLE e materiais efetivos sob custódia restrita",
+      "restriction": "Componente de outro subgrupo não pode ser relocado por nome aproximado"
+    },
+    {
+      "id": "failure_discrimination",
+      "discipline": "engenharia_confiabilidade",
+      "proof": "Teste autorizado que diferencie desgaste externo, perda de vedação, apoio interno e causas concorrentes",
+      "restriction": "Aquecimento, ruído ou desgaste visual isolado não confirmam dano do apoio"
+    },
+    {
+      "id": "safety_control",
+      "discipline": "supervisao_manutencao",
+      "proof": "Procedimento OEM, bloqueio, segurança contra movimentação da esteira/tensionador e manejo de energia armazenada",
+      "restriction": "Não manipular tensionador pressurizado nem desmontar conjunto sem instrução aplicável"
+    },
+    {
+      "id": "independent_review",
+      "discipline": "engenharia_revisora",
+      "proof": "Parecer técnico independente por configuração, com decisão explícita de código de dano/causa e objeto SAP",
+      "restriction": "Não aprovar vínculo/PN com base somente em literatura geral e descrição de tipo de objeto"
+    }
+  ],
+  "publicationRules": {
+    "noPartNumberCreation": true,
+    "noSapReassignment": true,
+    "noCTSValueFabrication": true,
+    "noBearingAssumption": true,
+    "noSealFailureAssumption": true,
+    "noRollerIdlerConflation": true,
+    "noObservedFailures": true,
+    "noPerformedMaintenance": true,
+    "independentReviewRequired": true
+  },
+  "receivedDocuments": 0,
+  "recordedInspections": 0,
+  "confirmedFailures": 0,
+  "approvedMappings": 0
+}
