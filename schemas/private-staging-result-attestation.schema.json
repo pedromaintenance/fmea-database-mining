@@ -1,0 +1,386 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PRIVATE staging result attestation metadata (must not be stored publicly)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "version",
+    "recordNature",
+    "classification",
+    "statement",
+    "attestations",
+    "release"
+  ],
+  "properties": {
+    "schema": {
+      "const": "fmea-mining.private-staging-result-attestation.v1"
+    },
+    "version": {
+      "const": "1.3.27"
+    },
+    "recordNature": {
+      "enum": [
+        "synthetic_test_only",
+        "private_real_staging"
+      ]
+    },
+    "classification": {
+      "const": "restricted"
+    },
+    "statement": {
+      "$ref": "#/$defs/statement"
+    },
+    "attestations": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "result",
+        "custody",
+        "technical",
+        "independent"
+      ],
+      "properties": {
+        "result": {
+          "$ref": "#/$defs/signature"
+        },
+        "custody": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "claim",
+            "keyId",
+            "signature"
+          ],
+          "properties": {
+            "claim": {
+              "$ref": "#/$defs/custodyClaim"
+            },
+            "keyId": {
+              "$ref": "#/$defs/opaqueToken"
+            },
+            "signature": {
+              "type": "string",
+              "minLength": 80,
+              "maxLength": 128,
+              "pattern": "^[A-Za-z0-9+/]+={0,2}$"
+            }
+          }
+        },
+        "technical": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "claim",
+            "keyId",
+            "signature"
+          ],
+          "properties": {
+            "claim": {
+              "$ref": "#/$defs/technicalClaim"
+            },
+            "keyId": {
+              "$ref": "#/$defs/opaqueToken"
+            },
+            "signature": {
+              "type": "string",
+              "minLength": 80,
+              "maxLength": 128,
+              "pattern": "^[A-Za-z0-9+/]+={0,2}$"
+            }
+          }
+        },
+        "independent": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "claim",
+            "keyId",
+            "signature"
+          ],
+          "properties": {
+            "claim": {
+              "$ref": "#/$defs/independentClaim"
+            },
+            "keyId": {
+              "$ref": "#/$defs/opaqueToken"
+            },
+            "signature": {
+              "type": "string",
+              "minLength": 80,
+              "maxLength": 128,
+              "pattern": "^[A-Za-z0-9+/]+={0,2}$"
+            }
+          }
+        }
+      }
+    },
+    "release": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "publicExportAuthorized",
+        "operationalReleaseApproved",
+        "rootCauseConfirmed",
+        "catalogPromotionApproved"
+      ],
+      "properties": {
+        "publicExportAuthorized": {
+          "const": false
+        },
+        "operationalReleaseApproved": {
+          "const": false
+        },
+        "rootCauseConfirmed": {
+          "const": false
+        },
+        "catalogPromotionApproved": {
+          "const": false
+        }
+      }
+    }
+  },
+  "$defs": {
+    "opaqueToken": {
+      "type": "string",
+      "pattern": "^[A-Z0-9-]{8,128}$"
+    },
+    "signature": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "keyId",
+        "signature"
+      ],
+      "properties": {
+        "keyId": {
+          "$ref": "#/$defs/opaqueToken"
+        },
+        "signature": {
+          "type": "string",
+          "minLength": 80,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9+/]+={0,2}$"
+        }
+      }
+    },
+    "probe": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "probeId",
+        "status",
+        "evidenceToken"
+      ],
+      "properties": {
+        "probeId": {
+          "type": "string",
+          "minLength": 8
+        },
+        "status": {
+          "enum": [
+            "pass",
+            "fail",
+            "blocked",
+            "inconclusive"
+          ]
+        },
+        "evidenceToken": {
+          "$ref": "#/$defs/opaqueToken"
+        }
+      }
+    },
+    "statement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema",
+        "runToken",
+        "tenantToken",
+        "caseToken",
+        "originatorToken",
+        "scenarioId",
+        "sourceAdapterId",
+        "issuedAt",
+        "expiresAt",
+        "probeResults"
+      ],
+      "properties": {
+        "schema": {
+          "const": "fmea-mining.private-staging-result-statement.v1"
+        },
+        "runToken": {
+          "$ref": "#/$defs/opaqueToken"
+        },
+        "tenantToken": {
+          "$ref": "#/$defs/opaqueToken"
+        },
+        "caseToken": {
+          "$ref": "#/$defs/opaqueToken"
+        },
+        "originatorToken": {
+          "$ref": "#/$defs/opaqueToken"
+        },
+        "scenarioId": {
+          "type": "string",
+          "pattern": "^STG-"
+        },
+        "sourceAdapterId": {
+          "$ref": "#/$defs/opaqueToken"
+        },
+        "issuedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "expiresAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "probeResults": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "$ref": "#/$defs/probe"
+          }
+        }
+      }
+    },
+    "signedReview": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "claim",
+        "keyId",
+        "signature"
+      ],
+      "properties": {
+        "claim": {
+          "$ref": "#/$defs/custodyClaim"
+        },
+        "keyId": {
+          "$ref": "#/$defs/opaqueToken"
+        },
+        "signature": {
+          "type": "string",
+          "minLength": 80,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9+/]+={0,2}$"
+        }
+      }
+    },
+    "custodyClaim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "statementDigest",
+        "actorToken",
+        "reviewedAt",
+        "custodyComplete",
+        "licenseChecked",
+        "integrityChecked"
+      ],
+      "properties": {
+        "statementDigest": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "actorToken": {
+          "$ref": "#/$defs/opaqueToken"
+        },
+        "reviewedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "custodyComplete": {
+          "const": true
+        },
+        "licenseChecked": {
+          "const": true
+        },
+        "integrityChecked": {
+          "const": true
+        }
+      }
+    },
+    "technicalClaim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "statementDigest",
+        "custodyDigest",
+        "actorToken",
+        "reviewedAt",
+        "decision",
+        "alternativesReviewed",
+        "oemEffectivityConsidered"
+      ],
+      "properties": {
+        "statementDigest": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "custodyDigest": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "actorToken": {
+          "$ref": "#/$defs/opaqueToken"
+        },
+        "reviewedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "decision": {
+          "const": "reviewed_for_change_board"
+        },
+        "alternativesReviewed": {
+          "const": true
+        },
+        "oemEffectivityConsidered": {
+          "const": true
+        }
+      }
+    },
+    "independentClaim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "statementDigest",
+        "custodyDigest",
+        "technicalDigest",
+        "actorToken",
+        "reviewedAt",
+        "decision",
+        "independentReviewComplete"
+      ],
+      "properties": {
+        "statementDigest": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "custodyDigest": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "technicalDigest": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "actorToken": {
+          "$ref": "#/$defs/opaqueToken"
+        },
+        "reviewedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "decision": {
+          "const": "reviewed_for_change_board"
+        },
+        "independentReviewComplete": {
+          "const": true
+        }
+      }
+    }
+  }
+}

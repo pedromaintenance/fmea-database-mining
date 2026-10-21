@@ -1,0 +1,132 @@
+{
+  "schema": "fmea-mining.private-result-custody-contract.v1",
+  "version": "1.3.27",
+  "purpose": "Contract for authenticity, integrity, provenance, custody and independent review of PRIVATE staging integration result receipts; public repo ships schemas, policy and synthetic-only test code, NEVER real cases.",
+  "maturity": "private_contract_offline_cryptographic_fixture_only",
+  "sourceIntegrationContract": "data/governance/staging-integration-contract.v1.json",
+  "sourceCustodyPolicy": "data/governance/restricted-evidence-workflow.v1.json",
+  "sourceStagingPlan": "data/governance/staging-acceptance-plan.v1.json",
+  "boundaries": {
+    "publicTestRecordsOnly": true,
+    "realPrivateResultRecordsInPublicRepo": 0,
+    "liveStorageCreated": false,
+    "liveIdentityConnected": false,
+    "realSignersAuthenticated": false,
+    "realVerifierDeployed": false,
+    "actualHumanReviewsCompleted": 0,
+    "actualCorporateApprovalGranted": false,
+    "automatedFmeaPromotionAllowed": false,
+    "networkCallsInPublicCI": false
+  },
+  "trustModel": {
+    "algorithm": "Ed25519",
+    "canonicalization": "recursive_lexicographic_JSON_keys_utf8_for_demo_not_RFC8785_guarantee",
+    "signaturesRequired": [
+      "result",
+      "custody",
+      "technical",
+      "independent"
+    ],
+    "verifiedInOrder": true,
+    "trustedKeyRegistrySource": "injected_by_private_service_not_the_result_packet",
+    "privateTestKeyGeneration": "ephemeral_in_memory_only_never_persisted",
+    "keysMustBeTrustedAndRoleBound": true,
+    "keysMustBeActive": true,
+    "signaturesNotProofOfTruth": true,
+    "roles": {
+      "result": "adapter_service",
+      "custody": "custodian",
+      "technical": "technical_reviewer",
+      "independent": "independent_reviewer"
+    }
+  },
+  "stageOrder": [
+    "restricted_result_received",
+    "signature_and_integrity_verified",
+    "custody_verified",
+    "technical_reviewed",
+    "independent_reviewed",
+    "eligible_for_manual_change_control_review"
+  ],
+  "evidenceRules": {
+    "perScenarioProbeCount": 4,
+    "allowedProbeStatuses": [
+      "pass",
+      "fail",
+      "blocked",
+      "inconclusive"
+    ],
+    "evidenceTokensMustBeOpaque": true,
+    "resultMustBindTenantCaseScenarioRun": true,
+    "runIdReplayMustBeCheckedInPrivateService": true,
+    "serviceSignatureNotEvidenceOfRealWorldAccuracy": true,
+    "custodyMustCoverLicenseIntegrity": true,
+    "technicalReviewMustCheckAlternatives": true,
+    "independentReviewMustBeByDistinctActor": true,
+    "resultReviewMustBeSignedToPriorDigest": true,
+    "fullyPassedTestsAreNotRealSecurityApproval": true,
+    "falseOrInconclusiveProbesCannotPassTechnicalGate": true
+  },
+  "privateReceiptFields": {
+    "statement": [
+      "schema",
+      "runToken",
+      "tenantToken",
+      "caseToken",
+      "originatorToken",
+      "scenarioId",
+      "sourceAdapterId",
+      "issuedAt",
+      "expiresAt",
+      "probeResults"
+    ],
+    "receipt": [
+      "schema",
+      "version",
+      "recordNature",
+      "classification",
+      "statement",
+      "attestations",
+      "release"
+    ],
+    "attestations": [
+      "result",
+      "custody",
+      "technical",
+      "independent"
+    ],
+    "release": [
+      "publicExportAuthorized",
+      "operationalReleaseApproved",
+      "rootCauseConfirmed",
+      "catalogPromotionApproved"
+    ]
+  },
+  "independentReviewRules": {
+    "custodianDistinctFromOriginator": true,
+    "technicalDistinctFromOriginator": true,
+    "independentDistinctFromOriginator": true,
+    "independentDistinctFromTechnical": true,
+    "independentDistinctFromCustodian": true
+  },
+  "requiredOutsidePublicRepo": [
+    "Corporate IdP signature-to-human identity binding",
+    "Private verifier with trusted and revocable key registry",
+    "Replay protection persisted transactionally by backend",
+    "Approved private document store and signed append-only audit trail",
+    "Independent human signoff with formal change-board workflow",
+    "Rights, license, privacy and non-reidentification review before publishing any aggregate data"
+  ],
+  "mockOnly": {
+    "syntheticTokenPrefix": "TEST-",
+    "testClock": "2026-10-21T12:05:00.000Z",
+    "runtimeSignatures": "fresh_keys_generated_each_CI_run",
+    "resultIfSuccess": "eligible_for_manual_change_control_review_only",
+    "actualPrivateCases": 0
+  },
+  "noDirectPublish": true,
+  "noSapLinkApproval": true,
+  "noneOfThisCertifiesOEM": true,
+  "coreChainsPreserved": 24,
+  "coreMechanismsPreserved": 15
+}

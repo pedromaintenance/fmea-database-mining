@@ -2,6 +2,15 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.27] — 2026-10-21 — Contrato de custódia privada e revisão de resultados de staging
+
+- Adicionado contrato de recibo **exclusivamente privado**, com 4 atestações encadeadas: serviço do teste, custodiante, revisor técnico e revisor independente.
+- Criado validador offline de Ed25519 com chaves **efêmeras de testes**, hash/digest de afirmações, registro externo de chaves confiáveis injetado e verificação de separação dos atores e sequência dos pareceres.
+- Verificações de validade de assinatura, papel vinculado à chave, revogação simulada, relógio, tenant/caso, 4 controles STG por cenário, evidências opacas, revisão de hipóteses concorrentes e referências aos hashes anteriores.
+- Incluídas **48 regressões sintéticas (8 positivos + 40 ataques)**, schema restritivo, documentação, integração ao `npm run qa` e GitHub Actions.
+- **0 casos reais, 0 chaves ou identidades corporativas, 0 pareceres reais, 0 aprovação OEM/Segurança, 0 causa raiz**. Assinatura criptográfica de dado sintético não atesta veracidade técnica.
+- Contrato público 1.0.0, conteúdo 1.0.0, preview 1.3.12 e checksum conservados; 24 cadeias FC e 15 mecanismos ME sem alterações, nenhum consumidor editado.
+
 ## [1.3.26] — 2026-10-21 — Contrato de integração e adaptador offline para staging
 - Criado contrato `executeProbe` com 8 cenários, **32 controles obrigatórios** e formato de resposta sem conteúdo restrito ou decisão humana simulada.
 - Implementado adaptador `offline_mock` determinístico que recusa casos não sintéticos e **não faz requisições a IdP, cofre, API, SIEM ou backup**.
