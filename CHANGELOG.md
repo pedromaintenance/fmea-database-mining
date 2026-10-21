@@ -2,6 +2,13 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.25] — 2026-10-21 — Pacote de homologação de staging restrito
+- Especificados **8 domínios de aceite** e **32 verificações obrigatórias**: identidade/revogação, isolamento de casos, revisões independentes, custódia OEM, auditoria, restauração, retenção/hold e exportação pública.
+- Definidos responsáveis, evidências de aprovação exigidas, seis gates de aceite corporativo e dependências externas ainda não atendidas.
+- Criados schema, funções puras de avaliação e **52 regressões sintéticas** (8 cenários-modelo positivos, 32 faltas de controle rejeitadas, 12 mutações de resultados/assinaturas rejeitadas); QA, CI e indicadores integrados.
+- A marcação `eligible_for_manual_staging_review` de um teste sintético **não equivale a execução/homologação de staging, nem autorização de usar laudos ou OEM reais**.
+- Arquitetura v1.3.24 preservada sem serviços provisionados; núcleo de 24 FC e 15 ME, contrato público 1.0.0 e preview 1.3.12 inalterados. Nenhum consumidor modificado.
+
 ## [1.3.24] — 2026-10-21 — Blueprint corporativo restrito, RBAC, auditoria e descarte
 
 - Definida arquitetura de **7 componentes** dependentes de TI/Segurança, com responsabilidades e status explicitamente `live=false`.
