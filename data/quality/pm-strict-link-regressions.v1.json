@@ -1,0 +1,236 @@
+{
+  "schema": "fmea-mining.pm-strict-link-regressions.v1",
+  "version": "1.3.34",
+  "nature": "synthetic_mutation_tests_over_real_generated_candidate_links",
+  "baselineRules": [
+    {
+      "ruleId": "cooling-radiator-leak",
+      "expected": "structural_reconciliation_checked_no_approval"
+    },
+    {
+      "ruleId": "cooling-radiator-blockage",
+      "expected": "structural_reconciliation_checked_no_approval"
+    },
+    {
+      "ruleId": "cooling-fan-bearing",
+      "expected": "structural_reconciliation_checked_no_approval"
+    },
+    {
+      "ruleId": "cooling-fan-belt",
+      "expected": "structural_reconciliation_checked_no_approval"
+    },
+    {
+      "ruleId": "engine-oil-filter",
+      "expected": "structural_reconciliation_checked_no_approval"
+    },
+    {
+      "ruleId": "engine-exhaust",
+      "expected": "structural_reconciliation_checked_no_approval"
+    },
+    {
+      "ruleId": "fuel-filter-contamination",
+      "expected": "structural_reconciliation_checked_no_approval"
+    },
+    {
+      "ruleId": "fuel-tank-water",
+      "expected": "structural_reconciliation_checked_no_approval"
+    },
+    {
+      "ruleId": "track-roller-wear",
+      "expected": "structural_reconciliation_checked_no_approval"
+    },
+    {
+      "ruleId": "track-idler-wear",
+      "expected": "structural_reconciliation_checked_no_approval"
+    },
+    {
+      "ruleId": "track-bolt-loose",
+      "expected": "structural_reconciliation_checked_no_approval"
+    },
+    {
+      "ruleId": "final-drive-gear",
+      "expected": "structural_reconciliation_checked_no_approval"
+    },
+    {
+      "ruleId": "final-drive-bearing",
+      "expected": "structural_reconciliation_checked_no_approval"
+    },
+    {
+      "ruleId": "differential-gear",
+      "expected": "structural_reconciliation_checked_no_approval"
+    },
+    {
+      "ruleId": "wheel-tire-damage",
+      "expected": "structural_reconciliation_checked_no_approval"
+    },
+    {
+      "ruleId": "wheel-tire-wear",
+      "expected": "structural_reconciliation_checked_no_approval"
+    },
+    {
+      "ruleId": "hydraulic-hose-leak",
+      "expected": "structural_reconciliation_checked_no_approval"
+    },
+    {
+      "ruleId": "hydraulic-hose-abrasion",
+      "expected": "structural_reconciliation_checked_no_approval"
+    },
+    {
+      "ruleId": "hydraulic-pump-seal",
+      "expected": "structural_reconciliation_checked_no_approval"
+    },
+    {
+      "ruleId": "implement-cylinder",
+      "expected": "structural_reconciliation_checked_no_approval"
+    },
+    {
+      "ruleId": "brake-disc",
+      "expected": "structural_reconciliation_checked_no_approval"
+    },
+    {
+      "ruleId": "drill-feed-chain",
+      "expected": "structural_reconciliation_checked_no_approval"
+    },
+    {
+      "ruleId": "drill-rotary-bearing",
+      "expected": "structural_reconciliation_checked_no_approval"
+    },
+    {
+      "ruleId": "drill-compressor-pressure",
+      "expected": "structural_reconciliation_checked_no_approval"
+    },
+    {
+      "ruleId": "drill-compressor-filter",
+      "expected": "structural_reconciliation_checked_no_approval"
+    }
+  ],
+  "mutationCases": [
+    {
+      "id": "TEST-MUT-01",
+      "mutation": "origin_rule_mismatch",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-02",
+      "mutation": "model_not_supported",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-03",
+      "mutation": "location_model_drift",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-04",
+      "mutation": "location_id_mismatch",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-05",
+      "mutation": "not_depth_three",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-06",
+      "mutation": "wrong_subgroup",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-07",
+      "mutation": "wrong_functional_system",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-08",
+      "mutation": "wrong_sap_object_type",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-09",
+      "mutation": "unlisted_component",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-10",
+      "mutation": "part_description_mismatch",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-11",
+      "mutation": "wrong_damage",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-12",
+      "mutation": "wrong_cause",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-13",
+      "mutation": "false_observation",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-14",
+      "mutation": "false_inspection_evidence",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-15",
+      "mutation": "false_mapping_approval",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-16",
+      "mutation": "false_scope_confirmation",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-17",
+      "mutation": "wrong_symptom",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-18",
+      "mutation": "wrong_inspection_method",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-19",
+      "mutation": "wrong_generated_id",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-20",
+      "mutation": "missing_warning",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-21",
+      "mutation": "unexpected_private_field",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-22",
+      "mutation": "alter_rule_model_coverage",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-23",
+      "mutation": "remove_candidate_link",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-24",
+      "mutation": "duplicate_candidate_link",
+      "expected": "reject"
+    }
+  ],
+  "counts": {
+    "sourceRules": 25,
+    "adversarialMutations": 24,
+    "totalChecks": 49,
+    "confirmedSapMappings": 0,
+    "realObservedFailures": 0
+  }
+}
