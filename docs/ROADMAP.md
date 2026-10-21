@@ -1,6 +1,6 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 21/10/2026 · **Ciclo:** catálogo técnico v1.3.36 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 21/10/2026 · **Ciclo:** catálogo técnico v1.3.37 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
 
@@ -38,6 +38,17 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 | Enriquecimento | 12 roteiros classificados por falha funcional, sintomas e técnicas | Anotação manual, não prova de causa |
 
 **Observação:** as 159 tarefas de PM com subgrupo candidato foram obtidas em extração local anterior e **não** representam 159 associações homologadas. Contagens de vínculos estritos serão publicadas pelo relatório automático após cada alteração do gerador.
+
+## Ciclo — 21/10/2026: proveniência de candidatos VPAR (v1.3.37)
+
+- [x] Auditados VPAR em EQ05/EQ06: um tipo de objeto contém dois códigos distintos com descrição de filtragem, repetidos em dois caminhos; um código possui par 03.02/C2.09 elegível.
+- [x] Verificada ausência de reutilização desse tipo de objeto em outros grupos do catálogo disponível, sem generalizar para a configuração física real.
+- [x] Documentadas quatro funções de filtragem de compressor potencialmente diferentes e limites das fontes públicas Sandvik por motorização; nenhuma função atribuída ao VPAR sem confirmação OEM.
+- [x] Auditor integrado ao CI com 22 testes sintéticos de hierarquia, semântica e falsa homologação; resultados agregados preservados.
+- [ ] **P0 Engenharia/OEM/SAP:** conferir P&ID, BOM efetiva e função dos dois códigos catalogados no equipamento real antes de decidir por eventual remapeamento da regra.
+- [ ] **Revisor independente:** confrontar dano/causa com o modo físico de falha e resultados de inspeção; manter bloqueados os dez casos até evidência verdadeira.
+
+**Estado:** não há aprovação por série ou condição de campo; a triagem reduziu duplicidades e delimitou a investigação.
 
 ## Ciclo — 21/10/2026: triagem de filtragem FUSY/COMR (v1.3.36)
 
