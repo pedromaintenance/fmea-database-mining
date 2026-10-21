@@ -2,6 +2,12 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.14] — 2026-10-20 — Auditoria sistêmica completa de 24 cadeias
+- Adicionadas seis revisões de alegações sistêmicas dos três roteiros de v1.3.11, cada uma com duas evidências independentes e uma explicação alternativa.
+- **24 cadeias, 48 alegações**; 0 desvios de processo comprovados, 0 pareceres OEM/independentes, 0 causas raízes confirmadas.
+- Atualizados schema, validador, contagem de QA, CI e documentação. Mecanismos físicos e hipóteses originais preservados.
+- Contrato público **1.0.0**, preview **1.3.12**, 24 registros/20 referências e checksum original sem alterações. Nenhum consumidor alterado.
+
 ## [1.3.13] — 2026-10-20 — Auditoria de 42 hipóteses sistêmicas e contrato público
 - Revisão editorial crítica das 21 cadeias causais ampliadas anteriormente e de suas **42 alegações sistêmicas**; cada hipótese com evidência mínima necessária e contraprova não organizacional.
 - Nenhum desvio de processo, culpa de equipe/pessoa ou causa raiz foi considerado confirmado sem evidências efetivas e revisão independente.

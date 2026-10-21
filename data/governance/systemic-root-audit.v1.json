@@ -1,9 +1,9 @@
 {
   "schema": "fmea-mining.systemic-root-audit.v1",
-  "version": "1.3.13",
-  "purpose": "Auditoria metodológica de 42 alegações sistêmicas candidatas em 21 cadeias, sem imputação causal não demonstrada.",
+  "version": "1.3.14",
+  "purpose": "Auditoria editorial das 48 candidatas sistêmicas em 24 cadeias, sem confirmação causal ou atribuição presumida de falha de processo.",
   "evidenceModel": "Cada alegação requer rastreio de processo e comparação com explicação alternativa independente do processo.",
-  "excluded": "Os três roteiros da v1.3.11 estão preservados, sem novo parecer especializado.",
+  "excluded": "Nenhuma cadeia excluída da auditoria editorial; aplicação OEM por série, dados de processo e pareceres independentes permanecem pendentes.",
   "policy": {
     "mechanicalPlausibilityIsNotProcessProof": true,
     "automaticBlameForbidden": true,
@@ -13,7 +13,9 @@
   },
   "counts": {
     "expandedChains": 21,
-    "systemicClaims": 42,
+    "priorPathwayChains": 3,
+    "totalAuditedChains": 24,
+    "systemicClaims": 48,
     "processDeviationsProven": 0,
     "systemicRootCausesConfirmed": 0
   },
@@ -1103,6 +1105,170 @@
       "sourcesGeneral": [
         "CAT-WATER-PUMP-REPLACEMENT",
         "CAT-RADIATOR-CARE"
+      ],
+      "applicabilityStatus": "nao_verificada_por_serie",
+      "reviewerPrimary": null,
+      "reviewerIndependent": null,
+      "reviewDecision": null,
+      "systemicRootCauseConfirmed": false
+    },
+    {
+      "chainId": "FC-HOSE-001",
+      "family": "mangueiras_hidraulicas",
+      "originVersion": "1.3.11",
+      "status": "revisao_critica_editorial_nao_homologacao",
+      "mechanicalHypothesisRetained": true,
+      "systemicCauseUnverified": true,
+      "reviewScope": "Auditoria de coerência editorial dos roteiros originais, sem inspeção de campo, exame de registros reais ou parecer OEM.",
+      "documentedPhysicalMechanism": "Perda localizada de contenção ou simples transporte externo de óleo; a posição de origem ainda precisa ser comprovada.",
+      "missingCausalBridge": "Não existem evidências de implementação de procedimento, ordem de serviço de montagem, desvio de padrão ou origem confirmada.",
+      "rootCandidateReviews": [
+        {
+          "id": "SYS-FC-HOSE-001-R1",
+          "originalClaim": "Deficiência de controle de roteamento na montagem",
+          "hypothesisCategory": "installation_quality",
+          "minimumIndependentEvidence": [
+            "Desenho OEM aplicável e registro datado do roteamento instalado, incluindo proteção e configuração original",
+            "Ordem de montagem e inspeção de aceitação com identificação da posição, histórico de alteração e requisitos vigentes"
+          ],
+          "nonOrganizationalAlternative": "Contato pode surgir em operação mesmo após montagem correta; fluido observado sobre a mangueira pode ter escorrido de ponto superior.",
+          "presentProofOfProcessDeviation": false,
+          "processRecordsExamined": false,
+          "attributedFaultToPeopleOrTeam": false,
+          "causalConclusion": "nao_demonstrada",
+          "actionsUntilVerified": "Coletar documentação, identificar explicações alternativas e obter revisão independente; não atribuir culpa ou promover a hipótese a causa confirmada."
+        },
+        {
+          "id": "SYS-FC-HOSE-001-R2",
+          "originalClaim": "Falha de verificação da origem após intervenções anteriores",
+          "hypothesisCategory": "diagnostic_quality",
+          "minimumIndependentEvidence": [
+            "Notas e ordens de reparo anteriores contendo posição, fotos da origem e descrição dos testes antes da limpeza",
+            "Histórico cronológico de intervenções, relatórios de estanqueidade OEM aplicável e confirmação de retorno do sintoma"
+          ],
+          "nonOrganizationalAlternative": "Um vazamento novo pode começar após a verificação correta, em ponto independente da ocorrência anterior ou em conexão mais elevada.",
+          "presentProofOfProcessDeviation": false,
+          "processRecordsExamined": false,
+          "attributedFaultToPeopleOrTeam": false,
+          "causalConclusion": "nao_demonstrada",
+          "actionsUntilVerified": "Coletar documentação, identificar explicações alternativas e obter revisão independente; não atribuir culpa ou promover a hipótese a causa confirmada."
+        }
+      ],
+      "sourcesGeneral": [
+        "CAT-HYD-HOSE-INSPECT",
+        "ISO-14224-2016",
+        "IEC-60812-2018",
+        "CAT-HYD-HOSE-FAILURE"
+      ],
+      "applicabilityStatus": "nao_verificada_por_serie",
+      "reviewerPrimary": null,
+      "reviewerIndependent": null,
+      "reviewDecision": null,
+      "systemicRootCauseConfirmed": false
+    },
+    {
+      "chainId": "FC-FD-001",
+      "family": "comando_final",
+      "originVersion": "1.3.11",
+      "status": "revisao_critica_editorial_nao_homologacao",
+      "mechanicalHypothesisRetained": true,
+      "systemicCauseUnverified": true,
+      "reviewScope": "Auditoria de coerência editorial dos roteiros originais, sem inspeção de campo, exame de registros reais ou parecer OEM.",
+      "documentedPhysicalMechanism": "Desgaste de contato ou contaminação circulante, sem componente ou direção causal comprovados.",
+      "missingCausalBridge": "Não foram verificados ingresso, condição interna, histórico da máquina, decisões de manutenção ou origem metalúrgica de partículas.",
+      "rootCandidateReviews": [
+        {
+          "id": "SYS-FC-FD-001-R1",
+          "originalClaim": "Deficiência de vedação ou controle de contaminação",
+          "hypothesisCategory": "contamination_control",
+          "minimumIndependentEvidence": [
+            "Amostras comparáveis com identificação do compartimento, método, laboratório, contaminantes e ponto de coleta",
+            "Inspeção rastreável das vedações e respiros, evidência de caminho de ingresso e históricos de intervenção"
+          ],
+          "nonOrganizationalAlternative": "As partículas podem vir de desgaste interno sem entrada externa, e água ou sujeira pode ter sido introduzida na própria coleta.",
+          "presentProofOfProcessDeviation": false,
+          "processRecordsExamined": false,
+          "attributedFaultToPeopleOrTeam": false,
+          "causalConclusion": "nao_demonstrada",
+          "actionsUntilVerified": "Coletar documentação, identificar explicações alternativas e obter revisão independente; não atribuir culpa ou promover a hipótese a causa confirmada."
+        },
+        {
+          "id": "SYS-FC-FD-001-R2",
+          "originalClaim": "Estratégia de lubrificação e acompanhamento incompatível com condição real",
+          "hypothesisCategory": "lubrication_strategy",
+          "minimumIndependentEvidence": [
+            "Plano por compartimento com produto, horas, periodicidade e históricos de cumprimento ou desvios demonstrados",
+            "Série histórica dos laudos de laboratório e decisões de tratativa, com baseline de fluido e mudança de formulação documentados"
+          ],
+          "nonOrganizationalAlternative": "Desgaste interno pode começar apesar de estratégia adequada; mudança de lubrificante também pode explicar perfil químico divergente.",
+          "presentProofOfProcessDeviation": false,
+          "processRecordsExamined": false,
+          "attributedFaultToPeopleOrTeam": false,
+          "causalConclusion": "nao_demonstrada",
+          "actionsUntilVerified": "Coletar documentação, identificar explicações alternativas e obter revisão independente; não atribuir culpa ou promover a hipótese a causa confirmada."
+        }
+      ],
+      "sourcesGeneral": [
+        "CAT-DRIVE-MAGNET-PLUG",
+        "CAT-SOS-SAMPLING-GUIDE-PT",
+        "CAT-DRIVE-MAINT-PRACTICES",
+        "ISO-14224-2016",
+        "SKF-WEAR-SURFACE-FATIGUE",
+        "CAT-FLUID-ANALYSIS-101"
+      ],
+      "applicabilityStatus": "nao_verificada_por_serie",
+      "reviewerPrimary": null,
+      "reviewerIndependent": null,
+      "reviewDecision": null,
+      "systemicRootCauseConfirmed": false
+    },
+    {
+      "chainId": "FC-TRACK-005",
+      "family": "material_rodante",
+      "originVersion": "1.3.11",
+      "status": "revisao_critica_editorial_nao_homologacao",
+      "mechanicalHypothesisRetained": true,
+      "systemicCauseUnverified": true,
+      "reviewScope": "Auditoria de coerência editorial dos roteiros originais, sem inspeção de campo, exame de registros reais ou parecer OEM.",
+      "documentedPhysicalMechanism": "Redução da pré-carga por rotação ou relaxação/assentamento, ainda não diferenciado.",
+      "missingCausalBridge": "Par 01.15/C1.17 é descritivamente circular; não há evidência de processo, histórico ou efetividade OEM da fixação.",
+      "rootCandidateReviews": [
+        {
+          "id": "SYS-FC-TRACK-005-R1",
+          "originalClaim": "Controle de montagem e rastreamento de aperto inadequado",
+          "hypothesisCategory": "installation_quality",
+          "minimumIndependentEvidence": [
+            "Procedimento OEM vigente por série e conjunto para torque-turn, fixador, montagem e condição da junta",
+            "Registros rastreáveis do aperto inicial e do estado das superfícies, com comparação temporal de posição e pré-carga"
+          ],
+          "nonOrganizationalAlternative": "A perda de pré-carga pode ocorrer por assentamento, deformação e relaxação sem rotação, mesmo com montagem originalmente conforme.",
+          "presentProofOfProcessDeviation": false,
+          "processRecordsExamined": false,
+          "attributedFaultToPeopleOrTeam": false,
+          "causalConclusion": "nao_demonstrada",
+          "actionsUntilVerified": "Coletar documentação, identificar explicações alternativas e obter revisão independente; não atribuir culpa ou promover a hipótese a causa confirmada."
+        },
+        {
+          "id": "SYS-FC-TRACK-005-R2",
+          "originalClaim": "Seleção/reutilização de fixadores incompatível com procedimento vigente",
+          "hypothesisCategory": "parts_and_reuse_control",
+          "minimumIndependentEvidence": [
+            "Part numbers e lote dos fixadores com requisitos OEM de inspeção e critérios de reutilização aplicáveis",
+            "Ordens de remoção, inspeção e reinstalação identificando peças utilizadas e condição das faces da junta"
+          ],
+          "nonOrganizationalAlternative": "O conjunto pode perder pré-carga por solicitação transversal ou acomodação das faces mesmo quando os fixadores são novos e corretos.",
+          "presentProofOfProcessDeviation": false,
+          "processRecordsExamined": false,
+          "attributedFaultToPeopleOrTeam": false,
+          "causalConclusion": "nao_demonstrada",
+          "actionsUntilVerified": "Coletar documentação, identificar explicações alternativas e obter revisão independente; não atribuir culpa ou promover a hipótese a causa confirmada."
+        }
+      ],
+      "sourcesGeneral": [
+        "CAT-UC-DOZER-GUIDE",
+        "NORDLOCK-BOLT-LOOSENING",
+        "NORDLOCK-ROTATIONAL-LOOSENING",
+        "IEC-60812-2018"
       ],
       "applicabilityStatus": "nao_verificada_por_serie",
       "reviewerPrimary": null,

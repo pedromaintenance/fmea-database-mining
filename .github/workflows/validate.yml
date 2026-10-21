@@ -58,7 +58,7 @@ jobs:
         run: npm run pathways:validate
       - name: Validar quatro niveis causais em 24 cadeias
         run: npm run causal:levels:validate
-      - name: Auditar causalidade sistemica em 21 cadeias
+      - name: Auditar causalidade sistemica em 24 cadeias
         run: npm run systemic:audit:validate
       - name: Gerar preview publico versionado
         run: npm run public:export
