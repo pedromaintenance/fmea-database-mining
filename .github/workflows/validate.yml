@@ -62,6 +62,8 @@ jobs:
         run: npm run pathways:expand:validate
       - name: Verificar seis playbooks aprofundados e 34 regressões
         run: npm run playbooks:deepdives:validate
+      - name: Validar 12 playbooks, crosswalk causal e 46 regressões
+        run: npm run playbooks:remaining:validate
       - name: Validar quatro niveis causais em 24 cadeias
         run: npm run causal:levels:validate
       - name: Auditar causalidade sistemica em 24 cadeias
