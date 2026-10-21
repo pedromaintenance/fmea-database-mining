@@ -1,6 +1,6 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 20/10/2026 · **Ciclo:** catálogo técnico v1.3.19 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 20/10/2026 · **Ciclo:** catálogo técnico v1.3.20 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
 
@@ -39,6 +39,20 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 
 **Observação:** as 159 tarefas de PM com subgrupo candidato foram obtidas em extração local anterior e **não** representam 159 associações homologadas. Contagens de vínculos estritos serão publicadas pelo relatório automático após cada alteração do gerador.
 
+## Ciclo concluído — 20/10/2026: revisão de cinco lacunas causais (v1.3.20)
+
+- [x] Reavaliadas **5/5 lacunas PB–FC**: 3 justificam propostas de investigação de modo de falha (vedação externa de bomba hidráulica, perdas internas e superfície de dentes); 2 representam hipótese de origem ou condição do fluido, não modo de falha.
+- [x] Elaboradas **3 propostas editoriais de cadeias**, com função, falha funcional candidata, mecanismo, dano possível, hipóteses concorrentes, 2 testes seguros cada e três evidências requeridas por candidato.
+- [x] Quatro fontes técnicas públicas indexadas com ressalvas de efetividade, especialmente Parker para bomba de palhetas e ISO 10825-1 pelo resumo público apenas.
+- [x] Criado gate `npm run causal:gaps:validate`, JSON Schemas, **21 regressões sintéticas** e integração CI/QA.
+- [x] Preservadas as 24 cadeias `FC-*`, as 18 correspondências candidatas do crosswalk, o contrato 1.0.0, o conteúdo público 1.0.0 e o preview legado 1.3.12.
+- [x] [Relatório técnico e plano de promoção condicionada](CICLO_2026-10-20_TRIAGEM_LACUNAS_CAUSAIS.md).
+- [ ] **P0 próximo ciclo:** revisar coerência e duplicidades das três propostas contra ontologia de falhas funcionais, métodos e efeitos antes de admitir qualquer novo ID `FC-*`; exigência de revisão técnica independente.
+- [ ] **P0 externo:** obter OMM/SIS e arranjo do sistema hidráulico CAT 395 e comando final CAT 777, sem publicar arquivos corporativos.
+- [ ] **P0 externo D9:** sete documentos OEM ainda bloqueados; **P1:** dez regras de preventiva × SAP ainda sem vínculo estrito.
+
+**Estado:** 24 cadeias vigentes, 3 propostas editoriais fora do núcleo, 2 não-falhas classificadas, 12 playbooks aprofundados, nenhuma evidência física observada e nenhuma homologação operacional.
+
 ## Ciclo concluído — 20/10/2026: finalizar 12 PBs e matriz PB–FC (v1.3.19)
 
 - [x] **12/12 playbooks aprofundados por ID**, com 6 registros de v1.3.18 preservados e 6 criados na v1.3.19; estes não equivalem a procedimentos OEM ou FMEA aprovada.
@@ -46,7 +60,7 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 - [x] Matriz [PB–FC](../data/quality/playbook-causal-crosswalk.v1.json): 18 hipóteses do lote, 18 vínculos candidatos, 5 lacunas de equivalência, 0 vínculos operacionais aceitos.
 - [x] `npm run playbooks:remaining:validate`: **46 regressões** (18 prontidão, 16 alterações proibidas no PB, 12 alterações proibidas no crosswalk), integrado a CI/QA.
 - [x] [Relatório técnico](CICLO_2026-10-20_PLAYBOOKS_COMPLETOS_PB_FC.md), documentação e schemas.
-- [ ] **P0 próximo ciclo:** examinar cinco lacunas sem cadeia equivalente; selecionar possíveis novas cadeias com literatura OEM sem inventar medições e aprovar somente taxonomia editorial, não causas de campo.
+- [x] **Concluído na v1.3.20:** cinco lacunas triadas; três propostas editoriais fora do núcleo, duas classificações de não-falha sem promoção causal.
 - [ ] **P0 dependência externa:** sete entradas documentais do D9 (prefixo/série, OMM, peças, torque, CTS, SAP e revisão) continuam bloqueadas.
 - [ ] **P1:** padronizar workflow restrito de coleta de dados de campo e pareceres técnicos antes de produzir conhecimento operacional validado.
 
