@@ -321,7 +321,7 @@
   "counts": {
     "domains": 8,
     "requiredControls": 32,
-    "syntheticFixtures": 40,
+    "syntheticFixtures": 52,
     "actualStagingRuns": 0,
     "actualCorporateApprovals": 0,
     "coreFmeaChanges": 0

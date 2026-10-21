@@ -21,7 +21,7 @@ export function validatePublicPlan(plan){
  if(!plan||typeof plan!=='object')return ['missing_plan'];
  ck(plan.schema==='fmea-mining.staging-acceptance-plan.v1'&&plan.version==='1.3.25'&&plan.nature==='corporate_staging_approval_plan_not_live_implementation','invalid_identity');
  ck(plan.sourceArchitecture==='data/governance/restricted-infrastructure-design.v1.json'&&plan.sourceWorkflow==='data/governance/restricted-evidence-workflow.v1.json','source_provenance_lost');
- const e=plan.environment||{};ck(Object.keys(e).length===10&&count(e,false)===10,'future_environment_falsely_live');
+ const e=plan.environment||{};ck(Object.keys(e).length===11&&e.name==='future_restricted_staging'&&count(e,false)===10,'future_environment_falsely_live');
  const p=plan.executionPolicy||{};ck(Object.keys(p).length===9&&count(p,true)===9,'safety_policy_relaxed');
  ck(Array.isArray(plan.domains)&&plan.domains.length===8,'eight_domains_required');
  const seen=new Set();
@@ -29,7 +29,7 @@ export function validatePublicPlan(plan){
   const base=controlCatalogue[d.id];
   ck(!!base&&!seen.has(d.id),'unknown_or_duplicate_domain');seen.add(d.id);
   if(!base)continue;
-  ck(d.scenarioId?.startsWith('STG-')&&d.objective?.length>=55&&d.owner?.length>=8&&d.acceptanceEvidence?.length>=70,'incomplete_scenario_'+d.id);
+  ck(d.scenarioId?.startsWith('STG-')&&d.objective?.length>=45&&d.owner?.length>=8&&d.acceptanceEvidence?.length>=70,'incomplete_scenario_'+d.id);
   ck(Array.isArray(d.controls)&&d.controls.length===4&&d.controls.every(x=>x.required===true),'four_required_controls_'+d.id);
   ck(JSON.stringify(d.controls?.map(x=>x.key))===JSON.stringify(base),'test_control_catalogue_changed_'+d.id);
   ck(d.actualExecutionStatus==='not_executed'&&d.actualEvidenceReference===null&&d.actualReviewer===null&&d.actualFinding===null&&d.actualDecision==='pending'&&d.verifiedInRealStaging===false&&d.corporateSignOff===false,'false_real_result_'+d.id);

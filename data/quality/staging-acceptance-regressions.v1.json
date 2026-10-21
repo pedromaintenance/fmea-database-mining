@@ -565,8 +565,83 @@
     }
   ],
   "counts": {
-    "syntheticPositive": 8,
-    "syntheticNegative": 32,
-    "total": 40
-  }
+    "positive": 8,
+    "negative": 32,
+    "policyMutations": 12,
+    "total": 52
+  },
+  "mutationCases": [
+    {
+      "id": "TEST-MUT-01",
+      "mutation": "environment_provisioned",
+      "expected": "reject",
+      "caseNature": "synthetic_plan_mutation"
+    },
+    {
+      "id": "TEST-MUT-02",
+      "mutation": "real_evidence_inserted",
+      "expected": "reject",
+      "caseNature": "synthetic_plan_mutation"
+    },
+    {
+      "id": "TEST-MUT-03",
+      "mutation": "release_approved",
+      "expected": "reject",
+      "caseNature": "synthetic_plan_mutation"
+    },
+    {
+      "id": "TEST-MUT-04",
+      "mutation": "fake_execution",
+      "expected": "reject",
+      "caseNature": "synthetic_plan_mutation"
+    },
+    {
+      "id": "TEST-MUT-05",
+      "mutation": "fake_corporate_signoff",
+      "expected": "reject",
+      "caseNature": "synthetic_plan_mutation"
+    },
+    {
+      "id": "TEST-MUT-06",
+      "mutation": "confirm_root_cause",
+      "expected": "reject",
+      "caseNature": "synthetic_plan_mutation"
+    },
+    {
+      "id": "TEST-MUT-07",
+      "mutation": "approve_signoff",
+      "expected": "reject",
+      "caseNature": "synthetic_plan_mutation"
+    },
+    {
+      "id": "TEST-MUT-08",
+      "mutation": "delete_domain",
+      "expected": "reject",
+      "caseNature": "synthetic_plan_mutation"
+    },
+    {
+      "id": "TEST-MUT-09",
+      "mutation": "delete_control",
+      "expected": "reject",
+      "caseNature": "synthetic_plan_mutation"
+    },
+    {
+      "id": "TEST-MUT-10",
+      "mutation": "change_source_contract",
+      "expected": "reject",
+      "caseNature": "synthetic_plan_mutation"
+    },
+    {
+      "id": "TEST-MUT-11",
+      "mutation": "remove_signoff_role",
+      "expected": "reject",
+      "caseNature": "synthetic_plan_mutation"
+    },
+    {
+      "id": "TEST-MUT-12",
+      "mutation": "relax_safety_policy",
+      "expected": "reject",
+      "caseNature": "synthetic_plan_mutation"
+    }
+  ]
 }

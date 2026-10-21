@@ -39,16 +39,98 @@
     },
     "environment": {
       "type": "object",
-      "minProperties": 10,
-      "additionalProperties": {
-        "const": false
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "provisioned",
+        "corporateTenantApproved",
+        "syntheticTestAccountsProvisioned",
+        "privateTestVaultAvailable",
+        "backendConnected",
+        "externalAuditAnchorOperational",
+        "restoreTestPerformed",
+        "retentionPolicyApproved",
+        "securityReviewCompleted",
+        "ingestRealEvidenceAllowed"
+      ],
+      "properties": {
+        "name": {
+          "const": "future_restricted_staging"
+        },
+        "provisioned": {
+          "const": false
+        },
+        "corporateTenantApproved": {
+          "const": false
+        },
+        "syntheticTestAccountsProvisioned": {
+          "const": false
+        },
+        "privateTestVaultAvailable": {
+          "const": false
+        },
+        "backendConnected": {
+          "const": false
+        },
+        "externalAuditAnchorOperational": {
+          "const": false
+        },
+        "restoreTestPerformed": {
+          "const": false
+        },
+        "retentionPolicyApproved": {
+          "const": false
+        },
+        "securityReviewCompleted": {
+          "const": false
+        },
+        "ingestRealEvidenceAllowed": {
+          "const": false
+        }
       }
     },
     "executionPolicy": {
       "type": "object",
-      "minProperties": 9,
-      "additionalProperties": {
-        "const": true
+      "additionalProperties": false,
+      "required": [
+        "noRealRecordsInPublicRepo",
+        "noRealCredentialsOrUrls",
+        "noOEMFilesInPublicRepo",
+        "noRealAssetIdentifiers",
+        "fixturesSyntheticOnly",
+        "mockTestsAreNotIntegrationTests",
+        "noAutomatedApproval",
+        "noAutoPublicRelease",
+        "stagingCannotApproveRootCause"
+      ],
+      "properties": {
+        "noRealRecordsInPublicRepo": {
+          "const": true
+        },
+        "noRealCredentialsOrUrls": {
+          "const": true
+        },
+        "noOEMFilesInPublicRepo": {
+          "const": true
+        },
+        "noRealAssetIdentifiers": {
+          "const": true
+        },
+        "fixturesSyntheticOnly": {
+          "const": true
+        },
+        "mockTestsAreNotIntegrationTests": {
+          "const": true
+        },
+        "noAutomatedApproval": {
+          "const": true
+        },
+        "noAutoPublicRelease": {
+          "const": true
+        },
+        "stagingCannotApproveRootCause": {
+          "const": true
+        }
       }
     },
     "domains": {
@@ -77,7 +159,7 @@
           "const": 32
         },
         "syntheticFixtures": {
-          "const": 40
+          "const": 52
         },
         "actualStagingRuns": {
           "const": 0
