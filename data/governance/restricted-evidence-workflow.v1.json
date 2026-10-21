@@ -1,0 +1,139 @@
+{
+  "schema": "fmea-mining.restricted-evidence-policy.v1",
+  "version": "1.3.23",
+  "purpose": "Especificar fluxo de custódia, validade documental e revisão independente antes de qualquer proposta de alteração de conhecimento FMEA; não é sistema de armazenamento ou controle efetivo de acesso.",
+  "scope": {
+    "proposalIds": [
+      "CAND-HYD-PUMP-SEAL-001",
+      "CAND-HYD-PUMP-INTERNAL-001",
+      "CAND-FD-GEAR-TOOTH-001"
+    ],
+    "refinementKinds": [
+      "candidate_mechanism_concept",
+      "proposed_gear_damage_submode"
+    ],
+    "realCasesInPublicRepository": 0,
+    "existingCoreChains": 24,
+    "existingOntologyMechanisms": 15,
+    "automaticApproval": false
+  },
+  "dataBoundary": {
+    "publicAllowed": [
+      "política de processo",
+      "JSON Schema sem registros reais",
+      "testes e identidades explicitamente sintéticas TEST-",
+      "resumos agregados sem identificadores ou valores de equipamentos"
+    ],
+    "publicForbidden": [
+      "número de série/prefixo real, placa, localização SAP específica",
+      "identificação pessoal, assinatura ou credenciais",
+      "laudo de óleo, ficha CTS, fotografia de campo ou arquivo OEM licenciado",
+      "URL restrita, caminho corporativo, URI de arquivo, link de SharePoint ou IDs internos reversíveis",
+      "hash/digest de documentação real como substituto de anonimização",
+      "valor medido, tolerância OEM ou descrição que permita reidentificação de máquina"
+    ],
+    "restrictedRequiredControls": [
+      "repositório organizacional com controle de acesso por função e menor privilégio",
+      "criptografia em trânsito e repouso, backup e registro de acesso/alterações",
+      "retenção e descarte conforme política corporativa e termos de licença",
+      "verificação de titularidade, licença e permissão de uso de documento OEM",
+      "separação de ambiente e revisão de exportação/anonimização antes de qualquer publicação"
+    ]
+  },
+  "roles": [
+    "originator",
+    "custodian",
+    "technical_reviewer",
+    "independent_reviewer",
+    "change_control_owner"
+  ],
+  "stageOrder": [
+    "draft",
+    "restricted_intake",
+    "custody_verified",
+    "technical_reviewed",
+    "independent_reviewed",
+    "ready_for_change_control"
+  ],
+  "evidenceKinds": [
+    "oem_effectivity",
+    "oem_procedure",
+    "field_observation",
+    "counterevidence",
+    "measurement_quality"
+  ],
+  "gateRequirements": {
+    "custody_verified": {
+      "allKinds": [
+        "oem_effectivity",
+        "oem_procedure",
+        "field_observation",
+        "counterevidence",
+        "measurement_quality"
+      ],
+      "requireUniqueEvidenceTokens": true,
+      "requireChainOfCustody": true,
+      "requireLicenseCheck": true,
+      "requireRestrictedReferences": true
+    },
+    "technical_reviewed": {
+      "reviewAccepted": true,
+      "requireEffectivityAssessment": true,
+      "requireAlternativeHypothesisReview": true,
+      "actorDistinctFromOriginator": true
+    },
+    "independent_reviewed": {
+      "independentAccepted": true,
+      "actorDistinctFromOriginator": true,
+      "actorDistinctFromTechnicalReviewer": true
+    },
+    "ready_for_change_control": {
+      "requireManualChangeRequest": true,
+      "allowKnowledgeApproval": false,
+      "allowOperationalRelease": false,
+      "allowRootCauseConfirmation": false
+    }
+  },
+  "transitionRoles": [
+    {
+      "from": "draft",
+      "to": "restricted_intake",
+      "role": "originator"
+    },
+    {
+      "from": "restricted_intake",
+      "to": "custody_verified",
+      "role": "custodian"
+    },
+    {
+      "from": "custody_verified",
+      "to": "technical_reviewed",
+      "role": "technical_reviewer"
+    },
+    {
+      "from": "technical_reviewed",
+      "to": "independent_reviewed",
+      "role": "independent_reviewer"
+    },
+    {
+      "from": "independent_reviewed",
+      "to": "ready_for_change_control",
+      "role": "change_control_owner"
+    }
+  ],
+  "claimRules": {
+    "oemEffectiveDocumentDoesNotProveDamage": true,
+    "fieldObservationDoesNotProveRootCause": true,
+    "missingCounterEvidenceCannotBeIgnored": true,
+    "changeControlReadinessIsNotPublicationApproval": true,
+    "publicationRequiresSeparateCopyrightPrivacyReview": true,
+    "automaticSapLinkingForbidden": true
+  },
+  "noLiveImplementation": {
+    "state": "specification_and_pure_validator_only",
+    "doesNotProvisionIdentityOrAccess": true,
+    "doesNotStoreRealDocuments": true,
+    "doesNotVerifyOEMAuthenticityAutomatically": true,
+    "doesNotSignOrApproveWorkOrders": true
+  }
+}

@@ -1,0 +1,355 @@
+{
+  "schema": "fmea-mining.restricted-evidence-regressions.v1",
+  "version": "1.3.23",
+  "nature": "synthetic_only",
+  "caseTemplate": {
+    "schema": "fmea-mining.restricted-evidence-case.v1",
+    "caseNature": "synthetic_test_only",
+    "caseId": "TEST-CASE-001",
+    "proposalId": "CAND-HYD-PUMP-INTERNAL-001",
+    "stage": "restricted_intake",
+    "dataClassification": "restricted",
+    "originatorId": "TEST-ORIGIN-A",
+    "receipts": [
+      {
+        "kind": "oem_effectivity",
+        "evidenceToken": "TEST-EVIDENCE-1",
+        "restrictedRef": "TEST-OPAQUE-1",
+        "licenseChecked": true,
+        "integrityChecked": true,
+        "custodyChainVerified": true,
+        "qualityChecked": true,
+        "oemEffectivityConfirmed": true
+      },
+      {
+        "kind": "oem_procedure",
+        "evidenceToken": "TEST-EVIDENCE-2",
+        "restrictedRef": "TEST-OPAQUE-2",
+        "licenseChecked": true,
+        "integrityChecked": true,
+        "custodyChainVerified": true,
+        "qualityChecked": true,
+        "oemEffectivityConfirmed": true
+      },
+      {
+        "kind": "field_observation",
+        "evidenceToken": "TEST-EVIDENCE-3",
+        "restrictedRef": "TEST-OPAQUE-3",
+        "licenseChecked": true,
+        "integrityChecked": true,
+        "custodyChainVerified": true,
+        "qualityChecked": true,
+        "oemEffectivityConfirmed": null
+      },
+      {
+        "kind": "counterevidence",
+        "evidenceToken": "TEST-EVIDENCE-4",
+        "restrictedRef": "TEST-OPAQUE-4",
+        "licenseChecked": true,
+        "integrityChecked": true,
+        "custodyChainVerified": true,
+        "qualityChecked": true,
+        "oemEffectivityConfirmed": null
+      },
+      {
+        "kind": "measurement_quality",
+        "evidenceToken": "TEST-EVIDENCE-5",
+        "restrictedRef": "TEST-OPAQUE-5",
+        "licenseChecked": true,
+        "integrityChecked": true,
+        "custodyChainVerified": true,
+        "qualityChecked": true,
+        "oemEffectivityConfirmed": null
+      }
+    ],
+    "technicalReview": {
+      "reviewerId": "TEST-REVIEW-T",
+      "decision": "accepted_for_change_control_review",
+      "reasonRecorded": true,
+      "oemEffectivityAssessment": "checked_for_applicability",
+      "alternativeHypothesesReviewed": true
+    },
+    "independentReview": {
+      "reviewerId": "TEST-REVIEW-I",
+      "decision": "accepted_for_change_control_review",
+      "reasonRecorded": true
+    },
+    "changeRequest": {
+      "requestToken": "TEST-CHANGE-001",
+      "registered": true,
+      "manualApprovalPending": true
+    },
+    "rootCauseConfirmed": false,
+    "operationalReleaseApproved": false,
+    "catalogPromotionApproved": false,
+    "publicationAuthorized": false
+  },
+  "cases": [
+    {
+      "id": "NOM-01",
+      "from": "draft",
+      "to": "restricted_intake",
+      "actorRole": "originator",
+      "actorId": "TEST-ORIGIN-A",
+      "expected": "allow",
+      "mutation": null
+    },
+    {
+      "id": "NOM-02",
+      "from": "restricted_intake",
+      "to": "custody_verified",
+      "actorRole": "custodian",
+      "actorId": "TEST-CUSTODIAN",
+      "expected": "allow",
+      "mutation": null
+    },
+    {
+      "id": "NOM-03",
+      "from": "custody_verified",
+      "to": "technical_reviewed",
+      "actorRole": "technical_reviewer",
+      "actorId": "TEST-REVIEW-T",
+      "expected": "allow",
+      "mutation": null
+    },
+    {
+      "id": "NOM-04",
+      "from": "technical_reviewed",
+      "to": "independent_reviewed",
+      "actorRole": "independent_reviewer",
+      "actorId": "TEST-REVIEW-I",
+      "expected": "allow",
+      "mutation": null
+    },
+    {
+      "id": "NOM-05",
+      "from": "independent_reviewed",
+      "to": "ready_for_change_control",
+      "actorRole": "change_control_owner",
+      "actorId": "TEST-CONTROL",
+      "expected": "allow",
+      "mutation": null
+    },
+    {
+      "id": "BAD-01",
+      "from": "restricted_intake",
+      "to": "technical_reviewed",
+      "actorRole": "technical_reviewer",
+      "actorId": "TEST-REVIEW-T",
+      "expected": "reject",
+      "mutation": null
+    },
+    {
+      "id": "BAD-02",
+      "from": "restricted_intake",
+      "to": "custody_verified",
+      "actorRole": "originator",
+      "actorId": "TEST-ORIGIN-A",
+      "expected": "reject",
+      "mutation": null
+    },
+    {
+      "id": "BAD-03",
+      "from": "restricted_intake",
+      "to": "custody_verified",
+      "actorRole": "custodian",
+      "actorId": "TEST-CUSTODIAN",
+      "expected": "reject",
+      "mutation": "missing_oem"
+    },
+    {
+      "id": "BAD-04",
+      "from": "restricted_intake",
+      "to": "custody_verified",
+      "actorRole": "custodian",
+      "actorId": "TEST-CUSTODIAN",
+      "expected": "reject",
+      "mutation": "duplicate_token"
+    },
+    {
+      "id": "BAD-05",
+      "from": "restricted_intake",
+      "to": "custody_verified",
+      "actorRole": "custodian",
+      "actorId": "TEST-CUSTODIAN",
+      "expected": "reject",
+      "mutation": "bad_license"
+    },
+    {
+      "id": "BAD-06",
+      "from": "restricted_intake",
+      "to": "custody_verified",
+      "actorRole": "custodian",
+      "actorId": "TEST-CUSTODIAN",
+      "expected": "reject",
+      "mutation": "bad_integrity"
+    },
+    {
+      "id": "BAD-07",
+      "from": "restricted_intake",
+      "to": "custody_verified",
+      "actorRole": "custodian",
+      "actorId": "TEST-CUSTODIAN",
+      "expected": "reject",
+      "mutation": "bad_custody"
+    },
+    {
+      "id": "BAD-08",
+      "from": "restricted_intake",
+      "to": "custody_verified",
+      "actorRole": "custodian",
+      "actorId": "TEST-CUSTODIAN",
+      "expected": "reject",
+      "mutation": "leaked_url"
+    },
+    {
+      "id": "BAD-09",
+      "from": "restricted_intake",
+      "to": "custody_verified",
+      "actorRole": "custodian",
+      "actorId": "TEST-CUSTODIAN",
+      "expected": "reject",
+      "mutation": "embedded_raw_document"
+    },
+    {
+      "id": "BAD-10",
+      "from": "custody_verified",
+      "to": "technical_reviewed",
+      "actorRole": "technical_reviewer",
+      "actorId": "TEST-REVIEW-T",
+      "expected": "reject",
+      "mutation": "same_originator_technical"
+    },
+    {
+      "id": "BAD-11",
+      "from": "technical_reviewed",
+      "to": "independent_reviewed",
+      "actorRole": "independent_reviewer",
+      "actorId": "TEST-REVIEW-I",
+      "expected": "reject",
+      "mutation": "same_technical_independent"
+    },
+    {
+      "id": "BAD-12",
+      "from": "technical_reviewed",
+      "to": "independent_reviewed",
+      "actorRole": "independent_reviewer",
+      "actorId": "TEST-REVIEW-I",
+      "expected": "reject",
+      "mutation": "same_originator_independent"
+    },
+    {
+      "id": "BAD-13",
+      "from": "custody_verified",
+      "to": "technical_reviewed",
+      "actorRole": "technical_reviewer",
+      "actorId": "TEST-REVIEW-T",
+      "expected": "reject",
+      "mutation": "reject_technical"
+    },
+    {
+      "id": "BAD-14",
+      "from": "technical_reviewed",
+      "to": "independent_reviewed",
+      "actorRole": "independent_reviewer",
+      "actorId": "TEST-REVIEW-I",
+      "expected": "reject",
+      "mutation": "reject_independent"
+    },
+    {
+      "id": "BAD-15",
+      "from": "independent_reviewed",
+      "to": "ready_for_change_control",
+      "actorRole": "change_control_owner",
+      "actorId": "TEST-CONTROL",
+      "expected": "reject",
+      "mutation": "missing_change_request"
+    },
+    {
+      "id": "BAD-16",
+      "from": "independent_reviewed",
+      "to": "ready_for_change_control",
+      "actorRole": "change_control_owner",
+      "actorId": "TEST-CONTROL",
+      "expected": "reject",
+      "mutation": "root_cause_claim"
+    },
+    {
+      "id": "BAD-17",
+      "from": "independent_reviewed",
+      "to": "ready_for_change_control",
+      "actorRole": "change_control_owner",
+      "actorId": "TEST-CONTROL",
+      "expected": "reject",
+      "mutation": "operational_approval"
+    },
+    {
+      "id": "BAD-18",
+      "from": "independent_reviewed",
+      "to": "ready_for_change_control",
+      "actorRole": "change_control_owner",
+      "actorId": "TEST-CONTROL",
+      "expected": "reject",
+      "mutation": "publication_approval"
+    },
+    {
+      "id": "BAD-19",
+      "from": "restricted_intake",
+      "to": "custody_verified",
+      "actorRole": "custodian",
+      "actorId": "TEST-CUSTODIAN",
+      "expected": "reject",
+      "mutation": "real_case_public"
+    },
+    {
+      "id": "BAD-20",
+      "from": "restricted_intake",
+      "to": "custody_verified",
+      "actorRole": "custodian",
+      "actorId": "TEST-CUSTODIAN",
+      "expected": "reject",
+      "mutation": "bad_proposal"
+    },
+    {
+      "id": "BAD-21",
+      "from": "custody_verified",
+      "to": "technical_reviewed",
+      "actorRole": "technical_reviewer",
+      "actorId": "TEST-REVIEW-T",
+      "expected": "reject",
+      "mutation": "missing_alternatives"
+    },
+    {
+      "id": "BAD-22",
+      "from": "restricted_intake",
+      "to": "custody_verified",
+      "actorRole": "custodian",
+      "actorId": "TEST-CUSTODIAN",
+      "expected": "reject",
+      "mutation": "bad_quality"
+    },
+    {
+      "id": "BAD-23",
+      "from": "restricted_intake",
+      "to": "custody_verified",
+      "actorRole": "custodian",
+      "actorId": "TEST-CUSTODIAN",
+      "expected": "reject",
+      "mutation": "reidentifiable_asset"
+    },
+    {
+      "id": "BAD-24",
+      "from": "independent_reviewed",
+      "to": "ready_for_change_control",
+      "actorRole": "change_control_owner",
+      "actorId": "TEST-CONTROL",
+      "expected": "reject",
+      "mutation": "promotion_approval"
+    }
+  ],
+  "totals": {
+    "allow": 5,
+    "reject": 24,
+    "syntheticOnly": true
+  }
+}
