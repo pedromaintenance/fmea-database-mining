@@ -1,0 +1,384 @@
+{
+  "schema": "fmea-mining.staging-acceptance-plan.v1",
+  "version": "1.3.25",
+  "nature": "corporate_staging_approval_plan_not_live_implementation",
+  "sourceArchitecture": "data/governance/restricted-infrastructure-design.v1.json",
+  "sourceWorkflow": "data/governance/restricted-evidence-workflow.v1.json",
+  "environment": {
+    "name": "future_restricted_staging",
+    "provisioned": false,
+    "corporateTenantApproved": false,
+    "syntheticTestAccountsProvisioned": false,
+    "privateTestVaultAvailable": false,
+    "backendConnected": false,
+    "externalAuditAnchorOperational": false,
+    "restoreTestPerformed": false,
+    "retentionPolicyApproved": false,
+    "securityReviewCompleted": false,
+    "ingestRealEvidenceAllowed": false
+  },
+  "executionPolicy": {
+    "noRealRecordsInPublicRepo": true,
+    "noRealCredentialsOrUrls": true,
+    "noOEMFilesInPublicRepo": true,
+    "noRealAssetIdentifiers": true,
+    "fixturesSyntheticOnly": true,
+    "mockTestsAreNotIntegrationTests": true,
+    "noAutomatedApproval": true,
+    "noAutoPublicRelease": true,
+    "stagingCannotApproveRootCause": true
+  },
+  "domains": [
+    {
+      "id": "identity_and_revocation",
+      "scenarioId": "STG-ID-001",
+      "objective": "Provar SSO/MFA, expiração e revogação de identidade",
+      "owner": "security_it",
+      "controls": [
+        {
+          "key": "sso_identity_asserted",
+          "category": "control_precondition",
+          "required": true
+        },
+        {
+          "key": "mfa_challenge_verified",
+          "category": "technical_control",
+          "required": true
+        },
+        {
+          "key": "revoked_account_denied",
+          "category": "technical_control",
+          "required": true
+        },
+        {
+          "key": "revocation_logged",
+          "category": "audit_or_reporting",
+          "required": true
+        }
+      ],
+      "acceptanceEvidence": "Captura de testes autenticados sintéticos, resultado de revogação e correlação ao IdP em staging",
+      "actualExecutionStatus": "not_executed",
+      "actualEvidenceReference": null,
+      "actualReviewer": null,
+      "actualFinding": null,
+      "actualDecision": "pending",
+      "verifiedInRealStaging": false,
+      "corporateSignOff": false
+    },
+    {
+      "id": "tenant_and_case_isolation",
+      "scenarioId": "STG-ISO-001",
+      "objective": "Bloquear acesso entre tenants, casos não atribuídos e URLs inferidas",
+      "owner": "platform_it",
+      "controls": [
+        {
+          "key": "server_authorization_enforced",
+          "category": "control_precondition",
+          "required": true
+        },
+        {
+          "key": "wrong_tenant_denied",
+          "category": "technical_control",
+          "required": true
+        },
+        {
+          "key": "unassigned_case_denied",
+          "category": "technical_control",
+          "required": true
+        },
+        {
+          "key": "guessed_object_ref_denied",
+          "category": "audit_or_reporting",
+          "required": true
+        }
+      ],
+      "acceptanceEvidence": "Matriz de negações com tenant/caso de teste, chamadas backend e ausência de documento retornado",
+      "actualExecutionStatus": "not_executed",
+      "actualEvidenceReference": null,
+      "actualReviewer": null,
+      "actualFinding": null,
+      "actualDecision": "pending",
+      "verifiedInRealStaging": false,
+      "corporateSignOff": false
+    },
+    {
+      "id": "segregated_reviews",
+      "scenarioId": "STG-SOD-001",
+      "objective": "Exigir revisor técnico independente do autor e segundo revisor distinto",
+      "owner": "maintenance_engineering",
+      "controls": [
+        {
+          "key": "originator_self_review_denied",
+          "category": "control_precondition",
+          "required": true
+        },
+        {
+          "key": "reviewer_identity_server_verified",
+          "category": "technical_control",
+          "required": true
+        },
+        {
+          "key": "independent_reviewer_distinct",
+          "category": "technical_control",
+          "required": true
+        },
+        {
+          "key": "change_control_does_not_approve_publication",
+          "category": "audit_or_reporting",
+          "required": true
+        }
+      ],
+      "acceptanceEvidence": "Log de rejeição por conflito e trilha das decisões sintéticas por pessoas de teste distintas",
+      "actualExecutionStatus": "not_executed",
+      "actualEvidenceReference": null,
+      "actualReviewer": null,
+      "actualFinding": null,
+      "actualDecision": "pending",
+      "verifiedInRealStaging": false,
+      "corporateSignOff": false
+    },
+    {
+      "id": "licensed_evidence_custody",
+      "scenarioId": "STG-CUSTODY-001",
+      "objective": "Conter arquivos e metadados sintéticos no cofre; provar verificação de direitos e origem",
+      "owner": "maintenance_engineering",
+      "controls": [
+        {
+          "key": "synthetic_vault_object_private",
+          "category": "control_precondition",
+          "required": true
+        },
+        {
+          "key": "license_policy_gate_enforced",
+          "category": "technical_control",
+          "required": true
+        },
+        {
+          "key": "oem_effectivity_flag_reviewed",
+          "category": "technical_control",
+          "required": true
+        },
+        {
+          "key": "raw_content_absent_from_public_artifacts",
+          "category": "audit_or_reporting",
+          "required": true
+        }
+      ],
+      "acceptanceEvidence": "Inspeção do bucket privado fictício, decisão de direitos de arquivo TEST e diff do artefato público",
+      "actualExecutionStatus": "not_executed",
+      "actualEvidenceReference": null,
+      "actualReviewer": null,
+      "actualFinding": null,
+      "actualDecision": "pending",
+      "verifiedInRealStaging": false,
+      "corporateSignOff": false
+    },
+    {
+      "id": "audit_integrity_alerting",
+      "scenarioId": "STG-AUDIT-001",
+      "objective": "Detectar supressão, reordenação e reescrita de eventos por mecanismo independente",
+      "owner": "security_it",
+      "controls": [
+        {
+          "key": "append_only_sink_configured",
+          "category": "control_precondition",
+          "required": true
+        },
+        {
+          "key": "external_anchor_verified",
+          "category": "technical_control",
+          "required": true
+        },
+        {
+          "key": "tampering_alert_triggered",
+          "category": "technical_control",
+          "required": true
+        },
+        {
+          "key": "trusted_time_and_log_access_verified",
+          "category": "audit_or_reporting",
+          "required": true
+        }
+      ],
+      "acceptanceEvidence": "Evidência de evento corrompido em log de teste, alarme no SIEM e verificação por âncora fora do domínio de escrita",
+      "actualExecutionStatus": "not_executed",
+      "actualEvidenceReference": null,
+      "actualReviewer": null,
+      "actualFinding": null,
+      "actualDecision": "pending",
+      "verifiedInRealStaging": false,
+      "corporateSignOff": false
+    },
+    {
+      "id": "backup_restore_and_recovery",
+      "scenarioId": "STG-RESTORE-001",
+      "objective": "Restaurar dados sintéticos mantendo ACL, integridade e evidências de auditoria",
+      "owner": "platform_it",
+      "controls": [
+        {
+          "key": "encrypted_backup_restored",
+          "category": "control_precondition",
+          "required": true
+        },
+        {
+          "key": "restored_tenant_case_acls_verified",
+          "category": "technical_control",
+          "required": true
+        },
+        {
+          "key": "restored_audit_chain_verified",
+          "category": "technical_control",
+          "required": true
+        },
+        {
+          "key": "recovery_result_documented",
+          "category": "audit_or_reporting",
+          "required": true
+        }
+      ],
+      "acceptanceEvidence": "Relatório de restauração sintética e checagem de negação cruzada e integridade após recuperação",
+      "actualExecutionStatus": "not_executed",
+      "actualEvidenceReference": null,
+      "actualReviewer": null,
+      "actualFinding": null,
+      "actualDecision": "pending",
+      "verifiedInRealStaging": false,
+      "corporateSignOff": false
+    },
+    {
+      "id": "retention_and_legal_hold",
+      "scenarioId": "STG-RETENTION-001",
+      "objective": "Impedir descarte com hold, antes do prazo ou sem dupla revisão e cópias tratadas",
+      "owner": "records_privacy",
+      "controls": [
+        {
+          "key": "approved_schedule_applied",
+          "category": "control_precondition",
+          "required": true
+        },
+        {
+          "key": "active_hold_blocks_disposal",
+          "category": "technical_control",
+          "required": true
+        },
+        {
+          "key": "two_distinct_disposal_approvers_checked",
+          "category": "technical_control",
+          "required": true
+        },
+        {
+          "key": "backup_and_disposition_record_verified",
+          "category": "audit_or_reporting",
+          "required": true
+        }
+      ],
+      "acceptanceEvidence": "Log do bloqueio de descarte de amostra fictícia, autorização simulada por duas identidades e plano para backups",
+      "actualExecutionStatus": "not_executed",
+      "actualEvidenceReference": null,
+      "actualReviewer": null,
+      "actualFinding": null,
+      "actualDecision": "pending",
+      "verifiedInRealStaging": false,
+      "corporateSignOff": false
+    },
+    {
+      "id": "separate_public_release_gate",
+      "scenarioId": "STG-RELEASE-001",
+      "objective": "Exigir decisão adicional de direitos, privacidade e diff antes de exportação pública",
+      "owner": "records_privacy",
+      "controls": [
+        {
+          "key": "oem_license_and_rights_reviewed",
+          "category": "control_precondition",
+          "required": true
+        },
+        {
+          "key": "privacy_reidentification_screened",
+          "category": "technical_control",
+          "required": true
+        },
+        {
+          "key": "human_release_board_approved",
+          "category": "technical_control",
+          "required": true
+        },
+        {
+          "key": "public_diff_and_checksum_checked",
+          "category": "audit_or_reporting",
+          "required": true
+        }
+      ],
+      "acceptanceEvidence": "Aprovação simulada de pacote TEST com diff revisado, sem dados de série, OEM ou evidências efetivas",
+      "actualExecutionStatus": "not_executed",
+      "actualEvidenceReference": null,
+      "actualReviewer": null,
+      "actualFinding": null,
+      "actualDecision": "pending",
+      "verifiedInRealStaging": false,
+      "corporateSignOff": false
+    }
+  ],
+  "counts": {
+    "domains": 8,
+    "requiredControls": 32,
+    "syntheticFixtures": 52,
+    "actualStagingRuns": 0,
+    "actualCorporateApprovals": 0,
+    "coreFmeaChanges": 0
+  },
+  "signoffRoles": [
+    "security_it",
+    "platform_it",
+    "maintenance_engineering",
+    "records_privacy"
+  ],
+  "manualAcceptanceRequirements": [
+    {
+      "key": "identity_and_hosting_approved",
+      "owner": "security_it",
+      "status": "pending",
+      "evidenceRef": null
+    },
+    {
+      "key": "vault_and_backup_staging_deployed",
+      "owner": "platform_it",
+      "status": "pending",
+      "evidenceRef": null
+    },
+    {
+      "key": "external_audit_and_incident_review",
+      "owner": "security_it",
+      "status": "pending",
+      "evidenceRef": null
+    },
+    {
+      "key": "rights_privacy_retention_approved",
+      "owner": "records_privacy",
+      "status": "pending",
+      "evidenceRef": null
+    },
+    {
+      "key": "engineering_test_execution_review",
+      "owner": "maintenance_engineering",
+      "status": "pending",
+      "evidenceRef": null
+    },
+    {
+      "key": "cross_role_acceptance_signed",
+      "owner": "security_it",
+      "status": "pending",
+      "evidenceRef": null
+    }
+  ],
+  "acceptanceMeaning": "Todas as verificações precisam ser executadas e confirmadas no staging corporativo privado por representantes autorizados. Aprovação de staging não valida falha mecânica, não autoriza publicação e não implica produção.",
+  "unmetExternalDependencies": [
+    "IdP/SSO+MFA, IAM backend e usuários de teste corporativos",
+    "Cofre privado criptografado, chaves e backup em staging",
+    "Log append-only com verificador e âncora sob controle independente",
+    "Plano de retenção e legal hold aprovado",
+    "Avaliação independente de segurança e aprovação formal de TI/Engenharia/Privacidade"
+  ],
+  "publicReleaseStatus": "not_approved",
+  "oemEffectivityApprovalStatus": "not_reviewed",
+  "rootCauseConfirmationCount": 0
+}

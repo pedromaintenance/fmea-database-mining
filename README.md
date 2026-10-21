@@ -2,7 +2,7 @@
 
 Banco de conhecimento **versionado** para investigar modos de falha, sintomas, evidências e causas em equipamentos móveis de mineração. Um consumidor possível é o jogo **[P.O.R.C.A.R.I.A. — Você Quebra, Eu Conserto](https://github.com/pedromaintenance/porcaria-voce-quebra-eu-conserto)**, mas o banco é independente: **este repositório não altera os consumidores**.
 
-> **Status:** versão do catálogo **1.3.24** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
+> **Status:** versão do catálogo **1.3.25** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
 
 ## O que queremos construir
 
@@ -322,6 +322,14 @@ O [blueprint de implantação](data/governance/restricted-infrastructure-design.
 **Atenção:** *não há infraestrutura corporativa implantada*. O modelo de RBAC não autentica usuários reais; os hashes demonstram detecção de alteração apenas diante de **âncora confiável externa**, e as regras de retenção não apagam dados. Prazos, permissões e implantação exigem deliberação da empresa. Nenhum caso real, credencial, URL, documento OEM, laudo ou registro de série deve entrar no repositório público.
 
 [Especificação de implantação e ameaças](docs/ARQUITETURA_RESTRITA_IMPLANTACAO.md) · [Relatório v1.3.24](docs/CICLO_2026-10-21_ARQUITETURA_CORPORATIVA_RESTRITA.md) · [Schema JSON](schemas/restricted-infrastructure-design.schema.json).
+
+## Plano de aceite para staging restrito — v1.3.25
+
+O [plano de homologação](data/governance/staging-acceptance-plan.v1.json) especifica **8 domínios**, **32 controles obrigatórios** e seis aprovações manuais futuras de TI, Segurança, Engenharia e Privacidade. O [validador](scripts/validate-staging-acceptance.mjs) executa **52 testes sintéticos** (8 baselines, 32 controles faltantes e 12 tentativas de forjar resultados/assinaturas), integrados ao `npm run qa` e ao GitHub Actions.
+
+**Não há staging corporativo provisionado nem homologado**: os testes só validam a coerência da especificação e não substituem teste de integração contra IdP, vault, backend, log externo e backup reais. O pacote proíbe documentos OEM, casos, números de série, valores reais ou credenciais em repositório público e mantém a necessidade de autorização corporativa prévia.
+
+[Runbook de homologação para TI](docs/RUNBOOK_HOMOLOGACAO_STAGING.md) · [Relatório do ciclo](docs/CICLO_2026-10-21_HOMOLOGACAO_STAGING.md) · [Schema JSON](schemas/staging-acceptance-plan.schema.json).
 
 ## Comece por aqui
 

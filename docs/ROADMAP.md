@@ -1,6 +1,6 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 21/10/2026 · **Ciclo:** catálogo técnico v1.3.24 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 21/10/2026 · **Ciclo:** catálogo técnico v1.3.25 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
 
@@ -39,6 +39,20 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 
 **Observação:** as 159 tarefas de PM com subgrupo candidato foram obtidas em extração local anterior e **não** representam 159 associações homologadas. Contagens de vínculos estritos serão publicadas pelo relatório automático após cada alteração do gerador.
 
+## Ciclo concluído — 21/10/2026: plano de homologação de staging (v1.3.25)
+
+- [x] [Plano de aceite](../data/governance/staging-acceptance-plan.v1.json) com 8 domínios e 32 controles: IdP/revogação, tenant/ACL, dupla revisão, custódia licenciada, log externo, restauração, hold e publicação separada.
+- [x] Seis autorizações corporativas definidas como **pendentes**, com nenhum resultado ou parecer real registrado.
+- [x] [Validador](../scripts/validate-staging-acceptance.mjs), [schema](../schemas/staging-acceptance-plan.schema.json) e **52 cenários inteiramente sintéticos** incorporados ao QA/CI.
+- [x] [Runbook de homologação](RUNBOOK_HOMOLOGACAO_STAGING.md) e [relatório de verificação](CICLO_2026-10-21_HOMOLOGACAO_STAGING.md).
+- [x] Preservados as sete camadas de arquitetura v1.3.24 ainda **não provisionadas**, contratos públicos, FMEA central e consumidores.
+- [ ] **P0 de TI/Segurança:** provisionar staging corporativo **privado** com SSO/MFA, backend que impõe tenant/caso, cofre, logs ancorados externamente e backup restaurável.
+- [ ] **P0 Engenharia/Privacidade:** aprovar direitos OEM, política de retenção/hold, papéis humanos segregados e critérios de liberação; designar responsáveis reais somente no ambiente privado.
+- [ ] **P0 próximo ciclo:** preparar implementação/contrato de adaptador de teste de integração para futura execução remota sob infraestrutura e autorização corporativa, sem criar credenciais ou endpoints ficticiamente ativos.
+- [ ] Nenhuma ingestão de dados reais, inspeção ou publicação automática até aprovação e evidências efetivas de staging.
+
+**Estado:** 8 domínios propostos, 52 testes de coerência sintéticos, **0 execuções reais de staging, 0 aprovações de TI/Segurança**, zero causas confirmadas.
+
 ## Ciclo concluído — 21/10/2026: arquitetura corporativa restrita (v1.3.24)
 
 - [x] Blueprint [v1.3.24](../data/governance/restricted-infrastructure-design.v1.json): 7 componentes para identidade corporativa, autorização backend, cofre, metadados, trilha de auditoria, retenção e governança de mudanças.
@@ -49,7 +63,7 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 - [x] [Especificação e threat model](ARQUITETURA_RESTRITA_IMPLANTACAO.md) e [relatório técnico](CICLO_2026-10-21_ARQUITETURA_CORPORATIVA_RESTRITA.md).
 - [ ] **P0 externo — TI/Segurança:** aprovar provedor de identidade/MFA, proteção de rede, KMS/chaves, cofre privado, logs assinados/ancorados, SIEM e autorização backend.
 - [ ] **P0 externo — Jurídico/Privacidade/Gestão Documental:** fixar retenção aprovada, revisão de licença OEM, legal hold, cópias de segurança e evidências de sanitização.
-- [ ] **P0 próximo ciclo:** planejar prova de conceito *em staging privado autorizado*, com usuários de teste, sem documentos reais e com exercícios de negação por tenant/role, auditoria e recuperação.
+- [x] **Plano de homologação v1.3.25 concluído:** critérios de staging privado definidos e testados sinteticamente; execução de testes de integração depende de infraestrutura/autorizações externas.
 - [ ] Nenhum piloto com dados reais até implantação, avaliação de segurança, dupla revisão e autorização explícita da organização.
 
 **Estado:** 7 componentes especificados, **0 provisionados**; 42 regressões sintéticas, 0 casos reais, 0 aprovação OEM ou de causa e nenhuma mudança no núcleo/público.

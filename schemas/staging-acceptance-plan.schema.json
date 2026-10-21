@@ -1,0 +1,290 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FMEA Mining — staging acceptance specification 1.3.25",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "version",
+    "nature",
+    "sourceArchitecture",
+    "sourceWorkflow",
+    "environment",
+    "executionPolicy",
+    "domains",
+    "counts",
+    "signoffRoles",
+    "manualAcceptanceRequirements",
+    "acceptanceMeaning",
+    "unmetExternalDependencies",
+    "publicReleaseStatus",
+    "oemEffectivityApprovalStatus",
+    "rootCauseConfirmationCount"
+  ],
+  "properties": {
+    "schema": {
+      "const": "fmea-mining.staging-acceptance-plan.v1"
+    },
+    "version": {
+      "const": "1.3.25"
+    },
+    "nature": {
+      "const": "corporate_staging_approval_plan_not_live_implementation"
+    },
+    "sourceArchitecture": {
+      "const": "data/governance/restricted-infrastructure-design.v1.json"
+    },
+    "sourceWorkflow": {
+      "const": "data/governance/restricted-evidence-workflow.v1.json"
+    },
+    "environment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "provisioned",
+        "corporateTenantApproved",
+        "syntheticTestAccountsProvisioned",
+        "privateTestVaultAvailable",
+        "backendConnected",
+        "externalAuditAnchorOperational",
+        "restoreTestPerformed",
+        "retentionPolicyApproved",
+        "securityReviewCompleted",
+        "ingestRealEvidenceAllowed"
+      ],
+      "properties": {
+        "name": {
+          "const": "future_restricted_staging"
+        },
+        "provisioned": {
+          "const": false
+        },
+        "corporateTenantApproved": {
+          "const": false
+        },
+        "syntheticTestAccountsProvisioned": {
+          "const": false
+        },
+        "privateTestVaultAvailable": {
+          "const": false
+        },
+        "backendConnected": {
+          "const": false
+        },
+        "externalAuditAnchorOperational": {
+          "const": false
+        },
+        "restoreTestPerformed": {
+          "const": false
+        },
+        "retentionPolicyApproved": {
+          "const": false
+        },
+        "securityReviewCompleted": {
+          "const": false
+        },
+        "ingestRealEvidenceAllowed": {
+          "const": false
+        }
+      }
+    },
+    "executionPolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "noRealRecordsInPublicRepo",
+        "noRealCredentialsOrUrls",
+        "noOEMFilesInPublicRepo",
+        "noRealAssetIdentifiers",
+        "fixturesSyntheticOnly",
+        "mockTestsAreNotIntegrationTests",
+        "noAutomatedApproval",
+        "noAutoPublicRelease",
+        "stagingCannotApproveRootCause"
+      ],
+      "properties": {
+        "noRealRecordsInPublicRepo": {
+          "const": true
+        },
+        "noRealCredentialsOrUrls": {
+          "const": true
+        },
+        "noOEMFilesInPublicRepo": {
+          "const": true
+        },
+        "noRealAssetIdentifiers": {
+          "const": true
+        },
+        "fixturesSyntheticOnly": {
+          "const": true
+        },
+        "mockTestsAreNotIntegrationTests": {
+          "const": true
+        },
+        "noAutomatedApproval": {
+          "const": true
+        },
+        "noAutoPublicRelease": {
+          "const": true
+        },
+        "stagingCannotApproveRootCause": {
+          "const": true
+        }
+      }
+    },
+    "domains": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 8,
+      "items": {
+        "$ref": "#/$defs/domain"
+      }
+    },
+    "counts": {
+      "type": "object",
+      "required": [
+        "domains",
+        "requiredControls",
+        "syntheticFixtures",
+        "actualStagingRuns",
+        "actualCorporateApprovals",
+        "coreFmeaChanges"
+      ],
+      "properties": {
+        "domains": {
+          "const": 8
+        },
+        "requiredControls": {
+          "const": 32
+        },
+        "syntheticFixtures": {
+          "const": 52
+        },
+        "actualStagingRuns": {
+          "const": 0
+        },
+        "actualCorporateApprovals": {
+          "const": 0
+        },
+        "coreFmeaChanges": {
+          "const": 0
+        }
+      }
+    },
+    "signoffRoles": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4
+    },
+    "manualAcceptanceRequirements": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "required": [
+          "key",
+          "owner",
+          "status",
+          "evidenceRef"
+        ],
+        "properties": {
+          "status": {
+            "const": "pending"
+          },
+          "evidenceRef": {
+            "type": "null"
+          }
+        }
+      }
+    },
+    "acceptanceMeaning": {
+      "type": "string"
+    },
+    "unmetExternalDependencies": {
+      "type": "array",
+      "minItems": 5
+    },
+    "publicReleaseStatus": {
+      "const": "not_approved"
+    },
+    "oemEffectivityApprovalStatus": {
+      "const": "not_reviewed"
+    },
+    "rootCauseConfirmationCount": {
+      "const": 0
+    }
+  },
+  "$defs": {
+    "domain": {
+      "type": "object",
+      "required": [
+        "id",
+        "scenarioId",
+        "objective",
+        "owner",
+        "controls",
+        "acceptanceEvidence",
+        "actualExecutionStatus",
+        "actualEvidenceReference",
+        "actualReviewer",
+        "actualFinding",
+        "actualDecision",
+        "verifiedInRealStaging",
+        "corporateSignOff"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "scenarioId": {
+          "type": "string",
+          "pattern": "^STG-"
+        },
+        "controls": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "required": [
+              "key",
+              "category",
+              "required"
+            ],
+            "properties": {
+              "key": {
+                "type": "string"
+              },
+              "required": {
+                "const": true
+              }
+            }
+          }
+        },
+        "actualExecutionStatus": {
+          "const": "not_executed"
+        },
+        "actualEvidenceReference": {
+          "type": "null"
+        },
+        "actualReviewer": {
+          "type": "null"
+        },
+        "actualFinding": {
+          "type": "null"
+        },
+        "actualDecision": {
+          "const": "pending"
+        },
+        "verifiedInRealStaging": {
+          "const": false
+        },
+        "corporateSignOff": {
+          "const": false
+        }
+      }
+    }
+  }
+}

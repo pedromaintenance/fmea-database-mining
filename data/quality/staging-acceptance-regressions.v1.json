@@ -1,0 +1,647 @@
+{
+  "schema": "fmea-mining.staging-acceptance-regressions.v1",
+  "version": "1.3.25",
+  "nature": "synthetic_only_no_real_staging",
+  "fixtures": [
+    {
+      "id": "TEST-STG-ID-001-PASS",
+      "scenarioId": "STG-ID-001",
+      "kind": "synthetic_baseline",
+      "syntheticOnly": true,
+      "controls": {
+        "sso_identity_asserted": true,
+        "mfa_challenge_verified": true,
+        "revoked_account_denied": true,
+        "revocation_logged": true
+      },
+      "expected": "eligible_for_manual_staging_review",
+      "actualStagingResult": null
+    },
+    {
+      "id": "TEST-STG-ID-001-DENY-1",
+      "scenarioId": "STG-ID-001",
+      "kind": "synthetic_missing_control",
+      "syntheticOnly": true,
+      "controls": {
+        "sso_identity_asserted": false,
+        "mfa_challenge_verified": true,
+        "revoked_account_denied": true,
+        "revocation_logged": true
+      },
+      "expected": "blocked",
+      "actualStagingResult": null
+    },
+    {
+      "id": "TEST-STG-ID-001-DENY-2",
+      "scenarioId": "STG-ID-001",
+      "kind": "synthetic_missing_control",
+      "syntheticOnly": true,
+      "controls": {
+        "sso_identity_asserted": true,
+        "mfa_challenge_verified": false,
+        "revoked_account_denied": true,
+        "revocation_logged": true
+      },
+      "expected": "blocked",
+      "actualStagingResult": null
+    },
+    {
+      "id": "TEST-STG-ID-001-DENY-3",
+      "scenarioId": "STG-ID-001",
+      "kind": "synthetic_missing_control",
+      "syntheticOnly": true,
+      "controls": {
+        "sso_identity_asserted": true,
+        "mfa_challenge_verified": true,
+        "revoked_account_denied": false,
+        "revocation_logged": true
+      },
+      "expected": "blocked",
+      "actualStagingResult": null
+    },
+    {
+      "id": "TEST-STG-ID-001-DENY-4",
+      "scenarioId": "STG-ID-001",
+      "kind": "synthetic_missing_control",
+      "syntheticOnly": true,
+      "controls": {
+        "sso_identity_asserted": true,
+        "mfa_challenge_verified": true,
+        "revoked_account_denied": true,
+        "revocation_logged": false
+      },
+      "expected": "blocked",
+      "actualStagingResult": null
+    },
+    {
+      "id": "TEST-STG-ISO-001-PASS",
+      "scenarioId": "STG-ISO-001",
+      "kind": "synthetic_baseline",
+      "syntheticOnly": true,
+      "controls": {
+        "server_authorization_enforced": true,
+        "wrong_tenant_denied": true,
+        "unassigned_case_denied": true,
+        "guessed_object_ref_denied": true
+      },
+      "expected": "eligible_for_manual_staging_review",
+      "actualStagingResult": null
+    },
+    {
+      "id": "TEST-STG-ISO-001-DENY-1",
+      "scenarioId": "STG-ISO-001",
+      "kind": "synthetic_missing_control",
+      "syntheticOnly": true,
+      "controls": {
+        "server_authorization_enforced": false,
+        "wrong_tenant_denied": true,
+        "unassigned_case_denied": true,
+        "guessed_object_ref_denied": true
+      },
+      "expected": "blocked",
+      "actualStagingResult": null
+    },
+    {
+      "id": "TEST-STG-ISO-001-DENY-2",
+      "scenarioId": "STG-ISO-001",
+      "kind": "synthetic_missing_control",
+      "syntheticOnly": true,
+      "controls": {
+        "server_authorization_enforced": true,
+        "wrong_tenant_denied": false,
+        "unassigned_case_denied": true,
+        "guessed_object_ref_denied": true
+      },
+      "expected": "blocked",
+      "actualStagingResult": null
+    },
+    {
+      "id": "TEST-STG-ISO-001-DENY-3",
+      "scenarioId": "STG-ISO-001",
+      "kind": "synthetic_missing_control",
+      "syntheticOnly": true,
+      "controls": {
+        "server_authorization_enforced": true,
+        "wrong_tenant_denied": true,
+        "unassigned_case_denied": false,
+        "guessed_object_ref_denied": true
+      },
+      "expected": "blocked",
+      "actualStagingResult": null
+    },
+    {
+      "id": "TEST-STG-ISO-001-DENY-4",
+      "scenarioId": "STG-ISO-001",
+      "kind": "synthetic_missing_control",
+      "syntheticOnly": true,
+      "controls": {
+        "server_authorization_enforced": true,
+        "wrong_tenant_denied": true,
+        "unassigned_case_denied": true,
+        "guessed_object_ref_denied": false
+      },
+      "expected": "blocked",
+      "actualStagingResult": null
+    },
+    {
+      "id": "TEST-STG-SOD-001-PASS",
+      "scenarioId": "STG-SOD-001",
+      "kind": "synthetic_baseline",
+      "syntheticOnly": true,
+      "controls": {
+        "originator_self_review_denied": true,
+        "reviewer_identity_server_verified": true,
+        "independent_reviewer_distinct": true,
+        "change_control_does_not_approve_publication": true
+      },
+      "expected": "eligible_for_manual_staging_review",
+      "actualStagingResult": null
+    },
+    {
+      "id": "TEST-STG-SOD-001-DENY-1",
+      "scenarioId": "STG-SOD-001",
+      "kind": "synthetic_missing_control",
+      "syntheticOnly": true,
+      "controls": {
+        "originator_self_review_denied": false,
+        "reviewer_identity_server_verified": true,
+        "independent_reviewer_distinct": true,
+        "change_control_does_not_approve_publication": true
+      },
+      "expected": "blocked",
+      "actualStagingResult": null
+    },
+    {
+      "id": "TEST-STG-SOD-001-DENY-2",
+      "scenarioId": "STG-SOD-001",
+      "kind": "synthetic_missing_control",
+      "syntheticOnly": true,
+      "controls": {
+        "originator_self_review_denied": true,
+        "reviewer_identity_server_verified": false,
+        "independent_reviewer_distinct": true,
+        "change_control_does_not_approve_publication": true
+      },
+      "expected": "blocked",
+      "actualStagingResult": null
+    },
+    {
+      "id": "TEST-STG-SOD-001-DENY-3",
+      "scenarioId": "STG-SOD-001",
+      "kind": "synthetic_missing_control",
+      "syntheticOnly": true,
+      "controls": {
+        "originator_self_review_denied": true,
+        "reviewer_identity_server_verified": true,
+        "independent_reviewer_distinct": false,
+        "change_control_does_not_approve_publication": true
+      },
+      "expected": "blocked",
+      "actualStagingResult": null
+    },
+    {
+      "id": "TEST-STG-SOD-001-DENY-4",
+      "scenarioId": "STG-SOD-001",
+      "kind": "synthetic_missing_control",
+      "syntheticOnly": true,
+      "controls": {
+        "originator_self_review_denied": true,
+        "reviewer_identity_server_verified": true,
+        "independent_reviewer_distinct": true,
+        "change_control_does_not_approve_publication": false
+      },
+      "expected": "blocked",
+      "actualStagingResult": null
+    },
+    {
+      "id": "TEST-STG-CUSTODY-001-PASS",
+      "scenarioId": "STG-CUSTODY-001",
+      "kind": "synthetic_baseline",
+      "syntheticOnly": true,
+      "controls": {
+        "synthetic_vault_object_private": true,
+        "license_policy_gate_enforced": true,
+        "oem_effectivity_flag_reviewed": true,
+        "raw_content_absent_from_public_artifacts": true
+      },
+      "expected": "eligible_for_manual_staging_review",
+      "actualStagingResult": null
+    },
+    {
+      "id": "TEST-STG-CUSTODY-001-DENY-1",
+      "scenarioId": "STG-CUSTODY-001",
+      "kind": "synthetic_missing_control",
+      "syntheticOnly": true,
+      "controls": {
+        "synthetic_vault_object_private": false,
+        "license_policy_gate_enforced": true,
+        "oem_effectivity_flag_reviewed": true,
+        "raw_content_absent_from_public_artifacts": true
+      },
+      "expected": "blocked",
+      "actualStagingResult": null
+    },
+    {
+      "id": "TEST-STG-CUSTODY-001-DENY-2",
+      "scenarioId": "STG-CUSTODY-001",
+      "kind": "synthetic_missing_control",
+      "syntheticOnly": true,
+      "controls": {
+        "synthetic_vault_object_private": true,
+        "license_policy_gate_enforced": false,
+        "oem_effectivity_flag_reviewed": true,
+        "raw_content_absent_from_public_artifacts": true
+      },
+      "expected": "blocked",
+      "actualStagingResult": null
+    },
+    {
+      "id": "TEST-STG-CUSTODY-001-DENY-3",
+      "scenarioId": "STG-CUSTODY-001",
+      "kind": "synthetic_missing_control",
+      "syntheticOnly": true,
+      "controls": {
+        "synthetic_vault_object_private": true,
+        "license_policy_gate_enforced": true,
+        "oem_effectivity_flag_reviewed": false,
+        "raw_content_absent_from_public_artifacts": true
+      },
+      "expected": "blocked",
+      "actualStagingResult": null
+    },
+    {
+      "id": "TEST-STG-CUSTODY-001-DENY-4",
+      "scenarioId": "STG-CUSTODY-001",
+      "kind": "synthetic_missing_control",
+      "syntheticOnly": true,
+      "controls": {
+        "synthetic_vault_object_private": true,
+        "license_policy_gate_enforced": true,
+        "oem_effectivity_flag_reviewed": true,
+        "raw_content_absent_from_public_artifacts": false
+      },
+      "expected": "blocked",
+      "actualStagingResult": null
+    },
+    {
+      "id": "TEST-STG-AUDIT-001-PASS",
+      "scenarioId": "STG-AUDIT-001",
+      "kind": "synthetic_baseline",
+      "syntheticOnly": true,
+      "controls": {
+        "append_only_sink_configured": true,
+        "external_anchor_verified": true,
+        "tampering_alert_triggered": true,
+        "trusted_time_and_log_access_verified": true
+      },
+      "expected": "eligible_for_manual_staging_review",
+      "actualStagingResult": null
+    },
+    {
+      "id": "TEST-STG-AUDIT-001-DENY-1",
+      "scenarioId": "STG-AUDIT-001",
+      "kind": "synthetic_missing_control",
+      "syntheticOnly": true,
+      "controls": {
+        "append_only_sink_configured": false,
+        "external_anchor_verified": true,
+        "tampering_alert_triggered": true,
+        "trusted_time_and_log_access_verified": true
+      },
+      "expected": "blocked",
+      "actualStagingResult": null
+    },
+    {
+      "id": "TEST-STG-AUDIT-001-DENY-2",
+      "scenarioId": "STG-AUDIT-001",
+      "kind": "synthetic_missing_control",
+      "syntheticOnly": true,
+      "controls": {
+        "append_only_sink_configured": true,
+        "external_anchor_verified": false,
+        "tampering_alert_triggered": true,
+        "trusted_time_and_log_access_verified": true
+      },
+      "expected": "blocked",
+      "actualStagingResult": null
+    },
+    {
+      "id": "TEST-STG-AUDIT-001-DENY-3",
+      "scenarioId": "STG-AUDIT-001",
+      "kind": "synthetic_missing_control",
+      "syntheticOnly": true,
+      "controls": {
+        "append_only_sink_configured": true,
+        "external_anchor_verified": true,
+        "tampering_alert_triggered": false,
+        "trusted_time_and_log_access_verified": true
+      },
+      "expected": "blocked",
+      "actualStagingResult": null
+    },
+    {
+      "id": "TEST-STG-AUDIT-001-DENY-4",
+      "scenarioId": "STG-AUDIT-001",
+      "kind": "synthetic_missing_control",
+      "syntheticOnly": true,
+      "controls": {
+        "append_only_sink_configured": true,
+        "external_anchor_verified": true,
+        "tampering_alert_triggered": true,
+        "trusted_time_and_log_access_verified": false
+      },
+      "expected": "blocked",
+      "actualStagingResult": null
+    },
+    {
+      "id": "TEST-STG-RESTORE-001-PASS",
+      "scenarioId": "STG-RESTORE-001",
+      "kind": "synthetic_baseline",
+      "syntheticOnly": true,
+      "controls": {
+        "encrypted_backup_restored": true,
+        "restored_tenant_case_acls_verified": true,
+        "restored_audit_chain_verified": true,
+        "recovery_result_documented": true
+      },
+      "expected": "eligible_for_manual_staging_review",
+      "actualStagingResult": null
+    },
+    {
+      "id": "TEST-STG-RESTORE-001-DENY-1",
+      "scenarioId": "STG-RESTORE-001",
+      "kind": "synthetic_missing_control",
+      "syntheticOnly": true,
+      "controls": {
+        "encrypted_backup_restored": false,
+        "restored_tenant_case_acls_verified": true,
+        "restored_audit_chain_verified": true,
+        "recovery_result_documented": true
+      },
+      "expected": "blocked",
+      "actualStagingResult": null
+    },
+    {
+      "id": "TEST-STG-RESTORE-001-DENY-2",
+      "scenarioId": "STG-RESTORE-001",
+      "kind": "synthetic_missing_control",
+      "syntheticOnly": true,
+      "controls": {
+        "encrypted_backup_restored": true,
+        "restored_tenant_case_acls_verified": false,
+        "restored_audit_chain_verified": true,
+        "recovery_result_documented": true
+      },
+      "expected": "blocked",
+      "actualStagingResult": null
+    },
+    {
+      "id": "TEST-STG-RESTORE-001-DENY-3",
+      "scenarioId": "STG-RESTORE-001",
+      "kind": "synthetic_missing_control",
+      "syntheticOnly": true,
+      "controls": {
+        "encrypted_backup_restored": true,
+        "restored_tenant_case_acls_verified": true,
+        "restored_audit_chain_verified": false,
+        "recovery_result_documented": true
+      },
+      "expected": "blocked",
+      "actualStagingResult": null
+    },
+    {
+      "id": "TEST-STG-RESTORE-001-DENY-4",
+      "scenarioId": "STG-RESTORE-001",
+      "kind": "synthetic_missing_control",
+      "syntheticOnly": true,
+      "controls": {
+        "encrypted_backup_restored": true,
+        "restored_tenant_case_acls_verified": true,
+        "restored_audit_chain_verified": true,
+        "recovery_result_documented": false
+      },
+      "expected": "blocked",
+      "actualStagingResult": null
+    },
+    {
+      "id": "TEST-STG-RETENTION-001-PASS",
+      "scenarioId": "STG-RETENTION-001",
+      "kind": "synthetic_baseline",
+      "syntheticOnly": true,
+      "controls": {
+        "approved_schedule_applied": true,
+        "active_hold_blocks_disposal": true,
+        "two_distinct_disposal_approvers_checked": true,
+        "backup_and_disposition_record_verified": true
+      },
+      "expected": "eligible_for_manual_staging_review",
+      "actualStagingResult": null
+    },
+    {
+      "id": "TEST-STG-RETENTION-001-DENY-1",
+      "scenarioId": "STG-RETENTION-001",
+      "kind": "synthetic_missing_control",
+      "syntheticOnly": true,
+      "controls": {
+        "approved_schedule_applied": false,
+        "active_hold_blocks_disposal": true,
+        "two_distinct_disposal_approvers_checked": true,
+        "backup_and_disposition_record_verified": true
+      },
+      "expected": "blocked",
+      "actualStagingResult": null
+    },
+    {
+      "id": "TEST-STG-RETENTION-001-DENY-2",
+      "scenarioId": "STG-RETENTION-001",
+      "kind": "synthetic_missing_control",
+      "syntheticOnly": true,
+      "controls": {
+        "approved_schedule_applied": true,
+        "active_hold_blocks_disposal": false,
+        "two_distinct_disposal_approvers_checked": true,
+        "backup_and_disposition_record_verified": true
+      },
+      "expected": "blocked",
+      "actualStagingResult": null
+    },
+    {
+      "id": "TEST-STG-RETENTION-001-DENY-3",
+      "scenarioId": "STG-RETENTION-001",
+      "kind": "synthetic_missing_control",
+      "syntheticOnly": true,
+      "controls": {
+        "approved_schedule_applied": true,
+        "active_hold_blocks_disposal": true,
+        "two_distinct_disposal_approvers_checked": false,
+        "backup_and_disposition_record_verified": true
+      },
+      "expected": "blocked",
+      "actualStagingResult": null
+    },
+    {
+      "id": "TEST-STG-RETENTION-001-DENY-4",
+      "scenarioId": "STG-RETENTION-001",
+      "kind": "synthetic_missing_control",
+      "syntheticOnly": true,
+      "controls": {
+        "approved_schedule_applied": true,
+        "active_hold_blocks_disposal": true,
+        "two_distinct_disposal_approvers_checked": true,
+        "backup_and_disposition_record_verified": false
+      },
+      "expected": "blocked",
+      "actualStagingResult": null
+    },
+    {
+      "id": "TEST-STG-RELEASE-001-PASS",
+      "scenarioId": "STG-RELEASE-001",
+      "kind": "synthetic_baseline",
+      "syntheticOnly": true,
+      "controls": {
+        "oem_license_and_rights_reviewed": true,
+        "privacy_reidentification_screened": true,
+        "human_release_board_approved": true,
+        "public_diff_and_checksum_checked": true
+      },
+      "expected": "eligible_for_manual_staging_review",
+      "actualStagingResult": null
+    },
+    {
+      "id": "TEST-STG-RELEASE-001-DENY-1",
+      "scenarioId": "STG-RELEASE-001",
+      "kind": "synthetic_missing_control",
+      "syntheticOnly": true,
+      "controls": {
+        "oem_license_and_rights_reviewed": false,
+        "privacy_reidentification_screened": true,
+        "human_release_board_approved": true,
+        "public_diff_and_checksum_checked": true
+      },
+      "expected": "blocked",
+      "actualStagingResult": null
+    },
+    {
+      "id": "TEST-STG-RELEASE-001-DENY-2",
+      "scenarioId": "STG-RELEASE-001",
+      "kind": "synthetic_missing_control",
+      "syntheticOnly": true,
+      "controls": {
+        "oem_license_and_rights_reviewed": true,
+        "privacy_reidentification_screened": false,
+        "human_release_board_approved": true,
+        "public_diff_and_checksum_checked": true
+      },
+      "expected": "blocked",
+      "actualStagingResult": null
+    },
+    {
+      "id": "TEST-STG-RELEASE-001-DENY-3",
+      "scenarioId": "STG-RELEASE-001",
+      "kind": "synthetic_missing_control",
+      "syntheticOnly": true,
+      "controls": {
+        "oem_license_and_rights_reviewed": true,
+        "privacy_reidentification_screened": true,
+        "human_release_board_approved": false,
+        "public_diff_and_checksum_checked": true
+      },
+      "expected": "blocked",
+      "actualStagingResult": null
+    },
+    {
+      "id": "TEST-STG-RELEASE-001-DENY-4",
+      "scenarioId": "STG-RELEASE-001",
+      "kind": "synthetic_missing_control",
+      "syntheticOnly": true,
+      "controls": {
+        "oem_license_and_rights_reviewed": true,
+        "privacy_reidentification_screened": true,
+        "human_release_board_approved": true,
+        "public_diff_and_checksum_checked": false
+      },
+      "expected": "blocked",
+      "actualStagingResult": null
+    }
+  ],
+  "counts": {
+    "positive": 8,
+    "negative": 32,
+    "policyMutations": 12,
+    "total": 52
+  },
+  "mutationCases": [
+    {
+      "id": "TEST-MUT-01",
+      "mutation": "environment_provisioned",
+      "expected": "reject",
+      "caseNature": "synthetic_plan_mutation"
+    },
+    {
+      "id": "TEST-MUT-02",
+      "mutation": "real_evidence_inserted",
+      "expected": "reject",
+      "caseNature": "synthetic_plan_mutation"
+    },
+    {
+      "id": "TEST-MUT-03",
+      "mutation": "release_approved",
+      "expected": "reject",
+      "caseNature": "synthetic_plan_mutation"
+    },
+    {
+      "id": "TEST-MUT-04",
+      "mutation": "fake_execution",
+      "expected": "reject",
+      "caseNature": "synthetic_plan_mutation"
+    },
+    {
+      "id": "TEST-MUT-05",
+      "mutation": "fake_corporate_signoff",
+      "expected": "reject",
+      "caseNature": "synthetic_plan_mutation"
+    },
+    {
+      "id": "TEST-MUT-06",
+      "mutation": "confirm_root_cause",
+      "expected": "reject",
+      "caseNature": "synthetic_plan_mutation"
+    },
+    {
+      "id": "TEST-MUT-07",
+      "mutation": "approve_signoff",
+      "expected": "reject",
+      "caseNature": "synthetic_plan_mutation"
+    },
+    {
+      "id": "TEST-MUT-08",
+      "mutation": "delete_domain",
+      "expected": "reject",
+      "caseNature": "synthetic_plan_mutation"
+    },
+    {
+      "id": "TEST-MUT-09",
+      "mutation": "delete_control",
+      "expected": "reject",
+      "caseNature": "synthetic_plan_mutation"
+    },
+    {
+      "id": "TEST-MUT-10",
+      "mutation": "change_source_contract",
+      "expected": "reject",
+      "caseNature": "synthetic_plan_mutation"
+    },
+    {
+      "id": "TEST-MUT-11",
+      "mutation": "remove_signoff_role",
+      "expected": "reject",
+      "caseNature": "synthetic_plan_mutation"
+    },
+    {
+      "id": "TEST-MUT-12",
+      "mutation": "relax_safety_policy",
+      "expected": "reject",
+      "caseNature": "synthetic_plan_mutation"
+    }
+  ]
+}

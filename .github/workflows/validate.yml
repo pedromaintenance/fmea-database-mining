@@ -56,6 +56,8 @@ jobs:
         run: npm run evidence:restricted:validate
       - name: Validar arquitetura corporativa e 42 testes sinteticos de seguranca
         run: npm run infrastructure:restricted:validate
+      - name: Verificar plano de homologacao de staging e 52 testes sinteticos
+        run: npm run staging:acceptance:validate
       - name: Validar capacidade discriminante de seis testes P0
         run: npm run discrimination:validate
       - name: Validar avaliacao cruzada de 24 testes e revisao SAP/OEM
