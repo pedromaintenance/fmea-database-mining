@@ -70,6 +70,8 @@ jobs:
         run: npm run blockers:validate
       - name: Conferir sete requisicoes D9 e 35 cenarios sinteticos
         run: npm run d9:oem:request:validate
+      - name: Validar cinco fontes CAT publicas e 31 regressoes D9
+        run: npm run d9:public:oem:validate
       - name: Validar capacidade discriminante de seis testes P0
         run: npm run discrimination:validate
       - name: Validar avaliacao cruzada de 24 testes e revisao SAP/OEM
