@@ -1,6 +1,6 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 21/10/2026 · **Ciclo:** catálogo técnico v1.3.25 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 21/10/2026 · **Ciclo:** catálogo técnico v1.3.26 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
 
@@ -39,6 +39,19 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 
 **Observação:** as 159 tarefas de PM com subgrupo candidato foram obtidas em extração local anterior e **não** representam 159 associações homologadas. Contagens de vínculos estritos serão publicadas pelo relatório automático após cada alteração do gerador.
 
+## Ciclo concluído — 21/10/2026: contrato do adaptador de integração (v1.3.26)
+
+- [x] [Contrato de integração](../data/governance/staging-integration-contract.v1.json) para 8 cenários e 32 probes, alinhado ao plano v1.3.25 sem editar os testes de homologação anteriores.
+- [x] Implementados mock offline determinístico, runner `executeProbe`, verificador de envelopes públicos e [JSON Schema](../schemas/staging-probe-result.schema.json), sem endpoints nem segredos.
+- [x] **56 regressões inteiramente sintéticas** adicionadas ao `npm run qa` e GitHub Actions, com três resultados possíveis: completo, incompleto e inválido; nenhum significa staging real homologado.
+- [x] Documentados [limites de implementação](CONTRATO_ADAPTADOR_STAGING.md), [relatório técnico](CICLO_2026-10-21_CONTRATO_ADAPTADOR_STAGING.md), responsáveis futuros e requisitos de custódia privada.
+- [x] Preservados 24 FC, 15 ME, 8 domínios, 32 controles, contrato público 1.0.0 e conteúdo preview 1.3.12.
+- [ ] **P0 externo:** TI/Segurança aprovar e provisionar staging privado e escolher transportes e credenciais corporativas sob políticas internas, **fora do GitHub**.
+- [ ] **P0 próximo ciclo:** modelar um modelo de evidência de execução privada e revisão técnica compatível com os envelopes, com integridade/autenticidade verificadas pelo backend e sem dados sensíveis exportados.
+- [ ] **P1:** quando existir staging, testar o adaptador corporativo real apenas com identidades e documentos sintéticos e revisar 6 gates de homologação com os responsáveis.
+
+**Estado:** adaptador offline/contrato pronto, **0 chamadas reais**, zero aprovação de segurança e zero casos operacionais.
+
 ## Ciclo concluído — 21/10/2026: plano de homologação de staging (v1.3.25)
 
 - [x] [Plano de aceite](../data/governance/staging-acceptance-plan.v1.json) com 8 domínios e 32 controles: IdP/revogação, tenant/ACL, dupla revisão, custódia licenciada, log externo, restauração, hold e publicação separada.
@@ -48,7 +61,7 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 - [x] Preservados as sete camadas de arquitetura v1.3.24 ainda **não provisionadas**, contratos públicos, FMEA central e consumidores.
 - [ ] **P0 de TI/Segurança:** provisionar staging corporativo **privado** com SSO/MFA, backend que impõe tenant/caso, cofre, logs ancorados externamente e backup restaurável.
 - [ ] **P0 Engenharia/Privacidade:** aprovar direitos OEM, política de retenção/hold, papéis humanos segregados e critérios de liberação; designar responsáveis reais somente no ambiente privado.
-- [ ] **P0 próximo ciclo:** preparar implementação/contrato de adaptador de teste de integração para futura execução remota sob infraestrutura e autorização corporativa, sem criar credenciais ou endpoints ficticiamente ativos.
+- [x] **Concluído no ciclo v1.3.26:** contrato de interface e adaptador offline sintético, sem transporte real. Integração corporativa depende de provisão/autorização da TI.
 - [ ] Nenhuma ingestão de dados reais, inspeção ou publicação automática até aprovação e evidências efetivas de staging.
 
 **Estado:** 8 domínios propostos, 52 testes de coerência sintéticos, **0 execuções reais de staging, 0 aprovações de TI/Segurança**, zero causas confirmadas.

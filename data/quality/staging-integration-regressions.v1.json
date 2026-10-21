@@ -1,0 +1,439 @@
+{
+  "schema": "fmea-mining.staging-adapter-regressions.v1",
+  "version": "1.3.26",
+  "nature": "synthetic_only",
+  "fixtures": [
+    {
+      "id": "TEST-BASE-STG-ID-001",
+      "scenarioId": "STG-ID-001",
+      "mutation": null,
+      "expected": "synthetic_complete",
+      "allProbesPass": true
+    },
+    {
+      "id": "TEST-BASE-STG-ISO-001",
+      "scenarioId": "STG-ISO-001",
+      "mutation": null,
+      "expected": "synthetic_complete",
+      "allProbesPass": true
+    },
+    {
+      "id": "TEST-BASE-STG-SOD-001",
+      "scenarioId": "STG-SOD-001",
+      "mutation": null,
+      "expected": "synthetic_complete",
+      "allProbesPass": true
+    },
+    {
+      "id": "TEST-BASE-STG-CUSTODY-001",
+      "scenarioId": "STG-CUSTODY-001",
+      "mutation": null,
+      "expected": "synthetic_complete",
+      "allProbesPass": true
+    },
+    {
+      "id": "TEST-BASE-STG-AUDIT-001",
+      "scenarioId": "STG-AUDIT-001",
+      "mutation": null,
+      "expected": "synthetic_complete",
+      "allProbesPass": true
+    },
+    {
+      "id": "TEST-BASE-STG-RESTORE-001",
+      "scenarioId": "STG-RESTORE-001",
+      "mutation": null,
+      "expected": "synthetic_complete",
+      "allProbesPass": true
+    },
+    {
+      "id": "TEST-BASE-STG-RETENTION-001",
+      "scenarioId": "STG-RETENTION-001",
+      "mutation": null,
+      "expected": "synthetic_complete",
+      "allProbesPass": true
+    },
+    {
+      "id": "TEST-BASE-STG-RELEASE-001",
+      "scenarioId": "STG-RELEASE-001",
+      "mutation": null,
+      "expected": "synthetic_complete",
+      "allProbesPass": true
+    },
+    {
+      "id": "TEST-FAIL-STG-ID-001-1",
+      "scenarioId": "STG-ID-001",
+      "mutation": "probe_failed",
+      "targetProbe": "sso_identity_asserted",
+      "expected": "synthetic_incomplete",
+      "allProbesPass": false
+    },
+    {
+      "id": "TEST-FAIL-STG-ID-001-2",
+      "scenarioId": "STG-ID-001",
+      "mutation": "probe_failed",
+      "targetProbe": "mfa_challenge_verified",
+      "expected": "synthetic_incomplete",
+      "allProbesPass": false
+    },
+    {
+      "id": "TEST-FAIL-STG-ID-001-3",
+      "scenarioId": "STG-ID-001",
+      "mutation": "probe_failed",
+      "targetProbe": "revoked_account_denied",
+      "expected": "synthetic_incomplete",
+      "allProbesPass": false
+    },
+    {
+      "id": "TEST-FAIL-STG-ID-001-4",
+      "scenarioId": "STG-ID-001",
+      "mutation": "probe_failed",
+      "targetProbe": "revocation_logged",
+      "expected": "synthetic_incomplete",
+      "allProbesPass": false
+    },
+    {
+      "id": "TEST-FAIL-STG-ISO-001-1",
+      "scenarioId": "STG-ISO-001",
+      "mutation": "probe_failed",
+      "targetProbe": "server_authorization_enforced",
+      "expected": "synthetic_incomplete",
+      "allProbesPass": false
+    },
+    {
+      "id": "TEST-FAIL-STG-ISO-001-2",
+      "scenarioId": "STG-ISO-001",
+      "mutation": "probe_failed",
+      "targetProbe": "wrong_tenant_denied",
+      "expected": "synthetic_incomplete",
+      "allProbesPass": false
+    },
+    {
+      "id": "TEST-FAIL-STG-ISO-001-3",
+      "scenarioId": "STG-ISO-001",
+      "mutation": "probe_failed",
+      "targetProbe": "unassigned_case_denied",
+      "expected": "synthetic_incomplete",
+      "allProbesPass": false
+    },
+    {
+      "id": "TEST-FAIL-STG-ISO-001-4",
+      "scenarioId": "STG-ISO-001",
+      "mutation": "probe_failed",
+      "targetProbe": "guessed_object_ref_denied",
+      "expected": "synthetic_incomplete",
+      "allProbesPass": false
+    },
+    {
+      "id": "TEST-FAIL-STG-SOD-001-1",
+      "scenarioId": "STG-SOD-001",
+      "mutation": "probe_failed",
+      "targetProbe": "originator_self_review_denied",
+      "expected": "synthetic_incomplete",
+      "allProbesPass": false
+    },
+    {
+      "id": "TEST-FAIL-STG-SOD-001-2",
+      "scenarioId": "STG-SOD-001",
+      "mutation": "probe_failed",
+      "targetProbe": "reviewer_identity_server_verified",
+      "expected": "synthetic_incomplete",
+      "allProbesPass": false
+    },
+    {
+      "id": "TEST-FAIL-STG-SOD-001-3",
+      "scenarioId": "STG-SOD-001",
+      "mutation": "probe_failed",
+      "targetProbe": "independent_reviewer_distinct",
+      "expected": "synthetic_incomplete",
+      "allProbesPass": false
+    },
+    {
+      "id": "TEST-FAIL-STG-SOD-001-4",
+      "scenarioId": "STG-SOD-001",
+      "mutation": "probe_failed",
+      "targetProbe": "change_control_does_not_approve_publication",
+      "expected": "synthetic_incomplete",
+      "allProbesPass": false
+    },
+    {
+      "id": "TEST-FAIL-STG-CUSTODY-001-1",
+      "scenarioId": "STG-CUSTODY-001",
+      "mutation": "probe_failed",
+      "targetProbe": "synthetic_vault_object_private",
+      "expected": "synthetic_incomplete",
+      "allProbesPass": false
+    },
+    {
+      "id": "TEST-FAIL-STG-CUSTODY-001-2",
+      "scenarioId": "STG-CUSTODY-001",
+      "mutation": "probe_failed",
+      "targetProbe": "license_policy_gate_enforced",
+      "expected": "synthetic_incomplete",
+      "allProbesPass": false
+    },
+    {
+      "id": "TEST-FAIL-STG-CUSTODY-001-3",
+      "scenarioId": "STG-CUSTODY-001",
+      "mutation": "probe_failed",
+      "targetProbe": "oem_effectivity_flag_reviewed",
+      "expected": "synthetic_incomplete",
+      "allProbesPass": false
+    },
+    {
+      "id": "TEST-FAIL-STG-CUSTODY-001-4",
+      "scenarioId": "STG-CUSTODY-001",
+      "mutation": "probe_failed",
+      "targetProbe": "raw_content_absent_from_public_artifacts",
+      "expected": "synthetic_incomplete",
+      "allProbesPass": false
+    },
+    {
+      "id": "TEST-FAIL-STG-AUDIT-001-1",
+      "scenarioId": "STG-AUDIT-001",
+      "mutation": "probe_failed",
+      "targetProbe": "append_only_sink_configured",
+      "expected": "synthetic_incomplete",
+      "allProbesPass": false
+    },
+    {
+      "id": "TEST-FAIL-STG-AUDIT-001-2",
+      "scenarioId": "STG-AUDIT-001",
+      "mutation": "probe_failed",
+      "targetProbe": "external_anchor_verified",
+      "expected": "synthetic_incomplete",
+      "allProbesPass": false
+    },
+    {
+      "id": "TEST-FAIL-STG-AUDIT-001-3",
+      "scenarioId": "STG-AUDIT-001",
+      "mutation": "probe_failed",
+      "targetProbe": "tampering_alert_triggered",
+      "expected": "synthetic_incomplete",
+      "allProbesPass": false
+    },
+    {
+      "id": "TEST-FAIL-STG-AUDIT-001-4",
+      "scenarioId": "STG-AUDIT-001",
+      "mutation": "probe_failed",
+      "targetProbe": "trusted_time_and_log_access_verified",
+      "expected": "synthetic_incomplete",
+      "allProbesPass": false
+    },
+    {
+      "id": "TEST-FAIL-STG-RESTORE-001-1",
+      "scenarioId": "STG-RESTORE-001",
+      "mutation": "probe_failed",
+      "targetProbe": "encrypted_backup_restored",
+      "expected": "synthetic_incomplete",
+      "allProbesPass": false
+    },
+    {
+      "id": "TEST-FAIL-STG-RESTORE-001-2",
+      "scenarioId": "STG-RESTORE-001",
+      "mutation": "probe_failed",
+      "targetProbe": "restored_tenant_case_acls_verified",
+      "expected": "synthetic_incomplete",
+      "allProbesPass": false
+    },
+    {
+      "id": "TEST-FAIL-STG-RESTORE-001-3",
+      "scenarioId": "STG-RESTORE-001",
+      "mutation": "probe_failed",
+      "targetProbe": "restored_audit_chain_verified",
+      "expected": "synthetic_incomplete",
+      "allProbesPass": false
+    },
+    {
+      "id": "TEST-FAIL-STG-RESTORE-001-4",
+      "scenarioId": "STG-RESTORE-001",
+      "mutation": "probe_failed",
+      "targetProbe": "recovery_result_documented",
+      "expected": "synthetic_incomplete",
+      "allProbesPass": false
+    },
+    {
+      "id": "TEST-FAIL-STG-RETENTION-001-1",
+      "scenarioId": "STG-RETENTION-001",
+      "mutation": "probe_failed",
+      "targetProbe": "approved_schedule_applied",
+      "expected": "synthetic_incomplete",
+      "allProbesPass": false
+    },
+    {
+      "id": "TEST-FAIL-STG-RETENTION-001-2",
+      "scenarioId": "STG-RETENTION-001",
+      "mutation": "probe_failed",
+      "targetProbe": "active_hold_blocks_disposal",
+      "expected": "synthetic_incomplete",
+      "allProbesPass": false
+    },
+    {
+      "id": "TEST-FAIL-STG-RETENTION-001-3",
+      "scenarioId": "STG-RETENTION-001",
+      "mutation": "probe_failed",
+      "targetProbe": "two_distinct_disposal_approvers_checked",
+      "expected": "synthetic_incomplete",
+      "allProbesPass": false
+    },
+    {
+      "id": "TEST-FAIL-STG-RETENTION-001-4",
+      "scenarioId": "STG-RETENTION-001",
+      "mutation": "probe_failed",
+      "targetProbe": "backup_and_disposition_record_verified",
+      "expected": "synthetic_incomplete",
+      "allProbesPass": false
+    },
+    {
+      "id": "TEST-FAIL-STG-RELEASE-001-1",
+      "scenarioId": "STG-RELEASE-001",
+      "mutation": "probe_failed",
+      "targetProbe": "oem_license_and_rights_reviewed",
+      "expected": "synthetic_incomplete",
+      "allProbesPass": false
+    },
+    {
+      "id": "TEST-FAIL-STG-RELEASE-001-2",
+      "scenarioId": "STG-RELEASE-001",
+      "mutation": "probe_failed",
+      "targetProbe": "privacy_reidentification_screened",
+      "expected": "synthetic_incomplete",
+      "allProbesPass": false
+    },
+    {
+      "id": "TEST-FAIL-STG-RELEASE-001-3",
+      "scenarioId": "STG-RELEASE-001",
+      "mutation": "probe_failed",
+      "targetProbe": "human_release_board_approved",
+      "expected": "synthetic_incomplete",
+      "allProbesPass": false
+    },
+    {
+      "id": "TEST-FAIL-STG-RELEASE-001-4",
+      "scenarioId": "STG-RELEASE-001",
+      "mutation": "probe_failed",
+      "targetProbe": "public_diff_and_checksum_checked",
+      "expected": "synthetic_incomplete",
+      "allProbesPass": false
+    },
+    {
+      "id": "TEST-MUT-01",
+      "scenarioId": "STG-ID-001",
+      "mutation": "wrong_scenario",
+      "expected": "reject",
+      "allProbesPass": false
+    },
+    {
+      "id": "TEST-MUT-02",
+      "scenarioId": "STG-ISO-001",
+      "mutation": "missing_probe",
+      "expected": "reject",
+      "allProbesPass": false
+    },
+    {
+      "id": "TEST-MUT-03",
+      "scenarioId": "STG-SOD-001",
+      "mutation": "extra_probe",
+      "expected": "reject",
+      "allProbesPass": false
+    },
+    {
+      "id": "TEST-MUT-04",
+      "scenarioId": "STG-CUSTODY-001",
+      "mutation": "duplicate_probe",
+      "expected": "reject",
+      "allProbesPass": false
+    },
+    {
+      "id": "TEST-MUT-05",
+      "scenarioId": "STG-AUDIT-001",
+      "mutation": "real_mode",
+      "expected": "reject",
+      "allProbesPass": false
+    },
+    {
+      "id": "TEST-MUT-06",
+      "scenarioId": "STG-RESTORE-001",
+      "mutation": "false_synthetic_id",
+      "expected": "reject",
+      "allProbesPass": false
+    },
+    {
+      "id": "TEST-MUT-07",
+      "scenarioId": "STG-RETENTION-001",
+      "mutation": "raw_url",
+      "expected": "reject",
+      "allProbesPass": false
+    },
+    {
+      "id": "TEST-MUT-08",
+      "scenarioId": "STG-RELEASE-001",
+      "mutation": "credential_field",
+      "expected": "reject",
+      "allProbesPass": false
+    },
+    {
+      "id": "TEST-MUT-09",
+      "scenarioId": "STG-ID-001",
+      "mutation": "privately_classified_data",
+      "expected": "reject",
+      "allProbesPass": false
+    },
+    {
+      "id": "TEST-MUT-10",
+      "scenarioId": "STG-ISO-001",
+      "mutation": "approval_forged",
+      "expected": "reject",
+      "allProbesPass": false
+    },
+    {
+      "id": "TEST-MUT-11",
+      "scenarioId": "STG-SOD-001",
+      "mutation": "publication_forged",
+      "expected": "reject",
+      "allProbesPass": false
+    },
+    {
+      "id": "TEST-MUT-12",
+      "scenarioId": "STG-CUSTODY-001",
+      "mutation": "status_forged",
+      "expected": "reject",
+      "allProbesPass": false
+    },
+    {
+      "id": "TEST-MUT-13",
+      "scenarioId": "STG-AUDIT-001",
+      "mutation": "missing_evidence",
+      "expected": "reject",
+      "allProbesPass": false
+    },
+    {
+      "id": "TEST-MUT-14",
+      "scenarioId": "STG-RESTORE-001",
+      "mutation": "impossible_time",
+      "expected": "reject",
+      "allProbesPass": false
+    },
+    {
+      "id": "TEST-MUT-15",
+      "scenarioId": "STG-RETENTION-001",
+      "mutation": "unknown_adapter",
+      "expected": "reject",
+      "allProbesPass": false
+    },
+    {
+      "id": "TEST-MUT-16",
+      "scenarioId": "STG-RELEASE-001",
+      "mutation": "malformed_result",
+      "expected": "reject",
+      "allProbesPass": false
+    }
+  ],
+  "counts": {
+    "positive": 8,
+    "negativeOutcomes": 32,
+    "invalidEnvelopes": 16,
+    "total": 56,
+    "realStagingRuns": 0,
+    "corporateApprovals": 0
+  }
+}
