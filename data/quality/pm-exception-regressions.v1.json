@@ -1,0 +1,103 @@
+{
+  "schema": "fmea-mining.pm-exception-regressions.v1",
+  "version": "1.3.16",
+  "nature": "synthetic_only",
+  "cases": [
+    {
+      "id": "EXC-01",
+      "target": "pm",
+      "mutation": "none",
+      "expected": "pass"
+    },
+    {
+      "id": "EXC-02",
+      "target": "pm",
+      "mutation": "allowAutoRemap",
+      "expected": "reject"
+    },
+    {
+      "id": "EXC-03",
+      "target": "pm",
+      "mutation": "approveLocation",
+      "expected": "reject"
+    },
+    {
+      "id": "EXC-04",
+      "target": "pm",
+      "mutation": "approveCause",
+      "expected": "reject"
+    },
+    {
+      "id": "EXC-05",
+      "target": "pm",
+      "mutation": "inventPartNumber",
+      "expected": "reject"
+    },
+    {
+      "id": "EXC-06",
+      "target": "pm",
+      "mutation": "removeEvidence",
+      "expected": "reject"
+    },
+    {
+      "id": "EXC-07",
+      "target": "pm",
+      "mutation": "removeAlternative",
+      "expected": "reject"
+    },
+    {
+      "id": "EXC-08",
+      "target": "pm",
+      "mutation": "changeBlocker",
+      "expected": "reject"
+    },
+    {
+      "id": "EXC-09",
+      "target": "pm",
+      "mutation": "duplicateRule",
+      "expected": "reject"
+    },
+    {
+      "id": "EXC-10",
+      "target": "d9",
+      "mutation": "none",
+      "expected": "pass"
+    },
+    {
+      "id": "EXC-11",
+      "target": "d9",
+      "mutation": "inventSerial",
+      "expected": "reject"
+    },
+    {
+      "id": "EXC-12",
+      "target": "d9",
+      "mutation": "approvePilot",
+      "expected": "reject"
+    },
+    {
+      "id": "EXC-13",
+      "target": "d9",
+      "mutation": "inventLimit",
+      "expected": "reject"
+    },
+    {
+      "id": "EXC-14",
+      "target": "d9",
+      "mutation": "removeInput",
+      "expected": "reject"
+    },
+    {
+      "id": "EXC-15",
+      "target": "d9",
+      "mutation": "approveChecklist",
+      "expected": "reject"
+    },
+    {
+      "id": "EXC-16",
+      "target": "d9",
+      "mutation": "removeChain",
+      "expected": "reject"
+    }
+  ]
+}
