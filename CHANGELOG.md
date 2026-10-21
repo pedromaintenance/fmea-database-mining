@@ -2,6 +2,14 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.43] — 2026-10-21 — Crosswalk semântico transversal de regras PM
+
+- Auditadas as **25 regras PM** quanto à cobertura semântica: **9 possuem bundles** explícitos de condições/ações/danos e **16 permanecem sem bundle**, evitando anunciar cobertura completa equivocadamente.
+- Detectados e documentados **6 nós compartilhados** entre pares de regras: água, sedimentos e amostra representativa de combustível; fuga externa, baixa pressão e verificação de pressão hidráulica. Todos são conceitos genéricos de sistema, **zero danos físicos compartilhados**.
+- Política de validação confere sistema, natureza do conceito, vínculo, ausência de observação/execução e isolamento IDLER/ROLLER; **29 mutações adversariais rejeitadas** (20 de ontologia e 9 de política).
+- Identificado rótulo `DMG-COOL-INTERNAL-BLOCKAGE` com “obstrução interna efetiva”, apesar de `confirmed:false` e revisão não aprovada: pendência editorial, sem alteração silenciosa do catálogo.
+- CI/report `pm:semantic:crosswalk:audit`, matriz de discriminação por compartilhamento e inventário de regras sem ontologia. Preservados 25 regras, 115 vínculos candidatos, 10 bloqueios, 24 FC/15 ME, contrato/conteúdo públicos 1.0.0, preview 1.3.12 e consumidores.
+
 ## [1.3.42] — 2026-10-21 — Correção da ontologia: roda-guia ≠ rolete
 
 - Adicionadas duas condições específicas da roda-guia (aquecimento localizado suspeito e vestígio oleoso suspeito), além de ação de inspeção de sua vedação/detritos, **todas não observadas e não executadas**.
