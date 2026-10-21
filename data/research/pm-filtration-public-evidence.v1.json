@@ -1,0 +1,56 @@
+{
+  "schema": "fmea-mining.pm-filtration-public-evidence.v1",
+  "version": "1.3.36",
+  "nature": "manufacturer_public_technical_context_without_configuration_effectivity",
+  "reviewStatus": "public_research_only_no_application_approval",
+  "claims": [
+    {
+      "id": "CAT-FUEL-STAGES",
+      "sourceUrl": "https://www.cat.com/en_US/blog/how-to-replace-a-fuel-filter.html",
+      "publisher": "Caterpillar",
+      "scope": "fuel_filtration_general",
+      "evidence": "A Caterpillar distingue filtragem primária/separação de água e filtragem adicional em sistemas de combustível, variando conforme a configuração.",
+      "doesNotProve": "Não identifica objeto SAP, PN ou filtro instalado na frota, nem defeito do filtro a partir de água no combustível.",
+      "evidenceType": "manufacturer_general",
+      "effectiveForMachine": false
+    },
+    {
+      "id": "SANDVIK-DR410i-BASE",
+      "sourceUrl": "https://www.mining.sandvik/pt-br/produtos/equipamento/equipamentos-de-perfuracao-de-superficie/dr410i/",
+      "publisher": "Sandvik",
+      "scope": "drill_compressor_machine_family",
+      "evidence": "A família DR410i integra sistema de compressor; documentação de operação e peças é oferecida pelo portal My Sandvik.",
+      "doesNotProve": "Não discrimina os subgrupos AISY/COMR nem comprova filtro de ar, filtro de óleo ou separador instalado na configuração-alvo.",
+      "evidenceType": "manufacturer_family",
+      "effectiveForMachine": false
+    },
+    {
+      "id": "SANDVIK-MAINT-KITS",
+      "sourceUrl": "https://www.mining.sandvik/pt-br/produtos/kits-e-consum%C3%ADveis/kits-de-manuten%C3%A7%C3%A3o/",
+      "publisher": "Sandvik",
+      "scope": "configuration_dependent_maintenance",
+      "evidence": "Os kits preventivos são ajustados ao modelo e à configuração da máquina; a periodicidade depende da estratégia OEM aplicável.",
+      "doesNotProve": "Não autoriza transferir kit, elemento de filtro ou periodicidade entre variantes/séries.",
+      "evidenceType": "manufacturer_policy",
+      "effectiveForMachine": false
+    },
+    {
+      "id": "SANDVIK-PUMP-MODULE-VARIANT",
+      "sourceUrl": "https://www.mining.sandvik/en/products/parts-and-components/upgrades/rotary-drills/pump-unit-module/",
+      "publisher": "Sandvik",
+      "scope": "hydraulic_pump_unit_upgrade_not_air_compressor",
+      "evidence": "A Sandvik informa que uma atualização do módulo de bombas para DR410i pode eliminar filtragem adicional no módulo.",
+      "doesNotProve": "Este módulo de bombas NÃO deve ser confundido com o compressor de ar; nada nesta fonte confirma remoção de filtro do compressor.",
+      "evidenceType": "manufacturer_configuration_example",
+      "effectiveForMachine": false
+    }
+  ],
+  "policy": {
+    "noPartNumbers": true,
+    "noSapCodeInvention": true,
+    "noOEMEffectivityClaim": true,
+    "noObservedFailures": true,
+    "doNotConflateHydraulicPumpWithCompressor": true,
+    "manualIndependentReviewRequired": true
+  }
+}
