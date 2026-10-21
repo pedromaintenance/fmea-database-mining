@@ -2,7 +2,7 @@
 
 Banco de conhecimento **versionado** para investigar modos de falha, sintomas, evidências e causas em equipamentos móveis de mineração. Um consumidor possível é o jogo **[P.O.R.C.A.R.I.A. — Você Quebra, Eu Conserto](https://github.com/pedromaintenance/porcaria-voce-quebra-eu-conserto)**, mas o banco é independente: **este repositório não altera os consumidores**.
 
-> **Status:** versão do catálogo **1.3.33** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
+> **Status:** versão do catálogo **1.3.34** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
 
 ## O que queremos construir
 
@@ -408,6 +408,14 @@ O próximo avanço é **institucional**, não mais uma pesquisa pública: foi ab
 O [controle de encaminhamento](data/governance/d9-external-handoff.v1.json) vincula a issue aos **sete requisitos originais** e separa: definir canal/destinatário privado, encaminhar solicitação, obter referências sob licença e verificar efetividade com revisão humana. O [guia operacional de handoff](docs/D9_HANDOFF_ENVIO_OEM.md) informa exatamente o que enviar, o que deve permanecer no sistema corporativo e quais estados podem ser atualizados com evidência.
 
 O comando `npm run d9:handoff:validate` executa **27 verificações sintéticas** (7 vínculos + 20 adulterações bloqueadas) no QA/CI. **Estado verdadeiro: issue pública criada; nenhum destinatário corporativo confirmado, nenhuma solicitação enviada, nenhum documento recebido e nenhuma inspeção executada.**
+
+## Auditoria de vínculos preventivos × SAP — v1.3.34
+
+A [auditoria PM de escopo funcional](docs/AUDITORIA_PM_ESCOPO_FUNCIONAL.md) executa uma reconciliação **sobre o catálogo real** das **25 regras preventivas**. Para cada vínculo candidato gerado, a verificação agora exige concordância integral entre o modelo da regra, sistema e grupo funcional, subgrupo SAP, localização e tipo de objeto, descrição do componente, dano, causa, sintoma, inspeção e sinalizadores de **não observação/não homologação**.
+
+O comando `npm run pm:scope:audit` calcula, por regra, as etapas de cobertura e as causas de ausência de vínculos. Executa também **24 mutações adversariais** nos candidatos reais ou no conjunto gerado, rejeitando cruzamentos indevidos de sistemas, componentes, códigos e afirmações de evidência. O relatório numérico é gerado em `reports/pm-system-scope-audit.generated.json` durante o QA.
+
+Esta é uma validação de **integridade estrutural**, não uma aprovação OEM/SAP: as **10 exceções PM × SAP** continuam bloqueadas, e nenhuma inspeção de campo ou causa raiz foi confirmada. O [pedido OEM D9](https://github.com/pedromaintenance/fmea-database-mining/issues/31) permanece aguardando envio por canal corporativo autorizado.
 
 ## Comece por aqui
 

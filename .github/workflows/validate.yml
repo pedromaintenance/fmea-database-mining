@@ -32,6 +32,8 @@ jobs:
         run: npm run pm:generate
       - name: Validar relações preventivas
         run: npm run pm:validate
+      - name: Auditoria de 25 regras PM, escopo funcional e 24 mutacoes
+        run: npm run pm:scope:audit
       - name: Auditar lacunas das regras preventivas
         run: npm run pm:gaps:audit
       - name: Validar 10 bloqueios PM e 7 requisitos de efetividade OEM D9

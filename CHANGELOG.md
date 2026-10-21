@@ -2,6 +2,16 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.34] — 2026-10-21 — Auditoria estrutural das 25 regras PM × SAP
+
+- **Endurecido** o `scripts/validate-pm.mjs`: cada vínculo gerado precisa coincidir com modelo elegível, raiz e grupo, subgrupo, localização SAP, tipo de objeto, componente e texto da regra, par dano/causa, sintoma, método e identidade da geração.
+- Rejeita vínculos duplicados, omitidos, inconsistentes ou com ocorrências, inspeções, correspondências SAP e conclusões indevidamente promovidas a **observadas/homologadas**.
+- Adicionado `scripts/audit-pm-system-scope.mjs`: contagem dinâmica dos **25 padrões** por modelos elegíveis, subgrupos encontrados, raízes funcionais compatíveis, componentes compatíveis e pares dano/causa válidos; classifica bloqueios sem criar associações forçadas.
+- Incluídas **24 mutações adversariais** sobre vínculos reais gerados, além da reconciliação dos **25 registros de regras** e testes específicos de sistemas com subgrupos potencialmente compartilhados.
+- Relatório reproduzível `reports/pm-system-scope-audit.generated.json`, integração em `npm run qa` e GitHub Actions, métricas do auditor de qualidade e [guia técnico](docs/AUDITORIA_PM_ESCOPO_FUNCIONAL.md).
+- **10 exceções PM-SAP continuam sem liberação de evidência** e nenhum local SAP, PN, procedimento OEM, falha observada ou causa foi inventado.
+- Núcleo FMEA **24 FC / 15 ME**, contrato e conteúdo públicos 1.0.0, preview 1.3.12, checksum e consumidores inalterados.
+
 ## [1.3.33] — 2026-10-21 — Handoff externo para solicitação OEM D9
 
 - Aberta [issue #31](https://github.com/pedromaintenance/fmea-database-mining/issues/31) com **ação externa real pendente**: designação do destinatário/canal corporativo e encaminhamento da solicitação já preparada.

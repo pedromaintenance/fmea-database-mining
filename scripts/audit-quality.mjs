@@ -7,6 +7,8 @@ const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const read=p=>JSON.parse(fs.readFileSync(path.join(root,p),'utf8'));
 const db=read('data/catalog/failure-db.v1.json');
 const pmRules=read('data/knowledge/pm-prevention/seed-rules.json').records;
+const pmScopeAudit=read('reports/pm-system-scope-audit.generated.json');
+const pmStrictFixtures=read('data/quality/pm-strict-link-regressions.v1.json');
 const pm=read('data/knowledge/pm-prevention/generated-links.json').records;
 const playbooks=read('data/knowledge/diagnostic/playbooks.v1.json').records;
 const diagnostic=read('data/knowledge/diagnostic/generated-links.json').records;
@@ -97,6 +99,12 @@ const noLinkPlaybooks=diagnostic.filter(x=>x.candidateCount===0).map(x=>x.playbo
 const counts={
  modelCount:db.models.length,complete3LevelPaths:db.locations.filter(l=>l.profundidade===3).length,
  damageCodes:db.damages.length,causeCodes:db.causes.length,components:new Set(Object.values(db.partsByObjectType).flat().map(p=>p.code)).size,
+ pmStrictStructuralRulesReviewed:pmScopeAudit.counts.rules,
+ pmStrictStructuralLinksChecked:pmScopeAudit.counts.generatedCandidateLinks,
+ pmStrictRuleBlockers:pmScopeAudit.counts.rulesWithoutLinks,
+ pmStrictCrossSystemSubgroupRisks:pmScopeAudit.counts.sharedSubgroupsAcrossRules,
+ pmStrictNegativeTests:pmStrictFixtures.mutationCases.length,
+ pmStrictFieldFailureAssertions:pmScopeAudit.counts.realInspections,
  pmSeedRules:pmRules.length,pmRulesWithAtLeastOneCandidate:foundRules.size,pmRulesWithoutCandidate:emptyRules.length,
  pmCandidateLinks:pm.length,pathsWithPmCandidate:new Set(pm.map(x=>x.locationId)).size,
  diagnosticPlaybooks:playbooks.length,annotatedPlaybooks:annotated.length,
@@ -244,7 +252,7 @@ const counts={
  semanticDamageConfirmations:semantic.confirmedComponentDamages.length,
  evidenceValidatedInRealEquipment:0,technicallyApprovedPlaybooks:0
 };
-const report={schema:'fmea-mining.quality-audit.v1',version:'1.3.33',
+const report={schema:'fmea-mining.quality-audit.v1',version:'1.3.34',
  generatedFrom:'working_tree',status:'qualidade_cadastral_nao_taxa_de_falhas',
  meanings:{
   pmCandidateLinks:'vinculos gerados por regra e taxonomia, NAO falhas observadas',
