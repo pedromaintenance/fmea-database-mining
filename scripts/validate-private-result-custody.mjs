@@ -31,7 +31,7 @@ const seen=new Set(),stats={baselinePassed:0,mutationsRejected:0};
 const signer=(authority,type)=>authority.keys[{
  result:'TEST-KEY-SERVICE',custody:'TEST-KEY-CUSTODY',technical:'TEST-KEY-TECHNICAL',independent:'TEST-KEY-INDEPENDENT'
 }[type]];
-const badSignature=att=>{att.signature='A'+att.signature.slice(1)};
+const badSignature=att=>{att.signature=(att.signature.startsWith('A')?'B':'A')+att.signature.slice(1)};
 function alter(name,p,a){
  const custody=p.attestations.custody,tech=p.attestations.technical,ind=p.attestations.independent;
  const release=p.release;

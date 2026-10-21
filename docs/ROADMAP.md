@@ -1,6 +1,6 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 21/10/2026 · **Ciclo:** catálogo técnico v1.3.26 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 21/10/2026 · **Ciclo:** catálogo técnico v1.3.27 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
 
@@ -39,6 +39,20 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 
 **Observação:** as 159 tarefas de PM com subgrupo candidato foram obtidas em extração local anterior e **não** representam 159 associações homologadas. Contagens de vínculos estritos serão publicadas pelo relatório automático após cada alteração do gerador.
 
+## Ciclo concluído — 21/10/2026: custódia e atestação dos resultados de integração (v1.3.27)
+
+- [x] Definido [contrato de custódia privada](../data/governance/private-result-custody-contract.v1.json) com 4 assinaturas/atestados encadeados, vínculo tenant/caso/run, confiança externa, identificação do autor e duas revisões segregadas.
+- [x] Implementado validador criptográfico **offline sintético** Ed25519 com chaves efêmeras, 8 cenários STG e **48 regressões** (8 baselines + 40 adversariais), em QA/CI.
+- [x] Testes de alteração de resultado, assinatura/chave/identidade, revogação, replay, perda de evidência, falsa origem, relógio, conflito de revisor e tentativa de autorização automática.
+- [x] [JSON Schema](../schemas/private-staging-result-attestation.schema.json), [runbook](CUSTODIA_RESULTADOS_STAGING.md) e [relatório](CICLO_2026-10-21_ATESTACAO_RESULTADOS_STAGING.md) incorporados.
+- [x] Mantidos no repositório público **somente política, código e testes TEST**. Nenhum recibo ou documento corporativo real, nenhuma assinatura/aprovação humana.
+- [ ] **P0 externo TI/Segurança:** criar backend restrito com identidade de serviço vinculada a certificado/chave, log externo protegido, revogação, persistência de replay, controles de acesso e cofre de evidências sob licença.
+- [ ] **P0 externo Engenharia/Privacidade:** definir critérios de aceitação de caso real, reviewers independentes autenticados e divulgação de metadados autorizados.
+- [ ] **P0 próximo ciclo:** preparar piloto de revisão humana **simulada** com decisões de falha/inconclusivo e fila de correções, sem introduzir casos ou credenciais reais.
+- [ ] O staging ainda não está provisionado e as seis assinaturas corporativas da v1.3.25 continuam pendentes.
+
+**Estado:** 8 atestações Ed25519 sintéticas válidas e 40 recusas previstas; **zero atestação real** e nenhuma homologação mecânica, operacional ou de infraestrutura.
+
 ## Ciclo concluído — 21/10/2026: contrato do adaptador de integração (v1.3.26)
 
 - [x] [Contrato de integração](../data/governance/staging-integration-contract.v1.json) para 8 cenários e 32 probes, alinhado ao plano v1.3.25 sem editar os testes de homologação anteriores.
@@ -47,7 +61,7 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 - [x] Documentados [limites de implementação](CONTRATO_ADAPTADOR_STAGING.md), [relatório técnico](CICLO_2026-10-21_CONTRATO_ADAPTADOR_STAGING.md), responsáveis futuros e requisitos de custódia privada.
 - [x] Preservados 24 FC, 15 ME, 8 domínios, 32 controles, contrato público 1.0.0 e conteúdo preview 1.3.12.
 - [ ] **P0 externo:** TI/Segurança aprovar e provisionar staging privado e escolher transportes e credenciais corporativas sob políticas internas, **fora do GitHub**.
-- [ ] **P0 próximo ciclo:** modelar um modelo de evidência de execução privada e revisão técnica compatível com os envelopes, com integridade/autenticidade verificadas pelo backend e sem dados sensíveis exportados.
+- [x] **Estrutura v1.3.27 definida:** recibos de evidência e revisões assinadas em modelo offline sintético, pendente de backend corporativo, chaves reais e pareceres efetivos.
 - [ ] **P1:** quando existir staging, testar o adaptador corporativo real apenas com identidades e documentos sintéticos e revisar 6 gates de homologação com os responsáveis.
 
 **Estado:** adaptador offline/contrato pronto, **0 chamadas reais**, zero aprovação de segurança e zero casos operacionais.

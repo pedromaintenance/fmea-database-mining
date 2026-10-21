@@ -2,7 +2,7 @@
 
 Banco de conhecimento **versionado** para investigar modos de falha, sintomas, evidências e causas em equipamentos móveis de mineração. Um consumidor possível é o jogo **[P.O.R.C.A.R.I.A. — Você Quebra, Eu Conserto](https://github.com/pedromaintenance/porcaria-voce-quebra-eu-conserto)**, mas o banco é independente: **este repositório não altera os consumidores**.
 
-> **Status:** versão do catálogo **1.3.26** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
+> **Status:** versão do catálogo **1.3.27** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
 
 ## O que queremos construir
 
@@ -338,6 +338,16 @@ O [contrato de integração](data/governance/staging-integration-contract.v1.jso
 O comando `npm run staging:adapter:validate` executa **56 regressões sintéticas**: oito cenários-modelo completos, 32 controles reprovados e 16 envelopes impróprios bloqueados. Um resultado `synthetic_complete` **não** representa integração, homologação de staging ou aprovação de segurança. A implementação de adaptador de rede e a custódia de resultados reais ficam exclusivamente com TI, em ambiente corporativo autorizado.
 
 [Contrato de interface e limites](docs/CONTRATO_ADAPTADOR_STAGING.md) · [Relatório do ciclo](docs/CICLO_2026-10-21_CONTRATO_ADAPTADOR_STAGING.md).
+
+## Custódia e atestação de resultados de staging (v1.3.27)
+
+O [contrato de custódia](data/governance/private-result-custody-contract.v1.json) especifica como um backend corporativo restrito deverá comprovar **integridade, autenticidade da origem, proveniência, verificação de custódia e dois pareceres independentes** sobre resultados de testes de integração.
+
+A biblioteca [`private-result-attestation.mjs`](scripts/lib/private-result-attestation.mjs) demonstra atestações encadeadas usando **Ed25519 e chaves descartáveis geradas em memória**. O comando `npm run custody:results:validate` executa **48 regressões totalmente sintéticas**: oito atestações válidas de teste e quarenta tentativas bloqueadas de alterar resultados, usar chaves revogadas, burlar vínculos/identidades, omitir evidência ou declarar aprovação/publicação.
+
+**Não há assinatura ou autenticação corporativa real.** O script não confirma que um fato foi observado nem substitui governança humana. Nenhum resultado privado, laudo OEM, número de série, chave privada, credencial ou URL corporativa é armazenado aqui; recibos reais, verificação de certificados e registro de replay precisam existir **exclusivamente em infraestrutura restrita aprovada pela empresa**.
+
+[Runbook de resultados e cadeia de confiança](docs/CUSTODIA_RESULTADOS_STAGING.md) · [Relatório v1.3.27](docs/CICLO_2026-10-21_ATESTACAO_RESULTADOS_STAGING.md) · [JSON Schema de recibo privado](schemas/private-staging-result-attestation.schema.json).
 
 ## Comece por aqui
 
