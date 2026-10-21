@@ -18,6 +18,9 @@ const bibliographicSources=read('data/research/sources.v1.json').sources;
 const chains=read('data/knowledge/causal-chains.v1.json').records;
 const sapAudit=read('reports/causal-sap-audit.generated.json');
 const pmGaps=read('reports/pm-gap-audit.generated.json');
+const pmExceptionGates=read('data/quality/pm-exception-evidence-gates.v1.json');
+const d9EvidenceIntake=read('data/quality/oem-d9-evidence-intake.v1.json');
+const pmExceptionFixtures=read('data/quality/pm-exception-regressions.v1.json');
 const semantic=read('data/ontology/condition-action-damage.v1.json');
 const semanticFixtures=read('data/quality/semantic-regression-fixtures.v1.json');
 const effects=read('data/knowledge/causal-effects.v1.json');
@@ -123,12 +126,17 @@ const counts={
  causalSapChainsWithoutPart:sapAudit.summary.chainsWithoutProposedComponent,
  causalSapLinksAcceptedByEngineering:sapAudit.summary.acceptedEngineeringLinks,
  pmGapRulesReviewed:pmGaps.summary.withoutStrictCandidates,
+ pmExceptionEvidenceGates:pmExceptionGates.records.length,
+ pmExceptionMissingIndependentEvidence:pmExceptionGates.records.reduce((n,x)=>n+x.minimumEvidence.length,0),
+ pmExceptionRegressionCases:pmExceptionFixtures.cases.length,
+ d9EvidenceIntakeRequirements:d9EvidenceIntake.requiredInputs.length,
+ d9DocumentInputsVerified:d9EvidenceIntake.requiredInputs.filter(x=>x.approved).length,
  pmGapBlockers:pmGaps.summary.blockerCounts,
  pmGapApprovedRemaps:pmGaps.summary.approvedEngineeringLinks,
  semanticDamageConfirmations:semantic.confirmedComponentDamages.length,
  evidenceValidatedInRealEquipment:0,technicallyApprovedPlaybooks:0
 };
-const report={schema:'fmea-mining.quality-audit.v1',version:'1.3.15',
+const report={schema:'fmea-mining.quality-audit.v1',version:'1.3.16',
  generatedFrom:'working_tree',status:'qualidade_cadastral_nao_taxa_de_falhas',
  meanings:{
   pmCandidateLinks:'vinculos gerados por regra e taxonomia, NAO falhas observadas',

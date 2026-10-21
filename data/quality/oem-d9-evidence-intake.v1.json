@@ -1,0 +1,123 @@
+{
+  "schema": "fmea-mining.oem-d9-evidence-intake.v1",
+  "version": "1.3.16",
+  "pilotId": "OEM-PILOT-D9-UNDERCARRIAGE",
+  "modelId": "EQ07",
+  "stage": "documentary_preparation_only",
+  "independentReviewStatus": "not_performed",
+  "pilotOperationallyApproved": false,
+  "serialEffectivityVerified": false,
+  "measurementLimitsVerified": false,
+  "boltingProcedureVerified": false,
+  "technicalReadiness": "blocked_pending_input",
+  "relatedChainIds": [
+    "FC-TRACK-001",
+    "FC-TRACK-002",
+    "FC-TRACK-003",
+    "FC-TRACK-004",
+    "FC-TRACK-005",
+    "FC-TRACK-006",
+    "FC-TRACK-007",
+    "FC-TRACK-008"
+  ],
+  "expectedInputs": 7,
+  "sourceIds": [
+    "CAT-DOZER-UC-MAINT",
+    "CAT-UC-DOZER-GUIDE",
+    "CAT-EXC-UNDERCARRIAGE-WEAR"
+  ],
+  "requiredInputs": [
+    {
+      "id": "serial-prefix",
+      "sourceStatus": "not_supplied",
+      "sourceValue": null,
+      "primaryEvidence": "Registro controlado do prefixo e série completos (ou arranjo homologado) do D9 objeto de inspeção",
+      "independentCrossCheck": "Confrontar número físico da máquina e registro de fabricante com dados mestres autorizados",
+      "responsibleDiscipline": "engenharia_ativos",
+      "relevance": "efetividade_por_configuracao_D9",
+      "documentReference": null,
+      "verifiedBy": null,
+      "approved": false
+    },
+    {
+      "id": "oem-omm",
+      "sourceStatus": "not_supplied",
+      "sourceValue": null,
+      "primaryEvidence": "Número de mídia, revisão, faixa de séries e edição do OMM efetivo pelo SIS",
+      "independentCrossCheck": "Confirmar que o manual se aplica à configuração acima antes de usar qualquer valor dimensional",
+      "responsibleDiscipline": "engenharia_mecanica",
+      "relevance": "efetividade_por_configuracao_D9",
+      "documentReference": null,
+      "verifiedBy": null,
+      "approved": false
+    },
+    {
+      "id": "oem-parts",
+      "sourceStatus": "not_verified",
+      "sourceValue": null,
+      "primaryEvidence": "Desenho/BOM OEM por arranjo para sapatas, fixadores, roda-guia, roletes, correntes e tensionamento",
+      "independentCrossCheck": "Confrontar composição instalada e registros de modificações, sem presumir intercambiabilidade",
+      "responsibleDiscipline": "materiais_cadastro",
+      "relevance": "efetividade_por_configuracao_D9",
+      "documentReference": null,
+      "verifiedBy": null,
+      "approved": false
+    },
+    {
+      "id": "oem-bolting",
+      "sourceStatus": "not_verified",
+      "sourceValue": null,
+      "primaryEvidence": "Procedimento oficial vigente de junta sapata–elo, fixador autorizado, condição de reutilização e sequência de aperto",
+      "independentCrossCheck": "Verificar aplicabilidade por série e revisão independente antes de anotar torque-turn operacional",
+      "responsibleDiscipline": "engenharia_mecanica",
+      "relevance": "efetividade_por_configuracao_D9",
+      "documentReference": null,
+      "verifiedBy": null,
+      "approved": false
+    },
+    {
+      "id": "oem-cts",
+      "sourceStatus": "not_verified",
+      "sourceValue": null,
+      "primaryEvidence": "Padrão CTS autorizado da variante de material rodante, ferramenta e localização de cada medida de desgaste",
+      "independentCrossCheck": "Verificar componente, posicionamento e baseline OEM específico antes de qualquer limite numérico",
+      "responsibleDiscipline": "inspecao_preditiva",
+      "relevance": "efetividade_por_configuracao_D9",
+      "documentReference": null,
+      "verifiedBy": null,
+      "approved": false
+    },
+    {
+      "id": "sap-master",
+      "sourceStatus": "not_verified",
+      "sourceValue": null,
+      "primaryEvidence": "Extrato do local funcional, objeto SAP, equipamento, lista técnica e situação de cadastro",
+      "independentCrossCheck": "Comparar hierarquia SAP com BOM por série, sem inferir peça a partir do nome de subgrupo",
+      "responsibleDiscipline": "dados_mestres_sap",
+      "relevance": "efetividade_por_configuracao_D9",
+      "documentReference": null,
+      "verifiedBy": null,
+      "approved": false
+    },
+    {
+      "id": "field-review",
+      "sourceStatus": "not_performed",
+      "sourceValue": null,
+      "primaryEvidence": "Parecer documentado de engenharia e oficina/inspeção sobre achados físicos e limites de aplicação",
+      "independentCrossCheck": "Exigir revisores independentes, identificação de documentos analisados e separação causa/efeito",
+      "responsibleDiscipline": "engenharia_oficina",
+      "relevance": "efetividade_por_configuracao_D9",
+      "documentReference": null,
+      "verifiedBy": null,
+      "approved": false
+    }
+  ],
+  "preservation": {
+    "noSpecificSerialInvented": true,
+    "noTorqueValueGuessed": true,
+    "noCTSLimitsGuessed": true,
+    "noOEMManualPublished": true,
+    "noSapMappingApproved": true
+  },
+  "notes": "Fontes públicas orientam inspeção visual e prática geral; tolerâncias CTS, PN e aperto por série exigem SIS/OMM autorizado e revisão de especialista."
+}

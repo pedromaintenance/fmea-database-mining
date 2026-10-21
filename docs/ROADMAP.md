@@ -1,6 +1,6 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 20/10/2026 · **Ciclo:** catálogo técnico v1.3.15 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 20/10/2026 · **Ciclo:** catálogo técnico v1.3.16 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
 
@@ -39,6 +39,21 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 
 **Observação:** as 159 tarefas de PM com subgrupo candidato foram obtidas em extração local anterior e **não** representam 159 associações homologadas. Contagens de vínculos estritos serão publicadas pelo relatório automático após cada alteração do gerador.
 
+## Ciclo concluído — 20/10/2026: dez exceções PM e gate documental D9 (v1.3.16)
+
+**Objetivo:** tornar cada ausência de vínculo PM × SAP e cada lacuna OEM verificável e reprovável por teste, sem buscar cobertura artificial.
+
+- [x] Avaliadas **10/10 regras PM bloqueadas** com mecanismo físico, duas evidências documentais independentes, contraprova e recomendação editorial; **0 vínculos aceitos automaticamente**.
+- [x] Classificados os bloqueios em **3 subgrupos fora de escopo**, **5 componentes não registrados** e **2 pares dano–causa não autorizados**.
+- [x] Plano de entrada documental para o D9 com **7 requisitos OEM ainda não atendidos** e 8 cadeias rastreadas, sem identificação fictícia por série.
+- [x] Criado `npm run pm:exceptions:validate` com **16 regressões sintéticas**, integrado ao CI, QA e auditor de qualidade.
+- [x] [Relatório técnico e matriz de decisão](CICLO_2026-10-20_PM_EXCECOES_D9.md).
+- [ ] **P0 próximo ciclo:** obter de fonte autorizada identificação de configuração do CAT D9, OMM e tabela CTS efetivas para uma máquina, com parecer de engenharia/oficina.
+- [ ] **P1:** após efetividade OEM, preparar revisão formal de hierarquia SAP ou PN para as regras pertinentes (sem remapeamento automático).
+- [ ] **P1:** ampliar evidência discriminante dos nove roteiros ainda não aprofundados e recuperar causas a partir de ensaios reais autorizados.
+
+**Estado:** PM 10 bloqueadas, D9 7 evidências faltantes, nenhuma validação por série, **24 cadeias inferidas, 48 alegações sistêmicas não confirmadas**, contrato público inalterado.
+
 ## Ciclo concluído — 20/10/2026: política de releases de conteúdo e golden snapshots (v1.3.15)
 
 **Objetivo:** permitir evoluções do conhecimento sem confundir a versão interna do pacote, o contrato público e o conteúdo publicado.
@@ -48,7 +63,7 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 - [x] [Registro de releases](../data/governance/public-content-releases.v1.json) e [política de publicação](../data/governance/public-content-release-policy.v1.json), com classificação editorial patch/aditiva minor, veto a major sem migração e veto à promoção causal.
 - [x] Gates `public:content:validate` e `public:content:test` (17 casos sintéticos), incorporados a `npm run qa`, GitHub Actions, Schema e relatórios de qualidade.
 - [x] [Relatório técnico e procedimento de release](CICLO_2026-10-20_VERSIONAMENTO_CONTEUDO.md).
-- [ ] **P0 próximo ciclo:** revisão técnica efetiva de uma configuração OEM por prefixo/série (piloto CAT D9), sem presumir parâmetros CTS, torque ou materiais.
+- [x] **Preparação documental na v1.3.16:** gate para sete requisitos do D9 sem homologação por falta de série/OMM. Revisão técnica efetiva continua pendente.
 - [ ] **P1:** tratar as 10 regras preventivas SAP sem associação estrita e lacunas diagnósticas sem evidência.
 
 **Estado:** nenhuma nova hipótese publicada, nenhum consumidor alterado, **0 causas confirmadas**, validação OEM e revisão independente ainda pendentes.

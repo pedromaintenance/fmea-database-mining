@@ -2,7 +2,7 @@
 
 Banco de conhecimento **versionado** para investigar modos de falha, sintomas, evidências e causas em equipamentos móveis de mineração. Um consumidor possível é o jogo **[P.O.R.C.A.R.I.A. — Você Quebra, Eu Conserto](https://github.com/pedromaintenance/porcaria-voce-quebra-eu-conserto)**, mas o banco é independente: **este repositório não altera os consumidores**.
 
-> **Status:** versão do catálogo **1.3.15** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
+> **Status:** versão do catálogo **1.3.16** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
 
 ## O que queremos construir
 
@@ -228,6 +228,18 @@ O [registro de releases de conteúdo](data/governance/public-content-releases.v1
 - `npm run qa` e GitHub Actions executam esses gates juntamente com a validação original de contrato e hash.
 
 [Relatório técnico v1.3.15](docs/CICLO_2026-10-20_VERSIONAMENTO_CONTEUDO.md) · [Schema do registro](schemas/public-content-releases.schema.json). Não houve mudança de conteúdo publicado nem edição de consumidores externos.
+
+## Gate de exceções preventivas e piloto OEM D9 (v1.3.16)
+
+Foram documentadas **10 regras de PM sem candidatos estritos** em [registro de evidências](data/quality/pm-exception-evidence-gates.v1.json). O objetivo é identificar por que o cruzamento entre subgrupo, peça, dano e causa SAP não é válido, **sem inventar compatibilidades**. Cada exceção possui modo físico a discriminar, dois conjuntos de documentação requerida, explicação concorrente e decisão formal `manter_bloqueado_sem_evidencia`.
+
+As dez exceções distribuem-se em três falhas de escopo/hierarquia de subgrupo, cinco componentes não cadastrados no tipo de objeto efetivo e duas combinações dano–causa não autorizadas. Essas contagens **não são dez falhas de máquina**.
+
+O [plano de evidências D9](data/quality/oem-d9-evidence-intake.v1.json) cobre sete requisitos pendentes do piloto CAT D9, preservando oito cadeias de rodante como hipóteses. Nenhum prefixo, série, número de peça, torque ou limite CTS foi preenchido sem evidência OEM efetiva.
+
+O comando `npm run pm:exceptions:validate` cruza essas bases com os dados da auditoria PM, confere os sete requisitos e executa **16 regressões sintéticas** de vazamento de evidência ou aprovação indevida. Está incorporado ao CI e a `npm run qa`.
+
+[Relatório v1.3.16](docs/CICLO_2026-10-20_PM_EXCECOES_D9.md). O conteúdo público, contrato, golden snapshot e repositórios consumidores permanecem inalterados.
 
 ## Comece por aqui
 

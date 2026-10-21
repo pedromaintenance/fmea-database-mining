@@ -2,6 +2,13 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.16] — 2026-10-20 — Gate PM × SAP e preparação documental CAT D9
+- Revisadas as **10 exceções sem vínculo estrito** (3 subgrupos fora de escopo, 5 componentes ausentes, 2 pares dano–causa incompatíveis) com documentação mínima, contraprovas e decisão de manter bloqueio.
+- Criado plano D9 para **7 requisitos OEM** e 8 cadeias de rodante: série/arranjo, OMM, peças, torque-turn, CTS, dados SAP e revisão independente; sem comprovação de efetividade.
+- Novo validador independente com **16 mutações sintéticas**, integrado ao pipeline CI e métricas de qualidade; bloqueios contra série, peças, inspeções, limites CTS e links SAP inventados.
+- Consulta adicional à documentação pública Caterpillar para escopo geral de inspeção e medição, sem transcrever literatura licenciada nem declarar valores para D9.
+- **0 remapeamentos SAP aceitos**, **0 causas confirmadas**, **0 homologações OEM**, sem modificação do contrato público 1.0.0, conteúdo público 1.0.0 ou consumidores.
+
 ## [1.3.15] — 2026-10-20 — Releases de conteúdo público independentes
 - Criada versão **conteúdo 1.0.0**, distinta do pacote interno 1.3.15, contrato 1.0.0 e preview histórico 1.3.12; é uma baseline retrospectiva, não atualização do conteúdo entregue.
 - Guardada uma cópia golden completa do preview (24 cadeias, 20 referências), vinculada ao SHA-256 histórico `b780a1c95e6f2ab5b3fb1f9acd20a63a1a5abd0e3f3ed111f61052b2e8c59c65`.
