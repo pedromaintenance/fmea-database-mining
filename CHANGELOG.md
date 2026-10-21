@@ -2,6 +2,15 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.40] — 2026-10-21 — Filtro de óleo do motor: LUSY × ETBE/IKSY
+
+- Verificada no catálogo real a ausência de componentes com texto de filtragem em **8 caminhos ENGN/LUSY**, embora o subgrupo exista nos modelos de destino.
+- Varredura conservadora identifica **16 caminhos em outros subgrupos ENGN** com descrições de filtro, correspondentes a 40 ocorrências de texto, porém apenas **8 ocorrências explicitamente relativas a óleo**, concentradas em ETBE; IKSY contém referências de ar, não equivalentes a filtro de óleo.
+- Os oito registros de óleo permitem o par 03.02/C2.09 **no catálogo**, sem afirmar peças distintas, montagem física, falha, causa ou homologação de remapeamento ETBE → LUSY.
+- Adicionado scanner com isolamento por modelo, raiz, grupo e subgrupo, 9 testes lexicais e 13 mutações adversariais, relatório público agregado e CI.
+- Separadas na ontologia já existente pressão diferencial no filtro, partículas no óleo e baixa pressão de lubrificação, sem inventar testes executados, periodicidades ou limites OEM.
+- Mantidos 25 padrões PM, 115 vínculos candidatos, 10 bloqueios sem aprovação, 24 FC/15 ME, contrato e conteúdo públicos 1.0.0, preview 1.3.12 e consumidores inalterados.
+
 ## [1.3.39] — 2026-10-21 — Triagem semântica PM de arrefecimento e combustível
 
 - Duas regras P0 com par dano/causa bloqueado agora possuem **roteiros de revisão não executáveis** derivados da ontologia existente: `cooling-radiator-blockage` e `fuel-tank-water`.

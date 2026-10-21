@@ -1,6 +1,6 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 21/10/2026 · **Ciclo:** catálogo técnico v1.3.39 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 21/10/2026 · **Ciclo:** catálogo técnico v1.3.40 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
 
@@ -38,6 +38,18 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 | Enriquecimento | 12 roteiros classificados por falha funcional, sintomas e técnicas | Anotação manual, não prova de causa |
 
 **Observação:** as 159 tarefas de PM com subgrupo candidato foram obtidas em extração local anterior e **não** representam 159 associações homologadas. Contagens de vínculos estritos serão publicadas pelo relatório automático após cada alteração do gerador.
+
+## Ciclo — 21/10/2026: auditoria filtro óleo motor LUSY (v1.3.40)
+
+- [x] Conferidos 307 caminhos de nível 3 da população alvo, 83 sob raízes de motor e 40 em ENGN, dos quais 8 são LUSY; nenhum LUSY possui descrição de filtro catalogada.
+- [x] Explorados subgrupos adjacentes sem alias automático: 16 caminhos com filtro textual, 40 ocorrências, porém apenas 8 ocorrências explicitamente de óleo em ETBE; IKSY reúne descrições de filtro de ar.
+- [x] Confrontados dados de catálogo e ontologia: baixa pressão do motor, restrição diferencial do filtro e partículas no óleo não são evidência equivalente de falha mecânica.
+- [x] Validação estruturada com 9 casos textuais e 13 adulterações sintéticas, integrada ao CI.
+- [ ] **Engenharia/SAP Dados Mestres:** revisar estrutura LUSY e ETBE por configuração, eventual dupla motorização, BOM e tipos de objetos reais.
+- [ ] **OEM/Especialista mecânico:** conferir base e elemento filtrante, circuito de bypass e técnica de diagnóstico aplicável por modelo e série.
+- [ ] **Revisor independente:** somente após identificação de componente físico e prova mecânica pertinente deliberar sobre mudança de regra ou par dano/causa.
+
+**Estado:** nenhum vínculo homologado ou causa provada; 115 candidatos PM e dez bloqueios preservados.
 
 ## Ciclo — 21/10/2026: triagem semântica de radiador e combustível (v1.3.39)
 
