@@ -1,0 +1,67 @@
+{
+  "schema": "fmea-mining.pm-vpar-function-differentials.v1",
+  "version": "1.3.37",
+  "nature": "generic_OEM_maintenance_planner_function_families_not_SAP_mapping",
+  "manufacturer": "Sandvik",
+  "references": [
+    {
+      "id": "DR410i-CAT-C18-PLANNER",
+      "url": "https://www.mining.sandvik/globalassets/parts-services/genuine-consumables-and-kits/pdf/dr410i-maintenance-planner-cat-c18-english.pdf",
+      "modelFamily": "DR410i",
+      "variant": "CAT C18 maintenance planner",
+      "status": "public_family_reference_not_effective_by_serial",
+      "limitation": "Componentes e tarefas mostrados são contexto de uma variante publicada; conferir BOM/OMM/arranjo físico e revisão de cada equipamento."
+    },
+    {
+      "id": "DR410i-CUMMINS-PLANNER",
+      "url": "https://www.mining.sandvik/globalassets/parts-services/genuine-consumables-and-kits/pdf/dr410i-maintenance-planner-cummins-english.pdf",
+      "modelFamily": "DR410i",
+      "variant": "Cummins maintenance planner",
+      "status": "public_family_reference_not_effective_by_serial",
+      "limitation": "Exemplifica variação por motorização; não associar os elementos publicados a outras variantes ou à DI650i."
+    }
+  ],
+  "functionalAlternatives": [
+    {
+      "id": "compressor_air_intake",
+      "function": "Filtrar partículas do ar aspirado pelo compressor ou entrada compartilhada com motor",
+      "physicalCircuit": "ar_de_admissao",
+      "expectedEvidence": "Desenho de admissão, elemento efetivo e condições de restrição/inspeção",
+      "canIdentifyVPAR": false
+    },
+    {
+      "id": "compressor_lubricating_oil",
+      "function": "Filtrar óleo do circuito interno de lubrificação do compressor",
+      "physicalCircuit": "oleo_de_lubrificacao",
+      "expectedEvidence": "Fluxograma de óleo do compressor e número de conjunto efetivo",
+      "canIdentifyVPAR": false
+    },
+    {
+      "id": "air_oil_separation",
+      "function": "Separar aerossóis de óleo do fluxo de ar comprimido",
+      "physicalCircuit": "mistura_ar_oleo",
+      "expectedEvidence": "Diagrama do separador, recipiente associado e componente efetivo",
+      "canIdentifyVPAR": false
+    },
+    {
+      "id": "receiver_tank_filtration",
+      "function": "Elemento de filtragem/separação possivelmente relacionado ao reservatório de ar",
+      "physicalCircuit": "recipiente_e_linha_de_ar",
+      "expectedEvidence": "BOM do vaso, diagrama de montagem e comprovante de existência do elemento por configuração",
+      "canIdentifyVPAR": false
+    }
+  ],
+  "policy": {
+    "noAutomaticSubgroupAlias": true,
+    "noBOMMembershipInferred": true,
+    "noInstalledPartInferred": true,
+    "noFunctionConfirmedFromDescriptor": true,
+    "noObservedFailureInferred": true,
+    "manufacturerSourceNotSerialEffectivity": true,
+    "comparisonAcrossEngineVariantsIsNotApplicationProof": true,
+    "independentEngineeringReviewRequired": true
+  },
+  "reviewedByEngineering": false,
+  "verifiedInstalledConfiguration": false,
+  "approvedSapMappings": 0
+}
