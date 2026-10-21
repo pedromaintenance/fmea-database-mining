@@ -1,0 +1,151 @@
+{
+  "schema": "fmea-mining.d9-handoff-regressions.v1",
+  "version": "1.3.33",
+  "nature": "synthetic_mutation_only",
+  "baselineCases": [
+    {
+      "id": "TEST-REQ-D9-01",
+      "requestId": "REQ-D9-01",
+      "expected": "pending_unverified"
+    },
+    {
+      "id": "TEST-REQ-D9-02",
+      "requestId": "REQ-D9-02",
+      "expected": "pending_unverified"
+    },
+    {
+      "id": "TEST-REQ-D9-03",
+      "requestId": "REQ-D9-03",
+      "expected": "pending_unverified"
+    },
+    {
+      "id": "TEST-REQ-D9-04",
+      "requestId": "REQ-D9-04",
+      "expected": "pending_unverified"
+    },
+    {
+      "id": "TEST-REQ-D9-05",
+      "requestId": "REQ-D9-05",
+      "expected": "pending_unverified"
+    },
+    {
+      "id": "TEST-REQ-D9-06",
+      "requestId": "REQ-D9-06",
+      "expected": "pending_unverified"
+    },
+    {
+      "id": "TEST-REQ-D9-07",
+      "requestId": "REQ-D9-07",
+      "expected": "pending_unverified"
+    }
+  ],
+  "mutationCases": [
+    {
+      "id": "TEST-MUT-01",
+      "mutation": "fake_recipient",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-02",
+      "mutation": "fake_channel",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-03",
+      "mutation": "fake_sent",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-04",
+      "mutation": "fake_received",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-05",
+      "mutation": "fake_review",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-06",
+      "mutation": "fake_ticket",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-07",
+      "mutation": "fake_timestamp",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-08",
+      "mutation": "fake_serial",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-09",
+      "mutation": "fake_oem_text",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-10",
+      "mutation": "fake_sap_id",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-11",
+      "mutation": "fake_field",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-12",
+      "mutation": "fake_core_promotion",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-13",
+      "mutation": "fake_issue_means_sent",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-14",
+      "mutation": "erase_dispatch_gate",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-15",
+      "mutation": "fake_approved_count",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-16",
+      "mutation": "fake_gate_status",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-17",
+      "mutation": "fake_issue_number",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-18",
+      "mutation": "remove_safety_boundary",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-19",
+      "mutation": "change_evidence_source",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-20",
+      "mutation": "close_as_oem_approved",
+      "expected": "reject"
+    }
+  ],
+  "counts": {
+    "baseline": 7,
+    "rejectedMutation": 20,
+    "total": 27,
+    "realCorporateRequests": 0,
+    "realOEMApprovals": 0
+  }
+}
