@@ -29,7 +29,7 @@ for(const source of research.claims){
  require(typeof source.doesNotProve==='string'&&source.doesNotProve.length>60,'missing_source_limit_'+source.id);
 }
 const pump=research.claims.find(x=>x.id==='SANDVIK-PUMP-MODULE-VARIANT');
-require(pump?.scope==='hydraulic_pump_unit_upgrade_not_air_compressor'&&pump.doesNotProve.includes('NÃO'),'false_compressor_inference');
+require(pump?.scope==='pump_unit_upgrade_not_air_compressor'&&pump.doesNotProve.includes('NÃO'),'false_compressor_inference');
 const findings=FILTER_RULE_IDS.map(id=>{
  const r=rules.find(x=>x.id===id);
  require(!!r,'source_rule_missing_'+id);
@@ -74,7 +74,7 @@ const violations=[
 ];
 for(const mutate of violations){
  const v=JSON.parse(JSON.stringify(pump));mutate(v);
- const safe=v.effectiveForMachine===false&&v.doesNotProve.length>60&&/^https:\/\/(www\.)?(cat\.com|mining\.sandvik)\//.test(v.sourceUrl)&&v.scope==='hydraulic_pump_unit_upgrade_not_air_compressor';
+ const safe=v.effectiveForMachine===false&&v.doesNotProve.length>60&&/^https:\/\/(www\.)?(cat\.com|mining\.sandvik)\//.test(v.sourceUrl)&&v.scope==='pump_unit_upgrade_not_air_compressor';
  if(!safe)refused++;
 }
 require(refused===4,'adversarial_research_mutations_not_rejected');
