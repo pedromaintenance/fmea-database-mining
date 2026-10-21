@@ -2,6 +2,15 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.33] — 2026-10-21 — Handoff externo para solicitação OEM D9
+
+- Aberta [issue #31](https://github.com/pedromaintenance/fmea-database-mining/issues/31) com **ação externa real pendente**: designação do destinatário/canal corporativo e encaminhamento da solicitação já preparada.
+- [Controle de handoff](data/governance/d9-external-handoff.v1.json): quatro marcos separados (rota, envio, recebimento e análise independente), associados 1:1 aos sete gates originais.
+- [Guia de envio e comprovação](docs/D9_HANDOFF_ENVIO_OEM.md) orienta as áreas técnicas, a custódia de SIS/OMM, série e dados SAP, o registro privado do comprovante e a atualização responsável do backlog.
+- [Validador](scripts/validate-d9-handoff.mjs), [schema](schemas/d9-external-handoff.schema.json) e **27 casos sintéticos** (7 baselines + 20 tentativas de falsear envio, aprovação, resultados ou dados internos) integrados ao QA/CI.
+- **A criação de issue pública não comprova envio ao destinatário corporativo**; o pedido permanece não enviado e os sete requisitos de OEM/inspeção bloqueados.
+- Contrato e conteúdo públicos 1.0.0, preview 1.3.12, 24 FC, 15 ME e consumidores preservados.
+
 ## [1.3.32] — 2026-10-21 — Pesquisa pública OEM de material rodante D9
 
 - Revisadas **5 referências públicas oficiais Caterpillar**, duas já catalogadas e três adicionadas à matriz específica de pesquisa, sem reprodução de material licenciado.
