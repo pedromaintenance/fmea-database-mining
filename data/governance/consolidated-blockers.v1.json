@@ -1,0 +1,346 @@
+{
+  "schema": "fmea-mining.consolidated-blockers.v1",
+  "version": "1.3.30",
+  "maturity": "editorial_readiness_matrix_no_corporate_approvals",
+  "purpose": "Single provenance-linked decision map for the real documentary and organizational dependencies which block field applicability or corporate staging; not a register of completed jobs.",
+  "sourceUpdatePolicy": {
+    "requiresSourceRevalidation": true,
+    "noManualOverridingCounts": true,
+    "neverMergeOverlappingBacklogs": true,
+    "prioritiesAreEditorialSuggestionsNotApproved": true,
+    "ownerIsInstitutionalDisciplineOnly": true,
+    "doNotExposePrivateOEMOrSapData": true,
+    "doNotInferSLA": true,
+    "doNotApproveFailuresAutomatically": true,
+    "independentReviewRequired": true
+  },
+  "overview": {
+    "distinctWorkstreams": 8,
+    "observedWorkstreamSourceItems": [
+      7,
+      10,
+      24,
+      48,
+      3,
+      4,
+      7,
+      6
+    ],
+    "doNotSumAsIndependentTasks": true,
+    "noApprovedWorkstream": 8,
+    "approvedItems": 0,
+    "confirmedFieldCases": 0,
+    "approvedCorporateInfrastructureComponents": 0,
+    "stagingCorporateSignoffs": 0
+  },
+  "workstreams": [
+    {
+      "id": "BLK-D9-OEM",
+      "title": "Efeito OEM no piloto de material rodante D9",
+      "area": "mechanical_oem",
+      "source": {
+        "path": "data/quality/oem-d9-evidence-intake.v1.json",
+        "countField": "requiredInputs",
+        "sourceVersion": "1.3.16"
+      },
+      "sourceFinding": "D9: sete requisitos documentais não fornecidos",
+      "unit": "required_document_inputs",
+      "sourceItemCount": 7,
+      "unblockedItems": 0,
+      "approvalStatus": "blocked_pending_external_evidence",
+      "priorityProposal": "P0",
+      "ownerDiscipline": "engenharia_ativos",
+      "namedResponsible": null,
+      "dependsOn": [],
+      "nextControlledAction": "Identificar a configuração específica em ambiente privado e solicitar documentação SIS/OMM/CTS, especificação de fixação e dados SAP autorizados.",
+      "releaseEvidence": [
+        "Validação por série ou arranjo de sete insumos, teste/limites OEM aplicáveis, contraprovas e revisão humana independente.",
+        "Permissões de compartilhamento, integridade dos dados e evidências de execução em ambiente corporativo restrito, se aplicáveis."
+      ],
+      "releaseDecision": "manual_independent_review_required",
+      "observedEvidenceReceipt": null,
+      "approvedReviewRecord": null,
+      "corporateDeadline": null,
+      "publicDataAuthorization": false,
+      "readyForKnowledgePromotion": false
+    },
+    {
+      "id": "BLK-PM-SAP",
+      "title": "Compatibilidade de regras PM × códigos SAP",
+      "area": "sap_pm",
+      "source": {
+        "path": "data/quality/pm-exception-evidence-gates.v1.json",
+        "countField": "records",
+        "sourceVersion": "1.3.16"
+      },
+      "sourceFinding": "PM×SAP: dez regras bloqueadas sem vínculo automático permitido",
+      "unit": "blocked_prevention_rules",
+      "sourceItemCount": 10,
+      "unblockedItems": 0,
+      "approvalStatus": "blocked_pending_external_evidence",
+      "priorityProposal": "P0",
+      "ownerDiscipline": "engenharia_manutencao_sap_pm",
+      "namedResponsible": null,
+      "dependsOn": [],
+      "nextControlledAction": "Revisar individualmente dez regras bloqueadas, preservando par dano/causa permitido e distinguindo condição operacional de dano físico.",
+      "releaseEvidence": [
+        "Evidência por regra, conjunto/componente efetivo, correspondência SAP tecnicamente homologada e parecer independente; nunca remap automático.",
+        "Permissões de compartilhamento, integridade dos dados e evidências de execução em ambiente corporativo restrito, se aplicáveis."
+      ],
+      "releaseDecision": "manual_independent_review_required",
+      "observedEvidenceReceipt": null,
+      "approvedReviewRecord": null,
+      "corporateDeadline": null,
+      "publicDataAuthorization": false,
+      "readyForKnowledgePromotion": false
+    },
+    {
+      "id": "BLK-FC-REVIEW",
+      "title": "Revisão das cadeias FMEA publicadas",
+      "area": "engineering_review",
+      "source": {
+        "path": "data/governance/technical-review-register.v1.json",
+        "countField": "records",
+        "sourceVersion": "1.3.8"
+      },
+      "sourceFinding": "FMEA: 24 revisões humanas pendentes",
+      "unit": "pending_chain_reviews",
+      "sourceItemCount": 24,
+      "unblockedItems": 0,
+      "approvalStatus": "blocked_pending_external_evidence",
+      "priorityProposal": "P0",
+      "ownerDiscipline": "engenharia_manutencao",
+      "namedResponsible": null,
+      "dependsOn": [],
+      "nextControlledAction": "Organizar fila dos 24 registros com fonte OEM aplicável, contraprova, segurança do ensaio e escopo de publicação autorizado.",
+      "releaseEvidence": [
+        "Revisão primária e independente registradas; a classificação de literatura revisada deve permanecer distinta de evento de campo confirmado.",
+        "Permissões de compartilhamento, integridade dos dados e evidências de execução em ambiente corporativo restrito, se aplicáveis."
+      ],
+      "releaseDecision": "manual_independent_review_required",
+      "observedEvidenceReceipt": null,
+      "approvedReviewRecord": null,
+      "corporateDeadline": null,
+      "publicDataAuthorization": false,
+      "readyForKnowledgePromotion": false
+    },
+    {
+      "id": "BLK-SYSTEMIC-ROOT",
+      "title": "Alegações de causas sistêmicas sem registros de processo",
+      "area": "causal_governance",
+      "source": {
+        "path": "data/governance/systemic-root-audit.v1.json",
+        "countField": "counts.systemicClaims",
+        "sourceVersion": "1.3.14"
+      },
+      "sourceFinding": "Causalidade sistêmica: 48 alegações sem comprovação do processo",
+      "unit": "unverified_systemic_claims",
+      "sourceItemCount": 48,
+      "unblockedItems": 0,
+      "approvalStatus": "blocked_pending_external_evidence",
+      "priorityProposal": "P1",
+      "ownerDiscipline": "engenharia_confiabilidade",
+      "namedResponsible": null,
+      "dependsOn": [
+        "BLK-FC-REVIEW"
+      ],
+      "nextControlledAction": "Investigar separadamente cada alegação com rastreio de processo, evidência contraditória e alternativa não organizacional.",
+      "releaseEvidence": [
+        "Registro comprovado da prática/processo, cadeia causal sustentada, contraprova e revisão independente; sem imputação automática de culpa.",
+        "Permissões de compartilhamento, integridade dos dados e evidências de execução em ambiente corporativo restrito, se aplicáveis."
+      ],
+      "releaseDecision": "manual_independent_review_required",
+      "observedEvidenceReceipt": null,
+      "approvedReviewRecord": null,
+      "corporateDeadline": null,
+      "publicDataAuthorization": false,
+      "readyForKnowledgePromotion": false
+    },
+    {
+      "id": "BLK-CAUSAL-CANDIDATES",
+      "title": "Cadeias candidatas fora do núcleo FMEA",
+      "area": "mechanical_candidates",
+      "source": {
+        "path": "data/quality/proposed-causal-chains.v1.json",
+        "countField": "records",
+        "sourceVersion": "1.3.20"
+      },
+      "sourceFinding": "Três propostas físicas fora do núcleo",
+      "unit": "causal_proposals",
+      "sourceItemCount": 3,
+      "unblockedItems": 0,
+      "approvalStatus": "blocked_pending_external_evidence",
+      "priorityProposal": "P0",
+      "ownerDiscipline": "engenharia_confiabilidade",
+      "namedResponsible": null,
+      "dependsOn": [],
+      "nextControlledAction": "Delimitar três hipóteses: estanqueidade de bomba hidráulica, perda volumétrica interna e dano dos flancos do comando final, sem associar série não confirmada.",
+      "releaseEvidence": [
+        "Função, modo físico, cenário OEM, testes comparativos, contraprova e revisão independente antes de qualquer promoção FC.",
+        "Permissões de compartilhamento, integridade dos dados e evidências de execução em ambiente corporativo restrito, se aplicáveis."
+      ],
+      "releaseDecision": "manual_independent_review_required",
+      "observedEvidenceReceipt": null,
+      "approvedReviewRecord": null,
+      "corporateDeadline": null,
+      "publicDataAuthorization": false,
+      "readyForKnowledgePromotion": false
+    },
+    {
+      "id": "BLK-ME-REFINEMENTS",
+      "title": "Conceitos e submodos de mecanismo propostos",
+      "area": "mechanism_ontology",
+      "source": {
+        "path": "data/quality/mechanism-refinements.v1.json",
+        "countField": "records",
+        "sourceVersion": "1.3.22"
+      },
+      "sourceFinding": "Quatro definições editoriais ainda não homologadas",
+      "unit": "mechanism_refinement_proposals",
+      "sourceItemCount": 4,
+      "unblockedItems": 0,
+      "approvalStatus": "blocked_pending_external_evidence",
+      "priorityProposal": "P1",
+      "ownerDiscipline": "engenharia_mecanica",
+      "namedResponsible": null,
+      "dependsOn": [
+        "BLK-CAUSAL-CANDIDATES"
+      ],
+      "nextControlledAction": "Solicitar evidência para distinguir fluxo interno normal de fuga excessiva e abrasão, adesão e fadiga em dente engrenado.",
+      "releaseEvidence": [
+        "Morfologia, condição OEM efetiva, mecanismo distinguível e revisor independente; não criar novo ME/FC por similaridade bibliográfica.",
+        "Permissões de compartilhamento, integridade dos dados e evidências de execução em ambiente corporativo restrito, se aplicáveis."
+      ],
+      "releaseDecision": "manual_independent_review_required",
+      "observedEvidenceReceipt": null,
+      "approvedReviewRecord": null,
+      "corporateDeadline": null,
+      "publicDataAuthorization": false,
+      "readyForKnowledgePromotion": false
+    },
+    {
+      "id": "BLK-IT-PLATFORM",
+      "title": "Infraestrutura privada e custódia técnica",
+      "area": "corporate_infrastructure",
+      "source": {
+        "path": "data/governance/restricted-infrastructure-design.v1.json",
+        "countField": "architecture",
+        "sourceVersion": "1.3.24"
+      },
+      "sourceFinding": "Sete camadas corporativas não provisionadas",
+      "unit": "unprovisioned_architecture_components",
+      "sourceItemCount": 7,
+      "unblockedItems": 0,
+      "approvalStatus": "blocked_pending_external_evidence",
+      "priorityProposal": "P0",
+      "ownerDiscipline": "ti_seguranca_plataforma",
+      "namedResponsible": null,
+      "dependsOn": [],
+      "nextControlledAction": "Submeter a TI/Segurança arquitetura de sete componentes: IdP, RBAC backend, cofre privado, metadados, log imutável, retenção e comitê de mudanças.",
+      "releaseEvidence": [
+        "Serviços provisionados e verificados por controle de acesso, criptografia, auditoria externa, recuperação e política de retenção autorizada.",
+        "Permissões de compartilhamento, integridade dos dados e evidências de execução em ambiente corporativo restrito, se aplicáveis."
+      ],
+      "releaseDecision": "manual_independent_review_required",
+      "observedEvidenceReceipt": null,
+      "approvedReviewRecord": null,
+      "corporateDeadline": null,
+      "publicDataAuthorization": false,
+      "readyForKnowledgePromotion": false
+    },
+    {
+      "id": "BLK-STAGING-SIGNOFF",
+      "title": "Aprovações formais da homologação do staging",
+      "area": "corporate_acceptance",
+      "source": {
+        "path": "data/governance/staging-acceptance-plan.v1.json",
+        "countField": "manualAcceptanceRequirements",
+        "sourceVersion": "1.3.25"
+      },
+      "sourceFinding": "Seis aprovações formais de staging pendentes",
+      "unit": "pending_staging_signoffs",
+      "sourceItemCount": 6,
+      "unblockedItems": 0,
+      "approvalStatus": "blocked_pending_external_evidence",
+      "priorityProposal": "P0",
+      "ownerDiscipline": "ti_seguranca_engenharia_privacidade",
+      "namedResponsible": null,
+      "dependsOn": [
+        "BLK-IT-PLATFORM"
+      ],
+      "nextControlledAction": "Planejar execução autorizada dos oito cenários/32 controles em staging privado exclusivamente com contas e documentos fictícios.",
+      "releaseEvidence": [
+        "Seis aceites documentados por órgãos autorizados, evidências de ensaio real de staging e pareceres de segurança; sem homologar causa mecânica.",
+        "Permissões de compartilhamento, integridade dos dados e evidências de execução em ambiente corporativo restrito, se aplicáveis."
+      ],
+      "releaseDecision": "manual_independent_review_required",
+      "observedEvidenceReceipt": null,
+      "approvedReviewRecord": null,
+      "corporateDeadline": null,
+      "publicDataAuthorization": false,
+      "readyForKnowledgePromotion": false
+    }
+  ],
+  "planningOrder": [
+    "BLK-D9-OEM",
+    "BLK-CAUSAL-CANDIDATES",
+    "BLK-PM-SAP",
+    "BLK-FC-REVIEW",
+    "BLK-IT-PLATFORM",
+    "BLK-STAGING-SIGNOFF",
+    "BLK-ME-REFINEMENTS",
+    "BLK-SYSTEMIC-ROOT"
+  ],
+  "separateCriticalPaths": [
+    {
+      "pathId": "OEM-ENGINEERING",
+      "ordered": [
+        "BLK-D9-OEM",
+        "BLK-FC-REVIEW"
+      ],
+      "note": "Sequência editorial recomendada de priorização, NÃO dependência universal de todo FC em D9."
+    },
+    {
+      "pathId": "MECHANISM-CONCEPTS",
+      "ordered": [
+        "BLK-CAUSAL-CANDIDATES",
+        "BLK-ME-REFINEMENTS"
+      ],
+      "note": "As propostas de mecanismo dependem de esclarecer a hipótese parent antes de promoção."
+    },
+    {
+      "pathId": "PRIVATE-STAGING",
+      "ordered": [
+        "BLK-IT-PLATFORM",
+        "BLK-STAGING-SIGNOFF"
+      ],
+      "note": "Aceite de infraestrutura é indispensável antes de declarar ensaios de staging executados."
+    },
+    {
+      "pathId": "SAP-TAXONOMY",
+      "ordered": [
+        "BLK-PM-SAP"
+      ],
+      "note": "Revisar cada regra por dados SAP e evidência aplicável, não criar dependência com o piloto D9."
+    },
+    {
+      "pathId": "SYSTEMIC-ROOT",
+      "ordered": [
+        "BLK-FC-REVIEW",
+        "BLK-SYSTEMIC-ROOT"
+      ],
+      "note": "Revisão causal de processo requer evidência própria e distinta, não atribuição automática baseada na FMEA mecânica."
+    }
+  ],
+  "exclusions": {
+    "fieldEvidenceStoredHere": false,
+    "corporateSystemsAccessed": false,
+    "realOwnerAssignments": false,
+    "approvedOEMLimits": false,
+    "realSecuritySignoffs": false,
+    "changesToCoreFmea": false,
+    "changesToSap": false,
+    "changesToPublicConsumers": false
+  },
+  "nextExternalDecision": "Obter responsável institucional pela infraestrutura de custódia e pela fila de documentação OEM em ambiente autorizado, mantendo o plano editorial independente de execução corporativa."
+}
