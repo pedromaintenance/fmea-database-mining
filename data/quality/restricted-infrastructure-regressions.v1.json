@@ -1,0 +1,268 @@
+{
+  "schema": "fmea-mining.restricted-infrastructure-regressions.v1",
+  "version": "1.3.24",
+  "nature": "synthetic_only",
+  "authorizationCases": [
+    {
+      "id": "ALLOW-01",
+      "role": "originator",
+      "operation": "create_case",
+      "expected": "allow",
+      "mutation": null
+    },
+    {
+      "id": "ALLOW-02",
+      "role": "custodian",
+      "operation": "upload_restricted",
+      "expected": "allow",
+      "mutation": null
+    },
+    {
+      "id": "ALLOW-03",
+      "role": "custodian",
+      "operation": "attest_custody",
+      "expected": "allow",
+      "mutation": null
+    },
+    {
+      "id": "ALLOW-04",
+      "role": "technical_reviewer",
+      "operation": "review_technical",
+      "expected": "allow",
+      "mutation": null
+    },
+    {
+      "id": "ALLOW-05",
+      "role": "independent_reviewer",
+      "operation": "review_independent",
+      "expected": "allow",
+      "mutation": null
+    },
+    {
+      "id": "ALLOW-06",
+      "role": "change_control_owner",
+      "operation": "submit_change",
+      "expected": "allow",
+      "mutation": null
+    },
+    {
+      "id": "ALLOW-07",
+      "role": "security_admin",
+      "operation": "read_audit_metadata",
+      "expected": "allow",
+      "mutation": null
+    },
+    {
+      "id": "DENY-01",
+      "role": "originator",
+      "operation": "upload_restricted",
+      "expected": "reject",
+      "mutation": null
+    },
+    {
+      "id": "DENY-02",
+      "role": "security_admin",
+      "operation": "view_restricted_evidence",
+      "expected": "reject",
+      "mutation": null
+    },
+    {
+      "id": "DENY-03",
+      "role": "originator",
+      "operation": "export_public",
+      "expected": "reject",
+      "mutation": null
+    },
+    {
+      "id": "DENY-04",
+      "role": "privacy_officer",
+      "operation": "export_public",
+      "expected": "reject",
+      "mutation": null
+    },
+    {
+      "id": "DENY-05",
+      "role": "fake_admin",
+      "operation": "read_case_metadata",
+      "expected": "reject",
+      "mutation": null
+    },
+    {
+      "id": "DENY-06",
+      "role": "technical_reviewer",
+      "operation": "review_technical",
+      "expected": "reject",
+      "mutation": "same_originator"
+    },
+    {
+      "id": "DENY-07",
+      "role": "independent_reviewer",
+      "operation": "review_independent",
+      "expected": "reject",
+      "mutation": "same_technical_reviewer"
+    },
+    {
+      "id": "DENY-08",
+      "role": "independent_reviewer",
+      "operation": "review_independent",
+      "expected": "reject",
+      "mutation": "same_originator"
+    },
+    {
+      "id": "DENY-09",
+      "role": "technical_reviewer",
+      "operation": "review_technical",
+      "expected": "reject",
+      "mutation": "no_mfa"
+    },
+    {
+      "id": "DENY-10",
+      "role": "custodian",
+      "operation": "view_restricted_evidence",
+      "expected": "reject",
+      "mutation": "not_assigned"
+    },
+    {
+      "id": "DENY-11",
+      "role": "custodian",
+      "operation": "attest_custody",
+      "expected": "reject",
+      "mutation": "wrong_tenant"
+    },
+    {
+      "id": "DENY-12",
+      "role": "custodian",
+      "operation": "attest_custody",
+      "expected": "reject",
+      "mutation": "disabled_identity"
+    },
+    {
+      "id": "DENY-13",
+      "role": "security_admin",
+      "operation": "read_audit_metadata",
+      "expected": "reject",
+      "mutation": "not_authenticated"
+    }
+  ],
+  "auditCases": [
+    {
+      "id": "AUDIT-01",
+      "mutation": "valid",
+      "expected": "allow"
+    },
+    {
+      "id": "AUDIT-02",
+      "mutation": "tamper_event",
+      "expected": "reject"
+    },
+    {
+      "id": "AUDIT-03",
+      "mutation": "delete_middle",
+      "expected": "reject"
+    },
+    {
+      "id": "AUDIT-04",
+      "mutation": "swap_events",
+      "expected": "reject"
+    },
+    {
+      "id": "AUDIT-05",
+      "mutation": "duplicate_sequence",
+      "expected": "reject"
+    },
+    {
+      "id": "AUDIT-06",
+      "mutation": "forged_anchor",
+      "expected": "reject"
+    },
+    {
+      "id": "AUDIT-07",
+      "mutation": "embed_raw_url",
+      "expected": "reject"
+    },
+    {
+      "id": "AUDIT-08",
+      "mutation": "invalid_event_type",
+      "expected": "reject"
+    },
+    {
+      "id": "AUDIT-09",
+      "mutation": "rehash_without_external_anchor",
+      "expected": "reject"
+    },
+    {
+      "id": "AUDIT-10",
+      "mutation": "empty_log",
+      "expected": "reject"
+    }
+  ],
+  "retentionCases": [
+    {
+      "id": "RET-01",
+      "mutation": "valid",
+      "expected": "allow"
+    },
+    {
+      "id": "RET-02",
+      "mutation": "legal_hold",
+      "expected": "reject"
+    },
+    {
+      "id": "RET-03",
+      "mutation": "schedule_unknown",
+      "expected": "reject"
+    },
+    {
+      "id": "RET-04",
+      "mutation": "before_due",
+      "expected": "reject"
+    },
+    {
+      "id": "RET-05",
+      "mutation": "case_open",
+      "expected": "reject"
+    },
+    {
+      "id": "RET-06",
+      "mutation": "approvers_same",
+      "expected": "reject"
+    },
+    {
+      "id": "RET-07",
+      "mutation": "approver_missing",
+      "expected": "reject"
+    },
+    {
+      "id": "RET-08",
+      "mutation": "backup_plan_missing",
+      "expected": "reject"
+    },
+    {
+      "id": "RET-09",
+      "mutation": "disposition_receipt_missing",
+      "expected": "reject"
+    },
+    {
+      "id": "RET-10",
+      "mutation": "privacy_review_missing",
+      "expected": "reject"
+    },
+    {
+      "id": "RET-11",
+      "mutation": "no_live_platform",
+      "expected": "reject"
+    },
+    {
+      "id": "RET-12",
+      "mutation": "policy_not_approved",
+      "expected": "reject"
+    }
+  ],
+  "counts": {
+    "allow": 9,
+    "reject": 32,
+    "authorization": 20,
+    "audit": 10,
+    "retention": 12
+  }
+}
