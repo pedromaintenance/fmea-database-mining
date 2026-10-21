@@ -1,6 +1,6 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 21/10/2026 · **Ciclo:** catálogo técnico v1.3.33 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 21/10/2026 · **Ciclo:** catálogo técnico v1.3.34 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
 
@@ -38,6 +38,19 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 | Enriquecimento | 12 roteiros classificados por falha funcional, sintomas e técnicas | Anotação manual, não prova de causa |
 
 **Observação:** as 159 tarefas de PM com subgrupo candidato foram obtidas em extração local anterior e **não** representam 159 associações homologadas. Contagens de vínculos estritos serão publicadas pelo relatório automático após cada alteração do gerador.
+
+## Ciclo concluído — 21/10/2026: auditoria estrutural PM × SAP (v1.3.34)
+
+- [x] Reforçado [validador de vínculos PM](../scripts/validate-pm.mjs), cobrindo modelo, raiz/grupo, subgrupo, objeto SAP, componente, par dano/causa e metadados de origem **não observada**.
+- [x] Criado [auditor de escopo funcional](../scripts/audit-pm-system-scope.mjs), com reconciliação dos 25 padrões contra os dados reais de catálogo e da geração; emite `reports/pm-system-scope-audit.generated.json`.
+- [x] [24 testes adversariais](../data/quality/pm-strict-link-regressions.v1.json) para impedir associações de sistemas indevidos, alteração de códigos, salto de evidência e perda/duplicidade de candidatos; integração ao QA/CI.
+- [x] [Guia do ciclo](AUDITORIA_PM_ESCOPO_FUNCIONAL.md) e [relatório técnico](CICLO_2026-10-21_AUDITORIA_PM_ESTRITA.md) incluídos.
+- [x] Mantidos 24 FC / 15 ME, zero diagnósticos comprovados, contrato público 1.0.0 e consumidor intacto.
+- [ ] **P0 externo — Engenharia/SAP PM:** analisar as **10 exceções** com BOM/OMM efetivos, estrutura de equipamentos, subgrupos e pareamento dano/causa; confirmar quais requerem correção de cadastro ou de hipótese.
+- [ ] **P0 externo — D9:** [issue #31](https://github.com/pedromaintenance/fmea-database-mining/issues/31) permanece **aguardando designação de canal/destinatário e envio** da solicitação OEM; não confundir issue com envio real.
+- [ ] **P0 próximo ciclo:** escolher regra PM prioritária, obter evidência OEM e SAP por modelo/arranjo no ambiente restrito e documentar parecer humano; sem prova externa, a base deve preservar os bloqueios.
+
+**Estado:** vínculos candidatos estruturalmente auditados; associações são hipóteses, não falhas observadas nem dados SAP homologados.
 
 ## Ciclo concluído — 21/10/2026: handoff externo para solicitação OEM D9 (v1.3.33)
 
