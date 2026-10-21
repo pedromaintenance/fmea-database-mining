@@ -2,6 +2,14 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.42] — 2026-10-21 — Correção da ontologia: roda-guia ≠ rolete
+
+- Adicionadas duas condições específicas da roda-guia (aquecimento localizado suspeito e vestígio oleoso suspeito), além de ação de inspeção de sua vedação/detritos, **todas não observadas e não executadas**.
+- `BUNDLE-09` deixa de referenciar `COND-TRACK-ROLLER-HEAT` e `ACT-TRACK-ROLLER-SEAL-CHECK` e passa a referenciar exclusivamente conceitos `TRACK-IDLER`. `BUNDLE-08` e todos os IDs históricos de rolete foram preservados.
+- Rótulo `DMG-TRACK-IDLER-WEAR` alterado de “Desgaste confirmado” para **“Desgaste da roda-guia ou dano do apoio interno sob investigação”**, sem alterar `confirmed:false`, revisão pendente ou códigos SAP.
+- Ontologia `1.3.8`: 20 condições, 19 ações, 9 danos hipotéticos, 9 bundles e 54 relações tipadas; 16 fixtures sintéticos após dois casos adicionais. Auditor com 24 mutações adversariais rejeitadas e vínculo SAP bloqueado.
+- Validação integral de contratos de exportação: 25 regras PM, 115 vínculos candidatos, dez exceções, 24 FC/15 ME, contrato/conteúdo públicos 1.0.0, preview 1.3.12 e consumidores inalterados.
+
 ## [1.3.41] — 2026-10-21 — Roda-guia IDLE: desgaste externo, rolamento interno, vedação e CTS
 
 - Escopo real `track-idler-wear`: **221 caminhos** nos modelos da regra, 40 em UNCR, oito em IDLE. O tipo de objeto IDLE contém oito ocorrências de eixo e oito de guia genérica, mas **zero ocorrências de Rolamento**.
