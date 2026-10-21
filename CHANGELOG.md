@@ -2,6 +2,14 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.22] — 2026-10-21 — Perda volumétrica interna e três submodos de flancos
+- Proposta editorial `ME-CAND-HYD-INTERNAL-LEAKAGE-001`: vazamento interno acima do requisito OEM em condições controladas; não confundir vazão normal de projeto, dreno de carcaça, ME-15 nem causas como desgaste.
+- Decomposto o candidato de dano de engrenagens em três submodos conceituais distintos: abrasão `ME-01`, adesão `ME-02` e fadiga de contato `ME-03`, todos sem dano observado.
+- A referência ISO 10825-1 foi mantida apenas como **nomenclatura de aparência**, sem alegar que ela fornece causa ou prevenção.
+- Adicionada referência pública do catálogo Parker de bomba de palhetas com ressalva explícita de **não aplicabilidade por série à CAT 395**.
+- Validador, JSON Schema e **24 regressões sintéticas** incorporados ao QA e GitHub Actions, com contadores de qualidade.
+- **0 IDs ME/FC aprovados**, **0 limites OEM inventados**, **0 ocorrências**, nenhum consumidor alterado. Preview/contrato públicos preservados.
+
 ## [1.3.21] — 2026-10-21 — Auditoria de coerência das três candidatas de cadeia
 - Três propostas `CAND-*` avaliadas contra as 10 classes de falha funcional e os 15 mecanismos da ontologia, sem editar quaisquer IDs `FC-*`.
 - Vedação externa da bomba: FF-06 / ME-15 condicional; perda volumétrica interna: FF-02 e lacuna ontológica; flancos de engrenagem: FF-02 e necessidade de separar ME-01/ME-02/ME-03.

@@ -2,7 +2,7 @@
 
 Banco de conhecimento **versionado** para investigar modos de falha, sintomas, evidências e causas em equipamentos móveis de mineração. Um consumidor possível é o jogo **[P.O.R.C.A.R.I.A. — Você Quebra, Eu Conserto](https://github.com/pedromaintenance/porcaria-voce-quebra-eu-conserto)**, mas o banco é independente: **este repositório não altera os consumidores**.
 
-> **Status:** versão do catálogo **1.3.21** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
+> **Status:** versão do catálogo **1.3.22** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
 
 ## O que queremos construir
 
@@ -296,6 +296,16 @@ A [auditoria de coerência](data/quality/proposal-taxonomy-audit.v1.json) verifi
 O comando `npm run taxonomy:proposals:validate` e o pipeline completo executam **3 verificações de baseline e 18 mutações sintéticas**, bloqueando aprovação, local SAP, série, dano medido ou efeito observado artificialmente. [Relatório técnico](docs/CICLO_2026-10-21_AUDITORIA_TAXONOMICA.md).
 
 **Estado:** 24 cadeias no núcleo, três candidatas fora dele, nenhuma homologação OEM, contrato público 1.0.0 e conteúdo 1.0.0 inalterados. O preview legado 1.3.12 não foi modificado.
+
+## Refinamento de mecanismos — v1.3.22
+
+A [coleção de refinamentos](data/quality/mechanism-refinements.v1.json) define **quatro propostas editoriais** vinculadas à auditoria das três candidatas: **uma perda volumétrica interna excessiva** em bomba hidráulica e **três submodos de dano superficial em engrenagens** (abrasão, adesão e fadiga de contato).
+
+**Perda interna normal não é falha:** não se deve reprovar uma bomba pela simples existência de vazão de dreno; arquitetura, perdas esperadas, comando, fluido, pressão, temperatura e rotação precisam ser conhecidos. O fluxo de dreno de carcaça não equivale automaticamente à totalidade das perdas volumétricas. Os valores de bombas de palhetas Parker não foram transferidos para CAT 395.
+
+**A ISO 10825-1:2022** fornece nomenclatura de condição e aparência de dentes, mas o resumo público declara que a norma *não determina causas ou medidas preventivas*. Para CAT 777, a distinção entre marcas abrasivas, adesivas e fadiga permanece hipótese que depende de inspeção localizada.
+
+O novo `npm run mechanisms:refinements:validate` executa **24 cenários sintéticos (4 baseline + 20 mutações)**. As 24 cadeias FC e os 15 mecanismos ME do núcleo foram preservados; o contrato público continua 1.0.0 e o conteúdo público 1.0.0. [Relatório técnico](docs/CICLO_2026-10-21_REFINAMENTO_MECANISMOS.md) · [Schema](schemas/mechanism-refinements.schema.json).
 
 ## Comece por aqui
 
