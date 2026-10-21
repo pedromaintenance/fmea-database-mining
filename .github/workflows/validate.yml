@@ -54,6 +54,8 @@ jobs:
         run: npm run evidence:validate
       - name: Validar protocolo de custodia restrita e 29 cenarios sinteticos
         run: npm run evidence:restricted:validate
+      - name: Validar arquitetura corporativa e 42 testes sinteticos de seguranca
+        run: npm run infrastructure:restricted:validate
       - name: Validar capacidade discriminante de seis testes P0
         run: npm run discrimination:validate
       - name: Validar avaliacao cruzada de 24 testes e revisao SAP/OEM

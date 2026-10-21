@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.public-contract.v1",
-  "version": "1.3.23",
+  "version": "1.3.24",
   "contractVersion": "1.0.0",
   "existingPreviewSchema": "fmea-mining.public-knowledge-preview.v1",
   "existingPreviewVersion": "1.3.12",
@@ -66,5 +66,5 @@
     "unknown_serial_to_approved_oem_effectivity",
     "unreviewed_cause_to_verified_root_cause"
   ],
-  "note": "A versão interna 1.3.23 introduz protocolo de custódia restrita e validador puro, sem persistir documentos/casos reais, aprovar evidência ou alterar fontes/consumidores. Contrato público 1.0.0, conteúdo 1.0.0, preview 1.3.12 e checksum imutáveis."
+  "note": "Versão interna 1.3.24 acrescenta blueprint de implantação, modelo RBAC, simulação de cadeia hash e gate de elegibilidade à revisão de descarte, sem infraestrutura real provisionada. Contrato público 1.0.0, conteúdo 1.0.0, preview 1.3.12 e checksum imutáveis."
 }
