@@ -36,6 +36,8 @@ const pathways=read('data/quality/diagnostic-pathways.v1.json');
 const pathwayFixtures=read('data/quality/pathway-regressions.v1.json');
 const pathwayExpansion=read('data/quality/diagnostic-pathway-expansion.v1.json');
 const pathwayExpansionFixtures=read('data/quality/pathway-expansion-regressions.v1.json');
+const deepdives=read('data/quality/playbook-deepdives.v1.json');
+const deepDiveFixtures=read('data/quality/playbook-deepdives-regressions.v1.json');
 const causalLevels=read('data/ontology/causal-levels.v1.json').records;
 const publicManifest=read('reports/public-manifest.v1.json');
 const systemicReview=read('data/governance/systemic-root-audit.v1.json');
@@ -66,6 +68,11 @@ const counts={
  pmSeedRules:pmRules.length,pmRulesWithAtLeastOneCandidate:foundRules.size,pmRulesWithoutCandidate:emptyRules.length,
  pmCandidateLinks:pm.length,pathsWithPmCandidate:new Set(pm.map(x=>x.locationId)).size,
  diagnosticPlaybooks:playbooks.length,annotatedPlaybooks:annotated.length,
+ playbooksDeepenedThisCycle:deepdives.records.length,
+ playbooksNotDeepenedInThisBatch:deepdives.otherPlaybookIds.length,
+ playbookDeepDiveStages:deepdives.records.reduce((n,x)=>n+x.stages.length,0),
+ playbookDeepDiveReadinessRequirements:deepdives.records.reduce((n,x)=>n+x.readiness.requires.length,0),
+ playbookDeepDiveSyntheticRegressions:deepDiveFixtures.readinessCases.length+deepDiveFixtures.mutationCases.length,
  playbooksWithCandidateLinks:diagnostic.filter(x=>x.candidateCount>0).length,
  playbooksWithoutCandidateLinks:noLinkPlaybooks.length,
  candidatePlaybookLinks:diagnostic.reduce((n,x)=>n+x.candidateCount,0),
@@ -142,7 +149,7 @@ const counts={
  semanticDamageConfirmations:semantic.confirmedComponentDamages.length,
  evidenceValidatedInRealEquipment:0,technicallyApprovedPlaybooks:0
 };
-const report={schema:'fmea-mining.quality-audit.v1',version:'1.3.17',
+const report={schema:'fmea-mining.quality-audit.v1',version:'1.3.18',
  generatedFrom:'working_tree',status:'qualidade_cadastral_nao_taxa_de_falhas',
  meanings:{
   pmCandidateLinks:'vinculos gerados por regra e taxonomia, NAO falhas observadas',

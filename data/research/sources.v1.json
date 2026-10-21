@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.research.sources.v1",
-  "version": "1.3.13",
+  "version": "1.3.18",
   "status": "literatura_de_referencia_nao_casos_empiricos",
   "rights": "somente_titulos_links_e_resumos_originais",
   "sources": [
@@ -542,6 +542,30 @@
       "limitation": "SemVer se aplica a interface pública definida; este projeto usa seus princípios em contrato JSON autoral. Não comprova estabilidade de conteúdo FMEA, causas físicas ou adequação OEM.",
       "reviewStatus": "especificacao_publica_consultada",
       "lastReviewed": "2026-10-20"
+    },
+    {
+      "id": "MICHELIN-EARTHMOVER-TIRE-INSPECTION",
+      "title": "Earthmover tyres inspection: tyre checking and maintenance",
+      "organization": "Michelin",
+      "url": "https://b2b.middle-east.michelin.com/help-advice/earthmover-vehicles/tyre-maintenance-earthmover-tyre-inspection",
+      "role": "princípios de inspeção visual, medição de desgaste e alinhamento",
+      "limitation": "Referência genérica para pneus de máquinas pesadas; não fornece pressão, dimensão ou liberação técnica do pneu efetivamente instalado na CAT 16."
+    },
+    {
+      "id": "MICHELIN-EARTHMOVER-TIRE-PRESSURE",
+      "title": "What is the right earthmover tyre pressure?",
+      "organization": "Michelin",
+      "url": "https://b2b.middle-east.michelin.com/help-advice/earthmover-vehicles/tyre-pressure-for-earthmover-vehicles",
+      "role": "princípios de pressão fria por carga, pneu e operação",
+      "limitation": "Pressão real depende de pneu, carga, aplicação e fabricante; nenhuma tabela de inflação foi aplicada à CAT 16."
+    },
+    {
+      "id": "SANDVIK-DI650I-S5-SPEC",
+      "title": "Leopard DI650i S5 — technical specification",
+      "organization": "Sandvik",
+      "url": "https://www.mining.sandvik/globalassets/products/surface-drill-rigs/pdf/di650i-s5-specification-sheet-english2.pdf",
+      "role": "contexto genérico de arquitetura de compressor, filtro e alimentação pneumática da variante S5",
+      "limitation": "Publicação da variante S5; não confirma variante, número de série, compressor instalado, pressão de teste ou circuito da frota DI650i."
     }
   ]
 }

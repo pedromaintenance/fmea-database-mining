@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.public-contract.v1",
-  "version": "1.3.17",
+  "version": "1.3.18",
   "contractVersion": "1.0.0",
   "existingPreviewSchema": "fmea-mining.public-knowledge-preview.v1",
   "existingPreviewVersion": "1.3.12",
@@ -66,5 +66,5 @@
     "unknown_serial_to_approved_oem_effectivity",
     "unreviewed_cause_to_verified_root_cause"
   ],
-  "note": "A v1.3.17 acrescenta roteiros internos de diagnóstico diferencial ainda não executados, sem afetar contrato/API 1.0.0, release de conteúdo 1.0.0, preview legado 1.3.12 ou hash SHA-256. Nenhuma causa ou configuração OEM promovida."
+  "note": "O catálogo interno 1.3.18 inclui seis análises diferenciais dos playbooks didáticos e fontes técnicas gerais, sem alterar contrato/API 1.0.0, conteúdo público 1.0.0, preview 1.3.12, checksum histórico ou consumidores. Nenhum cenário sintético foi homologado."
 }

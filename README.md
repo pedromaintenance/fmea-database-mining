@@ -2,7 +2,7 @@
 
 Banco de conhecimento **versionado** para investigar modos de falha, sintomas, evidências e causas em equipamentos móveis de mineração. Um consumidor possível é o jogo **[P.O.R.C.A.R.I.A. — Você Quebra, Eu Conserto](https://github.com/pedromaintenance/porcaria-voce-quebra-eu-conserto)**, mas o banco é independente: **este repositório não altera os consumidores**.
 
-> **Status:** versão do catálogo **1.3.17** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
+> **Status:** versão do catálogo **1.3.18** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
 
 ## O que queremos construir
 
@@ -250,6 +250,18 @@ Cada roteiro contém **3 etapas propostas**, desfechos que sustentariam A/B ou s
 O comando `npm run pathways:expand:validate` aplica validações de IDs, literatura, mecanismos, condições de campo pendentes e **21 regressões sintéticas** (9 de checklist e 12 de mutação indevida). O pipeline CI e `npm run qa` executam também esse controle.
 
 [Relatório do ciclo v1.3.17](docs/CICLO_2026-10-20_ROTEIROS_DIFERENCIAIS_II.md) · [Schema do lote](schemas/diagnostic-pathway-expansion.schema.json). As **24 cadeias causais** continuam hipóteses, com 0 causas homologadas, e nenhuma alteração do contrato, snapshot público ou consumidores.
+
+## Seis playbooks didáticos aprofundados por ID (v1.3.18)
+
+O [lote de seis análises](data/quality/playbook-deepdives.v1.json) confronta explicitamente as três hipóteses H1/H2/H3 já existentes nos playbooks `PB-*`: CAT 980 cilindro, Sandvik DR410i avanço, Sandvik DI650i pneumática, CAT 16 pneus, CAT 777 alimentação de combustível e CAT 6030 lubrificação do motor. Foram incluídas **18 etapas**, **24 pré-requisitos documentais** e **34 regressões sintéticas**, sem inspeções reais.
+
+**Nota de cobertura:** a biblioteca contém 12 playbooks didáticos, mas os seis roteiros aprofundados anteriormente (`PATH-*`) cobriam **cadeias causais**, não seis IDs de playbook. Portanto, a inclusão deste lote **não significa 12/12 playbooks homologados ou aprofundados por ID**. Os outros seis IDs permanecem identificados no campo `otherPlaybookIds`, inclusive a bomba hidráulica da 395. Não há mapeamento automático de playbooks a local SAP ou causa raiz.
+
+- [Validador de rastreabilidade](scripts/validate-playbook-deepdives.mjs): `npm run playbooks:deepdives:validate` verifica cada H1/H2/H3 em comparação literal com a origem e bloqueia 16 mutações proibidas.
+- [Schema JSON](schemas/playbook-deepdives.schema.json), [fixtures sintéticas](data/quality/playbook-deepdives-regressions.v1.json) e [relatório técnico](docs/CICLO_2026-10-20_PLAYBOOKS_DIFERENCIAIS.md).
+- Três referências gerais adicionadas ao índice: segurança de pressão/desgaste de pneus Michelin e especificação de arquitetura DI650i S5 da Sandvik, **sem presumir aplicação por série**.
+
+O contrato 1.0.0, release público 1.0.0, preview original 1.3.12 e checksum permanecem congelados, sem alterações no jogo.
 
 ## Comece por aqui
 

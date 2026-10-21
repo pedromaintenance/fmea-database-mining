@@ -2,6 +2,14 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.18] — 2026-10-20 — Seis playbooks com diagnóstico diferencial rastreável
+- Construídos **6 roteiros técnicos vinculados aos IDs reais `PB-*`**, com comparação H1/H2/H3 preservada integralmente em relação aos cenários originais, 18 estágios propostos e 24 requisitos documentais de prontidão.
+- Escopos: cilindro CAT 980; avanço DR410i; compressor/pneumática DI650i; pneus CAT 16; combustível CAT 777; lubrificação do motor CAT 6030.
+- Criados JSON Schema, validador estrito e **34 cenários sintéticos** (18 de prontidão e 16 mutações de segurança, causalidade e vinculação), integrados a `npm run qa` e GitHub Actions.
+- Três novas referências bibliográficas públicas: Michelin (inspeção/pressão de pneus) e Sandvik DI650i S5 (arquitetura específica daquela variante, sem efetividade na frota).
+- Escopo explícito: **6/12 playbooks com deepdive por ID neste lote**; 6 caminhos causais anteriores não equivalem automaticamente a 6 outros playbooks aprofundados.
+- Sem execução, resultados reais, homologação OEM, identificação SAP ou causa confirmada; contrato público 1.0.0, conteúdo 1.0.0 e checksum anterior preservados.
+
 ## [1.3.17] — 2026-10-20 — Diagnóstico diferencial aprofundado, segundo lote
 - Adicionados 3 roteiros técnicos condicionais às 3 investigações originais, totalizando **6 aprofundados** dentro de 12 playbooks didáticos do banco; os 3 originais v1.3.11 foram mantidos íntegros.
 - Novos temas: restrição externa da colmeia × ventilação insuficiente (`FC-COOL-001`); detritos compactados × falha interna de rolete (`FC-TRACK-001`); bomba de arrefecimento × termostato/bypass (`FC-COOL-007`).

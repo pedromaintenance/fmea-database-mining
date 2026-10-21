@@ -1,13 +1,13 @@
 {
   "name": "fmea-database-mining",
-  "version": "1.3.17",
+  "version": "1.3.18",
   "private": true,
   "type": "module",
   "description": "Banco independente de conhecimento de FMEA, evidencias e confiabilidade de equipamentos moveis de mineracao",
   "scripts": {
     "validate": "node scripts/validate.mjs",
     "generate": "node scripts/generate-models.mjs --all",
-    "qa": "node scripts/validate.mjs && node scripts/generate-models.mjs --all && node scripts/validate.mjs && node scripts/validate-knowledge.mjs && npm run pm:generate && npm run pm:validate && npm run pm:gaps:audit && npm run pm:exceptions:validate && npm run diagnostic:generate && npm run diagnostic:validate && npm run diagnostic:preview && npm run ontology:validate && npm run semantics:validate && npm run causal:validate && npm run effects:validate && npm run evidence:validate && npm run discrimination:validate && npm run differential:validate && npm run pathways:validate && npm run pathways:expand:validate && npm run causal:levels:validate && npm run systemic:audit:validate && npm run public:export && npm run public:validate && npm run public:compatibility && npm run public:content:validate && npm run public:content:test && npm run causal:sap:audit && npm run quality:audit",
+    "qa": "node scripts/validate.mjs && node scripts/generate-models.mjs --all && node scripts/validate.mjs && node scripts/validate-knowledge.mjs && npm run pm:generate && npm run pm:validate && npm run pm:gaps:audit && npm run pm:exceptions:validate && npm run diagnostic:generate && npm run diagnostic:validate && npm run diagnostic:preview && npm run ontology:validate && npm run semantics:validate && npm run causal:validate && npm run effects:validate && npm run evidence:validate && npm run discrimination:validate && npm run differential:validate && npm run pathways:validate && npm run pathways:expand:validate && npm run playbooks:deepdives:validate && npm run causal:levels:validate && npm run systemic:audit:validate && npm run public:export && npm run public:validate && npm run public:compatibility && npm run public:content:validate && npm run public:content:test && npm run causal:sap:audit && npm run quality:audit",
     "validate:knowledge": "node scripts/validate-knowledge.mjs",
     "pm:generate": "node scripts/generate-pm-links.mjs --require-results",
     "pm:validate": "node scripts/validate-pm.mjs",
@@ -33,7 +33,8 @@
     "public:content:validate": "node scripts/validate-public-content-release.mjs",
     "public:content:test": "node scripts/test-public-content-releases.mjs",
     "pm:exceptions:validate": "node scripts/validate-pm-exception-gates.mjs",
-    "pathways:expand:validate": "node scripts/validate-pathway-expansion.mjs"
+    "pathways:expand:validate": "node scripts/validate-pathway-expansion.mjs",
+    "playbooks:deepdives:validate": "node scripts/validate-playbook-deepdives.mjs"
   },
   "engines": {
     "node": ">=18"
