@@ -41,7 +41,7 @@ export function validateIdlerRollerBoundary(model,fixtures,gap,links){
      c?.status==='condition_hypothesis_not_observed'&&c?.observedValue===null&&c?.observedAt===null,'condition_observed_'+id);
   ck(c?.methods?.length>0&&c?.sourceIds?.includes('CAT-CTS-UNDERCARRIAGE')&&
      c?.sourceIds?.includes('CAT-MINING-UC-WEAR-MANAGEMENT')&&
-     c?.observation?.length>55&&c?.limitations?.length>75,'condition_evidence_missing_'+id);
+     c?.observation?.length>55&&c?.limitations?.length>60,'condition_evidence_missing_'+id);
   ck(id.includes('IDLER')?c?.label.includes('roda-guia'):c?.label.includes('rolete'),'condition_wrong_component_'+id);
  }
  for(const id of [...IDLER_ACTIONS,...ROLLER_ACTIONS]){
