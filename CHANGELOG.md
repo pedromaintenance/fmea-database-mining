@@ -2,6 +2,14 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.39] — 2026-10-21 — Triagem semântica PM de arrefecimento e combustível
+
+- Duas regras P0 com par dano/causa bloqueado agora possuem **roteiros de revisão não executáveis** derivados da ontologia existente: `cooling-radiator-blockage` e `fuel-tank-water`.
+- Separadas cinco hipóteses de investigação: obstrução externa de aletas, restrição interna de líquido, temperatura elevada sem causa localizada, água no combustível e sedimentos; condições e ações **não são ocorrências nem danos**.
+- Diferencial de dano preservado somente como hipótese não aprovada para restrição interna do núcleo ou falha de dreno, exigindo teste independente e revisão competente.
+- Criados plano JSON, biblioteca de validação, gerador de relatório PCM, 16 ataques sintéticos de plano e 10 de relatório, integrados ao CI com reconciliação de 25 regras, 115 vínculos candidatos e 10 bloqueios.
+- Nenhuma nota/ordem SAP criada, valor observado, teste executado, código OEM inventado ou alteração na taxonomia. Mantidos 24 FC/15 ME, contrato/conteúdo públicos 1.0.0, preview 1.3.12 e consumidores.
+
 ## [1.3.38] — 2026-10-21 — Matriz documental de decisão VPAR por circuito
 
 - Transformadas duas descrições distintas de filtragem no tipo de objeto AISY/COMR/VPAR em **8 cenários editoriais**, cruzando os dois códigos com quatro funções físicas concorrentes (admissão, óleo, separação ar–óleo, reservatório); sem afirmar instalação nem função efetiva.
