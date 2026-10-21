@@ -2,6 +2,15 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.24] — 2026-10-21 — Blueprint corporativo restrito, RBAC, auditoria e descarte
+
+- Definida arquitetura de **7 componentes** dependentes de TI/Segurança, com responsabilidades e status explicitamente `live=false`.
+- Construída **matriz RBAC de 8 papéis** e 11 operações, com negação por padrão, MFA, atribuição ao caso, segregação de revisão e bloqueio de exportação pública.
+- Incluída demonstração isolada de logs encadeados por SHA-256 com âncora externa **simulada**; não é log WORM, assinatura digital nem prova contra administrador que possa regravar âncoras.
+- Modelada elegibilidade sintética para revisão de descarte: prazo aprovado pela organização (nenhum valor fixo), `legal hold`, fechamento, cópias/backup, dupla autorização e comprovante planejado; sem API de exclusão.
+- Adicionados **42 testes sintéticos** (20 autorização, 10 auditoria, 12 retenção), JSON Schema, `npm run infrastructure:restricted:validate`, QA/CI e métricas de implantação.
+- Preparado documento de arquitetura, riscos, responsabilidades e critérios de aceite de homologação; zero controle real provisionado, zero documentos/casos reais, nenhum consumidor alterado. Contrato e preview público preservados.
+
 ## [1.3.23] — 2026-10-21 — Protocolo de evidências restritas e custódia
 - Especificados 6 estados de revisão, 5 papéis, 5 categorias de evidência, verificação de custódia/licença e parecer técnico e independente segregados.
 - Novo JSON Schema para metadados restritos, gate puro sem persistência e **29 regressões inteiramente sintéticas** (5 transições permitidas, 24 rejeições de falhas de segurança/causalidade).

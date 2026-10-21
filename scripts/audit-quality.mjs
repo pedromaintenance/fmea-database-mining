@@ -29,6 +29,8 @@ const review=read('data/governance/technical-review-register.v1.json');
 const evidenceFixtures=read('data/quality/evidence-gate-regressions.v1.json');
 const restrictedEvidencePolicy=read('data/governance/restricted-evidence-workflow.v1.json');
 const restrictedEvidenceTests=read('data/quality/restricted-evidence-regressions.v1.json');
+const restrictedInfrastructure=read('data/governance/restricted-infrastructure-design.v1.json');
+const infrastructureCases=read('data/quality/restricted-infrastructure-regressions.v1.json');
 const differential=read('data/quality/discriminative-tests.v1.json');
 const differentialFixtures=read('data/quality/discrimination-regressions.v1.json');
 const complementary=read('data/quality/complementary-discrimination.v1.json');
@@ -96,6 +98,10 @@ const counts={
  candidateTaxonomyCorePromotions:taxonomyAudit.counts.approvedCorePromotions,
  proposedMechanismRefinements:mechanismRefinements.records.length,
  restrictedEvidenceWorkflowStages:restrictedEvidencePolicy.stageOrder.length,
+ referenceSecurityArchitectureComponents:restrictedInfrastructure.architecture.length,
+ referenceRBACRoles:restrictedInfrastructure.roles.length,
+ restrictedInfrastructureSyntheticTests:infrastructureCases.authorizationCases.length+infrastructureCases.auditCases.length+infrastructureCases.retentionCases.length,
+ productionControlsActuallyProvisioned:Object.values(restrictedInfrastructure.deployment).filter(Boolean).length,
  restrictedEvidenceKinds:restrictedEvidencePolicy.evidenceKinds.length,
  restrictedEvidenceSyntheticRegressionCases:restrictedEvidenceTests.cases.length,
  publicRealRestrictedEvidenceCases:restrictedEvidencePolicy.scope.realCasesInPublicRepository,
@@ -184,7 +190,7 @@ const counts={
  semanticDamageConfirmations:semantic.confirmedComponentDamages.length,
  evidenceValidatedInRealEquipment:0,technicallyApprovedPlaybooks:0
 };
-const report={schema:'fmea-mining.quality-audit.v1',version:'1.3.23',
+const report={schema:'fmea-mining.quality-audit.v1',version:'1.3.24',
  generatedFrom:'working_tree',status:'qualidade_cadastral_nao_taxa_de_falhas',
  meanings:{
   pmCandidateLinks:'vinculos gerados por regra e taxonomia, NAO falhas observadas',

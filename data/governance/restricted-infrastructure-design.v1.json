@@ -1,0 +1,267 @@
+{
+  "schema": "fmea-mining.restricted-infrastructure-design.v1",
+  "version": "1.3.24",
+  "maturity": "architecture_specification_no_live_services",
+  "sourcePolicy": "data/governance/restricted-evidence-workflow.v1.json",
+  "deployment": {
+    "identityProviderConnected": false,
+    "realRestrictedStorageProvisioned": false,
+    "encryptedObjectStoreEnabled": false,
+    "immutableLogSinkProvisioned": false,
+    "realRBACEnforced": false,
+    "corporateSecurityApproved": false,
+    "corporatePrivacyApproved": false,
+    "realCasePilotApproved": false
+  },
+  "architecture": [
+    {
+      "id": "a1",
+      "component": "corporate_identity_provider",
+      "required": "SSO, MFA, cycle of access recertification and tenant-scoped identity",
+      "owner": "security_it",
+      "live": false
+    },
+    {
+      "id": "a2",
+      "component": "backend_authorization",
+      "required": "Server-side deny-by-default RBAC plus assignment and separation of duties; never trust role assertions from client",
+      "owner": "security_it",
+      "live": false
+    },
+    {
+      "id": "a3",
+      "component": "restricted_object_vault",
+      "required": "Private encrypted objects, versioning, tenant isolation, no unauthenticated/direct web URLs or public repository copy",
+      "owner": "platform_it",
+      "live": false
+    },
+    {
+      "id": "a4",
+      "component": "case_metadata_service",
+      "required": "Separate case tokens/ACL from raw documents; provenance, license, model effectivity, timestamp and chain of custody",
+      "owner": "maintenance_engineering",
+      "live": false
+    },
+    {
+      "id": "a5",
+      "component": "append_only_audit_sink",
+      "required": "Protected append-only log, trusted clock, off-system anchor/signature and monitored access; hash chaining alone is insufficient",
+      "owner": "security_it",
+      "live": false
+    },
+    {
+      "id": "a6",
+      "component": "retention_legal_hold",
+      "required": "Approved corporate retention schedule, legal hold, backups/copies, supervised media sanitization and disposal receipt",
+      "owner": "records_privacy",
+      "live": false
+    },
+    {
+      "id": "a7",
+      "component": "human_change_board",
+      "required": "Separate technical, independent, change control, legal/privacy and public-release decisions",
+      "owner": "maintenance_engineering",
+      "live": false
+    }
+  ],
+  "roles": [
+    "originator",
+    "custodian",
+    "technical_reviewer",
+    "independent_reviewer",
+    "change_control_owner",
+    "records_owner",
+    "privacy_officer",
+    "security_admin"
+  ],
+  "operations": [
+    "create_case",
+    "read_case_metadata",
+    "upload_restricted",
+    "view_restricted_evidence",
+    "attest_custody",
+    "review_technical",
+    "review_independent",
+    "submit_change",
+    "approve_disposal",
+    "read_audit_metadata",
+    "export_public"
+  ],
+  "permissions": {
+    "originator": [
+      "create_case",
+      "read_case_metadata"
+    ],
+    "custodian": [
+      "read_case_metadata",
+      "upload_restricted",
+      "view_restricted_evidence",
+      "attest_custody"
+    ],
+    "technical_reviewer": [
+      "read_case_metadata",
+      "view_restricted_evidence",
+      "review_technical"
+    ],
+    "independent_reviewer": [
+      "read_case_metadata",
+      "view_restricted_evidence",
+      "review_independent"
+    ],
+    "change_control_owner": [
+      "read_case_metadata",
+      "submit_change"
+    ],
+    "records_owner": [
+      "read_case_metadata",
+      "approve_disposal"
+    ],
+    "privacy_officer": [
+      "read_case_metadata",
+      "approve_disposal"
+    ],
+    "security_admin": [
+      "read_audit_metadata"
+    ]
+  },
+  "deniedOperationsRegardlessOfRole": [
+    "export_public"
+  ],
+  "authRequirements": {
+    "serverEnforced": true,
+    "defaultDeny": true,
+    "mfa": true,
+    "activeAccount": true,
+    "tenantMatch": true,
+    "caseAssignment": true,
+    "nonDelegableReview": true,
+    "securityAdminNoRawEvidence": true,
+    "noDirectRawDocumentUrls": true
+  },
+  "segregation": [
+    {
+      "action": "review_technical",
+      "cannotMatch": [
+        "originatorToken"
+      ]
+    },
+    {
+      "action": "review_independent",
+      "cannotMatch": [
+        "originatorToken",
+        "technicalReviewerToken"
+      ]
+    },
+    {
+      "action": "approve_disposal",
+      "cannotMatch": [
+        "originatorToken"
+      ]
+    }
+  ],
+  "audit": {
+    "allowedActions": [
+      "case_created",
+      "evidence_registered",
+      "custody_attested",
+      "review_recorded",
+      "change_submitted",
+      "access_denied",
+      "legal_hold_changed",
+      "disposal_reviewed"
+    ],
+    "requiredFields": [
+      "seq",
+      "eventToken",
+      "caseToken",
+      "actorToken",
+      "action",
+      "occurredAt",
+      "detailToken",
+      "previousHash",
+      "hash"
+    ],
+    "forbiddenPayloads": [
+      "documents",
+      "rawMeasurements",
+      "personNames",
+      "oemContent",
+      "serialNumbers",
+      "originalUrl"
+    ],
+    "algorithm": "sha256_sequence_demo_requires_externally_trusted_anchor_and_hardware_or_service_key_protection",
+    "requireExternalTrustedAnchor": true,
+    "requireAppendOnlyLogService": true,
+    "requireIndependentTimeSource": true,
+    "requireDataMinimization": true,
+    "implementationStatus": "offline_synthetic_demonstration_not_immutable_or_signed"
+  },
+  "retention": {
+    "scheduleDays": null,
+    "definedByCorporateRecordsOwner": false,
+    "noDefaultDays": true,
+    "legalHoldOverridesDeletion": true,
+    "requireClosedCase": true,
+    "disposalApproverRoles": [
+      "records_owner",
+      "privacy_officer"
+    ],
+    "distinctApprovers": true,
+    "mustVerifyBackupCopies": true,
+    "requireDispositionReceipt": true,
+    "sanitizerGuidance": "NIST SP 800-88 Rev. 2 (2025) — organizational media sanitization program",
+    "implementationStatus": "pure_eligibility_simulator_no_deletion"
+  },
+  "privacyAndRights": {
+    "publicationGateSeparate": true,
+    "licenseForOEMRequired": true,
+    "dataControllerApprovalRequired": true,
+    "anonymizationIsNotHashing": true,
+    "noRawEvidenceInPublicGitHub": true,
+    "noTelemetryOrRealAssetDataInFixtures": true
+  },
+  "normativeReferences": [
+    {
+      "id": "NIST-SP800-92",
+      "url": "https://csrc.nist.gov/pubs/sp/800/92/final",
+      "scope": "log management guidance, high-level, not a deployment certification"
+    },
+    {
+      "id": "NIST-SP800-88R2",
+      "url": "https://csrc.nist.gov/pubs/sp/800/88/r2/final",
+      "scope": "media sanitization and enterprise program, not a fixed universal retention period"
+    }
+  ],
+  "backlog": [
+    {
+      "id": "B1",
+      "task": "Approve selected corporate hosting/IdP/MFA/security logging and real IAM policy",
+      "status": "not_implemented",
+      "owner": "security_it"
+    },
+    {
+      "id": "B2",
+      "task": "Provision encrypted private object vault, tenant isolation, keys, backup, restricted metadata and logging",
+      "status": "not_implemented",
+      "owner": "platform_it"
+    },
+    {
+      "id": "B3",
+      "task": "Approve retention schedule, legal-hold practice, media sanitization and privacy/license review",
+      "status": "not_implemented",
+      "owner": "records_privacy"
+    },
+    {
+      "id": "B4",
+      "task": "Implement append-only signed/anchored event log with external verifier, monitoring and incident handling",
+      "status": "not_implemented",
+      "owner": "security_it"
+    },
+    {
+      "id": "B5",
+      "task": "Execute independent security tests and a fully synthetic isolated staging pilot before any authorized real data",
+      "status": "not_implemented",
+      "owner": "maintenance_engineering"
+    }
+  ]
+}
