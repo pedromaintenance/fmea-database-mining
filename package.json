@@ -1,13 +1,13 @@
 {
   "name": "fmea-database-mining",
-  "version": "1.3.38",
+  "version": "1.3.39",
   "private": true,
   "type": "module",
   "description": "Banco independente de conhecimento de FMEA, evidencias e confiabilidade de equipamentos moveis de mineracao",
   "scripts": {
     "validate": "node scripts/validate.mjs",
     "generate": "node scripts/generate-models.mjs --all",
-    "qa": "node scripts/validate.mjs && node scripts/generate-models.mjs --all && node scripts/validate.mjs && node scripts/validate-knowledge.mjs && npm run pm:generate && npm run pm:validate && npm run pm:scope:audit && npm run pm:gaps:audit && npm run pm:boundaries:audit && npm run pm:filtration:audit && npm run pm:vpar:audit && npm run pm:vpar:evidence:audit && npm run pm:exceptions:validate && npm run diagnostic:generate && npm run diagnostic:validate && npm run diagnostic:preview && npm run ontology:validate && npm run semantics:validate && npm run causal:validate && npm run effects:validate && npm run evidence:validate && npm run evidence:restricted:validate && npm run infrastructure:restricted:validate && npm run staging:acceptance:validate && npm run staging:adapter:validate && npm run custody:results:validate && npm run staging:exceptions:validate && npm run remediation:recurrence:validate && npm run blockers:validate && npm run d9:oem:request:validate && npm run d9:public:oem:validate && npm run d9:handoff:validate && npm run discrimination:validate && npm run differential:validate && npm run pathways:validate && npm run pathways:expand:validate && npm run playbooks:deepdives:validate && npm run playbooks:remaining:validate && npm run causal:gaps:validate && npm run taxonomy:proposals:validate && npm run mechanisms:refinements:validate && npm run causal:levels:validate && npm run systemic:audit:validate && npm run public:export && npm run public:validate && npm run public:compatibility && npm run public:content:validate && npm run public:content:test && npm run causal:sap:audit && npm run quality:audit",
+    "qa": "node scripts/validate.mjs && node scripts/generate-models.mjs --all && node scripts/validate.mjs && node scripts/validate-knowledge.mjs && npm run pm:generate && npm run pm:validate && npm run pm:scope:audit && npm run pm:gaps:audit && npm run pm:boundaries:audit && npm run pm:filtration:audit && npm run pm:vpar:audit && npm run pm:vpar:evidence:audit && npm run pm:semantic:triage && npm run pm:exceptions:validate && npm run diagnostic:generate && npm run diagnostic:validate && npm run diagnostic:preview && npm run ontology:validate && npm run semantics:validate && npm run causal:validate && npm run effects:validate && npm run evidence:validate && npm run evidence:restricted:validate && npm run infrastructure:restricted:validate && npm run staging:acceptance:validate && npm run staging:adapter:validate && npm run custody:results:validate && npm run staging:exceptions:validate && npm run remediation:recurrence:validate && npm run blockers:validate && npm run d9:oem:request:validate && npm run d9:public:oem:validate && npm run d9:handoff:validate && npm run discrimination:validate && npm run differential:validate && npm run pathways:validate && npm run pathways:expand:validate && npm run playbooks:deepdives:validate && npm run playbooks:remaining:validate && npm run causal:gaps:validate && npm run taxonomy:proposals:validate && npm run mechanisms:refinements:validate && npm run causal:levels:validate && npm run systemic:audit:validate && npm run public:export && npm run public:validate && npm run public:compatibility && npm run public:content:validate && npm run public:content:test && npm run causal:sap:audit && npm run quality:audit",
     "validate:knowledge": "node scripts/validate-knowledge.mjs",
     "pm:generate": "node scripts/generate-pm-links.mjs --require-results",
     "pm:validate": "node scripts/validate-pm.mjs",
@@ -54,7 +54,8 @@
     "pm:boundaries:audit": "node scripts/audit-pm-functional-boundaries.mjs",
     "pm:filtration:audit": "node scripts/audit-pm-filtration.mjs",
     "pm:vpar:audit": "node scripts/audit-pm-vpar-provenance.mjs",
-    "pm:vpar:evidence:audit": "node scripts/audit-pm-vpar-evidence.mjs"
+    "pm:vpar:evidence:audit": "node scripts/audit-pm-vpar-evidence.mjs",
+    "pm:semantic:triage": "node scripts/audit-pm-semantic-triage.mjs"
   },
   "engines": {
     "node": ">=18"

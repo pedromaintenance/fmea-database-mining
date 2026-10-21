@@ -2,7 +2,7 @@
 
 Banco de conhecimento **versionado** para investigar modos de falha, sintomas, evidências e causas em equipamentos móveis de mineração. Um consumidor possível é o jogo **[P.O.R.C.A.R.I.A. — Você Quebra, Eu Conserto](https://github.com/pedromaintenance/porcaria-voce-quebra-eu-conserto)**, mas o banco é independente: **este repositório não altera os consumidores**.
 
-> **Status:** versão do catálogo **1.3.38** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
+> **Status:** versão do catálogo **1.3.39** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
 
 **Ciclo v1.3.35:** [auditoria funcional de HSVV e COMR](docs/CICLO_2026-10-21_HSVV_COMR.md), com proteção do gerador contra colisões de grupo/subgrupo e 23 cenários sintéticos. As quatro regras focadas permanecem bloqueadas até evidência OEM/SAP e revisão independente.
 
@@ -11,6 +11,8 @@ Banco de conhecimento **versionado** para investigar modos de falha, sintomas, e
 **Ciclo v1.3.37:** a [auditoria de proveniência VPAR](docs/CICLO_2026-10-21_PROVENIENCIA_VPAR.md) demonstrou que quatro correspondências textuais resultam de dois códigos distintos repetidos em dois caminhos EQ05/EQ06; um código admite 03.02/C2.09 como combinação de catálogo, sem comprovação de instalação, circuito físico, defeito ou causa. A liberação permanece condicionada a BOM/OEM por série e revisão independente.
 
 **Ciclo v1.3.38:** [matriz de evidências por circuito VPAR](docs/CICLO_2026-10-21_MATRIZ_EVIDENCIAS_VPAR.md), com 2 códigos candidatos × 4 funções concorrentes e sete gates de documentação/segurança/revisão por cenário. Os 56 gates estão sem evidência; não foram homologados locais SAP nem modos de falha.
+
+**Ciclo v1.3.39:** [triagem semântica preventiva](docs/CICLO_2026-10-21_TRIAGEM_SEMANTICA_PM.md) para radiador e água no combustível, com cinco caminhos de investigação derivados da ontologia e 26 regressões adversariais. Condições, ações propostas e danos diferenciais permanecem separados; nenhuma nota SAP, teste ou aprovação foi criada.
 
 ## O que queremos construir
 

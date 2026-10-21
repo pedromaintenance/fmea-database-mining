@@ -1,6 +1,6 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 21/10/2026 · **Ciclo:** catálogo técnico v1.3.38 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 21/10/2026 · **Ciclo:** catálogo técnico v1.3.39 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
 
@@ -38,6 +38,17 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 | Enriquecimento | 12 roteiros classificados por falha funcional, sintomas e técnicas | Anotação manual, não prova de causa |
 
 **Observação:** as 159 tarefas de PM com subgrupo candidato foram obtidas em extração local anterior e **não** representam 159 associações homologadas. Contagens de vínculos estritos serão publicadas pelo relatório automático após cada alteração do gerador.
+
+## Ciclo — 21/10/2026: triagem semântica de radiador e combustível (v1.3.39)
+
+- [x] Verificado que os dois bloqueios `damage_cause_not_permitted` já possuem condições, ações e danos independentes na ontologia v1.3.7; evitada duplicação de conceitos.
+- [x] Criado relatório não executável com **5 caminhos diferenciais**, separando restrição de ar, restrição interna de líquido, aumento de temperatura, água e sedimentos.
+- [x] Auditor exige proveniência, bloqueio SAP e ausência de execução de campo, com **26 mutações adversariais rejeitadas** e integração ao CI.
+- [ ] **Engenharia/OEM:** verificar requisitos por modelo para qualquer inspeção ou teste, sem reproduzir procedimentos protegidos nem inventar limites operacionais.
+- [ ] **PCM:** revisar roteiros como orientação editorial, nunca como ordem gerada ou serviço já executado; programar apenas o que foi tecnicamente autorizado.
+- [ ] **Revisor independente:** só após prova física e cadastro funcional efetivo deliberar sobre par dano/causa e desbloqueio das duas regras.
+
+**Estado:** 115 vínculos candidatos e dez bloqueios continuam; 0 condições de campo, 0 danos e 0 notas executadas pela triagem.
 
 ## Ciclo — 21/10/2026: matriz de evidências VPAR por circuito (v1.3.38)
 

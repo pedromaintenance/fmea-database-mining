@@ -1,0 +1,118 @@
+{
+  "schema": "fmea-mining.pm-semantic-triage-plan.v1",
+  "version": "1.3.39",
+  "nature": "editorial_condition_action_triage_without_field_observation_or_SAP_execution",
+  "rules": [
+    {
+      "ruleId": "cooling-radiator-blockage",
+      "functionalSystem": "arrefecimento",
+      "expectedBlocker": "damage_cause_not_permitted",
+      "sourceIds": [
+        "CAT-RADIATOR-CARE",
+        "CAT-FILTERS-FLUIDS-GUIDE"
+      ],
+      "question": "A perda de capacidade de arrefecimento está associada a restrição externa de ar, circulação interna de líquido ou outra causa funcional?",
+      "pathways": [
+        {
+          "id": "air_side_debris",
+          "conditionId": "COND-COOL-EXTERNAL-DEBRIS",
+          "actionIds": [
+            "ACT-COOL-FINS-INSPECT",
+            "ACT-COOL-FINS-CLEAN"
+          ],
+          "differentialDamageIds": [],
+          "interpretation": "Depósito nas aletas é condição externa: não representa obstrução interna do trocador de calor.",
+          "counterEvidence": "A ausência de depósito externo e a persistência de anormalidade térmica exigem investigar hipóteses concorrentes, sem concluir restrição interna.",
+          "independentComponentEvidence": "Comparação da condição antes/depois da limpeza, aplicada ao equipamento e controlada pelo OEM, não basta isoladamente para condenar o núcleo."
+        },
+        {
+          "id": "coolant_side_restriction",
+          "conditionId": "COND-COOL-INTERNAL-FLOW-RESTRICTION",
+          "actionIds": [
+            "ACT-COOL-CIRCULATION-TEST"
+          ],
+          "differentialDamageIds": [
+            "DMG-COOL-INTERNAL-BLOCKAGE"
+          ],
+          "interpretation": "Restrição interna requer ensaio de circulação/restrição e exclusão de bomba, válvula termostática, sensor e outras causas.",
+          "counterEvidence": "Aquecimento excessivo ou fluido contaminado, isoladamente, não demonstram bloqueio interno.",
+          "independentComponentEvidence": "Resultado de ensaio OEM efetivo para o circuito e condição de operação, interpretado e revisado por Engenharia."
+        },
+        {
+          "id": "temperature_signal_only",
+          "conditionId": "COND-COOL-HIGH-TEMPERATURE",
+          "actionIds": [
+            "ACT-COOL-FINS-INSPECT",
+            "ACT-COOL-CIRCULATION-TEST"
+          ],
+          "differentialDamageIds": [],
+          "interpretation": "Temperatura acima de referência pode ter causas múltiplas e não deve virar dano do radiador sem evidência independente.",
+          "counterEvidence": "Comportamento térmico pode depender de carga, ventilador, termostato, circulação, ambiente ou indicação de sensor.",
+          "independentComponentEvidence": "Confirmar primeiro a referência OEM por modelo, carga e ambiente; depois verificar sistema e hipótese específica."
+        }
+      ],
+      "editorialStatus": "ready_for_human_review_not_executable",
+      "observedConditions": [],
+      "performedActions": [],
+      "confirmedDamages": [],
+      "generatedMaintenanceOrders": 0
+    },
+    {
+      "ruleId": "fuel-tank-water",
+      "functionalSystem": "combustivel",
+      "expectedBlocker": "damage_cause_not_permitted",
+      "sourceIds": [
+        "CAT-FILTERS-FLUIDS-GUIDE",
+        "CAT-FUEL-WATER-SEPARATOR-PURPOSE"
+      ],
+      "question": "A presença de água/sedimentos indica condição do fluido a tratar, mas existe alguma evidência independente de falha do dreno?",
+      "pathways": [
+        {
+          "id": "water_in_fuel",
+          "conditionId": "COND-FUEL-WATER",
+          "actionIds": [
+            "ACT-FUEL-REPRESENTATIVE-SAMPLE",
+            "ACT-FUEL-DRAIN-SEPARATOR"
+          ],
+          "differentialDamageIds": [
+            "DMG-FUEL-DRAIN-FAILURE"
+          ],
+          "interpretation": "Água detectada no combustível é condição do fluido, e a drenagem é ação, não evidência de falha do dreno.",
+          "counterEvidence": "Condensação, ingresso externo ou contaminação no abastecimento podem produzir água mesmo com dreno funcional.",
+          "independentComponentEvidence": "Somente teste independente da função de descarga do componente efetivo e confirmação física de sua aplicação poderiam sustentar hipótese de defeito."
+        },
+        {
+          "id": "sediment_in_fuel",
+          "conditionId": "COND-FUEL-SEDIMENT",
+          "actionIds": [
+            "ACT-FUEL-REPRESENTATIVE-SAMPLE",
+            "ACT-FUEL-DRAIN-SEPARATOR"
+          ],
+          "differentialDamageIds": [],
+          "interpretation": "Sedimento suspeito requer coleta representativa e apuração de origem; não prova filtro, dreno ou tanque danificado.",
+          "counterEvidence": "Amostra contaminada na coleta, abastecimento inadequado e depósito anterior são explicações a discriminar.",
+          "independentComponentEvidence": "Verificar origem e estado funcional do conjunto em procedimento aplicável; sem atribuição automática a componente."
+        }
+      ],
+      "editorialStatus": "ready_for_human_review_not_executable",
+      "observedConditions": [],
+      "performedActions": [],
+      "confirmedDamages": [],
+      "generatedMaintenanceOrders": 0
+    }
+  ],
+  "safetyPolicy": {
+    "never_auto_generate_sap_order": true,
+    "never_confirm_damage_from_condition": true,
+    "never_confirm_damage_from_performed_action": true,
+    "never_approve_blocked_sap_mapping": true,
+    "never_invent_test_result": true,
+    "never_invent_oem_threshold": true,
+    "never_invent_operating_hours": true,
+    "requires_safe_applicable_oem_procedure": true,
+    "independent_component_test_required_to_confirm_damage": true
+  },
+  "observedInspections": 0,
+  "approvedSapMappings": 0,
+  "confirmedFailures": 0
+}
