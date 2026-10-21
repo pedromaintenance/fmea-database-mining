@@ -2,14 +2,14 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
-import {matchesRoot} from './pm-system-scope.mjs';
+import {classifyPmPath} from './lib/pm-functional-boundaries.mjs';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const db=JSON.parse(fs.readFileSync(path.join(root,'data/catalog/failure-db.v1.json'),'utf8'));
 const rules=JSON.parse(fs.readFileSync(path.join(root,'data/knowledge/pm-prevention/seed-rules.json'),'utf8')).records;
 const result=[];
 for(const r of rules){
  for(const l of db.locations){
-  if(l.profundidade!==3||!r.models.includes(l.modelo)||l.subgrupo?.codigo!==r.subgroupCode||!matchesRoot(r,l))continue;
+  if(l.profundidade!==3||!r.models.includes(l.modelo)||classifyPmPath(r,l)!=='candidate_path')continue;
   const partList=db.partsByObjectType[l.objetoTipoSAP]||[];
   const matchingParts=partList.filter(p=>String(p.pt||'').toLowerCase().includes(r.partText.toLowerCase()));
   for(const p of matchingParts){
