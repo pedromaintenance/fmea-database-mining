@@ -2,7 +2,7 @@
 
 Banco de conhecimento **versionado** para investigar modos de falha, sintomas, evidências e causas em equipamentos móveis de mineração. Um consumidor possível é o jogo **[P.O.R.C.A.R.I.A. — Você Quebra, Eu Conserto](https://github.com/pedromaintenance/porcaria-voce-quebra-eu-conserto)**, mas o banco é independente: **este repositório não altera os consumidores**.
 
-> **Status:** versão do catálogo **1.3.25** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
+> **Status:** versão do catálogo **1.3.26** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
 
 ## O que queremos construir
 
@@ -330,6 +330,14 @@ O [plano de homologação](data/governance/staging-acceptance-plan.v1.json) espe
 **Não há staging corporativo provisionado nem homologado**: os testes só validam a coerência da especificação e não substituem teste de integração contra IdP, vault, backend, log externo e backup reais. O pacote proíbe documentos OEM, casos, números de série, valores reais ou credenciais em repositório público e mantém a necessidade de autorização corporativa prévia.
 
 [Runbook de homologação para TI](docs/RUNBOOK_HOMOLOGACAO_STAGING.md) · [Relatório do ciclo](docs/CICLO_2026-10-21_HOMOLOGACAO_STAGING.md) · [Schema JSON](schemas/staging-acceptance-plan.schema.json).
+
+## Contrato de adaptador de staging (v1.3.26)
+
+O [contrato de integração](data/governance/staging-integration-contract.v1.json) define uma interface `executeProbe` e um **adaptador exclusivamente offline** para os 32 controles dos oito cenários de homologação corporativa. O [schema de resultados](schemas/staging-probe-result.schema.json) só aceita envelopes públicos `TEST-*`, sem documentos, credenciais, URLs privadas ou resultados reais.
+
+O comando `npm run staging:adapter:validate` executa **56 regressões sintéticas**: oito cenários-modelo completos, 32 controles reprovados e 16 envelopes impróprios bloqueados. Um resultado `synthetic_complete` **não** representa integração, homologação de staging ou aprovação de segurança. A implementação de adaptador de rede e a custódia de resultados reais ficam exclusivamente com TI, em ambiente corporativo autorizado.
+
+[Contrato de interface e limites](docs/CONTRATO_ADAPTADOR_STAGING.md) · [Relatório do ciclo](docs/CICLO_2026-10-21_CONTRATO_ADAPTADOR_STAGING.md).
 
 ## Comece por aqui
 

@@ -2,6 +2,14 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.26] — 2026-10-21 — Contrato de integração e adaptador offline para staging
+- Criado contrato `executeProbe` com 8 cenários, **32 controles obrigatórios** e formato de resposta sem conteúdo restrito ou decisão humana simulada.
+- Implementado adaptador `offline_mock` determinístico que recusa casos não sintéticos e **não faz requisições a IdP, cofre, API, SIEM ou backup**.
+- Adicionados JSON Schema de envelope público `TEST-*`, validação de identidade/correlação, integridade dos 4 resultados por cenário e recusa de payload não previsto.
+- **56 regressões sintéticas** no CI/QA: 8 envelopes completos, 32 falhas de controle e 16 alterações de identidade, modo real, campos confidenciais ou aprovação falsa rejeitadas.
+- Arquitetura e runbook v1.3.24–25 preservados, incluindo **0 serviços corporativos provisionados** e seis aceites manuais pendentes; nenhuma falha mecânica homologada.
+- Contrato público e conteúdo 1.0.0, preview 1.3.12 e checksum original preservados; nenhum consumidor alterado.
+
 ## [1.3.25] — 2026-10-21 — Pacote de homologação de staging restrito
 - Especificados **8 domínios de aceite** e **32 verificações obrigatórias**: identidade/revogação, isolamento de casos, revisões independentes, custódia OEM, auditoria, restauração, retenção/hold e exportação pública.
 - Definidos responsáveis, evidências de aprovação exigidas, seis gates de aceite corporativo e dependências externas ainda não atendidas.
