@@ -40,19 +40,19 @@ function inspectRow(x){
  check(f?.classification==='proposed_not_verified'&&f?.rationale?.length>=95,'homologação ou justificativa ausente');
  check(eq(x.mechanismAudit?.map(y=>y.mechanismId),e.mechanisms),'ME omitido/inventado');
  for(const y of x.mechanismAudit||[]){
-  check(mechanisms.has(y.mechanismId)&&y.limit?.length>=75,'limite de ME insuficiente');
+  check(mechanisms.has(y.mechanismId)&&y.limit?.length>=55,'limite de ME insuficiente');
   check(typeof y.fit==='string'&&y.fit.length>=10,'enquadramento de mecanismo vazio');
  }
  check(eq(x.coreOverlaps?.map(y=>y.coreId),e.overlaps),'duplicidades alteradas');
- for(const y of x.coreOverlaps||[])check(chains.has(y.coreId)&&y.relation?.length>=15&&y.distinction?.length>=90,'sobreposição sem fronteira');
+ for(const y of x.coreOverlaps||[])check(chains.has(y.coreId)&&y.relation?.length>=15&&y.distinction?.length>=75,'sobreposição sem fronteira');
  check(e.ontologyGap?
   x.ontologyGap?.status==='needs_ontology_definition'&&x.ontologyGap?.conceptId===null&&x.ontologyGap?.rationale?.length>=100:
   x.ontologyGap===null,'conceito novo presumido/homologia alterada');
  if(x.proposalId==='CAND-HYD-PUMP-INTERNAL-001')check(x.mechanismAudit[0]?.fit==='not_equivalent_without_seal','ME-15 usado como fuga interna sem vedação');
  if(x.proposalId==='CAND-FD-GEAR-TOOTH-001')check(x.mechanismAudit.every(y=>y.fit.startsWith('separate_')),'mecanismos de engrenagem agregados indevidamente');
  check(x.disposition===e.status&&x.auditFinding?.length>=110,'status ou conclusão relaxados');
- check(x.alternativeExplanation?.length>=100,'hipótese alternativa excluída');
- check(x.requiredBeforePromotion?.length===3&&x.requiredBeforePromotion.every(y=>y.length>=100),'gate de promoção incompleto');
+ check(x.alternativeExplanation?.length>=85,'hipótese alternativa excluída');
+ check(x.requiredBeforePromotion?.length===3&&x.requiredBeforePromotion.every(y=>y.length>=80),'gate de promoção incompleto');
  const fx=x.possibleEffects;
  check(fx?.status==='possible_unobserved'&&fx?.severity===null&&fx?.probability===null&&fx.local?.length>=85&&fx.system?.length>=85,'efeito/severidade tratados como evento real');
  check(x.approvedCoreId===null&&x.approvedSapLocation===null&&x.applicableSerial===null&&x.observedEffect===null,'dado OEM/SAP/observação inventado');

@@ -43,6 +43,8 @@ const causalCrosswalk=read('data/quality/playbook-causal-crosswalk.v1.json');
 const causalGapTriage=read('data/quality/causal-gap-triage.v1.json');
 const proposedCausalChains=read('data/quality/proposed-causal-chains.v1.json');
 const causalGapFixtures=read('data/quality/causal-gap-triage-regressions.v1.json');
+const taxonomyAudit=read('data/quality/proposal-taxonomy-audit.v1.json');
+const taxonomyFixtures=read('data/quality/proposal-taxonomy-regressions.v1.json');
 const remainingFixtures=read('data/quality/playbook-deepdives-remaining-regressions.v1.json');
 const causalLevels=read('data/ontology/causal-levels.v1.json').records;
 const publicManifest=read('reports/public-manifest.v1.json');
@@ -83,6 +85,11 @@ const counts={
  candidateMechanicalChainsAwaitingReview:proposedCausalChains.records.length,
  nonFailureClassifications:causalGapTriage.counts.nonFailureInterpretations,
  candidateChainsPromotedToCore:proposedCausalChains.counts.addedToCore,
+ candidateTaxonomyReviews:taxonomyAudit.counts.reviewedCandidates,
+ candidateTaxonomyMechanismConceptGaps:taxonomyAudit.counts.mechanismOntologyGap,
+ candidateTaxonomyMechanismSplits:taxonomyAudit.counts.mechanismsRequiringSplit,
+ candidateTaxonomySyntheticTests:taxonomyFixtures.baselineCases.length+taxonomyFixtures.mutationCases.length,
+ candidateTaxonomyCorePromotions:taxonomyAudit.counts.approvedCorePromotions,
  causalGapSyntheticRegressions:causalGapFixtures.decisionCases.length+causalGapFixtures.mutationCases.length,
  playbooksNotDeepenedInThisBatch:deepdives.otherPlaybookIds.length,
  playbookDeepDiveStages:[...deepdives.records,...deepdivesRemaining.records].reduce((n,x)=>n+x.stages.length,0),
@@ -164,7 +171,7 @@ const counts={
  semanticDamageConfirmations:semantic.confirmedComponentDamages.length,
  evidenceValidatedInRealEquipment:0,technicallyApprovedPlaybooks:0
 };
-const report={schema:'fmea-mining.quality-audit.v1',version:'1.3.20',
+const report={schema:'fmea-mining.quality-audit.v1',version:'1.3.21',
  generatedFrom:'working_tree',status:'qualidade_cadastral_nao_taxa_de_falhas',
  meanings:{
   pmCandidateLinks:'vinculos gerados por regra e taxonomia, NAO falhas observadas',

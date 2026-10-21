@@ -66,6 +66,8 @@ jobs:
         run: npm run playbooks:remaining:validate
       - name: Revisar cinco lacunas e 21 regressões de promoção causal
         run: npm run causal:gaps:validate
+      - name: Auditar ontologia de 3 propostas e 18 mutacoes sinteticas
+        run: npm run taxonomy:proposals:validate
       - name: Validar quatro niveis causais em 24 cadeias
         run: npm run causal:levels:validate
       - name: Auditar causalidade sistemica em 24 cadeias
