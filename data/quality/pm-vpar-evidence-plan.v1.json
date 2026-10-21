@@ -1,0 +1,106 @@
+{
+  "schema": "fmea-mining.pm-vpar-evidence-plan.v1",
+  "version": "1.3.38",
+  "nature": "editorial_requirements_for_private_OEM_SAP_review_no_asset_evidence",
+  "target": {
+    "ruleId": "drill-compressor-filter",
+    "system": "AISY",
+    "group": "COMR",
+    "candidateSubgroup": "VPAR",
+    "originalRuleSubgroup": "COMR",
+    "models": [
+      "EQ05",
+      "EQ06"
+    ],
+    "damageId": "03.02",
+    "causeId": "C2.09"
+  },
+  "evidenceCustody": "private_authorized_environment_not_public_GitHub",
+  "gateDefinitions": [
+    {
+      "id": "asset_configuration",
+      "ownerDiscipline": "engenharia_de_ativos",
+      "artifact": "Configuração efetiva OEM/placa/cadastro, variante e revisão",
+      "criterion": "Coincidência entre ativo real e documentação efetiva por arranjo"
+    },
+    {
+      "id": "oem_bom",
+      "ownerDiscipline": "especialista_oem",
+      "artifact": "Lista técnica e desenho de montagem OEM efetivos por configuração",
+      "criterion": "Rastrear se o elemento integra o conjunto instalado, sem inferência por texto"
+    },
+    {
+      "id": "circuit_identification",
+      "ownerDiscipline": "especialista_mecanico",
+      "artifact": "Diagrama aplicável de circuito e conexões/fluxos",
+      "criterion": "Identificar circuito de ar, óleo ou condensado e componentes fronteiriços"
+    },
+    {
+      "id": "sap_object_mapping",
+      "ownerDiscipline": "dados_mestres_sap",
+      "artifact": "Árvore de locais, tipo de objeto e relação componente–posição revisadas",
+      "criterion": "Demonstrar pertencimento funcional sem confundir grupo COMR com subgrupo VPAR"
+    },
+    {
+      "id": "failure_discrimination",
+      "ownerDiscipline": "engenharia_de_confiabilidade",
+      "artifact": "Método de inspeção/ensaio OEM aplicável, riscos, resultados e hipótese concorrente",
+      "criterion": "Diferenciar condição, efeito e falha do elemento antes de usar dano/causa"
+    },
+    {
+      "id": "safety_and_test_control",
+      "ownerDiscipline": "supervisao_manutencao",
+      "artifact": "Análise de risco, controle de energias e condições seguras de inspeção",
+      "criterion": "Nenhuma abertura de recipiente/linha energizada ou teste sem procedimento autorizado"
+    },
+    {
+      "id": "independent_review",
+      "ownerDiscipline": "engenharia_revisora",
+      "artifact": "Parecer de revisão independente em sistema restrito",
+      "criterion": "Aprovar explicitamente função, efetividade e codificação antes de alterar regra PM"
+    }
+  ],
+  "circuits": [
+    {
+      "id": "compressor_air_intake",
+      "sourceDifferentialId": "compressor_air_intake",
+      "reviewQuestion": "O elemento protege a entrada de ar de um compressor específico ou pertence à admissão do motor?",
+      "counterHypothesis": "Restrição do fluxo pode vir de duto, pré-limpador ou condição ambiental, sem defeito do elemento",
+      "necessaryCircuitEvidence": "Traçado OEM da admissão e ligação do elemento ao compressor efetivo"
+    },
+    {
+      "id": "compressor_lubricating_oil",
+      "sourceDifferentialId": "compressor_lubricating_oil",
+      "reviewQuestion": "O elemento atua no óleo de lubrificação do compressor ou em outro circuito de óleo?",
+      "counterHypothesis": "Pressão/temperatura de óleo podem variar por viscosidade, válvula, bomba ou sensor",
+      "necessaryCircuitEvidence": "Fluxograma do óleo e localização efetiva antes/depois do elemento por arranjo"
+    },
+    {
+      "id": "air_oil_separation",
+      "sourceDifferentialId": "air_oil_separation",
+      "reviewQuestion": "O elemento realiza separação ar–óleo da descarga ou pertence a outro separador?",
+      "counterHypothesis": "Arraste de óleo também pode resultar de nível, retorno, ventilação ou condição de operação",
+      "necessaryCircuitEvidence": "Diagrama de descarga ar–óleo, retorno de óleo e conjunto separador/recipiente"
+    },
+    {
+      "id": "receiver_tank_filtration",
+      "sourceDifferentialId": "receiver_tank_filtration",
+      "reviewQuestion": "Existe filtragem/separação integrada ao vaso ou é somente um ponto de dreno/condensado?",
+      "counterHypothesis": "Água no recipiente pode decorrer de umidade do ar e condições de resfriamento sem avaria de elemento",
+      "necessaryCircuitEvidence": "Desenho efetivo do vaso e distribuição pneumática, itens montados e drenagem"
+    }
+  ],
+  "policy": {
+    "originalRuleRemainsBlocked": true,
+    "partDescriptionsDoNotProvePhysicalFunction": true,
+    "catalogueDamageCauseDoesNotProveFailure": true,
+    "noAutomaticSapRemapping": true,
+    "fieldEvidenceNotProvided": true,
+    "OEMEffectivityNotConfirmed": true,
+    "noPrivateDataInPublicOutput": true,
+    "independentApprovalNotRecorded": true
+  },
+  "approvedMappings": 0,
+  "realInspections": 0,
+  "receivedPrivateDocuments": 0
+}

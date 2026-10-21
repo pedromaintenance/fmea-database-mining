@@ -1,6 +1,6 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 21/10/2026 · **Ciclo:** catálogo técnico v1.3.37 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 21/10/2026 · **Ciclo:** catálogo técnico v1.3.38 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
 
@@ -38,6 +38,18 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 | Enriquecimento | 12 roteiros classificados por falha funcional, sintomas e técnicas | Anotação manual, não prova de causa |
 
 **Observação:** as 159 tarefas de PM com subgrupo candidato foram obtidas em extração local anterior e **não** representam 159 associações homologadas. Contagens de vínculos estritos serão publicadas pelo relatório automático após cada alteração do gerador.
+
+## Ciclo — 21/10/2026: matriz de evidências VPAR por circuito (v1.3.38)
+
+- [x] Derivadas diretamente do catálogo duas posições editoriais para candidatos VPAR: C01, com texto ambíguo e compatibilidade de dano/causa somente catalogada; C02, com pista de separação de água e sem essa compatibilidade.
+- [x] Construída matriz de oito cenários concorrentes e sete gates por cenário, totalizando 56 verificações pendentes (sem evidência de campo ou documento privado recebido).
+- [x] Instituídos requisitos por circuito, contraprovas e disciplinas de revisão, com auditoria por reconstrução da fonte e 19 mutações artificiais rejeitadas no CI.
+- [ ] **Engenharia de Ativos/OEM:** conferir configuração/arranjo efetivo e BOM privada do equipamento, preservando direitos de documentação e custódia.
+- [ ] **Mecânica/Confiabilidade:** confirmar circuito físico do elemento com P&ID, distinguir condição e falha e selecionar método seguro de diagnóstico.
+- [ ] **SAP Dados Mestres/revisor independente:** aprovar o pertencimento a VPAR ou outra posição funcional e só depois corrigir hipótese/regra, sem alias automático COMR→VPAR.
+- [ ] **Questão prioritária C01:** desambiguar a descrição para separar funções de ar, óleo, separador e reservatório. O pareamento 03.02/C2.09 no catálogo não prova defeito.
+
+**Estado:** nenhuma aprovação por série/PN, nenhum dado de campo; 115 vínculos seguem candidatos e dez regras PM-SAP bloqueadas.
 
 ## Ciclo — 21/10/2026: proveniência de candidatos VPAR (v1.3.37)
 
