@@ -1,0 +1,171 @@
+{
+  "schema": "fmea-mining.d9-public-oem-research-regressions.v1",
+  "version": "1.3.32",
+  "nature": "synthetic_mutations_only",
+  "baselineCases": [
+    {
+      "id": "TEST-PUB-D9-01",
+      "originInputId": "serial-prefix",
+      "expected": "remain_blocked"
+    },
+    {
+      "id": "TEST-PUB-D9-02",
+      "originInputId": "oem-omm",
+      "expected": "remain_blocked"
+    },
+    {
+      "id": "TEST-PUB-D9-03",
+      "originInputId": "oem-parts",
+      "expected": "remain_blocked"
+    },
+    {
+      "id": "TEST-PUB-D9-04",
+      "originInputId": "oem-bolting",
+      "expected": "remain_blocked"
+    },
+    {
+      "id": "TEST-PUB-D9-05",
+      "originInputId": "oem-cts",
+      "expected": "remain_blocked"
+    },
+    {
+      "id": "TEST-PUB-D9-06",
+      "originInputId": "sap-master",
+      "expected": "remain_blocked"
+    },
+    {
+      "id": "TEST-PUB-D9-07",
+      "originInputId": "field-review",
+      "expected": "remain_blocked"
+    }
+  ],
+  "mutationCases": [
+    {
+      "id": "TEST-MUT-01",
+      "mutation": "fake_serial_verified",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-02",
+      "mutation": "fake_cts_approved",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-03",
+      "mutation": "fake_torque_approved",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-04",
+      "mutation": "fake_parts_approved",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-05",
+      "mutation": "fake_field_failure",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-06",
+      "mutation": "fake_request_sent",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-07",
+      "mutation": "fake_installed_arrangement",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-08",
+      "mutation": "fake_source_doc_receipt",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-09",
+      "mutation": "invent_pn",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-10",
+      "mutation": "invent_torque_nm",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-11",
+      "mutation": "invent_cts_percent",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-12",
+      "mutation": "insert_oem_manual",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-13",
+      "mutation": "insert_sap_location",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-14",
+      "mutation": "drop_omm_mapping",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-15",
+      "mutation": "duplicate_rodante_gate",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-16",
+      "mutation": "remove_cat_source",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-17",
+      "mutation": "invent_private_url",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-18",
+      "mutation": "change_cat_url",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-19",
+      "mutation": "cross_link_unknown_source",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-20",
+      "mutation": "fake_independent_review",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-21",
+      "mutation": "fake_readiness_count",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-22",
+      "mutation": "fake_release_decision",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-23",
+      "mutation": "disable_omm_override",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-24",
+      "mutation": "claim_interchangeability_without_arrangement",
+      "expected": "reject"
+    }
+  ],
+  "counts": {
+    "baselines": 7,
+    "rejectedMutations": 24,
+    "total": 31,
+    "fieldEvents": 0,
+    "serialEffectiveProcedures": 0
+  }
+}
