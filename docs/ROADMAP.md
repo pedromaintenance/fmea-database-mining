@@ -1,6 +1,6 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 21/10/2026 · **Ciclo:** catálogo técnico v1.3.35 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 21/10/2026 · **Ciclo:** catálogo técnico v1.3.36 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
 
@@ -38,6 +38,17 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 | Enriquecimento | 12 roteiros classificados por falha funcional, sintomas e técnicas | Anotação manual, não prova de causa |
 
 **Observação:** as 159 tarefas de PM com subgrupo candidato foram obtidas em extração local anterior e **não** representam 159 associações homologadas. Contagens de vínculos estritos serão publicadas pelo relatório automático após cada alteração do gerador.
+
+## Ciclo — 21/10/2026: triagem de filtragem FUSY/COMR (v1.3.36)
+
+- [x] Pesquisa técnica primária Caterpillar/Sandvik: separação entre função de filtragem e estado de falha; modelo, variante e sistema precisam ser distinguidos.
+- [x] Varredura dos nós reais: 16 caminhos do grupo FUSY sem descrição filtrante; 12 caminhos AISY/COMR, com candidato catalogado VPAR (EQ05/EQ06) em dois caminhos e dois pares dano/causa estruturalmente elegíveis por ocorrência.
+- [x] Auditor integrado ao CI e relatório de comparação de subgrupos com bloqueio de promoção automática.
+- [ ] **Engenharia/Dados Mestres:** identificar em ambiente privado filtro/separador efetivo de combustível nos modelos da regra e posição funcional FUSY (ou revisar a modelagem se o grupo for outro).
+- [ ] **Especialista Sandvik/Engenharia:** conferir se VPAR contém componente filtrante no arranjo da DR410i/DI650i e qual função ele exerce (ar, óleo, coalescência, recipiente etc.), mediante desenho e BOM efetivos.
+- [ ] **Revisão independente:** confrontar o par dano/causa com o mecanismo físico e os possíveis resultados de teste antes de promover qualquer vínculo.
+
+**Estado:** nenhum componente homologado ou falha observada; 10 exceções bloqueadas.
 
 ## Ciclo — 21/10/2026: revisão HSVV e COMR (v1.3.35)
 
