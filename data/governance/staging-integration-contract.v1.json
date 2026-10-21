@@ -1,0 +1,351 @@
+{
+  "schema": "fmea-mining.staging-integration-adapter-contract.v1",
+  "version": "1.3.26",
+  "purpose": "Contract-first interface for later authorized corporate staging checks, with public synthetic-only mocks; not a connector, credential store or attestation service.",
+  "sourceAcceptancePlan": "data/governance/staging-acceptance-plan.v1.json",
+  "maturity": "public_contract_and_offline_mock_only",
+  "implementations": {
+    "offlineMockImplemented": true,
+    "realTransportImplemented": false,
+    "corporateIdentityIntegrated": false,
+    "corporateVaultIntegrated": false,
+    "corporateAuditIntegrated": false,
+    "productionOperationsEnabled": false
+  },
+  "executionModes": {
+    "publicRepository": "synthetic_offline_only",
+    "futurePrivateStaging": "authorized_private_staging_requires_external_TISecurity_approval",
+    "publicMayAcceptRealResults": false,
+    "publicMayHoldLiveEndpoints": false,
+    "publicMayHoldTokensOrCredentials": false
+  },
+  "adapterInterface": {
+    "language": "ecmascript_esm",
+    "exportName": "executeProbe",
+    "input": {
+      "scenarioId": "STG-ID-001",
+      "probeId": "sso_identity_asserted",
+      "caseRef": "TEST-CASE-01",
+      "correlationId": "TEST-CORR-01",
+      "syntheticOnly": true
+    },
+    "returns": {
+      "scenarioId": "STG-ID-001",
+      "probeId": "sso_identity_asserted",
+      "caseRef": "TEST-CASE-01",
+      "correlationId": "TEST-CORR-01",
+      "status": "pass",
+      "evidenceToken": "TEST-EVIDENCE-01"
+    },
+    "networkTransport": "injected_private_implementation_only",
+    "noBackgroundCalls": true,
+    "noRawPayloadReturn": true,
+    "failClosed": true,
+    "requireServiceSideAuthorization": true
+  },
+  "probeDefinitions": [
+    {
+      "scenarioId": "STG-ID-001",
+      "domainId": "identity_and_revocation",
+      "owner": "security_it",
+      "probes": [
+        {
+          "id": "sso_identity_asserted",
+          "mandatory": true,
+          "expectedContract": "deny_or_accept_as_specified_by_private_test_plan"
+        },
+        {
+          "id": "mfa_challenge_verified",
+          "mandatory": true,
+          "expectedContract": "deny_or_accept_as_specified_by_private_test_plan"
+        },
+        {
+          "id": "revoked_account_denied",
+          "mandatory": true,
+          "expectedContract": "deny_or_accept_as_specified_by_private_test_plan"
+        },
+        {
+          "id": "revocation_logged",
+          "mandatory": true,
+          "expectedContract": "deny_or_accept_as_specified_by_private_test_plan"
+        }
+      ]
+    },
+    {
+      "scenarioId": "STG-ISO-001",
+      "domainId": "tenant_and_case_isolation",
+      "owner": "platform_it",
+      "probes": [
+        {
+          "id": "server_authorization_enforced",
+          "mandatory": true,
+          "expectedContract": "deny_or_accept_as_specified_by_private_test_plan"
+        },
+        {
+          "id": "wrong_tenant_denied",
+          "mandatory": true,
+          "expectedContract": "deny_or_accept_as_specified_by_private_test_plan"
+        },
+        {
+          "id": "unassigned_case_denied",
+          "mandatory": true,
+          "expectedContract": "deny_or_accept_as_specified_by_private_test_plan"
+        },
+        {
+          "id": "guessed_object_ref_denied",
+          "mandatory": true,
+          "expectedContract": "deny_or_accept_as_specified_by_private_test_plan"
+        }
+      ]
+    },
+    {
+      "scenarioId": "STG-SOD-001",
+      "domainId": "segregated_reviews",
+      "owner": "maintenance_engineering",
+      "probes": [
+        {
+          "id": "originator_self_review_denied",
+          "mandatory": true,
+          "expectedContract": "deny_or_accept_as_specified_by_private_test_plan"
+        },
+        {
+          "id": "reviewer_identity_server_verified",
+          "mandatory": true,
+          "expectedContract": "deny_or_accept_as_specified_by_private_test_plan"
+        },
+        {
+          "id": "independent_reviewer_distinct",
+          "mandatory": true,
+          "expectedContract": "deny_or_accept_as_specified_by_private_test_plan"
+        },
+        {
+          "id": "change_control_does_not_approve_publication",
+          "mandatory": true,
+          "expectedContract": "deny_or_accept_as_specified_by_private_test_plan"
+        }
+      ]
+    },
+    {
+      "scenarioId": "STG-CUSTODY-001",
+      "domainId": "licensed_evidence_custody",
+      "owner": "maintenance_engineering",
+      "probes": [
+        {
+          "id": "synthetic_vault_object_private",
+          "mandatory": true,
+          "expectedContract": "deny_or_accept_as_specified_by_private_test_plan"
+        },
+        {
+          "id": "license_policy_gate_enforced",
+          "mandatory": true,
+          "expectedContract": "deny_or_accept_as_specified_by_private_test_plan"
+        },
+        {
+          "id": "oem_effectivity_flag_reviewed",
+          "mandatory": true,
+          "expectedContract": "deny_or_accept_as_specified_by_private_test_plan"
+        },
+        {
+          "id": "raw_content_absent_from_public_artifacts",
+          "mandatory": true,
+          "expectedContract": "deny_or_accept_as_specified_by_private_test_plan"
+        }
+      ]
+    },
+    {
+      "scenarioId": "STG-AUDIT-001",
+      "domainId": "audit_integrity_alerting",
+      "owner": "security_it",
+      "probes": [
+        {
+          "id": "append_only_sink_configured",
+          "mandatory": true,
+          "expectedContract": "deny_or_accept_as_specified_by_private_test_plan"
+        },
+        {
+          "id": "external_anchor_verified",
+          "mandatory": true,
+          "expectedContract": "deny_or_accept_as_specified_by_private_test_plan"
+        },
+        {
+          "id": "tampering_alert_triggered",
+          "mandatory": true,
+          "expectedContract": "deny_or_accept_as_specified_by_private_test_plan"
+        },
+        {
+          "id": "trusted_time_and_log_access_verified",
+          "mandatory": true,
+          "expectedContract": "deny_or_accept_as_specified_by_private_test_plan"
+        }
+      ]
+    },
+    {
+      "scenarioId": "STG-RESTORE-001",
+      "domainId": "backup_restore_and_recovery",
+      "owner": "platform_it",
+      "probes": [
+        {
+          "id": "encrypted_backup_restored",
+          "mandatory": true,
+          "expectedContract": "deny_or_accept_as_specified_by_private_test_plan"
+        },
+        {
+          "id": "restored_tenant_case_acls_verified",
+          "mandatory": true,
+          "expectedContract": "deny_or_accept_as_specified_by_private_test_plan"
+        },
+        {
+          "id": "restored_audit_chain_verified",
+          "mandatory": true,
+          "expectedContract": "deny_or_accept_as_specified_by_private_test_plan"
+        },
+        {
+          "id": "recovery_result_documented",
+          "mandatory": true,
+          "expectedContract": "deny_or_accept_as_specified_by_private_test_plan"
+        }
+      ]
+    },
+    {
+      "scenarioId": "STG-RETENTION-001",
+      "domainId": "retention_and_legal_hold",
+      "owner": "records_privacy",
+      "probes": [
+        {
+          "id": "approved_schedule_applied",
+          "mandatory": true,
+          "expectedContract": "deny_or_accept_as_specified_by_private_test_plan"
+        },
+        {
+          "id": "active_hold_blocks_disposal",
+          "mandatory": true,
+          "expectedContract": "deny_or_accept_as_specified_by_private_test_plan"
+        },
+        {
+          "id": "two_distinct_disposal_approvers_checked",
+          "mandatory": true,
+          "expectedContract": "deny_or_accept_as_specified_by_private_test_plan"
+        },
+        {
+          "id": "backup_and_disposition_record_verified",
+          "mandatory": true,
+          "expectedContract": "deny_or_accept_as_specified_by_private_test_plan"
+        }
+      ]
+    },
+    {
+      "scenarioId": "STG-RELEASE-001",
+      "domainId": "separate_public_release_gate",
+      "owner": "records_privacy",
+      "probes": [
+        {
+          "id": "oem_license_and_rights_reviewed",
+          "mandatory": true,
+          "expectedContract": "deny_or_accept_as_specified_by_private_test_plan"
+        },
+        {
+          "id": "privacy_reidentification_screened",
+          "mandatory": true,
+          "expectedContract": "deny_or_accept_as_specified_by_private_test_plan"
+        },
+        {
+          "id": "human_release_board_approved",
+          "mandatory": true,
+          "expectedContract": "deny_or_accept_as_specified_by_private_test_plan"
+        },
+        {
+          "id": "public_diff_and_checksum_checked",
+          "mandatory": true,
+          "expectedContract": "deny_or_accept_as_specified_by_private_test_plan"
+        }
+      ]
+    }
+  ],
+  "resultEnvelope": {
+    "required": [
+      "schema",
+      "version",
+      "mode",
+      "runId",
+      "scenarioId",
+      "caseRef",
+      "startedAt",
+      "finishedAt",
+      "adapterId",
+      "results",
+      "status",
+      "realSecurityApproval",
+      "publicationAuthorized"
+    ],
+    "syntheticRunPrefix": "TEST-",
+    "syntheticEvidencePrefix": "TEST-",
+    "allowedProbeOutcomes": [
+      "pass",
+      "fail",
+      "blocked",
+      "inconclusive"
+    ],
+    "maxProbeRecords": 4,
+    "deniedPayloadKinds": [
+      "accessToken",
+      "password",
+      "apiKey",
+      "authorizationHeader",
+      "rawDocument",
+      "oemAttachment",
+      "personalName",
+      "assetSerial",
+      "realMeasurement",
+      "privateUrl",
+      "hashOfRealDocument"
+    ]
+  },
+  "technicalAcceptance": {
+    "allProbesMandatory": true,
+    "unknownProbeRejected": true,
+    "duplicateProbeRejected": true,
+    "ambiguousProbeNotSuccessful": true,
+    "forbiddenPayloadRejected": true,
+    "scenarioAndCorrelationMustMatch": true,
+    "redactedSyntheticEvidenceOnly": true,
+    "syntheticAllPassMeans": "simulated_probe_set_complete_only",
+    "syntheticAllPassDoesNotMean": "real_staging_homologated_or_mechanical_cause_confirmed",
+    "privateSecurityAcceptanceRequiresSeparateHumanDecision": true
+  },
+  "liveReadiness": {
+    "approvedIdp": false,
+    "approvedRBAC": false,
+    "approvedStagingHost": false,
+    "approvedRestrictedVault": false,
+    "approvedAuditSink": false,
+    "approvedBackupAndRetention": false,
+    "corporateExecutionAuthorized": false,
+    "securityReviewSigned": false,
+    "realResultsStoredInPublicRepo": 0
+  },
+  "humanSignoffs": {
+    "itSecurity": "pending",
+    "platform": "pending",
+    "maintenanceEngineering": "pending",
+    "privacyRecords": "pending"
+  },
+  "forbiddenActions": [
+    "publishRealEvidence",
+    "approveOemLiterature",
+    "confirmMechanicalRootCause",
+    "releaseMachine",
+    "writeToSap",
+    "approvePublicKnowledgeChange",
+    "executeUnapprovedNetworkCall"
+  ],
+  "safeguards": [
+    "Only TEST-named synthetic references allowed in tracked fixtures and example outputs.",
+    "Do not serialize URLs, credentials, device IDs, serials, raw OEM/inspection content or hashes derived from them.",
+    "The offline mock exercises contract validation only; it does not confirm identity, isolation, audit durability, restoration or retention.",
+    "Future private adapters must implement network and access checks inside the corporate trust boundary, not import the public mock as security middleware.",
+    "Future staging outcomes and their evidence are retained exclusively in corporate private custody; public repository may receive only approved non-reidentifiable aggregate counts after separate release review."
+  ],
+  "coreFmeaChainsUnchanged": 24,
+  "coreOntologyMechanismsUnchanged": 15,
+  "mechanicalRootCausesConfirmed": 0
+}

@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Public synthetic-only staging adapter result envelope v1.3.26",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "version",
+    "mode",
+    "runId",
+    "scenarioId",
+    "caseRef",
+    "startedAt",
+    "finishedAt",
+    "adapterId",
+    "results",
+    "status",
+    "realSecurityApproval",
+    "publicationAuthorized"
+  ],
+  "properties": {
+    "schema": {
+      "const": "fmea-mining.staging-probe-result.v1"
+    },
+    "version": {
+      "const": "1.3.26"
+    },
+    "mode": {
+      "const": "synthetic_offline_only"
+    },
+    "runId": {
+      "type": "string",
+      "pattern": "^TEST-[A-Z0-9-]{4,80}$"
+    },
+    "scenarioId": {
+      "type": "string",
+      "enum": [
+        "STG-ID-001",
+        "STG-ISO-001",
+        "STG-SOD-001",
+        "STG-CUSTODY-001",
+        "STG-AUDIT-001",
+        "STG-RESTORE-001",
+        "STG-RETENTION-001",
+        "STG-RELEASE-001"
+      ]
+    },
+    "caseRef": {
+      "type": "string",
+      "pattern": "^TEST-[A-Z0-9-]{4,80}$"
+    },
+    "startedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "finishedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "adapterId": {
+      "const": "offline_mock"
+    },
+    "results": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "probeId",
+          "status",
+          "evidenceToken"
+        ],
+        "properties": {
+          "probeId": {
+            "type": "string",
+            "minLength": 8,
+            "maxLength": 100
+          },
+          "status": {
+            "enum": [
+              "pass",
+              "fail",
+              "blocked",
+              "inconclusive"
+            ]
+          },
+          "evidenceToken": {
+            "type": "string",
+            "pattern": "^TEST-[A-Z0-9-]{4,80}$"
+          }
+        }
+      }
+    },
+    "status": {
+      "const": "simulation_only"
+    },
+    "realSecurityApproval": {
+      "const": false
+    },
+    "publicationAuthorized": {
+      "const": false
+    }
+  }
+}
