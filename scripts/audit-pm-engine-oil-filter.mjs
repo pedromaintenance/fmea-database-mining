@@ -71,9 +71,13 @@ const fixture={
 };
 const f=examineEngineOilFilterScope(fixture,syntheticRule);
 check(f.targetSubgroup.summary.matchedDescriptionOccurrences===0,'synthetic_wrong_LUSY_match');
+check(f.sameEngineGroupOtherSubgroups.summary.explicitOilFilterOccurrences===1&&
+ f.sameEngineGroupOtherSubgroups.summary.eligibleOilFilterOccurrences===1,'synthetic_engine_oil_media_confusion');
 check(f.sameEngineGroupOtherSubgroups.summary.matchedLeafPaths===1&&
  f.sameEngineGroupOtherSubgroups.summary.matchedDescriptionOccurrences===2&&
  f.sameEngineGroupOtherSubgroups.summary.eligibleDamageCauseOccurrences===1,'synthetic_wrong_sibling_subgroup_discovery');
+check(f.outsideEngineGroup.summary.explicitOilFilterOccurrences===0&&
+ f.outsideEngineGroup.branches[0].mediaTextOccurrences.fuel===1,'synthetic_fuel_incorrectly_flagged_oil');
 check(f.outsideEngineGroup.summary.matchedLeafPaths===1&&f.outsideEngineGroup.branches.every(x=>x.groupCode!=='ENGN'),'synthetic_fuel_cross_link');
 check(f.counts.engineGroupLeafPaths===3&&f.counts.targetLusyLeafPaths===1,'synthetic_scope_not_strict');
 check(validateEngineOilReport(f,fixture,syntheticRule).length===0,'synthetic_baseline_invalid');
@@ -127,7 +131,8 @@ console.log(JSON.stringify({status:errors.length?'FAIL':'OK',
  siblingEngine:result.sameEngineGroupOtherSubgroups.summary,
  siblingCandidates:result.sameEngineGroupOtherSubgroups.branches.map(x=>({group:x.groupCode,subgroup:x.subgroupCode,
   models:x.models,descriptionOccurrences:x.descriptorMatchesPerPath,compatiblePairs:x.damageCauseEligibleMatchesPerPath,
-  hints:x.lexicalHints})),
+  hints:x.lexicalHints,oilMatches:x.oilSpecificMatchesPerPath,
+  oilCompatiblePairs:x.oilSpecificEligiblePairsPerPath,mediaCounts:x.mediaTextOccurrences})),
  otherEngineGroups:result.outsideEngineGroup.summary,
  lexicalCases:classes.length,adversarialMutationsRejected:rejected,errors},null,2));
 process.exit(errors.length?1:0);
