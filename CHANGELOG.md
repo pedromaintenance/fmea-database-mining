@@ -2,6 +2,13 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.15] — 2026-10-20 — Releases de conteúdo público independentes
+- Criada versão **conteúdo 1.0.0**, distinta do pacote interno 1.3.15, contrato 1.0.0 e preview histórico 1.3.12; é uma baseline retrospectiva, não atualização do conteúdo entregue.
+- Guardada uma cópia golden completa do preview (24 cadeias, 20 referências), vinculada ao SHA-256 histórico `b780a1c95e6f2ab5b3fb1f9acd20a63a1a5abd0e3f3ed111f61052b2e8c59c65`.
+- Criados registry, política, JSON Schema, comparador conservador e validador de snapshots/versões, com proibição de promoção causal e de remoção de IDs sem migração.
+- Adicionados **17 cenários sintéticos** de patch/minor/rejeição e teste de adulteração do hash, integrados ao GitHub Actions e auditor de qualidade.
+- Nenhum dado mecanicista, causa, efeito, evidência, valor OEM ou consumidor modificado. Liberação operacional continua proibida.
+
 ## [1.3.14] — 2026-10-20 — Auditoria sistêmica completa de 24 cadeias
 - Adicionadas seis revisões de alegações sistêmicas dos três roteiros de v1.3.11, cada uma com duas evidências independentes e uma explicação alternativa.
 - **24 cadeias, 48 alegações**; 0 desvios de processo comprovados, 0 pareceres OEM/independentes, 0 causas raízes confirmadas.
