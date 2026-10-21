@@ -2,7 +2,7 @@
 
 Banco de conhecimento **versionado** para investigar modos de falha, sintomas, evidências e causas em equipamentos móveis de mineração. Um consumidor possível é o jogo **[P.O.R.C.A.R.I.A. — Você Quebra, Eu Conserto](https://github.com/pedromaintenance/porcaria-voce-quebra-eu-conserto)**, mas o banco é independente: **este repositório não altera os consumidores**.
 
-> **Status:** versão do catálogo **1.3.42** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
+> **Status:** versão do catálogo **1.3.43** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
 
 **Ciclo v1.3.35:** [auditoria funcional de HSVV e COMR](docs/CICLO_2026-10-21_HSVV_COMR.md), com proteção do gerador contra colisões de grupo/subgrupo e 23 cenários sintéticos. As quatro regras focadas permanecem bloqueadas até evidência OEM/SAP e revisão independente.
 
@@ -19,6 +19,8 @@ Banco de conhecimento **versionado** para investigar modos de falha, sintomas, e
 **Ciclo v1.3.41:** [auditoria de roda-guia e CTS](docs/CICLO_2026-10-21_RODA_GUIA_CTS.md) comprovou oito caminhos IDLE sem Rolamento catalogado e distinguiu os rolamentos de ROLL em grupos vizinhos. Também identificou referências de rolete reutilizadas na ontologia da roda-guia, sem promover medições, danos ou homologações SAP.
 
 **Ciclo v1.3.42:** a [revisão da ontologia de roda-guia e rolete](docs/CICLO_2026-10-21_ONTOLOGIA_IDLER_ROLLER.md) separa calor e vedação da roda-guia de condições/ações dos roletes, corrige a palavra “confirmado” em dano hipotético e valida 24 regressões adversariais. Nenhum dano, inspeção de campo ou mapeamento SAP foi promovido.
+
+**Ciclo v1.3.43:** a [auditoria transversal da ontologia PM](docs/CICLO_2026-10-21_CROSSWALK_SEMANTICO_PM.md) inspeciona 25 regras (9 modeladas com bundle; 16 ainda não modeladas), registra seis compartilhamentos genéricos de condições/ações em combustível e hidráulico e rejeita 29 alterações artificiais de semântica. Não foram identificados danos compartilhados nem promovidos eventos de campo.
 
 ## O que queremos construir
 
