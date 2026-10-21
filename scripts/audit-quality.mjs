@@ -45,6 +45,8 @@ const proposedCausalChains=read('data/quality/proposed-causal-chains.v1.json');
 const causalGapFixtures=read('data/quality/causal-gap-triage-regressions.v1.json');
 const taxonomyAudit=read('data/quality/proposal-taxonomy-audit.v1.json');
 const taxonomyFixtures=read('data/quality/proposal-taxonomy-regressions.v1.json');
+const mechanismRefinements=read('data/quality/mechanism-refinements.v1.json');
+const mechanismRefinementTests=read('data/quality/mechanism-refinements-regressions.v1.json');
 const remainingFixtures=read('data/quality/playbook-deepdives-remaining-regressions.v1.json');
 const causalLevels=read('data/ontology/causal-levels.v1.json').records;
 const publicManifest=read('reports/public-manifest.v1.json');
@@ -90,6 +92,11 @@ const counts={
  candidateTaxonomyMechanismSplits:taxonomyAudit.counts.mechanismsRequiringSplit,
  candidateTaxonomySyntheticTests:taxonomyFixtures.baselineCases.length+taxonomyFixtures.mutationCases.length,
  candidateTaxonomyCorePromotions:taxonomyAudit.counts.approvedCorePromotions,
+ proposedMechanismRefinements:mechanismRefinements.records.length,
+ proposedHydraulicInternalLeakageMechanisms:mechanismRefinements.counts.internalLeakageCandidates,
+ proposedGearDamageSubmodes:mechanismRefinements.counts.gearSubmodes,
+ approvedNewMechanismIds:mechanismRefinements.counts.newApprovedMechanismIds,
+ mechanismRefinementSyntheticRegressions:mechanismRefinementTests.baselineCases.length+mechanismRefinementTests.mutationCases.length,
  causalGapSyntheticRegressions:causalGapFixtures.decisionCases.length+causalGapFixtures.mutationCases.length,
  playbooksNotDeepenedInThisBatch:deepdives.otherPlaybookIds.length,
  playbookDeepDiveStages:[...deepdives.records,...deepdivesRemaining.records].reduce((n,x)=>n+x.stages.length,0),
@@ -171,7 +178,7 @@ const counts={
  semanticDamageConfirmations:semantic.confirmedComponentDamages.length,
  evidenceValidatedInRealEquipment:0,technicallyApprovedPlaybooks:0
 };
-const report={schema:'fmea-mining.quality-audit.v1',version:'1.3.21',
+const report={schema:'fmea-mining.quality-audit.v1',version:'1.3.22',
  generatedFrom:'working_tree',status:'qualidade_cadastral_nao_taxa_de_falhas',
  meanings:{
   pmCandidateLinks:'vinculos gerados por regra e taxonomia, NAO falhas observadas',

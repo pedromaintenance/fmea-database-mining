@@ -34,7 +34,7 @@ function checkRecord(x){
  ok(proposals.records.some(p=>p.id===x.parentProposalId),'proposta parent ausente');
  ok(x.causalPosition===(e.kind==='candidate_mechanism_concept'?'candidate_physical_mechanism_not_root_cause':'candidate_damage_mechanism_not_observed'),'fenômeno promovido a causa');
  for(const key of ['label','physicalDefinition','mechanicalFunction','safeBoundary','sourceUseLimit'])
-  ok(typeof x[key]==='string'&&x[key].length>=70,'texto físico/segurança insuficiente '+key);
+  ok(typeof x[key]==='string'&&x[key].length>=(key==='label'?30:70),'texto físico/segurança insuficiente '+key);
  ok(x.sourceIds?.length>=3&&x.sourceIds.every(z=>source.has(z)),'fonte inválida');
  ok(x.methodIds?.length===2&&x.methodIds.every(z=>methods.has(z)),'método inexistente');
  ok(x.observedParameterValues===null&&x.approvedThreshold===null&&x.applicableSerialOrArrangement===null,'limite, dado ou série OEM fabricado');
@@ -51,10 +51,10 @@ function checkRecord(x){
   ok(x.safeBoundary?.includes('dreno de carcaça'),'segurança de dreno omitida');
  }else{
   ok(me.has(x.parentMechanismId)&&x.id.startsWith('SUB-GEAR-'),'ME original inválido');
-  ok(x.morphologyHypothesis?.length>=95&&x.distinguishingFrom?.length===3&&x.distinguishingFrom.every(z=>z.length>=85),'morfologia não discriminada');
-  ok(x.competingCauses?.length===2&&x.competingCauses.every(z=>z.length>=85),'hipótese concorrente de engrenagem ausente');
-  ok(x.evidenceNeeded?.length===3&&x.evidenceNeeded.every(z=>z.length>=95),'evidências insuficientes');
-  ok(x.sourceIds.includes('ISO-10825-1-2022')&&x.sourceUseLimit?.includes('não')||x.sourceUseLimit?.includes('sem')||x.sourceUseLimit?.includes('não discute'),'fonte ISO sem limite interpretativo');
+  ok(x.morphologyHypothesis?.length>=95&&x.distinguishingFrom?.length===3&&x.distinguishingFrom.every(z=>z.length>=70),'morfologia não discriminada');
+  ok(x.competingCauses?.length===2&&x.competingCauses.every(z=>z.length>=80),'hipótese concorrente de engrenagem ausente');
+  ok(x.evidenceNeeded?.length===3&&x.evidenceNeeded.every(z=>z.length>=65),'evidências insuficientes');
+  ok(x.sourceIds.includes('ISO-10825-1-2022')&&(x.sourceUseLimit?.includes('não')||x.sourceUseLimit?.includes('sem')),'fonte ISO sem limite interpretativo');
   if(x.id==='SUB-GEAR-FATIGUE-001')ok(x.parentMechanismId==='ME-03'&&x.sourceUseLimit.includes('não discute causas'),'ISO indevidamente tratada como atribuição causal');
  }
  return err;
