@@ -1,6 +1,6 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 21/10/2026 · **Ciclo:** catálogo técnico v1.3.42 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 21/10/2026 · **Ciclo:** catálogo técnico v1.3.43 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
 
@@ -38,6 +38,18 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 | Enriquecimento | 12 roteiros classificados por falha funcional, sintomas e técnicas | Anotação manual, não prova de causa |
 
 **Observação:** as 159 tarefas de PM com subgrupo candidato foram obtidas em extração local anterior e **não** representam 159 associações homologadas. Contagens de vínculos estritos serão publicadas pelo relatório automático após cada alteração do gerador.
+
+## Ciclo — 21/10/2026: crosswalk semântico PM transversal (v1.3.43)
+
+- [x] Auditadas 25 regras PM contra ontologia 1.3.8: 9 bundles presentes, **16 regras sem representação semântica explícita**.
+- [x] Rastreado o reuso de seis conceitos genéricos: 3 no combustível, 3 no hidráulico; **zero nós de dano de componente compartilhados**.
+- [x] Bloqueados cruzamentos de componentes (rolete/roda-guia), sistemas e atos de inferir dano/causa ou execução a partir de condição/ação.
+- [x] Implantado `pm:semantic:crosswalk:audit`, matriz de justificativas, revisão de cobertura e 29 mutações artificiais rejeitadas no CI.
+- [ ] **Ontologia/Engenharia:** priorizar bundles diferenciados para as 16 regras ainda sem modelo, com evidência OEM genérica e efeito funcional separado do dano de peça.
+- [ ] **Curadoria de rótulos:** revisar `DMG-COOL-INTERNAL-BLOCKAGE` com “obstrução interna efetiva” embora não aprovado, sem quebrar consumidores ou promover diagnóstico.
+- [ ] **Confiabilidade/PCM:** validar se os seis compartilhamentos continuam genéricos quando surgirem dados reais; localizar causa e componente por ensaio independente autorizado.
+
+**Estado:** 115 vínculos candidatos e dez exceções bloqueadas; não houve inspeção, OS, falha confirmada ou aprovação SAP.
 
 ## Ciclo — 21/10/2026: separação de roda-guia e rolete na ontologia (v1.3.42)
 
