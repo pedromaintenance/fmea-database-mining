@@ -1,0 +1,222 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FMEA synthetic staging exception history v1.3.28 (not a corporate ledger)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "version",
+    "nature",
+    "tenantToken",
+    "caseToken",
+    "scenarioId",
+    "initialRunToken",
+    "classification",
+    "status",
+    "release",
+    "events"
+  ],
+  "properties": {
+    "schema": {
+      "const": "fmea-mining.staging-exception-case.v1"
+    },
+    "version": {
+      "const": "1.3.28"
+    },
+    "nature": {
+      "const": "synthetic_only"
+    },
+    "tenantToken": {
+      "type": "string",
+      "pattern": "^TEST-[A-Z0-9-]{3,123}$"
+    },
+    "caseToken": {
+      "type": "string",
+      "pattern": "^TEST-[A-Z0-9-]{3,123}$"
+    },
+    "scenarioId": {
+      "type": "string",
+      "pattern": "^STG-"
+    },
+    "initialRunToken": {
+      "type": "string",
+      "pattern": "^TEST-[A-Z0-9-]{3,123}$"
+    },
+    "classification": {
+      "enum": [
+        "control_failure",
+        "inconclusive_evidence",
+        "verifier_infrastructure_error"
+      ]
+    },
+    "status": {
+      "enum": [
+        "closed_blocked",
+        "closed_inconclusive",
+        "retest_passed_needs_manual_security_review"
+      ]
+    },
+    "release": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "securityApproved",
+        "publicReleaseAuthorized",
+        "mechanicalRootCauseConfirmed",
+        "operationalReleaseApproved",
+        "fmeaCorePromoted"
+      ],
+      "properties": {
+        "securityApproved": {
+          "const": false
+        },
+        "publicReleaseAuthorized": {
+          "const": false
+        },
+        "mechanicalRootCauseConfirmed": {
+          "const": false
+        },
+        "operationalReleaseApproved": {
+          "const": false
+        },
+        "fmeaCorePromoted": {
+          "const": false
+        }
+      }
+    },
+    "events": {
+      "type": "array",
+      "minItems": 7,
+      "maxItems": 7,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "seq",
+          "eventToken",
+          "action",
+          "from",
+          "to",
+          "role",
+          "actorToken",
+          "tenantToken",
+          "caseToken",
+          "scenarioId",
+          "initialRunToken",
+          "retestRunToken",
+          "initialCategory",
+          "outcome",
+          "reasonCode",
+          "evidenceToken",
+          "occurredAt",
+          "previousHash",
+          "hash"
+        ],
+        "properties": {
+          "seq": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 7
+          },
+          "eventToken": {
+            "type": "string",
+            "pattern": "^TEST-[A-Z0-9-]{3,123}$"
+          },
+          "action": {
+            "enum": [
+              "open_triage",
+              "request_clarification",
+              "receive_clarification",
+              "order_retest",
+              "receive_retest",
+              "request_independent_review",
+              "conclude_review"
+            ]
+          },
+          "from": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "to": {
+            "type": "string"
+          },
+          "role": {
+            "enum": [
+              "originator",
+              "custodian",
+              "technical_reviewer",
+              "independent_reviewer"
+            ]
+          },
+          "actorToken": {
+            "type": "string",
+            "pattern": "^TEST-[A-Z0-9-]{3,123}$"
+          },
+          "tenantToken": {
+            "type": "string",
+            "pattern": "^TEST-[A-Z0-9-]{3,123}$"
+          },
+          "caseToken": {
+            "type": "string",
+            "pattern": "^TEST-[A-Z0-9-]{3,123}$"
+          },
+          "scenarioId": {
+            "type": "string",
+            "pattern": "^STG-"
+          },
+          "initialRunToken": {
+            "type": "string",
+            "pattern": "^TEST-[A-Z0-9-]{3,123}$"
+          },
+          "retestRunToken": {
+            "anyOf": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "string",
+                "pattern": "^TEST-[A-Z0-9-]{3,123}$"
+              }
+            ]
+          },
+          "initialCategory": {
+            "enum": [
+              null,
+              "control_failure",
+              "inconclusive_evidence",
+              "verifier_infrastructure_error"
+            ]
+          },
+          "outcome": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "reasonCode": {
+            "type": "string",
+            "minLength": 8
+          },
+          "evidenceToken": {
+            "type": "string",
+            "pattern": "^TEST-[A-Z0-9-]{3,123}$"
+          },
+          "occurredAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "previousHash": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "hash": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        }
+      }
+    }
+  }
+}

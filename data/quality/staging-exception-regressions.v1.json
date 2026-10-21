@@ -1,0 +1,529 @@
+{
+  "schema": "fmea-mining.staging-exception-regressions.v1",
+  "version": "1.3.28",
+  "nature": "synthetic_only",
+  "baselineCases": [
+    {
+      "id": "TEST-BASE-STG-ID-001-control_failure",
+      "scenarioId": "STG-ID-001",
+      "category": "control_failure",
+      "retestOutcome": "fail",
+      "expectedStatus": "closed_blocked",
+      "expected": "valid_synthetic_history"
+    },
+    {
+      "id": "TEST-BASE-STG-ID-001-inconclusive_evidence",
+      "scenarioId": "STG-ID-001",
+      "category": "inconclusive_evidence",
+      "retestOutcome": "inconclusive",
+      "expectedStatus": "closed_inconclusive",
+      "expected": "valid_synthetic_history"
+    },
+    {
+      "id": "TEST-BASE-STG-ID-001-verifier_infrastructure_error",
+      "scenarioId": "STG-ID-001",
+      "category": "verifier_infrastructure_error",
+      "retestOutcome": "pass",
+      "expectedStatus": "retest_passed_needs_manual_security_review",
+      "expected": "valid_synthetic_history"
+    },
+    {
+      "id": "TEST-BASE-STG-ISO-001-control_failure",
+      "scenarioId": "STG-ISO-001",
+      "category": "control_failure",
+      "retestOutcome": "fail",
+      "expectedStatus": "closed_blocked",
+      "expected": "valid_synthetic_history"
+    },
+    {
+      "id": "TEST-BASE-STG-ISO-001-inconclusive_evidence",
+      "scenarioId": "STG-ISO-001",
+      "category": "inconclusive_evidence",
+      "retestOutcome": "inconclusive",
+      "expectedStatus": "closed_inconclusive",
+      "expected": "valid_synthetic_history"
+    },
+    {
+      "id": "TEST-BASE-STG-ISO-001-verifier_infrastructure_error",
+      "scenarioId": "STG-ISO-001",
+      "category": "verifier_infrastructure_error",
+      "retestOutcome": "pass",
+      "expectedStatus": "retest_passed_needs_manual_security_review",
+      "expected": "valid_synthetic_history"
+    },
+    {
+      "id": "TEST-BASE-STG-SOD-001-control_failure",
+      "scenarioId": "STG-SOD-001",
+      "category": "control_failure",
+      "retestOutcome": "fail",
+      "expectedStatus": "closed_blocked",
+      "expected": "valid_synthetic_history"
+    },
+    {
+      "id": "TEST-BASE-STG-SOD-001-inconclusive_evidence",
+      "scenarioId": "STG-SOD-001",
+      "category": "inconclusive_evidence",
+      "retestOutcome": "inconclusive",
+      "expectedStatus": "closed_inconclusive",
+      "expected": "valid_synthetic_history"
+    },
+    {
+      "id": "TEST-BASE-STG-SOD-001-verifier_infrastructure_error",
+      "scenarioId": "STG-SOD-001",
+      "category": "verifier_infrastructure_error",
+      "retestOutcome": "pass",
+      "expectedStatus": "retest_passed_needs_manual_security_review",
+      "expected": "valid_synthetic_history"
+    },
+    {
+      "id": "TEST-BASE-STG-CUSTODY-001-control_failure",
+      "scenarioId": "STG-CUSTODY-001",
+      "category": "control_failure",
+      "retestOutcome": "fail",
+      "expectedStatus": "closed_blocked",
+      "expected": "valid_synthetic_history"
+    },
+    {
+      "id": "TEST-BASE-STG-CUSTODY-001-inconclusive_evidence",
+      "scenarioId": "STG-CUSTODY-001",
+      "category": "inconclusive_evidence",
+      "retestOutcome": "inconclusive",
+      "expectedStatus": "closed_inconclusive",
+      "expected": "valid_synthetic_history"
+    },
+    {
+      "id": "TEST-BASE-STG-CUSTODY-001-verifier_infrastructure_error",
+      "scenarioId": "STG-CUSTODY-001",
+      "category": "verifier_infrastructure_error",
+      "retestOutcome": "pass",
+      "expectedStatus": "retest_passed_needs_manual_security_review",
+      "expected": "valid_synthetic_history"
+    },
+    {
+      "id": "TEST-BASE-STG-AUDIT-001-control_failure",
+      "scenarioId": "STG-AUDIT-001",
+      "category": "control_failure",
+      "retestOutcome": "fail",
+      "expectedStatus": "closed_blocked",
+      "expected": "valid_synthetic_history"
+    },
+    {
+      "id": "TEST-BASE-STG-AUDIT-001-inconclusive_evidence",
+      "scenarioId": "STG-AUDIT-001",
+      "category": "inconclusive_evidence",
+      "retestOutcome": "inconclusive",
+      "expectedStatus": "closed_inconclusive",
+      "expected": "valid_synthetic_history"
+    },
+    {
+      "id": "TEST-BASE-STG-AUDIT-001-verifier_infrastructure_error",
+      "scenarioId": "STG-AUDIT-001",
+      "category": "verifier_infrastructure_error",
+      "retestOutcome": "pass",
+      "expectedStatus": "retest_passed_needs_manual_security_review",
+      "expected": "valid_synthetic_history"
+    },
+    {
+      "id": "TEST-BASE-STG-RESTORE-001-control_failure",
+      "scenarioId": "STG-RESTORE-001",
+      "category": "control_failure",
+      "retestOutcome": "fail",
+      "expectedStatus": "closed_blocked",
+      "expected": "valid_synthetic_history"
+    },
+    {
+      "id": "TEST-BASE-STG-RESTORE-001-inconclusive_evidence",
+      "scenarioId": "STG-RESTORE-001",
+      "category": "inconclusive_evidence",
+      "retestOutcome": "inconclusive",
+      "expectedStatus": "closed_inconclusive",
+      "expected": "valid_synthetic_history"
+    },
+    {
+      "id": "TEST-BASE-STG-RESTORE-001-verifier_infrastructure_error",
+      "scenarioId": "STG-RESTORE-001",
+      "category": "verifier_infrastructure_error",
+      "retestOutcome": "pass",
+      "expectedStatus": "retest_passed_needs_manual_security_review",
+      "expected": "valid_synthetic_history"
+    },
+    {
+      "id": "TEST-BASE-STG-RETENTION-001-control_failure",
+      "scenarioId": "STG-RETENTION-001",
+      "category": "control_failure",
+      "retestOutcome": "fail",
+      "expectedStatus": "closed_blocked",
+      "expected": "valid_synthetic_history"
+    },
+    {
+      "id": "TEST-BASE-STG-RETENTION-001-inconclusive_evidence",
+      "scenarioId": "STG-RETENTION-001",
+      "category": "inconclusive_evidence",
+      "retestOutcome": "inconclusive",
+      "expectedStatus": "closed_inconclusive",
+      "expected": "valid_synthetic_history"
+    },
+    {
+      "id": "TEST-BASE-STG-RETENTION-001-verifier_infrastructure_error",
+      "scenarioId": "STG-RETENTION-001",
+      "category": "verifier_infrastructure_error",
+      "retestOutcome": "pass",
+      "expectedStatus": "retest_passed_needs_manual_security_review",
+      "expected": "valid_synthetic_history"
+    },
+    {
+      "id": "TEST-BASE-STG-RELEASE-001-control_failure",
+      "scenarioId": "STG-RELEASE-001",
+      "category": "control_failure",
+      "retestOutcome": "fail",
+      "expectedStatus": "closed_blocked",
+      "expected": "valid_synthetic_history"
+    },
+    {
+      "id": "TEST-BASE-STG-RELEASE-001-inconclusive_evidence",
+      "scenarioId": "STG-RELEASE-001",
+      "category": "inconclusive_evidence",
+      "retestOutcome": "inconclusive",
+      "expectedStatus": "closed_inconclusive",
+      "expected": "valid_synthetic_history"
+    },
+    {
+      "id": "TEST-BASE-STG-RELEASE-001-verifier_infrastructure_error",
+      "scenarioId": "STG-RELEASE-001",
+      "category": "verifier_infrastructure_error",
+      "retestOutcome": "pass",
+      "expectedStatus": "retest_passed_needs_manual_security_review",
+      "expected": "valid_synthetic_history"
+    }
+  ],
+  "adversarialCases": [
+    {
+      "id": "TEST-MUT-01",
+      "scenarioId": "STG-ID-001",
+      "category": "control_failure",
+      "retestOutcome": "fail",
+      "mutation": "alter_event_no_rehash",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-02",
+      "scenarioId": "STG-ISO-001",
+      "category": "inconclusive_evidence",
+      "retestOutcome": "inconclusive",
+      "mutation": "anchor_changed",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-03",
+      "scenarioId": "STG-SOD-001",
+      "category": "verifier_infrastructure_error",
+      "retestOutcome": "pass",
+      "mutation": "remove_clarification",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-04",
+      "scenarioId": "STG-CUSTODY-001",
+      "category": "control_failure",
+      "retestOutcome": "fail",
+      "mutation": "skip_retest",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-05",
+      "scenarioId": "STG-AUDIT-001",
+      "category": "inconclusive_evidence",
+      "retestOutcome": "inconclusive",
+      "mutation": "delete_middle",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-06",
+      "scenarioId": "STG-RESTORE-001",
+      "category": "verifier_infrastructure_error",
+      "retestOutcome": "pass",
+      "mutation": "duplicate_event",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-07",
+      "scenarioId": "STG-RETENTION-001",
+      "category": "control_failure",
+      "retestOutcome": "fail",
+      "mutation": "swap_events",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-08",
+      "scenarioId": "STG-RELEASE-001",
+      "category": "inconclusive_evidence",
+      "retestOutcome": "inconclusive",
+      "mutation": "same_run_id",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-09",
+      "scenarioId": "STG-ID-001",
+      "category": "verifier_infrastructure_error",
+      "retestOutcome": "pass",
+      "mutation": "replayed_run",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-10",
+      "scenarioId": "STG-ISO-001",
+      "category": "control_failure",
+      "retestOutcome": "fail",
+      "mutation": "unknown_actor",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-11",
+      "scenarioId": "STG-SOD-001",
+      "category": "inconclusive_evidence",
+      "retestOutcome": "inconclusive",
+      "mutation": "disabled_actor",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-12",
+      "scenarioId": "STG-CUSTODY-001",
+      "category": "verifier_infrastructure_error",
+      "retestOutcome": "pass",
+      "mutation": "wrong_tenant",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-13",
+      "scenarioId": "STG-AUDIT-001",
+      "category": "control_failure",
+      "retestOutcome": "fail",
+      "mutation": "not_assigned",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-14",
+      "scenarioId": "STG-RESTORE-001",
+      "category": "inconclusive_evidence",
+      "retestOutcome": "inconclusive",
+      "mutation": "independent_is_originator",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-15",
+      "scenarioId": "STG-RETENTION-001",
+      "category": "verifier_infrastructure_error",
+      "retestOutcome": "pass",
+      "mutation": "independent_is_technical",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-16",
+      "scenarioId": "STG-RELEASE-001",
+      "category": "control_failure",
+      "retestOutcome": "fail",
+      "mutation": "independent_is_custodian",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-17",
+      "scenarioId": "STG-ID-001",
+      "category": "inconclusive_evidence",
+      "retestOutcome": "inconclusive",
+      "mutation": "wrong_action_role",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-18",
+      "scenarioId": "STG-ISO-001",
+      "category": "verifier_infrastructure_error",
+      "retestOutcome": "pass",
+      "mutation": "missing_evidence",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-19",
+      "scenarioId": "STG-SOD-001",
+      "category": "control_failure",
+      "retestOutcome": "fail",
+      "mutation": "extra_url_field",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-20",
+      "scenarioId": "STG-CUSTODY-001",
+      "category": "inconclusive_evidence",
+      "retestOutcome": "inconclusive",
+      "mutation": "raw_document_field",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-21",
+      "scenarioId": "STG-AUDIT-001",
+      "category": "verifier_infrastructure_error",
+      "retestOutcome": "pass",
+      "mutation": "actual_asset_id",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-22",
+      "scenarioId": "STG-RESTORE-001",
+      "category": "control_failure",
+      "retestOutcome": "fail",
+      "mutation": "non_synthetic_actor",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-23",
+      "scenarioId": "STG-RETENTION-001",
+      "category": "inconclusive_evidence",
+      "retestOutcome": "inconclusive",
+      "mutation": "invalid_time",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-24",
+      "scenarioId": "STG-RELEASE-001",
+      "category": "verifier_infrastructure_error",
+      "retestOutcome": "pass",
+      "mutation": "reverse_time",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-25",
+      "scenarioId": "STG-ID-001",
+      "category": "control_failure",
+      "retestOutcome": "fail",
+      "mutation": "wrong_case",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-26",
+      "scenarioId": "STG-ISO-001",
+      "category": "inconclusive_evidence",
+      "retestOutcome": "inconclusive",
+      "mutation": "wrong_scenario",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-27",
+      "scenarioId": "STG-SOD-001",
+      "category": "verifier_infrastructure_error",
+      "retestOutcome": "pass",
+      "mutation": "unknown_action",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-28",
+      "scenarioId": "STG-CUSTODY-001",
+      "category": "control_failure",
+      "retestOutcome": "fail",
+      "mutation": "wrong_reason",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-29",
+      "scenarioId": "STG-AUDIT-001",
+      "category": "inconclusive_evidence",
+      "retestOutcome": "inconclusive",
+      "mutation": "missing_reason",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-30",
+      "scenarioId": "STG-RESTORE-001",
+      "category": "verifier_infrastructure_error",
+      "retestOutcome": "pass",
+      "mutation": "fake_public_approval",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-31",
+      "scenarioId": "STG-RETENTION-001",
+      "category": "control_failure",
+      "retestOutcome": "fail",
+      "mutation": "fake_root_cause",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-32",
+      "scenarioId": "STG-RELEASE-001",
+      "category": "inconclusive_evidence",
+      "retestOutcome": "inconclusive",
+      "mutation": "fake_operational_release",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-33",
+      "scenarioId": "STG-ID-001",
+      "category": "verifier_infrastructure_error",
+      "retestOutcome": "pass",
+      "mutation": "wrong_resolution",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-34",
+      "scenarioId": "STG-ISO-001",
+      "category": "control_failure",
+      "retestOutcome": "fail",
+      "mutation": "missing_second_review",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-35",
+      "scenarioId": "STG-SOD-001",
+      "category": "inconclusive_evidence",
+      "retestOutcome": "inconclusive",
+      "mutation": "unsupported_retest",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-36",
+      "scenarioId": "STG-CUSTODY-001",
+      "category": "verifier_infrastructure_error",
+      "retestOutcome": "pass",
+      "mutation": "event_after_terminal",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-37",
+      "scenarioId": "STG-AUDIT-001",
+      "category": "control_failure",
+      "retestOutcome": "fail",
+      "mutation": "missing_anchor",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-38",
+      "scenarioId": "STG-RESTORE-001",
+      "category": "inconclusive_evidence",
+      "retestOutcome": "inconclusive",
+      "mutation": "initial_status_mismatch",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-39",
+      "scenarioId": "STG-RETENTION-001",
+      "category": "verifier_infrastructure_error",
+      "retestOutcome": "pass",
+      "mutation": "originator_is_technical",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-40",
+      "scenarioId": "STG-RELEASE-001",
+      "category": "control_failure",
+      "retestOutcome": "fail",
+      "mutation": "original_evidence_removed",
+      "expected": "reject"
+    }
+  ],
+  "counts": {
+    "validBaselineHistories": 24,
+    "rejectedMutations": 40,
+    "totalCases": 64,
+    "realEvents": 0,
+    "realReviews": 0,
+    "realApprovals": 0
+  }
+}

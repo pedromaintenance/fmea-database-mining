@@ -2,6 +2,15 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.28] — 2026-10-21 — Triagem de resultados falhos e inconclusivos
+
+- Diferenciadas três naturezas de resultado: **controle reprovado**, **prova insuficiente** e **erro de infraestrutura/verificador**, nenhuma interpretada como causa mecânica.
+- Modelado histórico sintético de sete ações: abertura, pedido de esclarecimento, recebimento, determinação de reteste, novo run, revisão independente solicitada e decisão motivada.
+- Regras de segregação entre solicitante, custodiante, revisor técnico e independente; resultado final condicionado a `pass`, `fail` ou `inconclusive`, sem aceite corporativo automático.
+- Biblioteca offline com validação dos IDs, sequência cronológica, identificador de reteste novo, vínculos entre tenant/caso/run, revisão distinta e cadeia SHA-256 ancorada **somente em simulação**.
+- Acrescentados schema, QA/CI, métricas e **64 casos sintéticos** (24 baselines e 40 mutações), incluindo retenção da prova original e rejeição de encerramento indevido.
+- Preservados núcleo 24 FC/15 ME, contrato e conteúdo público 1.0.0, preview 1.3.12 e checksum original; nenhum consumidor, caso OEM ou ativo real modificado.
+
 ## [1.3.27] — 2026-10-21 — Contrato de custódia privada e revisão de resultados de staging
 
 - Adicionado contrato de recibo **exclusivamente privado**, com 4 atestações encadeadas: serviço do teste, custodiante, revisor técnico e revisor independente.

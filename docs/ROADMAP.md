@@ -1,6 +1,6 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 21/10/2026 · **Ciclo:** catálogo técnico v1.3.27 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 21/10/2026 · **Ciclo:** catálogo técnico v1.3.28 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
 
@@ -39,6 +39,20 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 
 **Observação:** as 159 tarefas de PM com subgrupo candidato foram obtidas em extração local anterior e **não** representam 159 associações homologadas. Contagens de vínculos estritos serão publicadas pelo relatório automático após cada alteração do gerador.
 
+## Ciclo concluído — 21/10/2026: tratamento de exceções de staging (v1.3.28)
+
+- [x] [Política de exceções](../data/governance/staging-result-exception-workflow.v1.json) com três classes de problema, sete transições e três decisões possíveis sobre o **histórico de triagem**, sem confirmar resolução de não conformidade real.
+- [x] [Histórico sintético](../scripts/lib/staging-exception-workflow.mjs) encadeado por hash, com tenant/caso/run vinculados, esclarecimento obrigatório, rerun único e revisor independente.
+- [x] Validador, [JSON Schema](../schemas/staging-exception-case.schema.json) e **64 regressões sintéticas** integrados ao `npm run qa` e GitHub Actions.
+- [x] [Runbook](TRATAMENTO_EXCECOES_STAGING.md) e [relatório técnico](CICLO_2026-10-21_TRATAMENTO_EXCECOES.md) com riscos e critérios de retenção e escalonamento.
+- [x] Mantidos contratos públicos, 24 FC, 15 ME e todos os gates históricos; nenhuma aprovação/observação real inventada.
+- [ ] **P0 externo — TI:** implementar o histórico transacional imutável, autenticação e vínculo de eventos a resultados verdadeiramente assinados e custodiados em ambiente privado.
+- [ ] **P0 externo — Segurança/Engenharia:** definir quem mantém não conformidade aberta, requisitos de aceitação de reteste, risco residual e evidência da correção de controle.
+- [ ] **P0 próximo ciclo:** definir catálogo de bloqueios e plano de remediação para desvios recorrentes, separando a decisão de retestar da correção técnica real.
+- [ ] Infraestrutura de staging e seis assinaturas corporativas permanecem **pendentes**.
+
+**Estado:** 64 regressões de processo previstas; **zero casos reais**, zero assinatura de revisão humana e nenhuma FMEA promovida.
+
 ## Ciclo concluído — 21/10/2026: custódia e atestação dos resultados de integração (v1.3.27)
 
 - [x] Definido [contrato de custódia privada](../data/governance/private-result-custody-contract.v1.json) com 4 assinaturas/atestados encadeados, vínculo tenant/caso/run, confiança externa, identificação do autor e duas revisões segregadas.
@@ -48,7 +62,7 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 - [x] Mantidos no repositório público **somente política, código e testes TEST**. Nenhum recibo ou documento corporativo real, nenhuma assinatura/aprovação humana.
 - [ ] **P0 externo TI/Segurança:** criar backend restrito com identidade de serviço vinculada a certificado/chave, log externo protegido, revogação, persistência de replay, controles de acesso e cofre de evidências sob licença.
 - [ ] **P0 externo Engenharia/Privacidade:** definir critérios de aceitação de caso real, reviewers independentes autenticados e divulgação de metadados autorizados.
-- [ ] **P0 próximo ciclo:** preparar piloto de revisão humana **simulada** com decisões de falha/inconclusivo e fila de correções, sem introduzir casos ou credenciais reais.
+- [x] **Preparado na v1.3.28:** triagem e revisão independente simuladas de falha e inconclusão, com esclarecimento, reexecução e estados diferenciados; fila corporativa real depende de implantação.
 - [ ] O staging ainda não está provisionado e as seis assinaturas corporativas da v1.3.25 continuam pendentes.
 
 **Estado:** 8 atestações Ed25519 sintéticas válidas e 40 recusas previstas; **zero atestação real** e nenhuma homologação mecânica, operacional ou de infraestrutura.
