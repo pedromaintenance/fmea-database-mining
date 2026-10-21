@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.public-contract.v1",
-  "version": "1.3.25",
+  "version": "1.3.26",
   "contractVersion": "1.0.0",
   "existingPreviewSchema": "fmea-mining.public-knowledge-preview.v1",
   "existingPreviewVersion": "1.3.12",
@@ -66,5 +66,5 @@
     "unknown_serial_to_approved_oem_effectivity",
     "unreviewed_cause_to_verified_root_cause"
   ],
-  "note": "O catálogo interno 1.3.25 especifica pacote de aceite para staging corporativo privado com 8 domínios, 32 controles e 52 regressões sintéticas, sem afirmar execução de serviço, parecer OEM ou aceitação de dados reais. Contrato e conteúdo público 1.0.0, preview 1.3.12 e checksum anterior preservados."
+  "note": "Catálogo interno 1.3.26 adiciona contrato de interface de staging e adaptador offline com 32 probes e 56 cenários sintéticos, sem rede, autenticação real, dados corporativos ou aprovação automática. Contrato e conteúdo públicos 1.0.0, preview legado 1.3.12 e checksum preservados."
 }
