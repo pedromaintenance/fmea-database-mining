@@ -1,0 +1,199 @@
+{
+  "schema": "fmea-mining.proposed-causal-chains.v1",
+  "version": "1.3.20",
+  "purpose": "Propostas editoriais de modos de falha mecanicamente distintos, fora das 24 cadeias do núcleo, sem homologação OEM ou SAP.",
+  "policy": {
+    "neverAutoPromote": true,
+    "publicExportUntouched": true,
+    "requireOemEffectivity": true,
+    "requireIndependentReview": true,
+    "neverTreatConditionAsDamage": true
+  },
+  "counts": {
+    "existingCoreChains": 24,
+    "proposedChains": 3,
+    "addedToCore": 0,
+    "observedEvents": 0,
+    "confirmedRootCauses": 0
+  },
+  "records": [
+    {
+      "id": "CAND-HYD-PUMP-SEAL-001",
+      "family": "bombas_hidraulicas",
+      "relatedPlaybookId": "PB-EXC-PUMP-01",
+      "relatedHypothesisId": "H1",
+      "title": "Perda de estanqueidade externa da vedação do eixo/carcaça da bomba hidráulica",
+      "operatingFunction": "Conter o fluido dentro do conjunto de bombeamento e manter a interface externa estanque",
+      "functionalFailureCandidate": "Fluido do conjunto de bomba ultrapassa a interface de vedação e aparece externamente",
+      "physicalMechanismCandidate": "Degradação de lábio, junta ou interface de vedação permite migração de fluido; identificar a arquitetura real antes de atribuir uma peça.",
+      "possibleDamage": "Deterioração ou deformação localizada de elemento de vedação, não observada no banco",
+      "alternativeHypotheses": [
+        "Fluido escorreu da linha ou conexão situada acima da bomba",
+        "Óleo externo decorre de outra interface de montagem sem falha da vedação proposta"
+      ],
+      "diagnosticTests": [
+        {
+          "methodId": "EV-01",
+          "question": "Qual o primeiro ponto de origem do fluido antes da limpeza, após bloqueio e despressurização conforme procedimento OEM?",
+          "positiveOnlyIf": "Trilha verificada começa na interface da bomba identificada e não em mangueira ou conexão adjacente.",
+          "counterEvidence": "Origem em linha ou terminal superior afasta atribuição direta à vedação da bomba.",
+          "safeBoundary": "Proibido tocar vazamento pressurizado ou expor pessoas ao jato; não realizar teste dinâmico improvisado."
+        },
+        {
+          "methodId": "EV-13",
+          "question": "O arranjo OEM e os históricos de montagem, drenagem e reparo distinguem junta, vedação de eixo e conexões?",
+          "positiveOnlyIf": "Documentação efetiva identifica o elemento de vedação e há evidência independente de defeito desse elemento.",
+          "counterEvidence": "Elemento inexistente nesse arranjo ou origem em conexão exige abandonar a cadeia candidata.",
+          "safeBoundary": "Não desmontar a bomba ou remover retentor sem procedimento OEM e controle de energia residual."
+        }
+      ],
+      "minimumIndependentEvidence": [
+        "Identificação OEM por prefixo/arranjo do conjunto e desenho da vedação efetiva sem uso de PN genérico",
+        "Foto ou teste de localização de fuga autorizado com condição inicial, posição e possível fonte superior independente",
+        "Histórico rastreável de montagem/intervenção e inspeção física específica da vedação"
+      ],
+      "sources": [
+        "CAT-HYD-PUMPS-MOTORS",
+        "PARKER-VANE-PUMP-SERVICE",
+        "CAT-HYD-TECHNICAL-ANALYSIS"
+      ],
+      "nonOrganizationalAlternative": "A vedação pode estar íntegra e a fuga pertencer a uma conexão externa acima do corpo da bomba; presença de óleo não atribui componente avariado.",
+      "classification": "mechanical_failure_mode_candidate",
+      "editorialDisposition": "proposta_de_nova_cadeia_nao_integrada",
+      "promotedToCore": false,
+      "applicableSerialOrArrangement": null,
+      "approvedModelId": null,
+      "approvedSapLocation": null,
+      "partNumber": null,
+      "measuredThreshold": null,
+      "fieldObservation": null,
+      "review": {
+        "technicalReviewer": null,
+        "independentReviewer": null,
+        "decision": null,
+        "status": "not_reviewed"
+      },
+      "observedOccurrences": 0,
+      "confirmedRootCause": false
+    },
+    {
+      "id": "CAND-HYD-PUMP-INTERNAL-001",
+      "family": "bombas_hidraulicas",
+      "relatedPlaybookId": "PB-EXC-PUMP-01",
+      "relatedHypothesisId": "H3",
+      "title": "Redução de entrega da bomba hidráulica por perdas internas de fluido",
+      "operatingFunction": "Fornecer vazão útil ao circuito de implementos conforme comando e regime da configuração OEM",
+      "functionalFailureCandidate": "Capacidade útil insuficiente sob condição de teste definida e efetiva, após excluir falhas externas",
+      "physicalMechanismCandidate": "Fuga volumétrica interna através de folgas ou interfaces do conjunto pode reduzir vazão útil conforme temperatura, carga e comando.",
+      "possibleDamage": "Desgaste ou perda da integridade das superfícies internas ainda não demonstrados",
+      "alternativeHypotheses": [
+        "Compensador, regulador, piloto ou válvula limitam a saída sem desgaste interno de bomba",
+        "Restrição de sucção, condição inadequada de óleo ou instrumentação produz aparente deficiência de vazão"
+      ],
+      "diagnosticTests": [
+        {
+          "methodId": "EV-05",
+          "question": "A pressão e a vazão são comparadas nos pontos e regimes definidos no SIS/OMM para a bomba instalada?",
+          "positiveOnlyIf": "Capacidade sob condições equivalentes diverge do requisito, com instrumentos calibrados e origem da limitação localizada.",
+          "counterEvidence": "Bomba entrega conforme critério OEM enquanto válvula ou circuito a jusante apresenta anomalia.",
+          "safeBoundary": "Não executar teste de alívio ou bloqueio de implemento sem área isolada e procedimento OEM específico."
+        },
+        {
+          "methodId": "EV-14",
+          "question": "Há evidência independente de comando, temperatura, sucção, controle de deslocamento e retorno de carcaça quando o arranjo permitir?",
+          "positiveOnlyIf": "Medições isolam perda interna da bomba após exclusão de condições de controle ou sucção, conforme série efetiva.",
+          "counterEvidence": "Desvio de controle ou limitação da alimentação explica resposta sem demonstrar desgaste interno.",
+          "safeBoundary": "Não obstruir dreno de carcaça nem introduzir instrumentos sem isolamento e instrução OEM."
+        }
+      ],
+      "minimumIndependentEvidence": [
+        "Modelo de bomba e esquema hidráulico OEM com localização dos pontos, curvas de ensaio e condições admissíveis",
+        "Conjunto de medições de pressão/vazão/temperatura/comando com instrumentos calibrados e mesma condição de referência",
+        "Contraprova documentada de válvula, compensador, sucção e eventuais perdas em outras linhas, com revisão independente"
+      ],
+      "sources": [
+        "CAT-HYD-TECHNICAL-ANALYSIS",
+        "CAT-HYD-PUMPS-MOTORS",
+        "ISO-13379-1-2025"
+      ],
+      "nonOrganizationalAlternative": "Pressão/tempo de ciclo anormal pode decorrer de controle, válvula, temperatura, pressão de sucção ou instrumento; não é possível condenar a bomba a partir do sintoma.",
+      "classification": "mechanical_failure_mode_candidate",
+      "editorialDisposition": "proposta_de_nova_cadeia_nao_integrada",
+      "promotedToCore": false,
+      "applicableSerialOrArrangement": null,
+      "approvedModelId": null,
+      "approvedSapLocation": null,
+      "partNumber": null,
+      "measuredThreshold": null,
+      "fieldObservation": null,
+      "review": {
+        "technicalReviewer": null,
+        "independentReviewer": null,
+        "decision": null,
+        "status": "not_reviewed"
+      },
+      "observedOccurrences": 0,
+      "confirmedRootCause": false
+    },
+    {
+      "id": "CAND-FD-GEAR-TOOTH-001",
+      "family": "comando_final",
+      "relatedPlaybookId": "PB-TRUCK-FINAL-01",
+      "relatedHypothesisId": "H2",
+      "title": "Degradação da superfície ativa de dentes de engrenagem do comando final",
+      "operatingFunction": "Transmitir torque pelo engrenamento de dentes mantendo integridade superficial e geometria de contato",
+      "functionalFailureCandidate": "Superfície dos dentes degrada a ponto de reduzir integridade de contato e potencialmente gerar vibração ou partículas",
+      "physicalMechanismCandidate": "Deterioração superficial dos flancos pode resultar de fadiga de contato, desgaste abrasivo ou adesivo; mecanismo específico depende da morfologia real.",
+      "possibleDamage": "Pitting, spalling ou desgaste de flanco apenas como morfologias candidatas, não observado neste registro",
+      "alternativeHypotheses": [
+        "Descascamento de rolamento no mesmo comando final gera ruído e partículas semelhantes",
+        "Partículas do lubrificante podem decorrer de contaminação/alteração de baseline sem dano de flanco confirmado"
+      ],
+      "diagnosticTests": [
+        {
+          "methodId": "EV-11",
+          "question": "Em inspeção autorizada, a morfologia e a posição dos danos em flancos podem ser relacionadas à origem das partículas?",
+          "positiveOnlyIf": "Dano superficial identificado fisicamente nos dentes, com morfologia e contexto documentados por especialista.",
+          "counterEvidence": "Flancos sem dano demonstrado e avaria localizada em rolamento excluem atribuição por similaridade de ruído.",
+          "safeBoundary": "Não abrir comando final com energia/óleo quente nem operar engrenagens expostas; somente procedimento OEM."
+        },
+        {
+          "methodId": "EV-08",
+          "question": "A tendência de amostras, inspeção magnética e histórico do óleo diferenciam desgaste de dentes, rolamentos e mudança de formulação?",
+          "positiveOnlyIf": "Evidência morfológica e tendência compatíveis com dano de engrenagem e origem demonstrada; ICP isolado é insuficiente.",
+          "counterEvidence": "Nova formulação confirmada e sem dano físico sugerem alteração química de baseline, não falha de dente.",
+          "safeBoundary": "Coletar amostra antes de qualquer troca e respeitar controle de contaminação e procedimento de drenagem."
+        }
+      ],
+      "minimumIndependentEvidence": [
+        "BOM e arranjo do comando final CAT 777 por série com identificação de engrenagens e rolamentos efetivamente instalados",
+        "Evidência visual/morfológica autorizada de superfícies dentadas com origem e extensão documentadas",
+        "Série de laudos e inspeções de óleo/bujão com baseline do fluido, horas e interpretação de origem de partículas independente"
+      ],
+      "sources": [
+        "ISO-10825-1-2022",
+        "CAT-DRIVE-MAINT-PRACTICES",
+        "CAT-DRIVETRAIN-OIL-CARE",
+        "CAT-DRIVE-MAGNET-PLUG"
+      ],
+      "nonOrganizationalAlternative": "Ruído e partículas podem partir de rolamento, ou mudança química do fluido; desgaste de engrenagem exige observação de dano localizada.",
+      "classification": "mechanical_failure_mode_candidate",
+      "editorialDisposition": "proposta_de_nova_cadeia_nao_integrada",
+      "promotedToCore": false,
+      "applicableSerialOrArrangement": null,
+      "approvedModelId": null,
+      "approvedSapLocation": null,
+      "partNumber": null,
+      "measuredThreshold": null,
+      "fieldObservation": null,
+      "review": {
+        "technicalReviewer": null,
+        "independentReviewer": null,
+        "decision": null,
+        "status": "not_reviewed"
+      },
+      "observedOccurrences": 0,
+      "confirmedRootCause": false
+    }
+  ]
+}

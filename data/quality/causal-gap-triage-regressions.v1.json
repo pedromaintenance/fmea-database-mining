@@ -1,0 +1,119 @@
+{
+  "schema": "fmea-mining.causal-gap-triage-regressions.v1",
+  "version": "1.3.20",
+  "nature": "synthetic_only",
+  "decisionCases": [
+    {
+      "id": "DEC-1",
+      "gapId": "XW-PB-EXC-PUMP-01-H1",
+      "expectedDecision": "propor_cadeia_mecanica_condicional",
+      "expectedProposal": "CAND-HYD-PUMP-SEAL-001"
+    },
+    {
+      "id": "DEC-2",
+      "gapId": "XW-PB-EXC-PUMP-01-H3",
+      "expectedDecision": "propor_cadeia_mecanica_condicional",
+      "expectedProposal": "CAND-HYD-PUMP-INTERNAL-001"
+    },
+    {
+      "id": "DEC-3",
+      "gapId": "XW-PB-EXC-HOSE-01-H3",
+      "expectedDecision": "nao_gerar_cadeia",
+      "expectedProposal": null
+    },
+    {
+      "id": "DEC-4",
+      "gapId": "XW-PB-TRUCK-FINAL-01-H2",
+      "expectedDecision": "propor_cadeia_mecanica_condicional",
+      "expectedProposal": "CAND-FD-GEAR-TOOTH-001"
+    },
+    {
+      "id": "DEC-5",
+      "gapId": "XW-PB-TRUCK-FINAL-01-H3",
+      "expectedDecision": "nao_gerar_cadeia",
+      "expectedProposal": null
+    }
+  ],
+  "mutationCases": [
+    {
+      "id": "BAD-01",
+      "scope": "proposal",
+      "mutation": "promoteToCore"
+    },
+    {
+      "id": "BAD-02",
+      "scope": "proposal",
+      "mutation": "assignSerial"
+    },
+    {
+      "id": "BAD-03",
+      "scope": "proposal",
+      "mutation": "confirmRootCause"
+    },
+    {
+      "id": "BAD-04",
+      "scope": "proposal",
+      "mutation": "assignSapLocation"
+    },
+    {
+      "id": "BAD-05",
+      "scope": "proposal",
+      "mutation": "removeIndependentEvidence"
+    },
+    {
+      "id": "BAD-06",
+      "scope": "proposal",
+      "mutation": "removeCounterEvidence"
+    },
+    {
+      "id": "BAD-07",
+      "scope": "proposal",
+      "mutation": "inventSource"
+    },
+    {
+      "id": "BAD-08",
+      "scope": "proposal",
+      "mutation": "fakeObservation"
+    },
+    {
+      "id": "BAD-09",
+      "scope": "proposal",
+      "mutation": "approveReview"
+    },
+    {
+      "id": "BAD-10",
+      "scope": "triage",
+      "mutation": "conditionAsFailure"
+    },
+    {
+      "id": "BAD-11",
+      "scope": "triage",
+      "mutation": "alterCrosswalkGap"
+    },
+    {
+      "id": "BAD-12",
+      "scope": "triage",
+      "mutation": "fakeApprovedLink"
+    },
+    {
+      "id": "BAD-13",
+      "scope": "triage",
+      "mutation": "misassignProposal"
+    },
+    {
+      "id": "BAD-14",
+      "scope": "triage",
+      "mutation": "removeDecision"
+    },
+    {
+      "id": "BAD-15",
+      "scope": "triage",
+      "mutation": "inventEvidence"
+    },
+    {
+      "id": "BAD-16",
+      "scope": "triage",
+      "mutation": "duplicateGap"
+    }
+  ]
+}

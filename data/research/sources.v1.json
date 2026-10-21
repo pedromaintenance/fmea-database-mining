@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.research.sources.v1",
-  "version": "1.3.18",
+  "version": "1.3.20",
   "status": "literatura_de_referencia_nao_casos_empiricos",
   "rights": "somente_titulos_links_e_resumos_originais",
   "sources": [
@@ -566,6 +566,50 @@
       "url": "https://www.mining.sandvik/globalassets/products/surface-drill-rigs/pdf/di650i-s5-specification-sheet-english2.pdf",
       "role": "contexto genérico de arquitetura de compressor, filtro e alimentação pneumática da variante S5",
       "limitation": "Publicação da variante S5; não confirma variante, número de série, compressor instalado, pressão de teste ou circuito da frota DI650i."
+    },
+    {
+      "id": "CAT-HYD-PUMPS-MOTORS",
+      "organization": "Caterpillar",
+      "title": "Cat Hydraulic Pumps and Motors",
+      "url": "https://www.cat.com/en_US/support/maintenance/hydraulics/pumps-and-motors.html",
+      "area": "hydraulic_pumps_seals_volumetric_efficiency",
+      "role": "oem_general_technical_context",
+      "limitation": "Descrição genérica de famílias de bombas, falhas de vedação e reparos; não demonstra arquitetura nem PN de bomba CAT 395.",
+      "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
+      "lastReviewed": "2026-10-20"
+    },
+    {
+      "id": "PARKER-VANE-PUMP-SERVICE",
+      "organization": "Parker Hannifin",
+      "title": "Hydraulic Pumps — Overall Instructions (Denison Vane Pumps)",
+      "url": "https://www.parker.com/content/dam/Parker-com/Literature/PMDE/Service_Manuals/Vane_Pumps/HY29-0106-UK.pdf",
+      "area": "hydraulic_pump_shaft_seal_failure_differential",
+      "role": "fabricante_principio_mecanico_nao_efetivo_395",
+      "limitation": "Manual específico de bomba de palhetas Parker; mecanismos gerais de vedação são comparativos e não comprovam bomba nem procedimento CAT 395.",
+      "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
+      "lastReviewed": "2026-10-20"
+    },
+    {
+      "id": "ISO-10825-1-2022",
+      "organization": "ISO",
+      "title": "ISO 10825-1:2022 — Gears — Wear and damage to gear teeth — Nomenclature and characteristics",
+      "url": "https://www.iso.org/standard/78719.html",
+      "area": "gear_tooth_damage_classification",
+      "role": "norma_escopo_e_resumo_publico",
+      "limitation": "Somente resumo/escopo público da norma; classificação de aparência após operação não permite atribuir causa nem importar conteúdo integral protegido.",
+      "reviewStatus": "resumo_publico_consultado_sem_norma_integral",
+      "lastReviewed": "2026-10-20"
+    },
+    {
+      "id": "CAT-DRIVETRAIN-OIL-CARE",
+      "organization": "Caterpillar",
+      "title": "How to Maintain Cat Drive Train Oil",
+      "url": "https://www.cat.com/en_US/blog/maintain-drive-train-oil.html",
+      "area": "drivetrain_oil_fdao_maintenance_condition",
+      "role": "oem_general_baseline_and_fluid_selection",
+      "limitation": "Referência genérica para TDTO e FDAO; não determina compatibilidade de óleo por compartimento CAT 777 ou interpretação de um laudo específico.",
+      "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
+      "lastReviewed": "2026-10-20"
     }
   ]
 }
