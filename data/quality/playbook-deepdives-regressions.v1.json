@@ -1,0 +1,313 @@
+{
+  "schema": "fmea-mining.playbook-deepdives-regressions.v1",
+  "version": "1.3.18",
+  "nature": "synthetic_only",
+  "readinessCases": [
+    {
+      "id": "READY-DEEP-LOADER-CYL-001-1",
+      "deepDiveId": "DEEP-LOADER-CYL-001",
+      "availableRequirements": [
+        "Identificação do cilindro, porta hidráulica, válvula associada e configuração OEM efetiva"
+      ],
+      "expected": "inconclusivo",
+      "observedData": null
+    },
+    {
+      "id": "READY-DEEP-LOADER-CYL-001-2",
+      "deepDiveId": "DEEP-LOADER-CYL-001",
+      "availableRequirements": [
+        "Identificação do cilindro, porta hidráulica, válvula associada e configuração OEM efetiva",
+        "Registro de origem de óleo externo com fotos, posição e isolamento de energia",
+        "Ensaio de deriva ou retenção com procedimento e condições controladas pelo fabricante"
+      ],
+      "expected": "inconclusivo",
+      "observedData": null
+    },
+    {
+      "id": "READY-DEEP-LOADER-CYL-001-3",
+      "deepDiveId": "DEEP-LOADER-CYL-001",
+      "availableRequirements": [
+        "Identificação do cilindro, porta hidráulica, válvula associada e configuração OEM efetiva",
+        "Registro de origem de óleo externo com fotos, posição e isolamento de energia",
+        "Ensaio de deriva ou retenção com procedimento e condições controladas pelo fabricante",
+        "Diagnóstico independente que separe vedação interna de válvula de retenção e linha de alimentação"
+      ],
+      "expected": "apto_para_revisao_nao_confirmado",
+      "observedData": null
+    },
+    {
+      "id": "READY-DEEP-DR410-FEED-001-1",
+      "deepDiveId": "DEEP-DR410-FEED-001",
+      "availableRequirements": [
+        "Variante e arranjo do DR410i identificados com manual My Sandvik efetivo"
+      ],
+      "expected": "inconclusivo",
+      "observedData": null
+    },
+    {
+      "id": "READY-DEEP-DR410-FEED-001-2",
+      "deepDiveId": "DEEP-DR410-FEED-001",
+      "availableRequirements": [
+        "Variante e arranjo do DR410i identificados com manual My Sandvik efetivo",
+        "Condição das correntes, guias, patins e rodas dentadas documentada com mastro apoiado",
+        "Medição de ajuste/tensão por referência OEM, sem inventar folga ou tolerância"
+      ],
+      "expected": "inconclusivo",
+      "observedData": null
+    },
+    {
+      "id": "READY-DEEP-DR410-FEED-001-3",
+      "deepDiveId": "DEEP-DR410-FEED-001",
+      "availableRequirements": [
+        "Variante e arranjo do DR410i identificados com manual My Sandvik efetivo",
+        "Condição das correntes, guias, patins e rodas dentadas documentada com mastro apoiado",
+        "Medição de ajuste/tensão por referência OEM, sem inventar folga ou tolerância",
+        "Registro de comando e resposta com análise independente de interferência mecânica"
+      ],
+      "expected": "apto_para_revisao_nao_confirmado",
+      "observedData": null
+    },
+    {
+      "id": "READY-DEEP-DI650-COMP-001-1",
+      "deepDiveId": "DEEP-DI650-COMP-001",
+      "availableRequirements": [
+        "Variante/arranjo do DI650i e manual de compressor efetivos confirmados"
+      ],
+      "expected": "inconclusivo",
+      "observedData": null
+    },
+    {
+      "id": "READY-DEEP-DI650-COMP-001-2",
+      "deepDiveId": "DEEP-DI650-COMP-001",
+      "availableRequirements": [
+        "Variante/arranjo do DI650i e manual de compressor efetivos confirmados",
+        "Estado do filtro, admissão e linhas registrado com equipamento seguro e despressurizado",
+        "Medição de pressão e vazão por portas e regimes OEM com instrumento calibrado"
+      ],
+      "expected": "inconclusivo",
+      "observedData": null
+    },
+    {
+      "id": "READY-DEEP-DI650-COMP-001-3",
+      "deepDiveId": "DEEP-DI650-COMP-001",
+      "availableRequirements": [
+        "Variante/arranjo do DI650i e manual de compressor efetivos confirmados",
+        "Estado do filtro, admissão e linhas registrado com equipamento seguro e despressurizado",
+        "Medição de pressão e vazão por portas e regimes OEM com instrumento calibrado",
+        "Correlação independente de comando de carga, condição da fuga e pressão efetivamente medida"
+      ],
+      "expected": "apto_para_revisao_nao_confirmado",
+      "observedData": null
+    },
+    {
+      "id": "READY-DEEP-CAT16-TIRE-001-1",
+      "deepDiveId": "DEEP-CAT16-TIRE-001",
+      "availableRequirements": [
+        "Identificação da medida, marca/modelo, montagem e índice de carga dos pneus efetivos"
+      ],
+      "expected": "inconclusivo",
+      "observedData": null
+    },
+    {
+      "id": "READY-DEEP-CAT16-TIRE-001-2",
+      "deepDiveId": "DEEP-CAT16-TIRE-001",
+      "availableRequirements": [
+        "Identificação da medida, marca/modelo, montagem e índice de carga dos pneus efetivos",
+        "Mapa de desgaste por posição e método dimensional rastreável, com inspeção profissional de integridade",
+        "Pressão fria comparada à recomendação do fabricante por carga e aplicação, por profissional habilitado"
+      ],
+      "expected": "inconclusivo",
+      "observedData": null
+    },
+    {
+      "id": "READY-DEEP-CAT16-TIRE-001-3",
+      "deepDiveId": "DEEP-CAT16-TIRE-001",
+      "availableRequirements": [
+        "Identificação da medida, marca/modelo, montagem e índice de carga dos pneus efetivos",
+        "Mapa de desgaste por posição e método dimensional rastreável, com inspeção profissional de integridade",
+        "Pressão fria comparada à recomendação do fabricante por carga e aplicação, por profissional habilitado",
+        "Registro de geometria, condições de piso, ciclo operacional e contraprova independente"
+      ],
+      "expected": "apto_para_revisao_nao_confirmado",
+      "observedData": null
+    },
+    {
+      "id": "READY-DEEP-CAT777-FUEL-001-1",
+      "deepDiveId": "DEEP-CAT777-FUEL-001",
+      "availableRequirements": [
+        "Rastreio do abastecimento, produto, tanque, condições e identificação do ponto de coleta"
+      ],
+      "expected": "inconclusivo",
+      "observedData": null
+    },
+    {
+      "id": "READY-DEEP-CAT777-FUEL-001-2",
+      "deepDiveId": "DEEP-CAT777-FUEL-001",
+      "availableRequirements": [
+        "Rastreio do abastecimento, produto, tanque, condições e identificação do ponto de coleta",
+        "Amostras representativas antes de drenagem/troca, com método e controle de contaminação externa",
+        "Medição diferencial/fluxo de filtro por portas e regimes OEM com elemento correto identificado"
+      ],
+      "expected": "inconclusivo",
+      "observedData": null
+    },
+    {
+      "id": "READY-DEEP-CAT777-FUEL-001-3",
+      "deepDiveId": "DEEP-CAT777-FUEL-001",
+      "availableRequirements": [
+        "Rastreio do abastecimento, produto, tanque, condições e identificação do ponto de coleta",
+        "Amostras representativas antes de drenagem/troca, com método e controle de contaminação externa",
+        "Medição diferencial/fluxo de filtro por portas e regimes OEM com elemento correto identificado",
+        "Contraprova de sensores versus instrumento independente e revisão da cronologia de perda de potência"
+      ],
+      "expected": "apto_para_revisao_nao_confirmado",
+      "observedData": null
+    },
+    {
+      "id": "READY-DEEP-CAT6030-OIL-001-1",
+      "deepDiveId": "DEEP-CAT6030-OIL-001",
+      "availableRequirements": [
+        "Referência do motor e circuito OEM efetivos, inclusive ponto de pressão e elemento filtrante"
+      ],
+      "expected": "inconclusivo",
+      "observedData": null
+    },
+    {
+      "id": "READY-DEEP-CAT6030-OIL-001-2",
+      "deepDiveId": "DEEP-CAT6030-OIL-001",
+      "availableRequirements": [
+        "Referência do motor e circuito OEM efetivos, inclusive ponto de pressão e elemento filtrante",
+        "Histórico de produto, horas e amostra coletada antes de qualquer troca, com métodos laboratoriais válidos",
+        "Medição independente de pressão e estado de sensor/alarme conforme regime e temperatura do OEM"
+      ],
+      "expected": "inconclusivo",
+      "observedData": null
+    },
+    {
+      "id": "READY-DEEP-CAT6030-OIL-001-3",
+      "deepDiveId": "DEEP-CAT6030-OIL-001",
+      "availableRequirements": [
+        "Referência do motor e circuito OEM efetivos, inclusive ponto de pressão e elemento filtrante",
+        "Histórico de produto, horas e amostra coletada antes de qualquer troca, com métodos laboratoriais válidos",
+        "Medição independente de pressão e estado de sensor/alarme conforme regime e temperatura do OEM",
+        "Exame rastreável do filtro removido com substituição apropriada e revisão técnica independente"
+      ],
+      "expected": "apto_para_revisao_nao_confirmado",
+      "observedData": null
+    }
+  ],
+  "mutationCases": [
+    {
+      "id": "MUT-01",
+      "deepDiveId": "DEEP-LOADER-CYL-001",
+      "mutation": "inventSerial",
+      "expected": "reject",
+      "observedData": null
+    },
+    {
+      "id": "MUT-02",
+      "deepDiveId": "DEEP-DR410-FEED-001",
+      "mutation": "inventComponent",
+      "expected": "reject",
+      "observedData": null
+    },
+    {
+      "id": "MUT-03",
+      "deepDiveId": "DEEP-DI650-COMP-001",
+      "mutation": "approveOperational",
+      "expected": "reject",
+      "observedData": null
+    },
+    {
+      "id": "MUT-04",
+      "deepDiveId": "DEEP-CAT16-TIRE-001",
+      "mutation": "confirmCause",
+      "expected": "reject",
+      "observedData": null
+    },
+    {
+      "id": "MUT-05",
+      "deepDiveId": "DEEP-CAT777-FUEL-001",
+      "mutation": "inventObserved",
+      "expected": "reject",
+      "observedData": null
+    },
+    {
+      "id": "MUT-06",
+      "deepDiveId": "DEEP-CAT6030-OIL-001",
+      "mutation": "inventOemReview",
+      "expected": "reject",
+      "observedData": null
+    },
+    {
+      "id": "MUT-07",
+      "deepDiveId": "DEEP-LOADER-CYL-001",
+      "mutation": "eraseAlternative",
+      "expected": "reject",
+      "observedData": null
+    },
+    {
+      "id": "MUT-08",
+      "deepDiveId": "DEEP-DR410-FEED-001",
+      "mutation": "alterHypothesis",
+      "expected": "reject",
+      "observedData": null
+    },
+    {
+      "id": "MUT-09",
+      "deepDiveId": "DEEP-DI650-COMP-001",
+      "mutation": "inventMethod",
+      "expected": "reject",
+      "observedData": null
+    },
+    {
+      "id": "MUT-10",
+      "deepDiveId": "DEEP-CAT16-TIRE-001",
+      "mutation": "dropSafety",
+      "expected": "reject",
+      "observedData": null
+    },
+    {
+      "id": "MUT-11",
+      "deepDiveId": "DEEP-CAT777-FUEL-001",
+      "mutation": "dropMetadata",
+      "expected": "reject",
+      "observedData": null
+    },
+    {
+      "id": "MUT-12",
+      "deepDiveId": "DEEP-CAT6030-OIL-001",
+      "mutation": "deleteStage",
+      "expected": "reject",
+      "observedData": null
+    },
+    {
+      "id": "MUT-13",
+      "deepDiveId": "DEEP-LOADER-CYL-001",
+      "mutation": "deleteRequirement",
+      "expected": "reject",
+      "observedData": null
+    },
+    {
+      "id": "MUT-14",
+      "deepDiveId": "DEEP-DR410-FEED-001",
+      "mutation": "wrongSourceTest",
+      "expected": "reject",
+      "observedData": null
+    },
+    {
+      "id": "MUT-15",
+      "deepDiveId": "DEEP-DI650-COMP-001",
+      "mutation": "inventSource",
+      "expected": "reject",
+      "observedData": null
+    },
+    {
+      "id": "MUT-16",
+      "deepDiveId": "DEEP-CAT16-TIRE-001",
+      "mutation": "duplicateId",
+      "expected": "reject",
+      "observedData": null
+    }
+  ]
+}

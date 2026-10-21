@@ -1,0 +1,884 @@
+{
+  "schema": "fmea-mining.playbook-deepdives.v1",
+  "version": "1.3.18",
+  "editorialNature": "roteiros_propostos_para_playbooks_sinteticos_sem_eventos_reais",
+  "mappingPolicy": "IDs dos playbooks originais e H1/H2/H3 sao preservados; caminhos causais e registros SAP nao sao associados sem prova.",
+  "counts": {
+    "playbooksInSource": 12,
+    "newDeepdives": 6,
+    "otherPlaybooksWithoutThisDeepDive": 6,
+    "proposedStages": 18,
+    "readinessRequirements": 24,
+    "eventsObserved": 0,
+    "causesConfirmed": 0
+  },
+  "otherPlaybookIds": [
+    "PB-EXC-HOSE-01",
+    "PB-SHOVEL-COOL-01",
+    "PB-TRUCK-FINAL-01",
+    "PB-DOZER-TRACK-01",
+    "PB-EXC-PUMP-01",
+    "PB-LOADER-RADIATOR-01"
+  ],
+  "records": [
+    {
+      "id": "DEEP-LOADER-CYL-001",
+      "playbookId": "PB-LOADER-CYL-01",
+      "sourcePlaybookVersion": "1.2.1",
+      "originScenarioStatus": "cenario_autoral_sintetico",
+      "system": "implementos_hidraulicos",
+      "title": "Carregadeira CAT 980 — perda de posição do implemento",
+      "modelIds": [
+        "CAT980"
+      ],
+      "objective": "Distinguir perda externa, deriva por circuito interno e fuga de linha antes de atribuir defeito ao cilindro.",
+      "hypotheses": [
+        {
+          "id": "H1",
+          "label": "Vedação externa do cilindro com perda de estanqueidade",
+          "expectedSigns": "Perda identificada junto à haste/junta",
+          "counterSigns": "Exterior seco e perda localizada em outro ponto"
+        },
+        {
+          "id": "H2",
+          "label": "Vazamento interno do cilindro ou válvula de retenção",
+          "expectedSigns": "Deriva mensurável sem perda externa e teste discriminante de circuito",
+          "counterSigns": "Estanqueidade e retenção confirmadas por método OEM"
+        },
+        {
+          "id": "H3",
+          "label": "Fuga em mangueira ou conexão de alimentação",
+          "expectedSigns": "Trilha de óleo inicia na linha/conexão",
+          "counterSigns": "Conexões íntegras, origem localizada no cilindro"
+        }
+      ],
+      "sourceTestIds": [
+        "T1",
+        "T2"
+      ],
+      "stages": [
+        {
+          "id": "S1",
+          "methodId": "EV-01",
+          "sourceTestId": "T1",
+          "question": "Após sustentar mecanicamente o implemento e isolar energias, qual é a origem exata da trilha de óleo ao longo de haste, interfaces e linhas?",
+          "signals": {
+            "H1": "Fluido surgindo junto à vedação da haste favorece fuga externa do cilindro, sem demonstrar falha interna.",
+            "H2": "Ausência de vazamento externo não prova retenção interna nem identifica qual válvula poderia falhar.",
+            "H3": "Trilha começando na mangueira ou conexão de alimentação favorece fuga externa da linha."
+          },
+          "nonDiscrimination": "Óleo espalhado antes do isolamento ou superfície limpa sem registro de origem não permite atribuir a falha a nenhuma peça.",
+          "requiredMetadata": [
+            "equipmentContext",
+            "dateTime",
+            "isolationStatus",
+            "implementMechanicalSupport",
+            "inspectionLocation",
+            "photographicTrace"
+          ],
+          "safeBoundary": "Nunca permanecer sob implemento sustentado apenas por hidráulica; descarregar pressão residual e seguir bloqueio e escoramento conforme OEM.",
+          "performed": false,
+          "resultObserved": null,
+          "oemEffective": false,
+          "independentEvidenceVerified": false
+        },
+        {
+          "id": "S2",
+          "methodId": "EV-12",
+          "sourceTestId": "T2",
+          "question": "Há deriva de posição mensurada em teste de retenção autorizado, separando condição da carga e arquitetura de válvulas do cilindro?",
+          "signals": {
+            "H1": "Se um vazamento externo documentado acompanha deriva, investigar relação causal sem pressupor uma única origem.",
+            "H2": "Deriva persistente sem fuga externa reforça vazamento interno ou deficiência de retenção, mas não distingue esses componentes.",
+            "H3": "Fuga documentada em linha sob condição comparável pode explicar deriva sem culpa do cilindro."
+          },
+          "nonDiscrimination": "A deriva isolada, sem isolamento correto do circuito e referência por arranjo, não distingue vedação interna de válvula ou linha.",
+          "requiredMetadata": [
+            "equipmentContext",
+            "dateTime",
+            "oemProcedureReference",
+            "loadCondition",
+            "isolationStatus",
+            "positionTrend"
+          ],
+          "safeBoundary": "Não executar deriva deliberada com pessoas em alcance de esmagamento; ensaio apenas com suporte e procedimento OEM autorizado.",
+          "performed": false,
+          "resultObserved": null,
+          "oemEffective": false,
+          "independentEvidenceVerified": false
+        },
+        {
+          "id": "S3",
+          "methodId": "EV-05",
+          "sourceTestId": null,
+          "question": "A medição instrumentada por pontos OEM consegue separar perdas de pressão do cilindro, da válvula de retenção e da linha sem extrapolar limites?",
+          "signals": {
+            "H1": "Perda externa e ponto de fuga verificados orientam a condição da vedação externa, independentemente de retenção interna.",
+            "H2": "Medição seletiva comparada ao esquema OEM pode favorecer circuito interno ou retenção, sujeita à contraprova específica.",
+            "H3": "Queda entre pontos de linha associada a fuga localizada pode reforçar hipótese da alimentação."
+          },
+          "nonDiscrimination": "Pressões sem pontos efetivos, instrumento calibrado, carga e circuito isolado podem ser compatíveis com as três hipóteses.",
+          "requiredMetadata": [
+            "equipmentContext",
+            "dateTime",
+            "oemHydraulicSchematic",
+            "measurementPorts",
+            "instrumentCalibration",
+            "loadCondition"
+          ],
+          "safeBoundary": "Não instalar instrumentos em circuito pressurizado ou abrir portas sem o procedimento específico e pessoal habilitado.",
+          "performed": false,
+          "resultObserved": null,
+          "oemEffective": false,
+          "independentEvidenceVerified": false
+        }
+      ],
+      "readiness": {
+        "requires": [
+          "Identificação do cilindro, porta hidráulica, válvula associada e configuração OEM efetiva",
+          "Registro de origem de óleo externo com fotos, posição e isolamento de energia",
+          "Ensaio de deriva ou retenção com procedimento e condições controladas pelo fabricante",
+          "Diagnóstico independente que separe vedação interna de válvula de retenção e linha de alimentação"
+        ],
+        "whenMissing": "inconclusivo",
+        "whenComplete": "apto_para_revisao_nao_confirmado"
+      },
+      "sourceIds": [
+        "CAT-HYD-HOSE-INSPECT",
+        "CAT-HYD-TECHNICAL-ANALYSIS",
+        "ISO-13379-1-2025"
+      ],
+      "sourceNature": "literatura_geral_sem_efetividade_de_serie",
+      "linkedCausalChainId": null,
+      "serialOrArrangement": null,
+      "sapLocationId": null,
+      "confirmedComponentCode": null,
+      "caseReview": {
+        "engineering": null,
+        "independent": null,
+        "oem": null,
+        "status": "pendente_sem_evidencia"
+      },
+      "executionStatus": "not_performed",
+      "observedEvents": 0,
+      "confirmedRootCause": false,
+      "approvedForOperationalUse": false
+    },
+    {
+      "id": "DEEP-DR410-FEED-001",
+      "playbookId": "PB-DRILL-DR410-FEED-01",
+      "sourcePlaybookVersion": "1.2.1",
+      "originScenarioStatus": "cenario_autoral_sintetico",
+      "system": "avanco_perfuratriz",
+      "title": "Perfuratriz DR410i — avanço irregular",
+      "modelIds": [
+        "EQ05"
+      ],
+      "objective": "Distinguir geometria e corrente do avanço, restrição de guias e resposta hidráulica ou comando.",
+      "hypotheses": [
+        {
+          "id": "H1",
+          "label": "Corrente de avanço com desgaste/tensão inadequada",
+          "expectedSigns": "Folga, desgaste ou geometria incompatível com o ajuste especificado",
+          "counterSigns": "Corrente inspecionada e medida dentro do limite aplicável"
+        },
+        {
+          "id": "H2",
+          "label": "Guiamento ou elementos deslizantes oferecendo resistência",
+          "expectedSigns": "Marcas de contato, sujeira ou restrição mecânica em guias",
+          "counterSigns": "Guias íntegras e livres após inspeção"
+        },
+        {
+          "id": "H3",
+          "label": "Oscilação hidráulica ou de controle do avanço",
+          "expectedSigns": "Resposta irregular mesmo sem impedimento mecânico demonstrado",
+          "counterSigns": "Comando e circuito se comportam conforme testes OEM"
+        }
+      ],
+      "sourceTestIds": [
+        "T1",
+        "T2"
+      ],
+      "stages": [
+        {
+          "id": "S1",
+          "methodId": "EV-01",
+          "sourceTestId": "T1",
+          "question": "Com mastro travado e energia isolada, existem marcas localizadas, material aprisionado, danos visíveis na corrente ou impedimento das guias?",
+          "signals": {
+            "H1": "Desgaste e assentamento anormal da corrente ou rodas dentadas favorecem necessidade de investigar tensionamento.",
+            "H2": "Marcas de arrasto e acúmulo de material nas guias favorecem resistência mecânica de guiamento.",
+            "H3": "Ausência de impedimento visível aumenta a necessidade de avaliar controle, mas não o comprova."
+          },
+          "nonDiscrimination": "Inspeção sem acesso à trajetória completa, ou com o mastro previamente desmontado, não isola mecanismo inicial.",
+          "requiredMetadata": [
+            "equipmentContext",
+            "dateTime",
+            "isolationStatus",
+            "mastSupport",
+            "inspectionLocation",
+            "visualDocumentation"
+          ],
+          "safeBoundary": "Nunca acessar mastro suspenso ou apoiar-se na corrente; eliminar movimento residual com travamento e procedimento Sandvik aplicável.",
+          "performed": false,
+          "resultObserved": null,
+          "oemEffective": false,
+          "independentEvidenceVerified": false
+        },
+        {
+          "id": "S2",
+          "methodId": "EV-14",
+          "sourceTestId": "T2",
+          "question": "Tendências de demanda, resposta, posição e carga do avanço mostram perda de correspondência mesmo quando o guiamento é verificado?",
+          "signals": {
+            "H1": "Carga elevada com corrente tensionada incorretamente é compatível com H1, mas telemetria não mede ajuste mecânico.",
+            "H2": "Resposta degradada acompanhada de pontos de atrito documentados reforça H2, sem excluir controle.",
+            "H3": "Diferença entre comando e deslocamento sem restrição mecânica comprovada exige investigar o circuito e controle."
+          },
+          "nonDiscrimination": "Dado de telemetria sem identificador de canal, regime, lacunas de comunicação e referência do controle não discrimina.",
+          "requiredMetadata": [
+            "equipmentContext",
+            "dateTime",
+            "telemetryChannel",
+            "feedDirection",
+            "loadCondition",
+            "dataQuality"
+          ],
+          "safeBoundary": "Não contornar intertravamentos nem comandar avanço para investigar resistência com pessoas na zona de esmagamento.",
+          "performed": false,
+          "resultObserved": null,
+          "oemEffective": false,
+          "independentEvidenceVerified": false
+        },
+        {
+          "id": "S3",
+          "methodId": "EV-02",
+          "sourceTestId": null,
+          "question": "A verificação dimensional de corrente, deslocamento e guias utiliza critério OEM específico e instrumentos rastreáveis?",
+          "signals": {
+            "H1": "Geometria ou ajuste fora de referência do fabricante sob medição válida fortalece suspeita de H1.",
+            "H2": "Desalinhamento ou folga de guia comprovados podem sustentar H2 independentemente de tensão da corrente.",
+            "H3": "Medições mecânicas conformes reduzem parte das hipóteses mecânicas e orientam teste OEM do comando."
+          },
+          "nonDiscrimination": "Desgaste aparentemente visual e ausência de tolerâncias da variante não permitem classificar qualquer componente fora de especificação.",
+          "requiredMetadata": [
+            "equipmentContext",
+            "dateTime",
+            "oemPublicationRevision",
+            "measurementLocation",
+            "instrumentCalibration",
+            "mastSupport"
+          ],
+          "safeBoundary": "Não tensionar, soltar ou ajustar corrente de avanço sem bloquear energia acumulada e observar sequência OEM por configuração.",
+          "performed": false,
+          "resultObserved": null,
+          "oemEffective": false,
+          "independentEvidenceVerified": false
+        }
+      ],
+      "readiness": {
+        "requires": [
+          "Variante e arranjo do DR410i identificados com manual My Sandvik efetivo",
+          "Condição das correntes, guias, patins e rodas dentadas documentada com mastro apoiado",
+          "Medição de ajuste/tensão por referência OEM, sem inventar folga ou tolerância",
+          "Registro de comando e resposta com análise independente de interferência mecânica"
+        ],
+        "whenMissing": "inconclusivo",
+        "whenComplete": "apto_para_revisao_nao_confirmado"
+      },
+      "sourceIds": [
+        "SANDVIK-DR410i",
+        "SANDVIK-DR410i-SPEC",
+        "ISO-17359-2018"
+      ],
+      "sourceNature": "literatura_geral_sem_efetividade_de_serie",
+      "linkedCausalChainId": null,
+      "serialOrArrangement": null,
+      "sapLocationId": null,
+      "confirmedComponentCode": null,
+      "caseReview": {
+        "engineering": null,
+        "independent": null,
+        "oem": null,
+        "status": "pendente_sem_evidencia"
+      },
+      "executionStatus": "not_performed",
+      "observedEvents": 0,
+      "confirmedRootCause": false,
+      "approvedForOperationalUse": false
+    },
+    {
+      "id": "DEEP-DI650-COMP-001",
+      "playbookId": "PB-DRILL-DI650-COMP-01",
+      "sourcePlaybookVersion": "1.2.1",
+      "originScenarioStatus": "cenario_autoral_sintetico",
+      "system": "pneumatico_perfuratriz",
+      "title": "Perfuratriz DI650i — pressão pneumática insuficiente",
+      "modelIds": [
+        "EQ06"
+      ],
+      "objective": "Isolar restrição de admissão, fuga pneumática e capacidade/comando do compressor.",
+      "hypotheses": [
+        {
+          "id": "H1",
+          "label": "Restrição de filtro de admissão/compressor",
+          "expectedSigns": "Indicação de restrição e inspeção do elemento coerentes",
+          "counterSigns": "Filtro e fluxo de admissão em condição especificada"
+        },
+        {
+          "id": "H2",
+          "label": "Perda de estanqueidade em conexão ou mangueira pneumática",
+          "expectedSigns": "Vazamento localizado e queda de pressão correlacionada",
+          "counterSigns": "Circuito íntegro e estanque em verificação autorizada"
+        },
+        {
+          "id": "H3",
+          "label": "Deficiência interna do compressor ou comando de carga",
+          "expectedSigns": "Pressão insuficiente persiste após excluir restrições/fugas",
+          "counterSigns": "Desempenho do compressor dentro da faixa OEM em carga comparável"
+        }
+      ],
+      "sourceTestIds": [
+        "T1",
+        "T2"
+      ],
+      "stages": [
+        {
+          "id": "S1",
+          "methodId": "EV-01",
+          "sourceTestId": "T1",
+          "question": "Com o circuito comprovadamente despressurizado, a admissão e as linhas apresentam restrição visível ou sinais localizados de fuga?",
+          "signals": {
+            "H1": "Elemento filtrante e admissão com restrição demonstrável favorecem H1, sem mostrar quanto a capacidade diminuiu.",
+            "H2": "Mangueira ou conexão com perda de estanqueidade identificada favorece H2, sem condenar compressor.",
+            "H3": "Ausência de achado externo orienta ensaio controlado de compressor e comando, não prova H3."
+          },
+          "nonDiscrimination": "Sujeira normal do filtro, som ambiente e inspeção sem rastrear origem da fuga não quantificam restrição ou estanqueidade.",
+          "requiredMetadata": [
+            "equipmentContext",
+            "dateTime",
+            "isolationStatus",
+            "filterElementReference",
+            "inspectionLocation",
+            "lineTrace"
+          ],
+          "safeBoundary": "Circuito pneumático requer despressurização confirmada e isolamento; não procurar fugas com a pele ou desmontar vaso carregado.",
+          "performed": false,
+          "resultObserved": null,
+          "oemEffective": false,
+          "independentEvidenceVerified": false
+        },
+        {
+          "id": "S2",
+          "methodId": "EV-05",
+          "sourceTestId": "T2",
+          "question": "Uma medição em pontos autorizados registra pressão e condição de carga suficientes para separar admissão, fuga e deficiência do compressor?",
+          "signals": {
+            "H1": "Queda associada à restrição de admissão validada pode apoiar H1 sem estabelecer o elemento defeituoso.",
+            "H2": "Perda localizada em linha e queda correspondente sob método OEM podem favorecer H2.",
+            "H3": "Capacidade insuficiente persistente após exclusão de restrições e fugas pode favorecer H3, sem isolá-lo do comando."
+          },
+          "nonDiscrimination": "Pressão abaixo de referência sem portas, válvulas, comando e configuração do compressor identificados não define a peça causadora.",
+          "requiredMetadata": [
+            "equipmentContext",
+            "dateTime",
+            "oemPneumaticSchematic",
+            "measurementPort",
+            "instrumentCalibration",
+            "loadCondition"
+          ],
+          "safeBoundary": "Não improvisar derivações, bloquear válvulas de segurança ou utilizar pressão para descobrir vazamento expondo pessoas ao jato.",
+          "performed": false,
+          "resultObserved": null,
+          "oemEffective": false,
+          "independentEvidenceVerified": false
+        },
+        {
+          "id": "S3",
+          "methodId": "EV-14",
+          "sourceTestId": null,
+          "question": "Com os canais OEM identificados, a demanda de carga e a resposta pneumática distinguem falha de controle de perda de capacidade mecânica?",
+          "signals": {
+            "H1": "Comando normal com restrição de admissão comprovada mantém H1 plausível.",
+            "H2": "Comando coerente e fuga documentada sob carga mantêm H2 como explicação alternativa.",
+            "H3": "Demanda de carga não atendida sem fuga/restrição demonstrada indica necessidade de testes de comando e compressor."
+          },
+          "nonDiscrimination": "Falha de sensor, instrumento não calibrado, regime de perfuração diferente ou compressor de outra variante deixam o resultado inconclusivo.",
+          "requiredMetadata": [
+            "equipmentContext",
+            "dateTime",
+            "oemCompressorVariant",
+            "controlDemandChannel",
+            "pressureTrend",
+            "loadCondition"
+          ],
+          "safeBoundary": "Não forçar carga de compressor ou alterar parâmetros de proteção para produzir sintoma; usar coleta de dados autorizada.",
+          "performed": false,
+          "resultObserved": null,
+          "oemEffective": false,
+          "independentEvidenceVerified": false
+        }
+      ],
+      "readiness": {
+        "requires": [
+          "Variante/arranjo do DI650i e manual de compressor efetivos confirmados",
+          "Estado do filtro, admissão e linhas registrado com equipamento seguro e despressurizado",
+          "Medição de pressão e vazão por portas e regimes OEM com instrumento calibrado",
+          "Correlação independente de comando de carga, condição da fuga e pressão efetivamente medida"
+        ],
+        "whenMissing": "inconclusivo",
+        "whenComplete": "apto_para_revisao_nao_confirmado"
+      },
+      "sourceIds": [
+        "SANDVIK-DI650I-S5-SPEC",
+        "ISO-17359-2018",
+        "CAT-CONDITION-MONITORING-MULTISOURCE"
+      ],
+      "sourceNature": "literatura_geral_sem_efetividade_de_serie",
+      "linkedCausalChainId": null,
+      "serialOrArrangement": null,
+      "sapLocationId": null,
+      "confirmedComponentCode": null,
+      "caseReview": {
+        "engineering": null,
+        "independent": null,
+        "oem": null,
+        "status": "pendente_sem_evidencia"
+      },
+      "executionStatus": "not_performed",
+      "observedEvents": 0,
+      "confirmedRootCause": false,
+      "approvedForOperationalUse": false
+    },
+    {
+      "id": "DEEP-CAT16-TIRE-001",
+      "playbookId": "PB-GRADER-TIRE-01",
+      "sourcePlaybookVersion": "1.2.1",
+      "originScenarioStatus": "cenario_autoral_sintetico",
+      "system": "pneus_rodas",
+      "title": "Motoniveladora CAT 16 — desgaste irregular de pneus",
+      "modelIds": [
+        "EQ09"
+      ],
+      "objective": "Confrontar pressão de inflação, geometria/direção e aplicação do pneu antes de atribuir desgaste a um componente.",
+      "hypotheses": [
+        {
+          "id": "H1",
+          "label": "Pressão de inflação incompatível com carga e aplicação",
+          "expectedSigns": "Registro/calibração confirmam valor fora da recomendação vigente",
+          "counterSigns": "Pressão e condição de carga coerentes com ficha aplicável"
+        },
+        {
+          "id": "H2",
+          "label": "Desalinhamento ou folga no sistema de direção/rodas",
+          "expectedSigns": "Desgaste direcional correlacionado à geometria e folgas",
+          "counterSigns": "Geometria e articulações em condição correta"
+        },
+        {
+          "id": "H3",
+          "label": "Condição de solo/operação ou pneu inadequado à aplicação",
+          "expectedSigns": "Registro de operação ou especificação mostra incompatibilidade",
+          "counterSigns": "Pneu/aplicação compatíveis com histórico de operação"
+        }
+      ],
+      "sourceTestIds": [
+        "T1",
+        "T2"
+      ],
+      "stages": [
+        {
+          "id": "S1",
+          "methodId": "EV-02",
+          "sourceTestId": "T1",
+          "question": "O perfil de desgaste foi mapeado em posições comparáveis de cada pneu, com profundidade, danos e identificação de montagem?",
+          "signals": {
+            "H1": "Padrão de desgaste compatível com pressão inadequada justifica medição, não prova histórico de inflação.",
+            "H2": "Desgaste direcional assimétrico pode sugerir desalinhamento, sujeito a medições de geometria.",
+            "H3": "Desgaste por abrasão, cortes ou arraste em piso severo pode indicar condições de aplicação concorrentes."
+          },
+          "nonDiscrimination": "Marcas de desgaste sem medição inicial ou identificação de posição/rodízio não distinguem pressão, alinhamento e ciclo de operação.",
+          "requiredMetadata": [
+            "equipmentContext",
+            "dateTime",
+            "tireMakeSizeLoadRating",
+            "wheelPosition",
+            "treadMeasurementMap",
+            "visualDocumentation"
+          ],
+          "safeBoundary": "Inspeção por profissional habilitado em área isolada; não intervir em conjunto pressurizado ou danificado sem procedimento de segurança de pneus.",
+          "performed": false,
+          "resultObserved": null,
+          "oemEffective": false,
+          "independentEvidenceVerified": false
+        },
+        {
+          "id": "S2",
+          "methodId": "EV-05",
+          "sourceTestId": "T2",
+          "question": "A pressão fria medida por equipe de pneus com instrumento rastreável atende à recomendação vigente para o pneu, carga e aplicação efetivos?",
+          "signals": {
+            "H1": "Pressão fria fora da recomendação aplicável favorece condição de inflação incompatível, mas não prova causa histórica do desgaste.",
+            "H2": "Pressão correta sob contexto comparável mantém geometria e folgas como hipóteses abertas.",
+            "H3": "Pressão atual conforme não exclui mudanças de carga, operação ou pressão durante vida anterior do pneu."
+          },
+          "nonDiscrimination": "Medir pneu aquecido ou copiar tabela de outro produto não autoriza correção, liberação ou diagnóstico do desgaste.",
+          "requiredMetadata": [
+            "equipmentContext",
+            "dateTime",
+            "coldTireStatus",
+            "tireManufacturerReference",
+            "loadCondition",
+            "instrumentCalibration"
+          ],
+          "safeBoundary": "Não esvaziar pneu quente, não se posicionar na trajetória de projeção e não inflar desmontagem fora de procedimento profissional.",
+          "performed": false,
+          "resultObserved": null,
+          "oemEffective": false,
+          "independentEvidenceVerified": false
+        },
+        {
+          "id": "S3",
+          "methodId": "EV-13",
+          "sourceTestId": null,
+          "question": "Os registros de alinhamento, folgas, rotações das posições e ciclos de operação são suficientes para confrontar mecanismo direcional e abrasivo?",
+          "signals": {
+            "H1": "Histórico documentado de pressão inadequada e desgaste temporal coerente pode apoiar H1 sem excluir causas simultâneas.",
+            "H2": "Desvios de geometria efetivamente medidos e tendência direcional podem apoiar H2, mediante revisão do sistema de direção.",
+            "H3": "Operação em curvas severas, abrasividade, carga e produto inadequado à aplicação podem apoiar H3."
+          },
+          "nonDiscrimination": "Histórico sem data/posição, ou dados apenas de um pneu, não permitem atribuir mecanismo dominante.",
+          "requiredMetadata": [
+            "equipmentContext",
+            "dateTime",
+            "alignmentRecord",
+            "tireRotationHistory",
+            "roadSurface",
+            "loadCycle"
+          ],
+          "safeBoundary": "A revisão é documental; medições físicas de alinhamento e inspeção de pneus devem seguir isolamento e instruções OEM.",
+          "performed": false,
+          "resultObserved": null,
+          "oemEffective": false,
+          "independentEvidenceVerified": false
+        }
+      ],
+      "readiness": {
+        "requires": [
+          "Identificação da medida, marca/modelo, montagem e índice de carga dos pneus efetivos",
+          "Mapa de desgaste por posição e método dimensional rastreável, com inspeção profissional de integridade",
+          "Pressão fria comparada à recomendação do fabricante por carga e aplicação, por profissional habilitado",
+          "Registro de geometria, condições de piso, ciclo operacional e contraprova independente"
+        ],
+        "whenMissing": "inconclusivo",
+        "whenComplete": "apto_para_revisao_nao_confirmado"
+      },
+      "sourceIds": [
+        "MICHELIN-EARTHMOVER-TIRE-INSPECTION",
+        "MICHELIN-EARTHMOVER-TIRE-PRESSURE",
+        "ISO-17359-2018"
+      ],
+      "sourceNature": "literatura_geral_sem_efetividade_de_serie",
+      "linkedCausalChainId": null,
+      "serialOrArrangement": null,
+      "sapLocationId": null,
+      "confirmedComponentCode": null,
+      "caseReview": {
+        "engineering": null,
+        "independent": null,
+        "oem": null,
+        "status": "pendente_sem_evidencia"
+      },
+      "executionStatus": "not_performed",
+      "observedEvents": 0,
+      "confirmedRootCause": false,
+      "approvedForOperationalUse": false
+    },
+    {
+      "id": "DEEP-CAT777-FUEL-001",
+      "playbookId": "PB-TRUCK-FUEL-01",
+      "sourcePlaybookVersion": "1.2.1",
+      "originScenarioStatus": "cenario_autoral_sintetico",
+      "system": "combustivel",
+      "title": "Caminhão CAT 777 — perda de potência e água no combustível",
+      "modelIds": [
+        "CAT777"
+      ],
+      "objective": "Separar contaminação de combustível, restrição física de filtro e erro de leitura de alimentação.",
+      "hypotheses": [
+        {
+          "id": "H1",
+          "label": "Água ou sedimentos ingressaram no combustível",
+          "expectedSigns": "Coleta/drenagem representativa demonstram contaminante",
+          "counterSigns": "Amostras controladas e histórico de tanque sem indícios de água"
+        },
+        {
+          "id": "H2",
+          "label": "Filtro do combustível com restrição",
+          "expectedSigns": "Indicador e teste OEM apontam diferencial de pressão incompatível",
+          "counterSigns": "Restrição não confirmada em condições comparáveis"
+        },
+        {
+          "id": "H3",
+          "label": "Falha de sensor ou controle sem restrição real de alimentação",
+          "expectedSigns": "Medição independente contradiz leitura do controle",
+          "counterSigns": "Medição independente confirma pressão/fluxo efetivamente baixos"
+        }
+      ],
+      "sourceTestIds": [
+        "T1",
+        "T2"
+      ],
+      "stages": [
+        {
+          "id": "S1",
+          "methodId": "EV-10",
+          "sourceTestId": "T1",
+          "question": "A água ou sedimento foi comprovada por amostra representativa com cadeia de rastreio do tanque e da alimentação?",
+          "signals": {
+            "H1": "Contaminante confirmado em amostras comparáveis sustenta H1 como condição de fluido, não dano de dreno.",
+            "H2": "Contaminação pode favorecer restrição de elemento filtrante, mas só ensaio diferenciado identifica restrição.",
+            "H3": "Amostra sem contaminante enfraquece H1 na ocasião e não valida leitura do sensor."
+          },
+          "nonDiscrimination": "Amostra contaminada durante coleta, só de fundo sem contexto ou sem identificação de compartimento não define origem nem falha.",
+          "requiredMetadata": [
+            "equipmentContext",
+            "dateTime",
+            "samplingPoint",
+            "fuelBatch",
+            "laboratoryMethod",
+            "sampleChainOfCustody"
+          ],
+          "safeBoundary": "Coleta conforme instrução de combustível, sem chama e com contenção ambiental; não abrir circuito de alta pressão.",
+          "performed": false,
+          "resultObserved": null,
+          "oemEffective": false,
+          "independentEvidenceVerified": false
+        },
+        {
+          "id": "S2",
+          "methodId": "EV-05",
+          "sourceTestId": "T2",
+          "question": "A diferença de pressão ou vazão no filtro foi medida com elemento, portas, regime e referência OEM correspondentes?",
+          "signals": {
+            "H1": "Combustível fora de especificação pode explicar restrição secundária, mantendo investigação da origem.",
+            "H2": "Restrição verificada por instrumento independente nos pontos OEM favorece H2; elemento removido requer critério de substituição.",
+            "H3": "Medição conforme especificação quando painel acusa baixa pressão orienta investigar sensor e comando."
+          },
+          "nonDiscrimination": "Queda de potência, código de alarme ou pressão isolada sem referência não diferencia contaminação, filtro e eletrônica.",
+          "requiredMetadata": [
+            "equipmentContext",
+            "dateTime",
+            "oemFuelSchematic",
+            "filterPartReference",
+            "measurementPorts",
+            "instrumentCalibration"
+          ],
+          "safeBoundary": "Nunca soltar conexões de combustível sob pressão ou procurar jato com mãos; executar apenas procedimento OEM autorizado.",
+          "performed": false,
+          "resultObserved": null,
+          "oemEffective": false,
+          "independentEvidenceVerified": false
+        },
+        {
+          "id": "S3",
+          "methodId": "EV-06",
+          "sourceTestId": null,
+          "question": "A leitura independente do circuito de indicação permite distinguir sensor ou fiação de queda real de pressão de alimentação?",
+          "signals": {
+            "H1": "Medição real baixa com amostra contaminada torna H1 plausível, exigindo confirmar mecanismo de ingresso.",
+            "H2": "Pressão diferencial comprovada anormal reforça H2, apesar de sintomas eletrônicos concomitantes.",
+            "H3": "Sensor ou sinal divergente de medição confiável favorece H3, sem provar ausência de outras falhas intermitentes."
+          },
+          "nonDiscrimination": "Teste sem pinagem específica, aterramento, alimentação ou medição independente pode induzir diagnóstico elétrico falso.",
+          "requiredMetadata": [
+            "equipmentContext",
+            "dateTime",
+            "oemElectricalSchematic",
+            "sensorChannel",
+            "referenceInstrument",
+            "isolationStatus"
+          ],
+          "safeBoundary": "Não curto-circuitar sensores, burlar proteção eletrônica ou injetar tensão em módulo; trabalhar conforme esquema e categoria de segurança.",
+          "performed": false,
+          "resultObserved": null,
+          "oemEffective": false,
+          "independentEvidenceVerified": false
+        }
+      ],
+      "readiness": {
+        "requires": [
+          "Rastreio do abastecimento, produto, tanque, condições e identificação do ponto de coleta",
+          "Amostras representativas antes de drenagem/troca, com método e controle de contaminação externa",
+          "Medição diferencial/fluxo de filtro por portas e regimes OEM com elemento correto identificado",
+          "Contraprova de sensores versus instrumento independente e revisão da cronologia de perda de potência"
+        ],
+        "whenMissing": "inconclusivo",
+        "whenComplete": "apto_para_revisao_nao_confirmado"
+      },
+      "sourceIds": [
+        "CAT-FILTERS-FLUIDS-GUIDE",
+        "CAT-FUEL-WATER-SEPARATOR-PURPOSE",
+        "CAT-SOS-SAMPLING-GUIDE-PT"
+      ],
+      "sourceNature": "literatura_geral_sem_efetividade_de_serie",
+      "linkedCausalChainId": null,
+      "serialOrArrangement": null,
+      "sapLocationId": null,
+      "confirmedComponentCode": null,
+      "caseReview": {
+        "engineering": null,
+        "independent": null,
+        "oem": null,
+        "status": "pendente_sem_evidencia"
+      },
+      "executionStatus": "not_performed",
+      "observedEvents": 0,
+      "confirmedRootCause": false,
+      "approvedForOperationalUse": false
+    },
+    {
+      "id": "DEEP-CAT6030-OIL-001",
+      "playbookId": "PB-SHOVEL-MOTOR-OIL-01",
+      "sourcePlaybookVersion": "1.2.1",
+      "originScenarioStatus": "cenario_autoral_sintetico",
+      "system": "lubrificacao_motor",
+      "title": "Escavadeira CAT 6030 — alerta de lubrificação do motor",
+      "modelIds": [
+        "EQ02"
+      ],
+      "objective": "Distinguir restrição de filtro de óleo, condição físico-química do lubrificante e erro de indicação do motor.",
+      "hypotheses": [
+        {
+          "id": "H1",
+          "label": "Elemento filtrante de óleo com restrição",
+          "expectedSigns": "Indicador/pressão diferencial e inspeção conforme OEM mostram restrição",
+          "counterSigns": "Elemento e diferencial dentro dos critérios"
+        },
+        {
+          "id": "H2",
+          "label": "Degradação, mistura ou contaminação do óleo",
+          "expectedSigns": "Mudança de viscosidade e histórico de aplicação demonstram incompatibilidade",
+          "counterSigns": "Propriedades e produto corretos em amostra representativa"
+        },
+        {
+          "id": "H3",
+          "label": "Falha de indicação elétrica ou sensor sem pressão real anormal",
+          "expectedSigns": "Medição independente contradiz leitura do monitoramento",
+          "counterSigns": "Medição independente confirma pressão anormal"
+        }
+      ],
+      "sourceTestIds": [
+        "T1",
+        "T2"
+      ],
+      "stages": [
+        {
+          "id": "S1",
+          "methodId": "EV-13",
+          "sourceTestId": "T1",
+          "question": "O histórico de lubrificação comprova produto aplicado, lote, horas, intervenções anteriores e continuidade de anomalia sob condições similares?",
+          "signals": {
+            "H1": "Histórico de substituições fora de requisito pode orientar inspeção de filtro, sem comprovar obstrução.",
+            "H2": "Produto errado ou variação de viscosidade confirmada em laudo representativo fortalece H2.",
+            "H3": "Falhas de sensor anteriores justificam contraprova elétrica, mas não invalidam alarme atual."
+          },
+          "nonDiscrimination": "Histórico sem amostragem, validade do produto e comparação de carga/temperatura não prova filtro, óleo ou instrumento.",
+          "requiredMetadata": [
+            "equipmentContext",
+            "dateTime",
+            "engineArrangement",
+            "oilProduct",
+            "oilServiceHours",
+            "samplingTimeline"
+          ],
+          "safeBoundary": "Coletar fluido antes de intervenção apenas conforme procedimento seguro, respeitando óleo quente e risco de contaminação.",
+          "performed": false,
+          "resultObserved": null,
+          "oemEffective": false,
+          "independentEvidenceVerified": false
+        },
+        {
+          "id": "S2",
+          "methodId": "EV-05",
+          "sourceTestId": "T2",
+          "question": "O indicador de pressão foi confrontado com instrumento independente nos pontos OEM em regime de rotação e temperatura especificados?",
+          "signals": {
+            "H1": "Pressão diferencial efetiva no filtro, quando mensurável segundo OMM, pode apoiar H1 sem condenar peça.",
+            "H2": "Pressão alterada com propriedades de óleo não conformes pode apoiar H2, sem afirmar causa única.",
+            "H3": "Leitura do painel divergente de medição confiável favorece defeito de indicação H3."
+          },
+          "nonDiscrimination": "Uma pressão única abaixo de referência, sem canal, estado térmico e instrumento validado, pode indicar condição de sistema não prevista nas três hipóteses.",
+          "requiredMetadata": [
+            "equipmentContext",
+            "dateTime",
+            "oemPressureTest",
+            "instrumentCalibration",
+            "oilTemperature",
+            "engineSpeed"
+          ],
+          "safeBoundary": "Não manter motor em operação com suspeita de baixa pressão sem avaliação segura; não instalar instrumento em linha energizada.",
+          "performed": false,
+          "resultObserved": null,
+          "oemEffective": false,
+          "independentEvidenceVerified": false
+        },
+        {
+          "id": "S3",
+          "methodId": "EV-11",
+          "sourceTestId": null,
+          "question": "Em troca autorizada, o elemento filtrante removido foi inspecionado com rastreio, sem reinstalação, e comparado às demais evidências?",
+          "signals": {
+            "H1": "Achado físico de restrição ou detritos no filtro pode favorecer H1, desde que correlacionado ao ensaio do circuito.",
+            "H2": "Depósito ou alteração de fluido no elemento requer análise laboratorial para sustentar H2.",
+            "H3": "Filtro íntegro não confirma H3; sensor depende de teste elétrico e pressão independente."
+          },
+          "nonDiscrimination": "Elemento contaminado na abertura, registro sem posição/tempo, ausência de baseline ou óleo trocado antes da amostra não permite imputar causa.",
+          "requiredMetadata": [
+            "equipmentContext",
+            "dateTime",
+            "sampleBeforeIntervention",
+            "filterPartNumber",
+            "elementInspectionMethod",
+            "replacementRecord"
+          ],
+          "safeBoundary": "Não reinstalar filtro removido/aberto para inspeção; substituir filtro e óleo conforme condição e OMM, sob isolamento e controle ambiental.",
+          "performed": false,
+          "resultObserved": null,
+          "oemEffective": false,
+          "independentEvidenceVerified": false
+        }
+      ],
+      "readiness": {
+        "requires": [
+          "Referência do motor e circuito OEM efetivos, inclusive ponto de pressão e elemento filtrante",
+          "Histórico de produto, horas e amostra coletada antes de qualquer troca, com métodos laboratoriais válidos",
+          "Medição independente de pressão e estado de sensor/alarme conforme regime e temperatura do OEM",
+          "Exame rastreável do filtro removido com substituição apropriada e revisão técnica independente"
+        ],
+        "whenMissing": "inconclusivo",
+        "whenComplete": "apto_para_revisao_nao_confirmado"
+      },
+      "sourceIds": [
+        "CAT-ENGINE-OIL-FILTER-SERVICE",
+        "CAT-FLUID-ANALYSIS-101",
+        "CAT-SOS-SAMPLING-GUIDE-PT",
+        "ISO-17359-2018"
+      ],
+      "sourceNature": "literatura_geral_sem_efetividade_de_serie",
+      "linkedCausalChainId": null,
+      "serialOrArrangement": null,
+      "sapLocationId": null,
+      "confirmedComponentCode": null,
+      "caseReview": {
+        "engineering": null,
+        "independent": null,
+        "oem": null,
+        "status": "pendente_sem_evidencia"
+      },
+      "executionStatus": "not_performed",
+      "observedEvents": 0,
+      "confirmedRootCause": false,
+      "approvedForOperationalUse": false
+    }
+  ]
+}
