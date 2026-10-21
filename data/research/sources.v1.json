@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.research.sources.v1",
-  "version": "1.3.20",
+  "version": "1.3.22",
   "status": "literatura_de_referencia_nao_casos_empiricos",
   "rights": "somente_titulos_links_e_resumos_originais",
   "sources": [
@@ -610,6 +610,17 @@
       "limitation": "Referência genérica para TDTO e FDAO; não determina compatibilidade de óleo por compartimento CAT 777 ou interpretação de um laudo específico.",
       "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
       "lastReviewed": "2026-10-20"
+    },
+    {
+      "id": "PARKER-MOBILE-VANE-INTERNAL-LEAKAGE",
+      "organization": "Parker Hannifin",
+      "title": "Mobile Hydraulic Pumps, Catalogue HY29-0002/UK — internal leakage (typical)",
+      "url": "https://www.parker.com/Literature/Brazil/Catalogs/LMHD03.pdf",
+      "area": "pump_normal_internal_leakage_volumetric_characterization",
+      "role": "manufacturer_example_for_vane_pump_only",
+      "limitation": "Curvas e perdas internas são típicas para bombas de palhetas especificadas no catálogo Parker, NÃO para a bomba instalada CAT 395. O vazamento interno normal depende de projeto e condições; não usar valores ou limiares do catálogo em outros equipamentos.",
+      "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
+      "lastReviewed": "2026-10-21"
     }
   ]
 }

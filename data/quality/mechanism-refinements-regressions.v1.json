@@ -1,0 +1,153 @@
+{
+  "schema": "fmea-mining.mechanism-refinements-regressions.v1",
+  "version": "1.3.22",
+  "nature": "synthetic_only",
+  "baselineCases": [
+    {
+      "id": "BASE-ME-CAND-HYD-INTERNAL-LEAKAGE-001",
+      "refinementId": "ME-CAND-HYD-INTERNAL-LEAKAGE-001",
+      "expectedParent": "CAND-HYD-PUMP-INTERNAL-001",
+      "expectedKind": "candidate_mechanism_concept"
+    },
+    {
+      "id": "BASE-SUB-GEAR-ABRASION-001",
+      "refinementId": "SUB-GEAR-ABRASION-001",
+      "expectedParent": "CAND-FD-GEAR-TOOTH-001",
+      "expectedKind": "proposed_gear_damage_submode"
+    },
+    {
+      "id": "BASE-SUB-GEAR-ADHESION-001",
+      "refinementId": "SUB-GEAR-ADHESION-001",
+      "expectedParent": "CAND-FD-GEAR-TOOTH-001",
+      "expectedKind": "proposed_gear_damage_submode"
+    },
+    {
+      "id": "BASE-SUB-GEAR-FATIGUE-001",
+      "refinementId": "SUB-GEAR-FATIGUE-001",
+      "expectedParent": "CAND-FD-GEAR-TOOTH-001",
+      "expectedKind": "proposed_gear_damage_submode"
+    }
+  ],
+  "mutationCases": [
+    {
+      "id": "MUT-01",
+      "mutation": "promoteOntology",
+      "refinementId": "ME-CAND-HYD-INTERNAL-LEAKAGE-001",
+      "expected": "reject"
+    },
+    {
+      "id": "MUT-02",
+      "mutation": "promoteChain",
+      "refinementId": "SUB-GEAR-ABRASION-001",
+      "expected": "reject"
+    },
+    {
+      "id": "MUT-03",
+      "mutation": "fabricateSerial",
+      "refinementId": "SUB-GEAR-ADHESION-001",
+      "expected": "reject"
+    },
+    {
+      "id": "MUT-04",
+      "mutation": "fabricateLimit",
+      "refinementId": "SUB-GEAR-FATIGUE-001",
+      "expected": "reject"
+    },
+    {
+      "id": "MUT-05",
+      "mutation": "fabricateEvidence",
+      "refinementId": "ME-CAND-HYD-INTERNAL-LEAKAGE-001",
+      "expected": "reject"
+    },
+    {
+      "id": "MUT-06",
+      "mutation": "confirmCause",
+      "refinementId": "SUB-GEAR-ABRASION-001",
+      "expected": "reject"
+    },
+    {
+      "id": "MUT-07",
+      "mutation": "assignWrongParent",
+      "refinementId": "SUB-GEAR-ADHESION-001",
+      "expected": "reject"
+    },
+    {
+      "id": "MUT-08",
+      "mutation": "approveReviewer",
+      "refinementId": "SUB-GEAR-FATIGUE-001",
+      "expected": "reject"
+    },
+    {
+      "id": "MUT-09",
+      "mutation": "dropSafeBoundary",
+      "refinementId": "ME-CAND-HYD-INTERNAL-LEAKAGE-001",
+      "expected": "reject"
+    },
+    {
+      "id": "MUT-10",
+      "mutation": "inventSource",
+      "refinementId": "SUB-GEAR-ABRASION-001",
+      "expected": "reject"
+    },
+    {
+      "id": "MUT-11",
+      "mutation": "changeFunction",
+      "refinementId": "SUB-GEAR-ADHESION-001",
+      "expected": "reject"
+    },
+    {
+      "id": "MUT-12",
+      "mutation": "confuseMechanism",
+      "refinementId": "ME-CAND-HYD-INTERNAL-LEAKAGE-001",
+      "expected": "reject"
+    },
+    {
+      "id": "MUT-13",
+      "mutation": "confuseGearMechanisms",
+      "refinementId": "SUB-GEAR-FATIGUE-001",
+      "expected": "reject"
+    },
+    {
+      "id": "MUT-14",
+      "mutation": "dropEvidence",
+      "refinementId": "SUB-GEAR-ABRASION-001",
+      "expected": "reject"
+    },
+    {
+      "id": "MUT-15",
+      "mutation": "removeAlternative",
+      "refinementId": "SUB-GEAR-ADHESION-001",
+      "expected": "reject"
+    },
+    {
+      "id": "MUT-16",
+      "mutation": "reuseWaterPump",
+      "refinementId": "ME-CAND-HYD-INTERNAL-LEAKAGE-001",
+      "expected": "reject"
+    },
+    {
+      "id": "MUT-17",
+      "mutation": "approveNormalLeakageAsFault",
+      "refinementId": "ME-CAND-HYD-INTERNAL-LEAKAGE-001",
+      "expected": "reject"
+    },
+    {
+      "id": "MUT-18",
+      "mutation": "misquoteISO",
+      "refinementId": "SUB-GEAR-FATIGUE-001",
+      "expected": "reject"
+    },
+    {
+      "id": "MUT-19",
+      "mutation": "deleteRefinement",
+      "refinementId": "SUB-GEAR-ADHESION-001",
+      "expected": "reject"
+    },
+    {
+      "id": "MUT-20",
+      "mutation": "duplicateRefinement",
+      "refinementId": "SUB-GEAR-FATIGUE-001",
+      "expected": "reject"
+    }
+  ]
+}
