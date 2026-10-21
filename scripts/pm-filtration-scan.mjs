@@ -12,7 +12,7 @@ export function filterTerms(description){
 }
 export function discoverFiltration(db,rule){
  if(!FILTER_RULE_IDS.includes(rule?.id))throw Error('not_a_filtration_review_rule');
- const totals={modelLeafPaths:0,functionalGroupLeafPaths:0,withFilterTextInObjectType:0,partDescriptionMatches:0};
+ const totals={modelLeafPaths:0,functionalGroupLeafPaths:0,withFilterTextInObjectType:0,partDescriptionMatches:0,damageCauseCompatibleDescriptions:0};
  const groups=new Map();
  for(const l of db.locations){
   if(l.profundidade!==3||!rule.models.includes(l.modelo))continue;
@@ -23,12 +23,14 @@ export function discoverFiltration(db,rule){
   if(!matches.length)continue;
   totals.withFilterTextInObjectType++;
   totals.partDescriptionMatches+=matches.length;
+  const compatible=matches.filter(p=>db.compatibleFailureModesByPart?.[p.code]?.damageCauses?.[rule.damageId]?.includes(rule.causeId));
+  totals.damageCauseCompatibleDescriptions+=compatible.length;
   const key=JSON.stringify([l.sistema?.codigo,l.grupo?.codigo,l.subgrupo?.codigo]);
   const rec=groups.get(key)||{systemCode:l.sistema?.codigo||null,groupCode:l.grupo?.codigo||null,
    subgroupCode:l.subgrupo?.codigo||null,models:new Set(),objectTypeCount:new Set(),
-   eligibleLeafPaths:0,partDescriptionMatches:0,descriptorClasses:new Set()};
+   eligibleLeafPaths:0,partDescriptionMatches:0,damageCauseCompatibleDescriptions:0,descriptorClasses:new Set()};
   rec.models.add(l.modelo);rec.objectTypeCount.add(l.objetoTipoSAP);
-  rec.eligibleLeafPaths++;rec.partDescriptionMatches+=matches.length;
+  rec.eligibleLeafPaths++;rec.partDescriptionMatches+=matches.length;rec.damageCauseCompatibleDescriptions+=compatible.length;
   for(const p of matches)for(const t of filterTerms(p.pt))rec.descriptorClasses.add(t);
   groups.set(key,rec);
  }
@@ -36,6 +38,7 @@ export function discoverFiltration(db,rule){
    systemCode:g.systemCode,groupCode:g.groupCode,subgroupCode:g.subgroupCode,
    models:[...g.models].sort(),objectTypeCount:g.objectTypeCount.size,
    eligibleLeafPaths:g.eligibleLeafPaths,partDescriptionMatches:g.partDescriptionMatches,
+   damageCauseCompatibleDescriptions:g.damageCauseCompatibleDescriptions,
    descriptorClasses:[...g.descriptorClasses].sort(),
    disposition:'candidate_for_private_BOM_and_SAP_review_not_approved'
  })).sort((a,b)=>b.partDescriptionMatches-a.partDescriptionMatches||JSON.stringify(a).localeCompare(JSON.stringify(b)));
