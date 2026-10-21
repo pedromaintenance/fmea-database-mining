@@ -1,0 +1,385 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FMEA Mining: Provenance-Linked Unresolved Blockers v1.3.30",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "version",
+    "maturity",
+    "purpose",
+    "sourceUpdatePolicy",
+    "overview",
+    "workstreams",
+    "planningOrder",
+    "separateCriticalPaths",
+    "exclusions",
+    "nextExternalDecision"
+  ],
+  "properties": {
+    "schema": {
+      "const": "fmea-mining.consolidated-blockers.v1"
+    },
+    "version": {
+      "const": "1.3.30"
+    },
+    "maturity": {
+      "const": "editorial_readiness_matrix_no_corporate_approvals"
+    },
+    "purpose": {
+      "type": "string",
+      "minLength": 100
+    },
+    "sourceUpdatePolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "requiresSourceRevalidation",
+        "noManualOverridingCounts",
+        "neverMergeOverlappingBacklogs",
+        "prioritiesAreEditorialSuggestionsNotApproved",
+        "ownerIsInstitutionalDisciplineOnly",
+        "doNotExposePrivateOEMOrSapData",
+        "doNotInferSLA",
+        "doNotApproveFailuresAutomatically",
+        "independentReviewRequired"
+      ],
+      "properties": {
+        "requiresSourceRevalidation": {
+          "const": true
+        },
+        "noManualOverridingCounts": {
+          "const": true
+        },
+        "neverMergeOverlappingBacklogs": {
+          "const": true
+        },
+        "prioritiesAreEditorialSuggestionsNotApproved": {
+          "const": true
+        },
+        "ownerIsInstitutionalDisciplineOnly": {
+          "const": true
+        },
+        "doNotExposePrivateOEMOrSapData": {
+          "const": true
+        },
+        "doNotInferSLA": {
+          "const": true
+        },
+        "doNotApproveFailuresAutomatically": {
+          "const": true
+        },
+        "independentReviewRequired": {
+          "const": true
+        }
+      }
+    },
+    "overview": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "distinctWorkstreams",
+        "observedWorkstreamSourceItems",
+        "doNotSumAsIndependentTasks",
+        "blockedWorkstreams",
+        "approvedItems",
+        "confirmedFieldCases",
+        "approvedCorporateInfrastructureComponents",
+        "stagingCorporateSignoffs"
+      ],
+      "properties": {
+        "distinctWorkstreams": {
+          "const": 8
+        },
+        "observedWorkstreamSourceItems": {
+          "type": "array",
+          "minItems": 8,
+          "maxItems": 8,
+          "items": {
+            "type": "integer",
+            "minimum": 1
+          }
+        },
+        "doNotSumAsIndependentTasks": {
+          "const": true
+        },
+        "blockedWorkstreams": {
+          "const": 8
+        },
+        "approvedItems": {
+          "const": 0
+        },
+        "confirmedFieldCases": {
+          "const": 0
+        },
+        "approvedCorporateInfrastructureComponents": {
+          "const": 0
+        },
+        "stagingCorporateSignoffs": {
+          "const": 0
+        }
+      }
+    },
+    "workstreams": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "title",
+          "area",
+          "source",
+          "sourceFinding",
+          "unit",
+          "sourceItemCount",
+          "unblockedItems",
+          "approvalStatus",
+          "priorityProposal",
+          "ownerDiscipline",
+          "namedResponsible",
+          "dependsOn",
+          "nextControlledAction",
+          "releaseEvidence",
+          "releaseDecision",
+          "observedEvidenceReceipt",
+          "approvedReviewRecord",
+          "corporateDeadline",
+          "publicDataAuthorization",
+          "readyForKnowledgePromotion"
+        ],
+        "properties": {
+          "id": {
+            "enum": [
+              "BLK-D9-OEM",
+              "BLK-PM-SAP",
+              "BLK-FC-REVIEW",
+              "BLK-SYSTEMIC-ROOT",
+              "BLK-CAUSAL-CANDIDATES",
+              "BLK-ME-REFINEMENTS",
+              "BLK-IT-PLATFORM",
+              "BLK-STAGING-SIGNOFF"
+            ]
+          },
+          "title": {
+            "type": "string",
+            "minLength": 25
+          },
+          "area": {
+            "type": "string",
+            "minLength": 5
+          },
+          "source": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "path",
+              "countField",
+              "sourceVersion"
+            ],
+            "properties": {
+              "path": {
+                "type": "string",
+                "pattern": "^data/"
+              },
+              "countField": {
+                "type": "string"
+              },
+              "sourceVersion": {
+                "type": "string",
+                "pattern": "^1\\.3\\."
+              }
+            }
+          },
+          "sourceFinding": {
+            "type": "string",
+            "minLength": 28
+          },
+          "unit": {
+            "type": "string"
+          },
+          "sourceItemCount": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "unblockedItems": {
+            "const": 0
+          },
+          "approvalStatus": {
+            "const": "blocked_pending_external_evidence"
+          },
+          "priorityProposal": {
+            "enum": [
+              "P0",
+              "P1"
+            ]
+          },
+          "ownerDiscipline": {
+            "type": "string",
+            "minLength": 9
+          },
+          "namedResponsible": {
+            "type": "null"
+          },
+          "dependsOn": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "enum": [
+                "BLK-D9-OEM",
+                "BLK-PM-SAP",
+                "BLK-FC-REVIEW",
+                "BLK-SYSTEMIC-ROOT",
+                "BLK-CAUSAL-CANDIDATES",
+                "BLK-ME-REFINEMENTS",
+                "BLK-IT-PLATFORM",
+                "BLK-STAGING-SIGNOFF"
+              ]
+            }
+          },
+          "nextControlledAction": {
+            "type": "string",
+            "minLength": 90
+          },
+          "releaseEvidence": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2,
+            "items": {
+              "type": "string",
+              "minLength": 90
+            }
+          },
+          "releaseDecision": {
+            "const": "manual_independent_review_required"
+          },
+          "observedEvidenceReceipt": {
+            "type": "null"
+          },
+          "approvedReviewRecord": {
+            "type": "null"
+          },
+          "corporateDeadline": {
+            "type": "null"
+          },
+          "publicDataAuthorization": {
+            "const": false
+          },
+          "readyForKnowledgePromotion": {
+            "const": false
+          }
+        }
+      }
+    },
+    "planningOrder": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 8,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "BLK-D9-OEM",
+          "BLK-PM-SAP",
+          "BLK-FC-REVIEW",
+          "BLK-SYSTEMIC-ROOT",
+          "BLK-CAUSAL-CANDIDATES",
+          "BLK-ME-REFINEMENTS",
+          "BLK-IT-PLATFORM",
+          "BLK-STAGING-SIGNOFF"
+        ]
+      }
+    },
+    "separateCriticalPaths": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "pathId",
+          "ordered",
+          "note"
+        ],
+        "properties": {
+          "pathId": {
+            "enum": [
+              "OEM-ENGINEERING",
+              "MECHANISM-CONCEPTS",
+              "PRIVATE-STAGING",
+              "SAP-TAXONOMY",
+              "SYSTEMIC-ROOT"
+            ]
+          },
+          "ordered": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "enum": [
+                "BLK-D9-OEM",
+                "BLK-PM-SAP",
+                "BLK-FC-REVIEW",
+                "BLK-SYSTEMIC-ROOT",
+                "BLK-CAUSAL-CANDIDATES",
+                "BLK-ME-REFINEMENTS",
+                "BLK-IT-PLATFORM",
+                "BLK-STAGING-SIGNOFF"
+              ]
+            }
+          },
+          "note": {
+            "type": "string",
+            "minLength": 70
+          }
+        }
+      }
+    },
+    "exclusions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "fieldEvidenceStoredHere",
+        "corporateSystemsAccessed",
+        "realOwnerAssignments",
+        "approvedOEMLimits",
+        "realSecuritySignoffs",
+        "changesToCoreFmea",
+        "changesToSap",
+        "changesToPublicConsumers"
+      ],
+      "properties": {
+        "fieldEvidenceStoredHere": {
+          "const": false
+        },
+        "corporateSystemsAccessed": {
+          "const": false
+        },
+        "realOwnerAssignments": {
+          "const": false
+        },
+        "approvedOEMLimits": {
+          "const": false
+        },
+        "realSecuritySignoffs": {
+          "const": false
+        },
+        "changesToCoreFmea": {
+          "const": false
+        },
+        "changesToSap": {
+          "const": false
+        },
+        "changesToPublicConsumers": {
+          "const": false
+        }
+      }
+    },
+    "nextExternalDecision": {
+      "type": "string",
+      "minLength": 120
+    }
+  }
+}
