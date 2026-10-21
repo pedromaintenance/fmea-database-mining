@@ -2,6 +2,14 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.38] — 2026-10-21 — Matriz documental de decisão VPAR por circuito
+
+- Transformadas duas descrições distintas de filtragem no tipo de objeto AISY/COMR/VPAR em **8 cenários editoriais**, cruzando os dois códigos com quatro funções físicas concorrentes (admissão, óleo, separação ar–óleo, reservatório); sem afirmar instalação nem função efetiva.
+- Implantada matriz de **sete requisitos por cenário** (configuração, BOM, diagrama, estrutura SAP, discriminação, segurança e revisão independente): 56 verificações pendentes, **zero evidências recebidas**. As verificações são questões, não ordens de serviço ou ativos adicionais.
+- Relatório com pseudônimos locais C01/C02: C01 tem descrição ambígua e um par 03.02/C2.09 permitido no catálogo; C02 sugere separação de água, mas par não permitido. A permissão catalogada **não confirma falha real**.
+- Biblioteca, plano e auditor v1.3.38 confrontam dados reais do catálogo com proveniência, contraprovas e 19 modificações adversariais rejeitadas; integrados ao CI antes da exportação pública.
+- Nenhum novo mapeamento SAP/OEM, PN, revisão de campo, FC, ME ou consumidor. Permanecem 25 regras PM, 115 vínculos candidatos, 10 bloqueios, 24 FC / 15 ME e contrato/conteúdo públicos 1.0.0 (preview 1.3.12).
+
 ## [1.3.37] — 2026-10-21 — Proveniência de componentes de filtragem em VPAR
 
 - Reconciliados os **2 códigos distintos** com descrições filtrantes de 1 tipo de objeto SAP, repetido em **2 caminhos AISY/COMR/VPAR** (EQ05/EQ06): **4 ocorrências** de descrição não significam quatro componentes diferentes.
