@@ -1,0 +1,399 @@
+{
+  "schema": "fmea-mining.playbook-deepdives-remaining-regressions.v1",
+  "version": "1.3.19",
+  "nature": "synthetic_only",
+  "readinessCases": [
+    {
+      "id": "READY-DEEP-EXC395-PUMP-001-1",
+      "deepDiveId": "DEEP-EXC395-PUMP-001",
+      "availableRequirements": [
+        "Esquema hidráulico OEM efetivo e pontos de ensaio pela série ou arranjo CAT 395"
+      ],
+      "expected": "inconclusivo",
+      "observedData": null
+    },
+    {
+      "id": "READY-DEEP-EXC395-PUMP-001-2",
+      "deepDiveId": "DEEP-EXC395-PUMP-001",
+      "availableRequirements": [
+        "Esquema hidráulico OEM efetivo e pontos de ensaio pela série ou arranjo CAT 395",
+        "Origem da trilha de óleo preservada em foto e identificada por posição física antes da limpeza",
+        "Teste instrumentado de pressão e fluxo com condições de carga, óleo e comando conforme procedimento OEM"
+      ],
+      "expected": "inconclusivo",
+      "observedData": null
+    },
+    {
+      "id": "READY-DEEP-EXC395-PUMP-001-3",
+      "deepDiveId": "DEEP-EXC395-PUMP-001",
+      "availableRequirements": [
+        "Esquema hidráulico OEM efetivo e pontos de ensaio pela série ou arranjo CAT 395",
+        "Origem da trilha de óleo preservada em foto e identificada por posição física antes da limpeza",
+        "Teste instrumentado de pressão e fluxo com condições de carga, óleo e comando conforme procedimento OEM",
+        "Comparação independente com entrada de ar, válvulas, controle e linha de sucção antes de condenar a bomba"
+      ],
+      "expected": "apto_para_revisao_nao_confirmado",
+      "observedData": null
+    },
+    {
+      "id": "READY-DEEP-EXC395-HOSE-001-1",
+      "deepDiveId": "DEEP-EXC395-HOSE-001",
+      "availableRequirements": [
+        "Arranjo OEM e identificação da mangueira, conexão, origem superior e posições instaladas"
+      ],
+      "expected": "inconclusivo",
+      "observedData": null
+    },
+    {
+      "id": "READY-DEEP-EXC395-HOSE-001-2",
+      "deepDiveId": "DEEP-EXC395-HOSE-001",
+      "availableRequirements": [
+        "Arranjo OEM e identificação da mangueira, conexão, origem superior e posições instaladas",
+        "Sequência fotográfica pré-limpeza da primeira área úmida, da rota e dos pontos de contato",
+        "Procedimento de estanqueidade seguro autorizado que identifique origem sem injeção ou contato de fluido"
+      ],
+      "expected": "inconclusivo",
+      "observedData": null
+    },
+    {
+      "id": "READY-DEEP-EXC395-HOSE-001-3",
+      "deepDiveId": "DEEP-EXC395-HOSE-001",
+      "availableRequirements": [
+        "Arranjo OEM e identificação da mangueira, conexão, origem superior e posições instaladas",
+        "Sequência fotográfica pré-limpeza da primeira área úmida, da rota e dos pontos de contato",
+        "Procedimento de estanqueidade seguro autorizado que identifique origem sem injeção ou contato de fluido",
+        "Revisão independente da hipótese de óleo escorrido, vazamento intermitente e integridade dos terminais"
+      ],
+      "expected": "apto_para_revisao_nao_confirmado",
+      "observedData": null
+    },
+    {
+      "id": "READY-DEEP-CAT6030-COOL-001-1",
+      "deepDiveId": "DEEP-CAT6030-COOL-001",
+      "availableRequirements": [
+        "Configuração real do pacote e acionamento de ventilador da CAT 6030 com referência OEM específica"
+      ],
+      "expected": "inconclusivo",
+      "observedData": null
+    },
+    {
+      "id": "READY-DEEP-CAT6030-COOL-001-2",
+      "deepDiveId": "DEEP-CAT6030-COOL-001",
+      "availableRequirements": [
+        "Configuração real do pacote e acionamento de ventilador da CAT 6030 com referência OEM específica",
+        "Fotos do pacote acessível, histórico de limpeza e inspeção de nível com circuito frio",
+        "Verificação documentada de perdas externas, nível e pressão de circulação somente se autorizada pelo OEM"
+      ],
+      "expected": "inconclusivo",
+      "observedData": null
+    },
+    {
+      "id": "READY-DEEP-CAT6030-COOL-001-3",
+      "deepDiveId": "DEEP-CAT6030-COOL-001",
+      "availableRequirements": [
+        "Configuração real do pacote e acionamento de ventilador da CAT 6030 com referência OEM específica",
+        "Fotos do pacote acessível, histórico de limpeza e inspeção de nível com circuito frio",
+        "Verificação documentada de perdas externas, nível e pressão de circulação somente se autorizada pelo OEM",
+        "Registros de comando e resposta do ventilador, carga e temperatura com validação independente"
+      ],
+      "expected": "apto_para_revisao_nao_confirmado",
+      "observedData": null
+    },
+    {
+      "id": "READY-DEEP-CAT777-FINAL-001-1",
+      "deepDiveId": "DEEP-CAT777-FINAL-001",
+      "availableRequirements": [
+        "Identificação de comando final, lubrificante e eventual mudança de baseline com referência do compartimento"
+      ],
+      "expected": "inconclusivo",
+      "observedData": null
+    },
+    {
+      "id": "READY-DEEP-CAT777-FINAL-001-2",
+      "deepDiveId": "DEEP-CAT777-FINAL-001",
+      "availableRequirements": [
+        "Identificação de comando final, lubrificante e eventual mudança de baseline com referência do compartimento",
+        "Amostragem antes da troca com horas de óleo, laboratório, tendência e método de partículas rastreados",
+        "Inspeção autorizada de bujão magnético ou filtro com identificação da morfologia e procedência dos detritos"
+      ],
+      "expected": "inconclusivo",
+      "observedData": null
+    },
+    {
+      "id": "READY-DEEP-CAT777-FINAL-001-3",
+      "deepDiveId": "DEEP-CAT777-FINAL-001",
+      "availableRequirements": [
+        "Identificação de comando final, lubrificante e eventual mudança de baseline com referência do compartimento",
+        "Amostragem antes da troca com horas de óleo, laboratório, tendência e método de partículas rastreados",
+        "Inspeção autorizada de bujão magnético ou filtro com identificação da morfologia e procedência dos detritos",
+        "Contraprova de origem do ruído e parecer OEM para geometria e inspeção de rolamentos ou engrenagens"
+      ],
+      "expected": "apto_para_revisao_nao_confirmado",
+      "observedData": null
+    },
+    {
+      "id": "READY-DEEP-CATD9-TRACK-001-1",
+      "deepDiveId": "DEEP-CATD9-TRACK-001",
+      "availableRequirements": [
+        "Prefixo/série ou arranjo D9 verificado e literatura OMM/CTS aplicável, ainda não fornecidos"
+      ],
+      "expected": "inconclusivo",
+      "observedData": null
+    },
+    {
+      "id": "READY-DEEP-CATD9-TRACK-001-2",
+      "deepDiveId": "DEEP-CATD9-TRACK-001",
+      "availableRequirements": [
+        "Prefixo/série ou arranjo D9 verificado e literatura OMM/CTS aplicável, ainda não fornecidos",
+        "Inspeção de roletes, vedação, roda-guia e fixadores com posição e registro fotográfico",
+        "Medições de desgaste e tensão executadas por CTS/OMM com instrumento e limites efetivos"
+      ],
+      "expected": "inconclusivo",
+      "observedData": null
+    },
+    {
+      "id": "READY-DEEP-CATD9-TRACK-001-3",
+      "deepDiveId": "DEEP-CATD9-TRACK-001",
+      "availableRequirements": [
+        "Prefixo/série ou arranjo D9 verificado e literatura OMM/CTS aplicável, ainda não fornecidos",
+        "Inspeção de roletes, vedação, roda-guia e fixadores com posição e registro fotográfico",
+        "Medições de desgaste e tensão executadas por CTS/OMM com instrumento e limites efetivos",
+        "Revisão independente de mecanismo concorrente, fixação e histórico de manutenção do rodante"
+      ],
+      "expected": "apto_para_revisao_nao_confirmado",
+      "observedData": null
+    },
+    {
+      "id": "READY-DEEP-CAT980-RADIATOR-001-1",
+      "deepDiveId": "DEEP-CAT980-RADIATOR-001",
+      "availableRequirements": [
+        "Arranjo OEM de radiadores, ventilador, bomba e termostato da CAT 980 identificado por série"
+      ],
+      "expected": "inconclusivo",
+      "observedData": null
+    },
+    {
+      "id": "READY-DEEP-CAT980-RADIATOR-001-2",
+      "deepDiveId": "DEEP-CAT980-RADIATOR-001",
+      "availableRequirements": [
+        "Arranjo OEM de radiadores, ventilador, bomba e termostato da CAT 980 identificado por série",
+        "Inspeção com sistema frio do pacote, depósito externo, reservatório e conexões com registros",
+        "Tendências comparáveis de carga, ambiente, temperatura e resposta do ventilador, com canais validados"
+      ],
+      "expected": "inconclusivo",
+      "observedData": null
+    },
+    {
+      "id": "READY-DEEP-CAT980-RADIATOR-001-3",
+      "deepDiveId": "DEEP-CAT980-RADIATOR-001",
+      "availableRequirements": [
+        "Arranjo OEM de radiadores, ventilador, bomba e termostato da CAT 980 identificado por série",
+        "Inspeção com sistema frio do pacote, depósito externo, reservatório e conexões com registros",
+        "Tendências comparáveis de carga, ambiente, temperatura e resposta do ventilador, com canais validados",
+        "Testes autorizados de circulação e vedação mais revisão independente antes de condenar qualquer componente"
+      ],
+      "expected": "apto_para_revisao_nao_confirmado",
+      "observedData": null
+    }
+  ],
+  "mutationCases": [
+    {
+      "id": "MUT-01",
+      "deepDiveId": "DEEP-EXC395-PUMP-001",
+      "mutation": "inventSerial",
+      "expected": "reject",
+      "observedData": null
+    },
+    {
+      "id": "MUT-02",
+      "deepDiveId": "DEEP-EXC395-HOSE-001",
+      "mutation": "inventComponent",
+      "expected": "reject",
+      "observedData": null
+    },
+    {
+      "id": "MUT-03",
+      "deepDiveId": "DEEP-CAT6030-COOL-001",
+      "mutation": "approveOperational",
+      "expected": "reject",
+      "observedData": null
+    },
+    {
+      "id": "MUT-04",
+      "deepDiveId": "DEEP-CAT777-FINAL-001",
+      "mutation": "confirmCause",
+      "expected": "reject",
+      "observedData": null
+    },
+    {
+      "id": "MUT-05",
+      "deepDiveId": "DEEP-CATD9-TRACK-001",
+      "mutation": "inventObserved",
+      "expected": "reject",
+      "observedData": null
+    },
+    {
+      "id": "MUT-06",
+      "deepDiveId": "DEEP-CAT980-RADIATOR-001",
+      "mutation": "inventOemReview",
+      "expected": "reject",
+      "observedData": null
+    },
+    {
+      "id": "MUT-07",
+      "deepDiveId": "DEEP-EXC395-PUMP-001",
+      "mutation": "eraseAlternative",
+      "expected": "reject",
+      "observedData": null
+    },
+    {
+      "id": "MUT-08",
+      "deepDiveId": "DEEP-EXC395-HOSE-001",
+      "mutation": "alterHypothesis",
+      "expected": "reject",
+      "observedData": null
+    },
+    {
+      "id": "MUT-09",
+      "deepDiveId": "DEEP-CAT6030-COOL-001",
+      "mutation": "inventMethod",
+      "expected": "reject",
+      "observedData": null
+    },
+    {
+      "id": "MUT-10",
+      "deepDiveId": "DEEP-CAT777-FINAL-001",
+      "mutation": "dropSafety",
+      "expected": "reject",
+      "observedData": null
+    },
+    {
+      "id": "MUT-11",
+      "deepDiveId": "DEEP-CATD9-TRACK-001",
+      "mutation": "dropMetadata",
+      "expected": "reject",
+      "observedData": null
+    },
+    {
+      "id": "MUT-12",
+      "deepDiveId": "DEEP-CAT980-RADIATOR-001",
+      "mutation": "deleteStage",
+      "expected": "reject",
+      "observedData": null
+    },
+    {
+      "id": "MUT-13",
+      "deepDiveId": "DEEP-EXC395-PUMP-001",
+      "mutation": "deleteRequirement",
+      "expected": "reject",
+      "observedData": null
+    },
+    {
+      "id": "MUT-14",
+      "deepDiveId": "DEEP-EXC395-HOSE-001",
+      "mutation": "wrongSourceTest",
+      "expected": "reject",
+      "observedData": null
+    },
+    {
+      "id": "MUT-15",
+      "deepDiveId": "DEEP-CAT6030-COOL-001",
+      "mutation": "inventSource",
+      "expected": "reject",
+      "observedData": null
+    },
+    {
+      "id": "MUT-16",
+      "deepDiveId": "DEEP-CAT777-FINAL-001",
+      "mutation": "duplicateStageId",
+      "expected": "reject",
+      "observedData": null
+    }
+  ],
+  "crosswalkMutations": [
+    {
+      "id": "XW-MUT-01",
+      "crosswalkId": "XW-PB-EXC-PUMP-01-H1",
+      "mutation": "approveMapping",
+      "expected": "reject",
+      "observedData": null
+    },
+    {
+      "id": "XW-MUT-02",
+      "crosswalkId": "XW-PB-EXC-PUMP-01-H2",
+      "mutation": "inventSerial",
+      "expected": "reject",
+      "observedData": null
+    },
+    {
+      "id": "XW-MUT-03",
+      "crosswalkId": "XW-PB-EXC-PUMP-01-H3",
+      "mutation": "inventSapLocation",
+      "expected": "reject",
+      "observedData": null
+    },
+    {
+      "id": "XW-MUT-04",
+      "crosswalkId": "XW-PB-EXC-HOSE-01-H1",
+      "mutation": "fakeObservation",
+      "expected": "reject",
+      "observedData": null
+    },
+    {
+      "id": "XW-MUT-05",
+      "crosswalkId": "XW-PB-EXC-PUMP-01-H2",
+      "mutation": "inventChainId",
+      "expected": "reject",
+      "observedData": null
+    },
+    {
+      "id": "XW-MUT-06",
+      "crosswalkId": "XW-PB-EXC-HOSE-01-H3",
+      "mutation": "inventHypothesis",
+      "expected": "reject",
+      "observedData": null
+    },
+    {
+      "id": "XW-MUT-07",
+      "crosswalkId": "XW-PB-EXC-PUMP-01-H2",
+      "mutation": "removeReason",
+      "expected": "reject",
+      "observedData": null
+    },
+    {
+      "id": "XW-MUT-08",
+      "crosswalkId": "XW-PB-EXC-PUMP-01-H2",
+      "mutation": "removeLimit",
+      "expected": "reject",
+      "observedData": null
+    },
+    {
+      "id": "XW-MUT-09",
+      "crosswalkId": "XW-PB-SHOVEL-COOL-01-H3",
+      "mutation": "changeLabel",
+      "expected": "reject",
+      "observedData": null
+    },
+    {
+      "id": "XW-MUT-10",
+      "crosswalkId": "XW-PB-TRUCK-FINAL-01-H1",
+      "mutation": "wrongDeepDive",
+      "expected": "reject",
+      "observedData": null
+    },
+    {
+      "id": "XW-MUT-11",
+      "crosswalkId": "XW-PB-EXC-PUMP-01-H1",
+      "mutation": "removeUnmappedReason",
+      "expected": "reject",
+      "observedData": null
+    },
+    {
+      "id": "XW-MUT-12",
+      "crosswalkId": "XW-PB-TRUCK-FINAL-01-H3",
+      "mutation": "duplicateXref",
+      "expected": "reject",
+      "observedData": null
+    }
+  ]
+}

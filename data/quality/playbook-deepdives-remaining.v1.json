@@ -1,0 +1,879 @@
+{
+  "schema": "fmea-mining.playbook-deepdives-remaining.v1",
+  "version": "1.3.19",
+  "editorialNature": "roteiros_propostos_para_playbooks_sinteticos_sem_eventos_reais",
+  "coverageNature": "12_playbooks_aprofundados_documentalmente_nao_homologados",
+  "counts": {
+    "previousDeepdives": 6,
+    "newDeepdives": 6,
+    "totalDeepdives": 12,
+    "newInvestigationStages": 18,
+    "newReadinessRequirements": 24,
+    "observedEvents": 0,
+    "confirmedRootCauses": 0
+  },
+  "records": [
+    {
+      "id": "DEEP-EXC395-PUMP-001",
+      "playbookId": "PB-EXC-PUMP-01",
+      "sourcePlaybookVersion": "1.2.1",
+      "originScenarioStatus": "cenario_autoral_sintetico",
+      "system": "hidraulica_implementos",
+      "title": "Escavadeira CAT 395 — pressão hidráulica abaixo do esperado",
+      "modelIds": [
+        "EQ03"
+      ],
+      "objective": "Separar perda de contenção na vedação externa da bomba, fuga da linha adjacente e desempenho hidráulico insuficiente sem fuga demonstrada.",
+      "hypotheses": [
+        {
+          "id": "H1",
+          "label": "Vazamento externo em vedação da bomba",
+          "expectedSigns": "Origem da perda localizada na vedação da bomba",
+          "counterSigns": "Região da bomba seca e estanque"
+        },
+        {
+          "id": "H2",
+          "label": "Vazamento de linha ou conexão próximo à bomba",
+          "expectedSigns": "Origem da trilha em conexão/mangueira adjacente",
+          "counterSigns": "Circuito próximo estanque, perda no corpo da bomba"
+        },
+        {
+          "id": "H3",
+          "label": "Limitação de desempenho sem vazamento físico confirmado",
+          "expectedSigns": "Medição independente e condições de óleo apontam insuficiência funcional",
+          "counterSigns": "Pressão/fluxo e comando coerentes quando medidos conforme OEM"
+        }
+      ],
+      "sourceTestIds": [
+        "T1",
+        "T2"
+      ],
+      "stages": [
+        {
+          "id": "S1",
+          "methodId": "EV-01",
+          "sourceTestId": "T1",
+          "question": "Com o conjunto isolado e despressurizado, o primeiro ponto úmido localiza-se na vedação da bomba, na conexão próxima ou não há perda externa?",
+          "signals": {
+            "H1": "Trilha iniciada na interface vedada da bomba sustenta investigação da vedação externa, sem provar perda de capacidade.",
+            "H2": "Origem em terminal ou mangueira adjacente sustenta fuga de linha, não falha do corpo da bomba.",
+            "H3": "Nenhuma trilha externa visível mantém possível deficiência funcional, mas não a confirma."
+          },
+          "nonDiscrimination": "Óleo espalhado por gravidade, equipamento lavado ou vazamento intermitente sem origem rastreada não distingue os três mecanismos.",
+          "requiredMetadata": [
+            "equipmentContext",
+            "dateTime",
+            "isolationStatus",
+            "inspectionPosition",
+            "initialOilTrail",
+            "photoRecord"
+          ],
+          "safeBoundary": "Aplicar bloqueio, aliviar energia residual e nunca aproximar pele de vazamento pressurizado; não induzir vazamentos para observá-los.",
+          "performed": false,
+          "resultObserved": null,
+          "oemEffective": false,
+          "independentEvidenceVerified": false
+        },
+        {
+          "id": "S2",
+          "methodId": "EV-05",
+          "sourceTestId": "T2",
+          "question": "Medições de pressão e vazão nos pontos do arranjo OEM permitem separar queda real de desempenho, comando/compensação e perdas visíveis?",
+          "signals": {
+            "H1": "Pressão deficiente coexistindo com fuga confirmada da vedação demanda exame do circuito, sem atribuição imediata à bomba.",
+            "H2": "Perda de fluido confirmada na linha adjacente pode explicar pressão alterada sem condenar a bomba.",
+            "H3": "Déficit hidráulico instrumentado após exclusão das fugas sustenta investigar capacidade, controle e sucção."
+          },
+          "nonDiscrimination": "Sem curva, pontos de teste, instrumentação e regime de carga efetivos, a pressão isolada não prova vazamento nem dano interno.",
+          "requiredMetadata": [
+            "equipmentContext",
+            "dateTime",
+            "oemProcedureReference",
+            "testPorts",
+            "oilTemperature",
+            "loadCondition",
+            "instrumentCalibration"
+          ],
+          "safeBoundary": "Instalação e retirada de medidores exclusivamente sob procedimento OEM e equipe habilitada; não criar derivações com sistema pressurizado.",
+          "performed": false,
+          "resultObserved": null,
+          "oemEffective": false,
+          "independentEvidenceVerified": false
+        },
+        {
+          "id": "S3",
+          "methodId": "EV-14",
+          "sourceTestId": null,
+          "question": "A tendência de demanda, deslocamento ou comando da bomba e resposta dos implementos diferencia defeito hidráulico de proteção eletrônica ou condição do óleo?",
+          "signals": {
+            "H1": "Queda progressiva junto a fuga externa documentada favorece acompanhamento da vedação, ainda sem ligação causal fechada.",
+            "H2": "Evento de resposta correlacionado ao vazamento localizado em linha favorece inspecionar reparo dessa linha.",
+            "H3": "Comando incompatível com resposta hidráulica requer separar compensador, sensor, contaminação e restrição de sucção."
+          },
+          "nonDiscrimination": "Telemetria sem referência de canal, calibração, condição de carga ou linha de sucção não discrimina bomba, linha e controle.",
+          "requiredMetadata": [
+            "equipmentContext",
+            "dateTime",
+            "telemetryChannels",
+            "demandResponse",
+            "dataQuality",
+            "oilServiceContext"
+          ],
+          "safeBoundary": "Não executar testes dinâmicos ou burlar proteções para reproduzir perda de pressão; usar registros autorizados e método seguro.",
+          "performed": false,
+          "resultObserved": null,
+          "oemEffective": false,
+          "independentEvidenceVerified": false
+        }
+      ],
+      "readiness": {
+        "requires": [
+          "Esquema hidráulico OEM efetivo e pontos de ensaio pela série ou arranjo CAT 395",
+          "Origem da trilha de óleo preservada em foto e identificada por posição física antes da limpeza",
+          "Teste instrumentado de pressão e fluxo com condições de carga, óleo e comando conforme procedimento OEM",
+          "Comparação independente com entrada de ar, válvulas, controle e linha de sucção antes de condenar a bomba"
+        ],
+        "whenMissing": "inconclusivo",
+        "whenComplete": "apto_para_revisao_nao_confirmado"
+      },
+      "sourceIds": [
+        "CAT-HYD-TECHNICAL-ANALYSIS",
+        "CAT-HYD-HOSE-INSPECT",
+        "ISO-13379-1-2025"
+      ],
+      "sourceNature": "literatura_geral_sem_efetividade_de_serie",
+      "linkedCausalChainId": null,
+      "serialOrArrangement": null,
+      "sapLocationId": null,
+      "confirmedComponentCode": null,
+      "caseReview": {
+        "engineering": null,
+        "independent": null,
+        "oem": null,
+        "status": "pendente_sem_evidencia"
+      },
+      "executionStatus": "not_performed",
+      "observedEvents": 0,
+      "confirmedRootCause": false,
+      "approvedForOperationalUse": false
+    },
+    {
+      "id": "DEEP-EXC395-HOSE-001",
+      "playbookId": "PB-EXC-HOSE-01",
+      "sourcePlaybookVersion": "1.2.1",
+      "originScenarioStatus": "cenario_autoral_sintetico",
+      "system": "mangueiras_hidraulicas",
+      "title": "Escavadeira CAT 395 — perda de óleo no circuito de implementos",
+      "modelIds": [
+        "EQ03"
+      ],
+      "objective": "Diferenciar fuga pela conexão, degradação abrasiva do corpo da mangueira e óleo transportado de outra origem sem presumir que umidade significa rompimento.",
+      "hypotheses": [
+        {
+          "id": "H1",
+          "label": "Vazamento em interface de vedação ou conexão",
+          "expectedSigns": "Umidade concentrada na conexão e fixadores íntegros",
+          "counterSigns": "Marcas de abrasão na parede da mangueira sem perda na conexão"
+        },
+        {
+          "id": "H2",
+          "label": "Deterioração da mangueira por abrasão externa",
+          "expectedSigns": "Contato persistente com estrutura e desgaste localizado na cobertura",
+          "counterSigns": "Linha íntegra e fluido localizado apenas na junta"
+        },
+        {
+          "id": "H3",
+          "label": "Óleo proveniente de outro ponto e transportado por gravidade",
+          "expectedSigns": "Trilha de óleo inicia acima da mangueira suspeita",
+          "counterSigns": "Ponto de saída é localizado na própria linha"
+        }
+      ],
+      "sourceTestIds": [
+        "T1",
+        "T2"
+      ],
+      "stages": [
+        {
+          "id": "S1",
+          "methodId": "EV-01",
+          "sourceTestId": "T1",
+          "question": "No equipamento bloqueado, a trilha de fluido começa na conexão, na parede da mangueira ou em componente localizado acima?",
+          "signals": {
+            "H1": "Fluido originado na interface da conexão favorece fuga por vedação ou terminal, sem comprovar o motivo.",
+            "H2": "Fluido comprovadamente emergindo da parede danificada favorece integridade comprometida da mangueira.",
+            "H3": "Fluxo vindo de componente elevado favorece transporte superficial de óleo sem perda na mangueira."
+          },
+          "nonDiscrimination": "Filme de óleo espalhado, limpeza anterior ou ausência de identificação de primeiro ponto molhado não localizam a falha.",
+          "requiredMetadata": [
+            "equipmentContext",
+            "dateTime",
+            "isolationStatus",
+            "firstWetPoint",
+            "hosePosition",
+            "photoTrace"
+          ],
+          "safeBoundary": "Não procurar vazamento com mãos, papel pressionado ou movimento do implemento; eliminar pressão residual conforme OEM.",
+          "performed": false,
+          "resultObserved": null,
+          "oemEffective": false,
+          "independentEvidenceVerified": false
+        },
+        {
+          "id": "S2",
+          "methodId": "EV-15",
+          "sourceTestId": "T2",
+          "question": "A inspeção de fixações, raio, proteção e interferências evidencia contato repetitivo compatível com a abrasão localizada da linha?",
+          "signals": {
+            "H1": "Conexão úmida sem desgaste do corpo mantém possível falha de interface e exige contraprova de rota.",
+            "H2": "Contato mecânico e desgaste coincidentes podem sustentar mecanismo abrasivo sem confirmar ruptura.",
+            "H3": "Ausência de interferência não afasta fonte superior, e apenas orienta procurar outro caminho do óleo."
+          },
+          "nonDiscrimination": "Interferência que só ocorre com implemento energizado não pode ser validada por movimento improvisado na oficina.",
+          "requiredMetadata": [
+            "equipmentContext",
+            "dateTime",
+            "hoseRouting",
+            "contactPoints",
+            "protectionCondition",
+            "mountingReference"
+          ],
+          "safeBoundary": "Não entrar em envelope de movimento nem movimentar componentes para observar contato sem procedimento e isolamento previstos pelo fabricante.",
+          "performed": false,
+          "resultObserved": null,
+          "oemEffective": false,
+          "independentEvidenceVerified": false
+        },
+        {
+          "id": "S3",
+          "methodId": "EV-13",
+          "sourceTestId": null,
+          "question": "Os históricos de intervenções, troca de terminais, roteamento e origem de fugas mostram recorrência no mesmo ponto físico?",
+          "signals": {
+            "H1": "Conexão reaberta ou reparada com reincidência bem documentada justifica investigar montagem e vedação.",
+            "H2": "Histórico de contato e substituição reiterada da mesma posição favorece hipótese de abrasão recorrente.",
+            "H3": "Reparo anterior em peça situada acima explica pista de óleo escorrido, mas não prova a origem atual."
+          },
+          "nonDiscrimination": "Ordem genérica sem posição, componente, data ou comprovação da origem não pode sustentar diagnóstico de reincidência.",
+          "requiredMetadata": [
+            "equipmentContext",
+            "dateTime",
+            "workOrders",
+            "componentHistory",
+            "chronology",
+            "reworkDocumentation"
+          ],
+          "safeBoundary": "Investigação documental não autoriza abrir circuito; intervenção deve seguir OEM e trabalho com sistema sem energia.",
+          "performed": false,
+          "resultObserved": null,
+          "oemEffective": false,
+          "independentEvidenceVerified": false
+        }
+      ],
+      "readiness": {
+        "requires": [
+          "Arranjo OEM e identificação da mangueira, conexão, origem superior e posições instaladas",
+          "Sequência fotográfica pré-limpeza da primeira área úmida, da rota e dos pontos de contato",
+          "Procedimento de estanqueidade seguro autorizado que identifique origem sem injeção ou contato de fluido",
+          "Revisão independente da hipótese de óleo escorrido, vazamento intermitente e integridade dos terminais"
+        ],
+        "whenMissing": "inconclusivo",
+        "whenComplete": "apto_para_revisao_nao_confirmado"
+      },
+      "sourceIds": [
+        "CAT-HYD-HOSE-INSPECT",
+        "CAT-HYD-HOSE-FAILURE",
+        "ISO-17359-2018"
+      ],
+      "sourceNature": "literatura_geral_sem_efetividade_de_serie",
+      "linkedCausalChainId": null,
+      "serialOrArrangement": null,
+      "sapLocationId": null,
+      "confirmedComponentCode": null,
+      "caseReview": {
+        "engineering": null,
+        "independent": null,
+        "oem": null,
+        "status": "pendente_sem_evidencia"
+      },
+      "executionStatus": "not_performed",
+      "observedEvents": 0,
+      "confirmedRootCause": false,
+      "approvedForOperationalUse": false
+    },
+    {
+      "id": "DEEP-CAT6030-COOL-001",
+      "playbookId": "PB-SHOVEL-COOL-01",
+      "sourcePlaybookVersion": "1.2.1",
+      "originScenarioStatus": "cenario_autoral_sintetico",
+      "system": "arrefecimento",
+      "title": "Escavadeira CAT 6030 — aquecimento de arrefecimento",
+      "modelIds": [
+        "EQ02"
+      ],
+      "objective": "Separar sujeira externa na colmeia, perda de líquido e falha de resposta de ventilação sob carga sem concluir por temperatura de painel.",
+      "hypotheses": [
+        {
+          "id": "H1",
+          "label": "Fluxo de ar restringido na colmeia ou pacote de radiadores",
+          "expectedSigns": "Acúmulo de sujeira e restrição relevante da passagem de ar",
+          "counterSigns": "Colmeia desobstruída com fluxo compatível"
+        },
+        {
+          "id": "H2",
+          "label": "Perda de fluido do circuito de arrefecimento",
+          "expectedSigns": "Nível cai e há evidências de perda externa após resfriamento",
+          "counterSigns": "Nível estável e circuito estanque em teste autorizado"
+        },
+        {
+          "id": "H3",
+          "label": "Ventilação insuficiente por anomalia de ventilador/acionamento",
+          "expectedSigns": "Rotação ou comportamento do ventilador diverge da demanda, segundo OEM",
+          "counterSigns": "Comando e ventilador comportam-se dentro da especificação OEM"
+        }
+      ],
+      "sourceTestIds": [
+        "T1",
+        "T2"
+      ],
+      "stages": [
+        {
+          "id": "S1",
+          "methodId": "EV-01",
+          "sourceTestId": "T1",
+          "question": "Com o circuito frio e bloqueado, as passagens de ar e interfaces mostram depósito externo ou sinais de perda de líquido?",
+          "signals": {
+            "H1": "Detritos obstruindo a passagem de ar sustentam condição de sujidade, não a magnitude de perda térmica.",
+            "H2": "Nível em queda e origem de fluido verificada favorecem fuga do circuito sob investigação.",
+            "H3": "Colmeia limpa e ausência de perda orientam testar ventilação, sem provar falha de comando."
+          },
+          "nonDiscrimination": "Sujeira superficial sem restrição mensurável ou perda de nível sem origem não separa os mecanismos de aquecimento.",
+          "requiredMetadata": [
+            "equipmentContext",
+            "dateTime",
+            "coldSystemStatus",
+            "airPassages",
+            "coolantLevel",
+            "leakTrace"
+          ],
+          "safeBoundary": "Não abrir tampa quente ou pressurizada; inspeção de ventilador apenas após impedir partida automática e movimento.",
+          "performed": false,
+          "resultObserved": null,
+          "oemEffective": false,
+          "independentEvidenceVerified": false
+        },
+        {
+          "id": "S2",
+          "methodId": "EV-14",
+          "sourceTestId": "T2",
+          "question": "A demanda e a resposta do ventilador em regime comparável de carga são coerentes com a arquitetura instalada e os canais disponíveis?",
+          "signals": {
+            "H1": "Ventilação conforme requisito junto de restrição externa documentada reforça examinar capacidade da colmeia.",
+            "H2": "Nível comprovadamente baixo e perda externa rastreada mantêm fuga como alternativa a ventilação.",
+            "H3": "Demanda não atendida sob critérios OEM específicos favorece anomalia de ventilador, comando ou acionamento."
+          },
+          "nonDiscrimination": "Leitura térmica isolada, ventilador reversível presumido ou controle sem dados de resposta não distinguem hipóteses.",
+          "requiredMetadata": [
+            "equipmentContext",
+            "dateTime",
+            "fanArchitecture",
+            "fanDemand",
+            "fanResponse",
+            "loadTemperatureTrend"
+          ],
+          "safeBoundary": "Consultar dados sem comandar ventilador com acesso aberto; testes de acionamento somente com equipe e procedimento OEM.",
+          "performed": false,
+          "resultObserved": null,
+          "oemEffective": false,
+          "independentEvidenceVerified": false
+        },
+        {
+          "id": "S3",
+          "methodId": "EV-12",
+          "sourceTestId": null,
+          "question": "Uma verificação independente do nível e da circulação do arrefecimento demonstra condição funcional e afasta o confundidor de fluxo hidráulico?",
+          "signals": {
+            "H1": "Circulação dentro de referência com passagens sujas orienta investigar restrição externa e ventilação.",
+            "H2": "Deficiência de líquido com origem de perda localizada favorece H2 mesmo se as passagens estiverem sujas.",
+            "H3": "Circulação adequada e ausência de perda, com falha de resposta medida, favorecem investigar H3."
+          },
+          "nonDiscrimination": "Sem referência de sistema, termostato, bomba e temperatura, teste genérico não diferencia falhas simultâneas.",
+          "requiredMetadata": [
+            "equipmentContext",
+            "dateTime",
+            "oemProcedureReference",
+            "coolantState",
+            "pumpThermostatCondition",
+            "independentCheck"
+          ],
+          "safeBoundary": "Jamais abrir circuito pressurizado ou adaptar manômetros; execução apenas conforme OMM/SIS efetivo por arranjo.",
+          "performed": false,
+          "resultObserved": null,
+          "oemEffective": false,
+          "independentEvidenceVerified": false
+        }
+      ],
+      "readiness": {
+        "requires": [
+          "Configuração real do pacote e acionamento de ventilador da CAT 6030 com referência OEM específica",
+          "Fotos do pacote acessível, histórico de limpeza e inspeção de nível com circuito frio",
+          "Verificação documentada de perdas externas, nível e pressão de circulação somente se autorizada pelo OEM",
+          "Registros de comando e resposta do ventilador, carga e temperatura com validação independente"
+        ],
+        "whenMissing": "inconclusivo",
+        "whenComplete": "apto_para_revisao_nao_confirmado"
+      },
+      "sourceIds": [
+        "CAT-RADIATOR-CARE",
+        "CAT-EXC-COOL-CHECKLIST",
+        "CAT-COOLING-FAN-REVERSE"
+      ],
+      "sourceNature": "literatura_geral_sem_efetividade_de_serie",
+      "linkedCausalChainId": null,
+      "serialOrArrangement": null,
+      "sapLocationId": null,
+      "confirmedComponentCode": null,
+      "caseReview": {
+        "engineering": null,
+        "independent": null,
+        "oem": null,
+        "status": "pendente_sem_evidencia"
+      },
+      "executionStatus": "not_performed",
+      "observedEvents": 0,
+      "confirmedRootCause": false,
+      "approvedForOperationalUse": false
+    },
+    {
+      "id": "DEEP-CAT777-FINAL-001",
+      "playbookId": "PB-TRUCK-FINAL-01",
+      "sourcePlaybookVersion": "1.2.1",
+      "originScenarioStatus": "cenario_autoral_sintetico",
+      "system": "comando_final",
+      "title": "Caminhão CAT 777 — ruído em comando final",
+      "modelIds": [
+        "CAT777"
+      ],
+      "objective": "Distinguir indícios de rolamento, desgaste de engrenagens e alteração ou contaminação de óleo sem converter elementos químicos isolados em dano confirmado.",
+      "hypotheses": [
+        {
+          "id": "H1",
+          "label": "Deterioração de rolamento em comando final",
+          "expectedSigns": "Ruído localizado e evidências metálicas coerentes com rolamento, confirmadas por inspeção",
+          "counterSigns": "Fonte do ruído está em outro conjunto, sem indício interno"
+        },
+        {
+          "id": "H2",
+          "label": "Desgaste de engrenagens do comando final",
+          "expectedSigns": "Partículas, comportamento sob torque e inspeção localizada coerentes",
+          "counterSigns": "Sem indício de desgaste interno e ruído proveniente de outro sistema"
+        },
+        {
+          "id": "H3",
+          "label": "Contaminação ou lubrificante não conforme sem falha mecânica confirmada",
+          "expectedSigns": "Histórico de fluido ou ingresso identificado; inspeção ainda não comprova desgaste interno",
+          "counterSigns": "Indícios mecânicos independentes demonstram dano interno relevante"
+        }
+      ],
+      "sourceTestIds": [
+        "T1",
+        "T2"
+      ],
+      "stages": [
+        {
+          "id": "S1",
+          "methodId": "EV-08",
+          "sourceTestId": "T1",
+          "question": "O histórico do compartimento confirma produto usado, alteração de formulação, horas e tendência comparável de metais de desgaste?",
+          "signals": {
+            "H1": "Tendência crescente pode justificar examinar contato rolante, sem identificar origem de partículas por ICP.",
+            "H2": "Indicação de desgaste metálico sob carga justifica inspeção de engrenagens, sem diferenciá-las do rolamento.",
+            "H3": "Mudança conhecida de formulação ou ingresso de contaminante com ausência de dano físico sustenta condição de óleo como alternativa."
+          },
+          "nonDiscrimination": "Adição de óleo novo, diferença Shell/FDAO ou laudo incompatível isolado não comprova desgaste mecânico.",
+          "requiredMetadata": [
+            "equipmentContext",
+            "dateTime",
+            "compartmentIdentity",
+            "oilFormulation",
+            "oilServiceHours",
+            "sampleTimeline"
+          ],
+          "safeBoundary": "Coletar amostra representativa antes de troca e seguir procedimento OEM de drenagem e proteção contra queimaduras.",
+          "performed": false,
+          "resultObserved": null,
+          "oemEffective": false,
+          "independentEvidenceVerified": false
+        },
+        {
+          "id": "S2",
+          "methodId": "EV-11",
+          "sourceTestId": "T2",
+          "question": "Os achados em bujão magnético, filtro e depósitos distinguem morfologia e quantidade de partículas com rastreabilidade?",
+          "signals": {
+            "H1": "Fragmentos associados a contato rolante podem favorecer inspeção de rolamentos se origem for confirmada.",
+            "H2": "Partículas com morfologia de dente ou face de engrenamento favorecem investigação localizada de engrenagens.",
+            "H3": "Contaminante externo sem comprovação de dano mantém a hipótese de condição de fluido e necessidade de vedação."
+          },
+          "nonDiscrimination": "Morfologia genérica, material de origem desconhecida e partículas grandes não detectadas por ICP não distinguem origem.",
+          "requiredMetadata": [
+            "equipmentContext",
+            "dateTime",
+            "magnetFilterPosition",
+            "particleMorphology",
+            "sampleChain",
+            "replacementRecord"
+          ],
+          "safeBoundary": "Remoção e inspeção apenas em compartimento seguro conforme OEM; filtro retirado e aberto não deve ser reinstalado.",
+          "performed": false,
+          "resultObserved": null,
+          "oemEffective": false,
+          "independentEvidenceVerified": false
+        },
+        {
+          "id": "S3",
+          "methodId": "EV-13",
+          "sourceTestId": null,
+          "question": "O ruído foi localizado por método seguro e comparado aos registros históricos de comando final, freios, pneus e rolamentos?",
+          "signals": {
+            "H1": "Evidência de ruído localizado com folga e análise complementar consistente pode orientar inspeção de rolamento.",
+            "H2": "Frequência ou modulação relacionada a engrenamento sob regime controlado orienta avaliação de engrenagem.",
+            "H3": "Som proveniente de outro sistema enfraquece atribuição ao comando final apesar de mudança química no óleo."
+          },
+          "nonDiscrimination": "Ruído de rodagem sem instrumentação, carga comparável ou origem física independente não discrimina rolamento e engrenagem.",
+          "requiredMetadata": [
+            "equipmentContext",
+            "dateTime",
+            "workOrderChronology",
+            "noiseLocalization",
+            "loadRegime",
+            "alternativeSources"
+          ],
+          "safeBoundary": "Não reproduzir condição de carga perigosa nem abrir conjunto girando; ruído e folga apenas por método e limite OEM.",
+          "performed": false,
+          "resultObserved": null,
+          "oemEffective": false,
+          "independentEvidenceVerified": false
+        }
+      ],
+      "readiness": {
+        "requires": [
+          "Identificação de comando final, lubrificante e eventual mudança de baseline com referência do compartimento",
+          "Amostragem antes da troca com horas de óleo, laboratório, tendência e método de partículas rastreados",
+          "Inspeção autorizada de bujão magnético ou filtro com identificação da morfologia e procedência dos detritos",
+          "Contraprova de origem do ruído e parecer OEM para geometria e inspeção de rolamentos ou engrenagens"
+        ],
+        "whenMissing": "inconclusivo",
+        "whenComplete": "apto_para_revisao_nao_confirmado"
+      },
+      "sourceIds": [
+        "CAT-DRIVE-MAGNET-PLUG",
+        "SKF-ISO15243-BEARING",
+        "CAT-DRIVE-MAINT-PRACTICES",
+        "CAT-FLUID-ANALYSIS-101"
+      ],
+      "sourceNature": "literatura_geral_sem_efetividade_de_serie",
+      "linkedCausalChainId": null,
+      "serialOrArrangement": null,
+      "sapLocationId": null,
+      "confirmedComponentCode": null,
+      "caseReview": {
+        "engineering": null,
+        "independent": null,
+        "oem": null,
+        "status": "pendente_sem_evidencia"
+      },
+      "executionStatus": "not_performed",
+      "observedEvents": 0,
+      "confirmedRootCause": false,
+      "approvedForOperationalUse": false
+    },
+    {
+      "id": "DEEP-CATD9-TRACK-001",
+      "playbookId": "PB-DOZER-TRACK-01",
+      "sourcePlaybookVersion": "1.2.1",
+      "originScenarioStatus": "cenario_autoral_sintetico",
+      "system": "material_rodante",
+      "title": "Trator CAT D9 — aquecimento e esforço no rodante",
+      "modelIds": [
+        "EQ07"
+      ],
+      "objective": "Diferenciar rolete, roda-guia e tensionamento ou fixações do material rodante D9 sem valores CTS e apertos por série inventados.",
+      "hypotheses": [
+        {
+          "id": "H1",
+          "label": "Rolete com dano ou restrição de rotação",
+          "expectedSigns": "Folga, aquecimento localizado ou vedação comprometida em um rolete",
+          "counterSigns": "Rolete gira e apresenta condição compatível, sem sinais convergentes"
+        },
+        {
+          "id": "H2",
+          "label": "Roda-guia desgastada ou desalinhada",
+          "expectedSigns": "Marcas anormais e geometria afetada no conjunto de guiamento",
+          "counterSigns": "Conjunto de guiamento dentro de limites OEM"
+        },
+        {
+          "id": "H3",
+          "label": "Tensão/ajuste ou fixação inadequados da esteira",
+          "expectedSigns": "Medições e fixadores fora da especificação",
+          "counterSigns": "Tensão e fixadores corretos conforme configuração"
+        }
+      ],
+      "sourceTestIds": [
+        "T1",
+        "T2"
+      ],
+      "stages": [
+        {
+          "id": "S1",
+          "methodId": "EV-01",
+          "sourceTestId": "T1",
+          "question": "Com o conjunto bloqueado e acessível, os sinais de arrasto ou vazamento do rolete se diferenciam de desgaste geométrico da roda-guia ou fixação?",
+          "signals": {
+            "H1": "Rolete com dano de vedação, aquecimento ou marcas de arrasto orienta investigar travamento e lubrificação.",
+            "H2": "Contato lateral, desalinhamento ou desgaste concentrado na roda-guia orientam investigar o guiamento.",
+            "H3": "Fixadores deslocados, trilha torta ou tensão aparente reforçam medir ajuste e montagem conforme OEM."
+          },
+          "nonDiscrimination": "Material compactado, ausência de visibilidade e temperatura residual por carga passada impedem apontar causa específica.",
+          "requiredMetadata": [
+            "equipmentContext",
+            "dateTime",
+            "isolationStatus",
+            "rollerPosition",
+            "idlerPosition",
+            "shoeFasteners"
+          ],
+          "safeBoundary": "Não soltar tensionador, mover esteira ou ficar sob máquina suspensa; bloquear energias mecânicas e hidráulicas.",
+          "performed": false,
+          "resultObserved": null,
+          "oemEffective": false,
+          "independentEvidenceVerified": false
+        },
+        {
+          "id": "S2",
+          "methodId": "EV-02",
+          "sourceTestId": "T2",
+          "question": "Uma leitura CTS homologada por número de série distingue desgaste de rolete, roda-guia e ajuste atual da esteira?",
+          "signals": {
+            "H1": "Desgaste e folgas de rolete fora de limite efetivo sustentam suspeita localizada, não origem da falha.",
+            "H2": "Leituras de geometria e guia fora da tolerância OEM podem sustentar desalinhamento ou desgaste.",
+            "H3": "Medição de tensão fora do procedimento e faixa por arranjo favorece hipótese de ajuste incorreto."
+          },
+          "nonDiscrimination": "Uma medida de desgaste ou tensão sem posição, equipamento, ferramenta e referência OEM não permite condenação.",
+          "requiredMetadata": [
+            "equipmentContext",
+            "dateTime",
+            "oemSerialReference",
+            "ctsMethod",
+            "measurementPoint",
+            "instrumentTraceability"
+          ],
+          "safeBoundary": "CTS deve ser medido por pessoal treinado, com acesso seguro e referência OEM; não ajustar conjunto pressurizado.",
+          "performed": false,
+          "resultObserved": null,
+          "oemEffective": false,
+          "independentEvidenceVerified": false
+        },
+        {
+          "id": "S3",
+          "methodId": "EV-13",
+          "sourceTestId": null,
+          "question": "Ordens anteriores e registros de montagem mostram se anomalias de rolete, roda-guia ou tensionamento antecedem o sintoma observado?",
+          "signals": {
+            "H1": "Histórico de vazamento de rolete na posição correta reforça necessidade de inspeção específica.",
+            "H2": "Intervenções de roda-guia e evolução de geometria podem sustentar mecanismo de guiamento.",
+            "H3": "Aperto/ajuste e substituições documentados ajudam avaliar fixação, mas não provam erro de montagem."
+          },
+          "nonDiscrimination": "Histórico sem PN, posição, faixa de série, cronologia ou registro de montagem não permite imputação organizacional.",
+          "requiredMetadata": [
+            "equipmentContext",
+            "dateTime",
+            "serviceHistory",
+            "fastenerHistory",
+            "positionTrace",
+            "reviewerIdentity"
+          ],
+          "safeBoundary": "Análise documental apenas; nunca aplicar torque-turn ou alívio de tensão por valores de outro D9.",
+          "performed": false,
+          "resultObserved": null,
+          "oemEffective": false,
+          "independentEvidenceVerified": false
+        }
+      ],
+      "readiness": {
+        "requires": [
+          "Prefixo/série ou arranjo D9 verificado e literatura OMM/CTS aplicável, ainda não fornecidos",
+          "Inspeção de roletes, vedação, roda-guia e fixadores com posição e registro fotográfico",
+          "Medições de desgaste e tensão executadas por CTS/OMM com instrumento e limites efetivos",
+          "Revisão independente de mecanismo concorrente, fixação e histórico de manutenção do rodante"
+        ],
+        "whenMissing": "inconclusivo",
+        "whenComplete": "apto_para_revisao_nao_confirmado"
+      },
+      "sourceIds": [
+        "CAT-DOZER-UC-MAINT",
+        "CAT-MINING-UC-WEAR-MANAGEMENT",
+        "CAT-TRACK-DOZER-TENSION",
+        "CAT-UC-DOZER-GUIDE"
+      ],
+      "sourceNature": "literatura_geral_sem_efetividade_de_serie",
+      "linkedCausalChainId": null,
+      "serialOrArrangement": null,
+      "sapLocationId": null,
+      "confirmedComponentCode": null,
+      "caseReview": {
+        "engineering": null,
+        "independent": null,
+        "oem": null,
+        "status": "pendente_sem_evidencia"
+      },
+      "executionStatus": "not_performed",
+      "observedEvents": 0,
+      "confirmedRootCause": false,
+      "approvedForOperationalUse": false
+    },
+    {
+      "id": "DEEP-CAT980-RADIATOR-001",
+      "playbookId": "PB-LOADER-RADIATOR-01",
+      "sourcePlaybookVersion": "1.2.1",
+      "originScenarioStatus": "cenario_autoral_sintetico",
+      "system": "arrefecimento",
+      "title": "Carregadeira CAT 980 — aquecimento progressivo",
+      "modelIds": [
+        "CAT980"
+      ],
+      "objective": "Diferenciar restrição externa de ar no pacote de arrefecimento da CAT 980, fuga de fluido e falha concorrente de bomba, termostato ou ventilação.",
+      "hypotheses": [
+        {
+          "id": "H1",
+          "label": "Colmeia/pacote de radiadores obstruído externamente",
+          "expectedSigns": "Obstrução observável e troca térmica prejudicada",
+          "counterSigns": "Passagem de ar sem obstrução relevante"
+        },
+        {
+          "id": "H2",
+          "label": "Perda de líquido por mangueira ou interface",
+          "expectedSigns": "Nível abaixo do histórico e sinais de vazamento",
+          "counterSigns": "Nível estável e nenhuma perda demonstrada"
+        },
+        {
+          "id": "H3",
+          "label": "Outras causas do controle térmico (termostato, bomba, ventilação)",
+          "expectedSigns": "Testes OEM dos componentes do circuito mostram resposta fora do esperado",
+          "counterSigns": "Resposta correta após exclusão de restrição e fugas"
+        }
+      ],
+      "sourceTestIds": [
+        "T1",
+        "T2"
+      ],
+      "stages": [
+        {
+          "id": "S1",
+          "methodId": "EV-01",
+          "sourceTestId": "T1",
+          "question": "Com o circuito arrefecido, a colmeia apresenta passagens fisicamente bloqueadas ou existe origem de perda externa de fluido?",
+          "signals": {
+            "H1": "Sujidade e detritos entre aletas podem sustentar hipótese de restrição externa, sem medir capacidade térmica.",
+            "H2": "Vestígio de líquido rastreado a mangueira ou conexão com queda de nível favorece perda externa.",
+            "H3": "Ausência de obstrução e vazamento reforça necessidade de investigar controle térmico, sem confirmá-lo."
+          },
+          "nonDiscrimination": "Superfície suja com caminho livre, histórico de limpeza incerto e óleo superficial não discriminam entre problemas térmicos.",
+          "requiredMetadata": [
+            "equipmentContext",
+            "dateTime",
+            "coldCondition",
+            "radiatorAirPassage",
+            "coolantLevel",
+            "leakOrigin"
+          ],
+          "safeBoundary": "Não abrir reservatório pressurizado, lavar componente quente ou acessar ventilador com partida automática.",
+          "performed": false,
+          "resultObserved": null,
+          "oemEffective": false,
+          "independentEvidenceVerified": false
+        },
+        {
+          "id": "S2",
+          "methodId": "EV-14",
+          "sourceTestId": "T2",
+          "question": "A tendência de temperatura versus carga e os canais de comando do ventilador sustentam falha de ventilação ou sobrecarga térmica sob critérios OEM?",
+          "signals": {
+            "H1": "Ventilador conforme requisito com sujeira relevante dá suporte condicional à restrição de ar.",
+            "H2": "Perda de líquido documentada durante aquecimento pode contribuir para queda de rejeição térmica.",
+            "H3": "Comando ou resposta anormais do ventilador em carga comparável podem favorecer hipótese térmica concorrente."
+          },
+          "nonDiscrimination": "Temperatura alta sozinha não distingue ventilação, termostato, bomba, colmeia ou falta de líquido.",
+          "requiredMetadata": [
+            "equipmentContext",
+            "dateTime",
+            "loadCondition",
+            "ambientCondition",
+            "telemetryValidity",
+            "fanArchitecture"
+          ],
+          "safeBoundary": "Consultar dados sem forçar temperatura alta ou comandar ventilador em área aberta; seguir procedimentos OEM.",
+          "performed": false,
+          "resultObserved": null,
+          "oemEffective": false,
+          "independentEvidenceVerified": false
+        },
+        {
+          "id": "S3",
+          "methodId": "EV-12",
+          "sourceTestId": null,
+          "question": "O procedimento de circulação, termostato e estanqueidade aplicável à configuração distingue ausência de perda de fluido e deficiência interna?",
+          "signals": {
+            "H1": "Circulação conforme OEM com obstrução externa independente tende a fortalecer H1, sem condenar trocador.",
+            "H2": "Teste de estanqueidade e trilha de perda localizada favorecem vazamento específico da interface.",
+            "H3": "Desvio de circulação, termorregulação ou acionamento com arrefecimento limpo orienta discriminar componentes."
+          },
+          "nonDiscrimination": "Falha no ensaio sem controle de válvulas, carga e referências pode ser efeito de outra restrição no circuito.",
+          "requiredMetadata": [
+            "equipmentContext",
+            "dateTime",
+            "oemCoolingProcedure",
+            "flowCircuit",
+            "thermostatCheck",
+            "independentReview"
+          ],
+          "safeBoundary": "Testes funcionais somente com circuito frio e método OEM aplicável; não derivar linhas nem liberar pressão a quente.",
+          "performed": false,
+          "resultObserved": null,
+          "oemEffective": false,
+          "independentEvidenceVerified": false
+        }
+      ],
+      "readiness": {
+        "requires": [
+          "Arranjo OEM de radiadores, ventilador, bomba e termostato da CAT 980 identificado por série",
+          "Inspeção com sistema frio do pacote, depósito externo, reservatório e conexões com registros",
+          "Tendências comparáveis de carga, ambiente, temperatura e resposta do ventilador, com canais validados",
+          "Testes autorizados de circulação e vedação mais revisão independente antes de condenar qualquer componente"
+        ],
+        "whenMissing": "inconclusivo",
+        "whenComplete": "apto_para_revisao_nao_confirmado"
+      },
+      "sourceIds": [
+        "CAT-RADIATOR-CARE",
+        "CAT-EXC-COOL-CHECKLIST",
+        "CAT-WATER-PUMP-REPLACEMENT",
+        "CAT-THERMOSTAT-REPLACEMENT"
+      ],
+      "sourceNature": "literatura_geral_sem_efetividade_de_serie",
+      "linkedCausalChainId": null,
+      "serialOrArrangement": null,
+      "sapLocationId": null,
+      "confirmedComponentCode": null,
+      "caseReview": {
+        "engineering": null,
+        "independent": null,
+        "oem": null,
+        "status": "pendente_sem_evidencia"
+      },
+      "executionStatus": "not_performed",
+      "observedEvents": 0,
+      "confirmedRootCause": false,
+      "approvedForOperationalUse": false
+    }
+  ]
+}
