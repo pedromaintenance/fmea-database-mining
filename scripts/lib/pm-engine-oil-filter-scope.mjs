@@ -44,6 +44,8 @@ export function examineEngineOilFilterScope(db,rule){
     group={systemCode:l.sistema?.codigo||null,groupCode:l.grupo?.codigo||null,
      subgroupCode:l.subgrupo?.codigo||null,models:new Set(),objectTypes:new Set(),
      leafPaths:0,pathsWithExplicitFilterText:0,descriptorMatchesPerPath:0,
+     oilSpecificMatchesPerPath:0,oilSpecificEligiblePairsPerPath:0,
+     mediaTextOccurrences:{oil:0,fuel:0,air:0,hydraulic:0,unqualified:0,ambiguous:0},
      damageCauseEligibleMatchesPerPath:0,lexicalHints:new Set(),codesWithinType:new Map()};
     m.set(key,group);
    }
@@ -53,7 +55,15 @@ export function examineEngineOilFilterScope(db,rule){
    for(const p of matches){
     const eligible=Boolean(db.compatibleFailureModesByPart[p.code]?.damageCauses?.[rule.damageId]?.includes(rule.causeId));
     group.damageCauseEligibleMatchesPerPath+=Number(eligible);
-    group.lexicalHints.add(classifyOilFilterText(p.pt));
+    const cls=classifyOilFilterText(p.pt);
+    group.lexicalHints.add(cls);
+    const suffix=cls.replace('_filter_text','').replace('_filter_media','');
+    const media=({oil:'oil',fuel:'fuel',air:'air',hydraulic:'hydraulic',unqualified:'unqualified',ambiguous:'ambiguous'})[suffix];
+    if(media)group.mediaTextOccurrences[media]++;
+    if(cls==='oil_filter_text'){
+     group.oilSpecificMatchesPerPath++;
+     group.oilSpecificEligiblePairsPerPath+=Number(eligible);
+    }
     const byType=group.codesWithinType.get(l.objetoTipoSAP)||new Set();
     byType.add(p.code);group.codesWithinType.set(l.objetoTipoSAP,byType);
    }
@@ -64,6 +74,9 @@ export function examineEngineOilFilterScope(db,rule){
    leafPaths:g.leafPaths,pathsWithExplicitFilterText:g.pathsWithExplicitFilterText,
    descriptorMatchesPerPath:g.descriptorMatchesPerPath,
    damageCauseEligibleMatchesPerPath:g.damageCauseEligibleMatchesPerPath,
+   oilSpecificMatchesPerPath:g.oilSpecificMatchesPerPath,
+   oilSpecificEligiblePairsPerPath:g.oilSpecificEligiblePairsPerPath,
+   mediaTextOccurrences:g.mediaTextOccurrences,
    uniqueCodesWithinObjectTypes:[...g.codesWithinType.values()].reduce((n,s)=>n+s.size,0),
    lexicalHints:[...g.lexicalHints].sort(),
    disposition:'discovery_only_requires_effective_OEM_BOM_and_SAP_review'
@@ -77,6 +90,8 @@ export function examineEngineOilFilterScope(db,rule){
   matchedLeafPaths:arr.reduce((n,g)=>n+g.pathsWithExplicitFilterText,0),
   matchedDescriptionOccurrences:arr.reduce((n,g)=>n+g.descriptorMatchesPerPath,0),
   eligibleDamageCauseOccurrences:arr.reduce((n,g)=>n+g.damageCauseEligibleMatchesPerPath,0),
+  explicitOilFilterOccurrences:arr.reduce((n,g)=>n+g.oilSpecificMatchesPerPath,0),
+  eligibleOilFilterOccurrences:arr.reduce((n,g)=>n+g.oilSpecificEligiblePairsPerPath,0),
   candidateBranches:arr.filter(g=>g.descriptorMatchesPerPath>0).length
  });
  return {
