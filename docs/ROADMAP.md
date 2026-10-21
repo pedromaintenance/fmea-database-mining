@@ -1,6 +1,6 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 21/10/2026 · **Ciclo:** catálogo técnico v1.3.40 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 21/10/2026 · **Ciclo:** catálogo técnico v1.3.41 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
 
@@ -38,6 +38,19 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 | Enriquecimento | 12 roteiros classificados por falha funcional, sintomas e técnicas | Anotação manual, não prova de causa |
 
 **Observação:** as 159 tarefas de PM com subgrupo candidato foram obtidas em extração local anterior e **não** representam 159 associações homologadas. Contagens de vínculos estritos serão publicadas pelo relatório automático após cada alteração do gerador.
+
+## Ciclo — 21/10/2026: roda-guia IDLE e discriminação CTS (v1.3.41)
+
+- [x] Escaneados 221 caminhos dos modelos-alvo, 40 no sistema UNCR, oito em IDLE; zero Rolamento, oito ocorrências de eixo e oito de guia.
+- [x] Separados os oito registros textuais de rolamento nos subgrupos `TRF1/ROLL` e `TRF2/ROLL` de qualquer rolamento interno de IDLE; 02.01/C1.04 é apenas permitido no catálogo.
+- [x] Detectado uso compartilhado de semântica de roletes no bundle IDLE, incluindo condição de aquecimento e atividade de inspeção de vedação; registrar como hipótese de revisão, não copiar observações.
+- [x] Publicada matriz CTS/OEM/BOM/SAP de quatro hipóteses concorrentes e seis requisitos documentais, com auditor independente e CI.
+- [ ] **P0 Dados Mestres/Engenharia OEM:** obter composição real IDLE por modelo e número de série, discriminando eixo, bucha, conjunto completo e eventual rolamento substituível.
+- [ ] **Inspeção CTS:** avaliar perfil, medidas e posição somente com tabelas/procedimentos efetivos; evidência real deve ser mantida em sistema restrito.
+- [ ] **Curadoria semântica:** decidir se convém criar conceitos específicos de calor/vedação da roda-guia sem reutilizar rolete; corrigir rótulo “confirmado” do dano hipotético somente em ciclo controlado com testes de contrato.
+- [ ] **Revisor independente:** deliberar sobre subgrupo/parte/dano/causa após evidência suficiente e não pela ocorrência da palavra Rolamento em ROLL.
+
+**Estado:** nenhum rolamento IDLE homologado ou medição CTS apresentada; 115 vínculos PM candidatos e dez exceções bloqueadas.
 
 ## Ciclo — 21/10/2026: auditoria filtro óleo motor LUSY (v1.3.40)
 
