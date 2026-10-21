@@ -1,6 +1,6 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 20/10/2026 · **Ciclo:** catálogo técnico v1.3.17 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 20/10/2026 · **Ciclo:** catálogo técnico v1.3.18 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
 
@@ -39,6 +39,20 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 
 **Observação:** as 159 tarefas de PM com subgrupo candidato foram obtidas em extração local anterior e **não** representam 159 associações homologadas. Contagens de vínculos estritos serão publicadas pelo relatório automático após cada alteração do gerador.
 
+## Ciclo concluído — 20/10/2026: seis deepdives por playbook didático (v1.3.18)
+
+- [x] Auditados os 12 IDs de playbook e identificada lacuna de cobertura: os seis roteiros `PATH-*` prévios são **por cadeia causal**, não revisão formal de seis playbooks individuais.
+- [x] Aprofundados por ID **6/12 playbooks**: CAT 980/cilindro; DR410i/avanço; DI650i/pneumática; CAT 16/pneus; CAT 777/combustível; CAT 6030/lubrificação.
+- [x] Construídas **18 etapas técnicas propostas**, **24 critérios de prontidão**, campos de condição, sinal favorável a H1/H2/H3, inconclusão e segurança por etapa.
+- [x] Adicionados [validador](../scripts/validate-playbook-deepdives.mjs), [Schema](../schemas/playbook-deepdives.schema.json) e **34 regressões sintéticas**, com CI e indicadores integrados.
+- [x] Preservadas origens dos 12 playbooks, 24 cadeias, 6 roteiros PATH e contrato/conteúdo públicos sem promoção causal.
+- [x] [Relatório técnico](CICLO_2026-10-20_PLAYBOOKS_DIFERENCIAIS.md).
+- [ ] **P0 próximo ciclo:** aprofundar **os seis IDs `PB-*` ainda sem deepdive próprio**, com verificação de sobreposição aos `PATH-*` existentes; dar prioridade ao circuito hidráulico de pressão da CAT 395.
+- [ ] **P0 dependente de terceiros:** obter prefixo/OMM/CTS efetivos da CAT D9 e executar revisão de campo independente; sete requisitos seguem pendentes.
+- [ ] **P1:** modelar fluxo de revisão de evidências reais com isolamento de repositório privado e governança de acesso, sem adicionar documentação interna ao GitHub público.
+
+**Estado:** 6/12 playbooks aprofundados **por ID**, 6 roteiros PATH por cadeia, 0 ensaios, 0 raízes confirmadas, dez PMs bloqueadas.
+
 ## Ciclo concluído — 20/10/2026: segundo lote de roteiros diferenciais (v1.3.17)
 
 **Objetivo:** enfrentar diagnósticos ambíguos por comparação de mecanismos e inspeções realmente discriminantes, sem confundir condição detectada com causa comprovada.
@@ -48,7 +62,7 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 - [x] Criado `npm run pathways:expand:validate` com **9 regressões de prontidão e 12 de alterações indevidas**, no QA e CI.
 - [x] Manutenção do contrato público 1.0.0, conteúdo 1.0.0, 24 cadeias públicas e 20 fontes exportadas; sem atualização de consumidores.
 - [x] [Relatório técnico e fontes](CICLO_2026-10-20_ROTEIROS_DIFERENCIAIS_II.md).
-- [ ] **P0 próximo ciclo:** analisar os **seis playbooks ainda sem aprofundamento** com prioridade para segurança operacional e capacidade de medição OEM, sem extrapolar o SIS para série desconhecida.
+- [x] **Novo controle v1.3.18:** seis playbooks receberam deepdive por ID, sem converter seis PATH causais em cobertura artificial de playbooks. Outros seis permanecem sem deepdive por ID.
 - [ ] **P0 dependente de dados:** obter prefixo de série e OMM/CTS efetivos do piloto D9 e revisar com oficina; os sete requisitos continuam pendentes.
 - [ ] **P1:** estruturar registro controlado de coleta e aprovação de evidência de campo com separação de artefatos restritos e fontes públicas.
 
