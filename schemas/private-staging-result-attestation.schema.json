@@ -1,0 +1,214 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PRIVATE staging result attestation metadata (must not be stored publicly)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "version",
+    "recordNature",
+    "classification",
+    "statement",
+    "attestations",
+    "release"
+  ],
+  "properties": {
+    "schema": {
+      "const": "fmea-mining.private-staging-result-attestation.v1"
+    },
+    "version": {
+      "const": "1.3.27"
+    },
+    "recordNature": {
+      "enum": [
+        "synthetic_test_only",
+        "private_real_staging"
+      ]
+    },
+    "classification": {
+      "const": "restricted"
+    },
+    "statement": {
+      "$ref": "#/$defs/statement"
+    },
+    "attestations": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "result",
+        "custody",
+        "technical",
+        "independent"
+      ],
+      "properties": {
+        "result": {
+          "$ref": "#/$defs/signature"
+        },
+        "custody": {
+          "$ref": "#/$defs/signedReview"
+        },
+        "technical": {
+          "$ref": "#/$defs/signedReview"
+        },
+        "independent": {
+          "$ref": "#/$defs/signedReview"
+        }
+      }
+    },
+    "release": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "publicExportAuthorized",
+        "operationalReleaseApproved",
+        "rootCauseConfirmed",
+        "catalogPromotionApproved"
+      ],
+      "properties": {
+        "publicExportAuthorized": {
+          "const": false
+        },
+        "operationalReleaseApproved": {
+          "const": false
+        },
+        "rootCauseConfirmed": {
+          "const": false
+        },
+        "catalogPromotionApproved": {
+          "const": false
+        }
+      }
+    }
+  },
+  "$defs": {
+    "opaqueToken": {
+      "type": "string",
+      "pattern": "^[A-Z0-9-]{8,128}$"
+    },
+    "signature": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "keyId",
+        "signature"
+      ],
+      "properties": {
+        "keyId": {
+          "$ref": "#/$defs/opaqueToken"
+        },
+        "signature": {
+          "type": "string",
+          "minLength": 80,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9+/]+={0,2}$"
+        }
+      }
+    },
+    "probe": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "probeId",
+        "status",
+        "evidenceToken"
+      ],
+      "properties": {
+        "probeId": {
+          "type": "string",
+          "minLength": 8
+        },
+        "status": {
+          "enum": [
+            "pass",
+            "fail",
+            "blocked",
+            "inconclusive"
+          ]
+        },
+        "evidenceToken": {
+          "$ref": "#/$defs/opaqueToken"
+        }
+      }
+    },
+    "statement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema",
+        "runToken",
+        "tenantToken",
+        "caseToken",
+        "originatorToken",
+        "scenarioId",
+        "sourceAdapterId",
+        "issuedAt",
+        "expiresAt",
+        "probeResults"
+      ],
+      "properties": {
+        "schema": {
+          "const": "fmea-mining.private-staging-result-statement.v1"
+        },
+        "runToken": {
+          "$ref": "#/$defs/opaqueToken"
+        },
+        "tenantToken": {
+          "$ref": "#/$defs/opaqueToken"
+        },
+        "caseToken": {
+          "$ref": "#/$defs/opaqueToken"
+        },
+        "originatorToken": {
+          "$ref": "#/$defs/opaqueToken"
+        },
+        "scenarioId": {
+          "type": "string",
+          "pattern": "^STG-"
+        },
+        "sourceAdapterId": {
+          "$ref": "#/$defs/opaqueToken"
+        },
+        "issuedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "expiresAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "probeResults": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "$ref": "#/$defs/probe"
+          }
+        }
+      }
+    },
+    "signedReview": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "claim",
+        "keyId",
+        "signature"
+      ],
+      "properties": {
+        "claim": {
+          "type": "object",
+          "description": "Role-specific claim strictly validated by application policy (not JSON Schema alone)"
+        },
+        "keyId": {
+          "$ref": "#/$defs/opaqueToken"
+        },
+        "signature": {
+          "type": "string",
+          "minLength": 80,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9+/]+={0,2}$"
+        }
+      }
+    }
+  }
+}

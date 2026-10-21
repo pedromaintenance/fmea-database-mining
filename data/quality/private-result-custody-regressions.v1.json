@@ -1,0 +1,297 @@
+{
+  "schema": "fmea-mining.private-result-custody-regressions.v1",
+  "version": "1.3.27",
+  "nature": "offline_synthetic_only",
+  "baselineCases": [
+    {
+      "id": "TEST-BASE-01",
+      "scenarioId": "STG-ID-001",
+      "expected": "eligible_for_manual_change_control_review"
+    },
+    {
+      "id": "TEST-BASE-02",
+      "scenarioId": "STG-ISO-001",
+      "expected": "eligible_for_manual_change_control_review"
+    },
+    {
+      "id": "TEST-BASE-03",
+      "scenarioId": "STG-SOD-001",
+      "expected": "eligible_for_manual_change_control_review"
+    },
+    {
+      "id": "TEST-BASE-04",
+      "scenarioId": "STG-CUSTODY-001",
+      "expected": "eligible_for_manual_change_control_review"
+    },
+    {
+      "id": "TEST-BASE-05",
+      "scenarioId": "STG-AUDIT-001",
+      "expected": "eligible_for_manual_change_control_review"
+    },
+    {
+      "id": "TEST-BASE-06",
+      "scenarioId": "STG-RESTORE-001",
+      "expected": "eligible_for_manual_change_control_review"
+    },
+    {
+      "id": "TEST-BASE-07",
+      "scenarioId": "STG-RETENTION-001",
+      "expected": "eligible_for_manual_change_control_review"
+    },
+    {
+      "id": "TEST-BASE-08",
+      "scenarioId": "STG-RELEASE-001",
+      "expected": "eligible_for_manual_change_control_review"
+    }
+  ],
+  "mutationCases": [
+    {
+      "id": "TEST-MUT-01",
+      "scenarioId": "STG-ID-001",
+      "mutation": "tamper_result",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-02",
+      "scenarioId": "STG-ISO-001",
+      "mutation": "result_signature_invalid",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-03",
+      "scenarioId": "STG-SOD-001",
+      "mutation": "result_key_unknown",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-04",
+      "scenarioId": "STG-CUSTODY-001",
+      "mutation": "result_key_revoked",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-05",
+      "scenarioId": "STG-AUDIT-001",
+      "mutation": "result_wrong_role",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-06",
+      "scenarioId": "STG-RESTORE-001",
+      "mutation": "wrong_tenant",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-07",
+      "scenarioId": "STG-RETENTION-001",
+      "mutation": "expired_receipt",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-08",
+      "scenarioId": "STG-RELEASE-001",
+      "mutation": "replayed_run",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-09",
+      "scenarioId": "STG-ID-001",
+      "mutation": "missing_probe",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-10",
+      "scenarioId": "STG-ISO-001",
+      "mutation": "duplicate_probe",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-11",
+      "scenarioId": "STG-SOD-001",
+      "mutation": "unknown_probe",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-12",
+      "scenarioId": "STG-CUSTODY-001",
+      "mutation": "unsynthetic_identity",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-13",
+      "scenarioId": "STG-AUDIT-001",
+      "mutation": "leaked_url",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-14",
+      "scenarioId": "STG-RESTORE-001",
+      "mutation": "unexpected_payload",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-15",
+      "scenarioId": "STG-RETENTION-001",
+      "mutation": "invalid_probe_status",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-16",
+      "scenarioId": "STG-RELEASE-001",
+      "mutation": "mismatched_case_token",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-17",
+      "scenarioId": "STG-ID-001",
+      "mutation": "custody_signature_invalid",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-18",
+      "scenarioId": "STG-ISO-001",
+      "mutation": "missing_custody",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-19",
+      "scenarioId": "STG-SOD-001",
+      "mutation": "custodian_same_originator",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-20",
+      "scenarioId": "STG-CUSTODY-001",
+      "mutation": "custody_digest_mismatch",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-21",
+      "scenarioId": "STG-AUDIT-001",
+      "mutation": "custody_license_false",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-22",
+      "scenarioId": "STG-RESTORE-001",
+      "mutation": "technical_signature_invalid",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-23",
+      "scenarioId": "STG-RETENTION-001",
+      "mutation": "missing_technical",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-24",
+      "scenarioId": "STG-RELEASE-001",
+      "mutation": "technical_same_originator",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-25",
+      "scenarioId": "STG-ID-001",
+      "mutation": "technical_alternatives_false",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-26",
+      "scenarioId": "STG-ISO-001",
+      "mutation": "technical_digest_mismatch",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-27",
+      "scenarioId": "STG-SOD-001",
+      "mutation": "independent_signature_invalid",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-28",
+      "scenarioId": "STG-CUSTODY-001",
+      "mutation": "missing_independent",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-29",
+      "scenarioId": "STG-AUDIT-001",
+      "mutation": "independent_same_technical",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-30",
+      "scenarioId": "STG-RESTORE-001",
+      "mutation": "independent_same_originator",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-31",
+      "scenarioId": "STG-RETENTION-001",
+      "mutation": "independent_digest_mismatch",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-32",
+      "scenarioId": "STG-RELEASE-001",
+      "mutation": "release_authorized",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-33",
+      "scenarioId": "STG-ID-001",
+      "mutation": "operational_release",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-34",
+      "scenarioId": "STG-ISO-001",
+      "mutation": "root_cause_claimed",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-35",
+      "scenarioId": "STG-SOD-001",
+      "mutation": "record_mode_real",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-36",
+      "scenarioId": "STG-CUSTODY-001",
+      "mutation": "raw_result_data",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-37",
+      "scenarioId": "STG-AUDIT-001",
+      "mutation": "missing_evidence_token",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-38",
+      "scenarioId": "STG-RESTORE-001",
+      "mutation": "signer_identity_mismatch",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-39",
+      "scenarioId": "STG-RETENTION-001",
+      "mutation": "invalid_time_range",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-40",
+      "scenarioId": "STG-RELEASE-001",
+      "mutation": "independent_same_custodian",
+      "expected": "reject"
+    }
+  ],
+  "counts": {
+    "baselines": 8,
+    "attacksRejected": 40,
+    "total": 48,
+    "realFieldEvents": 0,
+    "realReviews": 0,
+    "realApprovals": 0
+  }
+}
