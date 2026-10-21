@@ -2,6 +2,14 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.21] — 2026-10-21 — Auditoria de coerência das três candidatas de cadeia
+- Três propostas `CAND-*` avaliadas contra as 10 classes de falha funcional e os 15 mecanismos da ontologia, sem editar quaisquer IDs `FC-*`.
+- Vedação externa da bomba: FF-06 / ME-15 condicional; perda volumétrica interna: FF-02 e lacuna ontológica; flancos de engrenagem: FF-02 e necessidade de separar ME-01/ME-02/ME-03.
+- Auditadas **seis sobreposições conceituais** com cadeias atuais, preservando fronteiras de componente e impedindo transplantar bomba de água para bomba hidráulica.
+- Registrados efeitos locais/sistêmicos **possíveis, não observados**, contraprovas e três gates de promoção por candidata.
+- Validador, JSON Schema e **21 regressões sintéticas (3 baseline + 18 mutações)** integrados a QA/CI; métricas e documentação atualizadas.
+- **0 cadeias aprovadas, 0 efeitos medidos, 0 causas confirmadas, 0 revisões OEM/independentes**; conteúdo e contrato públicos congelados, sem mudanças em consumidores.
+
 ## [1.3.20] — 2026-10-20 — Triagem de cinco lacunas e propostas mecânicas não homologadas
 - Reclassificadas as cinco hipóteses PB–FC sem equivalência: **três candidatas a cadeia física** e **duas interpretações que não configuram modos de falha**.
 - Propostos em coleção interna separada mecanismos de vedação externa e perda interna de entrega de bomba hidráulica, e degradação superficial de dentes de engrenagem de comando final; sem incorporação às 24 cadeias existentes.
