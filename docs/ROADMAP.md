@@ -1,6 +1,6 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 21/10/2026 · **Ciclo:** catálogo técnico v1.3.31 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 21/10/2026 · **Ciclo:** catálogo técnico v1.3.32 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
 
@@ -39,6 +39,19 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 
 **Observação:** as 159 tarefas de PM com subgrupo candidato foram obtidas em extração local anterior e **não** representam 159 associações homologadas. Contagens de vínculos estritos serão publicadas pelo relatório automático após cada alteração do gerador.
 
+## Ciclo concluído — 21/10/2026: confronto de fontes OEM públicas D9 (v1.3.32)
+
+- [x] [Matriz de pesquisa Caterpillar](../data/research/d9-public-oem-literature.v1.json): cinco fontes públicas auditáveis, sete mapeamentos ao pedido v1.3.31 e limites de utilização de cada informação.
+- [x] [Guia de interpretação](PESQUISA_PUBLICA_OEM_D9.md): separação entre orientações gerais e evidências exigidas para série/arranjo efetivo (OMM, BOM, CTS, junta sapata–elo, SAP e parecer de campo).
+- [x] [Validador](../scripts/validate-d9-public-oem-research.mjs), JSON Schema e **31 regressões sintéticas** integrados ao QA/CI para impedir falsa homologação de PN, torque, limites CTS e configurações instaladas.
+- [x] Mantidos dados reais, OMM/SIS licenciados e identificadores de ativo fora do GitHub, contrato público 1.0.0 e 24 FC/15 ME sem mudanças.
+- [ ] **P0 externo — responsável por Engenharia de Ativos:** selecionar o D9 físico por série/arranjo em sistema privado e encaminhar o [pedido v1.3.31](SOLICITACAO_TECNICA_OEM_D9.md) via canal institucional autorizado.
+- [ ] **P0 externo — literatura OEM licenciada:** localizar OMM/BOM/Service Information e procedimento CTS realmente efetivos, incluindo revisão, aplicabilidade e alterações instaladas, sem compartilhar material proprietário publicamente.
+- [ ] **P0 externo — Engenharia/Inspeção:** validar método, instrumento e condição segura antes de registrar resultado de inspeção/medição ou emitir parecer técnico independente.
+- [ ] **Próximo ciclo real:** dependerá da identificação de responsável/canal e do status de envio. Evitar produção de novos mocks enquanto o bloqueio externo não for resolvido.
+
+**Estado:** cinco fontes gerais revisadas; 7 requisitos de aplicação OEM continuam bloqueados e **0 solicitações enviadas**.
+
 ## Ciclo concluído — 21/10/2026: pedido técnico OEM D9 (v1.3.31)
 
 - [x] [Requisição de documentação](../data/governance/d9-oem-evidence-request.v1.json) com 7 itens ligados 1:1 ao piloto, sem números específicos e sem alterar evidências de origem.
@@ -50,7 +63,7 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 - [ ] **P0 externo oficina/inspeção:** após aprovar efetividade OEM, programar inspeção controlada e CTS conforme procedimento, com instrumentos e método aplicáveis.
 - [ ] **P0 externo SAP/Engenharia:** conciliar lista técnica e locais funcionais do ativo, após validação de componentes, sem mapeamentos deduzidos.
 - [ ] **P0 externo revisão independente:** registrar método, contraprovas, aplicabilidade e parecer em repositório restrito, sem publicar manual licenciado.
-- [ ] **Próximo ciclo condicionado:** receber metadados **não sigilosos** do andamento do pedido e atualizar os estados de origem somente após conferência documental; se não houver responsável ou canal de envio definido, registrar a dependência em vez de produzir mais simulações.
+- [ ] **Envio ainda necessário:** o ciclo v1.3.32 completou pesquisa pública adicional, mas o status de envio/recebimento por área autorizada permanece pendente. Próxima alteração de status exige protocolo corporativo real.
 
 **Estado:** solicitação estruturada, **ainda não encaminhada**. 7 itens pendentes; nenhuma evidência real recebida ou homologada.
 

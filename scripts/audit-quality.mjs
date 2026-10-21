@@ -45,6 +45,8 @@ const blockerMatrix=read('data/governance/consolidated-blockers.v1.json');
 const blockerFixtures=read('data/quality/consolidated-blocker-regressions.v1.json');
 const d9EvidenceRequest=read('data/governance/d9-oem-evidence-request.v1.json');
 const d9RequestRegressions=read('data/quality/d9-request-regressions.v1.json');
+const d9PublicOemResearch=read('data/research/d9-public-oem-literature.v1.json');
+const d9PublicOemRegressions=read('data/quality/d9-public-oem-regressions.v1.json');
 const differential=read('data/quality/discriminative-tests.v1.json');
 const differentialFixtures=read('data/quality/discrimination-regressions.v1.json');
 const complementary=read('data/quality/complementary-discrimination.v1.json');
@@ -142,6 +144,10 @@ const counts={
  d9DocumentRequestsActuallySent:d9EvidenceRequest.requestRouting.requestSentAt===null?0:1,
  d9RequestSyntheticRegressions:d9RequestRegressions.baselineCases.length+d9RequestRegressions.mutationCases.length,
  d9FieldReviewsActuallyCompleted:d9EvidenceRequest.counts.actualEquipmentInspections,
+ d9PublicCaterpillarSourcesReviewed:d9PublicOemResearch.sources.length,
+ d9PublicSourceRequestMappings:d9PublicOemResearch.mappings.length,
+ d9PublicOemSyntheticTests:d9PublicOemRegressions.baselineCases.length+d9PublicOemRegressions.mutationCases.length,
+ d9PublicOemEffectiveDataConfirmed:d9PublicOemResearch.counts.effectivityVerified,
  actualCorporateStagingApprovals:stagingAcceptance.counts.actualCorporateApprovals,
  productionControlsActuallyProvisioned:Object.values(restrictedInfrastructure.deployment).filter(Boolean).length,
  restrictedEvidenceKinds:restrictedEvidencePolicy.evidenceKinds.length,
@@ -232,7 +238,7 @@ const counts={
  semanticDamageConfirmations:semantic.confirmedComponentDamages.length,
  evidenceValidatedInRealEquipment:0,technicallyApprovedPlaybooks:0
 };
-const report={schema:'fmea-mining.quality-audit.v1',version:'1.3.31',
+const report={schema:'fmea-mining.quality-audit.v1',version:'1.3.32',
  generatedFrom:'working_tree',status:'qualidade_cadastral_nao_taxa_de_falhas',
  meanings:{
   pmCandidateLinks:'vinculos gerados por regra e taxonomia, NAO falhas observadas',

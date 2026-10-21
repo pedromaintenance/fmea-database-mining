@@ -2,7 +2,7 @@
 
 Banco de conhecimento **versionado** para investigar modos de falha, sintomas, evidências e causas em equipamentos móveis de mineração. Um consumidor possível é o jogo **[P.O.R.C.A.R.I.A. — Você Quebra, Eu Conserto](https://github.com/pedromaintenance/porcaria-voce-quebra-eu-conserto)**, mas o banco é independente: **este repositório não altera os consumidores**.
 
-> **Status:** versão do catálogo **1.3.31** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
+> **Status:** versão do catálogo **1.3.32** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
 
 ## O que queremos construir
 
@@ -390,6 +390,16 @@ O [texto para encaminhamento interno](docs/SOLICITACAO_TECNICA_OEM_D9.md) separa
 O comando `npm run d9:oem:request:validate` realiza **35 testes sintéticos**: sete verificações de origem e 28 adulterações rejeitadas, preservando bloqueios e direitos de publicação.
 
 [Relatório do ciclo](docs/CICLO_2026-10-21_SOLICITACAO_OEM_D9.md) · [Schema de solicitação](schemas/d9-oem-evidence-request.schema.json).
+
+## Referências OEM públicas para o D9 — v1.3.32
+
+A [matriz de literatura Caterpillar](data/research/d9-public-oem-literature.v1.json) reúne **5 páginas oficiais públicas** e relaciona sua capacidade de evidência aos **7 requisitos ainda bloqueados** do piloto D9. Duas referências já estavam no catálogo de fontes; três foram pesquisadas adicionalmente.
+
+A pesquisa sustenta práticas **gerais** (configurações alternativas D9–D11, inspeção de fixações, roletes e tensionamento, conceito do método torque-turn e serviço CTS Pro), mas **não identifica arranjo instalado, procedimento por série, PN, torque, limites CTS, dados SAP nem diagnóstico de falha**.
+
+O [guia técnico de fronteiras de evidência](docs/PESQUISA_PUBLICA_OEM_D9.md) discrimina o que pode ser apresentado na solicitação [v1.3.31](docs/SOLICITACAO_TECNICA_OEM_D9.md) e o que obrigatoriamente requer SIS/OMM licenciado, verificação de campo e revisão independente.
+
+`npm run d9:public:oem:validate` executa **31 regressões sintéticas** (7 vínculos e 24 alterações indevidas), impedindo promover conhecimento geral a especificação de máquina. **O pedido corporativo continua não enviado**; o CI público não homologa equipamentos.
 
 ## Comece por aqui
 

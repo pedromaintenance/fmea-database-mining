@@ -1,0 +1,241 @@
+{
+  "schema": "fmea-mining.d9-public-oem-research.v1",
+  "version": "1.3.32",
+  "pilotId": "OEM-PILOT-D9-UNDERCARRIAGE",
+  "modelId": "EQ07",
+  "nature": "caterpillar_public_source_review_not_oem_serial_homologation",
+  "sourceOfTruth": "data/quality/oem-d9-evidence-intake.v1.json",
+  "sourceRequest": "data/governance/d9-oem-evidence-request.v1.json",
+  "researchDate": "2026-10-21",
+  "sources": [
+    {
+      "id": "CAT-DOZER-UC-MAINT",
+      "title": "Dozer Undercarriage Maintenance",
+      "url": "https://www.cat.com/en_US/articles/for-owners/dozer-undercarriage-maintenance.html",
+      "existingCatalogSource": true,
+      "scope": "dozer_general_public",
+      "limitedFinding": "A inspeção visual em tratores inclui componentes, fixações, vedação, detritos e tensão; deve-se consultar o OMM efetivo antes de aplicar critérios."
+    },
+    {
+      "id": "CAT-UC-DOZER-GUIDE",
+      "title": "Undercarriage for Dozers",
+      "url": "https://www.cat.com/en_US/support/maintenance/undercarriage/dozers/",
+      "existingCatalogSource": true,
+      "scope": "dozer_general_public",
+      "limitedFinding": "Caterpillar recomenda tensionamento adequado, inspeção visual e método torque-turn para fixadores de esteira, sem especificações de aperto para a máquina efetiva."
+    },
+    {
+      "id": "CAT-UC-MINING-CHOICES-D9",
+      "title": "Undercarriage — Choices for Mining",
+      "url": "https://www.cat.com/en_US/support/maintenance/undercarriage.html",
+      "existingCatalogSource": false,
+      "scope": "d9_d11_product_families_public",
+      "limitedFinding": "Caterpillar apresenta famílias General Duty, Heavy Duty e HDXL para D9–D11; isso não informa qual delas está instalada no equipamento objeto do piloto."
+    },
+    {
+      "id": "CAT-CTS-PRO-EXPERT",
+      "title": "Get Expert Cat Undercarriage Maintenance and Repair",
+      "url": "https://www.cat.com/en_US/blog/mining/articles/get-expert-undercarriage-maintenance-and-repair.html",
+      "existingCatalogSource": false,
+      "scope": "undercarriage_service_public",
+      "limitedFinding": "CTS Pro e a rede de concessionários apoiam medições, acompanhamento de desgaste e planejamento; nenhum limite por variante D9 está estabelecido na página."
+    },
+    {
+      "id": "CAT-DOZER-TRACK-TENSION-PUBLIC",
+      "title": "How to Check Dozer Track Tension",
+      "url": "https://www.cat.com/en_US/articles/for-owners/how-to-check-dozer-track-tension.html/",
+      "existingCatalogSource": false,
+      "scope": "dozer_general_public",
+      "limitedFinding": "A página descreve observações e verificação genérica de tensionamento do material rodante, sem homologação da técnica para configuração específica D9."
+    }
+  ],
+  "mappings": [
+    {
+      "id": "PUB-D9-01",
+      "originInputId": "serial-prefix",
+      "requestId": "REQ-D9-01",
+      "sourceState": "not_supplied",
+      "generalFinding": "Há alternativas públicas de conjuntos para D9–D11; a variante efetivamente instalada continua desconhecida.",
+      "sourceIds": [
+        "CAT-UC-MINING-CHOICES-D9"
+      ],
+      "evidenceSupportClass": "context_only_no_serial",
+      "missingPrivateEvidence": "Prefixo, série completa ou arranjo de fábrica/modificado confrontado com placa e cadastro OEM restrito.",
+      "requestDiscipline": "engenharia_ativos",
+      "canIdentifyInstalledArrangement": false,
+      "canVerifySerialEffectivity": false,
+      "canApproveParts": false,
+      "canApproveCTSLimits": false,
+      "canApproveTorqueTurnValues": false,
+      "canConfirmFieldFailure": false,
+      "documentOrInspectionReceived": false,
+      "independentReviewer": null,
+      "manualDisposition": "remain_blocked"
+    },
+    {
+      "id": "PUB-D9-02",
+      "originInputId": "oem-omm",
+      "requestId": "REQ-D9-02",
+      "sourceState": "not_supplied",
+      "generalFinding": "A Caterpillar remete ao OMM para orientações operacionais e de manutenção por equipamento.",
+      "sourceIds": [
+        "CAT-DOZER-UC-MAINT"
+      ],
+      "evidenceSupportClass": "method_pointer_no_effectivity",
+      "missingPrivateEvidence": "Número de mídia, edição, revisão e faixa de séries do OMM efetivo, obtidos em fonte licenciada.",
+      "requestDiscipline": "engenharia_mecanica",
+      "canIdentifyInstalledArrangement": false,
+      "canVerifySerialEffectivity": false,
+      "canApproveParts": false,
+      "canApproveCTSLimits": false,
+      "canApproveTorqueTurnValues": false,
+      "canConfirmFieldFailure": false,
+      "documentOrInspectionReceived": false,
+      "independentReviewer": null,
+      "manualDisposition": "remain_blocked"
+    },
+    {
+      "id": "PUB-D9-03",
+      "originInputId": "oem-parts",
+      "requestId": "REQ-D9-03",
+      "sourceState": "not_verified",
+      "generalFinding": "A Caterpillar apresenta variantes de material rodante para D9–D11 com características gerais diferentes.",
+      "sourceIds": [
+        "CAT-UC-MINING-CHOICES-D9"
+      ],
+      "evidenceSupportClass": "options_only_no_bill_of_material",
+      "missingPrivateEvidence": "BOM/PN e desenhos aplicáveis por arranjo instalado, alterações de campo e confirmação contra peças físicas.",
+      "requestDiscipline": "materiais_cadastro",
+      "canIdentifyInstalledArrangement": false,
+      "canVerifySerialEffectivity": false,
+      "canApproveParts": false,
+      "canApproveCTSLimits": false,
+      "canApproveTorqueTurnValues": false,
+      "canConfirmFieldFailure": false,
+      "documentOrInspectionReceived": false,
+      "independentReviewer": null,
+      "manualDisposition": "remain_blocked"
+    },
+    {
+      "id": "PUB-D9-04",
+      "originInputId": "oem-bolting",
+      "requestId": "REQ-D9-04",
+      "sourceState": "not_verified",
+      "generalFinding": "Para hardware de esteira, a recomendação geral Cat menciona o método torque-turn e inspeção de fixações.",
+      "sourceIds": [
+        "CAT-UC-DOZER-GUIDE"
+      ],
+      "evidenceSupportClass": "general_method_no_torque_value",
+      "missingPrivateEvidence": "Fixador, reutilização, condição de montagem, ferramenta, sequência e torque/ângulo por documento OEM efetivo.",
+      "requestDiscipline": "engenharia_mecanica",
+      "canIdentifyInstalledArrangement": false,
+      "canVerifySerialEffectivity": false,
+      "canApproveParts": false,
+      "canApproveCTSLimits": false,
+      "canApproveTorqueTurnValues": false,
+      "canConfirmFieldFailure": false,
+      "documentOrInspectionReceived": false,
+      "independentReviewer": null,
+      "manualDisposition": "remain_blocked"
+    },
+    {
+      "id": "PUB-D9-05",
+      "originInputId": "oem-cts",
+      "requestId": "REQ-D9-05",
+      "sourceState": "not_verified",
+      "generalFinding": "O CTS Pro utiliza inspeções/medições de desgaste para apoiar monitoramento e planejamento da vida de material rodante.",
+      "sourceIds": [
+        "CAT-CTS-PRO-EXPERT"
+      ],
+      "evidenceSupportClass": "service_exists_no_measurement_baseline",
+      "missingPrivateEvidence": "Procedimento, pontos de medição, instrumento calibrado e limites CTS para a variante e condição real do D9.",
+      "requestDiscipline": "inspecao_preditiva",
+      "canIdentifyInstalledArrangement": false,
+      "canVerifySerialEffectivity": false,
+      "canApproveParts": false,
+      "canApproveCTSLimits": false,
+      "canApproveTorqueTurnValues": false,
+      "canConfirmFieldFailure": false,
+      "documentOrInspectionReceived": false,
+      "independentReviewer": null,
+      "manualDisposition": "remain_blocked"
+    },
+    {
+      "id": "PUB-D9-06",
+      "originInputId": "sap-master",
+      "requestId": "REQ-D9-06",
+      "sourceState": "not_verified",
+      "generalFinding": "Nenhuma das páginas públicas consultadas contém cadastro SAP, local funcional ou lista técnica corporativa.",
+      "sourceIds": [],
+      "evidenceSupportClass": "no_public_cat_evidence_for_sap",
+      "missingPrivateEvidence": "Dados mestres internos autorizados e confronto com a BOM da configuração efetivamente identificada.",
+      "requestDiscipline": "dados_mestres_sap",
+      "canIdentifyInstalledArrangement": false,
+      "canVerifySerialEffectivity": false,
+      "canApproveParts": false,
+      "canApproveCTSLimits": false,
+      "canApproveTorqueTurnValues": false,
+      "canConfirmFieldFailure": false,
+      "documentOrInspectionReceived": false,
+      "independentReviewer": null,
+      "manualDisposition": "remain_blocked"
+    },
+    {
+      "id": "PUB-D9-07",
+      "originInputId": "field-review",
+      "requestId": "REQ-D9-07",
+      "sourceState": "not_performed",
+      "generalFinding": "Há orientações públicas de inspeção visual de roletes, sapatas, fixações, sujeira e condição de tensionamento.",
+      "sourceIds": [
+        "CAT-DOZER-UC-MAINT",
+        "CAT-DOZER-TRACK-TENSION-PUBLIC"
+      ],
+      "evidenceSupportClass": "visual_practice_only_no_field_event",
+      "missingPrivateEvidence": "Inspeção de campo executada com controle de energias, registro de método efetivo, contraprova e dois revisores identificados no ambiente restrito.",
+      "requestDiscipline": "engenharia_oficina",
+      "canIdentifyInstalledArrangement": false,
+      "canVerifySerialEffectivity": false,
+      "canApproveParts": false,
+      "canApproveCTSLimits": false,
+      "canApproveTorqueTurnValues": false,
+      "canConfirmFieldFailure": false,
+      "documentOrInspectionReceived": false,
+      "independentReviewer": null,
+      "manualDisposition": "remain_blocked"
+    }
+  ],
+  "interpretationRules": {
+    "publicInformationCanSupport": "Conhecimento geral sobre configuração, riscos de desgaste, serviços CTS e temas a verificar durante consulta ao OEM.",
+    "publicInformationCannotSupport": "Número de série, PN, procedimento de desmontagem/montagem, torque ou ângulo, limites CTS, autorização SAP, causa confirmada, estado real do ativo ou homologação de revisão.",
+    "treatProductFamilyAvailabilityAsInstalledConfiguration": false,
+    "treatOtherDozerOrExcavatorMeasurementsAsApplicableToD9": false,
+    "treatPublicTorqueTurnMentionAsAnExecutableTorqueSpecification": false,
+    "treatCTSMarketingAsApprovedMeasurementBaseline": false,
+    "doNotUseGeneralGuidanceToOverrideOEMOMM": true,
+    "doNotReproduceRestrictedSISManuals": true,
+    "mustReviewRightsBeforeUsingOEMDocumentation": true,
+    "privateEvidenceRequiredBeforeFieldProcedure": true
+  },
+  "unresolvedDependencies": [
+    "Identificar série e arranjo reais no meio corporativo.",
+    "Confirmar OMM/BOM/procedimentos e CTS por configuração no SIS/serviço autorizado.",
+    "Obter decisão de TI/Engenharia sobre armazenamento licenciado e revisão independente.",
+    "Realizar inspeção planejada segundo método seguro OEM aplicável, sem assumir valores desta pesquisa."
+  ],
+  "counts": {
+    "publicSourcesReviewed": 5,
+    "existingRegistrySourcesReused": 2,
+    "newPublicSourceReferences": 3,
+    "gatesMapped": 7,
+    "gatesStillBlocked": 7,
+    "effectivityVerified": 0,
+    "fieldReviewsPerformed": 0,
+    "requestSent": 0,
+    "confirmedMechanicalRootCauses": 0
+  },
+  "confirmedOEMLimits": [],
+  "reviewDecision": "general_literature_only_not_applicable_to_machine",
+  "coreFmeaChanged": false,
+  "corporateSystemsAccessed": false,
+  "privateManualCopied": false
+}

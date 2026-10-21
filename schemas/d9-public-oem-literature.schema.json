@@ -1,0 +1,300 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "D9 public OEM literature review — explicitly non-specific v1.3.32",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "version",
+    "pilotId",
+    "modelId",
+    "nature",
+    "sourceOfTruth",
+    "sourceRequest",
+    "researchDate",
+    "sources",
+    "mappings",
+    "interpretationRules",
+    "unresolvedDependencies",
+    "counts",
+    "confirmedOEMLimits",
+    "reviewDecision",
+    "coreFmeaChanged",
+    "corporateSystemsAccessed",
+    "privateManualCopied"
+  ],
+  "properties": {
+    "schema": {
+      "const": "fmea-mining.d9-public-oem-research.v1"
+    },
+    "version": {
+      "const": "1.3.32"
+    },
+    "pilotId": {
+      "const": "OEM-PILOT-D9-UNDERCARRIAGE"
+    },
+    "modelId": {
+      "const": "EQ07"
+    },
+    "nature": {
+      "const": "caterpillar_public_source_review_not_oem_serial_homologation"
+    },
+    "sourceOfTruth": {
+      "type": "string"
+    },
+    "sourceRequest": {
+      "type": "string"
+    },
+    "researchDate": {
+      "const": "2026-10-21"
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "title",
+          "url",
+          "existingCatalogSource",
+          "scope",
+          "limitedFinding"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "pattern": "^https://www\\.cat\\.com/"
+          },
+          "existingCatalogSource": {
+            "type": "boolean"
+          },
+          "scope": {
+            "type": "string"
+          },
+          "limitedFinding": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "mappings": {
+      "type": "array",
+      "minItems": 7,
+      "maxItems": 7,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "originInputId",
+          "requestId",
+          "sourceState",
+          "generalFinding",
+          "sourceIds",
+          "evidenceSupportClass",
+          "missingPrivateEvidence",
+          "requestDiscipline",
+          "canIdentifyInstalledArrangement",
+          "canVerifySerialEffectivity",
+          "canApproveParts",
+          "canApproveCTSLimits",
+          "canApproveTorqueTurnValues",
+          "canConfirmFieldFailure",
+          "documentOrInspectionReceived",
+          "independentReviewer",
+          "manualDisposition"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "originInputId": {
+            "type": "string"
+          },
+          "requestId": {
+            "type": "string"
+          },
+          "sourceState": {
+            "enum": [
+              "not_supplied",
+              "not_verified",
+              "not_performed"
+            ]
+          },
+          "generalFinding": {
+            "type": "string",
+            "minLength": 90
+          },
+          "sourceIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "evidenceSupportClass": {
+            "type": "string"
+          },
+          "missingPrivateEvidence": {
+            "type": "string",
+            "minLength": 95
+          },
+          "requestDiscipline": {
+            "type": "string"
+          },
+          "canIdentifyInstalledArrangement": {
+            "const": false
+          },
+          "canVerifySerialEffectivity": {
+            "const": false
+          },
+          "canApproveParts": {
+            "const": false
+          },
+          "canApproveCTSLimits": {
+            "const": false
+          },
+          "canApproveTorqueTurnValues": {
+            "const": false
+          },
+          "canConfirmFieldFailure": {
+            "const": false
+          },
+          "documentOrInspectionReceived": {
+            "const": false
+          },
+          "independentReviewer": {
+            "type": "null"
+          },
+          "manualDisposition": {
+            "const": "remain_blocked"
+          }
+        }
+      }
+    },
+    "interpretationRules": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "publicInformationCanSupport",
+        "publicInformationCannotSupport",
+        "treatProductFamilyAvailabilityAsInstalledConfiguration",
+        "treatOtherDozerOrExcavatorMeasurementsAsApplicableToD9",
+        "treatPublicTorqueTurnMentionAsAnExecutableTorqueSpecification",
+        "treatCTSMarketingAsApprovedMeasurementBaseline",
+        "doNotUseGeneralGuidanceToOverrideOEMOMM",
+        "doNotReproduceRestrictedSISManuals",
+        "mustReviewRightsBeforeUsingOEMDocumentation",
+        "privateEvidenceRequiredBeforeFieldProcedure"
+      ],
+      "properties": {
+        "publicInformationCanSupport": {
+          "type": "string"
+        },
+        "publicInformationCannotSupport": {
+          "type": "string"
+        },
+        "treatProductFamilyAvailabilityAsInstalledConfiguration": {
+          "const": false
+        },
+        "treatOtherDozerOrExcavatorMeasurementsAsApplicableToD9": {
+          "const": false
+        },
+        "treatPublicTorqueTurnMentionAsAnExecutableTorqueSpecification": {
+          "const": false
+        },
+        "treatCTSMarketingAsApprovedMeasurementBaseline": {
+          "const": false
+        },
+        "doNotUseGeneralGuidanceToOverrideOEMOMM": {
+          "const": true
+        },
+        "doNotReproduceRestrictedSISManuals": {
+          "const": true
+        },
+        "mustReviewRightsBeforeUsingOEMDocumentation": {
+          "const": true
+        },
+        "privateEvidenceRequiredBeforeFieldProcedure": {
+          "const": true
+        }
+      }
+    },
+    "unresolvedDependencies": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {
+        "type": "string"
+      }
+    },
+    "counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "publicSourcesReviewed",
+        "existingRegistrySourcesReused",
+        "newPublicSourceReferences",
+        "gatesMapped",
+        "gatesStillBlocked",
+        "effectivityVerified",
+        "fieldReviewsPerformed",
+        "requestSent",
+        "confirmedMechanicalRootCauses"
+      ],
+      "properties": {
+        "publicSourcesReviewed": {
+          "const": 5
+        },
+        "existingRegistrySourcesReused": {
+          "const": 2
+        },
+        "newPublicSourceReferences": {
+          "const": 3
+        },
+        "gatesMapped": {
+          "const": 7
+        },
+        "gatesStillBlocked": {
+          "const": 7
+        },
+        "effectivityVerified": {
+          "const": 0
+        },
+        "fieldReviewsPerformed": {
+          "const": 0
+        },
+        "requestSent": {
+          "const": 0
+        },
+        "confirmedMechanicalRootCauses": {
+          "const": 0
+        }
+      }
+    },
+    "confirmedOEMLimits": {
+      "type": "array",
+      "maxItems": 0
+    },
+    "reviewDecision": {
+      "const": "general_literature_only_not_applicable_to_machine"
+    },
+    "coreFmeaChanged": {
+      "const": false
+    },
+    "corporateSystemsAccessed": {
+      "const": false
+    },
+    "privateManualCopied": {
+      "const": false
+    }
+  }
+}
