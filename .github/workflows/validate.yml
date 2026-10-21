@@ -42,6 +42,8 @@ jobs:
         run: npm run pm:filtration:audit
       - name: Auditar proveniencia de tipos de objeto VPAR sem confundir catalogo e instalacao
         run: npm run pm:vpar:audit
+      - name: Auditar matriz de evidencias VPAR por circuito e seguranca da inferencia
+        run: npm run pm:vpar:evidence:audit
       - name: Validar 10 bloqueios PM e 7 requisitos de efetividade OEM D9
         run: npm run pm:exceptions:validate
       - name: Gerar vínculos diagnósticos por modelo
@@ -134,6 +136,7 @@ jobs:
             reports/pm-functional-boundaries.generated.json
             reports/pm-filtration-discovery.generated.json
             reports/pm-vpar-provenance.generated.json
+            reports/pm-vpar-evidence-matrix.generated.json
             reports/public-knowledge.v1.json
             reports/public-manifest.v1.json
             data/governance/public-content-releases.v1.json
