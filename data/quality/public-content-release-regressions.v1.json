@@ -1,0 +1,125 @@
+{
+  "schema": "fmea-mining.public-content-regressions.v1",
+  "nature": "synthetic_only",
+  "cases": [
+    {
+      "id": "REL-01",
+      "mutation": "none",
+      "fromVersion": "1.0.0",
+      "toVersion": "1.0.0",
+      "expected": "unchanged"
+    },
+    {
+      "id": "REL-02",
+      "mutation": "title",
+      "fromVersion": "1.0.0",
+      "toVersion": "1.0.1",
+      "expected": "patch"
+    },
+    {
+      "id": "REL-03",
+      "mutation": "sourceTitle",
+      "fromVersion": "1.0.0",
+      "toVersion": "1.0.1",
+      "expected": "patch"
+    },
+    {
+      "id": "REL-04",
+      "mutation": "title",
+      "fromVersion": "1.0.0",
+      "toVersion": "1.0.0",
+      "expected": "reject"
+    },
+    {
+      "id": "REL-05",
+      "mutation": "title",
+      "fromVersion": "1.0.0",
+      "toVersion": "1.1.0",
+      "expected": "reject"
+    },
+    {
+      "id": "REL-06",
+      "mutation": "addChain",
+      "fromVersion": "1.0.0",
+      "toVersion": "1.1.0",
+      "expected": "minor"
+    },
+    {
+      "id": "REL-07",
+      "mutation": "addChain",
+      "fromVersion": "1.0.0",
+      "toVersion": "1.0.1",
+      "expected": "reject"
+    },
+    {
+      "id": "REL-08",
+      "mutation": "removeChain",
+      "fromVersion": "1.0.0",
+      "toVersion": "2.0.0",
+      "expected": "reject"
+    },
+    {
+      "id": "REL-09",
+      "mutation": "promoteRoot",
+      "fromVersion": "1.0.0",
+      "toVersion": "1.0.1",
+      "expected": "reject"
+    },
+    {
+      "id": "REL-10",
+      "mutation": "changeMechanism",
+      "fromVersion": "1.0.0",
+      "toVersion": "1.0.1",
+      "expected": "reject"
+    },
+    {
+      "id": "REL-11",
+      "mutation": "sourceUrl",
+      "fromVersion": "1.0.0",
+      "toVersion": "1.0.1",
+      "expected": "reject"
+    },
+    {
+      "id": "REL-12",
+      "mutation": "previewSchema",
+      "fromVersion": "1.0.0",
+      "toVersion": "2.0.0",
+      "expected": "reject"
+    },
+    {
+      "id": "REL-13",
+      "mutation": "none",
+      "fromVersion": "1.0.0",
+      "toVersion": "1.0.1",
+      "expected": "reject"
+    },
+    {
+      "id": "REL-14",
+      "mutation": "reorder",
+      "fromVersion": "1.0.0",
+      "toVersion": "1.0.1",
+      "expected": "reject"
+    },
+    {
+      "id": "REL-15",
+      "mutation": "addSource",
+      "fromVersion": "1.0.0",
+      "toVersion": "1.1.0",
+      "expected": "minor"
+    },
+    {
+      "id": "REL-16",
+      "mutation": "changeWarning",
+      "fromVersion": "1.0.0",
+      "toVersion": "1.0.1",
+      "expected": "reject"
+    },
+    {
+      "id": "REL-17",
+      "mutation": "none",
+      "fromVersion": "bad",
+      "toVersion": "1.0.0",
+      "expected": "reject"
+    }
+  ]
+}

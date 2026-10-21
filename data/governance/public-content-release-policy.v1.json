@@ -1,0 +1,38 @@
+{
+  "schema": "fmea-mining.public-content-release-policy.v1",
+  "version": "1.0.0",
+  "independence": {
+    "packageVersion": "package.json/version",
+    "publicContractVersion": "data/governance/public-contract.v1.json/contractVersion",
+    "contentVersion": "data/governance/public-content-releases.v1.json/currentContentRelease",
+    "legacyPreviewVersion": "campo version no preview v1, preservado enquanto o contrato público 1.0.0 estiver congelado"
+  },
+  "rules": {
+    "unchanged": "Alterações internas no pacote não aumentam a versão do conteúdo se os bytes públicos não mudaram.",
+    "patch": "Correções editoriais estritamente permitidas sem mudança de ID, esquema, significado, segurança, hipótese ou estado causal.",
+    "minor": "Adição de registros hipotéticos ou referências sem remoção de IDs, sem alterar campos/esquema; revisão editorial formal exigida.",
+    "major": "Remoção de ID, alteração de schema ou significado exige nova versão major do contrato público, migração planejada e revisão separada. Não é permitida automaticamente.",
+    "deny": "Nenhuma promoção automática de evidência, causa raiz, aplicabilidade OEM ou uso operacional; nenhum dado corporativo real pode entrar na exportação."
+  },
+  "gate": {
+    "frozenBaselineSha256": "b780a1c95e6f2ab5b3fb1f9acd20a63a1a5abd0e3f3ed111f61052b2e8c59c65",
+    "baselineContentVersion": "1.0.0",
+    "baselineContractVersion": "1.0.0",
+    "allSnapshotsRetained": true,
+    "requireExactVersionBump": true,
+    "requireGoldenSnapshotForCurrent": true,
+    "requireContentHashVerification": true,
+    "requireExplicitEditorialReviewForFuture": true,
+    "allowOperationalPromotion": false,
+    "allowSilentContractChanges": false
+  },
+  "publicationWorkflow": [
+    "Gerar preview determinístico a partir de dados sanitizados e rastreáveis.",
+    "Comparar bytes contra snapshot golden do release anterior e classificar alterações.",
+    "Se for patch/minor seguro, executar curadoria e revisão humana documentada, criar novo snapshot imutável e registrar nova versão de conteúdo.",
+    "Mudança incompatível ou causal: rejeitar até contrato major, plano de migração e aprovação independente; o validador não homologará conclusões reais.",
+    "Atualizar registry, notas de release, novo SHA-256, testes de regressão e executar pipeline CI completo.",
+    "Divulgar URI/versão/manifesto ao consumidor; consumidor escolhe quando atualizar. Não editar consumidores neste repositório."
+  ],
+  "currentState": "baseline congelado; nenhuma alteração de conteúdo nesta versão do banco"
+}

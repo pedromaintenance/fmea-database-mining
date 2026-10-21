@@ -2,7 +2,7 @@
 
 Banco de conhecimento **versionado** para investigar modos de falha, sintomas, evidências e causas em equipamentos móveis de mineração. Um consumidor possível é o jogo **[P.O.R.C.A.R.I.A. — Você Quebra, Eu Conserto](https://github.com/pedromaintenance/porcaria-voce-quebra-eu-conserto)**, mas o banco é independente: **este repositório não altera os consumidores**.
 
-> **Status:** versão do catálogo **1.3.14** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
+> **Status:** versão do catálogo **1.3.15** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
 
 ## O que queremos construir
 
@@ -215,6 +215,19 @@ A interface pública mantém [contrato SemVer 1.0.0](data/governance/public-cont
 - `npm run systemic:audit:validate` e `npm run public:compatibility` no CI
 
 As 24 cadeias e 48 investigações continuam sem execução/validação OEM por série. **Nenhum consumidor foi alterado.**
+
+## Governança de releases de conteúdo público (v1.3.15)
+
+Agora coexistem **três versões independentes**: **pacote interno 1.3.15**, **contrato/API 1.0.0** e **conteúdo público 1.0.0** (baseline retrospectiva). O campo histórico `version=1.3.12` dentro do preview **não foi mudado**, para preservar exatamente os mesmos bytes e o hash do pacote legado. **Esta versão interna não publica nova FMEA nem aprova caso real.**
+
+O [registro de releases de conteúdo](data/governance/public-content-releases.v1.json) aponta para um [golden snapshot integral](data/governance/snapshots/public-knowledge.content-1.0.0.json), guardado no repositório, e para seu SHA-256 fixo. A [política](data/governance/public-content-release-policy.v1.json) diferencia correção editorial patch, adição segura minor e alteração incompatível, que exige contrato major e plano de migração. A promoção de hipótese para causa confirmada é **bloqueada**.
+
+- `npm run public:export` reproduz o preview por allowlist, sem dados corporativos.
+- `npm run public:content:validate` compara versão, histórico, snapshots e artefato exportado **byte a byte**.
+- `npm run public:content:test` executa **17 regressões sintéticas**, incluindo remoção de ID, troca de mecanismo, promoção causal e alterações sem bump.
+- `npm run qa` e GitHub Actions executam esses gates juntamente com a validação original de contrato e hash.
+
+[Relatório técnico v1.3.15](docs/CICLO_2026-10-20_VERSIONAMENTO_CONTEUDO.md) · [Schema do registro](schemas/public-content-releases.schema.json). Não houve mudança de conteúdo publicado nem edição de consumidores externos.
 
 ## Comece por aqui
 

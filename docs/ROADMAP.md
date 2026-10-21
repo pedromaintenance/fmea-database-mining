@@ -1,6 +1,6 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 20/10/2026 · **Ciclo:** catálogo técnico v1.3.14 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 20/10/2026 · **Ciclo:** catálogo técnico v1.3.15 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
 
@@ -39,13 +39,27 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 
 **Observação:** as 159 tarefas de PM com subgrupo candidato foram obtidas em extração local anterior e **não** representam 159 associações homologadas. Contagens de vínculos estritos serão publicadas pelo relatório automático após cada alteração do gerador.
 
+## Ciclo concluído — 20/10/2026: política de releases de conteúdo e golden snapshots (v1.3.15)
+
+**Objetivo:** permitir evoluções do conhecimento sem confundir a versão interna do pacote, o contrato público e o conteúdo publicado.
+
+- [x] Criadas **três linhas de versão independentes**: pacote `1.3.15`, contrato público `1.0.0` e conteúdo público `1.0.0` (baseline retrospectiva).
+- [x] Congelado [snapshot integral 1.0.0](../data/governance/snapshots/public-knowledge.content-1.0.0.json), com SHA-256 original, **24 registros e 20 fontes**; preview legado `1.3.12` preservado byte a byte.
+- [x] [Registro de releases](../data/governance/public-content-releases.v1.json) e [política de publicação](../data/governance/public-content-release-policy.v1.json), com classificação editorial patch/aditiva minor, veto a major sem migração e veto à promoção causal.
+- [x] Gates `public:content:validate` e `public:content:test` (17 casos sintéticos), incorporados a `npm run qa`, GitHub Actions, Schema e relatórios de qualidade.
+- [x] [Relatório técnico e procedimento de release](CICLO_2026-10-20_VERSIONAMENTO_CONTEUDO.md).
+- [ ] **P0 próximo ciclo:** revisão técnica efetiva de uma configuração OEM por prefixo/série (piloto CAT D9), sem presumir parâmetros CTS, torque ou materiais.
+- [ ] **P1:** tratar as 10 regras preventivas SAP sem associação estrita e lacunas diagnósticas sem evidência.
+
+**Estado:** nenhuma nova hipótese publicada, nenhum consumidor alterado, **0 causas confirmadas**, validação OEM e revisão independente ainda pendentes.
+
 ## Ciclo concluído — 20/10/2026: completar os três roteiros da auditoria sistêmica (v1.3.14)
 
 - [x] Auditar duas hipóteses por roteiro de mangueira, comando final e fixação de sapata, com prova e contraprova física.
 - [x] Alcançar **24 cadeias/48 alegações**, sem eventos reais, **0 desvios organizacionais comprovados** e **0 causas raízes homologadas**.
 - [x] Validar origens 1.3.11 e 1.3.12 e preservar contrato público 1.0.0 e preview 1.3.12 com SHA-256 original.
 - [x] [Relatório técnico do ciclo](CICLO_2026-10-20_AUDITORIA_TRES_ROTEIROS.md).
-- [ ] **P0 próximo ciclo:** política de release do conteúdo público independente do SemVer do contrato, com golden snapshot e migração.
+- [x] **Resolvido na v1.3.15:** política de releases de conteúdo, golden snapshot integral e bloqueios de compatibilidade.
 - [ ] **P1:** validar efetividade OEM por prefixo/arranjo, executar revisão independente e resolver lacunas SAP.
 
 **Condição de saída:** cobertura metodológica completa, sem aprovação operacional ou modificação em consumidores.

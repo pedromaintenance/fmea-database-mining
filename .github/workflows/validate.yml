@@ -66,6 +66,10 @@ jobs:
         run: npm run public:validate
       - name: Verificar contrato publico e compatibilidade SemVer
         run: npm run public:compatibility
+      - name: Verificar release de conteudo e golden snapshot
+        run: npm run public:content:validate
+      - name: Testar 17 mutacoes sinteticas de compatibilidade de conteudo
+        run: npm run public:content:test
       - name: Auditar 24 cadeias contra locais componentes danos e causas SAP
         run: npm run causal:sap:audit
       - name: Gerar relatorio de cobertura e lacunas
@@ -85,4 +89,5 @@ jobs:
             reports/pm-gap-audit.generated.json
             reports/public-knowledge.v1.json
             reports/public-manifest.v1.json
+            data/governance/public-content-releases.v1.json
           retention-days: 14

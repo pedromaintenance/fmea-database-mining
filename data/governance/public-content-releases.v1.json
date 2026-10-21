@@ -1,0 +1,25 @@
+{
+  "schema": "fmea-mining.public-content-releases.v1",
+  "registryVersion": "1.0.0",
+  "currentContentRelease": "1.0.0",
+  "policyPath": "data/governance/public-content-release-policy.v1.json",
+  "releases": [
+    {
+      "contentVersion": "1.0.0",
+      "contractVersion": "1.0.0",
+      "historicalPreviewVersion": "1.3.12",
+      "snapshotPath": "data/governance/snapshots/public-knowledge.content-1.0.0.json",
+      "sha256": "b780a1c95e6f2ab5b3fb1f9acd20a63a1a5abd0e3f3ed111f61052b2e8c59c65",
+      "recordCount": 24,
+      "sourceCount": 20,
+      "characterization": "baseline_retrospectiva_sem_aprovacao_operacional",
+      "review": {
+        "status": "baseline_retroativa",
+        "editorialReviewer": null,
+        "independentReviewer": null,
+        "approvedForOperationalUse": false
+      },
+      "notes": "Primeiro congelamento completo dos bytes do preview originalmente publicado em 1.3.12. Nenhuma revisão de mecanismo ou aprovação operacional é inferida."
+    }
+  ]
+}
