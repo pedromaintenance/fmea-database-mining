@@ -45,13 +45,73 @@
           "$ref": "#/$defs/signature"
         },
         "custody": {
-          "$ref": "#/$defs/signedReview"
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "claim",
+            "keyId",
+            "signature"
+          ],
+          "properties": {
+            "claim": {
+              "$ref": "#/$defs/custodyClaim"
+            },
+            "keyId": {
+              "$ref": "#/$defs/opaqueToken"
+            },
+            "signature": {
+              "type": "string",
+              "minLength": 80,
+              "maxLength": 128,
+              "pattern": "^[A-Za-z0-9+/]+={0,2}$"
+            }
+          }
         },
         "technical": {
-          "$ref": "#/$defs/signedReview"
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "claim",
+            "keyId",
+            "signature"
+          ],
+          "properties": {
+            "claim": {
+              "$ref": "#/$defs/technicalClaim"
+            },
+            "keyId": {
+              "$ref": "#/$defs/opaqueToken"
+            },
+            "signature": {
+              "type": "string",
+              "minLength": 80,
+              "maxLength": 128,
+              "pattern": "^[A-Za-z0-9+/]+={0,2}$"
+            }
+          }
         },
         "independent": {
-          "$ref": "#/$defs/signedReview"
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "claim",
+            "keyId",
+            "signature"
+          ],
+          "properties": {
+            "claim": {
+              "$ref": "#/$defs/independentClaim"
+            },
+            "keyId": {
+              "$ref": "#/$defs/opaqueToken"
+            },
+            "signature": {
+              "type": "string",
+              "minLength": 80,
+              "maxLength": 128,
+              "pattern": "^[A-Za-z0-9+/]+={0,2}$"
+            }
+          }
         }
       }
     },
@@ -196,8 +256,7 @@
       ],
       "properties": {
         "claim": {
-          "type": "object",
-          "description": "Role-specific claim strictly validated by application policy (not JSON Schema alone)"
+          "$ref": "#/$defs/custodyClaim"
         },
         "keyId": {
           "$ref": "#/$defs/opaqueToken"
@@ -207,6 +266,119 @@
           "minLength": 80,
           "maxLength": 128,
           "pattern": "^[A-Za-z0-9+/]+={0,2}$"
+        }
+      }
+    },
+    "custodyClaim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "statementDigest",
+        "actorToken",
+        "reviewedAt",
+        "custodyComplete",
+        "licenseChecked",
+        "integrityChecked"
+      ],
+      "properties": {
+        "statementDigest": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "actorToken": {
+          "$ref": "#/$defs/opaqueToken"
+        },
+        "reviewedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "custodyComplete": {
+          "const": true
+        },
+        "licenseChecked": {
+          "const": true
+        },
+        "integrityChecked": {
+          "const": true
+        }
+      }
+    },
+    "technicalClaim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "statementDigest",
+        "custodyDigest",
+        "actorToken",
+        "reviewedAt",
+        "decision",
+        "alternativesReviewed",
+        "oemEffectivityConsidered"
+      ],
+      "properties": {
+        "statementDigest": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "custodyDigest": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "actorToken": {
+          "$ref": "#/$defs/opaqueToken"
+        },
+        "reviewedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "decision": {
+          "const": "reviewed_for_change_board"
+        },
+        "alternativesReviewed": {
+          "const": true
+        },
+        "oemEffectivityConsidered": {
+          "const": true
+        }
+      }
+    },
+    "independentClaim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "statementDigest",
+        "custodyDigest",
+        "technicalDigest",
+        "actorToken",
+        "reviewedAt",
+        "decision",
+        "independentReviewComplete"
+      ],
+      "properties": {
+        "statementDigest": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "custodyDigest": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "technicalDigest": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "actorToken": {
+          "$ref": "#/$defs/opaqueToken"
+        },
+        "reviewedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "decision": {
+          "const": "reviewed_for_change_board"
+        },
+        "independentReviewComplete": {
+          "const": true
         }
       }
     }

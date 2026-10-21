@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.public-contract.v1",
-  "version": "1.3.26",
+  "version": "1.3.27",
   "contractVersion": "1.0.0",
   "existingPreviewSchema": "fmea-mining.public-knowledge-preview.v1",
   "existingPreviewVersion": "1.3.12",
@@ -66,5 +66,5 @@
     "unknown_serial_to_approved_oem_effectivity",
     "unreviewed_cause_to_verified_root_cause"
   ],
-  "note": "Catálogo interno 1.3.26 adiciona contrato de interface de staging e adaptador offline com 32 probes e 56 cenários sintéticos, sem rede, autenticação real, dados corporativos ou aprovação automática. Contrato e conteúdo públicos 1.0.0, preview legado 1.3.12 e checksum preservados."
+  "note": "Versão interna 1.3.27 especifica recibos privados de resultados com quatro atestações encadeadas e 48 testes criptográficos sintéticos Ed25519. Nenhum documento, identidade real, resultado privado, autorização OEM ou mudança mecânica publicada. Contrato/conteúdo 1.0.0, preview legado 1.3.12 e checksum intactos."
 }

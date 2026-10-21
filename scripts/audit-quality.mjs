@@ -35,6 +35,8 @@ const stagingAcceptance=read('data/governance/staging-acceptance-plan.v1.json');
 const stagingRegressions=read('data/quality/staging-acceptance-regressions.v1.json');
 const stagingAdapterContract=read('data/governance/staging-integration-contract.v1.json');
 const stagingAdapterRegressions=read('data/quality/staging-integration-regressions.v1.json');
+const privateResultCustody=read('data/governance/private-result-custody-contract.v1.json');
+const privateCustodyRegressions=read('data/quality/private-result-custody-regressions.v1.json');
 const differential=read('data/quality/discriminative-tests.v1.json');
 const differentialFixtures=read('data/quality/discrimination-regressions.v1.json');
 const complementary=read('data/quality/complementary-discrimination.v1.json');
@@ -113,6 +115,9 @@ const counts={
  stagingAdapterSyntheticRegressions:stagingAdapterRegressions.fixtures.length,
  stagingAdapterLiveImplementations:Object.entries(stagingAdapterContract.implementations).filter(([k,v])=>k!=='offlineMockImplemented'&&v===true).length,
  stagingAdapterRealRuns:stagingAdapterRegressions.counts.realStagingRuns,
+ privateResultCustodySyntheticTests:privateCustodyRegressions.baselineCases.length+privateCustodyRegressions.mutationCases.length,
+ privateResultCustodyRealCaseRecords:privateResultCustody.boundaries.realPrivateResultRecordsInPublicRepo,
+ privateResultCustodyVerifiedLiveAttestations:privateResultCustody.boundaries.actualHumanReviewsCompleted,
  actualCorporateStagingApprovals:stagingAcceptance.counts.actualCorporateApprovals,
  productionControlsActuallyProvisioned:Object.values(restrictedInfrastructure.deployment).filter(Boolean).length,
  restrictedEvidenceKinds:restrictedEvidencePolicy.evidenceKinds.length,
@@ -203,7 +208,7 @@ const counts={
  semanticDamageConfirmations:semantic.confirmedComponentDamages.length,
  evidenceValidatedInRealEquipment:0,technicallyApprovedPlaybooks:0
 };
-const report={schema:'fmea-mining.quality-audit.v1',version:'1.3.26',
+const report={schema:'fmea-mining.quality-audit.v1',version:'1.3.27',
  generatedFrom:'working_tree',status:'qualidade_cadastral_nao_taxa_de_falhas',
  meanings:{
   pmCandidateLinks:'vinculos gerados por regra e taxonomia, NAO falhas observadas',
