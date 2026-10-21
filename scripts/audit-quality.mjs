@@ -139,7 +139,7 @@ const counts={
  consolidatedBlockerSyntheticTests:blockerFixtures.baselineCases.length+blockerFixtures.mutationCases.length,
  consolidatedActualExternalApprovals:blockerMatrix.overview.approvedItems,
  d9DocumentRequestsPrepared:d9EvidenceRequest.gates.length,
- d9DocumentRequestsActuallySent:d9EvidenceRequest.counts.actualOEMDocumentsObtained,
+ d9DocumentRequestsActuallySent:d9EvidenceRequest.requestRouting.requestSentAt===null?0:1,
  d9RequestSyntheticRegressions:d9RequestRegressions.baselineCases.length+d9RequestRegressions.mutationCases.length,
  d9FieldReviewsActuallyCompleted:d9EvidenceRequest.counts.actualEquipmentInspections,
  actualCorporateStagingApprovals:stagingAcceptance.counts.actualCorporateApprovals,

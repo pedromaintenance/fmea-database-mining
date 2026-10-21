@@ -2,6 +2,15 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.31] — 2026-10-21 — Pedido técnico OEM para piloto D9
+
+- Preparado [pedido de documentação](data/governance/d9-oem-evidence-request.v1.json) com **7 gates originais**: prefixo/série, OMM efetivo, desenhos/BOM, procedimento de junta sapata–elo, CTS, dados SAP e parecer de campo.
+- Estados preservados: **2 não fornecidos, 4 não verificados, 1 revisão não executada**; nenhuma fonte foi marcada como recebida, solicitada a destinatário real ou aprovada.
+- Disponibilizado [texto pronto para encaminhamento interno](docs/SOLICITACAO_TECNICA_OEM_D9.md), com disciplina competente, sequência de verificação, instruções de custódia e contraprova.
+- Delimitadas **cinco etapas de inspeção posterior**, todas pendentes, com controle de energias e efetividade OEM como pré-condições, sem PN, torque, tolerâncias CTS ou série presumidos.
+- Implementados schema e **35 regressões sintéticas** (7 baselines e 28 recusas de documento/inspeção/aprovação fictícia), adicionados ao QA/CI.
+- Preservados **24 FC / 15 ME**, contrato e conteúdo públicos 1.0.0, preview 1.3.12, checksum histórico e consumidores.
+
 ## [1.3.30] — 2026-10-21 — Consolidação de bloqueios e dependências reais
 
 - Consolidada uma matriz de **8 frentes**, com ponteiros verificados a documentos existentes: 7 insumos D9, 10 regras PM × SAP, 24 revisões FC, 48 alegações sistêmicas, 3 CAND, 4 refinamentos ME, 7 componentes de TI e 6 aceites de staging.

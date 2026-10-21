@@ -1,6 +1,6 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 21/10/2026 · **Ciclo:** catálogo técnico v1.3.30 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 21/10/2026 · **Ciclo:** catálogo técnico v1.3.31 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
 
@@ -39,6 +39,21 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 
 **Observação:** as 159 tarefas de PM com subgrupo candidato foram obtidas em extração local anterior e **não** representam 159 associações homologadas. Contagens de vínculos estritos serão publicadas pelo relatório automático após cada alteração do gerador.
 
+## Ciclo concluído — 21/10/2026: pedido técnico OEM D9 (v1.3.31)
+
+- [x] [Requisição de documentação](../data/governance/d9-oem-evidence-request.v1.json) com 7 itens ligados 1:1 ao piloto, sem números específicos e sem alterar evidências de origem.
+- [x] [Mensagem pronta para envio](SOLICITACAO_TECNICA_OEM_D9.md) delimitando prefixo/série, OMM e revisão, BOM, fixação sapata–elo, procedimento CTS, cadastro SAP e revisão independente.
+- [x] Separadas tarefas de **obtenção documental**, validação por configuração e inspeção posterior segura; campo ainda não executado.
+- [x] Criados [validador](../scripts/validate-d9-oem-request.mjs), [schema](../schemas/d9-oem-evidence-request.schema.json) e **35 regressões de integridade** no QA/CI.
+- [x] Núcleo FMEA/contratos públicos não modificado.
+- [ ] **P0 externo Engenharia de Ativos:** identificar o D9 efetivo e arranjo em local privado, preferencialmente confrontando placa, cadastro e SIS; designar recebedor autorizado.
+- [ ] **P0 externo oficina/inspeção:** após aprovar efetividade OEM, programar inspeção controlada e CTS conforme procedimento, com instrumentos e método aplicáveis.
+- [ ] **P0 externo SAP/Engenharia:** conciliar lista técnica e locais funcionais do ativo, após validação de componentes, sem mapeamentos deduzidos.
+- [ ] **P0 externo revisão independente:** registrar método, contraprovas, aplicabilidade e parecer em repositório restrito, sem publicar manual licenciado.
+- [ ] **Próximo ciclo condicionado:** receber metadados **não sigilosos** do andamento do pedido e atualizar os estados de origem somente após conferência documental; se não houver responsável ou canal de envio definido, registrar a dependência em vez de produzir mais simulações.
+
+**Estado:** solicitação estruturada, **ainda não encaminhada**. 7 itens pendentes; nenhuma evidência real recebida ou homologada.
+
 ## Ciclo concluído — 21/10/2026: matriz única de bloqueios externos e técnicos (v1.3.30)
 
 - [x] [Matriz consolidada](../data/governance/consolidated-blockers.v1.json): 8 frentes, contagens e status ligados diretamente às fontes de origem, ações delimitadas, responsáveis institucionais e evidências de liberação.
@@ -49,7 +64,7 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 - [ ] **P0 externo — Engenharia:** levantar documentação OEM **por configuração efetiva** (D9, bombas hidráulicas e comando final) em sistemas privados licenciados, com revisão independente e dados suficientes para métodos seguros de inspeção.
 - [ ] **P0 externo — SAP/Engenharia:** revisar cada uma das dez regras PM-SAP sem criar aliases automáticos ou inventar PN/localização.
 - [ ] **P0 externo — TI/Segurança/Privacidade:** designar responsáveis institucionais e deliberar sobre custódia restrita, autenticação, retenção e seis gates de aceite de staging.
-- [ ] **P0 próximo ciclo:** reduzir o trabalho editorial repetitivo; priorizar uma *primeira evidência OEM real, autorizada e revisável* para uma lacuna de alto valor técnico, ou preparar pacote para decisão formal de TI sem publicar documentos restritos.
+- [x] **Preparação v1.3.31 concluída:** pedido OEM D9 pronto para envio interno; efetiva submissão e acesso às literaturas aplicáveis continuam pendentes de canal/responsável corporativo.
 - [ ] Revisão de cadeias, causas sistêmicas e três candidatas físicas segue sem comprovação empírica, sem afirmação de causa raiz.
 
 **Estado:** oito frentes bloqueadas, zero liberações reais. O próximo avanço dependerá de insumos OEM e decisão institucional, não apenas de novos testes sintéticos.
