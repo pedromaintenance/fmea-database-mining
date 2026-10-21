@@ -2,6 +2,14 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.23] — 2026-10-21 — Protocolo de evidências restritas e custódia
+- Especificados 6 estados de revisão, 5 papéis, 5 categorias de evidência, verificação de custódia/licença e parecer técnico e independente segregados.
+- Novo JSON Schema para metadados restritos, gate puro sem persistência e **29 regressões inteiramente sintéticas** (5 transições permitidas, 24 rejeições de falhas de segurança/causalidade).
+- Inserida política pública do que pode e não pode ser compartilhado: sem laudos, séries, PNs, arquivos OEM, fotos, dados pessoais, links internos ou hashes derivados de documentos privados.
+- Último estado `ready_for_change_control` **não** autoriza publicação, alteração de FMEA, confirmação de causa raiz ou liberação operacional.
+- QA/CI, auditor de qualidade, documentação, roadmap e versão do pacote atualizados.
+- 0 casos reais, 0 documentos privados ingeridos, 0 alterações OEM/SAP e 0 mudanças em consumidores; contrato e preview públicos preservados.
+
 ## [1.3.22] — 2026-10-21 — Perda volumétrica interna e três submodos de flancos
 - Proposta editorial `ME-CAND-HYD-INTERNAL-LEAKAGE-001`: vazamento interno acima do requisito OEM em condições controladas; não confundir vazão normal de projeto, dreno de carcaça, ME-15 nem causas como desgaste.
 - Decomposto o candidato de dano de engrenagens em três submodos conceituais distintos: abrasão `ME-01`, adesão `ME-02` e fadiga de contato `ME-03`, todos sem dano observado.

@@ -1,6 +1,6 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 20/10/2026 · **Ciclo:** catálogo técnico v1.3.22 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 21/10/2026 · **Ciclo:** catálogo técnico v1.3.23 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
 
@@ -39,6 +39,19 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 
 **Observação:** as 159 tarefas de PM com subgrupo candidato foram obtidas em extração local anterior e **não** representam 159 associações homologadas. Contagens de vínculos estritos serão publicadas pelo relatório automático após cada alteração do gerador.
 
+## Ciclo concluído — 21/10/2026: especificação de custódia e revisão de evidências (v1.3.23)
+
+- [x] Política [v1.3.23](../data/governance/restricted-evidence-workflow.v1.json) com seis estados, cinco papéis segregados e cinco categorias documentais.
+- [x] Schema restrito, biblioteca de decisões e **29 regressões sintéticas**, incluindo salvaguardas contra publicação, causa raiz, aprovação operacional e informações de identificação vazadas.
+- [x] Validador `npm run evidence:restricted:validate`, integrado ao CI, QA e métricas, sem ingestão de casos ou documentos reais.
+- [x] [Procedimento operacional de governança](PROCEDIMENTO_EVIDENCIAS_RESTRITAS.md) e [relatório do ciclo](CICLO_2026-10-21_CUSTODIA_EVIDENCIAS.md).
+- [x] Preservadas 24 cadeias, 15 mecanismos, 3 propostas, 4 refinamentos, contrato público 1.0.0 e preview congelado.
+- [ ] **P0 próximo ciclo:** especificar implantação de um cofre/revisão realmente restritos e auditáveis com TI, mínimo privilégio, event sourcing e aprovação por papéis; este repositório público não é esse sistema.
+- [ ] **P0 externo:** documentação OEM efetiva CAT 395, CAT 777 e D9, acessível sob licença e confidencialidade; não a solicitar/publicar no GitHub.
+- [ ] **P1:** somente após homologação da infraestrutura, submeter um caso piloto autorizado e obter dupla revisão real; nenhum caso criado neste ciclo.
+
+**Estado:** política e testes prontos; infraestrutura corporativa não implantada; **zero casos reais**, zero revisões independentes executadas, nenhuma FMEA promovida.
+
 ## Ciclo concluído — 21/10/2026: desdobramento de mecanismos (v1.3.22)
 
 - [x] Proposta de **perda volumétrica interna acima da referência por arranjo**: distinguida de perdas internas normais, falha de vedação ME-15, desgaste ME-01/02 e regulação FF-08.
@@ -47,7 +60,7 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 - [x] Restrição de interpretação da ISO 10825-1: nomenclatura de aparência **não é determinação de causa raiz**.
 - [x] Novo arquivo [mechanism-refinements.v1.json](../data/quality/mechanism-refinements.v1.json) com quatro propostas, JSON Schema, validador e **24 regressões sintéticas** adicionados ao CI/QA.
 - [x] [Relatório técnico e critérios de futuro aceite](CICLO_2026-10-21_REFINAMENTO_MECANISMOS.md).
-- [ ] **P0 próximo ciclo:** definir protocolo restrito de submissão, revisão e custódia de evidências reais para uma proposta por vez (OEM, inspeção, contraprova, parecer), sem publicação de laudos privados.
+- [x] **Concluído na v1.3.23:** especificação de protocolo restrito de submissão, verificação de custódia e dupla revisão. Implantação corporativa de controles de acesso permanece pendente.
 - [ ] **P0 dependência:** obter a arquitetura da bomba CAT 395, limites efetivos e identificação do conjunto de engrenagens CAT 777; sem eles não liberar novo ME/FC.
 - [ ] Piloto D9 segue com sete requisitos documentais pendentes; dez regras preventivas PM × SAP continuam sem vínculo estrito.
 

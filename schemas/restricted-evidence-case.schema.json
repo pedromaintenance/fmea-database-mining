@@ -1,0 +1,221 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Restricted FMEA evidence case — confidential storage only",
+  "description": "Specification, not authorization to copy restricted cases into public repository.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "caseNature",
+    "caseId",
+    "proposalId",
+    "stage",
+    "dataClassification",
+    "originatorId",
+    "receipts",
+    "technicalReview",
+    "independentReview",
+    "changeRequest",
+    "rootCauseConfirmed",
+    "operationalReleaseApproved",
+    "catalogPromotionApproved",
+    "publicationAuthorized"
+  ],
+  "properties": {
+    "schema": {
+      "const": "fmea-mining.restricted-evidence-case.v1"
+    },
+    "caseNature": {
+      "enum": [
+        "restricted_real_case",
+        "synthetic_test_only"
+      ]
+    },
+    "caseId": {
+      "type": "string",
+      "pattern": "^[A-Z0-9-]{8,64}$"
+    },
+    "proposalId": {
+      "enum": [
+        "CAND-HYD-PUMP-SEAL-001",
+        "CAND-HYD-PUMP-INTERNAL-001",
+        "CAND-FD-GEAR-TOOTH-001"
+      ]
+    },
+    "stage": {
+      "enum": [
+        "draft",
+        "restricted_intake",
+        "custody_verified",
+        "technical_reviewed",
+        "independent_reviewed",
+        "ready_for_change_control"
+      ]
+    },
+    "dataClassification": {
+      "const": "restricted"
+    },
+    "originatorId": {
+      "type": "string",
+      "minLength": 6,
+      "maxLength": 128
+    },
+    "receipts": {
+      "type": "array",
+      "maxItems": 24,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "kind",
+          "evidenceToken",
+          "restrictedRef",
+          "licenseChecked",
+          "integrityChecked",
+          "custodyChainVerified",
+          "qualityChecked",
+          "oemEffectivityConfirmed"
+        ],
+        "properties": {
+          "kind": {
+            "enum": [
+              "oem_effectivity",
+              "oem_procedure",
+              "field_observation",
+              "counterevidence",
+              "measurement_quality"
+            ]
+          },
+          "evidenceToken": {
+            "type": "string",
+            "minLength": 8,
+            "maxLength": 128
+          },
+          "restrictedRef": {
+            "type": "string",
+            "pattern": "^[A-Z0-9-]{8,128}$"
+          },
+          "licenseChecked": {
+            "type": "boolean"
+          },
+          "integrityChecked": {
+            "type": "boolean"
+          },
+          "custodyChainVerified": {
+            "type": "boolean"
+          },
+          "qualityChecked": {
+            "type": "boolean"
+          },
+          "oemEffectivityConfirmed": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "technicalReview": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "reviewerId",
+        "decision",
+        "reasonRecorded",
+        "oemEffectivityAssessment",
+        "alternativeHypothesesReviewed"
+      ],
+      "properties": {
+        "reviewerId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "decision": {
+          "enum": [
+            "pending",
+            "accepted_for_change_control_review",
+            "rejected"
+          ]
+        },
+        "reasonRecorded": {
+          "type": "boolean"
+        },
+        "oemEffectivityAssessment": {
+          "enum": [
+            "not_checked",
+            "checked_for_applicability",
+            "failed"
+          ]
+        },
+        "alternativeHypothesesReviewed": {
+          "type": "boolean"
+        }
+      }
+    },
+    "independentReview": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "reviewerId",
+        "decision",
+        "reasonRecorded"
+      ],
+      "properties": {
+        "reviewerId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "decision": {
+          "enum": [
+            "pending",
+            "accepted_for_change_control_review",
+            "rejected"
+          ]
+        },
+        "reasonRecorded": {
+          "type": "boolean"
+        }
+      }
+    },
+    "changeRequest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "requestToken",
+        "registered",
+        "manualApprovalPending"
+      ],
+      "properties": {
+        "requestToken": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "registered": {
+          "type": "boolean"
+        },
+        "manualApprovalPending": {
+          "type": "boolean"
+        }
+      }
+    },
+    "rootCauseConfirmed": {
+      "const": false
+    },
+    "operationalReleaseApproved": {
+      "const": false
+    },
+    "catalogPromotionApproved": {
+      "const": false
+    },
+    "publicationAuthorized": {
+      "const": false
+    }
+  }
+}
