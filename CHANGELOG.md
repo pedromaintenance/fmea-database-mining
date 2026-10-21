@@ -2,6 +2,13 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.17] — 2026-10-20 — Diagnóstico diferencial aprofundado, segundo lote
+- Adicionados 3 roteiros técnicos condicionais às 3 investigações originais, totalizando **6 aprofundados** dentro de 12 playbooks didáticos do banco; os 3 originais v1.3.11 foram mantidos íntegros.
+- Novos temas: restrição externa da colmeia × ventilação insuficiente (`FC-COOL-001`); detritos compactados × falha interna de rolete (`FC-TRACK-001`); bomba de arrefecimento × termostato/bypass (`FC-COOL-007`).
+- Inseridos 9 passos, 12 exigências de evidência e **21 regressões sintéticas** (9 checklists + 12 bloqueios de mutação) sem ensaios, efetividade OEM ou diagnósticos observados.
+- Novo validador, JSON Schema, comandos CI/QA e cobertura no auditor de qualidade. **Nenhum dado real, PN, torque, tolerância, limite CTS ou atribuição causal confirmado.**
+- Preservados conteúdo público 1.0.0, contrato 1.0.0, preview 1.3.12 e seu SHA-256 fixo; consumidores não modificados.
+
 ## [1.3.16] — 2026-10-20 — Gate PM × SAP e preparação documental CAT D9
 - Revisadas as **10 exceções sem vínculo estrito** (3 subgrupos fora de escopo, 5 componentes ausentes, 2 pares dano–causa incompatíveis) com documentação mínima, contraprovas e decisão de manter bloqueio.
 - Criado plano D9 para **7 requisitos OEM** e 8 cadeias de rodante: série/arranjo, OMM, peças, torque-turn, CTS, dados SAP e revisão independente; sem comprovação de efetividade.

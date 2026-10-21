@@ -1,6 +1,6 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 20/10/2026 · **Ciclo:** catálogo técnico v1.3.16 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 20/10/2026 · **Ciclo:** catálogo técnico v1.3.17 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
 
@@ -39,6 +39,21 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 
 **Observação:** as 159 tarefas de PM com subgrupo candidato foram obtidas em extração local anterior e **não** representam 159 associações homologadas. Contagens de vínculos estritos serão publicadas pelo relatório automático após cada alteração do gerador.
 
+## Ciclo concluído — 20/10/2026: segundo lote de roteiros diferenciais (v1.3.17)
+
+**Objetivo:** enfrentar diagnósticos ambíguos por comparação de mecanismos e inspeções realmente discriminantes, sem confundir condição detectada com causa comprovada.
+
+- [x] Adicionados **3 roteiros independentes**, preservando os três de v1.3.11, para **6 roteiros aprofundados** no total: radiador/ventilador, rolete/detritos versus falha interna, bomba/termostato.
+- [x] Nove novas etapas (3 por roteiro), quatro requisitos de evidência por roteiro e uma hipótese de diagnóstico concorrente por cenário; todas as investigações como `not_performed`.
+- [x] Criado `npm run pathways:expand:validate` com **9 regressões de prontidão e 12 de alterações indevidas**, no QA e CI.
+- [x] Manutenção do contrato público 1.0.0, conteúdo 1.0.0, 24 cadeias públicas e 20 fontes exportadas; sem atualização de consumidores.
+- [x] [Relatório técnico e fontes](CICLO_2026-10-20_ROTEIROS_DIFERENCIAIS_II.md).
+- [ ] **P0 próximo ciclo:** analisar os **seis playbooks ainda sem aprofundamento** com prioridade para segurança operacional e capacidade de medição OEM, sem extrapolar o SIS para série desconhecida.
+- [ ] **P0 dependente de dados:** obter prefixo de série e OMM/CTS efetivos do piloto D9 e revisar com oficina; os sete requisitos continuam pendentes.
+- [ ] **P1:** estruturar registro controlado de coleta e aprovação de evidência de campo com separação de artefatos restritos e fontes públicas.
+
+**Estado:** 6 roteiros aprofundados de 12 playbooks (não homologados); 18 etapas propostas nos seis roteiros, zero procedimentos executados e zero causas confirmadas. Dez exceções preventivas SAP permanecem bloqueadas.
+
 ## Ciclo concluído — 20/10/2026: dez exceções PM e gate documental D9 (v1.3.16)
 
 **Objetivo:** tornar cada ausência de vínculo PM × SAP e cada lacuna OEM verificável e reprovável por teste, sem buscar cobertura artificial.
@@ -50,7 +65,7 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 - [x] [Relatório técnico e matriz de decisão](CICLO_2026-10-20_PM_EXCECOES_D9.md).
 - [ ] **P0 próximo ciclo:** obter de fonte autorizada identificação de configuração do CAT D9, OMM e tabela CTS efetivas para uma máquina, com parecer de engenharia/oficina.
 - [ ] **P1:** após efetividade OEM, preparar revisão formal de hierarquia SAP ou PN para as regras pertinentes (sem remapeamento automático).
-- [ ] **P1:** ampliar evidência discriminante dos nove roteiros ainda não aprofundados e recuperar causas a partir de ensaios reais autorizados.
+- [x] **Avanço v1.3.17:** três dos nove playbooks pendentes ganharam roteiros diferenciais. Restam seis playbooks a aprofundar; ensaios reais e confirmação causal continuam pendentes.
 
 **Estado:** PM 10 bloqueadas, D9 7 evidências faltantes, nenhuma validação por série, **24 cadeias inferidas, 48 alegações sistêmicas não confirmadas**, contrato público inalterado.
 

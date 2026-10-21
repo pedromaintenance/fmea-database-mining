@@ -2,7 +2,7 @@
 
 Banco de conhecimento **versionado** para investigar modos de falha, sintomas, evidências e causas em equipamentos móveis de mineração. Um consumidor possível é o jogo **[P.O.R.C.A.R.I.A. — Você Quebra, Eu Conserto](https://github.com/pedromaintenance/porcaria-voce-quebra-eu-conserto)**, mas o banco é independente: **este repositório não altera os consumidores**.
 
-> **Status:** versão do catálogo **1.3.16** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
+> **Status:** versão do catálogo **1.3.17** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
 
 ## O que queremos construir
 
@@ -240,6 +240,16 @@ O [plano de evidências D9](data/quality/oem-d9-evidence-intake.v1.json) cobre s
 O comando `npm run pm:exceptions:validate` cruza essas bases com os dados da auditoria PM, confere os sete requisitos e executa **16 regressões sintéticas** de vazamento de evidência ou aprovação indevida. Está incorporado ao CI e a `npm run qa`.
 
 [Relatório v1.3.16](docs/CICLO_2026-10-20_PM_EXCECOES_D9.md). O conteúdo público, contrato, golden snapshot e repositórios consumidores permanecem inalterados.
+
+## Ampliação do diagnóstico diferencial (v1.3.17)
+
+O [novo lote de roteiros](data/quality/diagnostic-pathway-expansion.v1.json) acrescenta **três diagnósticos comparativos** aos três já desenvolvidos na v1.3.11, totalizando **seis roteiros aprofundados**. Os originais permanecem inalterados para manter rastreabilidade e compatibilidade dos validadores históricos. Os três novos tratam: **colmeia obstruída versus ventilador insuficiente**, **rolete preso por detritos versus falha interna**, e **bomba de arrefecimento insuficiente versus termostato/bypass com restrição**.
+
+Cada roteiro contém **3 etapas propostas**, desfechos que sustentariam A/B ou seriam inconclusivos, limites de segurança, campos mínimos de medição, alternativas adicionais e **4 requisitos documentais** antes de revisão técnica. Nenhum ensaio foi executado, nenhum limite OEM foi inventado e os resultados não confirmam causas.
+
+O comando `npm run pathways:expand:validate` aplica validações de IDs, literatura, mecanismos, condições de campo pendentes e **21 regressões sintéticas** (9 de checklist e 12 de mutação indevida). O pipeline CI e `npm run qa` executam também esse controle.
+
+[Relatório do ciclo v1.3.17](docs/CICLO_2026-10-20_ROTEIROS_DIFERENCIAIS_II.md) · [Schema do lote](schemas/diagnostic-pathway-expansion.schema.json). As **24 cadeias causais** continuam hipóteses, com 0 causas homologadas, e nenhuma alteração do contrato, snapshot público ou consumidores.
 
 ## Comece por aqui
 
