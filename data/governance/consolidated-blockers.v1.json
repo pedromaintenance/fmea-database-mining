@@ -27,11 +27,11 @@
       6
     ],
     "doNotSumAsIndependentTasks": true,
-    "noApprovedWorkstream": 8,
     "approvedItems": 0,
     "confirmedFieldCases": 0,
     "approvedCorporateInfrastructureComponents": 0,
-    "stagingCorporateSignoffs": 0
+    "stagingCorporateSignoffs": 0,
+    "blockedWorkstreams": 8
   },
   "workstreams": [
     {
