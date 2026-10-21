@@ -38,7 +38,7 @@
       "id": "SANDVIK-PUMP-MODULE-VARIANT",
       "sourceUrl": "https://www.mining.sandvik/en/products/parts-and-components/upgrades/rotary-drills/pump-unit-module/",
       "publisher": "Sandvik",
-      "scope": "hydraulic_pump_unit_upgrade_not_air_compressor",
+      "scope": "pump_unit_upgrade_not_air_compressor",
       "evidence": "A Sandvik informa que uma atualização do módulo de bombas para DR410i pode eliminar filtragem adicional no módulo.",
       "doesNotProve": "Este módulo de bombas NÃO deve ser confundido com o compressor de ar; nada nesta fonte confirma remoção de filtro do compressor.",
       "evidenceType": "manufacturer_configuration_example",
