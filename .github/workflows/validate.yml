@@ -52,6 +52,8 @@ jobs:
         run: npm run pm:idler:audit
       - name: Auditar ontologia de roda-guia e rolete sem inferencia de falha
         run: npm run pm:idler:semantics:audit
+      - name: Auditar coerencia semantica transversal das regras PM sem confundir falha e condicao
+        run: npm run pm:semantic:crosswalk:audit
       - name: Validar 10 bloqueios PM e 7 requisitos de efetividade OEM D9
         run: npm run pm:exceptions:validate
       - name: Gerar vínculos diagnósticos por modelo
@@ -149,6 +151,7 @@ jobs:
             reports/pm-engine-oil-filter-scope.generated.json
             reports/pm-idler-scope.generated.json
             reports/pm-idler-roller-semantics.generated.json
+            reports/pm-semantic-crosswalk.generated.json
             reports/public-knowledge.v1.json
             reports/public-manifest.v1.json
             data/governance/public-content-releases.v1.json
