@@ -34,6 +34,8 @@ jobs:
         run: npm run pm:validate
       - name: Auditar lacunas das regras preventivas
         run: npm run pm:gaps:audit
+      - name: Validar 10 bloqueios PM e 7 requisitos de efetividade OEM D9
+        run: npm run pm:exceptions:validate
       - name: Gerar vínculos diagnósticos por modelo
         run: npm run diagnostic:generate
       - name: Validar vínculos, hipóteses e evidências planejadas

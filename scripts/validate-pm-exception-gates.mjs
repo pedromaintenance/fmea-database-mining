@@ -17,7 +17,7 @@ const fixtures=read('data/quality/pm-exception-regressions.v1.json');
 const errors=[],ck=(x,s)=>{if(!x)errors.push(s);};
 ck(gate.schema==='fmea-mining.pm-exception-evidence-gates.v1'&&gate.version==='1.3.16'&&gate.nature==='editorial_hypotheses_not_oem_effectivity','Registro PM incorreto');
 ck(gate.counts.blockedRules===10&&gate.counts.unresolvedGates===10&&gate.counts.systemicProcessOrComponentApprovals===0,'Contagem/causas PM indevidas');
-ck(Object.values(gate.policy).every(x=>x===true),'Política PM relaxada');
+ck(gate.policy.expectedBlockedRules===10&&Object.entries(gate.policy).filter(([key])=>key!=='expectedBlockedRules').every(([,value])=>value===true),'Política PM relaxada');
 ck(d9.schema==='fmea-mining.oem-d9-evidence-intake.v1'&&d9.version==='1.3.16','Registro D9 inválido');
 ck(generated.summary.withoutStrictCandidates===10&&generated.summary.approvedEngineeringLinks===0,'Auditoria de entrada PM mudou');
 errors.push(...inspectPm(gate.records,review,rules,generated,sources));
