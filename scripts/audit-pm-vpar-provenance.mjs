@@ -13,6 +13,8 @@ const rules=read('data/knowledge/pm-prevention/seed-rules.json').records;
 const reviews=read('data/quality/pm-gap-review.v1.json').records;
 const gates=read('data/quality/pm-exception-evidence-gates.v1.json').records;
 const links=read('data/knowledge/pm-prevention/generated-links.json').records;
+const differential=read('data/research/pm-vpar-function-differentials.v1.json');
+
 const errors=[...inspectFocusGuards(rules,reviews,gates,links)],assert=(ok,message)=>{if(!ok)errors.push(message)};
 const rule=rules.find(r=>r.id==='drill-compressor-filter');
 assert(!!rule,'no_original_compressor_filter_rule');
@@ -79,6 +81,23 @@ for(const mutate of mutations){
  else errors.push('adversarial_promotion_was_accepted_'+rejected);
 }
 assert(rejected===mutations.length,'not_all_fake_approvals_rejected');
+assert(differential.schema==='fmea-mining.pm-vpar-function-differentials.v1'&&differential.version==='1.3.37','differential_schema_drift');
+assert(differential.nature==='generic_OEM_maintenance_planner_function_families_not_SAP_mapping','false_source_effectivity');
+assert(differential.reviewedByEngineering===false&&differential.verifiedInstalledConfiguration===false&&differential.approvedSapMappings===0,'false_differential_approvals');
+const expectedFamilies=['compressor_air_intake','compressor_lubricating_oil','air_oil_separation','receiver_tank_filtration'];
+assert(differential.functionalAlternatives.length===4,'differential_families_changed');
+for(const id of expectedFamilies)assert(differential.functionalAlternatives.some(x=>x.id===id),'missing_differential_'+id);
+for(const d of differential.functionalAlternatives){
+ assert(d.canIdentifyVPAR===false,'invented_VPAR_function_'+d.id);
+ assert(typeof d.expectedEvidence==='string'&&d.expectedEvidence.length>45,'weak_evidence_gate_'+d.id);
+ assert(typeof d.physicalCircuit==='string'&&d.physicalCircuit.length>6,'missing_circuit_'+d.id);
+}
+for(const [key,value] of Object.entries(differential.policy))assert(value===true,'relaxed_policy_'+key);
+assert(differential.references.length===2&&differential.references.every(x=>x.url.startsWith('https://www.mining.sandvik/')&&x.status==='public_family_reference_not_effective_by_serial'),'invalid_research_source');
+const fakeResearch=JSON.parse(JSON.stringify(differential));
+fakeResearch.functionalAlternatives[0].canIdentifyVPAR=true;
+assert(fakeResearch.functionalAlternatives.some(x=>x.canIdentifyVPAR!==false),'adversarial_publication_not_detected');
+
 const payload={schema:'fmea-mining.pm-vpar-provenance.v1',version:'1.3.37',
  nature:'object_type_reuse_and_description_semantics_without_asset_effectivity',
  methodology:'deduplicate_by_catalogue_part_code_within_object_type_then_count_per_matching_leaf; no physical BOM or serial data',
