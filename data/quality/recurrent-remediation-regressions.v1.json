@@ -1,0 +1,421 @@
+{
+  "schema": "fmea-mining.recurrent-remediation-regressions.v1",
+  "version": "1.3.29",
+  "nature": "synthetic_only",
+  "baselines": [
+    {
+      "id": "TEST-BASE-REM-CONTROL-001-single",
+      "classification": "control_failure",
+      "profileId": "REM-CONTROL-001",
+      "variant": "single",
+      "expected": "eligible_for_manual_review"
+    },
+    {
+      "id": "TEST-BASE-REM-CONTROL-001-recurrent",
+      "classification": "control_failure",
+      "profileId": "REM-CONTROL-001",
+      "variant": "recurrent",
+      "expected": "eligible_for_manual_review"
+    },
+    {
+      "id": "TEST-BASE-REM-CONTROL-001-different_probe",
+      "classification": "control_failure",
+      "profileId": "REM-CONTROL-001",
+      "variant": "different_probe",
+      "expected": "eligible_for_manual_review"
+    },
+    {
+      "id": "TEST-BASE-REM-CONTROL-001-outside_window",
+      "classification": "control_failure",
+      "profileId": "REM-CONTROL-001",
+      "variant": "outside_window",
+      "expected": "eligible_for_manual_review"
+    },
+    {
+      "id": "TEST-BASE-REM-EVIDENCE-001-single",
+      "classification": "inconclusive_evidence",
+      "profileId": "REM-EVIDENCE-001",
+      "variant": "single",
+      "expected": "eligible_for_manual_review"
+    },
+    {
+      "id": "TEST-BASE-REM-EVIDENCE-001-recurrent",
+      "classification": "inconclusive_evidence",
+      "profileId": "REM-EVIDENCE-001",
+      "variant": "recurrent",
+      "expected": "eligible_for_manual_review"
+    },
+    {
+      "id": "TEST-BASE-REM-EVIDENCE-001-different_probe",
+      "classification": "inconclusive_evidence",
+      "profileId": "REM-EVIDENCE-001",
+      "variant": "different_probe",
+      "expected": "eligible_for_manual_review"
+    },
+    {
+      "id": "TEST-BASE-REM-EVIDENCE-001-outside_window",
+      "classification": "inconclusive_evidence",
+      "profileId": "REM-EVIDENCE-001",
+      "variant": "outside_window",
+      "expected": "eligible_for_manual_review"
+    },
+    {
+      "id": "TEST-BASE-REM-INFRA-001-single",
+      "classification": "verifier_infrastructure_error",
+      "profileId": "REM-INFRA-001",
+      "variant": "single",
+      "expected": "eligible_for_manual_review"
+    },
+    {
+      "id": "TEST-BASE-REM-INFRA-001-recurrent",
+      "classification": "verifier_infrastructure_error",
+      "profileId": "REM-INFRA-001",
+      "variant": "recurrent",
+      "expected": "eligible_for_manual_review"
+    },
+    {
+      "id": "TEST-BASE-REM-INFRA-001-different_probe",
+      "classification": "verifier_infrastructure_error",
+      "profileId": "REM-INFRA-001",
+      "variant": "different_probe",
+      "expected": "eligible_for_manual_review"
+    },
+    {
+      "id": "TEST-BASE-REM-INFRA-001-outside_window",
+      "classification": "verifier_infrastructure_error",
+      "profileId": "REM-INFRA-001",
+      "variant": "outside_window",
+      "expected": "eligible_for_manual_review"
+    }
+  ],
+  "mutations": [
+    {
+      "id": "TEST-MUT-01",
+      "mutation": "wrong_profile",
+      "classification": "control_failure",
+      "profileId": "REM-CONTROL-001",
+      "variant": "single",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-02",
+      "mutation": "fake_real_case",
+      "classification": "inconclusive_evidence",
+      "profileId": "REM-EVIDENCE-001",
+      "variant": "recurrent",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-03",
+      "mutation": "real_asset_serial",
+      "classification": "verifier_infrastructure_error",
+      "profileId": "REM-INFRA-001",
+      "variant": "different_probe",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-04",
+      "mutation": "unsafe_url",
+      "classification": "control_failure",
+      "profileId": "REM-CONTROL-001",
+      "variant": "outside_window",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-05",
+      "mutation": "raw_document",
+      "classification": "inconclusive_evidence",
+      "profileId": "REM-EVIDENCE-001",
+      "variant": "single",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-06",
+      "mutation": "missing_original_evidence",
+      "classification": "verifier_infrastructure_error",
+      "profileId": "REM-INFRA-001",
+      "variant": "recurrent",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-07",
+      "mutation": "clear_history",
+      "classification": "control_failure",
+      "profileId": "REM-CONTROL-001",
+      "variant": "different_probe",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-08",
+      "mutation": "duplicate_run_token",
+      "classification": "inconclusive_evidence",
+      "profileId": "REM-EVIDENCE-001",
+      "variant": "outside_window",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-09",
+      "mutation": "alter_same_run_outcome",
+      "classification": "verifier_infrastructure_error",
+      "profileId": "REM-INFRA-001",
+      "variant": "single",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-10",
+      "mutation": "cross_tenant_marked_recurrent",
+      "classification": "control_failure",
+      "profileId": "REM-CONTROL-001",
+      "variant": "recurrent",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-11",
+      "mutation": "cross_probe_marked_recurrent",
+      "classification": "inconclusive_evidence",
+      "profileId": "REM-EVIDENCE-001",
+      "variant": "different_probe",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-12",
+      "mutation": "cross_category_marked_recurrent",
+      "classification": "verifier_infrastructure_error",
+      "profileId": "REM-INFRA-001",
+      "variant": "outside_window",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-13",
+      "mutation": "outside_window_marked_recurrent",
+      "classification": "control_failure",
+      "profileId": "REM-CONTROL-001",
+      "variant": "single",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-14",
+      "mutation": "single_run_marked_recurrent",
+      "classification": "inconclusive_evidence",
+      "profileId": "REM-EVIDENCE-001",
+      "variant": "recurrent",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-15",
+      "mutation": "recurrence_flag_suppressed",
+      "classification": "verifier_infrastructure_error",
+      "profileId": "REM-INFRA-001",
+      "variant": "different_probe",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-16",
+      "mutation": "delete_action",
+      "classification": "control_failure",
+      "profileId": "REM-CONTROL-001",
+      "variant": "outside_window",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-17",
+      "mutation": "invent_action",
+      "classification": "inconclusive_evidence",
+      "profileId": "REM-EVIDENCE-001",
+      "variant": "single",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-18",
+      "mutation": "delete_expected_evidence",
+      "classification": "verifier_infrastructure_error",
+      "profileId": "REM-INFRA-001",
+      "variant": "recurrent",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-19",
+      "mutation": "modify_expected_evidence",
+      "classification": "control_failure",
+      "profileId": "REM-CONTROL-001",
+      "variant": "different_probe",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-20",
+      "mutation": "change_owner",
+      "classification": "inconclusive_evidence",
+      "profileId": "REM-EVIDENCE-001",
+      "variant": "outside_window",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-21",
+      "mutation": "invent_oem_limit",
+      "classification": "verifier_infrastructure_error",
+      "profileId": "REM-INFRA-001",
+      "variant": "single",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-22",
+      "mutation": "mark_root_cause",
+      "classification": "control_failure",
+      "profileId": "REM-CONTROL-001",
+      "variant": "recurrent",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-23",
+      "mutation": "approve_security",
+      "classification": "inconclusive_evidence",
+      "profileId": "REM-EVIDENCE-001",
+      "variant": "different_probe",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-24",
+      "mutation": "approve_operation",
+      "classification": "verifier_infrastructure_error",
+      "profileId": "REM-INFRA-001",
+      "variant": "outside_window",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-25",
+      "mutation": "approve_publication",
+      "classification": "control_failure",
+      "profileId": "REM-CONTROL-001",
+      "variant": "single",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-26",
+      "mutation": "approve_sap",
+      "classification": "inconclusive_evidence",
+      "profileId": "REM-EVIDENCE-001",
+      "variant": "recurrent",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-27",
+      "mutation": "declare_real_review",
+      "classification": "verifier_infrastructure_error",
+      "profileId": "REM-INFRA-001",
+      "variant": "different_probe",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-28",
+      "mutation": "originator_independent_same",
+      "classification": "control_failure",
+      "profileId": "REM-CONTROL-001",
+      "variant": "outside_window",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-29",
+      "mutation": "technical_independent_same",
+      "classification": "inconclusive_evidence",
+      "profileId": "REM-EVIDENCE-001",
+      "variant": "single",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-30",
+      "mutation": "ignore_negative_evidence",
+      "classification": "verifier_infrastructure_error",
+      "profileId": "REM-INFRA-001",
+      "variant": "recurrent",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-31",
+      "mutation": "close_nonconformity",
+      "classification": "control_failure",
+      "profileId": "REM-CONTROL-001",
+      "variant": "different_probe",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-32",
+      "mutation": "backdate_invalid_timestamp",
+      "classification": "inconclusive_evidence",
+      "profileId": "REM-EVIDENCE-001",
+      "variant": "outside_window",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-33",
+      "mutation": "missing_timestamp",
+      "classification": "verifier_infrastructure_error",
+      "profileId": "REM-INFRA-001",
+      "variant": "single",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-34",
+      "mutation": "bad_probe_id",
+      "classification": "control_failure",
+      "profileId": "REM-CONTROL-001",
+      "variant": "recurrent",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-35",
+      "mutation": "wrong_tenant_reference",
+      "classification": "inconclusive_evidence",
+      "profileId": "REM-EVIDENCE-001",
+      "variant": "different_probe",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-36",
+      "mutation": "alter_scope_fingerprint",
+      "classification": "verifier_infrastructure_error",
+      "profileId": "REM-INFRA-001",
+      "variant": "outside_window",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-37",
+      "mutation": "fabricate_verifier_pass",
+      "classification": "control_failure",
+      "profileId": "REM-CONTROL-001",
+      "variant": "single",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-38",
+      "mutation": "omit_independent_review",
+      "classification": "inconclusive_evidence",
+      "profileId": "REM-EVIDENCE-001",
+      "variant": "recurrent",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-39",
+      "mutation": "escalate_without_recurrence",
+      "classification": "verifier_infrastructure_error",
+      "profileId": "REM-INFRA-001",
+      "variant": "different_probe",
+      "expected": "reject"
+    },
+    {
+      "id": "TEST-MUT-40",
+      "mutation": "false_corporate_threshold",
+      "classification": "control_failure",
+      "profileId": "REM-CONTROL-001",
+      "variant": "outside_window",
+      "expected": "reject"
+    }
+  ],
+  "counts": {
+    "positive": 12,
+    "negative": 40,
+    "total": 52,
+    "realPlans": 0,
+    "realEscalations": 0,
+    "confirmedMechanicalCauses": 0
+  }
+}

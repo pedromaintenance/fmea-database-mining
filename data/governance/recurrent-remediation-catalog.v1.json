@@ -1,0 +1,185 @@
+{
+  "schema": "fmea-mining.recurrent-remediation-catalog.v1",
+  "version": "1.3.29",
+  "nature": "editorial_control_improvement_catalog_synthetic_only",
+  "sources": {
+    "exceptionWorkflow": "data/governance/staging-result-exception-workflow.v1.json",
+    "stagingPlan": "data/governance/staging-acceptance-plan.v1.json",
+    "privateAttestation": "data/governance/private-result-custody-contract.v1.json"
+  },
+  "scope": {
+    "domain": "corporate_staging_it_controls",
+    "doesNotRepresentEquipmentFailure": true,
+    "realIncidentRecords": 0,
+    "realCorrectiveActions": 0,
+    "realRecurrentFailureStatistics": 0,
+    "realSecurityReviews": 0,
+    "automaticClosureAllowed": false,
+    "realCorporateEscalations": 0
+  },
+  "profiles": [
+    {
+      "id": "REM-CONTROL-001",
+      "classification": "control_failure",
+      "title": "Persistência de reprovação de controle técnico",
+      "causeBoundary": "Falha observada no controle de staging; a não conformidade técnica deve ser isolada por evidências, não se deduz mecanismo mecânico de equipamento.",
+      "requiredActions": [
+        "identify_failed_control",
+        "define_corrective_hypothesis",
+        "approve_change_in_private_system",
+        "perform_distinct_control_retest",
+        "independent_effectiveness_review"
+      ],
+      "expectedEvidence": [
+        "original_failed_probe",
+        "alternative_control_explanations",
+        "private_change_authorization",
+        "distinct_retest_run",
+        "independent_effectiveness_report"
+      ],
+      "ownerRole": "security_it",
+      "disposition": "maintain_control_blocked_pending_manual_security_acceptance"
+    },
+    {
+      "id": "REM-EVIDENCE-001",
+      "classification": "inconclusive_evidence",
+      "title": "Incerteza de evidência e qualidade de medição",
+      "causeBoundary": "Inconclusão no ensaio não é falha comprovada nem conformidade; rever instrumento, método, origem e discriminação.",
+      "requiredActions": [
+        "identify_missing_discriminator",
+        "confirm_collection_method",
+        "request_quality_evidence",
+        "perform_distinct_control_retest",
+        "independent_evidence_review"
+      ],
+      "expectedEvidence": [
+        "inconclusive_probe",
+        "documented_measurement_gap",
+        "instrument_and_method_review",
+        "distinct_retest_run",
+        "independent_quality_report"
+      ],
+      "ownerRole": "maintenance_engineering",
+      "disposition": "retain_inconclusive_and_block_security_approval"
+    },
+    {
+      "id": "REM-INFRA-001",
+      "classification": "verifier_infrastructure_error",
+      "title": "Indisponibilidade ou erro do ambiente de verificação",
+      "causeBoundary": "O ensaio ou seu verificador foi bloqueado; restaurar a capacidade de mensuração antes de inferir estado do controle.",
+      "requiredActions": [
+        "isolate_verifier_error",
+        "review_identity_time_and_transport",
+        "restore_controlled_test_environment",
+        "perform_distinct_control_retest",
+        "independent_verifier_review"
+      ],
+      "expectedEvidence": [
+        "original_blocked_probe",
+        "verifier_diagnostic_record",
+        "environment_recovery_evidence",
+        "distinct_retest_run",
+        "independent_environment_report"
+      ],
+      "ownerRole": "platform_it",
+      "disposition": "retain_verification_block_pending_retest"
+    },
+    {
+      "id": "REM-RECURRENCE-001",
+      "classification": "cross_cutting_recurrence",
+      "title": "Reincidência de desvio em execuções distintas",
+      "causeBoundary": "Recorrência estatutária no histórico de testes sintéticos não prova causa comum; exige revisão de tendência, escopo e hipótese compartilhada.",
+      "requiredActions": [
+        "validate_distinct_runs",
+        "compare_scoped_events",
+        "assess_common_cause_candidates",
+        "escalate_to_accountable_owner",
+        "review_effectiveness_and_prevention"
+      ],
+      "expectedEvidence": [
+        "two_distinct_scoped_runs",
+        "scope_and_time_comparison",
+        "alternative_common_cause_hypotheses",
+        "accountable_owner_review_record",
+        "independent_prevention_review"
+      ],
+      "ownerRole": "security_it",
+      "disposition": "escalation_candidate_only_no_automatic_priority_or_resolution"
+    }
+  ],
+  "recurrence": {
+    "exampleOnly": true,
+    "syntheticWindowDays": 30,
+    "syntheticMinDistinctRuns": 2,
+    "realCorporateThresholdApproved": false,
+    "realThresholdDays": null,
+    "realThresholdCount": null,
+    "fingerprintFields": [
+      "tenantToken",
+      "scenarioId",
+      "probeId",
+      "classification"
+    ],
+    "distinctBy": "runToken",
+    "requireActualIsoTimestamp": true,
+    "excludeCrossTenant": true,
+    "excludeCrossProbe": true,
+    "excludeCrossCategory": true,
+    "excludeOutsideSyntheticWindow": true,
+    "duplicateRunMustNotIncrement": true,
+    "manualEscalationOnly": true
+  },
+  "reviewGates": {
+    "requiredFlow": [
+      "draft_plan",
+      "actions_proposed",
+      "clarification_or_correction_requested",
+      "retest_evidence_pending",
+      "independent_effectiveness_review_pending",
+      "eligible_for_manual_change_review"
+    ],
+    "minimumIndependentReview": true,
+    "manualRiskAcceptanceRequired": true,
+    "retainOriginalFailure": true,
+    "retainNegativeEvidence": true,
+    "noAutomaticClosure": true,
+    "allowRealCorrectiveWorkExecution": false,
+    "allowOEMApproval": false,
+    "allowPublicRelease": false,
+    "allowSapAction": false,
+    "allowRootCauseConfirmation": false
+  },
+  "fixtureContract": {
+    "identityPrefix": "TEST-",
+    "expectedStatuses": [
+      "candidate_remediation_plan_only",
+      "candidate_recurrent_escalation_plan_only"
+    ],
+    "mandatoryFields": [
+      "caseToken",
+      "tenantToken",
+      "scenarioId",
+      "probeId",
+      "classification",
+      "profileId",
+      "history",
+      "originalEvidenceToken",
+      "ownerRole",
+      "actions",
+      "expectedEvidence",
+      "review",
+      "release",
+      "syntheticClassification"
+    ]
+  },
+  "safeguards": [
+    "Do not equate a repeated security test finding with a machine failure or FMEA causal-chain confirmation.",
+    "No fixed real escalation time/count: only synthetic 2 distinct runs/30 days demonstration.",
+    "Cross-tenant/cross-probe runs must not be aggregated; repeated run tokens must never inflate recurrence.",
+    "Triage close, remediation complete, security acceptance and new FMEA approval are distinct human decisions.",
+    "Public repository contains policy and TEST fixtures only; private incidents, measurements and evidence remain private."
+  ],
+  "confirmedMechanicalRootCauses": 0,
+  "coreChainsUnchanged": 24,
+  "ontologyMechanismsUnchanged": 15
+}
