@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.research.sources.v1",
-  "version": "1.3.13",
+  "version": "1.3.18",
   "status": "literatura_de_referencia_nao_casos_empiricos",
   "rights": "somente_titulos_links_e_resumos_originais",
   "sources": [
