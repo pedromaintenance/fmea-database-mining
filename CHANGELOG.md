@@ -2,6 +2,16 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.32] — 2026-10-21 — Pesquisa pública OEM de material rodante D9
+
+- Revisadas **5 referências públicas oficiais Caterpillar**, duas já catalogadas e três adicionadas à matriz específica de pesquisa, sem reprodução de material licenciado.
+- Distinguida a oferta de conjuntos General Duty/Heavy Duty/HDXL para a família D9–D11 da **identificação do conjunto realmente instalado**, que continua pendente.
+- Orientação geral para inspeção de fixadores, roletes, detritos, tensionamento, método torque-turn e monitoramento CTS Pro classificada como **não efetiva para série/arranjo específico**.
+- Relacionadas as fontes a 7 requisitos D9, inclusive marcando explicitamente que **dados SAP corporativos não podem ser fundamentados por páginas públicas Caterpillar**.
+- Criados [guia de evidência](docs/PESQUISA_PUBLICA_OEM_D9.md), [matriz JSON](data/research/d9-public-oem-literature.v1.json), schema, validador e **31 regressões sintéticas** no QA/CI.
+- **Não foi enviada solicitação**, não houve acesso a SIS licenciado, inspeção física, confirmação de PN/torque/CTS, aprovação independente, dado de campo ou alteração no núcleo FMEA/SAP.
+- Preservados os **24 FC e 15 ME**, contrato/conteúdo públicos 1.0.0, preview 1.3.12 e checksum; nenhum consumidor alterado.
+
 ## [1.3.31] — 2026-10-21 — Pedido técnico OEM para piloto D9
 
 - Preparado [pedido de documentação](data/governance/d9-oem-evidence-request.v1.json) com **7 gates originais**: prefixo/série, OMM efetivo, desenhos/BOM, procedimento de junta sapata–elo, CTS, dados SAP e parecer de campo.
