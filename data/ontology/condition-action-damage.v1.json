@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.condition-action-damage.v1",
-  "version": "1.3.12",
+  "version": "1.3.13",
   "status": "conceptual_unvalidated",
   "semantics": {
     "condition": "Estado de fluido, superfície ou desempenho; ocorrência requer medição/observação",
@@ -748,6 +748,81 @@
       "status": "condition_hypothesis_not_observed",
       "observedValue": null,
       "observedAt": null
+    },
+    {
+      "id": "COND-DRIVE-BEARING-CONTACT-WEAR",
+      "label": "Suspeita de desgaste em pista ou elemento rolante de rolamento do comando final",
+      "system": "comando_final",
+      "medium": "rolamento_comando_final",
+      "observation": "Exame de pistas e corpos rolantes com acesso OEM autorizado, caracterizando riscos, sulcos ou desgaste em posição física comprovada no redutor",
+      "methods": [
+        "EV-01",
+        "EV-02"
+      ],
+      "sourceIds": [
+        "SKF-ISO15243-BEARING",
+        "SKF-WEAR-SURFACE-FATIGUE"
+      ],
+      "limitations": "Partículas metálicas e ruído, sem exame do rolamento efetivo, não demonstram desgaste de pista ou corpo rolante; diferenciar danos de engrenagem e montagem.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-DRIVE-BEARING-CONTACT-FATIGUE",
+      "label": "Suspeita de fadiga de contato ou descascamento em rolamento do comando final",
+      "system": "comando_final",
+      "medium": "rolamento_comando_final",
+      "observation": "Identificar possível spalling, descascamento ou pitting de contato nos elementos rolantes e pistas, com posição e morfologia verificadas por procedimento aplicável",
+      "methods": [
+        "EV-01",
+        "EV-02"
+      ],
+      "sourceIds": [
+        "SKF-ISO15243-BEARING",
+        "SKF-WEAR-SURFACE-FATIGUE"
+      ],
+      "limitations": "A classificação ISO 15243 é morfológica, não prova causa raiz; vibração ou metais não confirmam fadiga nem distinguem engrenagem de rolamento.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-DRIVE-BEARING-SEAL-LEAK",
+      "label": "Suspeita de perda de estanqueidade em vedação associada ao apoio do comando final",
+      "system": "comando_final",
+      "medium": "vedacao_comando_final",
+      "observation": "Localizar indícios de fuga ou ingresso de contaminantes junto ao conjunto vedado identificado, distinguindo vedações do comando final e pontos externos adjacentes",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "SKF-ISO15243-BEARING",
+        "CAT-DRIVE-MAINT-PRACTICES"
+      ],
+      "limitations": "A configuração OEM pode ter vedações compartilhadas do compartimento e não do rolamento individual; óleo externo não comprova perda de vedação nem dano do rolamento.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-DRIVE-BEARING-LOCAL-HEAT",
+      "label": "Aquecimento localizado suspeito na região de apoio do comando final",
+      "system": "comando_final",
+      "medium": "conjunto_comando_final",
+      "observation": "Comparar temperatura sob condição definida e com localização documentada na região do apoio, sem atribuir automaticamente o calor a pistas ou corpos rolantes",
+      "methods": [
+        "EV-01",
+        "EV-03"
+      ],
+      "sourceIds": [
+        "SKF-ISO15243-BEARING",
+        "CAT-DRIVE-MAINT-PRACTICES"
+      ],
+      "limitations": "Calor no conjunto pode decorrer de carga, engrenagens, frenagem, viscosidade do óleo e outros componentes; comparação térmica não confirma rolamento danificado.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
     }
   ],
   "actions": [
@@ -1248,6 +1323,54 @@
       "executionStatus": "not_performed",
       "observedResults": [],
       "intervalHours": null
+    },
+    {
+      "id": "ACT-DRIVE-BEARING-EFFECTIVITY-CHECK",
+      "label": "Identificar rolamento, suporte e vedação por configuração OEM do comando final",
+      "kind": "inspection",
+      "intent": "Localizar rolamento físico e sua montagem, possíveis vedações do conjunto e componentes de engrenagem adjacentes com desenho/BOM por série, sem inventar peça separada",
+      "sourceIds": [
+        "SKF-ISO15243-BEARING",
+        "SKF-WEAR-SURFACE-FATIGUE",
+        "CAT-DRIVE-MAINT-PRACTICES",
+        "CAT-DRIVE-MAGNET-PLUG",
+        "CAT-DRIVETRAIN-OIL-CARE"
+      ],
+      "safety": "Estabilizar o equipamento e controlar cargas e energia do comando final; não abrir compartimento pressurizado, girar conjunto exposto ou desmontar rolamento sem procedimento OEM autorizado.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
+    },
+    {
+      "id": "ACT-DRIVE-BEARING-DIFFERENTIAL-INSPECT",
+      "label": "Avaliar padrões de desgaste e fadiga de contato do rolamento conforme ISO/OEM",
+      "kind": "inspection",
+      "intent": "Inspecionar pistas, elementos, gaiola e sinais concorrentes de engrenagens para distinguir desgaste, fadiga de contato, corrosão, deformação e falha de montagem",
+      "sourceIds": [
+        "SKF-ISO15243-BEARING",
+        "SKF-WEAR-SURFACE-FATIGUE"
+      ],
+      "safety": "Desmontagem requer plano de levantamento, bloqueio, ferramentas e preservação de evidências; não manipular partes pesadas ou energizadas sem controle seguro e autorização formal.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
+    },
+    {
+      "id": "ACT-DRIVE-BEARING-SEAL-SOURCE-CHECK",
+      "label": "Investigar vedação e origem de fuga ou ingresso de contaminante no comando final",
+      "kind": "inspection",
+      "intent": "Verificar vedação efetiva, origem de óleo, água e partículas, distinguindo falha da vedação de dano interno do rolamento e lubrificação insuficiente",
+      "sourceIds": [
+        "SKF-ISO15243-BEARING",
+        "CAT-DRIVE-MAINT-PRACTICES"
+      ],
+      "safety": "Isolar máquina e aguardar temperatura segura; confirmar alívio de pressão residual e OMM efetivo; não manipular vedação, bujões ou fluidos sob pressão sem procedimento autorizado.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
     }
   ],
   "damageHypotheses": [
@@ -1585,6 +1708,66 @@
       "requiredEvidence": "Identificar material fraturado e dente específico por inspeção controlada; fragmentos no bujão e ruído não são confirmação automática do dano ou mecanismo causal.",
       "sourceIds": [
         "ISO-10825-1-2022",
+        "CAT-DRIVE-MAINT-PRACTICES"
+      ],
+      "kind": "candidate_component_damage",
+      "reviewStatus": "not_approved",
+      "catalogMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageCode": null,
+        "causeCode": null
+      },
+      "confirmed": false
+    },
+    {
+      "id": "DMG-DRIVE-BEARING-WEAR-CANDIDATE",
+      "label": "Possível desgaste abrasivo ou adesivo do rolamento do comando final sob investigação",
+      "componentRole": "rolamento_comando_final",
+      "requiredEvidence": "Documentar montagem e rolamento por série, observar pistas/corpos rolantes por acesso seguro e diferenciar riscos, abrasão, dano de engrenagem e alterações de lubrificação; metais no óleo isolados não são prova.",
+      "sourceIds": [
+        "SKF-ISO15243-BEARING",
+        "SKF-WEAR-SURFACE-FATIGUE"
+      ],
+      "kind": "candidate_component_damage",
+      "reviewStatus": "not_approved",
+      "catalogMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageCode": null,
+        "causeCode": null
+      },
+      "confirmed": false
+    },
+    {
+      "id": "DMG-DRIVE-BEARING-FATIGUE-CANDIDATE",
+      "label": "Possível fadiga de contato de rolamento do comando final sob investigação",
+      "componentRole": "rolamento_comando_final",
+      "requiredEvidence": "Documentar morfologia de spalling/fadiga na pista ou elemento rolante físico e avaliar carga, alinhamento, lubrificação e limpeza; ruído, vibração ou fragmentos isolados não provam mecanismo.",
+      "sourceIds": [
+        "SKF-ISO15243-BEARING",
+        "SKF-WEAR-SURFACE-FATIGUE"
+      ],
+      "kind": "candidate_component_damage",
+      "reviewStatus": "not_approved",
+      "catalogMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageCode": null,
+        "causeCode": null
+      },
+      "confirmed": false
+    },
+    {
+      "id": "DMG-DRIVE-BEARING-SEAL-CANDIDATE",
+      "label": "Possível comprometimento de vedação associada ao rolamento ou ao comando final sob investigação",
+      "componentRole": "vedacao_conjunto_comando_final",
+      "requiredEvidence": "Confirmar vedação efetiva por desenho/BOM e origem localizada de vazamento/ingresso; a vedação pode ser do compartimento e não de rolamento reparável isoladamente.",
+      "sourceIds": [
+        "SKF-ISO15243-BEARING",
         "CAT-DRIVE-MAINT-PRACTICES"
       ],
       "kind": "candidate_component_damage",
@@ -2028,6 +2211,47 @@
         "ISO-10825-1-2022",
         "CAT-DRIVE-MAGNET-PLUG",
         "CAT-DRIVE-MAINT-PRACTICES",
+        "CAT-DRIVETRAIN-OIL-CARE"
+      ],
+      "mappingScope": "generic_only",
+      "status": "review_candidate",
+      "observedConditionIds": [],
+      "performedActionIds": [],
+      "confirmedDamageIds": [],
+      "automaticDamagePromotion": false,
+      "evidenceInterpretation": "sem_resultado_de_campo"
+    },
+    {
+      "id": "BUNDLE-15",
+      "ruleId": "final-drive-bearing",
+      "conditionIds": [
+        "COND-DRIVE-BEARING-CONTACT-WEAR",
+        "COND-DRIVE-BEARING-CONTACT-FATIGUE",
+        "COND-DRIVE-BEARING-SEAL-LEAK",
+        "COND-DRIVE-BEARING-LOCAL-HEAT",
+        "COND-DRIVE-MAGNETIC-DEBRIS",
+        "COND-DRIVE-OIL-CONTAMINATION",
+        "COND-DRIVE-LUBRICATION-INADEQUACY",
+        "COND-DRIVE-ABNORMAL-NOISE"
+      ],
+      "actionIds": [
+        "ACT-DRIVE-BEARING-EFFECTIVITY-CHECK",
+        "ACT-DRIVE-BEARING-DIFFERENTIAL-INSPECT",
+        "ACT-DRIVE-BEARING-SEAL-SOURCE-CHECK",
+        "ACT-DRIVE-OIL-REPRESENTATIVE-SAMPLE"
+      ],
+      "differentialDamageIds": [
+        "DMG-DRIVE-BEARING-WEAR-CANDIDATE",
+        "DMG-DRIVE-BEARING-FATIGUE-CANDIDATE",
+        "DMG-DRIVE-BEARING-SEAL-CANDIDATE"
+      ],
+      "chainIds": [],
+      "interpretation": "Condições específicas de rolamento requerem exame físico OEM; ruído, partículas magnéticas, contaminação e lubrificação suspeita são sinais genéricos compartilhados com engrenagens, e NÃO comprovam rolamento avariado. Vedação do compartimento pode não pertencer ao rolamento. A ISO 15243 classifica morfologia do dano, não determina automaticamente causa nem efetividade da montagem.",
+      "sourceIds": [
+        "SKF-ISO15243-BEARING",
+        "SKF-WEAR-SURFACE-FATIGUE",
+        "CAT-DRIVE-MAINT-PRACTICES",
+        "CAT-DRIVE-MAGNET-PLUG",
         "CAT-DRIVETRAIN-OIL-CARE"
       ],
       "mappingScope": "generic_only",
@@ -2883,6 +3107,141 @@
       "to": "DMG-DRIVE-GEAR-FRACTURE-CANDIDATE",
       "type": "rule_lists_differential_damage",
       "meaning": "Dano diferencial de engrenagem não confirmado, sem aprovação SAP",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-095",
+      "from": "BUNDLE-15",
+      "to": "COND-DRIVE-BEARING-CONTACT-WEAR",
+      "type": "rule_monitors_condition",
+      "meaning": "Condição a investigar; não observada nem localizada em equipamento real",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-096",
+      "from": "BUNDLE-15",
+      "to": "COND-DRIVE-BEARING-CONTACT-FATIGUE",
+      "type": "rule_monitors_condition",
+      "meaning": "Condição a investigar; não observada nem localizada em equipamento real",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-097",
+      "from": "BUNDLE-15",
+      "to": "COND-DRIVE-BEARING-SEAL-LEAK",
+      "type": "rule_monitors_condition",
+      "meaning": "Condição a investigar; não observada nem localizada em equipamento real",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-098",
+      "from": "BUNDLE-15",
+      "to": "COND-DRIVE-BEARING-LOCAL-HEAT",
+      "type": "rule_monitors_condition",
+      "meaning": "Condição a investigar; não observada nem localizada em equipamento real",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-099",
+      "from": "BUNDLE-15",
+      "to": "COND-DRIVE-MAGNETIC-DEBRIS",
+      "type": "rule_monitors_condition",
+      "meaning": "Condição a investigar; não observada nem localizada em equipamento real",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-100",
+      "from": "BUNDLE-15",
+      "to": "COND-DRIVE-OIL-CONTAMINATION",
+      "type": "rule_monitors_condition",
+      "meaning": "Condição a investigar; não observada nem localizada em equipamento real",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-101",
+      "from": "BUNDLE-15",
+      "to": "COND-DRIVE-LUBRICATION-INADEQUACY",
+      "type": "rule_monitors_condition",
+      "meaning": "Condição a investigar; não observada nem localizada em equipamento real",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-102",
+      "from": "BUNDLE-15",
+      "to": "COND-DRIVE-ABNORMAL-NOISE",
+      "type": "rule_monitors_condition",
+      "meaning": "Condição a investigar; não observada nem localizada em equipamento real",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-103",
+      "from": "BUNDLE-15",
+      "to": "ACT-DRIVE-BEARING-EFFECTIVITY-CHECK",
+      "type": "rule_proposes_action",
+      "meaning": "Ação genérica apenas proposta, conforme OEM e sem execução",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-104",
+      "from": "BUNDLE-15",
+      "to": "ACT-DRIVE-BEARING-DIFFERENTIAL-INSPECT",
+      "type": "rule_proposes_action",
+      "meaning": "Ação genérica apenas proposta, conforme OEM e sem execução",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-105",
+      "from": "BUNDLE-15",
+      "to": "ACT-DRIVE-BEARING-SEAL-SOURCE-CHECK",
+      "type": "rule_proposes_action",
+      "meaning": "Ação genérica apenas proposta, conforme OEM e sem execução",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-106",
+      "from": "BUNDLE-15",
+      "to": "ACT-DRIVE-OIL-REPRESENTATIVE-SAMPLE",
+      "type": "rule_proposes_action",
+      "meaning": "Ação genérica apenas proposta, conforme OEM e sem execução",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-107",
+      "from": "BUNDLE-15",
+      "to": "DMG-DRIVE-BEARING-WEAR-CANDIDATE",
+      "type": "rule_lists_differential_damage",
+      "meaning": "Dano diferencial não aprovado e sem mapeamento SAP efetivo",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-108",
+      "from": "BUNDLE-15",
+      "to": "DMG-DRIVE-BEARING-FATIGUE-CANDIDATE",
+      "type": "rule_lists_differential_damage",
+      "meaning": "Dano diferencial não aprovado e sem mapeamento SAP efetivo",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-109",
+      "from": "BUNDLE-15",
+      "to": "DMG-DRIVE-BEARING-SEAL-CANDIDATE",
+      "type": "rule_lists_differential_damage",
+      "meaning": "Dano diferencial não aprovado e sem mapeamento SAP efetivo",
       "reviewStatus": "interpretacao_inferida",
       "observed": false
     }

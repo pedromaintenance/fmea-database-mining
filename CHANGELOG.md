@@ -2,6 +2,15 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.48] — 2026-10-22 — Rolamentos do comando final: desgaste, fadiga e vedação
+
+- Novo `BUNDLE-15` para `final-drive-bearing`: quatro condições próprias de rolamento/vedação, três ações propostas e três danos diferenciais não aprovados; **15 relações tipadas**.
+- Cinco nós **genéricos do comando final** compartilhados com `final-drive-gear`: quatro condições (partículas, óleo, lubrificação, ruído) e uma proposta de amostragem. Nenhum dano físico compartilhado e nenhuma atribuição automática de origem ou causa.
+- Fonte SKF/ISO 15243 distingue desgaste, fadiga de contato e falhas de vedação; não foi presumido rolamento separado, vedação exclusiva, limiar OEM, resultado medido ou evento real em máquina.
+- Crosswalk 1.3.48 com **11 conceitos genéricos compartilhados** (antes seis) e zero danos compartilhados; 15/25 regras PM representadas, dez ainda sem bundle.
+- Ontologia **1.3.13**: 43 condições, 35 ações, 20 danos candidatos, 15 bundles, 109 relações tipadas e 26 casos sintéticos.
+- Auditor `pm:drive:bearing:audit` com **32 mutações adversariais** contra falhas, mapeamentos SAP, evidências e diagnósticos inventados; preservados 25 regras, 115 vínculos candidatos, dez exceções, 24 FC/15 ME, contratos públicos e consumidores.
+
 ## [1.3.47] — 2026-10-21 — Engrenagem do comando final: desgaste, pitting, fratura e lubrificação
 
 - Criado `BUNDLE-14` para `final-drive-gear` com **7 condições candidatas**, **4 ações não executadas**, **3 danos físicos não aprovados** (desgaste de dente, pitting, fratura) e 14 relações tipadas.

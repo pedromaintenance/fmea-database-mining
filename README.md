@@ -2,7 +2,7 @@
 
 Banco de conhecimento **versionado** para investigar modos de falha, sintomas, evidências e causas em equipamentos móveis de mineração. Um consumidor possível é o jogo **[P.O.R.C.A.R.I.A. — Você Quebra, Eu Conserto](https://github.com/pedromaintenance/porcaria-voce-quebra-eu-conserto)**, mas o banco é independente: **este repositório não altera os consumidores**.
 
-> **Status:** versão do catálogo **1.3.47** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
+> **Status:** versão do catálogo **1.3.48** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
 
 **Ciclo v1.3.35:** [auditoria funcional de HSVV e COMR](docs/CICLO_2026-10-21_HSVV_COMR.md), com proteção do gerador contra colisões de grupo/subgrupo e 23 cenários sintéticos. As quatro regras focadas permanecem bloqueadas até evidência OEM/SAP e revisão independente.
 
@@ -29,6 +29,8 @@ Banco de conhecimento **versionado** para investigar modos de falha, sintomas, e
 **Ciclo v1.3.46:** [modelagem dos fixadores de sapatas e pré-carga](docs/CICLO_2026-10-21_FIXADORES_SAPATAS.md), com diferenciação de rotação, assentamento, fixadores frouxos e fratura, sem torques OEM inventados. Ontologia 1.3.11: 13/25 regras com bundle, 12 pendentes e 32 alterações adversariais rejeitadas.
 
 **Ciclo v1.3.47:** a [revisão de engrenagens do comando final](docs/CICLO_2026-10-21_ENGRENAGENS_COMANDO_FINAL.md) diferencia desgaste, pitting e fratura de dentes dos sinais de óleo, bujão magnético e ruído. Ontologia 1.3.12 com **14/25 regras modeladas**, 11 pendentes e auditoria adversarial, sem diagnóstico de campo nem valores OEM generalizados.
+
+**Ciclo v1.3.48:** a [análise semântica de rolamentos do comando final](docs/CICLO_2026-10-22_ROLAMENTOS_COMANDO_FINAL.md) diferencia desgaste de pistas, fadiga de contato e vedação dos sintomas genéricos de óleo, ruído e limalhas, compartilhados sob controle com engrenagens. Ontologia 1.3.13, 15/25 regras com bundle, dez ainda pendentes e testes adversariais, sem atribuir falhas confirmadas ou aprovações SAP.
 
 ## O que queremos construir
 
