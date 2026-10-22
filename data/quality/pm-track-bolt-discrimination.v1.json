@@ -1,0 +1,86 @@
+{
+  "schema": "fmea-mining.pm-track-bolt-discrimination.v1",
+  "version": "1.3.46",
+  "ruleId": "track-bolt-loose",
+  "scope": "track_shoe_to_link_bolted_joint",
+  "nature": "technical_differentials_without_machine_specific_OEM_effectivity",
+  "paths": [
+    {
+      "id": "rotational_loosening",
+      "conditionId": "COND-TRACK-SHOE-ROTATION-SUSPECT",
+      "mechanism": "Possible relative fastener rotation under dynamic loads",
+      "alternatives": [
+        "witness_marks_unreliable",
+        "assembly_movement_without_rotation"
+      ],
+      "test": "Check available baseline and controlled visual evidence; do not equate witness marks with measured preload",
+      "status": "hypothesis_not_observed"
+    },
+    {
+      "id": "preload_loss_without_rotation",
+      "conditionId": "COND-TRACK-SHOE-SEAT-DISTRESS",
+      "mechanism": "Seating, surface embedment or relaxation may reduce clamp force without rotation",
+      "alternatives": [
+        "preexisting_surface_marks",
+        "wear_unrelated_to_initial_preload"
+      ],
+      "test": "Investigate seat/washer/track-shoe link interfaces with OEM-specific disassembly acceptance",
+      "status": "hypothesis_not_observed"
+    },
+    {
+      "id": "loose_or_missing_fastener",
+      "conditionId": "COND-TRACK-SHOE-FASTENER-LOOSE",
+      "mechanism": "Joint retention at risk; specific initiating mechanism undetermined",
+      "alternatives": [
+        "broken_fastener",
+        "incorrect_assembly",
+        "loss_of_clamping"
+      ],
+      "test": "Identify joint configuration and secure machine; inspect missing/loose parts by OEM instructions",
+      "status": "hypothesis_not_observed"
+    },
+    {
+      "id": "fracture_or_structural_failure",
+      "conditionId": "COND-TRACK-SHOE-FASTENER-FRACTURE",
+      "mechanism": "Bolt or nut damage under fatigue, overload or other mechanisms",
+      "alternatives": [
+        "missing_hardware_without_fracture",
+        "loose_unbroken_fastener"
+      ],
+      "test": "Independent component examination, fracture surface when safe and engineering review; no field failure claimed",
+      "status": "hypothesis_not_observed"
+    }
+  ],
+  "independentEvidence": [
+    "track_shoe_link_BOM_by_serial",
+    "actual_bolt_and_nut_identity",
+    "OEM_torque_turn_sequence_and_reuse_rules",
+    "seat_damage_and_rotation_differentiation",
+    "documented_loading_and_inspection_conditions",
+    "engineering_review"
+  ],
+  "sourceIds": [
+    "CAT-UC-DOZER-GUIDE",
+    "CAT-DOZER-UC-MAINT",
+    "NORDLOCK-BOLT-LOOSENING",
+    "NORDLOCK-BOLTING-FAILURE"
+  ],
+  "safeguards": {
+    "no_universal_torque_or_angle": true,
+    "no_apparent_looseness_equals_preload_measurement": true,
+    "no_rotational_looseness_equals_fatigue": true,
+    "no_loose_fastener_equals_fracture": true,
+    "no_unapproved_retorque": true,
+    "no_assumed_installed_part_number": true,
+    "no_field_result_fabrication": true,
+    "no_SAP_approval": true,
+    "no_execution": true,
+    "no_operate_with_unsafe_missing_hardware": true
+  },
+  "measuredPreload": null,
+  "appliedTorqueNm": null,
+  "appliedTurnAngleDegrees": null,
+  "observedFailures": 0,
+  "executedTasks": 0,
+  "approvedSapMappings": 0
+}
