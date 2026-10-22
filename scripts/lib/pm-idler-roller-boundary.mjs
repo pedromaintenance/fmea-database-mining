@@ -18,7 +18,7 @@ const exactList=(a,b)=>Array.isArray(a)&&a.length===b.length&&a.every((x,i)=>x==
 const candidate=(x)=>x&&x.reviewStatus==='not_approved'&&x.confirmed===false&&Object.values(x.catalogMapping||{}).length===5&&Object.values(x.catalogMapping).every(v=>v===null);
 export function validateIdlerRollerBoundary(model,fixtures,gap,links){
  const errors=[],ck=(ok,id)=>{if(!ok)errors.push(id)};
- ck(model?.schema==='fmea-mining.condition-action-damage.v1'&&model?.version==='1.3.8','ontology_version_or_schema');
+ ck(model?.schema==='fmea-mining.condition-action-damage.v1'&&model?.version==='1.3.9','ontology_version_or_schema');
  ck(model?.safetyInvariant==='condition!=action!=damage'&&model?.evidenceNature==='no_field_observation','unsafe_ontology_evidence');
  ck(model?.conditions?.length===24&&model?.actions?.length===23&&model?.relations?.length===64&&model?.bundles?.length===11&&model?.damageHypotheses?.length===11,'cardinality_drift');
  ck(model?.observations?.length===0&&model?.workOrderExecutions?.length===0&&model?.confirmedComponentDamages?.length===0,'fabricated_field_records');
