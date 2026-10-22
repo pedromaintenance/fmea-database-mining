@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.semantic-regression.v1",
-  "version": "1.3.10",
+  "version": "1.3.11",
   "status": "synthetic_assertions_not_real_events",
   "cases": [
     {
@@ -277,6 +277,36 @@
       "independentComponentTest": "not_performed",
       "expectedConfirmedDamageIds": [],
       "why": "Cenário hipotético sinaliza condição crítica que demanda retirada segura de serviço conforme OMM, mas não demonstra evento real, ação executada nem mecanismo interno confirmado."
+    },
+    {
+      "id": "SEM-21",
+      "title": "Fixador de sapata aparentemente frouxo sem confirmação de causa",
+      "ruleId": "track-bolt-loose",
+      "observedConditionIds": [
+        "COND-TRACK-SHOE-FASTENER-LOOSE",
+        "COND-TRACK-SHOE-ROTATION-SUSPECT"
+      ],
+      "performedActionIds": [
+        "ACT-TRACK-SHOE-JOINT-IDENTIFY"
+      ],
+      "independentComponentTest": "not_performed",
+      "expectedConfirmedDamageIds": [],
+      "why": "Cenário sintético de suspeita de folga e rotação não demonstra pré-carga residual, falha de montagem, fadiga ou inspeção realizada."
+    },
+    {
+      "id": "SEM-22",
+      "title": "Assentamento e fratura de fixador como diferenciais separados",
+      "ruleId": "track-bolt-loose",
+      "observedConditionIds": [
+        "COND-TRACK-SHOE-SEAT-DISTRESS",
+        "COND-TRACK-SHOE-FASTENER-FRACTURE"
+      ],
+      "performedActionIds": [
+        "ACT-TRACK-SHOE-SEAT-INSPECT"
+      ],
+      "independentComponentTest": "not_performed",
+      "expectedConfirmedDamageIds": [],
+      "why": "Marcas de assento e dano físico hipotéticos exigem discriminação independente; nenhuma causa ou ruptura de campo foi validada."
     }
   ]
 }
