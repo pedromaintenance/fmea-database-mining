@@ -2,6 +2,15 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.45] — 2026-10-21 — Abrasão versus vazamento de mangueira hidráulica
+
+- Adicionado `BUNDLE-12` a `hydraulic-hose-abrasion`: quatro condições (desgaste de cobertura, armadura exposta, interferência e deformação), duas ações propostas e hipótese de dano do reforço não aprovada; sete novas arestas.
+- Armadura exposta exige avaliação de retirada segura e substituição segundo OEM, mesmo sem vazamento; não demonstra ruptura interna, ocorrência real ou causa raiz.
+- Mantida a separação de `hydraulic-hose-leak` e os dois bloqueios HSVV `subgroup_not_in_scope`.
+- Corrigido rótulo “Abrasion” para “Abrasão” sem alterar identidade nem evidência.
+- Ontologia 1.3.10: 28 condições, 25 ações, 12 danos, 12 bundles e 71 arestas, com 20 cenários e 24 regressões adversariais rejeitadas.
+- Cobertura semântica 12/25 regras (13 ainda sem bundle), 115 candidatos PM, dez bloqueios e 24 FC/15 ME; contratos públicos e consumidores mantidos.
+
 ## [1.3.44] — 2026-10-21 — Ventilador de arrefecimento e rótulo de dano não confirmado
 
 - Corrigida a descrição `DMG-COOL-INTERNAL-BLOCKAGE` de “Obstrução interna efetiva do trocador de calor” para **“Possível obstrução interna do trocador de calor sob investigação”**. ID, status `confirmed:false` e campos de mapeamento SAP permanecem.
