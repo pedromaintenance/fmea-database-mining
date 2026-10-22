@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.condition-action-damage.v1",
-  "version": "1.3.10",
+  "version": "1.3.11",
   "status": "conceptual_unvalidated",
   "semantics": {
     "condition": "Estado de fluido, superfície ou desempenho; ocorrência requer medição/observação",
@@ -536,6 +536,86 @@
       "status": "condition_hypothesis_not_observed",
       "observedValue": null,
       "observedAt": null
+    },
+    {
+      "id": "COND-TRACK-SHOE-FASTENER-LOOSE",
+      "label": "Parafuso ou porca de sapata aparentemente frouxo ou ausente",
+      "system": "rodante",
+      "medium": "uniao_parafusada_sapata",
+      "observation": "Inspeção visual do conjunto identificado quanto a folga, ausência de fixador, abertura de junta e marcas de movimentação, sem contato com o rodante em movimento",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "CAT-UC-DOZER-GUIDE",
+        "CAT-DOZER-UC-MAINT",
+        "NORDLOCK-BOLT-LOOSENING",
+        "NORDLOCK-BOLTING-FAILURE"
+      ],
+      "limitations": "Aparência de folga não mede a força de pré-carga, nem diferencia autoafrouxamento rotacional de assentamento; elemento ausente exige avaliação de risco imediata.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-TRACK-SHOE-ROTATION-SUSPECT",
+      "label": "Indícios suspeitos de rotação relativa do fixador de sapata",
+      "system": "rodante",
+      "medium": "uniao_parafusada_sapata",
+      "observation": "Marcas de referência desalinhadas ou evidências de deslocamento angular, caso haja referência histórica válida do conjunto",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "CAT-UC-DOZER-GUIDE",
+        "CAT-DOZER-UC-MAINT",
+        "NORDLOCK-BOLT-LOOSENING",
+        "NORDLOCK-BOLTING-FAILURE"
+      ],
+      "limitations": "Marcas deslocadas não substituem medição de pré-carga, torque de montagem ou inspeção de superfícies; não atribuir automaticamente culpa à execução.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-TRACK-SHOE-SEAT-DISTRESS",
+      "label": "Assentamento ou desgaste suspeito na interface sapata-elo",
+      "system": "rodante",
+      "medium": "uniao_parafusada_sapata",
+      "observation": "Fretting, marcas de contato, deformação aparente ou assentamento a avaliar nas superfícies da união, respeitando acesso seguro",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "CAT-UC-DOZER-GUIDE",
+        "CAT-DOZER-UC-MAINT",
+        "NORDLOCK-BOLT-LOOSENING",
+        "NORDLOCK-BOLTING-FAILURE"
+      ],
+      "limitations": "Perda de pré-carga pode ocorrer por assentamento sem rotação do fixador; marcas superficiais não provam dimensão, causa raiz ou necessidade de reaperto sem desmontagem autorizada.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-TRACK-SHOE-FASTENER-FRACTURE",
+      "label": "Dano físico ou fratura suspeita de parafuso de sapata",
+      "system": "rodante",
+      "medium": "uniao_parafusada_sapata",
+      "observation": "Trinca, quebra, alongamento aparente ou ausência de parte do fixador a caracterizar visualmente com máquina imobilizada",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "CAT-UC-DOZER-GUIDE",
+        "CAT-DOZER-UC-MAINT",
+        "NORDLOCK-BOLT-LOOSENING",
+        "NORDLOCK-BOLTING-FAILURE"
+      ],
+      "limitations": "Falha de elemento de fixação é fenômeno distinto da perda de pré-carga; fadiga ou sobrecarga exigem investigação própria, sem diagnóstico pelo aspecto isolado.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
     }
   ],
   "actions": [
@@ -920,6 +1000,57 @@
       "executionStatus": "not_performed",
       "observedResults": [],
       "intervalHours": null
+    },
+    {
+      "id": "ACT-TRACK-SHOE-JOINT-IDENTIFY",
+      "label": "Identificar união sapata-elo e configuração dos fixadores OEM",
+      "kind": "inspection",
+      "intent": "Confirmar conjunto, quantidade, posição, classe e condição do material de fixação, necessidade de substituição e aplicabilidade da instrução de aperto por série",
+      "sourceIds": [
+        "CAT-UC-DOZER-GUIDE",
+        "CAT-DOZER-UC-MAINT",
+        "NORDLOCK-BOLT-LOOSENING",
+        "NORDLOCK-BOLTING-FAILURE"
+      ],
+      "safety": "Estabilizar o equipamento e impedir movimentação da esteira; controlar pontos de esmagamento e nenhuma intervenção com máquina em movimento.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
+    },
+    {
+      "id": "ACT-TRACK-SHOE-SEAT-INSPECT",
+      "label": "Inspecionar folga, assento, deformação e integridade dos fixadores",
+      "kind": "inspection",
+      "intent": "Distinguir movimento da junta, rotação do fixador, assentamento do assento, trinca e falta de componentes, com evidências específicas e registro por posição",
+      "sourceIds": [
+        "CAT-UC-DOZER-GUIDE",
+        "CAT-DOZER-UC-MAINT",
+        "NORDLOCK-BOLT-LOOSENING",
+        "NORDLOCK-BOLTING-FAILURE"
+      ],
+      "safety": "Tratar sapatas ou fixadores ausentes, partidos ou aparentemente frouxos como risco de soltura; suspender intervenção até controle de energias e decisão de manutenção segura.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
+    },
+    {
+      "id": "ACT-TRACK-SHOE-OEM-REASSEMBLY-EVAL",
+      "label": "Avaliar substituição e montagem torque-turn aplicável pelo OEM",
+      "kind": "inspection",
+      "intent": "Após inspeção e definição de material reutilizável ou substituível, planejar aperto ou substituição pelo torque-turn e sequência OEM efetivos, sem valores generalizados",
+      "sourceIds": [
+        "CAT-UC-DOZER-GUIDE",
+        "CAT-DOZER-UC-MAINT",
+        "NORDLOCK-BOLT-LOOSENING",
+        "NORDLOCK-BOLTING-FAILURE"
+      ],
+      "safety": "Não reapertar cegamente fixador danificado, não reutilizar hardware sem critério OEM, não inventar torque/ângulo e não executar intervenção com esteira energizada.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
     }
   ],
   "damageHypotheses": [
@@ -1154,6 +1285,50 @@
       "sourceIds": [
         "CAT-HYD-HOSE-INSPECT",
         "CAT-HYD-HOSE-FAILURE"
+      ],
+      "kind": "candidate_component_damage",
+      "reviewStatus": "not_approved",
+      "catalogMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageCode": null,
+        "causeCode": null
+      },
+      "confirmed": false
+    },
+    {
+      "id": "DMG-TRACK-SHOE-JOINT-CLAMP-CANDIDATE",
+      "label": "Suspeita de perda de capacidade de retenção da união aparafusada",
+      "componentRole": "uniao_sapata_elo",
+      "requiredEvidence": "Identificar junta específica, geometria, assento, elementos e método de aperto com documentação OEM; diferenciar pré-carga insuficiente, assentamento e rotação, sem usar torque residual como medida direta universal da pré-carga.",
+      "sourceIds": [
+        "CAT-UC-DOZER-GUIDE",
+        "CAT-DOZER-UC-MAINT",
+        "NORDLOCK-BOLT-LOOSENING",
+        "NORDLOCK-BOLTING-FAILURE"
+      ],
+      "kind": "candidate_component_damage",
+      "reviewStatus": "not_approved",
+      "catalogMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageCode": null,
+        "causeCode": null
+      },
+      "confirmed": false
+    },
+    {
+      "id": "DMG-TRACK-SHOE-FASTENER-FRACTURE-CANDIDATE",
+      "label": "Suspeita de fratura ou dano estrutural no fixador de sapata",
+      "componentRole": "parafuso_ou_porca_sapata",
+      "requiredEvidence": "Inspeção física do fixador real, sinais de fissura/fratura, análise de superfície quando aplicável, cargas e histórico; distingue fadiga, sobrecarga, corrosão e defeitos de assentamento sem causa confirmada.",
+      "sourceIds": [
+        "CAT-UC-DOZER-GUIDE",
+        "CAT-DOZER-UC-MAINT",
+        "NORDLOCK-BOLT-LOOSENING",
+        "NORDLOCK-BOLTING-FAILURE"
       ],
       "kind": "candidate_component_damage",
       "reviewStatus": "not_approved",
@@ -1531,6 +1706,40 @@
         "CAT-HYD-HOSE-INSPECT",
         "CAT-HYD-HOSE-FAILURE"
       ],
+      "evidenceInterpretation": "sem_resultado_de_campo"
+    },
+    {
+      "id": "BUNDLE-13",
+      "ruleId": "track-bolt-loose",
+      "conditionIds": [
+        "COND-TRACK-SHOE-FASTENER-LOOSE",
+        "COND-TRACK-SHOE-ROTATION-SUSPECT",
+        "COND-TRACK-SHOE-SEAT-DISTRESS",
+        "COND-TRACK-SHOE-FASTENER-FRACTURE"
+      ],
+      "actionIds": [
+        "ACT-TRACK-SHOE-JOINT-IDENTIFY",
+        "ACT-TRACK-SHOE-SEAT-INSPECT",
+        "ACT-TRACK-SHOE-OEM-REASSEMBLY-EVAL"
+      ],
+      "differentialDamageIds": [
+        "DMG-TRACK-SHOE-JOINT-CLAMP-CANDIDATE",
+        "DMG-TRACK-SHOE-FASTENER-FRACTURE-CANDIDATE"
+      ],
+      "chainIds": [],
+      "interpretation": "Afrouxamento rotacional, perda de pré-carga por assentamento, desgaste de assento e fratura do fixador são mecanismos distintos. Fixador solto ou ausente é risco de desprendimento, mas não prova fadiga nem define torque; método torque-turn somente sob configuração OEM efetiva e aprovação de execução.",
+      "sourceIds": [
+        "CAT-UC-DOZER-GUIDE",
+        "CAT-DOZER-UC-MAINT",
+        "NORDLOCK-BOLT-LOOSENING",
+        "NORDLOCK-BOLTING-FAILURE"
+      ],
+      "mappingScope": "generic_only",
+      "status": "review_candidate",
+      "observedConditionIds": [],
+      "performedActionIds": [],
+      "confirmedDamageIds": [],
+      "automaticDamagePromotion": false,
       "evidenceInterpretation": "sem_resultado_de_campo"
     }
   ],
@@ -2171,6 +2380,87 @@
       "to": "DMG-HYD-HOSE-REINFORCEMENT-CANDIDATE",
       "type": "rule_lists_differential_damage",
       "meaning": "Hipótese de dano estrutural não aprovada no catálogo; riscos operacionais podem exigir retirada independente de confirmação causal",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-072",
+      "from": "BUNDLE-13",
+      "to": "COND-TRACK-SHOE-FASTENER-LOOSE",
+      "type": "rule_monitors_condition",
+      "meaning": "Condição hipotética, sem observação na frota",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-073",
+      "from": "BUNDLE-13",
+      "to": "COND-TRACK-SHOE-ROTATION-SUSPECT",
+      "type": "rule_monitors_condition",
+      "meaning": "Condição hipotética, sem observação na frota",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-074",
+      "from": "BUNDLE-13",
+      "to": "COND-TRACK-SHOE-SEAT-DISTRESS",
+      "type": "rule_monitors_condition",
+      "meaning": "Condição hipotética, sem observação na frota",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-075",
+      "from": "BUNDLE-13",
+      "to": "COND-TRACK-SHOE-FASTENER-FRACTURE",
+      "type": "rule_monitors_condition",
+      "meaning": "Condição hipotética, sem observação na frota",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-076",
+      "from": "BUNDLE-13",
+      "to": "ACT-TRACK-SHOE-JOINT-IDENTIFY",
+      "type": "rule_proposes_action",
+      "meaning": "Ação apenas proposta; depende de procedimento OEM e plano seguro",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-077",
+      "from": "BUNDLE-13",
+      "to": "ACT-TRACK-SHOE-SEAT-INSPECT",
+      "type": "rule_proposes_action",
+      "meaning": "Ação apenas proposta; depende de procedimento OEM e plano seguro",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-078",
+      "from": "BUNDLE-13",
+      "to": "ACT-TRACK-SHOE-OEM-REASSEMBLY-EVAL",
+      "type": "rule_proposes_action",
+      "meaning": "Ação apenas proposta; depende de procedimento OEM e plano seguro",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-079",
+      "from": "BUNDLE-13",
+      "to": "DMG-TRACK-SHOE-JOINT-CLAMP-CANDIDATE",
+      "type": "rule_lists_differential_damage",
+      "meaning": "Possibilidade de dano ainda não confirmada; nenhuma associação SAP homologada",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-080",
+      "from": "BUNDLE-13",
+      "to": "DMG-TRACK-SHOE-FASTENER-FRACTURE-CANDIDATE",
+      "type": "rule_lists_differential_damage",
+      "meaning": "Possibilidade de dano ainda não confirmada; nenhuma associação SAP homologada",
       "reviewStatus": "interpretacao_inferida",
       "observed": false
     }
