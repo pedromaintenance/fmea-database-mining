@@ -1,6 +1,6 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 21/10/2026 · **Ciclo:** catálogo técnico v1.3.47 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 22/10/2026 · **Ciclo:** catálogo técnico v1.3.48 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
 
@@ -38,6 +38,19 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 | Enriquecimento | 12 roteiros classificados por falha funcional, sintomas e técnicas | Anotação manual, não prova de causa |
 
 **Observação:** as 159 tarefas de PM com subgrupo candidato foram obtidas em extração local anterior e **não** representam 159 associações homologadas. Contagens de vínculos estritos serão publicadas pelo relatório automático após cada alteração do gerador.
+
+## Ciclo — 22/10/2026: rolamentos do comando final e sinais compartilhados (v1.3.48)
+
+- [x] Criado `BUNDLE-15` para `final-drive-bearing` com 4 condições próprias, 3 ações propostas e 3 danos diferenciais não confirmados.
+- [x] Distinguidos desgaste de pistas/corpos rolantes, fadiga de contato, problema de vedação e calor regional, sem associar automaticamente ruído/partículas a rolamento.
+- [x] Compartilhados explicitamente cinco nós genéricos de óleo, lubrificação, ruído e amostragem com `final-drive-gear`, **sem compartilhar danos de componente**.
+- [x] Crosswalk atualizado para 11 nós compartilhados (combustível, hidráulico e comando final); ontologia **1.3.13** com 43 condições, 35 ações, 20 danos, 15 bundles, 109 arestas e 26 cenários sintéticos.
+- [x] Auditor `pm:drive:bearing:audit` verifica fontes SKF/CAT, segregação entre engrenagens e rolamentos e 32 adulterações artificiais.
+- [ ] **OEM/Engenharia:** confirmar rolamentos e vedações instalados, posição, tipo, características de suporte e montagem no comando final por série; obter critérios de condenação efetivos.
+- [ ] **Inspeção/SOS:** vincular compartimento, fórmula do óleo, histórico e tendência; coletar antes de troca e separar partículas provenientes de engrenagens/rolamentos por evidência independente.
+- [ ] **Confiabilidade:** avançar sobre 10 regras PM ainda sem bundle e impedir aprovações SAP ou relatos de falha sem documentação técnica suficiente.
+
+**Estado:** 25 regras PM, 115 vínculos candidatos e dez exceções bloqueadas; zero evento de campo, dano ou ordem confirmada pela ontologia.
 
 ## Ciclo — 21/10/2026: engrenagens do comando final (v1.3.47)
 
