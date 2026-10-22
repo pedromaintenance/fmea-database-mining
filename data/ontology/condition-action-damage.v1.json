@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.condition-action-damage.v1",
-  "version": "1.3.8",
+  "version": "1.3.9",
   "status": "conceptual_unvalidated",
   "semantics": {
     "condition": "Estado de fluido, superfície ou desempenho; ocorrência requer medição/observação",
@@ -386,6 +386,84 @@
       "status": "condition_hypothesis_not_observed",
       "observedValue": null,
       "observedAt": null
+    },
+    {
+      "id": "COND-COOL-FAN-ABNORMAL-NOISE",
+      "label": "Ruído anormal suspeito na região do acionamento do ventilador",
+      "system": "arrefecimento",
+      "medium": "sistema_ventilacao",
+      "observation": "Localização comparativa do ruído no conjunto de ventilação, sob modo seguro de observação aplicável ao equipamento",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "CAT-COOLING-FAN-REVERSE",
+        "CAT-EXC-COOL-CHECKLIST",
+        "SKF-ISO15243-BEARING"
+      ],
+      "limitations": "Ruído da região não prova defeito do rolamento; lâminas, acionamento hidráulico, transmissão e componentes adjacentes podem gerar sinal semelhante.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-COOL-FAN-SUPPORT-PLAY",
+      "label": "Folga ou vibração suspeita no apoio do ventilador",
+      "system": "arrefecimento",
+      "medium": "sistema_ventilacao",
+      "observation": "Indício de folga ou vibração a investigar com medições e configuração mecânica efetiva do conjunto",
+      "methods": [
+        "EV-01",
+        "EV-03"
+      ],
+      "sourceIds": [
+        "CAT-COOLING-FAN-REVERSE",
+        "CAT-EXC-COOL-CHECKLIST",
+        "SKF-ISO15243-BEARING"
+      ],
+      "limitations": "Uma suspeita de folga não comprova rolamento interno nem confirma que existe apoio reparável por rolamento nesta variante.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-COOL-FAN-BELT-VISUAL",
+      "label": "Alteração superficial suspeita em correia de acionamento do ventilador",
+      "system": "arrefecimento",
+      "medium": "correia_ventilador",
+      "observation": "Desgaste, fissura ou contaminação visível em correia identificada como acionamento do ventilador na configuração OEM",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "CAT-FAN-BELT-FUNCTION",
+        "CAT-ENGINE-BELT-PM",
+        "CAT-COOLING-FAN-REVERSE"
+      ],
+      "limitations": "A presença e função da correia não podem ser presumidas; alguns ventiladores são acionados hidraulicamente e não têm correia de ventilador.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-COOL-FAN-BELT-SLIP",
+      "label": "Suspeita de patinamento ou tensão irregular da correia do ventilador",
+      "system": "arrefecimento",
+      "medium": "correia_ventilador",
+      "observation": "Sinal de transmissão irregular a investigar somente após identificar correia, polias e tensionador aplicáveis",
+      "methods": [
+        "EV-01",
+        "EV-03"
+      ],
+      "sourceIds": [
+        "CAT-FAN-BELT-FUNCTION",
+        "CAT-ENGINE-BELT-PM",
+        "CAT-COOLING-FAN-REVERSE"
+      ],
+      "limitations": "Sem ensaio e limite de tensionamento OEM não condenar correia; ruído e variação de rotação podem ter causas concorrentes.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
     }
   ],
   "actions": [
@@ -676,6 +754,70 @@
       "executionStatus": "not_performed",
       "observedResults": [],
       "intervalHours": null
+    },
+    {
+      "id": "ACT-COOL-FAN-DRIVE-IDENTIFY",
+      "label": "Identificar arquitetura de acionamento do ventilador conforme OEM",
+      "kind": "inspection",
+      "intent": "Verificar se o ventilador utiliza acionamento por correia, hidráulico, elétrico ou outro arranjo, sem supor componentes internos",
+      "sourceIds": [
+        "CAT-COOLING-FAN-REVERSE",
+        "CAT-EXC-COOL-CHECKLIST",
+        "SKF-ISO15243-BEARING"
+      ],
+      "safety": "Com equipamento em condição segura, impedir acesso ao ventilador em movimento e confirmar isolamento; não intervir em linhas hidráulicas, polias ou dispositivos energizados.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
+    },
+    {
+      "id": "ACT-COOL-FAN-SUPPORT-INSPECT",
+      "label": "Inspecionar apoio e sinais de vibração do ventilador",
+      "kind": "inspection",
+      "intent": "Separar ruído/vibração por origem e conferir apoio e conjunto efetivo conforme procedimento aplicável",
+      "sourceIds": [
+        "CAT-COOLING-FAN-REVERSE",
+        "CAT-EXC-COOL-CHECKLIST",
+        "SKF-ISO15243-BEARING"
+      ],
+      "safety": "Não aproximar mãos, roupa ou instrumentos de pás girando. Inspeção interna ou avaliação funcional somente nos pontos autorizados e com contenção da energia armazenada.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
+    },
+    {
+      "id": "ACT-COOL-FAN-BELT-CONDITION",
+      "label": "Inspecionar correia e polias do ventilador quando existentes",
+      "kind": "inspection",
+      "intent": "Inspecionar estado geométrico, contaminação e condição das polias com configuração e acesso confirmados",
+      "sourceIds": [
+        "CAT-FAN-BELT-FUNCTION",
+        "CAT-ENGINE-BELT-PM",
+        "CAT-COOLING-FAN-REVERSE"
+      ],
+      "safety": "Desenergizar e bloquear o equipamento, proteger pontos de aprisionamento e não retirar protetores para teste em movimento sem autorização e procedimento OEM.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
+    },
+    {
+      "id": "ACT-COOL-FAN-BELT-TENSION",
+      "label": "Verificar tensão e função do tensionador conforme OEM efetivo",
+      "kind": "test",
+      "intent": "Comparar condição de tensão e sistema de acionamento com especificação OEM por arranjo, sem universalizar valores",
+      "sourceIds": [
+        "CAT-FAN-BELT-FUNCTION",
+        "CAT-ENGINE-BELT-PM",
+        "CAT-COOLING-FAN-REVERSE"
+      ],
+      "safety": "Executar apenas com procedimento e instrumento aprovado para o conjunto, motor isolado quando exigido, mantendo proteções e prevenção de aprisionamento.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
     }
   ],
   "damageHypotheses": [
@@ -721,7 +863,7 @@
     },
     {
       "id": "DMG-COOL-INTERNAL-BLOCKAGE",
-      "label": "Obstrução interna efetiva do trocador de calor",
+      "label": "Possível obstrução interna do trocador de calor sob investigação",
       "componentRole": "nucleo_do_radiador",
       "requiredEvidence": "Teste OEM de circulação/restrição que diferencie colmeia externamente suja de passagens internas obstruídas",
       "sourceIds": [
@@ -848,6 +990,48 @@
       "sourceIds": [
         "CAT-MINING-UC-WEAR-MANAGEMENT",
         "CAT-CTS-UNDERCARRIAGE"
+      ],
+      "kind": "candidate_component_damage",
+      "reviewStatus": "not_approved",
+      "catalogMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageCode": null,
+        "causeCode": null
+      },
+      "confirmed": false
+    },
+    {
+      "id": "DMG-COOL-FAN-SUPPORT-CANDIDATE",
+      "label": "Possível comprometimento do apoio de ventilador sob investigação",
+      "componentRole": "apoio_do_ventilador",
+      "requiredEvidence": "Identificar configuração e componente efetivo, inspecionar por procedimento seguro e discriminar ruído/vibração de causas hidráulicas ou externas antes de atribuir dano ao rolamento.",
+      "sourceIds": [
+        "CAT-COOLING-FAN-REVERSE",
+        "CAT-EXC-COOL-CHECKLIST",
+        "SKF-ISO15243-BEARING"
+      ],
+      "kind": "candidate_component_damage",
+      "reviewStatus": "not_approved",
+      "catalogMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageCode": null,
+        "causeCode": null
+      },
+      "confirmed": false
+    },
+    {
+      "id": "DMG-COOL-FAN-BELT-CANDIDATE",
+      "label": "Possível deterioração funcional da correia de ventilador sob investigação",
+      "componentRole": "correia_de_ventilador_condicional",
+      "requiredEvidence": "Comprovar existência da correia no arranjo, aplicar critério OEM de integridade, tensão e acionamento e distinguir falha de polia/tensionador.",
+      "sourceIds": [
+        "CAT-FAN-BELT-FUNCTION",
+        "CAT-ENGINE-BELT-PM",
+        "CAT-COOLING-FAN-REVERSE"
       ],
       "kind": "candidate_component_damage",
       "reviewStatus": "not_approved",
@@ -1137,6 +1321,64 @@
       "performedActionIds": [],
       "confirmedDamageIds": [],
       "automaticDamagePromotion": false,
+      "evidenceInterpretation": "sem_resultado_de_campo"
+    },
+    {
+      "id": "BUNDLE-10",
+      "ruleId": "cooling-fan-bearing",
+      "conditionIds": [
+        "COND-COOL-FAN-ABNORMAL-NOISE",
+        "COND-COOL-FAN-SUPPORT-PLAY"
+      ],
+      "actionIds": [
+        "ACT-COOL-FAN-DRIVE-IDENTIFY",
+        "ACT-COOL-FAN-SUPPORT-INSPECT"
+      ],
+      "differentialDamageIds": [
+        "DMG-COOL-FAN-SUPPORT-CANDIDATE"
+      ],
+      "chainIds": [],
+      "interpretation": "Ruído e vibração de ventilador são apenas sinais sob investigação. Um rolamento de apoio somente pode ser considerado após confirmação da arquitetura OEM e identificação do componente físico, sem confundir ventilador hidráulico ou outras fontes de ruído.",
+      "mappingScope": "generic_only",
+      "status": "review_candidate",
+      "observedConditionIds": [],
+      "performedActionIds": [],
+      "confirmedDamageIds": [],
+      "automaticDamagePromotion": false,
+      "sourceIds": [
+        "CAT-COOLING-FAN-REVERSE",
+        "CAT-EXC-COOL-CHECKLIST",
+        "SKF-ISO15243-BEARING"
+      ],
+      "evidenceInterpretation": "sem_resultado_de_campo"
+    },
+    {
+      "id": "BUNDLE-11",
+      "ruleId": "cooling-fan-belt",
+      "conditionIds": [
+        "COND-COOL-FAN-BELT-VISUAL",
+        "COND-COOL-FAN-BELT-SLIP"
+      ],
+      "actionIds": [
+        "ACT-COOL-FAN-BELT-CONDITION",
+        "ACT-COOL-FAN-BELT-TENSION"
+      ],
+      "differentialDamageIds": [
+        "DMG-COOL-FAN-BELT-CANDIDATE"
+      ],
+      "chainIds": [],
+      "interpretation": "O ventilador pode não ter correia de acionamento. Fissuras, desgaste ou patinamento só poderão ser classificados após confirmar a instalação, a função, o tensionamento e critérios OEM por série, sem atribuir automaticamente falha ao componente.",
+      "mappingScope": "generic_only",
+      "status": "review_candidate",
+      "observedConditionIds": [],
+      "performedActionIds": [],
+      "confirmedDamageIds": [],
+      "automaticDamagePromotion": false,
+      "sourceIds": [
+        "CAT-FAN-BELT-FUNCTION",
+        "CAT-ENGINE-BELT-PM",
+        "CAT-COOLING-FAN-REVERSE"
+      ],
       "evidenceInterpretation": "sem_resultado_de_campo"
     }
   ],
@@ -1624,6 +1866,96 @@
       "to": "COND-TRACK-IDLER-SEAL-LEAK",
       "type": "rule_monitors_condition",
       "meaning": "Possível vestígio de fluido na roda-guia, não vazamento nem falha de vedação confirmados",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-055",
+      "from": "BUNDLE-10",
+      "to": "COND-COOL-FAN-ABNORMAL-NOISE",
+      "type": "rule_monitors_condition",
+      "meaning": "Condição hipotética por avaliar; não houve observação real",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-056",
+      "from": "BUNDLE-10",
+      "to": "COND-COOL-FAN-SUPPORT-PLAY",
+      "type": "rule_monitors_condition",
+      "meaning": "Condição hipotética por avaliar; não houve observação real",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-057",
+      "from": "BUNDLE-10",
+      "to": "ACT-COOL-FAN-DRIVE-IDENTIFY",
+      "type": "rule_proposes_action",
+      "meaning": "Ação genérica proposta, não executada e dependente de OMM efetivo",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-058",
+      "from": "BUNDLE-10",
+      "to": "ACT-COOL-FAN-SUPPORT-INSPECT",
+      "type": "rule_proposes_action",
+      "meaning": "Ação genérica proposta, não executada e dependente de OMM efetivo",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-059",
+      "from": "BUNDLE-10",
+      "to": "DMG-COOL-FAN-SUPPORT-CANDIDATE",
+      "type": "rule_lists_differential_damage",
+      "meaning": "Dano diferencial não confirmado e sem mapeamento SAP aprovado",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-060",
+      "from": "BUNDLE-11",
+      "to": "COND-COOL-FAN-BELT-VISUAL",
+      "type": "rule_monitors_condition",
+      "meaning": "Condição hipotética por avaliar; não houve observação real",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-061",
+      "from": "BUNDLE-11",
+      "to": "COND-COOL-FAN-BELT-SLIP",
+      "type": "rule_monitors_condition",
+      "meaning": "Condição hipotética por avaliar; não houve observação real",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-062",
+      "from": "BUNDLE-11",
+      "to": "ACT-COOL-FAN-BELT-CONDITION",
+      "type": "rule_proposes_action",
+      "meaning": "Ação genérica proposta, não executada e dependente de OMM efetivo",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-063",
+      "from": "BUNDLE-11",
+      "to": "ACT-COOL-FAN-BELT-TENSION",
+      "type": "rule_proposes_action",
+      "meaning": "Ação genérica proposta, não executada e dependente de OMM efetivo",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-064",
+      "from": "BUNDLE-11",
+      "to": "DMG-COOL-FAN-BELT-CANDIDATE",
+      "type": "rule_lists_differential_damage",
+      "meaning": "Dano diferencial não confirmado e sem mapeamento SAP aprovado",
       "reviewStatus": "interpretacao_inferida",
       "observed": false
     }

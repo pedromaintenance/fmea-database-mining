@@ -2,6 +2,15 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.44] — 2026-10-21 — Ventilador de arrefecimento e rótulo de dano não confirmado
+
+- Corrigida a descrição `DMG-COOL-INTERNAL-BLOCKAGE` de “Obstrução interna efetiva do trocador de calor” para **“Possível obstrução interna do trocador de calor sob investigação”**. ID, status `confirmed:false` e campos de mapeamento SAP permanecem.
+- Criados **2 bundles semânticos** `cooling-fan-bearing` e `cooling-fan-belt`, com **4 condições hipotéticas, 4 ações propostas, 2 danos diferenciais não aprovados e 10 relações tipadas**, sem declarar a existência de correia ou rolamento efetivo por modelo/série.
+- Ontologia atualizada para **1.3.9**: 24 condições, 23 ações, 11 danos hipotéticos, 11 bundles, 64 relações e 18 cenários sintéticos.
+- Cobertura de regras PM aumentou de **9/25 para 11/25**; **14 regras** seguem sem bundle e seis compartilhamentos genéricos continuam controlados.
+- Integrado auditor `pm:cooling:fan:audit` com **26 mutações adversariais rejeitadas**, verificação de fontes CAT/SKF e limitações de acionamento, configuração OEM e segurança.
+- Validações anteriores de IDLER/ROLLER e crosswalk ajustadas à versão ontológica, sem relaxar as invariantes de causalidade. Preservados 25 padrões PM, 115 vínculos candidatos, 10 exceções bloqueadas, 24 FC/15 ME, contratos e consumidores públicos.
+
 ## [1.3.43] — 2026-10-21 — Crosswalk semântico transversal de regras PM
 
 - Auditadas as **25 regras PM** quanto à cobertura semântica: **9 possuem bundles** explícitos de condições/ações/danos e **16 permanecem sem bundle**, evitando anunciar cobertura completa equivocadamente.

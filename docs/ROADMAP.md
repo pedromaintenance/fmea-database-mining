@@ -1,6 +1,6 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 21/10/2026 · **Ciclo:** catálogo técnico v1.3.43 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 21/10/2026 · **Ciclo:** catálogo técnico v1.3.44 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
 
@@ -38,6 +38,19 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 | Enriquecimento | 12 roteiros classificados por falha funcional, sintomas e técnicas | Anotação manual, não prova de causa |
 
 **Observação:** as 159 tarefas de PM com subgrupo candidato foram obtidas em extração local anterior e **não** representam 159 associações homologadas. Contagens de vínculos estritos serão publicadas pelo relatório automático após cada alteração do gerador.
+
+## Ciclo — 21/10/2026: rótulo do radiador e ventilador de arrefecimento (v1.3.44)
+
+- [x] Corrigido título de `DMG-COOL-INTERNAL-BLOCKAGE` para **possível obstrução interna sob investigação**, sem alterar status, causa ou código SAP.
+- [x] Expandidas `cooling-fan-bearing` e `cooling-fan-belt` em bundles semânticos com sinais, ações não executadas e danos hipotéticos distintos; ventiladores sem correia ou rolamento reparável são alternativas possíveis.
+- [x] Aumentada cobertura semântica de **9 para 11 regras PM**, sem afirmar aplicação por modelo e com **14 regras sem bundle**.
+- [x] Ontologia 1.3.9: 24 condições, 23 ações, 11 danos, 11 bundles, 64 arestas e 18 cenários; validadores IDLER/ROLLER e crosswalk revisados preservando regras existentes.
+- [x] Auditoria com 26 mutações artificiais, fontes públicas CAT/SKF e CI incluindo o preview e contrato de consumidores.
+- [ ] **OEM/Engenharia:** conferir arquitetura do ventilador por série (correia, hidráulico ou outra), tipo de apoio e existência de rolamento reparável; obter procedimentos seguros.
+- [ ] **Dados Mestres/PCM:** confrontar posições FANN e seus tipos de objeto com BOM efetiva, antes de alterar regra, nota, código de peça, periodicidade ou par dano/causa.
+- [ ] **Confiabilidade:** priorizar as 14 regras sem bundle por risco e recorrência, sem converter condição em falha mecânica provada.
+
+**Estado:** 25 regras PM, 115 vínculos candidatos, 10 bloqueios e nenhum evento ou código SAP homologado automaticamente.
 
 ## Ciclo — 21/10/2026: crosswalk semântico PM transversal (v1.3.43)
 
