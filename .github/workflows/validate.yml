@@ -56,6 +56,8 @@ jobs:
         run: npm run pm:semantic:crosswalk:audit
       - name: Auditar modelagem de ventilador e correia e rótulo hipotético do radiador
         run: npm run pm:cooling:fan:audit
+      - name: Auditar abrasão de mangueira, armadura exposta e bloqueio HSVV
+        run: npm run pm:hose:abrasion:audit
       - name: Validar 10 bloqueios PM e 7 requisitos de efetividade OEM D9
         run: npm run pm:exceptions:validate
       - name: Gerar vínculos diagnósticos por modelo
@@ -155,6 +157,7 @@ jobs:
             reports/pm-idler-roller-semantics.generated.json
             reports/pm-semantic-crosswalk.generated.json
             reports/pm-cooling-fan-ontology.generated.json
+            reports/pm-hose-abrasion.generated.json
             reports/public-knowledge.v1.json
             reports/public-manifest.v1.json
             data/governance/public-content-releases.v1.json

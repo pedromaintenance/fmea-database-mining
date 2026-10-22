@@ -1,0 +1,43 @@
+{
+  "schema": "fmea-mining.hose-abrasion-discrimination.v1",
+  "version": "1.3.45",
+  "ruleId": "hydraulic-hose-abrasion",
+  "comparisonRule": "hydraulic-hose-leak",
+  "classes": [
+    {
+      "id": "surface",
+      "conditionId": "COND-HYD-HOSE-ABRASION-SURFACE",
+      "action": "inspect_against_oem",
+      "canProveLeak": false
+    },
+    {
+      "id": "reinforcement",
+      "conditionId": "COND-HYD-HOSE-REINFORCEMENT-EXPOSED",
+      "action": "withdraw_safely_and_evaluate_replacement",
+      "canProveLeak": false
+    },
+    {
+      "id": "contact",
+      "conditionId": "COND-HYD-HOSE-ROUTING-CONTACT",
+      "action": "inspect_routing",
+      "canProveLeak": false
+    },
+    {
+      "id": "deformation",
+      "conditionId": "COND-HYD-HOSE-DEFORMATION",
+      "action": "assess_criticality_and_isolate_if_needed",
+      "canProveLeak": false
+    }
+  ],
+  "sourceIds": [
+    "CAT-HYD-HOSE-INSPECT",
+    "CAT-HYD-HOSE-FAILURE"
+  ],
+  "requiresIndependentEvidence": true,
+  "requiresOEMConfiguration": true,
+  "pressureTestingAuthorized": false,
+  "fieldObservations": 0,
+  "performedInspections": 0,
+  "confirmedDamage": 0,
+  "approvedSapMapping": 0
+}
