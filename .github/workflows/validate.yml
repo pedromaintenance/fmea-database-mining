@@ -163,6 +163,7 @@ jobs:
             reports/pm-cooling-fan-ontology.generated.json
             reports/pm-hose-abrasion.generated.json
             reports/pm-track-bolt.generated.json
+            reports/pm-final-drive-gear.generated.json
             reports/public-knowledge.v1.json
             reports/public-manifest.v1.json
             data/governance/public-content-releases.v1.json
