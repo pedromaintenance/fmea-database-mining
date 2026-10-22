@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.condition-action-damage.v1",
-  "version": "1.3.9",
+  "version": "1.3.10",
   "status": "conceptual_unvalidated",
   "semantics": {
     "condition": "Estado de fluido, superfície ou desempenho; ocorrência requer medição/observação",
@@ -262,7 +262,7 @@
     },
     {
       "id": "COND-HYD-HOSE-COVER-DAMAGE",
-      "label": "Abrasion ou fissura aparente na cobertura da mangueira",
+      "label": "Abrasão ou fissura aparente na cobertura da mangueira",
       "system": "hidraulico",
       "medium": "mangueira_hidraulica",
       "observation": "Marcas visíveis de contato, fissura ou exposição externa em linha identificada",
@@ -461,6 +461,78 @@
         "CAT-COOLING-FAN-REVERSE"
       ],
       "limitations": "Sem ensaio e limite de tensionamento OEM não condenar correia; ruído e variação de rotação podem ter causas concorrentes.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-HYD-HOSE-ABRASION-SURFACE",
+      "label": "Marcas de abrasão na cobertura externa de mangueira",
+      "system": "hidraulico",
+      "medium": "mangueira_hidraulica",
+      "observation": "Contato ou desgaste localizado da cobertura, a caracterizar por posição, profundidade aparente, extensão, causa de fricção e identificação da linha",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "CAT-HYD-HOSE-INSPECT",
+        "CAT-HYD-HOSE-FAILURE"
+      ],
+      "limitations": "Sujidade e riscos superficiais não comprovam ruptura, vazamento nem falha do reforço; não autoriza continuar operando sem avaliar a segurança e o critério OEM.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-HYD-HOSE-REINFORCEMENT-EXPOSED",
+      "label": "Suspeita visual de armadura ou reforço exposto em mangueira",
+      "system": "hidraulico",
+      "medium": "mangueira_hidraulica",
+      "observation": "Perda de cobertura com possível exposição visível do reforço estrutural, a confirmar sem manipular mangueira ou circuito pressurizado",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "CAT-HYD-HOSE-INSPECT",
+        "CAT-HYD-HOSE-FAILURE"
+      ],
+      "limitations": "Armadura exposta exige retirada segura de serviço e avaliação de substituição conforme OEM; ausência de óleo externo NÃO autoriza operação nem prova ruptura interna específica.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-HYD-HOSE-ROUTING-CONTACT",
+      "label": "Contato ou interferência suspeita no roteamento de mangueira",
+      "system": "hidraulico",
+      "medium": "mangueira_hidraulica",
+      "observation": "Possível fricção de mangueira contra estrutura, outra linha, abraçadeira ou proteção, sob condição estática e configuração identificada",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "CAT-HYD-HOSE-INSPECT",
+        "CAT-HYD-HOSE-FAILURE"
+      ],
+      "limitations": "Interferência pode ser mecanismo contribuinte de desgaste, mas não prova perda de estanqueidade; posição, movimento e raio de curvatura exigem avaliação OEM.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-HYD-HOSE-DEFORMATION",
+      "label": "Deformação, torção ou dobra suspeita em mangueira hidráulica",
+      "system": "hidraulico",
+      "medium": "mangueira_hidraulica",
+      "observation": "Possível achatamento, torção, dobra ou mudança geométrica no conjunto, sem assumir falha da armadura, tubo interno ou terminal",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "CAT-HYD-HOSE-INSPECT",
+        "CAT-HYD-HOSE-FAILURE"
+      ],
+      "limitations": "Torção/dobra pode exigir retirada de serviço segundo OEM mesmo sem vazamento; condição visual não localiza ruptura do reforço ou causa raiz de montagem.",
       "status": "condition_hypothesis_not_observed",
       "observedValue": null,
       "observedAt": null
@@ -818,6 +890,36 @@
       "executionStatus": "not_performed",
       "observedResults": [],
       "intervalHours": null
+    },
+    {
+      "id": "ACT-HYD-HOSE-ABRASION-CLASSIFY",
+      "label": "Inspecionar cobertura, reforço e roteamento da mangueira com segurança",
+      "kind": "inspection",
+      "intent": "Diferenciar contato superficial, exposição de armadura, torção, vazamento e interferência mecânica sem deduzir causa raiz automaticamente",
+      "sourceIds": [
+        "CAT-HYD-HOSE-INSPECT",
+        "CAT-HYD-HOSE-FAILURE"
+      ],
+      "safety": "Bloquear movimento e controlar energia hidráulica conforme OMM; nunca usar mãos para procurar fuga ou tocar linha pressurizada; inspecionar com acesso e temperatura seguros.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
+    },
+    {
+      "id": "ACT-HYD-HOSE-ASSEMBLY-REPLACE-EVALUATE",
+      "label": "Avaliar retirada de serviço e substituição do conjunto de mangueira",
+      "kind": "inspection",
+      "intent": "Acionar avaliação técnica imediata das condições críticas e definir substituição de conjunto danificado por material e procedimento OEM autorizados",
+      "sourceIds": [
+        "CAT-HYD-HOSE-INSPECT",
+        "CAT-HYD-HOSE-FAILURE"
+      ],
+      "safety": "Armadura exposta, vazamento ou deformação crítica requer isolamento e decisão segura de substituição; não operar para coletar prova adicional sob pressão e não autorizar reparo improvisado.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
     }
   ],
   "damageHypotheses": [
@@ -1032,6 +1134,26 @@
         "CAT-FAN-BELT-FUNCTION",
         "CAT-ENGINE-BELT-PM",
         "CAT-COOLING-FAN-REVERSE"
+      ],
+      "kind": "candidate_component_damage",
+      "reviewStatus": "not_approved",
+      "catalogMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageCode": null,
+        "causeCode": null
+      },
+      "confirmed": false
+    },
+    {
+      "id": "DMG-HYD-HOSE-REINFORCEMENT-CANDIDATE",
+      "label": "Suspeita de comprometimento do reforço estrutural da mangueira",
+      "componentRole": "armadura_ou_reforco_da_mangueira",
+      "requiredEvidence": "Inspeção independente do conjunto correto e identificação da profundidade de dano conforme OEM; armadura exposta exige retirada segura de serviço, sem pressupor ruptura interna ou causa raiz estabelecida.",
+      "sourceIds": [
+        "CAT-HYD-HOSE-INSPECT",
+        "CAT-HYD-HOSE-FAILURE"
       ],
       "kind": "candidate_component_damage",
       "reviewStatus": "not_approved",
@@ -1378,6 +1500,36 @@
         "CAT-FAN-BELT-FUNCTION",
         "CAT-ENGINE-BELT-PM",
         "CAT-COOLING-FAN-REVERSE"
+      ],
+      "evidenceInterpretation": "sem_resultado_de_campo"
+    },
+    {
+      "id": "BUNDLE-12",
+      "ruleId": "hydraulic-hose-abrasion",
+      "conditionIds": [
+        "COND-HYD-HOSE-ABRASION-SURFACE",
+        "COND-HYD-HOSE-REINFORCEMENT-EXPOSED",
+        "COND-HYD-HOSE-ROUTING-CONTACT",
+        "COND-HYD-HOSE-DEFORMATION"
+      ],
+      "actionIds": [
+        "ACT-HYD-HOSE-ABRASION-CLASSIFY",
+        "ACT-HYD-HOSE-ASSEMBLY-REPLACE-EVALUATE"
+      ],
+      "differentialDamageIds": [
+        "DMG-HYD-HOSE-REINFORCEMENT-CANDIDATE"
+      ],
+      "chainIds": [],
+      "interpretation": "Abrasão superficial, exposição de reforço, interferência de roteamento e vazamento são condições diferentes. Armadura exposta ou deformação crítica requer retirada segura de serviço sem aguardar vazamento; o mecanismo de falha interno não está automaticamente confirmado. Regra HSVV permanece bloqueada no SAP.",
+      "mappingScope": "generic_only",
+      "status": "review_candidate",
+      "observedConditionIds": [],
+      "performedActionIds": [],
+      "confirmedDamageIds": [],
+      "automaticDamagePromotion": false,
+      "sourceIds": [
+        "CAT-HYD-HOSE-INSPECT",
+        "CAT-HYD-HOSE-FAILURE"
       ],
       "evidenceInterpretation": "sem_resultado_de_campo"
     }
@@ -1956,6 +2108,69 @@
       "to": "DMG-COOL-FAN-BELT-CANDIDATE",
       "type": "rule_lists_differential_damage",
       "meaning": "Dano diferencial não confirmado e sem mapeamento SAP aprovado",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-065",
+      "from": "BUNDLE-12",
+      "to": "COND-HYD-HOSE-ABRASION-SURFACE",
+      "type": "rule_monitors_condition",
+      "meaning": "Condição apenas hipotética, sem inspeção real; avaliar segurança por evidência física",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-066",
+      "from": "BUNDLE-12",
+      "to": "COND-HYD-HOSE-REINFORCEMENT-EXPOSED",
+      "type": "rule_monitors_condition",
+      "meaning": "Condição apenas hipotética, sem inspeção real; avaliar segurança por evidência física",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-067",
+      "from": "BUNDLE-12",
+      "to": "COND-HYD-HOSE-ROUTING-CONTACT",
+      "type": "rule_monitors_condition",
+      "meaning": "Condição apenas hipotética, sem inspeção real; avaliar segurança por evidência física",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-068",
+      "from": "BUNDLE-12",
+      "to": "COND-HYD-HOSE-DEFORMATION",
+      "type": "rule_monitors_condition",
+      "meaning": "Condição apenas hipotética, sem inspeção real; avaliar segurança por evidência física",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-069",
+      "from": "BUNDLE-12",
+      "to": "ACT-HYD-HOSE-ABRASION-CLASSIFY",
+      "type": "rule_proposes_action",
+      "meaning": "Ação proposta para execução controlada por OMM, nenhuma intervenção realizada",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-070",
+      "from": "BUNDLE-12",
+      "to": "ACT-HYD-HOSE-ASSEMBLY-REPLACE-EVALUATE",
+      "type": "rule_proposes_action",
+      "meaning": "Ação proposta para execução controlada por OMM, nenhuma intervenção realizada",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-071",
+      "from": "BUNDLE-12",
+      "to": "DMG-HYD-HOSE-REINFORCEMENT-CANDIDATE",
+      "type": "rule_lists_differential_damage",
+      "meaning": "Hipótese de dano estrutural não aprovada no catálogo; riscos operacionais podem exigir retirada independente de confirmação causal",
       "reviewStatus": "interpretacao_inferida",
       "observed": false
     }
