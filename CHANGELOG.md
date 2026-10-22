@@ -2,6 +2,15 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.47] — 2026-10-21 — Engrenagem do comando final: desgaste, pitting, fratura e lubrificação
+
+- Criado `BUNDLE-14` para `final-drive-gear` com **7 condições candidatas**, **4 ações não executadas**, **3 danos físicos não aprovados** (desgaste de dente, pitting, fratura) e 14 relações tipadas.
+- Separados sintomas **não localizantes** (ruído, partículas no bujão magnético, laudo, formulação e lubrificação) da constatação direta de dano da engrenagem; rolamento de comando final permanece diagnóstico concorrente.
+- Aplicada nomenclatura de aparência ISO 10825-1:2022, sem inferir causa a partir dela; fontes Caterpillar genéricas de bujão, análise SOS e cuidados de óleo com limitações OEM por série e óleo FDAO/TDTO.
+- Atualizado crosswalk para prefixo DRIVE em `comando_final` e classificação do meio físico (engrenagem/óleo/conjunto), impedindo alteração indevida para óleo hidráulico.
+- Ontologia **1.3.12**: 39 condições, 32 ações, 17 danos, 14 bundles, 94 relações e 24 cenários sintéticos. Cobertura 14/25 regras PM, 11 sem bundle.
+- Integrado `pm:drive:gear:audit` com **36 alterações adversariais** contra falsas causas, diagnósticos, dados de óleo, intervenção e aprovações; preservados 115 candidatos PM, dez exceções, 24 FC/15 ME, contratos e consumidores.
+
 ## [1.3.46] — 2026-10-21 — Fixadores das sapatas: pré-carga, afrouxamento e fratura
 
 - Adicionado `BUNDLE-13` à regra existente `track-bolt-loose`: quatro condições hipotéticas (fixador frouxo/ausente, rotação suspeita, assentamento do assento e fratura), três atividades propostas e dois danos candidatos não aprovados; nove arestas tipadas.
