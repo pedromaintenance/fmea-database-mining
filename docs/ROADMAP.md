@@ -1,6 +1,6 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 21/10/2026 · **Ciclo:** catálogo técnico v1.3.45 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 21/10/2026 · **Ciclo:** catálogo técnico v1.3.46 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
 
@@ -38,6 +38,19 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 | Enriquecimento | 12 roteiros classificados por falha funcional, sintomas e técnicas | Anotação manual, não prova de causa |
 
 **Observação:** as 159 tarefas de PM com subgrupo candidato foram obtidas em extração local anterior e **não** representam 159 associações homologadas. Contagens de vínculos estritos serão publicadas pelo relatório automático após cada alteração do gerador.
+
+## Ciclo — 21/10/2026: fixadores de sapatas e perda de pré-carga (v1.3.46)
+
+- [x] Modelada `track-bolt-loose` em `BUNDLE-13`: quatro condições, três ações propostas e dois danos diferenciais não confirmados.
+- [x] Separadas pré-carga perdida por assentamento, autoafrouxamento rotacional, fixador solto/ausente e fratura; sem prova de causa por simples observação.
+- [x] Orientação CAT torque-turn incluída somente como **requisito de procedimento OEM efetivo**; não foram importados torque, ângulo, sequência ou material por série.
+- [x] Auditoria `pm:track:bolt:audit`: matriz de mecanismo e 32 alterações adversariais, preservando 24 FC/15 ME e os 115 candidatos PM.
+- [x] Ontologia **1.3.11**, com 13/25 regras PM modeladas e 12 ainda sem bundle.
+- [ ] **Engenharia/OEM:** validar conjunto sapata/elo, part numbers, classe, reutilização, torque-turn e material de assentamento por modelo/série.
+- [ ] **Oficina/Inspeção:** definir critérios seguros de acesso, condição de retirada, inspeção de assento e análise independente de fixador danificado.
+- [ ] **Confiabilidade:** avançar nas 12 regras sem bundle, respeitando fonte, limite de diagnóstico e vinculação SAP.
+
+**Status:** nenhum torque medido, falha confirmada, OS criada ou remapeamento SAP autorizado neste ciclo.
 
 ## Ciclo — 21/10/2026: abrasão versus vazamento em mangueiras (v1.3.45)
 
