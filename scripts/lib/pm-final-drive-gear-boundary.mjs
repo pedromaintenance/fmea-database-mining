@@ -34,7 +34,8 @@ export function checkGearSemanticBoundary(model,fixture,policy,seed,sources){
  ck(policy?.sourceIds?.includes('ISO-10825-1-2022')&&policy?.sourceIds?.includes('CAT-DRIVE-MAGNET-PLUG')&&policy?.sourceIds?.every(x=>refs.has(x)),'insufficient_sources');
  for(const id of DRIVE_CONDITIONS){
   const x=conditions.get(id);
-  ck(x?.system==='comando_final'&&x?.status==='condition_hypothesis_not_observed'&&x?.observedValue===null&&x?.observedAt===null,'observed_condition_'+id);
+  const medium=DRIVE_CONDITIONS.indexOf(id)<3?'engrenagem_comando_final':DRIVE_CONDITIONS.indexOf(id)<6?'oleo_comando_final':'conjunto_comando_final';
+  ck(x?.system==='comando_final'&&x?.medium===medium&&x?.status==='condition_hypothesis_not_observed'&&x?.observedValue===null&&x?.observedAt===null,'observed_condition_or_wrong_medium_'+id);
   ck(x?.observation?.length>70&&x?.limitations?.length>105&&x?.sourceIds?.length>0&&x?.sourceIds?.every(z=>refs.has(z)),'weak_condition_'+id);
  }
  for(const id of DRIVE_ACTIONS){
