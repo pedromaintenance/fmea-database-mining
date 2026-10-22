@@ -62,6 +62,8 @@ jobs:
         run: npm run pm:track:bolt:audit
       - name: Auditar comando final e engrenagem
         run: npm run pm:drive:gear:audit
+      - name: Auditar rolamentos do comando final e sinais do redutor
+        run: npm run pm:drive:bearing:audit
       - name: Validar 10 bloqueios PM e 7 requisitos de efetividade OEM D9
         run: npm run pm:exceptions:validate
       - name: Gerar vínculos diagnósticos por modelo
