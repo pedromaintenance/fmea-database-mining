@@ -22,9 +22,9 @@ export function validateSemanticCrosswalkInputs(ontology,rules,policy){
  ck(ontology?.schema==='fmea-mining.condition-action-damage.v1'&&ontology?.version===policy?.sourceOntologyVersion,'ontology_version_mismatch');
  ck(ontology?.safetyInvariant==='condition!=action!=damage'&&ontology?.evidenceNature==='no_field_observation','unsafe_ontology_provenance');
  ck(ontology?.observations?.length===0&&ontology?.workOrderExecutions?.length===0&&ontology?.confirmedComponentDamages?.length===0,'fabricated_events');
- ck(policy?.schema==='fmea-mining.semantic-crosswalk-policy.v1'&&policy?.version==='1.3.45'&&
+ ck(policy?.schema==='fmea-mining.semantic-crosswalk-policy.v1'&&policy?.version==='1.3.46'&&
   policy?.nature==='documented_generic_overlap_without_field_observations_or_component_approval','policy_provenance');
- ck(policy?.expectedBundles===12&&policy?.expectedSeedRules===25&&policy?.expectedUnmodeledRules===13,'coverage_policy_changed');
+ ck(policy?.expectedBundles===13&&policy?.expectedSeedRules===25&&policy?.expectedUnmodeledRules===12,'coverage_policy_changed');
  ck(policy?.policy&&Object.keys(policy.policy).length===10&&Object.values(policy.policy).every(Boolean),'policy_relaxed');
  ck(policy?.fieldObservations===0&&policy?.performedInspections===0&&policy?.confirmedDamages===0&&policy?.approvedSapMappings===0,'false_policy_approval');
  ck(eq(policy?.sharedNodes?.map(s=>s.id)||[],EXPECTED_SHARES),'shared_node_policy_drift');
@@ -35,8 +35,8 @@ export function validateSemanticCrosswalkInputs(ontology,rules,policy){
  const seeds=byId(rules), bundles=byId(ontology.bundles),
    cond=byId(ontology.conditions), actions=byId(ontology.actions), damages=byId(ontology.damageHypotheses);
  ck(rules.length===25&&seeds.size===25,'seed_coverage_drift');
- ck(ontology.bundles.length===12&&bundles.size===12,'bundle_coverage_drift');
- ck(ontology.conditions.length===28&&cond.size===28&&ontology.actions.length===25&&actions.size===25&&ontology.damageHypotheses.length===12&&damages.size===12,'semantic_cardinality_drift');
+ ck(ontology.bundles.length===13&&bundles.size===13,'bundle_coverage_drift');
+ ck(ontology.conditions.length===32&&cond.size===32&&ontology.actions.length===28&&actions.size===28&&ontology.damageHypotheses.length===14&&damages.size===14,'semantic_cardinality_drift');
  const usages=new Map();
  const byRule=new Map();
  for(const b of ontology.bundles){
