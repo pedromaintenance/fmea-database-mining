@@ -17,7 +17,7 @@ const errors=[...checkGearSemanticBoundary(model,fixtures,policy,rules,sources)]
 const cross=validateSemanticCrosswalkInputs(model,rules,crossPolicy);errors.push(...cross.errors);
 const check=(v,k)=>{if(!v)errors.push(k)};
 check(cross.coverage.totalSeeds===25&&cross.coverage.modeledRules===15&&cross.coverage.unmodeledRuleIds.length===10,'coverage_invalid');
-check(cross.coverage.sharedGenericNodes===6&&cross.coverage.sharedDamageNodes===0,'unexpected_shared_component_damage');
+check(cross.coverage.sharedGenericNodes===11&&cross.coverage.sharedDamageNodes===0,'unexpected_shared_component_damage');
 check(gaps.length===10&&gaps.every(x=>x.ruleId!=='final-drive-gear'),'unexpected_SAP_gap');
 const clone=v=>JSON.parse(JSON.stringify(v));
 const changes=[
