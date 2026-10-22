@@ -1,6 +1,6 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 21/10/2026 · **Ciclo:** catálogo técnico v1.3.44 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 21/10/2026 · **Ciclo:** catálogo técnico v1.3.45 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
 
@@ -38,6 +38,18 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 | Enriquecimento | 12 roteiros classificados por falha funcional, sintomas e técnicas | Anotação manual, não prova de causa |
 
 **Observação:** as 159 tarefas de PM com subgrupo candidato foram obtidas em extração local anterior e **não** representam 159 associações homologadas. Contagens de vínculos estritos serão publicadas pelo relatório automático após cada alteração do gerador.
+
+## Ciclo — 21/10/2026: abrasão versus vazamento em mangueiras (v1.3.45)
+
+- [x] Inserido `BUNDLE-12` para abrasão hidráulica com condições separadas de cobertura, reforço exposto, interferência e deformação.
+- [x] Mantido `hydraulic-hose-leak` como regra distinta: abrasão visual não confirma fuga nem falha de reforço.
+- [x] Diferenciada criticidade: armadura exposta, se verificada, exige retirada segura de serviço e avaliação de substituição, sem aguardar vazamento.
+- [x] Ontologia 1.3.10, cobertura de 12/25 regras, 13 pendentes, 24 mutações adversariais rejeitadas pelo CI.
+- [ ] **Engenharia/OEM:** verificar construção e roteamento de cada linha, raio de curvatura, armadura, pressão e procedimento por configuração.
+- [ ] **Dados Mestres/PCM:** manter HSVV bloqueado em hidráulica até desenho/BOM efetivos e revisão independente.
+- [ ] **Confiabilidade:** priorizar 13 regras ainda sem bundle e registrar evidências de campo em ambiente restrito.
+
+**Estado:** 115 links candidatos, dez exceções bloqueadas, nenhuma falha ou ordem real criada pela modelagem.
 
 ## Ciclo — 21/10/2026: rótulo do radiador e ventilador de arrefecimento (v1.3.44)
 
