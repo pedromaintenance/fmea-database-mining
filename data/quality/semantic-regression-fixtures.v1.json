@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.semantic-regression.v1",
-  "version": "1.3.8",
+  "version": "1.3.9",
   "status": "synthetic_assertions_not_real_events",
   "cases": [
     {
@@ -220,6 +220,34 @@
       "independentComponentTest": "not_performed",
       "expectedConfirmedDamageIds": [],
       "why": "Inspeção simulada de vedação da roda-guia não prova defeito da vedação nem ocorrência executada na frota real."
+    },
+    {
+      "id": "SEM-17",
+      "title": "Ruído suspeito no ventilador sem arquitetura de apoio confirmada",
+      "ruleId": "cooling-fan-bearing",
+      "observedConditionIds": [
+        "COND-COOL-FAN-ABNORMAL-NOISE"
+      ],
+      "performedActionIds": [
+        "ACT-COOL-FAN-DRIVE-IDENTIFY"
+      ],
+      "independentComponentTest": "not_performed",
+      "expectedConfirmedDamageIds": [],
+      "why": "Ruído e identificação simulada de arquitetura não confirmam rolamento instalado, avariado ou ocorrência de manutenção executada."
+    },
+    {
+      "id": "SEM-18",
+      "title": "Sinal de patinamento em correia de ventilador ainda não identificada",
+      "ruleId": "cooling-fan-belt",
+      "observedConditionIds": [
+        "COND-COOL-FAN-BELT-SLIP"
+      ],
+      "performedActionIds": [
+        "ACT-COOL-FAN-BELT-CONDITION"
+      ],
+      "independentComponentTest": "not_performed",
+      "expectedConfirmedDamageIds": [],
+      "why": "O modelo exige comprovar acionamento por correia e realizar ensaio com limite OEM; este cenário sintético não confirma correia nem falha."
     }
   ]
 }
