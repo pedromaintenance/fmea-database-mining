@@ -1,6 +1,6 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 21/10/2026 · **Ciclo:** catálogo técnico v1.3.46 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 21/10/2026 · **Ciclo:** catálogo técnico v1.3.47 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
 
@@ -38,6 +38,19 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 | Enriquecimento | 12 roteiros classificados por falha funcional, sintomas e técnicas | Anotação manual, não prova de causa |
 
 **Observação:** as 159 tarefas de PM com subgrupo candidato foram obtidas em extração local anterior e **não** representam 159 associações homologadas. Contagens de vínculos estritos serão publicadas pelo relatório automático após cada alteração do gerador.
+
+## Ciclo — 21/10/2026: engrenagens do comando final (v1.3.47)
+
+- [x] Inserido `BUNDLE-14` para `final-drive-gear`, separando desgaste de dente, pitting, fratura e quatro sinais sistêmicos inespecíficos.
+- [x] Separadas partículas no bujão magnético, contaminação, suspeita de lubrificação inadequada e ruído de confirmação física de dano de engrenagem.
+- [x] Reforçado isolamento de `final-drive-bearing` como hipótese concorrente; não atribuir metais e ruído automaticamente à engrenagem.
+- [x] Atualizado crosswalk para `comando_final` e testes do meio físico; ontologia 1.3.12 com 14 bundles, 39 condições, 32 ações, 17 danos, 94 relações e 24 fixtures.
+- [x] Criado relatório e auditor `pm:drive:gear:audit` com 36 mutações adversariais; nenhuma condenação por limiar CAT genérico importada para a frota.
+- [ ] **OEM/Engenharia:** obter montagem, relações de engrenagens, desenhos e identificação por máquina/série; diferenciar sintomas de rolamentos e engrenagens com acesso seguro.
+- [ ] **Inspeção/SOS:** confirmar fluido e formulação por compartimento (incluindo mudança histórica para FDAO quando aplicável), manter coleta antes da intervenção e avaliar tendência com OMM.
+- [ ] **Confiabilidade:** avançar nas 11 regras PM sem bundle e exigir parecer independente para todo novo dano físico aprovado.
+
+**Estado:** 115 candidatos, dez bloqueios PM, zero medições reais ou novos mapeamentos SAP homologados.
 
 ## Ciclo — 21/10/2026: fixadores de sapatas e perda de pré-carga (v1.3.46)
 
