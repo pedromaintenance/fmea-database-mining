@@ -621,6 +621,28 @@
       "limitation": "Curvas e perdas internas são típicas para bombas de palhetas especificadas no catálogo Parker, NÃO para a bomba instalada CAT 395. O vazamento interno normal depende de projeto e condições; não usar valores ou limiares do catálogo em outros equipamentos.",
       "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
       "lastReviewed": "2026-10-21"
+    },
+    {
+      "id": "CAT-FAN-BELT-FUNCTION",
+      "organization": "Caterpillar",
+      "title": "Cat Fan Drive V Belt Set — function of belt drive",
+      "url": "https://parts.cat.com/en/catcorp/product/7W-8137",
+      "area": "cooling_fan_belt_drive_general_function",
+      "role": "oem_component_function_other_model",
+      "limitation": "Página pública de correia em modelos de motores distintos; não demonstra correia, tensão, PN nem arranjo efetivo nos modelos da mina, sobretudo em ventiladores hidráulicos.",
+      "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
+      "lastReviewed": "2026-10-21"
+    },
+    {
+      "id": "CAT-ENGINE-BELT-PM",
+      "organization": "Caterpillar",
+      "title": "250-Hour Planned Maintenance for Cat Equipment — Inspect Engine Belt",
+      "url": "https://www.cat.com/en_US/blog/250-hour-planned-maintenance-cat-299d3.html",
+      "area": "belt_condition_tension_and_OMM_specific",
+      "role": "oem_general_maintenance_other_equipment",
+      "limitation": "Exemplo de inspeção de correia de motor de outra máquina, sem afirmar que seja correia do ventilador no ativo-alvo. Procedimento e tensão dependem do OMM efetivo; a periodicidade do artigo não é aplicada à frota.",
+      "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
+      "lastReviewed": "2026-10-21"
     }
   ]
 }
