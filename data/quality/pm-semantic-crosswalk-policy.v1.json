@@ -1,11 +1,11 @@
 {
   "schema": "fmea-mining.semantic-crosswalk-policy.v1",
-  "version": "1.3.47",
+  "version": "1.3.48",
   "nature": "documented_generic_overlap_without_field_observations_or_component_approval",
-  "sourceOntologyVersion": "1.3.12",
-  "expectedBundles": 14,
+  "sourceOntologyVersion": "1.3.13",
+  "expectedBundles": 15,
   "expectedSeedRules": 25,
-  "expectedUnmodeledRules": 11,
+  "expectedUnmodeledRules": 10,
   "sharedNodes": [
     {
       "id": "COND-FUEL-WATER",
@@ -72,6 +72,61 @@
       ],
       "sharingMeaning": "Proposta de teste hidráulico compartilhada não é medição realizada nem prova do componente",
       "requiredDiscrimination": "Definir pontos de ensaio e limites por circuito, com isolação e procedimento OEM autorizado"
+    },
+    {
+      "id": "COND-DRIVE-MAGNETIC-DEBRIS",
+      "kind": "condition",
+      "system": "comando_final",
+      "ruleIds": [
+        "final-drive-gear",
+        "final-drive-bearing"
+      ],
+      "sharingMeaning": "Partículas retidas por bujão magnético pertencem ao compartimento e não apontam exclusivamente a engrenagens ou rolamentos",
+      "requiredDiscrimination": "Examinar tendência, morfologia, outros componentes e conjunto OEM antes de afirmar origem ou dano específico"
+    },
+    {
+      "id": "COND-DRIVE-OIL-CONTAMINATION",
+      "kind": "condition",
+      "system": "comando_final",
+      "ruleIds": [
+        "final-drive-gear",
+        "final-drive-bearing"
+      ],
+      "sharingMeaning": "Contaminação do lubrificante compartilhado não localiza danos em pista de rolamento ou dente de engrenagem",
+      "requiredDiscrimination": "Verificar amostra representativa, histórico, fluido, formulação, ingresso e interpretação por compartimento OEM"
+    },
+    {
+      "id": "COND-DRIVE-LUBRICATION-INADEQUACY",
+      "kind": "condition",
+      "system": "comando_final",
+      "ruleIds": [
+        "final-drive-gear",
+        "final-drive-bearing"
+      ],
+      "sharingMeaning": "Nível ou lubrificação suspeita no redutor é hipótese de circuito e não confirmação de dano de rolamento ou engrenagem",
+      "requiredDiscrimination": "Confrontar especificação, volume, temperatura, nível, orientação do OMM e condições reais antes do diagnóstico"
+    },
+    {
+      "id": "COND-DRIVE-ABNORMAL-NOISE",
+      "kind": "condition",
+      "system": "comando_final",
+      "ruleIds": [
+        "final-drive-gear",
+        "final-drive-bearing"
+      ],
+      "sharingMeaning": "Ruído ou vibração do comando final tem componentes concorrentes e não confirma rolamento com fadiga ou engrenagem com pitting",
+      "requiredDiscrimination": "Localizar a frequência e região com procedimento seguro, correlacionar condições e inspecionar componente efetivo"
+    },
+    {
+      "id": "ACT-DRIVE-OIL-REPRESENTATIVE-SAMPLE",
+      "kind": "action",
+      "system": "comando_final",
+      "ruleIds": [
+        "final-drive-gear",
+        "final-drive-bearing"
+      ],
+      "sharingMeaning": "Amostragem do mesmo compartimento serve às duas hipóteses, mas não comprova execução nem identifica componente que gerou detritos",
+      "requiredDiscrimination": "Conferir compartimento e fluido, amostrar antes da troca, acompanhar tendência e separar inspeção física do componente"
     }
   ],
   "domainSeparation": [
@@ -89,6 +144,12 @@
       "left": "hydraulic-hose-leak",
       "right": "hydraulic-pump-seal",
       "genericOnly": true
+    },
+    {
+      "left": "final-drive-gear",
+      "right": "final-drive-bearing",
+      "genericOnly": true,
+      "noSharedPhysicalDamages": true
     }
   ],
   "evidenceRequirements": [
