@@ -25,7 +25,7 @@ ck(review.version==='1.3.41'&&review.crossComponentOntologyRefs.length===2,'hist
 ck(review.crossComponentOntologyRefs.some(x=>x.refId==='COND-TRACK-ROLLER-HEAT')&&
    review.crossComponentOntologyRefs.some(x=>x.refId==='ACT-TRACK-ROLLER-SEAL-CHECK'),'historical_roller_finding_lost');
 ck(seed.length===25&&gaps.length===10&&links.length===115,'baseline_pm_counts_drift');
-ck(model.damageHypotheses.length===11&&model.bundles.length===11,'damage_or_bundle_count_changed');
+ck(model.damageHypotheses.length===12&&model.bundles.length===12,'damage_or_bundle_count_changed');
 const clone=x=>JSON.parse(JSON.stringify(x));
 const mutate=[
  ['borrow_roller_heat',x=>{x.bundles.find(b=>b.id==='BUNDLE-09').conditionIds[1]='COND-TRACK-ROLLER-HEAT';}],
