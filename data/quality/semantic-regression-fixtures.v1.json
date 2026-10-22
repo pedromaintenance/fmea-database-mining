@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.semantic-regression.v1",
-  "version": "1.3.11",
+  "version": "1.3.12",
   "status": "synthetic_assertions_not_real_events",
   "cases": [
     {
@@ -307,6 +307,36 @@
       "independentComponentTest": "not_performed",
       "expectedConfirmedDamageIds": [],
       "why": "Marcas de assento e dano físico hipotéticos exigem discriminação independente; nenhuma causa ou ruptura de campo foi validada."
+    },
+    {
+      "id": "SEM-23",
+      "title": "Partículas e ruído de comando final sem engrenagem identificada",
+      "ruleId": "final-drive-gear",
+      "observedConditionIds": [
+        "COND-DRIVE-MAGNETIC-DEBRIS",
+        "COND-DRIVE-ABNORMAL-NOISE"
+      ],
+      "performedActionIds": [
+        "ACT-DRIVE-PLUG-DEBRIS-INSPECT"
+      ],
+      "independentComponentTest": "not_performed",
+      "expectedConfirmedDamageIds": [],
+      "why": "Cenário exclusivamente sintético: fragmentos de origem desconhecida e ruído inespecífico não confirmam dente fraturado, pitting ou dano de rolamento."
+    },
+    {
+      "id": "SEM-24",
+      "title": "Óleo anormal e possível perda de lubrificação sem prova de dano físico",
+      "ruleId": "final-drive-gear",
+      "observedConditionIds": [
+        "COND-DRIVE-OIL-CONTAMINATION",
+        "COND-DRIVE-LUBRICATION-INADEQUACY"
+      ],
+      "performedActionIds": [
+        "ACT-DRIVE-OIL-REPRESENTATIVE-SAMPLE"
+      ],
+      "independentComponentTest": "not_performed",
+      "expectedConfirmedDamageIds": [],
+      "why": "Cenário hipotético de fluido e nível; alteração conhecida de óleo ou aditivos não confirma falha e falta ensaio específico da engrenagem."
     }
   ]
 }

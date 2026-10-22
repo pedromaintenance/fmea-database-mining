@@ -1,0 +1,59 @@
+{
+  "schema": "fmea-mining.pm-final-drive-gear-discrimination.v1",
+  "version": "1.3.47",
+  "ruleId": "final-drive-gear",
+  "competingRuleId": "final-drive-bearing",
+  "status": "generic_only_unobserved",
+  "sourceIds": [
+    "ISO-10825-1-2022",
+    "CAT-DRIVE-MAGNET-PLUG",
+    "CAT-DRIVE-MAINT-PRACTICES",
+    "CAT-DRIVETRAIN-OIL-CARE"
+  ],
+  "conditions": [
+    "COND-DRIVE-GEAR-TOOTH-WEAR",
+    "COND-DRIVE-GEAR-PITTING",
+    "COND-DRIVE-GEAR-TOOTH-FRACTURE",
+    "COND-DRIVE-MAGNETIC-DEBRIS",
+    "COND-DRIVE-OIL-CONTAMINATION",
+    "COND-DRIVE-LUBRICATION-INADEQUACY",
+    "COND-DRIVE-ABNORMAL-NOISE"
+  ],
+  "damages": [
+    "DMG-DRIVE-GEAR-TOOTH-WEAR-CANDIDATE",
+    "DMG-DRIVE-GEAR-PITTING-CANDIDATE",
+    "DMG-DRIVE-GEAR-FRACTURE-CANDIDATE"
+  ],
+  "requiresDirectGearInspectionForDamage": true,
+  "nonLocalizingConditions": [
+    "COND-DRIVE-MAGNETIC-DEBRIS",
+    "COND-DRIVE-OIL-CONTAMINATION",
+    "COND-DRIVE-LUBRICATION-INADEQUACY",
+    "COND-DRIVE-ABNORMAL-NOISE"
+  ],
+  "independentEvidence": [
+    "OEM_BOM_by_serial",
+    "safe_actual_gear_inspection",
+    "magnetic_plug_context",
+    "oil_analysis_and_fluid_type",
+    "bearing_gear_differentiation",
+    "independent_engineering_review"
+  ],
+  "safety": {
+    "noNoiseToPitting": true,
+    "noOilMetalsToFracture": true,
+    "noDebrisToGearOrigin": true,
+    "noFluidChangeToDamage": true,
+    "noUniversalCondemnationThreshold": true,
+    "noInventedOMMLimit": true,
+    "noExecutedMaintenance": true,
+    "noConfirmedFailure": true,
+    "noAutoSapApproval": true,
+    "noAutoWorkOrder": true
+  },
+  "observedEvents": 0,
+  "performedActions": 0,
+  "confirmedDamage": 0,
+  "approvedMappings": 0,
+  "oemCondemnationLimit": null
+}

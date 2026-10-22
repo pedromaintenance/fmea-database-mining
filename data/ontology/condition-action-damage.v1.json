@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.condition-action-damage.v1",
-  "version": "1.3.11",
+  "version": "1.3.12",
   "status": "conceptual_unvalidated",
   "semantics": {
     "condition": "Estado de fluido, superfície ou desempenho; ocorrência requer medição/observação",
@@ -616,6 +616,138 @@
       "status": "condition_hypothesis_not_observed",
       "observedValue": null,
       "observedAt": null
+    },
+    {
+      "id": "COND-DRIVE-GEAR-TOOTH-WEAR",
+      "label": "Indícios visuais de desgaste na superfície de dentes de engrenagem",
+      "system": "comando_final",
+      "medium": "engrenagem_comando_final",
+      "observation": "Registrar apenas quando houver acesso OEM seguro à engrenagem identificada, com perfil e distribuição do contato comparados à referência efetiva",
+      "methods": [
+        "EV-01",
+        "EV-02"
+      ],
+      "sourceIds": [
+        "ISO-10825-1-2022",
+        "CAT-DRIVE-MAINT-PRACTICES"
+      ],
+      "limitations": "Desgaste na superfície dos dentes não identifica o mecanismo específico, sua causa ou o limite de condenação sem inspeção e documentação do conjunto.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-DRIVE-GEAR-PITTING",
+      "label": "Indícios de pitting ou fadiga superficial em dentes de engrenagem",
+      "system": "comando_final",
+      "medium": "engrenagem_comando_final",
+      "observation": "Caracterizar cavidades e padrão superficial do dente identificado apenas por inspeção acessível e permitida, comparando nomenclatura ISO aplicável",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "ISO-10825-1-2022",
+        "CAT-DRIVE-MAINT-PRACTICES"
+      ],
+      "limitations": "Partículas no óleo, ruído e vibração não comprovam pitting; distinguir dano superficial de desgaste abrasivo, lascamento e outras alterações com evidência física.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-DRIVE-GEAR-TOOTH-FRACTURE",
+      "label": "Suspeita de trinca ou fratura em dente de engrenagem",
+      "system": "comando_final",
+      "medium": "engrenagem_comando_final",
+      "observation": "Identificar trinca, lascamento importante ou porção ausente do dente em posição comprovada por inspeção autorizada do conjunto",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "ISO-10825-1-2022",
+        "CAT-DRIVE-MAINT-PRACTICES"
+      ],
+      "limitations": "Fragmento metálico sem origem confirmada não prova fratura de dente; distinguir engrenagem, rolamento, espaçador e outros elementos por análise independente.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-DRIVE-MAGNETIC-DEBRIS",
+      "label": "Partículas ferromagnéticas suspeitas no bujão magnético do comando final",
+      "system": "comando_final",
+      "medium": "oleo_comando_final",
+      "observation": "Registrar características, contexto de coleta e tendência do material retido em bujão magnético somente se previsto na configuração e procedimento do OEM",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "CAT-DRIVE-MAGNET-PLUG",
+        "CAT-DRIVE-MAINT-PRACTICES",
+        "CAT-DRIVETRAIN-OIL-CARE"
+      ],
+      "limitations": "Material retido pode originar-se de engrenagem, rolamento ou outra peça e sua morfologia não estabelece o dente causador; classificações CAT genéricas não são limites por série.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-DRIVE-OIL-CONTAMINATION",
+      "label": "Contaminação ou anormalidade química suspeita no lubrificante do comando final",
+      "system": "comando_final",
+      "medium": "oleo_comando_final",
+      "observation": "Interpretar laudo representativo por compartimento, fluido conhecido, amostra anterior à intervenção e tendência de metais, água, partículas e viscosidade",
+      "methods": [
+        "EV-08",
+        "EV-09"
+      ],
+      "sourceIds": [
+        "CAT-DRIVE-MAGNET-PLUG",
+        "CAT-DRIVE-MAINT-PRACTICES",
+        "CAT-DRIVETRAIN-OIL-CARE"
+      ],
+      "limitations": "Perfil de aditivos pode mudar por troca conhecida de formulação sem falha mecânica; óleo contaminado não identifica engrenagem ou rolamento danificado.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-DRIVE-LUBRICATION-INADEQUACY",
+      "label": "Possível insuficiência de nível, filme ou adequação do lubrificante do comando final",
+      "system": "comando_final",
+      "medium": "oleo_comando_final",
+      "observation": "Verificar nível, especificação de óleo efetiva, condição térmica e procedimento de amostragem da máquina e compartimento específico",
+      "methods": [
+        "EV-01",
+        "EV-08"
+      ],
+      "sourceIds": [
+        "CAT-DRIVE-MAGNET-PLUG",
+        "CAT-DRIVE-MAINT-PRACTICES",
+        "CAT-DRIVETRAIN-OIL-CARE"
+      ],
+      "limitations": "Nível ou viscosidade aparentemente inadequados não confirmam colapso de filme nem engrenagem danificada; não inferir viscosidade ou período de troca universais.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-DRIVE-ABNORMAL-NOISE",
+      "label": "Ruído ou vibração anormal suspeitos na região do comando final",
+      "system": "comando_final",
+      "medium": "conjunto_comando_final",
+      "observation": "Localizar e caracterizar ruído ou vibração sob condição operacional controlada pelo OEM e comparar com outros componentes do trem de força",
+      "methods": [
+        "EV-01",
+        "EV-03"
+      ],
+      "sourceIds": [
+        "CAT-DRIVE-MAINT-PRACTICES"
+      ],
+      "limitations": "Ruído isolado pode derivar de rolamento, engrenagem, lubrificação, interferência externa ou outra transmissão; não comprova pitting ou fratura de dente.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
     }
   ],
   "actions": [
@@ -1051,6 +1183,71 @@
       "executionStatus": "not_performed",
       "observedResults": [],
       "intervalHours": null
+    },
+    {
+      "id": "ACT-DRIVE-PLUG-DEBRIS-INSPECT",
+      "label": "Inspecionar bujão magnético do comando final se previsto no OEM",
+      "kind": "inspection",
+      "intent": "Documentar morfologia e tendência de detritos sem associar partículas à engrenagem ou rolamento sem evidência adicional",
+      "sourceIds": [
+        "CAT-DRIVE-MAGNET-PLUG",
+        "CAT-DRIVE-MAINT-PRACTICES",
+        "CAT-DRIVETRAIN-OIL-CARE"
+      ],
+      "safety": "Estabilizar e bloquear máquina, verificar temperatura e energia do compartimento e seguir OMM específico para remoção do bujão; não abrir circuito inadequadamente.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
+    },
+    {
+      "id": "ACT-DRIVE-OIL-REPRESENTATIVE-SAMPLE",
+      "label": "Coletar e interpretar amostra representativa de óleo do comando final",
+      "kind": "sampling",
+      "intent": "Verificar identidade e formulação do óleo, tendência de desgaste, contaminação, água e viscosidade, coletando antes de qualquer troca programada",
+      "sourceIds": [
+        "CAT-DRIVE-MAGNET-PLUG",
+        "CAT-DRIVE-MAINT-PRACTICES",
+        "CAT-DRIVETRAIN-OIL-CARE"
+      ],
+      "safety": "Observar temperatura, possíveis pressões residuais e prevenção de contaminação; coletar somente em ponto e condição previstos no OMM e gerenciar resíduos.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
+    },
+    {
+      "id": "ACT-DRIVE-LUBRICATION-OEM-CHECK",
+      "label": "Verificar especificação, nível e condição de lubrificação conforme OEM",
+      "kind": "inspection",
+      "intent": "Conferir especificação de óleo, volume, nível, contaminação e arquitetura do comando final efetivo sem extrapolar de outros modelos",
+      "sourceIds": [
+        "CAT-DRIVE-MAGNET-PLUG",
+        "CAT-DRIVE-MAINT-PRACTICES",
+        "CAT-DRIVETRAIN-OIL-CARE"
+      ],
+      "safety": "Garantir bloqueio, temperatura segura, orientação de posicionamento e procedimento OEM por série; não operar equipamento em suspeita crítica para obter dados adicionais.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
+    },
+    {
+      "id": "ACT-DRIVE-GEAR-DAMAGE-EVALUATE",
+      "label": "Avaliar engrenagens e fontes concorrentes do trem de força conforme OEM",
+      "kind": "inspection",
+      "intent": "Planejar exame de dentes, engrenagens, rolamentos e outras peças para discriminar desgaste, pitting, fratura e fonte das partículas, se houver acesso autorizado",
+      "sourceIds": [
+        "ISO-10825-1-2022",
+        "CAT-DRIVE-MAGNET-PLUG",
+        "CAT-DRIVE-MAINT-PRACTICES",
+        "CAT-DRIVETRAIN-OIL-CARE"
+      ],
+      "safety": "Acesso interno requer plano de desmontagem autorizado, contenção de carga, limpeza e bloqueio; não abrir redutor nem retornar ao serviço com risco de fragmentos sem avaliação técnica.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
     }
   ],
   "damageHypotheses": [
@@ -1329,6 +1526,66 @@
         "CAT-DOZER-UC-MAINT",
         "NORDLOCK-BOLT-LOOSENING",
         "NORDLOCK-BOLTING-FAILURE"
+      ],
+      "kind": "candidate_component_damage",
+      "reviewStatus": "not_approved",
+      "catalogMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageCode": null,
+        "causeCode": null
+      },
+      "confirmed": false
+    },
+    {
+      "id": "DMG-DRIVE-GEAR-TOOTH-WEAR-CANDIDATE",
+      "label": "Possível desgaste anormal de superfície de dente sob investigação",
+      "componentRole": "engrenagem_comando_final",
+      "requiredEvidence": "Exame da engrenagem efetiva com morfologia, perfil, localização, carga e especificação OEM; ruído ou limalha isolados não identificam desgaste de dente.",
+      "sourceIds": [
+        "ISO-10825-1-2022",
+        "CAT-DRIVE-MAINT-PRACTICES"
+      ],
+      "kind": "candidate_component_damage",
+      "reviewStatus": "not_approved",
+      "catalogMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageCode": null,
+        "causeCode": null
+      },
+      "confirmed": false
+    },
+    {
+      "id": "DMG-DRIVE-GEAR-PITTING-CANDIDATE",
+      "label": "Possível dano de fadiga superficial ou pitting em engrenagem sob investigação",
+      "componentRole": "engrenagem_comando_final",
+      "requiredEvidence": "Evidência visual/morfológica de cavidades nas superfícies de dentes acessíveis pelo método OEM, discriminando desgaste abrasivo e dano de rolamento.",
+      "sourceIds": [
+        "ISO-10825-1-2022",
+        "CAT-DRIVE-MAINT-PRACTICES"
+      ],
+      "kind": "candidate_component_damage",
+      "reviewStatus": "not_approved",
+      "catalogMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageCode": null,
+        "causeCode": null
+      },
+      "confirmed": false
+    },
+    {
+      "id": "DMG-DRIVE-GEAR-FRACTURE-CANDIDATE",
+      "label": "Possível fratura ou lascamento de dente de engrenagem sob investigação",
+      "componentRole": "engrenagem_comando_final",
+      "requiredEvidence": "Identificar material fraturado e dente específico por inspeção controlada; fragmentos no bujão e ruído não são confirmação automática do dano ou mecanismo causal.",
+      "sourceIds": [
+        "ISO-10825-1-2022",
+        "CAT-DRIVE-MAINT-PRACTICES"
       ],
       "kind": "candidate_component_damage",
       "reviewStatus": "not_approved",
@@ -1733,6 +1990,45 @@
         "CAT-DOZER-UC-MAINT",
         "NORDLOCK-BOLT-LOOSENING",
         "NORDLOCK-BOLTING-FAILURE"
+      ],
+      "mappingScope": "generic_only",
+      "status": "review_candidate",
+      "observedConditionIds": [],
+      "performedActionIds": [],
+      "confirmedDamageIds": [],
+      "automaticDamagePromotion": false,
+      "evidenceInterpretation": "sem_resultado_de_campo"
+    },
+    {
+      "id": "BUNDLE-14",
+      "ruleId": "final-drive-gear",
+      "conditionIds": [
+        "COND-DRIVE-GEAR-TOOTH-WEAR",
+        "COND-DRIVE-GEAR-PITTING",
+        "COND-DRIVE-GEAR-TOOTH-FRACTURE",
+        "COND-DRIVE-MAGNETIC-DEBRIS",
+        "COND-DRIVE-OIL-CONTAMINATION",
+        "COND-DRIVE-LUBRICATION-INADEQUACY",
+        "COND-DRIVE-ABNORMAL-NOISE"
+      ],
+      "actionIds": [
+        "ACT-DRIVE-PLUG-DEBRIS-INSPECT",
+        "ACT-DRIVE-OIL-REPRESENTATIVE-SAMPLE",
+        "ACT-DRIVE-LUBRICATION-OEM-CHECK",
+        "ACT-DRIVE-GEAR-DAMAGE-EVALUATE"
+      ],
+      "differentialDamageIds": [
+        "DMG-DRIVE-GEAR-TOOTH-WEAR-CANDIDATE",
+        "DMG-DRIVE-GEAR-PITTING-CANDIDATE",
+        "DMG-DRIVE-GEAR-FRACTURE-CANDIDATE"
+      ],
+      "chainIds": [],
+      "interpretation": "Ruído, partículas magnéticas, contaminação e possível lubrificação inadequada são condições não localizadas e NÃO confirmam engrenagem com desgaste, pitting ou fratura. A ISO 10825-1 classifica aparência, sem definir causa. Exigem identificação da engrenagem, inspeção física OEM, análise concorrente de rolamentos e revisão independente; nenhum dano foi observado.",
+      "sourceIds": [
+        "ISO-10825-1-2022",
+        "CAT-DRIVE-MAGNET-PLUG",
+        "CAT-DRIVE-MAINT-PRACTICES",
+        "CAT-DRIVETRAIN-OIL-CARE"
       ],
       "mappingScope": "generic_only",
       "status": "review_candidate",
@@ -2461,6 +2757,132 @@
       "to": "DMG-TRACK-SHOE-FASTENER-FRACTURE-CANDIDATE",
       "type": "rule_lists_differential_damage",
       "meaning": "Possibilidade de dano ainda não confirmada; nenhuma associação SAP homologada",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-081",
+      "from": "BUNDLE-14",
+      "to": "COND-DRIVE-GEAR-TOOTH-WEAR",
+      "type": "rule_monitors_condition",
+      "meaning": "Condição candidata não observada, sem conclusão causal",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-082",
+      "from": "BUNDLE-14",
+      "to": "COND-DRIVE-GEAR-PITTING",
+      "type": "rule_monitors_condition",
+      "meaning": "Condição candidata não observada, sem conclusão causal",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-083",
+      "from": "BUNDLE-14",
+      "to": "COND-DRIVE-GEAR-TOOTH-FRACTURE",
+      "type": "rule_monitors_condition",
+      "meaning": "Condição candidata não observada, sem conclusão causal",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-084",
+      "from": "BUNDLE-14",
+      "to": "COND-DRIVE-MAGNETIC-DEBRIS",
+      "type": "rule_monitors_condition",
+      "meaning": "Condição candidata não observada, sem conclusão causal",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-085",
+      "from": "BUNDLE-14",
+      "to": "COND-DRIVE-OIL-CONTAMINATION",
+      "type": "rule_monitors_condition",
+      "meaning": "Condição candidata não observada, sem conclusão causal",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-086",
+      "from": "BUNDLE-14",
+      "to": "COND-DRIVE-LUBRICATION-INADEQUACY",
+      "type": "rule_monitors_condition",
+      "meaning": "Condição candidata não observada, sem conclusão causal",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-087",
+      "from": "BUNDLE-14",
+      "to": "COND-DRIVE-ABNORMAL-NOISE",
+      "type": "rule_monitors_condition",
+      "meaning": "Condição candidata não observada, sem conclusão causal",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-088",
+      "from": "BUNDLE-14",
+      "to": "ACT-DRIVE-PLUG-DEBRIS-INSPECT",
+      "type": "rule_proposes_action",
+      "meaning": "Ação somente proposta e dependente de procedimento OEM",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-089",
+      "from": "BUNDLE-14",
+      "to": "ACT-DRIVE-OIL-REPRESENTATIVE-SAMPLE",
+      "type": "rule_proposes_action",
+      "meaning": "Ação somente proposta e dependente de procedimento OEM",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-090",
+      "from": "BUNDLE-14",
+      "to": "ACT-DRIVE-LUBRICATION-OEM-CHECK",
+      "type": "rule_proposes_action",
+      "meaning": "Ação somente proposta e dependente de procedimento OEM",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-091",
+      "from": "BUNDLE-14",
+      "to": "ACT-DRIVE-GEAR-DAMAGE-EVALUATE",
+      "type": "rule_proposes_action",
+      "meaning": "Ação somente proposta e dependente de procedimento OEM",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-092",
+      "from": "BUNDLE-14",
+      "to": "DMG-DRIVE-GEAR-TOOTH-WEAR-CANDIDATE",
+      "type": "rule_lists_differential_damage",
+      "meaning": "Dano diferencial de engrenagem não confirmado, sem aprovação SAP",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-093",
+      "from": "BUNDLE-14",
+      "to": "DMG-DRIVE-GEAR-PITTING-CANDIDATE",
+      "type": "rule_lists_differential_damage",
+      "meaning": "Dano diferencial de engrenagem não confirmado, sem aprovação SAP",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-094",
+      "from": "BUNDLE-14",
+      "to": "DMG-DRIVE-GEAR-FRACTURE-CANDIDATE",
+      "type": "rule_lists_differential_damage",
+      "meaning": "Dano diferencial de engrenagem não confirmado, sem aprovação SAP",
       "reviewStatus": "interpretacao_inferida",
       "observed": false
     }

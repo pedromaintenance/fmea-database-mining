@@ -26,7 +26,7 @@ const eq=(a,b)=>JSON.stringify(a)===JSON.stringify(b);
 function checkModel(model){
  const e=[],test=(v,id)=>{if(!v)e.push(id)},c=map(model.conditions),a=map(model.actions),d=map(model.damageHypotheses);
  const newRule=model.bundles.find(x=>x.id==='BUNDLE-12'),leak=model.bundles.find(x=>x.id==='BUNDLE-06');
- test(model.version==='1.3.11'&&model.conditions.length===32&&model.actions.length===28&&model.damageHypotheses.length===14&&model.bundles.length===13&&model.relations.length===80,'version_or_counts');
+ test(model.version==='1.3.12'&&model.conditions.length===39&&model.actions.length===32&&model.damageHypotheses.length===17&&model.bundles.length===14&&model.relations.length===94,'version_or_counts');
  test(newRule?.ruleId==='hydraulic-hose-abrasion'&&eq(newRule.conditionIds,ids)&&eq(newRule.actionIds,actions)&&eq(newRule.differentialDamageIds,[damage]),'bundle_identity');
  test(leak?.ruleId==='hydraulic-hose-leak'&&leak.conditionIds.includes('COND-HYD-EXTERNAL-LEAK')&&!leak.conditionIds.some(id=>ids.includes(id)),'leak_boundary');
  test(newRule?.chainIds.length===0&&newRule?.mappingScope==='generic_only'&&newRule?.automaticDamagePromotion===false&&newRule?.observedConditionIds.length===0&&newRule?.performedActionIds.length===0&&newRule?.confirmedDamageIds.length===0,'premature_approval');
@@ -52,7 +52,7 @@ function checkModel(model){
 }
 errors.push(...checkModel(m));
 const cross=validateSemanticCrosswalkInputs(m,seed,policy);errors.push(...cross.errors);
-ck(cross.coverage.modeledRules===13&&cross.coverage.unmodeledRuleIds.length===12&&cross.coverage.sharedGenericNodes===6&&cross.coverage.sharedDamageNodes===0,'coverage_or_unreviewed_share');
+ck(cross.coverage.modeledRules===14&&cross.coverage.unmodeledRuleIds.length===11&&cross.coverage.sharedGenericNodes===6&&cross.coverage.sharedDamageNodes===0,'coverage_or_unreviewed_share');
 ck(severity.schema==='fmea-mining.hose-abrasion-discrimination.v1'&&severity.version==='1.3.45'&&severity.classes.length===4,'severity_baseline');
 ck(eq(severity.classes.map(x=>x.conditionId),ids)&&severity.classes.every(x=>x.canProveLeak===false),'abrasion_conflated_with_leak');
 ck(severity.classes.find(x=>x.id==='reinforcement')?.action==='withdraw_safely_and_evaluate_replacement','unsafe_exposed_reinforcement');
@@ -65,7 +65,7 @@ for(const id of ['hydraulic-hose-leak','hydraulic-hose-abrasion']){
  ck(!links.some(x=>x.originRule===id),'unexpected_hose_sap_link_'+id);
 }
 ck(seed.length===25&&links.length===115&&gaps.length===10,'pm_baseline_drift');
-ck(fixtures.cases.length===22&&fixtures.status==='synthetic_assertions_not_real_events','fixture_count');
+ck(fixtures.cases.length===24&&fixtures.status==='synthetic_assertions_not_real_events','fixture_count');
 for(const id of ['SEM-19','SEM-20']){
  const f=fixtures.cases.find(x=>x.id===id);
  ck(f?.ruleId==='hydraulic-hose-abrasion'&&f.independentComponentTest==='not_performed'&&f.expectedConfirmedDamageIds.length===0,'fixture_not_hypothesis_'+id);
