@@ -2,7 +2,7 @@
 
 Banco de conhecimento **versionado** para investigar modos de falha, sintomas, evidências e causas em equipamentos móveis de mineração. Um consumidor possível é o jogo **[P.O.R.C.A.R.I.A. — Você Quebra, Eu Conserto](https://github.com/pedromaintenance/porcaria-voce-quebra-eu-conserto)**, mas o banco é independente: **este repositório não altera os consumidores**.
 
-> **Status:** versão do catálogo **1.3.44** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
+> **Status:** versão do catálogo **1.3.45** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
 
 **Ciclo v1.3.35:** [auditoria funcional de HSVV e COMR](docs/CICLO_2026-10-21_HSVV_COMR.md), com proteção do gerador contra colisões de grupo/subgrupo e 23 cenários sintéticos. As quatro regras focadas permanecem bloqueadas até evidência OEM/SAP e revisão independente.
 
@@ -23,6 +23,8 @@ Banco de conhecimento **versionado** para investigar modos de falha, sintomas, e
 **Ciclo v1.3.43:** a [auditoria transversal da ontologia PM](docs/CICLO_2026-10-21_CROSSWALK_SEMANTICO_PM.md) inspeciona 25 regras (9 modeladas com bundle; 16 ainda não modeladas), registra seis compartilhamentos genéricos de condições/ações em combustível e hidráulico e rejeita 29 alterações artificiais de semântica. Não foram identificados danos compartilhados nem promovidos eventos de campo.
 
 **Ciclo v1.3.44:** [ampliação semântica da família de ventilação](docs/CICLO_2026-10-21_VENTILADOR_ARREFECIMENTO.md) e correção do rótulo de obstrução interna do radiador. A ontologia cobre 11/25 regras (restam 14 sem bundle), com hipóteses de apoio/rolamento e correia sem presumir instalação por série, 26 mutações adversariais rejeitadas e nenhum evento de campo promovido.
+
+**Ciclo v1.3.45:** [modelagem de abrasão versus vazamento hidráulico](docs/CICLO_2026-10-21_MANGUEIRAS_ABRASAO.md), com quatro condições de mangueira, criticidade da armadura exposta e bloqueio HSVV preservado. Ontologia 1.3.10: 12/25 regras modeladas, 13 pendentes e 24 testes adversariais rejeitados.
 
 ## O que queremos construir
 
