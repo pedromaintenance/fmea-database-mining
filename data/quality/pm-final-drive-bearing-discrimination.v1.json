@@ -1,0 +1,78 @@
+{
+  "schema": "fmea-mining.pm-final-drive-bearing-discrimination.v1",
+  "version": "1.3.48",
+  "ruleId": "final-drive-bearing",
+  "competingRuleId": "final-drive-gear",
+  "ontologyVersion": "1.3.13",
+  "sources": [
+    "SKF-ISO15243-BEARING",
+    "SKF-WEAR-SURFACE-FATIGUE",
+    "CAT-DRIVE-MAINT-PRACTICES",
+    "CAT-DRIVE-MAGNET-PLUG",
+    "CAT-DRIVETRAIN-OIL-CARE"
+  ],
+  "branches": [
+    {
+      "id": "bearing_wear",
+      "conditionId": "COND-DRIVE-BEARING-CONTACT-WEAR",
+      "candidateDamage": "DMG-DRIVE-BEARING-WEAR-CANDIDATE",
+      "needsPhysicalInspection": true,
+      "distinction": "Riscos e desgaste de pista/corpos rolantes requerem exame da peça real, não diagnóstico por óleo ou ruído."
+    },
+    {
+      "id": "contact_fatigue",
+      "conditionId": "COND-DRIVE-BEARING-CONTACT-FATIGUE",
+      "candidateDamage": "DMG-DRIVE-BEARING-FATIGUE-CANDIDATE",
+      "needsPhysicalInspection": true,
+      "distinction": "Spalling ou fadiga superficial são morfologias a avaliar no rolamento identificado, não inferências a partir do bujão."
+    },
+    {
+      "id": "seal_integrity",
+      "conditionId": "COND-DRIVE-BEARING-SEAL-LEAK",
+      "candidateDamage": "DMG-DRIVE-BEARING-SEAL-CANDIDATE",
+      "needsPhysicalInspection": true,
+      "distinction": "Vazamento ou ingresso deve ser localizado: a vedação pode pertencer ao compartimento, não ao rolamento isolado."
+    },
+    {
+      "id": "local_heat",
+      "conditionId": "COND-DRIVE-BEARING-LOCAL-HEAT",
+      "candidateDamage": null,
+      "needsPhysicalInspection": false,
+      "distinction": "Calor pode provir de outros elementos do redutor e não confirma desgaste de pista ou fadiga de contato."
+    }
+  ],
+  "genericSharedConditions": [
+    "COND-DRIVE-MAGNETIC-DEBRIS",
+    "COND-DRIVE-OIL-CONTAMINATION",
+    "COND-DRIVE-LUBRICATION-INADEQUACY",
+    "COND-DRIVE-ABNORMAL-NOISE"
+  ],
+  "genericSharedAction": "ACT-DRIVE-OIL-REPRESENTATIVE-SAMPLE",
+  "evidenceRequirements": [
+    "OEM_BOM_by_serial",
+    "bearing_position_and_type",
+    "sealed_compartment_architecture",
+    "safe_condition_sampling",
+    "morphological_bearing_inspection",
+    "separate_gear_damage_assessment",
+    "independent_engineering_review"
+  ],
+  "guards": {
+    "noOilMetalsAsBearingFailure": true,
+    "noNoiseAsBearingFatigue": true,
+    "noGearDamageAsBearingDamage": true,
+    "noSealOwnershipAssumption": true,
+    "noUniversalViscosityOrLimit": true,
+    "noInstalledBearingClaim": true,
+    "noUnperformedInspectionClaim": true,
+    "noConfirmedFailure": true,
+    "noSAPMappingPromotion": true,
+    "noAutoWorkOrder": true,
+    "noUnapprovedDismantling": true
+  },
+  "observations": 0,
+  "inspectionsPerformed": 0,
+  "confirmedFailures": 0,
+  "sapMappingsApproved": 0,
+  "measuredValues": null
+}
