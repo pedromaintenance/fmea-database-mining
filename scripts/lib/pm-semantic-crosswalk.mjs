@@ -1,10 +1,12 @@
 /**
  * All 25 PM seeds are surveyed; the condition/action/damage ontology currently
- * has only nine bundles. A shared generic symptom is NOT an observed failure.
+ * has versioned bundles; review coverage rather than assuming all rules are modeled. A shared generic symptom is NOT an observed failure.
  */
 export const EXPECTED_SHARES=Object.freeze([
  'COND-FUEL-WATER','COND-FUEL-SEDIMENT','ACT-FUEL-REPRESENTATIVE-SAMPLE',
- 'COND-HYD-EXTERNAL-LEAK','COND-HYD-LOW-FUNCTIONAL-PRESSURE','ACT-HYD-PRESSURE-VERIFY'
+ 'COND-HYD-EXTERNAL-LEAK','COND-HYD-LOW-FUNCTIONAL-PRESSURE','ACT-HYD-PRESSURE-VERIFY',
+ 'COND-DRIVE-MAGNETIC-DEBRIS','COND-DRIVE-OIL-CONTAMINATION','COND-DRIVE-LUBRICATION-INADEQUACY',
+ 'COND-DRIVE-ABNORMAL-NOISE','ACT-DRIVE-OIL-REPRESENTATIVE-SAMPLE'
 ]);
 const PREFIX_SYSTEM={FUEL:'combustivel',COOL:'arrefecimento',ENGINE:'motor_diesel',HYD:'hidraulico',TRACK:'rodante',DRIVE:'comando_final'};
 const LABEL_EXCEPTIONS=/\b(confirmad[oa]s?|efetiv[ao]s?)\b/i;
@@ -22,21 +24,22 @@ export function validateSemanticCrosswalkInputs(ontology,rules,policy){
  ck(ontology?.schema==='fmea-mining.condition-action-damage.v1'&&ontology?.version===policy?.sourceOntologyVersion,'ontology_version_mismatch');
  ck(ontology?.safetyInvariant==='condition!=action!=damage'&&ontology?.evidenceNature==='no_field_observation','unsafe_ontology_provenance');
  ck(ontology?.observations?.length===0&&ontology?.workOrderExecutions?.length===0&&ontology?.confirmedComponentDamages?.length===0,'fabricated_events');
- ck(policy?.schema==='fmea-mining.semantic-crosswalk-policy.v1'&&policy?.version==='1.3.47'&&
+ ck(policy?.schema==='fmea-mining.semantic-crosswalk-policy.v1'&&policy?.version==='1.3.48'&&
   policy?.nature==='documented_generic_overlap_without_field_observations_or_component_approval','policy_provenance');
- ck(policy?.expectedBundles===14&&policy?.expectedSeedRules===25&&policy?.expectedUnmodeledRules===11,'coverage_policy_changed');
+ ck(policy?.expectedBundles===15&&policy?.expectedSeedRules===25&&policy?.expectedUnmodeledRules===10,'coverage_policy_changed');
  ck(policy?.policy&&Object.keys(policy.policy).length===10&&Object.values(policy.policy).every(Boolean),'policy_relaxed');
  ck(policy?.fieldObservations===0&&policy?.performedInspections===0&&policy?.confirmedDamages===0&&policy?.approvedSapMappings===0,'false_policy_approval');
  ck(eq(policy?.sharedNodes?.map(s=>s.id)||[],EXPECTED_SHARES),'shared_node_policy_drift');
  ck(unique(policy?.sharedNodes?.map(s=>s.id)||[]),'duplicate_share_policy');
- ck(policy?.domainSeparation?.length===3&&
+ ck(policy?.domainSeparation?.length===4&&
+  policy.domainSeparation.some(x=>x.left==='final-drive-gear'&&x.right==='final-drive-bearing'&&x.genericOnly===true&&x.noSharedPhysicalDamages===true)&&
   policy.domainSeparation.some(x=>x.left==='track-roller-wear'&&x.right==='track-idler-wear'&&x.forbidCrossComponentRefs===true),'missing_idler_roller_guard');
  ck(eq(policy?.evidenceRequirements||[],['oem_configuration','component_identity_and_function','discriminative_test','independent_engineering_review']),'missing_independent_evidence');
  const seeds=byId(rules), bundles=byId(ontology.bundles),
    cond=byId(ontology.conditions), actions=byId(ontology.actions), damages=byId(ontology.damageHypotheses);
  ck(rules.length===25&&seeds.size===25,'seed_coverage_drift');
- ck(ontology.bundles.length===14&&bundles.size===14,'bundle_coverage_drift');
- ck(ontology.conditions.length===39&&cond.size===39&&ontology.actions.length===32&&actions.size===32&&ontology.damageHypotheses.length===17&&damages.size===17,'semantic_cardinality_drift');
+ ck(ontology.bundles.length===15&&bundles.size===15,'bundle_coverage_drift');
+ ck(ontology.conditions.length===43&&cond.size===43&&ontology.actions.length===35&&actions.size===35&&ontology.damageHypotheses.length===20&&damages.size===20,'semantic_cardinality_drift');
  const usages=new Map();
  const byRule=new Map();
  for(const b of ontology.bundles){
@@ -63,7 +66,7 @@ export function validateSemanticCrosswalkInputs(ontology,rules,policy){
   }
  }
  const shared=[...usages.values()].filter(x=>x.ruleIds.length>1).sort((a,b)=>a.id.localeCompare(b.id));
- ck(eq(shared.map(x=>x.id),EXPECTED_SHARES)&&shared.length===6,'unexpected_shared_nodes');
+ ck(eq(shared.map(x=>x.id),EXPECTED_SHARES)&&shared.length===11,'unexpected_shared_nodes');
  for(const s of shared){
   const rule=policy.sharedNodes.find(x=>x.id===s.id);
   ck(Boolean(rule)&&rule.kind===s.kind&&eq(s.ruleIds,rule.ruleIds),'shared_pair_or_type_changed_'+s.id);
