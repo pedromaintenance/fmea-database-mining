@@ -2,6 +2,15 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.46] — 2026-10-21 — Fixadores das sapatas: pré-carga, afrouxamento e fratura
+
+- Adicionado `BUNDLE-13` à regra existente `track-bolt-loose`: quatro condições hipotéticas (fixador frouxo/ausente, rotação suspeita, assentamento do assento e fratura), três atividades propostas e dois danos candidatos não aprovados; nove arestas tipadas.
+- Distinguida perda de pré-carga sem rotação (assentamento/relaxação), autoafrouxamento rotacional e fratura/fadiga; indício visual não autoriza diagnóstico causal.
+- Referências Caterpillar de inspeção do rodante e método torque-turn e Nord-Lock de mecanismos de aperto, **sem importar torques, ângulos, sequência ou números de peça**.
+- Auditor `pm:track:bolt:audit`, matriz de quatro diferenciais, 22 cenários sintéticos e **32 mutações adversariais rejeitadas**; zero torque medido, falha confirmada, serviço executado ou mapeamento SAP homologado.
+- Ontologia **1.3.11**: 32 condições, 28 ações, 14 danos candidatos, 13 bundles e 80 relações. Cobertura das 25 regras passa a **13 com bundle**, 12 ainda sem bundle.
+- Preservados 115 links PM candidatos, dez exceções bloqueadas, 24 FC/15 ME, contratos e consumidores públicos anteriores.
+
 ## [1.3.45] — 2026-10-21 — Abrasão versus vazamento de mangueira hidráulica
 
 - Adicionado `BUNDLE-12` a `hydraulic-hose-abrasion`: quatro condições (desgaste de cobertura, armadura exposta, interferência e deformação), duas ações propostas e hipótese de dano do reforço não aprovada; sete novas arestas.
