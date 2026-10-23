@@ -2,6 +2,15 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.51] — 2026-10-22 — Freios: arquitetura, atrito e atuação
+
+- Modelada `brake-disc` no **BUNDLE-18**, com sete condições hipotéticas, quatro ações não executadas e três danos diferenciais não aprovados; 14 relações tipadas.
+- Distinguido freio dianteiro em pinça CAT777 (05) do pacote úmido traseiro, multidiscos úmidos dianteiro/traseiro CAT777 (07) e disco úmido de serviço CAT980; nenhuma efetividade por série ou PN declarada.
+- Separados desgaste de fricção, danos térmicos, contaminação, arrasto, pressão/energia de atuação, indicador e desempenho do sistema. Baixa desaceleração não prova disco condenado.
+- ISO 3450:2011 utilizada apenas pelo escopo de desempenho de serviço, secundário e estacionamento; teste dinâmico improvisado e liberação automática proibidos.
+- Ontologia **1.3.16** com 65 condições, 48 ações, 29 danos, 18 bundles, 153 relações e 32 cenários sintéticos; cobertura PM **18/25**, sete pendentes.
+- Auditor `pm:brake:disc:audit` com 32 mutações adversariais rejeitadas. Preservados 115 vínculos candidatos, dez bloqueios, 24 FC/15 ME, contratos públicos e consumidores.
+
 ## [1.3.50] — 2026-10-22 — Cilindros de implementos: deriva, bypass e válvulas concorrentes
 
 - Criado `BUNDLE-17` para `implement-cylinder` com **8 condições hipotéticas, 5 atividades propostas não executadas, 3 danos diferenciais não aprovados e 16 relações tipadas**.

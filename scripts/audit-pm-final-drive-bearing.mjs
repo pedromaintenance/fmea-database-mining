@@ -17,7 +17,7 @@ const errors=[...validateBearingDifferentials(m,fix,policy,seed,sources)];
 const cross=validateSemanticCrosswalkInputs(m,seed,xpolicy);
 errors.push(...cross.errors);
 const ck=(v,id)=>{if(!v)errors.push(id)};
-ck(cross.coverage.totalSeeds===25&&cross.coverage.modeledRules===17&&cross.coverage.unmodeledRuleIds.length===8,'semantic_coverage_inaccurate');
+ck(cross.coverage.totalSeeds===25&&cross.coverage.modeledRules===18&&cross.coverage.unmodeledRuleIds.length===7,'semantic_coverage_inaccurate');
 ck(cross.coverage.sharedGenericNodes===11&&cross.coverage.sharedDamageNodes===0,'unsafe_cross_component_sharing');
 ck(gaps.length===10&&links.length===115&&!gaps.some(x=>x.ruleId==='final-drive-bearing'),'unexpected_SAP_gap_or_link');
 ck(!links.some(x=>x.originRule==='final-drive-bearing')||links.every(x=>x.originRule!=='final-drive-bearing'||x.approvalStatus!=='approved'),'bearing_link_auto_approved');
