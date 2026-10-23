@@ -18,7 +18,7 @@ const ck=(condition,reason)=>{if(!condition)errors.push(reason)};
 const results=validateSemanticCrosswalkInputs(ont,rules,policy);
 errors.push(...results.errors);
 ck(links.length===115&&gaps.length===10&&rules.length===25,'pm_baseline_drift');
-ck(results.coverage.modeledRules===16&&results.coverage.unmodeledRuleIds.length===9,'inaccurate_semantic_coverage');
+ck(results.coverage.modeledRules===17&&results.coverage.unmodeledRuleIds.length===8,'inaccurate_semantic_coverage');
 ck(results.coverage.sharedGenericNodes===11&&results.coverage.sharedDamageNodes===0,'unexpected_semantic_sharing');
 ck(results.shared.every(x=>x.risk?.length>60&&x.requiredDiscrimination?.length>65),'ambiguous_shared_node_undocumented');
 const clone=x=>JSON.parse(JSON.stringify(x));

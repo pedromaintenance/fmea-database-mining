@@ -643,6 +643,17 @@
       "limitation": "Exemplo de inspeção de correia de motor de outra máquina, sem afirmar que seja correia do ventilador no ativo-alvo. Procedimento e tensão dependem do OMM efetivo; a periodicidade do artigo não é aplicada à frota.",
       "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
       "lastReviewed": "2026-10-21"
+    },
+    {
+      "id": "PARKER-CYL-DRIFT-SERVICE",
+      "organization": "Parker Hannifin",
+      "title": "Hydraulic Cylinder Service Manual — Troubleshooting Hints",
+      "url": "https://www.parker.com/content/dam/Parker-com/Literature/Mobile-Cylinder/hy18-0008-service.pdf",
+      "area": "implement_cylinder_drift_internal_external_leaks_general",
+      "role": "manufacturer_cylinder_troubleshooting_example",
+      "limitation": "Manual Parker para cilindros específicos, não demonstra arquitetura nem procedimento de isolamento dos cilindros CAT. Drift pode envolver válvulas e passagem no pistão; não transpor limites, passos de pressurização ou desmontagem para outros circuitos.",
+      "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
+      "lastReviewed": "2026-10-22"
     }
   ]
 }

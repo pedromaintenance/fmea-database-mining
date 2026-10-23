@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.condition-action-damage.v1",
-  "version": "1.3.14",
+  "version": "1.3.15",
   "status": "conceptual_unvalidated",
   "semantics": {
     "condition": "Estado de fluido, superfície ou desempenho; ocorrência requer medição/observação",
@@ -963,6 +963,150 @@
       "status": "condition_hypothesis_not_observed",
       "observedValue": null,
       "observedAt": null
+    },
+    {
+      "id": "COND-IMPL-CYL-EXTERNAL-SEEP",
+      "label": "Vestígio de fluido próximo à vedação externa ou conexão do cilindro",
+      "system": "implementos",
+      "medium": "cilindro_implemento",
+      "observation": "Localizar origem aparente da película ou gotejamento em haste, cabeçote, conexões e linhas associadas com acesso seguro",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "PARKER-CYL-DRIFT-SERVICE",
+        "CAT-HYD-TECHNICAL-ANALYSIS"
+      ],
+      "limitations": "Óleo migrado de mangueira, conexão ou componente próximo não confirma vedação da haste defeituosa; pressão e temperatura não autorizam busca manual de fuga.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-IMPL-CYL-PISTON-BYPASS",
+      "label": "Suspeita de passagem interna pelo pistão do cilindro de implemento",
+      "system": "implementos",
+      "medium": "cilindro_implemento",
+      "observation": "Comparar função e comportamento de retenção com ensaios discriminantes previstos no OMM específico do circuito",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "PARKER-CYL-DRIFT-SERVICE",
+        "CAT-HYD-TECHNICAL-ANALYSIS"
+      ],
+      "limitations": "Drift, baixa força ou movimento lento não comprovam bypass no pistão sem excluir vazamentos em válvulas e outras vias do circuito.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-IMPL-CYL-DRIFT",
+      "label": "Deriva não comandada suspeita do implemento em posição de retenção",
+      "system": "implementos",
+      "medium": "circuito_implemento",
+      "observation": "Registrar posição, carga, temperatura, intervalo e sentido do movimento somente se houver procedimento seguro de avaliação OEM",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "PARKER-CYL-DRIFT-SERVICE",
+        "CAT-HYD-TECHNICAL-ANALYSIS"
+      ],
+      "limitations": "A deriva pode resultar de válvula direcional, válvula de retenção, makeup, alívio ou vedação de pistão; nunca testar sustentação suspensa sem contenção positiva.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-IMPL-CYL-LOW-FORCE",
+      "label": "Perda de força ou velocidade insuficiente suspeita no movimento do implemento",
+      "system": "implementos",
+      "medium": "circuito_implemento",
+      "observation": "Caracterizar pressão e vazão disponíveis, carga, temperatura, comando e desempenho conforme condição de teste prescrita para a máquina",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "PARKER-CYL-DRIFT-SERVICE",
+        "CAT-HYD-TECHNICAL-ANALYSIS"
+      ],
+      "limitations": "Perda de força não identifica o cilindro: bombas, limitação de pressão, fuga de válvula e restrição de fluxo podem explicar o sintoma.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-IMPL-CYL-ROD-SURFACE",
+      "label": "Risco, corrosão ou dano superficial suspeito na haste do cilindro",
+      "system": "implementos",
+      "medium": "haste_cilindro_implemento",
+      "observation": "Inspecionar dano visível em haste/cromagem e sua interação com o raspador ou vedação, sem contato em movimento",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "PARKER-CYL-DRIFT-SERVICE",
+        "CAT-HYD-TECHNICAL-ANALYSIS"
+      ],
+      "limitations": "Marca de superfície não confirma vazamento interno do pistão; ovalização, desalinhamento e contaminação exigem verificação física independente.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-IMPL-CYL-ALIGNMENT",
+      "label": "Desalinhamento ou carga lateral suspeitos no cilindro e articulações",
+      "system": "implementos",
+      "medium": "montagem_cilindro_implemento",
+      "observation": "Comparar fixações, buchas, articulação e alinhamento nas posições acessíveis com desenho e procedimento da montagem efetiva",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "PARKER-CYL-DRIFT-SERVICE",
+        "CAT-HYD-TECHNICAL-ANALYSIS"
+      ],
+      "limitations": "Carga lateral pode danificar haste, guia ou vedações, mas aparência de desalinhamento isolada não estabelece causa raiz.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-IMPL-CIRCUIT-VALVE-LEAK",
+      "label": "Possível fuga em válvula de comando ou retenção no circuito do implemento",
+      "system": "implementos",
+      "medium": "circuito_implemento",
+      "observation": "Avaliar as vias de controle, retenção e proteção do circuito e seus estados conforme esquema hidráulico OEM específico",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "PARKER-CYL-DRIFT-SERVICE",
+        "CAT-HYD-TECHNICAL-ANALYSIS"
+      ],
+      "limitations": "Fuga ou ausência de retenção em válvula concorrente pode causar drift; não deve ser codificada como dano de vedação do cilindro.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-IMPL-CIRCUIT-PRESSURE-LOW",
+      "label": "Pressão ou vazão disponível suspeita de insuficiência no circuito do implemento",
+      "system": "implementos",
+      "medium": "circuito_implemento",
+      "observation": "Comparar pressão, vazão e comando com requisitos reais, em pontos e condições de ensaio autorizados do sistema de implementos",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "PARKER-CYL-DRIFT-SERVICE",
+        "CAT-HYD-TECHNICAL-ANALYSIS"
+      ],
+      "limitations": "Medição fora de referência ainda requer excluir falha de bomba, comando, sinal, válvulas e condição térmica antes de atribuir falha ao cilindro.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
     }
   ],
   "actions": [
@@ -1579,6 +1723,81 @@
       "executionStatus": "not_performed",
       "observedResults": [],
       "intervalHours": null
+    },
+    {
+      "id": "ACT-IMPL-CYL-EFFECTIVITY-IDENTIFY",
+      "label": "Identificar cilindro e arquitetura hidráulica do implemento conforme OEM",
+      "kind": "inspection",
+      "intent": "Confrontar BOM, circuito, tipo de vedação do pistão e haste, válvulas de retenção e configuração por modelo/série antes de atribuir mecanismo físico",
+      "sourceIds": [
+        "PARKER-CYL-DRIFT-SERVICE",
+        "CAT-HYD-TECHNICAL-ANALYSIS"
+      ],
+      "safety": "Baixar e apoiar o implemento, bloquear energias, controlar pontos de esmagamento e nunca depender da pressão hidráulica como suporte de carga.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
+    },
+    {
+      "id": "ACT-IMPL-CYL-EXTERNAL-LEAK-TRACE",
+      "label": "Inspecionar com segurança a origem de possível fuga externa",
+      "kind": "inspection",
+      "intent": "Distinguir vedação de haste, conexões, mangueiras e óleo migrado a partir de evidência localizada no componente efetivo",
+      "sourceIds": [
+        "PARKER-CYL-DRIFT-SERVICE",
+        "CAT-HYD-TECHNICAL-ANALYSIS"
+      ],
+      "safety": "Não procurar microvazamento com mãos ou corpo e não desmontar linha pressurizada; respeitar energia acumulada, fluido quente e procedimento OEM.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
+    },
+    {
+      "id": "ACT-IMPL-CYL-DRIFT-CHARACTERIZE",
+      "label": "Avaliar deriva do circuito do implemento em condição controlada OEM",
+      "kind": "inspection",
+      "intent": "Documentar movimento, carga, posição e temperatura previstos pelo método OEM, diferenciando válvulas, retenções e cilindro",
+      "sourceIds": [
+        "PARKER-CYL-DRIFT-SERVICE",
+        "CAT-HYD-TECHNICAL-ANALYSIS"
+      ],
+      "safety": "Não sustentar pessoas ou cargas pelo implemento para diagnosticar; movimento não comandado pode provocar esmagamento e exige contenção segura.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
+    },
+    {
+      "id": "ACT-IMPL-CYL-CIRCUIT-PRESSURE-CHECK",
+      "label": "Propor verificação de pressão, vazão e válvulas do circuito OEM",
+      "kind": "test",
+      "intent": "Conferir circuito hidráulico, pontos e limites efetivos para separar deficiência de suprimento ou válvulas de perda de desempenho do atuador",
+      "sourceIds": [
+        "PARKER-CYL-DRIFT-SERVICE",
+        "CAT-HYD-TECHNICAL-ANALYSIS"
+      ],
+      "safety": "Ensaio de pressão somente por técnico habilitado, com ferramenta classificada, isolamento, controle da energia e limites do equipamento efetivo.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
+    },
+    {
+      "id": "ACT-IMPL-CYL-PISTON-SEAL-INVESTIGATE",
+      "label": "Avaliar passagem interna pelo pistão após discriminar falhas do circuito",
+      "kind": "inspection",
+      "intent": "Determinar se a configuração e o procedimento OEM permitem testar integridade do pistão e tubo, sem extrapolar isolamentos de outro cilindro",
+      "sourceIds": [
+        "PARKER-CYL-DRIFT-SERVICE",
+        "CAT-HYD-TECHNICAL-ANALYSIS"
+      ],
+      "safety": "Não desconectar linha de cilindro sob carga ou pressão para testar bypass; ensaios de isolamento exigem sustentação física, alívio seguro e procedimento autorizado.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
     }
   ],
   "damageHypotheses": [
@@ -2043,6 +2262,66 @@
         "CAT-DRIVE-MAINT-PRACTICES",
         "CAT-DRIVETRAIN-OIL-CARE",
         "SKF-ISO15243-BEARING"
+      ],
+      "kind": "candidate_component_damage",
+      "reviewStatus": "not_approved",
+      "catalogMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageCode": null,
+        "causeCode": null
+      },
+      "confirmed": false
+    },
+    {
+      "id": "DMG-IMPL-ROD-SEAL-CANDIDATE",
+      "label": "Possível comprometimento da vedação de haste do cilindro sob investigação",
+      "componentRole": "vedacao_haste_cilindro",
+      "requiredEvidence": "Identificar conjunto OEM e origem localizada da fuga, avaliar haste, raspador, alojamento e vedações com acesso seguro; fluido próximo não confirma mecanismo.",
+      "sourceIds": [
+        "PARKER-CYL-DRIFT-SERVICE",
+        "CAT-HYD-TECHNICAL-ANALYSIS"
+      ],
+      "kind": "candidate_component_damage",
+      "reviewStatus": "not_approved",
+      "catalogMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageCode": null,
+        "causeCode": null
+      },
+      "confirmed": false
+    },
+    {
+      "id": "DMG-IMPL-PISTON-SEAL-CANDIDATE",
+      "label": "Possível perda de estanqueidade do pistão do cilindro sob investigação",
+      "componentRole": "vedacao_pistao_cilindro",
+      "requiredEvidence": "Comprovar passagem interna com ensaio discriminante OEM, após excluir vias de válvulas e condições de carga; drift isolado não confirma vedação defeituosa.",
+      "sourceIds": [
+        "PARKER-CYL-DRIFT-SERVICE",
+        "CAT-HYD-TECHNICAL-ANALYSIS"
+      ],
+      "kind": "candidate_component_damage",
+      "reviewStatus": "not_approved",
+      "catalogMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageCode": null,
+        "causeCode": null
+      },
+      "confirmed": false
+    },
+    {
+      "id": "DMG-IMPL-ROD-BARREL-CANDIDATE",
+      "label": "Possível dano físico na haste ou tubo do cilindro sob investigação",
+      "componentRole": "haste_ou_tubo_cilindro",
+      "requiredEvidence": "Inspecionar e medir haste, tubo, cromagem, alinhamento e guias por procedimento OEM; não inferir deformação ou desgaste interno por baixa força.",
+      "sourceIds": [
+        "PARKER-CYL-DRIFT-SERVICE",
+        "CAT-HYD-TECHNICAL-ANALYSIS"
       ],
       "kind": "candidate_component_damage",
       "reviewStatus": "not_approved",
@@ -2566,6 +2845,45 @@
         "CAT-DRIVE-MAINT-PRACTICES",
         "CAT-DRIVETRAIN-OIL-CARE",
         "SKF-ISO15243-BEARING"
+      ],
+      "mappingScope": "generic_only",
+      "status": "review_candidate",
+      "observedConditionIds": [],
+      "performedActionIds": [],
+      "confirmedDamageIds": [],
+      "automaticDamagePromotion": false,
+      "evidenceInterpretation": "sem_resultado_de_campo"
+    },
+    {
+      "id": "BUNDLE-17",
+      "ruleId": "implement-cylinder",
+      "conditionIds": [
+        "COND-IMPL-CYL-EXTERNAL-SEEP",
+        "COND-IMPL-CYL-PISTON-BYPASS",
+        "COND-IMPL-CYL-DRIFT",
+        "COND-IMPL-CYL-LOW-FORCE",
+        "COND-IMPL-CYL-ROD-SURFACE",
+        "COND-IMPL-CYL-ALIGNMENT",
+        "COND-IMPL-CIRCUIT-VALVE-LEAK",
+        "COND-IMPL-CIRCUIT-PRESSURE-LOW"
+      ],
+      "actionIds": [
+        "ACT-IMPL-CYL-EFFECTIVITY-IDENTIFY",
+        "ACT-IMPL-CYL-EXTERNAL-LEAK-TRACE",
+        "ACT-IMPL-CYL-DRIFT-CHARACTERIZE",
+        "ACT-IMPL-CYL-CIRCUIT-PRESSURE-CHECK",
+        "ACT-IMPL-CYL-PISTON-SEAL-INVESTIGATE"
+      ],
+      "differentialDamageIds": [
+        "DMG-IMPL-ROD-SEAL-CANDIDATE",
+        "DMG-IMPL-PISTON-SEAL-CANDIDATE",
+        "DMG-IMPL-ROD-BARREL-CANDIDATE"
+      ],
+      "chainIds": [],
+      "interpretation": "Drift, baixa força e vazamento externo são fenômenos distintos. Deriva pode provir de vedação do pistão, válvula direcional, retenção e makeup; deficiência de pressão ou vazão pode estar fora do cilindro. Vazamento de conexão não demonstra vedação da haste. Nenhum teste sob carga ou isolamento de linha é autorizado sem OMM efetivo.",
+      "sourceIds": [
+        "PARKER-CYL-DRIFT-SERVICE",
+        "CAT-HYD-TECHNICAL-ANALYSIS"
       ],
       "mappingScope": "generic_only",
       "status": "review_candidate",
@@ -3681,6 +3999,150 @@
       "to": "DMG-DIFF-SUPPORT-BEARING-CANDIDATE",
       "type": "rule_lists_differential_damage",
       "meaning": "Dano diferencial não confirmado e sem mapeamento SAP",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-124",
+      "from": "BUNDLE-17",
+      "to": "COND-IMPL-CYL-EXTERNAL-SEEP",
+      "type": "rule_monitors_condition",
+      "meaning": "Condição hipotética sem observação de campo",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-125",
+      "from": "BUNDLE-17",
+      "to": "COND-IMPL-CYL-PISTON-BYPASS",
+      "type": "rule_monitors_condition",
+      "meaning": "Condição hipotética sem observação de campo",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-126",
+      "from": "BUNDLE-17",
+      "to": "COND-IMPL-CYL-DRIFT",
+      "type": "rule_monitors_condition",
+      "meaning": "Condição hipotética sem observação de campo",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-127",
+      "from": "BUNDLE-17",
+      "to": "COND-IMPL-CYL-LOW-FORCE",
+      "type": "rule_monitors_condition",
+      "meaning": "Condição hipotética sem observação de campo",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-128",
+      "from": "BUNDLE-17",
+      "to": "COND-IMPL-CYL-ROD-SURFACE",
+      "type": "rule_monitors_condition",
+      "meaning": "Condição hipotética sem observação de campo",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-129",
+      "from": "BUNDLE-17",
+      "to": "COND-IMPL-CYL-ALIGNMENT",
+      "type": "rule_monitors_condition",
+      "meaning": "Condição hipotética sem observação de campo",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-130",
+      "from": "BUNDLE-17",
+      "to": "COND-IMPL-CIRCUIT-VALVE-LEAK",
+      "type": "rule_monitors_condition",
+      "meaning": "Condição hipotética sem observação de campo",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-131",
+      "from": "BUNDLE-17",
+      "to": "COND-IMPL-CIRCUIT-PRESSURE-LOW",
+      "type": "rule_monitors_condition",
+      "meaning": "Condição hipotética sem observação de campo",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-132",
+      "from": "BUNDLE-17",
+      "to": "ACT-IMPL-CYL-EFFECTIVITY-IDENTIFY",
+      "type": "rule_proposes_action",
+      "meaning": "Atividade proposta, ainda não executada e dependente de procedimento OEM",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-133",
+      "from": "BUNDLE-17",
+      "to": "ACT-IMPL-CYL-EXTERNAL-LEAK-TRACE",
+      "type": "rule_proposes_action",
+      "meaning": "Atividade proposta, ainda não executada e dependente de procedimento OEM",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-134",
+      "from": "BUNDLE-17",
+      "to": "ACT-IMPL-CYL-DRIFT-CHARACTERIZE",
+      "type": "rule_proposes_action",
+      "meaning": "Atividade proposta, ainda não executada e dependente de procedimento OEM",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-135",
+      "from": "BUNDLE-17",
+      "to": "ACT-IMPL-CYL-CIRCUIT-PRESSURE-CHECK",
+      "type": "rule_proposes_action",
+      "meaning": "Atividade proposta, ainda não executada e dependente de procedimento OEM",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-136",
+      "from": "BUNDLE-17",
+      "to": "ACT-IMPL-CYL-PISTON-SEAL-INVESTIGATE",
+      "type": "rule_proposes_action",
+      "meaning": "Atividade proposta, ainda não executada e dependente de procedimento OEM",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-137",
+      "from": "BUNDLE-17",
+      "to": "DMG-IMPL-ROD-SEAL-CANDIDATE",
+      "type": "rule_lists_differential_damage",
+      "meaning": "Dano diferencial não confirmado e sem aprovação SAP",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-138",
+      "from": "BUNDLE-17",
+      "to": "DMG-IMPL-PISTON-SEAL-CANDIDATE",
+      "type": "rule_lists_differential_damage",
+      "meaning": "Dano diferencial não confirmado e sem aprovação SAP",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-139",
+      "from": "BUNDLE-17",
+      "to": "DMG-IMPL-ROD-BARREL-CANDIDATE",
+      "type": "rule_lists_differential_damage",
+      "meaning": "Dano diferencial não confirmado e sem aprovação SAP",
       "reviewStatus": "interpretacao_inferida",
       "observed": false
     }

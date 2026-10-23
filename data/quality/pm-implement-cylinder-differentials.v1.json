@@ -1,0 +1,130 @@
+{
+  "schema": "fmea-mining.pm-implement-cylinder-differentials.v1",
+  "version": "1.3.50",
+  "ruleId": "implement-cylinder",
+  "ontologyVersion": "1.3.15",
+  "sources": [
+    "PARKER-CYL-DRIFT-SERVICE",
+    "CAT-HYD-TECHNICAL-ANALYSIS"
+  ],
+  "classes": [
+    {
+      "id": "external_seep",
+      "conditionId": "COND-IMPL-CYL-EXTERNAL-SEEP",
+      "physicalComponent": "rod_seal_or_connection_to_localize",
+      "competingCauses": [
+        "rod_seal",
+        "hose_fitting",
+        "oil_migration"
+      ],
+      "decision": "trace_origin_without_pressurized_contact"
+    },
+    {
+      "id": "piston_bypass",
+      "conditionId": "COND-IMPL-CYL-PISTON-BYPASS",
+      "physicalComponent": "piston_seal_candidate",
+      "competingCauses": [
+        "valve_spool",
+        "load_check_or_makeup",
+        "internal_piston_path"
+      ],
+      "decision": "require_OEM_independent_circuit_discrimination"
+    },
+    {
+      "id": "drift",
+      "conditionId": "COND-IMPL-CYL-DRIFT",
+      "physicalComponent": "implement_circuit",
+      "competingCauses": [
+        "piston_seal",
+        "control_valve",
+        "makeup_or_load_check"
+      ],
+      "decision": "support_load_and_evaluate_OEM_method_only"
+    },
+    {
+      "id": "low_force",
+      "conditionId": "COND-IMPL-CYL-LOW-FORCE",
+      "physicalComponent": "implement_circuit",
+      "competingCauses": [
+        "pump_or_supply_pressure",
+        "control_valve",
+        "piston_bypass"
+      ],
+      "decision": "measure_circuit_only_as_OEM_authorizes"
+    },
+    {
+      "id": "rod_surface",
+      "conditionId": "COND-IMPL-CYL-ROD-SURFACE",
+      "physicalComponent": "rod_and_gland",
+      "competingCauses": [
+        "contamination",
+        "misalignment",
+        "abrasive_contact"
+      ],
+      "decision": "inspect_surface_and_seal_independently"
+    },
+    {
+      "id": "misalignment",
+      "conditionId": "COND-IMPL-CYL-ALIGNMENT",
+      "physicalComponent": "cylinder_mounting",
+      "competingCauses": [
+        "pin_bush_clearance",
+        "structure_deformation",
+        "side_loading"
+      ],
+      "decision": "identify_installation_and_motion_by_OEM"
+    },
+    {
+      "id": "valve_leak",
+      "conditionId": "COND-IMPL-CIRCUIT-VALVE-LEAK",
+      "physicalComponent": "control_or_load_holding_valve",
+      "competingCauses": [
+        "spool_bypass",
+        "load_check_failure",
+        "makeup_valve_leak"
+      ],
+      "decision": "keep_valve_failure_separate_from_cylinder_damage"
+    },
+    {
+      "id": "pressure_low",
+      "conditionId": "COND-IMPL-CIRCUIT-PRESSURE-LOW",
+      "physicalComponent": "implement_circuit",
+      "competingCauses": [
+        "pump_supply",
+        "pressure_control",
+        "restriction"
+      ],
+      "decision": "confirm_pressures_only_at_OEM_defined_points"
+    }
+  ],
+  "evidenceGates": [
+    "machine_serial_and_cylinder_BOM",
+    "hydraulic_schematic_and_load_holding_architecture",
+    "positive_load_support_and_hazard_control",
+    "OEM_drift_test_conditions_and_limits",
+    "OEM_pressure_test_points_and_ranges",
+    "independent_valve_versus_piston_seal_discrimination",
+    "engineering_review_and_provenance"
+  ],
+  "safeguards": {
+    "noDriftEqualsPistonSealFailure": true,
+    "noLowForceEqualsCylinderFailure": true,
+    "noExternalOilEqualsRodSealFailure": true,
+    "noValveLeakEqualsCylinderDamage": true,
+    "noUniversalDriftLimit": true,
+    "noUniversalPressureValue": true,
+    "noLineDisconnectionUnderPressure": true,
+    "noSuspendedLoadTestWithoutPositiveSupport": true,
+    "noFieldEventFabrication": true,
+    "noAutoSAPMapping": true,
+    "noAutoWorkOrder": true,
+    "noUnapprovedDisassembly": true
+  },
+  "fieldMeasurements": 0,
+  "performedTests": 0,
+  "confirmedFailures": 0,
+  "approvedSapMappings": 0,
+  "driftLimitMm": null,
+  "testPressureBar": null,
+  "serialEffectivityVerified": false
+}

@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.semantic-regression.v1",
-  "version": "1.3.14",
+  "version": "1.3.15",
   "status": "synthetic_assertions_not_real_events",
   "cases": [
     {
@@ -397,6 +397,36 @@
       "independentComponentTest": "not_performed",
       "expectedConfirmedDamageIds": [],
       "why": "Sem aferição OEM, não comprova dano nem ajuste."
+    },
+    {
+      "id": "SEM-29",
+      "title": "Deriva com suspeita de fuga no comando sem prova do pistao",
+      "ruleId": "implement-cylinder",
+      "observedConditionIds": [
+        "COND-IMPL-CYL-DRIFT",
+        "COND-IMPL-CIRCUIT-VALVE-LEAK"
+      ],
+      "performedActionIds": [
+        "ACT-IMPL-CYL-DRIFT-CHARACTERIZE"
+      ],
+      "independentComponentTest": "not_performed",
+      "expectedConfirmedDamageIds": [],
+      "why": "Cenario sintetico: movimento nao comandado nao comprova fuga de vedacao do pistao sem diferenciar valvula direcional, retencao e circuito."
+    },
+    {
+      "id": "SEM-30",
+      "title": "Pressao insuficiente e haste riscada sem origem causal",
+      "ruleId": "implement-cylinder",
+      "observedConditionIds": [
+        "COND-IMPL-CIRCUIT-PRESSURE-LOW",
+        "COND-IMPL-CYL-ROD-SURFACE"
+      ],
+      "performedActionIds": [
+        "ACT-IMPL-CYL-CIRCUIT-PRESSURE-CHECK"
+      ],
+      "independentComponentTest": "not_performed",
+      "expectedConfirmedDamageIds": [],
+      "why": "Cenario sintetico: pressao e marca na haste sao sinais distintos, sem medicao real nem dano interno ou vedacao confirmados."
     }
   ]
 }

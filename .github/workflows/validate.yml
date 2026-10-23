@@ -66,6 +66,8 @@ jobs:
         run: npm run pm:drive:bearing:audit
       - name: Auditar geometria e danos das engrenagens do diferencial
         run: npm run pm:differential:gear:audit
+      - name: Auditar cilindro de implemento, deriva e vazamentos sem inferir causa
+        run: npm run pm:implement:cylinder:audit
       - name: Validar 10 bloqueios PM e 7 requisitos de efetividade OEM D9
         run: npm run pm:exceptions:validate
       - name: Gerar vínculos diagnósticos por modelo
@@ -170,6 +172,7 @@ jobs:
             reports/pm-final-drive-gear.generated.json
             reports/pm-final-drive-bearing.generated.json
             reports/pm-differential-gear.generated.json
+            reports/pm-implement-cylinder.generated.json
             reports/public-knowledge.v1.json
             reports/public-manifest.v1.json
             data/governance/public-content-releases.v1.json
