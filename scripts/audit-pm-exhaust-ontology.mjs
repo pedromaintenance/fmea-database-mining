@@ -59,7 +59,7 @@ function check(m,f,pre,p) {
   const fx=find(f.cases,id);
   ck(fx?.ruleId==='engine-exhaust'&&eq(fx.observedConditionIds,cs)&&eq(fx.performedActionIds,as)&&fx.independentComponentTest==='not_performed'&&fx.expectedConfirmedDamageIds.length===0,'synthetic_fixture_'+id);
  }
- ck(p?.version==='1.3.54'&&p?.sourceOntologyVersion==='1.3.18'&&p?.expectedBundles===19&&p?.expectedUnmodeledRules===6,'crosswalk_policy');
+ ck(p?.version==='1.3.54'&&p?.sourceOntologyVersion==='1.3.18'&&p?.expectedBundles===20&&p?.expectedUnmodeledRules===5,'crosswalk_policy');
  ck(gaps.length===10&&links.length===115&&seeds.length===25,'sap_pm_immutability');
  const cross=validateSemanticCrosswalkInputs(m,seeds,p);
  ck(cross.errors.length===0,'crosswalk:'+cross.errors.slice(0,6).join(','));
