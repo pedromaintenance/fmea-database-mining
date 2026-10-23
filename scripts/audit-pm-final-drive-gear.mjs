@@ -16,7 +16,7 @@ const gaps=load('data/quality/pm-gap-review.v1.json').records;
 const errors=[...checkGearSemanticBoundary(model,fixtures,policy,rules,sources)];
 const cross=validateSemanticCrosswalkInputs(model,rules,crossPolicy);errors.push(...cross.errors);
 const check=(v,k)=>{if(!v)errors.push(k)};
-check(cross.coverage.totalSeeds===25&&cross.coverage.modeledRules===19&&cross.coverage.unmodeledRuleIds.length===6,'coverage_invalid');
+check(cross.coverage.totalSeeds===25&&cross.coverage.modeledRules===20&&cross.coverage.unmodeledRuleIds.length===5,'coverage_invalid');
 check(cross.coverage.sharedGenericNodes===11&&cross.coverage.sharedDamageNodes===0,'unexpected_shared_component_damage');
 check(gaps.length===10&&gaps.every(x=>x.ruleId!=='final-drive-gear'),'unexpected_SAP_gap');
 const clone=v=>JSON.parse(JSON.stringify(v));
