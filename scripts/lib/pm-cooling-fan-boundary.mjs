@@ -7,8 +7,8 @@ const isCandidate=(d)=>d?.kind==='candidate_component_damage'&&d?.confirmed===fa
 const trueStatement=(x)=>typeof x==='string'&&x.length>60;
 export function checkFanOntology(model,fixtures,seed,rules){
  const errors=[],ck=(v,name)=>{if(!v)errors.push(name)};
- ck(model?.version==='1.3.13'&&model?.schema==='fmea-mining.condition-action-damage.v1','ontology_baseline');
- ck(model?.conditions?.length===43&&model?.actions?.length===35&&model?.damageHypotheses?.length===20&&model?.bundles?.length===15&&model?.relations?.length===109,'ontology_cardinality');
+ ck(model?.version==='1.3.14'&&model?.schema==='fmea-mining.condition-action-damage.v1','ontology_baseline');
+ ck(model?.conditions?.length===50&&model?.actions?.length===39&&model?.damageHypotheses?.length===23&&model?.bundles?.length===16&&model?.relations?.length===123,'ontology_cardinality');
  ck(model?.observations?.length===0&&model?.workOrderExecutions?.length===0&&model?.confirmedComponentDamages?.length===0,'falsified_field_evidence');
  const conditions=new Map(model.conditions.map(x=>[x.id,x]));
  const actions=new Map(model.actions.map(x=>[x.id,x]));
@@ -56,7 +56,7 @@ export function checkFanOntology(model,fixtures,seed,rules){
    'belt_effectivity_pretended');
  ck(belt?.differentialDamageIds.every(id=>!fan?.differentialDamageIds.includes(id)),'component_damage_conflated');
  ck(links.size===model.relations.length,'duplicate_relations');
- ck(fixtures?.status==='synthetic_assertions_not_real_events'&&fixtures?.cases?.length===26,'fixture_count');
+ ck(fixtures?.status==='synthetic_assertions_not_real_events'&&fixtures?.cases?.length===28,'fixture_count');
  for(const [id,rule,cond,act] of [
   ['SEM-17','cooling-fan-bearing','COND-COOL-FAN-ABNORMAL-NOISE','ACT-COOL-FAN-DRIVE-IDENTIFY'],
   ['SEM-18','cooling-fan-belt','COND-COOL-FAN-BELT-SLIP','ACT-COOL-FAN-BELT-CONDITION']
