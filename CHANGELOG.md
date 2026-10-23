@@ -2,6 +2,15 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.50] — 2026-10-22 — Cilindros de implementos: deriva, bypass e válvulas concorrentes
+
+- Criado `BUNDLE-17` para `implement-cylinder` com **8 condições hipotéticas, 5 atividades propostas não executadas, 3 danos diferenciais não aprovados e 16 relações tipadas**.
+- Separados fuga externa em vedação/conexão, passagem pelo pistão, deriva não comandada, perda de força/velocidade, danos da haste, desalinhamento, vazamento em válvulas e pressão/vazão insuficientes. **Deriva isolada não comprova falha do pistão nem de sua vedação**.
+- Fonte Parker de troubleshooting e fonte Caterpillar de análise hidráulica usadas como referências genéricas, sem transportar ensaios invasivos, pontos de pressão ou limites de outra máquina à frota.
+- Política de segurança impede teste de sustentação sem contenção positiva, desconexão sob pressão, diagnóstico automático e aprovação SAP sem evidência.
+- Ontologia **1.3.15**: 58 condições, 44 ações, 26 danos, 17 bundles, 139 relações e 30 casos sintéticos; cobertura PM **17/25**, com 8 regras ainda sem bundle.
+- Auditor `pm:implement:cylinder:audit` com **32 mutações adversariais rejeitadas**; 25 regras, 115 vínculos candidatos, 10 exceções bloqueadas, 24 FC/15 ME, contratos públicos e consumidores preservados.
+
 ## [1.3.49] — 2026-10-22 — Diferencial: coroa-pinhão, folga, contato e apoio
 
 - Modelada a regra existente `differential-gear` (CAT777/CAT980) em **BUNDLE-16** com sete condições, quatro ações propostas e três danos não aprovados, ligados por 14 relações tipadas.
