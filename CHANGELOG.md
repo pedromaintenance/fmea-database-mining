@@ -2,6 +2,15 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.49] — 2026-10-22 — Diferencial: coroa-pinhão, folga, contato e apoio
+
+- Modelada a regra existente `differential-gear` (CAT777/CAT980) em **BUNDLE-16** com sete condições, quatro ações propostas e três danos não aprovados, ligados por 14 relações tipadas.
+- Separados desgaste/pitting físicos, padrão de contato, backlash, pré-carga/suporte dos rolamentos e sinais genéricos de óleo/ruído. **Backlash não mede pré-carga e sinais do redutor não comprovam engrenagem avariada.**
+- Usadas referências gerais ISO 10825-1, CAT e SKF, e Dana/Spicer apenas como comparação metodológica. Nenhum torque, tolerância, PN ou procedimento de outro diferencial foi homologado para CAT777/CAT980.
+- Criada política `pm-differential-gear-discrimination.v1.json` e auditor `pm:differential:gear:audit` com **30 mutações adversariais rejeitadas**.
+- Ontologia **1.3.14**: 50 condições, 39 ações, 23 danos candidatos, 16 bundles, 123 relações e 28 casos sintéticos. Cobertura 16/25 regras, nove sem bundle.
+- Preservados 115 links PM candidatos, dez exceções bloqueadas, 24 FC/15 ME, contrato/conteúdo público 1.0.0, preview 1.3.12 e consumidores anteriores.
+
 ## [1.3.48] — 2026-10-22 — Rolamentos do comando final: desgaste, fadiga e vedação
 
 - Novo `BUNDLE-15` para `final-drive-bearing`: quatro condições próprias de rolamento/vedação, três ações propostas e três danos diferenciais não aprovados; **15 relações tipadas**.
