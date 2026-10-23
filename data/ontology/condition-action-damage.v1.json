@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.condition-action-damage.v1",
-  "version": "1.3.15",
+  "version": "1.3.16",
   "status": "conceptual_unvalidated",
   "semantics": {
     "condition": "Estado de fluido, superfície ou desempenho; ocorrência requer medição/observação",
@@ -1107,6 +1107,146 @@
       "status": "condition_hypothesis_not_observed",
       "observedValue": null,
       "observedAt": null
+    },
+    {
+      "id": "COND-BRAKE-DISC-WEAR",
+      "label": "Desgaste de disco ou material de fricção de freio sob investigação",
+      "system": "freios",
+      "medium": "conjunto_atrito_freio",
+      "observation": "Identificar arquitetura do sistema, disco/placa de fricção, posição e indicador ou dimensão prevista no OEM por modelo e série.",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "CAT-77705-BRAKE-ARCH",
+        "CAT-77707-BRAKE-ARCH",
+        "CAT-980-BRAKE-ARCH",
+        "ISO-3450-2011"
+      ],
+      "limitations": "Desgaste visual ou indicação não identifica automaticamente a peça condenada; freio dianteiro de pinça 77705 difere de multidiscos úmidos no eixo traseiro e 77707.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-BRAKE-DISC-THERMAL",
+      "label": "Alteração térmica ou sobreaquecimento suspeito na região do freio",
+      "system": "freios",
+      "medium": "conjunto_atrito_freio",
+      "observation": "Avaliar sinais de calor, descoloração ou degradação do atrito com localização e condição térmica documentadas por procedimento OEM.",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "CAT-77705-BRAKE-ARCH",
+        "CAT-77707-BRAKE-ARCH",
+        "CAT-980-BRAKE-ARCH",
+        "ISO-3450-2011"
+      ],
+      "limitations": "Calor no eixo ou redutor pode ter causas concorrentes; não inferir pastilha/disco danificado nem aplicar temperatura de condenação de outra arquitetura.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-BRAKE-FRICTION-CONTAMINATION",
+      "label": "Suspeita de contaminação ou alteração de material de fricção",
+      "system": "freios",
+      "medium": "conjunto_atrito_freio",
+      "observation": "Avaliar origem de fluido, material particulado e condição de superfície com acesso aprovado ao conjunto de fricção real.",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "CAT-77705-BRAKE-ARCH",
+        "CAT-77707-BRAKE-ARCH",
+        "CAT-980-BRAKE-ARCH",
+        "ISO-3450-2011"
+      ],
+      "limitations": "Óleo em sistema úmido é parte da arquitetura e não constitui contaminação por si; óleo em freio seco de pinça exige investigação distinta.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-BRAKE-LOW-DECEL",
+      "label": "Desempenho ou desaceleração de freio suspeito de insuficiência",
+      "system": "freios",
+      "medium": "sistema_frenagem",
+      "observation": "Registrar sintomas de frenagem apenas sob avaliação controlada e autorizada, distinguindo freio de serviço, secundário, estacionamento e retardador.",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "CAT-77705-BRAKE-ARCH",
+        "CAT-77707-BRAKE-ARCH",
+        "CAT-980-BRAKE-ARCH",
+        "ISO-3450-2011"
+      ],
+      "limitations": "Desempenho inadequado não confirma desgaste de disco: pressão, energia acumulada, comando, válvulas, fluido e carga são causas concorrentes; não realizar ensaio operacional improvisado.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-BRAKE-ACTUATION-PRESSURE",
+      "label": "Pressão de atuação ou energia de freio suspeita de insuficiência",
+      "system": "freios",
+      "medium": "circuito_atuacao_freio",
+      "observation": "Investigar pressão, suprimento, acumuladores quando existentes, circuito e controles pelos pontos, condições e limites da documentação efetiva.",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "CAT-77705-BRAKE-ARCH",
+        "CAT-77707-BRAKE-ARCH",
+        "CAT-980-BRAKE-ARCH",
+        "ISO-3450-2011"
+      ],
+      "limitations": "Pressão de atuação não é medida de espessura do disco nem prova de falha de fricção; acumuladores e arquitetura dependem do modelo/série.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-BRAKE-DRAG-RELEASE",
+      "label": "Arrasto ou liberação incompleta de freio sob suspeita",
+      "system": "freios",
+      "medium": "circuito_atuacao_freio",
+      "observation": "Avaliar indícios de aquecimento, resistência ao rolamento e estado de comando/liberação com equipamento imobilizado e procedimento seguro.",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "CAT-77705-BRAKE-ARCH",
+        "CAT-77707-BRAKE-ARCH",
+        "CAT-980-BRAKE-ARCH",
+        "ISO-3450-2011"
+      ],
+      "limitations": "Arrasto pode decorrer de atuação, retorno, mecanismo de pinça, sistema úmido ou estacionamento; não inferir disco empenado ou falha de caliper sem inspeção.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-BRAKE-WEAR-INDICATOR",
+      "label": "Indicação de desgaste do freio a confirmar na máquina",
+      "system": "freios",
+      "medium": "sistema_frenagem",
+      "observation": "Confrontar indicador presente com posição, funcionamento, condição de leitura e critério OEM do conjunto efetivamente instalado.",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "CAT-77705-BRAKE-ARCH",
+        "CAT-77707-BRAKE-ARCH",
+        "CAT-980-BRAKE-ARCH",
+        "ISO-3450-2011"
+      ],
+      "limitations": "A existência de indicador no folheto não prova o sensor instalado e sua indicação não substitui critério dimensional ou procedimento de inspeção do fabricante.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
     }
   ],
   "actions": [
@@ -1798,6 +1938,74 @@
       "executionStatus": "not_performed",
       "observedResults": [],
       "intervalHours": null
+    },
+    {
+      "id": "ACT-BRAKE-ARCHITECTURE-VERIFY",
+      "label": "Identificar arquitetura de frenagem por modelo, série e posição",
+      "kind": "inspection",
+      "intent": "Conferir BOM e diagramas OEM para distinguir caliper dianteiro 77705, multidiscos traseiros 77705, multidiscos 77707 e freios de serviço úmidos da 980.",
+      "sourceIds": [
+        "CAT-77705-BRAKE-ARCH",
+        "CAT-77707-BRAKE-ARCH",
+        "CAT-980-BRAKE-ARCH",
+        "ISO-3450-2011"
+      ],
+      "safety": "Imobilizar, calçar e bloquear veículo, controlar energia hidráulica/armazenada e impedir qualquer acesso ao conjunto antes de assegurar condição operacional segura.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
+    },
+    {
+      "id": "ACT-BRAKE-FRICTION-INSPECT",
+      "label": "Inspecionar condição e desgaste do conjunto de fricção com método OEM",
+      "kind": "inspection",
+      "intent": "Avaliar disco, placas ou material de atrito, indicador de desgaste, superfície e possíveis danos térmicos conforme acesso e critério por série.",
+      "sourceIds": [
+        "CAT-77705-BRAKE-ARCH",
+        "CAT-77707-BRAKE-ARCH",
+        "CAT-980-BRAKE-ARCH",
+        "ISO-3450-2011"
+      ],
+      "safety": "Não abrir freio úmido, soltar pinça, retirar tampa nem manipular conjunto quente ou pressurizado sem plano e procedimento aprovado; registrar evidência antes da intervenção.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
+    },
+    {
+      "id": "ACT-BRAKE-ACTUATION-DIFFERENTIAL",
+      "label": "Verificar diferenciais de atuação, retorno e pressão do sistema de freios",
+      "kind": "test",
+      "intent": "Separar perda de frenagem por fricção de deficiências de suprimento, válvulas, controles, acumuladores e retorno ou liberação.",
+      "sourceIds": [
+        "CAT-77705-BRAKE-ARCH",
+        "CAT-77707-BRAKE-ARCH",
+        "CAT-980-BRAKE-ARCH",
+        "ISO-3450-2011"
+      ],
+      "safety": "Proibir teste dinâmico de frenagem sem pista/ambiente controlado, permissão, técnico habilitado, plano de emergência e critérios OEM; não improvisar ensaio com veículo carregado.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
+    },
+    {
+      "id": "ACT-BRAKE-FUNCTIONAL-SAFETY-REVIEW",
+      "label": "Avaliar segurança e critérios para retorno do sistema de frenagem ao serviço",
+      "kind": "inspection",
+      "intent": "Conferir requisitos de freios de serviço, secundário e estacionamento, evidências e método de teste por OMM e norma aplicável antes de liberar veículo.",
+      "sourceIds": [
+        "CAT-77705-BRAKE-ARCH",
+        "CAT-77707-BRAKE-ARCH",
+        "CAT-980-BRAKE-ARCH",
+        "ISO-3450-2011"
+      ],
+      "safety": "Suspeita crítica de freio requer imobilização e avaliação de segurança, não liberação automática por ausência de código de falha; nenhum teste de declive improvisado.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
     }
   ],
   "damageHypotheses": [
@@ -2322,6 +2530,72 @@
       "sourceIds": [
         "PARKER-CYL-DRIFT-SERVICE",
         "CAT-HYD-TECHNICAL-ANALYSIS"
+      ],
+      "kind": "candidate_component_damage",
+      "reviewStatus": "not_approved",
+      "catalogMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageCode": null,
+        "causeCode": null
+      },
+      "confirmed": false
+    },
+    {
+      "id": "DMG-BRAKE-FRICTION-WEAR-CANDIDATE",
+      "label": "Possível desgaste físico do material de fricção do freio sob investigação",
+      "componentRole": "disco_ou_placa_friccao_freio",
+      "requiredEvidence": "Exige identificar pinça ou pacote de discos efetivos, medir indicador ou componente por método e limite OEM, distinguir desgaste normal e dano e registrar evidência física independente.",
+      "sourceIds": [
+        "CAT-77705-BRAKE-ARCH",
+        "CAT-77707-BRAKE-ARCH",
+        "CAT-980-BRAKE-ARCH",
+        "ISO-3450-2011"
+      ],
+      "kind": "candidate_component_damage",
+      "reviewStatus": "not_approved",
+      "catalogMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageCode": null,
+        "causeCode": null
+      },
+      "confirmed": false
+    },
+    {
+      "id": "DMG-BRAKE-FRICTION-THERMAL-CANDIDATE",
+      "label": "Possível dano térmico a disco ou placa de fricção sob investigação",
+      "componentRole": "disco_ou_placa_friccao_freio",
+      "requiredEvidence": "Exige evidência material em superfície e limite OEM aplicável, analisar calor de arrasto ou retardamento e separar causas de atuação, lubrificação e carga.",
+      "sourceIds": [
+        "CAT-77705-BRAKE-ARCH",
+        "CAT-77707-BRAKE-ARCH",
+        "CAT-980-BRAKE-ARCH",
+        "ISO-3450-2011"
+      ],
+      "kind": "candidate_component_damage",
+      "reviewStatus": "not_approved",
+      "catalogMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageCode": null,
+        "causeCode": null
+      },
+      "confirmed": false
+    },
+    {
+      "id": "DMG-BRAKE-ACTUATOR-CANDIDATE",
+      "label": "Possível defeito de mecanismo de atuação ou liberação de freio sob investigação",
+      "componentRole": "atuacao_sistema_freio",
+      "requiredEvidence": "Confirmar configuração da pinça, êmbolo ou pacote de discos e resultado de ensaios de atuação OEM; baixa desaceleração ou arrasto não confirmam componente defeituoso.",
+      "sourceIds": [
+        "CAT-77705-BRAKE-ARCH",
+        "CAT-77707-BRAKE-ARCH",
+        "CAT-980-BRAKE-ARCH",
+        "ISO-3450-2011"
       ],
       "kind": "candidate_component_damage",
       "reviewStatus": "not_approved",
@@ -2884,6 +3158,45 @@
       "sourceIds": [
         "PARKER-CYL-DRIFT-SERVICE",
         "CAT-HYD-TECHNICAL-ANALYSIS"
+      ],
+      "mappingScope": "generic_only",
+      "status": "review_candidate",
+      "observedConditionIds": [],
+      "performedActionIds": [],
+      "confirmedDamageIds": [],
+      "automaticDamagePromotion": false,
+      "evidenceInterpretation": "sem_resultado_de_campo"
+    },
+    {
+      "id": "BUNDLE-18",
+      "ruleId": "brake-disc",
+      "conditionIds": [
+        "COND-BRAKE-DISC-WEAR",
+        "COND-BRAKE-DISC-THERMAL",
+        "COND-BRAKE-FRICTION-CONTAMINATION",
+        "COND-BRAKE-LOW-DECEL",
+        "COND-BRAKE-ACTUATION-PRESSURE",
+        "COND-BRAKE-DRAG-RELEASE",
+        "COND-BRAKE-WEAR-INDICATOR"
+      ],
+      "actionIds": [
+        "ACT-BRAKE-ARCHITECTURE-VERIFY",
+        "ACT-BRAKE-FRICTION-INSPECT",
+        "ACT-BRAKE-ACTUATION-DIFFERENTIAL",
+        "ACT-BRAKE-FUNCTIONAL-SAFETY-REVIEW"
+      ],
+      "differentialDamageIds": [
+        "DMG-BRAKE-FRICTION-WEAR-CANDIDATE",
+        "DMG-BRAKE-FRICTION-THERMAL-CANDIDATE",
+        "DMG-BRAKE-ACTUATOR-CANDIDATE"
+      ],
+      "chainIds": [],
+      "interpretation": "Desgaste do disco, dano térmico, perda de atrito e baixa desaceleração não são equivalentes. Diferenciar freios de pinça secos dianteiros CAT77705 e multidiscos úmidos traseiros CAT77705, CAT77707 dianteiros/traseiros e serviço CAT980. Falha de atuação, pressão e retorno pode causar perda de frenagem ou arrasto sem disco condenado. Risco crítico exige imobilização e avaliação OEM, nunca teste de frenagem improvisado.",
+      "sourceIds": [
+        "CAT-77705-BRAKE-ARCH",
+        "CAT-77707-BRAKE-ARCH",
+        "CAT-980-BRAKE-ARCH",
+        "ISO-3450-2011"
       ],
       "mappingScope": "generic_only",
       "status": "review_candidate",
@@ -4143,6 +4456,132 @@
       "to": "DMG-IMPL-ROD-BARREL-CANDIDATE",
       "type": "rule_lists_differential_damage",
       "meaning": "Dano diferencial não confirmado e sem aprovação SAP",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-140",
+      "from": "BUNDLE-18",
+      "to": "COND-BRAKE-DISC-WEAR",
+      "type": "rule_monitors_condition",
+      "meaning": "Condição hipotética não medida",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-141",
+      "from": "BUNDLE-18",
+      "to": "COND-BRAKE-DISC-THERMAL",
+      "type": "rule_monitors_condition",
+      "meaning": "Condição hipotética não medida",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-142",
+      "from": "BUNDLE-18",
+      "to": "COND-BRAKE-FRICTION-CONTAMINATION",
+      "type": "rule_monitors_condition",
+      "meaning": "Condição hipotética não medida",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-143",
+      "from": "BUNDLE-18",
+      "to": "COND-BRAKE-LOW-DECEL",
+      "type": "rule_monitors_condition",
+      "meaning": "Condição hipotética não medida",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-144",
+      "from": "BUNDLE-18",
+      "to": "COND-BRAKE-ACTUATION-PRESSURE",
+      "type": "rule_monitors_condition",
+      "meaning": "Condição hipotética não medida",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-145",
+      "from": "BUNDLE-18",
+      "to": "COND-BRAKE-DRAG-RELEASE",
+      "type": "rule_monitors_condition",
+      "meaning": "Condição hipotética não medida",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-146",
+      "from": "BUNDLE-18",
+      "to": "COND-BRAKE-WEAR-INDICATOR",
+      "type": "rule_monitors_condition",
+      "meaning": "Condição hipotética não medida",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-147",
+      "from": "BUNDLE-18",
+      "to": "ACT-BRAKE-ARCHITECTURE-VERIFY",
+      "type": "rule_proposes_action",
+      "meaning": "Atividade proposta, não executada, requer segurança e OEM",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-148",
+      "from": "BUNDLE-18",
+      "to": "ACT-BRAKE-FRICTION-INSPECT",
+      "type": "rule_proposes_action",
+      "meaning": "Atividade proposta, não executada, requer segurança e OEM",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-149",
+      "from": "BUNDLE-18",
+      "to": "ACT-BRAKE-ACTUATION-DIFFERENTIAL",
+      "type": "rule_proposes_action",
+      "meaning": "Atividade proposta, não executada, requer segurança e OEM",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-150",
+      "from": "BUNDLE-18",
+      "to": "ACT-BRAKE-FUNCTIONAL-SAFETY-REVIEW",
+      "type": "rule_proposes_action",
+      "meaning": "Atividade proposta, não executada, requer segurança e OEM",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-151",
+      "from": "BUNDLE-18",
+      "to": "DMG-BRAKE-FRICTION-WEAR-CANDIDATE",
+      "type": "rule_lists_differential_damage",
+      "meaning": "Dano candidato não confirmado e sem associação SAP",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-152",
+      "from": "BUNDLE-18",
+      "to": "DMG-BRAKE-FRICTION-THERMAL-CANDIDATE",
+      "type": "rule_lists_differential_damage",
+      "meaning": "Dano candidato não confirmado e sem associação SAP",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-153",
+      "from": "BUNDLE-18",
+      "to": "DMG-BRAKE-ACTUATOR-CANDIDATE",
+      "type": "rule_lists_differential_damage",
+      "meaning": "Dano candidato não confirmado e sem associação SAP",
       "reviewStatus": "interpretacao_inferida",
       "observed": false
     }
