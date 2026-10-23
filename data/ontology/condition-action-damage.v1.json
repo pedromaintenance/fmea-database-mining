@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.condition-action-damage.v1",
-  "version": "1.3.13",
+  "version": "1.3.14",
   "status": "conceptual_unvalidated",
   "semantics": {
     "condition": "Estado de fluido, superfície ou desempenho; ocorrência requer medição/observação",
@@ -823,6 +823,146 @@
       "status": "condition_hypothesis_not_observed",
       "observedValue": null,
       "observedAt": null
+    },
+    {
+      "id": "COND-DIFF-RING-PINION-WEAR",
+      "label": "Suspeita de desgaste em dentes de coroa ou pinhão",
+      "system": "diferencial",
+      "medium": "engrenagem_diferencial",
+      "observation": "Documentar, quando existir acesso seguro, desgaste em dentes identificados da coroa ou pinhão, incluindo posição, morfologia e histórico de contato",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "ISO-10825-1-2022",
+        "CAT-DRIVE-MAINT-PRACTICES",
+        "CAT-DRIVETRAIN-OIL-CARE",
+        "SKF-ISO15243-BEARING"
+      ],
+      "limitations": "Metais de desgaste no óleo não comprovam qual engrenagem os originou; é necessário avaliar rolamentos, outras engrenagens e o conjunto efetivo.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-DIFF-RING-PINION-PITTING",
+      "label": "Suspeita de fadiga superficial ou pitting na coroa ou pinhão",
+      "system": "diferencial",
+      "medium": "engrenagem_diferencial",
+      "observation": "Caracterizar cavidades e superfície sob inspeção OEM de dentes e distinguir pitting de riscos, deformação e lascamento",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "ISO-10825-1-2022",
+        "CAT-DRIVE-MAINT-PRACTICES",
+        "CAT-DRIVETRAIN-OIL-CARE",
+        "SKF-ISO15243-BEARING"
+      ],
+      "limitations": "A terminologia ISO 10825-1 descreve aparência e não estabelece automaticamente causa raiz, vida restante ou padrão de carga real.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-DIFF-TOOTH-CONTACT-PATTERN",
+      "label": "Padrão de contato de coroa e pinhão suspeito de desvio",
+      "system": "diferencial",
+      "medium": "engrenamento_diferencial",
+      "observation": "Somente com acesso e método autorizado, documentar a distribuição de contato nas faces sob condição de avaliação indicada no OMM",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "ISO-10825-1-2022",
+        "CAT-DRIVE-MAINT-PRACTICES",
+        "CAT-DRIVETRAIN-OIL-CARE",
+        "SKF-ISO15243-BEARING"
+      ],
+      "limitations": "Padrão sem carga e padrão sob carga podem divergir; não presumir posicionamento incorreto sem referência OEM e condição de ensaio.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-DIFF-BACKLASH-SUSPECT",
+      "label": "Folga de engrenamento coroa-pinhão suspeita de desvio",
+      "system": "diferencial",
+      "medium": "engrenamento_diferencial",
+      "observation": "Medir folga por instrumento calibrado, posição e metodologia OEM, se indicada, sem importar limites de outro eixo ou relação",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "ISO-10825-1-2022",
+        "CAT-DRIVE-MAINT-PRACTICES",
+        "CAT-DRIVETRAIN-OIL-CARE",
+        "SKF-ISO15243-BEARING"
+      ],
+      "limitations": "Backlash é folga de engrenamento, não pré-carga de rolamento, espessura de calço ou evidência direta de fratura de dentes.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-DIFF-BEARING-SUPPORT-SUSPECT",
+      "label": "Suspeita de alteração de apoio ou pré-carga de rolamento do diferencial",
+      "system": "diferencial",
+      "medium": "apoio_diferencial",
+      "observation": "Examinar apoio e rolamentos efetivos conforme desenho, posição, condição de montagem e método de pré-carga OEM aplicável",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "ISO-10825-1-2022",
+        "CAT-DRIVE-MAINT-PRACTICES",
+        "CAT-DRIVETRAIN-OIL-CARE",
+        "SKF-ISO15243-BEARING"
+      ],
+      "limitations": "Alteração do padrão de contato pode ser efeito de suporte, montagem, carga e deformação; não equivale a rolamento danificado comprovado.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-DIFF-OIL-DEBRIS",
+      "label": "Anormalidade de óleo ou detritos no diferencial",
+      "system": "diferencial",
+      "medium": "oleo_diferencial",
+      "observation": "Avaliar amostra representativa anterior à troca e tendência de metais, contaminantes, viscosidade e perfil conhecido do lubrificante",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "ISO-10825-1-2022",
+        "CAT-DRIVE-MAINT-PRACTICES",
+        "CAT-DRIVETRAIN-OIL-CARE",
+        "SKF-ISO15243-BEARING"
+      ],
+      "limitations": "Óleo e partículas não identificam coroa, pinhão ou rolamento avariado e mudança documentada de formulação pode modificar aditivos sem falha.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-DIFF-NOISE-LOAD",
+      "label": "Ruído ou vibração do diferencial sob condição de carga suspeitos",
+      "system": "diferencial",
+      "medium": "conjunto_diferencial",
+      "observation": "Registrar sob condição segura variação de ruído com carga e regime, correlacionando posição do eixo e fontes adjacentes",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "ISO-10825-1-2022",
+        "CAT-DRIVE-MAINT-PRACTICES",
+        "CAT-DRIVETRAIN-OIL-CARE",
+        "SKF-ISO15243-BEARING"
+      ],
+      "limitations": "Ruído não comprova folga excessiva, pitting nem pré-carga incorreta; podem contribuir pneus, cardã, mancais, outros redutores e óleo.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
     }
   ],
   "actions": [
@@ -1371,6 +1511,74 @@
       "executionStatus": "not_performed",
       "observedResults": [],
       "intervalHours": null
+    },
+    {
+      "id": "ACT-DIFF-OEM-CONFIG-IDENTIFY",
+      "label": "Identificar arquitetura, coroa, pinhão, apoios e requisitos OEM",
+      "kind": "inspection",
+      "intent": "Confirmar por desenho/BOM e série a arquitetura, os elementos de ajuste, método, materiais e sequência OEM antes de diagnosticar ou planejar intervenção",
+      "sourceIds": [
+        "ISO-10825-1-2022",
+        "CAT-DRIVE-MAINT-PRACTICES",
+        "CAT-DRIVETRAIN-OIL-CARE",
+        "SKF-ISO15243-BEARING"
+      ],
+      "safety": "Controlar movimentação, energias e cargas do eixo; não desmontar diferencial nem executar ajuste sem plano seguro, acesso aprovado e procedimento específico.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
+    },
+    {
+      "id": "ACT-DIFF-BACKLASH-CONTACT-CHECK",
+      "label": "Propor avaliação da folga e padrão de contato coroa-pinhão",
+      "kind": "inspection",
+      "intent": "Conferir backlash, posição, contato e condições de medição conforme sequência e limites OEM para distinguir geometria, montagem e desgaste",
+      "sourceIds": [
+        "ISO-10825-1-2022",
+        "CAT-DRIVE-MAINT-PRACTICES",
+        "CAT-DRIVETRAIN-OIL-CARE",
+        "SKF-ISO15243-BEARING"
+      ],
+      "safety": "Usar dispositivo e instrumento calibrado somente com imobilização e procedimento autorizado; não alterar calços, pré-carga ou posição como tentativa sem diagnóstico.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
+    },
+    {
+      "id": "ACT-DIFF-BEARING-PRELOAD-EVALUATE",
+      "label": "Avaliar suporte e pré-carga dos rolamentos sem assumir dano",
+      "kind": "inspection",
+      "intent": "Comparar a arquitetura do apoio e os critérios de pré-carga por especificação efetiva, separando ajuste incorreto, assentamento e falha física do rolamento",
+      "sourceIds": [
+        "ISO-10825-1-2022",
+        "CAT-DRIVE-MAINT-PRACTICES",
+        "CAT-DRIVETRAIN-OIL-CARE",
+        "SKF-ISO15243-BEARING"
+      ],
+      "safety": "Não aplicar torque ou pré-carga genéricos de outro eixo e não reutilizar componentes sem critério OEM; planejar acesso e contenção de massas em oficina.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
+    },
+    {
+      "id": "ACT-DIFF-OIL-SAMPLE-AND-REVIEW",
+      "label": "Coletar amostra do diferencial antes de intervenção e revisar SOS",
+      "kind": "sampling",
+      "intent": "Identificar compartimento e fluido, coletar amostra antes da troca e interpretar tendência sem localizar fonte de desgaste pelo laudo isolado",
+      "sourceIds": [
+        "ISO-10825-1-2022",
+        "CAT-DRIVE-MAINT-PRACTICES",
+        "CAT-DRIVETRAIN-OIL-CARE",
+        "SKF-ISO15243-BEARING"
+      ],
+      "safety": "Amostragem depende do ponto e procedimento previstos no OMM; controlar temperatura, possível pressão residual, limpeza e proteção ambiental.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
     }
   ],
   "damageHypotheses": [
@@ -1769,6 +1977,72 @@
       "sourceIds": [
         "SKF-ISO15243-BEARING",
         "CAT-DRIVE-MAINT-PRACTICES"
+      ],
+      "kind": "candidate_component_damage",
+      "reviewStatus": "not_approved",
+      "catalogMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageCode": null,
+        "causeCode": null
+      },
+      "confirmed": false
+    },
+    {
+      "id": "DMG-DIFF-GEAR-WEAR-CANDIDATE",
+      "label": "Possível desgaste anormal de dentes da coroa ou pinhão sob investigação",
+      "componentRole": "engrenagens_diferencial",
+      "requiredEvidence": "Identificar coroa ou pinhão efetivamente instalados, morfologia e posição de desgaste por inspeção física segura; diferenciar óleo, rolamentos e outras origens.",
+      "sourceIds": [
+        "ISO-10825-1-2022",
+        "CAT-DRIVE-MAINT-PRACTICES",
+        "CAT-DRIVETRAIN-OIL-CARE",
+        "SKF-ISO15243-BEARING"
+      ],
+      "kind": "candidate_component_damage",
+      "reviewStatus": "not_approved",
+      "catalogMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageCode": null,
+        "causeCode": null
+      },
+      "confirmed": false
+    },
+    {
+      "id": "DMG-DIFF-GEAR-PITTING-CANDIDATE",
+      "label": "Possível pitting ou fadiga superficial de engrenagem do diferencial sob investigação",
+      "componentRole": "engrenagens_diferencial",
+      "requiredEvidence": "Examinar cavidades do dente efetivo, extensão e padrão físico com referência ISO/OEM, separando fadiga, abrasão, fratura e hipóteses de montagem.",
+      "sourceIds": [
+        "ISO-10825-1-2022",
+        "CAT-DRIVE-MAINT-PRACTICES",
+        "CAT-DRIVETRAIN-OIL-CARE",
+        "SKF-ISO15243-BEARING"
+      ],
+      "kind": "candidate_component_damage",
+      "reviewStatus": "not_approved",
+      "catalogMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageCode": null,
+        "causeCode": null
+      },
+      "confirmed": false
+    },
+    {
+      "id": "DMG-DIFF-SUPPORT-BEARING-CANDIDATE",
+      "label": "Possível dano de rolamento de apoio do diferencial sob investigação",
+      "componentRole": "rolamento_apoio_diferencial",
+      "requiredEvidence": "Exigir identificação OEM do apoio, inspeção independente de pista e elementos e distinção entre pré-carga fora de especificação e dano físico.",
+      "sourceIds": [
+        "ISO-10825-1-2022",
+        "CAT-DRIVE-MAINT-PRACTICES",
+        "CAT-DRIVETRAIN-OIL-CARE",
+        "SKF-ISO15243-BEARING"
       ],
       "kind": "candidate_component_damage",
       "reviewStatus": "not_approved",
@@ -2253,6 +2527,45 @@
         "CAT-DRIVE-MAINT-PRACTICES",
         "CAT-DRIVE-MAGNET-PLUG",
         "CAT-DRIVETRAIN-OIL-CARE"
+      ],
+      "mappingScope": "generic_only",
+      "status": "review_candidate",
+      "observedConditionIds": [],
+      "performedActionIds": [],
+      "confirmedDamageIds": [],
+      "automaticDamagePromotion": false,
+      "evidenceInterpretation": "sem_resultado_de_campo"
+    },
+    {
+      "id": "BUNDLE-16",
+      "ruleId": "differential-gear",
+      "conditionIds": [
+        "COND-DIFF-RING-PINION-WEAR",
+        "COND-DIFF-RING-PINION-PITTING",
+        "COND-DIFF-TOOTH-CONTACT-PATTERN",
+        "COND-DIFF-BACKLASH-SUSPECT",
+        "COND-DIFF-BEARING-SUPPORT-SUSPECT",
+        "COND-DIFF-OIL-DEBRIS",
+        "COND-DIFF-NOISE-LOAD"
+      ],
+      "actionIds": [
+        "ACT-DIFF-OEM-CONFIG-IDENTIFY",
+        "ACT-DIFF-BACKLASH-CONTACT-CHECK",
+        "ACT-DIFF-BEARING-PRELOAD-EVALUATE",
+        "ACT-DIFF-OIL-SAMPLE-AND-REVIEW"
+      ],
+      "differentialDamageIds": [
+        "DMG-DIFF-GEAR-WEAR-CANDIDATE",
+        "DMG-DIFF-GEAR-PITTING-CANDIDATE",
+        "DMG-DIFF-SUPPORT-BEARING-CANDIDATE"
+      ],
+      "chainIds": [],
+      "interpretation": "Folga backlash, padrão de contato, pré-carga e desgaste são fenômenos distintos. Ruído, óleo e partículas não localizam falha de coroa, pinhão ou rolamento. Dano físico requer prova independente e desenho OEM. Procedimentos e valores de outro diferencial não demonstram efetividade para CAT777/CAT980.",
+      "sourceIds": [
+        "ISO-10825-1-2022",
+        "CAT-DRIVE-MAINT-PRACTICES",
+        "CAT-DRIVETRAIN-OIL-CARE",
+        "SKF-ISO15243-BEARING"
       ],
       "mappingScope": "generic_only",
       "status": "review_candidate",
@@ -3242,6 +3555,132 @@
       "to": "DMG-DRIVE-BEARING-SEAL-CANDIDATE",
       "type": "rule_lists_differential_damage",
       "meaning": "Dano diferencial não aprovado e sem mapeamento SAP efetivo",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-110",
+      "from": "BUNDLE-16",
+      "to": "COND-DIFF-RING-PINION-WEAR",
+      "type": "rule_monitors_condition",
+      "meaning": "Condição hipotética não observada",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-111",
+      "from": "BUNDLE-16",
+      "to": "COND-DIFF-RING-PINION-PITTING",
+      "type": "rule_monitors_condition",
+      "meaning": "Condição hipotética não observada",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-112",
+      "from": "BUNDLE-16",
+      "to": "COND-DIFF-TOOTH-CONTACT-PATTERN",
+      "type": "rule_monitors_condition",
+      "meaning": "Condição hipotética não observada",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-113",
+      "from": "BUNDLE-16",
+      "to": "COND-DIFF-BACKLASH-SUSPECT",
+      "type": "rule_monitors_condition",
+      "meaning": "Condição hipotética não observada",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-114",
+      "from": "BUNDLE-16",
+      "to": "COND-DIFF-BEARING-SUPPORT-SUSPECT",
+      "type": "rule_monitors_condition",
+      "meaning": "Condição hipotética não observada",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-115",
+      "from": "BUNDLE-16",
+      "to": "COND-DIFF-OIL-DEBRIS",
+      "type": "rule_monitors_condition",
+      "meaning": "Condição hipotética não observada",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-116",
+      "from": "BUNDLE-16",
+      "to": "COND-DIFF-NOISE-LOAD",
+      "type": "rule_monitors_condition",
+      "meaning": "Condição hipotética não observada",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-117",
+      "from": "BUNDLE-16",
+      "to": "ACT-DIFF-OEM-CONFIG-IDENTIFY",
+      "type": "rule_proposes_action",
+      "meaning": "Ação proposta não executada, dependente de OMM/SIS efetivo",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-118",
+      "from": "BUNDLE-16",
+      "to": "ACT-DIFF-BACKLASH-CONTACT-CHECK",
+      "type": "rule_proposes_action",
+      "meaning": "Ação proposta não executada, dependente de OMM/SIS efetivo",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-119",
+      "from": "BUNDLE-16",
+      "to": "ACT-DIFF-BEARING-PRELOAD-EVALUATE",
+      "type": "rule_proposes_action",
+      "meaning": "Ação proposta não executada, dependente de OMM/SIS efetivo",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-120",
+      "from": "BUNDLE-16",
+      "to": "ACT-DIFF-OIL-SAMPLE-AND-REVIEW",
+      "type": "rule_proposes_action",
+      "meaning": "Ação proposta não executada, dependente de OMM/SIS efetivo",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-121",
+      "from": "BUNDLE-16",
+      "to": "DMG-DIFF-GEAR-WEAR-CANDIDATE",
+      "type": "rule_lists_differential_damage",
+      "meaning": "Dano diferencial não confirmado e sem mapeamento SAP",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-122",
+      "from": "BUNDLE-16",
+      "to": "DMG-DIFF-GEAR-PITTING-CANDIDATE",
+      "type": "rule_lists_differential_damage",
+      "meaning": "Dano diferencial não confirmado e sem mapeamento SAP",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-123",
+      "from": "BUNDLE-16",
+      "to": "DMG-DIFF-SUPPORT-BEARING-CANDIDATE",
+      "type": "rule_lists_differential_damage",
+      "meaning": "Dano diferencial não confirmado e sem mapeamento SAP",
       "reviewStatus": "interpretacao_inferida",
       "observed": false
     }
