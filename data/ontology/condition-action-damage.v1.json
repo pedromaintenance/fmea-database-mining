@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.condition-action-damage.v1",
-  "version": "1.3.17",
+  "version": "1.3.18",
   "status": "conceptual_unvalidated",
   "semantics": {
     "condition": "Estado de fluido, superfície ou desempenho; ocorrência requer medição/observação",
@@ -1361,6 +1361,120 @@
       "status": "condition_hypothesis_not_observed",
       "observedValue": null,
       "observedAt": null
+    },
+    {
+      "id": "COND-TIRE-SIDEWALL-CUT",
+      "label": "Corte ou fissura no flanco do pneu sob investigação",
+      "system": "pneus_rodas",
+      "medium": "borracha_flanco",
+      "observation": "Identificar posição e registrar corte ou fissura aparente de forma segura, sem tocar na lesão, medir profundidade por tentativa ou aproximar o corpo de flanco suspeito.",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "MICHELIN-OTR-TIRE-INSPECTION",
+        "MICHELIN-OTR-TIRE-REPAIR",
+        "BRIDGESTONE-OTR-PROGRAM"
+      ],
+      "limitations": "Corte externo não demonstra ruptura interna de carcaça, causa raiz ou reparabilidade; avaliação de profundidade exige método específico e profissional de pneus.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-TIRE-TREAD-CUT",
+      "label": "Corte ou arrancamento na banda de rodagem sob investigação",
+      "system": "pneus_rodas",
+      "medium": "borracha_banda",
+      "observation": "Documentar localização da lesão, arrancamento, material incrustado e transição com ombro, sem remover objetos incrustados ou alterar o estado físico do pneu.",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "MICHELIN-OTR-TIRE-INSPECTION",
+        "MICHELIN-OTR-TIRE-REPAIR",
+        "BRIDGESTONE-OTR-PROGRAM"
+      ],
+      "limitations": "Arrancamento superficial difere de corte que atinge a estrutura; sinais externos não provam dano interno, mecanismo de impacto ou limite de descarte.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-TIRE-CORD-EXPOSURE",
+      "label": "Reforço, lona ou cordonel aparentemente exposto no pneu",
+      "system": "pneus_rodas",
+      "medium": "reforco_estrutural",
+      "observation": "Registrar região e fotografar indícios de reforço aparente à distância segura; qualquer suspeita estrutural deve motivar imobilização e triagem profissional.",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "MICHELIN-OTR-TIRE-INSPECTION",
+        "MICHELIN-OTR-TIRE-REPAIR",
+        "BRIDGESTONE-OTR-PROGRAM"
+      ],
+      "limitations": "Exposição suspeita exige avaliação crítica, mas não comprova se os cordonéis romperam nem permite inferir causa específica, tolerância ou possibilidade de reparo.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-TIRE-BULGE",
+      "label": "Abaulamento ou deformação anormal aparente do pneu",
+      "system": "pneus_rodas",
+      "medium": "geometria_estrutura",
+      "observation": "Observar indícios de bolha, saliência, separação superficial ou alteração da geometria sem inflar, tocar, comprimir ou executar teste ativo de pneu.",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "MICHELIN-OTR-TIRE-INSPECTION",
+        "MICHELIN-OTR-TIRE-REPAIR",
+        "BRIDGESTONE-OTR-PROGRAM"
+      ],
+      "limitations": "Deformação aparente exige isolamento e avaliação; não confirma a localização nem a existência de separação interna sem inspeção especializada.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-TIRE-BEAD-RIM",
+      "label": "Anomalia na região de talão e aro sob investigação",
+      "system": "pneus_rodas",
+      "medium": "interface_talao_aro",
+      "observation": "Registrar anomalia de talão, borda, arame aparente ou conjunto aro-anel de trava, identificando o componente antes de classificar dano de pneu.",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "MICHELIN-OTR-TIRE-INSPECTION",
+        "MICHELIN-OTR-TIRE-REPAIR",
+        "BRIDGESTONE-OTR-PROGRAM"
+      ],
+      "limitations": "Talão, aro e anel de trava são componentes diferentes; alteração do conjunto não autoriza atribuir defeito à carcaça nem intervir com pressão residual.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-TIRE-PRESSURE-CONTEXT",
+      "label": "Pressão, temperatura ou carga suspeita como contexto de exposição",
+      "system": "pneus_rodas",
+      "medium": "contexto_pressao_carga",
+      "observation": "Revisar registros existentes de pressão, carga, temperatura, posição e trajetória operacional contra a configuração aplicável, sem manipular válvulas.",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "MICHELIN-OTR-TIRE-INSPECTION",
+        "MICHELIN-OTR-TIRE-REPAIR",
+        "BRIDGESTONE-OTR-PROGRAM"
+      ],
+      "limitations": "Pressão ou temperatura anormais podem contribuir para danos, mas não são confirmação de corte, separação, causa raiz ou limite OEM excedido sem prova.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
     }
   ],
   "actions": [
@@ -2200,6 +2314,86 @@
       "executionStatus": "not_performed",
       "observedResults": [],
       "intervalHours": null
+    },
+    {
+      "id": "ACT-TIRE-IDENTIFY-FITMENT",
+      "label": "Conferir identidade do pneu, posição e requisitos aplicáveis",
+      "kind": "inspection",
+      "intent": "Conferir pneu, construção, marca, dimensão, posição, montagem e especificação por veículo e serviço, sem assumir a existência de talão ou elemento estrutural idêntico.",
+      "sourceIds": [
+        "MICHELIN-OTR-TIRE-INSPECTION",
+        "MICHELIN-OTR-TIRE-REPAIR",
+        "BRIDGESTONE-OTR-PROGRAM"
+      ],
+      "safety": "Não transplantar limites de pneus rodoviários para OTR, não alterar pressão e não substituir documentação efetiva por folhetos genéricos.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
+    },
+    {
+      "id": "ACT-TIRE-DAMAGE-VISUAL-REVIEW",
+      "label": "Inspecionar visualmente banda, flanco e reforços à distância segura",
+      "kind": "inspection",
+      "intent": "Propor documentação visual e caracterização do local afetado, separando corte superficial, suspeita de carcaça, lona exposta e deformação sob supervisão.",
+      "sourceIds": [
+        "MICHELIN-OTR-TIRE-INSPECTION",
+        "MICHELIN-OTR-TIRE-REPAIR",
+        "BRIDGESTONE-OTR-PROGRAM"
+      ],
+      "safety": "Manter corpo e instrumentos afastados da zona potencial de ruptura; não escavar borracha, aproximar-se de flanco crítico ou executar inspeção improvisada.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
+    },
+    {
+      "id": "ACT-TIRE-STRUCTURAL-HOLD",
+      "label": "Imobilizar diante de suspeita estrutural e encaminhar profissional",
+      "kind": "inspection",
+      "intent": "Avaliar necessidade de imobilização e segregação por reforço exposto, deformação ou separação aparente e solicitar julgamento por equipe especializada em pneus.",
+      "sourceIds": [
+        "MICHELIN-OTR-TIRE-INSPECTION",
+        "MICHELIN-OTR-TIRE-REPAIR",
+        "BRIDGESTONE-OTR-PROGRAM"
+      ],
+      "safety": "Não inflar, esvaziar, cortar, soldar, aquecer ou desmontar conjunto pressurizado; proibir liberação automática ou reparo sem equipe qualificada.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
+    },
+    {
+      "id": "ACT-TIRE-OPERATING-CONTEXT",
+      "label": "Revisar contexto de pressão, carga e operação sem estabelecer causa",
+      "kind": "inspection",
+      "intent": "Correlacionar histórico disponível de pressão, cargas, ciclos e condição da via apenas como explicações concorrentes, sob configuração efetiva do pneu.",
+      "sourceIds": [
+        "MICHELIN-OTR-TIRE-INSPECTION",
+        "MICHELIN-OTR-TIRE-REPAIR",
+        "BRIDGESTONE-OTR-PROGRAM"
+      ],
+      "safety": "Não usar valor de pressão/temperatura de modelo distinto, nem intervir em válvula de pneu suspeito ou ajustar pneu quente sem procedimento especializado.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
+    },
+    {
+      "id": "ACT-TIRE-RIM-REPAIR-REVIEW",
+      "label": "Distinguir integridade do talão, aro e critérios de reparabilidade",
+      "kind": "inspection",
+      "intent": "Encaminhar análise de componente, possível dano interno e decisão de reparabilidade ao profissional qualificado com dados específicos do fabricante.",
+      "sourceIds": [
+        "MICHELIN-OTR-TIRE-INSPECTION",
+        "MICHELIN-OTR-TIRE-REPAIR",
+        "BRIDGESTONE-OTR-PROGRAM"
+      ],
+      "safety": "Não decidir montagem, desmontagem, esvaziamento, reparo ou descarte automático; adoção de método seguro para conjunto OTR pressurizado é obrigatória.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
     }
   ],
   "damageHypotheses": [
@@ -2864,6 +3058,90 @@
         "causeCode": null
       },
       "confirmed": false
+    },
+    {
+      "id": "DMG-TIRE-CARCASS-CUT-CANDIDATE",
+      "label": "Possível corte físico atingindo a carcaça do pneu sob investigação",
+      "componentRole": "carcaca_pneu",
+      "requiredEvidence": "Exige inspeção especializada e comprovação de penetração física da estrutura do pneu, distinguindo corte apenas superficial, peça afetada e critério específico do fabricante.",
+      "sourceIds": [
+        "MICHELIN-OTR-TIRE-INSPECTION",
+        "MICHELIN-OTR-TIRE-REPAIR",
+        "BRIDGESTONE-OTR-PROGRAM"
+      ],
+      "kind": "candidate_component_damage",
+      "reviewStatus": "not_approved",
+      "catalogMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageCode": null,
+        "causeCode": null
+      },
+      "confirmed": false
+    },
+    {
+      "id": "DMG-TIRE-CORD-BREAK-CANDIDATE",
+      "label": "Possível ruptura física de cordonel ou lona do pneu sob investigação",
+      "componentRole": "cordonel_lona_pneu",
+      "requiredEvidence": "Confirmar cordonel ou lona realmente rompido, não apenas suspeita de exposição, utilizando método apropriado com segurança e identificação do pneu.",
+      "sourceIds": [
+        "MICHELIN-OTR-TIRE-INSPECTION",
+        "MICHELIN-OTR-TIRE-REPAIR",
+        "BRIDGESTONE-OTR-PROGRAM"
+      ],
+      "kind": "candidate_component_damage",
+      "reviewStatus": "not_approved",
+      "catalogMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageCode": null,
+        "causeCode": null
+      },
+      "confirmed": false
+    },
+    {
+      "id": "DMG-TIRE-LAYER-SEPARATION-CANDIDATE",
+      "label": "Possível separação entre camadas de carcaça ou banda sob investigação",
+      "componentRole": "interface_camadas_pneu",
+      "requiredEvidence": "Confirmar separação física entre camadas por especialista e método efetivo; abaulamento ou aquecimento isolados não provam delaminação nem sua origem.",
+      "sourceIds": [
+        "MICHELIN-OTR-TIRE-INSPECTION",
+        "MICHELIN-OTR-TIRE-REPAIR",
+        "BRIDGESTONE-OTR-PROGRAM"
+      ],
+      "kind": "candidate_component_damage",
+      "reviewStatus": "not_approved",
+      "catalogMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageCode": null,
+        "causeCode": null
+      },
+      "confirmed": false
+    },
+    {
+      "id": "DMG-TIRE-BEAD-DAMAGE-CANDIDATE",
+      "label": "Possível dano físico do talão do pneu sob investigação",
+      "componentRole": "talao_pneu",
+      "requiredEvidence": "Identificar componente físico do talão e distingui-lo de aro, flange e anel de trava, com avaliação de integridade em ambiente e procedimento controlados.",
+      "sourceIds": [
+        "MICHELIN-OTR-TIRE-INSPECTION",
+        "MICHELIN-OTR-TIRE-REPAIR",
+        "BRIDGESTONE-OTR-PROGRAM"
+      ],
+      "kind": "candidate_component_damage",
+      "reviewStatus": "not_approved",
+      "catalogMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageCode": null,
+        "causeCode": null
+      },
+      "confirmed": false
     }
   ],
   "bundles": [
@@ -3492,6 +3770,45 @@
         "CAT-EXHAUST-MANIFOLD-KIT-INFO",
         "CAT-EXHAUST-WET-STACKING",
         "CAT-EXHAUST-BELLOWS-RELIABILITY"
+      ],
+      "mappingScope": "generic_only",
+      "status": "review_candidate",
+      "observedConditionIds": [],
+      "performedActionIds": [],
+      "confirmedDamageIds": [],
+      "automaticDamagePromotion": false,
+      "evidenceInterpretation": "sem_resultado_de_campo"
+    },
+    {
+      "id": "BUNDLE-20",
+      "ruleId": "wheel-tire-damage",
+      "conditionIds": [
+        "COND-TIRE-SIDEWALL-CUT",
+        "COND-TIRE-TREAD-CUT",
+        "COND-TIRE-CORD-EXPOSURE",
+        "COND-TIRE-BULGE",
+        "COND-TIRE-BEAD-RIM",
+        "COND-TIRE-PRESSURE-CONTEXT"
+      ],
+      "actionIds": [
+        "ACT-TIRE-IDENTIFY-FITMENT",
+        "ACT-TIRE-DAMAGE-VISUAL-REVIEW",
+        "ACT-TIRE-STRUCTURAL-HOLD",
+        "ACT-TIRE-OPERATING-CONTEXT",
+        "ACT-TIRE-RIM-REPAIR-REVIEW"
+      ],
+      "differentialDamageIds": [
+        "DMG-TIRE-CARCASS-CUT-CANDIDATE",
+        "DMG-TIRE-CORD-BREAK-CANDIDATE",
+        "DMG-TIRE-LAYER-SEPARATION-CANDIDATE",
+        "DMG-TIRE-BEAD-DAMAGE-CANDIDATE"
+      ],
+      "chainIds": [],
+      "interpretation": "Cortes em flanco e banda, reforço exposto, abaulamento, condição de talão e contexto de pressão são diferentes; nenhum sinal externo prova automaticamente integridade interna, causa, profundidade ou reparabilidade. Dano estrutural suspeito requer imobilização e avaliação especializada, sem inflar nem desmontar. A regra wheel-tire-wear permanece segregada e nenhum dano recebe código SAP ou limite de fabricante sem efetividade.",
+      "sourceIds": [
+        "MICHELIN-OTR-TIRE-INSPECTION",
+        "MICHELIN-OTR-TIRE-REPAIR",
+        "BRIDGESTONE-OTR-PROGRAM"
       ],
       "mappingScope": "generic_only",
       "status": "review_candidate",
@@ -5003,6 +5320,141 @@
       "to": "DMG-ENGINE-EXH-STUD-FAILURE-CANDIDATE",
       "type": "rule_lists_differential_damage",
       "meaning": "Dano candidato, não aprovado e sem mapeamento SAP",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-168",
+      "from": "BUNDLE-20",
+      "to": "COND-TIRE-SIDEWALL-CUT",
+      "type": "rule_monitors_condition",
+      "meaning": "Hipótese genérica não observada ou executada; evidência independente obrigatória",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-169",
+      "from": "BUNDLE-20",
+      "to": "COND-TIRE-TREAD-CUT",
+      "type": "rule_monitors_condition",
+      "meaning": "Hipótese genérica não observada ou executada; evidência independente obrigatória",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-170",
+      "from": "BUNDLE-20",
+      "to": "COND-TIRE-CORD-EXPOSURE",
+      "type": "rule_monitors_condition",
+      "meaning": "Hipótese genérica não observada ou executada; evidência independente obrigatória",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-171",
+      "from": "BUNDLE-20",
+      "to": "COND-TIRE-BULGE",
+      "type": "rule_monitors_condition",
+      "meaning": "Hipótese genérica não observada ou executada; evidência independente obrigatória",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-172",
+      "from": "BUNDLE-20",
+      "to": "COND-TIRE-BEAD-RIM",
+      "type": "rule_monitors_condition",
+      "meaning": "Hipótese genérica não observada ou executada; evidência independente obrigatória",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-173",
+      "from": "BUNDLE-20",
+      "to": "COND-TIRE-PRESSURE-CONTEXT",
+      "type": "rule_monitors_condition",
+      "meaning": "Hipótese genérica não observada ou executada; evidência independente obrigatória",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-174",
+      "from": "BUNDLE-20",
+      "to": "ACT-TIRE-IDENTIFY-FITMENT",
+      "type": "rule_proposes_action",
+      "meaning": "Hipótese genérica não observada ou executada; evidência independente obrigatória",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-175",
+      "from": "BUNDLE-20",
+      "to": "ACT-TIRE-DAMAGE-VISUAL-REVIEW",
+      "type": "rule_proposes_action",
+      "meaning": "Hipótese genérica não observada ou executada; evidência independente obrigatória",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-176",
+      "from": "BUNDLE-20",
+      "to": "ACT-TIRE-STRUCTURAL-HOLD",
+      "type": "rule_proposes_action",
+      "meaning": "Hipótese genérica não observada ou executada; evidência independente obrigatória",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-177",
+      "from": "BUNDLE-20",
+      "to": "ACT-TIRE-OPERATING-CONTEXT",
+      "type": "rule_proposes_action",
+      "meaning": "Hipótese genérica não observada ou executada; evidência independente obrigatória",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-178",
+      "from": "BUNDLE-20",
+      "to": "ACT-TIRE-RIM-REPAIR-REVIEW",
+      "type": "rule_proposes_action",
+      "meaning": "Hipótese genérica não observada ou executada; evidência independente obrigatória",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-179",
+      "from": "BUNDLE-20",
+      "to": "DMG-TIRE-CARCASS-CUT-CANDIDATE",
+      "type": "rule_lists_differential_damage",
+      "meaning": "Hipótese genérica não observada ou executada; evidência independente obrigatória",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-180",
+      "from": "BUNDLE-20",
+      "to": "DMG-TIRE-CORD-BREAK-CANDIDATE",
+      "type": "rule_lists_differential_damage",
+      "meaning": "Hipótese genérica não observada ou executada; evidência independente obrigatória",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-181",
+      "from": "BUNDLE-20",
+      "to": "DMG-TIRE-LAYER-SEPARATION-CANDIDATE",
+      "type": "rule_lists_differential_damage",
+      "meaning": "Hipótese genérica não observada ou executada; evidência independente obrigatória",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-182",
+      "from": "BUNDLE-20",
+      "to": "DMG-TIRE-BEAD-DAMAGE-CANDIDATE",
+      "type": "rule_lists_differential_damage",
+      "meaning": "Hipótese genérica não observada ou executada; evidência independente obrigatória",
       "reviewStatus": "interpretacao_inferida",
       "observed": false
     }

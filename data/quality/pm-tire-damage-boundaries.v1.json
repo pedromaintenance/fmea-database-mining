@@ -1,0 +1,150 @@
+{
+  "schema": "fmea-mining.pm-tire-damage-boundaries.v1",
+  "version": "1.3.54",
+  "sourceOntologyVersion": "1.3.18",
+  "nature": "manufacturer_generic_OTR_no_field_evidence",
+  "ruleId": "wheel-tire-damage",
+  "sourceIds": [
+    "MICHELIN-OTR-TIRE-INSPECTION",
+    "MICHELIN-OTR-TIRE-REPAIR",
+    "BRIDGESTONE-OTR-PROGRAM"
+  ],
+  "scope": {
+    "system": "pneus_rodas",
+    "subgroupCode": "TIR1",
+    "partText": "Pneu",
+    "models": [
+      "CAT777",
+      "CAT980",
+      "EQ09"
+    ],
+    "tireSizeVerified": false,
+    "constructionVerified": false,
+    "oemCriteriaVerified": false
+  },
+  "conditionIds": [
+    "COND-TIRE-SIDEWALL-CUT",
+    "COND-TIRE-TREAD-CUT",
+    "COND-TIRE-CORD-EXPOSURE",
+    "COND-TIRE-BULGE",
+    "COND-TIRE-BEAD-RIM",
+    "COND-TIRE-PRESSURE-CONTEXT"
+  ],
+  "actionIds": [
+    "ACT-TIRE-IDENTIFY-FITMENT",
+    "ACT-TIRE-DAMAGE-VISUAL-REVIEW",
+    "ACT-TIRE-STRUCTURAL-HOLD",
+    "ACT-TIRE-OPERATING-CONTEXT",
+    "ACT-TIRE-RIM-REPAIR-REVIEW"
+  ],
+  "damageIds": [
+    "DMG-TIRE-CARCASS-CUT-CANDIDATE",
+    "DMG-TIRE-CORD-BREAK-CANDIDATE",
+    "DMG-TIRE-LAYER-SEPARATION-CANDIDATE",
+    "DMG-TIRE-BEAD-DAMAGE-CANDIDATE"
+  ],
+  "differentials": [
+    {
+      "id": "TIR-D01",
+      "condition": "cut_or_crack",
+      "distinction": "External cut and internal carcass penetration are different facts; inspection depth and repairability require specialized method.",
+      "confirmed": false
+    },
+    {
+      "id": "TIR-D02",
+      "condition": "exposed_reinforcement",
+      "distinction": "Suspected cord exposure is a structural safety concern but does not prove cord rupture or identify the mechanical cause.",
+      "confirmed": false
+    },
+    {
+      "id": "TIR-D03",
+      "condition": "bulge_or_deformation",
+      "distinction": "Bulge may indicate structural danger without confirming delamination or the affected internal layer.",
+      "confirmed": false
+    },
+    {
+      "id": "TIR-D04",
+      "condition": "bead_or_rim",
+      "distinction": "Tire bead, rim and lock ring are separate physical components with different damage paths.",
+      "confirmed": false
+    },
+    {
+      "id": "TIR-D05",
+      "condition": "pressure_history",
+      "distinction": "Pressure, heat, load and haul route provide contextual hypotheses but cannot confirm physical carcass damage.",
+      "confirmed": false
+    }
+  ],
+  "gates": [
+    {
+      "id": "TIRE_IDENTITY",
+      "status": "pending"
+    },
+    {
+      "id": "MOUNTING_POSITION",
+      "status": "pending"
+    },
+    {
+      "id": "MATERIAL_VISUAL",
+      "status": "pending"
+    },
+    {
+      "id": "STRUCTURAL_EXAM",
+      "status": "pending"
+    },
+    {
+      "id": "PRESSURE_SPECIFIC",
+      "status": "pending"
+    },
+    {
+      "id": "RIM_BEAD_SEPARATION",
+      "status": "pending"
+    },
+    {
+      "id": "SAFE_PRESSURE_HANDLING",
+      "status": "pending"
+    },
+    {
+      "id": "SPECIALIST_DECISION",
+      "status": "pending"
+    },
+    {
+      "id": "INDEPENDENT_SAP_REVIEW",
+      "status": "pending"
+    }
+  ],
+  "safeguards": {
+    "noCutProvesCarcassFailure": true,
+    "noBulgeProvesDelamination": true,
+    "noCordExposedProvesMechanism": true,
+    "noPressureProvesDamage": true,
+    "noGenericCutThreshold": true,
+    "noGenericInflationPressure": true,
+    "noGenericTKPH": true,
+    "noAutomaticRepair": true,
+    "noAutomaticScrap": true,
+    "noRimEqualsTireDamage": true,
+    "noInflateDeflateDamagedTire": true,
+    "noUnqualifiedService": true,
+    "noReleaseWithoutSpecialist": true,
+    "noAutomaticSapMapping": true,
+    "noFieldObservations": true,
+    "noConsumerChange": true
+  },
+  "limits": {
+    "pressurePsi": null,
+    "pressureKpa": null,
+    "cutDepthMm": null,
+    "remainingTreadMm": null,
+    "temperatureC": null,
+    "tkph": null
+  },
+  "fieldState": {
+    "observations": 0,
+    "tests": 0,
+    "damages": 0,
+    "approvedSapMappings": 0,
+    "repairApprovals": 0,
+    "workOrders": 0
+  }
+}

@@ -2,6 +2,13 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.54] — 2026-10-23 — Dano físico do pneu OTR, integridade e segurança
+
+- BUNDLE-20 para `wheel-tire-damage`: seis condições não observadas, cinco ações não executadas, quatro danos candidatos, 15 relações e dois fixtures sintéticos.
+- Diferenciados cortes de flanco/banda, reforço exposto, abaulamento, talão versus aro e pressão contextual; `wheel-tire-wear` preservado como regra distinta.
+- Fontes Michelin/Bridgestone, nove gates pendentes e 16 salvaguardas. Sem pressões OEM, TKPH, reparabilidade ou decisão automática.
+- Ontologia 1.3.18: 77 condições, 58 ações, 36 danos, 20 bundles, 182 relações e 36 fixtures. Cobertura **20/25**, cinco pendentes, 115 candidatos PM, dez bloqueios e consumidores preservados.
+
 ## [1.3.53] — 2026-10-22 — Coletor de escape: BUNDLE-19 e discriminação por componente
 
 - Ontologia **1.3.17**: seis condições, cinco ações não executadas e três danos diferenciais não aprovados no `BUNDLE-19` (coletor/junta/fixador); 14 novas relações e dois casos sintéticos.

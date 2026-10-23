@@ -2,7 +2,9 @@
 
 Banco de conhecimento **versionado** para investigar modos de falha, sintomas, evidências e causas em equipamentos móveis de mineração. Um consumidor possível é o jogo **[P.O.R.C.A.R.I.A. — Você Quebra, Eu Conserto](https://github.com/pedromaintenance/porcaria-voce-quebra-eu-conserto)**, mas o banco é independente: **este repositório não altera os consumidores**.
 
-> **Status:** versão do catálogo **1.3.53** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
+> **Status:** versão do catálogo **1.3.54** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
+
+**Ciclo v1.3.54:** [pneus OTR: integridade e dano físico](docs/CICLO_2026-10-23_PNEUS_DANOS.md) implementa BUNDLE-20 com 6 condições hipotéticas, 5 ações propostas e 4 danos não confirmados; 9 gates pendentes, sem pressões ou critérios OEM inventados. Ontologia 1.3.18 com 20/25 regras PM modeladas, cinco pendentes.
 
 **Ciclo v1.3.53:** [ontologia de coletor de escape](docs/CICLO_2026-10-22_ONTOLOGIA_ESCAPE.md) implementa BUNDLE-19 com seis condições não observadas, cinco ações propostas, três danos candidatos, 14 relações e dois cenários sintéticos. O corpus mantém separados fuligem, corpo trincado, fuga de junta, resíduo úmido, fole apenas quando instalado e desempenho; 19/25 regras modeladas, seis pendentes, sem homologação SAP ou execução.
 

@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.research.sources.v1",
-  "version": "1.3.23",
+  "version": "1.3.24",
   "status": "literatura_de_referencia_nao_casos_empiricos",
   "rights": "somente_titulos_links_e_resumos_originais",
   "sources": [
@@ -731,6 +731,39 @@
       "limitation": "Exemplo de instalação em geração de energia, não prova existência de fole ou falha equivalente em CAT777, CAT980 ou outras configurações; requer desenho e apoio por série.",
       "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
       "lastReviewed": "2026-10-22"
+    },
+    {
+      "id": "MICHELIN-OTR-TIRE-INSPECTION",
+      "organization": "Michelin",
+      "title": "Earthmover tyres inspection: tyre checking and maintenance",
+      "url": "https://b2b.middle-east.michelin.com/help-advice/earthmover-vehicles/tyre-maintenance-earthmover-tyre-inspection",
+      "area": "otr_tire_damage_inspection_safety",
+      "role": "manufacturer_generic_earthmover_inspection",
+      "limitation": "Inspeção de cortes, deformações, reforços expostos e separação por profissional qualificado. Sem pressão nominal, limite dimensional, efetividade por máquina ou critérios individuais de descarte.",
+      "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
+      "lastReviewed": "2026-10-23"
+    },
+    {
+      "id": "MICHELIN-OTR-TIRE-REPAIR",
+      "organization": "Michelin",
+      "title": "Earthmover tyre repair",
+      "url": "https://b2b.middle-east.michelin.com/help-advice/earthmover-vehicles/tyre-wear-earthmover-tyre-repair",
+      "area": "otr_tire_repairability_and_specialist",
+      "role": "manufacturer_generic_earthmover_repair",
+      "limitation": "Nem toda lesão é reparável; avaliação de integridade interna e execução de reparo requerem especialista. Não autoriza desmontagem ou intervenção com pneu pressurizado.",
+      "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
+      "lastReviewed": "2026-10-23"
+    },
+    {
+      "id": "BRIDGESTONE-OTR-PROGRAM",
+      "organization": "Bridgestone",
+      "title": "OTR Tire Program Best Practices",
+      "url": "https://commercial.bridgestone.com/en-ca/resource-center/articles/tire-program-best-practices",
+      "area": "otr_tire_inspection_pressure_and_load",
+      "role": "manufacturer_generic_otr_inspection",
+      "limitation": "Relaciona inspeção, carga, pressão, dupla montagem e ambiente OTR. Não determina valores de pressão, TKPH, limite de corte ou profundidade para CAT777/CAT980/EQ09.",
+      "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
+      "lastReviewed": "2026-10-23"
     }
   ]
 }
