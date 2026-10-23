@@ -654,6 +654,50 @@
       "limitation": "Manual Parker para cilindros específicos, não demonstra arquitetura nem procedimento de isolamento dos cilindros CAT. Drift pode envolver válvulas e passagem no pistão; não transpor limites, passos de pressurização ou desmontagem para outros circuitos.",
       "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
       "lastReviewed": "2026-10-22"
+    },
+    {
+      "id": "CAT-77705-BRAKE-ARCH",
+      "organization": "Caterpillar",
+      "title": "777 (05) Off-Highway Truck — Braking system standard equipment",
+      "url": "https://www.cat.com/en_IN/products/new/equipment/off-highway-trucks/off-highway-trucks/126280.html",
+      "area": "brake_architecture_variation_77705",
+      "role": "oem_public_model_configuration",
+      "limitation": "A ficha descreve freio dianteiro com pinça a disco e freio traseiro multidiscos arrefecido a óleo. Não comprova a montagem de um número de série ou código de peça efetivo.",
+      "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
+      "lastReviewed": "2026-10-22"
+    },
+    {
+      "id": "CAT-77707-BRAKE-ARCH",
+      "organization": "Caterpillar",
+      "title": "777 (07) Off-Highway Truck — Braking system",
+      "url": "https://www.cat.com/en_US/products/new/equipment/off-highway-trucks/off-highway-trucks/115560.html",
+      "area": "brake_architecture_variation_77707",
+      "role": "oem_public_model_configuration",
+      "limitation": "Ficha de configuração 777 (07) informa conjuntos multidiscos arrefecidos a óleo dianteiros e traseiros; não homologa o item ou série de qualquer equipamento 777 (05).",
+      "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
+      "lastReviewed": "2026-10-22"
+    },
+    {
+      "id": "CAT-980-BRAKE-ARCH",
+      "organization": "Caterpillar",
+      "title": "980 Wheel Loader — standard powertrain braking equipment",
+      "url": "https://www.cat.com/en_US/products/new/equipment/wheel-loaders/medium-wheel-loaders/130318.html",
+      "area": "brake_architecture_variation_980",
+      "role": "oem_public_model_configuration",
+      "limitation": "Ficha pública de 980 com freios de serviço hidráulicos em disco úmido fechado e estacionamento em pinça; série e variante reais demandam OMM/BOM e diagrama.",
+      "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
+      "lastReviewed": "2026-10-22"
+    },
+    {
+      "id": "ISO-3450-2011",
+      "organization": "ISO",
+      "title": "ISO 3450:2011 — Earth-moving machinery — Braking systems performance requirements and test procedures",
+      "url": "https://www.iso.org/standard/42076.html",
+      "area": "brake_system_performance_and_safety",
+      "role": "standard_scope_summary_not_individual_brake_oem_tolerance",
+      "limitation": "Norma define requisitos de desempenho dos sistemas de freios de serviço, secundário e estacionamento; não fornece, nesta referência pública, tolerâncias do disco nem autoriza testes operacionais sem procedimento do fabricante e controle de risco.",
+      "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
+      "lastReviewed": "2026-10-22"
     }
   ]
 }
