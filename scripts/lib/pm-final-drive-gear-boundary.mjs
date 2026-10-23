@@ -13,7 +13,7 @@ export const DRIVE_DAMAGES=Object.freeze([
 const eq=(a,b)=>JSON.stringify(a)===JSON.stringify(b);
 export function checkGearSemanticBoundary(model,fixture,policy,seed,sources){
  const errors=[],ck=(v,id)=>{if(!v)errors.push(id)};
- ck(model?.schema==='fmea-mining.condition-action-damage.v1'&&model?.version==='1.3.13'&&model?.conditions?.length===43&&model?.actions?.length===35&&model?.damageHypotheses?.length===20&&model?.bundles?.length===15&&model?.relations?.length===109,'ontology_version_or_cardinality');
+ ck(model?.schema==='fmea-mining.condition-action-damage.v1'&&model?.version==='1.3.14'&&model?.conditions?.length===50&&model?.actions?.length===39&&model?.damageHypotheses?.length===23&&model?.bundles?.length===16&&model?.relations?.length===123,'ontology_version_or_cardinality');
  ck(model?.safetyInvariant==='condition!=action!=damage'&&model?.evidenceNature==='no_field_observation'&&model?.observations?.length===0&&model?.workOrderExecutions?.length===0&&model?.confirmedComponentDamages?.length===0,'field_evidence_fabricated');
  const rule=seed.find(x=>x.id==='final-drive-gear');
  ck(rule?.system==='comando_final'&&rule?.subgroupCode==='FID1'&&rule?.partText==='Engrenagem'&&rule?.damageId==='02.01'&&rule?.causeId==='C2.11'&&rule?.review==='pendente','seed_changed');
@@ -52,7 +52,7 @@ export function checkGearSemanticBoundary(model,fixture,policy,seed,sources){
  const edges=model.relations.filter(e=>e.from==='BUNDLE-14');
  ck(edges.length===14&&eq(edges.map(e=>e.id),Array.from({length:14},(_,i)=>'REL-'+String(81+i).padStart(3,'0'))),'relations_count');
  ck(edges.every(e=>e.observed===false&&e.reviewStatus==='interpretacao_inferida'&&[...DRIVE_CONDITIONS,...DRIVE_ACTIONS,...DRIVE_DAMAGES].includes(e.to)&&e.type===(DRIVE_CONDITIONS.includes(e.to)?'rule_monitors_condition':DRIVE_ACTIONS.includes(e.to)?'rule_proposes_action':'rule_lists_differential_damage')),'wrong_relations');
- ck(fixture?.status==='synthetic_assertions_not_real_events'&&fixture?.cases?.length===26,'fixtures_count');
+ ck(fixture?.status==='synthetic_assertions_not_real_events'&&fixture?.cases?.length===28,'fixtures_count');
  for(const [id,cs,act] of [
   ['SEM-23',[DRIVE_CONDITIONS[3],DRIVE_CONDITIONS[6]],DRIVE_ACTIONS[0]],
   ['SEM-24',[DRIVE_CONDITIONS[4],DRIVE_CONDITIONS[5]],DRIVE_ACTIONS[1]]
