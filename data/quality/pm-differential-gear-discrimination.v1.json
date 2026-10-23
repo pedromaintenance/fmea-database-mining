@@ -1,0 +1,56 @@
+{
+  "schema": "fmea-mining.pm-differential-gear-discrimination.v1",
+  "version": "1.3.49",
+  "ruleId": "differential-gear",
+  "ontologyVersion": "1.3.14",
+  "sourceIds": [
+    "ISO-10825-1-2022",
+    "CAT-DRIVE-MAINT-PRACTICES",
+    "CAT-DRIVETRAIN-OIL-CARE",
+    "SKF-ISO15243-BEARING"
+  ],
+  "specificConditions": [
+    "COND-DIFF-RING-PINION-WEAR",
+    "COND-DIFF-RING-PINION-PITTING",
+    "COND-DIFF-TOOTH-CONTACT-PATTERN",
+    "COND-DIFF-BACKLASH-SUSPECT",
+    "COND-DIFF-BEARING-SUPPORT-SUSPECT"
+  ],
+  "nonLocalizingConditions": [
+    "COND-DIFF-OIL-DEBRIS",
+    "COND-DIFF-NOISE-LOAD"
+  ],
+  "damageCandidates": [
+    "DMG-DIFF-GEAR-WEAR-CANDIDATE",
+    "DMG-DIFF-GEAR-PITTING-CANDIDATE",
+    "DMG-DIFF-SUPPORT-BEARING-CANDIDATE"
+  ],
+  "evidenceGates": [
+    "actual_gear_and_axle_configuration_by_serial",
+    "oem_backlash_method_and_limits",
+    "oem_contact_pattern_reference",
+    "oem_bearing_preload_procedure",
+    "safe_access_measurements",
+    "component_morphology",
+    "independent_engineering_review"
+  ],
+  "warnings": {
+    "backlashIsNotBearingPreload": true,
+    "contactPatternIsNotDamage": true,
+    "noiseIsNotGearWear": true,
+    "metalsAreNotPinionWear": true,
+    "bearingPreloadDeviationIsNotBearingFailure": true,
+    "noDanaNumbersOnCatModels": true,
+    "noInventedTorqueOrShim": true,
+    "noAutomaticSAPApproval": true,
+    "noExecutedInspectionClaim": true,
+    "noConfirmedComponentDamage": true,
+    "noAutoWorkOrder": true
+  },
+  "fieldMeasurements": 0,
+  "performedServices": 0,
+  "approvedSapMappings": 0,
+  "confirmedFailures": 0,
+  "OEMBacklashLimit": null,
+  "OEMBearingPreloadLimit": null
+}
