@@ -1,6 +1,6 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 22/10/2026 · **Ciclo:** catálogo técnico v1.3.50 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 22/10/2026 · **Ciclo:** catálogo técnico v1.3.51 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
 
@@ -38,6 +38,19 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 | Enriquecimento | 12 roteiros classificados por falha funcional, sintomas e técnicas | Anotação manual, não prova de causa |
 
 **Observação:** as 159 tarefas de PM com subgrupo candidato foram obtidas em extração local anterior e **não** representam 159 associações homologadas. Contagens de vínculos estritos serão publicadas pelo relatório automático após cada alteração do gerador.
+
+## Ciclo — 22/10/2026: segurança e fricção de discos de freios (v1.3.51)
+
+- [x] Modelado `brake-disc` como `BUNDLE-18`, com sete condições, quatro ações propostas, três danos candidatos e 14 relações tipadas.
+- [x] Diferenciados freios dianteiros de pinça 777 (05), multidiscos traseiros 777 (05), multidiscos 777 (07) e freios de serviço úmidos 980.
+- [x] Separados desgaste/dano térmico de atrito de falhas de pressão, energia, atuação, retorno e desempenho funcional.
+- [x] Reforçada segurança: ISO 3450 trata desempenho, **não libera ensaio dinâmico improvisado nem retorno automático ao serviço**.
+- [x] Ontologia **1.3.16**: 65 condições, 48 ações, 29 danos, 18 bundles, 153 relações, 32 cenários sintéticos e auditor com 32 mutações adversariais.
+- [ ] **Engenharia/OEM:** confirmar arquitetura de freios e indicadores por número de série, limite dimensional e procedimentos de inspeção/teste.
+- [ ] **Segurança/Oficina:** definir critério de imobilização, bloqueio de energia acumulada, controle de massas e autorização formal de avaliação funcional.
+- [ ] **PCM/Dados Mestres:** manter rastreabilidade e evidência independente antes de qualquer dano/causa SAP aprovado; priorizar as sete regras PM sem bundle.
+
+**Estado:** nenhum disco condenado, medição executada, máquina liberada, nota/ordem criada ou homologação SAP inferida.
 
 ## Ciclo — 22/10/2026: cilindros de implementos e diagnóstico de deriva (v1.3.50)
 
