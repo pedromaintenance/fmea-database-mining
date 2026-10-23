@@ -38,8 +38,8 @@ export function validateSemanticCrosswalkInputs(ontology,rules,policy){
  const seeds=byId(rules), bundles=byId(ontology.bundles),
    cond=byId(ontology.conditions), actions=byId(ontology.actions), damages=byId(ontology.damageHypotheses);
  ck(rules.length===25&&seeds.size===25,'seed_coverage_drift');
- ck(ontology.bundles.length===19&&bundles.size===18,'bundle_coverage_drift');
- ck(ontology.conditions.length===71&&cond.size===65&&ontology.actions.length===53&&actions.size===48&&ontology.damageHypotheses.length===32&&damages.size===29,'semantic_cardinality_drift');
+ ck(ontology.bundles.length===19&&bundles.size===19,'bundle_coverage_drift');
+ ck(ontology.conditions.length===71&&cond.size===71&&ontology.actions.length===53&&actions.size===53&&ontology.damageHypotheses.length===32&&damages.size===32,'semantic_cardinality_drift');
  const usages=new Map();
  const byRule=new Map();
  for(const b of ontology.bundles){
