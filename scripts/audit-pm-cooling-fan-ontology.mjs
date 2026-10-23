@@ -13,7 +13,7 @@ const gaps=read('data/quality/pm-gap-review.v1.json').records,links=read('data/k
 const cross=validateSemanticCrosswalkInputs(model,seed,policy);
 const errors=[...checkFanOntology(model,fixtures,seed,sources),...cross.errors];
 const ck=(ok,id)=>{if(!ok)errors.push(id)};
-ck(cross.coverage.totalSeeds===25&&cross.coverage.modeledRules===18&&cross.coverage.unmodeledRuleIds.length===7,'semantic_coverage_incorrect');
+ck(cross.coverage.totalSeeds===25&&cross.coverage.modeledRules===19&&cross.coverage.unmodeledRuleIds.length===6,'semantic_coverage_incorrect');
 ck(cross.coverage.sharedGenericNodes===11&&cross.coverage.sharedDamageNodes===0&&cross.editorialFlags.length===0,'semantic_risk_or_ambiguous_label');
 ck(links.length===115&&gaps.length===10,'sap_candidate_baseline_changed');
 const clone=x=>JSON.parse(JSON.stringify(x));

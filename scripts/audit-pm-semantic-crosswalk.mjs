@@ -18,7 +18,7 @@ const ck=(condition,reason)=>{if(!condition)errors.push(reason)};
 const results=validateSemanticCrosswalkInputs(ont,rules,policy);
 errors.push(...results.errors);
 ck(links.length===115&&gaps.length===10&&rules.length===25,'pm_baseline_drift');
-ck(results.coverage.modeledRules===18&&results.coverage.unmodeledRuleIds.length===7,'inaccurate_semantic_coverage');
+ck(results.coverage.modeledRules===19&&results.coverage.unmodeledRuleIds.length===6,'inaccurate_semantic_coverage');
 ck(results.coverage.sharedGenericNodes===11&&results.coverage.sharedDamageNodes===0,'unexpected_semantic_sharing');
 ck(results.shared.every(x=>x.risk?.length>60&&x.requiredDiscrimination?.length>65),'ambiguous_shared_node_undocumented');
 const clone=x=>JSON.parse(JSON.stringify(x));
@@ -70,7 +70,7 @@ for(const [name,edit] of policyAttacks){
 ck(rejected===attacks.length&&rejectedPolicy===policyAttacks.length,'mutation_suite_incomplete');
 const payload={
  schema:'fmea-mining.pm-semantic-crosswalk-report.v1',version:'1.3.43',
- nature:'nine_modeled_rules_plus_sixteen_unmodeled_rules_no_field_verification',
+ nature:'nineteen_modeled_six_unmodeled_rules_no_field_verification',
  counts:{...results.coverage,
   unsafeOntologyMutationsRejected:rejected,unsafePolicyMutationsRejected:rejectedPolicy,
   confirmedDamageEvents:0,executedMaintenanceActions:0,approvedSapMappings:0},

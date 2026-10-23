@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.condition-action-damage.v1",
-  "version": "1.3.16",
+  "version": "1.3.17",
   "status": "conceptual_unvalidated",
   "semantics": {
     "condition": "Estado de fluido, superfície ou desempenho; ocorrência requer medição/observação",
@@ -1247,6 +1247,120 @@
       "status": "condition_hypothesis_not_observed",
       "observedValue": null,
       "observedAt": null
+    },
+    {
+      "id": "COND-ENGINE-EXH-SOOT-TRACE",
+      "label": "Trilha localizada de fuligem na região de escape sob investigação",
+      "system": "motor_diesel",
+      "medium": "deposito_superficial_escape",
+      "observation": "Identificar com acesso seguro se a fuligem está sobre flange, corpo do coletor ou conexões vizinhas, preservando sua trajetória e localização em fotografia.",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "CAT-EXHAUST-MANIFOLD-KIT-INFO",
+        "CAT-EXHAUST-WET-STACKING",
+        "CAT-EXHAUST-BELLOWS-RELIABILITY"
+      ],
+      "limitations": "Fuligem não comprova trinca do coletor, não localiza automaticamente o ponto de fuga e pode estar depositada longe da origem por transporte de gases.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-ENGINE-EXH-BODY-DISCONTINUITY",
+      "label": "Descontinuidade aparente no corpo do coletor a confirmar",
+      "system": "motor_diesel",
+      "medium": "corpo_coletor_escape",
+      "observation": "Examinar indicação visual de fissura, porosidade ou irregularidade superficial no corpo identificado, distinguindo a condição de marcas de fabricação e sujeira.",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "CAT-EXHAUST-MANIFOLD-KIT-INFO",
+        "CAT-EXHAUST-WET-STACKING",
+        "CAT-EXHAUST-BELLOWS-RELIABILITY"
+      ],
+      "limitations": "Uma linha visual não prova fratura passante nem fadiga térmica; avaliação do material e método OEM por série são indispensáveis para confirmar dano.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-ENGINE-EXH-FLANGE-LEAK",
+      "label": "Suspeita de fuga de gases em interface de flange ou junta",
+      "system": "motor_diesel",
+      "medium": "interface_vedacao_escape",
+      "observation": "Localizar possível passagem de gases junto à flange, junta e fixadores quando acessíveis após isolamento, observando trajetória e componentes adjacentes.",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "CAT-EXHAUST-MANIFOLD-KIT-INFO",
+        "CAT-EXHAUST-WET-STACKING",
+        "CAT-EXHAUST-BELLOWS-RELIABILITY"
+      ],
+      "limitations": "Fuga na interface não é sinônimo de trinca do coletor, nem comprova junta ou prisioneiro avariado sem inspeção independente de vedação e montagem.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-ENGINE-EXH-WET-RESIDUE",
+      "label": "Resíduo escuro úmido no escape com composição e origem indefinidas",
+      "system": "motor_diesel",
+      "medium": "deposito_umido_escape",
+      "observation": "Descrever aspecto e localização do resíduo e contexto de carga, evitando interpretar depósito escuro como óleo de lubrificação sem caracterização adequada.",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "CAT-EXHAUST-MANIFOLD-KIT-INFO",
+        "CAT-EXHAUST-WET-STACKING",
+        "CAT-EXHAUST-BELLOWS-RELIABILITY"
+      ],
+      "limitations": "Mistura de fuligem com combustível não queimado ou óleo pode ocorrer em contextos específicos; referência de grupos geradores não define condição normal de motor de mina.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-ENGINE-EXH-FLEX-JOINT",
+      "label": "Condição suspeita de conexão flexível ou fole, se existir",
+      "system": "motor_diesel",
+      "medium": "conexao_flexivel_escape",
+      "observation": "Verificar por desenho OEM se há fole ou trecho flexível instalado, e só então avaliar indícios de deformação, vibração, suporte ou desalinhamento.",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "CAT-EXHAUST-MANIFOLD-KIT-INFO",
+        "CAT-EXHAUST-WET-STACKING",
+        "CAT-EXHAUST-BELLOWS-RELIABILITY"
+      ],
+      "limitations": "Não presumir fole em todos os modelos; falha de flexível ou tubulação adjacente não é dano do coletor e não permite copiar arranjo de grupo gerador.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-ENGINE-EXH-PERFORMANCE",
+      "label": "Desvio de desempenho ou temperatura de escape sem localização causal",
+      "system": "motor_diesel",
+      "medium": "desempenho_motor_escape",
+      "observation": "Confrontar sintoma, fumaça, temperatura e potência com condição de operação e dados de sensores apropriados ao motor, quando disponíveis.",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "CAT-EXHAUST-MANIFOLD-KIT-INFO",
+        "CAT-EXHAUST-WET-STACKING",
+        "CAT-EXHAUST-BELLOWS-RELIABILITY"
+      ],
+      "limitations": "Desvio de potência ou temperatura pode decorrer de combustão, admissão, turbo ou pós-tratamento; não demonstra dano no coletor por si só.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
     }
   ],
   "actions": [
@@ -2006,6 +2120,86 @@
       "executionStatus": "not_performed",
       "observedResults": [],
       "intervalHours": null
+    },
+    {
+      "id": "ACT-ENGINE-EXH-BOM-VERIFY",
+      "label": "Confirmar coletor, interfaces e opcionais por configuração OEM",
+      "kind": "inspection",
+      "intent": "Confrontar número de série, BOM e desenho para identificar corpo do coletor, juntas, fixadores, entradas do turbo e existência de eventual fole ou suporte.",
+      "sourceIds": [
+        "CAT-EXHAUST-MANIFOLD-KIT-INFO",
+        "CAT-EXHAUST-WET-STACKING",
+        "CAT-EXHAUST-BELLOWS-RELIABILITY"
+      ],
+      "safety": "Não atribuir itens de caminhão rodoviário ou grupo gerador a frota de mina; bloquear intervenção até identificar conjunto, posição e procedimentos efetivos.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
+    },
+    {
+      "id": "ACT-ENGINE-EXH-TRACE-INSPECT",
+      "label": "Inspecionar origem de fuligem ou fuga com isolamento térmico",
+      "kind": "inspection",
+      "intent": "Documentar trajetória de fuligem, depósito e possível fuga de gases, distinguindo corpo do coletor de interfaces e tubulações próximas após avaliar condições seguras.",
+      "sourceIds": [
+        "CAT-EXHAUST-MANIFOLD-KIT-INFO",
+        "CAT-EXHAUST-WET-STACKING",
+        "CAT-EXHAUST-BELLOWS-RELIABILITY"
+      ],
+      "safety": "Não tocar superfícies quentes nem aproximar mãos ou instrumentos de escape ativo; cumprir bloqueio, resfriamento, acesso e proteção estabelecidos pelo OEM.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
+    },
+    {
+      "id": "ACT-ENGINE-EXH-JOINT-DIFFERENTIAL",
+      "label": "Diferenciar corpo, junta, flange e fixadores sem supor torque",
+      "kind": "inspection",
+      "intent": "Examinar de forma não conclusiva se a origem está em descontinuidade do corpo, junta de vedação ou elemento de fixação; registrar hipóteses e contraprovas por posição.",
+      "sourceIds": [
+        "CAT-EXHAUST-MANIFOLD-KIT-INFO",
+        "CAT-EXHAUST-WET-STACKING",
+        "CAT-EXHAUST-BELLOWS-RELIABILITY"
+      ],
+      "safety": "Não reapertar prisioneiros nem desmontar flange com temperatura residual ou sem procedimento OEM de sequência, torque, material e reutilização por série.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
+    },
+    {
+      "id": "ACT-ENGINE-EXH-RESIDUE-FLEX-DIFFERENTIAL",
+      "label": "Diferenciar resíduo úmido e conexão flexível condicional",
+      "kind": "inspection",
+      "intent": "Investigar contexto de combustão e natureza do depósito; verificar se existe conexão flexível instalada e avaliar separadamente sua geometria e fixação.",
+      "sourceIds": [
+        "CAT-EXHAUST-MANIFOLD-KIT-INFO",
+        "CAT-EXHAUST-WET-STACKING",
+        "CAT-EXHAUST-BELLOWS-RELIABILITY"
+      ],
+      "safety": "Não tratar wet stacking de grupo gerador como diagnóstico de caminhão; não aplicar limites de carga alheios nem inferir a existência de fole não confirmado.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
+    },
+    {
+      "id": "ACT-ENGINE-EXH-PERFORMANCE-CORRELATE",
+      "label": "Correlacionar sintomas de escape com outros sistemas e critérios OEM",
+      "kind": "test",
+      "intent": "Comparar somente registros e medições autorizadas de desempenho, turbo e escape, analisando mecanismos concorrentes sem transformar sinal em dano comprovado.",
+      "sourceIds": [
+        "CAT-EXHAUST-MANIFOLD-KIT-INFO",
+        "CAT-EXHAUST-WET-STACKING",
+        "CAT-EXHAUST-BELLOWS-RELIABILITY"
+      ],
+      "safety": "Não improvisar teste com motor em carga, contrapressão, temperatura ou potência; utilizar condições, pontos de teste e limites OEM efetivos com avaliação de risco.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
     }
   ],
   "damageHypotheses": [
@@ -2607,6 +2801,69 @@
         "causeCode": null
       },
       "confirmed": false
+    },
+    {
+      "id": "DMG-ENGINE-EXH-MANIFOLD-CRACK-CANDIDATE",
+      "label": "Possível trinca física no corpo do coletor de escape sob investigação",
+      "componentRole": "corpo_coletor_escape",
+      "requiredEvidence": "Confirmar corpo/metal e origem do indício por inspeção independente, método aprovado e desenho OEM específico; diferenciar de deposição de fuligem e fugas em interface.",
+      "sourceIds": [
+        "CAT-EXHAUST-MANIFOLD-KIT-INFO",
+        "CAT-EXHAUST-WET-STACKING",
+        "CAT-EXHAUST-BELLOWS-RELIABILITY"
+      ],
+      "kind": "candidate_component_damage",
+      "reviewStatus": "not_approved",
+      "catalogMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageCode": null,
+        "causeCode": null
+      },
+      "confirmed": false
+    },
+    {
+      "id": "DMG-ENGINE-EXH-GASKET-LEAK-CANDIDATE",
+      "label": "Possível degradação da junta de vedação do coletor sob investigação",
+      "componentRole": "junta_vedacao_coletor",
+      "requiredEvidence": "Demonstrar falha de vedação na interface e estado físico da junta aplicável, distinguindo flange, fixador, assentamento e trinca do corpo, com registro OEM.",
+      "sourceIds": [
+        "CAT-EXHAUST-MANIFOLD-KIT-INFO",
+        "CAT-EXHAUST-WET-STACKING",
+        "CAT-EXHAUST-BELLOWS-RELIABILITY"
+      ],
+      "kind": "candidate_component_damage",
+      "reviewStatus": "not_approved",
+      "catalogMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageCode": null,
+        "causeCode": null
+      },
+      "confirmed": false
+    },
+    {
+      "id": "DMG-ENGINE-EXH-STUD-FAILURE-CANDIDATE",
+      "label": "Possível dano físico em prisioneiro ou fixador do coletor sob investigação",
+      "componentRole": "fixador_coletor_escape",
+      "requiredEvidence": "Confirmar instalação e condição física do prisioneiro, porca, sede ou luva conforme BOM e critério OEM, sem atribuir afrouxamento, corrosão ou fadiga sem prova.",
+      "sourceIds": [
+        "CAT-EXHAUST-MANIFOLD-KIT-INFO",
+        "CAT-EXHAUST-WET-STACKING",
+        "CAT-EXHAUST-BELLOWS-RELIABILITY"
+      ],
+      "kind": "candidate_component_damage",
+      "reviewStatus": "not_approved",
+      "catalogMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageCode": null,
+        "causeCode": null
+      },
+      "confirmed": false
     }
   ],
   "bundles": [
@@ -3197,6 +3454,44 @@
         "CAT-77707-BRAKE-ARCH",
         "CAT-980-BRAKE-ARCH",
         "ISO-3450-2011"
+      ],
+      "mappingScope": "generic_only",
+      "status": "review_candidate",
+      "observedConditionIds": [],
+      "performedActionIds": [],
+      "confirmedDamageIds": [],
+      "automaticDamagePromotion": false,
+      "evidenceInterpretation": "sem_resultado_de_campo"
+    },
+    {
+      "id": "BUNDLE-19",
+      "ruleId": "engine-exhaust",
+      "conditionIds": [
+        "COND-ENGINE-EXH-SOOT-TRACE",
+        "COND-ENGINE-EXH-BODY-DISCONTINUITY",
+        "COND-ENGINE-EXH-FLANGE-LEAK",
+        "COND-ENGINE-EXH-WET-RESIDUE",
+        "COND-ENGINE-EXH-FLEX-JOINT",
+        "COND-ENGINE-EXH-PERFORMANCE"
+      ],
+      "actionIds": [
+        "ACT-ENGINE-EXH-BOM-VERIFY",
+        "ACT-ENGINE-EXH-TRACE-INSPECT",
+        "ACT-ENGINE-EXH-JOINT-DIFFERENTIAL",
+        "ACT-ENGINE-EXH-RESIDUE-FLEX-DIFFERENTIAL",
+        "ACT-ENGINE-EXH-PERFORMANCE-CORRELATE"
+      ],
+      "differentialDamageIds": [
+        "DMG-ENGINE-EXH-MANIFOLD-CRACK-CANDIDATE",
+        "DMG-ENGINE-EXH-GASKET-LEAK-CANDIDATE",
+        "DMG-ENGINE-EXH-STUD-FAILURE-CANDIDATE"
+      ],
+      "chainIds": [],
+      "interpretation": "Fuligem, fissura visual, fuga por junta, resíduo escuro úmido e potência atípica não são sinônimos de trinca confirmada no coletor. Diferenciar corpo, vedação e fixadores; fole é hipótese externa apenas quando houver montagem comprovada. O estado térmico e a configuração por série exigem isolamento e OMM. Nenhum sinal isolado autoriza causa, dano, código SAP ou liberação operacional.",
+      "sourceIds": [
+        "CAT-EXHAUST-MANIFOLD-KIT-INFO",
+        "CAT-EXHAUST-WET-STACKING",
+        "CAT-EXHAUST-BELLOWS-RELIABILITY"
       ],
       "mappingScope": "generic_only",
       "status": "review_candidate",
@@ -4582,6 +4877,132 @@
       "to": "DMG-BRAKE-ACTUATOR-CANDIDATE",
       "type": "rule_lists_differential_damage",
       "meaning": "Dano candidato não confirmado e sem associação SAP",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-154",
+      "from": "BUNDLE-19",
+      "to": "COND-ENGINE-EXH-SOOT-TRACE",
+      "type": "rule_monitors_condition",
+      "meaning": "Condição hipotética, não observada nem localizante por si",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-155",
+      "from": "BUNDLE-19",
+      "to": "COND-ENGINE-EXH-BODY-DISCONTINUITY",
+      "type": "rule_monitors_condition",
+      "meaning": "Condição hipotética, não observada nem localizante por si",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-156",
+      "from": "BUNDLE-19",
+      "to": "COND-ENGINE-EXH-FLANGE-LEAK",
+      "type": "rule_monitors_condition",
+      "meaning": "Condição hipotética, não observada nem localizante por si",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-157",
+      "from": "BUNDLE-19",
+      "to": "COND-ENGINE-EXH-WET-RESIDUE",
+      "type": "rule_monitors_condition",
+      "meaning": "Condição hipotética, não observada nem localizante por si",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-158",
+      "from": "BUNDLE-19",
+      "to": "COND-ENGINE-EXH-FLEX-JOINT",
+      "type": "rule_monitors_condition",
+      "meaning": "Condição hipotética, não observada nem localizante por si",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-159",
+      "from": "BUNDLE-19",
+      "to": "COND-ENGINE-EXH-PERFORMANCE",
+      "type": "rule_monitors_condition",
+      "meaning": "Condição hipotética, não observada nem localizante por si",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-160",
+      "from": "BUNDLE-19",
+      "to": "ACT-ENGINE-EXH-BOM-VERIFY",
+      "type": "rule_proposes_action",
+      "meaning": "Inspeção ou teste proposto sem execução, requer OEM e análise de risco",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-161",
+      "from": "BUNDLE-19",
+      "to": "ACT-ENGINE-EXH-TRACE-INSPECT",
+      "type": "rule_proposes_action",
+      "meaning": "Inspeção ou teste proposto sem execução, requer OEM e análise de risco",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-162",
+      "from": "BUNDLE-19",
+      "to": "ACT-ENGINE-EXH-JOINT-DIFFERENTIAL",
+      "type": "rule_proposes_action",
+      "meaning": "Inspeção ou teste proposto sem execução, requer OEM e análise de risco",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-163",
+      "from": "BUNDLE-19",
+      "to": "ACT-ENGINE-EXH-RESIDUE-FLEX-DIFFERENTIAL",
+      "type": "rule_proposes_action",
+      "meaning": "Inspeção ou teste proposto sem execução, requer OEM e análise de risco",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-164",
+      "from": "BUNDLE-19",
+      "to": "ACT-ENGINE-EXH-PERFORMANCE-CORRELATE",
+      "type": "rule_proposes_action",
+      "meaning": "Inspeção ou teste proposto sem execução, requer OEM e análise de risco",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-165",
+      "from": "BUNDLE-19",
+      "to": "DMG-ENGINE-EXH-MANIFOLD-CRACK-CANDIDATE",
+      "type": "rule_lists_differential_damage",
+      "meaning": "Dano candidato, não aprovado e sem mapeamento SAP",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-166",
+      "from": "BUNDLE-19",
+      "to": "DMG-ENGINE-EXH-GASKET-LEAK-CANDIDATE",
+      "type": "rule_lists_differential_damage",
+      "meaning": "Dano candidato, não aprovado e sem mapeamento SAP",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-167",
+      "from": "BUNDLE-19",
+      "to": "DMG-ENGINE-EXH-STUD-FAILURE-CANDIDATE",
+      "type": "rule_lists_differential_damage",
+      "meaning": "Dano candidato, não aprovado e sem mapeamento SAP",
       "reviewStatus": "interpretacao_inferida",
       "observed": false
     }
