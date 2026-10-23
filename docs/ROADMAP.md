@@ -1,6 +1,6 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 22/10/2026 · **Ciclo:** catálogo técnico v1.3.48 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 22/10/2026 · **Ciclo:** catálogo técnico v1.3.49 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
 
@@ -38,6 +38,19 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 | Enriquecimento | 12 roteiros classificados por falha funcional, sintomas e técnicas | Anotação manual, não prova de causa |
 
 **Observação:** as 159 tarefas de PM com subgrupo candidato foram obtidas em extração local anterior e **não** representam 159 associações homologadas. Contagens de vínculos estritos serão publicadas pelo relatório automático após cada alteração do gerador.
+
+## Ciclo — 22/10/2026: engrenagens do diferencial CAT777/CAT980 (v1.3.49)
+
+- [x] Inserida regra `differential-gear` no `BUNDLE-16` com sete condições, quatro ações propostas e três hipóteses de dano.
+- [x] Separados desgaste/pitting da coroa-pinhão, padrão de contato, backlash, suporte/pré-carga, anormalidades de óleo e ruído.
+- [x] Proibido aplicar automaticamente tolerâncias de backlash, pré-carga e torques de outros eixos; evidência e OMM efetivos por série são obrigatórios.
+- [x] Ontologia 1.3.14: 50 condições, 39 ações, 23 danos, 16 bundles, 123 relações e 28 cenários sintéticos.
+- [x] Auditor `pm:differential:gear:audit` com 30 adulterações artificiais rejeitadas e manutenção de onze conceitos genéricos compartilhados sob controle.
+- [ ] **OEM/Engenharia:** identificar arquitetura, rolamentos, coroa/pinhão, posição, folga, sequência e critérios de contato efetivos por série de CAT777/CAT980.
+- [ ] **PCM/Inspeção:** estabelecer procedimentos, instrumentos e registros seguros de medições sem atribuir dano físico por sinais inespecíficos.
+- [ ] **Confiabilidade:** priorizar nove regras preventivas ainda sem bundle e continuar curadoria de dez bloqueios PM×SAP.
+
+**Estado:** sem inspeções executadas, componentes danificados confirmados ou aprovação SAP automática; 115 candidatos e contratos públicos preservados.
 
 ## Ciclo — 22/10/2026: rolamentos do comando final e sinais compartilhados (v1.3.48)
 
