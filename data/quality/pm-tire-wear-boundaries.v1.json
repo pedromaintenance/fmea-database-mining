@@ -45,27 +45,27 @@
   "differentials": [
     {
       "id": "uniform_depth",
-      "meaning": "Uniform wear can be normal without a model-specific limit.",
+      "meaning": "Uniform tread loss may be expected during service and is not abnormal unless multi-point RTD, tread geometry, duty cycle and the manufacturer's application-specific discard criterion are established.",
       "confirmed": false
     },
     {
       "id": "center_predominant",
-      "meaning": "Central wear alone does not prove pressure above specification.",
+      "meaning": "Center-dominant wear can be compatible with excessive inflation for some tires but cannot prove overpressure without calibrated readings, actual loads, construction and manufacturer specifications.",
       "confirmed": false
     },
     {
       "id": "shoulder_predominant",
-      "meaning": "Shoulder wear alone does not prove insufficient inflation pressure.",
+      "meaning": "Shoulder-dominant loss may accompany underinflation, turning or load differences, yet the appearance alone does not prove low pressure or damage to the casing or bead.",
       "confirmed": false
     },
     {
       "id": "one_sided_or_localized",
-      "meaning": "One-sided or patchy wear has multiple mechanical and operating explanations.",
+      "meaning": "One-sided or localized wear may arise from alignment, braking, slipping, turning, road surface or operational loads; the pattern does not uniquely determine a cause or require the tire to be discarded.",
       "confirmed": false
     },
     {
       "id": "dual_mismatch_conditional",
-      "meaning": "Dual matching requires proof that the tire position uses dual wheels.",
+      "meaning": "Dual-tire wear matching is applicable only after proving that dual wheels exist in the real configuration; compare specification, RTD, inflation, tread design and loaded radius using effective OEM guidance.",
       "confirmed": false
     }
   ],
