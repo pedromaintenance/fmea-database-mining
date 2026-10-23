@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.semantic-regression.v1",
-  "version": "1.3.17",
+  "version": "1.3.16",
   "status": "synthetic_assertions_not_real_events",
   "cases": [
     {
@@ -457,36 +457,6 @@
       "independentComponentTest": "not_performed",
       "expectedConfirmedDamageIds": [],
       "why": "Cenario sintetico: sem BOM por serie nao transferir freios secos 77705, umidos 77707 ou 980, nem confirmar dano termico."
-    },
-    {
-      "id": "SEM-33",
-      "title": "Fuligem na região de escape sem trinca do coletor comprovada",
-      "ruleId": "engine-exhaust",
-      "observedConditionIds": [
-        "COND-ENGINE-EXH-SOOT-TRACE",
-        "COND-ENGINE-EXH-FLANGE-LEAK"
-      ],
-      "performedActionIds": [
-        "ACT-ENGINE-EXH-TRACE-INSPECT"
-      ],
-      "independentComponentTest": "not_performed",
-      "expectedConfirmedDamageIds": [],
-      "why": "Simulação didática: trilha de fuligem e suspeita de fuga em junta não provam trinca nem execução de inspeção."
-    },
-    {
-      "id": "SEM-34",
-      "title": "Resíduo úmido e desempenho atípico sem causa do escape localizada",
-      "ruleId": "engine-exhaust",
-      "observedConditionIds": [
-        "COND-ENGINE-EXH-WET-RESIDUE",
-        "COND-ENGINE-EXH-PERFORMANCE"
-      ],
-      "performedActionIds": [
-        "ACT-ENGINE-EXH-PERFORMANCE-CORRELATE"
-      ],
-      "independentComponentTest": "not_performed",
-      "expectedConfirmedDamageIds": [],
-      "why": "Simulação didática: depósito preto e perda de desempenho não confirmam junta, trinca, óleo, combustível ou falha de fole."
     }
   ]
 }

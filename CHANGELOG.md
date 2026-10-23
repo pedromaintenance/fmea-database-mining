@@ -2,14 +2,6 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
-## [1.3.53] — 2026-10-22 — Coletor de escape: BUNDLE-19 e discriminação por componente
-
-- Ontologia **1.3.17**: seis condições, cinco ações não executadas e três danos diferenciais não aprovados no `BUNDLE-19` (coletor/junta/fixador); 14 novas relações e dois casos sintéticos.
-- Preservada pré-auditoria v1.3.52 com oito gates pendentes, três fontes OEM públicas genéricas e limitações por série.
-- Diferenciados fuligem, fissura visual, fuga em flange, resíduo úmido, fole condicional e desempenho; não inferir dano por sintomas inespecíficos.
-- Total: 71 condições, 53 ações, 32 danos, 19 bundles, 167 relações, 34 cenários sintéticos; cobertura PM **19/25**; 115 links candidatos e 10 exceções bloqueadas.
-- Novo auditor com mutações adversariais no CI e `npm run qa`; sem teste de campo, limite OEM inventado, peça aprovada ou mudanças aos consumidores.
-
 ## [1.3.52] — 2026-10-22 — Coletor de escape: pré-auditoria e barreiras de evidência
 
 - Realizada pré-auditoria de `engine-exhaust` sem ampliar indevidamente a ontologia: fuligem, fissura, vedação de flange, resíduo úmido, eventual fole e desempenho do escape permanecem hipóteses distintas.

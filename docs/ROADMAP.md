@@ -1,6 +1,6 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 22/10/2026 · **Ciclo:** catálogo técnico v1.3.53 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 22/10/2026 · **Ciclo:** catálogo técnico v1.3.52 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
 
@@ -38,18 +38,6 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 | Enriquecimento | 12 roteiros classificados por falha funcional, sintomas e técnicas | Anotação manual, não prova de causa |
 
 **Observação:** as 159 tarefas de PM com subgrupo candidato foram obtidas em extração local anterior e **não** representam 159 associações homologadas. Contagens de vínculos estritos serão publicadas pelo relatório automático após cada alteração do gerador.
-
-## Ciclo — 22/10/2026: coletor de escape e BUNDLE-19 (v1.3.53)
-
-- [x] Transformada a pré-auditoria de escape em `BUNDLE-19`, sem observar eventos de campo: seis condições, cinco ações, três danos candidatos e 14 relações tipadas.
-- [x] Diferenciados corpo do coletor, junta/flange, fixação e condições externas como eventual fole, resíduo úmido e desempenho.
-- [x] Preservados oito gates pendentes da pré-auditoria, com validação automática e regressões adversariais de causalidade e segurança.
-- [x] Cobertura passa a **19/25**, seis regras sem bundle; nenhuma causa, teste, frequência de falha ou vínculo SAP aprovado.
-- [ ] **OEM/Engenharia:** efetividade por série, desenho de coletor, fixações, juntas e sistemas adjacentes.
-- [ ] **Inspeção:** métodos seguros de identificação da origem e contraprovas, com isolamento e resfriamento antes do acesso.
-- [ ] **Curadoria:** decidir próximo bundle de pneus, observando arquitetura real, pressão e danos mecânicos conforme OEM efetivo.
-
-**Estado:** biblioteca independente, sem alterar consumidores. [Ciclo completo](CICLO_2026-10-22_ONTOLOGIA_ESCAPE.md).
 
 ## Ciclo — 22/10/2026: pré-auditoria do coletor de escape (v1.3.52)
 
