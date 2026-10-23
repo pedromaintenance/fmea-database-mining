@@ -1,0 +1,144 @@
+{
+  "schema": "fmea-mining.pm-tire-wear-boundaries.v1",
+  "version": "1.3.55",
+  "sourceOntologyVersion": "1.3.19",
+  "ruleId": "wheel-tire-wear",
+  "scope": {
+    "system": "pneus_rodas",
+    "subgroupCode": "TIR3",
+    "partText": "Pneu",
+    "models": [
+      "CAT777",
+      "CAT980",
+      "EQ09"
+    ],
+    "tireIdentified": false,
+    "patternVerified": false,
+    "dualFitmentVerified": false,
+    "oemLimitVerified": false
+  },
+  "sourceIds": [
+    "MICHELIN-EARTHMOVER-TIRE-INSPECTION",
+    "MICHELIN-EARTHMOVER-TIRE-PRESSURE",
+    "BRIDGESTONE-OTR-PROGRAM"
+  ],
+  "conditionIds": [
+    "COND-TIRE-WEAR-RTD-PROFILE",
+    "COND-TIRE-WEAR-CENTER",
+    "COND-TIRE-WEAR-SHOULDERS",
+    "COND-TIRE-WEAR-ONE-SIDED",
+    "COND-TIRE-WEAR-LOCALIZED",
+    "COND-TIRE-WEAR-DUAL-MATCH"
+  ],
+  "actionIds": [
+    "ACT-TIRE-WEAR-IDENTIFY",
+    "ACT-TIRE-WEAR-MEASURE",
+    "ACT-TIRE-WEAR-PRESSURE-LOAD",
+    "ACT-TIRE-WEAR-ALIGNMENT-DUAL"
+  ],
+  "damageIds": [
+    "DMG-TIRE-WEAR-CENTER-LOSS-CANDIDATE",
+    "DMG-TIRE-WEAR-SHOULDER-LOSS-CANDIDATE",
+    "DMG-TIRE-WEAR-LOCAL-LOSS-CANDIDATE"
+  ],
+  "physicalDamageBundle": "BUNDLE-20",
+  "differentials": [
+    {
+      "id": "uniform_depth",
+      "meaning": "Uniform wear can be normal without a model-specific limit.",
+      "confirmed": false
+    },
+    {
+      "id": "center_predominant",
+      "meaning": "Central wear alone does not prove pressure above specification.",
+      "confirmed": false
+    },
+    {
+      "id": "shoulder_predominant",
+      "meaning": "Shoulder wear alone does not prove insufficient inflation pressure.",
+      "confirmed": false
+    },
+    {
+      "id": "one_sided_or_localized",
+      "meaning": "One-sided or patchy wear has multiple mechanical and operating explanations.",
+      "confirmed": false
+    },
+    {
+      "id": "dual_mismatch_conditional",
+      "meaning": "Dual matching requires proof that the tire position uses dual wheels.",
+      "confirmed": false
+    }
+  ],
+  "gates": [
+    {
+      "id": "TIRE_IDENTITY",
+      "status": "pending"
+    },
+    {
+      "id": "TREAD_PATTERN",
+      "status": "pending"
+    },
+    {
+      "id": "RTD_METHOD",
+      "status": "pending"
+    },
+    {
+      "id": "RTD_BASELINE",
+      "status": "pending"
+    },
+    {
+      "id": "TIRE_POSITION",
+      "status": "pending"
+    },
+    {
+      "id": "LOAD_PRESSURE",
+      "status": "pending"
+    },
+    {
+      "id": "ALIGNMENT_ROAD",
+      "status": "pending"
+    },
+    {
+      "id": "QUALIFIED_TIRE_REVIEW",
+      "status": "pending"
+    },
+    {
+      "id": "SAP_INDEPENDENT_REVIEW",
+      "status": "pending"
+    }
+  ],
+  "safeguards": {
+    "noVisibleWearProvesFailure": true,
+    "noCenterWearProvesOverPressure": true,
+    "noShoulderWearProvesUnderPressure": true,
+    "noOneSidedWearProvesAlignment": true,
+    "noLocalizedWearProvesBrakeDrag": true,
+    "noAssumedDualWheels": true,
+    "noWearEqualsCarcassDamage": true,
+    "noWearEqualsCut": true,
+    "noGenericRtdLimit": true,
+    "noGenericPressure": true,
+    "noGenericRotationHour": true,
+    "noDeflationOfHotTire": true,
+    "noUnqualifiedTireService": true,
+    "noAutomaticScrap": true,
+    "noAutomaticSapMapping": true,
+    "noFieldObservations": true
+  },
+  "limits": {
+    "rtdMinimumMm": null,
+    "pressureKpa": null,
+    "pressurePsi": null,
+    "rotationHours": null,
+    "wearDeltaMm": null,
+    "allowableDualDifferenceMm": null
+  },
+  "fieldState": {
+    "inspections": 0,
+    "measurements": 0,
+    "confirmedDamages": 0,
+    "approvedSapMappings": 0,
+    "repairs": 0,
+    "orders": 0
+  }
+}
