@@ -1,6 +1,6 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 23/10/2026 · **Ciclo:** catálogo técnico v1.3.54 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 23/10/2026 · **Ciclo:** catálogo técnico v1.3.55 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
 
@@ -38,6 +38,17 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 | Enriquecimento | 12 roteiros classificados por falha funcional, sintomas e técnicas | Anotação manual, não prova de causa |
 
 **Observação:** as 159 tarefas de PM com subgrupo candidato foram obtidas em extração local anterior e **não** representam 159 associações homologadas. Contagens de vínculos estritos serão publicadas pelo relatório automático após cada alteração do gerador.
+
+## Ciclo — 23/10/2026: desgaste OTR e RTD (v1.3.55)
+
+- [x] BUNDLE-21: seis condições, quatro inspeções propostas, três danos candidatos, 13 relações e dois casos sintéticos.
+- [x] Separados perfis centro/ombros, assimetria, desgaste localizado, medição RTD e matching de duplos apenas quando aplicável.
+- [x] Michelin/Bridgestone como referência genérica; nenhum limite de RTD, pressão, intervalo de rodízio ou condenação declarado.
+- [x] Nenhum dano de TIR1 compartilhado com TIR3; sem observações, testes de oficina, causa ou mapeamento SAP aprovado.
+- [ ] Engenharia de pneus: confirmar construção, desenho, dimensão, posição, pontos RTD e tolerâncias para a frota.
+- [ ] Próxima modelagem: `drill-feed-chain` distinguindo arquitetura real do avanço em perfuratrizes.
+
+**Estado:** 21/25 PM modeladas, quatro pendentes, 115 vínculos candidatos e dez bloqueios SAP. [Relatório](CICLO_2026-10-23_PNEUS_DESGASTE.md).
 
 ## Ciclo — 23/10/2026: integridade de pneus OTR (v1.3.54)
 

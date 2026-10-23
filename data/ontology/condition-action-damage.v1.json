@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.condition-action-damage.v1",
-  "version": "1.3.18",
+  "version": "1.3.19",
   "status": "conceptual_unvalidated",
   "semantics": {
     "condition": "Estado de fluido, superfície ou desempenho; ocorrência requer medição/observação",
@@ -1475,6 +1475,120 @@
       "status": "condition_hypothesis_not_observed",
       "observedValue": null,
       "observedAt": null
+    },
+    {
+      "id": "COND-TIRE-WEAR-RTD-PROFILE",
+      "label": "Perfil de profundidade remanescente de banda sob investigação",
+      "system": "pneus_rodas",
+      "medium": "perfil_rtd",
+      "observation": "Registrar em futuros ensaios a profundidade de banda em pontos ao longo da circunferência e entre centro e ombros, segundo desenho e método OEM.",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "MICHELIN-EARTHMOVER-TIRE-INSPECTION",
+        "MICHELIN-EARTHMOVER-TIRE-PRESSURE",
+        "BRIDGESTONE-OTR-PROGRAM"
+      ],
+      "limitations": "Uma medida isolada não comprova desgaste excessivo, tendência, taxa, limite de retirada ou causa sem desenho, referência e aplicação verificados.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-TIRE-WEAR-CENTER",
+      "label": "Predominância suspeita de desgaste na faixa central",
+      "system": "pneus_rodas",
+      "medium": "centro_banda",
+      "observation": "Comparar a região central e os ombros em posições definidas, com métodos rastreáveis e condição operacional conhecida.",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "MICHELIN-EARTHMOVER-TIRE-INSPECTION",
+        "MICHELIN-EARTHMOVER-TIRE-PRESSURE",
+        "BRIDGESTONE-OTR-PROGRAM"
+      ],
+      "limitations": "Desgaste central pode coexistir com pressão elevada, mas não prova sobrepressão nem exclui carga, condução, construção e ambiente como causas concorrentes.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-TIRE-WEAR-SHOULDERS",
+      "label": "Desgaste suspeito predominante nos ombros da banda",
+      "system": "pneus_rodas",
+      "medium": "ombros_banda",
+      "observation": "Confrontar profundidade nos dois ombros e no centro em locais correspondentes, registrando possível assimetria.",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "MICHELIN-EARTHMOVER-TIRE-INSPECTION",
+        "MICHELIN-EARTHMOVER-TIRE-PRESSURE",
+        "BRIDGESTONE-OTR-PROGRAM"
+      ],
+      "limitations": "Desgaste dos ombros não confirma pressão insuficiente; carga, curvas, alinhamento e desenho da banda também devem ser diferenciados.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-TIRE-WEAR-ONE-SIDED",
+      "label": "Assimetria de desgaste entre lados da banda",
+      "system": "pneus_rodas",
+      "medium": "assimetria_banda",
+      "observation": "Diferenciar desgaste mais intenso de um lado, eixo e direção de rotação por medições em regiões equivalentes.",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "MICHELIN-EARTHMOVER-TIRE-INSPECTION",
+        "MICHELIN-EARTHMOVER-TIRE-PRESSURE",
+        "BRIDGESTONE-OTR-PROGRAM"
+      ],
+      "limitations": "Assimetria visual não confirma desalinhamento de eixo, alteração geométrica ou problema de direção sem inspeção e especificação aplicável.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-TIRE-WEAR-LOCALIZED",
+      "label": "Desgaste localizado ou plano em segmentos da banda",
+      "system": "pneus_rodas",
+      "medium": "segmentos_banda",
+      "observation": "Inspecionar e registrar faixas localizadas, manchas planas ou variação circunferencial do RTD sem manipulação do pneu.",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "MICHELIN-EARTHMOVER-TIRE-INSPECTION",
+        "MICHELIN-EARTHMOVER-TIRE-PRESSURE",
+        "BRIDGESTONE-OTR-PROGRAM"
+      ],
+      "limitations": "Não inferir arrasto de freio, patinagem ou lesão de carcaça apenas por área plana; separar abrasão gradual de cortes, arrancamentos e delaminação.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-TIRE-WEAR-DUAL-MATCH",
+      "label": "Diferença de RTD entre pneus de montagem dupla, quando existente",
+      "system": "pneus_rodas",
+      "medium": "conjunto_duplo",
+      "observation": "Quando e somente quando houver conjunto duplo, comparar dimensão, padrão, raio, RTD, pressão registrada e posição com método OEM.",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "MICHELIN-EARTHMOVER-TIRE-INSPECTION",
+        "MICHELIN-EARTHMOVER-TIRE-PRESSURE",
+        "BRIDGESTONE-OTR-PROGRAM"
+      ],
+      "limitations": "Montagem dupla não pode ser presumida; diferenças de RTD não provam distribuição de carga desigual, causa raiz ou critério de condenação.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
     }
   ],
   "actions": [
@@ -2394,6 +2508,70 @@
       "executionStatus": "not_performed",
       "observedResults": [],
       "intervalHours": null
+    },
+    {
+      "id": "ACT-TIRE-WEAR-IDENTIFY",
+      "label": "Identificar aplicação, desenho e requisito de RTD do pneu",
+      "kind": "inspection",
+      "intent": "Confirmar modelo, marca, construção, banda, dimensão, posição e especificação técnica aplicável antes da avaliação de desgaste.",
+      "sourceIds": [
+        "MICHELIN-EARTHMOVER-TIRE-INSPECTION",
+        "MICHELIN-EARTHMOVER-TIRE-PRESSURE",
+        "BRIDGESTONE-OTR-PROGRAM"
+      ],
+      "safety": "Não aplicar profundidade, pressão, critério de retirada nem periodicidade genéricos ou de pneus rodoviários a pneus OTR; identificar a configuração efetiva.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
+    },
+    {
+      "id": "ACT-TIRE-WEAR-MEASURE",
+      "label": "Propor medição multiponto de RTD com instrumento apropriado",
+      "kind": "inspection",
+      "intent": "Definir pontos de medição conforme desenho da banda, instrumento adequado, referência, posição e rastreabilidade de medições ainda não executadas.",
+      "sourceIds": [
+        "MICHELIN-EARTHMOVER-TIRE-INSPECTION",
+        "MICHELIN-EARTHMOVER-TIRE-PRESSURE",
+        "BRIDGESTONE-OTR-PROGRAM"
+      ],
+      "safety": "Somente com equipamento imobilizado, sem intervir em pneu quente ou danificado; qualquer indício estrutural exige isolamento e profissional de pneus.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
+    },
+    {
+      "id": "ACT-TIRE-WEAR-PRESSURE-LOAD",
+      "label": "Investigar histórico de pressão, carga e temperatura",
+      "kind": "inspection",
+      "intent": "Revisar leituras previamente autorizadas de pressão, carga, ciclo e temperatura e comparar com parâmetros específicos de aplicação.",
+      "sourceIds": [
+        "MICHELIN-EARTHMOVER-TIRE-INSPECTION",
+        "MICHELIN-EARTHMOVER-TIRE-PRESSURE",
+        "BRIDGESTONE-OTR-PROGRAM"
+      ],
+      "safety": "Jamais esvaziar pneu quente, ajustar pressão de conjunto danificado ou inventar calibração a partir de aparência; exigir equipe qualificada e manual efetivo.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
+    },
+    {
+      "id": "ACT-TIRE-WEAR-ALIGNMENT-DUAL",
+      "label": "Investigar alinhamento, serviço e matching de duplos se existentes",
+      "kind": "inspection",
+      "intent": "Cruzar perfil de RTD com uso, curvas, via, alinhamento aplicável e configuração de pneus duplos apenas quando instalada.",
+      "sourceIds": [
+        "MICHELIN-EARTHMOVER-TIRE-INSPECTION",
+        "MICHELIN-EARTHMOVER-TIRE-PRESSURE",
+        "BRIDGESTONE-OTR-PROGRAM"
+      ],
+      "safety": "Não executar teste dinâmico nem permuta, montagem ou desmontagem de pneus fora de procedimento seguro e aprovado por técnicos habilitados.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
     }
   ],
   "damageHypotheses": [
@@ -3142,6 +3320,69 @@
         "causeCode": null
       },
       "confirmed": false
+    },
+    {
+      "id": "DMG-TIRE-WEAR-CENTER-LOSS-CANDIDATE",
+      "label": "Possível perda física anormal da faixa central da banda sob investigação",
+      "componentRole": "centro_banda",
+      "requiredEvidence": "Confirmar com perfil de profundidade multiponto e referência específica do pneu uma perda central física anormal, sem atribuir causa à pressão somente pela aparência.",
+      "sourceIds": [
+        "MICHELIN-EARTHMOVER-TIRE-INSPECTION",
+        "MICHELIN-EARTHMOVER-TIRE-PRESSURE",
+        "BRIDGESTONE-OTR-PROGRAM"
+      ],
+      "kind": "candidate_component_damage",
+      "reviewStatus": "not_approved",
+      "catalogMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageCode": null,
+        "causeCode": null
+      },
+      "confirmed": false
+    },
+    {
+      "id": "DMG-TIRE-WEAR-SHOULDER-LOSS-CANDIDATE",
+      "label": "Possível perda física anormal de borracha em ombros da banda sob investigação",
+      "componentRole": "ombros_banda",
+      "requiredEvidence": "Confirmar perda diferencial em ombros por medição adequada e desenho de pneu verificado, distinguindo posição e serviço, sem afirmar subpressão automaticamente.",
+      "sourceIds": [
+        "MICHELIN-EARTHMOVER-TIRE-INSPECTION",
+        "MICHELIN-EARTHMOVER-TIRE-PRESSURE",
+        "BRIDGESTONE-OTR-PROGRAM"
+      ],
+      "kind": "candidate_component_damage",
+      "reviewStatus": "not_approved",
+      "catalogMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageCode": null,
+        "causeCode": null
+      },
+      "confirmed": false
+    },
+    {
+      "id": "DMG-TIRE-WEAR-LOCAL-LOSS-CANDIDATE",
+      "label": "Possível perda irregular localizada de borracha da banda sob investigação",
+      "componentRole": "regiao_localizada_banda",
+      "requiredEvidence": "Diferenciar material fisicamente perdido por abrasão de cortes/arrancamentos do bundle de dano, com medidas rastreáveis e critério aprovado.",
+      "sourceIds": [
+        "MICHELIN-EARTHMOVER-TIRE-INSPECTION",
+        "MICHELIN-EARTHMOVER-TIRE-PRESSURE",
+        "BRIDGESTONE-OTR-PROGRAM"
+      ],
+      "kind": "candidate_component_damage",
+      "reviewStatus": "not_approved",
+      "catalogMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageCode": null,
+        "causeCode": null
+      },
+      "confirmed": false
     }
   ],
   "bundles": [
@@ -3808,6 +4049,43 @@
       "sourceIds": [
         "MICHELIN-OTR-TIRE-INSPECTION",
         "MICHELIN-OTR-TIRE-REPAIR",
+        "BRIDGESTONE-OTR-PROGRAM"
+      ],
+      "mappingScope": "generic_only",
+      "status": "review_candidate",
+      "observedConditionIds": [],
+      "performedActionIds": [],
+      "confirmedDamageIds": [],
+      "automaticDamagePromotion": false,
+      "evidenceInterpretation": "sem_resultado_de_campo"
+    },
+    {
+      "id": "BUNDLE-21",
+      "ruleId": "wheel-tire-wear",
+      "conditionIds": [
+        "COND-TIRE-WEAR-RTD-PROFILE",
+        "COND-TIRE-WEAR-CENTER",
+        "COND-TIRE-WEAR-SHOULDERS",
+        "COND-TIRE-WEAR-ONE-SIDED",
+        "COND-TIRE-WEAR-LOCALIZED",
+        "COND-TIRE-WEAR-DUAL-MATCH"
+      ],
+      "actionIds": [
+        "ACT-TIRE-WEAR-IDENTIFY",
+        "ACT-TIRE-WEAR-MEASURE",
+        "ACT-TIRE-WEAR-PRESSURE-LOAD",
+        "ACT-TIRE-WEAR-ALIGNMENT-DUAL"
+      ],
+      "differentialDamageIds": [
+        "DMG-TIRE-WEAR-CENTER-LOSS-CANDIDATE",
+        "DMG-TIRE-WEAR-SHOULDER-LOSS-CANDIDATE",
+        "DMG-TIRE-WEAR-LOCAL-LOSS-CANDIDATE"
+      ],
+      "chainIds": [],
+      "interpretation": "Desgaste uniforme esperado, assimetria, perda no centro, ombros, área localizada e matching de duplos se instalados exigem medições RTD e referência OEM. Pressão, carga, alinhamento e condução são hipóteses de causas concorrentes, nunca provas isoladas. Diferenciar do BUNDLE-20 wheel-tire-damage e não confirmar dano estrutural, código SAP, limite de sucata ou liberação automática.",
+      "sourceIds": [
+        "MICHELIN-EARTHMOVER-TIRE-INSPECTION",
+        "MICHELIN-EARTHMOVER-TIRE-PRESSURE",
         "BRIDGESTONE-OTR-PROGRAM"
       ],
       "mappingScope": "generic_only",
@@ -5455,6 +5733,123 @@
       "to": "DMG-TIRE-BEAD-DAMAGE-CANDIDATE",
       "type": "rule_lists_differential_damage",
       "meaning": "Hipótese genérica não observada ou executada; evidência independente obrigatória",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-183",
+      "from": "BUNDLE-21",
+      "to": "COND-TIRE-WEAR-RTD-PROFILE",
+      "type": "rule_monitors_condition",
+      "meaning": "Hipótese genérica não comprovada, sem evento real nem mapeamento SAP",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-184",
+      "from": "BUNDLE-21",
+      "to": "COND-TIRE-WEAR-CENTER",
+      "type": "rule_monitors_condition",
+      "meaning": "Hipótese genérica não comprovada, sem evento real nem mapeamento SAP",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-185",
+      "from": "BUNDLE-21",
+      "to": "COND-TIRE-WEAR-SHOULDERS",
+      "type": "rule_monitors_condition",
+      "meaning": "Hipótese genérica não comprovada, sem evento real nem mapeamento SAP",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-186",
+      "from": "BUNDLE-21",
+      "to": "COND-TIRE-WEAR-ONE-SIDED",
+      "type": "rule_monitors_condition",
+      "meaning": "Hipótese genérica não comprovada, sem evento real nem mapeamento SAP",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-187",
+      "from": "BUNDLE-21",
+      "to": "COND-TIRE-WEAR-LOCALIZED",
+      "type": "rule_monitors_condition",
+      "meaning": "Hipótese genérica não comprovada, sem evento real nem mapeamento SAP",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-188",
+      "from": "BUNDLE-21",
+      "to": "COND-TIRE-WEAR-DUAL-MATCH",
+      "type": "rule_monitors_condition",
+      "meaning": "Hipótese genérica não comprovada, sem evento real nem mapeamento SAP",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-189",
+      "from": "BUNDLE-21",
+      "to": "ACT-TIRE-WEAR-IDENTIFY",
+      "type": "rule_proposes_action",
+      "meaning": "Hipótese genérica não comprovada, sem evento real nem mapeamento SAP",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-190",
+      "from": "BUNDLE-21",
+      "to": "ACT-TIRE-WEAR-MEASURE",
+      "type": "rule_proposes_action",
+      "meaning": "Hipótese genérica não comprovada, sem evento real nem mapeamento SAP",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-191",
+      "from": "BUNDLE-21",
+      "to": "ACT-TIRE-WEAR-PRESSURE-LOAD",
+      "type": "rule_proposes_action",
+      "meaning": "Hipótese genérica não comprovada, sem evento real nem mapeamento SAP",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-192",
+      "from": "BUNDLE-21",
+      "to": "ACT-TIRE-WEAR-ALIGNMENT-DUAL",
+      "type": "rule_proposes_action",
+      "meaning": "Hipótese genérica não comprovada, sem evento real nem mapeamento SAP",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-193",
+      "from": "BUNDLE-21",
+      "to": "DMG-TIRE-WEAR-CENTER-LOSS-CANDIDATE",
+      "type": "rule_lists_differential_damage",
+      "meaning": "Hipótese genérica não comprovada, sem evento real nem mapeamento SAP",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-194",
+      "from": "BUNDLE-21",
+      "to": "DMG-TIRE-WEAR-SHOULDER-LOSS-CANDIDATE",
+      "type": "rule_lists_differential_damage",
+      "meaning": "Hipótese genérica não comprovada, sem evento real nem mapeamento SAP",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-195",
+      "from": "BUNDLE-21",
+      "to": "DMG-TIRE-WEAR-LOCAL-LOSS-CANDIDATE",
+      "type": "rule_lists_differential_damage",
+      "meaning": "Hipótese genérica não comprovada, sem evento real nem mapeamento SAP",
       "reviewStatus": "interpretacao_inferida",
       "observed": false
     }

@@ -2,6 +2,13 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.55] — 2026-10-23 — Desgaste de pneus OTR e diagnóstico RTD
+
+- BUNDLE-21 `wheel-tire-wear` independente de TIR1: seis condições, quatro ações planejadas, três danos candidatos, 13 relações e dois cenários sintéticos.
+- Diferenciados centro, ombros, assimetria, localização, perfil de RTD e rodagem dupla condicional. Sem causas inferidas de pressão ou alinhamento.
+- Ontologia 1.3.19: 83 condições, 62 ações, 39 danos, 21 bundles, 195 relações e 38 casos sintéticos; 21/25 regras modeladas.
+- Auditor adversarial, nove gates, dezesseis salvaguardas, sem limites OEM fabricados, dados de campo, códigos SAP ou alteração nos consumidores.
+
 ## [1.3.54] — 2026-10-23 — Dano físico do pneu OTR, integridade e segurança
 
 - BUNDLE-20 para `wheel-tire-damage`: seis condições não observadas, cinco ações não executadas, quatro danos candidatos, 15 relações e dois fixtures sintéticos.

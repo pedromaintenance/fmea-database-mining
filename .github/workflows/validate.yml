@@ -76,6 +76,8 @@ jobs:
         run: npm run pm:exhaust:ontology:audit
       - name: Auditar danos estruturais de pneus OTR e bloqueios de seguranca
         run: npm run pm:tire:damage:audit
+      - name: Auditar desgaste de pneus OTR e perfil de RTD
+        run: npm run pm:tire:wear:audit
       - name: Validar 10 bloqueios PM e 7 requisitos de efetividade OEM D9
         run: npm run pm:exceptions:validate
       - name: Gerar vínculos diagnósticos por modelo
@@ -185,6 +187,7 @@ jobs:
             reports/pm-exhaust-preflight.generated.json
             reports/pm-exhaust-ontology.generated.json
             reports/pm-tire-damage.generated.json
+            reports/pm-tire-wear.generated.json
             reports/public-knowledge.v1.json
             reports/public-manifest.v1.json
             data/governance/public-content-releases.v1.json
