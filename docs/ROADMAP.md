@@ -1,6 +1,6 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 22/10/2026 · **Ciclo:** catálogo técnico v1.3.49 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 22/10/2026 · **Ciclo:** catálogo técnico v1.3.50 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
 
@@ -38,6 +38,19 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 | Enriquecimento | 12 roteiros classificados por falha funcional, sintomas e técnicas | Anotação manual, não prova de causa |
 
 **Observação:** as 159 tarefas de PM com subgrupo candidato foram obtidas em extração local anterior e **não** representam 159 associações homologadas. Contagens de vínculos estritos serão publicadas pelo relatório automático após cada alteração do gerador.
+
+## Ciclo — 22/10/2026: cilindros de implementos e diagnóstico de deriva (v1.3.50)
+
+- [x] Inserido `BUNDLE-17` para `implement-cylinder`: oito condições, cinco atividades propostas e três danos candidatos não confirmados.
+- [x] Separados vazamento externo, bypass no pistão, deriva, perda de força, haste, alinhamento, fuga em válvulas e pressão/vazão insuficientes.
+- [x] Estabelecida fronteira causal: **deriva não equivale à falha da vedação do pistão** e umidade próxima não confirma vedação de haste.
+- [x] Bloqueados testes improvisados de linhas sob pressão, ensaios sem suporte físico e importação de limites genéricos de Parker/Cat.
+- [x] Ontologia **1.3.15**: 58 condições, 44 ações, 26 danos, 17 bundles, 139 relações e 30 casos sintéticos. **32 mutações adversariais rejeitadas** em CI.
+- [ ] **Engenharia/OEM:** identificar cilindro, vedação, retenção de carga, desenho hidráulico, condições e critérios de teste de deriva por modelo/série.
+- [ ] **Oficina/Segurança:** estruturar análise de risco para contenção de implemento, bloqueio de energia e possível investigação de passagem interna.
+- [ ] **PCM/Confiabilidade:** priorizar oito regras PM sem bundle e validar todas as decisões SAP de dano, causa, peça e operação por evidência independente.
+
+**Estado:** 25 regras PM, 115 vínculos candidatos, dez exceções bloqueadas e nenhum teste real ou falha confirmada pela ontologia.
 
 ## Ciclo — 22/10/2026: engrenagens do diferencial CAT777/CAT980 (v1.3.49)
 
