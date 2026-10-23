@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.semantic-regression.v1",
-  "version": "1.3.13",
+  "version": "1.3.14",
   "status": "synthetic_assertions_not_real_events",
   "cases": [
     {
@@ -367,6 +367,36 @@
       "independentComponentTest": "not_performed",
       "expectedConfirmedDamageIds": [],
       "why": "Exemplo apenas didático: fluido suspeito e óleo contaminado não identificam vedação defeituosa nem comprovam rolamento com dano; exigem BOM e inspeção da origem."
+    },
+    {
+      "id": "SEM-27",
+      "title": "Ruido e metais",
+      "ruleId": "differential-gear",
+      "observedConditionIds": [
+        "COND-DIFF-NOISE-LOAD",
+        "COND-DIFF-OIL-DEBRIS"
+      ],
+      "performedActionIds": [
+        "ACT-DIFF-OIL-SAMPLE-AND-REVIEW"
+      ],
+      "independentComponentTest": "not_performed",
+      "expectedConfirmedDamageIds": [],
+      "why": "Hipotese sintética sem confirmar engrenagem ou rolamento."
+    },
+    {
+      "id": "SEM-28",
+      "title": "Backlash e contato",
+      "ruleId": "differential-gear",
+      "observedConditionIds": [
+        "COND-DIFF-BACKLASH-SUSPECT",
+        "COND-DIFF-TOOTH-CONTACT-PATTERN"
+      ],
+      "performedActionIds": [
+        "ACT-DIFF-BACKLASH-CONTACT-CHECK"
+      ],
+      "independentComponentTest": "not_performed",
+      "expectedConfirmedDamageIds": [],
+      "why": "Sem aferição OEM, não comprova dano nem ajuste."
     }
   ]
 }
