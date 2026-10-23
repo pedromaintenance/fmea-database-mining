@@ -2,6 +2,12 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.52] — 2026-10-22 — Coletor de escape: pré-auditoria e barreiras de evidência
+
+- Realizada pré-auditoria de `engine-exhaust` sem ampliar indevidamente a ontologia: fuligem, fissura, vedação de flange, resíduo úmido, eventual fole e desempenho do escape permanecem hipóteses distintas.
+- Adicionadas 3 fontes CAT genéricas, 6 discriminações, 8 gates pendentes, 10 controles de segurança e auditor com 36 mutações adversariais; validação no CI.
+- Preservados 18 bundles/25 regras PM, ontologia 1.3.16, 115 vínculos candidatos, 10 exceções, contratos/exports públicos e consumidores externos. Nenhuma causa, ensaio, peça ou mapeamento SAP homologado.
+
 ## [1.3.51] — 2026-10-22 — Freios: arquitetura, atrito e atuação
 
 - Modelada `brake-disc` no **BUNDLE-18**, com sete condições hipotéticas, quatro ações não executadas e três danos diferenciais não aprovados; 14 relações tipadas.

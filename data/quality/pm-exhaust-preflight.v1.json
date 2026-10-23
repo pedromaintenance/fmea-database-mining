@@ -1,0 +1,176 @@
+{
+  "schema": "fmea-mining.pm-exhaust-preflight.v1",
+  "version": "1.3.52",
+  "nature": "literature_based_differential_hypotheses_no_field_events",
+  "ruleId": "engine-exhaust",
+  "ontologyVersionFrozen": "1.3.16",
+  "scope": {
+    "system": "motor_diesel",
+    "subgroupCode": "EXSY",
+    "partText": "Coletor",
+    "models": [
+      "EQ03",
+      "EQ02",
+      "CAT777",
+      "CAT980",
+      "EQ07",
+      "EQ05",
+      "EQ06"
+    ],
+    "serialEffectivityVerified": false,
+    "physicalLocationVerified": false
+  },
+  "sourceIds": [
+    "CAT-EXHAUST-MANIFOLD-KIT-INFO",
+    "CAT-EXHAUST-WET-STACKING",
+    "CAT-EXHAUST-BELLOWS-RELIABILITY"
+  ],
+  "differentials": [
+    {
+      "id": "EXH-01",
+      "phenomenon": "localized_soot_trace",
+      "interpretation": "Trilha de fuligem pode sinalizar fuga em junta, conexão, coletor ou outro ponto próximo.",
+      "discriminator": "Localizar a origem e a trajetória da fuligem após avaliação térmica e acesso seguro; distinguir fissura do corpo de folga em juntas ou flanges.",
+      "confounds": [
+        "manifold_crack",
+        "flange_gasket_leak",
+        "adjacent_connection_leak"
+      ],
+      "status": "hypothesis_not_observed",
+      "confirmed": false
+    },
+    {
+      "id": "EXH-02",
+      "phenomenon": "visible_manifold_fissure",
+      "interpretation": "Indicação visual de fissura no corpo do coletor exige caracterização material e confirmação independente antes de atribuir causa.",
+      "discriminator": "Confirmar corpo e configuração, acesso/limpeza seguros, extensão e critério técnico adequado ao material do coletor; não imputar fadiga térmica por aparência.",
+      "confounds": [
+        "casting_mark",
+        "surface_discoloration",
+        "gasket_edge"
+      ],
+      "status": "hypothesis_not_observed",
+      "confirmed": false
+    },
+    {
+      "id": "EXH-03",
+      "phenomenon": "flange_or_gasket_leak",
+      "interpretation": "Fuga em interface flange/junta pode ocorrer sem trinca do corpo do coletor e exige verificação de vedação/fixação.",
+      "discriminator": "Distinguir plano de junta, prisioneiros, juntas, luvas e interfaces pelo desenho OEM, sem estimar torque nem escolher material por semelhança.",
+      "confounds": [
+        "manifold_crack",
+        "turbo_inlet_joint",
+        "exhaust_bellows"
+      ],
+      "status": "hypothesis_not_observed",
+      "confirmed": false
+    },
+    {
+      "id": "EXH-04",
+      "phenomenon": "black_wet_exhaust_residue",
+      "interpretation": "Resíduo preto úmido pode reunir fuligem, combustível não queimado e óleo; não se confunde automaticamente com vazamento de lubrificante ou trinca.",
+      "discriminator": "Separar depósito pós-combustão e condição de carga da origem de gás escapando; fonte de geração é apenas contexto, não parâmetro de operação de mina.",
+      "confounds": [
+        "wet_stacking",
+        "oil_leak",
+        "joint_escape"
+      ],
+      "status": "hypothesis_not_observed",
+      "confirmed": false
+    },
+    {
+      "id": "EXH-05",
+      "phenomenon": "expansion_bellows_damage",
+      "interpretation": "Desalinhamento ou trinca em conexão flexível pode afetar escape, mas depende de existir esse componente na configuração real.",
+      "discriminator": "Verificar se há fole, suporte e liberdade térmica por BOM/desenho, com investigação mecânica de interface e sem presumir instalação.",
+      "confounds": [
+        "pipe_support",
+        "vibration",
+        "manifold_fissure"
+      ],
+      "status": "hypothesis_not_observed",
+      "confirmed": false
+    },
+    {
+      "id": "EXH-06",
+      "phenomenon": "exhaust_performance_deviation",
+      "interpretation": "Temperatura, fumaça ou desempenho atípico de motor não identificam diretamente trinca de coletor.",
+      "discriminator": "Confrontar telemetria e medições com baseline OEM específico, diferenciando admissão, combustão, turbo, contrapressão e escapamento.",
+      "confounds": [
+        "turbo_condition",
+        "combustion",
+        "exhaust_restriction"
+      ],
+      "status": "hypothesis_not_observed",
+      "confirmed": false
+    }
+  ],
+  "evidenceGates": [
+    {
+      "id": "OEM-SERIAL",
+      "purpose": "Número de série e configuração efetiva do motor e coletor",
+      "status": "pending"
+    },
+    {
+      "id": "BOM-PARTS",
+      "purpose": "Desenho, juntas, prisioneiros, fole e suportes realmente instalados",
+      "status": "pending"
+    },
+    {
+      "id": "SITE-ISOLATION",
+      "purpose": "Bloqueio de energias, temperatura residual e acesso seguro",
+      "status": "pending"
+    },
+    {
+      "id": "PHYSICAL-DISCRIMINATION",
+      "purpose": "Distinguir corpo trincado, interface sem vedação e tubulação adjacente",
+      "status": "pending"
+    },
+    {
+      "id": "CONDITION-CONTEXT",
+      "purpose": "Distinguir fuligem seca, resíduo úmido e condições operacionais",
+      "status": "pending"
+    },
+    {
+      "id": "APPROVED-METHOD",
+      "purpose": "Inspeção/teste e critérios específicos do OEM sem extrapolação",
+      "status": "pending"
+    },
+    {
+      "id": "SAP-STRUCTURE",
+      "purpose": "Conferir modelo, EXSY, componente e par dano/causa antes da classificação",
+      "status": "pending"
+    },
+    {
+      "id": "INDEPENDENT-REVIEW",
+      "purpose": "Revisão técnica independente com documentação rastreável",
+      "status": "pending"
+    }
+  ],
+  "safeguards": {
+    "noSootMeansCrack": true,
+    "noWetStackingMeansCrack": true,
+    "noLowPowerMeansManifoldCrack": true,
+    "noPreTurboLeakEqualsPostTurboLeak": true,
+    "noGensetLoadLimitTransferred": true,
+    "noGenericBoltTorque": true,
+    "noSerialPartNumberInference": true,
+    "noUncontrolledHotInspection": true,
+    "noAutomaticSapApproval": true,
+    "noConsumerChanges": true
+  },
+  "limits": {
+    "torqueNm": null,
+    "temperatureC": null,
+    "backPressureKpa": null,
+    "crackDimensionMm": null
+  },
+  "fieldState": {
+    "fieldObservations": 0,
+    "performedTests": 0,
+    "confirmedDamages": 0,
+    "approvedSapMappings": 0,
+    "serviceOrdersCreated": 0
+  },
+  "nextDecision": "Modelar BUNDLE-19 apenas com categorias claramente diferenciadas e curadoria independente; manter revisão OEM por série como pendência."
+}

@@ -2,7 +2,9 @@
 
 Banco de conhecimento **versionado** para investigar modos de falha, sintomas, evidências e causas em equipamentos móveis de mineração. Um consumidor possível é o jogo **[P.O.R.C.A.R.I.A. — Você Quebra, Eu Conserto](https://github.com/pedromaintenance/porcaria-voce-quebra-eu-conserto)**, mas o banco é independente: **este repositório não altera os consumidores**.
 
-> **Status:** versão do catálogo **1.3.51** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
+> **Status:** versão do catálogo **1.3.52** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
+
+**Ciclo v1.3.52:** [pré-auditoria de coletor de escape](docs/CICLO_2026-10-22_ESCAPE_PREAUDITORIA.md) segrega fuligem, trinca física, junta, resíduo úmido, fole condicionado à instalação e desempenho inespecífico. São seis diferenciais, oito gates pendentes e 36 alterações adversariais de segurança, sem novos bundles ou evento de campo: a ontologia permanece 1.3.16 e a cobertura PM 18/25.
 
 **Ciclo v1.3.35:** [auditoria funcional de HSVV e COMR](docs/CICLO_2026-10-21_HSVV_COMR.md), com proteção do gerador contra colisões de grupo/subgrupo e 23 cenários sintéticos. As quatro regras focadas permanecem bloqueadas até evidência OEM/SAP e revisão independente.
 

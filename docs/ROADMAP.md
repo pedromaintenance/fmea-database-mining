@@ -1,6 +1,6 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 22/10/2026 · **Ciclo:** catálogo técnico v1.3.51 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 22/10/2026 · **Ciclo:** catálogo técnico v1.3.52 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
 
@@ -38,6 +38,17 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 | Enriquecimento | 12 roteiros classificados por falha funcional, sintomas e técnicas | Anotação manual, não prova de causa |
 
 **Observação:** as 159 tarefas de PM com subgrupo candidato foram obtidas em extração local anterior e **não** representam 159 associações homologadas. Contagens de vínculos estritos serão publicadas pelo relatório automático após cada alteração do gerador.
+
+## Ciclo — 22/10/2026: pré-auditoria do coletor de escape (v1.3.52)
+
+- [x] Contrastadas trincas do coletor, fugas em juntas/flanges, foles de configuração incerta, resíduo úmido e comportamento de escape inespecífico.
+- [x] Registradas 3 fontes Caterpillar públicas **genéricas**, 6 diferenciais, 8 requisitos documentais pendentes e 10 invariantes de segurança.
+- [x] Incorporado auditor com 36 mutações adversariais e relatório de CI, sem confirmar observações, códigos SAP, reparos, inspeções ou efetividade por série.
+- [ ] **Engenharia/OEM:** obter desenho de coletor, flanges, juntas, prisioneiros e eventuais foles por modelo/série; determinar critérios e método de inspeção aplicáveis.
+- [ ] **Segurança/PCM:** garantir isolamento de superfícies quentes, local físico do indício e evidência independente antes de qualquer condenação.
+- [ ] **Próximo ciclo:** decidir BUNDLE-19 com modelagem semântica diferenciada, sem presumir que fuligem equivale a trinca.
+
+**Estado:** ontologia 1.3.16, **18/25 regras modeladas**, 7 pendentes, 10 bloqueios SAP, 0 falhas confirmadas.
 
 ## Ciclo — 22/10/2026: segurança e fricção de discos de freios (v1.3.51)
 
