@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.research.sources.v1",
-  "version": "1.3.22",
+  "version": "1.3.23",
   "status": "literatura_de_referencia_nao_casos_empiricos",
   "rights": "somente_titulos_links_e_resumos_originais",
   "sources": [
@@ -696,6 +696,39 @@
       "area": "brake_system_performance_and_safety",
       "role": "standard_scope_summary_not_individual_brake_oem_tolerance",
       "limitation": "Norma define requisitos de desempenho dos sistemas de freios de serviço, secundário e estacionamento; não fornece, nesta referência pública, tolerâncias do disco nem autoriza testes operacionais sem procedimento do fabricante e controle de risco.",
+      "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
+      "lastReviewed": "2026-10-22"
+    },
+    {
+      "id": "CAT-EXHAUST-MANIFOLD-KIT-INFO",
+      "organization": "Caterpillar",
+      "title": "Four Affordable Ways to Fix Your Rig — exhaust manifold install kit",
+      "url": "https://www.cat.com/en_US/articles/truck-engine-resource-center/four-affordable-ways-to-fix-your-rig.html",
+      "area": "exhaust_manifold_joint_leak_and_sealing",
+      "role": "oem_public_general_exhaust_context",
+      "limitation": "Fonte de motores rodoviários sobre vedação, prisioneiros, juntas e luvas do coletor; não comprova arquitetura instalada ou peças aplicáveis na frota de mina.",
+      "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
+      "lastReviewed": "2026-10-22"
+    },
+    {
+      "id": "CAT-EXHAUST-WET-STACKING",
+      "organization": "Caterpillar",
+      "title": "Wet Stacking? What is That? — Cat",
+      "url": "https://www.cat.com/en_US/articles/electric-power/podcasts/wet-stacking-what-is-that.html",
+      "area": "black_exhaust_discharge_distinct_from_cracked_manifold",
+      "role": "oem_public_general_exhaust_context",
+      "limitation": "Explicação sobre grupos geradores em baixa carga; depósitos escuros com combustível e fuligem não provam trinca, e seus limiares operacionais não devem ser transferidos para motores de mina.",
+      "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
+      "lastReviewed": "2026-10-22"
+    },
+    {
+      "id": "CAT-EXHAUST-BELLOWS-RELIABILITY",
+      "organization": "Caterpillar",
+      "title": "How Small Changes Impact Reliability — exhaust bellows and relative motion",
+      "url": "https://www.cat.com/en_GB/blog/technical-pitfalls-after-genset-commissioning-how-small-changes-impact-reliability.html",
+      "area": "exhaust_bellows_fatigue_and_support",
+      "role": "oem_public_general_exhaust_context",
+      "limitation": "Exemplo de instalação em geração de energia, não prova existência de fole ou falha equivalente em CAT777, CAT980 ou outras configurações; requer desenho e apoio por série.",
       "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
       "lastReviewed": "2026-10-22"
     }
