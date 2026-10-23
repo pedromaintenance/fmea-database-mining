@@ -17,9 +17,9 @@ const exact=(a,b)=>JSON.stringify(a)===JSON.stringify(b);
 const dict=xs=>new Map(xs.map(x=>[x.id,x]));
 export function validateBearingDifferentials(model,fixtures,policy,seed,sources){
  const err=[],ck=(ok,id)=>{if(!ok)err.push(id)};
- ck(model?.schema==='fmea-mining.condition-action-damage.v1'&&model?.version==='1.3.18'&&
- model?.conditions?.length===77&&model?.actions?.length===58&&model?.damageHypotheses?.length===36&&
- model?.bundles?.length===20&&model?.relations?.length===182,'ontology_version_cardinality');
+ ck(model?.schema==='fmea-mining.condition-action-damage.v1'&&model?.version==='1.3.19'&&
+ model?.conditions?.length===83&&model?.actions?.length===62&&model?.damageHypotheses?.length===39&&
+ model?.bundles?.length===21&&model?.relations?.length===195,'ontology_version_cardinality');
  ck(model?.observations?.length===0&&model?.workOrderExecutions?.length===0&&model?.confirmedComponentDamages?.length===0,'false_field_evidence');
  const rule=seed.find(r=>r.id==='final-drive-bearing'),gear=seed.find(r=>r.id==='final-drive-gear');
  ck(rule?.system==='comando_final'&&rule?.subgroupCode==='FID2'&&rule?.partText==='Rolamento'&&
@@ -76,7 +76,7 @@ export function validateBearingDifferentials(model,fixtures,policy,seed,sources)
  ck(policy?.observations===0&&policy?.inspectionsPerformed===0&&policy?.confirmedFailures===0&&
  policy?.sapMappingsApproved===0&&policy?.measuredValues===null,'invented_field_or_threshold');
  ck(policy?.sources?.every(x=>sourceIds.has(x)),'unverified_source');
- ck(fixtures?.status==='synthetic_assertions_not_real_events'&&fixtures?.cases?.length===36,'fixtures_count');
+ ck(fixtures?.status==='synthetic_assertions_not_real_events'&&fixtures?.cases?.length===38,'fixtures_count');
  for(const [id,conditionIds,action] of [
   ['SEM-25',[BEARING_CONDITIONS[7],BEARING_CONDITIONS[4]],BEARING_ACTIONS[3]],
   ['SEM-26',[BEARING_CONDITIONS[2],BEARING_CONDITIONS[5]],BEARING_ACTIONS[2]]
