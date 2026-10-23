@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.semantic-regression.v1",
-  "version": "1.3.17",
+  "version": "1.3.18",
   "status": "synthetic_assertions_not_real_events",
   "cases": [
     {
@@ -487,6 +487,36 @@
       "independentComponentTest": "not_performed",
       "expectedConfirmedDamageIds": [],
       "why": "Simulação didática: depósito preto e perda de desempenho não confirmam junta, trinca, óleo, combustível ou falha de fole."
+    },
+    {
+      "id": "SEM-35",
+      "title": "Corte em flanco e reforço suspeito não comprovam ruptura",
+      "ruleId": "wheel-tire-damage",
+      "observedConditionIds": [
+        "COND-TIRE-SIDEWALL-CUT",
+        "COND-TIRE-CORD-EXPOSURE"
+      ],
+      "performedActionIds": [
+        "ACT-TIRE-DAMAGE-VISUAL-REVIEW"
+      ],
+      "independentComponentTest": "not_performed",
+      "expectedConfirmedDamageIds": [],
+      "why": "Somente exemplo didático; corte e reforço aparente motivam isolamento e verificação qualificada, não diagnóstico de ruptura ou execução real."
+    },
+    {
+      "id": "SEM-36",
+      "title": "Abaulamento e pressão suspeita não comprovam delaminação",
+      "ruleId": "wheel-tire-damage",
+      "observedConditionIds": [
+        "COND-TIRE-BULGE",
+        "COND-TIRE-PRESSURE-CONTEXT"
+      ],
+      "performedActionIds": [
+        "ACT-TIRE-STRUCTURAL-HOLD"
+      ],
+      "independentComponentTest": "not_performed",
+      "expectedConfirmedDamageIds": [],
+      "why": "Exemplo sintético: saliência e contexto de pressão não confirmam separação interna ou causa. Sem liberar pneu, inflar ou reparar."
     }
   ]
 }

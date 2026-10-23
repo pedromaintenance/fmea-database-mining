@@ -1,6 +1,6 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 22/10/2026 · **Ciclo:** catálogo técnico v1.3.53 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 23/10/2026 · **Ciclo:** catálogo técnico v1.3.54 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
 
@@ -38,6 +38,18 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 | Enriquecimento | 12 roteiros classificados por falha funcional, sintomas e técnicas | Anotação manual, não prova de causa |
 
 **Observação:** as 159 tarefas de PM com subgrupo candidato foram obtidas em extração local anterior e **não** representam 159 associações homologadas. Contagens de vínculos estritos serão publicadas pelo relatório automático após cada alteração do gerador.
+
+## Ciclo — 23/10/2026: integridade de pneus OTR (v1.3.54)
+
+- [x] BUNDLE-20: seis condições, cinco ações propostas, quatro danos físicos candidatos e 15 relações tipadas; não confundir corte de pneu com desgaste de banda.
+- [x] Registradas fontes Michelin Earthmover e Bridgestone OTR, critérios de segurança e nove gates documentais pendentes.
+- [x] Configuração, pressão, limites de descarte, reparabilidade e códigos SAP não foram inventados nem homologados.
+- [x] Testes sintéticos e auditor adversarial integrados ao CI.
+- [ ] **Engenharia e equipe de pneus:** confirmar configuração por marca, tamanho e posição; avaliar lesões e critérios de reparabilidade em ambiente seguro.
+- [ ] **PCM/Dados mestres:** validar regra TIR1 com estrutura real sem desbloqueio SAP automático.
+- [ ] **Próximo ciclo:** modelar `wheel-tire-wear` (TIR3) como desgaste, distinto de dano estrutural de TIR1.
+
+**Estado:** 20/25 bundles, cinco pendentes, 115 candidatos PM, dez bloqueios não homologados. [Relatório completo](CICLO_2026-10-23_PNEUS_DANOS.md).
 
 ## Ciclo — 22/10/2026: coletor de escape e BUNDLE-19 (v1.3.53)
 
