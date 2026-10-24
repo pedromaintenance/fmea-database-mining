@@ -1,0 +1,171 @@
+{
+  "schema": "fmea-mining.pm-drill-feed-boundaries.v1",
+  "version": "1.3.56",
+  "sourceOntologyVersion": "1.3.20",
+  "ruleId": "drill-feed-chain",
+  "nature": "generic_sandvik_feed_chain_hypotheses_not_serial_approved",
+  "sourceIds": [
+    "SANDVIK-DR410I-FEED-SPEC-2024",
+    "SANDVIK-DI650I-CHAIN-SPEC-2020"
+  ],
+  "scope": {
+    "system": "avanco_perfuratriz",
+    "subgroupCode": "FECH",
+    "partText": "Corrente",
+    "models": [
+      "EQ05",
+      "EQ06"
+    ],
+    "eqModelsResolved": false,
+    "serialEffectivityVerified": false,
+    "dr410AutoTensionInstalled": null,
+    "di650TensionMechanismConfirmed": false,
+    "componentLocationVerified": false
+  },
+  "conditionIds": [
+    "COND-FEED-CHAIN-WEAR",
+    "COND-FEED-CHAIN-SLACK",
+    "COND-FEED-CHAIN-SPROCKET",
+    "COND-FEED-CHAIN-TRACK",
+    "COND-FEED-CHAIN-SIDE-SKEW",
+    "COND-FEED-CHAIN-GUIDE"
+  ],
+  "actionIds": [
+    "ACT-FEED-CHAIN-SERIAL-BOM",
+    "ACT-FEED-CHAIN-SAFE-VISUAL",
+    "ACT-FEED-CHAIN-TENSION-VERIFY",
+    "ACT-FEED-CHAIN-SYNC-DIFFERENTIAL",
+    "ACT-FEED-CHAIN-REVIEW-DISPOSITION"
+  ],
+  "damageIds": [
+    "DMG-FEED-CHAIN-JOINT-WEAR-CANDIDATE",
+    "DMG-FEED-CHAIN-SPROCKET-WEAR-CANDIDATE",
+    "DMG-FEED-CHAIN-GUIDE-WEAR-CANDIDATE"
+  ],
+  "oemArchitecture": [
+    {
+      "id": "DR410i",
+      "chainFeedInPublication": true,
+      "twinCylindersInPublication": true,
+      "standardManualPins": true,
+      "autoHydraulicTensionOptional": true,
+      "fleetOptionConfirmed": false
+    },
+    {
+      "id": "DI650i-S5",
+      "chainFeedInPublication": true,
+      "twinCylindersInPublication": null,
+      "standardManualPins": null,
+      "autoHydraulicTensionOptional": null,
+      "fleetOptionConfirmed": false
+    }
+  ],
+  "differentials": [
+    {
+      "id": "FEED-01",
+      "phenomenon": "chain_wear",
+      "distinction": "Visible surface wear must be separated from OEM-measured pitch elongation, link wear and mechanical failure; no condemned chain without inspection data.",
+      "confirmed": false
+    },
+    {
+      "id": "FEED-02",
+      "phenomenon": "chain_tension",
+      "distinction": "Slack or deviation can involve configuration, load, guides or adjustment; manual and optional automatic tension mechanisms cannot be treated as equivalent.",
+      "confirmed": false
+    },
+    {
+      "id": "FEED-03",
+      "phenomenon": "sprocket_contact",
+      "distinction": "Irregular tooth profile or engagement is not independently proof of sprocket condemnation, chain elongation or timing mismatch.",
+      "confirmed": false
+    },
+    {
+      "id": "FEED-04",
+      "phenomenon": "head_motion",
+      "distinction": "Erratic feed or noises can arise from hydraulic cylinders, sensors, slides, rods or drilling load and do not demonstrate a chain failure.",
+      "confirmed": false
+    },
+    {
+      "id": "FEED-05",
+      "phenomenon": "synchronization",
+      "distinction": "Dual-chain synchronization stated for DR410i family cannot be presumed in DI650i or in EQ05/EQ06 without serial-specific geometry.",
+      "confirmed": false
+    }
+  ],
+  "gates": [
+    {
+      "id": "MODEL_SERIAL",
+      "status": "pending"
+    },
+    {
+      "id": "FEED_VARIANT",
+      "status": "pending"
+    },
+    {
+      "id": "CHAIN_BOM",
+      "status": "pending"
+    },
+    {
+      "id": "TENSIONER_OPTION",
+      "status": "pending"
+    },
+    {
+      "id": "ENERGY_ISOLATION",
+      "status": "pending"
+    },
+    {
+      "id": "CHAIN_MEASUREMENTS",
+      "status": "pending"
+    },
+    {
+      "id": "SPROCKET_GUIDE_REVIEW",
+      "status": "pending"
+    },
+    {
+      "id": "HYDRAULIC_DIFFERENTIAL",
+      "status": "pending"
+    },
+    {
+      "id": "ENGINEERING_REVIEW",
+      "status": "pending"
+    },
+    {
+      "id": "SAP_SCOPE_APPROVAL",
+      "status": "pending"
+    }
+  ],
+  "safeguards": {
+    "noSlackEqualsFailedChain": true,
+    "noSprocketNoiseMeansBrokenTooth": true,
+    "noErraticFeedMeansChainWear": true,
+    "noDR410AutoTensionAssumption": true,
+    "noDI650TensionTransfer": true,
+    "noDualChainAssumption": true,
+    "noEqModelMappingAssumption": true,
+    "noUncontrolledMastAccess": true,
+    "noHydraulicOrGravityEnergyExposure": true,
+    "noImprovisedActiveFeedTest": true,
+    "noUniversalChainPitchLimit": true,
+    "noUniversalTensionOrTorque": true,
+    "noAutomaticReplacement": true,
+    "noAutomaticSapApproval": true,
+    "noFieldEvents": true,
+    "noConsumerChanges": true
+  },
+  "limits": {
+    "chainPitchMm": null,
+    "chainElongationPercent": null,
+    "chainTensionN": null,
+    "adjustmentTorqueNm": null,
+    "sprocketWearMm": null,
+    "sideClearanceMm": null
+  },
+  "fieldState": {
+    "fieldObservations": 0,
+    "performedTests": 0,
+    "confirmedDamages": 0,
+    "approvedSapMappings": 0,
+    "workOrders": 0,
+    "approvedOEMProcedures": 0
+  }
+}
