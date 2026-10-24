@@ -1,6 +1,6 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 24/10/2026 · **Ciclo:** catálogo técnico v1.3.62 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 24/10/2026 · **Ciclo:** catálogo técnico v1.3.63 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
 
@@ -38,6 +38,20 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 | Enriquecimento | 12 roteiros classificados por falha funcional, sintomas e técnicas | Anotação manual, não prova de causa |
 
 **Observação:** as 159 tarefas de PM com subgrupo candidato foram obtidas em extração local anterior e **não** representam 159 associações homologadas. Contagens de vínculos estritos serão publicadas pelo relatório automático após cada alteração do gerador.
+
+## Ciclo — 24/10/2026: preflight de piloto por ativo, efetividade OEM e metrologia (v1.3.63)
+
+- [x] Matriz pública sintética de pré-piloto por regra e bundle; dois candidatos TEST-* em RADI/HSVV, sem equipamento real selecionado.
+- [x] 34 requisitos de identificação, efetividade OEM, segurança, qualidade de medição, diagnóstico, revisão independente e SAP.
+- [x] Oito gates estruturados; implantação e SAP bloqueados, demais gates pendentes. Resultado público invariavelmente NO-GO.
+- [x] Auditor de 46 mutações para reprovar confirmação de série, calibração fictícia, dano/causa, assinatura ou liberação inventada.
+- [ ] **TI/Segurança:** implantar cofre privado, SSO/RBAC, assinatura confiável, logs append-only e autorizar piloto via oito gates anteriores.
+- [ ] **Engenharia:** selecionar ativo e série fora do repositório público e comprovar BOM/procedimento efetivos.
+- [ ] **PCM/Confiabilidade:** planejar medição com calibração, repetibilidade, amostra pré-intervenção e alternativas mecânicas.
+- [ ] **Dados Mestres:** revisar RADI/HSVV sob fluxo independente, sem considerar checklist conceitual como aprovação.
+- [ ] **Próximo ciclo:** verificar consistência documental e condições de bloqueio dos gates, sem simular operação real.
+
+**Estado:** dois preflights sintéticos, zero pilotos ativos, 25/25 bundles e dez bloqueios PM×SAP preservados. [Relatório](CICLO_2026-10-24_PREFLIGHT_PILOTO_ATIVO.md).
 
 ## Ciclo — 24/10/2026: runbook privado e fila P0 documental (v1.3.62)
 

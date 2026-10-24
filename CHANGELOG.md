@@ -2,6 +2,13 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.63] — 2026-10-24 — Pré-piloto de homologação por ativo e qualidade metrológica
+
+- Preflight sintético de dois casos P0 (radiador RADI e filtro combustível HSVV) com 34 verificações em sete disciplinas e oito gates em NO-GO/PENDING.
+- Especificados série/BOM, qualidade da medição, amostra pré-intervenção, contraprovas, segurança e revisão de engenharia independente, sem medições ou limites OEM inventados.
+- Biblioteca de geração determinística, snapshot versionado e auditor de 46 mutações no QA/CI; operações reais, liberação SAP e exportação pública de evidências permanecem proibidas.
+- Runbook privado 1.3.62, intake 1.3.61, maturidade 1.3.60, ontologia 1.3.23, 25 bundles e dez exceções preservados.
+
 ## [1.3.62] — 2026-10-24 — Runbook privado e revisão documental P0
 
 - Plano de implantação privada com oito gates técnicos/organizacionais, dependências e NO-GO formal por padrão; nenhuma infraestrutura declarada ativa.
