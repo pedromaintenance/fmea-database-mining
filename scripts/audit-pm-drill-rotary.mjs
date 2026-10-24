@@ -24,7 +24,7 @@ const sIds=['SANDVIK-DI650I-ROTARY-BROCHURE-2020','SANDVIK-DI650I-ROTARY-OEM-PAG
 function check(m,f,p,crossPolicy){
  const errors=[],ck=(v,k)=>{if(!v)errors.push(k)};
  const seed=seeds.find(x=>x.id==='drill-rotary-bearing'),b=by(m.bundles,'BUNDLE-23');
- ck(m.schema==='fmea-mining.condition-action-damage.v1'&&m.version==='1.3.22'&&m.conditions.length===101&&m.actions.length===77&&m.damageHypotheses.length===48&&m.bundles.length===24&&m.relations.length===237,'ontology_cardinality');
+ ck(m.schema==='fmea-mining.condition-action-damage.v1'&&m.version==='1.3.23'&&m.conditions.length===107&&m.actions.length===82&&m.damageHypotheses.length===51&&m.bundles.length===25&&m.relations.length===251,'ontology_cardinality');
  ck(m.observations.length===0&&m.workOrderExecutions.length===0&&m.confirmedComponentDamages.length===0,'fabricated_field_events');
  ck(seed?.system==='cabeca_rotativa'&&seed?.subgroupCode==='MORO'&&seed?.partText==='Rolamento'&&seed?.review==='pendente'&&seeds.length===25&&gaps.length===10&&links.length===115,'sap_pm_seed_modified');
  ck(p.schema==='fmea-mining.pm-drill-rotary-boundaries.v1'&&p.version==='1.3.57'&&p.sourceOntologyVersion==='1.3.21'&&p.ruleId==='drill-rotary-bearing','guard_identity');
@@ -65,14 +65,14 @@ function check(m,f,p,crossPolicy){
  const edges=m.relations.filter(x=>x.from==='BUNDLE-23'),expected=[...cIds,...aIds,...dIds];
  ck(edges.length===14&&eq(edges.map(x=>x.to),expected)&&eq(edges.map(x=>x.id),Array.from({length:14},(_,i)=>'REL-'+String(210+i).padStart(3,'0'))),'edge_refs_or_count');
  ck(edges.every(x=>x.observed===false&&x.reviewStatus==='interpretacao_inferida'&&x.type===(cIds.includes(x.to)?'rule_monitors_condition':aIds.includes(x.to)?'rule_proposes_action':'rule_lists_differential_damage')),'edge_semantics');
- ck(f.version==='1.3.22'&&f.status==='synthetic_assertions_not_real_events'&&f.cases.length===44,'fixtures');
+ ck(f.version==='1.3.23'&&f.status==='synthetic_assertions_not_real_events'&&f.cases.length===46,'fixtures');
  for(const id of ['SEM-41','SEM-42']){
   const x=by(f.cases,id);
   ck(x?.ruleId==='drill-rotary-bearing'&&x.independentComponentTest==='not_performed'&&x.expectedConfirmedDamageIds.length===0&&x.observedConditionIds.every(v=>cIds.includes(v))&&x.performedActionIds.every(v=>aIds.includes(v)),'fabricated_fixture_'+id);
  }
- ck(crossPolicy.version==='1.3.58'&&crossPolicy.sourceOntologyVersion==='1.3.22'&&crossPolicy.expectedBundles===24&&crossPolicy.expectedUnmodeledRules===1,'crosswalk_version');
+ ck(crossPolicy.version==='1.3.59'&&crossPolicy.sourceOntologyVersion==='1.3.23'&&crossPolicy.expectedBundles===25&&crossPolicy.expectedUnmodeledRules===0,'crosswalk_version');
  const cv=validateSemanticCrosswalkInputs(m,seeds,crossPolicy);
- ck(cv.errors.length===0&&cv.coverage.modeledRules===24&&cv.coverage.unmodeledRuleIds.length===1&&cv.coverage.sharedGenericNodes===11&&cv.coverage.sharedDamageNodes===0,'crosswalk_'+cv.errors.slice(0,3).join('_'));
+ ck(cv.errors.length===0&&cv.coverage.modeledRules===25&&cv.coverage.unmodeledRuleIds.length===0&&cv.coverage.sharedGenericNodes===11&&cv.coverage.sharedDamageNodes===0,'crosswalk_'+cv.errors.slice(0,3).join('_'));
  return errors;
 }
 const errors=check(model,fixture,guard,cross),oa=[],pa=[],fa=[];

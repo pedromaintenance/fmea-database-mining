@@ -7,7 +7,7 @@ const ontology=read('data/ontology/condition-action-damage.v1.json'),fixtures=re
 const clone=x=>JSON.parse(JSON.stringify(x)),eq=(a,b)=>JSON.stringify(a)===JSON.stringify(b),find=(a,id)=>a.find(x=>x.id===id);
 function check(m,f,p,c){
  const e=[],ck=(v,n)=>{if(!v)e.push(n)},seed=rules.find(r=>r.id==='wheel-tire-damage'),b=find(m.bundles,'BUNDLE-20');
- ck(m.version==='1.3.22'&&m.conditions.length===101&&m.actions.length===77&&m.damageHypotheses.length===48&&m.bundles.length===24&&m.relations.length===237,'counts');
+ ck(m.version==='1.3.23'&&m.conditions.length===107&&m.actions.length===82&&m.damageHypotheses.length===51&&m.bundles.length===25&&m.relations.length===251,'counts');
  ck(m.observations.length===0&&m.workOrderExecutions.length===0&&m.confirmedComponentDamages.length===0,'fabricated_events');
  ck(rules.length===25&&gaps.length===10&&links.length===115&&seed?.system==='pneus_rodas'&&seed?.subgroupCode==='TIR1'&&seed?.partText==='Pneu'&&seed.review==='pendente','pm_baseline');
  ck(p.schema==='fmea-mining.pm-tire-damage-boundaries.v1'&&p.version==='1.3.54'&&p.sourceOntologyVersion==='1.3.18'&&p.ruleId==='wheel-tire-damage','policy_version');
@@ -29,11 +29,11 @@ function check(m,f,p,c){
  const ee=m.relations.filter(x=>x.from==='BUNDLE-20'),expected=[...p.conditionIds,...p.actionIds,...p.damageIds];
  ck(ee.length===15&&eq(ee.map(x=>x.to),expected)&&eq(ee.map(x=>x.id),Array.from({length:15},(_,i)=>'REL-'+String(i+168).padStart(3,'0'))),'edges');
  ck(ee.every(x=>!x.observed&&x.reviewStatus==='interpretacao_inferida'&&x.type===(p.conditionIds.includes(x.to)?'rule_monitors_condition':p.actionIds.includes(x.to)?'rule_proposes_action':'rule_lists_differential_damage')),'edge_types');
- ck(f.version==='1.3.22'&&f.status==='synthetic_assertions_not_real_events'&&f.cases.length===44,'fixtures');
+ ck(f.version==='1.3.23'&&f.status==='synthetic_assertions_not_real_events'&&f.cases.length===46,'fixtures');
  for(const id of ['SEM-35','SEM-36']){const x=find(f.cases,id);ck(x?.ruleId==='wheel-tire-damage'&&x?.independentComponentTest==='not_performed'&&x?.expectedConfirmedDamageIds.length===0,'fixture_'+id);}
- ck(c.version==='1.3.58'&&c.expectedBundles===24&&c.expectedUnmodeledRules===1&&c.sourceOntologyVersion==='1.3.22','cross_policy');
+ ck(c.version==='1.3.59'&&c.expectedBundles===25&&c.expectedUnmodeledRules===0&&c.sourceOntologyVersion==='1.3.23','cross_policy');
  const x=validateSemanticCrosswalkInputs(m,rules,c);
- ck(x.errors.length===0&&x.coverage.modeledRules===24&&x.coverage.unmodeledRuleIds.length===1&&x.coverage.sharedDamageNodes===0&&x.coverage.sharedGenericNodes===11,'crosswalk_'+x.errors.slice(0,3).join(','));
+ ck(x.errors.length===0&&x.coverage.modeledRules===25&&x.coverage.unmodeledRuleIds.length===0&&x.coverage.sharedDamageNodes===0&&x.coverage.sharedGenericNodes===11,'crosswalk_'+x.errors.slice(0,3).join(','));
  return e;
 }
 const errors=check(ontology,fixtures,policy,cross),att=[],pa=[],fa=[];

@@ -22,7 +22,7 @@ const dIds=['DMG-FEED-CHAIN-JOINT-WEAR-CANDIDATE','DMG-FEED-CHAIN-SPROCKET-WEAR-
 function check(o,fx,g,crossPolicy){
  const errors=[],ck=(v,k)=>{if(!v)errors.push(k)};
  const s=seeds.find(x=>x.id==='drill-feed-chain'),b=by(o.bundles,'BUNDLE-22');
- ck(o.schema==='fmea-mining.condition-action-damage.v1'&&o.version==='1.3.22'&&o.conditions.length===101&&o.actions.length===77&&o.damageHypotheses.length===48&&o.bundles.length===24&&o.relations.length===237,'ontology_baseline');
+ ck(o.schema==='fmea-mining.condition-action-damage.v1'&&o.version==='1.3.23'&&o.conditions.length===107&&o.actions.length===82&&o.damageHypotheses.length===51&&o.bundles.length===25&&o.relations.length===251,'ontology_baseline');
  ck(o.observations.length===0&&o.workOrderExecutions.length===0&&o.confirmedComponentDamages.length===0,'invented_field_evidence');
  ck(seeds.length===25&&gaps.length===10&&links.length===115&&s?.system==='avanco_perfuratriz'&&s.subgroupCode==='FECH'&&s.partText==='Corrente'&&s.review==='pendente','pm_sap_seed_drift');
  ck(g.schema==='fmea-mining.pm-drill-feed-boundaries.v1'&&g.version==='1.3.56'&&g.sourceOntologyVersion==='1.3.20'&&g.ruleId==='drill-feed-chain','guard_identity');
@@ -62,14 +62,14 @@ function check(o,fx,g,crossPolicy){
  const edges=o.relations.filter(x=>x.from==='BUNDLE-22'),expected=[...cIds,...aIds,...dIds];
  ck(edges.length===14&&eq(edges.map(x=>x.to),expected)&&eq(edges.map(x=>x.id),Array.from({length:14},(_,i)=>'REL-'+String(196+i).padStart(3,'0'))),'edge_cardinality');
  ck(edges.every(x=>x.observed===false&&x.reviewStatus==='interpretacao_inferida'&&x.type===(cIds.includes(x.to)?'rule_monitors_condition':aIds.includes(x.to)?'rule_proposes_action':'rule_lists_differential_damage')),'edge_type_or_evidence');
- ck(fx.version==='1.3.22'&&fx.status==='synthetic_assertions_not_real_events'&&fx.cases.length===44,'synthetic_fixture_baseline');
+ ck(fx.version==='1.3.23'&&fx.status==='synthetic_assertions_not_real_events'&&fx.cases.length===46,'synthetic_fixture_baseline');
  for(const id of ['SEM-39','SEM-40']){
   const x=by(fx.cases,id);
   ck(x?.ruleId==='drill-feed-chain'&&x?.independentComponentTest==='not_performed'&&x?.expectedConfirmedDamageIds.length===0&&x?.observedConditionIds.every(v=>cIds.includes(v))&&x?.performedActionIds.every(v=>aIds.includes(v)),'fixture_promoted_'+id);
  }
- ck(crossPolicy.version==='1.3.58'&&crossPolicy.sourceOntologyVersion==='1.3.22'&&crossPolicy.expectedBundles===24&&crossPolicy.expectedUnmodeledRules===1,'crosswalk_policy');
+ ck(crossPolicy.version==='1.3.59'&&crossPolicy.sourceOntologyVersion==='1.3.23'&&crossPolicy.expectedBundles===25&&crossPolicy.expectedUnmodeledRules===0,'crosswalk_policy');
  const v=validateSemanticCrosswalkInputs(o,seeds,crossPolicy);
- ck(v.errors.length===0&&v.coverage.modeledRules===24&&v.coverage.unmodeledRuleIds.length===1&&v.coverage.sharedGenericNodes===11&&v.coverage.sharedDamageNodes===0,'crosswalk_'+v.errors.slice(0,4).join('_'));
+ ck(v.errors.length===0&&v.coverage.modeledRules===25&&v.coverage.unmodeledRuleIds.length===0&&v.coverage.sharedGenericNodes===11&&v.coverage.sharedDamageNodes===0,'crosswalk_'+v.errors.slice(0,4).join('_'));
  return errors;
 }
 const errors=check(m,f,p,cross),oa=[],pa=[],fa=[];
