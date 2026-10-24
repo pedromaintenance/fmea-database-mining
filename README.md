@@ -2,7 +2,9 @@
 
 Banco de conhecimento **versionado** para investigar modos de falha, sintomas, evidências e causas em equipamentos móveis de mineração. Um consumidor possível é o jogo **[P.O.R.C.A.R.I.A. — Você Quebra, Eu Conserto](https://github.com/pedromaintenance/porcaria-voce-quebra-eu-conserto)**, mas o banco é independente: **este repositório não altera os consumidores**.
 
-> **Status:** versão do catálogo **1.3.63** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
+> **Status:** versão do catálogo **1.3.64** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
+
+**Ciclo v1.3.64:** [separação das decisões técnicas, cadastrais e operacionais](docs/CICLO_2026-10-24_TRILHAS_DECISAO_FMEA.md) organiza dois pacotes P0 com 68 checks ainda não verificados e quatro trilhas distintas: documentação, engenharia, SAP e liberação operacional. Novo auditor com 53 mutações adversariais; nenhum evento ou aprovação real. Ontologia 1.3.23 preservada.
 
 **Ciclo v1.3.63:** [pré-piloto por ativo e qualidade metrológica](docs/CICLO_2026-10-24_PREFLIGHT_PILOTO_ATIVO.md) acrescenta 34 verificações, dois casos sintéticos RADI/HSVV e oito gates de decisão em NO-GO/PENDING. Sem ativo real, inspeção, autorização corporativa ou aprovação SAP. Ontologia 1.3.23 e maturidade 1.3.60 preservadas.
 

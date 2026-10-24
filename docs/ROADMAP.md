@@ -1,6 +1,6 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 24/10/2026 · **Ciclo:** catálogo técnico v1.3.63 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 24/10/2026 · **Ciclo:** catálogo técnico v1.3.64 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
 
@@ -38,6 +38,20 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 | Enriquecimento | 12 roteiros classificados por falha funcional, sintomas e técnicas | Anotação manual, não prova de causa |
 
 **Observação:** as 159 tarefas de PM com subgrupo candidato foram obtidas em extração local anterior e **não** representam 159 associações homologadas. Contagens de vínculos estritos serão publicadas pelo relatório automático após cada alteração do gerador.
+
+## Ciclo — 24/10/2026: matriz de decisões independentes sobre evidências (v1.3.64)
+
+- [x] Quatro trilhas separadas para prontidão documental, validação de engenharia, curadoria SAP e liberação operacional.
+- [x] Pacotes TEST-* RADI/HSVV derivados dos checklists P0 existentes; 68 pendências, nenhum laudo recebido.
+- [x] Sete critérios de qualidade de evidência; cinco categorias de recibo e três contraprovas por caso.
+- [x] Sem inferir medição, dano, causa, liberação, revisor confiável ou assinatura corporativa.
+- [x] Auditor adversarial para detectar promoção indevida de hipóteses e violações dos gates privados/SAP.
+- [ ] **TI/Segurança:** obter implantação autorizada, identidade RBAC e trilha de auditoria independente.
+- [ ] **Engenharia:** confirmar efetividade OEM por série e executar inspeção discriminante somente mediante autorização.
+- [ ] **PCM/Dados Mestres:** manter decisões de código SAP e retorno operacional em fluxos distintos.
+- [ ] **Próximo ciclo:** analisar lacunas reais de evidência por ativo apenas quando houver ambiente corporativo autorizado.
+
+**Estado:** 25/25 bundles conceituais, 10 bloqueios SAP e nenhuma homologação real. [Relatório](CICLO_2026-10-24_TRILHAS_DECISAO_FMEA.md).
 
 ## Ciclo — 24/10/2026: preflight de piloto por ativo, efetividade OEM e metrologia (v1.3.63)
 
