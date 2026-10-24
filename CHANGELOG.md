@@ -2,6 +2,13 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.60] — 2026-10-24 — Matriz de maturidade, evidência e homologação
+
+- Nova matriz versionada e regenerável das 25 regras e sete gates independentes: modelagem, fonte, série/BOM, campo, dano/causa, SAP e revisão.
+- Filas P0/P1 reproduzidas sem inventar prioridade para 15 regras: cinco P0, cinco P1, dez bloqueios preservados.
+- 73 vínculos de referência pública/genérica catalogados, sem efetividade OEM validada; nenhum evento de campo, dano ou código SAP aprovado.
+- Auditor próprio com 24 mutações e relatório CI; ontologia 1.3.23, 25 bundles e 115 candidatos PM preservados. Consumidores e cadastros externos inalterados.
+
 ## [1.3.59] — 2026-10-24 — Compressor: separação funcional de filtros e 25/25 regras modeladas
 
 - `BUNDLE-25` para `drill-compressor-filter`: seis condições, cinco ações propostas, três danos físicos candidatos, quatorze relações tipadas e dois casos sintéticos.
