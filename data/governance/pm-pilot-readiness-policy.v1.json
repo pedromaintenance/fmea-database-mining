@@ -1,0 +1,234 @@
+{
+  "schema": "fmea-mining.pm-pilot-readiness-policy.v1",
+  "version": "1.3.63",
+  "nature": "public_synthetic_preflight_not_executable_asset_pilot",
+  "sourceDeployment": "data/governance/pm-private-deployment-runbook.v1.json",
+  "sourceDeploymentVersion": "1.3.62",
+  "sourceDocumentaryReview": "data/quality/pm-p0-documentary-review.v1.json",
+  "sourceDocumentaryVersion": "1.3.62",
+  "sourceMaturity": "data/quality/pm-maturity-matrix.v1.json",
+  "sourceMaturityVersion": "1.3.60",
+  "sourceIntake": "data/governance/pm-evidence-intake-policy.v1.json",
+  "sourceIntakeVersion": "1.3.61",
+  "selection": "two_existing_detailed_P0_rules_only; no_asset_selected_or_serial_verified",
+  "checklists": {
+    "identity": [
+      {
+        "id": "AST-MODEL",
+        "requirement": "Confirmar fabricante, modelo, variante e tag em ambiente restrito"
+      },
+      {
+        "id": "AST-SERIAL",
+        "requirement": "Conferir série e efetividade do manual OEM no cofre corporativo"
+      },
+      {
+        "id": "AST-COMPONENT",
+        "requirement": "Confrontar conjunto, localização física, BOM e PN efetivamente montados"
+      },
+      {
+        "id": "AST-CHANGE",
+        "requirement": "Avaliar modificações, campanhas e revisões históricas que alterem aplicabilidade"
+      }
+    ],
+    "oem": [
+      {
+        "id": "OEM-LICENSE",
+        "requirement": "Verificar licença de uso e revisão da documentação OEM"
+      },
+      {
+        "id": "OEM-PROCEDURE",
+        "requirement": "Validar procedimento e pré-requisitos pelo modelo/serial"
+      },
+      {
+        "id": "OEM-CRITERIA",
+        "requirement": "Identificar valores e critérios OEM somente em ambiente autorizado, sem fixar padrão genérico"
+      },
+      {
+        "id": "OEM-DIAGRAM",
+        "requirement": "Conferir esquema/BOM e cadeia de peças, subsistemas e interfaces"
+      },
+      {
+        "id": "OEM-SUPERSESSION",
+        "requirement": "Verificar substituições de peça e efetividade das revisões"
+      }
+    ],
+    "safe_execution": [
+      {
+        "id": "SAFE-JSA",
+        "requirement": "Análise de risco da tarefa e autorização formal da intervenção"
+      },
+      {
+        "id": "SAFE-ISOLATION",
+        "requirement": "Bloqueio e teste de energia zero por procedimento OEM"
+      },
+      {
+        "id": "SAFE-COOLPRESS",
+        "requirement": "Controlar temperatura, pressão e fluidos residuais"
+      },
+      {
+        "id": "SAFE-TOOL",
+        "requirement": "Ferramentas, EPIs, métodos e profissionais qualificados"
+      },
+      {
+        "id": "SAFE-NO-ACTIVE-TEST",
+        "requirement": "Proibir acionamento/ensaio improvisado para provocar falha"
+      }
+    ],
+    "measurement_quality": [
+      {
+        "id": "MET-METHOD",
+        "requirement": "Método/procedimento de medição ou amostragem identificado"
+      },
+      {
+        "id": "MET-TRACE",
+        "requirement": "Instrumento, identificação e calibração rastreáveis"
+      },
+      {
+        "id": "MET-CONTEXT",
+        "requirement": "Condição térmica, carga, regime, ambiente e compartimento definidos"
+      },
+      {
+        "id": "MET-PRE",
+        "requirement": "Sequência pré-intervenção registrada quando aplicável e segura"
+      },
+      {
+        "id": "MET-REPEAT",
+        "requirement": "Repetibilidade, representatividade e incerteza avaliadas conforme método"
+      },
+      {
+        "id": "MET-CUSTODY",
+        "requirement": "Cadeia de custódia e integridade do dado bruto em cofre privado"
+      },
+      {
+        "id": "MET-REFERENCE",
+        "requirement": "Limite de aceitação vinculado ao OEM específico, sem interpolação genérica"
+      },
+      {
+        "id": "MET-ALTERNATIVE",
+        "requirement": "Contraprova/alternativa física e instrumental registrada"
+      }
+    ],
+    "diagnosis": [
+      {
+        "id": "DIAG-SYMPTOM",
+        "requirement": "Sintoma identificado independentemente da causa e do dano"
+      },
+      {
+        "id": "DIAG-MECHANISM",
+        "requirement": "Mecanismos alternativos discriminados sem conclusão automática"
+      },
+      {
+        "id": "DIAG-PHYSICAL",
+        "requirement": "Dano físico só após evidência independente do componente"
+      },
+      {
+        "id": "DIAG-ROOT",
+        "requirement": "Causa raiz exige análise própria e vínculo causal revisado"
+      }
+    ],
+    "independent_review": [
+      {
+        "id": "REV-TECHNICAL",
+        "requirement": "Engenheiro técnico designado e parecer justificado"
+      },
+      {
+        "id": "REV-INDEPENDENT",
+        "requirement": "Outro revisor autorizado, sem conflito com solicitante e executor"
+      },
+      {
+        "id": "REV-EVIDENCE",
+        "requirement": "Aceite de qualidade de evidência e contraprovas em cofre privado"
+      },
+      {
+        "id": "REV-DECISION",
+        "requirement": "Decisão datada e assinada por identidade corporativa verificada"
+      }
+    ],
+    "sap_change": [
+      {
+        "id": "SAP-SCOPE",
+        "requirement": "Local funcional, grupo/subgrupo e componente conferidos por série"
+      },
+      {
+        "id": "SAP-REVIEW",
+        "requirement": "Códigos de dano e causa avaliados em curadoria independente"
+      },
+      {
+        "id": "SAP-CHANGE",
+        "requirement": "Mudança realizada apenas por workflow corporativo autorizado"
+      },
+      {
+        "id": "SAP-BLOCK",
+        "requirement": "Bloqueio original permanece até aprovação formal e rastreável"
+      }
+    ]
+  },
+  "gates": [
+    {
+      "id": "G-DEPLOY",
+      "dependsOn": "all_eight_private_deployment_gates",
+      "approvalStatus": "BLOCKED"
+    },
+    {
+      "id": "G-ASSET",
+      "dependsOn": "identity",
+      "approvalStatus": "PENDING"
+    },
+    {
+      "id": "G-OEM",
+      "dependsOn": "oem",
+      "approvalStatus": "PENDING"
+    },
+    {
+      "id": "G-SAFE",
+      "dependsOn": "safe_execution",
+      "approvalStatus": "PENDING"
+    },
+    {
+      "id": "G-MEASURE",
+      "dependsOn": "measurement_quality",
+      "approvalStatus": "PENDING"
+    },
+    {
+      "id": "G-DIAG",
+      "dependsOn": "diagnosis",
+      "approvalStatus": "PENDING"
+    },
+    {
+      "id": "G-REVIEW",
+      "dependsOn": "independent_review",
+      "approvalStatus": "PENDING"
+    },
+    {
+      "id": "G-SAP",
+      "dependsOn": "sap_change",
+      "approvalStatus": "BLOCKED"
+    }
+  ],
+  "decisions": {
+    "publicPreflight": "NO_GO",
+    "privatePilotApproval": null,
+    "privatePilotAuthorized": false,
+    "physicalInterventionAuthorized": false,
+    "rootCauseConfirmed": false,
+    "engineeringApproved": false,
+    "sapApproved": false,
+    "serviceReleaseApproved": false,
+    "publicEvidenceUploadAllowed": false,
+    "committeeApprovalRequired": true
+  },
+  "prohibitedFields": [
+    "real serial",
+    "real equipment tag",
+    "work order number",
+    "internal PN",
+    "measurements",
+    "report content",
+    "OEM manual content",
+    "private URL",
+    "corporate name",
+    "auth token",
+    "real signature"
+  ],
+  "realReadinessAuthority": "corporate_security_privacy_engineering_and_change_control"
+}
