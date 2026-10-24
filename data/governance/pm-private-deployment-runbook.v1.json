@@ -1,0 +1,194 @@
+{
+  "schema": "fmea-mining.pm-private-deployment-runbook.v1",
+  "version": "1.3.62",
+  "status": "offline_plan_pending_corporate_authorization",
+  "referencedContracts": [
+    "data/governance/restricted-infrastructure-design.v1.json",
+    "data/governance/restricted-evidence-workflow.v1.json",
+    "data/governance/private-result-custody-contract.v1.json",
+    "data/governance/pm-evidence-intake-policy.v1.json",
+    "data/quality/pm-maturity-matrix.v1.json"
+  ],
+  "purpose": "Controlled prerequisites for authorized private rollout of PM evidence intake, not a working deployment or permission to upload restricted data",
+  "infrastructureState": {
+    "securityApproved": false,
+    "privacyApproved": false,
+    "recordsApproved": false,
+    "engineeringOwnerApproved": false,
+    "corporateSSO": false,
+    "serverSideRBAC": false,
+    "privateVault": false,
+    "immutableTrustedAudit": false,
+    "retentionPolicy": false,
+    "privateVerifier": false,
+    "independentReviewLive": false,
+    "stagingAcceptanceSigned": false,
+    "realPilotApproved": false,
+    "realCasesAccepted": 0
+  },
+  "phases": [
+    {
+      "id": "SEC-01",
+      "name": "Patrocinio, licença e DPIA",
+      "owner": "seguranca_privacidade_e_governanca",
+      "prerequisites": [],
+      "requiredArtifacts": [
+        "aprovacao formal e escopo de acesso",
+        "validação de licenças OEM",
+        "classificação e base autorizada de tratamento"
+      ],
+      "status": "not_started",
+      "gate": "BLOCK",
+      "decisionToken": null
+    },
+    {
+      "id": "ID-02",
+      "name": "SSO, MFA e RBAC por ativo/caso",
+      "owner": "ti_identidade",
+      "prerequisites": [
+        "SEC-01"
+      ],
+      "requiredArtifacts": [
+        "matriz deny-by-default de papéis e segregação",
+        "comprovação de revogação e MFA",
+        "teste de isolamento por tenant/caso"
+      ],
+      "status": "not_started",
+      "gate": "BLOCK",
+      "decisionToken": null
+    },
+    {
+      "id": "STO-03",
+      "name": "Cofre segregado e custódia",
+      "owner": "plataforma_ti",
+      "prerequisites": [
+        "SEC-01",
+        "ID-02"
+      ],
+      "requiredArtifacts": [
+        "cofre corporativo criptografado",
+        "ACL restrita por caso e ativo",
+        "regras de licença e integridade por documento"
+      ],
+      "status": "not_started",
+      "gate": "BLOCK",
+      "decisionToken": null
+    },
+    {
+      "id": "AUD-04",
+      "name": "Auditoria externa verificável",
+      "owner": "seguranca_ti",
+      "prerequisites": [
+        "ID-02",
+        "STO-03"
+      ],
+      "requiredArtifacts": [
+        "assinatura de revisão com chave verificada externamente",
+        "log append-only com relógio confiável",
+        "detecção persistente de replay e revogação"
+      ],
+      "status": "not_started",
+      "gate": "BLOCK",
+      "decisionToken": null
+    },
+    {
+      "id": "RET-05",
+      "name": "Retenção e descarte",
+      "owner": "privacidade_e_arquivos",
+      "prerequisites": [
+        "SEC-01",
+        "STO-03"
+      ],
+      "requiredArtifacts": [
+        "prazo formal aprovado sem assumir dias",
+        "legal hold e backup segregado",
+        "trilha de descarte controlado"
+      ],
+      "status": "not_started",
+      "gate": "BLOCK",
+      "decisionToken": null
+    },
+    {
+      "id": "REV-06",
+      "name": "Revisão humana e mudança SAP",
+      "owner": "engenharia_pcm_dados_mestres",
+      "prerequisites": [
+        "AUD-04",
+        "RET-05"
+      ],
+      "requiredArtifacts": [
+        "revisores técnico e independente distintos",
+        "aprovação documental OEM por série",
+        "solicitação manual SAP em processo corporativo próprio"
+      ],
+      "status": "not_started",
+      "gate": "BLOCK",
+      "decisionToken": null
+    },
+    {
+      "id": "STG-07",
+      "name": "Staging isolado com falhas negativas",
+      "owner": "ti_seguranca_engenharia",
+      "prerequisites": [
+        "REV-06"
+      ],
+      "requiredArtifacts": [
+        "evidência de negação de credenciais revogadas",
+        "teste de cross-tenant e fuga de dados",
+        "ensaio de falhas e exceções com revisão independente"
+      ],
+      "status": "not_started",
+      "gate": "BLOCK",
+      "decisionToken": null
+    },
+    {
+      "id": "PIL-08",
+      "name": "Decisão formal de piloto privado",
+      "owner": "comite_de_mudancas",
+      "prerequisites": [
+        "STG-07"
+      ],
+      "requiredArtifacts": [
+        "aceite de segurança e privacidade",
+        "aceite do responsável de engenharia",
+        "plano de rollback, custódia e monitoramento"
+      ],
+      "status": "not_started",
+      "gate": "BLOCK",
+      "decisionToken": null
+    }
+  ],
+  "goNoGo": {
+    "decision": "NO_GO",
+    "automaticApprovalAllowed": false,
+    "operationalReleaseAllowed": false,
+    "publicExportAllowed": false,
+    "pmSapRemappingAllowed": false,
+    "realPilotAllowed": false,
+    "allEightGatesRequired": true,
+    "decisionOwner": "comite_de_mudancas",
+    "approvedAt": null,
+    "approvedBy": null
+  },
+  "dataBoundaries": {
+    "forbiddenInPublic": [
+      "número de série, identificação de equipamento real",
+      "arquivos OEM ou links restritos",
+      "laudos de óleo/medição/fotografia",
+      "PN corporativo, localização SAP e códigos internos reversíveis",
+      "token de produção, credencial, assinatura real ou hash de arquivo privado"
+    ],
+    "publicAllowed": [
+      "políticas, schema e testes exclusivamente sintéticos",
+      "nomes públicos de regras e categorias de bloqueio",
+      "referências públicas genéricas sem efetividade por série"
+    ]
+  },
+  "liveIntegration": {
+    "SAP": false,
+    "VisionLink": false,
+    "corporateSSO": false,
+    "privateDocumentStore": false,
+    "signedAttestation": false
+  }
+}
