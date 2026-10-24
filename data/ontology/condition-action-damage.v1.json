@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.condition-action-damage.v1",
-  "version": "1.3.20",
+  "version": "1.3.21",
   "status": "conceptual_unvalidated",
   "semantics": {
     "condition": "Estado de fluido, superfície ou desempenho; ocorrência requer medição/observação",
@@ -1697,6 +1697,120 @@
       "status": "condition_hypothesis_not_observed",
       "observedValue": null,
       "observedAt": null
+    },
+    {
+      "id": "COND-ROTARY-BEARING-NOISE",
+      "label": "Ruído anormal percebido no conjunto de rotação sem origem confirmada",
+      "system": "cabeca_rotativa",
+      "medium": "ruido_cabeca_rotativa",
+      "observation": "Documentar ruído, condição de operação, região aparente e histórico autorizado de ocorrências, sem operar a cabeça para tentar reproduzir sons por iniciativa própria.",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "SANDVIK-DI650I-ROTARY-BROCHURE-2020",
+        "SANDVIK-DI650I-ROTARY-OEM-PAGE",
+        "SANDVIK-DR410I-TWO-STAGE-ROTARY-OEM"
+      ],
+      "limitations": "Ruído na cabeça rotativa também pode vir de engrenagens, motores hidráulicos, eixo flutuante, ferramenta de perfuração, fixação ou elementos de vedação; não prova defeito de rolamento.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-ROTARY-BEARING-VIBRATION",
+      "label": "Vibração ou oscilação anormal do conjunto de cabeça rotativa",
+      "system": "cabeca_rotativa",
+      "medium": "vibracao_cabeca_rotativa",
+      "observation": "Comparar somente tendências existentes de vibração e condições de carga e velocidade quando disponíveis, evitando inferir frequência de defeito sem cinemática conhecida.",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "SANDVIK-DI650I-ROTARY-BROCHURE-2020",
+        "SANDVIK-DI650I-ROTARY-OEM-PAGE",
+        "SANDVIK-DR410I-TWO-STAGE-ROTARY-OEM"
+      ],
+      "limitations": "Amplitude elevada não identifica pista, elemento rolante ou causa sem dados de referência, instrumentação e geometria da cabeça; desalinhamento e transmissão são alternativas.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-ROTARY-BEARING-TEMPERATURE",
+      "label": "Aumento suspeito de temperatura próximo ao alojamento da rotação",
+      "system": "cabeca_rotativa",
+      "medium": "temperatura_regiao_rotativa",
+      "observation": "Registrar localização, condições ambientais e tendência de medição autorizada, separando pontos do alojamento, transmissão hidráulica e interfaces do eixo.",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "SANDVIK-DI650I-ROTARY-BROCHURE-2020",
+        "SANDVIK-DI650I-ROTARY-OEM-PAGE",
+        "SANDVIK-DR410I-TWO-STAGE-ROTARY-OEM"
+      ],
+      "limitations": "Temperatura superficial isolada não mede temperatura interna do rolamento nem estabelece lubrificação inadequada; sem referência OEM, não aplicar limiar de condenação.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-ROTARY-BEARING-LUBE",
+      "label": "Indício de lubrificação ou fluido anormal em compartimento da cabeça",
+      "system": "cabeca_rotativa",
+      "medium": "lubrificacao_cabeca_rotativa",
+      "observation": "Verificar documentação de compartimento, tipo de fluido, histórico de nível e amostras existentes, sem assumir que todas as arquiteturas usam o mesmo circuito.",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "SANDVIK-DI650I-ROTARY-BROCHURE-2020",
+        "SANDVIK-DI650I-ROTARY-OEM-PAGE",
+        "SANDVIK-DR410I-TWO-STAGE-ROTARY-OEM"
+      ],
+      "limitations": "Aspecto do lubrificante, partículas ou vazamento em ponto adjacente não localizam rolamento danificado; diferenciar lubrificação do redutor, vedação do ar e demais subsistemas.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-ROTARY-BEARING-PLAY",
+      "label": "Folga ou movimentação axial/radial aparente do conjunto rotativo",
+      "system": "cabeca_rotativa",
+      "medium": "folga_cabeca_rotativa",
+      "observation": "Descrever suspeita de deslocamento ou excentricidade a partir de evidências disponíveis e localizar qual eixo, flange ou alojamento estaria envolvido.",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "SANDVIK-DI650I-ROTARY-BROCHURE-2020",
+        "SANDVIK-DI650I-ROTARY-OEM-PAGE",
+        "SANDVIK-DR410I-TWO-STAGE-ROTARY-OEM"
+      ],
+      "limitations": "Folga aparente do spindle, adaptação da haste ou carcaça não comprova folga interna de rolamento; procedimentos de medição e pré-carga são específicos de HTRH6/MRH6/DR410i.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-ROTARY-BEARING-FASTENER",
+      "label": "Indício de fixação, acoplamento ou transmissão de torque irregular",
+      "system": "cabeca_rotativa",
+      "medium": "fixacao_transmissao_rotativa",
+      "observation": "Revisar registros de fixação, deslocamento de flanges, variação de torque e comportamento de rotação como hipóteses concorrentes não localizadas.",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "SANDVIK-DI650I-ROTARY-BROCHURE-2020",
+        "SANDVIK-DI650I-ROTARY-OEM-PAGE",
+        "SANDVIK-DR410I-TWO-STAGE-ROTARY-OEM"
+      ],
+      "limitations": "Torque ou velocidade de rotação fora do habitual pode envolver hidráulica, engrenagens, controle e ferramenta; não confirma pré-carga errada, fixador frouxo ou rolamento condenado.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
     }
   ],
   "actions": [
@@ -2755,6 +2869,86 @@
       "executionStatus": "not_performed",
       "observedResults": [],
       "intervalHours": null
+    },
+    {
+      "id": "ACT-ROTARY-BEARING-CONFIG",
+      "label": "Confirmar por série o módulo rotativo, rolamento e opcionais instalados",
+      "kind": "inspection",
+      "intent": "Identificar equipamento e serial, fabricante e variante da cabeça rotativa, desenho/BOM, módulo de rolamento e interfaces antes de escolher o procedimento técnico.",
+      "sourceIds": [
+        "SANDVIK-DI650I-ROTARY-BROCHURE-2020",
+        "SANDVIK-DI650I-ROTARY-OEM-PAGE",
+        "SANDVIK-DR410I-TWO-STAGE-ROTARY-OEM"
+      ],
+      "safety": "Não presumir cabeçote HTRH6, MRH6 ou conjunto DR410i a partir de tags internos; não transportar pré-carga, peça, óleo, folga ou método entre famílias.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
+    },
+    {
+      "id": "ACT-ROTARY-BEARING-SAFE-REVIEW",
+      "label": "Planejar inspeção segura de alojamento, fixações e sinais externos",
+      "kind": "inspection",
+      "intent": "Documentar indícios acessíveis de vazamentos, folgas aparentes, ruído relatado e marcas de contato com avaliação de acesso e isolamento prévio das energias.",
+      "sourceIds": [
+        "SANDVIK-DI650I-ROTARY-BROCHURE-2020",
+        "SANDVIK-DI650I-ROTARY-OEM-PAGE",
+        "SANDVIK-DR410I-TWO-STAGE-ROTARY-OEM"
+      ],
+      "safety": "Evitar zona de aprisionamento, haste sob torque, ar comprimido residual e forças hidráulicas/gravitacionais; não manipular a cabeça sem sustentação, isolamento de todas as energias hidráulicas, gravitacionais e pneumáticas e bloqueio OEM.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
+    },
+    {
+      "id": "ACT-ROTARY-BEARING-LUBE-CORRELATE",
+      "label": "Verificar histórico de lubrificação e separar compartimentos por OEM",
+      "kind": "inspection",
+      "intent": "Correlacionar amostras existentes, fluido, volume, nível, contaminação e histórico de manutenção com compartimento efetivo e hipóteses de falha concorrentes.",
+      "sourceIds": [
+        "SANDVIK-DI650I-ROTARY-BROCHURE-2020",
+        "SANDVIK-DI650I-ROTARY-OEM-PAGE",
+        "SANDVIK-DR410I-TWO-STAGE-ROTARY-OEM"
+      ],
+      "safety": "Não abrir tampas ou drenar sob pressão/temperatura, não atribuir limalha a rolamento sem identificação, nem substituir fluido ou vedação sem especificação homologada.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
+    },
+    {
+      "id": "ACT-ROTARY-BEARING-DIAGNOSIS",
+      "label": "Propor ensaios diferenciais OEM de rolamento, transmissão e motor",
+      "kind": "test",
+      "intent": "Planejar avaliação especializada de folga, vibração, torque, velocidade e engrenamento pelos pontos e critérios específicos da arquitetura, com hipóteses alternativas.",
+      "sourceIds": [
+        "SANDVIK-DI650I-ROTARY-BROCHURE-2020",
+        "SANDVIK-DI650I-ROTARY-OEM-PAGE",
+        "SANDVIK-DR410I-TWO-STAGE-ROTARY-OEM"
+      ],
+      "safety": "Não executar teste sob carga, acionar rotação para provocar ruído, ajustar pré-carga ou usar torque genérico sem procedimento aprovado e análise de riscos.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
+    },
+    {
+      "id": "ACT-ROTARY-BEARING-DISPOSITION",
+      "label": "Encaminhar dano, reparabilidade e mapeamento SAP à revisão independente",
+      "kind": "inspection",
+      "intent": "Reunir evidências mecânicas e do lubrificante, identificação da peça e testes aprovados, diferenciando rolamento, vedação, eixo, engrenagem e fixação.",
+      "sourceIds": [
+        "SANDVIK-DI650I-ROTARY-BROCHURE-2020",
+        "SANDVIK-DI650I-ROTARY-OEM-PAGE",
+        "SANDVIK-DR410I-TWO-STAGE-ROTARY-OEM"
+      ],
+      "safety": "Não condenar rolamento nem liberar equipamento somente por sintoma ou laudo de óleo; nenhum limite de troca, peça ou mapeamento SAP pode ser inferido.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
     }
   ],
   "damageHypotheses": [
@@ -3626,6 +3820,69 @@
         "causeCode": null
       },
       "confirmed": false
+    },
+    {
+      "id": "DMG-ROTARY-BEARING-RACE-CANDIDATE",
+      "label": "Possível dano físico em pista ou elemento rolante da cabeça rotativa",
+      "componentRole": "rolamento_pistas_elementos_rotativos",
+      "requiredEvidence": "Demonstrar por avaliação especializada um defeito localizado em pista ou elemento rolante, segundo arquitetura e referência OEM, distinguindo dano em engrenagem, vedação e spindle.",
+      "sourceIds": [
+        "SANDVIK-DI650I-ROTARY-BROCHURE-2020",
+        "SANDVIK-DI650I-ROTARY-OEM-PAGE",
+        "SANDVIK-DR410I-TWO-STAGE-ROTARY-OEM"
+      ],
+      "kind": "candidate_component_damage",
+      "reviewStatus": "not_approved",
+      "catalogMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageCode": null,
+        "causeCode": null
+      },
+      "confirmed": false
+    },
+    {
+      "id": "DMG-ROTARY-BEARING-SUPPORT-CANDIDATE",
+      "label": "Possível dano físico em alojamento ou assento de rolamento da cabeça",
+      "componentRole": "alojamento_rolamento_rotativo",
+      "requiredEvidence": "Confirmar deformação, desgaste ou perda de ajuste no alojamento e respectivos pontos de apoio, separando-a de folga no spindle ou fixação de flange com critérios OEM por série.",
+      "sourceIds": [
+        "SANDVIK-DI650I-ROTARY-BROCHURE-2020",
+        "SANDVIK-DI650I-ROTARY-OEM-PAGE",
+        "SANDVIK-DR410I-TWO-STAGE-ROTARY-OEM"
+      ],
+      "kind": "candidate_component_damage",
+      "reviewStatus": "not_approved",
+      "catalogMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageCode": null,
+        "causeCode": null
+      },
+      "confirmed": false
+    },
+    {
+      "id": "DMG-ROTARY-BEARING-SEAL-CANDIDATE",
+      "label": "Possível dano físico de vedação no módulo associado à rotação",
+      "componentRole": "vedacao_modulo_rotacao",
+      "requiredEvidence": "Diferenciar vedação de óleo do módulo de rolamento e vedação do ar da cabeça, identificar peça física e evidência de falha independentemente de óleo migrado ou ruído.",
+      "sourceIds": [
+        "SANDVIK-DI650I-ROTARY-BROCHURE-2020",
+        "SANDVIK-DI650I-ROTARY-OEM-PAGE",
+        "SANDVIK-DR410I-TWO-STAGE-ROTARY-OEM"
+      ],
+      "kind": "candidate_component_damage",
+      "reviewStatus": "not_approved",
+      "catalogMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageCode": null,
+        "causeCode": null
+      },
+      "confirmed": false
     }
   ],
   "bundles": [
@@ -4367,6 +4624,44 @@
       "sourceIds": [
         "SANDVIK-DR410I-FEED-SPEC-2024",
         "SANDVIK-DI650I-CHAIN-SPEC-2020"
+      ],
+      "mappingScope": "generic_only",
+      "status": "review_candidate",
+      "observedConditionIds": [],
+      "performedActionIds": [],
+      "confirmedDamageIds": [],
+      "automaticDamagePromotion": false,
+      "evidenceInterpretation": "sem_resultado_de_campo"
+    },
+    {
+      "id": "BUNDLE-23",
+      "ruleId": "drill-rotary-bearing",
+      "conditionIds": [
+        "COND-ROTARY-BEARING-NOISE",
+        "COND-ROTARY-BEARING-VIBRATION",
+        "COND-ROTARY-BEARING-TEMPERATURE",
+        "COND-ROTARY-BEARING-LUBE",
+        "COND-ROTARY-BEARING-PLAY",
+        "COND-ROTARY-BEARING-FASTENER"
+      ],
+      "actionIds": [
+        "ACT-ROTARY-BEARING-CONFIG",
+        "ACT-ROTARY-BEARING-SAFE-REVIEW",
+        "ACT-ROTARY-BEARING-LUBE-CORRELATE",
+        "ACT-ROTARY-BEARING-DIAGNOSIS",
+        "ACT-ROTARY-BEARING-DISPOSITION"
+      ],
+      "differentialDamageIds": [
+        "DMG-ROTARY-BEARING-RACE-CANDIDATE",
+        "DMG-ROTARY-BEARING-SUPPORT-CANDIDATE",
+        "DMG-ROTARY-BEARING-SEAL-CANDIDATE"
+      ],
+      "chainIds": [],
+      "interpretation": "Ruído, vibração, temperatura, fluido suspeito, folga e transmissão de torque não demonstram automaticamente dano de rolamento. A DI650i usa variantes HTRH6 com módulo de rolamentos e MRH6 com mecanismo próprio de pré-carga; DR410i possui arquitetura de cabeça de dois estágios não equivalente. Exigir série/BOM, isolamento hidráulico/gravitacional e pneumático, método de inspeção e prova física independente antes de diagnóstico, ajuste, liberação operacional ou classificação MORO/SAP.",
+      "sourceIds": [
+        "SANDVIK-DI650I-ROTARY-BROCHURE-2020",
+        "SANDVIK-DI650I-ROTARY-OEM-PAGE",
+        "SANDVIK-DR410I-TWO-STAGE-ROTARY-OEM"
       ],
       "mappingScope": "generic_only",
       "status": "review_candidate",
@@ -6256,6 +6551,132 @@
       "to": "DMG-FEED-CHAIN-GUIDE-WEAR-CANDIDATE",
       "type": "rule_lists_differential_damage",
       "meaning": "Alteração física candidata sem confirmação ou código SAP",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-210",
+      "from": "BUNDLE-23",
+      "to": "COND-ROTARY-BEARING-NOISE",
+      "type": "rule_monitors_condition",
+      "meaning": "Indício genérico ainda não observado nem localizado",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-211",
+      "from": "BUNDLE-23",
+      "to": "COND-ROTARY-BEARING-VIBRATION",
+      "type": "rule_monitors_condition",
+      "meaning": "Indício genérico ainda não observado nem localizado",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-212",
+      "from": "BUNDLE-23",
+      "to": "COND-ROTARY-BEARING-TEMPERATURE",
+      "type": "rule_monitors_condition",
+      "meaning": "Indício genérico ainda não observado nem localizado",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-213",
+      "from": "BUNDLE-23",
+      "to": "COND-ROTARY-BEARING-LUBE",
+      "type": "rule_monitors_condition",
+      "meaning": "Indício genérico ainda não observado nem localizado",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-214",
+      "from": "BUNDLE-23",
+      "to": "COND-ROTARY-BEARING-PLAY",
+      "type": "rule_monitors_condition",
+      "meaning": "Indício genérico ainda não observado nem localizado",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-215",
+      "from": "BUNDLE-23",
+      "to": "COND-ROTARY-BEARING-FASTENER",
+      "type": "rule_monitors_condition",
+      "meaning": "Indício genérico ainda não observado nem localizado",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-216",
+      "from": "BUNDLE-23",
+      "to": "ACT-ROTARY-BEARING-CONFIG",
+      "type": "rule_proposes_action",
+      "meaning": "Avaliação futura, sem execução ou conclusão",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-217",
+      "from": "BUNDLE-23",
+      "to": "ACT-ROTARY-BEARING-SAFE-REVIEW",
+      "type": "rule_proposes_action",
+      "meaning": "Avaliação futura, sem execução ou conclusão",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-218",
+      "from": "BUNDLE-23",
+      "to": "ACT-ROTARY-BEARING-LUBE-CORRELATE",
+      "type": "rule_proposes_action",
+      "meaning": "Avaliação futura, sem execução ou conclusão",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-219",
+      "from": "BUNDLE-23",
+      "to": "ACT-ROTARY-BEARING-DIAGNOSIS",
+      "type": "rule_proposes_action",
+      "meaning": "Avaliação futura, sem execução ou conclusão",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-220",
+      "from": "BUNDLE-23",
+      "to": "ACT-ROTARY-BEARING-DISPOSITION",
+      "type": "rule_proposes_action",
+      "meaning": "Avaliação futura, sem execução ou conclusão",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-221",
+      "from": "BUNDLE-23",
+      "to": "DMG-ROTARY-BEARING-RACE-CANDIDATE",
+      "type": "rule_lists_differential_damage",
+      "meaning": "Dano apenas candidato, sem prova mecânica e SAP",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-222",
+      "from": "BUNDLE-23",
+      "to": "DMG-ROTARY-BEARING-SUPPORT-CANDIDATE",
+      "type": "rule_lists_differential_damage",
+      "meaning": "Dano apenas candidato, sem prova mecânica e SAP",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-223",
+      "from": "BUNDLE-23",
+      "to": "DMG-ROTARY-BEARING-SEAL-CANDIDATE",
+      "type": "rule_lists_differential_damage",
+      "meaning": "Dano apenas candidato, sem prova mecânica e SAP",
       "reviewStatus": "interpretacao_inferida",
       "observed": false
     }

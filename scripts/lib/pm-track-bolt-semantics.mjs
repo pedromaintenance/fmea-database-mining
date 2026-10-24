@@ -22,9 +22,9 @@ const map=x=>new Map(x.map(v=>[v.id,v]));
 const sourceIds=['CAT-UC-DOZER-GUIDE','CAT-DOZER-UC-MAINT','NORDLOCK-BOLT-LOOSENING','NORDLOCK-BOLTING-FAILURE'];
 export function auditTrackBoltOntology(m,fixtures,seed,policy,sourceList) {
  const errors=[],check=(v,id)=>{if(!v)errors.push(id)};
- check(m?.schema==='fmea-mining.condition-action-damage.v1'&&m?.version==='1.3.20'&&
-  m?.conditions?.length===89&&m?.actions?.length===67&&m?.damageHypotheses?.length===42&&
-  m?.bundles?.length===22&&m?.relations?.length===209,'ontology_version_or_counts');
+ check(m?.schema==='fmea-mining.condition-action-damage.v1'&&m?.version==='1.3.21'&&
+  m?.conditions?.length===95&&m?.actions?.length===72&&m?.damageHypotheses?.length===45&&
+  m?.bundles?.length===23&&m?.relations?.length===223,'ontology_version_or_counts');
  check(m?.safetyInvariant==='condition!=action!=damage'&&m?.evidenceNature==='no_field_observation'&&
   m?.observations?.length===0&&m?.workOrderExecutions?.length===0&&m?.confirmedComponentDamages?.length===0,'faked_provenance');
  const rule=seed.find(x=>x.id==='track-bolt-loose');
@@ -80,7 +80,7 @@ export function auditTrackBoltOntology(m,fixtures,seed,policy,sourceList) {
  check(policy?.safeguards&&Object.keys(policy.safeguards).length===10&&Object.values(policy.safeguards).every(x=>x===true),'policy_safety_relaxed');
  check(policy?.measuredPreload===null&&policy?.appliedTorqueNm===null&&policy?.appliedTurnAngleDegrees===null&&
   policy?.observedFailures===0&&policy?.executedTasks===0&&policy?.approvedSapMappings===0,'pretended_torque_or_field_data');
- check(fixtures?.status==='synthetic_assertions_not_real_events'&&fixtures?.cases?.length===40,'fixtures_count');
+ check(fixtures?.status==='synthetic_assertions_not_real_events'&&fixtures?.cases?.length===42,'fixtures_count');
  for(const [id,expected] of [
   ['SEM-21',['COND-TRACK-SHOE-FASTENER-LOOSE','COND-TRACK-SHOE-ROTATION-SUSPECT']],
   ['SEM-22',['COND-TRACK-SHOE-SEAT-DISTRESS','COND-TRACK-SHOE-FASTENER-FRACTURE']]

@@ -1,11 +1,11 @@
 {
   "schema": "fmea-mining.semantic-crosswalk-policy.v1",
-  "version": "1.3.56",
+  "version": "1.3.57",
   "nature": "documented_generic_overlap_without_field_observations_or_component_approval",
-  "sourceOntologyVersion": "1.3.20",
-  "expectedBundles": 22,
+  "sourceOntologyVersion": "1.3.21",
+  "expectedBundles": 23,
   "expectedSeedRules": 25,
-  "expectedUnmodeledRules": 3,
+  "expectedUnmodeledRules": 2,
   "sharedNodes": [
     {
       "id": "COND-FUEL-WATER",

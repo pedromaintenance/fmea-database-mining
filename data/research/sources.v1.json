@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.research.sources.v1",
-  "version": "1.3.25",
+  "version": "1.3.26",
   "status": "literatura_de_referencia_nao_casos_empiricos",
   "rights": "somente_titulos_links_e_resumos_originais",
   "sources": [
@@ -784,6 +784,39 @@
       "area": "di650i_chain_feed_general_architecture",
       "role": "oem_public_architecture_variant_specific_not_serial_approval",
       "limitation": "Ficha da variante T4F/S5 lista Chain Feed, mas não especifica a mesma geometria, ajuste, corrente ou sincronização da DR410i. Não confirma variante ou opções presentes nos ativos EQ05/EQ06.",
+      "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
+      "lastReviewed": "2026-10-24"
+    },
+    {
+      "id": "SANDVIK-DI650I-ROTARY-BROCHURE-2020",
+      "organization": "Sandvik",
+      "title": "Leopard DI650i — brochure: HTRH6 bearing module and MRH6 bearing pretension",
+      "url": "https://www.mining.sandvik/siteassets/product-documents/surface-drill-rigs/surface-down-the-hole-drill-rigs/di650i-brochure-english.pdf",
+      "area": "di650i_HTRH6_modular_bearing_vs_MRH6_pretension",
+      "role": "oem_public_architecture_not_service_tolerance",
+      "limitation": "Documento descreve rolamentos do HTRH6 em módulo independente e mecanismo de pré-carga de rolamentos do MRH6; não identifica qual conjunto está instalado por máquina/série e não publica tolerâncias de pré-carga, folgas, óleo ou procedimentos aplicáveis.",
+      "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
+      "lastReviewed": "2026-10-24"
+    },
+    {
+      "id": "SANDVIK-DI650I-ROTARY-OEM-PAGE",
+      "organization": "Sandvik",
+      "title": "Leopard DI650i — rotary head options HTRH6 and MRH6",
+      "url": "https://www.mining.sandvik/pt-br/produtos/equipamento/equipamentos-de-perfuracao-de-superficie/leopard-di650i/",
+      "area": "di650i_rotary_head_family_and_options",
+      "role": "oem_product_family_context",
+      "limitation": "Página distingue cabeça HTRH6 e alternativa MRH6 em família de equipamento; ficha da variante S5 pode diferir na configuração padrão. Não comprova variante, rolamento, interface, peça ou opção realmente montada nos modelos internos EQ05/EQ06.",
+      "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
+      "lastReviewed": "2026-10-24"
+    },
+    {
+      "id": "SANDVIK-DR410I-TWO-STAGE-ROTARY-OEM",
+      "organization": "Sandvik",
+      "title": "DR410i — two-stage rotary head and My Sandvik manuals",
+      "url": "https://www.mining.sandvik/en/products/equipment/surface-drill-rigs/dr410i-rotary-blasthole-drill-rig/",
+      "area": "dr410i_two_stage_rotary_head_architecture",
+      "role": "oem_product_family_context",
+      "limitation": "Página descreve cabeça rotativa de dois estágios e direciona a manuais no My Sandvik; não comprova que os rolamentos, pré-carga, lubrificante ou conjunto são equivalentes aos HTRH6/MRH6 da DI650i.",
       "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
       "lastReviewed": "2026-10-24"
     }

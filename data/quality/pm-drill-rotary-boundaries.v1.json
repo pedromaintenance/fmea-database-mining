@@ -1,0 +1,179 @@
+{
+  "schema": "fmea-mining.pm-drill-rotary-boundaries.v1",
+  "version": "1.3.57",
+  "sourceOntologyVersion": "1.3.21",
+  "ruleId": "drill-rotary-bearing",
+  "nature": "OEM_family_context_conceptual_rolling_bearing_differentials_not_serial_approved",
+  "sourceIds": [
+    "SANDVIK-DI650I-ROTARY-BROCHURE-2020",
+    "SANDVIK-DI650I-ROTARY-OEM-PAGE",
+    "SANDVIK-DR410I-TWO-STAGE-ROTARY-OEM"
+  ],
+  "scope": {
+    "system": "cabeca_rotativa",
+    "subgroupCode": "MORO",
+    "partText": "Rolamento",
+    "models": [
+      "EQ05",
+      "EQ06"
+    ],
+    "eqModelMappingVerified": false,
+    "serialEffectivityVerified": false,
+    "headVariantInstalled": null,
+    "bearingModulePartNumberVerified": false,
+    "oilCompartmentVerified": false
+  },
+  "oemArchitectures": [
+    {
+      "id": "DI650i-HTRH6",
+      "familyDocumented": true,
+      "bearingModuleDocumented": true,
+      "bearingPreloadMechanismKnown": null,
+      "installedOnFleet": false
+    },
+    {
+      "id": "DI650i-MRH6",
+      "familyDocumented": true,
+      "bearingModuleDocumented": null,
+      "bearingPreloadMechanismKnown": true,
+      "installedOnFleet": false
+    },
+    {
+      "id": "DR410i-TWO-STAGE",
+      "familyDocumented": true,
+      "bearingModuleDocumented": null,
+      "bearingPreloadMechanismKnown": null,
+      "installedOnFleet": false
+    }
+  ],
+  "conditionIds": [
+    "COND-ROTARY-BEARING-NOISE",
+    "COND-ROTARY-BEARING-VIBRATION",
+    "COND-ROTARY-BEARING-TEMPERATURE",
+    "COND-ROTARY-BEARING-LUBE",
+    "COND-ROTARY-BEARING-PLAY",
+    "COND-ROTARY-BEARING-FASTENER"
+  ],
+  "actionIds": [
+    "ACT-ROTARY-BEARING-CONFIG",
+    "ACT-ROTARY-BEARING-SAFE-REVIEW",
+    "ACT-ROTARY-BEARING-LUBE-CORRELATE",
+    "ACT-ROTARY-BEARING-DIAGNOSIS",
+    "ACT-ROTARY-BEARING-DISPOSITION"
+  ],
+  "damageIds": [
+    "DMG-ROTARY-BEARING-RACE-CANDIDATE",
+    "DMG-ROTARY-BEARING-SUPPORT-CANDIDATE",
+    "DMG-ROTARY-BEARING-SEAL-CANDIDATE"
+  ],
+  "differentials": [
+    {
+      "id": "ROT-01",
+      "phenomenon": "abnormal_rotary_head_noise",
+      "distinction": "Ruído de rotação pode originar-se de engrenagens, motor hidráulico, spindle, ferramentas, acoplamento ou rolamento; não provar pista deteriorada por acústica.",
+      "confirmed": false
+    },
+    {
+      "id": "ROT-02",
+      "phenomenon": "vibration_and_temperature",
+      "distinction": "Vibração e aquecimento são sinais de conjunto não específicos; frequência, medição, carga, velocidade e referência de arquitetura são necessárias.",
+      "confirmed": false
+    },
+    {
+      "id": "ROT-03",
+      "phenomenon": "lubrication_debris",
+      "distinction": "Partículas, nível de óleo ou fuga no módulo não localizam automaticamente rolamento, engrenagem ou vedação e exigem compartimento e fluido reais.",
+      "confirmed": false
+    },
+    {
+      "id": "ROT-04",
+      "phenomenon": "axial_radial_play",
+      "distinction": "Folga no spindle ou carcaça não é folga interna de rolamento confirmada; MRH6 possui dispositivo próprio de pré-carga não transplantável.",
+      "confirmed": false
+    },
+    {
+      "id": "ROT-05",
+      "phenomenon": "hydraulic_torque_and_fixations",
+      "distinction": "Variação de torque, velocidade ou fixação pode decorrer de hidráulica, controle, transmissão ou ferramenta, sem estabelecer falha de rolamento.",
+      "confirmed": false
+    }
+  ],
+  "gates": [
+    {
+      "id": "MODEL_SERIAL",
+      "status": "pending"
+    },
+    {
+      "id": "HEAD_VARIANT",
+      "status": "pending"
+    },
+    {
+      "id": "BEARING_BOM",
+      "status": "pending"
+    },
+    {
+      "id": "LUBE_COMPARTMENT",
+      "status": "pending"
+    },
+    {
+      "id": "ENERGY_ISOLATION",
+      "status": "pending"
+    },
+    {
+      "id": "DYNAMIC_SYMPTOM_CONTEXT",
+      "status": "pending"
+    },
+    {
+      "id": "BEARING_DISCRIMINATION",
+      "status": "pending"
+    },
+    {
+      "id": "TORQUE_FIXATION_CRITERIA",
+      "status": "pending"
+    },
+    {
+      "id": "INDEPENDENT_ENGINEERING_REVIEW",
+      "status": "pending"
+    },
+    {
+      "id": "SAP_SCOPE_APPROVAL",
+      "status": "pending"
+    }
+  ],
+  "safeguards": {
+    "noNoiseEqualsFailedBearing": true,
+    "noVibrationMeansRaceSpalling": true,
+    "noHeatEqualsBearingFailure": true,
+    "noMetalDebrisMeansBearing": true,
+    "noPlayMeansBearingPreloadFault": true,
+    "noOilLeakMeansBearingSeal": true,
+    "noDR410BearingArchitectureTransfer": true,
+    "noMRH6PreloadTransferToHTRH6": true,
+    "noAssumedHeadInstalled": true,
+    "noUnknownSapComponent": true,
+    "noUncontrolledRotaryHeadAccess": true,
+    "noUncontrolledHydraulicOrGravityEnergy": true,
+    "noUnexpectedPneumaticPressure": true,
+    "noImprovisedActiveRotaryTest": true,
+    "noGenericPreloadClearanceOrTorque": true,
+    "noAutomaticRepairOrScrap": true,
+    "noFieldEvidence": true,
+    "noConsumerChanges": true
+  },
+  "limits": {
+    "bearingClearanceMm": null,
+    "preloadNm": null,
+    "bearingTemperatureC": null,
+    "vibrationMmS": null,
+    "rotaryTestPressureBar": null,
+    "fastenerTorqueNm": null
+  },
+  "fieldState": {
+    "observations": 0,
+    "tests": 0,
+    "confirmedDamages": 0,
+    "approvedSapMappings": 0,
+    "workOrders": 0,
+    "approvedOEMProcedures": 0
+  }
+}

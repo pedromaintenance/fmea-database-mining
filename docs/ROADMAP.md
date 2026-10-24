@@ -1,6 +1,6 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 24/10/2026 · **Ciclo:** catálogo técnico v1.3.56 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 24/10/2026 · **Ciclo:** catálogo técnico v1.3.57 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
 
@@ -38,6 +38,18 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 | Enriquecimento | 12 roteiros classificados por falha funcional, sintomas e técnicas | Anotação manual, não prova de causa |
 
 **Observação:** as 159 tarefas de PM com subgrupo candidato foram obtidas em extração local anterior e **não** representam 159 associações homologadas. Contagens de vínculos estritos serão publicadas pelo relatório automático após cada alteração do gerador.
+
+## Ciclo — 24/10/2026: rolamento da cabeça rotativa (v1.3.57)
+
+- [x] `BUNDLE-23` para `drill-rotary-bearing`: seis indícios, cinco propostas de verificação, três danos físicos candidatos, 14 relações tipadas e dois cenários sintéticos.
+- [x] Fontes OEM Sandvik discriminam DI650i HTRH6 (módulo de rolamentos), MRH6 (mecanismo de pré-carga) e DR410i (cabeça de dois estágios), sem presumir cabeçote instalado.
+- [x] Ruído, vibração, temperatura, óleo/partículas, folga e torque permanecem condições inespecíficas, com contraprovas de engrenagem, motor, spindle e fixações.
+- [x] Dez gates pendentes, dezoito salvaguardas, seis limites nulos e 42 ataques adversariais protegem os critérios de inferência e segurança.
+- [ ] **OEM e engenharia:** identificar cabeçote, part number, módulo de rolamento, compartimento e manual de montagem por número de série EQ05/EQ06.
+- [ ] **PCM e manutenção:** especificar método de inspeção, folga e pré-carga autorizados; controlar energias armazenadas e revisar código SAP de dano/causa.
+- [ ] **Próximo ciclo:** `drill-compressor-pressure`, tratar vazamentos do sistema de ar comprimido com discriminação de vaso, mangueira e conexão.
+
+**Estado:** 23/25 regras com modelagem conceitual, duas pendentes, 115 vínculos preventivos candidatos e 10 bloqueios SAP. [Relatório do ciclo](CICLO_2026-10-24_ROLAMENTO_CABECA_ROTATIVA.md).
 
 ## Ciclo — 24/10/2026: corrente de avanço Sandvik e efetividade (v1.3.56)
 
