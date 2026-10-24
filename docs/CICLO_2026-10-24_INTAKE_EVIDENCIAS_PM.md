@@ -31,6 +31,8 @@ O contrato exige:
 | `technical_reviewed` → `independent_reviewed` | Revisor independente | Ator distinto de solicitante, custodiante e revisor técnico; justificativa |
 | `independent_reviewed` → `ready_for_change_control` | Responsável pela mudança | Token de solicitação manual e justificativa; **nenhuma aprovação automática** |
 
+Os papéis e os identificadores declarados nos testes são apenas dados sintéticos; **não equivalem à autenticação ou autorização RBAC**. Além disso, encadear tokens anteriores ajuda a detectar inconsistências na sequência recebida, mas, sem assinatura e log append-only independente, não impede reescrita maliciosa de todo o histórico.
+
 A função `assessPmIntakeCase` recompõe o estágio a partir dos eventos e rejeita saltos, eventos duplicados, encadeamento rompido, auto-revisão, dados em campos não declarados, papéis incompatíveis e sinalizações falsas de liberação ou homologação.
 
 **Ponto central:** `ready_for_change_control` quer dizer somente *apto a solicitar avaliação humana*. A condição não aprova causa raiz, componente, código SAP, liberação operacional, substituição, descarte, publicação nem mudança no catálogo. Os dez bloqueios PM×SAP continuam intactos.
