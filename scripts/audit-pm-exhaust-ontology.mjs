@@ -80,7 +80,7 @@ attacks.push(x=>{find(x.bundles,'BUNDLE-19').automaticDamagePromotion=true});
 attacks.push(x=>{find(x.bundles,'BUNDLE-19').conditionIds.push('COND-BRAKE-DISC-WEAR')});
 attacks.push(x=>{find(x.relations,'REL-154').observed=true});
 attacks.push(x=>{x.workOrderExecutions.push({fiction:true})});
-const policyAttacks=[x=>{x.expectedBundles=18},x=>{x.expectedUnmodeledRules=0},x=>{x.sharedNodes.push({id:'DMG-ENGINE-EXH-MANIFOLD-CRACK-CANDIDATE'})}];
+const policyAttacks=[x=>{x.expectedBundles=18},x=>{x.expectedUnmodeledRules=1},x=>{x.sharedNodes.push({id:'DMG-ENGINE-EXH-MANIFOLD-CRACK-CANDIDATE'})}];
 const fixtureAttacks=[x=>{find(x.cases,'SEM-33').expectedConfirmedDamageIds=[wantedDamages[0]]},x=>{find(x.cases,'SEM-34').independentComponentTest='performed'}];
 const preAttacks=[x=>{x.evidenceGates[0].status='approved'},x=>{x.scope.serialEffectivityVerified=true}];
 let rejected=0;
