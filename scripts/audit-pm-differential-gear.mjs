@@ -20,7 +20,7 @@ const byId=arr=>new Map(arr.map(x=>[x.id,x]));
 const same=(a,b)=>JSON.stringify(a)===JSON.stringify(b);
 function check(m,f,p){
  const errors=[],ck=(v,id)=>{if(!v)errors.push(id)};
- ck(m.version==='1.3.22'&&m.conditions.length===101&&m.actions.length===77&&m.damageHypotheses.length===48&&m.bundles.length===24&&m.relations.length===237,'ontology_baseline');
+ ck(m.version==='1.3.23'&&m.conditions.length===107&&m.actions.length===82&&m.damageHypotheses.length===51&&m.bundles.length===25&&m.relations.length===251,'ontology_baseline');
  ck(m.observations.length===0&&m.workOrderExecutions.length===0&&m.confirmedComponentDamages.length===0,'events_fabricated');
  ck(p.schema==='fmea-mining.pm-differential-gear-discrimination.v1'&&p.version==='1.3.49'&&p.ontologyVersion==='1.3.14'&&p.ruleId==='differential-gear','policy_identity');
  ck(p.specificConditions.length===5&&p.nonLocalizingConditions.length===2&&p.damageCandidates.length===3,'differential_groups');
@@ -55,7 +55,7 @@ function check(m,f,p){
  const edges=m.relations.filter(e=>e.from==='BUNDLE-16');
  ck(edges.length===14&&same(edges.map(x=>x.id),Array.from({length:14},(_,i)=>'REL-'+String(i+110).padStart(3,'0'))),'relation_count');
  ck(edges.every(x=>[...condIds,...actionIds,...damageIds].includes(x.to)&&x.observed===false&&x.reviewStatus==='interpretacao_inferida'&&x.type===(condIds.includes(x.to)?'rule_monitors_condition':actionIds.includes(x.to)?'rule_proposes_action':'rule_lists_differential_damage')),'incorrect_relation');
- ck(f.cases.length===44&&f.status==='synthetic_assertions_not_real_events','fixture_count');
+ ck(f.cases.length===46&&f.status==='synthetic_assertions_not_real_events','fixture_count');
  for(const [id,conds,action] of [
   ['SEM-27',['COND-DIFF-NOISE-LOAD','COND-DIFF-OIL-DEBRIS'],'ACT-DIFF-OIL-SAMPLE-AND-REVIEW'],
   ['SEM-28',['COND-DIFF-BACKLASH-SUSPECT','COND-DIFF-TOOTH-CONTACT-PATTERN'],'ACT-DIFF-BACKLASH-CONTACT-CHECK']
@@ -69,7 +69,7 @@ const errors=[...check(model,fixtures,policy)];
 const x=validateSemanticCrosswalkInputs(model,rules,crossPolicy);
 errors.push(...x.errors);
 const ck=(v,id)=>{if(!v)errors.push(id)};
-ck(x.coverage.totalSeeds===25&&x.coverage.modeledRules===24&&x.coverage.unmodeledRuleIds.length===1,'coverage_error');
+ck(x.coverage.totalSeeds===25&&x.coverage.modeledRules===25&&x.coverage.unmodeledRuleIds.length===0,'coverage_error');
 ck(x.coverage.sharedGenericNodes===11&&x.coverage.sharedDamageNodes===0&&gaps.length===10&&links.length===115,'baseline_drift');
 const clone=y=>JSON.parse(JSON.stringify(y));
 const mutations=[
