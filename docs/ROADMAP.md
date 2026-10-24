@@ -1,6 +1,6 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 24/10/2026 · **Ciclo:** catálogo técnico v1.3.58 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 24/10/2026 · **Ciclo:** catálogo técnico v1.3.59 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
 
@@ -38,6 +38,20 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 | Enriquecimento | 12 roteiros classificados por falha funcional, sintomas e técnicas | Anotação manual, não prova de causa |
 
 **Observação:** as 159 tarefas de PM com subgrupo candidato foram obtidas em extração local anterior e **não** representam 159 associações homologadas. Contagens de vínculos estritos serão publicadas pelo relatório automático após cada alteração do gerador.
+
+## Ciclo — 24/10/2026: filtragem de compressor e fechamento conceitual (v1.3.59)
+
+- [x] BUNDLE-25 `drill-compressor-filter`: seis condições hipotéticas, cinco ações propostas, três danos candidatos, 14 relações tipadas, dois fixtures sintéticos.
+- [x] Quatro hipóteses funcionais mantidas apartadas: admissão, óleo do compressor, separador ar–óleo e possível elemento no receptor.
+- [x] Não inferir existência do filtro no vaso por condensado, nem falha do separador por arraste de óleo ou variação de pressão diferencial.
+- [x] Mantida exceção SAP `subgroup_not_in_scope`: COMR é grupo, VPAR é alternativa sob investigação, nenhum mapeamento aprovado.
+- [x] Preservado material prévio de 7 gates na matriz VPAR e 4 diferenciais de circuito, com nova camada auditável e 42 ataques adversariais.
+- [x] **Cobertura semântica das 25 regras PM: 100%**; não há eventos reais, reparos, materiais ou códigos SAP homologados.
+- [ ] **Próximo eixo, não novo bundle:** homologação OEM por série, revisão de efetividade e obtenção de evidência real em ambiente restrito.
+- [ ] **Dados Mestres SAP/PCM:** tratar separadamente os dez bloqueios restantes, mantendo `autoRemapAllowed=false` até revisão independente.
+- [ ] **Confiabilidade/Engenharia:** priorizar regras por criticidade, exposição, custo e disponibilidade para validação de campo.
+
+**Estado:** 25/25 regras modeladas, 115 vínculos candidatos e dez exceções SAP bloqueadas. [Relatório técnico](CICLO_2026-10-24_FILTRAGEM_COMPRESSOR.md).
 
 ## Ciclo — 24/10/2026: estanqueidade pneumática de perfuratrizes (v1.3.58)
 
