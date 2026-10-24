@@ -1,0 +1,185 @@
+{
+  "schema": "fmea-mining.pm-review-decision-policy.v1",
+  "version": "1.3.64",
+  "nature": "public_synthetic_decision_boundary_not_authority_to_approve",
+  "sourcePreflight": "data/quality/pm-pilot-preflight.v1.json",
+  "sourcePreflightVersion": "1.3.63",
+  "sourceP0": "data/quality/pm-p0-documentary-review.v1.json",
+  "sourceP0Version": "1.3.62",
+  "sourceMaturity": "data/quality/pm-maturity-matrix.v1.json",
+  "sourceMaturityVersion": "1.3.60",
+  "sourceDeployment": "data/governance/pm-private-deployment-runbook.v1.json",
+  "sourceDeploymentVersion": "1.3.62",
+  "sourceIntake": "data/governance/pm-evidence-intake-policy.v1.json",
+  "sourceIntakeVersion": "1.3.61",
+  "decisionLanes": [
+    {
+      "id": "documentary_readiness",
+      "ownerRole": "technical_document_controller",
+      "publicStatus": "missing_or_unverified_evidence",
+      "privatePossibleOutcome": [
+        "request_more_evidence",
+        "document_set_ready_for_human_review",
+        "reject_non_applicable_document"
+      ],
+      "requires": [
+        "verified_oem_serial_bom",
+        "method_custody_traceability",
+        "differential_counterevidence"
+      ],
+      "doesNotAuthorize": [
+        "engineering_validation",
+        "sap_update",
+        "service_release"
+      ]
+    },
+    {
+      "id": "engineering_validation",
+      "ownerRole": "independent_maintenance_engineer",
+      "publicStatus": "not_reviewed",
+      "privatePossibleOutcome": [
+        "hypothesis_rejected",
+        "hypothesis_unresolved",
+        "hypothesis_supported_for_further_investigation",
+        "confirmed_mechanism_with_independent_evidence"
+      ],
+      "requires": [
+        "real_measurement_quality",
+        "alternative_hypotheses_review",
+        "signed_independent_verdict"
+      ],
+      "doesNotAuthorize": [
+        "sap_update",
+        "service_release"
+      ]
+    },
+    {
+      "id": "sap_masterdata_change",
+      "ownerRole": "authorized_SAP_master_data_steward",
+      "publicStatus": "blocked_pending_curatorship",
+      "privatePossibleOutcome": [
+        "reject_mapping",
+        "request_hierarchy_correction",
+        "approved_in_separate_SAP_change_control"
+      ],
+      "requires": [
+        "functional_location_validation",
+        "registered_component",
+        "damage_cause_pair_approval",
+        "separate_change_record"
+      ],
+      "doesNotAuthorize": [
+        "service_release",
+        "failure_root_cause"
+      ]
+    },
+    {
+      "id": "operational_release",
+      "ownerRole": "authorized_operations_and_maintenance_management",
+      "publicStatus": "not_authorized",
+      "privatePossibleOutcome": [
+        "hold_out_of_service",
+        "restricted_operation_per_approved_procedure",
+        "authorized_return_to_service"
+      ],
+      "requires": [
+        "work_execution_record",
+        "independent_safety_acceptance",
+        "formal_operations_signoff"
+      ],
+      "doesNotAuthorize": [
+        "sap_change",
+        "FMEA_validation"
+      ]
+    }
+  ],
+  "evidenceKinds": [
+    "oem_effectivity",
+    "oem_procedure",
+    "field_observation",
+    "counterevidence",
+    "measurement_quality"
+  ],
+  "criteria": [
+    {
+      "id": "EC-01",
+      "topic": "Identity and OEM effectivity",
+      "trigger": "Serial, model/variant, current parts book and service revision match installed unit",
+      "failureEffect": "hold_documentary"
+    },
+    {
+      "id": "EC-02",
+      "topic": "Integrity and custody",
+      "trigger": "Evidence authenticated in authorized vault with license, revision, provenance and integrity",
+      "failureEffect": "hold_documentary"
+    },
+    {
+      "id": "EC-03",
+      "topic": "Safe measurement",
+      "trigger": "Approved procedure and safe isolation with instrument calibration, uncertainty and operating context",
+      "failureEffect": "hold_field_claim"
+    },
+    {
+      "id": "EC-04",
+      "topic": "Differential hypothesis",
+      "trigger": "Record counterhypotheses and discriminating results separately from observations",
+      "failureEffect": "hold_engineering"
+    },
+    {
+      "id": "EC-05",
+      "topic": "Physical damage and root cause",
+      "trigger": "Independent physical evidence distinguishes damage and separately supported causal mechanism",
+      "failureEffect": "hold_damage_and_cause"
+    },
+    {
+      "id": "EC-06",
+      "topic": "Independent engineering signoff",
+      "trigger": "Authenticated qualified reviewer different from originator, custodian and executor",
+      "failureEffect": "hold_engineering"
+    },
+    {
+      "id": "EC-07",
+      "topic": "SAP and operations separation",
+      "trigger": "Distinct master-data approval and separate safe-operational release; one never implies the other",
+      "failureEffect": "hold_sap_and_operations"
+    }
+  ],
+  "trustBoundary": {
+    "publicAlwaysNoGo": true,
+    "realCaseDataInRepo": 0,
+    "realAssetTagInRepo": 0,
+    "realSerialsInRepo": 0,
+    "realMeasurementsInRepo": 0,
+    "realReviewedDocumentsInRepo": 0,
+    "corporateApprovalTokensInRepo": 0,
+    "privateInfrastructureAuthorized": false,
+    "corporateRBACVerified": false,
+    "trustedSignaturesVerified": false,
+    "appendOnlyAuditVerified": false,
+    "documentaryAutoApproval": false,
+    "engineeringAutoApproval": false,
+    "sapAutoApproval": false,
+    "operationsAutoRelease": false,
+    "publicationOfPrivateEvidence": false,
+    "automaticRootCauseConfirmation": false,
+    "immutableDecisionLedgerImplemented": false,
+    "privateEvidenceTransportImplemented": false
+  },
+  "publicActions": [
+    "generate_synthetic_evidence_request",
+    "list_missing_documents",
+    "show_unverified_counterhypotheses",
+    "show_separate_decision_lanes",
+    "run_negative_tests"
+  ],
+  "forbiddenPromotions": [
+    "condition_to_confirmed_damage",
+    "action_to_performed_work",
+    "candidate_sap_mapping_to_approved",
+    "technical_readiness_to_engineering_approval",
+    "engineering_review_to_service_release",
+    "sap_approval_to_operational_release",
+    "public_mock_to_private_pilot"
+  ],
+  "nextOwner": "authorized_corporate_security_engineering_PCM_and_SAP_governance"
+}

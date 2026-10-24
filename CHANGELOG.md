@@ -2,6 +2,13 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.64] — 2026-10-24 — Segregação de decisões de evidência, engenharia, SAP e operação
+
+- Quatro trilhas de decisão independentes; pacote sintético derivado de dois preflights P0 com 68 requisitos ainda sem verificação e cinco classes de recibo por caso.
+- Sete critérios de qualidade para documentação, efetividade OEM, metrologia, hipóteses concorrentes, confirmação de dano/causa, revisão independente e separação de aprovações.
+- Biblioteca e auditor com 53 ataques adversariais; proibição de promoção automática para dano, código SAP, liberação operacional ou aprovação de engenharia.
+- Preservados ontologia 1.3.23, maturidade 1.3.60, preflight 1.3.63, 25/25 bundles, 115 links PM candidatos e dez exceções SAP bloqueadas. Nenhum backend privado nem evento real adicionado.
+
 ## [1.3.63] — 2026-10-24 — Pré-piloto de homologação por ativo e qualidade metrológica
 
 - Preflight sintético de dois casos P0 (radiador RADI e filtro combustível HSVV) com 34 verificações em sete disciplinas e oito gates em NO-GO/PENDING.
