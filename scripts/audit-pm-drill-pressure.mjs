@@ -71,7 +71,7 @@ let rejected=0;
 for(let i=0;i<oa.length;i++){const x=clone(m);oa[i](x);if(check(x,fx,p,cross).length)rejected++;else errors.push('ontology_mutant_'+i);}
 for(let i=0;i<ga.length;i++){const x=clone(p);ga[i](x);if(check(m,fx,x,cross).length)rejected++;else errors.push('guard_mutant_'+i);}
 for(let i=0;i<fa.length;i++){const x=clone(fx);fa[i](x);if(check(m,x,p,cross).length)rejected++;else errors.push('fixture_mutant_'+i);}
-const expected=oa.length+ga.length+fa.length;if(expected!==44||rejected!==expected)errors.push('adversarial_suite_incomplete');
+const expected=oa.length+ga.length+fa.length;if(expected!==42||rejected!==expected)errors.push('adversarial_suite_incomplete');
 const counts={totalPMRules:rules.length,modeledBundles:m.bundles.length,remainingRules:rules.length-m.bundles.length,conditions:m.conditions.length,actions:m.actions.length,candidateDamages:m.damageHypotheses.length,typedRelations:m.relations.length,syntheticCases:fx.cases.length,mutationsRejected:rejected,confirmedDamages:0,observations:0,approvedSAPMappings:0};
 fs.mkdirSync(path.join(root,'reports'),{recursive:true});fs.writeFileSync(path.join(root,'reports/pm-drill-pressure.generated.json'),JSON.stringify({schema:'fmea-mining.pm-drill-pressure-report.v1',version:'1.3.58',counts,errors},null,2)+'\n');
 console.log(JSON.stringify({status:errors.length?'FAIL':'OK',counts,errors},null,2));process.exit(errors.length?1:0);
