@@ -37,7 +37,7 @@ export function assessPublicPmPilotPreflight({policy,runbook,p0,maturity,gaps,in
  ck(gaps.records.length===10&&gaps.records.every(x=>x.status==='bloqueado_aguardando_curadoria'&&x.autoRemapAllowed===false),'sap_locks');
  ck(policy.gates.length===8&&policy.gates[0].approvalStatus==='BLOCKED'&&policy.gates[7].approvalStatus==='BLOCKED'&&policy.gates.slice(1,7).every(x=>x.approvalStatus==='PENDING'),'gate_policy');
  ck(Object.entries(policy.decisions).every(([k,v])=>k==='publicPreflight'?v==='NO_GO':k==='privatePilotApproval'?v===null:k==='committeeApprovalRequired'?v===true:v===false),'policy_decisions');
- ck(policy.prohibitedFields.length===10&&policy.prohibitedFields.includes('real serial')&&policy.prohibitedFields.includes('measurements'),'protected_fields');
+ ck(policy.prohibitedFields.length===11&&policy.prohibitedFields.includes('real serial')&&policy.prohibitedFields.includes('measurements'),'protected_fields');
  ck(REQUIRED_SECTIONS.every(section=>policy.checklists[section]?.length>=4),'incomplete_quality_checklists');
  ck(snapshot.summary.pilotCandidates===2&&snapshot.summary.actualAssetsSelected===0&&snapshot.summary.actualPilotsApproved===0&&snapshot.summary.overallDecision==='NO_GO','not_a_real_pilot');
  ck(snapshot.cases.length===2&&snapshot.cases.every(c=>c.nature==='synthetic_candidate_no_asset_assignment'&&c.publicPreflightDecision==='NO_GO'&&c.realAssetAssigned===false&&c.fieldEvidenceCount===0),'fake_asset_case');
