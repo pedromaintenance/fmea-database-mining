@@ -1,6 +1,6 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 23/10/2026 · **Ciclo:** catálogo técnico v1.3.55 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 24/10/2026 · **Ciclo:** catálogo técnico v1.3.56 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
 
@@ -38,6 +38,18 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 | Enriquecimento | 12 roteiros classificados por falha funcional, sintomas e técnicas | Anotação manual, não prova de causa |
 
 **Observação:** as 159 tarefas de PM com subgrupo candidato foram obtidas em extração local anterior e **não** representam 159 associações homologadas. Contagens de vínculos estritos serão publicadas pelo relatório automático após cada alteração do gerador.
+
+## Ciclo — 24/10/2026: corrente de avanço Sandvik e efetividade (v1.3.56)
+
+- [x] `BUNDLE-22` para `drill-feed-chain`: seis condições hipotéticas, cinco ações propostas, três danos candidatos, 14 relações tipadas e dois cenários sintéticos.
+- [x] Fontes oficiais Sandvik consultadas: DR410i com avanço de dois cilindros e correntes; ajuste por pinos padrão e tensionamento hidráulico automático opcional; DI650i T4F/S5 com `Chain feed` listado, sem equivalência automática.
+- [x] Distintos desgaste da corrente, tensão, engrenamento, sincronismo, oscilação do carro e marcas nas guias, evitando confusão entre mecanismo, indício e dano.
+- [x] Auditor de segurança com 40 mutações adversariais e gates de série, montagem, bloqueio de energia e documentação, sem limites dimensionais inventados.
+- [ ] **OEM e engenharia:** confirmar modelo interno EQ05/EQ06, série, variante, desenho de avanço e opção real de tensionamento.
+- [ ] **Manutenção/PCM:** definir métodos de medição e critérios por corrente e roda dentada; riscos de esmagamento e energia hidráulica/gravitacional; revisão SAP independente.
+- [ ] **Próximo ciclo:** `drill-rotary-bearing`, diferenciando ruídos de rotação, rolamento, lubrificação, conjunto de cabeça e fixações.
+
+**Estado:** 22/25 regras modeladas, três restantes, 115 vínculos candidatos e 10 bloqueios PM×SAP. [Ciclo técnico](CICLO_2026-10-24_CORRENTE_AVANCO.md).
 
 ## Ciclo — 23/10/2026: desgaste OTR e RTD (v1.3.55)
 
