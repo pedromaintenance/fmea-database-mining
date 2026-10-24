@@ -1,6 +1,6 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 24/10/2026 · **Ciclo:** catálogo técnico v1.3.61 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 24/10/2026 · **Ciclo:** catálogo técnico v1.3.62 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
 
@@ -38,6 +38,19 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 | Enriquecimento | 12 roteiros classificados por falha funcional, sintomas e técnicas | Anotação manual, não prova de causa |
 
 **Observação:** as 159 tarefas de PM com subgrupo candidato foram obtidas em extração local anterior e **não** representam 159 associações homologadas. Contagens de vínculos estritos serão publicadas pelo relatório automático após cada alteração do gerador.
+
+## Ciclo — 24/10/2026: runbook privado e fila P0 documental (v1.3.62)
+
+- [x] Definidos oito gates de implantação privada com NO-GO por padrão e dependências explícitas.
+- [x] Dossiês documentais para obstrução de radiador e contaminação de filtro de combustível, com contraprovas e riscos.
+- [x] Preservada a fila de cinco P0 e dez bloqueios PM×SAP, sem remapear RADI/HSVV ou homologar pares de dano/causa.
+- [x] Auditor adversarial contra implantação fictícia, perdas de evidência mínima, aprovação SAP e contraprovas removidas.
+- [ ] Segurança/TI/Privacidade: autorizar escopo, identidade, cofre, assinatura e trilha independente.
+- [ ] Engenharia: reunir manuais e BOM por série em repositório restrito e validar alternativas causais.
+- [ ] Dados Mestres SAP: curadoria independente dos códigos e locais, sem alteração automática.
+- [ ] Próximo ciclo: plano de piloto condicionado a autorização formal e checklist de revisão de evidência por ativo.
+
+**Estado:** oito gates bloqueados, cinco P0 na fila, dois com dossiê preparado; nenhuma evidência operacional recebida. [Relatório](CICLO_2026-10-24_RUNBOOK_PRIVADO_P0.md).
 
 ## Ciclo — 24/10/2026: contrato de intake restrito para as regras PM (v1.3.61)
 
