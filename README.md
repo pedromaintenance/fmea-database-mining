@@ -2,7 +2,9 @@
 
 Banco de conhecimento **versionado** para investigar modos de falha, sintomas, evidências e causas em equipamentos móveis de mineração. Um consumidor possível é o jogo **[P.O.R.C.A.R.I.A. — Você Quebra, Eu Conserto](https://github.com/pedromaintenance/porcaria-voce-quebra-eu-conserto)**, mas o banco é independente: **este repositório não altera os consumidores**.
 
-> **Status:** versão do catálogo **1.3.57** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
+> **Status:** versão do catálogo **1.3.58** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
+
+**Ciclo v1.3.58:** [estanqueidade pneumática e bloqueio VPAR](docs/CICLO_2026-10-24_ESTANQUEIDADE_PNEUMATICA.md) adiciona BUNDLE-24: seis indícios, cinco ações propostas e três danos candidatos de mangueira, junta e vaso, sem inferir que pressão baixa é fuga. Política com isolamento/pressão zero e bloqueio SAP `component_not_registered` preservado; ontologia 1.3.22, 24/25 regras PM modeladas.
 
 **Ciclo v1.3.57:** [rolamento da cabeça rotativa e mecanismos concorrentes](docs/CICLO_2026-10-24_ROLAMENTO_CABECA_ROTATIVA.md) implementa BUNDLE-23 com seis condições, cinco ações propostas e três danos físicos candidatos. Diferença HTRH6, MRH6 e DR410i preservada por desenho OEM; ontologia 1.3.21, cobertura 23/25, sem pré-carga inventada ou dano confirmado.
 

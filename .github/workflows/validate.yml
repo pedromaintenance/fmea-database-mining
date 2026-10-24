@@ -82,6 +82,8 @@ jobs:
         run: npm run pm:drill:feed:audit
       - name: Auditar rolamentos e arquiteturas Sandvik HTRH6 MRH6 DR410i
         run: npm run pm:drill:rotary:audit
+      - name: Auditar estanqueidade pneumatica, pressao zero e bloqueio VPAR
+        run: npm run pm:drill:pressure:audit
       - name: Validar 10 bloqueios PM e 7 requisitos de efetividade OEM D9
         run: npm run pm:exceptions:validate
       - name: Gerar vínculos diagnósticos por modelo
@@ -194,6 +196,7 @@ jobs:
             reports/pm-tire-wear.generated.json
             reports/pm-drill-feed.generated.json
             reports/pm-drill-rotary.generated.json
+            reports/pm-drill-pressure.generated.json
             reports/public-knowledge.v1.json
             reports/public-manifest.v1.json
             data/governance/public-content-releases.v1.json

@@ -1,6 +1,6 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 24/10/2026 · **Ciclo:** catálogo técnico v1.3.57 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 24/10/2026 · **Ciclo:** catálogo técnico v1.3.58 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
 
@@ -38,6 +38,20 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 | Enriquecimento | 12 roteiros classificados por falha funcional, sintomas e técnicas | Anotação manual, não prova de causa |
 
 **Observação:** as 159 tarefas de PM com subgrupo candidato foram obtidas em extração local anterior e **não** representam 159 associações homologadas. Contagens de vínculos estritos serão publicadas pelo relatório automático após cada alteração do gerador.
+
+## Ciclo — 24/10/2026: estanqueidade pneumática de perfuratrizes (v1.3.58)
+
+- [x] BUNDLE-24 `drill-compressor-pressure`: seis indícios, cinco ações propostas, três danos físicos candidatos, 14 relações e dois cenários sintéticos.
+- [x] Pressão baixa, fluxo, ruído, capa de mangueira, engate e vaso mantidos distintos; hipóteses concorrentes de admissão, consumo, compressor, válvula e sensor.
+- [x] Fontes Sandvik DR410i/DI650i e Kaeser explicitadas como contexto, sem converter dados de guia de trânsito em tolerância de teste.
+- [x] Preservado o bloqueio VPAR `component_not_registered`: a árvore não registra Mangueira como componente confirmado.
+- [x] Dez gates de evidência pendentes, 18 controles de segurança, seis limites nulos e auditor adversarial para validação integrada.
+- [ ] **OEM/Engenharia:** confirmar circuitos de ar, receptor, válvula e mangueiras por série e BOM de cada equipamento.
+- [ ] **Segurança/Manutenção:** método controlado de isolamento, purga, medição de pressão zero e inspeção de recipientes.
+- [ ] **PCM/Dados Mestres:** comprovar posição SAP sem converter VPAR em código de mangueira por analogia.
+- [ ] **Próxima regra:** `drill-compressor-filter`, COMR com `subgroup_not_in_scope`, separando quatro circuitos de filtragem.
+
+**Estado:** 24/25 regras com bundle, uma pendente, 115 vínculos preventivos candidatos e dez exceções não homologadas. [Relatório técnico](CICLO_2026-10-24_ESTANQUEIDADE_PNEUMATICA.md).
 
 ## Ciclo — 24/10/2026: rolamento da cabeça rotativa (v1.3.57)
 
