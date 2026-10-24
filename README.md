@@ -2,7 +2,9 @@
 
 Banco de conhecimento **versionado** para investigar modos de falha, sintomas, evidências e causas em equipamentos móveis de mineração. Um consumidor possível é o jogo **[P.O.R.C.A.R.I.A. — Você Quebra, Eu Conserto](https://github.com/pedromaintenance/porcaria-voce-quebra-eu-conserto)**, mas o banco é independente: **este repositório não altera os consumidores**.
 
-> **Status:** versão do catálogo **1.3.58** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
+> **Status:** versão do catálogo **1.3.59** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
+
+**Ciclo v1.3.59:** [filtragem do compressor e COMR/VPAR](docs/CICLO_2026-10-24_FILTRAGEM_COMPRESSOR.md) completa BUNDLE-25, distinguindo admissão, óleo, separação ar–óleo e eventual elemento do receptor; bloqueio SAP `subgroup_not_in_scope` permanece. **25/25 regras PM com bundle (100% de cobertura conceitual)**, sem homologação por máquina nem resultados de campo. Ontologia 1.3.23.
 
 **Ciclo v1.3.58:** [estanqueidade pneumática e bloqueio VPAR](docs/CICLO_2026-10-24_ESTANQUEIDADE_PNEUMATICA.md) adiciona BUNDLE-24: seis indícios, cinco ações propostas e três danos candidatos de mangueira, junta e vaso, sem inferir que pressão baixa é fuga. Política com isolamento/pressão zero e bloqueio SAP `component_not_registered` preservado; ontologia 1.3.22, 24/25 regras PM modeladas.
 

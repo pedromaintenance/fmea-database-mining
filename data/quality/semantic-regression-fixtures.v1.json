@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.semantic-regression.v1",
-  "version": "1.3.22",
+  "version": "1.3.23",
   "status": "synthetic_assertions_not_real_events",
   "cases": [
     {
@@ -637,6 +637,36 @@
       "independentComponentTest": "not_performed",
       "expectedConfirmedDamageIds": [],
       "why": "Exemplo sintético: ruído e cobertura danificada não provam ruptura da parede, fuga em vaso nem autorização da mangueira no subgrupo VPAR."
+    },
+    {
+      "id": "SEM-45",
+      "title": "Pressão diferencial suspeita e baixa vazão não confirmam elemento filtrante obstruído",
+      "ruleId": "drill-compressor-filter",
+      "observedConditionIds": [
+        "COND-AIR-FILTER-SEPARATOR-DP",
+        "COND-AIR-FILTER-DOWNSTREAM-FLOW"
+      ],
+      "performedActionIds": [
+        "ACT-AIR-FILTER-DIFFERENTIAL-REVIEW"
+      ],
+      "independentComponentTest": "not_performed",
+      "expectedConfirmedDamageIds": [],
+      "why": "Cenário sintético: filtros, válvulas, demanda, sensores e o próprio compressor são hipóteses diferentes; nenhum limite, teste ou componente foi verificado."
+    },
+    {
+      "id": "SEM-46",
+      "title": "Óleo arrastado e água no receptor não provam dano de separador nem filtro no vaso",
+      "ruleId": "drill-compressor-filter",
+      "observedConditionIds": [
+        "COND-AIR-FILTER-OIL-CARRYOVER",
+        "COND-AIR-FILTER-RECEIVER-MOISTURE"
+      ],
+      "performedActionIds": [
+        "ACT-AIR-FILTER-CARRYOVER-REVIEW"
+      ],
+      "independentComponentTest": "not_performed",
+      "expectedConfirmedDamageIds": [],
+      "why": "Cenário sintético: retorno de óleo, nível, umidade e drenagem também explicam sintomas; instalação de elemento do receptor e mapeamento COMR/VPAR não foram confirmados."
     }
   ]
 }

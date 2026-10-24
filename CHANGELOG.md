@@ -2,6 +2,14 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.59] — 2026-10-24 — Compressor: separação funcional de filtros e 25/25 regras modeladas
+
+- `BUNDLE-25` para `drill-compressor-filter`: seis condições, cinco ações propostas, três danos físicos candidatos, quatorze relações tipadas e dois casos sintéticos.
+- Quatro circuitos distinguem ar de admissão, filtro de óleo de compressor, separação ar–óleo e hipótese de filtragem no receptor, sem instalação confirmada.
+- Preservado bloqueio SAP `subgroup_not_in_scope`: COMR grupo não é subgrupo; VPAR não aprovado como remapeamento.
+- Ontologia 1.3.23: 107 condições, 82 ações, 51 danos candidatos, 25 bundles, 251 relações e 46 cenários sintéticos. **25/25 regras com cobertura semântica**, não homologação.
+- Auditor com 42 mutações adversariais, 10 gates pendentes, 18 salvaguardas, seis limites nulos, 115 vínculos candidatos e dez bloqueios preservados; zero eventos ou aprovação SAP.
+
 ## [1.3.58] — 2026-10-24 — Estanqueidade pneumática, pressão diferencial e bloqueio VPAR
 
 - BUNDLE-24 para `drill-compressor-pressure`: seis condições, cinco ações propostas, três danos candidatos, quatorze relações e dois casos sintéticos.

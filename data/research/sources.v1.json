@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.research.sources.v1",
-  "version": "1.3.27",
+  "version": "1.3.28",
   "status": "literatura_de_referencia_nao_casos_empiricos",
   "rights": "somente_titulos_links_e_resumos_originais",
   "sources": [
@@ -840,6 +840,50 @@
       "role": "manufacturer_generic_safety_not_sandvik_procedure",
       "limitation": "Recomenda alívio de pressão em todos os pontos antes de manutenção. Não substitui o método Sandvik por série, os procedimentos de bloqueio nem autorização da equipe de manutenção da mina.",
       "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
+      "lastReviewed": "2026-10-24"
+    },
+    {
+      "id": "SANDVIK-DR410I-CAT-C18-MAINT-PLANNER",
+      "organization": "Sandvik",
+      "title": "DR410i Maintenance Planner CAT C18 — compressor intake and main oil filter references",
+      "url": "https://www.mining.sandvik/globalassets/parts-services/genuine-consumables-and-kits/pdf/dr410i-maintenance-planner-cat-c18-english.pdf",
+      "area": "dr410i_cat_c18_compressor_filter_function_examples",
+      "role": "existing_research_OEM_planner_family_reference_not_serial_approval",
+      "limitation": "Planner já catalogado nos diferenciais PM×SAP, referente à família CAT C18, sem validação física nesta execução; não define a configuração de EQ05/EQ06, DI650i, COMR ou VPAR nem justifica intervalo universal.",
+      "reviewStatus": "fonte_publica_previamente_catalogada_requer_validacao_por_serie",
+      "lastReviewed": "2026-10-24"
+    },
+    {
+      "id": "SANDVIK-DR410I-CUMMINS-MAINT-PLANNER",
+      "organization": "Sandvik",
+      "title": "DR410i Maintenance Planner Cummins — alternative engine family",
+      "url": "https://www.mining.sandvik/globalassets/parts-services/genuine-consumables-and-kits/pdf/dr410i-maintenance-planner-cummins-english.pdf",
+      "area": "dr410i_cummins_comparison_variant_caution",
+      "role": "existing_research_family_variant_comparison_only",
+      "limitation": "Versão Cummins anteriormente catalogada para demonstrar variantes de planejamento. Não comprova peças de compressor efetivas, montagem, intervalo ou equivalência à versão CAT C18 sem revisão OEM.",
+      "reviewStatus": "fonte_publica_previamente_catalogada_requer_validacao_por_serie",
+      "lastReviewed": "2026-10-24"
+    },
+    {
+      "id": "ATLAS-COPCO-COMPRESSOR-FILTER-FUNCTIONS",
+      "organization": "Atlas Copco",
+      "title": "Filtros e separadores do compressor de ar",
+      "url": "https://www.atlascopco.com/pt-br/compressors/service/parts/air-compressor-filters",
+      "area": "compressor_air_intake_lubricating_oil_air_oil_separator_functional_differences",
+      "role": "OEM_generic_function_context_not_sandvik_or_fleet_part_identification",
+      "limitation": "Distinções gerais entre filtro de ar, filtro de óleo, separador ar–óleo e filtros em linha; valores comerciais de pureza/eficiência não são critérios, PN, limite de restrição ou efetividade para Sandvik.",
+      "reviewStatus": "fonte_publica_consultada_sem_aplicacao_ao_ativo",
+      "lastReviewed": "2026-10-24"
+    },
+    {
+      "id": "KAESER-COMPRESSOR-MAINTENANCE-INDICATORS",
+      "organization": "Kaeser Compressors",
+      "title": "Rotary Screw Air Compressor Maintenance Checklist",
+      "url": "https://us.kaeser.com/compressed-air-resources/compressed-air-tips/compressor-maintenance-checklist.aspx",
+      "area": "compressor_observable_pressure_carryover_and_differential_indicators",
+      "role": "manufacturer_generic_diagnostic_counterhypotheses",
+      "limitation": "Sintomas de alta temperatura, baixa pressão, óleo arrastado e restrição podem decorrer de válvulas, fluido, saturação, sensor e demanda; não aprova diagnóstico nem periodicidade de modelo específico.",
+      "reviewStatus": "fonte_publica_consultada_sem_aplicacao_ao_ativo",
       "lastReviewed": "2026-10-24"
     }
   ]

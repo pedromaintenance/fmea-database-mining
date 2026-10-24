@@ -17,7 +17,7 @@ const equals=(a,b)=>JSON.stringify(a)===JSON.stringify(b);
 const dict=xs=>new Map(xs.map(x=>[x.id,x]));
 function check(m,f,p){
  const e=[],ck=(v,k)=>{if(!v)e.push(k)};
- ck(m?.schema==='fmea-mining.condition-action-damage.v1'&&m?.version==='1.3.22'&&m?.conditions.length===101&&m?.actions.length===77&&m?.damageHypotheses.length===48&&m?.bundles.length===24&&m?.relations.length===237,'ontology_counts');
+ ck(m?.schema==='fmea-mining.condition-action-damage.v1'&&m?.version==='1.3.23'&&m?.conditions.length===107&&m?.actions.length===82&&m?.damageHypotheses.length===51&&m?.bundles.length===25&&m?.relations.length===251,'ontology_counts');
  ck(m?.observations.length===0&&m?.workOrderExecutions.length===0&&m?.confirmedComponentDamages.length===0,'fabricated_events');
  const rule=rules.find(x=>x.id==='brake-disc');
  ck(rule?.system==='freios'&&rule?.subgroupCode==='BRA1'&&rule?.partText==='Disco'&&rule?.review==='pendente'&&equals(rule.models,['CAT777','CAT980','EQ09']),'seed_drift');
@@ -56,7 +56,7 @@ function check(m,f,p){
  const edges=m.relations.filter(x=>x.from==='BUNDLE-18'),targets=[...p.conditionIds,...p.actionIds,...p.damageIds];
  ck(edges.length===14&&equals(edges.map(x=>x.id),Array.from({length:14},(_,i)=>'REL-'+String(i+140).padStart(3,'0'))),'relation_count');
  ck(edges.every(x=>targets.includes(x.to)&&x.observed===false&&x.reviewStatus==='interpretacao_inferida'&&x.type===(p.conditionIds.includes(x.to)?'rule_monitors_condition':p.actionIds.includes(x.to)?'rule_proposes_action':'rule_lists_differential_damage')),'relation_type');
- ck(f?.status==='synthetic_assertions_not_real_events'&&f?.version==='1.3.22'&&f?.cases.length===44,'fixture_count');
+ ck(f?.status==='synthetic_assertions_not_real_events'&&f?.version==='1.3.23'&&f?.cases.length===46,'fixture_count');
  for(const [id,conditions,action] of [
  ['SEM-31',['COND-BRAKE-LOW-DECEL','COND-BRAKE-ACTUATION-PRESSURE'],'ACT-BRAKE-ACTUATION-DIFFERENTIAL'],
  ['SEM-32',['COND-BRAKE-DISC-THERMAL','COND-BRAKE-WEAR-INDICATOR'],'ACT-BRAKE-ARCHITECTURE-VERIFY']
@@ -68,7 +68,7 @@ function check(m,f,p){
 }
 const errors=[...check(model,fixtures,policy)],cross=validateSemanticCrosswalkInputs(model,rules,crossPolicy);errors.push(...cross.errors);
 const checkGlobal=(v,id)=>{if(!v)errors.push(id)};
-checkGlobal(cross.coverage.totalSeeds===25&&cross.coverage.modeledRules===24&&cross.coverage.unmodeledRuleIds.length===1&&cross.coverage.sharedGenericNodes===11&&cross.coverage.sharedDamageNodes===0,'coverage_error');
+checkGlobal(cross.coverage.totalSeeds===25&&cross.coverage.modeledRules===25&&cross.coverage.unmodeledRuleIds.length===0&&cross.coverage.sharedGenericNodes===11&&cross.coverage.sharedDamageNodes===0,'coverage_error');
 checkGlobal(gaps.length===10&&links.length===115,'PM_backlog_drift');
 const clone=x=>JSON.parse(JSON.stringify(x));
 const changes=[
