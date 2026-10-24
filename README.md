@@ -2,7 +2,9 @@
 
 Banco de conhecimento **versionado** para investigar modos de falha, sintomas, evidências e causas em equipamentos móveis de mineração. Um consumidor possível é o jogo **[P.O.R.C.A.R.I.A. — Você Quebra, Eu Conserto](https://github.com/pedromaintenance/porcaria-voce-quebra-eu-conserto)**, mas o banco é independente: **este repositório não altera os consumidores**.
 
-> **Status:** versão do catálogo **1.3.60** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
+> **Status:** versão do catálogo **1.3.61** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
+
+**Ciclo v1.3.61:** [contrato de intake restrito para evidências PM](docs/CICLO_2026-10-24_INTAKE_EVIDENCIAS_PM.md) conecta as 25 regras a cinco etapas de custódia/revisão, usando exclusivamente metadados TEST-* em validação pública. Não existe serviço corporativo real, aprovação OEM ou mudança SAP. A ontologia continua 1.3.23 e a matriz de maturidade continua 1.3.60.
 
 **Ciclo v1.3.60:** [matriz de maturidade técnica](docs/CICLO_2026-10-24_MATURIDADE_FMEA.md) audita as 25 regras, preserva 10 exceções PM×SAP (5 P0 e 5 P1), registra 15 regras sem prioridade documental e separa sete gates de evidência. Não homologa efetividade OEM, dano real ou código SAP. Ontologia continua 1.3.23.
 

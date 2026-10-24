@@ -2,6 +2,13 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.61] — 2026-10-24 — Intake restrito conceitual e controle de revisão PM
+
+- Contrato público sintético para vincular as 25 regras e bundles a comprovantes de evidência por tokens opacos TEST-*; nenhuma evidência bruta no GitHub.
+- Fluxo em seis estados e cinco transições, com custódia, revisão técnica, contraprovas, revisão independente e solicitação manual de mudança.
+- JSON Schema, biblioteca de verificação pura e auditor de 40 mutações, integrado ao CI e à rotina de QA.
+- Preservados os dez bloqueios PM×SAP, 115 candidatos preventivos, matriz de maturidade 1.3.60 e ontologia 1.3.23. Sem implantação privada, assinatura real, conexão corporativa ou homologação.
+
 ## [1.3.60] — 2026-10-24 — Matriz de maturidade, evidência e homologação
 
 - Nova matriz versionada e regenerável das 25 regras e sete gates independentes: modelagem, fonte, série/BOM, campo, dano/causa, SAP e revisão.

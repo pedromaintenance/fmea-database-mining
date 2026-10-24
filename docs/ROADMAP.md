@@ -1,6 +1,6 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 24/10/2026 · **Ciclo:** catálogo técnico v1.3.60 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 24/10/2026 · **Ciclo:** catálogo técnico v1.3.61 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
 
@@ -38,6 +38,20 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 | Enriquecimento | 12 roteiros classificados por falha funcional, sintomas e técnicas | Anotação manual, não prova de causa |
 
 **Observação:** as 159 tarefas de PM com subgrupo candidato foram obtidas em extração local anterior e **não** representam 159 associações homologadas. Contagens de vínculos estritos serão publicadas pelo relatório automático após cada alteração do gerador.
+
+## Ciclo — 24/10/2026: contrato de intake restrito para as regras PM (v1.3.61)
+
+- [x] Política de recebimento sintético e contrato estruturado, alinhados ao workflow restrito e à matriz de maturidade.
+- [x] Cinco transições por papel: origem, custódia, revisão técnica, revisão independente e solicitação de mudança.
+- [x] Todos os 25 ruleId/bundleId são reconhecidos; evidências e identidades são exclusivamente tokens TEST-* no CI.
+- [x] Dez exceções SAP permanecem bloqueadas e quaisquer mudanças cadastrais são exclusivamente manuais.
+- [x] Auditor adversarial para impedir URL/serial, documentos reais, salto de estágio, reviewer duplicado e falsa liberação.
+- [ ] **Segurança/TI:** desenvolver ambiente privado aprovado com RBAC, armazenamento, assinatura validada, retenção e proteção contra replay.
+- [ ] **Engenharia/OEM:** executar casos reais apenas no ambiente autorizado, com inspeção e efetividade por série.
+- [ ] **Dados Mestres SAP:** tratar bloqueios formalmente, com processo separado de aprovação.
+- [ ] **Próximo ciclo:** runbook de implantação privada e pacote de revisão documental P0, sem persistir registros reais no GitHub.
+
+**Estado:** implementação de contrato + mock offline. Zero conectores privados ou aprovações reais. [Relatório](CICLO_2026-10-24_INTAKE_EVIDENCIAS_PM.md).
 
 ## Ciclo — 24/10/2026: matriz de maturidade e aprovação responsável (v1.3.60)
 
