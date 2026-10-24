@@ -2896,7 +2896,7 @@
         "SANDVIK-DI650I-ROTARY-OEM-PAGE",
         "SANDVIK-DR410I-TWO-STAGE-ROTARY-OEM"
       ],
-      "safety": "Evitar zona de aprisionamento, haste sob torque, ar comprimido residual e forças hidráulicas/gravitacionais; não manipular a cabeça sem sustentação e bloqueio OEM.",
+      "safety": "Evitar zona de aprisionamento, haste sob torque, ar comprimido residual e forças hidráulicas/gravitacionais; não manipular a cabeça sem sustentação, isolamento de todas as energias hidráulicas, gravitacionais e pneumáticas e bloqueio OEM.",
       "requiresApplicableOemProcedure": true,
       "executionStatus": "not_performed",
       "observedResults": [],
