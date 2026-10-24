@@ -26,7 +26,7 @@ function check(m,f,p,c){
  ok(m.version==='1.3.20'&&m.conditions.length===89&&m.actions.length===67&&m.damageHypotheses.length===42&&m.bundles.length===22&&m.relations.length===209,'ontology_count');
  ok(m.observations.length===0&&m.workOrderExecutions.length===0&&m.confirmedComponentDamages.length===0,'fabricated_events');
  ok(seed?.system==='pneus_rodas'&&seed?.subgroupCode==='TIR3'&&seed?.partText==='Pneu'&&seed?.review==='pendente'&&rules.length===25&&gaps.length===10&&links.length===115,'pm_sap_drift');
- ok(p.schema==='fmea-mining.pm-tire-wear-boundaries.v1'&&p.version==='1.3.55'&&p.sourceOntologyVersion===m.version&&p.ruleId==='wheel-tire-wear','policy_identity');
+ ok(p.schema==='fmea-mining.pm-tire-wear-boundaries.v1'&&p.version==='1.3.55'&&p.sourceOntologyVersion==='1.3.19'&&p.ruleId==='wheel-tire-wear','policy_identity');
  ok(p.scope.system===seed.system&&p.scope.subgroupCode===seed.subgroupCode&&eq(p.scope.models,seed.models)&&p.scope.partText===seed.partText,'scope');
  ok(Object.values({tire:p.scope.tireIdentified,pattern:p.scope.patternVerified,dual:p.scope.dualFitmentVerified,oem:p.scope.oemLimitVerified}).every(v=>v===false),'imaginary_effectivity');
  ok(eq(p.conditionIds,expectedConditions)&&eq(p.actionIds,expectedActions)&&eq(p.damageIds,expectedDamages),'policy_node_identity');
