@@ -22,7 +22,7 @@ const wantedDamages=['DMG-ENGINE-EXH-MANIFOLD-CRACK-CANDIDATE','DMG-ENGINE-EXH-G
 function check(m,f,pre,p) {
  const errors=[],ck=(v,id)=>{if(!v)errors.push(id);};
  const seed=seeds.find(x=>x.id==='engine-exhaust'),b=find(m.bundles,'BUNDLE-19');
- ck(m.version==='1.3.20'&&m.conditions.length===89&&m.actions.length===67&&m.damageHypotheses.length===42&&m.bundles.length===22&&m.relations.length===209,'ontology_baseline');
+ ck(m.version==='1.3.21'&&m.conditions.length===95&&m.actions.length===72&&m.damageHypotheses.length===45&&m.bundles.length===23&&m.relations.length===223,'ontology_baseline');
  ck(m.observations.length===0&&m.workOrderExecutions.length===0&&m.confirmedComponentDamages.length===0,'fabricated_field_events');
  ck(pre.version==='1.3.52'&&pre.ontologyVersionFrozen==='1.3.16'&&pre.scope.serialEffectivityVerified===false&&pre.evidenceGates.length===8&&pre.evidenceGates.every(x=>x.status==='pending'),'preflight_promoted');
  ck(pre.sourceIds.length===3&&pre.sourceIds.every(id=>sources.has(id))&&pre.differentials.length===6&&pre.differentials.every(x=>x.status==='hypothesis_not_observed'&&x.confirmed===false),'preflight_provenance');
@@ -54,16 +54,16 @@ function check(m,f,pre,p) {
  const edges=m.relations.filter(x=>x.from==='BUNDLE-19'),all=[...wantedConditions,...wantedActions,...wantedDamages];
  ck(eq(edges.map(x=>x.id),Array.from({length:14},(_,i)=>'REL-'+String(154+i).padStart(3,'0')))&&eq(edges.map(x=>x.to),all),'relations');
  ck(edges.every(x=>!x.observed&&x.reviewStatus==='interpretacao_inferida'&&x.type===(wantedConditions.includes(x.to)?'rule_monitors_condition':wantedActions.includes(x.to)?'rule_proposes_action':'rule_lists_differential_damage')),'relation_falsification');
- ck(f.version==='1.3.20'&&f.status==='synthetic_assertions_not_real_events'&&f.cases.length===40,'fixtures_version');
+ ck(f.version==='1.3.21'&&f.status==='synthetic_assertions_not_real_events'&&f.cases.length===42,'fixtures_version');
  for(const [id,cs,as] of [['SEM-33',['COND-ENGINE-EXH-SOOT-TRACE','COND-ENGINE-EXH-FLANGE-LEAK'],['ACT-ENGINE-EXH-TRACE-INSPECT']],['SEM-34',['COND-ENGINE-EXH-WET-RESIDUE','COND-ENGINE-EXH-PERFORMANCE'],['ACT-ENGINE-EXH-PERFORMANCE-CORRELATE']]]){
   const fx=find(f.cases,id);
   ck(fx?.ruleId==='engine-exhaust'&&eq(fx.observedConditionIds,cs)&&eq(fx.performedActionIds,as)&&fx.independentComponentTest==='not_performed'&&fx.expectedConfirmedDamageIds.length===0,'synthetic_fixture_'+id);
  }
- ck(p?.version==='1.3.56'&&p?.sourceOntologyVersion==='1.3.20'&&p?.expectedBundles===22&&p?.expectedUnmodeledRules===3,'crosswalk_policy');
+ ck(p?.version==='1.3.57'&&p?.sourceOntologyVersion==='1.3.21'&&p?.expectedBundles===23&&p?.expectedUnmodeledRules===2,'crosswalk_policy');
  ck(gaps.length===10&&links.length===115&&seeds.length===25,'sap_pm_immutability');
  const cross=validateSemanticCrosswalkInputs(m,seeds,p);
  ck(cross.errors.length===0,'crosswalk:'+cross.errors.slice(0,6).join(','));
- ck(cross.coverage.modeledRules===22&&cross.coverage.unmodeledRuleIds.length===3&&cross.coverage.sharedGenericNodes===11&&cross.coverage.sharedDamageNodes===0,'coverage_or_sharing');
+ ck(cross.coverage.modeledRules===23&&cross.coverage.unmodeledRuleIds.length===2&&cross.coverage.sharedGenericNodes===11&&cross.coverage.sharedDamageNodes===0,'coverage_or_sharing');
  return errors;
 }
 const errors=check(model,fixtures,preflight,policy),attacks=[];
