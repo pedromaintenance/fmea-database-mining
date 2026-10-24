@@ -15,7 +15,7 @@ const errors=[...auditTrackBoltOntology(model,fixtures,rules,policy,sources)];
 const cross=validateSemanticCrosswalkInputs(model,rules,crossPolicy);
 errors.push(...cross.errors);
 const check=(v,name)=>{if(!v)errors.push(name)};
-check(cross.coverage.totalSeeds===25&&cross.coverage.modeledRules===23&&cross.coverage.unmodeledRuleIds.length===2,'inaccurate_semantic_coverage');
+check(cross.coverage.totalSeeds===25&&cross.coverage.modeledRules===24&&cross.coverage.unmodeledRuleIds.length===1,'inaccurate_semantic_coverage');
 check(cross.coverage.sharedGenericNodes===11&&cross.coverage.sharedDamageNodes===0,'unexpected_cross_system_sharing');
 check(gaps.length===10&&gaps.every(x=>x.ruleId!=='track-bolt-loose'),'unexpected_bolt_gap');
 const clone=x=>JSON.parse(JSON.stringify(x));
