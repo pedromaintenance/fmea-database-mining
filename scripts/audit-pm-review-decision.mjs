@@ -19,7 +19,7 @@ function check(d,s){
  const a=assessPublicPmReviewDecisionPacket(d,s);
  ck(a.status==='NO_GO_PUBLIC_REVIEW'&&a.errors.length===0&&a.engineeringApproved===false&&a.sapApproved===false&&a.operationsReleased===false,'assess_'+a.errors.slice(0,3).join('_'));
  ck(policy.schema==='fmea-mining.pm-review-decision-policy.v1'&&policy.version==='1.3.64','policy_version');
- ck(same(policy.decisionLanes.map(x=>x.id),LANES)&&policy.decisionLanes.length===4&&policy.decisionLanes.every(x=>x.privatePossibleOutcome.length>=3&&x.requires.length===3&&x.doesNotAuthorize.length>=2&&x.publicStatus!=='approved'),'lanes_separated');
+ ck(same(policy.decisionLanes.map(x=>x.id),LANES)&&policy.decisionLanes.length===4&&policy.decisionLanes.every(x=>x.privatePossibleOutcome.length>=3&&x.requires.length>=3&&x.doesNotAuthorize.length>=2&&x.publicStatus!=='approved'),'lanes_separated');
  ck(same(CATEGORIES,['identity','oem','safe_execution','measurement_quality','diagnosis','independent_review','sap_change']),'checklist_sections');
  ck(policy.criteria.length===7&&policy.criteria.every((x,i)=>x.id==='EC-0'+(i+1)&&x.trigger.length>55&&x.failureEffect.startsWith('hold_')),'seven_decision_criteria');
  ck(policy.trustBoundary.publicAlwaysNoGo===true&&Object.entries(policy.trustBoundary).every(([k,v])=>k==='publicAlwaysNoGo'?v===true:k.endsWith('InRepo')?v===0:v===false),'public_private_boundary');

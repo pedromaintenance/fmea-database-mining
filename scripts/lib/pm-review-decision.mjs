@@ -42,7 +42,7 @@ export function assessPublicPmReviewDecisionPacket(sources,packet){
  ck(runbook.goNoGo.decision==='NO_GO'&&runbook.goNoGo.realPilotAllowed===false&&runbook.phases.length===8&&runbook.phases.every(x=>x.gate==='BLOCK'&&x.status==='not_started'),'private_deployment_blocked');
  ck(intake.boundaries.publicSyntheticOnly===true&&intake.boundaries.privateStorageImplemented===false&&intake.boundaries.trustedActorRolesProven===false,'private_identity_not_implemented');
  ck(maturity.summary.sapExceptionsBlocked===10&&maturity.summary.sapMappingsApproved===0&&maturity.summary.serialOemVerified===0&&maturity.summary.fieldConfirmed===0,'maturity_unvalidated');
- ck(stable(policy.decisionLanes.map(x=>x.id))===stable(LANES)&&policy.decisionLanes.every(x=>x.publicStatus&&x.privatePossibleOutcome.length>=3&&x.requires.length===3&&x.doesNotAuthorize.length>=2),'four_distinct_decision_lanes');
+ ck(stable(policy.decisionLanes.map(x=>x.id))===stable(LANES)&&policy.decisionLanes.every(x=>x.publicStatus&&x.privatePossibleOutcome.length>=3&&x.requires.length>=3&&x.doesNotAuthorize.length>=2),'four_distinct_decision_lanes');
  ck(stable(policy.evidenceKinds)===stable(['oem_effectivity','oem_procedure','field_observation','counterevidence','measurement_quality']),'evidence_kinds');
  ck(stable(policy.criteria.map(x=>x.id))===stable(['EC-01','EC-02','EC-03','EC-04','EC-05','EC-06','EC-07']),'seven_decision_criteria');
  ck(policy.trustBoundary.publicAlwaysNoGo===true&&Object.entries(policy.trustBoundary).every(([k,v])=>k==='publicAlwaysNoGo'?v===true:k.endsWith('InRepo')?v===0:v===false),'trust_boundary');
