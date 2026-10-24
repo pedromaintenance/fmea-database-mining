@@ -56,7 +56,7 @@ const policyAttacks=[
  ['cross_system_policy',x=>{x.sharedNodes[0].system='hidraulico';}],
  ['weaken_discrimination',x=>{x.sharedNodes[1].requiredDiscrimination='';}],
  ['relax_field_rule',x=>{x.policy.noObservedConditions=false;}],
- ['pretend_full_coverage',x=>{x.expectedUnmodeledRules=0;}],
+ ['invent_missing_rule_after_full_coverage',x=>{x.expectedUnmodeledRules=1;}],
  ['invent_oem_approval',x=>{x.approvedSapMappings=1;}],
  ['omit_idler_boundary',x=>{x.domainSeparation=x.domainSeparation.filter(y=>y.left!=='track-roller-wear');}],
  ['wrong_share_partner',x=>{x.sharedNodes[0].ruleIds=['fuel-tank-water','hydraulic-pump-seal'];}]
@@ -70,14 +70,14 @@ for(const [name,edit] of policyAttacks){
 ck(rejected===attacks.length&&rejectedPolicy===policyAttacks.length,'mutation_suite_incomplete');
 const payload={
  schema:'fmea-mining.pm-semantic-crosswalk-report.v1',version:'1.3.43',
- nature:'twenty_two_modeled_three_unmodeled_rules_no_field_verification',
+ nature:'twenty_five_modeled_zero_unmodeled_rules_no_field_verification',
  counts:{...results.coverage,
   unsafeOntologyMutationsRejected:rejected,unsafePolicyMutationsRejected:rejectedPolicy,
   confirmedDamageEvents:0,executedMaintenanceActions:0,approvedSapMappings:0},
  sharedNodes:results.shared,
  editorialReviewCandidates:results.editorialFlags,
  distinction:'generic_shared_condition_or_action_is_not_component_failure_or_root_cause',
- pending:'extend_semantic_ontology_to_unmodeled_rules_with_OEM_review',
+ pending:'validate_modeled_ontology_against_serial_specific_OEM_and_field_evidence',
  errors
 };
 fs.mkdirSync(path.join(root,'reports'),{recursive:true});
