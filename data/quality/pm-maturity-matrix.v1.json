@@ -1,0 +1,1499 @@
+{
+  "schema": "fmea-mining.pm-maturity-matrix.v1",
+  "version": "1.3.60",
+  "ontologyVersion": "1.3.23",
+  "asOfDate": "2026-10-24",
+  "nature": "repository_evidence_status_not_asset_homologation",
+  "method": "deterministic_read_only_join_of_PM_seeds_bundles_sources_SAP_gaps_and_exception_gates",
+  "summary": {
+    "seedRules": 25,
+    "conceptuallyModeled": 25,
+    "conceptualCoveragePercent": 100,
+    "serialOemVerified": 0,
+    "fieldConfirmed": 0,
+    "engineeringApprovalsRecorded": 0,
+    "sapMappingsApproved": 0,
+    "sapExceptionsBlocked": 10,
+    "documentedP0": 5,
+    "documentedP1": 5,
+    "withoutDocumentedPriority": 15,
+    "publicOrGenericReferenceLinkages": 73,
+    "candidatePreventiveLinks": 115
+  },
+  "reviewQueue": [
+    {
+      "ruleId": "cooling-radiator-blockage",
+      "priority": "P0",
+      "blocker": "damage_cause_not_permitted",
+      "reviewDiscipline": "engenharia_de_confiabilidade_e_dados_mestres_sap",
+      "minimumEvidence": [
+        "Inspeção fotográfica do lado de entrada e saída de ar com posição, limpeza e carga de poeira documentadas",
+        "Teste OEM aplicável de fluxo térmico ou diagnóstico de circulação, com identificação do conjunto e condição de teste"
+      ]
+    },
+    {
+      "ruleId": "fuel-filter-contamination",
+      "priority": "P0",
+      "blocker": "component_not_registered",
+      "reviewDiscipline": "engenharia_de_ativos_e_dados_mestres_sap",
+      "minimumEvidence": [
+        "Diagrama OEM de alimentação e separação por série identificando cabeçote, elementos e pontos de coleta",
+        "Estrutura funcional SAP revisada e componente filtrante cadastrado com PN e tipo de objeto efetivos"
+      ]
+    },
+    {
+      "ruleId": "fuel-tank-water",
+      "priority": "P0",
+      "blocker": "damage_cause_not_permitted",
+      "reviewDiscipline": "engenharia_de_confiabilidade_e_dados_mestres_sap",
+      "minimumEvidence": [
+        "Amostragem representativa do tanque, linha e fornecimento com cadeia de custódia e método analítico",
+        "Inspeção física e teste autorizado do dreno/vedação, confrontados com registros de drenagem executada"
+      ]
+    },
+    {
+      "ruleId": "hydraulic-hose-abrasion",
+      "priority": "P0",
+      "blocker": "subgroup_not_in_scope",
+      "reviewDiscipline": "engenharia_de_sistemas_e_dados_mestres_sap",
+      "minimumEvidence": [
+        "Desenho de instalação OEM e fotos de linha e suportes em posição segura com a marca de atrito",
+        "BOM e local funcional do circuito efetivo, com comparação de histórico de intervenções e modificações"
+      ]
+    },
+    {
+      "ruleId": "hydraulic-hose-leak",
+      "priority": "P0",
+      "blocker": "subgroup_not_in_scope",
+      "reviewDiscipline": "engenharia_de_sistemas_e_dados_mestres_sap",
+      "minimumEvidence": [
+        "Esquema hidráulico OEM e identificação de linha/roteamento por circuito e série do equipamento",
+        "Cadastro SAP de estrutura funcional e lista técnica de montagem que comprove pertencimento ao circuito de implementos"
+      ]
+    },
+    {
+      "ruleId": "drill-compressor-filter",
+      "priority": "P1",
+      "blocker": "subgroup_not_in_scope",
+      "reviewDiscipline": "engenharia_de_sistemas_e_dados_mestres_sap",
+      "minimumEvidence": [
+        "Árvore de sistema AISY e grupo COMR do cadastro SAP, com subgrupos realmente existentes por modelo",
+        "Diagrama OEM do fluxo de ar e conjunto de filtragem, com componente e arranjo identificados"
+      ]
+    },
+    {
+      "ruleId": "drill-compressor-pressure",
+      "priority": "P1",
+      "blocker": "component_not_registered",
+      "reviewDiscipline": "engenharia_de_ativos_e_dados_mestres_sap",
+      "minimumEvidence": [
+        "P&ID/diagrama pneumático Sandvik por variante indicando vaso, tubulações e pontos de medição",
+        "Lista SAP/BOM de mangueiras e conexões com confirmação da localização funcional e teste seguro de estanqueidade"
+      ]
+    },
+    {
+      "ruleId": "drill-rotary-bearing",
+      "priority": "P1",
+      "blocker": "component_not_registered",
+      "reviewDiscipline": "engenharia_de_ativos_e_dados_mestres_sap",
+      "minimumEvidence": [
+        "Desenho Sandvik aplicável da cabeça rotativa e revisão de lista de itens para série/arranjo",
+        "Vinculação da unidade MORO ao objeto SAP e sua política de manutenção/reparo, aprovada pelo cadastro"
+      ]
+    },
+    {
+      "ruleId": "engine-oil-filter",
+      "priority": "P1",
+      "blocker": "component_not_registered",
+      "reviewDiscipline": "engenharia_de_ativos_e_dados_mestres_sap",
+      "minimumEvidence": [
+        "BOM OEM por modelo/arranjo do conjunto de filtragem e identificação da posição exata do elemento",
+        "Extrato de locais funcionais e tipos de objeto SAP da máquina, conferido pelo responsável de dados mestres"
+      ]
+    },
+    {
+      "ruleId": "track-idler-wear",
+      "priority": "P1",
+      "blocker": "component_not_registered",
+      "reviewDiscipline": "engenharia_de_ativos_e_dados_mestres_sap",
+      "minimumEvidence": [
+        "Catálogo OEM aplicável ao rodante, com desenho do conjunto roda-guia e identificação de manutenção por série",
+        "Histórico de inspeção CTS e lista de componentes SAP discriminando conjunto completo, eixo e apoio interno"
+      ]
+    }
+  ],
+  "unrankedRules": [
+    "brake-disc",
+    "cooling-fan-bearing",
+    "cooling-fan-belt",
+    "cooling-radiator-leak",
+    "differential-gear",
+    "drill-feed-chain",
+    "engine-exhaust",
+    "final-drive-bearing",
+    "final-drive-gear",
+    "hydraulic-pump-seal",
+    "implement-cylinder",
+    "track-bolt-loose",
+    "track-roller-wear",
+    "wheel-tire-damage",
+    "wheel-tire-wear"
+  ],
+  "rules": [
+    {
+      "ruleId": "brake-disc",
+      "system": "freios",
+      "subgroupCode": "BRA1",
+      "partText": "Disco",
+      "modelCandidates": [
+        "CAT777",
+        "CAT980",
+        "EQ09"
+      ],
+      "bundleId": "BUNDLE-18",
+      "sourceIds": [
+        "CAT-77705-BRAKE-ARCH",
+        "CAT-77707-BRAKE-ARCH",
+        "CAT-980-BRAKE-ARCH",
+        "ISO-3450-2011"
+      ],
+      "referenceCount": 4,
+      "candidateConditions": 7,
+      "candidateActions": 4,
+      "candidateDamages": 3,
+      "maturity": "conceptual_pending_OEM_field_SAP_review",
+      "gates": {
+        "semanticModel": "modeled_unvalidated",
+        "sourceTraceability": "catalogued_not_serial_effective",
+        "serialBOM": "pending",
+        "fieldDiscrimination": "not_recorded",
+        "damageCause": "not_confirmed",
+        "sapMapping": "not_approved_no_recorded_exception",
+        "independentReview": "not_recorded"
+      },
+      "sap": {
+        "isBlocked": false,
+        "blocker": null,
+        "priorityFromRepo": null,
+        "exceptionStatus": null,
+        "autoRemapAllowed": false,
+        "reviewedByEngineering": false,
+        "minimumEvidence": [],
+        "requiredSubgroup": null,
+        "requestedDamageId": "02.01",
+        "requestedCauseId": "C1.04",
+        "approvedLocationId": null,
+        "approvedComponentCode": null,
+        "reviewDiscipline": "engenharia_de_manutencao_e_especialista_oem"
+      },
+      "nextDecision": "verify_serial_BOM_and_gather_discriminative_evidence",
+      "fieldObservations": 0,
+      "performedActions": 0,
+      "confirmedDamages": 0,
+      "approvedSapMappings": 0
+    },
+    {
+      "ruleId": "cooling-fan-bearing",
+      "system": "arrefecimento",
+      "subgroupCode": "FANN",
+      "partText": "Rolamento",
+      "modelCandidates": [
+        "EQ03",
+        "EQ02",
+        "CAT777",
+        "CAT980",
+        "EQ07",
+        "EQ05",
+        "EQ06"
+      ],
+      "bundleId": "BUNDLE-10",
+      "sourceIds": [
+        "CAT-COOLING-FAN-REVERSE",
+        "CAT-EXC-COOL-CHECKLIST",
+        "SKF-ISO15243-BEARING"
+      ],
+      "referenceCount": 3,
+      "candidateConditions": 2,
+      "candidateActions": 2,
+      "candidateDamages": 1,
+      "maturity": "conceptual_pending_OEM_field_SAP_review",
+      "gates": {
+        "semanticModel": "modeled_unvalidated",
+        "sourceTraceability": "catalogued_not_serial_effective",
+        "serialBOM": "pending",
+        "fieldDiscrimination": "not_recorded",
+        "damageCause": "not_confirmed",
+        "sapMapping": "not_approved_no_recorded_exception",
+        "independentReview": "not_recorded"
+      },
+      "sap": {
+        "isBlocked": false,
+        "blocker": null,
+        "priorityFromRepo": null,
+        "exceptionStatus": null,
+        "autoRemapAllowed": false,
+        "reviewedByEngineering": false,
+        "minimumEvidence": [],
+        "requiredSubgroup": null,
+        "requestedDamageId": "06.05",
+        "requestedCauseId": "C2.11",
+        "approvedLocationId": null,
+        "approvedComponentCode": null,
+        "reviewDiscipline": "engenharia_de_manutencao_e_especialista_oem"
+      },
+      "nextDecision": "verify_serial_BOM_and_gather_discriminative_evidence",
+      "fieldObservations": 0,
+      "performedActions": 0,
+      "confirmedDamages": 0,
+      "approvedSapMappings": 0
+    },
+    {
+      "ruleId": "cooling-fan-belt",
+      "system": "arrefecimento",
+      "subgroupCode": "FANN",
+      "partText": "Correia",
+      "modelCandidates": [
+        "EQ03",
+        "EQ02",
+        "CAT777",
+        "CAT980",
+        "EQ07"
+      ],
+      "bundleId": "BUNDLE-11",
+      "sourceIds": [
+        "CAT-FAN-BELT-FUNCTION",
+        "CAT-ENGINE-BELT-PM",
+        "CAT-COOLING-FAN-REVERSE"
+      ],
+      "referenceCount": 3,
+      "candidateConditions": 2,
+      "candidateActions": 2,
+      "candidateDamages": 1,
+      "maturity": "conceptual_pending_OEM_field_SAP_review",
+      "gates": {
+        "semanticModel": "modeled_unvalidated",
+        "sourceTraceability": "catalogued_not_serial_effective",
+        "serialBOM": "pending",
+        "fieldDiscrimination": "not_recorded",
+        "damageCause": "not_confirmed",
+        "sapMapping": "not_approved_no_recorded_exception",
+        "independentReview": "not_recorded"
+      },
+      "sap": {
+        "isBlocked": false,
+        "blocker": null,
+        "priorityFromRepo": null,
+        "exceptionStatus": null,
+        "autoRemapAllowed": false,
+        "reviewedByEngineering": false,
+        "minimumEvidence": [],
+        "requiredSubgroup": null,
+        "requestedDamageId": "06.03",
+        "requestedCauseId": "C1.24",
+        "approvedLocationId": null,
+        "approvedComponentCode": null,
+        "reviewDiscipline": "engenharia_de_manutencao_e_especialista_oem"
+      },
+      "nextDecision": "verify_serial_BOM_and_gather_discriminative_evidence",
+      "fieldObservations": 0,
+      "performedActions": 0,
+      "confirmedDamages": 0,
+      "approvedSapMappings": 0
+    },
+    {
+      "ruleId": "cooling-radiator-blockage",
+      "system": "arrefecimento",
+      "subgroupCode": "RADI",
+      "partText": "Trocador",
+      "modelCandidates": [
+        "EQ03",
+        "EQ02",
+        "CAT777",
+        "CAT980",
+        "EQ07",
+        "EQ05",
+        "EQ06"
+      ],
+      "bundleId": "BUNDLE-03",
+      "sourceIds": [
+        "CAT-RADIATOR-CARE",
+        "CAT-FILTERS-FLUIDS-GUIDE"
+      ],
+      "referenceCount": 2,
+      "candidateConditions": 3,
+      "candidateActions": 3,
+      "candidateDamages": 1,
+      "maturity": "conceptual_pending_OEM_field_SAP_review",
+      "gates": {
+        "semanticModel": "modeled_unvalidated",
+        "sourceTraceability": "catalogued_not_serial_effective",
+        "serialBOM": "pending",
+        "fieldDiscrimination": "not_recorded",
+        "damageCause": "not_confirmed",
+        "sapMapping": "blocked_pending_curatorship",
+        "independentReview": "not_recorded"
+      },
+      "sap": {
+        "isBlocked": true,
+        "blocker": "damage_cause_not_permitted",
+        "priorityFromRepo": "P0",
+        "exceptionStatus": "bloqueado_aguardando_curadoria",
+        "autoRemapAllowed": false,
+        "reviewedByEngineering": false,
+        "minimumEvidence": [
+          "Inspeção fotográfica do lado de entrada e saída de ar com posição, limpeza e carga de poeira documentadas",
+          "Teste OEM aplicável de fluxo térmico ou diagnóstico de circulação, com identificação do conjunto e condição de teste"
+        ],
+        "requiredSubgroup": "RADI",
+        "requestedDamageId": "03.02",
+        "requestedCauseId": "C2.09",
+        "approvedLocationId": null,
+        "approvedComponentCode": null,
+        "reviewDiscipline": "engenharia_de_confiabilidade_e_dados_mestres_sap"
+      },
+      "nextDecision": "resolve_registered_SAP_exception_with_OEM_and_evidence",
+      "fieldObservations": 0,
+      "performedActions": 0,
+      "confirmedDamages": 0,
+      "approvedSapMappings": 0
+    },
+    {
+      "ruleId": "cooling-radiator-leak",
+      "system": "arrefecimento",
+      "subgroupCode": "RADI",
+      "partText": "Mangueira",
+      "modelCandidates": [
+        "EQ03",
+        "EQ02",
+        "CAT777",
+        "CAT980",
+        "EQ07",
+        "EQ05",
+        "EQ06"
+      ],
+      "bundleId": "BUNDLE-04",
+      "sourceIds": [
+        "CAT-RADIATOR-CARE",
+        "CAT-FILTERS-FLUIDS-GUIDE"
+      ],
+      "referenceCount": 2,
+      "candidateConditions": 1,
+      "candidateActions": 1,
+      "candidateDamages": 1,
+      "maturity": "conceptual_pending_OEM_field_SAP_review",
+      "gates": {
+        "semanticModel": "modeled_unvalidated",
+        "sourceTraceability": "catalogued_not_serial_effective",
+        "serialBOM": "pending",
+        "fieldDiscrimination": "not_recorded",
+        "damageCause": "not_confirmed",
+        "sapMapping": "not_approved_no_recorded_exception",
+        "independentReview": "not_recorded"
+      },
+      "sap": {
+        "isBlocked": false,
+        "blocker": null,
+        "priorityFromRepo": null,
+        "exceptionStatus": null,
+        "autoRemapAllowed": false,
+        "reviewedByEngineering": false,
+        "minimumEvidence": [],
+        "requiredSubgroup": null,
+        "requestedDamageId": "03.01",
+        "requestedCauseId": "C2.13",
+        "approvedLocationId": null,
+        "approvedComponentCode": null,
+        "reviewDiscipline": "engenharia_de_manutencao_e_especialista_oem"
+      },
+      "nextDecision": "verify_serial_BOM_and_gather_discriminative_evidence",
+      "fieldObservations": 0,
+      "performedActions": 0,
+      "confirmedDamages": 0,
+      "approvedSapMappings": 0
+    },
+    {
+      "ruleId": "differential-gear",
+      "system": "diferencial",
+      "subgroupCode": "DIFF",
+      "partText": "Engrenagem",
+      "modelCandidates": [
+        "CAT777",
+        "CAT980"
+      ],
+      "bundleId": "BUNDLE-16",
+      "sourceIds": [
+        "ISO-10825-1-2022",
+        "CAT-DRIVE-MAINT-PRACTICES",
+        "CAT-DRIVETRAIN-OIL-CARE",
+        "SKF-ISO15243-BEARING"
+      ],
+      "referenceCount": 4,
+      "candidateConditions": 7,
+      "candidateActions": 4,
+      "candidateDamages": 3,
+      "maturity": "conceptual_pending_OEM_field_SAP_review",
+      "gates": {
+        "semanticModel": "modeled_unvalidated",
+        "sourceTraceability": "catalogued_not_serial_effective",
+        "serialBOM": "pending",
+        "fieldDiscrimination": "not_recorded",
+        "damageCause": "not_confirmed",
+        "sapMapping": "not_approved_no_recorded_exception",
+        "independentReview": "not_recorded"
+      },
+      "sap": {
+        "isBlocked": false,
+        "blocker": null,
+        "priorityFromRepo": null,
+        "exceptionStatus": null,
+        "autoRemapAllowed": false,
+        "reviewedByEngineering": false,
+        "minimumEvidence": [],
+        "requiredSubgroup": null,
+        "requestedDamageId": "02.01",
+        "requestedCauseId": "C2.11",
+        "approvedLocationId": null,
+        "approvedComponentCode": null,
+        "reviewDiscipline": "engenharia_de_manutencao_e_especialista_oem"
+      },
+      "nextDecision": "verify_serial_BOM_and_gather_discriminative_evidence",
+      "fieldObservations": 0,
+      "performedActions": 0,
+      "confirmedDamages": 0,
+      "approvedSapMappings": 0
+    },
+    {
+      "ruleId": "drill-compressor-filter",
+      "system": "ar_comprimido",
+      "subgroupCode": "COMR",
+      "partText": "Filtro",
+      "modelCandidates": [
+        "EQ05",
+        "EQ06"
+      ],
+      "bundleId": "BUNDLE-25",
+      "sourceIds": [
+        "SANDVIK-DR410I-CAT-C18-MAINT-PLANNER",
+        "SANDVIK-DR410I-CUMMINS-MAINT-PLANNER",
+        "ATLAS-COPCO-COMPRESSOR-FILTER-FUNCTIONS",
+        "KAESER-COMPRESSOR-MAINTENANCE-INDICATORS"
+      ],
+      "referenceCount": 4,
+      "candidateConditions": 6,
+      "candidateActions": 5,
+      "candidateDamages": 3,
+      "maturity": "conceptual_pending_OEM_field_SAP_review",
+      "gates": {
+        "semanticModel": "modeled_unvalidated",
+        "sourceTraceability": "catalogued_not_serial_effective",
+        "serialBOM": "pending",
+        "fieldDiscrimination": "not_recorded",
+        "damageCause": "not_confirmed",
+        "sapMapping": "blocked_pending_curatorship",
+        "independentReview": "not_recorded"
+      },
+      "sap": {
+        "isBlocked": true,
+        "blocker": "subgroup_not_in_scope",
+        "priorityFromRepo": "P1",
+        "exceptionStatus": "bloqueado_aguardando_curadoria",
+        "autoRemapAllowed": false,
+        "reviewedByEngineering": false,
+        "minimumEvidence": [
+          "Árvore de sistema AISY e grupo COMR do cadastro SAP, com subgrupos realmente existentes por modelo",
+          "Diagrama OEM do fluxo de ar e conjunto de filtragem, com componente e arranjo identificados"
+        ],
+        "requiredSubgroup": "COMR",
+        "requestedDamageId": "03.02",
+        "requestedCauseId": "C2.09",
+        "approvedLocationId": null,
+        "approvedComponentCode": null,
+        "reviewDiscipline": "engenharia_de_sistemas_e_dados_mestres_sap"
+      },
+      "nextDecision": "resolve_registered_SAP_exception_with_OEM_and_evidence",
+      "fieldObservations": 0,
+      "performedActions": 0,
+      "confirmedDamages": 0,
+      "approvedSapMappings": 0
+    },
+    {
+      "ruleId": "drill-compressor-pressure",
+      "system": "ar_comprimido",
+      "subgroupCode": "VPAR",
+      "partText": "Mangueira",
+      "modelCandidates": [
+        "EQ05",
+        "EQ06"
+      ],
+      "bundleId": "BUNDLE-24",
+      "sourceIds": [
+        "SANDVIK-DR410I-TRANSIT-GUIDE-REV-C-2023",
+        "SANDVIK-DR410i-SPEC",
+        "SANDVIK-DI650I-S5-SPEC",
+        "KAESER-COMPRESSED-AIR-SAFETY-2019"
+      ],
+      "referenceCount": 4,
+      "candidateConditions": 6,
+      "candidateActions": 5,
+      "candidateDamages": 3,
+      "maturity": "conceptual_pending_OEM_field_SAP_review",
+      "gates": {
+        "semanticModel": "modeled_unvalidated",
+        "sourceTraceability": "catalogued_not_serial_effective",
+        "serialBOM": "pending",
+        "fieldDiscrimination": "not_recorded",
+        "damageCause": "not_confirmed",
+        "sapMapping": "blocked_pending_curatorship",
+        "independentReview": "not_recorded"
+      },
+      "sap": {
+        "isBlocked": true,
+        "blocker": "component_not_registered",
+        "priorityFromRepo": "P1",
+        "exceptionStatus": "bloqueado_aguardando_curadoria",
+        "autoRemapAllowed": false,
+        "reviewedByEngineering": false,
+        "minimumEvidence": [
+          "P&ID/diagrama pneumático Sandvik por variante indicando vaso, tubulações e pontos de medição",
+          "Lista SAP/BOM de mangueiras e conexões com confirmação da localização funcional e teste seguro de estanqueidade"
+        ],
+        "requiredSubgroup": "VPAR",
+        "requestedDamageId": "03.01",
+        "requestedCauseId": "C2.13",
+        "approvedLocationId": null,
+        "approvedComponentCode": null,
+        "reviewDiscipline": "engenharia_de_ativos_e_dados_mestres_sap"
+      },
+      "nextDecision": "resolve_registered_SAP_exception_with_OEM_and_evidence",
+      "fieldObservations": 0,
+      "performedActions": 0,
+      "confirmedDamages": 0,
+      "approvedSapMappings": 0
+    },
+    {
+      "ruleId": "drill-feed-chain",
+      "system": "avanco_perfuratriz",
+      "subgroupCode": "FECH",
+      "partText": "Corrente",
+      "modelCandidates": [
+        "EQ05",
+        "EQ06"
+      ],
+      "bundleId": "BUNDLE-22",
+      "sourceIds": [
+        "SANDVIK-DR410I-FEED-SPEC-2024",
+        "SANDVIK-DI650I-CHAIN-SPEC-2020"
+      ],
+      "referenceCount": 2,
+      "candidateConditions": 6,
+      "candidateActions": 5,
+      "candidateDamages": 3,
+      "maturity": "conceptual_pending_OEM_field_SAP_review",
+      "gates": {
+        "semanticModel": "modeled_unvalidated",
+        "sourceTraceability": "catalogued_not_serial_effective",
+        "serialBOM": "pending",
+        "fieldDiscrimination": "not_recorded",
+        "damageCause": "not_confirmed",
+        "sapMapping": "not_approved_no_recorded_exception",
+        "independentReview": "not_recorded"
+      },
+      "sap": {
+        "isBlocked": false,
+        "blocker": null,
+        "priorityFromRepo": null,
+        "exceptionStatus": null,
+        "autoRemapAllowed": false,
+        "reviewedByEngineering": false,
+        "minimumEvidence": [],
+        "requiredSubgroup": null,
+        "requestedDamageId": "02.01",
+        "requestedCauseId": "C1.04",
+        "approvedLocationId": null,
+        "approvedComponentCode": null,
+        "reviewDiscipline": "engenharia_de_manutencao_e_especialista_oem"
+      },
+      "nextDecision": "verify_serial_BOM_and_gather_discriminative_evidence",
+      "fieldObservations": 0,
+      "performedActions": 0,
+      "confirmedDamages": 0,
+      "approvedSapMappings": 0
+    },
+    {
+      "ruleId": "drill-rotary-bearing",
+      "system": "cabeca_rotativa",
+      "subgroupCode": "MORO",
+      "partText": "Rolamento",
+      "modelCandidates": [
+        "EQ05",
+        "EQ06"
+      ],
+      "bundleId": "BUNDLE-23",
+      "sourceIds": [
+        "SANDVIK-DI650I-ROTARY-BROCHURE-2020",
+        "SANDVIK-DI650I-ROTARY-OEM-PAGE",
+        "SANDVIK-DR410I-TWO-STAGE-ROTARY-OEM"
+      ],
+      "referenceCount": 3,
+      "candidateConditions": 6,
+      "candidateActions": 5,
+      "candidateDamages": 3,
+      "maturity": "conceptual_pending_OEM_field_SAP_review",
+      "gates": {
+        "semanticModel": "modeled_unvalidated",
+        "sourceTraceability": "catalogued_not_serial_effective",
+        "serialBOM": "pending",
+        "fieldDiscrimination": "not_recorded",
+        "damageCause": "not_confirmed",
+        "sapMapping": "blocked_pending_curatorship",
+        "independentReview": "not_recorded"
+      },
+      "sap": {
+        "isBlocked": true,
+        "blocker": "component_not_registered",
+        "priorityFromRepo": "P1",
+        "exceptionStatus": "bloqueado_aguardando_curadoria",
+        "autoRemapAllowed": false,
+        "reviewedByEngineering": false,
+        "minimumEvidence": [
+          "Desenho Sandvik aplicável da cabeça rotativa e revisão de lista de itens para série/arranjo",
+          "Vinculação da unidade MORO ao objeto SAP e sua política de manutenção/reparo, aprovada pelo cadastro"
+        ],
+        "requiredSubgroup": "MORO",
+        "requestedDamageId": "06.05",
+        "requestedCauseId": "C2.11",
+        "approvedLocationId": null,
+        "approvedComponentCode": null,
+        "reviewDiscipline": "engenharia_de_ativos_e_dados_mestres_sap"
+      },
+      "nextDecision": "resolve_registered_SAP_exception_with_OEM_and_evidence",
+      "fieldObservations": 0,
+      "performedActions": 0,
+      "confirmedDamages": 0,
+      "approvedSapMappings": 0
+    },
+    {
+      "ruleId": "engine-exhaust",
+      "system": "motor_diesel",
+      "subgroupCode": "EXSY",
+      "partText": "Coletor",
+      "modelCandidates": [
+        "EQ03",
+        "EQ02",
+        "CAT777",
+        "CAT980",
+        "EQ07",
+        "EQ05",
+        "EQ06"
+      ],
+      "bundleId": "BUNDLE-19",
+      "sourceIds": [
+        "CAT-EXHAUST-MANIFOLD-KIT-INFO",
+        "CAT-EXHAUST-WET-STACKING",
+        "CAT-EXHAUST-BELLOWS-RELIABILITY"
+      ],
+      "referenceCount": 3,
+      "candidateConditions": 6,
+      "candidateActions": 5,
+      "candidateDamages": 3,
+      "maturity": "conceptual_pending_OEM_field_SAP_review",
+      "gates": {
+        "semanticModel": "modeled_unvalidated",
+        "sourceTraceability": "catalogued_not_serial_effective",
+        "serialBOM": "pending",
+        "fieldDiscrimination": "not_recorded",
+        "damageCause": "not_confirmed",
+        "sapMapping": "not_approved_no_recorded_exception",
+        "independentReview": "not_recorded"
+      },
+      "sap": {
+        "isBlocked": false,
+        "blocker": null,
+        "priorityFromRepo": null,
+        "exceptionStatus": null,
+        "autoRemapAllowed": false,
+        "reviewedByEngineering": false,
+        "minimumEvidence": [],
+        "requiredSubgroup": null,
+        "requestedDamageId": "01.02",
+        "requestedCauseId": "C1.03",
+        "approvedLocationId": null,
+        "approvedComponentCode": null,
+        "reviewDiscipline": "engenharia_de_manutencao_e_especialista_oem"
+      },
+      "nextDecision": "verify_serial_BOM_and_gather_discriminative_evidence",
+      "fieldObservations": 0,
+      "performedActions": 0,
+      "confirmedDamages": 0,
+      "approvedSapMappings": 0
+    },
+    {
+      "ruleId": "engine-oil-filter",
+      "system": "motor_diesel",
+      "subgroupCode": "LUSY",
+      "partText": "Filtro",
+      "modelCandidates": [
+        "EQ03",
+        "EQ02",
+        "CAT777",
+        "CAT980",
+        "EQ07",
+        "EQ05",
+        "EQ06"
+      ],
+      "bundleId": "BUNDLE-05",
+      "sourceIds": [
+        "CAT-ENGINE-OIL-FILTER-SERVICE",
+        "CAT-FLUID-ANALYSIS-101"
+      ],
+      "referenceCount": 2,
+      "candidateConditions": 3,
+      "candidateActions": 3,
+      "candidateDamages": 1,
+      "maturity": "conceptual_pending_OEM_field_SAP_review",
+      "gates": {
+        "semanticModel": "modeled_unvalidated",
+        "sourceTraceability": "catalogued_not_serial_effective",
+        "serialBOM": "pending",
+        "fieldDiscrimination": "not_recorded",
+        "damageCause": "not_confirmed",
+        "sapMapping": "blocked_pending_curatorship",
+        "independentReview": "not_recorded"
+      },
+      "sap": {
+        "isBlocked": true,
+        "blocker": "component_not_registered",
+        "priorityFromRepo": "P1",
+        "exceptionStatus": "bloqueado_aguardando_curadoria",
+        "autoRemapAllowed": false,
+        "reviewedByEngineering": false,
+        "minimumEvidence": [
+          "BOM OEM por modelo/arranjo do conjunto de filtragem e identificação da posição exata do elemento",
+          "Extrato de locais funcionais e tipos de objeto SAP da máquina, conferido pelo responsável de dados mestres"
+        ],
+        "requiredSubgroup": "LUSY",
+        "requestedDamageId": "03.02",
+        "requestedCauseId": "C2.09",
+        "approvedLocationId": null,
+        "approvedComponentCode": null,
+        "reviewDiscipline": "engenharia_de_ativos_e_dados_mestres_sap"
+      },
+      "nextDecision": "resolve_registered_SAP_exception_with_OEM_and_evidence",
+      "fieldObservations": 0,
+      "performedActions": 0,
+      "confirmedDamages": 0,
+      "approvedSapMappings": 0
+    },
+    {
+      "ruleId": "final-drive-bearing",
+      "system": "comando_final",
+      "subgroupCode": "FID2",
+      "partText": "Rolamento",
+      "modelCandidates": [
+        "CAT777",
+        "CAT980",
+        "EQ03",
+        "EQ02",
+        "EQ07",
+        "EQ05",
+        "EQ06"
+      ],
+      "bundleId": "BUNDLE-15",
+      "sourceIds": [
+        "SKF-ISO15243-BEARING",
+        "SKF-WEAR-SURFACE-FATIGUE",
+        "CAT-DRIVE-MAINT-PRACTICES",
+        "CAT-DRIVE-MAGNET-PLUG",
+        "CAT-DRIVETRAIN-OIL-CARE"
+      ],
+      "referenceCount": 5,
+      "candidateConditions": 8,
+      "candidateActions": 4,
+      "candidateDamages": 3,
+      "maturity": "conceptual_pending_OEM_field_SAP_review",
+      "gates": {
+        "semanticModel": "modeled_unvalidated",
+        "sourceTraceability": "catalogued_not_serial_effective",
+        "serialBOM": "pending",
+        "fieldDiscrimination": "not_recorded",
+        "damageCause": "not_confirmed",
+        "sapMapping": "not_approved_no_recorded_exception",
+        "independentReview": "not_recorded"
+      },
+      "sap": {
+        "isBlocked": false,
+        "blocker": null,
+        "priorityFromRepo": null,
+        "exceptionStatus": null,
+        "autoRemapAllowed": false,
+        "reviewedByEngineering": false,
+        "minimumEvidence": [],
+        "requiredSubgroup": null,
+        "requestedDamageId": "06.05",
+        "requestedCauseId": "C2.11",
+        "approvedLocationId": null,
+        "approvedComponentCode": null,
+        "reviewDiscipline": "engenharia_de_manutencao_e_especialista_oem"
+      },
+      "nextDecision": "verify_serial_BOM_and_gather_discriminative_evidence",
+      "fieldObservations": 0,
+      "performedActions": 0,
+      "confirmedDamages": 0,
+      "approvedSapMappings": 0
+    },
+    {
+      "ruleId": "final-drive-gear",
+      "system": "comando_final",
+      "subgroupCode": "FID1",
+      "partText": "Engrenagem",
+      "modelCandidates": [
+        "CAT777",
+        "CAT980",
+        "EQ03",
+        "EQ02",
+        "EQ07",
+        "EQ05",
+        "EQ06"
+      ],
+      "bundleId": "BUNDLE-14",
+      "sourceIds": [
+        "ISO-10825-1-2022",
+        "CAT-DRIVE-MAGNET-PLUG",
+        "CAT-DRIVE-MAINT-PRACTICES",
+        "CAT-DRIVETRAIN-OIL-CARE"
+      ],
+      "referenceCount": 4,
+      "candidateConditions": 7,
+      "candidateActions": 4,
+      "candidateDamages": 3,
+      "maturity": "conceptual_pending_OEM_field_SAP_review",
+      "gates": {
+        "semanticModel": "modeled_unvalidated",
+        "sourceTraceability": "catalogued_not_serial_effective",
+        "serialBOM": "pending",
+        "fieldDiscrimination": "not_recorded",
+        "damageCause": "not_confirmed",
+        "sapMapping": "not_approved_no_recorded_exception",
+        "independentReview": "not_recorded"
+      },
+      "sap": {
+        "isBlocked": false,
+        "blocker": null,
+        "priorityFromRepo": null,
+        "exceptionStatus": null,
+        "autoRemapAllowed": false,
+        "reviewedByEngineering": false,
+        "minimumEvidence": [],
+        "requiredSubgroup": null,
+        "requestedDamageId": "02.01",
+        "requestedCauseId": "C2.11",
+        "approvedLocationId": null,
+        "approvedComponentCode": null,
+        "reviewDiscipline": "engenharia_de_manutencao_e_especialista_oem"
+      },
+      "nextDecision": "verify_serial_BOM_and_gather_discriminative_evidence",
+      "fieldObservations": 0,
+      "performedActions": 0,
+      "confirmedDamages": 0,
+      "approvedSapMappings": 0
+    },
+    {
+      "ruleId": "fuel-filter-contamination",
+      "system": "combustivel",
+      "subgroupCode": "HSVV",
+      "partText": "Filtro",
+      "modelCandidates": [
+        "EQ03",
+        "EQ02",
+        "CAT777",
+        "CAT980",
+        "EQ07",
+        "EQ05",
+        "EQ06"
+      ],
+      "bundleId": "BUNDLE-02",
+      "sourceIds": [
+        "CAT-FILTERS-FLUIDS-GUIDE",
+        "CAT-FUEL-WATER-SEPARATOR-PURPOSE"
+      ],
+      "referenceCount": 2,
+      "candidateConditions": 3,
+      "candidateActions": 3,
+      "candidateDamages": 1,
+      "maturity": "conceptual_pending_OEM_field_SAP_review",
+      "gates": {
+        "semanticModel": "modeled_unvalidated",
+        "sourceTraceability": "catalogued_not_serial_effective",
+        "serialBOM": "pending",
+        "fieldDiscrimination": "not_recorded",
+        "damageCause": "not_confirmed",
+        "sapMapping": "blocked_pending_curatorship",
+        "independentReview": "not_recorded"
+      },
+      "sap": {
+        "isBlocked": true,
+        "blocker": "component_not_registered",
+        "priorityFromRepo": "P0",
+        "exceptionStatus": "bloqueado_aguardando_curadoria",
+        "autoRemapAllowed": false,
+        "reviewedByEngineering": false,
+        "minimumEvidence": [
+          "Diagrama OEM de alimentação e separação por série identificando cabeçote, elementos e pontos de coleta",
+          "Estrutura funcional SAP revisada e componente filtrante cadastrado com PN e tipo de objeto efetivos"
+        ],
+        "requiredSubgroup": "HSVV",
+        "requestedDamageId": "02.10",
+        "requestedCauseId": "C2.09",
+        "approvedLocationId": null,
+        "approvedComponentCode": null,
+        "reviewDiscipline": "engenharia_de_ativos_e_dados_mestres_sap"
+      },
+      "nextDecision": "resolve_registered_SAP_exception_with_OEM_and_evidence",
+      "fieldObservations": 0,
+      "performedActions": 0,
+      "confirmedDamages": 0,
+      "approvedSapMappings": 0
+    },
+    {
+      "ruleId": "fuel-tank-water",
+      "system": "combustivel",
+      "subgroupCode": "TVRE",
+      "partText": "Dreno",
+      "modelCandidates": [
+        "EQ03",
+        "EQ02",
+        "CAT777",
+        "CAT980",
+        "EQ07",
+        "EQ05",
+        "EQ06"
+      ],
+      "bundleId": "BUNDLE-01",
+      "sourceIds": [
+        "CAT-FILTERS-FLUIDS-GUIDE",
+        "CAT-FUEL-WATER-SEPARATOR-PURPOSE"
+      ],
+      "referenceCount": 2,
+      "candidateConditions": 2,
+      "candidateActions": 2,
+      "candidateDamages": 1,
+      "maturity": "conceptual_pending_OEM_field_SAP_review",
+      "gates": {
+        "semanticModel": "modeled_unvalidated",
+        "sourceTraceability": "catalogued_not_serial_effective",
+        "serialBOM": "pending",
+        "fieldDiscrimination": "not_recorded",
+        "damageCause": "not_confirmed",
+        "sapMapping": "blocked_pending_curatorship",
+        "independentReview": "not_recorded"
+      },
+      "sap": {
+        "isBlocked": true,
+        "blocker": "damage_cause_not_permitted",
+        "priorityFromRepo": "P0",
+        "exceptionStatus": "bloqueado_aguardando_curadoria",
+        "autoRemapAllowed": false,
+        "reviewedByEngineering": false,
+        "minimumEvidence": [
+          "Amostragem representativa do tanque, linha e fornecimento com cadeia de custódia e método analítico",
+          "Inspeção física e teste autorizado do dreno/vedação, confrontados com registros de drenagem executada"
+        ],
+        "requiredSubgroup": "TVRE",
+        "requestedDamageId": "02.10",
+        "requestedCauseId": "C2.09",
+        "approvedLocationId": null,
+        "approvedComponentCode": null,
+        "reviewDiscipline": "engenharia_de_confiabilidade_e_dados_mestres_sap"
+      },
+      "nextDecision": "resolve_registered_SAP_exception_with_OEM_and_evidence",
+      "fieldObservations": 0,
+      "performedActions": 0,
+      "confirmedDamages": 0,
+      "approvedSapMappings": 0
+    },
+    {
+      "ruleId": "hydraulic-hose-abrasion",
+      "system": "hidraulico",
+      "subgroupCode": "HSVV",
+      "partText": "Mangueira",
+      "modelCandidates": [
+        "EQ03",
+        "EQ02",
+        "CAT777",
+        "CAT980",
+        "EQ07",
+        "EQ05",
+        "EQ06"
+      ],
+      "bundleId": "BUNDLE-12",
+      "sourceIds": [
+        "CAT-HYD-HOSE-INSPECT",
+        "CAT-HYD-HOSE-FAILURE"
+      ],
+      "referenceCount": 2,
+      "candidateConditions": 4,
+      "candidateActions": 2,
+      "candidateDamages": 1,
+      "maturity": "conceptual_pending_OEM_field_SAP_review",
+      "gates": {
+        "semanticModel": "modeled_unvalidated",
+        "sourceTraceability": "catalogued_not_serial_effective",
+        "serialBOM": "pending",
+        "fieldDiscrimination": "not_recorded",
+        "damageCause": "not_confirmed",
+        "sapMapping": "blocked_pending_curatorship",
+        "independentReview": "not_recorded"
+      },
+      "sap": {
+        "isBlocked": true,
+        "blocker": "subgroup_not_in_scope",
+        "priorityFromRepo": "P0",
+        "exceptionStatus": "bloqueado_aguardando_curadoria",
+        "autoRemapAllowed": false,
+        "reviewedByEngineering": false,
+        "minimumEvidence": [
+          "Desenho de instalação OEM e fotos de linha e suportes em posição segura com a marca de atrito",
+          "BOM e local funcional do circuito efetivo, com comparação de histórico de intervenções e modificações"
+        ],
+        "requiredSubgroup": "HSVV",
+        "requestedDamageId": "02.02",
+        "requestedCauseId": "C5.08",
+        "approvedLocationId": null,
+        "approvedComponentCode": null,
+        "reviewDiscipline": "engenharia_de_sistemas_e_dados_mestres_sap"
+      },
+      "nextDecision": "resolve_registered_SAP_exception_with_OEM_and_evidence",
+      "fieldObservations": 0,
+      "performedActions": 0,
+      "confirmedDamages": 0,
+      "approvedSapMappings": 0
+    },
+    {
+      "ruleId": "hydraulic-hose-leak",
+      "system": "hidraulico",
+      "subgroupCode": "HSVV",
+      "partText": "Mangueira",
+      "modelCandidates": [
+        "EQ03",
+        "EQ02",
+        "CAT777",
+        "CAT980",
+        "EQ07",
+        "EQ05",
+        "EQ06"
+      ],
+      "bundleId": "BUNDLE-06",
+      "sourceIds": [
+        "CAT-HYD-TECHNICAL-ANALYSIS",
+        "CAT-HYD-OIL-CLEANLINESS",
+        "CAT-HYD-HOSE-INSPECT"
+      ],
+      "referenceCount": 3,
+      "candidateConditions": 3,
+      "candidateActions": 2,
+      "candidateDamages": 1,
+      "maturity": "conceptual_pending_OEM_field_SAP_review",
+      "gates": {
+        "semanticModel": "modeled_unvalidated",
+        "sourceTraceability": "catalogued_not_serial_effective",
+        "serialBOM": "pending",
+        "fieldDiscrimination": "not_recorded",
+        "damageCause": "not_confirmed",
+        "sapMapping": "blocked_pending_curatorship",
+        "independentReview": "not_recorded"
+      },
+      "sap": {
+        "isBlocked": true,
+        "blocker": "subgroup_not_in_scope",
+        "priorityFromRepo": "P0",
+        "exceptionStatus": "bloqueado_aguardando_curadoria",
+        "autoRemapAllowed": false,
+        "reviewedByEngineering": false,
+        "minimumEvidence": [
+          "Esquema hidráulico OEM e identificação de linha/roteamento por circuito e série do equipamento",
+          "Cadastro SAP de estrutura funcional e lista técnica de montagem que comprove pertencimento ao circuito de implementos"
+        ],
+        "requiredSubgroup": "HSVV",
+        "requestedDamageId": "03.01",
+        "requestedCauseId": "C2.13",
+        "approvedLocationId": null,
+        "approvedComponentCode": null,
+        "reviewDiscipline": "engenharia_de_sistemas_e_dados_mestres_sap"
+      },
+      "nextDecision": "resolve_registered_SAP_exception_with_OEM_and_evidence",
+      "fieldObservations": 0,
+      "performedActions": 0,
+      "confirmedDamages": 0,
+      "approvedSapMappings": 0
+    },
+    {
+      "ruleId": "hydraulic-pump-seal",
+      "system": "hidraulico",
+      "subgroupCode": "HYPU",
+      "partText": "Vedação",
+      "modelCandidates": [
+        "EQ03",
+        "EQ02",
+        "CAT777",
+        "CAT980",
+        "EQ07",
+        "EQ05",
+        "EQ06"
+      ],
+      "bundleId": "BUNDLE-07",
+      "sourceIds": [
+        "CAT-HYD-TECHNICAL-ANALYSIS",
+        "CAT-HYD-OIL-CLEANLINESS",
+        "CAT-HYD-HOSE-INSPECT"
+      ],
+      "referenceCount": 3,
+      "candidateConditions": 3,
+      "candidateActions": 3,
+      "candidateDamages": 1,
+      "maturity": "conceptual_pending_OEM_field_SAP_review",
+      "gates": {
+        "semanticModel": "modeled_unvalidated",
+        "sourceTraceability": "catalogued_not_serial_effective",
+        "serialBOM": "pending",
+        "fieldDiscrimination": "not_recorded",
+        "damageCause": "not_confirmed",
+        "sapMapping": "not_approved_no_recorded_exception",
+        "independentReview": "not_recorded"
+      },
+      "sap": {
+        "isBlocked": false,
+        "blocker": null,
+        "priorityFromRepo": null,
+        "exceptionStatus": null,
+        "autoRemapAllowed": false,
+        "reviewedByEngineering": false,
+        "minimumEvidence": [],
+        "requiredSubgroup": null,
+        "requestedDamageId": "03.01",
+        "requestedCauseId": "C2.13",
+        "approvedLocationId": null,
+        "approvedComponentCode": null,
+        "reviewDiscipline": "engenharia_de_manutencao_e_especialista_oem"
+      },
+      "nextDecision": "verify_serial_BOM_and_gather_discriminative_evidence",
+      "fieldObservations": 0,
+      "performedActions": 0,
+      "confirmedDamages": 0,
+      "approvedSapMappings": 0
+    },
+    {
+      "ruleId": "implement-cylinder",
+      "system": "implementos",
+      "subgroupCode": "CYL1",
+      "partText": "Vedação",
+      "modelCandidates": [
+        "EQ03",
+        "EQ02",
+        "CAT980",
+        "EQ07"
+      ],
+      "bundleId": "BUNDLE-17",
+      "sourceIds": [
+        "PARKER-CYL-DRIFT-SERVICE",
+        "CAT-HYD-TECHNICAL-ANALYSIS"
+      ],
+      "referenceCount": 2,
+      "candidateConditions": 8,
+      "candidateActions": 5,
+      "candidateDamages": 3,
+      "maturity": "conceptual_pending_OEM_field_SAP_review",
+      "gates": {
+        "semanticModel": "modeled_unvalidated",
+        "sourceTraceability": "catalogued_not_serial_effective",
+        "serialBOM": "pending",
+        "fieldDiscrimination": "not_recorded",
+        "damageCause": "not_confirmed",
+        "sapMapping": "not_approved_no_recorded_exception",
+        "independentReview": "not_recorded"
+      },
+      "sap": {
+        "isBlocked": false,
+        "blocker": null,
+        "priorityFromRepo": null,
+        "exceptionStatus": null,
+        "autoRemapAllowed": false,
+        "reviewedByEngineering": false,
+        "minimumEvidence": [],
+        "requiredSubgroup": null,
+        "requestedDamageId": "03.01",
+        "requestedCauseId": "C2.13",
+        "approvedLocationId": null,
+        "approvedComponentCode": null,
+        "reviewDiscipline": "engenharia_de_manutencao_e_especialista_oem"
+      },
+      "nextDecision": "verify_serial_BOM_and_gather_discriminative_evidence",
+      "fieldObservations": 0,
+      "performedActions": 0,
+      "confirmedDamages": 0,
+      "approvedSapMappings": 0
+    },
+    {
+      "ruleId": "track-bolt-loose",
+      "system": "rodante",
+      "subgroupCode": "TRAK",
+      "partText": "Parafuso",
+      "modelCandidates": [
+        "EQ03",
+        "EQ02",
+        "EQ07",
+        "EQ05",
+        "EQ06"
+      ],
+      "bundleId": "BUNDLE-13",
+      "sourceIds": [
+        "CAT-UC-DOZER-GUIDE",
+        "CAT-DOZER-UC-MAINT",
+        "NORDLOCK-BOLT-LOOSENING",
+        "NORDLOCK-BOLTING-FAILURE"
+      ],
+      "referenceCount": 4,
+      "candidateConditions": 4,
+      "candidateActions": 3,
+      "candidateDamages": 2,
+      "maturity": "conceptual_pending_OEM_field_SAP_review",
+      "gates": {
+        "semanticModel": "modeled_unvalidated",
+        "sourceTraceability": "catalogued_not_serial_effective",
+        "serialBOM": "pending",
+        "fieldDiscrimination": "not_recorded",
+        "damageCause": "not_confirmed",
+        "sapMapping": "not_approved_no_recorded_exception",
+        "independentReview": "not_recorded"
+      },
+      "sap": {
+        "isBlocked": false,
+        "blocker": null,
+        "priorityFromRepo": null,
+        "exceptionStatus": null,
+        "autoRemapAllowed": false,
+        "reviewedByEngineering": false,
+        "minimumEvidence": [],
+        "requiredSubgroup": null,
+        "requestedDamageId": "01.15",
+        "requestedCauseId": "C1.17",
+        "approvedLocationId": null,
+        "approvedComponentCode": null,
+        "reviewDiscipline": "engenharia_de_manutencao_e_especialista_oem"
+      },
+      "nextDecision": "verify_serial_BOM_and_gather_discriminative_evidence",
+      "fieldObservations": 0,
+      "performedActions": 0,
+      "confirmedDamages": 0,
+      "approvedSapMappings": 0
+    },
+    {
+      "ruleId": "track-idler-wear",
+      "system": "rodante",
+      "subgroupCode": "IDLE",
+      "partText": "Rolamento",
+      "modelCandidates": [
+        "EQ03",
+        "EQ02",
+        "EQ07",
+        "EQ05",
+        "EQ06"
+      ],
+      "bundleId": "BUNDLE-09",
+      "sourceIds": [
+        "CAT-MINING-UC-WEAR-MANAGEMENT",
+        "CAT-CTS-UNDERCARRIAGE"
+      ],
+      "referenceCount": 2,
+      "candidateConditions": 3,
+      "candidateActions": 2,
+      "candidateDamages": 1,
+      "maturity": "conceptual_pending_OEM_field_SAP_review",
+      "gates": {
+        "semanticModel": "modeled_unvalidated",
+        "sourceTraceability": "catalogued_not_serial_effective",
+        "serialBOM": "pending",
+        "fieldDiscrimination": "not_recorded",
+        "damageCause": "not_confirmed",
+        "sapMapping": "blocked_pending_curatorship",
+        "independentReview": "not_recorded"
+      },
+      "sap": {
+        "isBlocked": true,
+        "blocker": "component_not_registered",
+        "priorityFromRepo": "P1",
+        "exceptionStatus": "bloqueado_aguardando_curadoria",
+        "autoRemapAllowed": false,
+        "reviewedByEngineering": false,
+        "minimumEvidence": [
+          "Catálogo OEM aplicável ao rodante, com desenho do conjunto roda-guia e identificação de manutenção por série",
+          "Histórico de inspeção CTS e lista de componentes SAP discriminando conjunto completo, eixo e apoio interno"
+        ],
+        "requiredSubgroup": "IDLE",
+        "requestedDamageId": "02.01",
+        "requestedCauseId": "C1.04",
+        "approvedLocationId": null,
+        "approvedComponentCode": null,
+        "reviewDiscipline": "engenharia_de_ativos_e_dados_mestres_sap"
+      },
+      "nextDecision": "resolve_registered_SAP_exception_with_OEM_and_evidence",
+      "fieldObservations": 0,
+      "performedActions": 0,
+      "confirmedDamages": 0,
+      "approvedSapMappings": 0
+    },
+    {
+      "ruleId": "track-roller-wear",
+      "system": "rodante",
+      "subgroupCode": "ROLL",
+      "partText": "Rolamento",
+      "modelCandidates": [
+        "EQ03",
+        "EQ02",
+        "EQ07",
+        "EQ05",
+        "EQ06"
+      ],
+      "bundleId": "BUNDLE-08",
+      "sourceIds": [
+        "CAT-MINING-UC-WEAR-MANAGEMENT",
+        "CAT-CTS-UNDERCARRIAGE"
+      ],
+      "referenceCount": 2,
+      "candidateConditions": 3,
+      "candidateActions": 2,
+      "candidateDamages": 1,
+      "maturity": "conceptual_pending_OEM_field_SAP_review",
+      "gates": {
+        "semanticModel": "modeled_unvalidated",
+        "sourceTraceability": "catalogued_not_serial_effective",
+        "serialBOM": "pending",
+        "fieldDiscrimination": "not_recorded",
+        "damageCause": "not_confirmed",
+        "sapMapping": "not_approved_no_recorded_exception",
+        "independentReview": "not_recorded"
+      },
+      "sap": {
+        "isBlocked": false,
+        "blocker": null,
+        "priorityFromRepo": null,
+        "exceptionStatus": null,
+        "autoRemapAllowed": false,
+        "reviewedByEngineering": false,
+        "minimumEvidence": [],
+        "requiredSubgroup": null,
+        "requestedDamageId": "02.01",
+        "requestedCauseId": "C2.11",
+        "approvedLocationId": null,
+        "approvedComponentCode": null,
+        "reviewDiscipline": "engenharia_de_manutencao_e_especialista_oem"
+      },
+      "nextDecision": "verify_serial_BOM_and_gather_discriminative_evidence",
+      "fieldObservations": 0,
+      "performedActions": 0,
+      "confirmedDamages": 0,
+      "approvedSapMappings": 0
+    },
+    {
+      "ruleId": "wheel-tire-damage",
+      "system": "pneus_rodas",
+      "subgroupCode": "TIR1",
+      "partText": "Pneu",
+      "modelCandidates": [
+        "CAT777",
+        "CAT980",
+        "EQ09"
+      ],
+      "bundleId": "BUNDLE-20",
+      "sourceIds": [
+        "MICHELIN-OTR-TIRE-INSPECTION",
+        "MICHELIN-OTR-TIRE-REPAIR",
+        "BRIDGESTONE-OTR-PROGRAM"
+      ],
+      "referenceCount": 3,
+      "candidateConditions": 6,
+      "candidateActions": 5,
+      "candidateDamages": 4,
+      "maturity": "conceptual_pending_OEM_field_SAP_review",
+      "gates": {
+        "semanticModel": "modeled_unvalidated",
+        "sourceTraceability": "catalogued_not_serial_effective",
+        "serialBOM": "pending",
+        "fieldDiscrimination": "not_recorded",
+        "damageCause": "not_confirmed",
+        "sapMapping": "not_approved_no_recorded_exception",
+        "independentReview": "not_recorded"
+      },
+      "sap": {
+        "isBlocked": false,
+        "blocker": null,
+        "priorityFromRepo": null,
+        "exceptionStatus": null,
+        "autoRemapAllowed": false,
+        "reviewedByEngineering": false,
+        "minimumEvidence": [],
+        "requiredSubgroup": null,
+        "requestedDamageId": "01.02",
+        "requestedCauseId": "C1.12",
+        "approvedLocationId": null,
+        "approvedComponentCode": null,
+        "reviewDiscipline": "engenharia_de_manutencao_e_especialista_oem"
+      },
+      "nextDecision": "verify_serial_BOM_and_gather_discriminative_evidence",
+      "fieldObservations": 0,
+      "performedActions": 0,
+      "confirmedDamages": 0,
+      "approvedSapMappings": 0
+    },
+    {
+      "ruleId": "wheel-tire-wear",
+      "system": "pneus_rodas",
+      "subgroupCode": "TIR3",
+      "partText": "Pneu",
+      "modelCandidates": [
+        "CAT777",
+        "CAT980",
+        "EQ09"
+      ],
+      "bundleId": "BUNDLE-21",
+      "sourceIds": [
+        "MICHELIN-EARTHMOVER-TIRE-INSPECTION",
+        "MICHELIN-EARTHMOVER-TIRE-PRESSURE",
+        "BRIDGESTONE-OTR-PROGRAM"
+      ],
+      "referenceCount": 3,
+      "candidateConditions": 6,
+      "candidateActions": 4,
+      "candidateDamages": 3,
+      "maturity": "conceptual_pending_OEM_field_SAP_review",
+      "gates": {
+        "semanticModel": "modeled_unvalidated",
+        "sourceTraceability": "catalogued_not_serial_effective",
+        "serialBOM": "pending",
+        "fieldDiscrimination": "not_recorded",
+        "damageCause": "not_confirmed",
+        "sapMapping": "not_approved_no_recorded_exception",
+        "independentReview": "not_recorded"
+      },
+      "sap": {
+        "isBlocked": false,
+        "blocker": null,
+        "priorityFromRepo": null,
+        "exceptionStatus": null,
+        "autoRemapAllowed": false,
+        "reviewedByEngineering": false,
+        "minimumEvidence": [],
+        "requiredSubgroup": null,
+        "requestedDamageId": "02.01",
+        "requestedCauseId": "C1.04",
+        "approvedLocationId": null,
+        "approvedComponentCode": null,
+        "reviewDiscipline": "engenharia_de_manutencao_e_especialista_oem"
+      },
+      "nextDecision": "verify_serial_BOM_and_gather_discriminative_evidence",
+      "fieldObservations": 0,
+      "performedActions": 0,
+      "confirmedDamages": 0,
+      "approvedSapMappings": 0
+    }
+  ]
+}
