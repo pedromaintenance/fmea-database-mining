@@ -2,6 +2,13 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.57] — 2026-10-24 — Rolamento de cabeça rotativa, módulos e indícios não causais
+
+- BUNDLE-23 para `drill-rotary-bearing`: 6 condições não observadas, 5 ações não executadas, 3 danos candidatos, 14 relações tipadas e 2 casos sintéticos.
+- Separadas arquiteturas Sandvik HTRH6, MRH6 e DR410i; sem inferir pré-carga, PN, folga, óleo ou opção instalada.
+- Ontologia 1.3.21: 95 condições, 72 ações, 45 danos candidatos, 23 bundles, 223 relações e 42 cenários sintéticos; 23/25 regras modeladas e 2 pendentes.
+- 10 gates pendentes, 18 controles de segurança, auditor de 42 mutações no QA/CI; sem dados de campo, teste funcional, código SAP aprovado ou alterações de consumidores.
+
 ## [1.3.56] — 2026-10-24 — Corrente de avanço e arquitetura da perfuratriz
 
 - BUNDLE-22 para `drill-feed-chain`: 6 condições, 5 ações, 3 danos candidatos, 14 relações tipadas, 2 casos sintéticos.
