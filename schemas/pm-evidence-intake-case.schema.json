@@ -1,0 +1,284 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/fmea-mining/pm-evidence-intake-case.v1.schema.json",
+  "title": "Synthetic-only PM evidence intake envelope (real cases require private systems)",
+  "description": "Only TEST-* opaque tokens in public repository. No serials, locations, OEM files, raw measurements, signed claims or real cases.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "recordNature",
+    "classification",
+    "tenantToken",
+    "caseToken",
+    "assetToken",
+    "ruleId",
+    "bundleId",
+    "originatorToken",
+    "stage",
+    "receipts",
+    "events",
+    "release"
+  ],
+  "properties": {
+    "schema": {
+      "const": "fmea-mining.pm-evidence-intake-case.v1"
+    },
+    "recordNature": {
+      "const": "synthetic_test_only"
+    },
+    "classification": {
+      "const": "restricted_synthetic_metadata"
+    },
+    "tenantToken": {
+      "$ref": "#/$defs/token"
+    },
+    "caseToken": {
+      "$ref": "#/$defs/token"
+    },
+    "assetToken": {
+      "$ref": "#/$defs/token"
+    },
+    "ruleId": {
+      "enum": [
+        "brake-disc",
+        "cooling-fan-bearing",
+        "cooling-fan-belt",
+        "cooling-radiator-blockage",
+        "cooling-radiator-leak",
+        "differential-gear",
+        "drill-compressor-filter",
+        "drill-compressor-pressure",
+        "drill-feed-chain",
+        "drill-rotary-bearing",
+        "engine-exhaust",
+        "engine-oil-filter",
+        "final-drive-bearing",
+        "final-drive-gear",
+        "fuel-filter-contamination",
+        "fuel-tank-water",
+        "hydraulic-hose-abrasion",
+        "hydraulic-hose-leak",
+        "hydraulic-pump-seal",
+        "implement-cylinder",
+        "track-bolt-loose",
+        "track-idler-wear",
+        "track-roller-wear",
+        "wheel-tire-damage",
+        "wheel-tire-wear"
+      ]
+    },
+    "bundleId": {
+      "enum": [
+        "BUNDLE-18",
+        "BUNDLE-10",
+        "BUNDLE-11",
+        "BUNDLE-03",
+        "BUNDLE-04",
+        "BUNDLE-16",
+        "BUNDLE-25",
+        "BUNDLE-24",
+        "BUNDLE-22",
+        "BUNDLE-23",
+        "BUNDLE-19",
+        "BUNDLE-05",
+        "BUNDLE-15",
+        "BUNDLE-14",
+        "BUNDLE-02",
+        "BUNDLE-01",
+        "BUNDLE-12",
+        "BUNDLE-06",
+        "BUNDLE-07",
+        "BUNDLE-17",
+        "BUNDLE-13",
+        "BUNDLE-09",
+        "BUNDLE-08",
+        "BUNDLE-20",
+        "BUNDLE-21"
+      ]
+    },
+    "originatorToken": {
+      "$ref": "#/$defs/token"
+    },
+    "stage": {
+      "enum": [
+        "draft",
+        "restricted_intake",
+        "custody_verified",
+        "technical_reviewed",
+        "independent_reviewed",
+        "ready_for_change_control"
+      ]
+    },
+    "receipts": {
+      "type": "array",
+      "maxItems": 12,
+      "items": {
+        "$ref": "#/$defs/receipt"
+      }
+    },
+    "events": {
+      "type": "array",
+      "maxItems": 5,
+      "items": {
+        "$ref": "#/$defs/event"
+      }
+    },
+    "release": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "rootCauseConfirmed",
+        "sapMappingApproved",
+        "catalogPromotionApproved",
+        "operationalReleaseApproved",
+        "publicExportAuthorized"
+      ],
+      "properties": {
+        "rootCauseConfirmed": {
+          "const": false
+        },
+        "sapMappingApproved": {
+          "const": false
+        },
+        "catalogPromotionApproved": {
+          "const": false
+        },
+        "operationalReleaseApproved": {
+          "const": false
+        },
+        "publicExportAuthorized": {
+          "const": false
+        }
+      }
+    }
+  },
+  "$defs": {
+    "token": {
+      "type": "string",
+      "pattern": "^TEST-[A-Z0-9-]{4,119}$",
+      "maxLength": 124
+    },
+    "receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "evidenceToken",
+        "restrictedRef",
+        "licenseChecked",
+        "integrityChecked",
+        "custodyChainVerified",
+        "qualityChecked"
+      ],
+      "properties": {
+        "kind": {
+          "enum": [
+            "oem_effectivity",
+            "oem_procedure",
+            "field_observation",
+            "counterevidence",
+            "measurement_quality"
+          ]
+        },
+        "evidenceToken": {
+          "$ref": "#/$defs/token"
+        },
+        "restrictedRef": {
+          "$ref": "#/$defs/token"
+        },
+        "licenseChecked": {
+          "type": "boolean"
+        },
+        "integrityChecked": {
+          "type": "boolean"
+        },
+        "custodyChainVerified": {
+          "type": "boolean"
+        },
+        "qualityChecked": {
+          "type": "boolean"
+        }
+      }
+    },
+    "event": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "eventToken",
+        "previousEventToken",
+        "action",
+        "role",
+        "actorToken",
+        "decision",
+        "reasonRecorded",
+        "alternativesReviewed",
+        "oemEffectivityAssessed",
+        "manualRequestToken"
+      ],
+      "properties": {
+        "eventToken": {
+          "$ref": "#/$defs/token"
+        },
+        "previousEventToken": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/token"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "action": {
+          "enum": [
+            "submit",
+            "verify_custody",
+            "technical_accept",
+            "independent_accept",
+            "request_change_control"
+          ]
+        },
+        "role": {
+          "enum": [
+            "originator",
+            "custodian",
+            "technical_reviewer",
+            "independent_reviewer",
+            "change_control_owner"
+          ]
+        },
+        "actorToken": {
+          "$ref": "#/$defs/token"
+        },
+        "decision": {
+          "enum": [
+            "submitted",
+            "verified",
+            "accepted",
+            "request_only"
+          ]
+        },
+        "reasonRecorded": {
+          "type": "boolean"
+        },
+        "alternativesReviewed": {
+          "type": "boolean"
+        },
+        "oemEffectivityAssessed": {
+          "type": "boolean"
+        },
+        "manualRequestToken": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/token"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
