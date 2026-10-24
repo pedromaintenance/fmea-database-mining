@@ -2,6 +2,13 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.62] — 2026-10-24 — Runbook privado e revisão documental P0
+
+- Plano de implantação privada com oito gates técnicos/organizacionais, dependências e NO-GO formal por padrão; nenhuma infraestrutura declarada ativa.
+- Pacote de curadoria P0 regenerável com cinco exceções, dossiês diferenciais aprofundados para radiador e filtro de combustível e outras três regras na fila.
+- Mantida incompatibilidade dos pares/códigos SAP RADI e HSVV sem aprovação, incluindo diferença entre condição e dano físico.
+- Auditor com 36 mutações para impedir aprovação privada, dados reais inventados, perda de contraprovas e alteração dos bloqueios. Ontologia 1.3.23, maturidade 1.3.60, intake 1.3.61 e 25/25 bundles preservados.
+
 ## [1.3.61] — 2026-10-24 — Intake restrito conceitual e controle de revisão PM
 
 - Contrato público sintético para vincular as 25 regras e bundles a comprovantes de evidência por tokens opacos TEST-*; nenhuma evidência bruta no GitHub.

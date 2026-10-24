@@ -90,6 +90,8 @@ jobs:
         run: npm run pm:maturity:audit
       - name: Validar intake restrito sintetico PM e 40 ataques adversariais
         run: npm run pm:evidence:intake:audit
+      - name: Auditar runbook privado PM e dossies P0 sem aprovacoes
+        run: npm run pm:private:p0:audit
       - name: Validar 10 bloqueios PM e 7 requisitos de efetividade OEM D9
         run: npm run pm:exceptions:validate
       - name: Gerar vínculos diagnósticos por modelo
@@ -206,6 +208,7 @@ jobs:
             reports/pm-drill-filter.generated.json
             reports/pm-maturity.generated.json
             reports/pm-evidence-intake.generated.json
+            reports/pm-private-p0.generated.json
             reports/public-knowledge.v1.json
             reports/public-manifest.v1.json
             data/governance/public-content-releases.v1.json
