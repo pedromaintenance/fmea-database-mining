@@ -1,0 +1,195 @@
+{
+  "schema": "fmea-mining.pm-drill-filter-boundaries.v1",
+  "version": "1.3.59",
+  "sourceOntologyVersion": "1.3.23",
+  "ruleId": "drill-compressor-filter",
+  "nature": "generic_compressor_filter_hypotheses_no_field_mapping_or_OEM_effectivity",
+  "sourceIds": [
+    "SANDVIK-DR410I-CAT-C18-MAINT-PLANNER",
+    "SANDVIK-DR410I-CUMMINS-MAINT-PLANNER",
+    "ATLAS-COPCO-COMPRESSOR-FILTER-FUNCTIONS",
+    "KAESER-COMPRESSOR-MAINTENANCE-INDICATORS"
+  ],
+  "scope": {
+    "system": "ar_comprimido",
+    "subgroupCode": "COMR",
+    "partText": "Filtro",
+    "models": [
+      "EQ05",
+      "EQ06"
+    ],
+    "eqModelsResolved": false,
+    "serialEffectivityVerified": false,
+    "filterElementInstalled": false,
+    "circuitBOMVerified": false,
+    "oemReplacementLimitsVerified": false
+  },
+  "sapBlocker": {
+    "ruleId": "drill-compressor-filter",
+    "expectedBlocker": "subgroup_not_in_scope",
+    "originalSubgroupCode": "COMR",
+    "actualHierarchyGroup": "COMR",
+    "candidateSubgroup": "VPAR",
+    "noGroupAsSubgroup": true,
+    "autoRemapAllowed": false,
+    "approvedSapMappings": 0
+  },
+  "circuits": [
+    {
+      "id": "compressor_air_intake",
+      "function": "filtragem_ar_admissao",
+      "installed": false,
+      "componentVerified": false
+    },
+    {
+      "id": "compressor_lubricating_oil",
+      "function": "filtragem_oleo_compressor",
+      "installed": false,
+      "componentVerified": false
+    },
+    {
+      "id": "air_oil_separation",
+      "function": "separacao_aerossol_oleo_ar",
+      "installed": false,
+      "componentVerified": false
+    },
+    {
+      "id": "receiver_tank_filtration",
+      "function": "hipotese_filtragem_no_receptor",
+      "installed": false,
+      "componentVerified": false
+    }
+  ],
+  "conditionIds": [
+    "COND-AIR-FILTER-INTAKE-RESTRICTION",
+    "COND-AIR-FILTER-LUBE-OIL-DIFFERENTIAL",
+    "COND-AIR-FILTER-OIL-CARRYOVER",
+    "COND-AIR-FILTER-SEPARATOR-DP",
+    "COND-AIR-FILTER-RECEIVER-MOISTURE",
+    "COND-AIR-FILTER-DOWNSTREAM-FLOW"
+  ],
+  "actionIds": [
+    "ACT-AIR-FILTER-IDENTIFY-CIRCUIT",
+    "ACT-AIR-FILTER-SAFE-ISOLATION",
+    "ACT-AIR-FILTER-DIFFERENTIAL-REVIEW",
+    "ACT-AIR-FILTER-CARRYOVER-REVIEW",
+    "ACT-AIR-FILTER-SAP-REVIEW"
+  ],
+  "damageIds": [
+    "DMG-AIR-FILTER-INTAKE-MEDIA-CANDIDATE",
+    "DMG-AIR-FILTER-LUBE-MEDIA-CANDIDATE",
+    "DMG-AIR-FILTER-SEPARATOR-MEDIA-CANDIDATE"
+  ],
+  "differentials": [
+    {
+      "id": "FIL-01",
+      "phenomenon": "intake_restriction",
+      "distinction": "Compressor inlet filter restriction must be distinguished from duct, precleaner, inlet valve, engine filter and sensor before naming an installed element.",
+      "confirmed": false
+    },
+    {
+      "id": "FIL-02",
+      "phenomenon": "oil_filter_delta_pressure",
+      "distinction": "Oil temperature or differential pressure can change due to viscosity, bypass valve, pump, sensor and load without proving a damaged lubrication filter.",
+      "confirmed": false
+    },
+    {
+      "id": "FIL-03",
+      "phenomenon": "air_oil_carryover",
+      "distinction": "Oil carryover can be associated with separator media, fluid overfill, return line and operating conditions; the separator is not confirmed failed by carryover alone.",
+      "confirmed": false
+    },
+    {
+      "id": "FIL-04",
+      "phenomenon": "receiver_condensate",
+      "distinction": "Condensate in a receiver does not demonstrate that a filter is installed at the vessel or that its element is defective, because drainage and humidity can explain water.",
+      "confirmed": false
+    },
+    {
+      "id": "FIL-05",
+      "phenomenon": "air_delivery_loss",
+      "distinction": "Pressure or flow deterioration can arise from upstream control, leak, demand, filter, compressor capacity or instrumentation and requires differential diagnosis.",
+      "confirmed": false
+    }
+  ],
+  "gates": [
+    {
+      "id": "ASSET_MODEL_SERIAL",
+      "status": "pending"
+    },
+    {
+      "id": "COMPRESSOR_VARIANT",
+      "status": "pending"
+    },
+    {
+      "id": "OEM_CIRCUIT_DIAGRAM",
+      "status": "pending"
+    },
+    {
+      "id": "ELEMENT_BOM_POSITION",
+      "status": "pending"
+    },
+    {
+      "id": "FUNCTION_DISCRIMINATION",
+      "status": "pending"
+    },
+    {
+      "id": "ENERGY_ISOLATION",
+      "status": "pending"
+    },
+    {
+      "id": "PRESSURE_ZERO_VERIFICATION",
+      "status": "pending"
+    },
+    {
+      "id": "TEST_CRITERION_OEM",
+      "status": "pending"
+    },
+    {
+      "id": "INDEPENDENT_ENGINEERING",
+      "status": "pending"
+    },
+    {
+      "id": "SAP_HIERARCHY_APPROVAL",
+      "status": "pending"
+    }
+  ],
+  "safeguards": {
+    "noSingleFilterAssumption": true,
+    "noAirEqualsOilFilter": true,
+    "noSeparatorEqualsReceiverFilter": true,
+    "noCondensateMeansFilterFailure": true,
+    "noCarryoverMeansSeparatorRupture": true,
+    "noDeltaPressureMeansCloggedMedia": true,
+    "noLowPressureMeansFilter": true,
+    "noEngineFilterEqualsCompressorFilter": true,
+    "noGroupCOMRAsSubgroup": true,
+    "noVPARAutomaticAlias": true,
+    "noUnverifiedBOMMembership": true,
+    "noUnqualifiedPressureService": true,
+    "noOpenUnderPressure": true,
+    "noImprovisedFilterTest": true,
+    "noUniversalReplacementInterval": true,
+    "noGenericDifferentialLimit": true,
+    "noAutomaticSapMapping": true,
+    "noConsumerChanges": true
+  },
+  "limits": {
+    "intakeRestrictionKpa": null,
+    "oilFilterDeltaKpa": null,
+    "separatorDeltaKpa": null,
+    "oilCarryoverPpm": null,
+    "serviceIntervalHours": null,
+    "airFilterFlowRate": null
+  },
+  "fieldState": {
+    "observations": 0,
+    "tests": 0,
+    "confirmedDamages": 0,
+    "approvedSapMappings": 0,
+    "workOrders": 0,
+    "approvedProcedures": 0
+  },
+  "priorEvidencePolicyVersion": "1.3.38",
+  "priorDifferentialsVersion": "1.3.37"
+}

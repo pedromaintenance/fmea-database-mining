@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.condition-action-damage.v1",
-  "version": "1.3.22",
+  "version": "1.3.23",
   "status": "conceptual_unvalidated",
   "semantics": {
     "condition": "Estado de fluido, superfície ou desempenho; ocorrência requer medição/observação",
@@ -1931,6 +1931,126 @@
       "status": "condition_hypothesis_not_observed",
       "observedValue": null,
       "observedAt": null
+    },
+    {
+      "id": "COND-AIR-FILTER-INTAKE-RESTRICTION",
+      "label": "Indício de restrição de admissão antes do elemento compressor",
+      "system": "ar_comprimido",
+      "medium": "admissao_compressor",
+      "observation": "Revisar alarmes, indicadores e tendência de restrição da entrada de ar, localizando a tomada e o elemento físico apenas após confirmar diagrama de admissão do compressor.",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "SANDVIK-DR410I-CAT-C18-MAINT-PLANNER",
+        "SANDVIK-DR410I-CUMMINS-MAINT-PLANNER",
+        "ATLAS-COPCO-COMPRESSOR-FILTER-FUNCTIONS",
+        "KAESER-COMPRESSOR-MAINTENANCE-INDICATORS"
+      ],
+      "limitations": "Vazão baixa pode ocorrer por duto, pré-limpador, válvula de admissão, carga ou sensor; não prova filtro de admissão saturado nem compartilhamento com filtro do motor.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-AIR-FILTER-LUBE-OIL-DIFFERENTIAL",
+      "label": "Indício de restrição no circuito de óleo lubrificante do compressor",
+      "system": "ar_comprimido",
+      "medium": "oleo_lubrificacao_compressor",
+      "observation": "Investigar medições existentes de diferencial, pressão ou temperatura do circuito de óleo identificado e sua relação com filtro efetivo e linha de desvio.",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "SANDVIK-DR410I-CAT-C18-MAINT-PLANNER",
+        "SANDVIK-DR410I-CUMMINS-MAINT-PLANNER",
+        "ATLAS-COPCO-COMPRESSOR-FILTER-FUNCTIONS",
+        "KAESER-COMPRESSOR-MAINTENANCE-INDICATORS"
+      ],
+      "limitations": "Temperatura ou pressão de óleo não demonstram elemento de filtro obstruído, bypass atuado ou dano do compressor; viscosidade, válvula, bomba e sensores são alternativas.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-AIR-FILTER-OIL-CARRYOVER",
+      "label": "Presença suspeita de óleo no ar de descarga sem origem estabelecida",
+      "system": "ar_comprimido",
+      "medium": "mistura_ar_oleo",
+      "observation": "Descrever evidências de arraste de óleo relatado e identificar pontos de coleta/descarga, nível de óleo e retorno do separador quando previstos na arquitetura.",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "SANDVIK-DR410I-CAT-C18-MAINT-PLANNER",
+        "SANDVIK-DR410I-CUMMINS-MAINT-PLANNER",
+        "ATLAS-COPCO-COMPRESSOR-FILTER-FUNCTIONS",
+        "KAESER-COMPRESSOR-MAINTENANCE-INDICATORS"
+      ],
+      "limitations": "Arraste pode resultar de sobreenchimento, retorno de óleo, operação, separador, ventilação ou drenagem; não significa automaticamente elemento separador rompido.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-AIR-FILTER-SEPARATOR-DP",
+      "label": "Indício de perda de carga no conjunto separador ar–óleo",
+      "system": "ar_comprimido",
+      "medium": "elemento_separador_ar_oleo",
+      "observation": "Confrontar somente leituras aprovadas a montante e jusante da separação com vazão e temperatura de operação e ponto de tomada de pressão confirmado.",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "SANDVIK-DR410I-CAT-C18-MAINT-PLANNER",
+        "SANDVIK-DR410I-CUMMINS-MAINT-PLANNER",
+        "ATLAS-COPCO-COMPRESSOR-FILTER-FUNCTIONS",
+        "KAESER-COMPRESSOR-MAINTENANCE-INDICATORS"
+      ],
+      "limitations": "Perda de carga também depende de fluxo, viscosidade, temperatura e sensor; sem limites OEM e diagrama, não condenar separador nem assumir filtro em linha.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-AIR-FILTER-RECEIVER-MOISTURE",
+      "label": "Água ou condensado observado em região do reservatório de ar",
+      "system": "ar_comprimido",
+      "medium": "condensado_receptor",
+      "observation": "Caracterizar ocorrência de umidade e drenagem em registros seguros e confirmar desenho de vaso, separador, dreno ou elemento de filtragem associado.",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "SANDVIK-DR410I-CAT-C18-MAINT-PLANNER",
+        "SANDVIK-DR410I-CUMMINS-MAINT-PLANNER",
+        "ATLAS-COPCO-COMPRESSOR-FILTER-FUNCTIONS",
+        "KAESER-COMPRESSOR-MAINTENANCE-INDICATORS"
+      ],
+      "limitations": "Condensado pode ocorrer mesmo sem filtro instalado e não demonstra falha de elemento; não supor que VPAR possui filtro ou que grupo COMR é subgrupo SAP.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-AIR-FILTER-DOWNSTREAM-FLOW",
+      "label": "Desempenho pneumático insuficiente sem restrição localizada",
+      "system": "ar_comprimido",
+      "medium": "fluxo_pneumatico_jusante",
+      "observation": "Reunir dados de pressão, demanda, vazão e sensores já disponíveis para separar resposta de compressor, elemento filtrante, admissão, válvulas e consumo.",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "SANDVIK-DR410I-CAT-C18-MAINT-PLANNER",
+        "SANDVIK-DR410I-CUMMINS-MAINT-PLANNER",
+        "ATLAS-COPCO-COMPRESSOR-FILTER-FUNCTIONS",
+        "KAESER-COMPRESSOR-MAINTENANCE-INDICATORS"
+      ],
+      "limitations": "Perda de pressão ou vazão não prova restrição de filtro: vazamento, comando de admissão, compressor, demanda variável e instrumentação concorrem no diagnóstico.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
     }
   ],
   "actions": [
@@ -3154,6 +3274,91 @@
       "executionStatus": "not_performed",
       "observedResults": [],
       "intervalHours": null
+    },
+    {
+      "id": "ACT-AIR-FILTER-IDENTIFY-CIRCUIT",
+      "label": "Identificar circuito, função e elemento por número de série",
+      "kind": "inspection",
+      "intent": "Confrontar máquina, variante e BOM para distinguir filtro de admissão, óleo de lubrificação, separação ar–óleo e eventual filtragem do receptor antes de definir serviço.",
+      "sourceIds": [
+        "SANDVIK-DR410I-CAT-C18-MAINT-PLANNER",
+        "SANDVIK-DR410I-CUMMINS-MAINT-PLANNER",
+        "ATLAS-COPCO-COMPRESSOR-FILTER-FUNCTIONS",
+        "KAESER-COMPRESSOR-MAINTENANCE-INDICATORS"
+      ],
+      "safety": "Não converter descrição Filtro no grupo COMR em subgrupo COMR ou VPAR automaticamente, nem transferir peça e posição entre DR410i CAT C18, Cummins e DI650i.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
+    },
+    {
+      "id": "ACT-AIR-FILTER-SAFE-ISOLATION",
+      "label": "Planejar isolamento de pressão, temperatura e energia armazenada",
+      "kind": "inspection",
+      "intent": "Identificar pontos de bloqueio e drenagem conforme OEM, incluindo reservatório e circuito de óleo, para verificar pressão zero e temperatura segura antes de abrir.",
+      "sourceIds": [
+        "SANDVIK-DR410I-CAT-C18-MAINT-PLANNER",
+        "SANDVIK-DR410I-CUMMINS-MAINT-PLANNER",
+        "ATLAS-COPCO-COMPRESSOR-FILTER-FUNCTIONS",
+        "KAESER-COMPRESSOR-MAINTENANCE-INDICATORS"
+      ],
+      "safety": "Não abrir carcaça de filtro, vaso, separador ou drenagem pressurizada, nem retirar elemento com energias hidráulicas, pneumáticas e térmicas residuais.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
+    },
+    {
+      "id": "ACT-AIR-FILTER-DIFFERENTIAL-REVIEW",
+      "label": "Verificar evidências de restrição e condição do elemento com critério OEM",
+      "kind": "inspection",
+      "intent": "Correlacionar indicadores de restrição, diferencial de pressão e histórico por circuito, considerando carga, vazão, temperatura, bypass e sensor como hipóteses.",
+      "sourceIds": [
+        "SANDVIK-DR410I-CAT-C18-MAINT-PLANNER",
+        "SANDVIK-DR410I-CUMMINS-MAINT-PLANNER",
+        "ATLAS-COPCO-COMPRESSOR-FILTER-FUNCTIONS",
+        "KAESER-COMPRESSOR-MAINTENANCE-INDICATORS"
+      ],
+      "safety": "Não inventar diferencial máximo, intervalo de troca ou procedimento de medição; sem configuração confirmada e instrução OEM não executar teste ativo.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
+    },
+    {
+      "id": "ACT-AIR-FILTER-CARRYOVER-REVIEW",
+      "label": "Diferenciar separador ar–óleo, retorno, nível e drenagem",
+      "kind": "inspection",
+      "intent": "Comparar evidências de óleo no ar, nível do reservatório, retorno de óleo e condição de separação na configuração comprovada, sem presumir separador instalado.",
+      "sourceIds": [
+        "SANDVIK-DR410I-CAT-C18-MAINT-PLANNER",
+        "SANDVIK-DR410I-CUMMINS-MAINT-PLANNER",
+        "ATLAS-COPCO-COMPRESSOR-FILTER-FUNCTIONS",
+        "KAESER-COMPRESSOR-MAINTENANCE-INDICATORS"
+      ],
+      "safety": "Não provocar fluxo, drenar ou desmontar separador energizado e não atribuir óleo no ar à ruptura de elemento sem inspeção independente.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
+    },
+    {
+      "id": "ACT-AIR-FILTER-SAP-REVIEW",
+      "label": "Submeter componente e codificação SAP a revisão independente",
+      "kind": "inspection",
+      "intent": "Solicitar revisão de diagrama funcional, montagem, subgrupo efetivo, código de peça e evidência discriminante por responsáveis OEM, PCM e engenharia de confiabilidade.",
+      "sourceIds": [
+        "SANDVIK-DR410I-CAT-C18-MAINT-PLANNER",
+        "SANDVIK-DR410I-CUMMINS-MAINT-PLANNER",
+        "ATLAS-COPCO-COMPRESSOR-FILTER-FUNCTIONS",
+        "KAESER-COMPRESSOR-MAINTENANCE-INDICATORS"
+      ],
+      "safety": "Manter o bloqueio subgroup_not_in_scope da regra COMR e proibir remapeamento para VPAR ou alteração de dano e causa SAP antes de homologação.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
     }
   ],
   "damageHypotheses": [
@@ -4154,6 +4359,72 @@
         "causeCode": null
       },
       "confirmed": false
+    },
+    {
+      "id": "DMG-AIR-FILTER-INTAKE-MEDIA-CANDIDATE",
+      "label": "Possível obstrução ou dano físico no meio filtrante de admissão",
+      "componentRole": "meio_filtrante_ar_entrada",
+      "requiredEvidence": "Confirmar saturação, colapso ou ruptura física do elemento de admissão efetivamente instalado, com inspeção autorizada, referência e distinção do duto e pré-limpador.",
+      "sourceIds": [
+        "SANDVIK-DR410I-CAT-C18-MAINT-PLANNER",
+        "SANDVIK-DR410I-CUMMINS-MAINT-PLANNER",
+        "ATLAS-COPCO-COMPRESSOR-FILTER-FUNCTIONS",
+        "KAESER-COMPRESSOR-MAINTENANCE-INDICATORS"
+      ],
+      "kind": "candidate_component_damage",
+      "reviewStatus": "not_approved",
+      "catalogMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageCode": null,
+        "causeCode": null
+      },
+      "confirmed": false
+    },
+    {
+      "id": "DMG-AIR-FILTER-LUBE-MEDIA-CANDIDATE",
+      "label": "Possível perda de função física do elemento filtrante de óleo do compressor",
+      "componentRole": "elemento_filtro_oleo_compressor",
+      "requiredEvidence": "Identificar filtro de óleo do compressor e verificar obstrução ou ruptura física por critério específico, excluindo defeito de válvula bypass, viscosidade e bomba.",
+      "sourceIds": [
+        "SANDVIK-DR410I-CAT-C18-MAINT-PLANNER",
+        "SANDVIK-DR410I-CUMMINS-MAINT-PLANNER",
+        "ATLAS-COPCO-COMPRESSOR-FILTER-FUNCTIONS",
+        "KAESER-COMPRESSOR-MAINTENANCE-INDICATORS"
+      ],
+      "kind": "candidate_component_damage",
+      "reviewStatus": "not_approved",
+      "catalogMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageCode": null,
+        "causeCode": null
+      },
+      "confirmed": false
+    },
+    {
+      "id": "DMG-AIR-FILTER-SEPARATOR-MEDIA-CANDIDATE",
+      "label": "Possível degradação física do meio separador ar–óleo do compressor",
+      "componentRole": "meio_separador_ar_oleo",
+      "requiredEvidence": "Demonstrar falha física do elemento separador real mediante avaliação independente, distinguindo saturação, retorno de óleo, excesso de nível, sensor e operação.",
+      "sourceIds": [
+        "SANDVIK-DR410I-CAT-C18-MAINT-PLANNER",
+        "SANDVIK-DR410I-CUMMINS-MAINT-PLANNER",
+        "ATLAS-COPCO-COMPRESSOR-FILTER-FUNCTIONS",
+        "KAESER-COMPRESSOR-MAINTENANCE-INDICATORS"
+      ],
+      "kind": "candidate_component_damage",
+      "reviewStatus": "not_approved",
+      "catalogMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageCode": null,
+        "causeCode": null
+      },
+      "confirmed": false
     }
   ],
   "bundles": [
@@ -4972,6 +5243,45 @@
         "SANDVIK-DR410i-SPEC",
         "SANDVIK-DI650I-S5-SPEC",
         "KAESER-COMPRESSED-AIR-SAFETY-2019"
+      ],
+      "mappingScope": "generic_only",
+      "status": "review_candidate",
+      "observedConditionIds": [],
+      "performedActionIds": [],
+      "confirmedDamageIds": [],
+      "automaticDamagePromotion": false,
+      "evidenceInterpretation": "sem_resultado_de_campo"
+    },
+    {
+      "id": "BUNDLE-25",
+      "ruleId": "drill-compressor-filter",
+      "conditionIds": [
+        "COND-AIR-FILTER-INTAKE-RESTRICTION",
+        "COND-AIR-FILTER-LUBE-OIL-DIFFERENTIAL",
+        "COND-AIR-FILTER-OIL-CARRYOVER",
+        "COND-AIR-FILTER-SEPARATOR-DP",
+        "COND-AIR-FILTER-RECEIVER-MOISTURE",
+        "COND-AIR-FILTER-DOWNSTREAM-FLOW"
+      ],
+      "actionIds": [
+        "ACT-AIR-FILTER-IDENTIFY-CIRCUIT",
+        "ACT-AIR-FILTER-SAFE-ISOLATION",
+        "ACT-AIR-FILTER-DIFFERENTIAL-REVIEW",
+        "ACT-AIR-FILTER-CARRYOVER-REVIEW",
+        "ACT-AIR-FILTER-SAP-REVIEW"
+      ],
+      "differentialDamageIds": [
+        "DMG-AIR-FILTER-INTAKE-MEDIA-CANDIDATE",
+        "DMG-AIR-FILTER-LUBE-MEDIA-CANDIDATE",
+        "DMG-AIR-FILTER-SEPARATOR-MEDIA-CANDIDATE"
+      ],
+      "chainIds": [],
+      "interpretation": "Filtro de admissão do compressor, filtro de óleo lubrificante, separador ar–óleo e possível filtragem do receptor são funções distintas, dependentes do desenho efetivo. Pressão, vazão, diferencial, arraste de óleo e condensado são indícios, não elementos confirmados nem diagnóstico de restrição. COMR aparece como grupo, mas não como subgrupo próprio no escopo AISY; a regra COMR/Filtro mantém subgroup_not_in_scope e é proibido remapear automaticamente para VPAR. Exigir série/BOM, isolamento e pressão zero, prova discriminante, parecer independente e limites OEM antes de dano, troca, causa ou SAP.",
+      "sourceIds": [
+        "SANDVIK-DR410I-CAT-C18-MAINT-PLANNER",
+        "SANDVIK-DR410I-CUMMINS-MAINT-PLANNER",
+        "ATLAS-COPCO-COMPRESSOR-FILTER-FUNCTIONS",
+        "KAESER-COMPRESSOR-MAINTENANCE-INDICATORS"
       ],
       "mappingScope": "generic_only",
       "status": "review_candidate",
@@ -7113,6 +7423,132 @@
       "to": "DMG-AIR-PRESS-RECEIVER-WALL-CANDIDATE",
       "type": "rule_lists_differential_damage",
       "meaning": "Hipótese sem observação, execução ou confirmação SAP",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-238",
+      "from": "BUNDLE-25",
+      "to": "COND-AIR-FILTER-INTAKE-RESTRICTION",
+      "type": "rule_monitors_condition",
+      "meaning": "Observação hipotética de fluxo, óleo e filtragem sem evidência",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-239",
+      "from": "BUNDLE-25",
+      "to": "COND-AIR-FILTER-LUBE-OIL-DIFFERENTIAL",
+      "type": "rule_monitors_condition",
+      "meaning": "Observação hipotética de fluxo, óleo e filtragem sem evidência",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-240",
+      "from": "BUNDLE-25",
+      "to": "COND-AIR-FILTER-OIL-CARRYOVER",
+      "type": "rule_monitors_condition",
+      "meaning": "Observação hipotética de fluxo, óleo e filtragem sem evidência",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-241",
+      "from": "BUNDLE-25",
+      "to": "COND-AIR-FILTER-SEPARATOR-DP",
+      "type": "rule_monitors_condition",
+      "meaning": "Observação hipotética de fluxo, óleo e filtragem sem evidência",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-242",
+      "from": "BUNDLE-25",
+      "to": "COND-AIR-FILTER-RECEIVER-MOISTURE",
+      "type": "rule_monitors_condition",
+      "meaning": "Observação hipotética de fluxo, óleo e filtragem sem evidência",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-243",
+      "from": "BUNDLE-25",
+      "to": "COND-AIR-FILTER-DOWNSTREAM-FLOW",
+      "type": "rule_monitors_condition",
+      "meaning": "Observação hipotética de fluxo, óleo e filtragem sem evidência",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-244",
+      "from": "BUNDLE-25",
+      "to": "ACT-AIR-FILTER-IDENTIFY-CIRCUIT",
+      "type": "rule_proposes_action",
+      "meaning": "Inspeção proposta com pré-requisitos OEM, sem execução",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-245",
+      "from": "BUNDLE-25",
+      "to": "ACT-AIR-FILTER-SAFE-ISOLATION",
+      "type": "rule_proposes_action",
+      "meaning": "Inspeção proposta com pré-requisitos OEM, sem execução",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-246",
+      "from": "BUNDLE-25",
+      "to": "ACT-AIR-FILTER-DIFFERENTIAL-REVIEW",
+      "type": "rule_proposes_action",
+      "meaning": "Inspeção proposta com pré-requisitos OEM, sem execução",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-247",
+      "from": "BUNDLE-25",
+      "to": "ACT-AIR-FILTER-CARRYOVER-REVIEW",
+      "type": "rule_proposes_action",
+      "meaning": "Inspeção proposta com pré-requisitos OEM, sem execução",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-248",
+      "from": "BUNDLE-25",
+      "to": "ACT-AIR-FILTER-SAP-REVIEW",
+      "type": "rule_proposes_action",
+      "meaning": "Inspeção proposta com pré-requisitos OEM, sem execução",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-249",
+      "from": "BUNDLE-25",
+      "to": "DMG-AIR-FILTER-INTAKE-MEDIA-CANDIDATE",
+      "type": "rule_lists_differential_damage",
+      "meaning": "Falha física candidata de elemento distinto e sem SAP",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-250",
+      "from": "BUNDLE-25",
+      "to": "DMG-AIR-FILTER-LUBE-MEDIA-CANDIDATE",
+      "type": "rule_lists_differential_damage",
+      "meaning": "Falha física candidata de elemento distinto e sem SAP",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-251",
+      "from": "BUNDLE-25",
+      "to": "DMG-AIR-FILTER-SEPARATOR-MEDIA-CANDIDATE",
+      "type": "rule_lists_differential_damage",
+      "meaning": "Falha física candidata de elemento distinto e sem SAP",
       "reviewStatus": "interpretacao_inferida",
       "observed": false
     }
