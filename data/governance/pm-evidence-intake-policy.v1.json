@@ -1,0 +1,126 @@
+{
+  "schema": "fmea-mining.pm-evidence-intake-policy.v1",
+  "version": "1.3.61",
+  "status": "public_offline_synthetic_contract_no_corporate_backend",
+  "sourceMaturityMatrix": "data/quality/pm-maturity-matrix.v1.json",
+  "sourceMaturityVersion": "1.3.60",
+  "sourceRestrictedCustody": "data/governance/restricted-evidence-workflow.v1.json",
+  "sourceResultCustody": "data/governance/private-result-custody-contract.v1.json",
+  "purpose": "Link one PM rule and its bundle to controlled custody, OEM effectivity, counterevidence and independent technical review without storing or approving real corporate artifacts in GitHub.",
+  "stages": [
+    "draft",
+    "restricted_intake",
+    "custody_verified",
+    "technical_reviewed",
+    "independent_reviewed",
+    "ready_for_change_control"
+  ],
+  "roles": [
+    "originator",
+    "custodian",
+    "technical_reviewer",
+    "independent_reviewer",
+    "change_control_owner"
+  ],
+  "events": [
+    {
+      "action": "submit",
+      "from": "draft",
+      "to": "restricted_intake",
+      "role": "originator"
+    },
+    {
+      "action": "verify_custody",
+      "from": "restricted_intake",
+      "to": "custody_verified",
+      "role": "custodian"
+    },
+    {
+      "action": "technical_accept",
+      "from": "custody_verified",
+      "to": "technical_reviewed",
+      "role": "technical_reviewer"
+    },
+    {
+      "action": "independent_accept",
+      "from": "technical_reviewed",
+      "to": "independent_reviewed",
+      "role": "independent_reviewer"
+    },
+    {
+      "action": "request_change_control",
+      "from": "independent_reviewed",
+      "to": "ready_for_change_control",
+      "role": "change_control_owner"
+    }
+  ],
+  "requiredEvidenceKinds": [
+    "oem_effectivity",
+    "oem_procedure",
+    "field_observation",
+    "counterevidence",
+    "measurement_quality"
+  ],
+  "gateRequirements": {
+    "custody": {
+      "fiveKindsRequired": true,
+      "uniqueTokens": true,
+      "licenseAndIntegrityChecks": true,
+      "custodyChainCheck": true,
+      "qualityCheck": true,
+      "noRawEvidence": true
+    },
+    "technical": {
+      "acceptanceRequired": true,
+      "alternativesReviewed": true,
+      "oemEffectivityAssessed": true,
+      "recordedReasonRequired": true,
+      "actorDifferentFromOriginator": true
+    },
+    "independent": {
+      "acceptanceRequired": true,
+      "recordedReasonRequired": true,
+      "differentFromOriginator": true,
+      "differentFromCustodian": true,
+      "differentFromTechnical": true
+    },
+    "changeControl": {
+      "manualRequestToken": true,
+      "doesNotChangeSapBlocker": true,
+      "noDirectCatalogPromotion": true
+    }
+  },
+  "boundaries": {
+    "publicSyntheticOnly": true,
+    "realCasesInRepository": 0,
+    "realEvidenceValuesInRepository": 0,
+    "privateTransportImplemented": false,
+    "privateStorageImplemented": false,
+    "corporateSSOIntegrated": false,
+    "corporateKeyAndSignatureVerificationImplemented": false,
+    "trustedActorRolesProven": false,
+    "replayPreventionPersisted": false,
+    "signedImmutableAuditTrailImplemented": false,
+    "publicRepoMayAcceptRealCases": false,
+    "preventsDirectSapWrites": true,
+    "preventsAutomaticFmeaPromotion": true,
+    "preventsOperationalRelease": true,
+    "preventsRootCauseConfirmation": true,
+    "preventsPublicEvidenceExport": true
+  },
+  "publicSyntheticPrefix": "TEST-",
+  "requiredForRealImplementation": [
+    "Corporate approval for private environment and legal basis for OEM documents",
+    "Authorization by central IdP with tenant, asset, rule and separation-of-duty RBAC",
+    "Private encrypted storage with retention and access logs",
+    "Signed and tamper-evident append-only audit chain with server-side replay defense",
+    "Independent human engineering reviewer and SAP master-data change-control approval",
+    "No raw case metadata, URL, serial, PN, reports, measurements or digest exported into GitHub"
+  ],
+  "interpretations": {
+    "ready_for_change_control": "Readiness for human change-request deliberation only; not a signed approval or automatic material/SAP change",
+    "recordNature": "All test cases are synthetic TEST-*; runtime assessment checks shape and rules only, not truth of actor statements",
+    "sapExceptions": "The ten blocked PMxSAP exceptions remain blocked even if a synthetic case reaches the final stage",
+    "remainingRules": "All 25 rules have conceptual bundles, none has serial-effectivity or real field approval in the public matrix"
+  }
+}
