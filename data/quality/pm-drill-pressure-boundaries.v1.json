@@ -1,0 +1,163 @@
+{
+  "schema": "fmea-mining.pm-drill-pressure-boundaries.v1",
+  "version": "1.3.58",
+  "sourceOntologyVersion": "1.3.22",
+  "ruleId": "drill-compressor-pressure",
+  "nature": "generic_compressor_differential_not_field_evidence_or_sap_approval",
+  "sourceIds": [
+    "SANDVIK-DR410I-TRANSIT-GUIDE-REV-C-2023",
+    "SANDVIK-DR410i-SPEC",
+    "SANDVIK-DI650I-S5-SPEC",
+    "KAESER-COMPRESSED-AIR-SAFETY-2019"
+  ],
+  "scope": {
+    "system": "ar_comprimido",
+    "subgroupCode": "VPAR",
+    "partText": "Mangueira",
+    "models": [
+      "EQ05",
+      "EQ06"
+    ],
+    "eqModelsResolved": false,
+    "serialEffectivityVerified": false,
+    "circuitBOMVerified": false,
+    "vparHoseRegistered": false,
+    "receiverInspected": false
+  },
+  "sapBlocker": {
+    "ruleId": "drill-compressor-pressure",
+    "expectedBlocker": "component_not_registered",
+    "autoRemapAllowed": false,
+    "approvedMappingCount": 0
+  },
+  "conditionIds": [
+    "COND-AIR-PRESS-LOW-RECEIVER",
+    "COND-AIR-PRESS-AUDIBLE-LEAK",
+    "COND-AIR-PRESS-HOSE-WEAR",
+    "COND-AIR-PRESS-JOINT-LEAK",
+    "COND-AIR-PRESS-RECEIVER-RISK",
+    "COND-AIR-PRESS-FLOW-DEVIATION"
+  ],
+  "actionIds": [
+    "ACT-AIR-PRESS-SERIAL-CIRCUIT",
+    "ACT-AIR-PRESS-ISOLATE-VERIFY",
+    "ACT-AIR-PRESS-STATIC-DIFFERENTIAL",
+    "ACT-AIR-PRESS-OPERATING-DIFFERENTIAL",
+    "ACT-AIR-PRESS-ENGINEERING-DISPOSITION"
+  ],
+  "damageIds": [
+    "DMG-AIR-PRESS-HOSE-THROUGHLEAK-CANDIDATE",
+    "DMG-AIR-PRESS-JOINT-SEAL-CANDIDATE",
+    "DMG-AIR-PRESS-RECEIVER-WALL-CANDIDATE"
+  ],
+  "differentials": [
+    {
+      "id": "PRESS-01",
+      "phenomenon": "low_receiver_pressure",
+      "distinction": "Insufficient pressure may result from leak, inlet control, compressor capacity, sensor or excessive demand, not confirmed hose perforation.",
+      "confirmed": false
+    },
+    {
+      "id": "PRESS-02",
+      "phenomenon": "audible_air_flow",
+      "distinction": "Audible air can be intended drain or valve discharge and does not identify the leaking component, location or physical defect.",
+      "confirmed": false
+    },
+    {
+      "id": "PRESS-03",
+      "phenomenon": "hose_abrasion",
+      "distinction": "Outer cover abrasion does not prove a through-wall leak, reinforcement damage, specified hose identity or cause of a loss.",
+      "confirmed": false
+    },
+    {
+      "id": "PRESS-04",
+      "phenomenon": "receiver_surface_risk",
+      "distinction": "Condensate and visible corrosion are not vessel-wall failure confirmation; evaluation needs trained pressure-vessel inspectors.",
+      "confirmed": false
+    },
+    {
+      "id": "PRESS-05",
+      "phenomenon": "reduced_air_delivery",
+      "distinction": "Inlet control, filter restriction, sensor error or abnormal demand can imitate leakage signatures without a proved leak.",
+      "confirmed": false
+    }
+  ],
+  "gates": [
+    {
+      "id": "ASSET_SERIAL",
+      "status": "pending"
+    },
+    {
+      "id": "OEM_AIR_CIRCUIT",
+      "status": "pending"
+    },
+    {
+      "id": "RECEIVER_HOSE_BOM",
+      "status": "pending"
+    },
+    {
+      "id": "VPAR_COMPONENT_MAPPING",
+      "status": "pending"
+    },
+    {
+      "id": "PRESSURE_ISOLATION",
+      "status": "pending"
+    },
+    {
+      "id": "ZERO_PRESSURE",
+      "status": "pending"
+    },
+    {
+      "id": "DIFFERENTIAL_TEST",
+      "status": "pending"
+    },
+    {
+      "id": "VESSEL_SPECIALIST",
+      "status": "pending"
+    },
+    {
+      "id": "INDEPENDENT_ENGINEERING",
+      "status": "pending"
+    },
+    {
+      "id": "SAP_APPROVAL",
+      "status": "pending"
+    }
+  ],
+  "safeguards": {
+    "noLowPressureEqualsLeak": true,
+    "noSoundEqualsHoseDamage": true,
+    "noAbrasionEqualsPerforation": true,
+    "noCondensateEqualsVesselCrack": true,
+    "noFlowDropMeansLeak": true,
+    "noReceiverEqualsHose": true,
+    "noVparHoseAssumption": true,
+    "noAutoSapRemap": true,
+    "noTransitPressureTransfer": true,
+    "noDI650CircuitTransfer": true,
+    "noPressurizedIntervention": true,
+    "noTouchOrTightenLiveHose": true,
+    "noImprovisedLeakSearch": true,
+    "noImprovisedPressureTest": true,
+    "noUnqualifiedVesselRepair": true,
+    "noAutomaticRelease": true,
+    "noFieldEvidence": true,
+    "noConsumerChanges": true
+  },
+  "limits": {
+    "pressureBar": null,
+    "testPressureBar": null,
+    "hoseBurstBar": null,
+    "dropBar": null,
+    "leakRate": null,
+    "vesselWallMm": null
+  },
+  "fieldState": {
+    "observations": 0,
+    "tests": 0,
+    "confirmedDamages": 0,
+    "approvedSapMappings": 0,
+    "repairs": 0,
+    "orders": 0
+  }
+}

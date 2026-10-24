@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.research.sources.v1",
-  "version": "1.3.26",
+  "version": "1.3.27",
   "status": "literatura_de_referencia_nao_casos_empiricos",
   "rights": "somente_titulos_links_e_resumos_originais",
   "sources": [
@@ -817,6 +817,28 @@
       "area": "dr410i_two_stage_rotary_head_architecture",
       "role": "oem_product_family_context",
       "limitation": "Página descreve cabeça rotativa de dois estágios e direciona a manuais no My Sandvik; não comprova que os rolamentos, pré-carga, lubrificante ou conjunto são equivalentes aos HTRH6/MRH6 da DI650i.",
+      "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
+      "lastReviewed": "2026-10-24"
+    },
+    {
+      "id": "SANDVIK-DR410I-TRANSIT-GUIDE-REV-C-2023",
+      "organization": "Sandvik",
+      "title": "DR410i transit guide Rev C — receiver pressure and inlet valve differential",
+      "url": "https://www.mining.sandvik/siteassets/product-documents/surface-drill-rigs/rotary-blasthole-drill-rigs/transit-guides/dr410i-transit-guide-pt-pt.pdf",
+      "area": "dr410i_receiver_pressure_context",
+      "role": "oem_transit_troubleshooting_not_fleet_maintenance_procedure",
+      "limitation": "Guia de trânsito/partida da DR410i menciona mangueiras e válvula de admissão como verificações de pressão baixa no reservatório. Pressões e alarmes do guia não são limites universais de teste ou manutenção e não comprovam pertencimento de Mangueira a VPAR.",
+      "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
+      "lastReviewed": "2026-10-24"
+    },
+    {
+      "id": "KAESER-COMPRESSED-AIR-SAFETY-2019",
+      "organization": "Kaeser Compressors",
+      "title": "Compressed Air System Installation Guide — stored pressure isolation",
+      "url": "https://us.kaeser.com/download.ashx?id=tcm%3A46-37774",
+      "area": "compressed_air_stored_energy_safety",
+      "role": "manufacturer_generic_safety_not_sandvik_procedure",
+      "limitation": "Recomenda alívio de pressão em todos os pontos antes de manutenção. Não substitui o método Sandvik por série, os procedimentos de bloqueio nem autorização da equipe de manutenção da mina.",
       "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
       "lastReviewed": "2026-10-24"
     }
