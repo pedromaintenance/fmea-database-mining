@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.condition-action-damage.v1",
-  "version": "1.3.19",
+  "version": "1.3.20",
   "status": "conceptual_unvalidated",
   "semantics": {
     "condition": "Estado de fluido, superfície ou desempenho; ocorrência requer medição/observação",
@@ -1589,6 +1589,114 @@
       "status": "condition_hypothesis_not_observed",
       "observedValue": null,
       "observedAt": null
+    },
+    {
+      "id": "COND-FEED-CHAIN-WEAR",
+      "label": "Indício de desgaste em articulações, pinos ou placas da corrente de avanço",
+      "system": "avanco_perfuratriz",
+      "medium": "corrente_articulacoes",
+      "observation": "Verificar visualmente indícios de desgaste ou dano em pinos, buchas, roletes e placas na cadeia de avanço identificada, sem medições improvisadas de passo.",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "SANDVIK-DR410I-FEED-SPEC-2024",
+        "SANDVIK-DI650I-CHAIN-SPEC-2020"
+      ],
+      "limitations": "Aparência de desgaste não confirma alongamento fora de limite nem causa raiz; exigem-se dimensão, método OEM, configuração da corrente e dados independentes.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-FEED-CHAIN-SLACK",
+      "label": "Folga ou tensão aparentemente irregular na corrente de avanço",
+      "system": "avanco_perfuratriz",
+      "medium": "corrente_tensionamento",
+      "observation": "Documentar corrente suspeita de frouxidão, flutuação ou tensão desigual com o mastro travado e energias isoladas, identificando o tipo de ajuste efetivamente instalado.",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "SANDVIK-DR410I-FEED-SPEC-2024",
+        "SANDVIK-DI650I-CHAIN-SPEC-2020"
+      ],
+      "limitations": "Folga visual não confirma ajuste incorreto; na DR410i há regulagem padrão por pinos e tensionamento hidráulico automático opcional, não intercambiáveis com outras variantes.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-FEED-CHAIN-SPROCKET",
+      "label": "Indício de desgaste, dano ou engrenamento atípico em roda dentada",
+      "system": "avanco_perfuratriz",
+      "medium": "roda_dentada_corrente",
+      "observation": "Inspecionar sinais externos de dentes irregulares, entrada ou saída da corrente e desgaste conjugado somente após garantir apoio do conjunto e acesso seguro.",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "SANDVIK-DR410I-FEED-SPEC-2024",
+        "SANDVIK-DI650I-CHAIN-SPEC-2020"
+      ],
+      "limitations": "Dentes aparentemente desgastados não demonstram desalinhamento ou causa por corrente; a função de sincronização e o número de rodas devem ser confirmados por BOM específico.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-FEED-CHAIN-TRACK",
+      "label": "Deslocamento ou ruído anormal do carro da cabeça rotativa durante avanço",
+      "system": "avanco_perfuratriz",
+      "medium": "movimento_cabeca_rotativa",
+      "observation": "Registrar histórico operacional de trepidação, variação de velocidade ou oscilação do carro sem reproduzir o sintoma em teste ativo improvisado.",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "SANDVIK-DR410I-FEED-SPEC-2024",
+        "SANDVIK-DI650I-CHAIN-SPEC-2020"
+      ],
+      "limitations": "Vibração ou avanço irregular pode envolver hidráulica, guias, cilindros, sensores ou processo de perfuração; não comprova defeito de corrente ou engrenagem.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-FEED-CHAIN-SIDE-SKEW",
+      "label": "Indício de movimentação lateral assimétrica ou sincronismo suspeito",
+      "system": "avanco_perfuratriz",
+      "medium": "alinhamento_do_avanco",
+      "observation": "Investigar assimetria de corrente, carro, guias e regiões de contato com referências de configuração, especialmente se houver duas correntes no conjunto.",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "SANDVIK-DR410I-FEED-SPEC-2024",
+        "SANDVIK-DI650I-CHAIN-SPEC-2020"
+      ],
+      "limitations": "O sincronismo mecânico descrito para DR410i não autoriza presumir duas correntes, roda sincronizadora ou mesmo procedimento de alinhamento na DI650i.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-FEED-CHAIN-GUIDE",
+      "label": "Marcas ou contato anormal nas guias e pontos de suporte do avanço",
+      "system": "avanco_perfuratriz",
+      "medium": "guias_suportes_avanco",
+      "observation": "Registrar posição de marcas de contato, resíduos e desgaste da guia, evitando classificá-los como mecanismo de falha sem exame da geometria e montagem.",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "SANDVIK-DR410I-FEED-SPEC-2024",
+        "SANDVIK-DI650I-CHAIN-SPEC-2020"
+      ],
+      "limitations": "Desgaste de guia ou suporte não comprova desgaste de corrente e pode produzir sintomas semelhantes; identificar o componente físico antes do mapeamento SAP.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
     }
   ],
   "actions": [
@@ -2572,6 +2680,81 @@
       "executionStatus": "not_performed",
       "observedResults": [],
       "intervalHours": null
+    },
+    {
+      "id": "ACT-FEED-CHAIN-SERIAL-BOM",
+      "label": "Confirmar arquitetura do avanço e tensionador pela máquina e série",
+      "kind": "inspection",
+      "intent": "Conferir marca/modelo real, variante, mastro, BOM, caminho da corrente, rodas, cilindros e opção de tensionamento antes de planejar qualquer ajuste ou substituição.",
+      "sourceIds": [
+        "SANDVIK-DR410I-FEED-SPEC-2024",
+        "SANDVIK-DI650I-CHAIN-SPEC-2020"
+      ],
+      "safety": "Não transportar regulagem automática opcional da DR410i para DI650i; a confirmação por número de série e manual de manutenção aplicável é obrigatória.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
+    },
+    {
+      "id": "ACT-FEED-CHAIN-SAFE-VISUAL",
+      "label": "Planejar inspeção estática segura da corrente, guias e rodas",
+      "kind": "inspection",
+      "intent": "Descrever posição e anomalias aparentes em placas, pinos, roletes, guias e dentes, com registro fotográfico seguro e mastro devidamente sustentado.",
+      "sourceIds": [
+        "SANDVIK-DR410I-FEED-SPEC-2024",
+        "SANDVIK-DI650I-CHAIN-SPEC-2020"
+      ],
+      "safety": "Impedir acesso à zona de esmagamento e de corrente sob tração; imobilizar, isolar energias hidráulicas e gravitacionais e aplicar bloqueios OEM antes da inspeção.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
+    },
+    {
+      "id": "ACT-FEED-CHAIN-TENSION-VERIFY",
+      "label": "Propor avaliação de tensão, passo e extensão pelos limites OEM",
+      "kind": "test",
+      "intent": "Definir ponto, método, instrumento, posição do carro e critérios aplicáveis de tensão ou extensão da corrente, somente após confirmar sua configuração.",
+      "sourceIds": [
+        "SANDVIK-DR410I-FEED-SPEC-2024",
+        "SANDVIK-DI650I-CHAIN-SPEC-2020"
+      ],
+      "safety": "Não ajustar pinos ou tensionadores hidráulicos nem aplicar força para medir com mastro energizado; não inventar torque, deslocamento, passo limite ou tensão.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
+    },
+    {
+      "id": "ACT-FEED-CHAIN-SYNC-DIFFERENTIAL",
+      "label": "Distinguir sincronismo, rodas dentadas, cilindros e guias",
+      "kind": "inspection",
+      "intent": "Confrontar sinais do avanço com hipóteses de engrenamento, guias, cilindros de alimentação e controles, mantendo mecanismos concorrentes em aberto.",
+      "sourceIds": [
+        "SANDVIK-DR410I-FEED-SPEC-2024",
+        "SANDVIK-DI650I-CHAIN-SPEC-2020"
+      ],
+      "safety": "Não executar testes funcionais sob carga nem mover cabeça rotativa para provocar sintoma sem procedimento OEM, isolamento e autorização da equipe responsável.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
+    },
+    {
+      "id": "ACT-FEED-CHAIN-REVIEW-DISPOSITION",
+      "label": "Encaminhar decisão de reparo e critério de condenação à engenharia",
+      "kind": "inspection",
+      "intent": "Reunir inspeção aprovada, geometria, peças instaladas, histórico de falha e medição independente para revisão técnica antes de registrar a conclusão no SAP.",
+      "sourceIds": [
+        "SANDVIK-DR410I-FEED-SPEC-2024",
+        "SANDVIK-DI650I-CHAIN-SPEC-2020"
+      ],
+      "safety": "Nenhuma hipótese autoriza substituir corrente, reapertar, liberar máquina, condenar roda dentada ou atribuir causa sem aprovação OEM e risco avaliado.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
     }
   ],
   "damageHypotheses": [
@@ -3383,6 +3566,66 @@
         "causeCode": null
       },
       "confirmed": false
+    },
+    {
+      "id": "DMG-FEED-CHAIN-JOINT-WEAR-CANDIDATE",
+      "label": "Possível desgaste físico de pinos, buchas ou articulações da corrente",
+      "componentRole": "articulacoes_corrente_avanco",
+      "requiredEvidence": "Exigir medidas independentes de passo e condição de articulação conforme manual específico, com rastreabilidade de corrente e descarte, sem associar automaticamente desgaste a tensão incorreta.",
+      "sourceIds": [
+        "SANDVIK-DR410I-FEED-SPEC-2024",
+        "SANDVIK-DI650I-CHAIN-SPEC-2020"
+      ],
+      "kind": "candidate_component_damage",
+      "reviewStatus": "not_approved",
+      "catalogMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageCode": null,
+        "causeCode": null
+      },
+      "confirmed": false
+    },
+    {
+      "id": "DMG-FEED-CHAIN-SPROCKET-WEAR-CANDIDATE",
+      "label": "Possível dano físico de dentes de roda dentada de avanço",
+      "componentRole": "roda_dentada_avanco",
+      "requiredEvidence": "Confirmar estado físico dos dentes e engrenamento por componente efetivo e especificação por série, distinguindo desgaste conjugado de desalinhamento ou falha de corrente.",
+      "sourceIds": [
+        "SANDVIK-DR410I-FEED-SPEC-2024",
+        "SANDVIK-DI650I-CHAIN-SPEC-2020"
+      ],
+      "kind": "candidate_component_damage",
+      "reviewStatus": "not_approved",
+      "catalogMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageCode": null,
+        "causeCode": null
+      },
+      "confirmed": false
+    },
+    {
+      "id": "DMG-FEED-CHAIN-GUIDE-WEAR-CANDIDATE",
+      "label": "Possível dano físico na guia ou suporte de deslizamento do avanço",
+      "componentRole": "guia_carro_avanco",
+      "requiredEvidence": "Verificar material e superfícies do guia ou suporte real por inspeção e tolerância OEM; uma marca superficial não identifica falha da corrente ou mecanismo de carga.",
+      "sourceIds": [
+        "SANDVIK-DR410I-FEED-SPEC-2024",
+        "SANDVIK-DI650I-CHAIN-SPEC-2020"
+      ],
+      "kind": "candidate_component_damage",
+      "reviewStatus": "not_approved",
+      "catalogMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageCode": null,
+        "causeCode": null
+      },
+      "confirmed": false
     }
   ],
   "bundles": [
@@ -4087,6 +4330,43 @@
         "MICHELIN-EARTHMOVER-TIRE-INSPECTION",
         "MICHELIN-EARTHMOVER-TIRE-PRESSURE",
         "BRIDGESTONE-OTR-PROGRAM"
+      ],
+      "mappingScope": "generic_only",
+      "status": "review_candidate",
+      "observedConditionIds": [],
+      "performedActionIds": [],
+      "confirmedDamageIds": [],
+      "automaticDamagePromotion": false,
+      "evidenceInterpretation": "sem_resultado_de_campo"
+    },
+    {
+      "id": "BUNDLE-22",
+      "ruleId": "drill-feed-chain",
+      "conditionIds": [
+        "COND-FEED-CHAIN-WEAR",
+        "COND-FEED-CHAIN-SLACK",
+        "COND-FEED-CHAIN-SPROCKET",
+        "COND-FEED-CHAIN-TRACK",
+        "COND-FEED-CHAIN-SIDE-SKEW",
+        "COND-FEED-CHAIN-GUIDE"
+      ],
+      "actionIds": [
+        "ACT-FEED-CHAIN-SERIAL-BOM",
+        "ACT-FEED-CHAIN-SAFE-VISUAL",
+        "ACT-FEED-CHAIN-TENSION-VERIFY",
+        "ACT-FEED-CHAIN-SYNC-DIFFERENTIAL",
+        "ACT-FEED-CHAIN-REVIEW-DISPOSITION"
+      ],
+      "differentialDamageIds": [
+        "DMG-FEED-CHAIN-JOINT-WEAR-CANDIDATE",
+        "DMG-FEED-CHAIN-SPROCKET-WEAR-CANDIDATE",
+        "DMG-FEED-CHAIN-GUIDE-WEAR-CANDIDATE"
+      ],
+      "chainIds": [],
+      "interpretation": "Desgaste de articulações, folga de tensão, engrenamento em roda dentada, oscilação do carro, sincronismo lateral e marcas de guia são hipóteses concorrentes, não danos confirmados. A DR410i documenta dois cilindros com correntes e ajuste manual padrão, automático opcional; DI650i S5 declara chain feed sem confirmar mecanismo de tensionamento equivalente. Exigir série/BOM, isolamento mecânico e hidráulico, limites OEM e prova independente antes de diagnosticar, ajustar, liberar ou mapear FECH/SAP.",
+      "sourceIds": [
+        "SANDVIK-DR410I-FEED-SPEC-2024",
+        "SANDVIK-DI650I-CHAIN-SPEC-2020"
       ],
       "mappingScope": "generic_only",
       "status": "review_candidate",
@@ -5850,6 +6130,132 @@
       "to": "DMG-TIRE-WEAR-LOCAL-LOSS-CANDIDATE",
       "type": "rule_lists_differential_damage",
       "meaning": "Hipótese genérica não comprovada, sem evento real nem mapeamento SAP",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-196",
+      "from": "BUNDLE-22",
+      "to": "COND-FEED-CHAIN-WEAR",
+      "type": "rule_monitors_condition",
+      "meaning": "Indício hipotético não observado e não causal",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-197",
+      "from": "BUNDLE-22",
+      "to": "COND-FEED-CHAIN-SLACK",
+      "type": "rule_monitors_condition",
+      "meaning": "Indício hipotético não observado e não causal",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-198",
+      "from": "BUNDLE-22",
+      "to": "COND-FEED-CHAIN-SPROCKET",
+      "type": "rule_monitors_condition",
+      "meaning": "Indício hipotético não observado e não causal",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-199",
+      "from": "BUNDLE-22",
+      "to": "COND-FEED-CHAIN-TRACK",
+      "type": "rule_monitors_condition",
+      "meaning": "Indício hipotético não observado e não causal",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-200",
+      "from": "BUNDLE-22",
+      "to": "COND-FEED-CHAIN-SIDE-SKEW",
+      "type": "rule_monitors_condition",
+      "meaning": "Indício hipotético não observado e não causal",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-201",
+      "from": "BUNDLE-22",
+      "to": "COND-FEED-CHAIN-GUIDE",
+      "type": "rule_monitors_condition",
+      "meaning": "Indício hipotético não observado e não causal",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-202",
+      "from": "BUNDLE-22",
+      "to": "ACT-FEED-CHAIN-SERIAL-BOM",
+      "type": "rule_proposes_action",
+      "meaning": "Teste/inspeção apenas proposto, sem execução",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-203",
+      "from": "BUNDLE-22",
+      "to": "ACT-FEED-CHAIN-SAFE-VISUAL",
+      "type": "rule_proposes_action",
+      "meaning": "Teste/inspeção apenas proposto, sem execução",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-204",
+      "from": "BUNDLE-22",
+      "to": "ACT-FEED-CHAIN-TENSION-VERIFY",
+      "type": "rule_proposes_action",
+      "meaning": "Teste/inspeção apenas proposto, sem execução",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-205",
+      "from": "BUNDLE-22",
+      "to": "ACT-FEED-CHAIN-SYNC-DIFFERENTIAL",
+      "type": "rule_proposes_action",
+      "meaning": "Teste/inspeção apenas proposto, sem execução",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-206",
+      "from": "BUNDLE-22",
+      "to": "ACT-FEED-CHAIN-REVIEW-DISPOSITION",
+      "type": "rule_proposes_action",
+      "meaning": "Teste/inspeção apenas proposto, sem execução",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-207",
+      "from": "BUNDLE-22",
+      "to": "DMG-FEED-CHAIN-JOINT-WEAR-CANDIDATE",
+      "type": "rule_lists_differential_damage",
+      "meaning": "Alteração física candidata sem confirmação ou código SAP",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-208",
+      "from": "BUNDLE-22",
+      "to": "DMG-FEED-CHAIN-SPROCKET-WEAR-CANDIDATE",
+      "type": "rule_lists_differential_damage",
+      "meaning": "Alteração física candidata sem confirmação ou código SAP",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-209",
+      "from": "BUNDLE-22",
+      "to": "DMG-FEED-CHAIN-GUIDE-WEAR-CANDIDATE",
+      "type": "rule_lists_differential_damage",
+      "meaning": "Alteração física candidata sem confirmação ou código SAP",
       "reviewStatus": "interpretacao_inferida",
       "observed": false
     }

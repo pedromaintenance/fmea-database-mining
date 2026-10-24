@@ -78,6 +78,8 @@ jobs:
         run: npm run pm:tire:damage:audit
       - name: Auditar desgaste de pneus OTR e perfil de RTD
         run: npm run pm:tire:wear:audit
+      - name: Auditar corrente de avanco FECH e opcao de tensionamento OEM
+        run: npm run pm:drill:feed:audit
       - name: Validar 10 bloqueios PM e 7 requisitos de efetividade OEM D9
         run: npm run pm:exceptions:validate
       - name: Gerar vínculos diagnósticos por modelo
@@ -188,6 +190,7 @@ jobs:
             reports/pm-exhaust-ontology.generated.json
             reports/pm-tire-damage.generated.json
             reports/pm-tire-wear.generated.json
+            reports/pm-drill-feed.generated.json
             reports/public-knowledge.v1.json
             reports/public-manifest.v1.json
             data/governance/public-content-releases.v1.json

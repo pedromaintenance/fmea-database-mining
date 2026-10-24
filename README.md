@@ -2,7 +2,9 @@
 
 Banco de conhecimento **versionado** para investigar modos de falha, sintomas, evidências e causas em equipamentos móveis de mineração. Um consumidor possível é o jogo **[P.O.R.C.A.R.I.A. — Você Quebra, Eu Conserto](https://github.com/pedromaintenance/porcaria-voce-quebra-eu-conserto)**, mas o banco é independente: **este repositório não altera os consumidores**.
 
-> **Status:** versão do catálogo **1.3.55** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
+> **Status:** versão do catálogo **1.3.56** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
+
+**Ciclo v1.3.56:** [corrente de avanço de perfuratrizes](docs/CICLO_2026-10-24_CORRENTE_AVANCO.md) adiciona BUNDLE-22 com seis condições hipotéticas, cinco atividades propostas e três danos candidatos. Diferencia ajuste manual padrão e automático opcional da DR410i, sem transpor mecanismos para DI650i ou EQ05/EQ06 sem série/BOM; ontologia 1.3.20, cobertura PM 22/25.
 
 **Ciclo v1.3.55:** [desgaste OTR/RTD](docs/CICLO_2026-10-23_PNEUS_DESGASTE.md) modela BUNDLE-21 com seis condições, quatro inspeções propostas, três danos candidatos e dois cenários sintéticos. Separa desgaste de cortes/carcase; cobertura PM 21/25 e nenhuma causa ou limite OEM homologado.
 

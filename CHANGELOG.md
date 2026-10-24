@@ -2,6 +2,13 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.56] — 2026-10-24 — Corrente de avanço e arquitetura da perfuratriz
+
+- BUNDLE-22 para `drill-feed-chain`: 6 condições, 5 ações, 3 danos candidatos, 14 relações tipadas, 2 casos sintéticos.
+- Contraste OEM DR410i (dois cilindros/corrente, pinos manuais padrão, automático opcional) versus DI650i (chain feed sem comprovação de tensão equivalente).
+- Ontologia 1.3.20: 89 condições, 67 ações, 42 danos, 22 bundles, 209 relações e 40 cenários sintéticos; cobertura 22/25 regras e três pendentes.
+- 10 gates pendentes, 16 controles de segurança e auditor adversarial com 40 mutações, integrado ao CI e ao QA. Preservados 115 vínculos PM candidatos, dez bloqueios, zero medições/OS/SAP homologados e consumidores externos inalterados.
+
 ## [1.3.55] — 2026-10-23 — Desgaste de pneus OTR e diagnóstico RTD
 
 - BUNDLE-21 `wheel-tire-wear` independente de TIR1: seis condições, quatro ações planejadas, três danos candidatos, 13 relações e dois cenários sintéticos.

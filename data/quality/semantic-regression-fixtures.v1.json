@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.semantic-regression.v1",
-  "version": "1.3.19",
+  "version": "1.3.20",
   "status": "synthetic_assertions_not_real_events",
   "cases": [
     {
@@ -547,6 +547,36 @@
       "independentComponentTest": "not_performed",
       "expectedConfirmedDamageIds": [],
       "why": "Cenário sintético: pneus duplos são condicionais e aparência não comprova causa, desgaste anormal nem limite de descarte."
+    },
+    {
+      "id": "SEM-39",
+      "title": "Folga visual e irregularidade de avanço não comprovam corrente alongada",
+      "ruleId": "drill-feed-chain",
+      "observedConditionIds": [
+        "COND-FEED-CHAIN-SLACK",
+        "COND-FEED-CHAIN-TRACK"
+      ],
+      "performedActionIds": [
+        "ACT-FEED-CHAIN-TENSION-VERIFY"
+      ],
+      "independentComponentTest": "not_performed",
+      "expectedConfirmedDamageIds": [],
+      "why": "Cenário sintético: não houve medição de passo nem identificação do tensionador por série; folga e avanço irregular não comprovam corrente condenada."
+    },
+    {
+      "id": "SEM-40",
+      "title": "Desgaste de dente e assimetria não comprovam falha de sincronismo na DI650i",
+      "ruleId": "drill-feed-chain",
+      "observedConditionIds": [
+        "COND-FEED-CHAIN-SPROCKET",
+        "COND-FEED-CHAIN-SIDE-SKEW"
+      ],
+      "performedActionIds": [
+        "ACT-FEED-CHAIN-SYNC-DIFFERENTIAL"
+      ],
+      "independentComponentTest": "not_performed",
+      "expectedConfirmedDamageIds": [],
+      "why": "Cenário sintético: não transportar desenho DR410i para DI650i sem confirmação por BOM e variante, nem presumir roda dentada ou guia com dano real."
     }
   ]
 }
