@@ -23,7 +23,7 @@ function check(m,f,p,c){
  const e=[],ok=(v,k)=>{if(!v)e.push(k)};
  const seed=rules.find(x=>x.id==='wheel-tire-wear');
  const wear=by(m.bundles,'BUNDLE-21'),structural=by(m.bundles,'BUNDLE-20');
- ok(m.version==='1.3.21'&&m.conditions.length===95&&m.actions.length===72&&m.damageHypotheses.length===45&&m.bundles.length===23&&m.relations.length===223,'ontology_count');
+ ok(m.version==='1.3.22'&&m.conditions.length===101&&m.actions.length===77&&m.damageHypotheses.length===48&&m.bundles.length===24&&m.relations.length===237,'ontology_count');
  ok(m.observations.length===0&&m.workOrderExecutions.length===0&&m.confirmedComponentDamages.length===0,'fabricated_events');
  ok(seed?.system==='pneus_rodas'&&seed?.subgroupCode==='TIR3'&&seed?.partText==='Pneu'&&seed?.review==='pendente'&&rules.length===25&&gaps.length===10&&links.length===115,'pm_sap_drift');
  ok(p.schema==='fmea-mining.pm-tire-wear-boundaries.v1'&&p.version==='1.3.55'&&p.sourceOntologyVersion==='1.3.19'&&p.ruleId==='wheel-tire-wear','policy_identity');
@@ -61,11 +61,11 @@ function check(m,f,p,c){
  ok(Object.keys(p.safeguards).length===16&&Object.values(p.safeguards).every(v=>v===true),'safety_relaxed');
  ok(Object.keys(p.limits).length===6&&Object.values(p.limits).every(x=>x===null),'fabricated_limit');
  ok(Object.keys(p.fieldState).length===6&&Object.values(p.fieldState).every(x=>x===0),'fabricated_field_state');
- ok(f.version==='1.3.21'&&f.status==='synthetic_assertions_not_real_events'&&f.cases.length===42,'fixture_baseline');
+ ok(f.version==='1.3.22'&&f.status==='synthetic_assertions_not_real_events'&&f.cases.length===44,'fixture_baseline');
  for(const id of ['SEM-37','SEM-38']){const x=by(f.cases,id);ok(x?.ruleId==='wheel-tire-wear'&&x.independentComponentTest==='not_performed'&&x.expectedConfirmedDamageIds.length===0&&x.observedConditionIds.every(v=>p.conditionIds.includes(v))&&x.performedActionIds.every(v=>p.actionIds.includes(v)),'fixture_promoted_'+id);}
- ok(c.version==='1.3.57'&&c.sourceOntologyVersion==='1.3.21'&&c.expectedBundles===23&&c.expectedUnmodeledRules===2,'crosswalk_policy');
+ ok(c.version==='1.3.58'&&c.sourceOntologyVersion==='1.3.22'&&c.expectedBundles===24&&c.expectedUnmodeledRules===1,'crosswalk_policy');
  const result=validateSemanticCrosswalkInputs(m,rules,c);
- ok(result.errors.length===0&&result.coverage.modeledRules===23&&result.coverage.unmodeledRuleIds.length===2&&result.coverage.sharedGenericNodes===11&&result.coverage.sharedDamageNodes===0,'crosswalk_'+result.errors.slice(0,3).join('-'));
+ ok(result.errors.length===0&&result.coverage.modeledRules===24&&result.coverage.unmodeledRuleIds.length===1&&result.coverage.sharedGenericNodes===11&&result.coverage.sharedDamageNodes===0,'crosswalk_'+result.errors.slice(0,3).join('-'));
  return e;
 }
 const errors=check(ont,fixtures,policy,cross),att=[],pa=[],fx=[];

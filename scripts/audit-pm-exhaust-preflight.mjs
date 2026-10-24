@@ -22,7 +22,7 @@ function check(x){
  ok(seed?.system==='motor_diesel'&&seed?.subgroupCode==='EXSY'&&seed?.partText==='Coletor'&&seed?.review==='pendente','seed');
  ok(equals(x?.scope?.models,seed?.models)&&x?.scope?.system===seed?.system&&x?.scope?.subgroupCode===seed?.subgroupCode&&x?.scope?.partText===seed?.partText,'scope');
  ok(x?.scope?.serialEffectivityVerified===false&&x?.scope?.physicalLocationVerified===false,'fabricated_effectivity');
- ok(model.version==='1.3.21'&&x?.ontologyVersionFrozen==='1.3.16'&&model.bundles.length===23&&model.bundles.filter(b=>b.ruleId==='engine-exhaust').length===1,'preflight_not_model_approval');
+ ok(model.version==='1.3.22'&&x?.ontologyVersionFrozen==='1.3.16'&&model.bundles.length===24&&model.bundles.filter(b=>b.ruleId==='engine-exhaust').length===1,'preflight_not_model_approval');
  ok(seeds.length===25&&gaps.length===10,'base_backlog_drift');
  ok(equals(x?.sourceIds,expectedSources)&&x.sourceIds.every(id=>sources.some(s=>s.id===id&&s.url.startsWith('https://www.cat.com/')&&s.reviewStatus==='fonte_publica_consultada_sem_reproducao_integral')),'source_provenance');
  ok(equals(x?.differentials?.map(d=>d.phenomenon),expectedPhenomena),'differential_identity');

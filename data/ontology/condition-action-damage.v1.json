@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.condition-action-damage.v1",
-  "version": "1.3.21",
+  "version": "1.3.22",
   "status": "conceptual_unvalidated",
   "semantics": {
     "condition": "Estado de fluido, superfície ou desempenho; ocorrência requer medição/observação",
@@ -1811,6 +1811,126 @@
       "status": "condition_hypothesis_not_observed",
       "observedValue": null,
       "observedAt": null
+    },
+    {
+      "id": "COND-AIR-PRESS-LOW-RECEIVER",
+      "label": "Pressão insuficiente no reservatório de ar sob investigação",
+      "system": "ar_comprimido",
+      "medium": "reservatorio_ar",
+      "observation": "Registrar alarmes e tendências existentes de pressão, demanda, condições de operação e posição do sensor no recipiente, sem reproduzir evento por acionamento.",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "SANDVIK-DR410I-TRANSIT-GUIDE-REV-C-2023",
+        "SANDVIK-DR410i-SPEC",
+        "SANDVIK-DI650I-S5-SPEC",
+        "KAESER-COMPRESSED-AIR-SAFETY-2019"
+      ],
+      "limitations": "Pressão baixa pode resultar de vazamento, válvula de entrada, compressor, demanda e instrumento; não prova furo de mangueira nem falha da parede do vaso.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-AIR-PRESS-AUDIBLE-LEAK",
+      "label": "Ruído de escape de ar próximo a tubulação sem origem confirmada",
+      "system": "ar_comprimido",
+      "medium": "linha_ar",
+      "observation": "Documentar relatos e posição aparente de som com segurança, distinguindo escapes intermitentes da condição de uso, sem aproximar ouvido, mãos ou ferramentas.",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "SANDVIK-DR410I-TRANSIT-GUIDE-REV-C-2023",
+        "SANDVIK-DR410i-SPEC",
+        "SANDVIK-DI650I-S5-SPEC",
+        "KAESER-COMPRESSED-AIR-SAFETY-2019"
+      ],
+      "limitations": "Ruído pode vir de purga programada, descarga de controle, dreno ou válvula; o som não identifica o corpo de mangueira nem o componente de origem.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-AIR-PRESS-HOSE-WEAR",
+      "label": "Deterioração visual externa de mangueira do circuito de ar",
+      "system": "ar_comprimido",
+      "medium": "mangueira_ar",
+      "observation": "Registrar cobertura abrasada, trincas aparentes, abrasão por contato ou dano no terminal apenas em inspeção estática e despressurizada.",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "SANDVIK-DR410I-TRANSIT-GUIDE-REV-C-2023",
+        "SANDVIK-DR410i-SPEC",
+        "SANDVIK-DI650I-S5-SPEC",
+        "KAESER-COMPRESSED-AIR-SAFETY-2019"
+      ],
+      "limitations": "Marcas externas não demonstram perfuração da parede, vazamento ou pressão de trabalho excedida; localização e aplicação exigem diagrama e BOM OEM.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-AIR-PRESS-JOINT-LEAK",
+      "label": "Indício de fuga em conexão, vedação ou flange da linha de ar",
+      "system": "ar_comprimido",
+      "medium": "conexao_ar",
+      "observation": "Distinguir visualmente mangueira, terminal, união, flange, válvula e tubulação adjacente apenas após isolamento e confirmação de pressão zero.",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "SANDVIK-DR410I-TRANSIT-GUIDE-REV-C-2023",
+        "SANDVIK-DR410i-SPEC",
+        "SANDVIK-DI650I-S5-SPEC",
+        "KAESER-COMPRESSED-AIR-SAFETY-2019"
+      ],
+      "limitations": "Fuga aparente em interface não confirma parede de mangueira danificada, torque incorreto ou corpo de vaso trincado sem prova física discriminante.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-AIR-PRESS-RECEIVER-RISK",
+      "label": "Alteração física aparente ou suspeita de fuga no vaso receptor",
+      "system": "ar_comprimido",
+      "medium": "vaso_pressurizado",
+      "observation": "Registrar possíveis deformações, corrosão, condensado ou fuga no recipiente, delimitando acesso e encaminhando avaliação de integridade à equipe habilitada.",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "SANDVIK-DR410I-TRANSIT-GUIDE-REV-C-2023",
+        "SANDVIK-DR410i-SPEC",
+        "SANDVIK-DI650I-S5-SPEC",
+        "KAESER-COMPRESSED-AIR-SAFETY-2019"
+      ],
+      "limitations": "Corrosão visível ou condensado não prova trinca passante nem estabelece espessura admissível; integridade de vaso não pode ser julgada por analogia com mangueira.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
+    },
+    {
+      "id": "COND-AIR-PRESS-FLOW-DEVIATION",
+      "label": "Vazão ou resposta pneumática irregular sem vazamento localizado",
+      "system": "ar_comprimido",
+      "medium": "vazao_compressor",
+      "observation": "Comparar dados operacionais existentes de pressão, vazão, demanda, controle de entrada, filtros e sensores conforme a configuração efetiva.",
+      "methods": [
+        "EV-01"
+      ],
+      "sourceIds": [
+        "SANDVIK-DR410I-TRANSIT-GUIDE-REV-C-2023",
+        "SANDVIK-DR410i-SPEC",
+        "SANDVIK-DI650I-S5-SPEC",
+        "KAESER-COMPRESSED-AIR-SAFETY-2019"
+      ],
+      "limitations": "Restrição, consumo elevado, defeito de válvula, filtragem ou capacidade do compressor podem mimetizar vazamento sem perda de estanqueidade comprovada.",
+      "status": "condition_hypothesis_not_observed",
+      "observedValue": null,
+      "observedAt": null
     }
   ],
   "actions": [
@@ -2949,6 +3069,91 @@
       "executionStatus": "not_performed",
       "observedResults": [],
       "intervalHours": null
+    },
+    {
+      "id": "ACT-AIR-PRESS-SERIAL-CIRCUIT",
+      "label": "Identificar circuito e peças por série e conferir VPAR",
+      "kind": "inspection",
+      "intent": "Confirmar variante, diagrama OEM, BOM, vaso, mangueira, conexões, válvulas e registro SAP de cada componente antes de atribuir qualquer mecanismo.",
+      "sourceIds": [
+        "SANDVIK-DR410I-TRANSIT-GUIDE-REV-C-2023",
+        "SANDVIK-DR410i-SPEC",
+        "SANDVIK-DI650I-S5-SPEC",
+        "KAESER-COMPRESSED-AIR-SAFETY-2019"
+      ],
+      "safety": "VPAR está cadastrado mas Mangueira não está confirmada nele; bloquear o mapeamento automático e jamais equiparar variantes DR410i e DI650i.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
+    },
+    {
+      "id": "ACT-AIR-PRESS-ISOLATE-VERIFY",
+      "label": "Planejar bloqueio e verificação de pressão zero no circuito",
+      "kind": "inspection",
+      "intent": "Definir procedimento autorizado de isolamento, alívio de pressão armazenada e confirmação com instrumento aprovado em todos os pontos antes de tocar no sistema.",
+      "sourceIds": [
+        "SANDVIK-DR410I-TRANSIT-GUIDE-REV-C-2023",
+        "SANDVIK-DR410i-SPEC",
+        "SANDVIK-DI650I-S5-SPEC",
+        "KAESER-COMPRESSED-AIR-SAFETY-2019"
+      ],
+      "safety": "Não desapertar, remover, testar, reparar ou manusear mangueiras, válvulas e recipientes energizados; confirmação de pressão zero e isolamento são obrigatórios.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
+    },
+    {
+      "id": "ACT-AIR-PRESS-STATIC-DIFFERENTIAL",
+      "label": "Distinguir condição física de mangueira, conexão e vaso",
+      "kind": "inspection",
+      "intent": "Planejar caracterização em condição isolada de abrasão, vedações, terminais, válvulas, drenos e integridade estrutural de componentes efetivos.",
+      "sourceIds": [
+        "SANDVIK-DR410I-TRANSIT-GUIDE-REV-C-2023",
+        "SANDVIK-DR410i-SPEC",
+        "SANDVIK-DI650I-S5-SPEC",
+        "KAESER-COMPRESSED-AIR-SAFETY-2019"
+      ],
+      "safety": "Não usar mãos, audição próxima, chama, líquido improvisado nem pressurização experimental para localizar vazamento; aplicar método OEM seguro.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
+    },
+    {
+      "id": "ACT-AIR-PRESS-OPERATING-DIFFERENTIAL",
+      "label": "Correlacionar pressão, demanda e controle de compressor",
+      "kind": "inspection",
+      "intent": "Analisar alarmes e registros existentes de pressão, capacidade, admissão, válvulas, sensores e consumo, sem interpretar perda de pressão como fuga confirmada.",
+      "sourceIds": [
+        "SANDVIK-DR410I-TRANSIT-GUIDE-REV-C-2023",
+        "SANDVIK-DR410i-SPEC",
+        "SANDVIK-DI650I-S5-SPEC",
+        "KAESER-COMPRESSED-AIR-SAFETY-2019"
+      ],
+      "safety": "Não usar limites de partida do guia de trânsito DR410i como tolerâncias universais nem provocar alarme ou queda de pressão para testar hipótese.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
+    },
+    {
+      "id": "ACT-AIR-PRESS-ENGINEERING-DISPOSITION",
+      "label": "Revisar evidências e decidir componente e integridade do vaso",
+      "kind": "inspection",
+      "intent": "Reunir inspeções aprovadas, BOM, históricos e contraprovas para separar hipótese de falha de mangueira, vedação, vaso, sensor ou controle.",
+      "sourceIds": [
+        "SANDVIK-DR410I-TRANSIT-GUIDE-REV-C-2023",
+        "SANDVIK-DR410i-SPEC",
+        "SANDVIK-DI650I-S5-SPEC",
+        "KAESER-COMPRESSED-AIR-SAFETY-2019"
+      ],
+      "safety": "Não soldar, remendar, substituir, rearmar ou liberar vaso e linhas sem avaliação de risco, qualificação da equipe, procedimento OEM e requisitos legais.",
+      "requiresApplicableOemProcedure": true,
+      "executionStatus": "not_performed",
+      "observedResults": [],
+      "intervalHours": null
     }
   ],
   "damageHypotheses": [
@@ -3883,6 +4088,72 @@
         "causeCode": null
       },
       "confirmed": false
+    },
+    {
+      "id": "DMG-AIR-PRESS-HOSE-THROUGHLEAK-CANDIDATE",
+      "label": "Possível falha física de parede ou terminal de mangueira de ar",
+      "componentRole": "mangueira_ar_pressurizada",
+      "requiredEvidence": "Confirmar fisicamente o local exato do vazamento em mangueira identificada, distinguindo abrasão superficial, junta de conexão e causa pelo método aprovado da máquina.",
+      "sourceIds": [
+        "SANDVIK-DR410I-TRANSIT-GUIDE-REV-C-2023",
+        "SANDVIK-DR410i-SPEC",
+        "SANDVIK-DI650I-S5-SPEC",
+        "KAESER-COMPRESSED-AIR-SAFETY-2019"
+      ],
+      "kind": "candidate_component_damage",
+      "reviewStatus": "not_approved",
+      "catalogMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageCode": null,
+        "causeCode": null
+      },
+      "confirmed": false
+    },
+    {
+      "id": "DMG-AIR-PRESS-JOINT-SEAL-CANDIDATE",
+      "label": "Possível dano físico de vedação na conexão pneumática",
+      "componentRole": "vedacao_pneumatica",
+      "requiredEvidence": "Comprovar comprometimento da vedação específica sem atribuir vazamento ao tubo, mangueira, válvula ou vaso adjacente, com inspeção e manual por série.",
+      "sourceIds": [
+        "SANDVIK-DR410I-TRANSIT-GUIDE-REV-C-2023",
+        "SANDVIK-DR410i-SPEC",
+        "SANDVIK-DI650I-S5-SPEC",
+        "KAESER-COMPRESSED-AIR-SAFETY-2019"
+      ],
+      "kind": "candidate_component_damage",
+      "reviewStatus": "not_approved",
+      "catalogMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageCode": null,
+        "causeCode": null
+      },
+      "confirmed": false
+    },
+    {
+      "id": "DMG-AIR-PRESS-RECEIVER-WALL-CANDIDATE",
+      "label": "Possível dano estrutural físico na parede do reservatório de ar",
+      "componentRole": "parede_vaso_ar",
+      "requiredEvidence": "Exigir avaliação especializada do vaso e comprovação de dano em parede, espessura ou trinca por método autorizado, sem classificar o recipiente como mangueira VPAR.",
+      "sourceIds": [
+        "SANDVIK-DR410I-TRANSIT-GUIDE-REV-C-2023",
+        "SANDVIK-DR410i-SPEC",
+        "SANDVIK-DI650I-S5-SPEC",
+        "KAESER-COMPRESSED-AIR-SAFETY-2019"
+      ],
+      "kind": "candidate_component_damage",
+      "reviewStatus": "not_approved",
+      "catalogMapping": {
+        "modelId": null,
+        "locationId": null,
+        "componentCode": null,
+        "damageCode": null,
+        "causeCode": null
+      },
+      "confirmed": false
     }
   ],
   "bundles": [
@@ -4662,6 +4933,45 @@
         "SANDVIK-DI650I-ROTARY-BROCHURE-2020",
         "SANDVIK-DI650I-ROTARY-OEM-PAGE",
         "SANDVIK-DR410I-TWO-STAGE-ROTARY-OEM"
+      ],
+      "mappingScope": "generic_only",
+      "status": "review_candidate",
+      "observedConditionIds": [],
+      "performedActionIds": [],
+      "confirmedDamageIds": [],
+      "automaticDamagePromotion": false,
+      "evidenceInterpretation": "sem_resultado_de_campo"
+    },
+    {
+      "id": "BUNDLE-24",
+      "ruleId": "drill-compressor-pressure",
+      "conditionIds": [
+        "COND-AIR-PRESS-LOW-RECEIVER",
+        "COND-AIR-PRESS-AUDIBLE-LEAK",
+        "COND-AIR-PRESS-HOSE-WEAR",
+        "COND-AIR-PRESS-JOINT-LEAK",
+        "COND-AIR-PRESS-RECEIVER-RISK",
+        "COND-AIR-PRESS-FLOW-DEVIATION"
+      ],
+      "actionIds": [
+        "ACT-AIR-PRESS-SERIAL-CIRCUIT",
+        "ACT-AIR-PRESS-ISOLATE-VERIFY",
+        "ACT-AIR-PRESS-STATIC-DIFFERENTIAL",
+        "ACT-AIR-PRESS-OPERATING-DIFFERENTIAL",
+        "ACT-AIR-PRESS-ENGINEERING-DISPOSITION"
+      ],
+      "differentialDamageIds": [
+        "DMG-AIR-PRESS-HOSE-THROUGHLEAK-CANDIDATE",
+        "DMG-AIR-PRESS-JOINT-SEAL-CANDIDATE",
+        "DMG-AIR-PRESS-RECEIVER-WALL-CANDIDATE"
+      ],
+      "chainIds": [],
+      "interpretation": "Pressão baixa, ruído de escape, cobertura de mangueira, interface de conexão, anomalia em vaso e vazão reduzida são indícios não equivalentes. Controle da admissão, compressor, sensores, demanda e restrições podem simular vazamento. O VPAR SAP não registra Mangueira como componente confirmado, exigindo curadoria independente; vaso, mangueira e conexão são peças distintas. Não transferir DR410i para DI650i. Isolar todas as energias e verificar pressão zero antes de qualquer intervenção; nenhum diagnóstico físico ou código SAP homologado.",
+      "sourceIds": [
+        "SANDVIK-DR410I-TRANSIT-GUIDE-REV-C-2023",
+        "SANDVIK-DR410i-SPEC",
+        "SANDVIK-DI650I-S5-SPEC",
+        "KAESER-COMPRESSED-AIR-SAFETY-2019"
       ],
       "mappingScope": "generic_only",
       "status": "review_candidate",
@@ -6677,6 +6987,132 @@
       "to": "DMG-ROTARY-BEARING-SEAL-CANDIDATE",
       "type": "rule_lists_differential_damage",
       "meaning": "Dano apenas candidato, sem prova mecânica e SAP",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-224",
+      "from": "BUNDLE-24",
+      "to": "COND-AIR-PRESS-LOW-RECEIVER",
+      "type": "rule_monitors_condition",
+      "meaning": "Hipótese sem observação, execução ou confirmação SAP",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-225",
+      "from": "BUNDLE-24",
+      "to": "COND-AIR-PRESS-AUDIBLE-LEAK",
+      "type": "rule_monitors_condition",
+      "meaning": "Hipótese sem observação, execução ou confirmação SAP",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-226",
+      "from": "BUNDLE-24",
+      "to": "COND-AIR-PRESS-HOSE-WEAR",
+      "type": "rule_monitors_condition",
+      "meaning": "Hipótese sem observação, execução ou confirmação SAP",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-227",
+      "from": "BUNDLE-24",
+      "to": "COND-AIR-PRESS-JOINT-LEAK",
+      "type": "rule_monitors_condition",
+      "meaning": "Hipótese sem observação, execução ou confirmação SAP",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-228",
+      "from": "BUNDLE-24",
+      "to": "COND-AIR-PRESS-RECEIVER-RISK",
+      "type": "rule_monitors_condition",
+      "meaning": "Hipótese sem observação, execução ou confirmação SAP",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-229",
+      "from": "BUNDLE-24",
+      "to": "COND-AIR-PRESS-FLOW-DEVIATION",
+      "type": "rule_monitors_condition",
+      "meaning": "Hipótese sem observação, execução ou confirmação SAP",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-230",
+      "from": "BUNDLE-24",
+      "to": "ACT-AIR-PRESS-SERIAL-CIRCUIT",
+      "type": "rule_proposes_action",
+      "meaning": "Hipótese sem observação, execução ou confirmação SAP",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-231",
+      "from": "BUNDLE-24",
+      "to": "ACT-AIR-PRESS-ISOLATE-VERIFY",
+      "type": "rule_proposes_action",
+      "meaning": "Hipótese sem observação, execução ou confirmação SAP",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-232",
+      "from": "BUNDLE-24",
+      "to": "ACT-AIR-PRESS-STATIC-DIFFERENTIAL",
+      "type": "rule_proposes_action",
+      "meaning": "Hipótese sem observação, execução ou confirmação SAP",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-233",
+      "from": "BUNDLE-24",
+      "to": "ACT-AIR-PRESS-OPERATING-DIFFERENTIAL",
+      "type": "rule_proposes_action",
+      "meaning": "Hipótese sem observação, execução ou confirmação SAP",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-234",
+      "from": "BUNDLE-24",
+      "to": "ACT-AIR-PRESS-ENGINEERING-DISPOSITION",
+      "type": "rule_proposes_action",
+      "meaning": "Hipótese sem observação, execução ou confirmação SAP",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-235",
+      "from": "BUNDLE-24",
+      "to": "DMG-AIR-PRESS-HOSE-THROUGHLEAK-CANDIDATE",
+      "type": "rule_lists_differential_damage",
+      "meaning": "Hipótese sem observação, execução ou confirmação SAP",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-236",
+      "from": "BUNDLE-24",
+      "to": "DMG-AIR-PRESS-JOINT-SEAL-CANDIDATE",
+      "type": "rule_lists_differential_damage",
+      "meaning": "Hipótese sem observação, execução ou confirmação SAP",
+      "reviewStatus": "interpretacao_inferida",
+      "observed": false
+    },
+    {
+      "id": "REL-237",
+      "from": "BUNDLE-24",
+      "to": "DMG-AIR-PRESS-RECEIVER-WALL-CANDIDATE",
+      "type": "rule_lists_differential_damage",
+      "meaning": "Hipótese sem observação, execução ou confirmação SAP",
       "reviewStatus": "interpretacao_inferida",
       "observed": false
     }

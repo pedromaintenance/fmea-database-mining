@@ -21,7 +21,7 @@ const same=(a,b)=>JSON.stringify(a)===JSON.stringify(b);
 const byId=x=>new Map(x.map(v=>[v.id,v]));
 function verify(m,f,policy){
  const errors=[],ck=(v,id)=>{if(!v)errors.push(id)};
- ck(m?.version==='1.3.21'&&m?.conditions?.length===95&&m?.actions?.length===72&&m?.damageHypotheses?.length===45&&m?.bundles?.length===23&&m?.relations?.length===223,'ontology_version_or_counts');
+ ck(m?.version==='1.3.22'&&m?.conditions?.length===101&&m?.actions?.length===77&&m?.damageHypotheses?.length===48&&m?.bundles?.length===24&&m?.relations?.length===237,'ontology_version_or_counts');
  ck(m?.observations?.length===0&&m?.workOrderExecutions?.length===0&&m?.confirmedComponentDamages?.length===0,'fabricated_field_records');
  ck(policy?.schema==='fmea-mining.pm-implement-cylinder-differentials.v1'&&policy?.version==='1.3.50'&&policy?.ontologyVersion==='1.3.15'&&policy?.ruleId==='implement-cylinder','policy_identity');
  ck(same(policy?.classes?.map(x=>x.conditionId),condIds)&&policy?.classes?.every(x=>x.competingCauses.length>=3&&x.decision.length>25),'missing_differentials');
@@ -56,7 +56,7 @@ function verify(m,f,policy){
  const rel=m.relations.filter(x=>x.from==='BUNDLE-17');
  ck(rel.length===16&&same(rel.map(x=>x.id),Array.from({length:16},(_,i)=>'REL-'+String(i+124).padStart(3,'0'))),'relations_missing');
  ck(rel.every(x=>x.observed===false&&x.reviewStatus==='interpretacao_inferida'&&[...condIds,...actionIds,...damageIds].includes(x.to)&&x.type===(condIds.includes(x.to)?'rule_monitors_condition':actionIds.includes(x.to)?'rule_proposes_action':'rule_lists_differential_damage')),'relation_mismatch');
- ck(f?.version==='1.3.21'&&f?.status==='synthetic_assertions_not_real_events'&&f?.cases.length===42,'fixture_baseline');
+ ck(f?.version==='1.3.22'&&f?.status==='synthetic_assertions_not_real_events'&&f?.cases.length===44,'fixture_baseline');
  for(const [id,conds,act] of [
   ['SEM-29',['COND-IMPL-CYL-DRIFT','COND-IMPL-CIRCUIT-VALVE-LEAK'],'ACT-IMPL-CYL-DRIFT-CHARACTERIZE'],
   ['SEM-30',['COND-IMPL-CIRCUIT-PRESSURE-LOW','COND-IMPL-CYL-ROD-SURFACE'],'ACT-IMPL-CYL-CIRCUIT-PRESSURE-CHECK']
@@ -68,7 +68,7 @@ function verify(m,f,policy){
 }
 const errors=[...verify(model,fix,p)];
 const coverage=validateSemanticCrosswalkInputs(model,seed,crossPolicy);errors.push(...coverage.errors);
-if(!(coverage.coverage.totalSeeds===25&&coverage.coverage.modeledRules===23&&coverage.coverage.unmodeledRuleIds.length===2&&coverage.coverage.sharedGenericNodes===11&&coverage.coverage.sharedDamageNodes===0))errors.push('coverage_or_sharing_regression');
+if(!(coverage.coverage.totalSeeds===25&&coverage.coverage.modeledRules===24&&coverage.coverage.unmodeledRuleIds.length===1&&coverage.coverage.sharedGenericNodes===11&&coverage.coverage.sharedDamageNodes===0))errors.push('coverage_or_sharing_regression');
 if(gaps.length!==10||links.length!==115)errors.push('pm_link_or_exception_drift');
 const clone=x=>JSON.parse(JSON.stringify(x));
 const modelMutations=[

@@ -2,6 +2,14 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.58] — 2026-10-24 — Estanqueidade pneumática, pressão diferencial e bloqueio VPAR
+
+- BUNDLE-24 para `drill-compressor-pressure`: seis condições, cinco ações propostas, três danos candidatos, quatorze relações e dois casos sintéticos.
+- Distinguidos pressão baixa, perda de vazão, ruído, mangueira, vedação e vaso, sem confundir consumo/controle com vazamento confirmado.
+- Bloqueio SAP `component_not_registered` preservado: VPAR não registra Mangueira; zero remapeamentos aprovados.
+- Ontologia 1.3.22: 101 condições, 77 ações, 48 danos, 24 bundles, 237 relações e 44 casos sintéticos; cobertura PM 24/25.
+- Auditor de 42 mutações, 10 gates pendentes, 18 salvaguardas e seis limites nulos; sem execução, teste pressurizado, dano confirmado ou alteração de consumidores.
+
 ## [1.3.57] — 2026-10-24 — Rolamento de cabeça rotativa, módulos e indícios não causais
 
 - BUNDLE-23 para `drill-rotary-bearing`: 6 condições não observadas, 5 ações não executadas, 3 danos candidatos, 14 relações tipadas e 2 casos sintéticos.
