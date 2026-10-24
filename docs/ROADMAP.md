@@ -1,6 +1,6 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 24/10/2026 · **Ciclo:** catálogo técnico v1.3.59 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 24/10/2026 · **Ciclo:** catálogo técnico v1.3.60 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
 
@@ -38,6 +38,20 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 | Enriquecimento | 12 roteiros classificados por falha funcional, sintomas e técnicas | Anotação manual, não prova de causa |
 
 **Observação:** as 159 tarefas de PM com subgrupo candidato foram obtidas em extração local anterior e **não** representam 159 associações homologadas. Contagens de vínculos estritos serão publicadas pelo relatório automático após cada alteração do gerador.
+
+## Ciclo — 24/10/2026: matriz de maturidade e aprovação responsável (v1.3.60)
+
+- [x] Matriz determinística de 25 regras PM, com sete gates e proveniência individual das fontes genéricas.
+- [x] Fila existente de dez bloqueios: cinco P0 e cinco P1, sem recalcular criticidade ou inventar RPN.
+- [x] As 15 regras sem exceção permanecem não homologadas e sem classificação de prioridade adicionada.
+- [x] Critérios de evidência mínima preservados para cada exceção, sem copiar dados OEM privados.
+- [x] Auditor com 24 mutações para detectar evidência falsa, aprovação SAP, alteração de bloqueios ou confusão de escopo.
+- [ ] **Engenharia/OEM:** confrontar manual, peça e arquitetura por série e variante.
+- [ ] **PCM/dados mestres:** revisar em ambiente autorizado os dez bloqueios PM×SAP com evidências rastreáveis.
+- [ ] **Confiabilidade/Operação:** obter laudos/inspeções discriminantes reais com governança de segurança.
+- [ ] **Próximo ciclo:** contrato de intake de evidência restrita e histórico de decisões por regra.
+
+**Estado:** 25/25 bundles conceituais; nenhuma efetividade por série, falha real ou aprovação SAP registrada. [Relatório](CICLO_2026-10-24_MATURIDADE_FMEA.md).
 
 ## Ciclo — 24/10/2026: filtragem de compressor e fechamento conceitual (v1.3.59)
 

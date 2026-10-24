@@ -86,6 +86,8 @@ jobs:
         run: npm run pm:drill:pressure:audit
       - name: Auditar filtragem de compressor, funcoes e bloqueio COMR
         run: npm run pm:drill:filter:audit
+      - name: Auditar maturidade FMEA de 25 regras e fila de homologacao
+        run: npm run pm:maturity:audit
       - name: Validar 10 bloqueios PM e 7 requisitos de efetividade OEM D9
         run: npm run pm:exceptions:validate
       - name: Gerar vínculos diagnósticos por modelo
@@ -200,6 +202,7 @@ jobs:
             reports/pm-drill-rotary.generated.json
             reports/pm-drill-pressure.generated.json
             reports/pm-drill-filter.generated.json
+            reports/pm-maturity.generated.json
             reports/public-knowledge.v1.json
             reports/public-manifest.v1.json
             data/governance/public-content-releases.v1.json
