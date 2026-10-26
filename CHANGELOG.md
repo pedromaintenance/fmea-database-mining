@@ -2,6 +2,13 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.65] — 2026-10-26 — Prontidão de investigação P0 e pedidos documentais por modelo
+
+- Cinco P0 em três sistemas, 15 hipóteses com evidência discriminante e contraprova, todos sem validação de campo.
+- Trinta e cinco posições de chaves candidatas de modelo (não equipamentos) e sete tipos de pedidos cada: 245 lacunas de evidência **no repositório público**, sem afirmar inexistência de documentos corporativos.
+- Preservados papéis e limitações das fontes Cat/SAP; nenhum PN, série, limite OEM, ativo, OS, inspeção ou código SAP aprovado.
+- Biblioteca determinística, auditor de 53 mutações e integração ao CI/QA. Ontologia 1.3.23, matriz de maturidade 1.3.60, 25 bundles, 115 vínculos candidatos e dez bloqueios PM×SAP intactos.
+
 ## [1.3.64] — 2026-10-24 — Segregação de decisões de evidência, engenharia, SAP e operação
 
 - Quatro trilhas de decisão independentes; pacote sintético derivado de dois preflights P0 com 68 requisitos ainda sem verificação e cinco classes de recibo por caso.
