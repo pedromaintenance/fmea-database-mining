@@ -1,6 +1,6 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 24/10/2026 · **Ciclo:** catálogo técnico v1.3.64 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 26/10/2026 · **Ciclo:** catálogo técnico v1.3.65 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
 
@@ -38,6 +38,20 @@ O objetivo não é maximizar número de combinações. É obter **relações mec
 | Enriquecimento | 12 roteiros classificados por falha funcional, sintomas e técnicas | Anotação manual, não prova de causa |
 
 **Observação:** as 159 tarefas de PM com subgrupo candidato foram obtidas em extração local anterior e **não** representam 159 associações homologadas. Contagens de vínculos estritos serão publicadas pelo relatório automático após cada alteração do gerador.
+
+## Ciclo — 26/10/2026: prontidão de investigação por sistema e chave de modelo (v1.3.65)
+
+- [x] Cinco regras P0 organizadas em três sistemas: arrefecimento, combustível e hidráulica, preservando bloqueios SAP e fontes originais.
+- [x] Quinze hipóteses com evidência discriminante e contraprova; diferenças entre condição de fluido, dano de componente e causa.
+- [x] Matriz determinística de 35 posições de **chaves genéricas** (5 regras × 7 candidatos), explicitamente não inventário de equipamentos reais.
+- [x] Sete classes de solicitação por posição, total de 245 lacunas de **comprovação no repositório público**, não 245 documentos privados comprovadamente ausentes.
+- [x] Auditor com 53 ataques contra confirmação fictícia de modelo/série, OEM, campo, segurança e SAP.
+- [ ] **Engenharia/OEM:** em ambiente privado, relacionar primeiro chaves de modelo aos ativos reais e validar série, BOM e revisões documentais.
+- [ ] **PCM/Dados Mestres:** confrontar os cinco P0 à árvore SAP sem transferir HSVV ou aprovar pares de dano/causa por analogia.
+- [ ] **Segurança/Manutenção:** autorizar métodos discriminantes e garantir isolamento de energias antes de qualquer inspeção real.
+- [ ] **Próximo ciclo:** registrar classificações não aplicáveis e documentar evidência de aplicabilidade apenas em infraestrutura corporativa autorizada.
+
+**Estado:** zero ativos, séries, testes e aprovações reais; oito gates privados continuam NO-GO. [Relatório](CICLO_2026-10-26_INVESTIGACAO_P0.md).
 
 ## Ciclo — 24/10/2026: matriz de decisões independentes sobre evidências (v1.3.64)
 

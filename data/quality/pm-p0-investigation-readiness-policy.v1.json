@@ -1,0 +1,219 @@
+{
+  "schema": "fmea-mining.pm-p0-investigation-readiness-policy.v1",
+  "version": "1.3.65",
+  "asOfDate": "2026-10-26",
+  "basis": "source_registry_and_repository_gap_matrix_only_not_private_OEM_SIS_or_SAP",
+  "inputVersions": {
+    "catalog": "1.3.64",
+    "maturity": "1.3.60",
+    "p0": "1.3.62",
+    "ontology": "1.3.23",
+    "runbook": "1.3.62"
+  },
+  "scope": {
+    "p0Rules": 5,
+    "candidateModelKeysPerRule": 7,
+    "expectedCandidateSlots": 35,
+    "actualFleetAssetsConfirmed": 0,
+    "actualSerialNumbersConfirmed": 0,
+    "realOEMManualsApplied": 0
+  },
+  "evidenceRequests": [
+    {
+      "id": "ASSET-ID",
+      "type": "asset_identity",
+      "ask": "Identificar ativo, família, variante, motor, série e configuração em registro privado autorizado",
+      "answer": "Identidade e relação entre código genérico EQ/CAT e equipamento real com efetividade verificada"
+    },
+    {
+      "id": "OEM-MANUAL",
+      "type": "manufacturer_OEM_manual",
+      "ask": "Obter OMM/serviço OEM com edição/revisão e aplicabilidade para a série",
+      "answer": "Procedimento, limites e segurança aplicáveis à série e variante"
+    },
+    {
+      "id": "OEM-SCHEMATIC",
+      "type": "manufacturer_drawing",
+      "ask": "Conferir desenho técnico, esquema hidráulico, combustível ou arrefecimento pertinente",
+      "answer": "Arquitetura funcional real, localização de circuitos e hipóteses concorrentes"
+    },
+    {
+      "id": "OEM-BOM",
+      "type": "manufacturer_parts_book",
+      "ask": "Verificar BOM/arranjo e revisões/substituições dos componentes por série",
+      "answer": "Componente, posição e função fisicamente montados, sem transplantar PN de outras máquinas"
+    },
+    {
+      "id": "OEM-TEST",
+      "type": "manufacturer_diagnostic_criteria",
+      "ask": "Identificar critério, tolerância, instrumento, contexto e procedimento de diagnóstico específico",
+      "answer": "Medições verificáveis e interpretação sob condições de teste aprovadas"
+    },
+    {
+      "id": "FIELD-EVIDENCE",
+      "type": "controlled_field_evidence",
+      "ask": "Planejar inspeção segura e obtenção de prova física diferenciadora, sem registrar dados reais no GitHub",
+      "answer": "Sintoma, mecanismo, dano e possível causa confirmados ou refutados separadamente"
+    },
+    {
+      "id": "SAP-BOM",
+      "type": "functional_location_masterdata",
+      "ask": "Validar árvore SAP, objeto técnico, função, subgrupo, códigos de dano/causa e aprovação independente",
+      "answer": "Decisão formal de Dados Mestres distinta de aceite técnico e de liberação operacional"
+    }
+  ],
+  "hypothesisDifferentials": {
+    "cooling-radiator-blockage": [
+      {
+        "id": "RAD-EXT-AIR",
+        "candidate": "Sujidade externa/restrição do fluxo de ar na colmeia",
+        "confirmWith": "Observação segura e documentada das faces e evidência OEM de fluxo de ar no conjunto identificado",
+        "refuteOrCompete": "Aumento térmico também decorre de ventilador, carga, ambiente e sensor sem obstrução externa",
+        "kind": "condition_not_damaged_core"
+      },
+      {
+        "id": "RAD-INT-COOLANT",
+        "candidate": "Restrição interna da circulação de fluido",
+        "confirmWith": "Procedimento OEM de diagnóstico da circulação e evidência de impedimento interno na peça por série",
+        "refuteOrCompete": "Bomba, válvula termostática, nível e mistura/condição do fluido podem produzir o mesmo efeito",
+        "kind": "candidate_mechanism_not_confirmed"
+      },
+      {
+        "id": "RAD-INSTRUMENT",
+        "candidate": "Leitura elevada ou irregular com mecanismo físico não localizado",
+        "confirmWith": "Confronto de carga, condição térmica, ponto do sensor e método metrológico OEM",
+        "refuteOrCompete": "Erro de sensor/ligação ou regime de carga podem explicar temperatura sem danificar trocador",
+        "kind": "diagnostic_counterhypothesis"
+      }
+    ],
+    "fuel-filter-contamination": [
+      {
+        "id": "FUEL-FILTER-ELEMENT",
+        "candidate": "Restrição ou degradação física do elemento filtrante",
+        "confirmWith": "BOM por série, diferencial de pressão conforme OEM e inspeção autorizada do elemento identificado",
+        "refuteOrCompete": "Restrição pode estar em linha, válvula, bomba ou fonte de abastecimento",
+        "kind": "candidate_mechanism_not_confirmed"
+      },
+      {
+        "id": "FUEL-FLUID-WATER",
+        "candidate": "Água ou partículas presentes no combustível sem dano de filtro",
+        "confirmWith": "Amostragem representativa, método analítico e cadeia de custódia pré-intervenção quando seguro",
+        "refuteOrCompete": "Tanque, transporte, armazenamento ou coleta podem explicar contaminantes independentemente do elemento",
+        "kind": "fluid_condition_not_damage"
+      },
+      {
+        "id": "FUEL-HSVV-LOCATION",
+        "candidate": "Filtro associado a subgrupo HSVV sem componente cadastrado",
+        "confirmWith": "Comparar diagrama OEM, BOM de filtro/separador e cadastro funcional SAP do objeto real",
+        "refuteOrCompete": "HSVV pode corresponder a mangueiras e válvulas sem incluir filtro, mesmo no mesmo sistema",
+        "kind": "sap_mapping_candidate_not_approved"
+      }
+    ],
+    "fuel-tank-water": [
+      {
+        "id": "TANK-WATER-SOURCE",
+        "candidate": "Água no tanque proveniente de abastecimento, armazenamento ou condensação",
+        "confirmWith": "Amostras representativas de tanque/fornecimento com procedimento e histórico rastreável",
+        "refuteOrCompete": "Água observada não prova falha física do dreno e exige controle de contaminação de coleta",
+        "kind": "fluid_condition_not_damage"
+      },
+      {
+        "id": "TANK-DRAIN-MECHANISM",
+        "candidate": "Dreno ou vedação do tanque com falha física independente",
+        "confirmWith": "Teste e inspeção física do componente efetivo somente por procedimento OEM desenergizado",
+        "refuteOrCompete": "Água acumulada pode ocorrer com dreno íntegro e sem falha de vedação",
+        "kind": "candidate_component_damage"
+      },
+      {
+        "id": "TANK-METHOD-QUALITY",
+        "candidate": "Anomalia da amostra sem confirmação de contaminação operacional",
+        "confirmWith": "Pontos/recipientes de coleta, identificação do compartimento e contraprova por método validado",
+        "refuteOrCompete": "Contaminação durante manuseio/coleta pode imitar água em tanque",
+        "kind": "sampling_counterhypothesis"
+      }
+    ],
+    "hydraulic-hose-leak": [
+      {
+        "id": "HOSE-THROUGH-LEAK",
+        "candidate": "Fuga localizada na parede ou terminação de mangueira hidráulica",
+        "confirmWith": "Inspeção controlada com isolamento e evidência de origem física no componente por série",
+        "refuteOrCompete": "Óleo na cobertura pode escorrer de vedação, flange ou válvula adjacente",
+        "kind": "candidate_component_damage"
+      },
+      {
+        "id": "HOSE-JOINT-LEAK",
+        "candidate": "Fuga em vedação ou conexão distinta da parede da mangueira",
+        "confirmWith": "Confirmar ponto de origem no engate/vedação após bloqueio de pressões residuais",
+        "refuteOrCompete": "Mancha em união não prova ruptura de parede ou terminal",
+        "kind": "candidate_component_damage"
+      },
+      {
+        "id": "HOSE-SAP-HIERARCHY",
+        "candidate": "Associação indevida de HSVV ao circuito hidráulico de implementos",
+        "confirmWith": "Diagrama OEM de linha/montagem e árvore SAP com posição efetiva conferida",
+        "refuteOrCompete": "HSVV registrado em outro sistema não demonstra pertinência no circuito de implementos",
+        "kind": "sap_mapping_candidate_not_approved"
+      }
+    ],
+    "hydraulic-hose-abrasion": [
+      {
+        "id": "HOSE-COVER-RUBBING",
+        "candidate": "Marca de atrito ou desgaste externo da capa",
+        "confirmWith": "Fotografias em condição despressurizada, roteamento real, interferências e método de inspeção OEM",
+        "refuteOrCompete": "Marca de contato pode ser superficial sem perda de estanqueidade ou reforço",
+        "kind": "condition_not_damaged_core"
+      },
+      {
+        "id": "HOSE-REINFORCEMENT",
+        "candidate": "Possível dano físico ao reforço estrutural da mangueira",
+        "confirmWith": "Evidência técnica autorizada da condição do reforço e critérios OEM de substituição por aplicação",
+        "refuteOrCompete": "Capa visualmente marcada não basta para afirmar reforço atingido ou pressão insegura",
+        "kind": "candidate_component_damage"
+      },
+      {
+        "id": "HOSE-ROUTING",
+        "candidate": "Causa de interferência/roteamento incompatível com configuração montada",
+        "confirmWith": "Desenho OEM, suportes, proteção, movimentação de conjunto e histórico de modificações",
+        "refuteOrCompete": "Atrito aparente também pode decorrer de alteração isolada de suporte, não da montagem original",
+        "kind": "cause_hypothesis_not_confirmed"
+      }
+    ]
+  },
+  "safetyConstraints": {
+    "common": [
+      "Apenas solicitação documental: não autoriza inspeção, manutenção ou medição real",
+      "Procedimento por máquina/série, AR/LOTO e equipe habilitada são pré-requisitos operacionais",
+      "Todos os dados privados de ativo, série, BOM, PN, medidas e anexos ficam fora do GitHub",
+      "Sem aprovação automática da engenharia, SAP, causa raiz ou liberação operacional"
+    ],
+    "arrefecimento": [
+      "Não abrir circuito de arrefecimento quente ou pressurizado",
+      "Não aplicar água de alta pressão em aletas nem assumir fluxo/temperatura de descarte"
+    ],
+    "combustivel": [
+      "Isolar pressão e fontes de ignição; controlar vazamento e descarte ambiental",
+      "Coletar amostra antes da troca/drenagem quando indicado por procedimento e seguro"
+    ],
+    "hidraulico": [
+      "Despressurizar todas as energias armazenadas; não procurar fuga usando mãos ou proximidade corporal",
+      "Não apertar conexões ou movimentar linha sob pressão; avaliação de integridade por profissionais habilitados"
+    ]
+  },
+  "gateOrder": [
+    "identity",
+    "serial_oem",
+    "bom_function",
+    "diagnostic_criteria",
+    "field_counterevidence",
+    "engineering_signoff",
+    "sap_change_control"
+  ],
+  "decisionRule": "PUBLIC_NO_GO_UNTIL_CORPORATE_PRIVATE_VERIFICATION",
+  "approvedMeasurements": 0,
+  "approvedSapMappings": 0,
+  "actualAssetIdentitiesStored": 0,
+  "noAutoRemap": true,
+  "noCommonOEMThresholds": true,
+  "noRiskScoreWithoutCriticality": true,
+  "noRealActionExecution": true
+}
