@@ -16,6 +16,22 @@ Antes de ampliar hipoteticamente o número de documentos requeridos, agora organ
 
 Os pacotes são ordenados por **prioridade documental preexistente P0, depois P1, depois sem prioridade**, nunca pelo volume das 84 rejeições. Isso impede que um sistema com mais combinações catalogadas ganhe artificialmente uma severidade de falha maior.
 
+## Resultado reproduzido pela auditoria
+
+| Métrica | Valor |
+| --- | ---: |
+| Famílias em revisão P0 (documental) | 3 |
+| Famílias com apenas P1 | 4 |
+| Famílias sem exceção classificada | 6 |
+| Exceções P0 / P1 | 5 / 5 |
+| Rejeições estruturais: hidráulico | 64 |
+| Rejeições estruturais: combustível | 19 |
+| Rejeições estruturais: arrefecimento | 1 |
+| Demais famílias: rejeições no filtro atual | 0 |
+| Auditoria adversarial | **66/66 rejeições**, 0 erros |
+
+A distribuição das rejeições reflete quantas instâncias de caminho foram consideradas pelas regras de cada família. **Não demonstra que hidráulica tenha risco operacional maior**, não estabelece criticidade, severidade FMEA, índices RPN ou custo de manutenção. A fila P0/P1 mantém a prioridade documental **original** do catálogo.
+
 ## Receitas de investigação por tipo de bloqueio
 
 | Bloqueio | Pergunta de engenharia | Evidência antes de propor mudança |
