@@ -163,7 +163,7 @@ attack('policy_no_responsible',(i)=>i.policy.raci[0].R=[]);
 attack('policy_duplicate_check',(i)=>i.policy.raci[1].checkId=i.policy.raci[0].checkId);
 attack('policy_manual_case_approval',(i)=>i.policy.raci[0].corporateAssignmentRecorded=true);
 attack('policy_approval_fields_filled',(i)=>i.policy.decisions[0].actualSignatory='REAL');
-attack('policy_override_outcome',(i)=>i.policy.decisions[0].outcomeOptions.push('AUTOMATIC_APPROVE');
+attack('policy_override_outcome',(i)=>i.policy.decisions[0].outcomeOptions.push('AUTOMATIC_APPROVE'));
 attack('policy_mismatched_anchor',(i)=>i.policy.decisions[0].anchorCheckId='SEC01-L01');
 attack('policy_independent_roles_removed',(i)=>i.policy.raci[1].C=[]);
 attack('policy_acceptance_marked_passed',(i)=>i.policy.acceptanceConditions[0].satisfied=true);
