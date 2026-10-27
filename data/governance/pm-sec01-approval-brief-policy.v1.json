@@ -31,7 +31,7 @@
     {
       "id": "SEC01-A01",
       "stream": "sponsor_and_scope",
-      "reviewQuestion": "Formal project sponsor and accountable corporate owner identified",
+      "reviewQuestion": "Identify a formal accountable corporate project sponsor and confirm the authorized review function and accountable decision owner.",
       "privateProofRequired": "Documented sponsorship and accountable owner approved in corporate system"
     },
     {
@@ -49,7 +49,7 @@
     {
       "id": "SEC01-L01",
       "stream": "oem_license",
-      "reviewQuestion": "Identify license owner and permitted use of OEM documentation",
+      "reviewQuestion": "Identify the corporate holder of OEM documentation access rights and determine who is authorized to review the applicable license terms.",
       "privateProofRequired": "OEM access and usage terms verified by authorized legal/licensing function"
     },
     {
