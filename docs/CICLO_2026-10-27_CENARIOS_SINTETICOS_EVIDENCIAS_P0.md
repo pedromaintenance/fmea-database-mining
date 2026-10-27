@@ -24,6 +24,21 @@ Os 15 diferenciais de v1.3.69 e o blueprint de v1.3.70 são fontes; não criamos
 
 **Cada classe é avaliada uma vez para cada piloto: 18 casos sintéticos.** O recebimento de dados aparentemente bons **não promove** o estado de hipótese, dano, causa ou SAP. Os nomes dos estados são sugestões de rota para uma implementação corporativa futura, e não tickets ou solicitações realmente enviados.
 
+## Evidência dos testes automatizados
+
+| Métrica verificada | Resultado |
+| --- | ---: |
+| Situações documentais distintas | 9 |
+| Candidatos a piloto inteiramente sintéticos | 2 |
+| Combinações situação × piloto | 18 |
+| Casos por resultado do classificador | 2 (cada um dos 9 resultados) |
+| Provas funcionais de precedência e entradas inesperadas | 27/27 |
+| Tentativas adversariais de promoção indevida rejeitadas | 59/59 |
+| Exemplos de slots sintéticos de recibo nas situações | 84 |
+| Documentos reais recebidos / OS abertas / aprovações SAP / liberações | 0 / 0 / 0 |
+
+Os 84 exemplos são representações de estados de recibo em casos hipotéticos, **não evidências recebidas ou documentos existentes**. O teste inclusive rejeita campos inesperados que tentem inserir tags, informações confidenciais ou supostas assinaturas na estrutura pública.
+
 ## Critérios de proteção
 
 1. A entrada deve conter **exatamente sete campos sintéticos permitidos**, com enumerações estritas. Tag, série, token real, URLs, assinatura ou propriedades desconhecidas são rejeitadas.
