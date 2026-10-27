@@ -2,6 +2,12 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.73] — 2026-10-27 — Pacote de submissão corporativa SEC-01
+
+- Dossiê público e rastreável para reunião com Governança, detentor de direitos OEM e área de Privacidade: três trilhas, nove perguntas/comprovações e critérios de aceite/rejeição sem emitir conclusão jurídica ou contratual.
+- Sete cenários sintéticos de patrocínio ausente, escopo indefinido, licenças incompatíveis/não analisadas, avaliação de privacidade pendente, publicação imprópria e cenário favorável ainda sem atestação; nenhum desbloqueia o gate.
+- Auditor de integridade e antiautomação integrado a QA/CI, com relatório gerado; permanece 8/8 gates privados, dez exceções SAP bloqueadas, nenhuma assinatura, licença real ou OS.
+
 ## [1.3.72] — 2026-10-27 — Prontidão de homologação corporativa e dependências de gates
 
 - Deriva, sem alterar estados, oito gates SEC-01–PIL-08 do runbook corporativo e suas dependências, responsáveis, artefatos de comprovação e lacunas privadas verificáveis.
