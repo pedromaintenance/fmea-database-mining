@@ -103,7 +103,7 @@ export function assessPmFunctionalReviewWorkpacks(inputs,report){
  ck(reconciliation.rows.length===25&&reconciliation.sharedSubgroups.length===1,'upstream_rows');
  ck(seeds.records.length===25&&gaps.records.length===10&&gaps.records.every(g=>g.autoRemapAllowed===false&&g.observedFailures===0&&g.status==='bloqueado_aguardando_curadoria'&&g.sourceIds.length>0),'source_gap_blocks');
  ck(maturity.summary.conceptuallyModeled===25&&maturity.summary.sapExceptionsBlocked===10&&maturity.summary.candidatePreventiveLinks===115&&maturity.summary.serialOemVerified===0&&maturity.summary.fieldConfirmed===0&&maturity.summary.sapMappingsApproved===0,'maturity_preserved');
- ck(staged.version==='1.3.66'&&staged.summary.realAssetsVerified===0&&staged.summary.privateRequestsSent===0&&staged.summary.result==='NO_GO','private_context_not_fabricated');
+ ck(staged.version==='1.3.66'&&staged.summary.actualAssetsVerified===0&&staged.summary.privateRequestsSent===0&&staged.summary.result==='NO_GO','private_context_not_fabricated');
  ck(report.schema==='fmea-mining.pm-functional-review-workpacks.v1'&&report.version==='1.3.68'&&report.nature==='public_documentary_triage_not_safety_risk_score_or_approved_work_plan','output_identity');
  const s=report.summary;
  ck(s.families===13&&s.seedRules===25&&s.exceptions===10&&s.p0Exceptions===5&&s.p1Exceptions===5&&s.unrankedNonexceptionRules===15&&s.rejectedPathInstances===84&&s.candidateLinkInstances===115&&s.activeCandidateRules===15&&s.sharedSubgroupStrings===1,'summary_reconciled');
