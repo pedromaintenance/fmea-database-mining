@@ -36,6 +36,24 @@ O relatório reconstrói os candidatos públicos `TEST-PILOT-RADIATOR-001` e `TE
 
 As trilhas de Engenharia, cadastro SAP e autorização operacional não podem se validar mutuamente. A verificação do documento é distinta da qualidade da observação e da confirmação do dano; confirmar dano não é, por si só, confirmar sua causa.
 
+## Resultado reproduzido no CI
+
+| Indicador | Resultado |
+| --- | ---: |
+| Regras P0 com protocolo | 5 |
+| Hipóteses qualitativas | 15 |
+| Pedidos documentais hipotéticos associados a hipóteses | 64 |
+| Slots por hipótese para classes de recibo (deduplicados) | 67 |
+| Pilotos públicos sintéticos / reais selecionados | 2 / 0 |
+| Slots de recibo ainda não recebido nos pilotos | 10 |
+| Checklist por piloto | 34 |
+| Instâncias totais de checklist | 68 |
+| Trilhas de decisão independentes | 8 |
+| Mutações adversariais rejeitadas | **79/79** |
+| Evidências corporativas recebidas, decisões aprovadas ou ativos reais | **0** |
+
+Os 67 slots de recibo, os 64 pedidos documentais associados e as 68 verificações são três conjuntos **distintos** de requisitos documentais e de controle; não somá-los como documentos existentes, solicitações enviadas ou testes de campo executados.
+
 ## Sequência que precisaria existir no ambiente corporativo privado
 
 ```text
