@@ -1,0 +1,46 @@
+{
+  "schema": "fmea-mining.pm-functional-reconciliation-policy.v1",
+  "version": "1.3.67",
+  "asOfDate": "2026-10-27",
+  "predecessor": "1.3.66",
+  "basis": "public_SAP_derived_catalogue_and_existing_candidate_links_not_private_OEM_effectivity",
+  "purpose": "classify_structural_matching_and_narrow_per_rule_validation_queue",
+  "stageOrder": [
+    "model_and_leaf",
+    "full_system_root_and_group",
+    "requested_subgroup",
+    "component_description_in_object_type",
+    "permitted_damage_cause_pair",
+    "existing_generated_candidate_link"
+  ],
+  "interpretation": {
+    "zeroLinks": "not_proof_of_absent_physical_component",
+    "validLink": "structural_catalogue_candidate_not_installed_or_approved",
+    "rejectedBySystem": "catalogue_rule_path_mismatch_not_confirmed_machine_configuration",
+    "counting": "path_instances_per_rule_not_distinct_machines",
+    "preexistingP0": "documentary_exception_priority_not_machine_safety_risk"
+  },
+  "differentialGuards": {
+    "sharedSubgroupMustUseSystemAndGroup": true,
+    "neverMatchBySubgroupAlone": true,
+    "checkModelAndLeafDepth": true,
+    "checkComponentTypeAndDescription": true,
+    "checkDamageCauseEligibility": true,
+    "keepOldExceptionsBlocked": true,
+    "noAutomaticSAPRecoding": true,
+    "noOEMSerialAssertion": true,
+    "noRealFieldEvidence": true,
+    "noSafetySeverityFromCount": true
+  },
+  "publicClaims": {
+    "assetIdentitiesRecorded": 0,
+    "serialEffectivityVerified": 0,
+    "fieldInspectionsPerformed": 0,
+    "confirmedComponentDamages": 0,
+    "confirmedCauses": 0,
+    "engineeringApprovals": 0,
+    "sapApprovals": 0,
+    "operationalReleases": 0
+  },
+  "userAction": "Review functional hierarchy and licensed OEM/BOM in authorized private systems before proposing data-master changes"
+}

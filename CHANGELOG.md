@@ -2,6 +2,12 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.67] — 2026-10-27 — Reconciliação funcional das 25 regras PM
+
+- Adiciona auditoria determinística das seis etapas de qualificação de cada regra: folhas por modelo, subgrupo em pais concorrentes, rejeição de sistema/grupo, componente por tipo de objeto, par dano–causa elegível e equivalência com vínculos gerados.
+- Diferencia candidatos estruturais, exceções PM×SAP e ausência de candidato sem inferir inexistência física; quantifica colisões como HSVV entre circuitos sem remapear código SAP.
+- CI/QA com 16 testes funcionais sintéticos, 45 mutações adversariais e relatório gerado. Preserva 25 bundles, 115 vínculos candidatos, dez bloqueios de curadoria, ontologia 1.3.23 e gates NO-GO privados.
+
 ## [1.3.66] — 2026-10-27 — Triagem de chaves P0 e aplicabilidade em etapas
 
 - Reorganiza as 35 posições candidatas da v1.3.65 em sete templates de chave e 35 gates de identidade/aplicabilidade; posterga seis classes documentais por posição (210) até verificação privada, sem interpretar os 245 slots como documentos ausentes.
