@@ -1,0 +1,199 @@
+{
+  "schema": "fmea-mining.pm-corporate-readiness-closure-policy.v1",
+  "version": "1.3.72",
+  "asOfDate": "2026-10-27",
+  "predecessor": "1.3.71",
+  "purpose": "consolidate proven public synthetic checks and unfulfilled corporate predeployment dependencies without asserting production readiness",
+  "requiredGateOrder": [
+    "SEC-01",
+    "ID-02",
+    "STO-03",
+    "AUD-04",
+    "RET-05",
+    "REV-06",
+    "STG-07",
+    "PIL-08"
+  ],
+  "gateProofCriteria": [
+    {
+      "gateId": "SEC-01",
+      "proofClass": "corporate_authorization_and_OEM_license",
+      "verificationQuestion": "Identify sponsor and privacy/licensing authority; verify permitted data processing and scope",
+      "privateEvidenceDescription": "Approval letter, OEM licensing evidence and assessed privacy basis from corporate controlled vault",
+      "syntheticTestsNotSufficient": true,
+      "allowPublicEvidenceEmbedding": false,
+      "privateAttestationReceived": false,
+      "reviewerIdentityConfirmed": false,
+      "gateSatisfied": false,
+      "gateDecision": "BLOCK_NOT_ATTESTED"
+    },
+    {
+      "gateId": "ID-02",
+      "proofClass": "authenticated_user_isolation",
+      "verificationQuestion": "Demonstrate SSO, MFA, least privilege and deny-by-default on restricted case scope",
+      "privateEvidenceDescription": "Corporate identity configuration, revoked-access and cross-case negative test results",
+      "syntheticTestsNotSufficient": true,
+      "allowPublicEvidenceEmbedding": false,
+      "privateAttestationReceived": false,
+      "reviewerIdentityConfirmed": false,
+      "gateSatisfied": false,
+      "gateDecision": "BLOCK_NOT_ATTESTED"
+    },
+    {
+      "gateId": "STO-03",
+      "proofClass": "private_document_custody",
+      "verificationQuestion": "Demonstrate segregated encrypted vault, per-case ACL, document provenance and integrity",
+      "privateEvidenceDescription": "Vault security attestation, access audit and licensed document integrity review",
+      "syntheticTestsNotSufficient": true,
+      "allowPublicEvidenceEmbedding": false,
+      "privateAttestationReceived": false,
+      "reviewerIdentityConfirmed": false,
+      "gateSatisfied": false,
+      "gateDecision": "BLOCK_NOT_ATTESTED"
+    },
+    {
+      "gateId": "AUD-04",
+      "proofClass": "immutable_replay_protected_decisions",
+      "verificationQuestion": "Demonstrate externally verifiable reviewers, event signatures, anti-replay and append-only event chain",
+      "privateEvidenceDescription": "Signed audit records, key rotation and revocation failure tests in private environment",
+      "syntheticTestsNotSufficient": true,
+      "allowPublicEvidenceEmbedding": false,
+      "privateAttestationReceived": false,
+      "reviewerIdentityConfirmed": false,
+      "gateSatisfied": false,
+      "gateDecision": "BLOCK_NOT_ATTESTED"
+    },
+    {
+      "gateId": "RET-05",
+      "proofClass": "approved_retention_and_disposal",
+      "verificationQuestion": "Establish approved retention, legal holds and evidence of controlled disposal",
+      "privateEvidenceDescription": "Approved retention schedule, legal hold policy and private destruction ledger",
+      "syntheticTestsNotSufficient": true,
+      "allowPublicEvidenceEmbedding": false,
+      "privateAttestationReceived": false,
+      "reviewerIdentityConfirmed": false,
+      "gateSatisfied": false,
+      "gateDecision": "BLOCK_NOT_ATTESTED"
+    },
+    {
+      "gateId": "REV-06",
+      "proofClass": "separate_engineering_SAP_lanes",
+      "verificationQuestion": "Demonstrate OEM series-specific evidence review, independent engineer decision and separate SAP change request",
+      "privateEvidenceDescription": "OEM applicability record; distinct independently signed engineering review and SAP masterdata workflow",
+      "syntheticTestsNotSufficient": true,
+      "allowPublicEvidenceEmbedding": false,
+      "privateAttestationReceived": false,
+      "reviewerIdentityConfirmed": false,
+      "gateSatisfied": false,
+      "gateDecision": "BLOCK_NOT_ATTESTED"
+    },
+    {
+      "gateId": "STG-07",
+      "proofClass": "isolated_end_to_end_negative_staging",
+      "verificationQuestion": "Exercise access denial, cross-tenant isolation, evidence tampering and error handling with independent acceptance",
+      "privateEvidenceDescription": "Staging test transcript, adverse cases, vulnerability remediation and reviewers' acceptance",
+      "syntheticTestsNotSufficient": true,
+      "allowPublicEvidenceEmbedding": false,
+      "privateAttestationReceived": false,
+      "reviewerIdentityConfirmed": false,
+      "gateSatisfied": false,
+      "gateDecision": "BLOCK_NOT_ATTESTED"
+    },
+    {
+      "gateId": "PIL-08",
+      "proofClass": "pilot_change_board_decision",
+      "verificationQuestion": "Record committee go/no-go after all prerequisite gates and documented rollback/monitoring",
+      "privateEvidenceDescription": "Change-board minutes, security/privacy/engineering acceptance, rollback and monitoring plan",
+      "syntheticTestsNotSufficient": true,
+      "allowPublicEvidenceEmbedding": false,
+      "privateAttestationReceived": false,
+      "reviewerIdentityConfirmed": false,
+      "gateSatisfied": false,
+      "gateDecision": "BLOCK_NOT_ATTESTED"
+    }
+  ],
+  "documentedReadiness": "PUBLIC_DESIGN_AND_TEST_COVERAGE_ONLY",
+  "corporateReadiness": "NOT_ATTESTED_PRIVATE_INFRASTRUCTURE",
+  "pilotReadiness": "NO_GO_NO_REAL_ASSET_OR_SERIAL_OEM",
+  "allowedNextPrivateStep": "SEC-01_SPONSOR_LICENSE_PRIVACY_AUTHORIZATION",
+  "pilotChecklistCategories": [
+    "identity",
+    "oem",
+    "safe_execution",
+    "measurement_quality",
+    "diagnosis",
+    "independent_review",
+    "sap_change"
+  ],
+  "separateDecisions": [
+    "documentary_readiness",
+    "engineering_validation",
+    "sap_masterdata_change",
+    "operational_release"
+  ],
+  "caseRequirements": [
+    {
+      "kind": "identity",
+      "privateEvidenceType": "actual_asset_model_variant_serial_and_configuration"
+    },
+    {
+      "kind": "OEM",
+      "privateEvidenceType": "licensed_revision_effective_manual_BOM_and_schematic"
+    },
+    {
+      "kind": "metrology",
+      "privateEvidenceType": "safe_method_calibration_uncertainty_and_context"
+    },
+    {
+      "kind": "differential",
+      "privateEvidenceType": "counterevidence_and_mechanism_exclusion_or_inconclusion"
+    },
+    {
+      "kind": "custody",
+      "privateEvidenceType": "authenticated_limited_access_evidence_integrity_signature"
+    },
+    {
+      "kind": "engineering",
+      "privateEvidenceType": "independent_engineering_disposition"
+    },
+    {
+      "kind": "SAP",
+      "privateEvidenceType": "separate_authorized_masterdata_change_request"
+    },
+    {
+      "kind": "operations",
+      "privateEvidenceType": "independent_operational_go_no_go"
+    }
+  ],
+  "safety": {
+    "noLiveStorageProvisioned": true,
+    "noActualAssetNamesOrSerials": true,
+    "noRealOEMDocumentsOrMeasurements": true,
+    "noSyntheticTestMeansCorporateAcceptance": true,
+    "noCounterevidenceAutoPromotion": true,
+    "noHumanReviewerSignatureInvented": true,
+    "noAutomaticSapCoding": true,
+    "noWorkOrdersCreated": true,
+    "noOperationalRelease": true,
+    "independentLanesRequired": true,
+    "blockedPhasesCannotBeMarkedPassed": true,
+    "privateDataMustStayOutsideGitHub": true,
+    "documentedTestPassDoesNotProveFieldReadiness": true,
+    "existingP0AndP1SapBlocksUnchanged": true,
+    "noRiskRankingFromCounts": true
+  },
+  "baseline": {
+    "priorScenarioTypes": 9,
+    "priorSyntheticEvaluations": 18,
+    "priorP0Hypotheses": 15,
+    "priorPublicPilots": 2,
+    "priorCheckInstances": 68,
+    "priorPrivateGatesBlocked": 8,
+    "priorSAPExceptionsBlocked": 10,
+    "realAssetsSelected": 0,
+    "verifiedOEMSeries": 0,
+    "privateAttestations": 0,
+    "realWorkOrders": 0,
+    "goDecisions": 0
+  }
+}

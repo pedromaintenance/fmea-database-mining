@@ -2,6 +2,12 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.72] — 2026-10-27 — Prontidão de homologação corporativa e dependências de gates
+
+- Deriva, sem alterar estados, oito gates SEC-01–PIL-08 do runbook corporativo e suas dependências, responsáveis, artefatos de comprovação e lacunas privadas verificáveis.
+- Consolida 18 cenários sintéticos, 15 hipóteses P0, dois candidatos a piloto, 68 requisitos de checklist ainda não verificados e oito classes de evidência privada; distingue cobertura pública de testes de capacidade operacional real.
+- Relatório determinístico, testes adversariais e integração QA/CI. Mantém NO-GO, dez exceções PM×SAP e sem implantação privada, evidência OEM real, OS ou alteração de consumidores.
+
 ## [1.3.71] — 2026-10-27 — Cenários sintéticos de qualidade da evidência P0
 
 - Adiciona nove situações documentais e metrológicas por piloto público de radiador e filtro de combustível (18 avaliações), com classificação fail-closed e responsável por revisão humana; indícios favoráveis não aprovam hipótese, causa, SAP ou operação.
