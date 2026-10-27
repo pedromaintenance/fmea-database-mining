@@ -2,6 +2,12 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.70] — 2026-10-27 — Blueprint de intake e custódia de evidências P0
+
+- Crosswalk determinístico entre 15 diagnósticos diferenciais (v1.3.69), sete classes documentais, cinco tipos de recibo do intake v1.3.61 e quatro trilhas decisórias v1.3.64.
+- Integra dois pilotos inteiramente sintéticos preexistentes com 34 verificações e quatro decisões independentes por caso, todos sem recibo, assinatura, efetividade OEM ou autorização real.
+- Auditor adversarial, QA/CI e relatório auditável. Sem backend privado, sem SAP/OS e sem alteração dos 25 bundles ou consumidores.
+
 ## [1.3.69] — 2026-10-27 — Discriminação de hipóteses e contraprovas P0
 
 - Cinco dossiês P0 (radiador, filtragem de combustível, água no tanque, fuga e abrasão hidráulica) e quinze diferenciais fundamentados nas hipóteses e fontes versionadas em 1.3.65.
