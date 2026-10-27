@@ -1,0 +1,255 @@
+{
+  "schema": "fmea-mining.pm-p0-synthetic-evidence-outcomes-policy.v1",
+  "version": "1.3.71",
+  "asOfDate": "2026-10-27",
+  "predecessor": "1.3.70",
+  "purpose": "stress_test_existing_synthetic_P0_evidence_intake_with_trust_boundaries_and_no_approval",
+  "syntheticCasePrefix": "TEST-PILOT-",
+  "existingPilotRules": [
+    "cooling-radiator-blockage",
+    "fuel-filter-contamination"
+  ],
+  "intakeKinds": [
+    "oem_effectivity",
+    "oem_procedure",
+    "field_observation",
+    "counterevidence",
+    "measurement_quality"
+  ],
+  "inputEnums": {
+    "identity": [
+      "missing",
+      "synthetic_candidate"
+    ],
+    "provenance": [
+      "not_provided",
+      "synthetic_consistent",
+      "invalid"
+    ],
+    "applicability": [
+      "unknown",
+      "synthetic_match",
+      "mismatch"
+    ],
+    "receiptMode": [
+      "none",
+      "partial",
+      "all"
+    ],
+    "methodQuality": [
+      "not_assessed",
+      "synthetic_adequate",
+      "unreliable"
+    ],
+    "counterevidence": [
+      "missing",
+      "synthetic_considered",
+      "conflicting"
+    ],
+    "observation": [
+      "not_recorded",
+      "apparently_supportive",
+      "conflicting",
+      "nondiscriminating"
+    ]
+  },
+  "scenarios": [
+    {
+      "id": "identity_missing",
+      "expect": "REQUEST_IDENTITY",
+      "title": "Sem identidade do ativo",
+      "overrides": {
+        "identity": "missing"
+      },
+      "fields": {
+        "identity": "missing",
+        "provenance": "synthetic_consistent",
+        "applicability": "synthetic_match",
+        "receiptMode": "all",
+        "methodQuality": "synthetic_adequate",
+        "counterevidence": "synthetic_considered",
+        "observation": "apparently_supportive"
+      }
+    },
+    {
+      "id": "missing_documents",
+      "expect": "REQUEST_DOCUMENTATION",
+      "title": "Documentação incompleta",
+      "overrides": {
+        "receiptMode": "partial"
+      },
+      "fields": {
+        "identity": "synthetic_candidate",
+        "provenance": "synthetic_consistent",
+        "applicability": "synthetic_match",
+        "receiptMode": "partial",
+        "methodQuality": "synthetic_adequate",
+        "counterevidence": "synthetic_considered",
+        "observation": "apparently_supportive"
+      }
+    },
+    {
+      "id": "invalid_provenance",
+      "expect": "REJECT_UNTRUSTED_EVIDENCE",
+      "title": "Origem/custódia inválida",
+      "overrides": {
+        "provenance": "invalid"
+      },
+      "fields": {
+        "identity": "synthetic_candidate",
+        "provenance": "invalid",
+        "applicability": "synthetic_match",
+        "receiptMode": "all",
+        "methodQuality": "synthetic_adequate",
+        "counterevidence": "synthetic_considered",
+        "observation": "apparently_supportive"
+      }
+    },
+    {
+      "id": "oem_mismatch",
+      "expect": "REJECT_WRONG_APPLICABILITY",
+      "title": "Documento não efetivo à configuração",
+      "overrides": {
+        "applicability": "mismatch"
+      },
+      "fields": {
+        "identity": "synthetic_candidate",
+        "provenance": "synthetic_consistent",
+        "applicability": "mismatch",
+        "receiptMode": "all",
+        "methodQuality": "synthetic_adequate",
+        "counterevidence": "synthetic_considered",
+        "observation": "apparently_supportive"
+      }
+    },
+    {
+      "id": "counterevidence_absent",
+      "expect": "REQUEST_COUNTEREVIDENCE",
+      "title": "Sem contraprova",
+      "overrides": {
+        "counterevidence": "missing"
+      },
+      "fields": {
+        "identity": "synthetic_candidate",
+        "provenance": "synthetic_consistent",
+        "applicability": "synthetic_match",
+        "receiptMode": "all",
+        "methodQuality": "synthetic_adequate",
+        "counterevidence": "missing",
+        "observation": "apparently_supportive"
+      }
+    },
+    {
+      "id": "conflicting_results",
+      "expect": "HOLD_CONFLICTING_EVIDENCE",
+      "title": "Dados conflitantes",
+      "overrides": {
+        "counterevidence": "conflicting",
+        "observation": "conflicting"
+      },
+      "fields": {
+        "identity": "synthetic_candidate",
+        "provenance": "synthetic_consistent",
+        "applicability": "synthetic_match",
+        "receiptMode": "all",
+        "methodQuality": "synthetic_adequate",
+        "counterevidence": "conflicting",
+        "observation": "conflicting"
+      }
+    },
+    {
+      "id": "poor_measurement_quality",
+      "expect": "HOLD_METROLOGY_REVIEW",
+      "title": "Medição sem qualidade demonstrada",
+      "overrides": {
+        "methodQuality": "unreliable"
+      },
+      "fields": {
+        "identity": "synthetic_candidate",
+        "provenance": "synthetic_consistent",
+        "applicability": "synthetic_match",
+        "receiptMode": "all",
+        "methodQuality": "unreliable",
+        "counterevidence": "synthetic_considered",
+        "observation": "apparently_supportive"
+      }
+    },
+    {
+      "id": "apparently_favorable",
+      "expect": "HOLD_PRIVATE_INDEPENDENT_REVIEW",
+      "title": "Indícios aparentemente favoráveis",
+      "overrides": {},
+      "fields": {
+        "identity": "synthetic_candidate",
+        "provenance": "synthetic_consistent",
+        "applicability": "synthetic_match",
+        "receiptMode": "all",
+        "methodQuality": "synthetic_adequate",
+        "counterevidence": "synthetic_considered",
+        "observation": "apparently_supportive"
+      }
+    },
+    {
+      "id": "nondiscriminating",
+      "expect": "HOLD_INCONCLUSIVE",
+      "title": "Observação sem poder discriminante",
+      "overrides": {
+        "observation": "nondiscriminating"
+      },
+      "fields": {
+        "identity": "synthetic_candidate",
+        "provenance": "synthetic_consistent",
+        "applicability": "synthetic_match",
+        "receiptMode": "all",
+        "methodQuality": "synthetic_adequate",
+        "counterevidence": "synthetic_considered",
+        "observation": "nondiscriminating"
+      }
+    }
+  ],
+  "priorityOfEvaluation": [
+    "UNTRUSTED",
+    "OEM_MISMATCH",
+    "IDENTITY_GAP",
+    "DOCUMENT_GAP",
+    "COUNTEREVIDENCE_GAP",
+    "CONFLICT",
+    "METROLOGY",
+    "NO_DISCRIMINATING_OBSERVATION",
+    "APPARENT_SUPPORT"
+  ],
+  "humanRouting": {
+    "REJECT_UNTRUSTED_EVIDENCE": "technical_document_controller",
+    "REJECT_WRONG_APPLICABILITY": "technical_document_controller",
+    "REQUEST_IDENTITY": "technical_document_controller",
+    "REQUEST_DOCUMENTATION": "technical_document_controller",
+    "REQUEST_COUNTEREVIDENCE": "independent_maintenance_engineer",
+    "HOLD_CONFLICTING_EVIDENCE": "independent_maintenance_engineer",
+    "HOLD_METROLOGY_REVIEW": "independent_maintenance_engineer",
+    "HOLD_INCONCLUSIVE": "independent_maintenance_engineer",
+    "HOLD_PRIVATE_INDEPENDENT_REVIEW": "independent_maintenance_engineer"
+  },
+  "alwaysBlockedDecisions": [
+    "engineering_validation",
+    "sap_masterdata_change",
+    "operational_release"
+  ],
+  "safetyAndGovernance": {
+    "onlySyntheticFixtures": true,
+    "noActualEquipmentOrSerial": true,
+    "noActualPrivateEvidence": true,
+    "noRealVerifierOrCustody": true,
+    "noLiveExternalAction": true,
+    "noAutomaticEvidentiaryAcceptance": true,
+    "noDiagnosisOrRootCausePromotion": true,
+    "noSAPChange": true,
+    "noOperationalRelease": true,
+    "rejectUnexpectedFields": true,
+    "rejectUnknownEnums": true,
+    "failClosedOnUnrecognizedScenario": true,
+    "existingDocumentaryBlockersUnchanged": true,
+    "existingEightInfrastructureGatesBlocked": true,
+    "independentSignoffsRemainRequired": true
+  },
+  "knownLimitations": "A seemingly favorable synthetic fixture is a control-flow test, not verified OEM evidence or an approved field result; no FMEA severity/RPN inferred."
+}
