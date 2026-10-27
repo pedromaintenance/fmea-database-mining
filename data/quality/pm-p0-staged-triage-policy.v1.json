@@ -1,0 +1,83 @@
+{
+  "schema": "fmea-mining.pm-p0-staged-triage-policy.v1",
+  "version": "1.3.66",
+  "asOfDate": "2026-10-27",
+  "predecessor": "1.3.65",
+  "nature": "public_templates_for_private_OEM_SAP_applicability_review_not_asset_inventory",
+  "firstGate": {
+    "requestId": "ASSET-ID",
+    "distinctKeyTemplates": 7,
+    "ruleByKeyPositions": 35,
+    "privatePossibleOutcomes": [
+      "applicable",
+      "not_applicable",
+      "requires_more_evidence"
+    ],
+    "publicStatus": "unverified"
+  },
+  "deferredRequestIds": [
+    "OEM-MANUAL",
+    "OEM-SCHEMATIC",
+    "OEM-BOM",
+    "OEM-TEST",
+    "FIELD-EVIDENCE",
+    "SAP-BOM"
+  ],
+  "stages": [
+    {
+      "id": "generic_key_crosswalk",
+      "level": 0,
+      "publicState": "template_only"
+    },
+    {
+      "id": "rule_functional_applicability",
+      "level": 1,
+      "publicState": "unverified"
+    },
+    {
+      "id": "serial_effective_OEM_documents",
+      "level": 2,
+      "publicState": "deferred"
+    },
+    {
+      "id": "controlled_evidence_and_counterevidence",
+      "level": 3,
+      "publicState": "not_authorized"
+    },
+    {
+      "id": "independent_human_decisions",
+      "level": 4,
+      "publicState": "blocked"
+    }
+  ],
+  "requiredPrivateFunctionalChecks": [
+    "model_variant_serial",
+    "OEM_effectivity",
+    "BOM_installed_function",
+    "SAP_system",
+    "SAP_group",
+    "SAP_subgroup",
+    "SAP_component_object_type",
+    "SAP_damage_cause_permissions"
+  ],
+  "publicAssumptions": {
+    "keyIsVerifiedAsset": false,
+    "privateDocumentsRequested": false,
+    "serialOEMVerified": false,
+    "systemGroupSubgroupApproved": false,
+    "fieldDataReceived": false,
+    "engineeringReviewApproved": false,
+    "sapChangeApproved": false,
+    "operationReleased": false
+  },
+  "safety": {
+    "preserveTenSapExceptions": true,
+    "preserveEightPrivateNoGoGates": true,
+    "subgroupAloneNeverSufficient": true,
+    "sharedHSVVAcrossSystemsNeverInterchangeable": true,
+    "noAutomaticRemap": true,
+    "noRiskRankWithoutCriticality": true,
+    "noRealPrivateDataInPublicOutput": true
+  },
+  "interpretation": "Seven tokens are not machines, 35 rule-key positions are not installed configurations, 245 candidate documentary-class slots are not sent requests or documents known to be missing privately."
+}
