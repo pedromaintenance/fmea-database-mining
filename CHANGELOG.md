@@ -6,7 +6,7 @@ Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, in
 
 - Adiciona auditoria determinística das seis etapas de qualificação de cada regra: folhas por modelo, subgrupo em pais concorrentes, rejeição de sistema/grupo, componente por tipo de objeto, par dano–causa elegível e equivalência com vínculos gerados.
 - Diferencia candidatos estruturais, exceções PM×SAP e ausência de candidato sem inferir inexistência física; quantifica colisões como HSVV entre circuitos sem remapear código SAP.
-- CI/QA com 16 testes funcionais sintéticos, 45 mutações adversariais e relatório gerado. Preserva 25 bundles, 115 vínculos candidatos, dez bloqueios de curadoria, ontologia 1.3.23 e gates NO-GO privados.
+- CI/QA com 16 testes funcionais sintéticos, 46 mutações adversariais e relatório gerado. Preserva 25 bundles, 115 vínculos candidatos, dez bloqueios de curadoria, ontologia 1.3.23 e gates NO-GO privados.
 
 ## [1.3.66] — 2026-10-27 — Triagem de chaves P0 e aplicabilidade em etapas
 
