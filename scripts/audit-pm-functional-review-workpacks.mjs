@@ -103,7 +103,7 @@ attack('source_omits_gap',(i)=>i.gaps.records.pop());
 attack('source_recon_omits_rejection',(i)=>i.reconciliation.summary.subgroupPathsRejectedByDifferentFunctionalParent=0);
 attack('source_maturity_false_field',(i)=>i.maturity.summary.fieldConfirmed=1);
 attack('source_maturity_SAP_approved',(i)=>i.maturity.summary.sapMappingsApproved=1);
-attack('source_staged_real_asset',(i)=>i.staged.summary.realAssetsVerified=1);
+attack('source_staged_real_asset',(i)=>i.staged.summary.actualAssetsVerified=1);
 const audit={status:errors.length?'FAIL':'OK',assessment:tested.status,mutationCount:mutations.length,mutationsRejected:mutations.filter(x=>x.rejected).length,mutations,errors};
 const report={...result,audit};
 fs.mkdirSync(path.join(root,'reports'),{recursive:true});
