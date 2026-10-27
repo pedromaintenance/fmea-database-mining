@@ -2,7 +2,9 @@
 
 Banco de conhecimento **versionado** para investigar modos de falha, sintomas, evidências e causas em equipamentos móveis de mineração. Um consumidor possível é o jogo **[P.O.R.C.A.R.I.A. — Você Quebra, Eu Conserto](https://github.com/pedromaintenance/porcaria-voce-quebra-eu-conserto)**, mas o banco é independente: **este repositório não altera os consumidores**.
 
-> **Status:** versão do catálogo **1.3.73** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
+> **Status:** versão do catálogo **1.3.74** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
+
+**Ciclo v1.3.74:** [handoff corporativo SEC-01](docs/CICLO_2026-10-27_HANDOFF_CORPORATIVO_SEC01.md) estrutura 8 funções **propostas**, 9 atividades RACI sem pessoas designadas, 3 decisões ainda pendentes, 3 condições de aceite e uma pauta de 4 tópicos. Gera registro rastreável e testa assinaturas e liberações falsas; nenhuma solicitação real, decisão corporativa ou desbloqueio dos 8 gates.
 
 **Ciclo v1.3.73:** [solicitação corporativa SEC-01](docs/CICLO_2026-10-27_SEC01_SOLICITACAO_APROVACAO_CORPORATIVA.md) prepara três trilhas de revisão — patrocínio, licenciamento OEM e privacidade — com nove requisitos verificáveis e sete cenários de decisão sintéticos. Não envia solicitação, não obtém assinatura, não avalia licença real ou DPIA, nem destrava os oito gates privados, SAP ou Operação.
 
