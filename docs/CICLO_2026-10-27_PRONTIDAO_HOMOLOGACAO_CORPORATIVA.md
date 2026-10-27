@@ -27,6 +27,26 @@ Os gates foram derivados, **sem reescrever ou dar baixa**, de `data/governance/p
 
 Mesmo havendo testes sintéticos públicos, **nenhum desses gates recebeu atestação corporativa**. A fila de revisão prioriza SEC-01 porque é a raiz das dependências, não porque os outros tenham menor importância.
 
+## Resultados obtidos na auditoria CI
+
+| Indicador | Resultado |
+| --- | ---: |
+| Definições de gates corporativos | 8 |
+| Gates privados atestados / bloqueados | 0 / 8 |
+| Níveis de dependência calculados | 7 |
+| Situações sintéticas avaliadas | 18 |
+| Hipóteses P0 mantidas | 15 |
+| Candidatos públicos a piloto | 2 |
+| Itens de checklist não verificados | 68 |
+| Trilhas de decisão independentes | 8 |
+| Classes de evidência privada ainda sem comprovação | 8 |
+| Exceções SAP ainda bloqueadas | 10 |
+| Auditorias anteriores verificadas nesta etapa | 6 |
+| Mutações adversariais rejeitadas | **77/77** |
+| Ativos reais, séries OEM, medições, OS ou liberações | **0** |
+
+Os **sete níveis** são ondas de precedência da estrutura de dependências, não prazos nem autorização para executar atividades. A validação automática rejeitou falsificações de assinatura, remoção de dependências, encerramento de gates e promoção indevida de resultados simulados.
+
 ## Do desenho de teste à evidência operacional
 
 A matriz `pm-corporate-readiness-closure.generated.json` expõe:
