@@ -2,6 +2,12 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.66] — 2026-10-27 — Triagem de chaves P0 e aplicabilidade em etapas
+
+- Reorganiza as 35 posições candidatas da v1.3.65 em sete templates de chave e 35 gates de identidade/aplicabilidade; posterga seis classes documentais por posição (210) até verificação privada, sem interpretar os 245 slots como documentos ausentes.
+- Expõe raízes funcionais apenas como filtro preliminar; bloqueia uso de HSVV isolado, remapeamento SAP, hipóteses confirmadas, autorizações OEM e liberação operacional automáticos.
+- Acrescenta gerador determinístico, 55 regressões adversariais, relatório do CI e documentação do fluxo; não altera 25 bundles, dez exceções SAP, oito gates NO-GO ou consumidores externos.
+
 ## [1.3.65] — 2026-10-26 — Prontidão de investigação P0 e pedidos documentais por modelo
 
 - Cinco P0 em três sistemas, 15 hipóteses com evidência discriminante e contraprova, todos sem validação de campo.
