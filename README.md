@@ -2,7 +2,9 @@
 
 Banco de conhecimento **versionado** para investigar modos de falha, sintomas, evidências e causas em equipamentos móveis de mineração. Um consumidor possível é o jogo **[P.O.R.C.A.R.I.A. — Você Quebra, Eu Conserto](https://github.com/pedromaintenance/porcaria-voce-quebra-eu-conserto)**, mas o banco é independente: **este repositório não altera os consumidores**.
 
-> **Status:** versão do catálogo **1.3.70** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
+> **Status:** versão do catálogo **1.3.71** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
+
+**Ciclo v1.3.71:** [cenários sintéticos de evidência P0](docs/CICLO_2026-10-27_CENARIOS_SINTETICOS_EVIDENCIAS_P0.md) executa nove situações por cada um dos dois pilotos públicos: documentos insuficientes, origem inválida, OEM incompatível, contraprova ausente, conflito, metrologia não confiável, indício favorável e inconclusão. A classificação é somente encaminhamento humano futuro, sem aprovação automática, dados reais nem alteração SAP.
 
 **Ciclo v1.3.70:** [blueprint de recebimento de evidências para piloto P0](docs/CICLO_2026-10-27_BLUEPRINT_PILOTO_EVIDENCIAS_P0.md) integra 15 diferenciais e cinco classes de custódia aos dois pilotos sintéticos existentes, com 34 verificações e quatro trilhas decisórias por piloto. Metadados e contraprovas planejados, auditoria adversarial e CI; nenhuma evidência privada recebida, ativo selecionado, mudança SAP ou operação autorizada.
 
