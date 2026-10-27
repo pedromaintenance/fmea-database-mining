@@ -1,0 +1,356 @@
+{
+  "schema": "fmea-mining.pm-sec01-governance-handoff-policy.v1",
+  "version": "1.3.74",
+  "predecessor": "1.3.73",
+  "asOfDate": "2026-10-27",
+  "purpose": "Propose a traceable, non-authoritative RACI and corporate decision register for SEC-01, without nominating real signatories or granting gate access",
+  "scope": "request_private_restricted_design_review_only",
+  "raciSemantics": {
+    "A": "proposed_accountable_for_the_requested_review",
+    "R": "proposed_responsible_for_preparation",
+    "C": "proposed_consulted",
+    "I": "proposed_informed"
+  },
+  "roles": [
+    {
+      "id": "corporate_governance",
+      "label": "Governança corporativa",
+      "realPersonAssigned": false,
+      "corporateRoleVerified": false
+    },
+    {
+      "id": "corporate_project_sponsor",
+      "label": "Patrocinador corporativo",
+      "realPersonAssigned": false,
+      "corporateRoleVerified": false
+    },
+    {
+      "id": "oem_license_custodian",
+      "label": "Custódia das licenças OEM",
+      "realPersonAssigned": false,
+      "corporateRoleVerified": false
+    },
+    {
+      "id": "corporate_legal",
+      "label": "Jurídico / contratos OEM",
+      "realPersonAssigned": false,
+      "corporateRoleVerified": false
+    },
+    {
+      "id": "privacy_data_controller",
+      "label": "Privacidade / controlador",
+      "realPersonAssigned": false,
+      "corporateRoleVerified": false
+    },
+    {
+      "id": "security_architecture",
+      "label": "Arquitetura de Segurança/TI",
+      "realPersonAssigned": false,
+      "corporateRoleVerified": false
+    },
+    {
+      "id": "maintenance_engineering",
+      "label": "Engenharia de Manutenção",
+      "realPersonAssigned": false,
+      "corporateRoleVerified": false
+    },
+    {
+      "id": "corporate_records",
+      "label": "Gestão documental e retenção",
+      "realPersonAssigned": false,
+      "corporateRoleVerified": false
+    }
+  ],
+  "raci": [
+    {
+      "checkId": "SEC01-A01",
+      "A": "corporate_governance",
+      "R": [
+        "corporate_project_sponsor"
+      ],
+      "C": [
+        "maintenance_engineering"
+      ],
+      "I": [
+        "security_architecture"
+      ],
+      "proposedOnly": true,
+      "corporateAssignmentRecorded": false
+    },
+    {
+      "checkId": "SEC01-A02",
+      "A": "corporate_project_sponsor",
+      "R": [
+        "maintenance_engineering"
+      ],
+      "C": [
+        "corporate_governance",
+        "privacy_data_controller"
+      ],
+      "I": [
+        "security_architecture"
+      ],
+      "proposedOnly": true,
+      "corporateAssignmentRecorded": false
+    },
+    {
+      "checkId": "SEC01-A03",
+      "A": "corporate_governance",
+      "R": [
+        "corporate_project_sponsor"
+      ],
+      "C": [
+        "maintenance_engineering",
+        "security_architecture"
+      ],
+      "I": [
+        "privacy_data_controller"
+      ],
+      "proposedOnly": true,
+      "corporateAssignmentRecorded": false
+    },
+    {
+      "checkId": "SEC01-L01",
+      "A": "corporate_legal",
+      "R": [
+        "oem_license_custodian"
+      ],
+      "C": [
+        "maintenance_engineering"
+      ],
+      "I": [
+        "corporate_governance"
+      ],
+      "proposedOnly": true,
+      "corporateAssignmentRecorded": false
+    },
+    {
+      "checkId": "SEC01-L02",
+      "A": "corporate_legal",
+      "R": [
+        "oem_license_custodian"
+      ],
+      "C": [
+        "corporate_records",
+        "security_architecture"
+      ],
+      "I": [
+        "corporate_governance"
+      ],
+      "proposedOnly": true,
+      "corporateAssignmentRecorded": false
+    },
+    {
+      "checkId": "SEC01-L03",
+      "A": "corporate_legal",
+      "R": [
+        "oem_license_custodian"
+      ],
+      "C": [
+        "maintenance_engineering",
+        "corporate_records"
+      ],
+      "I": [
+        "privacy_data_controller"
+      ],
+      "proposedOnly": true,
+      "corporateAssignmentRecorded": false
+    },
+    {
+      "checkId": "SEC01-P01",
+      "A": "privacy_data_controller",
+      "R": [
+        "security_architecture"
+      ],
+      "C": [
+        "maintenance_engineering",
+        "corporate_records"
+      ],
+      "I": [
+        "corporate_governance"
+      ],
+      "proposedOnly": true,
+      "corporateAssignmentRecorded": false
+    },
+    {
+      "checkId": "SEC01-P02",
+      "A": "privacy_data_controller",
+      "R": [
+        "corporate_records"
+      ],
+      "C": [
+        "corporate_legal",
+        "security_architecture"
+      ],
+      "I": [
+        "corporate_governance"
+      ],
+      "proposedOnly": true,
+      "corporateAssignmentRecorded": false
+    },
+    {
+      "checkId": "SEC01-P03",
+      "A": "privacy_data_controller",
+      "R": [
+        "security_architecture",
+        "corporate_records"
+      ],
+      "C": [
+        "corporate_legal"
+      ],
+      "I": [
+        "maintenance_engineering"
+      ],
+      "proposedOnly": true,
+      "corporateAssignmentRecorded": false
+    }
+  ],
+  "decisions": [
+    {
+      "decisionId": "SEC01-DEC-SPONSOR",
+      "stream": "sponsor_and_scope",
+      "anchorCheckId": "SEC01-A01",
+      "proposedAccountableRole": "corporate_governance",
+      "requestedHumanDecision": "Obtain formal sponsorship and bound the restricted project scope",
+      "holdConditions": "Missing authorized sponsor or scope, or a purported approval that permits unrestricted real data use",
+      "outcomeOptions": [
+        "APPROVED_FOR_RESTRICTED_DESIGN_REVIEW_ONLY",
+        "RETURN_FOR_CORRECTION",
+        "DECLINED",
+        "MORE_EVIDENCE_REQUIRED"
+      ],
+      "actualDecision": null,
+      "actualSignatory": null,
+      "authorizedRoleVerified": false,
+      "corporateDecisionRecord": null,
+      "reviewedOn": null
+    },
+    {
+      "decisionId": "SEC01-DEC-OEM",
+      "stream": "oem_license",
+      "anchorCheckId": "SEC01-L01",
+      "proposedAccountableRole": "corporate_legal",
+      "requestedHumanDecision": "Obtain license rights and permitted document use assessed by authorized owner",
+      "holdConditions": "OEM terms not assessed, incompatible, or permission to retain/copy/extract is unverified",
+      "outcomeOptions": [
+        "APPROVED_FOR_RESTRICTED_DESIGN_REVIEW_ONLY",
+        "RETURN_FOR_CORRECTION",
+        "DECLINED",
+        "MORE_EVIDENCE_REQUIRED"
+      ],
+      "actualDecision": null,
+      "actualSignatory": null,
+      "authorizedRoleVerified": false,
+      "corporateDecisionRecord": null,
+      "reviewedOn": null
+    },
+    {
+      "decisionId": "SEC01-DEC-PRIVACY",
+      "stream": "privacy_and_data",
+      "anchorCheckId": "SEC01-P02",
+      "proposedAccountableRole": "privacy_data_controller",
+      "requestedHumanDecision": "Obtain lawful-use assessment and DPIA applicability decision by corporate owner",
+      "holdConditions": "Data classification, lawful-use basis or DPIA applicability not assessed by authorized function",
+      "outcomeOptions": [
+        "APPROVED_FOR_RESTRICTED_DESIGN_REVIEW_ONLY",
+        "RETURN_FOR_CORRECTION",
+        "DECLINED",
+        "MORE_EVIDENCE_REQUIRED"
+      ],
+      "actualDecision": null,
+      "actualSignatory": null,
+      "authorizedRoleVerified": false,
+      "corporateDecisionRecord": null,
+      "reviewedOn": null
+    }
+  ],
+  "acceptanceConditions": [
+    {
+      "id": "SEC01-C01",
+      "stream": "sponsor_and_scope",
+      "checkIds": [
+        "SEC01-A01",
+        "SEC01-A02",
+        "SEC01-A03"
+      ],
+      "privateAcceptanceEvidence": "signed_sponsorship_scope_restrictions",
+      "satisfied": false,
+      "corporateVerification": null
+    },
+    {
+      "id": "SEC01-C02",
+      "stream": "oem_license",
+      "checkIds": [
+        "SEC01-L01",
+        "SEC01-L02",
+        "SEC01-L03"
+      ],
+      "privateAcceptanceEvidence": "licensed_use_rights_checked_by_authorized_function",
+      "satisfied": false,
+      "corporateVerification": null
+    },
+    {
+      "id": "SEC01-C03",
+      "stream": "privacy_and_data",
+      "checkIds": [
+        "SEC01-P01",
+        "SEC01-P02",
+        "SEC01-P03"
+      ],
+      "privateAcceptanceEvidence": "documented_privacy_classification_and_DPIA_applicability_disposition",
+      "satisfied": false,
+      "corporateVerification": null
+    }
+  ],
+  "agenda": [
+    {
+      "sequence": 1,
+      "focus": "sponsor_and_scope",
+      "decisionId": "SEC01-DEC-SPONSOR",
+      "objective": "Name responsible corporate sponsor privately and determine bounded project scope"
+    },
+    {
+      "sequence": 2,
+      "focus": "oem_license",
+      "decisionId": "SEC01-DEC-OEM",
+      "objective": "Establish authorized contractual review of OEM documentation rights and restrictions"
+    },
+    {
+      "sequence": 3,
+      "focus": "privacy_and_data",
+      "decisionId": "SEC01-DEC-PRIVACY",
+      "objective": "Document classification, lawful-use assessment and DPIA determination by corporate function"
+    },
+    {
+      "sequence": 4,
+      "focus": "decision_register",
+      "decisionId": null,
+      "objective": "Record unresolved conditions and next governance owners without implying gate closure"
+    }
+  ],
+  "gateDecisionPreconditions": [
+    "authenticated_corporate_sponsor",
+    "valid_scope_and_data_classification",
+    "documented_OEM_license_rights",
+    "documented_privacy_legal_basis_and_DPIA_necessity",
+    "trusted_corporate_signatures",
+    "restricted_record_custody"
+  ],
+  "persistentDisposition": "NO_GO_UNTIL_PRIVATE_CORPORATE_REVIEW",
+  "safeHandoffRules": {
+    "noPersonOrSignerAssigned": true,
+    "noCorporateApprovalClaims": true,
+    "noMinutesOrDocumentsStoredInPublicRepo": true,
+    "noLicenseRightInvented": true,
+    "noLegalBasisOrDPIAOutcomeInferred": true,
+    "noPrivateSubmissionPerformed": true,
+    "noProductionEvidenceAccepted": true,
+    "noAutomaticGateTransition": true,
+    "noSAPOrWorkOrderWrite": true,
+    "noTechnicalFailurePromotion": true,
+    "noOperationalRelease": true,
+    "allEightGatesRemainBlocked": true,
+    "allTenSapExceptionsRemainBlocked": true,
+    "doNotTreatRaciProposalAsCorporateAuthority": true
+  }
+}
