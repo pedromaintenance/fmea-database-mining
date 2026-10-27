@@ -108,6 +108,8 @@ jobs:
         run: npm run pm:p0:discrimination:audit
       - name: Auditar blueprint de recebimento e custodia de dois pilotos P0
         run: npm run pm:p0:evidence:pilot:audit
+      - name: Simular evidencias insuficientes conflitantes invalidas e favoraveis nos pilotos P0
+        run: npm run pm:p0:scenarios:audit
       - name: Validar 10 bloqueios PM e 7 requisitos de efetividade OEM D9
         run: npm run pm:exceptions:validate
       - name: Gerar vínculos diagnósticos por modelo
@@ -233,6 +235,7 @@ jobs:
             reports/pm-functional-review-workpacks.generated.json
             reports/pm-p0-discriminative-evidence.generated.json
             reports/pm-p0-evidence-pilot-blueprints.generated.json
+            reports/pm-p0-synthetic-evidence-outcomes.generated.json
             reports/public-knowledge.v1.json
             reports/public-manifest.v1.json
             data/governance/public-content-releases.v1.json
