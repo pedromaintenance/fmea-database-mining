@@ -104,6 +104,8 @@ jobs:
         run: npm run pm:functional:reconcile:audit
       - name: Auditar pacotes de curadoria documental por familia funcional PM
         run: npm run pm:functional:review-queue:audit
+      - name: Auditar cinco P0 e quinze diagnosticos diferenciais com contraprovas
+        run: npm run pm:p0:discrimination:audit
       - name: Validar 10 bloqueios PM e 7 requisitos de efetividade OEM D9
         run: npm run pm:exceptions:validate
       - name: Gerar vínculos diagnósticos por modelo
@@ -227,6 +229,7 @@ jobs:
             reports/pm-p0-staged-triage.generated.json
             reports/pm-functional-reconciliation.generated.json
             reports/pm-functional-review-workpacks.generated.json
+            reports/pm-p0-discriminative-evidence.generated.json
             reports/public-knowledge.v1.json
             reports/public-manifest.v1.json
             data/governance/public-content-releases.v1.json

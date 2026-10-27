@@ -2,7 +2,9 @@
 
 Banco de conhecimento **versionado** para investigar modos de falha, sintomas, evidências e causas em equipamentos móveis de mineração. Um consumidor possível é o jogo **[P.O.R.C.A.R.I.A. — Você Quebra, Eu Conserto](https://github.com/pedromaintenance/porcaria-voce-quebra-eu-conserto)**, mas o banco é independente: **este repositório não altera os consumidores**.
 
-> **Status:** versão do catálogo **1.3.68** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
+> **Status:** versão do catálogo **1.3.69** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
+
+**Ciclo v1.3.69:** [diagnóstico diferencial e contraprova de cinco P0](docs/CICLO_2026-10-27_DIAGNOSTICO_DIFERENCIAL_P0.md) explicita 15 hipóteses com evidências potenciais, alternativas concorrentes e resultados inconclusivos. Reconstrói proveniência 1.3.65–1.3.68 e preserva integralmente os bloqueios OEM/SAP, sem realizar testes, aprovar códigos ou alterar consumidores.
 
 **Ciclo v1.3.68:** [pacotes de revisão documental por família funcional](docs/CICLO_2026-10-27_PACOTES_REVISAO_FUNCIONAL_PM.md) organiza as 25 regras em 13 famílias, distingue as dez exceções PM×SAP (5 P0 e 5 P1) das 15 regras com vínculos estruturais, e preserva 84 rejeições por caminho como indicador de filtro — não gravidade operacional. Receitas de evidência por bloqueio, auditoria adversarial e CI, sem homologação OEM/SAP ou dados de campo.
 

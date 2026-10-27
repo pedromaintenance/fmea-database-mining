@@ -2,6 +2,12 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.69] — 2026-10-27 — Discriminação de hipóteses e contraprovas P0
+
+- Cinco dossiês P0 (radiador, filtragem de combustível, água no tanque, fuga e abrasão hidráulica) e quinze diferenciais fundamentados nas hipóteses e fontes versionadas em 1.3.65.
+- Evidências qualitativas, mecanismos concorrentes, observações negativas/inconclusivas e classes documentais por hipótese, mantendo ASSET-ID como primeiro gate privado e decisões Engenharia/SAP/Operação independentes.
+- Auditoria adversarial, QA/CI e relatório público determinístico; sem campo realizado, confirmação de falha/causa, liberação ou alteração de consumidores.
+
 ## [1.3.68] — 2026-10-27 — Pacotes documentais por família e bloqueio PM×SAP
 
 - Treze workpacks de sistema funcional, 10 exceções rastreáveis (5 P0/5 P1), 15 regras com vínculos estruturais candidatos e proteção contra uso de contagens de rejeição como escore de risco.

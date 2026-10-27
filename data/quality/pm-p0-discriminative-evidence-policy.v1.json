@@ -1,0 +1,262 @@
+{
+  "schema": "fmea-mining.pm-p0-discriminative-evidence-policy.v1",
+  "version": "1.3.69",
+  "asOfDate": "2026-10-27",
+  "predecessor": "1.3.68",
+  "basis": "registered_public_hypotheses_and_document_requests_not_real_OEM_tests",
+  "scope": {
+    "documentaryPriority": "P0",
+    "rules": 5,
+    "hypothesesPerRule": 3,
+    "uniqueHypotheses": 15,
+    "modelKeysRemainUnverified": 7,
+    "conditionalModelPositions": 35
+  },
+  "hypothesisChecks": {
+    "cooling-radiator-blockage": [
+      {
+        "hypothesisId": "RAD-EXT-AIR",
+        "evidenceRequestIds": [
+          "ASSET-ID",
+          "OEM-MANUAL",
+          "OEM-SCHEMATIC",
+          "FIELD-EVIDENCE"
+        ],
+        "discriminatingObservation": "Documentar localização e extensão da sujidade nas faces acessíveis e confrontar com o percurso de ar específico do conjunto por série.",
+        "competingExplanationCheck": "Verificar arquitetura e funcionamento de ventilador, acionamento, carga e condição ambiente sob critérios OEM; temperatura elevada isolada não discrimina colmeia.",
+        "negativeOrInconclusiveFinding": "Sem prova de restrição no percurso de ar ou com explicação alternativa plausível: registrar inconclusivo, não atribuir dano interno ao trocador."
+      },
+      {
+        "hypothesisId": "RAD-INT-COOLANT",
+        "evidenceRequestIds": [
+          "ASSET-ID",
+          "OEM-MANUAL",
+          "OEM-SCHEMATIC",
+          "OEM-TEST",
+          "FIELD-EVIDENCE"
+        ],
+        "discriminatingObservation": "Separar evidência OEM de deficiência de circulação interna de hipótese de restrição localizada no trocador identificado.",
+        "competingExplanationCheck": "Checar bomba, termostato, nível, fluido e instrumentação usando sequência e critérios OEM para a variante.",
+        "negativeOrInconclusiveFinding": "Sem evidência localizada ou critérios de medição efetivos: não declarar obstrução interna nem abrir sistema quente."
+      },
+      {
+        "hypothesisId": "RAD-INSTRUMENT",
+        "evidenceRequestIds": [
+          "ASSET-ID",
+          "OEM-MANUAL",
+          "OEM-TEST",
+          "FIELD-EVIDENCE"
+        ],
+        "discriminatingObservation": "Comparar coerência da leitura com condição térmica independente, localização de sensor e regime de operação previstos no OEM.",
+        "competingExplanationCheck": "Distinguir indicação falsa de aumento térmico real associado a fluxo de ar, carga e circulação.",
+        "negativeOrInconclusiveFinding": "Discrepância metrológica não comprova sensor defeituoso sem ensaio correto; guardar alternativa aberta."
+      }
+    ],
+    "fuel-filter-contamination": [
+      {
+        "hypothesisId": "FUEL-FILTER-ELEMENT",
+        "evidenceRequestIds": [
+          "ASSET-ID",
+          "OEM-MANUAL",
+          "OEM-BOM",
+          "OEM-TEST",
+          "FIELD-EVIDENCE"
+        ],
+        "discriminatingObservation": "Identificar o elemento real por série e avaliar indício de restrição com método OEM sem equiparar contaminante a dano.",
+        "competingExplanationCheck": "Comparar com fontes de restrição em linhas, válvulas, bomba e abastecimento, sem atribuir automaticamente a origem ao filtro.",
+        "negativeOrInconclusiveFinding": "Sem componente identificável ou teste discriminante válido, não registrar elemento degradado nem remapear HSVV."
+      },
+      {
+        "hypothesisId": "FUEL-FLUID-WATER",
+        "evidenceRequestIds": [
+          "ASSET-ID",
+          "OEM-MANUAL",
+          "OEM-SCHEMATIC",
+          "FIELD-EVIDENCE"
+        ],
+        "discriminatingObservation": "Separar presença de água/partículas no fluido de integridade física do meio filtrante por amostragem representativa autorizada.",
+        "competingExplanationCheck": "Confrontar tanque, fornecimento, transporte, ponto de coleta e histórico, preservando custódia e contraprovas.",
+        "negativeOrInconclusiveFinding": "Amostra sem rastreabilidade ou localizada fora do equipamento não permite inferir falha do filtro."
+      },
+      {
+        "hypothesisId": "FUEL-HSVV-LOCATION",
+        "evidenceRequestIds": [
+          "ASSET-ID",
+          "OEM-SCHEMATIC",
+          "OEM-BOM",
+          "SAP-BOM"
+        ],
+        "discriminatingObservation": "Confrontar árvore completa de sistema/grupo/subgrupo e BOM por série com a função efetiva de filtração.",
+        "competingExplanationCheck": "Testar hipótese concorrente de HSVV representar somente mangueiras/válvulas mesmo sob combustível.",
+        "negativeOrInconclusiveFinding": "Sem componente de filtração demonstrado e aprovado por Dados Mestres, bloquear vínculo SAP; jamais renomear HSVV."
+      }
+    ],
+    "fuel-tank-water": [
+      {
+        "hypothesisId": "TANK-WATER-SOURCE",
+        "evidenceRequestIds": [
+          "ASSET-ID",
+          "OEM-MANUAL",
+          "FIELD-EVIDENCE"
+        ],
+        "discriminatingObservation": "Separar ocorrência de água no tanque de possível ingresso por abastecimento, armazenamento ou condensação, com cadeia de amostras válida.",
+        "competingExplanationCheck": "Confrontar água no suprimento e tanque contra integridade do dreno e variáveis de coleta, sem assumir causalidade.",
+        "negativeOrInconclusiveFinding": "Presença de água isolada não comprova dreno danificado nem causa raiz."
+      },
+      {
+        "hypothesisId": "TANK-DRAIN-MECHANISM",
+        "evidenceRequestIds": [
+          "ASSET-ID",
+          "OEM-MANUAL",
+          "OEM-BOM",
+          "OEM-TEST",
+          "FIELD-EVIDENCE"
+        ],
+        "discriminatingObservation": "Inspecionar em procedimento OEM seguro o dreno e a vedação efetivamente montados, distinguindo dano/estanqueidade de água acumulada.",
+        "competingExplanationCheck": "Confrontar com contaminação de origem externa ou dreno íntegro e verificar histórico de drenagens.",
+        "negativeOrInconclusiveFinding": "Não demonstrado defeito físico independente: não classificar dano do dreno e não forçar par dano/causa."
+      },
+      {
+        "hypothesisId": "TANK-METHOD-QUALITY",
+        "evidenceRequestIds": [
+          "ASSET-ID",
+          "OEM-MANUAL",
+          "FIELD-EVIDENCE"
+        ],
+        "discriminatingObservation": "Avaliar ponto/recipiente de coleta, identificação, branco/contraprova e repetibilidade por método aplicável.",
+        "competingExplanationCheck": "Diferenciar artefato de amostragem de contaminação persistente de tanque e fonte.",
+        "negativeOrInconclusiveFinding": "Sem validação da cadeia de custódia, a amostra permanece evidência não qualificável; não descartar outras hipóteses."
+      }
+    ],
+    "hydraulic-hose-leak": [
+      {
+        "hypothesisId": "HOSE-THROUGH-LEAK",
+        "evidenceRequestIds": [
+          "ASSET-ID",
+          "OEM-SCHEMATIC",
+          "OEM-BOM",
+          "OEM-MANUAL",
+          "FIELD-EVIDENCE"
+        ],
+        "discriminatingObservation": "Confirmar origem da fuga na parede/terminal da mangueira identificada, com equipamento isolado e pressão residual controlada.",
+        "competingExplanationCheck": "Inspecionar possibilidades de óleo migrado de flange, vedação, conexão ou válvula adjacente.",
+        "negativeOrInconclusiveFinding": "Vestígio externo sem origem demonstrada não confirma ruptura de mangueira; nunca procurar fuga com as mãos."
+      },
+      {
+        "hypothesisId": "HOSE-JOINT-LEAK",
+        "evidenceRequestIds": [
+          "ASSET-ID",
+          "OEM-SCHEMATIC",
+          "OEM-BOM",
+          "OEM-MANUAL",
+          "FIELD-EVIDENCE"
+        ],
+        "discriminatingObservation": "Distinguir fuga em junta/vedação do componente de fuga na parede do conjunto flexível, sem reaperto pressurizado.",
+        "competingExplanationCheck": "Confrontar com escoamento de pontos a montante e vedação íntegra sob procedimento OEM.",
+        "negativeOrInconclusiveFinding": "Mancha na união não prova falha do engate; qualquer intervenção exige bloqueio/despressurização."
+      },
+      {
+        "hypothesisId": "HOSE-SAP-HIERARCHY",
+        "evidenceRequestIds": [
+          "ASSET-ID",
+          "OEM-SCHEMATIC",
+          "OEM-BOM",
+          "SAP-BOM"
+        ],
+        "discriminatingObservation": "Verificar se a mangueira e seus terminais pertencem fisicamente ao circuito e ao sistema/grupo/subgrupo declarados por série.",
+        "competingExplanationCheck": "Confrontar HSVV de combustível ou outro circuito e objetos de direção/freio versus implementos.",
+        "negativeOrInconclusiveFinding": "Código HSVV idêntico em ramo distinto não valida função; manter exceção SAP bloqueada."
+      }
+    ],
+    "hydraulic-hose-abrasion": [
+      {
+        "hypothesisId": "HOSE-COVER-RUBBING",
+        "evidenceRequestIds": [
+          "ASSET-ID",
+          "OEM-MANUAL",
+          "OEM-SCHEMATIC",
+          "FIELD-EVIDENCE"
+        ],
+        "discriminatingObservation": "Documentar localização do atrito na capa em posição segura e cotejar com o roteiro, suportes e proteção efetivos.",
+        "competingExplanationCheck": "Separar marca cosmética de exposição de reforço, fuga, deformação e dano estrutural, usando critérios OEM.",
+        "negativeOrInconclusiveFinding": "Marca visual isolada não demonstra ruptura, perda de pressão ou capacidade estrutural."
+      },
+      {
+        "hypothesisId": "HOSE-REINFORCEMENT",
+        "evidenceRequestIds": [
+          "ASSET-ID",
+          "OEM-MANUAL",
+          "OEM-BOM",
+          "FIELD-EVIDENCE"
+        ],
+        "discriminatingObservation": "Verificar, com método OEM seguro, evidência diferenciadora de reforço atingido sem ensaio improvisado pressurizado.",
+        "competingExplanationCheck": "Confrontar com abrasão limitada à capa e possível óleo externo de outro componente.",
+        "negativeOrInconclusiveFinding": "Sem comprovação de reforço atingido, não atribuir dano estrutural; aplicação e critérios dependem da montagem."
+      },
+      {
+        "hypothesisId": "HOSE-ROUTING",
+        "evidenceRequestIds": [
+          "ASSET-ID",
+          "OEM-SCHEMATIC",
+          "OEM-BOM",
+          "FIELD-EVIDENCE",
+          "SAP-BOM"
+        ],
+        "discriminatingObservation": "Comparar traçado, suportes, folgas funcionais e histórico de alterações com instalação OEM aplicável.",
+        "competingExplanationCheck": "Testar se a interferência deriva de alteração de suporte, montagem anterior ou configuração original, evitando atribuição automática.",
+        "negativeOrInconclusiveFinding": "Desenho sem efetividade por série ou sem histórico não confirma causa raiz do atrito nem autoriza remapear HSVV."
+      }
+    ]
+  },
+  "interpretation": {
+    "testsAre": "qualitative_private_evidence_designs_not_performed_field_tests",
+    "signal": "candidate_discriminating_observation_requires_OEM_criteria",
+    "negative": "non_confirmation_or_competing_explanation_not_automatic_exoneration",
+    "priority": "existing_documentary_triage_not_failure_severity",
+    "hypotheses": "may_coexist_and_must_not_be_force_ranked_from_public_sources"
+  },
+  "gateOrder": [
+    "identity_and_variant",
+    "serial_OEM_and_BOM",
+    "measurement_and_safety_criteria",
+    "independent_discrimination_and_counterevidence",
+    "engineering_determination",
+    "SAP_masterdata_separate_decision",
+    "operations_separate_authorization"
+  ],
+  "causalLayers": {
+    "condition_not_damaged_core": "observed_condition_not_confirmed_component_damage",
+    "candidate_mechanism_not_confirmed": "mechanism_hypothesis_not_damage_or_root_cause",
+    "diagnostic_counterhypothesis": "alternative_indication_or_sensor_path_not_confirmed",
+    "fluid_condition_not_damage": "fluid_condition_not_component_failure",
+    "sap_mapping_candidate_not_approved": "catalogue_location_hypothesis_not_installed_component",
+    "candidate_component_damage": "physical_component_damage_hypothesis_not_confirmed",
+    "sampling_counterhypothesis": "sample_quality_alternative_not_confirmed",
+    "cause_hypothesis_not_confirmed": "possible_causal_mechanism_not_root_cause"
+  },
+  "allPublicFlags": {
+    "actualCasesReceived": 0,
+    "actualAssetIdsStored": 0,
+    "OEMSerialVerified": 0,
+    "physicalTestsPerformed": 0,
+    "confirmedComponentDamages": 0,
+    "confirmedRootCauses": 0,
+    "approvedSAPRemaps": 0,
+    "engineeringApprovals": 0,
+    "operationalReleases": 0,
+    "privateRequestsSent": 0
+  },
+  "safeguards": {
+    "noAutoDiagnosticRanking": true,
+    "noActualMeasurements": true,
+    "noThresholdInvented": true,
+    "noPrivateDocumentsInPublicRepo": true,
+    "noSubgroupAlias": true,
+    "noAutomaticSAPRemap": true,
+    "noFieldOrWorkOrderAuthorization": true,
+    "independentEngineeringReviewRequired": true,
+    "sapAndOperationalLanesSeparate": true,
+    "preserveExistingExceptionBlocks": true,
+    "preserveOriginalDifferentialAndCounterhypothesis": true
+  }
+}
