@@ -112,7 +112,7 @@ attack('decision_has_go',(_,o)=>dec(o).decision='GO');
 attack('decision_review_completed',(_,o)=>dec(o).documentaryReviewComplete=true);
 attack('decision_privacy_completed',(_,o)=>dec(o).legalOrPrivacyFindingEstablished=true);
 attack('decision_removed_check',(_,o)=>dec(o).unresolvedCheckIds.pop());
-attack('decision_release_option_forged',(_,o)=>dec(o).availablePrivateOutcomes.push('OPERATIONS_RELEASE');
+attack('decision_release_option_forged',(_,o)=>dec(o).availablePrivateOutcomes.push('OPERATIONS_RELEASE'));
 attack('decision_owner_reassigned',(_,o)=>dec(o).proposedAccountableRole='software_auto_approver');
 attack('decision_removed',(_,o)=>o.decisionRegister.pop());
 attack('decision_duplicate',(_,o)=>o.decisionRegister.push(clone(dec(o))));
