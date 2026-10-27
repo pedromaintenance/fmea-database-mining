@@ -1,0 +1,132 @@
+{
+  "schema": "fmea-mining.pm-p0-evidence-pilot-blueprints-policy.v1",
+  "version": "1.3.70",
+  "predecessor": "1.3.69",
+  "asOfDate": "2026-10-27",
+  "purpose": "join_existing_P0_hypothesis_design_with_existing_custody_quality_checklist_and_independent_decision_lanes",
+  "sourceBoundaries": {
+    "existingIntake": "data/governance/pm-evidence-intake-policy.v1.json",
+    "existingDecision": "data/governance/pm-review-decision-policy.v1.json",
+    "existingTwoPilotCases": "data/quality/pm-review-decision-packet.v1.json",
+    "existingPreflight": "data/quality/pm-pilot-preflight.v1.json",
+    "existingHypotheses": "data/quality/pm-p0-discriminative-evidence-policy.v1.json"
+  },
+  "evidenceKinds": [
+    "oem_effectivity",
+    "oem_procedure",
+    "field_observation",
+    "counterevidence",
+    "measurement_quality"
+  ],
+  "referenceToIntake": {
+    "ASSET-ID": {
+      "kind": null,
+      "gate": "identity",
+      "lane": "documentary_readiness",
+      "meaning": "private_asset_identity_crosswalk_not_a_public_document"
+    },
+    "OEM-MANUAL": {
+      "kind": "oem_procedure",
+      "gate": "oem",
+      "lane": "documentary_readiness",
+      "meaning": "licensed_serial_effective_service_procedure"
+    },
+    "OEM-SCHEMATIC": {
+      "kind": "oem_effectivity",
+      "gate": "oem",
+      "lane": "documentary_readiness",
+      "meaning": "licensed_effective_functional_drawing"
+    },
+    "OEM-BOM": {
+      "kind": "oem_effectivity",
+      "gate": "oem",
+      "lane": "documentary_readiness",
+      "meaning": "serial_effective_parts_arrangement"
+    },
+    "OEM-TEST": {
+      "kind": "measurement_quality",
+      "gate": "measurement_quality",
+      "lane": "engineering_validation",
+      "meaning": "OEM_criteria_plus_metrology_and_safe_procedure_not_completed_test"
+    },
+    "FIELD-EVIDENCE": {
+      "kind": "field_observation",
+      "gate": "safe_execution",
+      "lane": "engineering_validation",
+      "meaning": "authorized_observation_with_quality_checks_not_physical_damage_proof"
+    },
+    "SAP-BOM": {
+      "kind": null,
+      "gate": "sap_change",
+      "lane": "sap_masterdata_change",
+      "meaning": "separate_SAP_functional_masterdata_evaluation_never_inferred_from_OEM"
+    }
+  },
+  "supplementaryMandatoryKinds": {
+    "counterevidence": "every_differential_must_be_compared_with_competing_mechanisms_before_engineering_decision",
+    "measurement_quality": "must_qualify_method_context_repeatability_calibration_and_uncertainty_if_measurement_is_appropriate"
+  },
+  "mandatoryPrivateCustodyMetadata": [
+    "authorized_case_reference",
+    "asset_identity_and_variant",
+    "OEM_document_revision_and_effectivity",
+    "evidence_origin_and_method",
+    "collection_context_and_time",
+    "integrity_and_custody_trace",
+    "license_and_access_scope",
+    "qualification_and_independent_review_identity"
+  ],
+  "candidateOutcomes": [
+    "insufficient_documentation",
+    "inapplicable_configuration",
+    "requires_safe_measurement",
+    "inconclusive_or_conflicting",
+    "supported_for_independent_review",
+    "refuted_for_this_configuration"
+  ],
+  "gateOrder": [
+    "identity_and_variant",
+    "oem_serial_effectivity",
+    "safety_and_measurement_quality",
+    "counterevidence_and_causal_separation",
+    "custody_validation",
+    "independent_engineering",
+    "sap_masterdata_separate",
+    "operational_authorization_separate"
+  ],
+  "guardrails": {
+    "allInputsPublicAndSynthetic": true,
+    "identityIsNotEvidenceAcceptance": true,
+    "OEMProcedureDoesNotProveDamage": true,
+    "observationDoesNotProveMechanism": true,
+    "mechanismDoesNotProveRootCause": true,
+    "competingHypothesesNotAutomaticallyEliminated": true,
+    "SAPMasterdataIsNotOperationalAuthorization": true,
+    "engineeringDecisionIsNotSAPApproval": true,
+    "noAutomaticCausePromotion": true,
+    "noRealPrivateReceiptsOrSignatures": true,
+    "noRealAssetIdsOrSerials": true,
+    "noRealMeasurementInPublicReport": true,
+    "noLiveEvidenceIngestOrStorage": true,
+    "noLiveSAPOrOperationsIntegration": true,
+    "noAutomaticTaskOrWorkOrder": true,
+    "preserveTenSapBlocks": true,
+    "preserveEightPrivateInfrastructureGates": true
+  },
+  "baseline": {
+    "p0Rules": 5,
+    "differentials": 15,
+    "realPilotsSelected": 0,
+    "syntheticPilotCandidates": 2,
+    "custodyKindsPerCase": 5,
+    "reviewLanesPerPilot": 4,
+    "preflightChecksPerPilot": 34,
+    "totalPublicCases": 0,
+    "actualReceiptsReceived": 0,
+    "verifiedDocuments": 0,
+    "actualFieldInspections": 0,
+    "engineeringApprovals": 0,
+    "SAPMappingsApproved": 0,
+    "operationalReleases": 0
+  }
+}
