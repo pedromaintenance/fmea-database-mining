@@ -114,6 +114,8 @@ jobs:
         run: npm run pm:corporate:readiness:audit
       - name: Auditar pacote SEC-01 patrocínio licença OEM e privacidade sem homologacao
         run: npm run pm:sec01:approval:audit
+      - name: Auditar RACI proposto e registro de decisoes privadas SEC-01 sem atribuir signatarios
+        run: npm run pm:sec01:handoff:audit
       - name: Validar 10 bloqueios PM e 7 requisitos de efetividade OEM D9
         run: npm run pm:exceptions:validate
       - name: Gerar vínculos diagnósticos por modelo
@@ -242,6 +244,7 @@ jobs:
             reports/pm-p0-synthetic-evidence-outcomes.generated.json
             reports/pm-corporate-readiness-closure.generated.json
             reports/pm-sec01-approval-brief.generated.json
+            reports/pm-sec01-governance-handoff.generated.json
             reports/public-knowledge.v1.json
             reports/public-manifest.v1.json
             data/governance/public-content-releases.v1.json
