@@ -18,6 +18,21 @@ A v1.3.68 deixou uma fila documental de dez exceções PM×SAP, com cinco regist
 
 Os 15 roteiros reproduzem integralmente os campos de hipótese e alternativa da política original v1.3.65 e **acrescentam** uma observação qualitativa discriminante, uma checagem de explicação concorrente e um limite explícito de refutação ou inconclusão. As hipóteses **podem coexistir**. As distinções são propostas de investigação; nenhum valor de pressão, temperatura, tolerância ou método de campo é improvisado.
 
+## Resultado da validação automatizada (GitHub Actions)
+
+| Indicador | Resultado |
+| --- | ---: |
+| Regras documentais P0 | 5 |
+| Hipóteses diferenciais | 15 |
+| Chaves genéricas de modelo (não ativos reais) | 7 |
+| Combinações teóricas regra × chave | 35 |
+| Associações de hipótese × classe documental | 64 |
+| Classes documentais distintas no catálogo | 7 |
+| Ataques adversariais detectados e rejeitados | **75/75** |
+| Evidências reais, testes executados, causas confirmadas e aprovações SAP | **0** |
+
+As **64 associações** são requisitos potenciais deduzidos da política dos roteiros, não 64 documentos ausentes, solicitações enviadas, ordens de manutenção ou testes efetivos. Todas as decisões continuam **NO-GO** até verificação corporativa privada autorizada.
+
 ## Evidências, efetividade e segurança
 
 Cada hipótese aponta para os IDs existentes da v1.3.65: `ASSET-ID`, `OEM-MANUAL`, `OEM-SCHEMATIC`, `OEM-BOM`, `OEM-TEST`, `FIELD-EVIDENCE`, `SAP-BOM`. Esses IDs representam **classes potenciais de documentos**, não documentos enviados, recebidos ou verificados. A porta inicial continua sendo identidade real/variante em ambiente privado, seguida de OEM por série e critérios técnicos efetivos.
