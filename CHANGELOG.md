@@ -2,6 +2,12 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.74] — 2026-10-27 — Handoff corporativo SEC-01 com RACI e decisões pendentes
+
+- RACI funcional **proposto** com oito funções e nove atividades vinculadas aos nove critérios SEC-01; sem nomeação de responsáveis reais, poder de assinatura ou convite enviado.
+- Registro de três decisões em branco (patrocínio, licença OEM, privacidade/DPIA), três condições de aceite separadas e pauta de quatro tópicos; nenhum aceite automático do gate ou dos futuros pilotos.
+- Auditor adversarial, CI/QA, documentação e relatório público regenerável. Permanece NO-GO, oito gates privados e dez exceções SAP bloqueadas.
+
 ## [1.3.73] — 2026-10-27 — Pacote de submissão corporativa SEC-01
 
 - Dossiê público e rastreável para reunião com Governança, detentor de direitos OEM e área de Privacidade: três trilhas, nove perguntas/comprovações e critérios de aceite/rejeição sem emitir conclusão jurídica ou contratual.
