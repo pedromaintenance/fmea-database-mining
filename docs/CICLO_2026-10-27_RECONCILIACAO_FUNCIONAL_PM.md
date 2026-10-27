@@ -31,11 +31,28 @@ Casos sintéticos negativos e positivos exercitam `ENSY/FUSY/HSVV`, `ENSY/COSY/H
 
 No caso de `hydraulic-hose-leak` ou `hydraulic-hose-abrasion`, mesmo um HSVV com pai habilitado permanece sujeito à efetividade OEM e curadoria SAP. Para `fuel-filter-contamination`, localizar o subgrupo não cria automaticamente um elemento de filtro. Para `drill-compressor-filter`, grupo COMR e subgrupo COMR não são equivalentes.
 
+## Resultados efetivamente reproduzidos no CI (27/10/2026)
+
+| Medida | Resultado |
+| --- | ---: |
+| Regras PM / sistemas declarados | 25 / 13 |
+| Vínculos estruturais candidatos gerados | 115 |
+| Regras com pelo menos um candidato | 15 |
+| Regras sem candidato e ainda bloqueadas para curadoria | 10 |
+| Exceções P0 / P1 | 5 / 5 |
+| Subgrupos compartilhados entre sistemas nas regras | 1 (`HSVV`) |
+| Caminhos descartados por divergência de pai funcional | 84 |
+| Fixtures estruturais sintéticas aprovadas | 16/16 |
+| Mutações adversariais rejeitadas | 46/46 |
+| Inspeções reais / aprovações OEM / SAP | 0 / 0 / 0 |
+
+As **84** ocorrências são contadas por regra e caminho: a mesma folha pode participar de mais de uma avaliação. São rejeições **estruturais do filtro atual**, não 84 ativos com defeito, nem prova de cadastro SAP incorreto ou conflito físico OEM.
+
 ## Artefatos
 
 - `data/quality/pm-functional-reconciliation-policy.v1.json` — contrato de classificação e dez travas sem promoção automática;
 - `scripts/lib/pm-functional-reconciliation.mjs` — reconciliação determinística;
-- `scripts/audit-pm-functional-reconciliation.mjs` — auditor com **16 casos funcionais sintéticos e 45 mutações adversariais**;
+- `scripts/audit-pm-functional-reconciliation.mjs` — auditor com **16 casos funcionais sintéticos e 46 mutações adversariais**;
 - `reports/pm-functional-reconciliation.generated.json` — relatório regenerado no CI/QA, não registro de ativos nem laudos.
 
 As 25 regras, 115 vínculos conceituais, dez exceções PM×SAP (cinco P0 e cinco P1), e ontologia 1.3.23 permanecem intocados. O repositório público mantém status **NO-GO** para evidências reais, revisões, códigos SAP e liberação operacional.
