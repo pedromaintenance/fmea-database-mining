@@ -2,6 +2,12 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.68] — 2026-10-27 — Pacotes documentais por família e bloqueio PM×SAP
+
+- Treze workpacks de sistema funcional, 10 exceções rastreáveis (5 P0/5 P1), 15 regras com vínculos estruturais candidatos e proteção contra uso de contagens de rejeição como escore de risco.
+- Receitas diferenciadas de evidência para `damage_cause_not_permitted`, `component_not_registered` e `subgroup_not_in_scope`; registro de fontes originais, contraprovas e gates de revisão privados.
+- Auditoria determinística adversarial, relatórios e CI/QA. Permanecem 84 rejeições por caminho, 115 vínculos candidatos, 10 bloqueios, ontologia 1.3.23 e status NO-GO, sem alterações SAP, OEM ou consumidores.
+
 ## [1.3.67] — 2026-10-27 — Reconciliação funcional das 25 regras PM
 
 - Adiciona auditoria determinística das seis etapas de qualificação de cada regra: folhas por modelo, subgrupo em pais concorrentes, rejeição de sistema/grupo, componente por tipo de objeto, par dano–causa elegível e equivalência com vínculos gerados.
