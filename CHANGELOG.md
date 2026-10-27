@@ -2,6 +2,12 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.71] — 2026-10-27 — Cenários sintéticos de qualidade da evidência P0
+
+- Adiciona nove situações documentais e metrológicas por piloto público de radiador e filtro de combustível (18 avaliações), com classificação fail-closed e responsável por revisão humana; indícios favoráveis não aprovam hipótese, causa, SAP ou operação.
+- Classificador recusa propriedades inesperadas e enumerações inválidas, exige contraprovas e precedência para custódia e efetividade OEM. Reporta apenas exemplos sintéticos.
+- Novo gerador de cenários, auditor adversarial, QA/CI e relatório; preserva 25 regras, 115 candidatos, dez exceções SAP, oito gates privados e maturidade existente.
+
 ## [1.3.70] — 2026-10-27 — Blueprint de intake e custódia de evidências P0
 
 - Crosswalk determinístico entre 15 diagnósticos diferenciais (v1.3.69), sete classes documentais, cinco tipos de recibo do intake v1.3.61 e quatro trilhas decisórias v1.3.64.
