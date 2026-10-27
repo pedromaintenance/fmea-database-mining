@@ -49,6 +49,23 @@ Os três itens de aceite do relatório rastreiam os nove itens de checklist; nã
 
 A pauta **não é convite, reunião agendada, ata produzida ou autorização concedida**.
 
+## Resultado verificado no CI
+
+| Controle | Resultado |
+| --- | ---: |
+| Funções genéricas propostas | 8 |
+| Atividades RACI com único A proposto | 9 |
+| Decisões corporativas pendentes | 3 |
+| Condições formais de aceite ainda pendentes | 3 |
+| Itens de pauta não agendados | 4 |
+| Solicitações privadas **não enviadas** | 9 |
+| Contratos/auditorias anteriores revalidados | 8 |
+| Tentativas adversariais rejeitadas | **103/103** |
+| Responsáveis reais nomeados, decisões ou reuniões realizadas | **0** |
+| Gates privados bloqueados / exceções SAP bloqueadas | **8 / 10** |
+
+A auditoria verifica campos de assinatura, atribuição, proposta RACI e separação de decisões. O `NO_GO` é intencional: aprovação de testes não implica aprovação da Governança.
+
 ## Segurança e auditoria
 
 O relatório `reports/pm-sec01-governance-handoff.generated.json` possui exclusivamente funções e requisitos genéricos. Não aceita nomes de aprovadores, dados OEM privados, hashes de arquivos corporativos, tags de máquinas, dados reais ou links restritos. Mutação de responsabilidade, prova, assinatura, data, status de aprovação ou liberação operacional deve levar à rejeição pelo auditor.
