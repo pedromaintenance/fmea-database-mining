@@ -1,0 +1,213 @@
+{
+  "schema": "fmea-mining.pm-sec01-approval-brief-policy.v1",
+  "version": "1.3.73",
+  "predecessor": "1.3.72",
+  "asOfDate": "2026-10-27",
+  "purpose": "prepare a public nonbinding SEC-01 corporate governance review brief, without soliciting or granting approval",
+  "requiredGateId": "SEC-01",
+  "requiredGateName": "Patrocinio, licença e DPIA",
+  "requiredRunbookOwner": "seguranca_privacidade_e_governanca",
+  "streams": [
+    {
+      "id": "sponsor_and_scope",
+      "label": "Patrocínio e escopo",
+      "suggestedReviewFunction": "corporate_project_sponsor_and_governance",
+      "evidenceAnchor": "aprovacao formal e escopo de acesso"
+    },
+    {
+      "id": "oem_license",
+      "label": "Licenciamento OEM e direitos de uso",
+      "suggestedReviewFunction": "OEM_licensing_or_corporate_legal_custodian",
+      "evidenceAnchor": "validação de licenças OEM"
+    },
+    {
+      "id": "privacy_and_data",
+      "label": "Privacidade, classificação e base autorizada",
+      "suggestedReviewFunction": "corporate_privacy_and_data_controller",
+      "evidenceAnchor": "classificação e base autorizada de tratamento"
+    }
+  ],
+  "checks": [
+    {
+      "id": "SEC01-A01",
+      "stream": "sponsor_and_scope",
+      "reviewQuestion": "Identify a formal accountable corporate project sponsor and confirm the authorized review function and accountable decision owner.",
+      "privateProofRequired": "Documented sponsorship and accountable owner approved in corporate system"
+    },
+    {
+      "id": "SEC01-A02",
+      "stream": "sponsor_and_scope",
+      "reviewQuestion": "Proposed pilot objective, authorized purpose, audience and access limits established",
+      "privateProofRequired": "Signed scope, classification and authorized case categories"
+    },
+    {
+      "id": "SEC01-A03",
+      "stream": "sponsor_and_scope",
+      "reviewQuestion": "Distinguish approval for restricted design from future real-pilot execution",
+      "privateProofRequired": "Explicit exclusion of field execution, SAP writes and public publication"
+    },
+    {
+      "id": "SEC01-L01",
+      "stream": "oem_license",
+      "reviewQuestion": "Identify the corporate holder of OEM documentation access rights and determine who is authorized to review the applicable license terms.",
+      "privateProofRequired": "OEM access and usage terms verified by authorized legal/licensing function"
+    },
+    {
+      "id": "SEC01-L02",
+      "stream": "oem_license",
+      "reviewQuestion": "Decide whether copying, retention and derivative extraction are permitted",
+      "privateProofRequired": "Copyright, replication, retention and access approval recorded privately"
+    },
+    {
+      "id": "SEC01-L03",
+      "stream": "oem_license",
+      "reviewQuestion": "Confirm permissible source/provenance without treating generic OEM guide as serial effectivity",
+      "privateProofRequired": "Licensed source identification and serial effectivity method proposed"
+    },
+    {
+      "id": "SEC01-P01",
+      "stream": "privacy_and_data",
+      "reviewQuestion": "Assess data classes including machine, person, credential and restricted commercial information",
+      "privateProofRequired": "Written data classification and lawful-use assessment in corporate vault"
+    },
+    {
+      "id": "SEC01-P02",
+      "stream": "privacy_and_data",
+      "reviewQuestion": "Assess DPIA necessity and legal basis with competent privacy controller",
+      "privateProofRequired": "Documented privacy officer/controller decision, not inferred by script"
+    },
+    {
+      "id": "SEC01-P03",
+      "stream": "privacy_and_data",
+      "reviewQuestion": "Define private evidence access, external-publication prohibition and retention ownership",
+      "privateProofRequired": "Access scope, least-privilege expectations and owner for retention review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "sponsor_missing",
+      "fields": {
+        "sponsor": "missing",
+        "license": "synthetic_compatible",
+        "privacy": "synthetic_assessed",
+        "boundary": "private_only"
+      },
+      "expected": "REQUEST_FORMAL_SPONSORSHIP"
+    },
+    {
+      "id": "license_unreviewed",
+      "fields": {
+        "sponsor": "synthetic_defined",
+        "license": "not_reviewed",
+        "privacy": "synthetic_assessed",
+        "boundary": "private_only"
+      },
+      "expected": "HOLD_OEM_LICENSE_REVIEW"
+    },
+    {
+      "id": "license_incompatible",
+      "fields": {
+        "sponsor": "synthetic_defined",
+        "license": "incompatible",
+        "privacy": "synthetic_assessed",
+        "boundary": "private_only"
+      },
+      "expected": "REJECT_OEM_USAGE_SCOPE"
+    },
+    {
+      "id": "privacy_unreviewed",
+      "fields": {
+        "sponsor": "synthetic_defined",
+        "license": "synthetic_compatible",
+        "privacy": "not_reviewed",
+        "boundary": "private_only"
+      },
+      "expected": "HOLD_PRIVACY_ASSESSMENT"
+    },
+    {
+      "id": "public_evidence_route",
+      "fields": {
+        "sponsor": "synthetic_defined",
+        "license": "synthetic_compatible",
+        "privacy": "synthetic_assessed",
+        "boundary": "public_raw_evidence"
+      },
+      "expected": "REJECT_PUBLIC_EVIDENCE_ROUTE"
+    },
+    {
+      "id": "scope_undefined",
+      "fields": {
+        "sponsor": "scope_undefined",
+        "license": "synthetic_compatible",
+        "privacy": "synthetic_assessed",
+        "boundary": "private_only"
+      },
+      "expected": "REQUEST_SCOPE_REDEFINITION"
+    },
+    {
+      "id": "apparently_complete",
+      "fields": {
+        "sponsor": "synthetic_defined",
+        "license": "synthetic_compatible",
+        "privacy": "synthetic_assessed",
+        "boundary": "private_only"
+      },
+      "expected": "HOLD_PRIVATE_CORPORATE_ATTESTATION"
+    }
+  ],
+  "inputEnums": {
+    "sponsor": [
+      "missing",
+      "scope_undefined",
+      "synthetic_defined"
+    ],
+    "license": [
+      "not_reviewed",
+      "incompatible",
+      "synthetic_compatible"
+    ],
+    "privacy": [
+      "not_reviewed",
+      "synthetic_assessed"
+    ],
+    "boundary": [
+      "private_only",
+      "public_raw_evidence"
+    ]
+  },
+  "routing": {
+    "REQUEST_FORMAL_SPONSORSHIP": "corporate_project_sponsor_and_governance",
+    "REQUEST_SCOPE_REDEFINITION": "corporate_project_sponsor_and_governance",
+    "HOLD_OEM_LICENSE_REVIEW": "OEM_licensing_or_corporate_legal_custodian",
+    "REJECT_OEM_USAGE_SCOPE": "OEM_licensing_or_corporate_legal_custodian",
+    "HOLD_PRIVACY_ASSESSMENT": "corporate_privacy_and_data_controller",
+    "REJECT_PUBLIC_EVIDENCE_ROUTE": "corporate_privacy_and_data_controller",
+    "HOLD_PRIVATE_CORPORATE_ATTESTATION": "seguranca_privacidade_e_governanca"
+  },
+  "decisionInterpretation": {
+    "publicDecision": "NO_GO",
+    "corporateSignatureStatus": "NOT_RECEIVED",
+    "signoffScope": "restricted_design_authorization_request_only_not_pilot_approval",
+    "downstreamGatesRemainBlocked": true,
+    "privateEvidenceMustNeverEnterPublicGitHub": true,
+    "hypotheticalApprovalIsNotVerified": true,
+    "legalOrRegulatoryConclusionNotAutomated": true
+  },
+  "invariants": {
+    "noActualSponsorOrSignerIdentity": true,
+    "noPrivateLicenseDocuments": true,
+    "noPersonalOrCorporateIdentifiers": true,
+    "noLiveEvidenceCollection": true,
+    "noLegalBasisInferred": true,
+    "noDPIARequirementInferred": true,
+    "noUniversalLicenseRightsAssumed": true,
+    "noAutomaticGateApproval": true,
+    "noImplicitPilotOrWorkAuthorization": true,
+    "noSAPChanges": true,
+    "noOEMSerialEffectivityClaim": true,
+    "noOperationalReleases": true,
+    "allEightPrivateGatesRemainBlocked": true,
+    "allTenSapExceptionsRemainBlocked": true,
+    "noPrivateArtifactsOrHashesInPublicReport": true
+  }
+}
