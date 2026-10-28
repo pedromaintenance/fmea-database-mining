@@ -97,7 +97,13 @@ export function assessSec01DecisionRequest(input,output){
  handoff.summary.gatesBlocked===8&&handoff.state==="NO_GO_REQUEST_NOT_SENT"&&
  handoff.decisionRegister.every(x=>x.actualDecision===null&&x.authorizedSigner===null)&&
  handoff.missingPrivateRequestQueue.every(x=>x.status==="UNREQUESTED_PRIVATELY"&&x.corporateReference===null),"handoff_is_not_real");
- ck(brief.version==="1.3.73"&&brief.summary.documentaryChecks===9&&brief.summary.privateSubmissionsMade===0&&brief.decision==="NO_GO_PUBLIC_PACKAGE_ONLY","brief_contract");
+ ck(brief.version==="1.3.73"&&brief.summary.documentaryChecks===9&&brief.summary.privateSubmissionsMade===0&&
+ brief.decision==="NO_GO_PUBLIC_PACKAGE_ONLY"&&brief.scopeBoundary.grantedDecision===false&&
+ brief.scopeBoundary.privateSecurityApproval===false&&brief.scopeBoundary.privatePrivacyApproval===false&&
+ brief.scopeBoundary.licensedOEMReproductionApproval===false&&
+ brief.scopeBoundary.downstreamPilotAuthorized===false&&
+ brief.documentaryChecklist.every(x=>x.evidenceActuallyReceived===false&&x.approvalSignaturePresent===false),
+ "brief_contract");
  ck(closure.version==="1.3.72"&&closure.summary.privateGatesBlocked===8&&closure.summary.overallDecision==="NO_GO","closure_no_go");
  ck(runbook.version==="1.3.62"&&runbook.phases.length===8&&
  runbook.phases.every(p=>p.gate==="BLOCK"&&p.status==="not_started"&&p.decisionToken===null)&&
