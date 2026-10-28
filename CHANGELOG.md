@@ -2,6 +2,12 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.79] — 2026-10-28 — Matriz integrada de maturidade da evidência PM
+
+- Consolida observabilidade v1.3.76, detectabilidade v1.3.77 e qualidade metrológica v1.3.78 em um registro explicativo: 15 regras, 30 alternativas, 150 critérios documentais não avaliados e seis camadas causais não resolvidas por regra (90 posições).
+- Roteamento integrado de 90 situações sintéticas de sinal presente/ausente/ambíguo com lacunas OEM, segurança e não aplicabilidade. Mesmo aparente completude documental não é diagnóstico, estimativa de risco ou aprovação.
+- Auditor adversarial e CI mantêm **NO_GO**, dez exceções PM×SAP e oito gates de infraestrutura bloqueados; sem dados de campo, OEM por série, aprovação humana, OS ou mudança SAP.
+
 ## [1.3.78] — 2026-10-28 — Qualidade metrológica e rastreabilidade de inspeções preventivas
 
 - Dez controles de qualidade por cada uma das 15 regras sem prioridade documental: autorização, identidade/configuração, método OEM, técnica/instrumento, calibração, condições, repetibilidade, incerteza, custódia e contraprova; 150 posições **não avaliadas**.
