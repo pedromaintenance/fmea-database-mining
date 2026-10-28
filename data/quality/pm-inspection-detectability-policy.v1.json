@@ -49,7 +49,7 @@
     },
     {
       "ruleId": "cooling-fan-belt",
-      "signal": "Patinamento, ruído ou condição visual/tensão da correia",
+      "signal": "Patinamento, ruído e aspecto superficial ou condição de tensão da correia do ventilador",
       "attributionTrap": "Patinamento pode decorrer de carga do acessório, desalinhamento ou condição da polia",
       "confounder": "Temperatura, tensão em repouso, condição da superfície, alinhamento e carga aplicada",
       "missedDetection": "Defeito intermitente de acionamento pode não aparecer durante verificação estática",
