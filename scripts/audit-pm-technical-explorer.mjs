@@ -161,7 +161,7 @@ attack("fake_15_count",(_,o)=>o.summary.unrankedRules=25);
 attack("fake_exception_total",(_,o)=>o.summary.documentedSapExceptions=0);
 attack("source_missing_exception",(s)=>s.gaps.records.pop());
 attack("source_forced_low_priority",(s)=>s.gaps.records[0].priority="P2");
-attack("source_approved_SAP_part",(s)=>s.gaps.records[0].approvedModelIds.push("FAKE");
+attack("source_approved_SAP_part",(s)=>s.gaps.records[0].approvedModelIds.push("FAKE"));
 const audit={status:errors.length?"FAIL":"OK",staticAndSearchProbes:probes.length,
  passedProbes:probes.filter(x=>x.pass).length,adversarialMutations:attacks.length,
  rejectedMutations:attacks.filter(x=>x.rejected).length,
