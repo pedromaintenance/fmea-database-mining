@@ -2,6 +2,13 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.82] — 2026-10-28 — Comparação estrutural e fichas técnicas para revisão FMEA
+
+- A consulta offline das 25 regras incorpora links de proximidade por mesmo sistema/subgrupo, sem pontuação ou inferência de causalidade, e seleção de dois registros para comparação lado a lado.
+- Nova ficha individual e comparativa em Markdown para revisão de Engenharia/PCM, preservando o enquadramento distinto das 15 regras de observabilidade e das dez exceções PM×SAP P0/P1 documentais.
+- Implementadas verificações de 600 pares ordenados, casos inválidos, exportações Markdown, parsing do JS embutido e tentativas de promoção indevida de causa, risco, liberação e SAP; CI integra auditor dedicado.
+- Nenhum dado real, medição, assinatura ou autorização adicionados; dez exceções e oito gates corporativos continuam bloqueados.
+
 ## [1.3.81] — 2026-10-28 — Consulta técnica das 25 regras em duas trilhas
 
 - Amplia o HTML offline para as **25 regras preventivas de 13 sistemas**, com filtros por trilha de revisão e prioridades documentais P0/P1.
