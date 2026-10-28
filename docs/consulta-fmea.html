@@ -106,6 +106,125 @@ details{margin-top:10px;border-top:1px solid var(--line);padding-top:10px}summar
    "ESTADO: CAUSA NÃO CONFIRMADA. SEM PRIORIDADE DOCUMENTAL (NÃO IMPLICA BAIXO RISCO).",
    "10 EXCEÇÕES SAP E 8 GATES PRIVADOS BLOQUEADOS. VERIFICAR FONTES E MÉTODO OEM EFETIVO."].join("\n");
  }
+
+ function downloadText(filename,content,type){
+  const b=new Blob([content],{type});const u=URL.createObjectURL(b);
+  const a=h("a");a.href=u;a.download=filename;document.body.append(a);a.click();a.remove();
+  setTimeout(()=>URL.revokeObjectURL(u),1000);
+ }
+ function reviewMarkdown(selected){
+  if(!Array.isArray(selected)||![1,2].includes(selected.length)||new Set(selected).size!==selected.length)return null;
+  const rows=selected.map(id=>data.records.find(r=>r.ruleId===id));if(rows.some(x=>!x))return null;
+  const clean=s=>String(s??"Não documentado").replace(/\r/g,"").replace(/\n/g," ");
+  const out=["# Ficha técnica para revisão de Engenharia e PCM","",
+   "**Catálogo:** v1.3.82 · **NÃO HOMOLOGADO · NO_GO** · Somente leitura",
+   "**Natureza:** consulta a fontes públicas conceituais, sem inspeção, aprovação ou autorização real","",
+   "> P0/P1 são prioridades da FILA DOCUMENTAL PM×SAP, não criticidade operacional.",
+   "> A falta de prioridade documental NÃO significa baixo risco. Esta ficha não é nota SAP nem OS.",""];
+  rows.forEach(r=>{
+   out.push("## "+r.ruleId,"","- **Sistema:** "+clean(r.system),
+    "- **Subgrupo:** "+clean(r.subgroupCode),"- **Componente candidato:** "+clean(r.component),
+    "- **Trilha:** "+(r.reviewTrack==="PM_SAP_DOCUMENTARY_EXCEPTION"?"Exceção PM×SAP bloqueada":"Modelo conceitual não priorizado"),
+    "- **Prioridade documental:** "+(r.documentaryPriority??"não atribuída"),
+    "- **Sintoma:** "+clean(r.symptom),"- **Método original:** "+clean(r.inspectionMethod),"");
+   if(r.reviewTrack==="PM_SAP_DOCUMENTARY_EXCEPTION"){
+    out.push("### Pendência de enquadramento PM×SAP","",
+     "- **Impedimento:** "+clean(r.sapException.expectedBlocker),
+     "- **Achado original:** "+clean(r.sapException.finding),
+     "- **Próxima análise proposta:** "+clean(r.sapException.nextInspection),
+     "- **Disciplina proposta:** "+clean(r.sapException.reviewDiscipline),"",
+     "#### Evidências mínimas ainda não coletadas","");
+    r.sapException.minimumEvidence.forEach(v=>out.push("- "+clean(v)));
+    out.push("","**IDs de referência catalogados:** "+r.sapException.sourceIds.join(", "),"");
+   }else{
+    out.push("### Hipóteses concorrentes (não confirmadas)","");
+    r.alternatives.forEach((a,i)=>out.push((i+1)+". "+clean(a.candidate)+" — **evidência discriminante proposta:** "+clean(a.requestedEvidence)));
+    out.push("","### Limites diagnósticos","",
+     "- **Atribuição enganosa possível:** "+clean(r.attributionTrap),
+     "- **Confusores:** "+clean(r.confounder),
+     "- **Possibilidade de não detecção:** "+clean(r.missedDetection),
+     "- **Limite inconclusivo:** "+clean(r.inconclusiveBoundary),
+     "- **Fronteira de segurança:** "+clean(r.safetyBoundary),"",
+     "### Bloqueios ainda abertos","");
+    r.blockers.forEach(b=>out.push("- "+clean(b.label)+": "+clean(b.description)));
+    out.push("","**Critérios metrológicos não avaliados:** "+r.qualityCriteria.length,"");
+   }
+   out.push("**Resultado:** INCONCLUSIVO · causa não confirmada · SAP e execução não autorizados.","");
+  });
+  if(rows.length===2)out.push("## Nota de comparação","",
+   "Semelhança de sistema/subgrupo NÃO demonstra o mesmo mecanismo de falha; P0/P1 documental NÃO é risco operacional.","");
+  out.push("## Próximas verificações em ambiente privado","",
+   "Conferir método OEM por série, contraprova e evidências com revisão humana qualificada.",
+   "**Dez exceções PM×SAP e oito gates corporativos permanecem BLOCK / NO_GO.**","");
+  return out.join("\n");
+ }
+ function relatedPanel(el,r){
+  const rank={MESMO_SISTEMA_E_SUBGRUPO:0,MESMO_SISTEMA:1,MESMO_SUBGRUPO:2};
+  const related=data.records.filter(x=>x.ruleId!==r.ruleId&&(x.system===r.system||x.subgroupCode===r.subgroupCode))
+   .map(x=>({record:x,reason:x.system===r.system&&x.subgroupCode===r.subgroupCode?
+    "MESMO_SISTEMA_E_SUBGRUPO":x.system===r.system?"MESMO_SISTEMA":"MESMO_SUBGRUPO"}))
+   .sort((a,b)=>rank[a.reason]-rank[b.reason]||a.record.ruleId.localeCompare(b.record.ruleId)).slice(0,5);
+  if(!related.length)return;
+  el.append(sectionTitle("Regras relacionadas por estrutura"));
+  const section=h("section",null,"panel");
+  section.append(h("p","Associação por sistema ou código de subgrupo, não por causalidade, risco ou urgência.","notice"));
+  const list=h("div",null,"related-list");
+  related.forEach(x=>{
+   const b=h("button",null,"related-rule");b.type="button";
+   b.append(h("b",x.record.ruleId),h("small",x.record.component+" · "+x.reason.replaceAll("_"," ").toLowerCase()));
+   b.addEventListener("click",()=>{
+    if(!filter().some(v=>v.ruleId===x.record.ruleId)){
+     $("search").value="";$("system").value="all";$("track").value="all";$("priority").value="all";
+    }
+    current=x.record.ruleId;renderList();
+    if(window.innerWidth<831)$("detail").scrollIntoView({behavior:"smooth",block:"start"});
+   });list.append(b);
+  });
+  section.append(list);el.append(section);
+ }
+ function compareCard(r,side){
+  const card=h("div",null,"compare-card");card.append(h("div",side==="left"?"REGRA A":"REGRA B","eyebrow"),h("h4",r.ruleId));
+  const item=(label,value)=>{const row=h("div",null,"compare-item");row.append(h("b",label),h("p",value));card.append(row);};
+  item("Sistema / subgrupo",r.system+" · "+r.subgroupCode);
+  item("Componente candidato",r.component);
+  item("Sintoma",r.symptom);item("Inspeção proposta",r.inspectionMethod);
+  if(r.reviewTrack==="PM_SAP_DOCUMENTARY_EXCEPTION"){
+   item("Trilha","Exceção PM×SAP bloqueada; "+r.documentaryPriority+" documental (não criticidade operacional)");
+   item("Bloqueio",r.sapException.expectedBlocker);
+   item("Achado original",r.sapException.finding);
+   item("Próxima revisão proposta",r.sapException.nextInspection);
+   item("Evidências a solicitar",r.sapException.minimumEvidence.join(" | "));
+  }else{
+   item("Trilha","Sem prioridade documental (não equivale a baixo risco)");
+   item("Hipóteses abertas",r.alternatives.map(x=>x.candidate).join(" | "));
+   item("Atribuição indevida possível",r.attributionTrap);
+   item("Possível não detecção",r.missedDetection);
+   item("Validade documental","10 critérios e 6 camadas não verificadas");
+  }
+  item("Decisão","INCONCLUSIVO / NO_GO; nenhuma causa confirmada ou execução autorizada");
+  return card;
+ }
+ function comparisonPanel(el){
+  if(!compareSlots.left&&!compareSlots.right)return;
+  el.append(sectionTitle("Comparação lado a lado"));
+  const p=h("section",null,"panel full");
+  p.append(h("p","A: "+(compareSlots.left??"não selecionada")+" · B: "+(compareSlots.right??"não selecionada")+
+   ". Comparação estrutural, sem equivalência causal, aprovação ou pontuação de risco.","notice"));
+  const actions=h("div",null,"actions");
+  const clear=h("button","Limpar comparação","action secondary");clear.type="button";
+  clear.addEventListener("click",()=>{compareSlots.left=null;compareSlots.right=null;renderDetail();});actions.append(clear);
+  if(compareSlots.left&&compareSlots.right&&compareSlots.left!==compareSlots.right){
+   const a=data.records.find(x=>x.ruleId===compareSlots.left);
+   const b=data.records.find(x=>x.ruleId===compareSlots.right);
+   if(a&&b){
+    const grid=h("div",null,"compare-grid");grid.append(compareCard(a,"left"),compareCard(b,"right"));p.append(grid);
+    const exportButton=h("button","Exportar comparação MD","action");exportButton.type="button";
+    exportButton.addEventListener("click",()=>downloadText("fmea-comparacao-"+a.ruleId+"-vs-"+b.ruleId+".md",
+     reviewMarkdown([a.ruleId,b.ruleId]),"text/markdown;charset=utf-8"));actions.append(exportButton);
+   }
+  }
+  p.append(actions);el.append(p);
+ }
  function renderDetail(){
   const el=$("detail");el.replaceChildren();
   const r=data.records.find(x=>x.ruleId===current);
