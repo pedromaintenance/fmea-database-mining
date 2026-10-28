@@ -63,7 +63,14 @@ export function assessSystemMechanismMaps({catalog,graph},maps){
  const errors=[],check=(ok,code)=>{if(!ok)errors.push(code)};
  const systems=[...new Set(catalog.records.map(x=>x.system))].sort(sorted);
  check(catalog.version==="1.3.84"&&graph.version==="1.3.84"&&catalog.records.length===25&&
-  graph.rules.length===25&&graph.links.length===6&&systems.length===13,"upstream_scope");
+  graph.rules.length===25&&graph.links.length===6&&systems.length===13&&
+  catalog.summary.decision==="NO_GO"&&catalog.summary.confirmedRootCauses===0&&
+  catalog.summary.approvedSapLinks===0&&catalog.summary.operationalReleases===0&&
+  graph.summary.decision==="NO_GO"&&graph.summary.confirmedCauses===0&&
+  graph.summary.approvedSAPRemaps===0&&graph.summary.fieldVerifiedMechanisms===0&&
+  graph.links.every(x=>x.linkStatus==="PUBLIC_AUTHORSHIP_NOT_FIELD_VALIDATED"&&
+   x.rootCauseConfirmed===false&&x.OEMSerialVerified===false&&
+   x.SAPApproved===false&&x.mechanicalEquivalenceDemonstrated===false),"upstream_scope");
  check(Array.isArray(maps)&&maps.length===13,"all_13_system_maps");
  for(const system of systems){
   const p=maps.find(x=>x.system===system),expected=buildSystemMechanismMap(catalog,graph,system);
