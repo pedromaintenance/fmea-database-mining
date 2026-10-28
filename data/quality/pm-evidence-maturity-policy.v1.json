@@ -1,0 +1,129 @@
+{
+  "schema": "fmea-mining.pm-evidence-maturity-policy.v1",
+  "version": "1.3.79",
+  "predecessor": "1.3.78",
+  "asOfDate": "2026-10-28",
+  "purpose": "Consolidate the existing observable symptom, unvalidated detectability and unassessed metrology documents into one engineering-readable evidence maturity register, without equating completeness with diagnosis, safety, OEM authorization or risk priority",
+  "scope": "all_15_unranked_pm_rules_not_new_operational_priority",
+  "sourceVersions": {
+    "observability": "1.3.76",
+    "detectability": "1.3.77",
+    "metrology": "1.3.78",
+    "maturity": "1.3.60"
+  },
+  "layers": [
+    {
+      "id": "conceptual_model",
+      "label": "Sintoma, método e hipóteses",
+      "status": "CONCEPTUAL_DESIGN_EXISTS_NOT_FIELD_VERIFIED",
+      "blockerCode": "SOURCE_DESIGN_NOT_FIELD_VALIDATED",
+      "requiredNext": "Revisar aplicabilidade física ao modelo e confrontar as alternativas com evidência independente"
+    },
+    {
+      "id": "detection_limits",
+      "label": "Detectabilidade e interpretação",
+      "status": "QUALITATIVE_LIMITS_DEFINED_NOT_PERFORMANCE_VALIDATED",
+      "blockerCode": "DETECTION_CAPABILITY_NOT_VALIDATED",
+      "requiredNext": "Verificar limitações do método, risco de não detecção e confusores na configuração efetiva"
+    },
+    {
+      "id": "measurement_quality",
+      "label": "Metrologia e proveniência",
+      "status": "TEN_CHECKS_UNASSESSED_NO_REAL_EVIDENCE",
+      "blockerCode": "TEN_PRIVATE_QUALITY_REQUIREMENTS_UNASSESSED",
+      "requiredNext": "Realizar revisão privada dos dez critérios, incluindo justificação de não aplicabilidade"
+    },
+    {
+      "id": "oem_effectivity",
+      "label": "Documentação OEM e efetividade",
+      "status": "OEM_METHOD_AND_SERIAL_NOT_VERIFIED",
+      "blockerCode": "OEM_SERIAL_METHOD_EFFECTIVITY_NOT_VERIFIED",
+      "requiredNext": "Confirmar direitos, manual aplicável e efetividade por modelo/série no ambiente licenciado"
+    },
+    {
+      "id": "qualified_review",
+      "label": "Revisão técnica e decisão humana",
+      "status": "NO_INDEPENDENT_REVIEW_OR_SIGNOFF",
+      "blockerCode": "ENGINEERING_CAUSAL_REVIEW_NOT_RECORDED",
+      "requiredNext": "Submeter contraprovas e resultado inconclusivo ao profissional habilitado em processo aprovado"
+    },
+    {
+      "id": "execution_and_sap",
+      "label": "Execução, SAP e operação",
+      "status": "NOT_AUTHORIZED_NO_AUTOMATED_PROMOTION",
+      "blockerCode": "EXECUTION_AND_SAP_ARE_SEPARATE_GATES",
+      "requiredNext": "Não gerar OS, alterar mestre SAP ou liberar operação; cumprir separadamente gates privados"
+    }
+  ],
+  "privateQualityCriteria": [
+    "safety",
+    "asset_identity",
+    "oem_method",
+    "instrument",
+    "calibration",
+    "conditions",
+    "repeatability",
+    "uncertainty",
+    "custody",
+    "counterevidence"
+  ],
+  "syntheticCases": [
+    {
+      "id": "positive_signal_all_hypothetically_documented",
+      "signalState": "observed",
+      "metrologyScenarioId": "apparently_complete_remains_blocked"
+    },
+    {
+      "id": "negative_signal_all_hypothetically_documented",
+      "signalState": "notObserved",
+      "metrologyScenarioId": "apparently_complete_remains_blocked"
+    },
+    {
+      "id": "ambiguous_signal_all_hypothetically_documented",
+      "signalState": "ambiguous",
+      "metrologyScenarioId": "apparently_complete_remains_blocked"
+    },
+    {
+      "id": "positive_signal_OEM_missing",
+      "signalState": "observed",
+      "metrologyScenarioId": "missing_oem_method"
+    },
+    {
+      "id": "ambiguous_signal_unsafe",
+      "signalState": "ambiguous",
+      "metrologyScenarioId": "unsafe_condition"
+    },
+    {
+      "id": "positive_signal_calibration_na_claimed",
+      "signalState": "observed",
+      "metrologyScenarioId": "not_applicable_requires_decision"
+    }
+  ],
+  "routeSemantics": {
+    "observed": "EVIDENCE_PENDING_COMPETING_EXPLANATIONS",
+    "notObserved": "ABSENCE_DOES_NOT_EXCLUDE_FAILURE",
+    "ambiguous": "INCONCLUSIVE_REQUIRE_HUMAN_REVIEW",
+    "allHypotheticallyComplete": "HOLD_INDEPENDENT_PRIVATE_QUALIFIED_REVIEW",
+    "unsafe": "STOP_UNAUTHORIZED_OPERATION_REQUEST_SAFETY_REVIEW",
+    "OEMMissing": "HOLD_OEM_METHOD_PRIVATE_EVIDENCE",
+    "notApplicable": "HOLD_METHOD_APPLICABILITY_JUSTIFICATION"
+  },
+  "noGoSummary": "MODEL_COVERAGE_IS_NOT_EVIDENCE_QUALITY_OR_OPERATIONAL_READINESS",
+  "guardrails": {
+    "noOperationalRiskRanking": true,
+    "noRealAssets": true,
+    "noRealInspections": true,
+    "noRealInstrumentResults": true,
+    "noStatisticalDetectionRates": true,
+    "noRealOEMEffectivity": true,
+    "noRootCauseConfirmation": true,
+    "noSignedPrivateReview": true,
+    "noDocumentaryCompletenessClaim": true,
+    "noAutomaticSAPMapping": true,
+    "noWorkOrderCreation": true,
+    "noOperationalRelease": true,
+    "noConsumerUpdates": true,
+    "allEightPrivateGatesBlocked": true,
+    "allTenSapExceptionsBlocked": true
+  }
+}
