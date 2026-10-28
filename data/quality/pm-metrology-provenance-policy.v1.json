@@ -270,5 +270,22 @@
     "noOperationalRelease": true,
     "eightPrivateGatesBlocked": true,
     "tenSapExceptionsBlocked": true
-  }
+  },
+  "ruleIds": [
+    "brake-disc",
+    "cooling-fan-bearing",
+    "cooling-fan-belt",
+    "cooling-radiator-leak",
+    "differential-gear",
+    "drill-feed-chain",
+    "engine-exhaust",
+    "final-drive-bearing",
+    "final-drive-gear",
+    "hydraulic-pump-seal",
+    "implement-cylinder",
+    "track-bolt-loose",
+    "track-roller-wear",
+    "wheel-tire-damage",
+    "wheel-tire-wear"
+  ]
 }
