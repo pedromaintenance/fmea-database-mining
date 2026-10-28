@@ -2,7 +2,9 @@
 
 Banco de conhecimento **versionado** para investigar modos de falha, sintomas, evidências e causas em equipamentos móveis de mineração. Um consumidor possível é o jogo **[P.O.R.C.A.R.I.A. — Você Quebra, Eu Conserto](https://github.com/pedromaintenance/porcaria-voce-quebra-eu-conserto)**, mas o banco é independente: **este repositório não altera os consumidores**.
 
-> **Status:** versão do catálogo **1.3.75** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
+> **Status:** versão do catálogo **1.3.76** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
+
+**Ciclo v1.3.76:** [observabilidade das 15 regras PM sem prioridade documental](docs/CICLO_2026-10-27_OBSERVABILIDADE_REGRAS_SEM_PRIORIDADE.md) reconcilia seus sintomas e inspeções literais com 30 hipóteses alternativas conceituais e pedidos de evidência discriminante. **Sem prioridade não equivale a baixo risco**; nenhuma inspeção, causa raiz, classificação de gravidade, ligação SAP ou liberação é inferida. Dez exceções e oito gates privados continuam bloqueados.
 
 **Ciclo v1.3.75:** [solicitação de decisão SEC-01 pronta para adaptação](docs/CICLO_2026-10-27_SOLICITACAO_DECISAO_SEC01.md) gera um memorando Markdown objetivo com três decisões corporativas e nove evidências; testa seis cenários de devolução, recusa, pendências e aprovação restrita hipotética. O documento não foi enviado; nenhuma assinatura, gate, alteração SAP ou liberação é criada.
 

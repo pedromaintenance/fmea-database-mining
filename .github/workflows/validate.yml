@@ -118,6 +118,8 @@ jobs:
         run: npm run pm:sec01:handoff:audit
       - name: Auditar memorando SEC-01 e triagem de respostas corporativas sinteticas
         run: npm run pm:sec01:request:audit
+      - name: Auditar observabilidade e hipoteses alternativas de 15 regras PM sem prioridade documental
+        run: npm run pm:unranked:observability:audit
       - name: Validar 10 bloqueios PM e 7 requisitos de efetividade OEM D9
         run: npm run pm:exceptions:validate
       - name: Gerar vínculos diagnósticos por modelo
@@ -248,6 +250,7 @@ jobs:
             reports/pm-sec01-approval-brief.generated.json
             reports/pm-sec01-governance-handoff.generated.json
             reports/pm-sec01-decision-request.generated.json
+            reports/pm-unranked-observability.generated.json
             reports/sec01-corporate-request.generated.md
             reports/public-knowledge.v1.json
             reports/public-manifest.v1.json

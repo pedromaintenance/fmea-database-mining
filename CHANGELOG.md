@@ -2,6 +2,12 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.76] — 2026-10-27 — Observabilidade das 15 regras preventivas sem prioridade documental
+
+- Retoma engenharia do catálogo após preparar SEC-01: associa 15 sementes preventivas sem prioridade documental a 30 hipóteses alternativas conceituais, requisitos qualitativos de contraprova e barreiras de segurança, preservando sintomas e métodos de inspeção literalmente.
+- Reconciliador e auditor adversarial integrados ao QA/CI, com relatório técnico para revisão; sem ranking de risco, conclusão física, método OEM autorizado, ordem ou aprovação SAP.
+- Mantém intactas as 10 exceções originais PM×SAP (5 P0/5 P1), oito gates de infraestrutura e maturidade sem evidência real.
+
 ## [1.3.75] — 2026-10-27 — Solicitação SEC-01 pronta para encaminhamento humano
 
 - Modelo sintético curto de solicitação de análise corporativa SEC-01, com três decisões separadas e os nove requisitos documentais já rastreados, gerado como Markdown copiável no CI.
