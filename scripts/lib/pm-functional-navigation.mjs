@@ -56,7 +56,7 @@ export function buildFunctionalNavigation({catalog,chains,ontology,semantic}){
   v.fieldConfirmationCount=0;v.validatedCausalRelations=0;
  }
  const graphLinks=[...links.values()].sort((a,b)=>a.left.localeCompare(b.left)||a.right.localeCompare(b.right));
- return {schema:"fmea-mining.pm-functional-navigation.v1",version:"1.3.83",
+ return {schema:"fmea-mining.pm-functional-navigation.v1",version:"1.3.84",
   nature:"PUBLIC_AUTHORED_RELATIONS_AND_GENERIC_SHARED_CONTEXT_NOT_FIELD_EVIDENCE",
   provenance:{explorer:catalog.version,chains:chains.version,ontology:ontology.version,semantic:semantic.version},
   summary:{rules:rules.length,authoredGenericChains:chains.records.length,
@@ -87,7 +87,7 @@ export function assessFunctionalNavigation(input,graph){
  let expected;try{expected=buildFunctionalNavigation(input)}
  catch(e){return {status:"REJECTED",errors:["build_"+e.message]}};
  ck(eq(graph,expected),"derived_graph_drift");
- ck(catalog.version==="1.3.83"&&catalog.records.length===25&&catalog.summary.blockedSapExceptions===10&&
+ ck(catalog.version==="1.3.84"&&catalog.records.length===25&&catalog.summary.blockedSapExceptions===10&&
   catalog.summary.blockedCorporateGates===8&&catalog.summary.verifiedFieldCases===0&&
   catalog.summary.confirmedRootCauses===0&&catalog.summary.approvedSapLinks===0&&catalog.summary.decision==="NO_GO",
   "explorer_unapproved_catalog");
@@ -121,7 +121,7 @@ export function assessFunctionalNavigation(input,graph){
   "hydraulic-hose-leak::hydraulic-pump-seal",
   "track-idler-wear::track-roller-wear"
  ];
- ck(graph.version==="1.3.83"&&graph.schema==="fmea-mining.pm-functional-navigation.v1"&&
+ ck(graph.version==="1.3.84"&&graph.schema==="fmea-mining.pm-functional-navigation.v1"&&
   eq(graph.links.map(x=>pair(x.left,x.right)),expectedPairs)&&graph.rules.length===25&&
   graph.links.every(x=>x.linkStatus==="PUBLIC_AUTHORSHIP_NOT_FIELD_VALIDATED"&&
    x.mechanicalEquivalenceDemonstrated===false&&x.rootCauseConfirmed===false&&

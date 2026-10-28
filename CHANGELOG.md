@@ -2,6 +2,13 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.84] — 2026-10-28 — Mapa SVG técnico navegável por sistema
+
+- Consulta HTML offline passa a exibir grafo SVG determinístico de quatro colunas — sistema, regra, cadeia genérica, família de mecanismo — com seletor de 13 sistemas, legenda e detalhes de proveniência.
+- Nós navegáveis por mouse e teclado, rolagem horizontal no celular e integração com fichas técnicas; fonte e limite causal visíveis em cada nível, sem animação/zoom ou serviço externo.
+- Arestas estritamente associadas aos dados do catálogo, sem fabricar cadeia para regras não cobertas, atribuir dano de outros componentes ou confundir P0/P1 documental com risco operacional.
+- Novo auditor valida treze subgrafos, integridade de arestas, geometria, JS, HTML offline e mutações contra falsa comprovação de falha, efetividade OEM, liberação ou SAP. Dez exceções e oito gates seguem bloqueados.
+
 ## [1.3.83] — 2026-10-28 — Navegação funcional e fontes de mecanismos
 
 - Integra 24 cadeias genéricas catalogadas, 11 nós semânticos de condições/ações e famílias da ontologia à consulta das 25 regras, com IDs de proveniência e separação explícita de associações apenas estruturais.
