@@ -1,0 +1,412 @@
+{
+  "schema": "fmea-mining.pm-unranked-observability-policy.v1",
+  "version": "1.3.76",
+  "asOfDate": "2026-10-27",
+  "predecessor": "1.3.75",
+  "purpose": "Cross-check all fifteen preventive rule IDs without documented priority and produce non-exclusive diagnostic alternatives and specific evidence requests without inferring risk, OEM applicability, field findings, or SAP approval",
+  "prioritySemantics": {
+    "unranked": "NO_DOCUMENTED_PRIORITY_NOT_LOW_RISK",
+    "noPriorityAssignment": true,
+    "noNumericalRiskScore": true
+  },
+  "sourceSemantics": {
+    "literalSeedSymptomsAndMethods": "verbatim_from_seed_rules",
+    "alternatives": "proposed_engineering_hypotheses_not_source_facts",
+    "proofs": "qualitative_requests_not_executed_field_tests",
+    "safety": "generic_hazards_not_a_job_procedure"
+  },
+  "entries": [
+    {
+      "ruleId": "brake-disc",
+      "inspectionFamily": "wear_measurement",
+      "alternatives": [
+        {
+          "id": "brake-disc-ALT-1",
+          "candidate": "desgaste por atrito distribuído",
+          "proposedDiscriminatingEvidence": "medições de espessura e condição superficial sob critério OEM efetivo",
+          "hypothesisStatus": "UNTESTED_CONCEPTUAL_NONEXCLUSIVE"
+        },
+        {
+          "id": "brake-disc-ALT-2",
+          "candidate": "aquecimento por arrasto ou aplicação anormal",
+          "proposedDiscriminatingEvidence": "registros de temperatura/arrasto e condição do mecanismo de atuação, sob método autorizado",
+          "hypothesisStatus": "UNTESTED_CONCEPTUAL_NONEXCLUSIVE"
+        }
+      ],
+      "safeBoundary": "Nenhuma verificação dinâmica do freio pode ser inferida como segura a partir deste catálogo.",
+      "priorityFromRepository": null,
+      "fieldEvidenceReceived": false,
+      "OEMSerialVerified": false,
+      "engineeringReviewApproved": false,
+      "SAPMappingApproved": false
+    },
+    {
+      "ruleId": "cooling-fan-bearing",
+      "inspectionFamily": "noise_and_play",
+      "alternatives": [
+        {
+          "id": "cooling-fan-bearing-ALT-1",
+          "candidate": "rolamento de ventilador com desgaste",
+          "proposedDiscriminatingEvidence": "inspeção isolada de folga/rolamento conforme procedimento OEM aplicável",
+          "hypothesisStatus": "UNTESTED_CONCEPTUAL_NONEXCLUSIVE"
+        },
+        {
+          "id": "cooling-fan-bearing-ALT-2",
+          "candidate": "fonte sonora adjacente como tensionador ou acionamento",
+          "proposedDiscriminatingEvidence": "localização qualificada da fonte de ruído sem acesso a partes girantes",
+          "hypothesisStatus": "UNTESTED_CONCEPTUAL_NONEXCLUSIVE"
+        }
+      ],
+      "safeBoundary": "Não aproximar mãos/instrumentos de partes girantes; exigir isolamento e procedimento seguro.",
+      "priorityFromRepository": null,
+      "fieldEvidenceReceived": false,
+      "OEMSerialVerified": false,
+      "engineeringReviewApproved": false,
+      "SAPMappingApproved": false
+    },
+    {
+      "ruleId": "cooling-fan-belt",
+      "inspectionFamily": "belt_tension",
+      "alternatives": [
+        {
+          "id": "cooling-fan-belt-ALT-1",
+          "candidate": "tensão inadequada da correia",
+          "proposedDiscriminatingEvidence": "registro de tensão/condição segundo método e faixa OEM efetivos",
+          "hypothesisStatus": "UNTESTED_CONCEPTUAL_NONEXCLUSIVE"
+        },
+        {
+          "id": "cooling-fan-belt-ALT-2",
+          "candidate": "resistência anormal no acessório acionado ou desalinhamento",
+          "proposedDiscriminatingEvidence": "verificação estática autorizada do alinhamento, polias e acessórios",
+          "hypothesisStatus": "UNTESTED_CONCEPTUAL_NONEXCLUSIVE"
+        }
+      ],
+      "safeBoundary": "Medições e intervenções somente com energias perigosas controladas.",
+      "priorityFromRepository": null,
+      "fieldEvidenceReceived": false,
+      "OEMSerialVerified": false,
+      "engineeringReviewApproved": false,
+      "SAPMappingApproved": false
+    },
+    {
+      "ruleId": "cooling-radiator-leak",
+      "inspectionFamily": "visual_leak",
+      "alternatives": [
+        {
+          "id": "cooling-radiator-leak-ALT-1",
+          "candidate": "perda de estanqueidade da mangueira",
+          "proposedDiscriminatingEvidence": "localização documentada da origem do fluido após inspeção segura",
+          "hypothesisStatus": "UNTESTED_CONCEPTUAL_NONEXCLUSIVE"
+        },
+        {
+          "id": "cooling-radiator-leak-ALT-2",
+          "candidate": "vazamento na conexão/abraçadeira com escoamento sobre a mangueira",
+          "proposedDiscriminatingEvidence": "inspeção de conexões e trajetos de escoamento com identificação de componente",
+          "hypothesisStatus": "UNTESTED_CONCEPTUAL_NONEXCLUSIVE"
+        }
+      ],
+      "safeBoundary": "Não abrir circuito pressurizado ou quente; avaliação de fonte não é diagnóstico de causa raiz.",
+      "priorityFromRepository": null,
+      "fieldEvidenceReceived": false,
+      "OEMSerialVerified": false,
+      "engineeringReviewApproved": false,
+      "SAPMappingApproved": false
+    },
+    {
+      "ruleId": "differential-gear",
+      "inspectionFamily": "oil_and_noise",
+      "alternatives": [
+        {
+          "id": "differential-gear-ALT-1",
+          "candidate": "degradação de dentes da engrenagem",
+          "proposedDiscriminatingEvidence": "tendência, caracterização e contexto da amostragem de óleo, sem atribuir origem só por partículas",
+          "hypothesisStatus": "UNTESTED_CONCEPTUAL_NONEXCLUSIVE"
+        },
+        {
+          "id": "differential-gear-ALT-2",
+          "candidate": "desgaste de rolamento ou fonte sonora da transmissão associada",
+          "proposedDiscriminatingEvidence": "correlação com inspeção e método OEM específicos da arquitetura",
+          "hypothesisStatus": "UNTESTED_CONCEPTUAL_NONEXCLUSIVE"
+        }
+      ],
+      "safeBoundary": "A composição de partículas não identifica, isoladamente, a peça e o mecanismo de falha.",
+      "priorityFromRepository": null,
+      "fieldEvidenceReceived": false,
+      "OEMSerialVerified": false,
+      "engineeringReviewApproved": false,
+      "SAPMappingApproved": false
+    },
+    {
+      "ruleId": "drill-feed-chain",
+      "inspectionFamily": "wear_and_tension",
+      "alternatives": [
+        {
+          "id": "drill-feed-chain-ALT-1",
+          "candidate": "alongamento/desgaste da corrente",
+          "proposedDiscriminatingEvidence": "registro dimensional e condição de corrente com limites do OEM efetivo",
+          "hypothesisStatus": "UNTESTED_CONCEPTUAL_NONEXCLUSIVE"
+        },
+        {
+          "id": "drill-feed-chain-ALT-2",
+          "candidate": "desgaste ou desalinhamento de roda dentada/guia",
+          "proposedDiscriminatingEvidence": "verificação documental de roda dentada, alinhamento e condições de montagem",
+          "hypothesisStatus": "UNTESTED_CONCEPTUAL_NONEXCLUSIVE"
+        }
+      ],
+      "safeBoundary": "Não medir ou ajustar mecanismos de avanço energizados; não pressupor tolerância de ajuste.",
+      "priorityFromRepository": null,
+      "fieldEvidenceReceived": false,
+      "OEMSerialVerified": false,
+      "engineeringReviewApproved": false,
+      "SAPMappingApproved": false
+    },
+    {
+      "ruleId": "engine-exhaust",
+      "inspectionFamily": "visual_soot_crack",
+      "alternatives": [
+        {
+          "id": "engine-exhaust-ALT-1",
+          "candidate": "trinca em coletor ou conexão",
+          "proposedDiscriminatingEvidence": "inspeção documentada de descontinuidade e posição exata de fuga sob condição segura",
+          "hypothesisStatus": "UNTESTED_CONCEPTUAL_NONEXCLUSIVE"
+        },
+        {
+          "id": "engine-exhaust-ALT-2",
+          "candidate": "falha de junta ou união causando depósito de fuligem próximo",
+          "proposedDiscriminatingEvidence": "inspeção de juntas e uniões considerando expansão térmica e efetividade do arranjo",
+          "hypothesisStatus": "UNTESTED_CONCEPTUAL_NONEXCLUSIVE"
+        }
+      ],
+      "safeBoundary": "Componentes podem estar quentes e pressurizados; fuligem não confirma trinca.",
+      "priorityFromRepository": null,
+      "fieldEvidenceReceived": false,
+      "OEMSerialVerified": false,
+      "engineeringReviewApproved": false,
+      "SAPMappingApproved": false
+    },
+    {
+      "ruleId": "final-drive-bearing",
+      "inspectionFamily": "noise_and_oil",
+      "alternatives": [
+        {
+          "id": "final-drive-bearing-ALT-1",
+          "candidate": "desgaste de rolamento do comando final",
+          "proposedDiscriminatingEvidence": "condição de óleo e achados de inspeção/medição por método OEM pertinente",
+          "hypothesisStatus": "UNTESTED_CONCEPTUAL_NONEXCLUSIVE"
+        },
+        {
+          "id": "final-drive-bearing-ALT-2",
+          "candidate": "ruído de engrenamento ou outra fonte do conjunto planetário",
+          "proposedDiscriminatingEvidence": "discriminação da origem do ruído e componente segundo procedimento autorizado",
+          "hypothesisStatus": "UNTESTED_CONCEPTUAL_NONEXCLUSIVE"
+        }
+      ],
+      "safeBoundary": "Ruído e nível de óleo não confirmam dano do rolamento; não executar prova rodante sem controle.",
+      "priorityFromRepository": null,
+      "fieldEvidenceReceived": false,
+      "OEMSerialVerified": false,
+      "engineeringReviewApproved": false,
+      "SAPMappingApproved": false
+    },
+    {
+      "ruleId": "final-drive-gear",
+      "inspectionFamily": "magnetic_plug_oil",
+      "alternatives": [
+        {
+          "id": "final-drive-gear-ALT-1",
+          "candidate": "desgaste de engrenagens",
+          "proposedDiscriminatingEvidence": "morfologia/tendência de partículas e referência do compartimento, sem diagnóstico automático",
+          "hypothesisStatus": "UNTESTED_CONCEPTUAL_NONEXCLUSIVE"
+        },
+        {
+          "id": "final-drive-gear-ALT-2",
+          "candidate": "desgaste de rolamentos ou outras peças ferrosas no compartimento",
+          "proposedDiscriminatingEvidence": "correlação com inspeção OEM dirigida a engrenagens e componentes concorrentes",
+          "hypothesisStatus": "UNTESTED_CONCEPTUAL_NONEXCLUSIVE"
+        }
+      ],
+      "safeBoundary": "Material magnético não é prova isolada de falha de engrenagem.",
+      "priorityFromRepository": null,
+      "fieldEvidenceReceived": false,
+      "OEMSerialVerified": false,
+      "engineeringReviewApproved": false,
+      "SAPMappingApproved": false
+    },
+    {
+      "ruleId": "hydraulic-pump-seal",
+      "inspectionFamily": "external_leak",
+      "alternatives": [
+        {
+          "id": "hydraulic-pump-seal-ALT-1",
+          "candidate": "perda de estanqueidade na vedação da bomba",
+          "proposedDiscriminatingEvidence": "localização de ponto inicial de vazamento após limpeza/inspeção autorizadas",
+          "hypothesisStatus": "UNTESTED_CONCEPTUAL_NONEXCLUSIVE"
+        },
+        {
+          "id": "hydraulic-pump-seal-ALT-2",
+          "candidate": "vazamento em conexão ou componente adjacente com escoamento sobre a bomba",
+          "proposedDiscriminatingEvidence": "identificação do circuito e comparação com conexões e drenos segundo esquema OEM",
+          "hypothesisStatus": "UNTESTED_CONCEPTUAL_NONEXCLUSIVE"
+        }
+      ],
+      "safeBoundary": "Proibir busca tátil de vazamento em linha pressurizada; risco de injeção hidráulica.",
+      "priorityFromRepository": null,
+      "fieldEvidenceReceived": false,
+      "OEMSerialVerified": false,
+      "engineeringReviewApproved": false,
+      "SAPMappingApproved": false
+    },
+    {
+      "ruleId": "implement-cylinder",
+      "inspectionFamily": "cylinder_leak",
+      "alternatives": [
+        {
+          "id": "implement-cylinder-ALT-1",
+          "candidate": "vazamento na vedação da haste",
+          "proposedDiscriminatingEvidence": "origem do fluido e estado da haste documentados sob contenção/isolamento de carga",
+          "hypothesisStatus": "UNTESTED_CONCEPTUAL_NONEXCLUSIVE"
+        },
+        {
+          "id": "implement-cylinder-ALT-2",
+          "candidate": "vazamento em conexão/tubulação próxima ou outra vedação",
+          "proposedDiscriminatingEvidence": "inspeção de conexões e circuito sem confundir vazamento externo com bypass interno",
+          "hypothesisStatus": "UNTESTED_CONCEPTUAL_NONEXCLUSIVE"
+        }
+      ],
+      "safeBoundary": "Carga suspensa e energia hidráulica retida exigem isolamento e apoio conforme procedimento.",
+      "priorityFromRepository": null,
+      "fieldEvidenceReceived": false,
+      "OEMSerialVerified": false,
+      "engineeringReviewApproved": false,
+      "SAPMappingApproved": false
+    },
+    {
+      "ruleId": "track-bolt-loose",
+      "inspectionFamily": "fastener_condition",
+      "alternatives": [
+        {
+          "id": "track-bolt-loose-ALT-1",
+          "candidate": "perda de pré-carga na fixação",
+          "proposedDiscriminatingEvidence": "evidência de condição de fixador e junta; procedimento/torque OEM por série",
+          "hypothesisStatus": "UNTESTED_CONCEPTUAL_NONEXCLUSIVE"
+        },
+        {
+          "id": "track-bolt-loose-ALT-2",
+          "candidate": "deformação de junta/fixador ou condição das sapatas que altera retenção",
+          "proposedDiscriminatingEvidence": "verificação documental de material, montagem e condições de contato sem presumir causa",
+          "hypothesisStatus": "UNTESTED_CONCEPTUAL_NONEXCLUSIVE"
+        }
+      ],
+      "safeBoundary": "Não usar torque arbitrário ou executar intervenção em esteira sem isolamento.",
+      "priorityFromRepository": null,
+      "fieldEvidenceReceived": false,
+      "OEMSerialVerified": false,
+      "engineeringReviewApproved": false,
+      "SAPMappingApproved": false
+    },
+    {
+      "ruleId": "track-roller-wear",
+      "inspectionFamily": "wear_and_seal",
+      "alternatives": [
+        {
+          "id": "track-roller-wear-ALT-1",
+          "candidate": "desgaste superficial do rolete",
+          "proposedDiscriminatingEvidence": "medições de perfil/desgaste com critérios da configuração efetiva",
+          "hypothesisStatus": "UNTESTED_CONCEPTUAL_NONEXCLUSIVE"
+        },
+        {
+          "id": "track-roller-wear-ALT-2",
+          "candidate": "falha de vedação/rolamento ou desalinhamento contribuindo para desgaste",
+          "proposedDiscriminatingEvidence": "inspeção autorizada de vedação, folga e alinhamento para discriminar mecanismos",
+          "hypothesisStatus": "UNTESTED_CONCEPTUAL_NONEXCLUSIVE"
+        }
+      ],
+      "safeBoundary": "Não inferir limite de desgaste nem segurança de deslocamento a partir da hipótese.",
+      "priorityFromRepository": null,
+      "fieldEvidenceReceived": false,
+      "OEMSerialVerified": false,
+      "engineeringReviewApproved": false,
+      "SAPMappingApproved": false
+    },
+    {
+      "ruleId": "wheel-tire-damage",
+      "inspectionFamily": "tire_visual",
+      "alternatives": [
+        {
+          "id": "wheel-tire-damage-ALT-1",
+          "candidate": "dano por impacto/corte externo",
+          "proposedDiscriminatingEvidence": "registro da localização, dimensão e natureza do dano com critério do fabricante do pneu",
+          "hypothesisStatus": "UNTESTED_CONCEPTUAL_NONEXCLUSIVE"
+        },
+        {
+          "id": "wheel-tire-damage-ALT-2",
+          "candidate": "trinca relacionada a fadiga/degradação ou condição operacional",
+          "proposedDiscriminatingEvidence": "revisão de histórico e sinais estruturais por especialista habilitado, sem atribuição automática",
+          "hypothesisStatus": "UNTESTED_CONCEPTUAL_NONEXCLUSIVE"
+        }
+      ],
+      "safeBoundary": "Danos em pneu OTR têm alto potencial energético; não inflar, manusear ou desmontar sem autorização.",
+      "priorityFromRepository": null,
+      "fieldEvidenceReceived": false,
+      "OEMSerialVerified": false,
+      "engineeringReviewApproved": false,
+      "SAPMappingApproved": false
+    },
+    {
+      "ruleId": "wheel-tire-wear",
+      "inspectionFamily": "wear_pressure",
+      "alternatives": [
+        {
+          "id": "wheel-tire-wear-ALT-1",
+          "candidate": "distribuição de desgaste relacionada à pressão",
+          "proposedDiscriminatingEvidence": "mapa de desgaste e histórico qualificado de pressão, carga e temperatura",
+          "hypothesisStatus": "UNTESTED_CONCEPTUAL_NONEXCLUSIVE"
+        },
+        {
+          "id": "wheel-tire-wear-ALT-2",
+          "candidate": "desgaste associado a alinhamento, carga, suspensão ou trajetória",
+          "proposedDiscriminatingEvidence": "inspeção de alinhamento/elementos de suspensão e contexto operacional com procedimento aplicável",
+          "hypothesisStatus": "UNTESTED_CONCEPTUAL_NONEXCLUSIVE"
+        }
+      ],
+      "safeBoundary": "Padrão de desgaste isolado não identifica uma causa; sem autorização para ajuste de pressão.",
+      "priorityFromRepository": null,
+      "fieldEvidenceReceived": false,
+      "OEMSerialVerified": false,
+      "engineeringReviewApproved": false,
+      "SAPMappingApproved": false
+    }
+  ],
+  "allowedActions": [
+    "READ_PUBLIC_SEED_INSPECTION_METHOD",
+    "REQUEST_PRIVATE_OEM_EFFECTIVITY",
+    "REQUEST_QUALIFIED_COUNTEREVIDENCE",
+    "DEFER_CAUSAL_CONCLUSION"
+  ],
+  "neverActions": [
+    "RANK_BY_COUNT",
+    "TREAT_UNRANKED_AS_LOW_RISK",
+    "CONFIRM_CAUSE_FROM_SINGLE_OBSERVATION",
+    "DEFINE_OEM_LIMIT_WITHOUT_SERIES",
+    "RELEASE_OPERATION",
+    "EXECUTE_ACTIVE_TEST",
+    "APPROVE_SAP_REMAP"
+  ],
+  "guardrails": {
+    "noRealEquipmentData": true,
+    "noOEMSerials": true,
+    "noProcedureStepsForLiveTests": true,
+    "noRiskRanking": true,
+    "noActionExecution": true,
+    "noRootCausePromotion": true,
+    "noSingleSignalCausation": true,
+    "noFieldEvidenceClaims": true,
+    "noEngineeringSignoffs": true,
+    "noSAPAutomaticMapping": true,
+    "noWorkOrders": true,
+    "noOperationalRelease": true,
+    "noSyntheticConfirmation": true,
+    "allTenExceptionsBlocked": true,
+    "allEightPrivateGatesBlocked": true
+  }
+}
