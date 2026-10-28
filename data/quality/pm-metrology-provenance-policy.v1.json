@@ -1,0 +1,274 @@
+{
+  "schema": "fmea-mining.pm-metrology-provenance-policy.v1",
+  "version": "1.3.78",
+  "predecessor": "1.3.77",
+  "asOfDate": "2026-10-28",
+  "purpose": "Require auditably distinct identity, licensed method applicability, measurement conditions, instrument fitness, calibration, repeatability, uncertainty, custody, counterevidence and safe authorization before any technical decision, without representing private evidence or corporate approvals as complete",
+  "scope": {
+    "rules": "fifteen_unranked_preventive_inspections",
+    "validatedFieldMethods": 0,
+    "actualInstruments": 0,
+    "numericalThresholds": 0,
+    "actualDataStored": 0
+  },
+  "criteria": [
+    {
+      "id": "safety",
+      "label": "Segurança e autorização",
+      "reviewQuestion": "A tarefa de inspeção e a condição energética foram avaliadas e autorizadas para a configuração efetiva?",
+      "privateProof": "Análise de risco, isolamento/controle de energias e competência, sob procedimento corporativo autorizado.",
+      "source": "proposed_engineering_requirement_not_verified_oem",
+      "actualEvidenceReceived": false,
+      "corporateApprovalReceived": false
+    },
+    {
+      "id": "asset_identity",
+      "label": "Identidade e configuração",
+      "reviewQuestion": "O ativo, modelo, série, posição e variante estão identificados em fonte corporativa controlada?",
+      "privateProof": "Rastreio privado da configuração e escopo do componente, sem disponibilização pública de tags ou séries.",
+      "source": "proposed_engineering_requirement_not_verified_oem",
+      "actualEvidenceReceived": false,
+      "corporateApprovalReceived": false
+    },
+    {
+      "id": "oem_method",
+      "label": "Método OEM efetivo",
+      "reviewQuestion": "O método, os limites e a efetividade por série foram revisados sob licença e por profissional autorizado?",
+      "privateProof": "Referência OEM licenciada e aplicabilidade revisada, sem transferir o manual ao repositório público.",
+      "source": "proposed_engineering_requirement_not_verified_oem",
+      "actualEvidenceReceived": false,
+      "corporateApprovalReceived": false
+    },
+    {
+      "id": "instrument",
+      "label": "Instrumento e grandeza",
+      "reviewQuestion": "O método define se há instrumento ou técnica visual e qual grandeza efetivamente se observa?",
+      "privateProof": "Identificação de instrumento ou justificativa técnica de método não instrumental em registro privado.",
+      "source": "proposed_engineering_requirement_not_verified_oem",
+      "actualEvidenceReceived": false,
+      "corporateApprovalReceived": false
+    },
+    {
+      "id": "calibration",
+      "label": "Calibração e adequação",
+      "reviewQuestion": "Quando aplicável, o instrumento é adequado à faixa e possui calibração válida e rastreável?",
+      "privateProof": "Certificado/faixa/validade e compatibilidade metrológica, ou análise fundamentada de não aplicabilidade.",
+      "source": "proposed_engineering_requirement_not_verified_oem",
+      "actualEvidenceReceived": false,
+      "corporateApprovalReceived": false
+    },
+    {
+      "id": "conditions",
+      "label": "Condições de coleta",
+      "reviewQuestion": "Temperatura, pressão, carga, posição, acessibilidade e histórico relevante estão sob controle ou registrados?",
+      "privateProof": "Condições e contexto operacional que tornam comparáveis inspeções e evidências.",
+      "source": "proposed_engineering_requirement_not_verified_oem",
+      "actualEvidenceReceived": false,
+      "corporateApprovalReceived": false
+    },
+    {
+      "id": "repeatability",
+      "label": "Repetibilidade e amostragem",
+      "reviewQuestion": "O plano contempla variação de operador, posição, repetição ou amostragem segundo a técnica aplicável?",
+      "privateProof": "Justificativa de repetição ou amostragem e critério de consistência, sem presumir medição executada.",
+      "source": "proposed_engineering_requirement_not_verified_oem",
+      "actualEvidenceReceived": false,
+      "corporateApprovalReceived": false
+    },
+    {
+      "id": "uncertainty",
+      "label": "Incerteza e resolução",
+      "reviewQuestion": "Limitações de resolução, incerteza e tolerância foram analisadas quando há mensuração quantitativa?",
+      "privateProof": "Compatibilidade entre incerteza, resolução e critério OEM, ou justificativa da natureza qualitativa.",
+      "source": "proposed_engineering_requirement_not_verified_oem",
+      "actualEvidenceReceived": false,
+      "corporateApprovalReceived": false
+    },
+    {
+      "id": "custody",
+      "label": "Proveniência e cadeia de custódia",
+      "reviewQuestion": "A evidência pode ser vinculada de forma segura à fonte, contexto, versão, responsável e custódia privada?",
+      "privateProof": "Controle de versão, método e origem em repositório corporativo segregado; sem upload real no GitHub.",
+      "source": "proposed_engineering_requirement_not_verified_oem",
+      "actualEvidenceReceived": false,
+      "corporateApprovalReceived": false
+    },
+    {
+      "id": "counterevidence",
+      "label": "Hipóteses concorrentes",
+      "reviewQuestion": "Foram preservadas explicações alternativas e previstas contraprovas antes de atribuir componente ou causa?",
+      "privateProof": "Conjunto de hipóteses abertas e verificação independente de contraprova por Engenharia.",
+      "source": "proposed_engineering_requirement_not_verified_oem",
+      "actualEvidenceReceived": false,
+      "corporateApprovalReceived": false
+    }
+  ],
+  "sequence": [
+    "safety",
+    "asset_identity",
+    "oem_method",
+    "instrument",
+    "calibration",
+    "conditions",
+    "repeatability",
+    "uncertainty",
+    "custody",
+    "counterevidence"
+  ],
+  "statusEnums": {
+    "general": [
+      "not_demonstrated",
+      "hypothetically_documented"
+    ],
+    "safety": [
+      "not_demonstrated",
+      "hypothetically_documented",
+      "unsafe"
+    ],
+    "conditional": [
+      "not_demonstrated",
+      "hypothetically_documented",
+      "hypothetically_not_applicable"
+    ]
+  },
+  "conditionalIds": [
+    "instrument",
+    "calibration",
+    "repeatability",
+    "uncertainty"
+  ],
+  "routes": {
+    "missing_safety": "HOLD_SAFETY_PRIVATE_EVIDENCE",
+    "missing_asset_identity": "HOLD_ASSET_IDENTITY_PRIVATE_EVIDENCE",
+    "missing_oem_method": "HOLD_OEM_METHOD_PRIVATE_EVIDENCE",
+    "missing_instrument": "HOLD_INSTRUMENT_PRIVATE_EVIDENCE",
+    "missing_calibration": "HOLD_CALIBRATION_PRIVATE_EVIDENCE",
+    "missing_conditions": "HOLD_CONDITIONS_PRIVATE_EVIDENCE",
+    "missing_repeatability": "HOLD_REPEATABILITY_PRIVATE_EVIDENCE",
+    "missing_uncertainty": "HOLD_UNCERTAINTY_PRIVATE_EVIDENCE",
+    "missing_custody": "HOLD_CUSTODY_PRIVATE_EVIDENCE",
+    "missing_counterevidence": "HOLD_COUNTEREVIDENCE_PRIVATE_EVIDENCE",
+    "unsafe": "STOP_UNAUTHORIZED_OPERATION_REQUEST_SAFETY_REVIEW",
+    "not_applicable": "HOLD_METHOD_APPLICABILITY_JUSTIFICATION",
+    "all_synthetic": "HOLD_INDEPENDENT_PRIVATE_QUALIFIED_REVIEW"
+  },
+  "scenarios": [
+    {
+      "id": "missing_safety",
+      "override": {
+        "safety": "not_demonstrated"
+      },
+      "expected": "HOLD_SAFETY_PRIVATE_EVIDENCE"
+    },
+    {
+      "id": "missing_asset_identity",
+      "override": {
+        "asset_identity": "not_demonstrated"
+      },
+      "expected": "HOLD_ASSET_IDENTITY_PRIVATE_EVIDENCE"
+    },
+    {
+      "id": "missing_oem_method",
+      "override": {
+        "oem_method": "not_demonstrated"
+      },
+      "expected": "HOLD_OEM_METHOD_PRIVATE_EVIDENCE"
+    },
+    {
+      "id": "missing_instrument",
+      "override": {
+        "instrument": "not_demonstrated"
+      },
+      "expected": "HOLD_INSTRUMENT_PRIVATE_EVIDENCE"
+    },
+    {
+      "id": "missing_calibration",
+      "override": {
+        "calibration": "not_demonstrated"
+      },
+      "expected": "HOLD_CALIBRATION_PRIVATE_EVIDENCE"
+    },
+    {
+      "id": "missing_conditions",
+      "override": {
+        "conditions": "not_demonstrated"
+      },
+      "expected": "HOLD_CONDITIONS_PRIVATE_EVIDENCE"
+    },
+    {
+      "id": "missing_repeatability",
+      "override": {
+        "repeatability": "not_demonstrated"
+      },
+      "expected": "HOLD_REPEATABILITY_PRIVATE_EVIDENCE"
+    },
+    {
+      "id": "missing_uncertainty",
+      "override": {
+        "uncertainty": "not_demonstrated"
+      },
+      "expected": "HOLD_UNCERTAINTY_PRIVATE_EVIDENCE"
+    },
+    {
+      "id": "missing_custody",
+      "override": {
+        "custody": "not_demonstrated"
+      },
+      "expected": "HOLD_CUSTODY_PRIVATE_EVIDENCE"
+    },
+    {
+      "id": "missing_counterevidence",
+      "override": {
+        "counterevidence": "not_demonstrated"
+      },
+      "expected": "HOLD_COUNTEREVIDENCE_PRIVATE_EVIDENCE"
+    },
+    {
+      "id": "unsafe_condition",
+      "override": {
+        "safety": "unsafe"
+      },
+      "expected": "STOP_UNAUTHORIZED_OPERATION_REQUEST_SAFETY_REVIEW"
+    },
+    {
+      "id": "not_applicable_requires_decision",
+      "override": {
+        "calibration": "hypothetically_not_applicable"
+      },
+      "expected": "HOLD_METHOD_APPLICABILITY_JUSTIFICATION"
+    },
+    {
+      "id": "apparently_complete_remains_blocked",
+      "override": {},
+      "expected": "HOLD_INDEPENDENT_PRIVATE_QUALIFIED_REVIEW"
+    }
+  ],
+  "privateReviewBoundaries": {
+    "instrumentationMayBeNotApplicableToVisualInspections": true,
+    "notApplicableRequiresHumanMethodJustification": true,
+    "noActualCalibrationVerified": true,
+    "noSensitivityOrSpecificityEstimated": true,
+    "noNumericTolerancesAssumed": true,
+    "noCorporateApprovalInPublicEvidence": true
+  },
+  "guardrails": {
+    "noAssetsIdentified": true,
+    "noSerialEffectivityVerified": true,
+    "noOEMDocumentCopied": true,
+    "noMeasurementsTaken": true,
+    "noRealInstrumentClaimed": true,
+    "noCalibrationsClaimed": true,
+    "noUncertaintyClaimed": true,
+    "noOperatorPerformanceClaimed": true,
+    "noFieldTestAuthorized": true,
+    "noApprovalsClaimed": true,
+    "noRootCausesConfirmed": true,
+    "noHealthByNonDetection": true,
+    "noAutomaticRiskRanking": true,
+    "noSAPChanges": true,
+    "noWorkOrders": true,
+    "noOperationalRelease": true,
+    "eightPrivateGatesBlocked": true,
+    "tenSapExceptionsBlocked": true
+  }
+}
