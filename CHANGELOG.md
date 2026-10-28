@@ -2,6 +2,12 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.75] — 2026-10-27 — Solicitação SEC-01 pronta para encaminhamento humano
+
+- Modelo sintético curto de solicitação de análise corporativa SEC-01, com três decisões separadas e os nove requisitos documentais já rastreados, gerado como Markdown copiável no CI.
+- Classificador de seis cenários hipotéticos de resposta: pendente, necessidade de prova, correção, recusa e manifestações favoráveis somente quanto ao desenho restrito; nenhuma manifestação implica aprovação automática do gate.
+- Auditor adversarial e integração QA/CI; nenhuma mensagem foi enviada, nenhuma aprovação corporativa ocorreu, oito gates e dez exceções SAP continuam bloqueados.
+
 ## [1.3.74] — 2026-10-27 — Handoff corporativo SEC-01 com RACI e decisões pendentes
 
 - RACI funcional **proposto** com oito funções e nove atividades vinculadas aos nove critérios SEC-01; sem nomeação de responsáveis reais, poder de assinatura ou convite enviado.
