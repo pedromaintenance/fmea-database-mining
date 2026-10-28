@@ -126,6 +126,8 @@ jobs:
         run: npm run pm:metrology:provenance:audit
       - name: Auditar matriz integrada de maturidade da evidencia e bloqueios causais PM
         run: npm run pm:evidence:maturity:audit
+      - name: Verificar consulta FMEA standalone com filtros e 15 regras publicas
+        run: npm run pm:technical:explorer:audit
       - name: Validar 10 bloqueios PM e 7 requisitos de efetividade OEM D9
         run: npm run pm:exceptions:validate
       - name: Gerar vínculos diagnósticos por modelo
@@ -260,6 +262,8 @@ jobs:
             reports/pm-inspection-detectability.generated.json
             reports/pm-metrology-provenance.generated.json
             reports/pm-evidence-maturity.generated.json
+            reports/pm-technical-explorer.generated.json
+            docs/consulta-fmea.html
             reports/sec01-corporate-request.generated.md
             reports/public-knowledge.v1.json
             reports/public-manifest.v1.json
