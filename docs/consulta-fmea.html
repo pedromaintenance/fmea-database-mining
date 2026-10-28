@@ -253,7 +253,17 @@ details{margin-top:10px;border-top:1px solid var(--line);padding-top:10px}summar
    const blob=new Blob([reportText(r)],{type:"text/plain;charset=utf-8"});const url=URL.createObjectURL(blob);
    const a=h("a");a.href=url;a.download="fmea-consulta-"+r.ruleId+".txt";document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
   });
-  actions.append(copy,save);head.append(actions);el.append(head);
+  const sheet=h("button","Exportar ficha MD","action secondary");sheet.type="button";
+  sheet.addEventListener("click",()=>downloadText("fmea-revisao-"+r.ruleId+".md",
+    reviewMarkdown([r.ruleId]),"text/markdown;charset=utf-8"));
+  const left=h("button","Selecionar A","action secondary");left.type="button";
+  left.setAttribute("aria-pressed",compareSlots.left===r.ruleId?"true":"false");
+  left.addEventListener("click",()=>{compareSlots.left=r.ruleId;if(compareSlots.right===r.ruleId)compareSlots.right=null;renderDetail();});
+  const right=h("button","Selecionar B","action secondary");right.type="button";
+  right.setAttribute("aria-pressed",compareSlots.right===r.ruleId?"true":"false");
+  right.addEventListener("click",()=>{compareSlots.right=r.ruleId;if(compareSlots.left===r.ruleId)compareSlots.left=null;renderDetail();});
+  actions.append(copy,save,sheet,left,right);head.append(actions);el.append(head);
+  comparisonPanel(el);
   if(r.reviewTrack==="PM_SAP_DOCUMENTARY_EXCEPTION"){
     el.append(sectionTitle("Semente preventiva — descrição original"));
     const base=h("div",null,"grid");base.append(panel("Sintoma de origem",r.symptom),
@@ -282,6 +292,7 @@ details{margin-top:10px;border-top:1px solid var(--line);padding-top:10px}summar
       h("p","Status da fonte: "+r.sapException.disposition+" · Remapeamento automático: proibido. Oito gates corporativos permanecem bloqueados.","note"));
     el.append(boundary);
     const foot=h("footer",null,"footer");foot.append(h("p","Fontes: semente PM, revisão de lacunas PM×SAP e fila de maturidade. Campos preservados sem promoção causal."));el.append(foot);
+    relatedPanel(el,r);
     return;
   }
   el.append(sectionTitle("Observação e método de origem"));
@@ -303,6 +314,7 @@ details{margin-top:10px;border-top:1px solid var(--line);padding-top:10px}summar
   r.qualityCriteria.forEach((q,i)=>{const d=h("details");const s=h("summary",(i+1)+". "+q.label);d.append(s,h("p",q.question,"note"),h("p","Evidência a solicitar: "+q.privateProof,"note"));quality.append(d);});el.append(quality);
   const foot=h("footer",null,"footer");foot.append(h("p","Fonte: catálogo público versionado · sementes PM "+data.provenance.preventiveSeeds+" · observabilidade "+data.provenance.observability+" · detectabilidade "+data.provenance.detectability+" · metrologia "+data.provenance.metrology+" · maturidade "+data.provenance.evidenceMaturity+"."),
    h("p","Não autoriza inspeção prática, definição de periodicidade, alteração SAP, geração de OS ou liberação. Dez exceções PM×SAP e oito gates corporativos permanecem bloqueados."));el.append(foot);
+  relatedPanel(el,r);
  }
  $("search").addEventListener("input",renderList);$("system").addEventListener("change",renderList);
  $("track").addEventListener("change",renderList);$("priority").addEventListener("change",renderList);
