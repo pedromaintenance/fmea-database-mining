@@ -2,6 +2,12 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.78] — 2026-10-28 — Qualidade metrológica e rastreabilidade de inspeções preventivas
+
+- Dez controles de qualidade por cada uma das 15 regras sem prioridade documental: autorização, identidade/configuração, método OEM, técnica/instrumento, calibração, condições, repetibilidade, incerteza, custódia e contraprova; 150 posições **não avaliadas**.
+- Treze cenários públicos por inspeção, totalizando 195 roteamentos sintéticos; evidências faltantes, condições inseguras, alegações de não aplicabilidade e aparente completude seguem sem aprovação automática.
+- Auditor adversarial e QA/CI, sem dados reais, resultados de medição, incertezas calculadas, documentos OEM sob licença, assinaturas, conclusões de causa, alteração SAP ou autorização operacional. Mantidos 8/8 gates e 10/10 exceções bloqueados.
+
 ## [1.3.77] — 2026-10-28 — Limites de detecção e atribuição nas 15 inspeções PM
 
 - Acrescenta aos 15 pacotes de observabilidade condições de sinal, atribuições incorretas possíveis, confusores, possibilidades de não detecção e limites inconclusivos, reconciliados às sementes e alternativas anteriores.

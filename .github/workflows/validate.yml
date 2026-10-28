@@ -122,6 +122,8 @@ jobs:
         run: npm run pm:unranked:observability:audit
       - name: Auditar detectabilidade e inconclusao de 15 metodos de inspecao PM
         run: npm run pm:inspection:detectability:audit
+      - name: Auditar qualidade metrologica e custodia de evidencias sinteticas PM
+        run: npm run pm:metrology:provenance:audit
       - name: Validar 10 bloqueios PM e 7 requisitos de efetividade OEM D9
         run: npm run pm:exceptions:validate
       - name: Gerar vínculos diagnósticos por modelo
@@ -254,6 +256,7 @@ jobs:
             reports/pm-sec01-decision-request.generated.json
             reports/pm-unranked-observability.generated.json
             reports/pm-inspection-detectability.generated.json
+            reports/pm-metrology-provenance.generated.json
             reports/sec01-corporate-request.generated.md
             reports/public-knowledge.v1.json
             reports/public-manifest.v1.json
