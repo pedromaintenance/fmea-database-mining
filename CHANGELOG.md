@@ -2,6 +2,12 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.80] — 2026-10-28 — Consulta técnica standalone dos mecanismos concorrentes
+
+- Publicado `docs/consulta-fmea.html`, HTML responsivo offline com pesquisa por regra, sintoma, método, sistema ou hipótese, seleção por sistema, visão detalhada de 15 regras, 30 alternativas abertas, 150 critérios e 90 bloqueios documentais.
+- Dados públicos integrados no próprio arquivo, sem fetch, CDN, armazenamento externo, dependência corporativa ou alterações SAP. Resumo copiável e exportação TXT explicitamente não homologados.
+- Auditor de fidelidade entre HTML e oito fontes locais, filtros e fronteiras de segurança. A UI mantém dez exceções PM×SAP e oito gates corporativos bloqueados; não adiciona medições ou classificações de risco.
+
 ## [1.3.79] — 2026-10-28 — Matriz integrada de maturidade da evidência PM
 
 - Consolida observabilidade v1.3.76, detectabilidade v1.3.77 e qualidade metrológica v1.3.78 em um registro explicativo: 15 regras, 30 alternativas, 150 critérios documentais não avaliados e seis camadas causais não resolvidas por regra (90 posições).
