@@ -5,8 +5,7 @@ const exact=(x,keys)=>x!==null&&typeof x==="object"&&!Array.isArray(x)&&
  Object.keys(x).length===keys.length&&keys.every(k=>Object.hasOwn(x,k));
 export function classifySyntheticMetrology(sample,policy){
  if(!exact(sample,["ruleId","statuses"])||
-    !policy.criteria.some(x=>x.id)&&policy.criteria.length!==10||
-    !policy.scopedRuleIds?.includes?.(sample.ruleId)&&!policy._allowRuleForUnitTest?.includes?.(sample.ruleId))
+    !Array.isArray(policy.ruleIds)||!policy.ruleIds.includes(sample.ruleId))
    return "REJECT_UNSUPPORTED_SYNTHETIC_EVIDENCE";
  return routeMetrologyStatuses(sample.statuses,policy);
 }
@@ -100,6 +99,7 @@ export function assessMetrologyProvenance(input,report){
    "policy_identity");
  const ids=["safety","asset_identity","oem_method","instrument","calibration","conditions",
    "repeatability","uncertainty","custody","counterevidence"];
+ ck(eq(policy.ruleIds,[...detectability.detectionChecks.map(x=>x.ruleId)].sort()),"rule_allowlist_traceability");
  ck(eq(policy.sequence,ids)&&policy.criteria.length===10&&unique(policy.criteria.map(x=>x.id))&&
    eq(policy.criteria.map(x=>x.id),ids)&&policy.criteria.every(c=>
    c.label.length>8&&c.reviewQuestion.length>64&&c.privateProof.length>60&&
