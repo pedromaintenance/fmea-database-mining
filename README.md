@@ -2,7 +2,11 @@
 
 Banco de conhecimento **versionado** para investigar modos de falha, sintomas, evidências e causas em equipamentos móveis de mineração. Um consumidor possível é o jogo **[P.O.R.C.A.R.I.A. — Você Quebra, Eu Conserto](https://github.com/pedromaintenance/porcaria-voce-quebra-eu-conserto)**, mas o banco é independente: **este repositório não altera os consumidores**.
 
-> **Status:** versão do catálogo **1.3.79** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
+> **Status:** versão do catálogo **1.3.80** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
+
+**Consulta técnica disponível:** [abrir interface HTML standalone](docs/consulta-fmea.html). No GitHub, use **Raw/Download raw file** para salvar e abrir no navegador, mesmo sem internet. Permite busca, filtro por sistema, consulta de sintomas, hipóteses, limites, pendências e exportação TXT conceitual. **Não consulta nem altera SAP**.
+
+**Ciclo v1.3.80:** [interface de consulta pública das 15 regras PM sem prioridade documental](docs/CICLO_2026-10-28_CONSULTA_TECNICA_FMEA.md) incorpora dados rastreáveis diretamente num HTML offline, com busca acentuada/insensível a caixa, filtro por sistema, hipóteses alternativas, seis bloqueios, dez requisitos de qualidade e resumo TXT. Auditor verifica que o conteúdo não divergiu das políticas e não promove causa, risco ou aprovação.
 
 **Ciclo v1.3.79:** [matriz consolidada de maturidade da evidência](docs/CICLO_2026-10-28_MATRIZ_MATURIDADE_EVIDENCIA_PM.md) cruza as 15 regras sem prioridade, 30 alternativas, limitações de detecção e 150 verificações documentais pendentes, com seis camadas de bloqueio causal por regra. Simula 90 cenários que permanecem inconclusivos, sem confundir modelagem pública com validação de método, evidência física, criticidade, SAP ou liberação operacional.
 
