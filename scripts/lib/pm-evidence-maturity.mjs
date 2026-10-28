@@ -141,7 +141,11 @@ export function assessEvidenceMaturity(input,report){
   observability.summary.realPriorityAssignments===0&&
   observability.packets.every(x=>x.hypotheticalAlternatives.length===2&&
    x.originalRecordedPriority===null&&x.mayPromoteFMEA===false&&
-   x.realAssetMapped===false&&x.decision==="NO_GO"),"conceptual_observability");
+   x.realAssetMapped===false&&x.decision==="NO_GO"&&
+   x.hypotheticalAlternatives.every(a=>a.rootCauseConfirmed===false&&
+    a.physicalDamageConfirmed===false&&a.OEMEffectivityVerified===false&&
+    a.evidenceActuallyCollected===false&&a.engineeringSignoff===false&&
+    a.SAPlinkApproved===false)),"conceptual_observability");
  ck(detectability.detectionChecks.length===15&&detectability.summary.actualObservations===0&&
   detectability.summary.validatedSensitivityCount===0&&
   detectability.summary.validatedSpecificityCount===0&&
