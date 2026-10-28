@@ -127,7 +127,10 @@ export function assessTechnicalExplorer(input,output){
   gaps.records.every(x=>!maturity.unrankedRules.includes(x.ruleId))&&
   gaps.records.filter(x=>x.priority==="P0").length===5&&
   gaps.records.filter(x=>x.priority==="P1").length===5&&
-  gaps.records.every(x=>x.autoRemapAllowed===false&&x.observedFailures===0),"ten_sap_exceptions_locked");
+  gaps.records.every(x=>x.autoRemapAllowed===false&&x.observedFailures===0&&
+   x.status==="bloqueado_aguardando_curadoria"&&x.reviewer===null&&
+   x.approvedModelIds.length===0&&x.confirmedSapLocationIds.length===0&&
+   x.verifiedPartCodes.length===0),"ten_sap_exceptions_locked");
  check(runbook.phases.length===8&&runbook.phases.every(x=>
   x.gate==="BLOCK"&&x.status==="not_started"&&x.decisionToken===null)&&
   runbook.goNoGo.decision==="NO_GO","eight_corporate_gates_locked");
