@@ -45,6 +45,7 @@ details{margin-top:10px;border-top:1px solid var(--line);padding-top:10px}summar
 "use strict";
 (function(){
  const data=JSON.parse(document.getElementById("catalog-data").textContent);
+ const functional=JSON.parse(document.getElementById("functional-graph-data").textContent);
  const $=id=>document.getElementById(id);
  const h=(tag,text,cls)=>{const e=document.createElement(tag);if(text!==undefined&&text!==null)e.textContent=String(text);if(cls)e.className=cls;return e;};
  const norm=s=>String(s??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLocaleLowerCase("pt-BR");
@@ -150,6 +151,19 @@ details{margin-top:10px;border-top:1px solid var(--line);padding-top:10px}summar
     r.blockers.forEach(b=>out.push("- "+clean(b.label)+": "+clean(b.description)));
     out.push("","**Critérios metrológicos não avaliados:** "+r.qualityCriteria.length,"");
    }
+   const gn=functional.rules.find(x=>x.ruleId===r.ruleId);
+   if(gn){
+    out.push("### Referências funcionais do catálogo (não verificadas em campo)","");
+    if(gn.chains.length)gn.chains.forEach(c=>out.push("- **"+c.id+"** "+c.title+" · função: "+clean(c.function)+
+      " · famílias: "+c.mechanismIds.join(", ")+" · IDs de fonte: "+c.sourceIds.join(", ")));
+    else out.push("- Sem cadeia funcional explicitamente vinculada entre as 24 existentes.");
+    gn.sharedNodes.forEach(n=>out.push("- **"+n.id+"** ("+n.kind+"): "+clean(n.sharingMeaning)));
+    functional.links.filter(l=>l.left===r.ruleId||l.right===r.ruleId).forEach(l=>out.push(
+      "- Vínculo catalogado com **"+(l.left===r.ruleId?l.right:l.left)+"**; cadeias: "+
+      (l.explicitChainIds.join(", ")||"nenhuma")+"; nós compartilhados: "+
+      (l.sharedGenericNodeIds.join(", ")||"nenhum")+"; ressalvas: "+(l.boundaryIds.join(", ")||"revisão independente")));
+    out.push("");
+   }
    out.push("**Resultado:** INCONCLUSIVO · causa não confirmada · SAP e execução não autorizados.","");
   });
   if(rows.length===2)out.push("## Nota de comparação","",
@@ -159,6 +173,62 @@ details{margin-top:10px;border-top:1px solid var(--line);padding-top:10px}summar
    "**Dez exceções PM×SAP e oito gates corporativos permanecem BLOCK / NO_GO.**","");
   return out.join("\n");
  }
+
+ function provenanceLinks(el,r){
+  const node=functional.rules.find(x=>x.ruleId===r.ruleId);
+  if(!node)return;
+  el.append(sectionTitle("Funções e mecanismos citados no catálogo"));
+  const section=h("section",null,"panel");
+  section.append(h("h3","Relações explícitas de fontes públicas — não validadas em campo"),
+   h("p","Cadeias e condições catalogadas são hipóteses de literatura geral, sem inspeções reais, efetividade OEM por série, aprovação SAP ou causa confirmada.","notice"));
+  if(node.chains.length){
+   const title=h("details");title.open=true;title.append(h("summary",node.chains.length+" cadeias funcionais genéricas catalogadas"));
+   node.chains.forEach(c=>{
+    const item=h("div",null,"criterion");
+    item.append(h("b",c.id+" · "+c.title),
+     h("p","Função: "+c.function,"note"),
+     h("p","Modo proposto: "+c.mode,"note"),
+     h("p","Fontes catalogadas (IDs): "+c.sourceIds.join(", "),"note"));
+    title.append(item);
+   });section.append(title);
+  }else section.append(h("p","Não há cadeia funcional explícita vinculada a esta regra nas 24 cadeias do catálogo. Isso não significa ausência de mecanismo possível.","note"));
+  if(node.mechanismFamilies.length){
+   const title=h("details");title.append(h("summary",node.mechanismFamilies.length+" famílias de mecanismo conceituais"));
+   node.mechanismFamilies.forEach(m=>{const item=h("div",null,"criterion");item.append(h("b",m.id+" · "+m.label),
+     h("p",m.criteria,"note"));title.append(item);});section.append(title);
+  }
+  if(node.sharedNodes.length){
+   const title=h("details");title.append(h("summary",node.sharedNodes.length+" condições ou ações genéricas compartilhadas"));
+   node.sharedNodes.forEach(n=>{const item=h("div",null,"criterion");
+    item.append(h("b",n.id+" · "+(n.kind==="condition"?"Condição compartilhada":"Ação genérica compartilhada")),
+     h("p",n.sharingMeaning,"note"),
+     h("p","Discriminar: "+n.requiredDiscrimination,"note"));title.append(item);
+   });section.append(title);
+  }
+  const linked=functional.links.filter(x=>x.left===r.ruleId||x.right===r.ruleId);
+  if(linked.length){
+   const title=h("h3","Vínculos entre regras com referência identificável");section.append(title);
+   linked.forEach(l=>{
+    const other=l.left===r.ruleId?l.right:l.left;
+    const label=l.explicitChainIds.length?"MESMA CADEIA GENÉRICA CITADA":"SOMENTE NÓ SEMÂNTICO GENÉRICO";
+    const entry=h("div",null,"criterion");const button=h("button",other+" · "+label,"related-rule");button.type="button";
+    button.addEventListener("click",()=>{
+     if(!filter().some(x=>x.ruleId===other)){
+      $("search").value="";$("system").value="all";$("track").value="all";$("priority").value="all";
+     }
+     current=other;renderList();if(window.innerWidth<831)$("detail").scrollIntoView({behavior:"smooth",block:"start"});
+    });
+    entry.append(button,h("p","Cadeias explícitas: "+(l.explicitChainIds.join(", ")||"nenhuma")+
+     " · Nós genéricos: "+(l.sharedGenericNodeIds.join(", ")||"nenhum"),"note"));
+    if(l.boundaryIds.length)entry.append(h("p","RESTRIÇÃO DE ENQUADRAMENTO: "+l.boundaryIds.join(", ")+
+      ". Não concluir equivalência de componente, dano ou causalidade.","notice"));
+    section.append(entry);
+   });
+  }else section.append(h("p","Sem relacionamento explícito com outra regra nas fontes integradas. Sugestões estruturais abaixo requerem revisão independente.","note"));
+  section.append(h("p","Fonte: cadeias "+functional.provenance.chains+", ontologia "+functional.provenance.ontology+
+   " e crosswalk semântico "+functional.provenance.semantic+". Nenhum vínculo aqui é diagnóstico confirmado.","note"));
+  el.append(section);
+ }
  function relatedPanel(el,r){
   const rank={MESMO_SISTEMA_E_SUBGRUPO:0,MESMO_SISTEMA:1,MESMO_SUBGRUPO:2};
   const related=data.records.filter(x=>x.ruleId!==r.ruleId&&(x.system===r.system||x.subgroupCode===r.subgroupCode))
@@ -166,7 +236,7 @@ details{margin-top:10px;border-top:1px solid var(--line);padding-top:10px}summar
     "MESMO_SISTEMA_E_SUBGRUPO":x.system===r.system?"MESMO_SISTEMA":"MESMO_SUBGRUPO"}))
    .sort((a,b)=>rank[a.reason]-rank[b.reason]||a.record.ruleId.localeCompare(b.record.ruleId)).slice(0,5);
   if(!related.length)return;
-  el.append(sectionTitle("Regras relacionadas por estrutura"));
+  el.append(sectionTitle("Sugestões estruturais — revisão necessária"));
   const section=h("section",null,"panel");
   section.append(h("p","Associação por sistema ou código de subgrupo, não por causalidade, risco ou urgência.","notice"));
   const list=h("div",null,"related-list");
@@ -293,6 +363,7 @@ details{margin-top:10px;border-top:1px solid var(--line);padding-top:10px}summar
       h("p","Status da fonte: "+r.sapException.disposition+" · Remapeamento automático: proibido. Oito gates corporativos permanecem bloqueados.","note"));
     el.append(boundary);
     const foot=h("footer",null,"footer");foot.append(h("p","Fontes: semente PM, revisão de lacunas PM×SAP e fila de maturidade. Campos preservados sem promoção causal."));el.append(foot);
+    provenanceLinks(el,r);
     relatedPanel(el,r);
     return;
   }
@@ -315,6 +386,7 @@ details{margin-top:10px;border-top:1px solid var(--line);padding-top:10px}summar
   r.qualityCriteria.forEach((q,i)=>{const d=h("details");const s=h("summary",(i+1)+". "+q.label);d.append(s,h("p",q.question,"note"),h("p","Evidência a solicitar: "+q.privateProof,"note"));quality.append(d);});el.append(quality);
   const foot=h("footer",null,"footer");foot.append(h("p","Fonte: catálogo público versionado · sementes PM "+data.provenance.preventiveSeeds+" · observabilidade "+data.provenance.observability+" · detectabilidade "+data.provenance.detectability+" · metrologia "+data.provenance.metrology+" · maturidade "+data.provenance.evidenceMaturity+"."),
    h("p","Não autoriza inspeção prática, definição de periodicidade, alteração SAP, geração de OS ou liberação. Dez exceções PM×SAP e oito gates corporativos permanecem bloqueados."));el.append(foot);
+  provenanceLinks(el,r);
   relatedPanel(el,r);
  }
  $("search").addEventListener("input",renderList);$("system").addEventListener("change",renderList);
