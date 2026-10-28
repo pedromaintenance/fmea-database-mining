@@ -402,9 +402,174 @@ details{margin-top:10px;border-top:1px solid var(--line);padding-top:10px}summar
   provenanceLinks(el,r);
   relatedPanel(el,r);
  }
+
+ const svgNS="http://www.w3.org/2000/svg";
+ const svgElement=(tag,attributes,textValue)=>{
+  const el=document.createElementNS(svgNS,tag);
+  Object.entries(attributes||{}).forEach(([name,value])=>el.setAttribute(name,String(value)));
+  if(textValue!==undefined)el.textContent=String(textValue);
+  return el;
+ };
+ const mapSystem=$("map-system");systems.forEach(id=>{
+  const option=h("option",id.replaceAll("_"," "));option.value=id;mapSystem.append(option);
+ });
+ mapSystem.value=systems.includes("comando_final")?"comando_final":systems[0];
+ const cut=(s,max)=>{s=String(s??"");return s.length>max?s.slice(0,max-1)+"…":s;};
+ let selectedMapNode=null;
+ function mapDataForSystem(system){
+  const records=data.records.filter(x=>x.system===system).sort((a,b)=>a.ruleId.localeCompare(b.ruleId));
+  const provenance=new Map(functional.rules.map(x=>[x.ruleId,x]));
+  const rules=records.map(r=>({id:"rule:"+r.ruleId,kind:"rule",label:r.ruleId,subtitle:r.component,record:r}));
+  const chains=new Map(),mechanisms=new Map(),edges=[];
+  records.forEach(r=>{
+   edges.push({from:"system:"+system,to:"rule:"+r.ruleId,kind:"contains"});
+   const entry=provenance.get(r.ruleId);
+   if(!entry)return;
+   entry.chains.forEach(c=>{
+    if(!chains.has(c.id))chains.set(c.id,{id:"chain:"+c.id,kind:"chain",label:c.id,subtitle:c.title,chain:c});
+    edges.push({from:"rule:"+r.ruleId,to:"chain:"+c.id,kind:"authored"});
+    c.mechanismIds.forEach(mid=>{
+     const m=entry.mechanismFamilies.find(x=>x.id===mid);
+     if(!m)return;
+     if(!mechanisms.has(mid))mechanisms.set(mid,{id:"mechanism:"+mid,kind:"mechanism",label:mid,subtitle:m.label,mechanism:m});
+     if(!edges.some(e=>e.from==="chain:"+c.id&&e.to==="mechanism:"+mid)){
+      edges.push({from:"chain:"+c.id,to:"mechanism:"+mid,kind:"tag"});
+     }
+    });
+   });
+  });
+  const layers=[
+   [{id:"system:"+system,kind:"system",label:system.replaceAll("_"," "),subtitle:records.length+" regras"}],
+   rules,[...chains.values()].sort((a,b)=>a.label.localeCompare(b.label)),
+   [...mechanisms.values()].sort((a,b)=>a.label.localeCompare(b.label))
+  ];
+  const set=new Set(records.map(x=>x.ruleId));
+  const peers=functional.links.filter(l=>set.has(l.left)||set.has(l.right));
+  return {system,records,layers,edges,peers};
+ }
+ function navigateFromMap(ruleId){
+  if(!data.records.some(x=>x.ruleId===ruleId))return;
+  $("search").value="";$("system").value="all";$("track").value="all";$("priority").value="all";
+  current=ruleId;renderList();$("detail").scrollIntoView({behavior:"smooth",block:"start"});
+ }
+ function selectedMapDetails(node,subgraph){
+  const area=$("map-details");area.replaceChildren();
+  const title=h("strong",(node.kind==="system"?"Sistema: ":node.kind==="rule"?"Regra: ":node.kind==="chain"?"Cadeia: ":"Mecanismo: ")+node.label);
+  area.append(title);
+  const emit=x=>{if(x)area.append(h("p",x));};
+  if(node.kind==="system"){
+   emit("Sistema de origem do cadastro, com "+subgraph.records.length+" regras preventivas conceituais. Não caracteriza equipamento ou falha real.");
+  }else if(node.kind==="rule"){
+   emit("Componente candidato: "+node.record.component);
+   emit("Sintoma original: "+node.record.symptom);
+   emit("Trilha: "+(node.record.reviewTrack==="PM_SAP_DOCUMENTARY_EXCEPTION"?
+    "exceção PM×SAP bloqueada — P0/P1 apenas prioridade documental":"hipótese conceitual sem prioridade documental, não classificada como risco baixo"));
+   const go=h("button","Abrir ficha completa de "+node.record.ruleId,"action");go.type="button";
+   go.addEventListener("click",()=>navigateFromMap(node.record.ruleId));area.append(go);
+  }else if(node.kind==="chain"){
+   emit("Função proposta: "+node.chain.function);
+   emit("Modo conceitual: "+node.chain.mode);
+   emit("IDs de fontes catalogadas: "+node.chain.sourceIds.join(", "));
+   emit("Estado: literatura geral inferida, não aplicabilidade OEM por série nem ocorrência física verificada.");
+  }else if(node.kind==="mechanism"){
+   emit("Família ontológica: "+node.mechanism.label);
+   emit(node.mechanism.criteria);
+   emit("A classificação do mecanismo é conceitual e não prova que houve o fenômeno no equipamento.");
+  }
+  if(node.kind==="chain"||node.kind==="mechanism"){
+   const relatedRuleIds=new Set();
+   if(node.kind==="chain")subgraph.edges.filter(x=>x.to===node.id&&x.kind==="authored")
+    .forEach(x=>relatedRuleIds.add(x.from.slice(5)));
+   else subgraph.edges.filter(x=>x.to===node.id&&x.kind==="tag").forEach(x=>
+    subgraph.edges.filter(y=>y.to===x.from&&y.kind==="authored")
+     .forEach(y=>relatedRuleIds.add(y.from.slice(5))));
+   if(relatedRuleIds.size){
+    const buttons=h("div",null,"map-peers");
+    [...relatedRuleIds].sort().forEach(id=>{
+     const b=h("button","Abrir "+id);b.type="button";
+     b.addEventListener("click",()=>navigateFromMap(id));buttons.append(b);
+    });area.append(buttons);
+   }
+  }
+  emit("Vínculo registrado na fonte pública; NO_GO para diagnóstico, SAP ou operação.");
+ }
+ function renderSystemMap(){
+  const subgraph=mapDataForSystem(mapSystem.value);
+  const svg=$("map-svg");svg.replaceChildren();
+  selectedMapNode=null;
+  const columns=[{x:22,w:196},{x:272,w:235},{x:570,w:216},{x:846,w:265}];
+  const maxCount=Math.max(1,...subgraph.layers.map(x=>x.length));
+  const height=Math.max(420,Math.min(850,maxCount*73+120));
+  svg.setAttribute("viewBox","0 0 1200 "+height);
+  svg.setAttribute("height",String(height));svg.setAttribute("width","1200");
+  svg.setAttribute("aria-label","Mapa documental do sistema "+subgraph.system+", com regras, cadeias genéricas e mecanismos");
+  const coordinates=new Map();
+  subgraph.layers.forEach((layer,i)=>layer.forEach((node,j)=>{
+   const col=columns[i],y=76+(j+.5)*(height-150)/layer.length;
+   coordinates.set(node.id,{x:col.x,y:y-25,w:col.w,h:50,node});
+  }));
+  subgraph.edges.forEach(edge=>{
+   const a=coordinates.get(edge.from),b=coordinates.get(edge.to);
+   if(!a||!b)return;
+   const x1=a.x+a.w,y1=a.y+a.h/2,x2=b.x,y2=b.y+b.h/2,mx=(x1+x2)/2;
+   const path=svgElement("path",{d:"M "+x1+" "+y1+" C "+mx+" "+y1+", "+mx+" "+y2+", "+x2+" "+y2,
+    class:"edge "+(edge.kind==="authored"?"source":edge.kind==="tag"?"tag":""),
+    "aria-hidden":"true"});svg.append(path);
+  });
+  for(const pos of coordinates.values()){
+   const node=pos.node;
+   const group=svgElement("g",{class:"node "+node.kind,role:"button",tabindex:"0",
+    "data-node-id":node.id,
+    "aria-label":node.kind+" "+node.label+"; referência conceitual não verificada"});
+   const tip=svgElement("title",null,node.label+" · "+node.subtitle);group.append(tip);
+   group.append(svgElement("rect",{x:pos.x,y:pos.y,width:pos.w,height:pos.h,rx:9}));
+   group.append(svgElement("text",{x:pos.x+10,y:pos.y+20},cut(node.label,node.kind==="rule"?31:28)));
+   group.append(svgElement("text",{x:pos.x+10,y:pos.y+37,class:"secondary"},
+    cut(node.subtitle||"",node.kind==="rule"?34:37)));
+   const activate=()=>{
+    selectedMapNode=node.id;
+    svg.querySelectorAll("g.node").forEach(x=>x.classList.toggle("selected",x.getAttribute("data-node-id")===node.id));
+    selectedMapDetails(node,subgraph);
+   };
+   group.addEventListener("click",activate);
+   group.addEventListener("keydown",ev=>{if(ev.key==="Enter"||ev.key===" "){ev.preventDefault();activate();}});
+   svg.append(group);
+  }
+  if(!subgraph.layers[2].length){
+   svg.append(svgElement("text",{x:575,y:height/2,fill:"#d4bd91"},
+    "Nenhuma cadeia genérica vinculada nas fontes"));
+   svg.append(svgElement("text",{x:850,y:height/2,fill:"#d4bd91"},
+    "Sem mecanismos vinculados por cadeia"));
+  }
+  $("map-counter").textContent=subgraph.records.length+" regra(s) · "+subgraph.layers[2].length+
+   " cadeia(s) genérica(s) · "+subgraph.layers[3].length+" família(s) de mecanismo(s) · "+
+   subgraph.peers.length+" par(es) de regras com relação catalogada";
+  const detail=$("map-details");detail.replaceChildren();
+  detail.append(h("strong","Vínculos entre regras no sistema e em sistemas correlatos"));
+  if(!subgraph.peers.length)detail.append(h("p",
+   "Nenhum vínculo explícito entre pares para este sistema nas fontes integradas. Isso não exclui mecanismos reais."));
+  const peers=h("div",null,"map-peers");
+  subgraph.peers.forEach(link=>{
+   const label=link.explicitChainIds.length?"Cadeia citada":"Apenas contexto genérico";
+   const btn=h("button",link.left+" × "+link.right+" · "+label);btn.type="button";
+   btn.addEventListener("click",()=>{
+    const area=$("map-details");area.replaceChildren(
+     h("strong",link.left+" / "+link.right),
+     h("p","Cadeias de origem: "+(link.explicitChainIds.join(", ")||"nenhuma")+
+      ". Nós genéricos: "+(link.sharedGenericNodeIds.join(", ")||"nenhum")),
+     h("p",link.boundaryIds.length?"RESTRIÇÃO: "+link.boundaryIds.join(", ")+". Sem equivalência de dano, componente ou causa.":"Documentação genérica sem confirmação de mecanismo em campo."),
+     h("p","Ambas as regras permanecem não homologadas; NO_GO."));
+    const controls=h("div",null,"map-peers");
+    [link.left,link.right].forEach(id=>{const b=h("button","Abrir "+id);b.type="button";b.addEventListener("click",()=>navigateFromMap(id));controls.append(b);});
+    area.append(controls);
+   });peers.append(btn);
+  });detail.append(peers);
+ }
+ mapSystem.addEventListener("change",renderSystemMap);
  $("search").addEventListener("input",renderList);$("system").addEventListener("change",renderList);
  $("track").addEventListener("change",renderList);$("priority").addEventListener("change",renderList);
  $("clear").addEventListener("click",()=>{$("search").value="";$("system").value="all";$("track").value="all";$("priority").value="all";renderList();$("search").focus();});
  renderList();
+ renderSystemMap();
 })();
 </script></body></html>
