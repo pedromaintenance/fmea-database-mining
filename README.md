@@ -2,7 +2,9 @@
 
 Banco de conhecimento **versionado** para investigar modos de falha, sintomas, evidências e causas em equipamentos móveis de mineração. Um consumidor possível é o jogo **[P.O.R.C.A.R.I.A. — Você Quebra, Eu Conserto](https://github.com/pedromaintenance/porcaria-voce-quebra-eu-conserto)**, mas o banco é independente: **este repositório não altera os consumidores**.
 
-> **Status:** versão do catálogo **1.3.78** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
+> **Status:** versão do catálogo **1.3.79** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
+
+**Ciclo v1.3.79:** [matriz consolidada de maturidade da evidência](docs/CICLO_2026-10-28_MATRIZ_MATURIDADE_EVIDENCIA_PM.md) cruza as 15 regras sem prioridade, 30 alternativas, limitações de detecção e 150 verificações documentais pendentes, com seis camadas de bloqueio causal por regra. Simula 90 cenários que permanecem inconclusivos, sem confundir modelagem pública com validação de método, evidência física, criticidade, SAP ou liberação operacional.
 
 **Ciclo v1.3.78:** [qualidade metrológica e proveniência de evidências PM](docs/CICLO_2026-10-28_QUALIDADE_METROLOGICA_PROVENIENCIA_PM.md) define dez critérios de avaliação por inspeção (150 posições não verificadas) e 13 situações sintéticas por cada uma das 15 regras (195 roteamentos). Distingue instrumento aplicável de técnica visual, exige justificativa privada de não aplicabilidade e nunca trata completude sintética como homologação. Mantém dez exceções SAP e oito gates corporativos em NO_GO.
 
