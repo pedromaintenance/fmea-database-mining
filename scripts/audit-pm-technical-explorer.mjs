@@ -35,6 +35,10 @@ const staticChecks=[
  ["file_embedded",html.includes('id="catalog-data"')&&html.includes("JSON.parse")],
  ["has_text_filter",html.includes('id="search"')&&html.includes("norm(allFieldText(r))")],
  ["has_system_filter",html.includes('id="system"')&&html.includes('r.system===$("system").value')],
+ ["has_track_filter",html.includes('id="track"')&&html.includes('r.reviewTrack===$("track").value')],
+ ["has_priority_filter",html.includes('id="priority"')&&html.includes('r.documentaryPriority===$("priority").value')],
+ ["has_exception_details",html.includes('r.sapException.finding')&&html.includes('r.sapException.minimumEvidence.forEach')],
+ ["explicit_priority_separation",html.includes("FILA DOCUMENTAL, NÃO RISCO OPERACIONAL")],
  ["has_rule_selector",html.includes('id="rules"')&&html.includes("current=p.ruleId")],
  ["has_alternative_view",html.includes("r.alternatives.forEach")],
  ["has_diagnostic_limits",html.includes("r.attributionTrap")&&html.includes("r.missedDetection")],
@@ -50,15 +54,15 @@ const staticChecks=[
  ["no_css_remote_import",!/@import\b/i.test(html)],
  ["no_auto_approve",!/\bSAP\.update\s*\(/.test(html)],
  ["bounded_size",Buffer.byteLength(html,"utf8")<190000],
- ["no_duplicate_assets",new Set(model.records.map(r=>r.ruleId)).size===15]
+ ["no_duplicate_assets",new Set(model.records.map(r=>r.ruleId)).size===25]
 ];
 for(const [name,pass] of staticChecks){probes.push({name,pass});if(!pass)errors.push("html_guard_"+name)}
 function probe(name,result,expected){
  const pass=JSON.stringify(result)===JSON.stringify(expected);
  probes.push({name,pass});if(!pass)errors.push("query_"+name);
 }
-probe("all_unfiltered",queryExplorer(model).length,15);
-probe("all_empty_query",queryExplorer(model,{query:""}).length,15);
+probe("all_unfiltered",queryExplorer(model).length,25);
+probe("all_empty_query",queryExplorer(model,{query:""}).length,25);
 probe("no_results",queryExplorer(model,{query:"NONEXISTENT_RANDOM_STRING_993"}).length,0);
 probe("tag_exact",queryExplorer(model,{query:"final-drive-gear"}).map(x=>x.ruleId),["final-drive-gear"]);
 probe("case_insensitive",queryExplorer(model,{query:"FINAL-DRIVE-GEAR"}).map(x=>x.ruleId),["final-drive-gear"]);
@@ -69,9 +73,23 @@ probe("search_differential",queryExplorer(model,{query:"rolamento"}).some(x=>x.r
 probe("search_countermechanism",queryExplorer(model,{query:"rolamentos"}).some(x=>x.ruleId==="final-drive-gear"),true);
 probe("search_evidence",queryExplorer(model,{query:"morfologia"}).some(x=>x.ruleId==="final-drive-gear"),true);
 probe("search_quality",queryExplorer(model,{query:"Calibração"}).length,15);
-probe("system_count",new Set(model.records.map(x=>x.system)).size,10);
+probe("system_count",new Set(model.records.map(x=>x.system)).size,13);
 probe("no_go",model.summary.decision,"NO_GO");
 probe("unknown_model_returns_empty",queryExplorer({records:null}),[]);
+probe("track_unranked",queryExplorer(model,{track:"UNRANKED_DETECTABILITY"}).length,15);
+probe("track_exceptions",queryExplorer(model,{track:"PM_SAP_DOCUMENTARY_EXCEPTION"}).length,10);
+probe("priority_P0",queryExplorer(model,{priority:"P0"}).length,5);
+probe("priority_P1",queryExplorer(model,{priority:"P1"}).length,5);
+probe("P0_in_SAP_track",queryExplorer(model,{track:"PM_SAP_DOCUMENTARY_EXCEPTION",priority:"P0"}).length,5);
+probe("P1_in_unranked_track",queryExplorer(model,{track:"UNRANKED_DETECTABILITY",priority:"P1"}).length,0);
+probe("missing_status_track",queryExplorer(model,{track:"UNKNOWN"}).length,0);
+probe("missing_priority",queryExplorer(model,{priority:"P99"}).length,0);
+probe("exception_source_finding",queryExplorer(model,{query:"subgrupo_not_in_scope"}).length,0);
+probe("exception_subgroup",queryExplorer(model,{query:"subgroup_not_in_scope"}).length,3);
+probe("sap_exception_direct",queryExplorer(model,{query:"drill-compressor-filter"}).some(x=>x.reviewTrack==="PM_SAP_DOCUMENTARY_EXCEPTION"),true);
+probe("P0_not_risk",model.records.filter(x=>x.documentaryPriority==="P0").every(x=>x.priorityStatus==="DOCUMENTED_QUEUE_PRIORITY_NOT_OPERATIONAL_RISK"),true);
+probe("unranked_not_low_risk",model.records.filter(x=>x.reviewTrack==="UNRANKED_DETECTABILITY").every(x=>x.priorityStatus==="UNRANKED_NOT_LOW_RISK"),true);
+probe("no_spurious_hypotheses_exceptions",model.records.filter(x=>x.reviewTrack==="PM_SAP_DOCUMENTARY_EXCEPTION").every(x=>x.alternatives.length===0&&x.qualityCriteria.length===0&&x.blockers.length===0),true);
 for(const rule of model.records){
  probe("rule_query_"+rule.ruleId,queryExplorer(model,{query:rule.ruleId}).some(x=>x.ruleId===rule.ruleId),true);
  probe("system_"+rule.ruleId,queryExplorer(model,{system:rule.system}).some(x=>x.ruleId===rule.ruleId),true);
@@ -84,26 +102,38 @@ function attack(name,mutate){
  attacks.push({name,rejected});if(!rejected)errors.push("mutation_accepted_"+name);
 }
 for(let i=0;i<model.records.length;i++){
- const id=model.records[i].ruleId;
+ const id=model.records[i].ruleId,isException=model.records[i].reviewTrack==="PM_SAP_DOCUMENTARY_EXCEPTION";
  attack("forged_root_"+id,(_,o)=>o.records[i].diagnosisStatus="ROOT_CAUSE_CONFIRMED");
  attack("forged_approval_"+id,(_,o)=>o.records[i].approvedSAPMapping=true);
  attack("forged_oem_"+id,(_,o)=>o.records[i].OEMSeriesEffective=true);
  attack("forged_release_"+id,(_,o)=>o.records[i].operationReleased=true);
  attack("forged_priority_"+id,(_,o)=>o.records[i].priorityStatus="LOW_RISK");
- attack("forged_hypothesis_"+id,(_,o)=>o.records[i].alternatives[0].status="CONFIRMED");
- attack("forged_quality_"+id,(_,o)=>o.records[i].qualityCriteria[0].status="PASSED");
- attack("forged_blocker_"+id,(_,o)=>o.records[i].blockers[0].status="CLOSED");
  attack("alter_symptom_"+id,(_,o)=>o.records[i].symptom="fake symptom");
  attack("alter_method_"+id,(_,o)=>o.records[i].inspectionMethod="verified test");
- attack("source_hypothesis_fake_"+id,(s)=>s.observabilityPolicy.entries.find(x=>x.ruleId===id).fieldEvidenceReceived=true);
- attack("source_OEM_fake_"+id,(s)=>s.detectabilityPolicy.checks.find(x=>x.ruleId===id).OEMMethodEffective=true);
+ attack("switch_review_track_"+id,(_,o)=>o.records[i].reviewTrack=isException?"UNRANKED_DETECTABILITY":"PM_SAP_DOCUMENTARY_EXCEPTION");
+ if(isException){
+  attack("forged_documentary_priority_"+id,(_,o)=>o.records[i].documentaryPriority="P2");
+  attack("fake_SAP_clearance_"+id,(_,o)=>o.records[i].sapException.autoRemapAllowed=true);
+  attack("fake_exception_removed_"+id,(_,o)=>o.records[i].sapException=null);
+  attack("fake_proof_accepted_"+id,(_,o)=>o.records[i].sapException.minimumEvidence=[]);
+  attack("fake_causal_finding_"+id,(_,o)=>o.records[i].sapException.finding="confirmado");
+  attack("fake_documentary_priority_source_"+id,(s)=>s.gaps.records.find(x=>x.ruleId===id).priority="P2");
+  attack("fake_sap_verified_"+id,(s)=>s.gaps.records.find(x=>x.ruleId===id).autoRemapAllowed=true);
+  attack("fake_queue_approval_"+id,(s)=>s.maturity.reviewQueue.find(x=>x.ruleId===id).priority="GO");
+ }else{
+  attack("forged_hypothesis_"+id,(_,o)=>o.records[i].alternatives[0].status="CONFIRMED");
+  attack("forged_quality_"+id,(_,o)=>o.records[i].qualityCriteria[0].status="PASSED");
+  attack("forged_blocker_"+id,(_,o)=>o.records[i].blockers[0].status="CLOSED");
+  attack("source_hypothesis_fake_"+id,(s)=>s.observabilityPolicy.entries.find(x=>x.ruleId===id).fieldEvidenceReceived=true);
+  attack("source_OEM_fake_"+id,(s)=>s.detectabilityPolicy.checks.find(x=>x.ruleId===id).OEMMethodEffective=true);
+ }
 }
 const rec=o=>o.records[0];
 attack("remove_record",(_,o)=>o.records.pop());
 attack("duplicate_record",(_,o)=>o.records.push(clone(rec(o))));
-attack("drop_quality",(_,o)=>rec(o).qualityCriteria.pop());
-attack("drop_blockers",(_,o)=>rec(o).blockers.pop());
-attack("drop_hypothesis",(_,o)=>rec(o).alternatives.pop());
+attack("drop_quality",(_,o)=>o.records.find(x=>x.reviewTrack==="UNRANKED_DETECTABILITY").qualityCriteria.pop());
+attack("drop_blockers",(_,o)=>o.records.find(x=>x.reviewTrack==="UNRANKED_DETECTABILITY").blockers.pop());
+attack("drop_hypothesis",(_,o)=>o.records.find(x=>x.reviewTrack==="UNRANKED_DETECTABILITY").alternatives.pop());
 attack("invent_documentary_acceptance",(_,o)=>o.summary.confirmedRootCauses=1);
 attack("invent_field_cases",(_,o)=>o.summary.verifiedFieldCases=1);
 attack("invent_sap_link",(_,o)=>o.summary.approvedSapLinks=1);
@@ -113,7 +143,7 @@ attack("promote_decision",(_,o)=>o.summary.decision="GO");
 attack("allow_network",(_,o)=>o.boundaries.noExternalNetworkCalls=false);
 attack("allow_orders",(_,o)=>o.boundaries.noWorkOrders=false);
 attack("show_real_asset",(_,o)=>o.boundaries.noRealAssetData=false);
-attack("alter_model_version",(_,o)=>o.provenance.observability="1.3.80");
+attack("alter_model_version",(_,o)=>o.provenance.observability="1.3.81");
 attack("source_seed_reviewed",(s)=>s.seeds.records[0].review="approved");
 attack("source_seed_dropped",(s)=>s.seeds.records.pop());
 attack("source_maturity_field",(s)=>s.maturity.summary.fieldConfirmed=1);
@@ -124,6 +154,14 @@ attack("source_evidence_gate_false",(s)=>s.evidencePolicy.guardrails.noWorkOrder
 attack("source_detection_sensitivity",(s)=>s.detectabilityPolicy.checks[0].validatedSensitivity=0.5);
 attack("source_SAP_unblocked",(s)=>s.gaps.records[0].autoRemapAllowed=true);
 attack("source_private_gate_unblocked",(s)=>s.runbook.phases[0].gate="GO");
+attack("omit_exception_record",(_,o)=>o.records.splice(o.records.findIndex(x=>x.reviewTrack==="PM_SAP_DOCUMENTARY_EXCEPTION"),1));
+attack("fake_P0_count",(_,o)=>o.summary.documentedP0=6);
+attack("fake_P1_count",(_,o)=>o.summary.documentedP1=4);
+attack("fake_15_count",(_,o)=>o.summary.unrankedRules=25);
+attack("fake_exception_total",(_,o)=>o.summary.documentedSapExceptions=0);
+attack("source_missing_exception",(s)=>s.gaps.records.pop());
+attack("source_forced_low_priority",(s)=>s.gaps.records[0].priority="P2");
+attack("source_approved_SAP_part",(s)=>s.gaps.records[0].approvedModelIds.push("FAKE");
 const audit={status:errors.length?"FAIL":"OK",staticAndSearchProbes:probes.length,
  passedProbes:probes.filter(x=>x.pass).length,adversarialMutations:attacks.length,
  rejectedMutations:attacks.filter(x=>x.rejected).length,
