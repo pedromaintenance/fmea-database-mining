@@ -197,7 +197,7 @@
         {
           "id": "final-drive-bearing-ALT-2",
           "candidate": "ruído de engrenamento ou outra fonte do conjunto planetário",
-          "proposedDiscriminatingEvidence": "discriminação da origem do ruído e componente segundo procedimento autorizado",
+          "proposedDiscriminatingEvidence": "discriminação da origem do ruído e componente segundo método OEM a confirmar, mediante autorização específica antes da avaliação",
           "hypothesisStatus": "UNTESTED_CONCEPTUAL_NONEXCLUSIVE"
         }
       ],
