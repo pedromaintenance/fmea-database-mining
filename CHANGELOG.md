@@ -2,6 +2,13 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.83] — 2026-10-28 — Navegação funcional e fontes de mecanismos
+
+- Integra 24 cadeias genéricas catalogadas, 11 nós semânticos de condições/ações e famílias da ontologia à consulta das 25 regras, com IDs de proveniência e separação explícita de associações apenas estruturais.
+- Seis pares de regras têm referência compartilhada; quatro pares por mesma cadeia, três por nó genérico (há sobreposição). Quatro pares preservam restrições semânticas de não atribuir dano/código de componente indevidamente.
+- Exportações Markdown passam a incluir referências funcionais sem promover hipóteses a falhas confirmadas. Auditor dedicado protege contra falsificação causal, evidência, efetividade OEM, risco e aprovação SAP.
+- Permanecem 10 exceções PM×SAP e oito gates corporativos bloqueados; nenhuma medição ou ocorrência real incorporada.
+
 ## [1.3.82] — 2026-10-28 — Comparação estrutural e fichas técnicas para revisão FMEA
 
 - A consulta offline das 25 regras incorpora links de proximidade por mesmo sistema/subgrupo, sem pontuação ou inferência de causalidade, e seleção de dois registros para comparação lado a lado.
