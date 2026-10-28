@@ -98,7 +98,16 @@ export function assessFunctionalNavigation(input,graph){
    unique(x.preventionRuleIds)&&x.sourceClaims.length>0&&x.sourceClaims.every(z=>z.scope==="principio_geral")),
   "authored_chains_unvalidated");
  ck(ontology.version==="1.3.3"&&ontology.mechanismFamilies.length===15&&
-  unique(flatIds(ontology.mechanismFamilies)), "ontology_is_conceptual");
+  unique(flatIds(ontology.mechanismFamilies))&&
+  eq(ontology.mechanismFamilies.map(x=>[x.id,x.pt]),[
+   ["ME-01","Desgaste abrasivo"],["ME-02","Desgaste adesivo"],
+   ["ME-03","Fadiga de contato"],["ME-04","Fadiga estrutural"],
+   ["ME-05","Corrosão"],["ME-06","Degradação térmica"],
+   ["ME-07","Degradação de elastômero"],["ME-08","Erosão/cavitação"],
+   ["ME-09","Afrouxamento/perda de pré-carga"],["ME-10","Ruptura de isolamento elétrico"],
+   ["ME-11","Resistência de contato anormal"],["ME-12","Restrição de escoamento"],
+   ["ME-13","Lubrificação inadequada"],["ME-14","Desajuste/calibração inadequada"],
+   ["ME-15","Falha de vedação"]]),"ontology_is_conceptual");
  ck(semantic.version==="1.3.59"&&semantic.sharedNodes.length===11&&
   unique(flatIds(semantic.sharedNodes))&&semantic.domainSeparation.length===4&&
   semantic.sharedNodes.every(n=>n.ruleIds.length>=2&&unique(n.ruleIds)&&
