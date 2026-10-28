@@ -58,7 +58,7 @@ const domIndicators=[
  ["linked_peer_boundaries",html.includes("RESTRIÇÃO: ")&&html.includes("Sem equivalência de dano")],
  ["no_source_fabrication",html.includes("NO_GO: a ausência de cadeia documentada")],
  ["no_independent_method_claim",html.includes("não aplicabilidade OEM por série")],
- ["no_http",!/\bhttps?:\/\//i.test(html)],
+ ["no_http",!/\bhttps?:\/\//i.test(html.replaceAll("http://www.w3.org/2000/svg",""))],
  ["no_external_resources",!/<script\b[^>]*src\s*=|<link\b[^>]*href\s*=/i.test(html)],
  ["no_network",!/\b(fetch|XMLHttpRequest|WebSocket|EventSource|sendBeacon)\s*\(/.test(html)],
  ["no_dynamic_html",!/\binnerHTML\s*=/.test(html)&&!/insertAdjacentHTML/.test(html)],
