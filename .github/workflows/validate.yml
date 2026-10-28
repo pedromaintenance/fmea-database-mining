@@ -128,6 +128,8 @@ jobs:
         run: npm run pm:evidence:maturity:audit
       - name: Verificar consulta FMEA standalone de 25 regras, duas trilhas e prioridades documentais P0-P1
         run: npm run pm:technical:explorer:audit
+      - name: Validar comparacao A-B, relacoes estruturais e fichas FMEA de revisao
+        run: npm run pm:technical:workspace:audit
       - name: Validar 10 bloqueios PM e 7 requisitos de efetividade OEM D9
         run: npm run pm:exceptions:validate
       - name: Gerar vínculos diagnósticos por modelo
@@ -263,6 +265,7 @@ jobs:
             reports/pm-metrology-provenance.generated.json
             reports/pm-evidence-maturity.generated.json
             reports/pm-technical-explorer.generated.json
+            reports/pm-technical-review-workspace.generated.json
             docs/consulta-fmea.html
             reports/sec01-corporate-request.generated.md
             reports/public-knowledge.v1.json
