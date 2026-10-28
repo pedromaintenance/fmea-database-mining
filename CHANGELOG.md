@@ -2,6 +2,12 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.77] — 2026-10-28 — Limites de detecção e atribuição nas 15 inspeções PM
+
+- Acrescenta aos 15 pacotes de observabilidade condições de sinal, atribuições incorretas possíveis, confusores, possibilidades de não detecção e limites inconclusivos, reconciliados às sementes e alternativas anteriores.
+- Classificador de 45 estados de observação estritamente sintéticos com fronteiras explícitas: observar sinal não confirma mecanismo; ausência de sinal não prova integridade; ambiguidade não autoriza conclusão.
+- Auditor adversarial e integração QA/CI. Nenhuma métrica de detecção, OEM por série, medição real, diagnóstico confirmado, nova prioridade, alteração SAP ou liberação. Os dez bloqueios SAP e oito gates corporativos são preservados.
+
 ## [1.3.76] — 2026-10-27 — Observabilidade das 15 regras preventivas sem prioridade documental
 
 - Retoma engenharia do catálogo após preparar SEC-01: associa 15 sementes preventivas sem prioridade documental a 30 hipóteses alternativas conceituais, requisitos qualitativos de contraprova e barreiras de segurança, preservando sintomas e métodos de inspeção literalmente.

@@ -2,7 +2,9 @@
 
 Banco de conhecimento **versionado** para investigar modos de falha, sintomas, evidências e causas em equipamentos móveis de mineração. Um consumidor possível é o jogo **[P.O.R.C.A.R.I.A. — Você Quebra, Eu Conserto](https://github.com/pedromaintenance/porcaria-voce-quebra-eu-conserto)**, mas o banco é independente: **este repositório não altera os consumidores**.
 
-> **Status:** versão do catálogo **1.3.76** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
+> **Status:** versão do catálogo **1.3.77** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
+
+**Ciclo v1.3.77:** [detectabilidade dos métodos de inspeção PM](docs/CICLO_2026-10-28_DETECTABILIDADE_INSPECOES_PM.md) modela 15 sinais com possíveis armadilhas de atribuição, fatores de confusão, hipóteses de não detecção e condições inconclusivas. Simula 45 interpretações sem sensibilidade/especificidade estatística, medições reais, confirmação de dano, prioridade atribuída ou aprovação de execução. Mantém as 10 exceções SAP e oito gates privados bloqueados.
 
 **Ciclo v1.3.76:** [observabilidade das 15 regras PM sem prioridade documental](docs/CICLO_2026-10-27_OBSERVABILIDADE_REGRAS_SEM_PRIORIDADE.md) reconcilia seus sintomas e inspeções literais com 30 hipóteses alternativas conceituais e pedidos de evidência discriminante. **Sem prioridade não equivale a baixo risco**; nenhuma inspeção, causa raiz, classificação de gravidade, ligação SAP ou liberação é inferida. Dez exceções e oito gates privados continuam bloqueados.
 
