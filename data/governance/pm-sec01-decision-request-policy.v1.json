@@ -1,0 +1,138 @@
+{
+  "schema": "fmea-mining.pm-sec01-decision-request-policy.v1",
+  "version": "1.3.75",
+  "predecessor": "1.3.74",
+  "asOfDate": "2026-10-27",
+  "purpose": "Compile a concise public decision-ready request and deterministic synthetic response routing for SEC-01, without performing any corporate submission, records handling, or gate approval",
+  "requestedScope": "restricted_architecture_review_only_not_real_data_or_pilot",
+  "decisionIds": [
+    "SEC01-DEC-SPONSOR",
+    "SEC01-DEC-OEM",
+    "SEC01-DEC-PRIVACY"
+  ],
+  "checkIds": [
+    "SEC01-A01",
+    "SEC01-A02",
+    "SEC01-A03",
+    "SEC01-L01",
+    "SEC01-L02",
+    "SEC01-L03",
+    "SEC01-P01",
+    "SEC01-P02",
+    "SEC01-P03"
+  ],
+  "privateOutcomeTokens": [
+    "NOT_REVIEWED",
+    "APPROVED_FOR_RESTRICTED_DESIGN_REVIEW_ONLY",
+    "RETURN_FOR_CORRECTION",
+    "DECLINED",
+    "MORE_EVIDENCE_REQUIRED"
+  ],
+  "documentationSections": [
+    "contexto_e_pedido",
+    "escopo_e_exclusoes",
+    "decisoes_a_solicitar",
+    "evidencias_e_acesso",
+    "condicoes_de_retorno"
+  ],
+  "routingRules": {
+    "DECLINED": "STOP_AND_RETURN_FOR_HUMAN_RESCOPING",
+    "RETURN_FOR_CORRECTION": "RETURN_FOR_CORRECTION",
+    "MORE_EVIDENCE_REQUIRED": "REQUEST_PRIVATE_EVIDENCE",
+    "NOT_REVIEWED": "PENDING_HUMAN_DECISIONS",
+    "APPROVED_FOR_RESTRICTED_DESIGN_REVIEW_ONLY": "HOLD_INDEPENDENT_CORPORATE_ATTESTATION"
+  },
+  "scenarios": [
+    {
+      "id": "none_reviewed",
+      "outcomes": [
+        "NOT_REVIEWED",
+        "NOT_REVIEWED",
+        "NOT_REVIEWED"
+      ],
+      "expected": "PENDING_HUMAN_DECISIONS"
+    },
+    {
+      "id": "partial_design_concurrence",
+      "outcomes": [
+        "APPROVED_FOR_RESTRICTED_DESIGN_REVIEW_ONLY",
+        "NOT_REVIEWED",
+        "NOT_REVIEWED"
+      ],
+      "expected": "PENDING_HUMAN_DECISIONS"
+    },
+    {
+      "id": "needs_more_evidence",
+      "outcomes": [
+        "APPROVED_FOR_RESTRICTED_DESIGN_REVIEW_ONLY",
+        "MORE_EVIDENCE_REQUIRED",
+        "NOT_REVIEWED"
+      ],
+      "expected": "REQUEST_PRIVATE_EVIDENCE"
+    },
+    {
+      "id": "scope_correction",
+      "outcomes": [
+        "RETURN_FOR_CORRECTION",
+        "APPROVED_FOR_RESTRICTED_DESIGN_REVIEW_ONLY",
+        "NOT_REVIEWED"
+      ],
+      "expected": "RETURN_FOR_CORRECTION"
+    },
+    {
+      "id": "incompatible_rights_declined",
+      "outcomes": [
+        "APPROVED_FOR_RESTRICTED_DESIGN_REVIEW_ONLY",
+        "DECLINED",
+        "MORE_EVIDENCE_REQUIRED"
+      ],
+      "expected": "STOP_AND_RETURN_FOR_HUMAN_RESCOPING"
+    },
+    {
+      "id": "all_hypothetically_favorable",
+      "outcomes": [
+        "APPROVED_FOR_RESTRICTED_DESIGN_REVIEW_ONLY",
+        "APPROVED_FOR_RESTRICTED_DESIGN_REVIEW_ONLY",
+        "APPROVED_FOR_RESTRICTED_DESIGN_REVIEW_ONLY"
+      ],
+      "expected": "HOLD_INDEPENDENT_CORPORATE_ATTESTATION"
+    }
+  ],
+  "routingPriority": [
+    "DECLINED",
+    "RETURN_FOR_CORRECTION",
+    "MORE_EVIDENCE_REQUIRED",
+    "NOT_REVIEWED",
+    "APPROVED_FOR_RESTRICTED_DESIGN_REVIEW_ONLY"
+  ],
+  "corporateApprovalRequirements": [
+    "authorized_human_signatories",
+    "recorded_applicable_OEM_rights",
+    "legal_privacy_DPIA_disposition",
+    "private_immutable_custody",
+    "formal_SEC01_change_control"
+  ],
+  "ownerFunctions": [
+    "corporate_governance",
+    "corporate_legal",
+    "privacy_data_controller"
+  ],
+  "safe": {
+    "noActualSubmission": true,
+    "noNamedApprovers": true,
+    "noPrivateEvidence": true,
+    "noLicensedOemMaterial": true,
+    "noLegalConclusion": true,
+    "noDpiaDetermination": true,
+    "noAutomaticGateChange": true,
+    "noAutomaticCorporateApproval": true,
+    "noAutomaticApprovalFromSyntheticFavorableScenario": true,
+    "noSAPChange": true,
+    "noWorkOrder": true,
+    "noOperationRelease": true,
+    "noRealPilotOrAssetSelected": true,
+    "allEightGatesBlocked": true,
+    "allTenSapExceptionsBlocked": true,
+    "noRealDecisionOrMeetingClaim": true
+  }
+}
