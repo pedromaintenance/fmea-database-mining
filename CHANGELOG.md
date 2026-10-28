@@ -2,6 +2,13 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.81] — 2026-10-28 — Consulta técnica das 25 regras em duas trilhas
+
+- Amplia o HTML offline para as **25 regras preventivas de 13 sistemas**, com filtros por trilha de revisão e prioridades documentais P0/P1.
+- Consulta mantém 15 regras sem prioridade documental e suas 30 hipóteses concorrentes; os outros dez casos mostram impedimento PM×SAP, achado de curadoria, ação proposta, disciplina, evidências mínimas e IDs de referência sem atribuir limites de detecção ou dados metrológicos inexistentes.
+- **P0/P1 expressam prioridade da fila documental, nunca classificação automática do risco operacional.** Todos os dez remapeamentos continuam bloqueados, assim como os oito gates corporativos.
+- Auditor de fontes/HTML ampliado, com regressões de integridade e tentativas adversariais de criar causa, liberar SAP e alterar prioridades.
+
 ## [1.3.80] — 2026-10-28 — Consulta técnica standalone dos mecanismos concorrentes
 
 - Publicado `docs/consulta-fmea.html`, HTML responsivo offline com pesquisa por regra, sintoma, método, sistema ou hipótese, seleção por sistema, visão detalhada de 15 regras, 30 alternativas abertas, 150 critérios e 90 bloqueios documentais.

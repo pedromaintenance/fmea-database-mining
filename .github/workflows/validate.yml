@@ -126,7 +126,7 @@ jobs:
         run: npm run pm:metrology:provenance:audit
       - name: Auditar matriz integrada de maturidade da evidencia e bloqueios causais PM
         run: npm run pm:evidence:maturity:audit
-      - name: Verificar consulta FMEA standalone com filtros e 15 regras publicas
+      - name: Verificar consulta FMEA standalone de 25 regras, duas trilhas e prioridades documentais P0-P1
         run: npm run pm:technical:explorer:audit
       - name: Validar 10 bloqueios PM e 7 requisitos de efetividade OEM D9
         run: npm run pm:exceptions:validate
