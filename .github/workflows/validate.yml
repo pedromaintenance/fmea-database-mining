@@ -132,6 +132,8 @@ jobs:
         run: npm run pm:technical:workspace:audit
       - name: Verificar navegacao causal conceitual e proveniencia de mecanismos PM
         run: npm run pm:functional:navigation:audit
+      - name: Auditar mapa SVG por sistema, arestas documentais e acessibilidade
+        run: npm run pm:system:map:audit
       - name: Validar 10 bloqueios PM e 7 requisitos de efetividade OEM D9
         run: npm run pm:exceptions:validate
       - name: Gerar vínculos diagnósticos por modelo
@@ -269,6 +271,7 @@ jobs:
             reports/pm-technical-explorer.generated.json
             reports/pm-technical-review-workspace.generated.json
             reports/pm-functional-navigation.generated.json
+            reports/pm-system-mechanism-map.generated.json
             docs/consulta-fmea.html
             reports/sec01-corporate-request.generated.md
             reports/public-knowledge.v1.json
