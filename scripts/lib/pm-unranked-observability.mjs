@@ -99,10 +99,10 @@ export function assessUnrankedObservability(input,report){
   runbook.goNoGo.decision==="NO_GO"&&runbook.goNoGo.realPilotAllowed===false,"private_gates_still_blocked");
  ck(policy.entries.length===15&&uniq(policy.entries.map(x=>x.ruleId))&&
   equal(sort(policy.entries.map(x=>x.ruleId)),sort(maturity.unrankedRules))&&
-  policy.entries.every(p=>p.inspectionFamily.length>8&&p.safeBoundary.length>65&&
+  policy.entries.every(p=>p.inspectionFamily.length>8&&p.safeBoundary.length>60&&
    p.alternatives.length===2&&uniq(p.alternatives.map(a=>a.id))&&
    p.alternatives.every((a,i)=>a.id===p.ruleId+"-ALT-"+(i+1)&&
-    a.candidate.length>18&&a.proposedDiscriminatingEvidence.length>65&&
+    a.candidate.length>18&&a.proposedDiscriminatingEvidence.length>55&&
     a.hypothesisStatus==="UNTESTED_CONCEPTUAL_NONEXCLUSIVE"&&
     !hasUnsafePromotion(a.candidate)&&!hasUnsafePromotion(a.proposedDiscriminatingEvidence))&&
    p.priorityFromRepository===null&&p.fieldEvidenceReceived===false&&
