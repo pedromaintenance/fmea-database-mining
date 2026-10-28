@@ -101,8 +101,10 @@ for(let i=0;i<graph.links.length;i++){
  attack("invent_causal_root_"+i,(_,g)=>g.links[i].rootCauseConfirmed=true);
  attack("invent_SAP_link_"+i,(_,g)=>g.links[i].SAPApproved=true);
  attack("fake_OEM_"+i,(_,g)=>g.links[i].OEMSerialVerified=true);
- attack("remove_explicit_provenance_"+i,(_,g)=>g.links[i].explicitChainIds=[]);
- attack("remove_semantic_provenance_"+i,(_,g)=>g.links[i].sharedGenericNodeIds=[]);
+ if(graph.links[i].explicitChainIds.length)
+  attack("remove_explicit_provenance_"+i,(_,g)=>g.links[i].explicitChainIds=[]);
+ if(graph.links[i].sharedGenericNodeIds.length)
+  attack("remove_semantic_provenance_"+i,(_,g)=>g.links[i].sharedGenericNodeIds=[]);
  if(graph.links[i].boundaryIds.length)
   attack("remove_domain_guard_"+i,(_,g)=>g.links[i].boundaryIds.pop());
 }
