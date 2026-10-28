@@ -175,6 +175,7 @@ const audit={status:errors.length?"FAIL":"OK",
  probes,adversarial,errors};
 fs.mkdirSync(path.join(root,"reports"),{recursive:true});
 fs.writeFileSync(path.join(root,"reports/pm-sec01-decision-request.generated.json"),JSON.stringify({...out,audit},null,2)+"\n");
+fs.writeFileSync(path.join(root,"reports/sec01-corporate-request.generated.md"),out.memo);
 console.log(JSON.stringify({status:audit.status,summary:out.summary,
  probes:audit.syntheticProbes,passed:audit.syntheticProbesPassed,
  negativeMutations:audit.mutations,rejected:audit.rejected,upstreamAudits:audit.upstreamAudits,errors},null,2));
