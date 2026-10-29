@@ -47,7 +47,7 @@ export function buildSystemMechanismMap(catalog,graph,system){
     withinSelectedSystem:recordIds.has(x.left)&&recordIds.has(x.right),
     relationStatus:"DOCUMENTARY_REFERENCE_NO_CAUSAL_CONFIRMATION"}))
   .sort((a,b)=>sorted(a.left,b.left)||sorted(a.right,b.right));
- return {schema:"fmea-mining.pm-system-map.v1",version:"1.3.84",system,
+ return {schema:"fmea-mining.pm-system-map.v1",version:"1.3.85",system,
   status:"NO_GO_READ_ONLY_PUBLIC_DOCUMENTARY_MAP",
   counts:{systemsInCatalog:systems.length,rules:records.length,chains:chains.size,
    mechanisms:mechanisms.size,relatedPairs:related.length,
@@ -62,7 +62,7 @@ export function buildSystemMechanismMap(catalog,graph,system){
 export function assessSystemMechanismMaps({catalog,graph},maps){
  const errors=[],check=(ok,code)=>{if(!ok)errors.push(code)};
  const systems=[...new Set(catalog.records.map(x=>x.system))].sort(sorted);
- check(catalog.version==="1.3.84"&&graph.version==="1.3.84"&&catalog.records.length===25&&
+ check(catalog.version==="1.3.85"&&graph.version==="1.3.85"&&catalog.records.length===25&&
   graph.rules.length===25&&graph.links.length===6&&systems.length===13&&
   catalog.summary.decision==="NO_GO"&&catalog.summary.confirmedRootCauses===0&&
   catalog.summary.approvedSapLinks===0&&catalog.summary.operationalReleases===0&&
