@@ -2,9 +2,11 @@
 
 Banco de conhecimento **versionado** para investigar modos de falha, sintomas, evidências e causas em equipamentos móveis de mineração. Um consumidor possível é o jogo **[P.O.R.C.A.R.I.A. — Você Quebra, Eu Conserto](https://github.com/pedromaintenance/porcaria-voce-quebra-eu-conserto)**, mas o banco é independente: **este repositório não altera os consumidores**.
 
-> **Status:** versão do catálogo **1.3.84** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
+> **Status:** versão do catálogo **1.3.85** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
 
 **Consulta técnica disponível:** [abrir interface HTML standalone](docs/consulta-fmea.html). No GitHub, use **Raw/Download raw file** para salvar e abrir no navegador, mesmo sem internet. Permite busca, filtro por sistema, consulta de sintomas, hipóteses, limites, pendências e exportação TXT conceitual. **Não consulta nem altera SAP**.
+
+**Ciclo v1.3.85:** [carteira de lacunas documentais para Engenharia e PCM](docs/CICLO_2026-10-29_LACUNAS_DOCUMENTAIS_FMEA.md) adiciona à [consulta HTML offline](docs/consulta-fmea.html) filtros por sistema, trilha e tipo de pendência (OEM por série, contraprova de campo, ausência de cadeia genérica, enquadramento SAP e revisão independente), com exportação Markdown. **Não gera ranking de risco**: 25 regras sem validação OEM por série, 14 sem cadeia genérica catalogada, 10 exceções SAP bloqueadas, zero aprovações. Auditoria independente protege o vínculo com fontes públicas.
 
 **Ciclo v1.3.84:** [mapa navegável de sistemas, regras, cadeias e mecanismos](docs/CICLO_2026-10-28_MAPA_VISUAL_SISTEMAS_MECANISMOS.md) integra [a consulta HTML offline](docs/consulta-fmea.html) a um SVG acessível e responsivo. Selecione um dos 13 sistemas, inspecione funções e referências de cadeias genéricas e abra diretamente a ficha de cada regra. As ligações são **somente relações documentais, não prova causal**, e a ausência de cadeia não comprova integridade. Auditor independente testa todos os subgrafos e preserva os bloqueios de revisão OEM/SAP e os gates operacionais.
 
