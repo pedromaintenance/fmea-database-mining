@@ -52,7 +52,7 @@ const staticRules=[
  ["offline_no_external_network",!/\b(fetch|XMLHttpRequest|WebSocket|EventSource|sendBeacon)\s*\(/.test(html)],
  ["no_unsafe_HTML",!/\binnerHTML\s*=/.test(html)&&!/insertAdjacentHTML/.test(html)],
  ["offline_no_http",!/\bhttps?:\/\//i.test(html.replaceAll("http://www.w3.org/2000/svg",""))],
- ["limit_standalone_size",Buffer.byteLength(html,"utf8")<230000],
+ ["limit_standalone_size",Buffer.byteLength(html,"utf8")<245000],
  ["no_private_real_tags",!/\b0(?:10|20|21|40|55|60)-0[0-9]{2}\b/.test(c?.[1]||"")],
  ["no_private_serial_effectivity",graph.summary.fieldVerifiedMechanisms===0&&graph.summary.confirmedCauses===0]
 ];

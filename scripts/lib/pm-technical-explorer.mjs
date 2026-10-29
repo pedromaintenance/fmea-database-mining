@@ -71,7 +71,7 @@ export function buildTechnicalExplorer({seeds,observabilityPolicy,detectabilityP
    OEMSeriesEffective:false,approvedSAPMapping:false,operationReleased:false};
  });
  const records=[...unrankedRecords,...exceptionalRecords].sort((a,b)=>a.ruleId.localeCompare(b.ruleId));
- return {schema:"fmea-mining.pm-technical-explorer.v1",version:"1.3.85",
+ return {schema:"fmea-mining.pm-technical-explorer.v1",version:"1.3.86",
   asOfDate:"2026-10-28",nature:"PUBLIC_CONCEPTUAL_READ_ONLY",
   provenance:{preventiveSeeds:seeds.version,observability:observabilityPolicy.version,
    detectability:detectabilityPolicy.version,metrology:metrologyPolicy.version,
@@ -134,7 +134,7 @@ export function assessTechnicalExplorer(input,output){
  check(runbook.phases.length===8&&runbook.phases.every(x=>
   x.gate==="BLOCK"&&x.status==="not_started"&&x.decisionToken===null)&&
   runbook.goNoGo.decision==="NO_GO","eight_corporate_gates_locked");
- check(output.schema==="fmea-mining.pm-technical-explorer.v1"&&output.version==="1.3.85"&&
+ check(output.schema==="fmea-mining.pm-technical-explorer.v1"&&output.version==="1.3.86"&&
   output.nature==="PUBLIC_CONCEPTUAL_READ_ONLY","schema_and_public_boundary");
  check(output.summary.explorableRules===25&&output.summary.unrankedRules===15&&
   output.summary.documentedSapExceptions===10&&output.summary.documentedP0===5&&
