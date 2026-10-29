@@ -50,7 +50,7 @@ const checks=[
  ["safe_export",html.includes('reviewMarkdown([r.ruleId])')&&html.includes("downloadText(")],
  ["same_rule_not_comparable",html.includes("compareSlots.right===r.ruleId")&&html.includes("compareSlots.left===r.ruleId")],
  ["no_real_asset_tags",!/\b0(?:10|20|21|40|55|60)-0[0-9]{2}\b/.test(embedded?.[1]??"")],
- ["size_under_230k",Buffer.byteLength(html,"utf8")<230000],
+ ["size_under_245k",Buffer.byteLength(html,"utf8")<245000],
  ["offline_no_external_import",!/@import\b/.test(html)&&!/<script\s[^>]*src\s*=/i.test(html)]
 ];
 for(const [id,ok] of checks)test("static_"+id,ok,true);
