@@ -126,7 +126,7 @@ const audit={status:errors.length?"FAIL":"OK",
  errors,checks:tests,attacks:mutations};
 fs.mkdirSync(path.join(root,"reports"),{recursive:true});
 fs.writeFileSync(path.join(root,"reports/pm-technical-review-workspace.generated.json"),
- JSON.stringify({version:"1.3.84",summary:model.summary,audit},null,2)+"\n");
+ JSON.stringify({version:"1.3.85",summary:model.summary,audit},null,2)+"\n");
 console.log(JSON.stringify({status:audit.status,tests:audit.tests,passed:audit.passed,
  adversarialMutations:audit.adversarialMutations,rejected:audit.rejected,
  orderedComparisons:audit.orderedComparisons,reviewSheetsIndividual:audit.reviewSheetsIndividual,

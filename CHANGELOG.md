@@ -2,6 +2,13 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.85] — 2026-10-29 — Carteira de lacunas documentais de Engenharia/PCM
+
+- Dashboard de 25 pendências por regra com cinco categorias, 13 sistemas, filtros combinados e exportação Markdown, reconciliado com matriz de maturidade e grafo documental existente.
+- Separa 14 regras sem cadeia genérica explícita, 11 com literatura genérica não verificada, 10 exceções SAP formalmente bloqueadas e outras 15 sem mapeamento aprovado e sem exceção registrada.
+- Todas as 25 carecem de efetividade OEM por série, contraprova de campo registrada e revisão técnica independente; **não equivale a critério de risco operacional**.
+- Novo auditor para fidelidade das fontes, controles offline, busca, exportação e ataques contra falsa aprovação SAP, valoração de risco e evidências OEM/field. Oito gates corporativos continuam BLOCK/NO_GO.
+
 ## [1.3.84] — 2026-10-28 — Mapa SVG técnico navegável por sistema
 
 - Consulta HTML offline passa a exibir grafo SVG determinístico de quatro colunas — sistema, regra, cadeia genérica, família de mecanismo — com seletor de 13 sistemas, legenda e detalhes de proveniência.
