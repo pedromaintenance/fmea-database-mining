@@ -67,7 +67,7 @@ export function queryKnowledgeGaps(data,{system="all",category="all",track="all"
   (category==="all"||x.categories.includes(category))&&
   (track==="all"||track===x.reviewTrack)&&
   (!term||norm([x.ruleId,x.system,x.component,x.sapBlocker,x.reviewDiscipline,x.nextDecision,
-    ...x.sourceIds].join(" ")).includes(term)));
+    x.documentedGenericReferences].join(" ")).includes(term)));
 }
 export function assessKnowledgeGapInventory({catalog,graph,maturity},inventory){
  const errors=[],check=(flag,id)=>{if(!flag)errors.push(id)};
