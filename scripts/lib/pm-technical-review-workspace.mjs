@@ -35,7 +35,7 @@ export function buildTechnicalComparison(catalog,leftId,rightId){
    openQualityRequirements:x.qualityCriteria.length,
    openMaturityLayers:x.blockers.length,
    rootCauseConfirmed:false,SAPApproved:false,operationallyReleased:false});
- return {schema:"fmea-mining.pm-technical-comparison.v1",version:"1.3.84",
+ return {schema:"fmea-mining.pm-technical-comparison.v1",version:"1.3.85",
   purpose:"SOURCE_BASED_STRUCTURAL_CONTRAST_NOT_CAUSAL_DIAGNOSIS",
   left:shape(left),right:shape(right),
   sameSystem:left.system===right.system,sameSubgroup:left.subgroupCode===right.subgroupCode,
@@ -51,7 +51,7 @@ export function buildReviewMarkdown(catalog,selectedIds){
  const lines=[
  "# Ficha técnica para revisão de Engenharia e PCM",
  "",
- "**Versão do catálogo:** 1.3.84",
+ "**Versão do catálogo:** 1.3.85",
  "**Estado:** NÃO HOMOLOGADO · NO_GO · APENAS CONSULTA CONCEITUAL",
  "**Natureza:** extração de fontes públicas já versionadas; nenhuma observação ou aprovação real",
  "**Comparação:** "+(selectedIds.length===2?"duas regras distintas, sem inferência de equivalência causal":"uma regra"),
@@ -110,7 +110,7 @@ export function buildReviewMarkdown(catalog,selectedIds){
 export function assessTechnicalReviewWorkspace(catalog){
  const errors=[],assert=(c,k)=>{if(!c)errors.push(k)};
  const ids=catalog?.records?.map(x=>x.ruleId)??[];
- assert(catalog?.version==="1.3.84"&&ids.length===25&&new Set(ids).size===25,"source_catalog_25");
+ assert(catalog?.version==="1.3.85"&&ids.length===25&&new Set(ids).size===25,"source_catalog_25");
  const combos=ids.flatMap((a,i)=>ids.filter((_,j)=>j!==i).map(b=>[a,b]));
  assert(combos.length===600,"all_distinct_ordered_pairs");
  for(const [left,right] of combos){
