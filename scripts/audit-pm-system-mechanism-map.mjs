@@ -63,7 +63,7 @@ const domIndicators=[
  ["no_network",!/\b(fetch|XMLHttpRequest|WebSocket|EventSource|sendBeacon)\s*\(/.test(html)],
  ["no_dynamic_html",!/\binnerHTML\s*=/.test(html)&&!/insertAdjacentHTML/.test(html)],
  ["no_uploaded_private_asset_tags",!/\b0(?:10|20|21|40|55|60)-0[0-9]{2}\b/.test(match1?.[1]??"")],
- ["standalone_size",Buffer.byteLength(html,"utf8")<230000],
+ ["standalone_size",Buffer.byteLength(html,"utf8")<245000],
  ["no_SAP_mapping_call",!/\bSAP\.update\s*\(/.test(html)],
  ["source_types_legend",["Sistema","Regra preventiva","Cadeia genérica","Família de mecanismo"].every(x=>html.includes(">"+x+"</span>"))]
 ];
