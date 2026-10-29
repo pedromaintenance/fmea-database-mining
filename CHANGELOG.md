@@ -2,6 +2,13 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.87] — 2026-10-29 — Pautas de revisão documental por disciplina
+
+- Novo HTML independente `docs/pauta-revisao-fmea.html`, responsivo e offline, para organizar 25 registros em quatro disciplinas propostas e etapas de revisão S1–S5.
+- Filtros por disciplina, sistema, etapa e pesquisa, com exportação Markdown da pauta; documentos mantêm hipóteses abertas, IDs de fonte, evidências propostas e impedimentos SAP.
+- Biblioteca e auditor dedicados reconciliam fontes versionadas e rejeitam reuniões, execução, evidência, prioridade de risco, causa confirmada ou aprovações fictícias.
+- Sem atribuição de pessoas, sem alterações na consulta FMEA original ou em consumidores. Dez exceções e oito gates corporativos permanecem bloqueados.
+
 ## [1.3.86] — 2026-10-29 — Roteiros de preparação de investigação documental
 
 - Adiciona à consulta FMEA 25 fichas preparatórias de investigação técnica (S1 configuração OEM; S2 função/mecanismos; S3 contraprovas e segurança; S4 curadoria SAP; S5 revisão independente), com visualização e exportação Markdown por regra.
