@@ -2,9 +2,11 @@
 
 Banco de conhecimento **versionado** para investigar modos de falha, sintomas, evidências e causas em equipamentos móveis de mineração. Um consumidor possível é o jogo **[P.O.R.C.A.R.I.A. — Você Quebra, Eu Conserto](https://github.com/pedromaintenance/porcaria-voce-quebra-eu-conserto)**, mas o banco é independente: **este repositório não altera os consumidores**.
 
-> **Status:** versão do catálogo **1.3.87** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
+> **Status:** versão do catálogo **1.3.88** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
 
 **Consulta técnica disponível:** [abrir interface HTML standalone](docs/consulta-fmea.html). No GitHub, use **Raw/Download raw file** para salvar e abrir no navegador, mesmo sem internet. Permite busca, filtro por sistema, consulta de sintomas, hipóteses, limites, pendências e exportação TXT conceitual. **Não consulta nem altera SAP**.
+
+**Ciclo v1.3.88:** [pré-solicitações documentais de evidência por disciplina e etapa](docs/CICLO_2026-10-29_PRE_SOLICITACOES_EVIDENCIA_FMEA.md) disponibiliza [HTML standalone offline](docs/pre-solicitacoes-evidencia-fmea.html) para preparar **125 rascunhos S1–S5** das 25 regras. Filtros por disciplina, sistema, etapa e trilha, com exportação individual ou por recorte em Markdown; cada ficha preserva as perguntas da pauta, referências e contraprovas/evidências mínimas somente quando fornecidas nas fontes. **Nenhuma solicitação foi enviada, evidência recebida, reunião realizada ou aprovação registrada**. P0/P1 permanecem exclusivamente documentais, com dez bloqueios SAP e oito gates corporativos NO_GO.
 
 **Ciclo v1.3.87:** [pautas documentais de revisão por disciplina](docs/CICLO_2026-10-29_PAUTAS_REVISAO_POR_DISCIPLINA.md) apresenta um [novo HTML offline independente](docs/pauta-revisao-fmea.html) para preparar discussões de Engenharia e PCM. Organiza as 25 regras em quatro carteiras de disciplina proposta (15 manutenção/OEM, 5 ativos/SAP, 3 sistemas/SAP, 2 confiabilidade/SAP), etapas S1–S5, pesquisa, filtros e exportação Markdown. **Nenhum responsável, reunião, teste ou aprovação foi registrado**, P0/P1 não medem criticidade e dez exceções SAP e oito gates permanecem BLOCK/NO_GO.
 
