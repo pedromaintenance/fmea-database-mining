@@ -110,7 +110,17 @@ export function assessDisciplineAgenda(inputs,actual){
  check(inputs.catalog.version==="1.3.86"&&inputs.inventory.version==="1.3.86"&&
   inputs.graph.version==="1.3.86"&&inputs.catalog.summary.decision==="NO_GO"&&
   inputs.catalog.summary.confirmedRootCauses===0&&inputs.inventory.summary.decision==="NO_GO"&&
-  inputs.graph.summary.decision==="NO_GO","unapproved_input_source");
+  inputs.graph.summary.decision==="NO_GO"&&
+  inputs.maturity.summary.serialOemVerified===0&&
+  inputs.maturity.summary.fieldConfirmed===0&&
+  inputs.maturity.summary.engineeringApprovalsRecorded===0&&
+  inputs.maturity.summary.sapMappingsApproved===0&&
+  inputs.maturity.rules.length===25&&
+  inputs.maturity.rules.every(r=>r.sap.reviewedByEngineering===false&&
+    r.sap.autoRemapAllowed===false&&r.sap.approvedLocationId===null&&
+    r.sap.approvedComponentCode===null&&r.fieldObservations===0&&
+    r.approvedSapMappings===0&&r.confirmedDamages===0&&
+    r.gates.independentReview==="not_recorded"),"unapproved_input_source");
  check(actual.version==="1.3.87"&&actual.summary.records===25&&
   actual.summary.disciplines===4&&actual.summary.blockedSAPExceptions===10&&
   actual.summary.withoutApprovedSAPNoException===15&&
