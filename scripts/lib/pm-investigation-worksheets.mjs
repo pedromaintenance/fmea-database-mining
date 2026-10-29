@@ -114,9 +114,26 @@ export function assessInvestigationWorksheets(inputs,worksheets){
  ck(Array.isArray(worksheets)&&worksheets.length===25,"25_worksheets");
  ck(inputs.catalog.version==="1.3.86"&&inputs.graph.version==="1.3.86"&&
   inputs.inventory.version==="1.3.86"&&inputs.catalog.summary.decision==="NO_GO"&&
+  inputs.graph.summary.decision==="NO_GO"&&
+  inputs.graph.summary.confirmedCauses===0&&
+  inputs.graph.summary.approvedSAPRemaps===0&&
   inputs.inventory.summary.decision==="NO_GO"&&
+  inputs.catalog.summary.confirmedRootCauses===0&&
+  inputs.catalog.summary.approvedSapLinks===0&&
+  inputs.catalog.summary.operationalReleases===0&&
   inputs.catalog.summary.blockedCorporateGates===8&&
-  inputs.catalog.summary.blockedSapExceptions===10,"upstream_no_go");
+  inputs.catalog.summary.blockedSapExceptions===10&&
+  inputs.inventory.summary.confirmedRootCauses===0&&
+  inputs.inventory.summary.approvedSAPMappings===0&&
+  inputs.inventory.records.length===25&&
+  inputs.inventory.records.every(g=>{
+   const source=inputs.catalog.records.find(r=>r.ruleId===g.ruleId);
+   return !!source&&g.reviewTrack===source.reviewTrack&&
+    g.documentaryPriority===source.documentaryPriority&&
+    g.sapStatus===(source.reviewTrack==="PM_SAP_DOCUMENTARY_EXCEPTION"?
+      "EXCEPTION_BLOCKED":"NO_APPROVED_MAPPING_NO_RECORDED_EXCEPTION")&&
+    g.sapBlocker===(source.sapException?.expectedBlocker??null);
+  }),"upstream_no_go");
  ck(ids.every(id=>{
   const w=worksheets?.find(x=>x.ruleId===id);
   return w&&same(w,buildInvestigationWorksheet(inputs,id))&&w.stages.length===5&&
