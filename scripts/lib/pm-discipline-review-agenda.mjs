@@ -8,15 +8,15 @@ export const STAGES=[
  {id:"S4",title:"Enquadramento SAP",question:"Que subgrupo, componente, objeto e par dano–causa precisam de curadoria autorizada?"},
  {id:"S5",title:"Revisão independente",question:"Qual parecer técnico e aprovação formal faltam registrar no fluxo corporativo próprio?"}
 ];
-export function buildDisciplineAgenda({catalog,graph,inventory}){
+export function buildDisciplineAgenda({catalog,graph,inventory,maturity}){
  const rules=new Map(catalog.records.map(x=>[x.ruleId,x]));
  const graphRules=new Map(graph.rules.map(x=>[x.ruleId,x]));
  const items=inventory.records.map(g=>{
   const r=rules.get(g.ruleId),node=graphRules.get(g.ruleId);
-  if(!r||!node)throw Error("source_record_missing_"+g.ruleId);
+  if(!r||!node||!m)throw Error("source_record_missing_"+g.ruleId);
   return {ruleId:g.ruleId,discipline:g.reviewDiscipline,system:g.system,
    component:g.component,reviewTrack:g.reviewTrack,documentaryPriority:g.documentaryPriority,
-   sourceIds:[...g.sourceIds],chainIds:node.chains.map(x=>x.id),
+   sourceIds:[...m.sourceIds],chainIds:node.chains.map(x=>x.id),
    chainGap:node.chains.length===0,
    gapCategories:[...g.categories],
    sapStatus:g.sapStatus,sapBlocker:g.sapBlocker,
