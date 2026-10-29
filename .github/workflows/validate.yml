@@ -138,6 +138,8 @@ jobs:
         run: npm run pm:knowledge:gaps:audit
       - name: Auditar roteiros documentais de investigacao sem autorizacao de campo
         run: npm run pm:investigation:worksheets:audit
+      - name: Validar pautas FMEA por disciplina e perguntas de revisao documental
+        run: npm run pm:discipline:agenda:audit
       - name: Validar 10 bloqueios PM e 7 requisitos de efetividade OEM D9
         run: npm run pm:exceptions:validate
       - name: Gerar vínculos diagnósticos por modelo
@@ -278,6 +280,8 @@ jobs:
             reports/pm-system-mechanism-map.generated.json
             reports/pm-knowledge-gaps.generated.json
             reports/pm-investigation-worksheets.generated.json
+            reports/pm-discipline-review-agenda.generated.json
+            docs/pauta-revisao-fmea.html
             docs/consulta-fmea.html
             reports/sec01-corporate-request.generated.md
             reports/public-knowledge.v1.json
