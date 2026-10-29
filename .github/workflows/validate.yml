@@ -140,6 +140,8 @@ jobs:
         run: npm run pm:investigation:worksheets:audit
       - name: Validar pautas FMEA por disciplina e perguntas de revisao documental
         run: npm run pm:discipline:agenda:audit
+      - name: Auditar 125 pre-solicitacoes documentais S1-S5 FMEA
+        run: npm run pm:evidence:requests:audit
       - name: Validar 10 bloqueios PM e 7 requisitos de efetividade OEM D9
         run: npm run pm:exceptions:validate
       - name: Gerar vínculos diagnósticos por modelo
@@ -281,6 +283,8 @@ jobs:
             reports/pm-knowledge-gaps.generated.json
             reports/pm-investigation-worksheets.generated.json
             reports/pm-discipline-review-agenda.generated.json
+            reports/pm-evidence-requests.generated.json
+            docs/pre-solicitacoes-evidencia-fmea.html
             docs/pauta-revisao-fmea.html
             docs/consulta-fmea.html
             reports/sec01-corporate-request.generated.md
