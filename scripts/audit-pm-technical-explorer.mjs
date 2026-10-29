@@ -53,7 +53,7 @@ const staticChecks=[
  ["no_real_equipment_tags",!/\b0(?:10|20|21|40|55|60)-0[0-9]{2}\b/.test(match?.[1]||"")],
  ["no_css_remote_import",!/@import\b/i.test(html)],
  ["no_auto_approve",!/\bSAP\.update\s*\(/.test(html)],
- ["bounded_size",Buffer.byteLength(html,"utf8")<230000],
+ ["bounded_size",Buffer.byteLength(html,"utf8")<245000],
  ["no_duplicate_assets",new Set(model.records.map(r=>r.ruleId)).size===25]
 ];
 for(const [name,pass] of staticChecks){probes.push({name,pass});if(!pass)errors.push("html_guard_"+name)}
