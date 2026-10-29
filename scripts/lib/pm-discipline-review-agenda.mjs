@@ -11,8 +11,9 @@ export const STAGES=[
 export function buildDisciplineAgenda({catalog,graph,inventory,maturity}){
  const rules=new Map(catalog.records.map(x=>[x.ruleId,x]));
  const graphRules=new Map(graph.rules.map(x=>[x.ruleId,x]));
+ const matrix=new Map(maturity.rules.map(x=>[x.ruleId,x]));
  const items=inventory.records.map(g=>{
-  const r=rules.get(g.ruleId),node=graphRules.get(g.ruleId);
+  const r=rules.get(g.ruleId),node=graphRules.get(g.ruleId),m=matrix.get(g.ruleId);
   if(!r||!node||!m)throw Error("source_record_missing_"+g.ruleId);
   return {ruleId:g.ruleId,discipline:g.reviewDiscipline,system:g.system,
    component:g.component,reviewTrack:g.reviewTrack,documentaryPriority:g.documentaryPriority,
