@@ -581,11 +581,100 @@ details{margin-top:10px;border-top:1px solid var(--line);padding-top:10px}summar
    });peers.append(btn);
   });detail.append(peers);
  }
+
+ const knowledgeGaps=JSON.parse($("knowledge-gap-data").textContent);
+ const gapSystems=$("gap-system"),gapCategory=$("gap-category"),gapTrack=$("gap-track"),gapSearch=$("gap-search");
+ knowledgeGaps.systems.forEach(x=>{const opt=h("option",x.system.replaceAll("_"," "));opt.value=x.system;gapSystems.append(opt);});
+ knowledgeGaps.categories.forEach(x=>{const opt=h("option",x.label);opt.value=x.id;gapCategory.append(opt);});
+ gapSystems.value=mapSystem.value;
+ function filteredGaps(){
+  const norm=s=>String(s??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLocaleLowerCase("pt-BR");
+  const q=norm(gapSearch.value.trim());
+  return knowledgeGaps.records.filter(x=>
+   (gapSystems.value==="all"||gapSystems.value===x.system)&&
+   (gapCategory.value==="all"||x.categories.includes(gapCategory.value))&&
+   (gapTrack.value==="all"||x.reviewTrack===gapTrack.value)&&
+   (!q||norm([x.ruleId,x.system,x.component,x.sapBlocker,x.reviewDiscipline,x.nextDecision].join(" ")).includes(q)));
+ }
+ function gapSummaryLine(x){
+  const coverage=x.genericAuthoredChains?"Há "+x.genericAuthoredChains+" cadeia(s) genérica(s), não verificadas em campo":
+   "Sem cadeia genérica catalogada; não implica ausência de falha";
+  const sap=x.sapStatus==="EXCEPTION_BLOCKED"?
+   "Exceção PM×SAP bloqueada ("+x.sapBlocker+") — "+x.documentaryPriority+" documental, não risco":
+   "Sem mapeamento SAP aprovado; nenhuma exceção formal registrada";
+  return {coverage,sap};
+ }
+ function renderGapPanel(){
+  const found=filteredGaps(),target=$("gap-list");target.replaceChildren();
+  $("gap-count").textContent=found.length+" de 25 regras | "+(gapSystems.value==="all"?"13 sistemas":gapSystems.value.replaceAll("_"," "))+
+   " | classificação exclusivamente documental, sem ranqueamento";
+  for(const x of found){
+   const card=h("article",null,"gap-card");
+   card.append(h("h3",x.ruleId),h("p",x.system.replaceAll("_"," ")+" · "+x.component,"meta"));
+   const line=gapSummaryLine(x);
+   card.append(h("p",line.coverage),h("p",line.sap));
+   card.append(h("p",x.documentedGenericReferences+" referências genéricas catalogadas; nenhuma efetividade OEM por série verificada.","meta"));
+   const list=h("ul");
+   x.categories.filter(id=>gapCategory.value==="all"||id===gapCategory.value).forEach(id=>{
+    const definition=knowledgeGaps.categories.find(k=>k.id===id);
+    const item=h("li",definition.label+" — "+definition.action);list.append(item);
+   });card.append(list);
+   const button=h("button","Abrir ficha "+x.ruleId,"action secondary");button.type="button";
+   button.addEventListener("click",()=>navigateFromMap(x.ruleId));card.append(button);target.append(card);
+  }
+  if(!found.length)target.append(h("p","Nenhum registro corresponde aos filtros. Isto não representa conclusão de risco ou ausência de falha.","gap-alert"));
+ }
+ function knowledgeGapReport(rows){
+  const out=["# Lacunas documentais FMEA — revisão Engenharia/PCM","",
+   "**Versão:** v1.3.85 · **NÃO HOMOLOGADO / NO_GO**",
+   "**Fonte:** matriz de maturidade v"+knowledgeGaps.provenance.maturity+"; catálogo e grafo conceitual v1.3.85","",
+   "> Não é classificação de risco, severidade, urgência, OS ou autorização. P0/P1 são apenas prioridades documentais.",
+   "> Ausência de cadeia genérica ou evidência registrada não comprova ausência de falha.","",
+   "## Filtro aplicado","",
+   "- Sistema: "+gapSystems.value,
+   "- Categoria: "+gapCategory.value,
+   "- Trilha: "+gapTrack.value,
+   "- Busca: "+gapSearch.value.trim(),
+   "- Regras encontradas: "+rows.length,""];
+  rows.forEach(x=>{
+   const summary=gapSummaryLine(x);
+   out.push("## "+x.ruleId,"",
+    "- Sistema: "+x.system+"; componente candidato: "+x.component,
+    "- Cobertura funcional: "+summary.coverage,
+    "- Enquadramento SAP: "+summary.sap,
+    "- Referências gerais catalogadas: "+x.documentedGenericReferences,
+    "- Revisão proposta: "+x.reviewDiscipline,
+    "- Próxima decisão documental da fonte: "+x.nextDecision,
+    "- Categorias abertas:");
+   x.categories.forEach(id=>{
+    if(gapCategory.value==="all"||gapCategory.value===id){
+     const c=knowledgeGaps.categories.find(k=>k.id===id);
+     out.push("  - "+c.label+": "+c.action);
+    }
+   });
+   out.push("");
+  });
+  out.push("## Fronteiras de uso","","- 25 regras sem validação de série OEM, evidência de campo ou revisão independente.",
+   "- Dez exceções PM×SAP e oito gates corporativos permanecem BLOCK / NO_GO.",
+   "- Esta extração não faz remapeamento SAP, libera máquinas nem substitui a investigação humana.","");
+  return out.join("\n");
+ }
+ [gapSystems,gapCategory,gapTrack].forEach(el=>el.addEventListener("change",renderGapPanel));
+ gapSearch.addEventListener("input",renderGapPanel);
+ $("gap-clear").addEventListener("click",()=>{
+  gapSystems.value="all";gapCategory.value="all";gapTrack.value="all";gapSearch.value="";
+  renderGapPanel();
+ });
+ $("gap-export").addEventListener("click",()=>{
+  downloadText("fmea-lacunas-documentais-v1.3.85.md",knowledgeGapReport(filteredGaps()),
+    "text/markdown;charset=utf-8");
+ });
  mapSystem.addEventListener("change",renderSystemMap);
  $("search").addEventListener("input",renderList);$("system").addEventListener("change",renderList);
  $("track").addEventListener("change",renderList);$("priority").addEventListener("change",renderList);
  $("clear").addEventListener("click",()=>{$("search").value="";$("system").value="all";$("track").value="all";$("priority").value="all";renderList();$("search").focus();});
  renderList();
  renderSystemMap();
+ renderGapPanel();
 })();
 </script></body></html>
