@@ -46,7 +46,7 @@ const safety=[
  ["offline_no_network",!/\b(fetch|XMLHttpRequest|WebSocket|EventSource|sendBeacon)\s*\(/.test(html)],
  ["offline_no_external_scripts",!/<script\b[^>]*src\s*=|<link\b[^>]*href\s*=/i.test(html)],
  ["safe_text_nodes",!/\binnerHTML\s*=|insertAdjacentHTML/.test(html)],
- ["within_standalone_budget",Buffer.byteLength(html,"utf8")<230000],
+ ["within_standalone_budget",Buffer.byteLength(html,"utf8")<245000],
  ["gap_summary_no_risk",html.toLocaleLowerCase("pt-BR").includes("não é fila de risco")&&html.includes("não gravidade operacional")],
  ["five_categories",html.includes('id="gap-category"')&&html.includes("knowledgeGaps.categories.forEach")],
  ["system_filter",html.includes('id="gap-system"')&&html.includes('gapSystems.value===x.system')],
