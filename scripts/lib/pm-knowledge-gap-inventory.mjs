@@ -37,7 +37,7 @@ export function buildKnowledgeGapInventory({catalog,graph,maturity}){
    noOEMSerialValidation:subset.length,noFieldDiscrimination:subset.length,
    noIndependentReview:subset.length};
  });
- return {schema:"fmea-mining.pm-knowledge-gap-inventory.v1",version:"1.3.85",
+ return {schema:"fmea-mining.pm-knowledge-gap-inventory.v1",version:"1.3.86",
   nature:"SOURCE_DERIVED_DOCUMENTARY_GAPS_NOT_MAINTENANCE_RISK",
   provenance:{catalog:catalog.version,functionalGraph:graph.version,maturity:maturity.version},
   categories:GAP_CATEGORIES,systems,records,
@@ -75,11 +75,11 @@ export function assessKnowledgeGapInventory({catalog,graph,maturity},inventory){
  try{expected=buildKnowledgeGapInventory({catalog,graph,maturity})}
  catch(e){return {status:"REJECTED",errors:["build_error_"+e.message]}};
  check(eq(inventory,expected),"derived_output_drift");
- check(catalog.version==="1.3.85"&&catalog.records.length===25&&catalog.summary.decision==="NO_GO"&&
+ check(catalog.version==="1.3.86"&&catalog.records.length===25&&catalog.summary.decision==="NO_GO"&&
   catalog.summary.confirmedRootCauses===0&&catalog.summary.approvedSapLinks===0&&
   catalog.summary.blockedSapExceptions===10&&catalog.summary.blockedCorporateGates===8,
   "upstream_catalog_not_bounded");
- check(graph.version==="1.3.85"&&graph.rules.length===25&&graph.summary.decision==="NO_GO"&&
+ check(graph.version==="1.3.86"&&graph.rules.length===25&&graph.summary.decision==="NO_GO"&&
   graph.summary.confirmedCauses===0&&graph.summary.approvedSAPRemaps===0&&
   graph.rules.every(x=>x.fieldConfirmationCount===0&&x.validatedCausalRelations===0),
   "upstream_graph_not_bounded");
@@ -105,7 +105,7 @@ export function assessKnowledgeGapInventory({catalog,graph,maturity},inventory){
    x.gates.sapMapping==="not_approved_no_recorded_exception"&&
     x.sap.priorityFromRepo===null)),"no_inferred_approvals");
  const s=inventory.summary;
- check(inventory.version==="1.3.85"&&inventory.records.length===25&&
+ check(inventory.version==="1.3.86"&&inventory.records.length===25&&
   inventory.systems.length===13&&inventory.categories.length===5&&
   distinct(inventory.records.map(x=>x.ruleId))&&
   s.genericChainCovered===11&&s.withoutGenericChain===14&&
