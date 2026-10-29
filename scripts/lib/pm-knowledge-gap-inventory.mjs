@@ -21,17 +21,11 @@ export function buildKnowledgeGapInventory({catalog,graph,maturity}){
    documentaryPriority:r.documentaryPriority,
    genericAuthoredChains:g.chains.length,
    documentedGenericReferences:m.referenceCount,
-   sourceIds:[...m.sourceIds],
    categories,
    sapStatus:m.sap.isBlocked?"EXCEPTION_BLOCKED":"NO_APPROVED_MAPPING_NO_RECORDED_EXCEPTION",
    sapBlocker:m.sap.isBlocked?m.sap.blocker:null,
    reviewDiscipline:m.sap.reviewDiscipline,
-   requiredEvidence:[...m.sap.minimumEvidence],
-   nextDecision:m.nextDecision,
-   gates:{...m.gates},
-   actualOEMSerialValidated:false,fieldObservationRecorded:false,
-   reviewedIndependently:false,rootCauseConfirmed:false,
-   approvedSAP:false,operationReleased:false};
+   nextDecision:m.nextDecision};
  }).sort((a,b)=>order(a.ruleId,b.ruleId));
  const systems=[...new Set(records.map(x=>x.system))].sort(order).map(system=>{
   const subset=records.filter(x=>x.system===system);
