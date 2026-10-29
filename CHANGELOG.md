@@ -2,6 +2,13 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.88] — 2026-10-29 — Pré-solicitações documentais de evidência por etapa S1–S5
+
+- Novo HTML offline `docs/pre-solicitacoes-evidencia-fmea.html`, com 125 rascunhos derivados da pauta de 25 regras e quatro disciplinas, filtros combinados e exportação Markdown individual/por recorte.
+- Cada pré-solicitação preserva pergunta, etapa, fonte original, cadeias genéricas e, quando existentes, contraprovas ou evidências mínimas; campos não documentados continuam explicitamente ausentes.
+- Auditor dedicado testa integridade da fonte, JavaScript, filtros e rejeição de evidência, reunião, execução, envio ou aprovação fictícia. Os rascunhos permanecem `DRAFT_NOT_SENT`, sem responsáveis ou destinos.
+- P0/P1 não representam risco operacional; dez exceções PM×SAP e oito gates corporativos seguem BLOCK/NO_GO, sem alteração dos dados de campo ou de consumidores.
+
 ## [1.3.87] — 2026-10-29 — Pautas de revisão documental por disciplina
 
 - Novo HTML independente `docs/pauta-revisao-fmea.html`, responsivo e offline, para organizar 25 registros em quatro disciplinas propostas e etapas de revisão S1–S5.
