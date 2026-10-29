@@ -2,6 +2,12 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.86] — 2026-10-29 — Roteiros de preparação de investigação documental
+
+- Adiciona à consulta FMEA 25 fichas preparatórias de investigação técnica (S1 configuração OEM; S2 função/mecanismos; S3 contraprovas e segurança; S4 curadoria SAP; S5 revisão independente), com visualização e exportação Markdown por regra.
+- Preserva a proveniência documental e distingue 15 regras com duas hipóteses propostas das 10 exceções PM×SAP bloqueadas, cujas evidências mínimas propostas não são tratadas como realizadas.
+- Nova biblioteca determinística e auditoria integrada ao CI; nenhuma etapa concluída, aprovação técnica, inspeção real, ajuste SAP ou autorização operacional. Dez bloqueios e oito gates corporativos seguem NO_GO.
+
 ## [1.3.85] — 2026-10-29 — Carteira de lacunas documentais de Engenharia/PCM
 
 - Dashboard de 25 pendências por regra com cinco categorias, 13 sistemas, filtros combinados e exportação Markdown, reconciliado com matriz de maturidade e grafo documental existente.
