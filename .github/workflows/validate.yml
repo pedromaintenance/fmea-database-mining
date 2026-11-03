@@ -60,6 +60,8 @@ jobs:
         run: npm run pm:hose:abrasion:audit
       - name: Auditar 9 diagnosticos diferenciais de mangueiras e 15 mutacoes adversariais
         run: npm run pm:hydraulic:hose:differential:audit
+      - name: Auditar 10 padroes de circuito hidraulico, grafo condicional e 18 mutacoes
+        run: npm run pm:hydraulic:circuit:audit
       - name: Auditar fixadores de sapatas, pré-carga e torque-turn com evidência OEM
         run: npm run pm:track:bolt:audit
       - name: Auditar comando final e engrenagem
