@@ -885,6 +885,28 @@
       "limitation": "Sintomas de alta temperatura, baixa pressão, óleo arrastado e restrição podem decorrer de válvulas, fluido, saturação, sensor e demanda; não aprova diagnóstico nem periodicidade de modelo específico.",
       "reviewStatus": "fonte_publica_consultada_sem_aplicacao_ao_ativo",
       "lastReviewed": "2026-10-24"
+    },
+    {
+      "id": "GATES-SAFE-HYDRAULICS-2025",
+      "organization": "Gates",
+      "title": "Hydraulic Maintenance & Safety — Safe Hydraulics Pocket Guide (2025)",
+      "url": "https://www.gates.com/content/dam/documents-library/operating-manuals/safe-hydraulics-pocket-guide-en.pdf",
+      "area": "hydraulic_hose_failure_modes_fittings_routing_safety",
+      "role": "manufacturer_generic_differential_reference_not_serial_effectivity",
+      "limitation": "As páginas 24–25 distinguem abrasão, ruptura no corpo/terminal, vazamento no assento, exsudação na interface e perda do terminal. Não indicam valores nem aprovações para equipamento/linha de mina específicos.",
+      "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
+      "lastReviewed": "2026-11-03"
+    },
+    {
+      "id": "PARKER-HOSE-FAILURES-2023",
+      "organization": "Parker Hannifin (autor Ron Mramor; publicação Power & Motion)",
+      "title": "A Guide to Recognizing the Causes of Hose Failure",
+      "url": "https://www.powermotiontech.com/hydraulics/hose-tubing/article/21884482/parker-hannifin-corp-hose-products-div-a-guide-to-recognizing-the-causes-of-hose-failure",
+      "area": "hose_failure_morphology_competing_mechanisms",
+      "role": "manufacturer_authored_general_diagnostic_morphology_not_machine_specific",
+      "limitation": "Fotografias e exemplos de mecanismos prováveis não constituem diagnóstico de caso, geometria OEM de uma máquina ou critério de liberação.",
+      "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
+      "lastReviewed": "2026-11-03"
     }
   ]
 }
