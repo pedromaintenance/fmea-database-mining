@@ -907,6 +907,17 @@
       "limitation": "Fotografias e exemplos de mecanismos prováveis não constituem diagnóstico de caso, geometria OEM de uma máquina ou critério de liberação.",
       "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
       "lastReviewed": "2026-11-03"
+    },
+    {
+      "id": "CAT-HYD-CIRCUIT-INSPECTION",
+      "organization": "Caterpillar",
+      "title": "How to Inspect Your Cat Hydraulic System",
+      "url": "https://www.cat.com/en_US/blog/hydraulic-system-inspection-steps.html",
+      "area": "hydraulic_system_inspection_pumps_valves_cylinders_leaks_oil",
+      "role": "OEM_public_general_inspection_context_not_model_specific",
+      "limitation": "Artigo de inspeção genérica (exemplo de carregadeira 938), não identifica configuração, número de série, válvulas, portas de ensaio, pressão de referência, critérios de liberação ou equipamentos da mina. Procedimento efetivo depende do OMM/SIS.",
+      "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
+      "lastReviewed": "2026-11-03"
     }
   ]
 }
