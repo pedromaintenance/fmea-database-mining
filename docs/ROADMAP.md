@@ -1,8 +1,25 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 26/10/2026 · **Ciclo:** catálogo técnico v1.3.65 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 03/11/2026 · **Ciclo:** catálogo técnico v1.3.89 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
+
+## Retomada e consolidação — ciclo v1.3.89
+
+**Entrega nova:** [diagnóstico diferencial de mangueiras hidráulicas](CICLO_2026-11-03_DIAGNOSTICO_DIFERENCIAL_MANGUEIRAS.md), com 9 cenários, 19 hipóteses concorrentes, fontes CAT/Gates/Parker, evidências requeridas e auditoria adversarial integrada. **Nenhum caso real, ensaio, homologação ou remapeamento foi criado.**
+
+### Reconciliação das entregas v1.3.66–v1.3.88
+
+| Ciclos integrados | Conteúdo implementado | Dependência ainda real |
+| --- | --- | --- |
+| v1.3.66–v1.3.75 | Chaves candidatas, cadeias funcionais, pilotos sintéticos, trilhas separadas de decisão e SEC-01 documental | Efetividade OEM por série, autorização corporativa e infraestrutura privada |
+| v1.3.76–v1.3.79 | Observabilidade, detectabilidade, qualidade metrológica e maturidade documental de 15 regras sem prioridade | Contraprovas e medições de campo verdadeiras; 0 aprovação |
+| v1.3.80–v1.3.84 | Consulta offline de 25 regras, comparação, navegação funcional e mapa de 13 sistemas | Validação de relações conceituais em aplicação real, sem inferência causal automática |
+| v1.3.85–v1.3.88 | Lacunas por regra, roteiros S1–S5, pauta por disciplina e 125 pré-solicitações **não enviadas** | Obter evidências e pareceres via processo corporativo autorizado |
+
+**Próximo horizonte:** repetir o aprofundamento diferencial por família mecânica somente quando acrescentar evidência ou capacidade de discriminação; priorizar seleção de um conjunto real em ambiente privado autorizado, confirmação de BOM/OMM e revisão independente. Evitar novos artefatos derivados que apenas reformulem solicitações existentes.
+
+**Invariantes em 03/11/2026:** 25 regras preventivas conceituais, dez exceções SAP bloqueadas, oito gates privados NO_GO, zero causa confirmada por este projeto, nenhum RPN empírico e nenhuma autorização operacional. Prioridades P0/P1 anteriores referem-se exclusivamente à fila documental.
 
 ## Missão e definição de qualidade
 

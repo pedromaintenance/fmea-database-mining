@@ -2,7 +2,9 @@
 
 Banco de conhecimento **versionado** para investigar modos de falha, sintomas, evidências e causas em equipamentos móveis de mineração. Um consumidor possível é o jogo **[P.O.R.C.A.R.I.A. — Você Quebra, Eu Conserto](https://github.com/pedromaintenance/porcaria-voce-quebra-eu-conserto)**, mas o banco é independente: **este repositório não altera os consumidores**.
 
-> **Status:** versão do catálogo **1.3.88** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
+> **Status:** versão do catálogo **1.3.89** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
+
+**Ciclo v1.3.89:** [matriz de diagnóstico diferencial para mangueiras hidráulicas](docs/CICLO_2026-11-03_DIAGNOSTICO_DIFERENCIAL_MANGUEIRAS.md): nove cenários, 19 hipóteses concorrentes, contraprovas possíveis, requisitos documentais e resposta segura para sinais críticos. Novos [dados conceituais](data/quality/hydraulic-hose-differential.v1.json), [esquema](schemas/hydraulic-hose-differential.schema.json) e auditoria integrada ao QA. Zero testes, eventos, aprovadores, remapeamento SAP ou mudança no jogo. As duas exceções de mangueira continuam bloqueadas; oito gates privados NO_GO.
 
 **Consulta técnica disponível:** [abrir interface HTML standalone](docs/consulta-fmea.html). No GitHub, use **Raw/Download raw file** para salvar e abrir no navegador, mesmo sem internet. Permite busca, filtro por sistema, consulta de sintomas, hipóteses, limites, pendências e exportação TXT conceitual. **Não consulta nem altera SAP**.
 

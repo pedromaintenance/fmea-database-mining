@@ -2,6 +2,14 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.89] — 2026-11-03 — Diagnóstico diferencial de mangueiras hidráulicas
+
+- Adicionada `data/quality/hydraulic-hose-differential.v1.json`: **9 cenários** de falha/condição e **19 hipóteses concorrentes**, com indícios distintos para fuga externa, abrasão, reforço exposto, corpo, terminal, assento, prensagem, degradação térmica e torção; hipóteses, testes propostos e causas comprovadas separados.
+- Fontes Gates (guia de segurança de 2025) e Parker (análise de morfologias de 2023) catalogadas, complementando referências Caterpillar existentes; documentação OEM pública geral, nunca validade por série.
+- Esquema JSON, auditoria com **15 mutações adversariais**, rastreabilidade de fontes, controles de risco e manutenção dos dois bloqueios de mangueiras no SAP; integrado a `npm run qa`.
+- Atualizados `README.md` e `docs/ROADMAP.md` para a versão 1.3.89, com retrospecto dos ciclos 1.3.66–1.3.88.
+- Preservados: 25 regras PM, dez exceções PM×SAP em BLOCK, oito gates privados NO_GO, zero inspeções/testes, zero aprovações reais, sem alteração nos consumidores, ontologia principal ou conteúdo público exportado.
+
 ## [1.3.88] — 2026-10-29 — Pré-solicitações documentais de evidência por etapa S1–S5
 
 - Novo HTML offline `docs/pre-solicitacoes-evidencia-fmea.html`, com 125 rascunhos derivados da pauta de 25 regras e quatro disciplinas, filtros combinados e exportação Markdown individual/por recorte.
