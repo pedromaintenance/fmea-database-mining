@@ -2,6 +2,15 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.90] — 2026-11-03 — Diferenciação funcional em circuitos hidráulicos
+
+- Nova matriz conceitual de **10 padrões de circuito / 30 hipóteses concorrentes** em bombas, regulação, válvulas, cilindros, cargas, retorno, ruído, temperatura, comando e instrumentação.
+- Grafo genérico com 8 nós e 10 relações **condicionais**, explicitamente não homologado para arquitetura de uma máquina. Oito gates de documentação OEM/série, instrumentação e segurança em `PENDING`.
+- Novo arquivo `data/quality/hydraulic-circuit-differential.v1.json` e esquema correspondente, com perguntas de discriminação, fontes, fatores de confusão e cruzamento explícito com conceitos existentes de cilindros.
+- Auditoria `npm run pm:hydraulic:circuit:audit` integrada a `npm run qa` e ao GitHub Actions, incluindo 18 mutações adversariais contra inventar medidas, aprovações, limites ou causalidade.
+- Referência pública de inspeção Cat catalogada e relatório técnico individualizado; atualizados README e roadmap.
+- **Invariantes:** 25 regras conceituais, 10 bloqueios PM×SAP, 8 gates corporativos NO_GO; nenhuma execução, dado corporativo, série, confirmação, remapeamento ou consumidor alterado.
+
 ## [1.3.89] — 2026-11-03 — Diagnóstico diferencial de mangueiras hidráulicas
 
 - Adicionada `data/quality/hydraulic-hose-differential.v1.json`: **9 cenários** de falha/condição e **19 hipóteses concorrentes**, com indícios distintos para fuga externa, abrasão, reforço exposto, corpo, terminal, assento, prensagem, degradação térmica e torção; hipóteses, testes propostos e causas comprovadas separados.

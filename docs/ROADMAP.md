@@ -1,8 +1,16 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 03/11/2026 · **Ciclo:** catálogo técnico v1.3.89 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 03/11/2026 · **Ciclo:** catálogo técnico v1.3.90 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
+
+## Próximo avanço de engenharia — ciclo v1.3.90
+
+**Implementado:** [diagnóstico diferencial funcional de circuitos hidráulicos](CICLO_2026-11-03_DIAGNOSTICO_DIFERENCIAL_CIRCUITOS_HIDRAULICOS.md), com 10 comportamentos, 30 hipóteses concorrentes, oito gates OEM/segurança em PENDING e grafo condicional (8 nós, 10 arestas). A análise relaciona suprimento, controle, retenção, atuador, retorno, instrumentação e condição operacional, **sem atribuir função física a uma frota/serie não verificada**.
+
+**Fronteiras mantidas:** 25 bundles PM conceituais, dez exceções SAP bloqueadas, oito gates corporativos NO_GO, nenhum evento ou ensaio real, nenhuma autorização operacional ou homologação OEM. A versão v1.3.89 de mangueiras continua separada e preservada.
+
+**Próximo trabalho com maior valor:** obter em ambiente corporativo autorizado **uma configuração real**, diagrama e referências OEM de ensaio, para cruzar sintomas de um circuito de implemento com dados efetivos e revisão independente. Não reproduzir números de pressão, vazão, deriva ou diagrama de outra série. Evitar expandir formulários sem evidência discriminante nova.
 
 ## Retomada e consolidação — ciclo v1.3.89
 

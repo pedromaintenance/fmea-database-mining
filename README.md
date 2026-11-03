@@ -2,7 +2,9 @@
 
 Banco de conhecimento **versionado** para investigar modos de falha, sintomas, evidências e causas em equipamentos móveis de mineração. Um consumidor possível é o jogo **[P.O.R.C.A.R.I.A. — Você Quebra, Eu Conserto](https://github.com/pedromaintenance/porcaria-voce-quebra-eu-conserto)**, mas o banco é independente: **este repositório não altera os consumidores**.
 
-> **Status:** versão do catálogo **1.3.89** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
+> **Status:** versão do catálogo **1.3.90** (catálogo de hipóteses e taxonomias), **não** FMEAs formalmente aprovadas, banco de ocorrências reais nem fonte de procedimentos de execução.
+
+**Ciclo v1.3.90:** [diagnóstico funcional de circuitos hidráulicos](docs/CICLO_2026-11-03_DIAGNOSTICO_DIFERENCIAL_CIRCUITOS_HIDRAULICOS.md): dez padrões de comportamento, 30 hipóteses concorrentes, oito gates de aplicabilidade, grafo conceitual condicional, perguntas de contraprova e 18 mutações adversariais. Novo [JSON conceitual](data/quality/hydraulic-circuit-differential.v1.json) e [contrato](schemas/hydraulic-circuit-differential.schema.json). **Sem medidas reais, modelos/séries homologados, falhas confirmadas, valores universais, mudanças SAP ou execução de ensaio.** O mecanismo independente de QA preserva a exigência de OMM/SIS e oito gates privados NO_GO.
 
 **Ciclo v1.3.89:** [matriz de diagnóstico diferencial para mangueiras hidráulicas](docs/CICLO_2026-11-03_DIAGNOSTICO_DIFERENCIAL_MANGUEIRAS.md): nove cenários, 19 hipóteses concorrentes, contraprovas possíveis, requisitos documentais e resposta segura para sinais críticos. Novos [dados conceituais](data/quality/hydraulic-hose-differential.v1.json), [esquema](schemas/hydraulic-hose-differential.schema.json) e auditoria integrada ao QA. Zero testes, eventos, aprovadores, remapeamento SAP ou mudança no jogo. As duas exceções de mangueira continuam bloqueadas; oito gates privados NO_GO.
 
