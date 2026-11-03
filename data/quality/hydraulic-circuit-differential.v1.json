@@ -215,7 +215,7 @@
       "sourceIds": [
         "CAT-HYD-TECHNICAL-ANALYSIS",
         "CAT-HYD-PUMPS-MOTORS",
-        "CAT-HYD-CIRCUIT-INSPECTION-2026"
+        "CAT-HYD-CIRCUIT-INSPECTION"
       ],
       "safeInitialDisposition": "Manter equipamento em condição segura e preparar diagnóstico de suprimento compartilhado, sem trocar bombas por inferência.",
       "observedOnAsset": false,
@@ -270,7 +270,7 @@
       "sourceIds": [
         "CAT-HYD-TECHNICAL-ANALYSIS",
         "PARKER-CYL-DRIFT-SERVICE",
-        "CAT-HYD-CIRCUIT-INSPECTION-2026"
+        "CAT-HYD-CIRCUIT-INSPECTION"
       ],
       "safeInitialDisposition": "Não inferir substituição de cilindro; comparar a função isolada sob condições documentais equivalentes.",
       "observedOnAsset": false,
@@ -325,7 +325,7 @@
       "sourceIds": [
         "CAT-HYD-TECHNICAL-ANALYSIS",
         "CAT-HYD-PUMPS-MOTORS",
-        "CAT-HYD-CIRCUIT-INSPECTION-2026"
+        "CAT-HYD-CIRCUIT-INSPECTION"
       ],
       "safeInitialDisposition": "Não gerar teste de alívio ou estol fora de procedimento OEM e autorização de segurança.",
       "observedOnAsset": false,
@@ -437,7 +437,7 @@
       "sourceIds": [
         "PARKER-CYL-DRIFT-SERVICE",
         "CAT-HYD-TECHNICAL-ANALYSIS",
-        "CAT-HYD-CIRCUIT-INSPECTION-2026"
+        "CAT-HYD-CIRCUIT-INSPECTION"
       ],
       "safeInitialDisposition": "Retirar da condição de risco, apoiar positivamente o implemento e não testar deriva com carga insegura.",
       "observedOnAsset": false,
@@ -490,7 +490,7 @@
       "sourceIds": [
         "CAT-HYD-TECHNICAL-ANALYSIS",
         "CAT-HYD-OIL-CLEANLINESS",
-        "CAT-HYD-CIRCUIT-INSPECTION-2026"
+        "CAT-HYD-CIRCUIT-INSPECTION"
       ],
       "safeInitialDisposition": "Avaliar segurança térmica e não impor teste de carga máxima para reproduzir aquecimento.",
       "observedOnAsset": false,
@@ -541,7 +541,7 @@
       ],
       "existingConceptRefs": [],
       "sourceIds": [
-        "CAT-HYD-CIRCUIT-INSPECTION-2026",
+        "CAT-HYD-CIRCUIT-INSPECTION",
         "CAT-HYD-PUMPS-MOTORS",
         "CAT-HYD-OIL-CLEANLINESS"
       ],
@@ -651,7 +651,7 @@
       "sourceIds": [
         "PARKER-CYL-DRIFT-SERVICE",
         "CAT-HYD-TECHNICAL-ANALYSIS",
-        "CAT-HYD-CIRCUIT-INSPECTION-2026"
+        "CAT-HYD-CIRCUIT-INSPECTION"
       ],
       "safeInitialDisposition": "Não usar valores de um sentido como limite do outro nem induzir batentes sem procedimento.",
       "observedOnAsset": false,
@@ -703,7 +703,7 @@
       "existingConceptRefs": [],
       "sourceIds": [
         "CAT-HYD-TECHNICAL-ANALYSIS",
-        "CAT-HYD-CIRCUIT-INSPECTION-2026",
+        "CAT-HYD-CIRCUIT-INSPECTION",
         "CAT-HYD-PUMPS-MOTORS"
       ],
       "safeInitialDisposition": "Não ajustar controle, alterar ECM ou trocar bomba antes de reconciliar observabilidade.",
