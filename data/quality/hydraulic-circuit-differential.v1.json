@@ -1,0 +1,722 @@
+{
+  "schema": "fmea-mining.hydraulic-circuit-differential.v1",
+  "version": "1.3.90",
+  "nature": "conceptual_system_differential_no_field_diagnosis",
+  "scope": {
+    "circuit": "implementos hidraulicos de equipamento movel",
+    "architecture": "illustrative_not_serial_verified",
+    "machineModelsVerified": [],
+    "serialsVerified": [],
+    "candidatePmBundles": 25,
+    "applicabilityApproved": false
+  },
+  "globalSafety": "Conter movimento inesperado: apoiar positivamente implementos e cargas, isolar e bloquear energia, despressurizar e verificar energia residual conforme procedimento OEM específico. Proibido desconectar linhas energizadas, procurar microvazamentos com mãos ou corpo, bloquear drenagens, improvisar sensores/estrangulamentos e provocar pressão máxima sem ensaio formalmente autorizado. Suspeita de injeção hidráulica requer atendimento médico imediato.",
+  "interpretationPolicy": {
+    "pressureDoesNotProveFlow": true,
+    "lowPressureDoesNotProvePumpFailure": true,
+    "normalPumpPressureDoesNotProveActuatorPressure": true,
+    "driftDoesNotProvePistonSealFailure": true,
+    "temperatureDoesNotProveInternalLeakage": true,
+    "oilChemistryDoesNotProveFailedValve": true,
+    "electronicCodeDoesNotProveMechanicalFault": true,
+    "plannedTestIsNotExecutedEvidence": true,
+    "noUniversalPressureFlowOrDriftLimits": true,
+    "noCrossModelArchitectureAssumptions": true,
+    "noAutomaticRiskScores": true,
+    "noAutomaticSapMapping": true,
+    "noAutomaticWorkOrder": true,
+    "noOperatingRelease": true,
+    "requiresApplicableOemProcedure": true,
+    "requiresIndependentEngineeringReview": true,
+    "requiresPermissionForFieldTesting": true,
+    "actualFieldEvents": 0,
+    "testsPerformed": 0,
+    "approvedSapMappings": 0,
+    "privateCorporateGates": "NO_GO"
+  },
+  "topologyGates": [
+    {
+      "id": "TG-01",
+      "ask": "Modelo, número de série e configuração do implemento documentados em ambiente autorizado?",
+      "status": "PENDING"
+    },
+    {
+      "id": "TG-02",
+      "ask": "Esquema OEM distingue bombas, controladores, alimentação piloto, circuitos prioritários e possíveis fluxos paralelos?",
+      "status": "PENDING"
+    },
+    {
+      "id": "TG-03",
+      "ask": "Válvulas de controle, retenção, anticavitação e sustentação de carga foram identificadas no circuito efetivo?",
+      "status": "PENDING"
+    },
+    {
+      "id": "TG-04",
+      "ask": "Condições operacionais e de carregamento, temperatura e rotação exigidas pelo ensaio OEM foram confirmadas?",
+      "status": "PENDING"
+    },
+    {
+      "id": "TG-05",
+      "ask": "Pontos de pressão/vazão e instrumentos calibrados são efetivos e autorizados para essa máquina?",
+      "status": "PENDING"
+    },
+    {
+      "id": "TG-06",
+      "ask": "Estado dos intertravamentos, sinal de comando e diagnóstico eletrônico foi interpretado por software/ECM aplicável?",
+      "status": "PENDING"
+    },
+    {
+      "id": "TG-07",
+      "ask": "Energia armazenada, movimento inesperado, zona de carga e resgate foram controlados por responsáveis habilitados?",
+      "status": "PENDING"
+    },
+    {
+      "id": "TG-08",
+      "ask": "Contraprovas, rastreabilidade e revisão independente foram registradas no ambiente corporativo autorizado?",
+      "status": "PENDING"
+    }
+  ],
+  "genericCircuitGraph": {
+    "status": "illustrative_not_machine_specific",
+    "nodes": [
+      {
+        "id": "N-RES",
+        "name": "Reservatório e alimentação"
+      },
+      {
+        "id": "N-PMP",
+        "name": "Bomba e controle de deslocamento"
+      },
+      {
+        "id": "N-PIL",
+        "name": "Comando e alimentação piloto"
+      },
+      {
+        "id": "N-VLV",
+        "name": "Distribuição e regulação de pressão"
+      },
+      {
+        "id": "N-HLD",
+        "name": "Retenção e sustentação de carga"
+      },
+      {
+        "id": "N-ACT",
+        "name": "Atuador: cilindro ou motor"
+      },
+      {
+        "id": "N-RET",
+        "name": "Retorno, resfriamento e filtragem"
+      },
+      {
+        "id": "N-SEN",
+        "name": "Instrumentação e eletrônica"
+      }
+    ],
+    "edges": [
+      {
+        "from": "N-RES",
+        "to": "N-PMP",
+        "relationship": "suprimento possível",
+        "conditional": true
+      },
+      {
+        "from": "N-PMP",
+        "to": "N-VLV",
+        "relationship": "vazão/pressão condicionadas",
+        "conditional": true
+      },
+      {
+        "from": "N-PIL",
+        "to": "N-VLV",
+        "relationship": "comando condicionado",
+        "conditional": true
+      },
+      {
+        "from": "N-VLV",
+        "to": "N-HLD",
+        "relationship": "fluxo via proteção possível",
+        "conditional": true
+      },
+      {
+        "from": "N-HLD",
+        "to": "N-ACT",
+        "relationship": "controle de carga possível",
+        "conditional": true
+      },
+      {
+        "from": "N-VLV",
+        "to": "N-ACT",
+        "relationship": "via de trabalho alternativa",
+        "conditional": true
+      },
+      {
+        "from": "N-ACT",
+        "to": "N-RET",
+        "relationship": "retorno possível",
+        "conditional": true
+      },
+      {
+        "from": "N-RET",
+        "to": "N-RES",
+        "relationship": "condicionamento do fluido",
+        "conditional": true
+      },
+      {
+        "from": "N-SEN",
+        "to": "N-PMP",
+        "relationship": "medição/controle possível",
+        "conditional": true
+      },
+      {
+        "from": "N-SEN",
+        "to": "N-VLV",
+        "relationship": "medição/controle possível",
+        "conditional": true
+      }
+    ]
+  },
+  "records": [
+    {
+      "id": "HC-DIFF-01",
+      "scope": "global_supply",
+      "signal": "Várias funções hidráulicas apresentam lentidão ou perda de desempenho em condições semelhantes",
+      "potentialFunctionalEffect": "Redução potencial de produtividade e capacidade funcional em mais de um ramo",
+      "competingHypotheses": [
+        {
+          "id": "HC-DIFF-01-DRIVE",
+          "mechanism": "Rotação/controle de potência ou comando das bombas insuficiente",
+          "proposedDiscriminant": "Os registros da rotação efetiva e do comando de deslocamento das bombas permanecem coerentes com o método OEM?",
+          "alternativeInterpretation": "O mesmo sintoma pode surgir de condição de sucção ou regulação de pressão, sem defeito na bomba"
+        },
+        {
+          "id": "HC-DIFF-01-INLET",
+          "mechanism": "Abastecimento insuficiente, ar admitido ou restrição de sucção",
+          "proposedDiscriminant": "Histórico de nível, aeração e restrições é coerente com o tipo de circuito e procedimento aplicável?",
+          "alternativeInterpretation": "Ruído ou lentidão não comprovam cavitação sem discriminação hidráulica"
+        },
+        {
+          "id": "HC-DIFF-01-REG",
+          "mechanism": "Desvio de regulador, compensador ou válvula de alívio",
+          "proposedDiscriminant": "Resposta do circuito e regulação nas condições OEM diferenciam perda por controle de pressão de fornecimento insuficiente?",
+          "alternativeInterpretation": "Baixa resposta da função não demonstra deslocamento de bomba incorreto"
+        }
+      ],
+      "evidenceToRequest": [
+        "Arquitetura e número de bombas por modelo/série",
+        "Estado de rotação, comando e intertravamentos em condição autorizada",
+        "Histórico de nível, fluido, aeração e filtros",
+        "Pontos e condições de avaliação OEM de pressão e vazão"
+      ],
+      "confounders": [
+        "Diferenças de carga entre funções",
+        "Controle eletrônico ou potência do motor"
+      ],
+      "existingConceptRefs": [],
+      "sourceIds": [
+        "CAT-HYD-TECHNICAL-ANALYSIS",
+        "CAT-HYD-PUMPS-MOTORS",
+        "CAT-HYD-CIRCUIT-INSPECTION-2026"
+      ],
+      "safeInitialDisposition": "Manter equipamento em condição segura e preparar diagnóstico de suprimento compartilhado, sem trocar bombas por inferência.",
+      "observedOnAsset": false,
+      "performedTests": 0,
+      "confirmedDamage": false,
+      "confirmedRootCause": false,
+      "pressureReference": null,
+      "flowReference": null,
+      "driftReference": null,
+      "applicableOemSerial": null,
+      "approvedSapMapping": false,
+      "independentReviewStatus": "not_performed"
+    },
+    {
+      "id": "HC-DIFF-02",
+      "scope": "isolated_function",
+      "signal": "Uma função de implemento apresenta ciclo lento enquanto outras aparentam responder normalmente",
+      "potentialFunctionalEffect": "Possível degradação localizada de velocidade do atuador, sem identificar sua causa",
+      "competingHypotheses": [
+        {
+          "id": "HC-DIFF-02-VALVE",
+          "mechanism": "Comando proporcional/elemento de distribuição não fornece vazão esperada",
+          "proposedDiscriminant": "A condição de pilotagem e a posição/comando da seção da válvula podem ser comprovadas pelo método efetivo?",
+          "alternativeInterpretation": "Vazão local inadequada também pode decorrer de restrição de linha"
+        },
+        {
+          "id": "HC-DIFF-02-ACT",
+          "mechanism": "Passagem interna no atuador ou fricção mecânica localizada",
+          "proposedDiscriminant": "A contraprova autorizada separa fuga no atuador de atrito de haste, buchas e montagem?",
+          "alternativeInterpretation": "Lentidão pode ocorrer sem dano no pistão"
+        },
+        {
+          "id": "HC-DIFF-02-LINE",
+          "mechanism": "Restrição ou acoplamento inadequado em alimentação/retorno do ramo",
+          "proposedDiscriminant": "A topologia revela elemento restritivo, retorno com contrapressão ou conexão não integral?",
+          "alternativeInterpretation": "Pressão na bomba não demonstra pressão nem vazão efetiva nas câmaras"
+        }
+      ],
+      "evidenceToRequest": [
+        "Localização do atuador e da seção de válvula por esquema",
+        "Condições OEM de tempo de ciclo por movimento e carga",
+        "Histórico de inspeção das linhas e conexões do ramo",
+        "Dados válidos de comando e instrumentação do circuito"
+      ],
+      "confounders": [
+        "Variação de carga e posição geométrica",
+        "Temperatura e viscosidade na comparação"
+      ],
+      "existingConceptRefs": [
+        "COND-IMPL-CYL-LOW-FORCE"
+      ],
+      "sourceIds": [
+        "CAT-HYD-TECHNICAL-ANALYSIS",
+        "PARKER-CYL-DRIFT-SERVICE",
+        "CAT-HYD-CIRCUIT-INSPECTION-2026"
+      ],
+      "safeInitialDisposition": "Não inferir substituição de cilindro; comparar a função isolada sob condições documentais equivalentes.",
+      "observedOnAsset": false,
+      "performedTests": 0,
+      "confirmedDamage": false,
+      "confirmedRootCause": false,
+      "pressureReference": null,
+      "flowReference": null,
+      "driftReference": null,
+      "applicableOemSerial": null,
+      "approvedSapMapping": false,
+      "independentReviewStatus": "not_performed"
+    },
+    {
+      "id": "HC-DIFF-03",
+      "scope": "pressure_vs_flow",
+      "signal": "Indicação de pressão inferior à referência esperada, sem comprovação da vazão efetiva",
+      "potentialFunctionalEffect": "Potencial redução de força no atuador, desde que a medição seja representativa do ponto e carga",
+      "competingHypotheses": [
+        {
+          "id": "HC-DIFF-03-PUMP",
+          "mechanism": "Controle de deslocamento ou capacidade volumétrica da bomba fora da condição",
+          "proposedDiscriminant": "A relação pressão-comando-vazão prevista pela arquitetura pode ser avaliada sem transpor curvas de outro modelo?",
+          "alternativeInterpretation": "Pressão inferior também pode depender de alívio ou condição de carga"
+        },
+        {
+          "id": "HC-DIFF-03-RELIEF",
+          "mechanism": "Válvula de alívio, compensação ou controle de pressão desviando vazão",
+          "proposedDiscriminant": "O teste OEM discrimina atuação prematura de alívio e perda de vazão útil?",
+          "alternativeInterpretation": "Dado do sensor ou ponto incorreto pode simular pressão baixa"
+        },
+        {
+          "id": "HC-DIFF-03-CONTEXT",
+          "mechanism": "Ponto, calibração, carga ou estado de controle incompatível com a referência",
+          "proposedDiscriminant": "A instrumentação e a condição de ensaio correspondem ao mesmo ponto, faixa, rotação e regime?",
+          "alternativeInterpretation": "A referência isolada não prova que uma bomba está avariada"
+        }
+      ],
+      "evidenceToRequest": [
+        "Fonte exata da leitura (monitor/porta/transdutor)",
+        "Pressão esperada somente na documentação OEM por série",
+        "Estado de carga, temperatura e comando durante leitura",
+        "Calibração, escala e unidade dos instrumentos"
+      ],
+      "confounders": [
+        "Pressão de alívio não equivale a vazão sob trabalho",
+        "Arquiteturas com bombas múltiplas ou compensadores"
+      ],
+      "existingConceptRefs": [
+        "COND-IMPL-CIRCUIT-PRESSURE-LOW"
+      ],
+      "sourceIds": [
+        "CAT-HYD-TECHNICAL-ANALYSIS",
+        "CAT-HYD-PUMPS-MOTORS",
+        "CAT-HYD-CIRCUIT-INSPECTION-2026"
+      ],
+      "safeInitialDisposition": "Não gerar teste de alívio ou estol fora de procedimento OEM e autorização de segurança.",
+      "observedOnAsset": false,
+      "performedTests": 0,
+      "confirmedDamage": false,
+      "confirmedRootCause": false,
+      "pressureReference": null,
+      "flowReference": null,
+      "driftReference": null,
+      "applicableOemSerial": null,
+      "approvedSapMapping": false,
+      "independentReviewStatus": "not_performed"
+    },
+    {
+      "id": "HC-DIFF-04",
+      "scope": "localized_force",
+      "signal": "Pressão de alimentação aparentemente compatível, mas o implemento não desenvolve força suficiente",
+      "potentialFunctionalEffect": "Possível incapacidade local de sustentar força sob carga",
+      "competingHypotheses": [
+        {
+          "id": "HC-DIFF-04-DELIVERY",
+          "mechanism": "Perda de pressão entre ponto medido e câmara do atuador por regulação/distribuição",
+          "proposedDiscriminant": "O esquema permite diferenciar pressão no ramo de pressão principal efetivamente medida?",
+          "alternativeInterpretation": "Ponto principal normal não assegura força na haste"
+        },
+        {
+          "id": "HC-DIFF-04-BYPASS",
+          "mechanism": "Fuga interna em pistão ou passagem interna no conjunto do atuador",
+          "proposedDiscriminant": "Há contraprova de vedação interna realizada por procedimento específico sem movimentação perigosa?",
+          "alternativeInterpretation": "Baixa força também ocorre por válvula que não fecha"
+        },
+        {
+          "id": "HC-DIFF-04-LOAD",
+          "mechanism": "Carga externa, geometria ou resistência mecânica fora da condição de referência",
+          "proposedDiscriminant": "Condições de carga, alavancagem e impedimentos mecânicos são equivalentes às condições OEM?",
+          "alternativeInterpretation": "Alteração de geometria pode reduzir força útil sem falha hidráulica"
+        }
+      ],
+      "evidenceToRequest": [
+        "Identificação da câmara e área efetiva do cilindro",
+        "Diagrama de alimentação, retorno e válvulas locais",
+        "Condição de carga e posição do mecanismo",
+        "Referência OEM do ensaio e evidência de medida no ponto adequado"
+      ],
+      "confounders": [
+        "Área diferencial dos lados da haste",
+        "Pressão principal medida não é pressão nas duas câmaras"
+      ],
+      "existingConceptRefs": [
+        "COND-IMPL-CYL-LOW-FORCE"
+      ],
+      "sourceIds": [
+        "PARKER-CYL-DRIFT-SERVICE",
+        "CAT-HYD-TECHNICAL-ANALYSIS",
+        "CAT-HYD-PUMPS-MOTORS"
+      ],
+      "safeInitialDisposition": "Bloquear conclusão de falha da bomba ou pistão sem discriminação do circuito e da carga.",
+      "observedOnAsset": false,
+      "performedTests": 0,
+      "confirmedDamage": false,
+      "confirmedRootCause": false,
+      "pressureReference": null,
+      "flowReference": null,
+      "driftReference": null,
+      "applicableOemSerial": null,
+      "approvedSapMapping": false,
+      "independentReviewStatus": "not_performed"
+    },
+    {
+      "id": "HC-DIFF-05",
+      "scope": "load_holding",
+      "signal": "Implemento deriva ou desce em posição de espera, com comando nominalmente neutro",
+      "potentialFunctionalEffect": "Perda potencial de retenção de carga, com risco imediato de movimento não comandado",
+      "competingHypotheses": [
+        {
+          "id": "HC-DIFF-05-PISTON",
+          "mechanism": "Vazamento interno pela vedação do pistão/cilindro",
+          "proposedDiscriminant": "Inspeção OEM discrimina fuga interna do atuador sem desconexão insegura ou carga suspensa?",
+          "alternativeInterpretation": "Deriva também pode ocorrer quando válvula de controle permite passagem"
+        },
+        {
+          "id": "HC-DIFF-05-HOLD",
+          "mechanism": "Válvula de retenção, contrabalanço ou sustentação de carga não retém",
+          "proposedDiscriminant": "Arquitetura efetiva confirma presença da válvula e método de contraprova?",
+          "alternativeInterpretation": "Nem toda máquina possui a mesma arquitetura de retenção"
+        },
+        {
+          "id": "HC-DIFF-05-SPOOL",
+          "mechanism": "Passagem interna na válvula distribuidora ou retorno em outro ramo",
+          "proposedDiscriminant": "O teste efetivo separa válvula de comando do conjunto cilindro?",
+          "alternativeInterpretation": "Deriva não representa comprovação de retentor de pistão danificado"
+        }
+      ],
+      "evidenceToRequest": [
+        "Procedimento OEM de sustentação, isolamento e limite de deriva",
+        "Válvulas efetivamente instaladas no ramo",
+        "Posição, carga, temperatura e tempo previstos na referência",
+        "Parecer de equipe habilitada antes de qualquer prova em campo"
+      ],
+      "confounders": [
+        "Carga e geometria influenciam tendência de descida",
+        "Instrumento e intervalo de medição podem não ser comparáveis"
+      ],
+      "existingConceptRefs": [
+        "COND-IMPL-CYL-DRIFT",
+        "COND-IMPL-CYL-PISTON-BYPASS",
+        "COND-IMPL-CIRCUIT-VALVE-LEAK"
+      ],
+      "sourceIds": [
+        "PARKER-CYL-DRIFT-SERVICE",
+        "CAT-HYD-TECHNICAL-ANALYSIS",
+        "CAT-HYD-CIRCUIT-INSPECTION-2026"
+      ],
+      "safeInitialDisposition": "Retirar da condição de risco, apoiar positivamente o implemento e não testar deriva com carga insegura.",
+      "observedOnAsset": false,
+      "performedTests": 0,
+      "confirmedDamage": false,
+      "confirmedRootCause": false,
+      "pressureReference": null,
+      "flowReference": null,
+      "driftReference": null,
+      "applicableOemSerial": null,
+      "approvedSapMapping": false,
+      "independentReviewStatus": "not_performed"
+    },
+    {
+      "id": "HC-DIFF-06",
+      "scope": "overheating",
+      "signal": "Elevação de temperatura ou aquecimento anormal do óleo hidráulico",
+      "potentialFunctionalEffect": "Potencial perda de eficiência, degradação do fluido e aumento de solicitação térmica",
+      "competingHypotheses": [
+        {
+          "id": "HC-DIFF-06-LOSS",
+          "mechanism": "Recirculação de vazão em válvula de alívio ou perdas internas elevadas",
+          "proposedDiscriminant": "Há indícios independentes de fluxo em alívio, perda interna e energia dissipada no regime previsto?",
+          "alternativeInterpretation": "Temperatura elevada isolada não identifica uma bomba desgastada"
+        },
+        {
+          "id": "HC-DIFF-06-COOL",
+          "mechanism": "Capacidade de resfriamento, fluxo de ar ou troca térmica insuficientes",
+          "proposedDiscriminant": "Inspeção de trocador, ventilação e circuito de arrefecimento corresponde à máquina efetiva?",
+          "alternativeInterpretation": "Calor em alta carga pode ser normal dentro de faixa OEM desconhecida"
+        },
+        {
+          "id": "HC-DIFF-06-FLUID",
+          "mechanism": "Viscosidade/condição ou nível de fluido inadequado para regime",
+          "proposedDiscriminant": "Dados de amostragem, fluido correto, horas e temperatura podem ser comparados ao baseline efetivo?",
+          "alternativeInterpretation": "Metal ou variação de aditivos não confirmam falha de válvula"
+        }
+      ],
+      "evidenceToRequest": [
+        "Tendência térmica por condição operacional e posição de sensor",
+        "Referência OEM de temperatura e propriedades do óleo",
+        "Estado do resfriamento/ventilação e histórico de manutenção",
+        "Fluxos de alívio/perdas somente se medidos por método homologado"
+      ],
+      "confounders": [
+        "Ciclo e ambiente podem elevar carga térmica",
+        "Leitura do sensor pode ser incorreta"
+      ],
+      "existingConceptRefs": [],
+      "sourceIds": [
+        "CAT-HYD-TECHNICAL-ANALYSIS",
+        "CAT-HYD-OIL-CLEANLINESS",
+        "CAT-HYD-CIRCUIT-INSPECTION-2026"
+      ],
+      "safeInitialDisposition": "Avaliar segurança térmica e não impor teste de carga máxima para reproduzir aquecimento.",
+      "observedOnAsset": false,
+      "performedTests": 0,
+      "confirmedDamage": false,
+      "confirmedRootCause": false,
+      "pressureReference": null,
+      "flowReference": null,
+      "driftReference": null,
+      "applicableOemSerial": null,
+      "approvedSapMapping": false,
+      "independentReviewStatus": "not_performed"
+    },
+    {
+      "id": "HC-DIFF-07",
+      "scope": "acoustic",
+      "signal": "Ruído de bomba, vibração ou movimentos irregulares acompanhados de espuma/aeração aparente",
+      "potentialFunctionalEffect": "Possível insuficiência de alimentação ou anomalia mecânica com risco de dano progressivo",
+      "competingHypotheses": [
+        {
+          "id": "HC-DIFF-07-SUCTION",
+          "mechanism": "Restrição de entrada ou nível insuficiente levando a cavitação possível",
+          "proposedDiscriminant": "Condição de suprimento e pontos autorizados diferenciam falta de líquido de outros ruídos?",
+          "alternativeInterpretation": "Ruído não prova cavitação sem evidência complementar"
+        },
+        {
+          "id": "HC-DIFF-07-AIR",
+          "mechanism": "Entrada/arraste de ar e condição de reservatório",
+          "proposedDiscriminant": "A origem de ar/espuma pode ser avaliada sem abrir circuito energizado?",
+          "alternativeInterpretation": "Espuma pode coexistir com problemas de retorno e fluido"
+        },
+        {
+          "id": "HC-DIFF-07-MECH",
+          "mechanism": "Desgaste de componente girante ou fixação com vibração",
+          "proposedDiscriminant": "Morfologia acústica, tendência e inspeção autorizada distinguem rolamento/acoplamento de evento de sucção?",
+          "alternativeInterpretation": "Ruído de bomba não identifica sozinho qual peça falhou"
+        }
+      ],
+      "evidenceToRequest": [
+        "Nível de fluido, histórico de abastecimento e restrição",
+        "Condição acústica por rotação e carga sem tentativa de falha",
+        "Inspeção autorizada de sucção, retorno, fixação e filtros",
+        "Tendência de amostra e qualidade do óleo"
+      ],
+      "confounders": [
+        "Condição de operação pode alterar o espectro sonoro",
+        "Aeração e cavitação não são sinônimos"
+      ],
+      "existingConceptRefs": [],
+      "sourceIds": [
+        "CAT-HYD-CIRCUIT-INSPECTION-2026",
+        "CAT-HYD-PUMPS-MOTORS",
+        "CAT-HYD-OIL-CLEANLINESS"
+      ],
+      "safeInitialDisposition": "Não operar deliberadamente com sucção limitada nem isolar dreno ou respiro.",
+      "observedOnAsset": false,
+      "performedTests": 0,
+      "confirmedDamage": false,
+      "confirmedRootCause": false,
+      "pressureReference": null,
+      "flowReference": null,
+      "driftReference": null,
+      "applicableOemSerial": null,
+      "approvedSapMapping": false,
+      "independentReviewStatus": "not_performed"
+    },
+    {
+      "id": "HC-DIFF-08",
+      "scope": "erratic_command",
+      "signal": "Atuador movimenta-se aos trancos, atrasa resposta ou oscila após comando",
+      "potentialFunctionalEffect": "Possível descontrole de movimento ou choque mecânico/hidráulico",
+      "competingHypotheses": [
+        {
+          "id": "HC-DIFF-08-PILOT",
+          "mechanism": "Pressão piloto, alimentação elétrica ou comando proporcional inconsistente",
+          "proposedDiscriminant": "Histórico de entrada, corrente e estado piloto, se existente, discrimina falta de comando de resposta hidráulica?",
+          "alternativeInterpretation": "Comando eletrônico presente não garante pilotagem mecânica efetiva"
+        },
+        {
+          "id": "HC-DIFF-08-SPOOL",
+          "mechanism": "Carretel/elemento de válvula intermitente por contaminação ou travamento",
+          "proposedDiscriminant": "Avaliação segura separa retenção de carretel de sinal de comando variável?",
+          "alternativeInterpretation": "Alarme de solenoide não comprova carretel travado"
+        },
+        {
+          "id": "HC-DIFF-08-STICK",
+          "mechanism": "Atrito estático, ar em câmaras ou desalinhamento do atuador",
+          "proposedDiscriminant": "Histórico de montagem, buchas e movimento diferencia atrito de falha de comando?",
+          "alternativeInterpretation": "Movimento irregular pode resultar de carga e geometria"
+        }
+      ],
+      "evidenceToRequest": [
+        "Arquitetura e disponibilidade de piloto e controles",
+        "Histórico de falhas eletrônicas e software aplicável",
+        "Condição de óleo e qualidade de filtragem",
+        "Inspeção mecânica de montagem e articulações sem movimento energizado"
+      ],
+      "confounders": [
+        "Intertravamentos de segurança podem limitar comandos",
+        "Válvulas de regeneração e controle de fluxo mudam resposta"
+      ],
+      "existingConceptRefs": [],
+      "sourceIds": [
+        "PARKER-CYL-DRIFT-SERVICE",
+        "CAT-HYD-TECHNICAL-ANALYSIS",
+        "CAT-HYD-OIL-CLEANLINESS"
+      ],
+      "safeInitialDisposition": "Não forçar movimento nem neutralizar intertravamentos para diagnosticar oscilação.",
+      "observedOnAsset": false,
+      "performedTests": 0,
+      "confirmedDamage": false,
+      "confirmedRootCause": false,
+      "pressureReference": null,
+      "flowReference": null,
+      "driftReference": null,
+      "applicableOemSerial": null,
+      "approvedSapMapping": false,
+      "independentReviewStatus": "not_performed"
+    },
+    {
+      "id": "HC-DIFF-09",
+      "scope": "directional_asymmetry",
+      "signal": "Movimento de extensão e retração apresentam respostas muito distintas",
+      "potentialFunctionalEffect": "Diferença de velocidade ou força dependente do sentido pode ser normal ou sinal de falha",
+      "competingHypotheses": [
+        {
+          "id": "HC-DIFF-09-GEOMETRY",
+          "mechanism": "Áreas efetivas e carga diferentes nos dois sentidos",
+          "proposedDiscriminant": "A referência OEM considera área anular, sentido de carga e geometria na comparação?",
+          "alternativeInterpretation": "Diferença de tempo não implica falha quando a referência não é simétrica"
+        },
+        {
+          "id": "HC-DIFF-09-VALVING",
+          "mechanism": "Válvula de retenção, regeneração ou controle de fluxo atua em apenas um sentido",
+          "proposedDiscriminant": "Esquema mostra dispositivos específicos e condições de ativação desse sentido?",
+          "alternativeInterpretation": "Assumir uma válvula inexistente produz falso diagnóstico"
+        },
+        {
+          "id": "HC-DIFF-09-FLOW",
+          "mechanism": "Restrição/contrapressão assimétrica em retorno ou alimentação",
+          "proposedDiscriminant": "Comparações efetivas por lado e ponto permitem diferenciar retorno restrito de vazão de entrada?",
+          "alternativeInterpretation": "Pressão principal normal não exclui obstrução em linha de retorno"
+        }
+      ],
+      "evidenceToRequest": [
+        "Arquitetura de extensão/retração por arranjo",
+        "Referência temporal para cada sentido e posição",
+        "Estado de carga e condições equivalentes",
+        "Roteamento, retenção e regeneração quando aplicáveis"
+      ],
+      "confounders": [
+        "Diferença de áreas por lado é fisicamente esperada",
+        "Máquinas com cilindros combinados ou circuitos compartilhados"
+      ],
+      "existingConceptRefs": [
+        "COND-IMPL-CYL-DRIFT"
+      ],
+      "sourceIds": [
+        "PARKER-CYL-DRIFT-SERVICE",
+        "CAT-HYD-TECHNICAL-ANALYSIS",
+        "CAT-HYD-CIRCUIT-INSPECTION-2026"
+      ],
+      "safeInitialDisposition": "Não usar valores de um sentido como limite do outro nem induzir batentes sem procedimento.",
+      "observedOnAsset": false,
+      "performedTests": 0,
+      "confirmedDamage": false,
+      "confirmedRootCause": false,
+      "pressureReference": null,
+      "flowReference": null,
+      "driftReference": null,
+      "applicableOemSerial": null,
+      "approvedSapMapping": false,
+      "independentReviewStatus": "not_performed"
+    },
+    {
+      "id": "HC-DIFF-10",
+      "scope": "measurement_disagreement",
+      "signal": "Leitura de pressão no monitor diverge de indicação instrumental ou varia sem mudança de função",
+      "potentialFunctionalEffect": "Falha de observabilidade ou oscilação real ainda não discriminada",
+      "competingHypotheses": [
+        {
+          "id": "HC-DIFF-10-SENSOR",
+          "mechanism": "Transdutor, chicote, alimentação ou calibração incorretos",
+          "proposedDiscriminant": "Ponto físico, sinal, faixa e calibração são comparáveis e coerentes segundo configuração ECM?",
+          "alternativeInterpretation": "Divergência não comprova defeito de sensor"
+        },
+        {
+          "id": "HC-DIFF-10-POINT",
+          "mechanism": "Pontos de medição representam ramificações, perdas ou fases distintas",
+          "proposedDiscriminant": "Diagrama confirma equivalência dos pontos e condições temporais de leitura?",
+          "alternativeInterpretation": "Instrumentos corretos podem divergir por medirem partes diferentes"
+        },
+        {
+          "id": "HC-DIFF-10-TRANSIENT",
+          "mechanism": "Mudanças reais rápidas de pressão ou filtro/controle oscilante",
+          "proposedDiscriminant": "Método OEM prevê sincronização de registros e faixa dinâmica de instrumentos?",
+          "alternativeInterpretation": "Transiente de carga pode não aparecer no monitor de atualização lenta"
+        }
+      ],
+      "evidenceToRequest": [
+        "Ponto e função de cada instrumento no esquema",
+        "Certificado de calibração, faixa e unidade",
+        "Estado do ECM/software e código do sensor",
+        "Sincronização de carga/tempo na comparação"
+      ],
+      "confounders": [
+        "Resolução de tela e taxa de aquisição",
+        "Pressão em circuito piloto pode diferir do principal"
+      ],
+      "existingConceptRefs": [],
+      "sourceIds": [
+        "CAT-HYD-TECHNICAL-ANALYSIS",
+        "CAT-HYD-CIRCUIT-INSPECTION-2026",
+        "CAT-HYD-PUMPS-MOTORS"
+      ],
+      "safeInitialDisposition": "Não ajustar controle, alterar ECM ou trocar bomba antes de reconciliar observabilidade.",
+      "observedOnAsset": false,
+      "performedTests": 0,
+      "confirmedDamage": false,
+      "confirmedRootCause": false,
+      "pressureReference": null,
+      "flowReference": null,
+      "driftReference": null,
+      "applicableOemSerial": null,
+      "approvedSapMapping": false,
+      "independentReviewStatus": "not_performed"
+    }
+  ]
+}
