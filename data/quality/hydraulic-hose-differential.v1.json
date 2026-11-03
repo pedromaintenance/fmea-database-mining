@@ -1,0 +1,389 @@
+{
+  "schema": "fmea-mining.hydraulic-hose-differential.v1",
+  "version": "1.3.89",
+  "nature": "conceptual_technical_differentials_not_field_diagnostics",
+  "scope": {
+    "system": "hidraulico",
+    "componentFamily": "conjuntos de mangueiras hidraulicas pressurizadas",
+    "pmRules": [
+      "hydraulic-hose-abrasion",
+      "hydraulic-hose-leak"
+    ],
+    "sapBlocker": "subgroup_not_in_scope",
+    "operationalPriorityAssigned": false
+  },
+  "globalSafety": "Não tocar em vazamento, não buscar jatos com as mãos, não aproximar o corpo, não desmontar sob pressão residual. Estabilizar cargas/implementos, bloquear energias e confirmar alívio conforme OMM efetivo. Suspeita de injeção de fluido exige atendimento médico imediato. Sem teste de pressão ou liberação autorizados por esta base.",
+  "policy": {
+    "conceptualOnly": true,
+    "oemSerialRequired": true,
+    "independentReviewRequired": true,
+    "noAutomaticSapMapping": true,
+    "noAutomaticWorkOrder": true,
+    "noPressurizedLeakSearch": true,
+    "noOperatingRelease": true,
+    "noUniversalThresholds": true,
+    "recordedFieldEvents": 0,
+    "performedInspections": 0,
+    "engineeringApprovals": 0,
+    "privateCorporateGates": "NO_GO"
+  },
+  "records": [
+    {
+      "id": "HH-DIFF-01",
+      "signal": "Óleo encontrado externamente sobre o corpo da mangueira, sem origem localizada",
+      "potentialFunctionalEffect": "Perda de estanqueidade ainda não demonstrada",
+      "disposition": "isolate_and_verify_origin_safely",
+      "competingHypotheses": [
+        {
+          "id": "HH-DIFF-01-EXT",
+          "mechanism": "Escorrimento de componente, conexão ou linha situada acima",
+          "proposedDiscriminant": "Rastrear pontos molhados e origem potencial somente com circuito em condição segura",
+          "competingExplanation": "A cobertura molhada não comprova perfuração da mangueira"
+        },
+        {
+          "id": "HH-DIFF-01-BODY",
+          "mechanism": "Fuga pela parede/tubo da própria mangueira",
+          "proposedDiscriminant": "Diferenciar ponto de origem no corpo de marcas de óleo trazidas por gravidade",
+          "competingExplanation": "Contato com óleo externo pode produzir o mesmo aspecto"
+        }
+      ],
+      "evidenceToRequest": [
+        "Identificação OEM da linha, função, trajeto e pontos superiores",
+        "Registro visual da distribuição de óleo e de outras fontes possíveis com pressão neutralizada",
+        "Avaliação autorizada de integridade do conjunto"
+      ],
+      "sourceIds": [
+        "CAT-HYD-HOSE-INSPECT",
+        "CAT-HYD-HOSE-FAILURE",
+        "PARKER-HOSE-FAILURES-2023"
+      ],
+      "interpretationLimit": "Sem inspeção independente não classificar vazamento no corpo nem causa; não realizar ensaio pressurizado improvisado.",
+      "observedOnAsset": false,
+      "performedTests": 0,
+      "confirmedDamage": false,
+      "confirmedRootCause": false,
+      "approvedMeasurementLimit": null,
+      "validatedOemSerial": null,
+      "approvedSapMapping": false,
+      "independentReview": "not_performed"
+    },
+    {
+      "id": "HH-DIFF-02",
+      "signal": "Abrasão ou marca na cobertura externa, sem fuga visível e sem reforço confirmado",
+      "potentialFunctionalEffect": "Perda de proteção externa possível; perda de pressão não demonstrada",
+      "disposition": "inspect_without_operating_release",
+      "competingHypotheses": [
+        {
+          "id": "HH-DIFF-02-CONTACT",
+          "mechanism": "Contato repetido com estrutura, abraçadeira ou outra linha",
+          "proposedDiscriminant": "Confrontar localização da marca com trajeto e deslocamento físico admissível",
+          "competingExplanation": "Marcas não provam ainda dano no reforço nem a direção causal"
+        },
+        {
+          "id": "HH-DIFF-02-EXPOSURE",
+          "mechanism": "Ataque químico/termofísico ou deterioração ambiental da cobertura",
+          "proposedDiscriminant": "Confrontar fissuras, endurecimento e uniformidade da alteração com histórico do ambiente",
+          "competingExplanation": "Textura danificada isolada não demonstra incompatibilidade do fluido"
+        }
+      ],
+      "evidenceToRequest": [
+        "Localização da marca e condição da cobertura sob inspeção segura",
+        "Roteamento efetivo e interferências ao longo do movimento",
+        "Critério de rejeição do fabricante por tipo de mangueira"
+      ],
+      "sourceIds": [
+        "CAT-HYD-HOSE-INSPECT",
+        "GATES-SAFE-HYDRAULICS-2025",
+        "PARKER-HOSE-FAILURES-2023"
+      ],
+      "interpretationLimit": "Abrasão superficial não é automaticamente vazamento e ausência de fuga não é prova de integridade.",
+      "observedOnAsset": false,
+      "performedTests": 0,
+      "confirmedDamage": false,
+      "confirmedRootCause": false,
+      "approvedMeasurementLimit": null,
+      "validatedOemSerial": null,
+      "approvedSapMapping": false,
+      "independentReview": "not_performed"
+    },
+    {
+      "id": "HH-DIFF-03",
+      "signal": "Reforço da mangueira visivelmente exposto em área com dano da cobertura",
+      "potentialFunctionalEffect": "Resistência mecânica potencialmente comprometida mesmo sem vazamento",
+      "disposition": "withdraw_from_service_evaluate_replacement",
+      "competingHypotheses": [
+        {
+          "id": "HH-DIFF-03-RUB",
+          "mechanism": "Desgaste por atrito progressivo até o reforço",
+          "proposedDiscriminant": "Localizar origem do contato e compatibilizar marca com pontos de interferência",
+          "competingExplanation": "Reforço exposto não comprova por si só a razão do contato"
+        },
+        {
+          "id": "HH-DIFF-03-IMPACT",
+          "mechanism": "Corte, esmagamento ou impacto localizado",
+          "proposedDiscriminant": "Analisar morfologia e histórico de interferência externa",
+          "competingExplanation": "Dano por impacto pode coexistir com abrasão"
+        }
+      ],
+      "evidenceToRequest": [
+        "Registro visual seguro da extensão e posição",
+        "Confirmação da linha/arranjo e interferência física",
+        "Parecer técnico sobre roteamento e substituição do conjunto"
+      ],
+      "sourceIds": [
+        "CAT-HYD-HOSE-INSPECT",
+        "GATES-SAFE-HYDRAULICS-2025",
+        "PARKER-HOSE-FAILURES-2023"
+      ],
+      "interpretationLimit": "Condição crítica independe de vazamento; não manter operação por ausência de fuga.",
+      "observedOnAsset": false,
+      "performedTests": 0,
+      "confirmedDamage": false,
+      "confirmedRootCause": false,
+      "approvedMeasurementLimit": null,
+      "validatedOemSerial": null,
+      "approvedSapMapping": false,
+      "independentReview": "not_performed"
+    },
+    {
+      "id": "HH-DIFF-04",
+      "signal": "Ruptura ou fuga localizada no corpo da mangueira, longe dos terminais",
+      "potentialFunctionalEffect": "Falha funcional de contenção de fluido pressurizado",
+      "disposition": "withdraw_from_service_evaluate_replacement",
+      "competingHypotheses": [
+        {
+          "id": "HH-DIFF-04-PULSE",
+          "mechanism": "Pressão de operação ou pulsos incompatíveis com o conjunto",
+          "proposedDiscriminant": "Confrontar especificação do conjunto com dados de projeto/controle autorizados",
+          "competingExplanation": "Ruptura não prova sobrepressão; não elevar pressão para confirmar"
+        },
+        {
+          "id": "HH-DIFF-04-FLEX",
+          "mechanism": "Fadiga por flexão, esmagamento ou raio de curvatura inadequado",
+          "proposedDiscriminant": "Confrontar posição da ruptura, vinco, movimento e raio com configuração OEM",
+          "competingExplanation": "Flexão anormal pode coexistir com pressão de trabalho correta"
+        },
+        {
+          "id": "HH-DIFF-04-IMPACT",
+          "mechanism": "Corte/abrasão externa evoluindo a dano estrutural",
+          "proposedDiscriminant": "Confrontar sinais na cobertura e interferências",
+          "competingExplanation": "Reforço rompido não revela sozinho a origem do dano"
+        }
+      ],
+      "evidenceToRequest": [
+        "Identificar mangueira/pressão nominal e arranjo OEM",
+        "Documentar morfologia após despressurização e retirada autorizada",
+        "Histórico de carga, movimento, roteamento e proteção"
+      ],
+      "sourceIds": [
+        "GATES-SAFE-HYDRAULICS-2025",
+        "PARKER-HOSE-FAILURES-2023",
+        "CAT-HYD-HOSE-FAILURE"
+      ],
+      "interpretationLimit": "Não atribuir a sobrepressão, abrasão ou fadiga por morfologia isolada.",
+      "observedOnAsset": false,
+      "performedTests": 0,
+      "confirmedDamage": false,
+      "confirmedRootCause": false,
+      "approvedMeasurementLimit": null,
+      "validatedOemSerial": null,
+      "approvedSapMapping": false,
+      "independentReview": "not_performed"
+    },
+    {
+      "id": "HH-DIFF-05",
+      "signal": "Ruptura próxima ao início do terminal ou da capa prensada",
+      "potentialFunctionalEffect": "Risco de separação do conjunto ou fuga abrupta",
+      "disposition": "withdraw_from_service_evaluate_replacement",
+      "competingHypotheses": [
+        {
+          "id": "HH-DIFF-05-STRAIN",
+          "mechanism": "Esforço axial/flexão junto ao terminal por comprimento ou roteamento",
+          "proposedDiscriminant": "Comparar folga, pontos fixos e movimento do equipamento com desenho aprovado",
+          "competingExplanation": "Ruptura junto ao terminal não prova mangueira curta"
+        },
+        {
+          "id": "HH-DIFF-05-ASSEMBLY",
+          "mechanism": "Prensagem ou montagem incompatível com mangueira/terminal",
+          "proposedDiscriminant": "Verificar rastreabilidade do conjunto e processo de fabricação por técnico autorizado",
+          "competingExplanation": "Aparência externa não valida dimensão nem qualidade da crimpagem"
+        }
+      ],
+      "evidenceToRequest": [
+        "Trajeto de movimento e restrição de flexão junto ao terminal",
+        "Identificação conjunta mangueira-terminal e registro de fabricação",
+        "Inspeção segura do conjunto retirado e revisão independente"
+      ],
+      "sourceIds": [
+        "GATES-SAFE-HYDRAULICS-2025",
+        "PARKER-HOSE-FAILURES-2023",
+        "CAT-HYD-HOSE-INSPECT"
+      ],
+      "interpretationLimit": "Não sugerir reparo local nem especificar crimpagem sem ficha OEM da montagem.",
+      "observedOnAsset": false,
+      "performedTests": 0,
+      "confirmedDamage": false,
+      "confirmedRootCause": false,
+      "approvedMeasurementLimit": null,
+      "validatedOemSerial": null,
+      "approvedSapMapping": false,
+      "independentReview": "not_performed"
+    },
+    {
+      "id": "HH-DIFF-06",
+      "signal": "Óleo na interface roscada/assento ou na vedação do adaptador",
+      "potentialFunctionalEffect": "Perda localizada de vedação, origem precisa ainda a confirmar",
+      "disposition": "withdraw_from_service_evaluate_replacement",
+      "competingHypotheses": [
+        {
+          "id": "HH-DIFF-06-SEAL",
+          "mechanism": "Vedação ausente, degradada ou de material incompatível",
+          "proposedDiscriminant": "Inspecionar vedação apenas após alívio e desmontagem autorizada",
+          "competingExplanation": "Não concluir falha do corpo da mangueira por vazamento no porto"
+        },
+        {
+          "id": "HH-DIFF-06-MATE",
+          "mechanism": "Assento, rosca ou geometria de conexão incompatíveis/danificados",
+          "proposedDiscriminant": "Conferir padrões de conexão e integridade das superfícies efetivas",
+          "competingExplanation": "Não atribuir à falta de torque sem histórico e verificação técnica"
+        }
+      ],
+      "evidenceToRequest": [
+        "Localização exata da fuga na união, sem teste manual sob pressão",
+        "Tipo de conexão OEM e componentes compatíveis",
+        "Condição de assento, vedação e método de montagem aprovado"
+      ],
+      "sourceIds": [
+        "GATES-SAFE-HYDRAULICS-2025",
+        "PARKER-HOSE-FAILURES-2023",
+        "CAT-HYD-HOSE-FAILURE"
+      ],
+      "interpretationLimit": "Distinguir junta, porto e terminal antes de abrir código de dano na mangueira.",
+      "observedOnAsset": false,
+      "performedTests": 0,
+      "confirmedDamage": false,
+      "confirmedRootCause": false,
+      "approvedMeasurementLimit": null,
+      "validatedOemSerial": null,
+      "approvedSapMapping": false,
+      "independentReview": "not_performed"
+    },
+    {
+      "id": "HH-DIFF-07",
+      "signal": "Exsudação na interface mangueira-terminal ou terminal solto/desengatado",
+      "potentialFunctionalEffect": "Falha de retenção e contenção do conjunto, com risco crítico",
+      "disposition": "withdraw_from_service_evaluate_replacement",
+      "competingHypotheses": [
+        {
+          "id": "HH-DIFF-07-CRIMP",
+          "mechanism": "Inserção insuficiente ou prensagem incompatível",
+          "proposedDiscriminant": "Confrontar rastreabilidade, componentes e dimensões especificadas de montagem retirada",
+          "competingExplanation": "Exsudação não identifica sozinha defeito de fabricação"
+        },
+        {
+          "id": "HH-DIFF-07-LOAD",
+          "mechanism": "Tração ou movimento excessivo transmitido ao terminal",
+          "proposedDiscriminant": "Confrontar folga, ancoragens e movimentos reais da aplicação",
+          "competingExplanation": "Falha de retenção pode resultar de mais de um mecanismo simultâneo"
+        }
+      ],
+      "evidenceToRequest": [
+        "Isolamento de energia armazenada e retirada segura",
+        "Rastreabilidade de terminais e processo de montagem",
+        "Revisão de percurso, folga e possíveis cargas dinâmicas"
+      ],
+      "sourceIds": [
+        "GATES-SAFE-HYDRAULICS-2025",
+        "PARKER-HOSE-FAILURES-2023",
+        "CAT-HYD-HOSE-FAILURE"
+      ],
+      "interpretationLimit": "Não reapertar, remendar nem testar com pessoas na zona de falha.",
+      "observedOnAsset": false,
+      "performedTests": 0,
+      "confirmedDamage": false,
+      "confirmedRootCause": false,
+      "approvedMeasurementLimit": null,
+      "validatedOemSerial": null,
+      "approvedSapMapping": false,
+      "independentReview": "not_performed"
+    },
+    {
+      "id": "HH-DIFF-08",
+      "signal": "Cobertura endurecida, fissurada, carbonizada ou com bolhas",
+      "potentialFunctionalEffect": "Degradação potencial do polímero e perda de integridade",
+      "disposition": "withdraw_from_service_evaluate_replacement",
+      "competingHypotheses": [
+        {
+          "id": "HH-DIFF-08-HEAT",
+          "mechanism": "Temperatura do fluido ou do ambiente acima do aplicável",
+          "proposedDiscriminant": "Confrontar fonte térmica e classe da mangueira por configuração",
+          "competingExplanation": "Fissura não demonstra sozinha qual fonte de calor atuou"
+        },
+        {
+          "id": "HH-DIFF-08-CHEM",
+          "mechanism": "Incompatibilidade de fluido/material ou degradação ambiental",
+          "proposedDiscriminant": "Confrontar fluido, composição da mangueira e padrões de alteração",
+          "competingExplanation": "Envelhecimento ambiental e contato químico podem produzir sinais semelhantes"
+        }
+      ],
+      "evidenceToRequest": [
+        "Histórico de fluido, temperatura e exposição ambiental",
+        "Especificação do tubo/cobertura efetivamente instalados",
+        "Registro visual seguro e parecer sobre substituição"
+      ],
+      "sourceIds": [
+        "GATES-SAFE-HYDRAULICS-2025",
+        "PARKER-HOSE-FAILURES-2023",
+        "CAT-HYD-HOSE-INSPECT"
+      ],
+      "interpretationLimit": "Não fixar prazo de vida ou temperatura universal; cumprir descarte quando condição de rejeição for comprovada.",
+      "observedOnAsset": false,
+      "performedTests": 0,
+      "confirmedDamage": false,
+      "confirmedRootCause": false,
+      "approvedMeasurementLimit": null,
+      "validatedOemSerial": null,
+      "approvedSapMapping": false,
+      "independentReview": "not_performed"
+    },
+    {
+      "id": "HH-DIFF-09",
+      "signal": "Torção aparente da mangueira, linha de marcação helicoidal, vinco ou achatamento",
+      "potentialFunctionalEffect": "Risco de fadiga do reforço/restrição hidráulica sem vazamento inicialmente visível",
+      "disposition": "withdraw_from_service_if_confirmed",
+      "competingHypotheses": [
+        {
+          "id": "HH-DIFF-09-INSTALL",
+          "mechanism": "Torção introduzida durante instalação ou aperto do terminal",
+          "proposedDiscriminant": "Comparar orientação do layline, fixação e montagem conforme procedimento",
+          "competingExplanation": "Linha aparente inclinada isolada não mede ângulo de torção"
+        },
+        {
+          "id": "HH-DIFF-09-MOTION",
+          "mechanism": "Roteamento incompatível com o movimento efetivo de componentes",
+          "proposedDiscriminant": "Confrontar envelopes de movimento e posicionamento de abraçadeiras",
+          "competingExplanation": "Não assumir erro humano sem análise da arquitetura e de forças"
+        }
+      ],
+      "evidenceToRequest": [
+        "Orientação original e atual da marcação, rota e fixação",
+        "Desenho/raio mínimo aplicável por conjunto e movimentos",
+        "Avaliação de dano e elegibilidade de substituição pelo fabricante"
+      ],
+      "sourceIds": [
+        "CAT-HYD-HOSE-INSPECT",
+        "GATES-SAFE-HYDRAULICS-2025",
+        "PARKER-HOSE-FAILURES-2023"
+      ],
+      "interpretationLimit": "Não aplicar valor genérico de ângulo tolerável nem provocar movimentos com circuito energizado.",
+      "observedOnAsset": false,
+      "performedTests": 0,
+      "confirmedDamage": false,
+      "confirmedRootCause": false,
+      "approvedMeasurementLimit": null,
+      "validatedOemSerial": null,
+      "approvedSapMapping": false,
+      "independentReview": "not_performed"
+    }
+  ]
+}
