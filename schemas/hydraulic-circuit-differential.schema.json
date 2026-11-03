@@ -1,0 +1,395 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Differential diagnosis of hydraulic circuits - conceptual only",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "version",
+    "nature",
+    "scope",
+    "globalSafety",
+    "interpretationPolicy",
+    "topologyGates",
+    "genericCircuitGraph",
+    "records"
+  ],
+  "properties": {
+    "schema": {
+      "const": "fmea-mining.hydraulic-circuit-differential.v1"
+    },
+    "version": {
+      "const": "1.3.90"
+    },
+    "nature": {
+      "const": "conceptual_system_differential_no_field_diagnosis"
+    },
+    "scope": {
+      "type": "object",
+      "required": [
+        "circuit",
+        "architecture",
+        "machineModelsVerified",
+        "serialsVerified",
+        "candidatePmBundles",
+        "applicabilityApproved"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "circuit": {
+          "type": "string"
+        },
+        "architecture": {
+          "const": "illustrative_not_serial_verified"
+        },
+        "machineModelsVerified": {
+          "type": "array",
+          "maxItems": 0
+        },
+        "serialsVerified": {
+          "type": "array",
+          "maxItems": 0
+        },
+        "candidatePmBundles": {
+          "const": 25
+        },
+        "applicabilityApproved": {
+          "const": false
+        }
+      }
+    },
+    "globalSafety": {
+      "type": "string",
+      "minLength": 250
+    },
+    "interpretationPolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "pressureDoesNotProveFlow",
+        "lowPressureDoesNotProvePumpFailure",
+        "normalPumpPressureDoesNotProveActuatorPressure",
+        "driftDoesNotProvePistonSealFailure",
+        "temperatureDoesNotProveInternalLeakage",
+        "oilChemistryDoesNotProveFailedValve",
+        "electronicCodeDoesNotProveMechanicalFault",
+        "plannedTestIsNotExecutedEvidence",
+        "noUniversalPressureFlowOrDriftLimits",
+        "noCrossModelArchitectureAssumptions",
+        "noAutomaticRiskScores",
+        "noAutomaticSapMapping",
+        "noAutomaticWorkOrder",
+        "noOperatingRelease",
+        "requiresApplicableOemProcedure",
+        "requiresIndependentEngineeringReview",
+        "requiresPermissionForFieldTesting",
+        "actualFieldEvents",
+        "testsPerformed",
+        "approvedSapMappings",
+        "privateCorporateGates"
+      ],
+      "properties": {
+        "pressureDoesNotProveFlow": {
+          "const": true
+        },
+        "lowPressureDoesNotProvePumpFailure": {
+          "const": true
+        },
+        "normalPumpPressureDoesNotProveActuatorPressure": {
+          "const": true
+        },
+        "driftDoesNotProvePistonSealFailure": {
+          "const": true
+        },
+        "temperatureDoesNotProveInternalLeakage": {
+          "const": true
+        },
+        "oilChemistryDoesNotProveFailedValve": {
+          "const": true
+        },
+        "electronicCodeDoesNotProveMechanicalFault": {
+          "const": true
+        },
+        "plannedTestIsNotExecutedEvidence": {
+          "const": true
+        },
+        "noUniversalPressureFlowOrDriftLimits": {
+          "const": true
+        },
+        "noCrossModelArchitectureAssumptions": {
+          "const": true
+        },
+        "noAutomaticRiskScores": {
+          "const": true
+        },
+        "noAutomaticSapMapping": {
+          "const": true
+        },
+        "noAutomaticWorkOrder": {
+          "const": true
+        },
+        "noOperatingRelease": {
+          "const": true
+        },
+        "requiresApplicableOemProcedure": {
+          "const": true
+        },
+        "requiresIndependentEngineeringReview": {
+          "const": true
+        },
+        "requiresPermissionForFieldTesting": {
+          "const": true
+        },
+        "actualFieldEvents": {
+          "const": 0
+        },
+        "testsPerformed": {
+          "const": 0
+        },
+        "approvedSapMappings": {
+          "const": 0
+        },
+        "privateCorporateGates": {
+          "const": "NO_GO"
+        }
+      }
+    },
+    "topologyGates": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "ask",
+          "status"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^TG-[0-9]{2}$"
+          },
+          "ask": {
+            "type": "string",
+            "minLength": 25
+          },
+          "status": {
+            "const": "PENDING"
+          }
+        }
+      }
+    },
+    "genericCircuitGraph": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "nodes",
+        "edges"
+      ],
+      "properties": {
+        "status": {
+          "const": "illustrative_not_machine_specific"
+        },
+        "nodes": {
+          "type": "array",
+          "minItems": 8,
+          "maxItems": 8,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "name"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "edges": {
+          "type": "array",
+          "minItems": 10,
+          "maxItems": 10,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "from",
+              "to",
+              "relationship",
+              "conditional"
+            ],
+            "properties": {
+              "from": {
+                "type": "string"
+              },
+              "to": {
+                "type": "string"
+              },
+              "relationship": {
+                "type": "string"
+              },
+              "conditional": {
+                "const": true
+              }
+            }
+          }
+        }
+      }
+    },
+    "records": {
+      "type": "array",
+      "minItems": 10,
+      "maxItems": 10,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "scope",
+          "signal",
+          "potentialFunctionalEffect",
+          "competingHypotheses",
+          "evidenceToRequest",
+          "confounders",
+          "existingConceptRefs",
+          "sourceIds",
+          "safeInitialDisposition",
+          "observedOnAsset",
+          "performedTests",
+          "confirmedDamage",
+          "confirmedRootCause",
+          "pressureReference",
+          "flowReference",
+          "driftReference",
+          "applicableOemSerial",
+          "approvedSapMapping",
+          "independentReviewStatus"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^HC-DIFF-[0-9]{2}$"
+          },
+          "scope": {
+            "type": "string",
+            "minLength": 5
+          },
+          "signal": {
+            "type": "string",
+            "minLength": 40
+          },
+          "potentialFunctionalEffect": {
+            "type": "string",
+            "minLength": 35
+          },
+          "competingHypotheses": {
+            "type": "array",
+            "minItems": 3,
+            "maxItems": 3,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "id",
+                "mechanism",
+                "proposedDiscriminant",
+                "alternativeInterpretation"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "mechanism": {
+                  "type": "string",
+                  "minLength": 25
+                },
+                "proposedDiscriminant": {
+                  "type": "string",
+                  "minLength": 40
+                },
+                "alternativeInterpretation": {
+                  "type": "string",
+                  "minLength": 30
+                }
+              }
+            }
+          },
+          "evidenceToRequest": {
+            "type": "array",
+            "minItems": 4,
+            "items": {
+              "type": "string",
+              "minLength": 20
+            }
+          },
+          "confounders": {
+            "type": "array",
+            "minItems": 2,
+            "items": {
+              "type": "string",
+              "minLength": 20
+            }
+          },
+          "existingConceptRefs": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string"
+            }
+          },
+          "sourceIds": {
+            "type": "array",
+            "uniqueItems": true,
+            "minItems": 2,
+            "items": {
+              "type": "string"
+            }
+          },
+          "safeInitialDisposition": {
+            "type": "string",
+            "minLength": 40
+          },
+          "observedOnAsset": {
+            "const": false
+          },
+          "performedTests": {
+            "const": 0
+          },
+          "confirmedDamage": {
+            "const": false
+          },
+          "confirmedRootCause": {
+            "const": false
+          },
+          "pressureReference": {
+            "type": "null"
+          },
+          "flowReference": {
+            "type": "null"
+          },
+          "driftReference": {
+            "type": "null"
+          },
+          "applicableOemSerial": {
+            "type": "null"
+          },
+          "approvedSapMapping": {
+            "const": false
+          },
+          "independentReviewStatus": {
+            "const": "not_performed"
+          }
+        }
+      }
+    }
+  }
+}
