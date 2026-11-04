@@ -57,7 +57,7 @@ Nenhum gate foi satisfeito por esta pesquisa. A página de produto somente forne
 - `data/quality/cat395-public-variant-preflight.v1.json` — três variantes, cinco campos comerciais tipados por variante, 8 gates, 10 vínculos conceituais e natureza explícita da evidência.
 - `schemas/cat395-public-variant-preflight.schema.json` — contrato estrito, `null` para dados não publicados, bloqueios permanentes.
 - `docs/preflight-cat395.html` — consulta standalone/offline, seleção da publicação, comparação e exportação de **rascunho de preparação** (não aceite).
-- `scripts/audit-cat395-public-variant-preflight.mjs` — integridade de valores OEM verificados, fontes, cruzamento das 10 fichas, funcionamento offline, anti-inferência e 20 mutações adversariais.
+- `scripts/audit-cat395-public-variant-preflight.mjs` — integridade de valores OEM verificados, fontes, cruzamento das 10 fichas, funcionamento offline, anti-inferência e 22 mutações adversariais.
 - `npm run pm:cat395:variant:audit` integrado ao `qa` e ao GitHub Actions.
 
 **Invariantes:** 25 regras PM, dez exceções PM×SAP bloqueadas, oito gates corporativos privados NO_GO, nenhuma máquina/serial real associada, zero resultados de teste, zero causa confirmada, nenhuma alteração em SAP ou consumidores externos. P0/P1 no legado continuam **prioridade documental**, nunca criticidade operacional.
