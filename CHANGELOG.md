@@ -2,6 +2,15 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.93] — 2026-11-03 — Red team do contrato CAT 395: validação fail-closed
+
+- Corrigido o avaliador `scripts/lib/cat395-serial-evidence.mjs`: a versão anterior aceitava campos extras ou tipos inválidos em determinadas condições; agora qualquer divergência estrutural, valor enumerado inconsistente, declaração malformada ou grandeza/unidade incompatíveis bloqueia a prontidão documental.
+- Schema de dados privados reforçado com regras de coerência dimensional sem criar pressões ou limites OEM.
+- `docs/cat395-private-evidence-workbench.html` sincronizado exatamente com o módulo Node.js, evitando deriva entre execução offline e servidor de QA.
+- Nova auditoria `npm run pm:cat395:evidence:hardening:audit`: **46 alterações adversariais de fichas, 9 entradas malformadas e 8 contratos alterados**, dois cenários sintéticos de completude e ensaio de marcador confidencial, além de paridade de runtime e aderência ao schema.
+- `npm run qa` e GitHub Actions integrados; relatório técnico publicado. Permanece o formato de registro privado v1.3.92, compatível sem migração.
+- Nenhum evento, série, documento OEM interno, medição ou aprovação recebido. Dez exceções PM×SAP e oito gates corporativos permanecem BLOCK/NO_GO. Nenhum consumidor alterado.
+
 ## [1.3.92] — 2026-11-03 — Contrato de evidências por série CAT 395 em custódia privada
 
 - Novo contrato público `data/governance/cat395-serial-evidence-contract.v1.json` com 8 gates G395-01..08, S1–S5 e revisão de dados mestres SAP S4 separada, mantendo NO_GO operacional e confidencialidade.
