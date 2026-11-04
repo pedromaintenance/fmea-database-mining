@@ -1,0 +1,191 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FMEA hydraulic synthetic peer review feedback (anonymous)",
+  "description": "Strict anonymous editorial feedback; no real field cases, corporate evidence or expert signature.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "version",
+    "sourceBenchmarkVersion",
+    "nature",
+    "trainingOnly",
+    "humanIdentityVerified",
+    "engineeringApproved",
+    "operationalRelease",
+    "sapApproved",
+    "rows"
+  ],
+  "properties": {
+    "schema": {
+      "const": "fmea-mining.hydraulic-expert-review-sheet.v1"
+    },
+    "version": {
+      "const": "1.3.95"
+    },
+    "sourceBenchmarkVersion": {
+      "const": "1.3.94"
+    },
+    "nature": {
+      "const": "synthetic_anonymous_editorial_feedback_only"
+    },
+    "trainingOnly": {
+      "const": true
+    },
+    "humanIdentityVerified": {
+      "const": false
+    },
+    "engineeringApproved": {
+      "const": false
+    },
+    "operationalRelease": {
+      "const": false
+    },
+    "sapApproved": {
+      "const": false
+    },
+    "rows": {
+      "type": "array",
+      "minItems": 20,
+      "maxItems": 20,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "caseId",
+          "scenarioId",
+          "recommendedChoiceCode",
+          "ratings",
+          "issueTags"
+        ],
+        "properties": {
+          "caseId": {
+            "enum": [
+              "HY-DRILL-01",
+              "HY-DRILL-02",
+              "HY-DRILL-03",
+              "HY-DRILL-04",
+              "HY-DRILL-05",
+              "HY-DRILL-06",
+              "HY-DRILL-07",
+              "HY-DRILL-08",
+              "HY-DRILL-09",
+              "HY-DRILL-10",
+              "HY-DRILL-11",
+              "HY-DRILL-12",
+              "HY-DRILL-13",
+              "HY-DRILL-14",
+              "HY-DRILL-15",
+              "HY-DRILL-16",
+              "HY-DRILL-17",
+              "HY-DRILL-18",
+              "HY-DRILL-19",
+              "HY-DRILL-20"
+            ]
+          },
+          "scenarioId": {
+            "enum": [
+              "HC-DIFF-01",
+              "HC-DIFF-02",
+              "HC-DIFF-03",
+              "HC-DIFF-04",
+              "HC-DIFF-05",
+              "HC-DIFF-06",
+              "HC-DIFF-07",
+              "HC-DIFF-08",
+              "HC-DIFF-09",
+              "HC-DIFF-10"
+            ]
+          },
+          "recommendedChoiceCode": {
+            "anyOf": [
+              {
+                "type": "null"
+              },
+              {
+                "enum": [
+                  "VERIFY_OEM_DISCRIMINANT",
+                  "PREMATURE_CAUSE",
+                  "UNSAFE_TEST",
+                  "SAFETY_STOP",
+                  "RECONCILE_OBSERVABILITY",
+                  "APPLY_UNRELATED_REFERENCE"
+                ]
+              }
+            ]
+          },
+          "ratings": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "safety_boundary",
+              "causal_discrimination",
+              "oem_effectivity",
+              "observability",
+              "distractor_quality"
+            ],
+            "properties": {
+              "safety_boundary": {
+                "enum": [
+                  "unreviewed",
+                  "adequate",
+                  "needs_revision",
+                  "critical_issue"
+                ]
+              },
+              "causal_discrimination": {
+                "enum": [
+                  "unreviewed",
+                  "adequate",
+                  "needs_revision",
+                  "critical_issue"
+                ]
+              },
+              "oem_effectivity": {
+                "enum": [
+                  "unreviewed",
+                  "adequate",
+                  "needs_revision",
+                  "critical_issue"
+                ]
+              },
+              "observability": {
+                "enum": [
+                  "unreviewed",
+                  "adequate",
+                  "needs_revision",
+                  "critical_issue"
+                ]
+              },
+              "distractor_quality": {
+                "enum": [
+                  "unreviewed",
+                  "adequate",
+                  "needs_revision",
+                  "critical_issue"
+                ]
+              }
+            }
+          },
+          "issueTags": {
+            "type": "array",
+            "uniqueItems": true,
+            "maxItems": 8,
+            "items": {
+              "enum": [
+                "unsafe_action_risk",
+                "premature_cause",
+                "oem_applicability",
+                "observability_gap",
+                "answer_key_ambiguity",
+                "distractor_unrealistic",
+                "explanation_weak",
+                "editorial_other"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

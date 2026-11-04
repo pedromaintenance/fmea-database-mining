@@ -1,0 +1,112 @@
+{
+  "schema": "fmea-mining.hydraulic-expert-review-protocol.v1",
+  "version": "1.3.95",
+  "date": "2026-11-04",
+  "sourceBenchmark": "data/quality/hydraulic-diagnostic-reasoning-benchmark.v1.json",
+  "sourceBenchmarkVersion": "1.3.94",
+  "nature": "public_synthetic_editorial_peer_review_not_a_verified_expert_opinion",
+  "purpose": "Solicitar avaliação editorial independente de 20 exercícios hidráulicos sintéticos sem recolher informação de campo ou identificar o revisor.",
+  "dimensions": [
+    {
+      "id": "safety_boundary",
+      "label": "Segurança e barreiras",
+      "question": "O caso bloqueia intervenção insegura, ensaio improvisado e liberação indevida?"
+    },
+    {
+      "id": "causal_discrimination",
+      "label": "Discriminação causal",
+      "question": "Sintoma, mecanismos concorrentes, dano e causa permanecem separados?"
+    },
+    {
+      "id": "oem_effectivity",
+      "label": "Efetividade OEM",
+      "question": "A alternativa correta exige comprovação da variante e procedimento por série quando necessário?"
+    },
+    {
+      "id": "observability",
+      "label": "Observabilidade e metrologia",
+      "question": "O caso considera condição, instrumento, unidades, tempo e comparação de sinais quando pertinentes?"
+    },
+    {
+      "id": "distractor_quality",
+      "label": "Qualidade dos distratores",
+      "question": "As alternativas incorretas representam erros plausíveis e não banalizam riscos?"
+    }
+  ],
+  "allowedRatings": [
+    "unreviewed",
+    "adequate",
+    "needs_revision",
+    "critical_issue"
+  ],
+  "issueTags": [
+    {
+      "code": "unsafe_action_risk",
+      "meaning": "Conduta sugerida poderia expor pessoas a energia/risco não controlado"
+    },
+    {
+      "code": "premature_cause",
+      "meaning": "Gabarito ou alternativa induz inferência causal prematura"
+    },
+    {
+      "code": "oem_applicability",
+      "meaning": "Exige critério OEM sem declarar limite de série; conferir premissa"
+    },
+    {
+      "code": "observability_gap",
+      "meaning": "Dados simulados de origem, medição, tempo ou condição são ambíguos"
+    },
+    {
+      "code": "answer_key_ambiguity",
+      "meaning": "Mais de uma alternativa pode ser defensável nas premissas"
+    },
+    {
+      "code": "distractor_unrealistic",
+      "meaning": "Alternativa errada artificialmente óbvia ou pouco plausível"
+    },
+    {
+      "code": "explanation_weak",
+      "meaning": "Explicação não enfrenta hipótese concorrente ou condição de decisão"
+    },
+    {
+      "code": "editorial_other",
+      "meaning": "Dúvida editorial genérica sem observação operacional"
+    }
+  ],
+  "reviewRules": {
+    "gabaritoHiddenFromReviewInterface": true,
+    "referenceAnswerPreservedUntilHumanCuration": true,
+    "noVerifiedExpertIdentityInPublicTool": true,
+    "noExpertEndorsementImplied": true,
+    "ratingIsEditorialNotOperational": true,
+    "disagreementTriggersManualEditorialReview": true,
+    "noAutomaticBenchmarkAnswerUpdate": true,
+    "noQualifyingExamOrCertificate": true,
+    "noPrivateFieldsOrFreeTextInExport": true,
+    "noRealAssetTagsOrSerials": true,
+    "noFieldMeasurementsOrOEMLicensedContent": true,
+    "noSAPOrOperatingApproval": true,
+    "replaysAndRoleClaimsNotCryptographicallyVerified": true
+  },
+  "reviewStatus": "awaiting_independent_human_editorial_review",
+  "acceptedOutputNature": "synthetic_anonymous_editorial_feedback_only",
+  "privacyScope": "only_case_ids_controlled_ratings_issue_tags_and_suggested_choice_code",
+  "dataProhibited": [
+    "reviewerName",
+    "companyEmail",
+    "employeeId",
+    "assetTag",
+    "serialNumber",
+    "fieldMeasurements",
+    "oemProcedureAttachment",
+    "privateURL",
+    "comments",
+    "timeStamp",
+    "signature",
+    "workOrder",
+    "sapFunctionalLocation"
+  ],
+  "humanExpertReviewsReceived": 0,
+  "engineeringApprovals": 0,
+  "realTrainingCertificates": 0
+}
