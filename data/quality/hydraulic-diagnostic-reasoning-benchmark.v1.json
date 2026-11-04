@@ -1,0 +1,949 @@
+{
+  "schema": "fmea-mining.hydraulic-diagnostic-reasoning-benchmark.v1",
+  "version": "1.3.94",
+  "nature": "synthetic_training_not_field_diagnostics",
+  "basedOn": "data/quality/hydraulic-circuit-differential.v1.json",
+  "purpose": "Treinar decisão defensável diante de sintomas, contraprovas, riscos e limites de medição. Não diagnostica ativos.",
+  "policy": {
+    "allExamplesFictional": true,
+    "independentOemReviewStillRequired": true,
+    "neverInferConfirmedCauseFromSymptom": true,
+    "neverAuthorizePressurizedTests": true,
+    "neverDisableInterlocks": true,
+    "noUniversalAcceptanceValues": true,
+    "noRealAssetsOrSerials": true,
+    "noActualMeasurements": true,
+    "noFieldTests": true,
+    "noAutomaticSapMapping": true,
+    "noOperatingRelease": true,
+    "noQuantifiedFailureProbability": true,
+    "noSensitiveDataExport": true,
+    "privateGates": "NO_GO"
+  },
+  "responseSemantics": {
+    "VERIFY_OEM_DISCRIMINANT": "Antes de afirmar falha, confirmar o arranjo/condição OEM e discriminar mecanismos concorrentes.",
+    "SAFETY_STOP": "Interromper investigação insegura. Documentação OEM e controle de energia são pré-requisitos.",
+    "RECONCILE_OBSERVABILITY": "Reconstruir origem, condição, unidade e sincronismo da observação; não inferir falha de dados incompatíveis.",
+    "PREMATURE_CAUSE": "Erro: inferir causa/componente substituível apenas pelo sintoma.",
+    "UNSAFE_TEST": "Erro: provocar condição de risco ou desconsiderar barreiras para obter evidência.",
+    "APPLY_UNRELATED_REFERENCE": "Erro: aplicar parâmetro de outro circuito, variante ou condição sem efetividade."
+  },
+  "entries": [
+    {
+      "id": "HY-DRILL-01",
+      "scenarioId": "HC-DIFF-01",
+      "kind": "ambiguous_symptom",
+      "simulatedContext": "No exercício, três movimentos apresentam resposta lenta durante a mesma janela operacional, sem medidas comparáveis de vazão ou pressão por ramo.",
+      "question": "É possível distinguir fornecimento compartilhado, sucção e regulação sem atribuir a lentidão à bomba?",
+      "hypothesisIds": [
+        "HC-DIFF-01-DRIVE",
+        "HC-DIFF-01-INLET",
+        "HC-DIFF-01-REG"
+      ],
+      "focusHypothesisId": "HC-DIFF-01-DRIVE",
+      "choices": [
+        {
+          "code": "VERIFY_OEM_DISCRIMINANT",
+          "label": "Identificar o arranjo OEM de bombas e controle; solicitar comparações válidas de rotação/comando, condição de suprimento e regulação por método autorizado.",
+          "feedback": "Correto: preserva as hipóteses concorrentes e solicita evidência discriminante efetiva."
+        },
+        {
+          "code": "PREMATURE_CAUSE",
+          "label": "Classificar todas as bombas como desgastadas e preparar substituição por lentidão simultânea.",
+          "feedback": "Incorreto: converte sintoma em causa sem contraprova ou efetividade OEM."
+        },
+        {
+          "code": "UNSAFE_TEST",
+          "label": "Forçar todas as funções ao limite para tentar demonstrar queda de pressão sem autorização de teste.",
+          "feedback": "Incorreto: propõe provocação ou abertura de circuito sem segurança e procedimento."
+        }
+      ],
+      "expectedChoiceCode": "VERIFY_OEM_DISCRIMINANT",
+      "engineeringExplanation": "Lentidão em várias funções é um efeito de sistema. Não demonstra sozinha desgaste da bomba: alimentação, controles e regulação competem como mecanismos.",
+      "sourceIds": [
+        "CAT-HYD-TECHNICAL-ANALYSIS",
+        "CAT-HYD-PUMPS-MOTORS",
+        "CAT-HYD-CIRCUIT-INSPECTION"
+      ],
+      "requiredBoundary": "conceptual_education_no_operational_authority",
+      "oemSerialVerified": false,
+      "performedOnMachine": false,
+      "actualMeasurements": null,
+      "confirmedRootCause": null,
+      "operatingRelease": false,
+      "sapMappingApproved": false,
+      "privateCorporateGate": "NO_GO"
+    },
+    {
+      "id": "HY-DRILL-02",
+      "scenarioId": "HC-DIFF-01",
+      "kind": "safety_or_observability_countercase",
+      "simulatedContext": "Foi relatada fuga externa de óleo próxima ao circuito enquanto alguém propõe repetir o movimento para descobrir de onde o fluido sai.",
+      "question": "Qual decisão preserva segurança e validade da evidência nesse caso?",
+      "hypothesisIds": [
+        "HC-DIFF-01-DRIVE",
+        "HC-DIFF-01-INLET",
+        "HC-DIFF-01-REG"
+      ],
+      "focusHypothesisId": "HC-DIFF-01-INLET",
+      "choices": [
+        {
+          "code": "UNSAFE_TEST",
+          "label": "Prosseguir com ciclo de implementos para provocar o vazamento e observar o ponto.",
+          "feedback": "Incorreto: a ação não preserva o requisito de segurança ou evidência."
+        },
+        {
+          "code": "PREMATURE_CAUSE",
+          "label": "Condenar a bomba porque várias funções ficaram lentas e apareceu óleo externo.",
+          "feedback": "Incorreto: causalidade ou referência OEM efetiva não foi demonstrada."
+        },
+        {
+          "code": "SAFETY_STOP",
+          "label": "Interromper a reprodução, estabelecer condição segura e tratar o possível vazamento por equipe habilitada, conforme procedimento efetivo.",
+          "feedback": "Correto: risco e/ou comparabilidade de dados prevalecem sobre conclusão prematura."
+        }
+      ],
+      "expectedChoiceCode": "SAFETY_STOP",
+      "engineeringExplanation": "Vazamento hidráulico potencial sob pressão exige controle de energia e de injeção de fluido; não se deve gerar jato para localizar origem.",
+      "sourceIds": [
+        "CAT-HYD-TECHNICAL-ANALYSIS",
+        "CAT-HYD-PUMPS-MOTORS",
+        "CAT-HYD-CIRCUIT-INSPECTION"
+      ],
+      "requiredBoundary": "conceptual_education_no_operational_authority",
+      "oemSerialVerified": false,
+      "performedOnMachine": false,
+      "actualMeasurements": null,
+      "confirmedRootCause": null,
+      "operatingRelease": false,
+      "sapMappingApproved": false,
+      "privateCorporateGate": "NO_GO"
+    },
+    {
+      "id": "HY-DRILL-03",
+      "scenarioId": "HC-DIFF-02",
+      "kind": "ambiguous_symptom",
+      "simulatedContext": "Uma função de implemento é mais lenta que as demais; não se sabe se o sinal de comando, o retorno e o atrito mecânico foram comparados sob a mesma carga.",
+      "question": "Qual evidência pode diferenciar válvula, passagem no atuador e restrição no ramo?",
+      "hypothesisIds": [
+        "HC-DIFF-02-VALVE",
+        "HC-DIFF-02-ACT",
+        "HC-DIFF-02-LINE"
+      ],
+      "focusHypothesisId": "HC-DIFF-02-ACT",
+      "choices": [
+        {
+          "code": "UNSAFE_TEST",
+          "label": "Desconectar linha do atuador ainda pressurizada para observar se passa fluido.",
+          "feedback": "Incorreto: propõe provocação ou abertura de circuito sem segurança e procedimento."
+        },
+        {
+          "code": "VERIFY_OEM_DISCRIMINANT",
+          "label": "Confirmar o esquema do ramo e solicitar evidência independente de comando, condições de carga, pressão nos pontos OEM e integridade mecânica.",
+          "feedback": "Correto: preserva as hipóteses concorrentes e solicita evidência discriminante efetiva."
+        },
+        {
+          "code": "PREMATURE_CAUSE",
+          "label": "Substituir o cilindro, porque somente um movimento está lento.",
+          "feedback": "Incorreto: converte sintoma em causa sem contraprova ou efetividade OEM."
+        }
+      ],
+      "expectedChoiceCode": "VERIFY_OEM_DISCRIMINANT",
+      "engineeringExplanation": "Deficiência de um ramo não exclui falha no comando, restrição/contrapressão e fricção mecânica.",
+      "sourceIds": [
+        "CAT-HYD-TECHNICAL-ANALYSIS",
+        "PARKER-CYL-DRIFT-SERVICE",
+        "CAT-HYD-CIRCUIT-INSPECTION"
+      ],
+      "requiredBoundary": "conceptual_education_no_operational_authority",
+      "oemSerialVerified": false,
+      "performedOnMachine": false,
+      "actualMeasurements": null,
+      "confirmedRootCause": null,
+      "operatingRelease": false,
+      "sapMappingApproved": false,
+      "privateCorporateGate": "NO_GO"
+    },
+    {
+      "id": "HY-DRILL-04",
+      "scenarioId": "HC-DIFF-02",
+      "kind": "safety_or_observability_countercase",
+      "simulatedContext": "Os tempos de ciclo foram comparados entre turnos, mas carga, rotação e temperatura do óleo não foram registrados.",
+      "question": "Qual decisão preserva segurança e validade da evidência nesse caso?",
+      "hypothesisIds": [
+        "HC-DIFF-02-VALVE",
+        "HC-DIFF-02-ACT",
+        "HC-DIFF-02-LINE"
+      ],
+      "focusHypothesisId": "HC-DIFF-02-LINE",
+      "choices": [
+        {
+          "code": "RECONCILE_OBSERVABILITY",
+          "label": "Reconciliar as condições das observações com o procedimento OEM antes de interpretar diferença de ciclo.",
+          "feedback": "Correto: risco e/ou comparabilidade de dados prevalecem sobre conclusão prematura."
+        },
+        {
+          "code": "PREMATURE_CAUSE",
+          "label": "Usar a diferença de tempo como prova de perda volumétrica da bomba.",
+          "feedback": "Incorreto: a ação não preserva o requisito de segurança ou evidência."
+        },
+        {
+          "code": "APPLY_UNRELATED_REFERENCE",
+          "label": "Substituir a válvula controladora somente porque o ramo está lento.",
+          "feedback": "Incorreto: causalidade ou referência OEM efetiva não foi demonstrada."
+        }
+      ],
+      "expectedChoiceCode": "RECONCILE_OBSERVABILITY",
+      "engineeringExplanation": "Tempos sem condições equivalentes não constituem contraprova; a Caterpillar remete aos limites SIS efetivos.",
+      "sourceIds": [
+        "CAT-HYD-TECHNICAL-ANALYSIS",
+        "PARKER-CYL-DRIFT-SERVICE",
+        "CAT-HYD-CIRCUIT-INSPECTION"
+      ],
+      "requiredBoundary": "conceptual_education_no_operational_authority",
+      "oemSerialVerified": false,
+      "performedOnMachine": false,
+      "actualMeasurements": null,
+      "confirmedRootCause": null,
+      "operatingRelease": false,
+      "sapMappingApproved": false,
+      "privateCorporateGate": "NO_GO"
+    },
+    {
+      "id": "HY-DRILL-05",
+      "scenarioId": "HC-DIFF-03",
+      "kind": "ambiguous_symptom",
+      "simulatedContext": "Há indicação de pressão abaixo de uma referência verbal, mas desconhecemos o ponto do sensor, a carga e a vazão efetiva.",
+      "question": "Como distinguir falha de suprimento, atuação de controle de pressão e erro de comparação?",
+      "hypothesisIds": [
+        "HC-DIFF-03-PUMP",
+        "HC-DIFF-03-RELIEF",
+        "HC-DIFF-03-CONTEXT"
+      ],
+      "focusHypothesisId": "HC-DIFF-03-CONTEXT",
+      "choices": [
+        {
+          "code": "PREMATURE_CAUSE",
+          "label": "Trocar a bomba, porque a pressão mostrada no monitor parece baixa.",
+          "feedback": "Incorreto: converte sintoma em causa sem contraprova ou efetividade OEM."
+        },
+        {
+          "code": "UNSAFE_TEST",
+          "label": "Ajustar a válvula de alívio até o monitor se aproximar do maior valor publicado em catálogo.",
+          "feedback": "Incorreto: propõe provocação ou abertura de circuito sem segurança e procedimento."
+        },
+        {
+          "code": "VERIFY_OEM_DISCRIMINANT",
+          "label": "Identificar a origem da leitura, o ponto do circuito e as condições de referência; planejar discriminação de bomba/controle/alívio conforme SIS efetivo.",
+          "feedback": "Correto: preserva as hipóteses concorrentes e solicita evidência discriminante efetiva."
+        }
+      ],
+      "expectedChoiceCode": "VERIFY_OEM_DISCRIMINANT",
+      "engineeringExplanation": "Pressão sem ponto, carga e referência comparáveis não identifica a causa. Máximos comerciais não são setpoints de teste.",
+      "sourceIds": [
+        "CAT-HYD-TECHNICAL-ANALYSIS",
+        "CAT-HYD-PUMPS-MOTORS",
+        "CAT-HYD-CIRCUIT-INSPECTION"
+      ],
+      "requiredBoundary": "conceptual_education_no_operational_authority",
+      "oemSerialVerified": false,
+      "performedOnMachine": false,
+      "actualMeasurements": null,
+      "confirmedRootCause": null,
+      "operatingRelease": false,
+      "sapMappingApproved": false,
+      "privateCorporateGate": "NO_GO"
+    },
+    {
+      "id": "HY-DRILL-06",
+      "scenarioId": "HC-DIFF-03",
+      "kind": "safety_or_observability_countercase",
+      "simulatedContext": "O valor de pressão mostrado no monitor foi comparado ao manômetro de outra linha, sem comprovar que ambos mediam a mesma grandeza no mesmo ponto.",
+      "question": "Qual decisão preserva segurança e validade da evidência nesse caso?",
+      "hypothesisIds": [
+        "HC-DIFF-03-PUMP",
+        "HC-DIFF-03-RELIEF",
+        "HC-DIFF-03-CONTEXT"
+      ],
+      "focusHypothesisId": "HC-DIFF-03-PUMP",
+      "choices": [
+        {
+          "code": "APPLY_UNRELATED_REFERENCE",
+          "label": "Elevar o ajuste de alívio para alinhar as duas indicações.",
+          "feedback": "Incorreto: causalidade ou referência OEM efetiva não foi demonstrada."
+        },
+        {
+          "code": "RECONCILE_OBSERVABILITY",
+          "label": "Reconstruir proveniência, localização, sincronismo e calibração das leituras antes de avaliar falha do circuito.",
+          "feedback": "Correto: risco e/ou comparabilidade de dados prevalecem sobre conclusão prematura."
+        },
+        {
+          "code": "PREMATURE_CAUSE",
+          "label": "Atribuir a divergência a desgaste de bomba imediatamente.",
+          "feedback": "Incorreto: a ação não preserva o requisito de segurança ou evidência."
+        }
+      ],
+      "expectedChoiceCode": "RECONCILE_OBSERVABILITY",
+      "engineeringExplanation": "A diferença pode ser metrológica ou topológica, não uma falha hidráulica confirmada. É obrigatório confirmar a proveniência da leitura, os pontos do circuito e a equivalência das condições de aquisição antes de atribuir o desvio a um componente.",
+      "sourceIds": [
+        "CAT-HYD-TECHNICAL-ANALYSIS",
+        "CAT-HYD-PUMPS-MOTORS",
+        "CAT-HYD-CIRCUIT-INSPECTION"
+      ],
+      "requiredBoundary": "conceptual_education_no_operational_authority",
+      "oemSerialVerified": false,
+      "performedOnMachine": false,
+      "actualMeasurements": null,
+      "confirmedRootCause": null,
+      "operatingRelease": false,
+      "sapMappingApproved": false,
+      "privateCorporateGate": "NO_GO"
+    },
+    {
+      "id": "HY-DRILL-07",
+      "scenarioId": "HC-DIFF-04",
+      "kind": "ambiguous_symptom",
+      "simulatedContext": "A alimentação principal aparenta pressão compatível, mas a força útil da ferramenta caiu; faltam carga, geometria e pressão em câmaras.",
+      "question": "Como evitar confundir pressão principal com força no atuador?",
+      "hypothesisIds": [
+        "HC-DIFF-04-DELIVERY",
+        "HC-DIFF-04-BYPASS",
+        "HC-DIFF-04-LOAD"
+      ],
+      "focusHypothesisId": "HC-DIFF-04-DELIVERY",
+      "choices": [
+        {
+          "code": "VERIFY_OEM_DISCRIMINANT",
+          "label": "Solicitar verificação de cargas, geometria, distribuição local, pressões de câmara e vedação por método OEM aplicável e seguro.",
+          "feedback": "Correto: preserva as hipóteses concorrentes e solicita evidência discriminante efetiva."
+        },
+        {
+          "code": "PREMATURE_CAUSE",
+          "label": "Condenar as vedações do pistão pela força insuficiente.",
+          "feedback": "Incorreto: converte sintoma em causa sem contraprova ou efetividade OEM."
+        },
+        {
+          "code": "UNSAFE_TEST",
+          "label": "Aplicar esforço máximo com carga não sustentada para verificar a capacidade do cilindro.",
+          "feedback": "Incorreto: propõe provocação ou abertura de circuito sem segurança e procedimento."
+        }
+      ],
+      "expectedChoiceCode": "VERIFY_OEM_DISCRIMINANT",
+      "engineeringExplanation": "Força depende de pressões efetivas, áreas e geometria, não apenas da indicação de linha principal.",
+      "sourceIds": [
+        "PARKER-CYL-DRIFT-SERVICE",
+        "CAT-HYD-TECHNICAL-ANALYSIS",
+        "CAT-HYD-PUMPS-MOTORS"
+      ],
+      "requiredBoundary": "conceptual_education_no_operational_authority",
+      "oemSerialVerified": false,
+      "performedOnMachine": false,
+      "actualMeasurements": null,
+      "confirmedRootCause": null,
+      "operatingRelease": false,
+      "sapMappingApproved": false,
+      "privateCorporateGate": "NO_GO"
+    },
+    {
+      "id": "HY-DRILL-08",
+      "scenarioId": "HC-DIFF-04",
+      "kind": "safety_or_observability_countercase",
+      "simulatedContext": "Há implemento elevado com carga, e a proposta de diagnóstico exige mantê-lo suspenso durante medição.",
+      "question": "Qual decisão preserva segurança e validade da evidência nesse caso?",
+      "hypothesisIds": [
+        "HC-DIFF-04-DELIVERY",
+        "HC-DIFF-04-BYPASS",
+        "HC-DIFF-04-LOAD"
+      ],
+      "focusHypothesisId": "HC-DIFF-04-BYPASS",
+      "choices": [
+        {
+          "code": "UNSAFE_TEST",
+          "label": "Aceitar a medição com a carga suspensa por ser uma condição representativa de trabalho.",
+          "feedback": "Incorreto: a ação não preserva o requisito de segurança ou evidência."
+        },
+        {
+          "code": "PREMATURE_CAUSE",
+          "label": "Confirmar desgaste de retentores pelo esforço insuficiente.",
+          "feedback": "Incorreto: causalidade ou referência OEM efetiva não foi demonstrada."
+        },
+        {
+          "code": "SAFETY_STOP",
+          "label": "Bloquear essa configuração e exigir sustentação positiva da carga, análise de riscos e método autorizado antes de qualquer ensaio.",
+          "feedback": "Correto: risco e/ou comparabilidade de dados prevalecem sobre conclusão prematura."
+        }
+      ],
+      "expectedChoiceCode": "SAFETY_STOP",
+      "engineeringExplanation": "Risco de queda e esmagamento prevalece sobre obtenção de um dado de força. A comparação entre pressão principal e força na haste depende de áreas efetivas, perdas e condições de carga; só um teste autorizado permite discriminar alternativas.",
+      "sourceIds": [
+        "PARKER-CYL-DRIFT-SERVICE",
+        "CAT-HYD-TECHNICAL-ANALYSIS",
+        "CAT-HYD-PUMPS-MOTORS"
+      ],
+      "requiredBoundary": "conceptual_education_no_operational_authority",
+      "oemSerialVerified": false,
+      "performedOnMachine": false,
+      "actualMeasurements": null,
+      "confirmedRootCause": null,
+      "operatingRelease": false,
+      "sapMappingApproved": false,
+      "privateCorporateGate": "NO_GO"
+    },
+    {
+      "id": "HY-DRILL-09",
+      "scenarioId": "HC-DIFF-05",
+      "kind": "ambiguous_symptom",
+      "simulatedContext": "Um implemento apresenta movimento de descida em neutro, porém não se conhece a arquitetura de retenção nem se houve passagem pela válvula.",
+      "question": "Que discriminação separa vazamento no pistão de válvula de sustentação ou distribuidor?",
+      "hypothesisIds": [
+        "HC-DIFF-05-PISTON",
+        "HC-DIFF-05-HOLD",
+        "HC-DIFF-05-SPOOL"
+      ],
+      "focusHypothesisId": "HC-DIFF-05-HOLD",
+      "choices": [
+        {
+          "code": "UNSAFE_TEST",
+          "label": "Desconectar uma linha sob carga suspensa para observar retorno e confirmar fuga interna.",
+          "feedback": "Incorreto: propõe provocação ou abertura de circuito sem segurança e procedimento."
+        },
+        {
+          "code": "VERIFY_OEM_DISCRIMINANT",
+          "label": "Requisitar diagrama OEM e método seguro que diferencie circuito de retenção, carretel e vedação do pistão, com carga apoiada.",
+          "feedback": "Correto: preserva as hipóteses concorrentes e solicita evidência discriminante efetiva."
+        },
+        {
+          "code": "PREMATURE_CAUSE",
+          "label": "Abrir o cilindro para trocar a vedação, pois deriva demonstra fuga pelo pistão.",
+          "feedback": "Incorreto: converte sintoma em causa sem contraprova ou efetividade OEM."
+        }
+      ],
+      "expectedChoiceCode": "VERIFY_OEM_DISCRIMINANT",
+      "engineeringExplanation": "A Parker identifica deriva como sintoma comum a vazamento pelo pistão e pelo circuito de válvula; não é causa raiz por si só.",
+      "sourceIds": [
+        "PARKER-CYL-DRIFT-SERVICE",
+        "CAT-HYD-TECHNICAL-ANALYSIS",
+        "CAT-HYD-CIRCUIT-INSPECTION"
+      ],
+      "requiredBoundary": "conceptual_education_no_operational_authority",
+      "oemSerialVerified": false,
+      "performedOnMachine": false,
+      "actualMeasurements": null,
+      "confirmedRootCause": null,
+      "operatingRelease": false,
+      "sapMappingApproved": false,
+      "privateCorporateGate": "NO_GO"
+    },
+    {
+      "id": "HY-DRILL-10",
+      "scenarioId": "HC-DIFF-05",
+      "kind": "safety_or_observability_countercase",
+      "simulatedContext": "O implemento está elevado e desce lentamente; alguém propõe mantê-lo sem apoio para observar a taxa de deriva.",
+      "question": "Qual decisão preserva segurança e validade da evidência nesse caso?",
+      "hypothesisIds": [
+        "HC-DIFF-05-PISTON",
+        "HC-DIFF-05-HOLD",
+        "HC-DIFF-05-SPOOL"
+      ],
+      "focusHypothesisId": "HC-DIFF-05-SPOOL",
+      "choices": [
+        {
+          "code": "SAFETY_STOP",
+          "label": "Suspender a avaliação na configuração insegura, apoiar positivamente o implemento e exigir autorização e procedimento OEM.",
+          "feedback": "Correto: risco e/ou comparabilidade de dados prevalecem sobre conclusão prematura."
+        },
+        {
+          "code": "UNSAFE_TEST",
+          "label": "Cronometrar a descida com pessoas na zona de movimento.",
+          "feedback": "Incorreto: a ação não preserva o requisito de segurança ou evidência."
+        },
+        {
+          "code": "PREMATURE_CAUSE",
+          "label": "Concluir falha de anel de pistão a partir da descida isolada.",
+          "feedback": "Incorreto: causalidade ou referência OEM efetiva não foi demonstrada."
+        }
+      ],
+      "expectedChoiceCode": "SAFETY_STOP",
+      "engineeringExplanation": "Perda de sustentação de carga é risco imediato; a busca por evidência não justifica expor trabalhadores.",
+      "sourceIds": [
+        "PARKER-CYL-DRIFT-SERVICE",
+        "CAT-HYD-TECHNICAL-ANALYSIS",
+        "CAT-HYD-CIRCUIT-INSPECTION"
+      ],
+      "requiredBoundary": "conceptual_education_no_operational_authority",
+      "oemSerialVerified": false,
+      "performedOnMachine": false,
+      "actualMeasurements": null,
+      "confirmedRootCause": null,
+      "operatingRelease": false,
+      "sapMappingApproved": false,
+      "privateCorporateGate": "NO_GO"
+    },
+    {
+      "id": "HY-DRILL-11",
+      "scenarioId": "HC-DIFF-06",
+      "kind": "ambiguous_symptom",
+      "simulatedContext": "O óleo hidráulico aquece em operação prolongada, sem histórico comparável de carga, resfriamento, alívio ou condição do fluido.",
+      "question": "Como diferenciar geração de calor por perdas e remoção insuficiente de calor?",
+      "hypothesisIds": [
+        "HC-DIFF-06-LOSS",
+        "HC-DIFF-06-COOL",
+        "HC-DIFF-06-FLUID"
+      ],
+      "focusHypothesisId": "HC-DIFF-06-FLUID",
+      "choices": [
+        {
+          "code": "PREMATURE_CAUSE",
+          "label": "Condenar a bomba como desgastada porque o tanque aquece.",
+          "feedback": "Incorreto: converte sintoma em causa sem contraprova ou efetividade OEM."
+        },
+        {
+          "code": "UNSAFE_TEST",
+          "label": "Manter a máquina em carga máxima para forçar aquecimento sem controle e obter uma tendência.",
+          "feedback": "Incorreto: propõe provocação ou abertura de circuito sem segurança e procedimento."
+        },
+        {
+          "code": "VERIFY_OEM_DISCRIMINANT",
+          "label": "Comparar tendências térmicas em condições equivalentes, eficiência do resfriamento e possíveis perdas/alívio, sem converter calor em causa confirmada.",
+          "feedback": "Correto: preserva as hipóteses concorrentes e solicita evidência discriminante efetiva."
+        }
+      ],
+      "expectedChoiceCode": "VERIFY_OEM_DISCRIMINANT",
+      "engineeringExplanation": "Temperatura é efeito agregado de perdas, ambiente, carga e resfriamento; não isola mecanismo.",
+      "sourceIds": [
+        "CAT-HYD-TECHNICAL-ANALYSIS",
+        "CAT-HYD-OIL-CLEANLINESS",
+        "CAT-HYD-CIRCUIT-INSPECTION"
+      ],
+      "requiredBoundary": "conceptual_education_no_operational_authority",
+      "oemSerialVerified": false,
+      "performedOnMachine": false,
+      "actualMeasurements": null,
+      "confirmedRootCause": null,
+      "operatingRelease": false,
+      "sapMappingApproved": false,
+      "privateCorporateGate": "NO_GO"
+    },
+    {
+      "id": "HY-DRILL-12",
+      "scenarioId": "HC-DIFF-06",
+      "kind": "safety_or_observability_countercase",
+      "simulatedContext": "Há alarme ativo de alta temperatura hidráulica, mas se sugere continuar em carga para chegar a uma temperatura de referência.",
+      "question": "Qual decisão preserva segurança e validade da evidência nesse caso?",
+      "hypothesisIds": [
+        "HC-DIFF-06-LOSS",
+        "HC-DIFF-06-COOL",
+        "HC-DIFF-06-FLUID"
+      ],
+      "focusHypothesisId": "HC-DIFF-06-LOSS",
+      "choices": [
+        {
+          "code": "PREMATURE_CAUSE",
+          "label": "Substituir trocador de calor sem diferenciar carga e geração térmica.",
+          "feedback": "Incorreto: causalidade ou referência OEM efetiva não foi demonstrada."
+        },
+        {
+          "code": "SAFETY_STOP",
+          "label": "Priorizar o estado de segurança e as orientações OEM de alarmes; não reproduzir aquecimento por ensaio improvisado.",
+          "feedback": "Correto: risco e/ou comparabilidade de dados prevalecem sobre conclusão prematura."
+        },
+        {
+          "code": "UNSAFE_TEST",
+          "label": "Ignorar o alarme até alcançar um valor de temperatura de catálogo.",
+          "feedback": "Incorreto: a ação não preserva o requisito de segurança ou evidência."
+        }
+      ],
+      "expectedChoiceCode": "SAFETY_STOP",
+      "engineeringExplanation": "Alarme pode indicar proteção operacional; nenhum valor universal foi homologado no banco.",
+      "sourceIds": [
+        "CAT-HYD-TECHNICAL-ANALYSIS",
+        "CAT-HYD-OIL-CLEANLINESS",
+        "CAT-HYD-CIRCUIT-INSPECTION"
+      ],
+      "requiredBoundary": "conceptual_education_no_operational_authority",
+      "oemSerialVerified": false,
+      "performedOnMachine": false,
+      "actualMeasurements": null,
+      "confirmedRootCause": null,
+      "operatingRelease": false,
+      "sapMappingApproved": false,
+      "privateCorporateGate": "NO_GO"
+    },
+    {
+      "id": "HY-DRILL-13",
+      "scenarioId": "HC-DIFF-07",
+      "kind": "ambiguous_symptom",
+      "simulatedContext": "Ruído de bomba, vibração e espuma são mencionados no relato, sem identificação de ponto, rotação ou histórico de alimentação.",
+      "question": "O que diferencia cavitação, ar incorporado e ruído mecânico?",
+      "hypothesisIds": [
+        "HC-DIFF-07-SUCTION",
+        "HC-DIFF-07-AIR",
+        "HC-DIFF-07-MECH"
+      ],
+      "focusHypothesisId": "HC-DIFF-07-SUCTION",
+      "choices": [
+        {
+          "code": "VERIFY_OEM_DISCRIMINANT",
+          "label": "Documentar condições de sucção/nível, fontes de ar, histórico de fluido e evidências mecânicas; requerer análise OEM sem provocar restrição.",
+          "feedback": "Correto: preserva as hipóteses concorrentes e solicita evidência discriminante efetiva."
+        },
+        {
+          "code": "PREMATURE_CAUSE",
+          "label": "Condenar o rolamento da bomba porque há ruído.",
+          "feedback": "Incorreto: converte sintoma em causa sem contraprova ou efetividade OEM."
+        },
+        {
+          "code": "UNSAFE_TEST",
+          "label": "Fechar parcialmente a alimentação da bomba para testar se o som muda.",
+          "feedback": "Incorreto: propõe provocação ou abertura de circuito sem segurança e procedimento."
+        }
+      ],
+      "expectedChoiceCode": "VERIFY_OEM_DISCRIMINANT",
+      "engineeringExplanation": "Ruído não diferencia automaticamente cavitação, aeração e defeito de rolamento/acoplamento.",
+      "sourceIds": [
+        "CAT-HYD-CIRCUIT-INSPECTION",
+        "CAT-HYD-PUMPS-MOTORS",
+        "CAT-HYD-OIL-CLEANLINESS"
+      ],
+      "requiredBoundary": "conceptual_education_no_operational_authority",
+      "oemSerialVerified": false,
+      "performedOnMachine": false,
+      "actualMeasurements": null,
+      "confirmedRootCause": null,
+      "operatingRelease": false,
+      "sapMappingApproved": false,
+      "privateCorporateGate": "NO_GO"
+    },
+    {
+      "id": "HY-DRILL-14",
+      "scenarioId": "HC-DIFF-07",
+      "kind": "safety_or_observability_countercase",
+      "simulatedContext": "Um operador percebe ruído anormal acompanhado de movimentos imprevisíveis, e é sugerido aumentar a rotação para intensificar a manifestação.",
+      "question": "Qual decisão preserva segurança e validade da evidência nesse caso?",
+      "hypothesisIds": [
+        "HC-DIFF-07-SUCTION",
+        "HC-DIFF-07-AIR",
+        "HC-DIFF-07-MECH"
+      ],
+      "focusHypothesisId": "HC-DIFF-07-AIR",
+      "choices": [
+        {
+          "code": "UNSAFE_TEST",
+          "label": "Aumentar rotação sem autorização para registrar o ruído no momento mais severo.",
+          "feedback": "Incorreto: a ação não preserva o requisito de segurança ou evidência."
+        },
+        {
+          "code": "PREMATURE_CAUSE",
+          "label": "Diagnosticar cavitação como causa confirmada usando apenas o som.",
+          "feedback": "Incorreto: causalidade ou referência OEM efetiva não foi demonstrada."
+        },
+        {
+          "code": "SAFETY_STOP",
+          "label": "Evitar reprodução deliberada e encaminhar contenção e avaliação técnica do comportamento inseguro.",
+          "feedback": "Correto: risco e/ou comparabilidade de dados prevalecem sobre conclusão prematura."
+        }
+      ],
+      "expectedChoiceCode": "SAFETY_STOP",
+      "engineeringExplanation": "Aumento deliberado da solicitação pode agravar dano e risco sem acrescentar contraprova válida.",
+      "sourceIds": [
+        "CAT-HYD-CIRCUIT-INSPECTION",
+        "CAT-HYD-PUMPS-MOTORS",
+        "CAT-HYD-OIL-CLEANLINESS"
+      ],
+      "requiredBoundary": "conceptual_education_no_operational_authority",
+      "oemSerialVerified": false,
+      "performedOnMachine": false,
+      "actualMeasurements": null,
+      "confirmedRootCause": null,
+      "operatingRelease": false,
+      "sapMappingApproved": false,
+      "privateCorporateGate": "NO_GO"
+    },
+    {
+      "id": "HY-DRILL-15",
+      "scenarioId": "HC-DIFF-08",
+      "kind": "ambiguous_symptom",
+      "simulatedContext": "O movimento oscila após o comando, mas não está claro se o problema é eletrônico, piloto, válvula ou atrito mecânico.",
+      "question": "Como evitar concluir travamento de carretel a partir de um código?",
+      "hypothesisIds": [
+        "HC-DIFF-08-PILOT",
+        "HC-DIFF-08-SPOOL",
+        "HC-DIFF-08-STICK"
+      ],
+      "focusHypothesisId": "HC-DIFF-08-SPOOL",
+      "choices": [
+        {
+          "code": "UNSAFE_TEST",
+          "label": "Desabilitar o intertravamento para observar se a oscilação desaparece.",
+          "feedback": "Incorreto: propõe provocação ou abertura de circuito sem segurança e procedimento."
+        },
+        {
+          "code": "VERIFY_OEM_DISCRIMINANT",
+          "label": "Comparar registros do comando/ECM com a resposta hidráulica e mecânica, incluindo intertravamentos e arquitetura de pilotagem.",
+          "feedback": "Correto: preserva as hipóteses concorrentes e solicita evidência discriminante efetiva."
+        },
+        {
+          "code": "PREMATURE_CAUSE",
+          "label": "Substituir a válvula porque surgiu um código de solenoide.",
+          "feedback": "Incorreto: converte sintoma em causa sem contraprova ou efetividade OEM."
+        }
+      ],
+      "expectedChoiceCode": "VERIFY_OEM_DISCRIMINANT",
+      "engineeringExplanation": "Código indica anomalia de controle possível e não prova travamento hidráulico, contaminação nem dano mecânico.",
+      "sourceIds": [
+        "PARKER-CYL-DRIFT-SERVICE",
+        "CAT-HYD-TECHNICAL-ANALYSIS",
+        "CAT-HYD-OIL-CLEANLINESS"
+      ],
+      "requiredBoundary": "conceptual_education_no_operational_authority",
+      "oemSerialVerified": false,
+      "performedOnMachine": false,
+      "actualMeasurements": null,
+      "confirmedRootCause": null,
+      "operatingRelease": false,
+      "sapMappingApproved": false,
+      "privateCorporateGate": "NO_GO"
+    },
+    {
+      "id": "HY-DRILL-16",
+      "scenarioId": "HC-DIFF-08",
+      "kind": "safety_or_observability_countercase",
+      "simulatedContext": "Durante a investigação aparece sugestão de neutralizar um intertravamento que impede movimento errático.",
+      "question": "Qual decisão preserva segurança e validade da evidência nesse caso?",
+      "hypothesisIds": [
+        "HC-DIFF-08-PILOT",
+        "HC-DIFF-08-SPOOL",
+        "HC-DIFF-08-STICK"
+      ],
+      "focusHypothesisId": "HC-DIFF-08-STICK",
+      "choices": [
+        {
+          "code": "SAFETY_STOP",
+          "label": "Recusar bypass, preservar a função de segurança e encaminhar a avaliação do comando por procedimento autorizado.",
+          "feedback": "Correto: risco e/ou comparabilidade de dados prevalecem sobre conclusão prematura."
+        },
+        {
+          "code": "UNSAFE_TEST",
+          "label": "Desabilitar o intertravamento para medir diretamente a resposta sob carga.",
+          "feedback": "Incorreto: a ação não preserva o requisito de segurança ou evidência."
+        },
+        {
+          "code": "PREMATURE_CAUSE",
+          "label": "Concluir que a válvula hidráulica está presa com base apenas no registro elétrico.",
+          "feedback": "Incorreto: causalidade ou referência OEM efetiva não foi demonstrada."
+        }
+      ],
+      "expectedChoiceCode": "SAFETY_STOP",
+      "engineeringExplanation": "Intertravamentos são camadas de proteção e não devem ser contornados para obter um dado de manutenção.",
+      "sourceIds": [
+        "PARKER-CYL-DRIFT-SERVICE",
+        "CAT-HYD-TECHNICAL-ANALYSIS",
+        "CAT-HYD-OIL-CLEANLINESS"
+      ],
+      "requiredBoundary": "conceptual_education_no_operational_authority",
+      "oemSerialVerified": false,
+      "performedOnMachine": false,
+      "actualMeasurements": null,
+      "confirmedRootCause": null,
+      "operatingRelease": false,
+      "sapMappingApproved": false,
+      "privateCorporateGate": "NO_GO"
+    },
+    {
+      "id": "HY-DRILL-17",
+      "scenarioId": "HC-DIFF-09",
+      "kind": "ambiguous_symptom",
+      "simulatedContext": "A extensão apresenta duração diferente da retração, mas áreas do cilindro, posição, carga e regeneração são desconhecidas.",
+      "question": "Quando a assimetria é condição física normal e quando demanda discriminação?",
+      "hypothesisIds": [
+        "HC-DIFF-09-GEOMETRY",
+        "HC-DIFF-09-VALVING",
+        "HC-DIFF-09-FLOW"
+      ],
+      "focusHypothesisId": "HC-DIFF-09-FLOW",
+      "choices": [
+        {
+          "code": "PREMATURE_CAUSE",
+          "label": "Trocar o cilindro porque os tempos de extensão e retração não são iguais.",
+          "feedback": "Incorreto: converte sintoma em causa sem contraprova ou efetividade OEM."
+        },
+        {
+          "code": "UNSAFE_TEST",
+          "label": "Manter um sentido atuando contra batente para equalizar o ciclo com o outro.",
+          "feedback": "Incorreto: propõe provocação ou abertura de circuito sem segurança e procedimento."
+        },
+        {
+          "code": "VERIFY_OEM_DISCRIMINANT",
+          "label": "Obter referência OEM para cada sentido, geometria e circuito de regeneração/retorno antes de classificar a assimetria como falha.",
+          "feedback": "Correto: preserva as hipóteses concorrentes e solicita evidência discriminante efetiva."
+        }
+      ],
+      "expectedChoiceCode": "VERIFY_OEM_DISCRIMINANT",
+      "engineeringExplanation": "Áreas efetivas e exigências de carga podem produzir assimetria normal; não existe regra de tempos idênticos.",
+      "sourceIds": [
+        "PARKER-CYL-DRIFT-SERVICE",
+        "CAT-HYD-TECHNICAL-ANALYSIS",
+        "CAT-HYD-CIRCUIT-INSPECTION"
+      ],
+      "requiredBoundary": "conceptual_education_no_operational_authority",
+      "oemSerialVerified": false,
+      "performedOnMachine": false,
+      "actualMeasurements": null,
+      "confirmedRootCause": null,
+      "operatingRelease": false,
+      "sapMappingApproved": false,
+      "privateCorporateGate": "NO_GO"
+    },
+    {
+      "id": "HY-DRILL-18",
+      "scenarioId": "HC-DIFF-09",
+      "kind": "safety_or_observability_countercase",
+      "simulatedContext": "Os tempos de extensão foram medidos com implemento carregado e retração sem carga, porém são comparados como se as condições fossem equivalentes.",
+      "question": "Qual decisão preserva segurança e validade da evidência nesse caso?",
+      "hypothesisIds": [
+        "HC-DIFF-09-GEOMETRY",
+        "HC-DIFF-09-VALVING",
+        "HC-DIFF-09-FLOW"
+      ],
+      "focusHypothesisId": "HC-DIFF-09-GEOMETRY",
+      "choices": [
+        {
+          "code": "APPLY_UNRELATED_REFERENCE",
+          "label": "Aplicar valores de uma variante de equipamento a outra para obter um limite de assimetria.",
+          "feedback": "Incorreto: causalidade ou referência OEM efetiva não foi demonstrada."
+        },
+        {
+          "code": "RECONCILE_OBSERVABILITY",
+          "label": "Marcar a comparação como não equivalente, identificar a condição OEM de cada sentido e normalizar a base de observação.",
+          "feedback": "Correto: risco e/ou comparabilidade de dados prevalecem sobre conclusão prematura."
+        },
+        {
+          "code": "PREMATURE_CAUSE",
+          "label": "Classificar a diferença de tempo como perda volumétrica do pistão.",
+          "feedback": "Incorreto: a ação não preserva o requisito de segurança ou evidência."
+        }
+      ],
+      "expectedChoiceCode": "RECONCILE_OBSERVABILITY",
+      "engineeringExplanation": "Geometria e carga alteram resposta direcional; comparar condições diferentes produz falso diagnóstico.",
+      "sourceIds": [
+        "PARKER-CYL-DRIFT-SERVICE",
+        "CAT-HYD-TECHNICAL-ANALYSIS",
+        "CAT-HYD-CIRCUIT-INSPECTION"
+      ],
+      "requiredBoundary": "conceptual_education_no_operational_authority",
+      "oemSerialVerified": false,
+      "performedOnMachine": false,
+      "actualMeasurements": null,
+      "confirmedRootCause": null,
+      "operatingRelease": false,
+      "sapMappingApproved": false,
+      "privateCorporateGate": "NO_GO"
+    },
+    {
+      "id": "HY-DRILL-19",
+      "scenarioId": "HC-DIFF-10",
+      "kind": "ambiguous_symptom",
+      "simulatedContext": "Leituras de pressão no monitor e no instrumento externo divergem, mas não foram reconciliados ponto físico, faixa, horário e calibração.",
+      "question": "Como separar sensor, ponto hidráulico diferente e transiente real?",
+      "hypothesisIds": [
+        "HC-DIFF-10-SENSOR",
+        "HC-DIFF-10-POINT",
+        "HC-DIFF-10-TRANSIENT"
+      ],
+      "focusHypothesisId": "HC-DIFF-10-SENSOR",
+      "choices": [
+        {
+          "code": "VERIFY_OEM_DISCRIMINANT",
+          "label": "Reconciliar ponto, unidade, calibração, tempo de aquisição e malha ECM antes de trocar componente hidráulico.",
+          "feedback": "Correto: preserva as hipóteses concorrentes e solicita evidência discriminante efetiva."
+        },
+        {
+          "code": "PREMATURE_CAUSE",
+          "label": "Condenar o transdutor do monitor por divergência com outro instrumento.",
+          "feedback": "Incorreto: converte sintoma em causa sem contraprova ou efetividade OEM."
+        },
+        {
+          "code": "UNSAFE_TEST",
+          "label": "Ajustar pressão da bomba até as duas leituras coincidirem sem esquema do circuito.",
+          "feedback": "Incorreto: propõe provocação ou abertura de circuito sem segurança e procedimento."
+        }
+      ],
+      "expectedChoiceCode": "VERIFY_OEM_DISCRIMINANT",
+      "engineeringExplanation": "Dois instrumentos podem medir pontos distintos ou registrar transientes; divergência não prova defeito do sensor.",
+      "sourceIds": [
+        "CAT-HYD-TECHNICAL-ANALYSIS",
+        "CAT-HYD-CIRCUIT-INSPECTION",
+        "CAT-HYD-PUMPS-MOTORS"
+      ],
+      "requiredBoundary": "conceptual_education_no_operational_authority",
+      "oemSerialVerified": false,
+      "performedOnMachine": false,
+      "actualMeasurements": null,
+      "confirmedRootCause": null,
+      "operatingRelease": false,
+      "sapMappingApproved": false,
+      "privateCorporateGate": "NO_GO"
+    },
+    {
+      "id": "HY-DRILL-20",
+      "scenarioId": "HC-DIFF-10",
+      "kind": "safety_or_observability_countercase",
+      "simulatedContext": "A leitura digital é lenta e o transiente no instrumento externo é rápido; os registros não foram sincronizados.",
+      "question": "Qual decisão preserva segurança e validade da evidência nesse caso?",
+      "hypothesisIds": [
+        "HC-DIFF-10-SENSOR",
+        "HC-DIFF-10-POINT",
+        "HC-DIFF-10-TRANSIENT"
+      ],
+      "focusHypothesisId": "HC-DIFF-10-POINT",
+      "choices": [
+        {
+          "code": "PREMATURE_CAUSE",
+          "label": "Trocar o sensor digital por não reproduzir o pico transitório.",
+          "feedback": "Incorreto: a ação não preserva o requisito de segurança ou evidência."
+        },
+        {
+          "code": "APPLY_UNRELATED_REFERENCE",
+          "label": "Condenar a bomba como instável com base apenas na divergência temporal.",
+          "feedback": "Incorreto: causalidade ou referência OEM efetiva não foi demonstrada."
+        },
+        {
+          "code": "RECONCILE_OBSERVABILITY",
+          "label": "Exigir análise metrológica de sincronismo e dinâmica de medição; manter a causa hidráulica inconclusiva.",
+          "feedback": "Correto: risco e/ou comparabilidade de dados prevalecem sobre conclusão prematura."
+        }
+      ],
+      "expectedChoiceCode": "RECONCILE_OBSERVABILITY",
+      "engineeringExplanation": "Frequência de atualização e ponto físico podem criar divergência aparente sem causa hidráulica confirmada.",
+      "sourceIds": [
+        "CAT-HYD-TECHNICAL-ANALYSIS",
+        "CAT-HYD-CIRCUIT-INSPECTION",
+        "CAT-HYD-PUMPS-MOTORS"
+      ],
+      "requiredBoundary": "conceptual_education_no_operational_authority",
+      "oemSerialVerified": false,
+      "performedOnMachine": false,
+      "actualMeasurements": null,
+      "confirmedRootCause": null,
+      "operatingRelease": false,
+      "sapMappingApproved": false,
+      "privateCorporateGate": "NO_GO"
+    }
+  ],
+  "scoring": {
+    "educationalOnly": true,
+    "rightAnswerPoints": 1,
+    "noNegativePenalty": true,
+    "neverTreatScoreAsQualification": true,
+    "noCertificationIssued": true,
+    "publicExportFormat": "aggregate_anonymous_training_attempts",
+    "exportProhibited": [
+      "machineSerial",
+      "assetTag",
+      "operatorName",
+      "privateDocuments",
+      "measurements",
+      "reviewerNames"
+    ]
+  }
+}

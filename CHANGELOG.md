@@ -2,6 +2,14 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.94] — 2026-11-04 — Benchmark de raciocínio diferencial hidráulico
+
+- **20 casos inteiramente sintéticos** em 10 temas de circuitos; todos referenciam as **30 hipóteses** e fontes anteriores. Dez cenários pedem discriminação OEM, seis exigem contenção de risco e quatro exigem reconciliar condições de observação.
+- Novo dataset `hydraulic-diagnostic-reasoning-benchmark.v1.json`, schema rigoroso e módulo `scripts/lib/hydraulic-reasoning.mjs` que pontua apenas um exercício e proíbe interpretação como certificação, diagnóstico, OS ou liberação de máquina.
+- [Treinador HTML offline](docs/treino-diagnostico-hidraulico.html) sem backend, telemetria ou persistência, permite estudo em 20 etapas e exportação de resultado anônimo em JSON.
+- Auditor `pm:hydraulic:reasoning:audit` integrado a `npm run qa` e GitHub Actions: gabaritos e distratores, proveniência, 24 mutações adversariais, paridade do JavaScript offline e proteção de marcador privado sintético.
+- Preservadas 25 regras conceituais, 10 exceções PM×SAP em BLOCK, oito gates corporativos NO_GO; zero eventos de campo, valores OEM por série ou alterações nos consumidores.
+
 ## [1.3.93] — 2026-11-03 — Red team do contrato CAT 395: validação fail-closed
 
 - Corrigido o avaliador `scripts/lib/cat395-serial-evidence.mjs`: a versão anterior aceitava campos extras ou tipos inválidos em determinadas condições; agora qualquer divergência estrutural, valor enumerado inconsistente, declaração malformada ou grandeza/unidade incompatíveis bloqueia a prontidão documental.
