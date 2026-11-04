@@ -1,8 +1,18 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 03/11/2026 · **Ciclo:** catálogo técnico v1.3.90 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 03/11/2026 · **Ciclo:** catálogo técnico v1.3.91 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
+
+## Pré-piloto por publicação OEM — ciclo v1.3.91
+
+**Implementado:** [pré-piloto documental por variante CAT 395](CICLO_2026-11-03_PREFLIGHT_CAT395_VARIANTES_OEM.md), com três fontes oficiais regionais/configuracionais, quinze posições de especificação tipadas, dois valores de modo de levantamento não publicados mantidos como `null`, oito gates pendentes e rastreio de dez `HC-DIFF-xx`. A [consulta offline](preflight-cat395.html) exporta somente pauta documental, sem aprovação. Auditor específico: 22 mutações adversariais.
+
+**Distinção central:** especificação máxima **de catálogo comercial** ≠ parâmetro de ensaio OEM por série ≠ medição real ≠ limite aceitável ≠ diagnóstico confirmado. A Front Shovel registra vazão e pressão de equipamento distintas da 395 publicada para Brasil, razão concreta para não cruzar variantes sem prova.
+
+**Condição de fronteira:** nenhum equipamento real, configuração por série, documento de teste/ajuste, acesso OEM privado, dado corporativo, RPN, pressão operacional aprovada, remapeamento SAP ou liberação. Dez bloqueios PM×SAP e oito gates corporativos permanecem NO_GO.
+
+**Próximo passo efetivo:** em ambiente corporativo aprovado, selecionar um ativo CAT 395 por série/arranjo, confirmar variante e diagrama no SIS, obter limites do procedimento efetivo, documentar metrologia e autorização. Só após isso propor uma validação discriminante de campo, com revisão independente.
 
 ## Próximo avanço de engenharia — ciclo v1.3.90
 
