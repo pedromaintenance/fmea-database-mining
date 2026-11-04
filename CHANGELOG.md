@@ -2,6 +2,15 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.92] — 2026-11-03 — Contrato de evidências por série CAT 395 em custódia privada
+
+- Novo contrato público `data/governance/cat395-serial-evidence-contract.v1.json` com 8 gates G395-01..08, S1–S5 e revisão de dados mestres SAP S4 separada, mantendo NO_GO operacional e confidencialidade.
+- Novo schema `schemas/cat395-private-evidence-draft.schema.json` **somente como especificação**: instâncias com séries, documentos internos, medições e revisões devem permanecer fora do repositório público e sob custódia corporativa.
+- Validador `scripts/lib/cat395-serial-evidence.mjs` produz exclusivamente contagens, códigos de lacuna e status `BLOCKED_PENDING_DOCUMENTATION` ou `READY_FOR_HUMAN_REVIEW`; **nunca** `APPROVED`, liberação de equipamento ou homologação.
+- Novo [workbench HTML offline](docs/cat395-private-evidence-workbench.html) para baixar modelo vazio, verificar rascunho local e exportar relatório redigido, sem backend ou armazenamento persistente. Não substitui segurança/TI, criptografia ou governança corporativa.
+- Auditoria `npm run pm:cat395:serial:evidence:audit` com **30 alterações adversariais de fichas + 12 do contrato**, teste explícito de não vazamento de segredo sintético e preservação das 25 regras, dez bloqueios PM×SAP, oito gates corporativos NO_GO.
+- Nenhum evento ou dado privado recebido e nenhum consumidor alterado.
+
 ## [1.3.91] — 2026-11-03 — Pré-piloto CAT 395: variantes OEM e bloqueio de parâmetros comerciais
 
 - Pesquisadas três páginas primárias da Caterpillar: CAT 395 Tier 3/MAR-1 Brasil, CAT 395 Tier 4 Final/Stage V EUA e 395 Front Shovel. Os máximos de implementos (**1.064 versus 1.008 L/min**) e de pressão de equipamento (**37.000 versus 32.000 kPa**) variam conforme publicação; a pressão em modo de levantamento **38.000 kPa** consta na página brasileira e não foi propagada às demais.
