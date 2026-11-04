@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FMEA 1.3.92 | CAT 395 — verificação documental restrita</title>
+<style>
+:root{color-scheme:dark;--bg:#0d1822;--panel:#182b3a;--line:#375163;--text:#f3f5f7;--muted:#bccbd5;--gold:#e3bf7f;--blue:#9fd2f4}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}
+main{max-width:1050px;margin:auto;padding:24px 20px 60px}h1{font-size:clamp(25px,4vw,38px);line-height:1.2}h2{font-size:21px;margin:0 0 8px}
+p{color:var(--muted)}.panel{background:var(--panel);border:1px solid var(--line);border-radius:13px;margin:19px 0;padding:19px}
+.warning{background:#3c2e22;color:#ffe6b5;border-left:4px solid var(--gold);border-radius:6px;padding:13px 16px}
+small{color:var(--gold);font-weight:700;letter-spacing:.12em}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px}
+.kpi{border:1px solid var(--line);border-radius:10px;padding:12px}.kpi strong{display:block;font-size:24px}
+button,input{font:inherit}button{background:var(--gold);color:#18232e;border:0;border-radius:8px;padding:11px 16px;font-weight:700;cursor:pointer;margin:8px 8px 8px 0}
+button.secondary{background:#42627c;color:#fff}button:disabled{opacity:.5;cursor:not-allowed}button:focus-visible,input:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+input[type=file]{display:block;border:1px dashed var(--muted);padding:15px;border-radius:10px;max-width:100%;width:100%;background:#102131;color:var(--text)}
+.gate{padding:13px 0;border-top:1px solid var(--line)}.gate strong{color:var(--gold)}.mini{font-size:13px;color:var(--muted)}code{color:var(--gold)}
+a{color:var(--blue)}footer{border-top:1px solid var(--line);padding-top:20px;color:var(--muted)}
+</style></head><body><main>
+<header><small>FMEA DATABASE MINING · v1.3.92</small><h1>CAT 395 — contrato de evidências por série</h1>
+<p>Ferramenta standalone de verificação de <strong>completude documental declarada</strong>. Não valida autenticidade OEM, não homologa causa e não autoriza ensaio ou operação.</p></header>
+<section class="panel">
+<h2>1. Ambiente e confidencialidade</h2>
+<div class="warning"><strong>NO_GO operacional.</strong> Abra este HTML somente como arquivo local, baixado de uma origem verificada e autorizado por Segurança/TI da empresa. O formulário NÃO criptografa o registro privado, NÃO confere assinaturas e NÃO é sistema corporativo de custódia. Não suba arquivos confidenciais ao GitHub, ChatGPT, Pages ou servidores externos.</div>
+<p>O HTML não contém backend, CDN, telemetria, armazenamento persistente nem envio remoto. Os dados importados são processados localmente durante a sessão e não são reproduzidos no relatório exportado.</p>
+</section>
+<section class="panel"><h2>2. Modelo e entrada de documentos privados</h2>
+<p>Use o modelo vazio como ponto de partida, preencha e mantenha o arquivo exclusivamente na infraestrutura autorizada. A verificação nunca substitui conferência humana de validade, revisão documental e efetividade por série.</p>
+<button id="download-template">Exportar modelo vazio (JSON)</button>
+<label for="private-record-file" style="display:block;margin:15px 0 7px;font-weight:650">Abrir rascunho privado local (somente JSON)</label>
+<input id="private-record-file" type="file" accept=".json,application/json">
+<p id="file-status" class="mini" aria-live="polite">Nenhum registro carregado. Os oito gates estão PENDING.</p>
+</section>
+<section class="panel"><h2>3. Resultado redigido — sem dados confidenciais</h2>
+<div id="result-summary" class="warning">Nenhuma verificação executada.</div>
+<div id="counts" class="grid" aria-live="polite"></div>
+<h3>Códigos de lacuna</h3><div id="issues"></div>
+<button id="redacted_public_summary" disabled>Exportar apenas resumo público redigido</button>
+<p class="mini">O arquivo de saída inclui exclusivamente contagens, códigos e status. Não inclui série, patrimônio, documentos, revisões, medidas, instrumentação, valores, nomes, texto livre ou observações. Conferir manualmente antes de divulgar.</p></section>
+<section class="panel"><h2>4. Oito verificações obrigatórias (todas pendentes na base pública)</h2>
+<div id="gates"></div></section>
+<section class="panel"><h2>5. Separação de decisões</h2>
+<p><strong>S1:</strong> documentação de série e efetividade OEM. <strong>S2:</strong> arquitetura e função. <strong>S3:</strong> teste discriminante e segurança. <strong>S4:</strong> revisão independente de dados mestres SAP. <strong>S5:</strong> parecer técnico independente. Nenhuma dessas etapas é aprovada por esta interface.</p>
+<p>Ver também <a href="https://www.cat.com/pt_BR/support/maintenance/sis2go-app.html" rel="noopener noreferrer" target="_blank">orientação oficial Caterpillar sobre documentação por número de série</a>. O link é opcional; a interface funciona sem rede.</p></section>
+<footer>Contrato público 1.3.92 · Nenhum evento real, nenhum aceite por série, nenhum procedimento de campo aprovado · Uso exclusivamente documental.</footer>
+</main>
+<script id="contract-data" type="application/json">{"schema":"fmea-mining.cat395-serial-evidence-contract.v1","version":"1.3.92","nature":"public_contract_private_evidence_outside_repository","predecessor":"data/quality/cat395-public-variant-preflight.v1.json","privateSchema":"schemas/cat395-private-evidence-draft.schema.json","sources":["CAT-SIS2GO","ISO-14224-2016","CAT-395-BR-TIER3-PRODUCT","CAT-395-US-TIER4-PRODUCT","CAT-395-FRONT-SHOVEL-PRODUCT"],"modelFamily":"Caterpillar 395","policy":{"repositoryIsPublic":true,"privateDocumentsInPublicRepo":false,"privateSerialOrAssetTagsInPublicRepo":false,"privateMeasurementsInPublicRepo":false,"privateOemManualTextInPublicRepo":false,"schemaValidationIsNotEvidenceAuthentication":true,"documentaryReadinessIsNotTechnicalApproval":true,"operationalReleaseAutomated":false,"automatedCausalConfirmation":false,"sapMappingAutomated":false,"noFabricatedEvidence":true,"noPressureTestInstructions":true,"doesNotAuthorizeFieldTesting":true,"privateCorporateGates":"NO_GO","allSerialsVerified":0,"privateRecordsReceived":0,"fieldMeasurementsReceived":0,"performedTests":0,"approvalsRecorded":0,"repositoryDisposition":"PUBLIC_TEMPLATE_ONLY"},"decisionSemantics":{"MISSING":"Documento ou campo obrigatório ausente no rascunho privado.","UNVERIFIED":"Referência declarada, sem prova de efetividade/revisão.","CONFLICT":"Informações de fonte, variante, local ou condição mutuamente incompatíveis.","DOCUMENTED_FOR_REVIEW":"Metadados declarados suficientes para agendar conferência humana; não é aprovação.","publicExportAllowedFields":["schema","version","nature","documentaryStatus","gateCounts","errorCodes","operationalUseAllowed","approvedSapMapping","actualFailureConfirmed"],"publicExportMustOmit":["serialNumber","assetTag","documentId","documentRevision","internalRef","measurement","value","unit","comments","observations","reviewerName","sourceUrl","attachments","timestamps"]},"gates":[{"gateId":"G395-01","stage":"S1_OEM_CONFIG","requirement":"Identificar série real, prefixo, arranjo e configuração física em ambiente privado autorizado","evidenceType":"machine_identity","suggestedReviewRole":"maintenance_engineering","minimumProvenance":["private_reference","source_revision","serial_applicability_reviewed_by_human","independent_cross_check"],"inferenceRestriction":"Serial informado não comprova variante nem autorização de divulgação.","status":"PENDING","automaticallySatisfiable":false,"sourceIds":["CAT-SIS2GO"]},{"gateId":"G395-02","stage":"S1_OEM_CONFIG","requirement":"Confirmar compatibilidade da página de produto com a variante efetiva, sem assumir equivalência por nome 395","evidenceType":"variant_effectivity","suggestedReviewRole":"maintenance_engineering","minimumProvenance":["private_reference","source_revision","serial_applicability_reviewed_by_human","independent_cross_check"],"inferenceRestriction":"Sem correspondência de arranjo e série, ficha comercial é apenas contexto.","status":"PENDING","automaticallySatisfiable":false,"sourceIds":["CAT-SIS2GO"]},{"gateId":"G395-03","stage":"S1_OEM_CONFIG","requirement":"Obter esquema hidráulico e operações de sistema efetivos por número de série","evidenceType":"oem_hydraulic_schematic","suggestedReviewRole":"oem_document_control","minimumProvenance":["private_reference","source_revision","serial_applicability_reviewed_by_human","independent_cross_check"],"inferenceRestriction":"Esquema genérico de outra série não confirma arquitetura de implementos.","status":"PENDING","automaticallySatisfiable":false,"sourceIds":["CAT-SIS2GO"]},{"gateId":"G395-04","stage":"S2_FUNCTIONAL_TOPOLOGY","requirement":"Identificar bombas, válvulas, malhas de controle, retenção e sensoriamento realmente presentes","evidenceType":"hydraulic_architecture","suggestedReviewRole":"maintenance_engineering","minimumProvenance":["private_reference","source_revision","serial_applicability_reviewed_by_human","independent_cross_check"],"inferenceRestriction":"Não assumir existência ou localização de bomba, retenção ou piloto por analogia.","status":"PENDING","automaticallySatisfiable":false,"sourceIds":["CAT-SIS2GO"]},{"gateId":"G395-05","stage":"S3_DISCRIMINATIVE_TEST","requirement":"Identificar teste/ajuste OEM e referência de aceitação para aquele ponto e condição","evidenceType":"oem_test_and_adjust","suggestedReviewRole":"oem_document_control","minimumProvenance":["private_reference","source_revision","serial_applicability_reviewed_by_human","independent_cross_check"],"inferenceRestriction":"Pressão/vazão de catálogo não substituem limites do Test and Adjust efetivo.","status":"PENDING","automaticallySatisfiable":false,"sourceIds":["CAT-SIS2GO"]},{"gateId":"G395-06","stage":"S3_DISCRIMINATIVE_TEST","requirement":"Confirmar escala, calibração, portos e condições de operação antes de interpretar resultados","evidenceType":"metrology_and_test_context","suggestedReviewRole":"condition_monitoring","minimumProvenance":["private_reference","source_revision","serial_applicability_reviewed_by_human","independent_cross_check"],"inferenceRestriction":"Calibração informada não torna ensaio seguro nem valida seu resultado.","status":"PENDING","automaticallySatisfiable":false,"sourceIds":["CAT-SIS2GO"]},{"gateId":"G395-07","stage":"S3_EXECUTION_SAFETY","requirement":"Controlar energias armazenadas, movimento de implementos, carga e autorização antes de qualquer teste","evidenceType":"safe_work_authorization","suggestedReviewRole":"safety_and_execution","minimumProvenance":["private_reference","source_revision","serial_applicability_reviewed_by_human","independent_cross_check"],"inferenceRestriction":"Ficha de segurança não é autorização concedida pelo repositório.","status":"PENDING","automaticallySatisfiable":false,"sourceIds":["CAT-SIS2GO"]},{"gateId":"G395-08","stage":"S5_INDEPENDENT_REVIEW","requirement":"Registrar contraprovas e revisão independente antes de aprovação causal, SAP ou de operação","evidenceType":"independent_engineering_review","suggestedReviewRole":"maintenance_engineering","minimumProvenance":["private_reference","source_revision","serial_applicability_reviewed_by_human","independent_cross_check"],"inferenceRestriction":"Parecer técnico exige revisor humano independente no fluxo corporativo.","status":"PENDING","automaticallySatisfiable":false,"sourceIds":["CAT-SIS2GO"]}],"crossCuttingSapReview":{"stage":"S4_SAP_MASTER_DATA","status":"NOT_STARTED","purpose":"Separar enquadramento de hierarquia e código SAP da confirmação física e documental do mecanismo.","requiresAuthorizedMasterDataReview":true,"neverAutomaticallyMaps":["component_code","damage_code","cause_code","functional_location"],"approvedMappings":0},"hypotheses":[{"scenarioId":"HC-DIFF-01","diagnosisAllowed":false,"evidenceRequired":"independent_discriminative_test_after_serial_applicability","status":"NOT_ASSESSED"},{"scenarioId":"HC-DIFF-02","diagnosisAllowed":false,"evidenceRequired":"independent_discriminative_test_after_serial_applicability","status":"NOT_ASSESSED"},{"scenarioId":"HC-DIFF-03","diagnosisAllowed":false,"evidenceRequired":"independent_discriminative_test_after_serial_applicability","status":"NOT_ASSESSED"},{"scenarioId":"HC-DIFF-04","diagnosisAllowed":false,"evidenceRequired":"independent_discriminative_test_after_serial_applicability","status":"NOT_ASSESSED"},{"scenarioId":"HC-DIFF-05","diagnosisAllowed":false,"evidenceRequired":"independent_discriminative_test_after_serial_applicability","status":"NOT_ASSESSED"},{"scenarioId":"HC-DIFF-06","diagnosisAllowed":false,"evidenceRequired":"independent_discriminative_test_after_serial_applicability","status":"NOT_ASSESSED"},{"scenarioId":"HC-DIFF-07","diagnosisAllowed":false,"evidenceRequired":"independent_discriminative_test_after_serial_applicability","status":"NOT_ASSESSED"},{"scenarioId":"HC-DIFF-08","diagnosisAllowed":false,"evidenceRequired":"independent_discriminative_test_after_serial_applicability","status":"NOT_ASSESSED"},{"scenarioId":"HC-DIFF-09","diagnosisAllowed":false,"evidenceRequired":"independent_discriminative_test_after_serial_applicability","status":"NOT_ASSESSED"},{"scenarioId":"HC-DIFF-10","diagnosisAllowed":false,"evidenceRequired":"independent_discriminative_test_after_serial_applicability","status":"NOT_ASSESSED"}],"unresolvedRealWorldChecks":["authorization","license_and_privacy","serial_and_arrangement","effective_OEM_revision","test_and_adjust_method","calibration","safety_permit","independent_engineering_review","sap_master_data_review"],"reviewDecision":"NO_OPERATIONAL_APPROVAL_BY_THIS_CONTRACT"}</script>
+<script>
+"use strict";
+/**
+ * Avaliador documental não certificador CAT 395.
+ * Entrada: registro RESTRITO em ambiente autorizado, nunca armazenado no repositório público.
+ * Saída: APENAS agregados e códigos; nenhuma propriedade privada de entrada pode ser copiada.
+ */
+const PUBLIC_REPORT_KEYS=[
+  'schema','version','nature','documentaryStatus','gateCounts','errorCodes',
+  'operationalUseAllowed','approvedSapMapping','actualFailureConfirmed'
+];
+const hasText=x=>typeof x==='string'&&x.trim().length>=3;
+const expectedVariantIds=new Set(['CAT395-BR-TIER3','CAT395-US-T4F','CAT395-FRONT-SHOVEL']);
+const expectedStatus=new Set(['NOT_REQUESTED','REQUESTED','RECEIVED_UNVERIFIED','DOCUMENTED_FOR_REVIEW']);
+const unique=xs=>new Set(xs).size===xs.length;
+function assessment(draft,contract){
+ const flags=new Set();
+ const counts={MISSING:0,UNVERIFIED:0,CONFLICT:0,DOCUMENTED_FOR_REVIEW:0};
+ const mark=c=>flags.add(c);
+ const gateIds=Array.isArray(contract?.gates)?contract.gates.map(g=>g.gateId):[];
+ const D=draft&&typeof draft==='object'&&!Array.isArray(draft)?draft:{};
+ if(D.schema!=='fmea-mining.cat395-private-evidence-draft.v1'||D.contractVersion!=='1.3.92'||D.status!=='DRAFT_FOR_PRIVATE_REVIEW'||D.confidentiality!=='RESTRICTED_CORPORATE')mark('INVALID_RECORD_HEADER');
+ if(!D.privacy||D.privacy.authorizedPrivateEnvironment!==true||D.privacy.noPublicExport!==true||D.privacy.externalTransmissionAuthorized!==false)mark('PRIVATE_ENVIRONMENT_NOT_ATTESTED');
+ if(D.operationalRelease!==false)mark('OPERATIONAL_RELEASE_FIELD_FORBIDDEN');
+ const machine=D.machine||{};
+ if(machine.manufacturer!=='Caterpillar'||machine.modelFamily!=='395'||!hasText(machine.serialNumber)||!hasText(machine.arrangementReference)||!expectedVariantIds.has(machine.declaredVariantId))mark('MACHINE_IDENTITY_INCOMPLETE');
+ const all=Array.isArray(D.gateEvidence)?D.gateEvidence:[];
+ if(all.length!==8||!unique(all.map(g=>g?.gateId)))mark('GATE_SET_INVALID');
+ const byId=new Map(all.map(g=>[g?.gateId,g]));
+ for(const id of gateIds){
+  const e=byId.get(id);
+  if(!e){counts.MISSING++;mark('GATE_EVIDENCE_MISSING');continue;}
+  if(!expectedStatus.has(e.status)){counts.CONFLICT++;mark('GATE_STATUS_INVALID');continue;}
+  if(e.effectiveForSerial===false||(hasText(e.declaredVariantId)&&hasText(machine.declaredVariantId)&&e.declaredVariantId!==machine.declaredVariantId)){
+   counts.CONFLICT++;mark('EFFECTIVITY_OR_VARIANT_CONFLICT');continue;
+  }
+  if(e.status!=='DOCUMENTED_FOR_REVIEW'){
+   counts[e.status==='NOT_REQUESTED'?'MISSING':'UNVERIFIED']++;
+   continue;
+  }
+  const valid=hasText(e.privateReference)&&hasText(e.documentRevision)&&
+   e.effectiveForSerial===true&&hasText(e.reviewedByRole)&&
+   e.declaredVariantId===machine.declaredVariantId;
+  if(!valid){counts.UNVERIFIED++;mark('GATE_PROVENANCE_INCOMPLETE');}
+  else counts.DOCUMENTED_FOR_REVIEW++;
+ }
+ if(byId.size!==gateIds.length||gateIds.some(id=>!byId.has(id)))mark('GATE_SET_INVALID');
+ const R=D.review||{};
+ if(R.independentEngineeringReview!=='HUMAN_REVIEW_DECLARED')mark('INDEPENDENT_REVIEW_NOT_DECLARED');
+ if(R.oemEffectivityHumanAttested!==true)mark('OEM_EFFECTIVITY_UNATTESTED');
+ if(R.safetyAuthorization!=='AUTHORIZATION_REFERENCED')mark('SAFETY_AUTHORIZATION_UNREFERENCED');
+ const S=D.sapReview||{};
+ if(S.publicCodePromotion!==false)mark('SAP_PUBLIC_PROMOTION_FORBIDDEN');
+ if(S.status!=='PRIVATE_REVIEW_DECLARED')mark('SAP_PRIVATE_REVIEW_PENDING');
+ const rows=Array.isArray(D.measurementRows)?D.measurementRows:[];
+ if(!Array.isArray(D.measurementRows))mark('INVALID_MEASUREMENT_CONTAINER');
+ if(rows.length&&R.actualFieldTestExecution!==true)mark('MEASUREMENT_WITHOUT_EXECUTION_ATTESTATION');
+ if(R.actualFieldTestExecution===true&&!rows.length)mark('FIELD_TEST_WITHOUT_TRACEABLE_RESULT');
+ if(rows.length&&D.privacy?.authorizedPrivateEnvironment!==true)mark('PRIVATE_MEASUREMENT_EXPOSURE_RISK');
+ if(rows.length){
+  for(const r of rows){
+   if(!r||!hasText(r.oemProcedureReference)||!hasText(r.instrumentRef)||!hasText(r.calibrationRef)||!hasText(r.testConditionRef)||!hasText(r.portRef)||!Number.isFinite(r.value)||r.performedByAuthorizedTeam!==true)mark('MEASUREMENT_PROVENANCE_INCOMPLETE');
+   if(!contract?.hypotheses?.some(h=>h.scenarioId===r?.scenarioId))mark('MEASUREMENT_SCENARIO_UNKNOWN');
+  }
+  if(counts.DOCUMENTED_FOR_REVIEW!==8)mark('MEASUREMENT_BEFORE_DOCUMENTARY_CLOSURE');
+ }
+ // Schema evaluation, self-attestation and human claims NEVER establish authenticity.
+ // Documentary readiness only means required *statements* were provided for manual review.
+ const documentaryStatus=flags.size===0&&counts.DOCUMENTED_FOR_REVIEW===8
+  ?'READY_FOR_HUMAN_REVIEW':'BLOCKED_PENDING_DOCUMENTATION';
+ return Object.freeze({
+  schema:'fmea-mining.cat395-public-readiness-result.v1',
+  version:'1.3.92',
+  nature:'redacted_documentary_completeness_not_technical_validation',
+  documentaryStatus,
+  gateCounts:Object.freeze({...counts}),
+  errorCodes:Object.freeze([...flags].sort()),
+  operationalUseAllowed:false,
+  approvedSapMapping:false,
+  actualFailureConfirmed:false
+ });
+}
+const evaluatePrivateDraft=assessment;
+function safePublicSummary(draft,contract){
+ const r=assessment(draft,contract);
+ return Object.fromEntries(PUBLIC_REPORT_KEYS.map(k=>[k,r[k]]));
+}
+
+const CONTRACT=JSON.parse(document.getElementById('contract-data').textContent);
+const fileInput=document.getElementById('private-record-file');
+let lastRedacted=null;
+const txt=(tag,value)=>{const el=document.createElement(tag);el.textContent=value;return el;};
+for(const gate of CONTRACT.gates){
+ const div=document.createElement('div');div.className='gate';
+ div.appendChild(txt('strong',gate.gateId+' · '+gate.stage));
+ div.appendChild(txt('p',gate.requirement));
+ div.appendChild(txt('div','Evidência: '+gate.evidenceType+' · Papel sugerido: '+gate.suggestedReviewRole));
+ div.appendChild(txt('small','PENDING · Não homologado'));
+ document.getElementById('gates').appendChild(div);
+}
+function emptyDraft(){
+ return {
+ schema:'fmea-mining.cat395-private-evidence-draft.v1',contractVersion:'1.3.92',
+ status:'DRAFT_FOR_PRIVATE_REVIEW',confidentiality:'RESTRICTED_CORPORATE',
+ machine:{manufacturer:'Caterpillar',modelFamily:'395',serialNumber:null,assetTag:null,declaredVariantId:null,arrangementReference:null},
+ gateEvidence:CONTRACT.gates.map(g=>({gateId:g.gateId,status:'NOT_REQUESTED',privateReference:null,documentRevision:null,effectiveForSerial:null,reviewedByRole:null,declaredVariantId:null})),
+ measurementRows:[],
+ review:{independentEngineeringReview:'NOT_REQUESTED',safetyAuthorization:'NOT_REQUESTED',actualFieldTestExecution:false,oemEffectivityHumanAttested:false},
+ sapReview:{status:'NOT_STARTED',publicCodePromotion:false},
+ privacy:{authorizedPrivateEnvironment:false,noPublicExport:true,externalTransmissionAuthorized:false},
+ operationalRelease:false
+ };
+}
+function saveFile(filename,content){
+ const url=URL.createObjectURL(new Blob([content],{type:'application/json'}));
+ const a=document.createElement('a');a.href=url;a.download=filename;a.click();URL.revokeObjectURL(url);
+}
+document.getElementById('download-template').addEventListener('click',()=>saveFile('cat395-modelo-privado-VAZIO.json',JSON.stringify(emptyDraft(),null,2)+'\n'));
+function renderRedacted(r){
+ document.getElementById('result-summary').textContent=r.documentaryStatus==='READY_FOR_HUMAN_REVIEW'
+ ?'Pronto apenas para conferência humana de referências declaradas — NÃO é aprovação OEM, SAP ou operacional.'
+ :'Bloqueado: documentação e/ou declarações insuficientes ou conflitantes.';
+ const counts=document.getElementById('counts');counts.replaceChildren();
+ for(const [k,v] of Object.entries(r.gateCounts)){const box=document.createElement('div');box.className='kpi';box.appendChild(txt('small',k));box.appendChild(txt('strong',String(v)));counts.appendChild(box);}
+ const issues=document.getElementById('issues');issues.replaceChildren();
+ if(r.errorCodes.length===0)issues.appendChild(txt('p','Nenhuma lacuna de preenchimento detectada. A autenticidade continua sem verificação automática.'));
+ else for(const code of r.errorCodes)issues.appendChild(txt('p',code));
+}
+fileInput.addEventListener('change',async()=>{
+ const file=fileInput.files?.[0];if(!file)return;
+ lastRedacted=null;document.getElementById('redacted_public_summary').disabled=true;
+ try{
+  if(file.size>1000000)throw Error('FILE_SIZE_EXCEEDED');
+  const raw=await file.text();
+  const record=JSON.parse(raw);
+  const report=safePublicSummary(record,CONTRACT);
+  lastRedacted=report;
+  renderRedacted(report);
+  document.getElementById('redacted_public_summary').disabled=false;
+  document.getElementById('file-status').textContent='JSON processado localmente. Conteúdo privado não exibido, não transmitido nem exportado.';
+ }catch(e){
+  document.getElementById('file-status').textContent='Arquivo inválido ou excessivamente grande. Nenhum resumo gerado.';
+  document.getElementById('result-summary').textContent='Validação não realizada.';
+  document.getElementById('counts').replaceChildren();document.getElementById('issues').replaceChildren();
+ }finally{fileInput.value='';}
+});
+document.getElementById('redacted_public_summary').addEventListener('click',()=>{
+ if(!lastRedacted)return;
+ saveFile('cat395-resumo-redigido-NO_GO.json',JSON.stringify(lastRedacted,null,2)+'\n');
+});
+</script></body></html>
