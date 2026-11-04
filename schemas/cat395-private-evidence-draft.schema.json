@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Modelo PRIVADO de registro documental por série — nunca publicar registros preenchidos",
-  "description": "Contrato de conteúdo privado, sem certificação de autenticidade, homologação OEM, diagnóstico ou permissão operacional. Guarda privada e consentimento são pré-requisitos. Não copiar registros preenchidos para repositório público.",
+  "description": "Contrato de conteúdo privado, sem certificação de autenticidade, homologação OEM, diagnóstico ou permissão operacional. Guarda privada e consentimento são pré-requisitos. Não copiar registros preenchidos para repositório público. O validador v1.3.93 rejeita campos extras, tipos inconsistentes e incompatibilidade quantidade/unidade; status positivo significa somente revisão humana.",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -233,7 +233,116 @@
           "performedByAuthorizedTeam": {
             "type": "boolean"
           }
-        }
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "quantity": {
+                  "const": "pressure"
+                }
+              },
+              "required": [
+                "quantity"
+              ]
+            },
+            "then": {
+              "properties": {
+                "unit": {
+                  "enum": [
+                    "kPa",
+                    "bar"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "quantity": {
+                  "const": "flow"
+                }
+              },
+              "required": [
+                "quantity"
+              ]
+            },
+            "then": {
+              "properties": {
+                "unit": {
+                  "enum": [
+                    "L/min"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "quantity": {
+                  "const": "time"
+                }
+              },
+              "required": [
+                "quantity"
+              ]
+            },
+            "then": {
+              "properties": {
+                "unit": {
+                  "enum": [
+                    "s"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "quantity": {
+                  "const": "temperature"
+                }
+              },
+              "required": [
+                "quantity"
+              ]
+            },
+            "then": {
+              "properties": {
+                "unit": {
+                  "enum": [
+                    "°C"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "quantity": {
+                  "const": "displacement"
+                }
+              },
+              "required": [
+                "quantity"
+              ]
+            },
+            "then": {
+              "properties": {
+                "unit": {
+                  "enum": [
+                    "mm"
+                  ]
+                }
+              }
+            }
+          }
+        ],
+        "description": "Unidades coerentes apenas dimensionalmente; não são parâmetros OEM, limites de aceitação ou autorização de medição."
       }
     },
     "review": {
