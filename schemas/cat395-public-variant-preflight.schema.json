@@ -1,0 +1,462 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Cat 395 Public Variant Preflight — marketing spec ≠ approved OEM test",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "version",
+    "nature",
+    "studiedProductFamily",
+    "evidenceDate",
+    "sourceCatalogIds",
+    "interpretationPolicy",
+    "variants",
+    "documentGates",
+    "scenarioCrosswalk",
+    "allMachineSerials",
+    "approvalOnRealMachine",
+    "notes",
+    "safety",
+    "executiveDecision"
+  ],
+  "properties": {
+    "schema": {
+      "const": "fmea-mining.cat395-public-variant-preflight.v1"
+    },
+    "version": {
+      "const": "1.3.91"
+    },
+    "nature": {
+      "const": "public_oem_product_variant_catalog_not_serial_applicability"
+    },
+    "studiedProductFamily": {
+      "const": "Caterpillar 395"
+    },
+    "evidenceDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "sourceCatalogIds": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "interpretationPolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "productSpecIsNotTestAndAdjust",
+        "marketingMaximumIsNotAcceptanceThreshold",
+        "publishedFlowIsNotPumpSpecificFlow",
+        "publishedPressureIsNotReliefValveSetting",
+        "noCrossVariantTransfer",
+        "missingValueMustRemainNull",
+        "modelFamilyIsNotSerialEffectivity",
+        "noAutomaticDiagnosticConclusion",
+        "noRpnOrFailureRateFromProductSpec",
+        "noTestExecutionFromPublicDocuments",
+        "noOperatingRelease",
+        "noSapMapping",
+        "corporatePrivateGates"
+      ],
+      "properties": {
+        "productSpecIsNotTestAndAdjust": {
+          "const": true
+        },
+        "marketingMaximumIsNotAcceptanceThreshold": {
+          "const": true
+        },
+        "publishedFlowIsNotPumpSpecificFlow": {
+          "const": true
+        },
+        "publishedPressureIsNotReliefValveSetting": {
+          "const": true
+        },
+        "noCrossVariantTransfer": {
+          "const": true
+        },
+        "missingValueMustRemainNull": {
+          "const": true
+        },
+        "modelFamilyIsNotSerialEffectivity": {
+          "const": true
+        },
+        "noAutomaticDiagnosticConclusion": {
+          "const": true
+        },
+        "noRpnOrFailureRateFromProductSpec": {
+          "const": true
+        },
+        "noTestExecutionFromPublicDocuments": {
+          "const": true
+        },
+        "noOperatingRelease": {
+          "const": true
+        },
+        "noSapMapping": {
+          "const": true
+        },
+        "corporatePrivateGates": {
+          "const": "NO_GO"
+        }
+      }
+    },
+    "variants": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "variantId",
+          "displayName",
+          "marketPage",
+          "configuration",
+          "emissionsFamily",
+          "oemSourceId",
+          "claims",
+          "verifiedOnIndividualMachine",
+          "effectiveSerialNumber",
+          "verifiedHydraulicSchematicId",
+          "approvedTestAndAdjustDocument",
+          "measuredValues",
+          "authorizedOperatingLimit",
+          "approvedSapMapping"
+        ],
+        "properties": {
+          "variantId": {
+            "enum": [
+              "CAT395-BR-TIER3",
+              "CAT395-US-T4F",
+              "CAT395-FRONT-SHOVEL"
+            ]
+          },
+          "displayName": {
+            "type": "string",
+            "minLength": 12
+          },
+          "marketPage": {
+            "enum": [
+              "Brasil",
+              "EUA"
+            ]
+          },
+          "configuration": {
+            "enum": [
+              "retroescavadeira",
+              "front_shovel"
+            ]
+          },
+          "emissionsFamily": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "oemSourceId": {
+            "enum": [
+              "CAT-395-BR-TIER3-PRODUCT",
+              "CAT-395-US-TIER4-PRODUCT",
+              "CAT-395-FRONT-SHOVEL-PRODUCT"
+            ]
+          },
+          "claims": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "implementMainMaxFlow",
+              "equipmentMaxPressure",
+              "equipmentLiftModeMaxPressure",
+              "travelMaxPressure",
+              "swingMaxPressure"
+            ],
+            "properties": {
+              "implementMainMaxFlow": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "value",
+                  "unit",
+                  "classification"
+                ],
+                "properties": {
+                  "value": {
+                    "type": [
+                      "number",
+                      "null"
+                    ]
+                  },
+                  "unit": {
+                    "enum": [
+                      "L/min",
+                      "kPa"
+                    ]
+                  },
+                  "classification": {
+                    "enum": [
+                      "published_maximum_product_spec",
+                      "not_reported_on_selected_source"
+                    ]
+                  }
+                }
+              },
+              "equipmentMaxPressure": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "value",
+                  "unit",
+                  "classification"
+                ],
+                "properties": {
+                  "value": {
+                    "type": [
+                      "number",
+                      "null"
+                    ]
+                  },
+                  "unit": {
+                    "enum": [
+                      "L/min",
+                      "kPa"
+                    ]
+                  },
+                  "classification": {
+                    "enum": [
+                      "published_maximum_product_spec",
+                      "not_reported_on_selected_source"
+                    ]
+                  }
+                }
+              },
+              "equipmentLiftModeMaxPressure": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "value",
+                  "unit",
+                  "classification"
+                ],
+                "properties": {
+                  "value": {
+                    "type": [
+                      "number",
+                      "null"
+                    ]
+                  },
+                  "unit": {
+                    "enum": [
+                      "L/min",
+                      "kPa"
+                    ]
+                  },
+                  "classification": {
+                    "enum": [
+                      "published_maximum_product_spec",
+                      "not_reported_on_selected_source"
+                    ]
+                  }
+                }
+              },
+              "travelMaxPressure": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "value",
+                  "unit",
+                  "classification"
+                ],
+                "properties": {
+                  "value": {
+                    "type": [
+                      "number",
+                      "null"
+                    ]
+                  },
+                  "unit": {
+                    "enum": [
+                      "L/min",
+                      "kPa"
+                    ]
+                  },
+                  "classification": {
+                    "enum": [
+                      "published_maximum_product_spec",
+                      "not_reported_on_selected_source"
+                    ]
+                  }
+                }
+              },
+              "swingMaxPressure": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "value",
+                  "unit",
+                  "classification"
+                ],
+                "properties": {
+                  "value": {
+                    "type": [
+                      "number",
+                      "null"
+                    ]
+                  },
+                  "unit": {
+                    "enum": [
+                      "L/min",
+                      "kPa"
+                    ]
+                  },
+                  "classification": {
+                    "enum": [
+                      "published_maximum_product_spec",
+                      "not_reported_on_selected_source"
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "verifiedOnIndividualMachine": {
+            "const": false
+          },
+          "effectiveSerialNumber": {
+            "type": "null"
+          },
+          "verifiedHydraulicSchematicId": {
+            "type": "null"
+          },
+          "approvedTestAndAdjustDocument": {
+            "type": "null"
+          },
+          "measuredValues": {
+            "type": "null"
+          },
+          "authorizedOperatingLimit": {
+            "type": "null"
+          },
+          "approvedSapMapping": {
+            "type": "null"
+          }
+        }
+      }
+    },
+    "documentGates": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "requirement",
+          "evidenceRequest",
+          "status",
+          "evidenceReference",
+          "approvedBy",
+          "approvedAt"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^G395-[0-9]{2}$"
+          },
+          "requirement": {
+            "type": "string",
+            "minLength": 35
+          },
+          "evidenceRequest": {
+            "type": "string",
+            "minLength": 15
+          },
+          "status": {
+            "const": "PENDING"
+          },
+          "evidenceReference": {
+            "type": "null"
+          },
+          "approvedBy": {
+            "type": "null"
+          },
+          "approvedAt": {
+            "type": "null"
+          }
+        }
+      }
+    },
+    "scenarioCrosswalk": {
+      "type": "array",
+      "minItems": 10,
+      "maxItems": 10,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "scenarioId",
+          "publishedContextFields",
+          "interpretationBoundary",
+          "operationalDiagnosisAllowed",
+          "safetyReviewRequired",
+          "sourceOfDiagnosticTruth"
+        ],
+        "properties": {
+          "scenarioId": {
+            "type": "string",
+            "pattern": "^HC-DIFF-[0-9]{2}$"
+          },
+          "publishedContextFields": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "enum": [
+                "implementMainMaxFlow",
+                "equipmentMaxPressure",
+                "equipmentLiftModeMaxPressure",
+                "travelMaxPressure",
+                "swingMaxPressure"
+              ]
+            }
+          },
+          "interpretationBoundary": {
+            "type": "string",
+            "minLength": 55
+          },
+          "operationalDiagnosisAllowed": {
+            "const": false
+          },
+          "safetyReviewRequired": {
+            "const": true
+          },
+          "sourceOfDiagnosticTruth": {
+            "const": "effective_serial_oem_service_document_not_product_marketing"
+          }
+        }
+      }
+    },
+    "allMachineSerials": {
+      "type": "null"
+    },
+    "approvalOnRealMachine": {
+      "const": false
+    },
+    "notes": {
+      "type": "string",
+      "minLength": 180
+    },
+    "safety": {
+      "type": "string",
+      "minLength": 180
+    },
+    "executiveDecision": {
+      "const": "BLOCK_OPERATIONAL_USE_UNTIL_SERIAL_OEM_EVIDENCE"
+    }
+  }
+}

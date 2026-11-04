@@ -918,6 +918,39 @@
       "limitation": "Artigo de inspeção genérica (exemplo de carregadeira 938), não identifica configuração, número de série, válvulas, portas de ensaio, pressão de referência, critérios de liberação ou equipamentos da mina. Procedimento efetivo depende do OMM/SIS.",
       "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
       "lastReviewed": "2026-11-03"
+    },
+    {
+      "id": "CAT-395-BR-TIER3-PRODUCT",
+      "organization": "Caterpillar",
+      "title": "Escavadeira 395 — publicação brasileira Tier 3/MAR-1 — especificações hidráulicas",
+      "url": "https://www.cat.com/pt_BR/products/new/equipment/excavators/large-excavators/127102.html",
+      "area": "cat395_model_variant_public_maximum_product_specification",
+      "role": "primary_oem_product_page_variant_context_only_not_serial_approved",
+      "limitation": "Valor máximo comercial por variante (1064 L/min; 37000 kPa; levantamento 38000 kPa); não representa vazão de bomba individual, pressão de ensaio, ponto de teste, ajuste de alívio nem condição de aceitação. Série/arranjo da mina desconhecidos.",
+      "reviewStatus": "fonte_publica_consultada_sem_aprovacao_por_serie",
+      "lastReviewed": "2026-11-03"
+    },
+    {
+      "id": "CAT-395-US-TIER4-PRODUCT",
+      "organization": "Caterpillar",
+      "title": "395 Excavator — Tier 4 Final/Stage V US product specifications",
+      "url": "https://www.cat.com/en_US/products/new/equipment/excavators/large-excavators/126440.html",
+      "area": "cat395_us_regional_variant_public_product_specification",
+      "role": "primary_oem_product_page_comparison_only",
+      "limitation": "Valores publicados 1064 L/min e 37000 kPa representam máximos comerciais. Ausência do campo de modo de levantamento na página consultada NÃO equivale a ausência física da função. Não prova série ou aplicação no Brasil.",
+      "reviewStatus": "fonte_publica_consultada_sem_aprovacao_por_serie",
+      "lastReviewed": "2026-11-03"
+    },
+    {
+      "id": "CAT-395-FRONT-SHOVEL-PRODUCT",
+      "organization": "Caterpillar",
+      "title": "395 Front Shovel — high-production mining excavator — product hydraulic specifications",
+      "url": "https://www.cat.com/en_US/products/new/equipment/excavators/large-excavators/128240.html",
+      "area": "cat395_front_shovel_public_product_specification",
+      "role": "primary_oem_variant_crosscheck_and_difference_not_bom",
+      "limitation": "Publica 1008 L/min e 32000 kPa para Front Shovel, distintos dos valores máximos de outras 395. Não é evidência de qual tipo/implemento foi instalado em máquina real, nem autoriza transferência de regulagens.",
+      "reviewStatus": "fonte_publica_consultada_sem_aprovacao_por_serie",
+      "lastReviewed": "2026-11-03"
     }
   ]
 }

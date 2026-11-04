@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FMEA 1.3.91 | CAT 395 — pré-piloto documental OEM</title>
+<style>
+:root{color-scheme:dark;--bg:#0b1520;--panel:#142638;--edge:#34485b;--fg:#f2f5f7;--sub:#b5c5d2;--gold:#dec087;--blue:#87bde7;--warn:#ffd789}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);font:15px/1.55 system-ui,-apple-system,Segoe UI,sans-serif;color:var(--fg)}
+main{max-width:1100px;margin:auto;padding:30px 20px 80px}header{border-bottom:1px solid var(--edge);padding:12px 0 20px}
+header small{color:var(--gold);letter-spacing:.1em;text-transform:uppercase;font-weight:700}
+h1{margin:9px 0;font-size:clamp(25px,4vw,39px);line-height:1.15}h2{font-size:21px;margin:0 0 12px}
+p{margin:8px 0 14px;color:var(--sub)}strong{color:var(--fg)}
+.panel{border:1px solid var(--edge);background:var(--panel);border-radius:13px;padding:20px;margin:20px 0;box-shadow:0 8px 30px #0002}
+.warning{border-left:4px solid var(--gold);padding:13px 16px;background:#392d1b;color:#f6e3ba;border-radius:6px;margin:15px 0}
+.row{display:flex;gap:15px;flex-wrap:wrap;align-items:center}.row>div{flex:1;min-width:220px}
+select,textarea,button{font:inherit}select,textarea{border:1px solid #668092;background:#0b1926;color:white;border-radius:7px;padding:10px 12px;width:100%}
+textarea{min-height:80px;resize:vertical}button{cursor:pointer;background:var(--gold);border:0;border-radius:8px;color:#182332;font-weight:700;padding:11px 16px}
+button.secondary{color:var(--fg);background:#304d66}button:focus,select:focus,textarea:focus,input:focus{outline:2px solid var(--blue);outline-offset:2px}
+.tag{display:inline-flex;padding:3px 8px;border:1px solid #836a42;border-radius:30px;color:var(--gold);font-size:12px;font-weight:650}
+.scroller{overflow-x:auto}table{width:100%;border-collapse:collapse;min-width:660px;font-size:14px}th,td{text-align:left;padding:12px 11px;border-bottom:1px solid var(--edge)}th{color:var(--gold)}
+.value{font-variant-numeric:tabular-nums;font-weight:700}a{color:var(--blue)}a:hover{text-decoration:underline}.muted{color:var(--sub);font-size:13px}
+.gate{padding:15px 0;border-top:1px solid var(--edge)}.gate .gate-head{display:flex;align-items:flex-start;gap:9px;justify-content:space-between}
+.gate label{display:block;font-weight:650}.gate input[type=checkbox]{accent-color:var(--gold);width:18px;height:18px}
+fieldset{border:0;padding:0;margin:0}legend{color:var(--sub);margin-bottom:7px}
+.card{border:1px solid var(--edge);border-radius:10px;padding:13px;margin:8px 0}
+.card .muted{margin-bottom:0}.safety{border-left:3px solid #debd83;padding-left:14px}
+kbd{background:#0c1824;padding:2px 5px;border-radius:3px}footer{border-top:1px solid var(--edge);padding-top:18px;color:var(--sub)}
+@media(max-width:680px){main{padding:17px 12px 50px}.panel{padding:15px}h1{font-size:26px}}
+</style></head><body><main>
+<header><small>FMEA Database Mining / Engenharia de Manutenção / v1.3.91</small>
+<h1>CAT 395 — pré-piloto OEM por variante</h1>
+<p>Consulta documental offline. Especificações de produto não equivalem a limites de teste e ajuste, efetividade por série nem autorização de operação.</p>
+<div class="warning"><strong>NO_GO operacional.</strong> Todos os gates permanecem PENDING. Este arquivo não contém dados privados, não executa testes, não abre OS e não envia informações para nenhum servidor.</div>
+</header>
+<section class="panel"><h2>1. Selecionar publicação OEM</h2>
+<label for="variant">Variante descrita na publicação</label>
+<select id="variant"></select>
+<div id="selected-spec" aria-live="polite"></div></section>
+<section class="panel"><h2>2. Comparar as publicações</h2>
+<p>Valores máximos de catálogo, não leituras de campo. Um campo sem publicação é uma lacuna documental, não um valor zero.</p>
+<div id="comparison" class="scroller"></div>
+<p id="differences" class="muted"></p></section>
+<section class="panel"><h2>3. Vinculação com as dez fichas de circuito</h2>
+<p>Referências de catálogo apenas como contexto. O mecanismo e o componente causador continuam sem confirmação.</p>
+<div id="crosswalk"></div></section>
+<section class="panel"><h2>4. Pauta documental privada — oito gates</h2>
+<p>Marcar um pedido significa <strong>incluir o item no roteiro de solicitação</strong>, e nunca comprovar que o documento foi recebido, validado ou aprovado. Evite dados identificáveis, internos ou confidenciais nas notas.</p>
+<div id="gates"></div>
+<div class="row" style="margin-top:16px">
+<button id="json">Exportar JSON de preparação</button>
+<button class="secondary" id="md">Exportar Markdown</button>
+</div></section>
+<section class="panel"><h2>5. Fontes públicas catalogadas</h2><div id="refs"></div><p class="muted">Para efetividade por série e critérios de execução, utilizar documentação SIS/OMM autorizada fora deste repositório público.</p></section>
+<footer>Estado: <strong>BLOCK_OPERATIONAL_USE_UNTIL_SERIAL_OEM_EVIDENCE</strong> · Sem backend, CDN, armazenamento persistente ou homologação SAP. Conteúdo técnico sob revisão.</footer>
+</main>
+<script id="preflight-data" type="application/json">{"schema":"fmea-mining.cat395-public-variant-preflight.v1","version":"1.3.91","nature":"public_oem_product_variant_catalog_not_serial_applicability","studiedProductFamily":"Caterpillar 395","evidenceDate":"2026-11-03","sourceCatalogIds":["CAT-395-BR-TIER3-PRODUCT","CAT-395-US-TIER4-PRODUCT","CAT-395-FRONT-SHOVEL-PRODUCT","CAT-SIS2GO"],"interpretationPolicy":{"productSpecIsNotTestAndAdjust":true,"marketingMaximumIsNotAcceptanceThreshold":true,"publishedFlowIsNotPumpSpecificFlow":true,"publishedPressureIsNotReliefValveSetting":true,"noCrossVariantTransfer":true,"missingValueMustRemainNull":true,"modelFamilyIsNotSerialEffectivity":true,"noAutomaticDiagnosticConclusion":true,"noRpnOrFailureRateFromProductSpec":true,"noTestExecutionFromPublicDocuments":true,"noOperatingRelease":true,"noSapMapping":true,"corporatePrivateGates":"NO_GO"},"variants":[{"variantId":"CAT395-BR-TIER3","displayName":"395 Tier 3 / MAR-1 (página Brasil)","marketPage":"Brasil","configuration":"retroescavadeira","emissionsFamily":"MAR-1 / EPA Tier 3 equivalent","oemSourceId":"CAT-395-BR-TIER3-PRODUCT","claims":{"implementMainMaxFlow":{"value":1064,"unit":"L/min","classification":"published_maximum_product_spec"},"equipmentMaxPressure":{"value":37000,"unit":"kPa","classification":"published_maximum_product_spec"},"equipmentLiftModeMaxPressure":{"value":38000,"unit":"kPa","classification":"published_maximum_product_spec"},"travelMaxPressure":{"value":35000,"unit":"kPa","classification":"published_maximum_product_spec"},"swingMaxPressure":{"value":31000,"unit":"kPa","classification":"published_maximum_product_spec"}},"verifiedOnIndividualMachine":false,"effectiveSerialNumber":null,"verifiedHydraulicSchematicId":null,"approvedTestAndAdjustDocument":null,"measuredValues":null,"authorizedOperatingLimit":null,"approvedSapMapping":null},{"variantId":"CAT395-US-T4F","displayName":"395 Tier 4 Final / Stage V (página EUA)","marketPage":"EUA","configuration":"retroescavadeira","emissionsFamily":"EPA Tier 4 Final / EU Stage V","oemSourceId":"CAT-395-US-TIER4-PRODUCT","claims":{"implementMainMaxFlow":{"value":1064,"unit":"L/min","classification":"published_maximum_product_spec"},"equipmentMaxPressure":{"value":37000,"unit":"kPa","classification":"published_maximum_product_spec"},"equipmentLiftModeMaxPressure":{"value":null,"unit":"kPa","classification":"not_reported_on_selected_source"},"travelMaxPressure":{"value":35000,"unit":"kPa","classification":"published_maximum_product_spec"},"swingMaxPressure":{"value":31000,"unit":"kPa","classification":"published_maximum_product_spec"}},"verifiedOnIndividualMachine":false,"effectiveSerialNumber":null,"verifiedHydraulicSchematicId":null,"approvedTestAndAdjustDocument":null,"measuredValues":null,"authorizedOperatingLimit":null,"approvedSapMapping":null},{"variantId":"CAT395-FRONT-SHOVEL","displayName":"395 Front Shovel (página EUA)","marketPage":"EUA","configuration":"front_shovel","emissionsFamily":null,"oemSourceId":"CAT-395-FRONT-SHOVEL-PRODUCT","claims":{"implementMainMaxFlow":{"value":1008,"unit":"L/min","classification":"published_maximum_product_spec"},"equipmentMaxPressure":{"value":32000,"unit":"kPa","classification":"published_maximum_product_spec"},"equipmentLiftModeMaxPressure":{"value":null,"unit":"kPa","classification":"not_reported_on_selected_source"},"travelMaxPressure":{"value":35000,"unit":"kPa","classification":"published_maximum_product_spec"},"swingMaxPressure":{"value":31000,"unit":"kPa","classification":"published_maximum_product_spec"}},"verifiedOnIndividualMachine":false,"effectiveSerialNumber":null,"verifiedHydraulicSchematicId":null,"approvedTestAndAdjustDocument":null,"measuredValues":null,"authorizedOperatingLimit":null,"approvedSapMapping":null}],"documentGates":[{"id":"G395-01","requirement":"Identificar série real, prefixo, arranjo e configuração física em ambiente privado autorizado","evidenceRequest":"identificação do ativo e variação OEM aplicável","status":"PENDING","evidenceReference":null,"approvedBy":null,"approvedAt":null},{"id":"G395-02","requirement":"Confirmar compatibilidade da página de produto com a variante efetiva, sem assumir equivalência por nome 395","evidenceRequest":"registro OEM de variante/implemento/emissões","status":"PENDING","evidenceReference":null,"approvedBy":null,"approvedAt":null},{"id":"G395-03","requirement":"Obter esquema hidráulico e operações de sistema efetivos por número de série","evidenceRequest":"documentação SIS/OMM com mídia e revisão","status":"PENDING","evidenceReference":null,"approvedBy":null,"approvedAt":null},{"id":"G395-04","requirement":"Identificar bombas, válvulas, malhas de controle, retenção e sensoriamento realmente presentes","evidenceRequest":"diagrama e BOM correspondente","status":"PENDING","evidenceReference":null,"approvedBy":null,"approvedAt":null},{"id":"G395-05","requirement":"Identificar teste/ajuste OEM e referência de aceitação para aquele ponto e condição","evidenceRequest":"procedimento autorizado específico por série","status":"PENDING","evidenceReference":null,"approvedBy":null,"approvedAt":null},{"id":"G395-06","requirement":"Confirmar escala, calibração, portos e condições de operação antes de interpretar resultados","evidenceRequest":"rastreabilidade metrológica e condições de ensaio","status":"PENDING","evidenceReference":null,"approvedBy":null,"approvedAt":null},{"id":"G395-07","requirement":"Controlar energias armazenadas, movimento de implementos, carga e autorização antes de qualquer teste","evidenceRequest":"permissão formal e análise de segurança","status":"PENDING","evidenceReference":null,"approvedBy":null,"approvedAt":null},{"id":"G395-08","requirement":"Registrar contraprovas e revisão independente antes de aprovação causal, SAP ou de operação","evidenceRequest":"pareceres de Engenharia e Dados Mestres em fluxo privado","status":"PENDING","evidenceReference":null,"approvedBy":null,"approvedAt":null}],"scenarioCrosswalk":[{"scenarioId":"HC-DIFF-01","publishedContextFields":["implementMainMaxFlow","equipmentMaxPressure"],"interpretationBoundary":"A classificação exige olhar controle de suprimento, mas a vazão máxima comercial não é vazão de teste nem resultado de bomba.","operationalDiagnosisAllowed":false,"safetyReviewRequired":true,"sourceOfDiagnosticTruth":"effective_serial_oem_service_document_not_product_marketing"},{"scenarioId":"HC-DIFF-02","publishedContextFields":["implementMainMaxFlow"],"interpretationBoundary":"A vazão global publicada não identifica o ramo do atuador lento.","operationalDiagnosisAllowed":false,"safetyReviewRequired":true,"sourceOfDiagnosticTruth":"effective_serial_oem_service_document_not_product_marketing"},{"scenarioId":"HC-DIFF-03","publishedContextFields":["equipmentMaxPressure"],"interpretationBoundary":"Pressão máxima publicada não equivale a ajuste do alívio nem referência de medição por porto.","operationalDiagnosisAllowed":false,"safetyReviewRequired":true,"sourceOfDiagnosticTruth":"effective_serial_oem_service_document_not_product_marketing"},{"scenarioId":"HC-DIFF-04","publishedContextFields":["equipmentMaxPressure"],"interpretationBoundary":"Mesmo limite comercial não prova pressão nas duas câmaras do cilindro.","operationalDiagnosisAllowed":false,"safetyReviewRequired":true,"sourceOfDiagnosticTruth":"effective_serial_oem_service_document_not_product_marketing"},{"scenarioId":"HC-DIFF-05","publishedContextFields":[],"interpretationBoundary":"Deriva de implemento depende de circuito de retenção, vedação e ensaio específico; especificações comerciais são insuficientes.","operationalDiagnosisAllowed":false,"safetyReviewRequired":true,"sourceOfDiagnosticTruth":"effective_serial_oem_service_document_not_product_marketing"},{"scenarioId":"HC-DIFF-06","publishedContextFields":[],"interpretationBoundary":"Aquecimento necessita baseline térmico e condição operacional, ausentes da página de produto.","operationalDiagnosisAllowed":false,"safetyReviewRequired":true,"sourceOfDiagnosticTruth":"effective_serial_oem_service_document_not_product_marketing"},{"scenarioId":"HC-DIFF-07","publishedContextFields":[],"interpretationBoundary":"Ruído/aeração precisa discriminar sucção, ar e defeito mecânico; não há referência diagnóstica nos valores comerciais.","operationalDiagnosisAllowed":false,"safetyReviewRequired":true,"sourceOfDiagnosticTruth":"effective_serial_oem_service_document_not_product_marketing"},{"scenarioId":"HC-DIFF-08","publishedContextFields":[],"interpretationBoundary":"Comando errático precisa distinguir piloto, eletrônico, válvula e atrito; comercial não descreve circuito.","operationalDiagnosisAllowed":false,"safetyReviewRequired":true,"sourceOfDiagnosticTruth":"effective_serial_oem_service_document_not_product_marketing"},{"scenarioId":"HC-DIFF-09","publishedContextFields":["implementMainMaxFlow"],"interpretationBoundary":"Velocidades por sentido dependem de geometria/carga e válvulas efetivas, não da vazão máxima publicada.","operationalDiagnosisAllowed":false,"safetyReviewRequired":true,"sourceOfDiagnosticTruth":"effective_serial_oem_service_document_not_product_marketing"},{"scenarioId":"HC-DIFF-10","publishedContextFields":["equipmentMaxPressure"],"interpretationBoundary":"Diferença de leitura requer pontos, instrumento, condição e ECM; valor de catálogo não é leitura em campo.","operationalDiagnosisAllowed":false,"safetyReviewRequired":true,"sourceOfDiagnosticTruth":"effective_serial_oem_service_document_not_product_marketing"}],"allMachineSerials":null,"approvalOnRealMachine":false,"notes":"Publicações comerciais por variante e região: a correspondência física por número de série e arranjo não foi analisada. A falta de publicação de valor não significa ausência de modo ou função. Todas as pressões e vazões documentadas são grandezas máximas de catálogo, nunca setpoints de alívio, pontos de medição, procedimentos de teste ou critérios de condenação.","safety":"Qualquer teste hidráulico real precisa de procedimento OEM efetivo por série, controle de energia residual e cargas, ferramentas homologadas, autorização de segurança e revisão independente. Não realizar testes de estol/pressão máxima, desconexão de linhas, bloqueio de dreno ou exposição a jatos pressurizados a partir deste material.","executiveDecision":"BLOCK_OPERATIONAL_USE_UNTIL_SERIAL_OEM_EVIDENCE"}</script>
+<script id="preflight-references" type="application/json">{"CAT-SIS2GO":{"title":"Aplicativo SIS2GO","url":"https://www.cat.com/pt_BR/support/maintenance/sis2go-app.html"},"CAT-395-BR-TIER3-PRODUCT":{"title":"Escavadeira 395 — publicação brasileira Tier 3/MAR-1 — especificações hidráulicas","url":"https://www.cat.com/pt_BR/products/new/equipment/excavators/large-excavators/127102.html"},"CAT-395-US-TIER4-PRODUCT":{"title":"395 Excavator — Tier 4 Final/Stage V US product specifications","url":"https://www.cat.com/en_US/products/new/equipment/excavators/large-excavators/126440.html"},"CAT-395-FRONT-SHOVEL-PRODUCT":{"title":"395 Front Shovel — high-production mining excavator — product hydraulic specifications","url":"https://www.cat.com/en_US/products/new/equipment/excavators/large-excavators/128240.html"}}</script>
+<script>
+"use strict";
+const D=JSON.parse(document.getElementById("preflight-data").textContent);
+const SOURCES=JSON.parse(document.getElementById("preflight-references").textContent);
+const selected=document.getElementById("variant"), prepared={};
+const fmt=v=>v.value===null?"Não publicado":new Intl.NumberFormat("pt-BR").format(v.value)+" "+v.unit;
+const textNode=(tag,t)=>{const n=document.createElement(tag);n.textContent=t;return n;};
+const labels={implementMainMaxFlow:"Vazão máxima principal — implementos",equipmentMaxPressure:"Pressão máxima — equipamento",equipmentLiftModeMaxPressure:"Pressão máxima — modo levantamento",travelMaxPressure:"Pressão máxima — translação",swingMaxPressure:"Pressão máxima — giro"};
+for(const v of D.variants){const o=document.createElement("option");o.value=v.variantId;o.textContent=v.displayName;selected.appendChild(o);}
+function renderVariant(){
+ const v=D.variants.find(z=>z.variantId===selected.value);const node=document.getElementById("selected-spec");node.replaceChildren();
+ const p=textNode("p","Origem: "+v.marketPage+" · "+v.configuration+" · fonte "+v.oemSourceId);node.appendChild(p);
+ node.appendChild(textNode("p","Série efetiva: NÃO IDENTIFICADA · Esquema hidráulico OEM: PENDENTE · Teste e ajuste: PENDENTE"));
+ const note=document.createElement("div");note.className="warning";note.textContent="Não use os valores da publicação "+v.marketPage+" para aprovar ou condenar componente de máquina não identificada.";node.appendChild(note);
+ renderCrosswalk();
+}
+function table(){
+ let h="<table><thead><tr><th>Parâmetro</th>"+D.variants.map(v=>"<th>"+v.displayName+"</th>").join("")+"</tr></thead><tbody>";
+ for(const k of Object.keys(labels))h+="<tr><td>"+labels[k]+"</td>"+D.variants.map(v=>"<td class='value'>"+fmt(v.claims[k])+"</td>").join("")+"</tr>";
+ document.getElementById("comparison").innerHTML=h+"</tbody></table>";
+ const base=D.variants[0],fs=D.variants[2],dq=base.claims.implementMainMaxFlow.value-fs.claims.implementMainMaxFlow.value;
+ const dp=base.claims.equipmentMaxPressure.value-fs.claims.equipmentMaxPressure.value;
+ document.getElementById("differences").textContent="Diferença de produto Front Shovel em relação à 395 Brasil: "+new Intl.NumberFormat("pt-BR").format(dq)+" L/min de vazão máxima e "+new Intl.NumberFormat("pt-BR").format(dp)+" kPa de pressão máxima. Não corresponde a falha nem tolerância.";
+}
+function renderCrosswalk(){
+ const node=document.getElementById("crosswalk");node.replaceChildren();
+ for(const row of D.scenarioCrosswalk){const card=document.createElement("article");card.className="card";
+ card.appendChild(textNode("strong",row.scenarioId+" — "+(row.publishedContextFields.length?row.publishedContextFields.map(k=>labels[k]).join("; "):"Nenhum parâmetro comercial relevante")));
+ card.appendChild(textNode("p",row.interpretationBoundary));card.appendChild(textNode("span","Diagnóstico operacional: BLOQUEADO"));node.appendChild(card);}
+}
+function renderGates(){
+ const node=document.getElementById("gates");node.replaceChildren();
+ for(const g of D.documentGates){
+ const sect=document.createElement("section");sect.className="gate";
+ const head=document.createElement("div");head.className="gate-head";
+ const label=textNode("label",g.id+" — "+g.requirement);label.htmlFor="check-"+g.id;head.appendChild(label);
+ const mark=document.createElement("span");mark.className="tag";mark.textContent="PENDING";head.appendChild(mark);sect.appendChild(head);
+ const p=textNode("p","Evidência a solicitar: "+g.evidenceRequest);sect.appendChild(p);
+ const tick=document.createElement("input");tick.type="checkbox";tick.id="check-"+g.id;
+ const tickLabel=textNode("label","Incluir na solicitação documental");tickLabel.style.fontWeight="normal";tickLabel.prepend(tick);sect.appendChild(tickLabel);
+ const area=document.createElement("textarea");area.id="note-"+g.id;area.placeholder="Comentário de preparação (sem dados internos, número de série ou nomes de pessoas)...";area.setAttribute("aria-label","Comentário "+g.id);area.style.marginTop="8px";sect.appendChild(area);
+ prepared[g.id]={tick,area};node.appendChild(sect);
+ }
+}
+function draft(){
+ return {schema:"fmea-mining.cat395-preparation-draft.v1",catalogVersion:D.version,variantDocumentSelected:selected.value,
+ nature:"documentary_preparation_only",status:"DRAFT_NOT_SENT",sourceIds:D.sourceCatalogIds,
+ requests:D.documentGates.map(g=>({gateId:g.id,includeInRequest:prepared[g.id].tick.checked,comment:prepared[g.id].area.value,approvalStatus:"PENDING"})),
+ measuredValues:null,approvedThresholds:null,approvedSapMapping:false,
+ actualSerialEffectivity:null,testsPerformed:0,diagnosticConclusions:[],operationalRelease:false,
+ privateGateStatus:"NO_GO",warning:"Arquivo de preparação; nenhum pedido enviado, documento verificado ou ensaio aprovado."};
+}
+function save(name,content,type){
+ const url=URL.createObjectURL(new Blob([content],{type}));
+ const a=document.createElement("a");a.href=url;a.download=name;a.click();URL.revokeObjectURL(url);
+}
+document.getElementById("json").addEventListener("click",()=>save("cat395-preparacao-fmea.json",JSON.stringify(draft(),null,2)+"\n","application/json"));
+document.getElementById("md").addEventListener("click",()=>{
+ const x=draft();const lines=["# Rascunho documental FMEA — CAT 395","Status: DRAFT_NOT_SENT / NO_GO","Variante: "+x.variantDocumentSelected,
+ ...x.requests.map(r=>"## "+r.gateId+" — "+(r.includeInRequest?"Solicitar":"Não selecionado")+"\n"+(r.comment||"Sem comentário")),
+ "Nenhuma validação técnica, ajuste, teste, série ou liberação concedida."];
+ save("cat395-preparacao-fmea.md",lines.join("\n\n")+"\n","text/markdown");
+});
+selected.addEventListener("change",renderVariant);
+function renderRefs(){const n=document.getElementById("refs");for(const k of D.sourceCatalogIds){const s=SOURCES[k];const p=document.createElement("p"),a=document.createElement("a");a.href=s.url;a.target="_blank";a.rel="noopener noreferrer";a.textContent=k+" — "+s.title;p.appendChild(a);n.appendChild(p);}}
+table();renderGates();renderRefs();renderVariant();
+</script></body></html>
