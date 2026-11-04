@@ -1,8 +1,16 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 03/11/2026 · **Ciclo:** catálogo técnico v1.3.92 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 03/11/2026 · **Ciclo:** catálogo técnico v1.3.93 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
+
+## Integridade de evidências e red team — ciclo v1.3.93
+
+**Implementado:** [auditoria e correções de qualidade do avaliador CAT 395](CICLO_2026-11-03_HARDENING_EVIDENCIAS_CAT395.md). A análise do código anterior encontrou possibilidade de prontidão indevida por campos extras, tipos inconsistentes e unidade incompatível com a grandeza, além de entradas capazes de interromper a avaliação. Esses casos agora retornam bloqueio controlado. O mesmo avaliador é utilizado no Node.js e no HTML offline, com verificação de paridade.
+
+**Qualidade:** 46 mutações de fichas, 9 entradas malformadas e 8 ataques ao contrato, teste sintético de sigilo, schema e duas fichas positivas apenas para revisão humana. A versão de catálogo evolui a 1.3.93, mas o contrato de registro privado permanece 1.3.92 por compatibilidade.
+
+**Fronteira de valor:** não criar outro contrato público sem evidência OEM/inspeção autorizada. A próxima evolução material demanda **um ativo e circuito reais em ambiente corporativo privado**, revisão de SIS/OMM por série, instrumentação qualificada e parecer independente. Dez bloqueios SAP e oito gates privados continuam NO_GO; qualquer `READY_FOR_HUMAN_REVIEW` é apenas completude declarada.
 
 ## Contrato de evidências privadas por série — ciclo v1.3.92
 
