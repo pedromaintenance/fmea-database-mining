@@ -1,0 +1,311 @@
+{
+  "schema": "fmea-mining.cat395-serial-evidence-contract.v1",
+  "version": "1.3.92",
+  "nature": "public_contract_private_evidence_outside_repository",
+  "predecessor": "data/quality/cat395-public-variant-preflight.v1.json",
+  "privateSchema": "schemas/cat395-private-evidence-draft.schema.json",
+  "sources": [
+    "CAT-SIS2GO",
+    "ISO-14224-2016",
+    "CAT-395-BR-TIER3-PRODUCT",
+    "CAT-395-US-TIER4-PRODUCT",
+    "CAT-395-FRONT-SHOVEL-PRODUCT"
+  ],
+  "modelFamily": "Caterpillar 395",
+  "policy": {
+    "repositoryIsPublic": true,
+    "privateDocumentsInPublicRepo": false,
+    "privateSerialOrAssetTagsInPublicRepo": false,
+    "privateMeasurementsInPublicRepo": false,
+    "privateOemManualTextInPublicRepo": false,
+    "schemaValidationIsNotEvidenceAuthentication": true,
+    "documentaryReadinessIsNotTechnicalApproval": true,
+    "operationalReleaseAutomated": false,
+    "automatedCausalConfirmation": false,
+    "sapMappingAutomated": false,
+    "noFabricatedEvidence": true,
+    "noPressureTestInstructions": true,
+    "doesNotAuthorizeFieldTesting": true,
+    "privateCorporateGates": "NO_GO",
+    "allSerialsVerified": 0,
+    "privateRecordsReceived": 0,
+    "fieldMeasurementsReceived": 0,
+    "performedTests": 0,
+    "approvalsRecorded": 0,
+    "repositoryDisposition": "PUBLIC_TEMPLATE_ONLY"
+  },
+  "decisionSemantics": {
+    "MISSING": "Documento ou campo obrigatório ausente no rascunho privado.",
+    "UNVERIFIED": "Referência declarada, sem prova de efetividade/revisão.",
+    "CONFLICT": "Informações de fonte, variante, local ou condição mutuamente incompatíveis.",
+    "DOCUMENTED_FOR_REVIEW": "Metadados declarados suficientes para agendar conferência humana; não é aprovação.",
+    "publicExportAllowedFields": [
+      "schema",
+      "version",
+      "nature",
+      "documentaryStatus",
+      "gateCounts",
+      "errorCodes",
+      "operationalUseAllowed",
+      "approvedSapMapping",
+      "actualFailureConfirmed"
+    ],
+    "publicExportMustOmit": [
+      "serialNumber",
+      "assetTag",
+      "documentId",
+      "documentRevision",
+      "internalRef",
+      "measurement",
+      "value",
+      "unit",
+      "comments",
+      "observations",
+      "reviewerName",
+      "sourceUrl",
+      "attachments",
+      "timestamps"
+    ]
+  },
+  "gates": [
+    {
+      "gateId": "G395-01",
+      "stage": "S1_OEM_CONFIG",
+      "requirement": "Identificar série real, prefixo, arranjo e configuração física em ambiente privado autorizado",
+      "evidenceType": "machine_identity",
+      "suggestedReviewRole": "maintenance_engineering",
+      "minimumProvenance": [
+        "private_reference",
+        "source_revision",
+        "serial_applicability_reviewed_by_human",
+        "independent_cross_check"
+      ],
+      "inferenceRestriction": "Serial informado não comprova variante nem autorização de divulgação.",
+      "status": "PENDING",
+      "automaticallySatisfiable": false,
+      "sourceIds": [
+        "CAT-SIS2GO"
+      ]
+    },
+    {
+      "gateId": "G395-02",
+      "stage": "S1_OEM_CONFIG",
+      "requirement": "Confirmar compatibilidade da página de produto com a variante efetiva, sem assumir equivalência por nome 395",
+      "evidenceType": "variant_effectivity",
+      "suggestedReviewRole": "maintenance_engineering",
+      "minimumProvenance": [
+        "private_reference",
+        "source_revision",
+        "serial_applicability_reviewed_by_human",
+        "independent_cross_check"
+      ],
+      "inferenceRestriction": "Sem correspondência de arranjo e série, ficha comercial é apenas contexto.",
+      "status": "PENDING",
+      "automaticallySatisfiable": false,
+      "sourceIds": [
+        "CAT-SIS2GO"
+      ]
+    },
+    {
+      "gateId": "G395-03",
+      "stage": "S1_OEM_CONFIG",
+      "requirement": "Obter esquema hidráulico e operações de sistema efetivos por número de série",
+      "evidenceType": "oem_hydraulic_schematic",
+      "suggestedReviewRole": "oem_document_control",
+      "minimumProvenance": [
+        "private_reference",
+        "source_revision",
+        "serial_applicability_reviewed_by_human",
+        "independent_cross_check"
+      ],
+      "inferenceRestriction": "Esquema genérico de outra série não confirma arquitetura de implementos.",
+      "status": "PENDING",
+      "automaticallySatisfiable": false,
+      "sourceIds": [
+        "CAT-SIS2GO"
+      ]
+    },
+    {
+      "gateId": "G395-04",
+      "stage": "S2_FUNCTIONAL_TOPOLOGY",
+      "requirement": "Identificar bombas, válvulas, malhas de controle, retenção e sensoriamento realmente presentes",
+      "evidenceType": "hydraulic_architecture",
+      "suggestedReviewRole": "maintenance_engineering",
+      "minimumProvenance": [
+        "private_reference",
+        "source_revision",
+        "serial_applicability_reviewed_by_human",
+        "independent_cross_check"
+      ],
+      "inferenceRestriction": "Não assumir existência ou localização de bomba, retenção ou piloto por analogia.",
+      "status": "PENDING",
+      "automaticallySatisfiable": false,
+      "sourceIds": [
+        "CAT-SIS2GO"
+      ]
+    },
+    {
+      "gateId": "G395-05",
+      "stage": "S3_DISCRIMINATIVE_TEST",
+      "requirement": "Identificar teste/ajuste OEM e referência de aceitação para aquele ponto e condição",
+      "evidenceType": "oem_test_and_adjust",
+      "suggestedReviewRole": "oem_document_control",
+      "minimumProvenance": [
+        "private_reference",
+        "source_revision",
+        "serial_applicability_reviewed_by_human",
+        "independent_cross_check"
+      ],
+      "inferenceRestriction": "Pressão/vazão de catálogo não substituem limites do Test and Adjust efetivo.",
+      "status": "PENDING",
+      "automaticallySatisfiable": false,
+      "sourceIds": [
+        "CAT-SIS2GO"
+      ]
+    },
+    {
+      "gateId": "G395-06",
+      "stage": "S3_DISCRIMINATIVE_TEST",
+      "requirement": "Confirmar escala, calibração, portos e condições de operação antes de interpretar resultados",
+      "evidenceType": "metrology_and_test_context",
+      "suggestedReviewRole": "condition_monitoring",
+      "minimumProvenance": [
+        "private_reference",
+        "source_revision",
+        "serial_applicability_reviewed_by_human",
+        "independent_cross_check"
+      ],
+      "inferenceRestriction": "Calibração informada não torna ensaio seguro nem valida seu resultado.",
+      "status": "PENDING",
+      "automaticallySatisfiable": false,
+      "sourceIds": [
+        "CAT-SIS2GO"
+      ]
+    },
+    {
+      "gateId": "G395-07",
+      "stage": "S3_EXECUTION_SAFETY",
+      "requirement": "Controlar energias armazenadas, movimento de implementos, carga e autorização antes de qualquer teste",
+      "evidenceType": "safe_work_authorization",
+      "suggestedReviewRole": "safety_and_execution",
+      "minimumProvenance": [
+        "private_reference",
+        "source_revision",
+        "serial_applicability_reviewed_by_human",
+        "independent_cross_check"
+      ],
+      "inferenceRestriction": "Ficha de segurança não é autorização concedida pelo repositório.",
+      "status": "PENDING",
+      "automaticallySatisfiable": false,
+      "sourceIds": [
+        "CAT-SIS2GO"
+      ]
+    },
+    {
+      "gateId": "G395-08",
+      "stage": "S5_INDEPENDENT_REVIEW",
+      "requirement": "Registrar contraprovas e revisão independente antes de aprovação causal, SAP ou de operação",
+      "evidenceType": "independent_engineering_review",
+      "suggestedReviewRole": "maintenance_engineering",
+      "minimumProvenance": [
+        "private_reference",
+        "source_revision",
+        "serial_applicability_reviewed_by_human",
+        "independent_cross_check"
+      ],
+      "inferenceRestriction": "Parecer técnico exige revisor humano independente no fluxo corporativo.",
+      "status": "PENDING",
+      "automaticallySatisfiable": false,
+      "sourceIds": [
+        "CAT-SIS2GO"
+      ]
+    }
+  ],
+  "crossCuttingSapReview": {
+    "stage": "S4_SAP_MASTER_DATA",
+    "status": "NOT_STARTED",
+    "purpose": "Separar enquadramento de hierarquia e código SAP da confirmação física e documental do mecanismo.",
+    "requiresAuthorizedMasterDataReview": true,
+    "neverAutomaticallyMaps": [
+      "component_code",
+      "damage_code",
+      "cause_code",
+      "functional_location"
+    ],
+    "approvedMappings": 0
+  },
+  "hypotheses": [
+    {
+      "scenarioId": "HC-DIFF-01",
+      "diagnosisAllowed": false,
+      "evidenceRequired": "independent_discriminative_test_after_serial_applicability",
+      "status": "NOT_ASSESSED"
+    },
+    {
+      "scenarioId": "HC-DIFF-02",
+      "diagnosisAllowed": false,
+      "evidenceRequired": "independent_discriminative_test_after_serial_applicability",
+      "status": "NOT_ASSESSED"
+    },
+    {
+      "scenarioId": "HC-DIFF-03",
+      "diagnosisAllowed": false,
+      "evidenceRequired": "independent_discriminative_test_after_serial_applicability",
+      "status": "NOT_ASSESSED"
+    },
+    {
+      "scenarioId": "HC-DIFF-04",
+      "diagnosisAllowed": false,
+      "evidenceRequired": "independent_discriminative_test_after_serial_applicability",
+      "status": "NOT_ASSESSED"
+    },
+    {
+      "scenarioId": "HC-DIFF-05",
+      "diagnosisAllowed": false,
+      "evidenceRequired": "independent_discriminative_test_after_serial_applicability",
+      "status": "NOT_ASSESSED"
+    },
+    {
+      "scenarioId": "HC-DIFF-06",
+      "diagnosisAllowed": false,
+      "evidenceRequired": "independent_discriminative_test_after_serial_applicability",
+      "status": "NOT_ASSESSED"
+    },
+    {
+      "scenarioId": "HC-DIFF-07",
+      "diagnosisAllowed": false,
+      "evidenceRequired": "independent_discriminative_test_after_serial_applicability",
+      "status": "NOT_ASSESSED"
+    },
+    {
+      "scenarioId": "HC-DIFF-08",
+      "diagnosisAllowed": false,
+      "evidenceRequired": "independent_discriminative_test_after_serial_applicability",
+      "status": "NOT_ASSESSED"
+    },
+    {
+      "scenarioId": "HC-DIFF-09",
+      "diagnosisAllowed": false,
+      "evidenceRequired": "independent_discriminative_test_after_serial_applicability",
+      "status": "NOT_ASSESSED"
+    },
+    {
+      "scenarioId": "HC-DIFF-10",
+      "diagnosisAllowed": false,
+      "evidenceRequired": "independent_discriminative_test_after_serial_applicability",
+      "status": "NOT_ASSESSED"
+    }
+  ],
+  "unresolvedRealWorldChecks": [
+    "authorization",
+    "license_and_privacy",
+    "serial_and_arrangement",
+    "effective_OEM_revision",
+    "test_and_adjust_method",
+    "calibration",
+    "safety_permit",
+    "independent_engineering_review",
+    "sap_master_data_review"
+  ],
+  "reviewDecision": "NO_OPERATIONAL_APPROVAL_BY_THIS_CONTRACT"
+}
