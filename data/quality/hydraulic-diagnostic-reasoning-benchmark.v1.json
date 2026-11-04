@@ -284,7 +284,7 @@
         }
       ],
       "expectedChoiceCode": "RECONCILE_OBSERVABILITY",
-      "engineeringExplanation": "A diferença pode ser metrológica ou topológica, não uma falha hidráulica confirmada.",
+      "engineeringExplanation": "A diferença pode ser metrológica ou topológica, não uma falha hidráulica confirmada. É obrigatório confirmar a proveniência da leitura, os pontos do circuito e a equivalência das condições de aquisição antes de atribuir o desvio a um componente.",
       "sourceIds": [
         "CAT-HYD-TECHNICAL-ANALYSIS",
         "CAT-HYD-PUMPS-MOTORS",
@@ -374,7 +374,7 @@
         }
       ],
       "expectedChoiceCode": "SAFETY_STOP",
-      "engineeringExplanation": "Risco de queda e esmagamento prevalece sobre obtenção de um dado de força.",
+      "engineeringExplanation": "Risco de queda e esmagamento prevalece sobre obtenção de um dado de força. A comparação entre pressão principal e força na haste depende de áreas efetivas, perdas e condições de carga; só um teste autorizado permite discriminar alternativas.",
       "sourceIds": [
         "PARKER-CYL-DRIFT-SERVICE",
         "CAT-HYD-TECHNICAL-ANALYSIS",
