@@ -1,8 +1,18 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 03/11/2026 · **Ciclo:** catálogo técnico v1.3.91 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 03/11/2026 · **Ciclo:** catálogo técnico v1.3.92 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
+
+## Contrato de evidências privadas por série — ciclo v1.3.92
+
+**Entregue:** [contrato de evidências CAT 395 por série](CICLO_2026-11-03_CONTRATO_EVIDENCIAS_CAT395_SERIE.md), com 8 gates G395-01..08, cinco etapas separando S1 configuração, S2 função, S3 contraprova/segurança, S4 Dados Mestres SAP e S5 revisão independente. O modelo JSON de dados privados é **esquema não preenchido**; nenhum número de série, documento licenciado, medição ou laudo entrou no repositório.
+
+**Novo instrumento:** [workbench HTML offline](cat395-private-evidence-workbench.html) recebe localmente um rascunho restrito em ambiente autorizado, verifica completude declarada e exporta apenas resumo filtrado por allowlist. Não autentica documentos ou assinaturas, não criptografa os dados de entrada nem pode aprovar teste/OS/operação. A auditoria prevê 42 mutações e ensaio sintético de não vazamento de dados.
+
+**Limite técnico que permanece:** a única saída positiva é `READY_FOR_HUMAN_REVIEW`, e não `GO` ou homologação. Série, arranjo, diagrama, procedimento Test & Adjust, calibração, segurança e parecer exigem checagem OEM e humana em infraestrutura privada. Sem integração real com SAP.
+
+**Próxima etapa com ganho material:** obter por fluxo corporativo uma inspeção/solicitação de diagnóstico hidráulico **real e autorizada**, mantendo documentação e resultados privados. Não criar mais camadas públicas até surgirem fontes/evidências novas ou um teste de competência claramente verificável.
 
 ## Pré-piloto por publicação OEM — ciclo v1.3.91
 
