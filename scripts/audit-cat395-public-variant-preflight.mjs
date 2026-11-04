@@ -74,7 +74,7 @@ function validate(x, sourceMap=activeSources){
   t(typeof c.interpretationBoundary==='string'&&c.interpretationBoundary.length>=55,'crosswalk_boundary_'+id);
  }
  t(typeof x.notes==='string'&&x.notes.includes('não')&&x.notes.length>180,'source_limit_note');
- t(typeof x.safety==='string'&&x.safety.length>180&&x.safety.includes('não')&&x.safety.includes('energia'),'safety_requirements');
+ t(typeof x.safety==='string'&&x.safety.length>180&&x.safety.toLowerCase().includes('não')&&x.safety.includes('energia'),'safety_requirements');
  return e;
 }
 issues.push(...validate(data));
@@ -93,7 +93,7 @@ try{inlineRefs=JSON.parse(er?.[1]||'');}
 catch(e){issues.push('html_references_invalid');}
 check(inlineRefs&&sourceReq.every(id=>inlineRefs[id]?.url===activeSources.get(id)?.url),'html_provenance_links');
 const js=html.match(/<script>\s*([\s\S]*?)<\/script>/);
-try{new vm.Script(js?.[1]||'','html-inline-script');}
+try{new vm.Script(js?.[1]||'',{filename:'html-inline-script'});}
 catch(e){issues.push('html_script_syntax_'+String(e));}
 const forbidden=['<script src=','<iframe','localStorage','sessionStorage','navigator.sendBeacon','XMLHttpRequest','fetch(','WebSocket('];
 for(const token of forbidden)check(!html.includes(token),'offline_forbidden_'+token);
