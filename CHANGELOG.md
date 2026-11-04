@@ -2,6 +2,14 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.91] — 2026-11-03 — Pré-piloto CAT 395: variantes OEM e bloqueio de parâmetros comerciais
+
+- Pesquisadas três páginas primárias da Caterpillar: CAT 395 Tier 3/MAR-1 Brasil, CAT 395 Tier 4 Final/Stage V EUA e 395 Front Shovel. Os máximos de implementos (**1.064 versus 1.008 L/min**) e de pressão de equipamento (**37.000 versus 32.000 kPa**) variam conforme publicação; a pressão em modo de levantamento **38.000 kPa** consta na página brasileira e não foi propagada às demais.
+- JSON estruturado de **3 variantes × 5 campos publicados/não publicados**, **8 gates de efetividade OEM ainda pendentes** e **10 vínculos meramente contextuais** às fichas hidráulicas v1.3.90. Sem série, diagrama efetivo, parâmetros de teste ou medições.
+- Novo [HTML offline](docs/preflight-cat395.html) para comparar fontes e exportar rascunho documental em JSON/Markdown; status irremovível `DRAFT_NOT_SENT`, sem aprovação nem transmissão.
+- Novo esquema e auditor `pm:cat395:variant:audit` com **22 mutações adversariais**, ataque de falsificação de URL, equivalência do JSON embutido e segurança offline, integrados a `npm run qa` e ao GitHub Actions.
+- Preservados 25 bundles conceituais, 10 exceções PM×SAP bloqueadas, oito gates corporativos NO_GO, nenhuma alteração de ontologia, caso real, OS, SAP ou consumidor.
+
 ## [1.3.90] — 2026-11-03 — Diferenciação funcional em circuitos hidráulicos
 
 - Nova matriz conceitual de **10 padrões de circuito / 30 hipóteses concorrentes** em bombas, regulação, válvulas, cilindros, cargas, retorno, ruído, temperatura, comando e instrumentação.
