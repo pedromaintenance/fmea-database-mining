@@ -62,6 +62,8 @@ jobs:
         run: npm run pm:hydraulic:hose:differential:audit
       - name: Auditar 10 padroes de circuito hidraulico, grafo condicional e 18 mutacoes
         run: npm run pm:hydraulic:circuit:audit
+      - name: Auditar 20 exercícios sintéticos de raciocínio hidráulico, 24 mutacoes e paridade offline
+        run: npm run pm:hydraulic:reasoning:audit
       - name: Auditar aplicabilidade publica por variante CAT 395, HTML e 22 mutacoes
         run: npm run pm:cat395:variant:audit
       - name: Auditar contrato privado de evidencias CAT 395 e 42 mutacoes de seguranca
