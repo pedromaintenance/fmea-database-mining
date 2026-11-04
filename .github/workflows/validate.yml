@@ -66,6 +66,8 @@ jobs:
         run: npm run pm:cat395:variant:audit
       - name: Auditar contrato privado de evidencias CAT 395 e 42 mutacoes de seguranca
         run: npm run pm:cat395:serial:evidence:audit
+      - name: Red team do avaliador CAT 395 e paridade do HTML offline
+        run: npm run pm:cat395:evidence:hardening:audit
       - name: Auditar fixadores de sapatas, pré-carga e torque-turn com evidência OEM
         run: npm run pm:track:bolt:audit
       - name: Auditar comando final e engrenagem
