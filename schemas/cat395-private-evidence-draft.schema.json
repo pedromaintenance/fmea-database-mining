@@ -1,0 +1,315 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Modelo PRIVADO de registro documental por série — nunca publicar registros preenchidos",
+  "description": "Contrato de conteúdo privado, sem certificação de autenticidade, homologação OEM, diagnóstico ou permissão operacional. Guarda privada e consentimento são pré-requisitos. Não copiar registros preenchidos para repositório público.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "contractVersion",
+    "status",
+    "confidentiality",
+    "machine",
+    "gateEvidence",
+    "measurementRows",
+    "review",
+    "sapReview",
+    "privacy",
+    "operationalRelease"
+  ],
+  "properties": {
+    "schema": {
+      "const": "fmea-mining.cat395-private-evidence-draft.v1"
+    },
+    "contractVersion": {
+      "const": "1.3.92"
+    },
+    "status": {
+      "const": "DRAFT_FOR_PRIVATE_REVIEW"
+    },
+    "confidentiality": {
+      "const": "RESTRICTED_CORPORATE"
+    },
+    "machine": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "manufacturer",
+        "modelFamily",
+        "serialNumber",
+        "assetTag",
+        "declaredVariantId",
+        "arrangementReference"
+      ],
+      "properties": {
+        "manufacturer": {
+          "const": "Caterpillar"
+        },
+        "modelFamily": {
+          "const": "395"
+        },
+        "serialNumber": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 3,
+          "maxLength": 80
+        },
+        "assetTag": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 2,
+          "maxLength": 120
+        },
+        "declaredVariantId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "CAT395-BR-TIER3",
+            "CAT395-US-T4F",
+            "CAT395-FRONT-SHOVEL",
+            null
+          ]
+        },
+        "arrangementReference": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 2,
+          "maxLength": 256
+        }
+      }
+    },
+    "gateEvidence": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "gateId",
+          "status",
+          "privateReference",
+          "documentRevision",
+          "effectiveForSerial",
+          "reviewedByRole",
+          "declaredVariantId"
+        ],
+        "properties": {
+          "gateId": {
+            "type": "string",
+            "pattern": "^G395-0[1-8]$"
+          },
+          "status": {
+            "enum": [
+              "NOT_REQUESTED",
+              "REQUESTED",
+              "RECEIVED_UNVERIFIED",
+              "DOCUMENTED_FOR_REVIEW"
+            ]
+          },
+          "privateReference": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 5,
+            "maxLength": 256
+          },
+          "documentRevision": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1,
+            "maxLength": 80
+          },
+          "effectiveForSerial": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "reviewedByRole": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 3,
+            "maxLength": 120
+          },
+          "declaredVariantId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "enum": [
+              "CAT395-BR-TIER3",
+              "CAT395-US-T4F",
+              "CAT395-FRONT-SHOVEL",
+              null
+            ]
+          }
+        }
+      }
+    },
+    "measurementRows": {
+      "type": "array",
+      "maxItems": 500,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "scenarioId",
+          "oemProcedureReference",
+          "instrumentRef",
+          "calibrationRef",
+          "testConditionRef",
+          "portRef",
+          "quantity",
+          "value",
+          "unit",
+          "performedByAuthorizedTeam"
+        ],
+        "properties": {
+          "scenarioId": {
+            "type": "string",
+            "pattern": "^HC-DIFF-(0[1-9]|10)$"
+          },
+          "oemProcedureReference": {
+            "type": "string",
+            "minLength": 3,
+            "maxLength": 256
+          },
+          "instrumentRef": {
+            "type": "string",
+            "minLength": 3,
+            "maxLength": 256
+          },
+          "calibrationRef": {
+            "type": "string",
+            "minLength": 3,
+            "maxLength": 256
+          },
+          "testConditionRef": {
+            "type": "string",
+            "minLength": 3,
+            "maxLength": 256
+          },
+          "portRef": {
+            "type": "string",
+            "minLength": 3,
+            "maxLength": 256
+          },
+          "quantity": {
+            "enum": [
+              "pressure",
+              "flow",
+              "time",
+              "temperature",
+              "displacement"
+            ]
+          },
+          "value": {
+            "type": "number"
+          },
+          "unit": {
+            "enum": [
+              "kPa",
+              "bar",
+              "L/min",
+              "s",
+              "°C",
+              "mm"
+            ]
+          },
+          "performedByAuthorizedTeam": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "independentEngineeringReview",
+        "safetyAuthorization",
+        "actualFieldTestExecution",
+        "oemEffectivityHumanAttested"
+      ],
+      "properties": {
+        "independentEngineeringReview": {
+          "enum": [
+            "NOT_REQUESTED",
+            "REQUESTED",
+            "HUMAN_REVIEW_DECLARED"
+          ]
+        },
+        "safetyAuthorization": {
+          "enum": [
+            "NOT_REQUESTED",
+            "REQUESTED",
+            "AUTHORIZATION_REFERENCED"
+          ]
+        },
+        "actualFieldTestExecution": {
+          "type": "boolean"
+        },
+        "oemEffectivityHumanAttested": {
+          "type": "boolean"
+        }
+      }
+    },
+    "sapReview": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "publicCodePromotion"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "NOT_STARTED",
+            "PRIVATE_REVIEW_REQUESTED",
+            "PRIVATE_REVIEW_DECLARED"
+          ]
+        },
+        "publicCodePromotion": {
+          "const": false
+        }
+      }
+    },
+    "privacy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "authorizedPrivateEnvironment",
+        "noPublicExport",
+        "externalTransmissionAuthorized"
+      ],
+      "properties": {
+        "authorizedPrivateEnvironment": {
+          "type": "boolean"
+        },
+        "noPublicExport": {
+          "const": true
+        },
+        "externalTransmissionAuthorized": {
+          "const": false
+        }
+      }
+    },
+    "operationalRelease": {
+      "const": false
+    }
+  }
+}
