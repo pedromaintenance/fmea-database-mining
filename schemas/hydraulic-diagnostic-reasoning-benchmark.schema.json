@@ -1,0 +1,369 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FMEA Mining — Synthetic Hydraulic Diagnostic Reasoning Benchmark",
+  "description": "Benchmark didático; decisões de simulação não são diagnósticos, autorização de testes, liberação ou certificação.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "version",
+    "nature",
+    "basedOn",
+    "purpose",
+    "policy",
+    "responseSemantics",
+    "entries",
+    "scoring"
+  ],
+  "properties": {
+    "schema": {
+      "const": "fmea-mining.hydraulic-diagnostic-reasoning-benchmark.v1"
+    },
+    "version": {
+      "const": "1.3.94"
+    },
+    "nature": {
+      "const": "synthetic_training_not_field_diagnostics"
+    },
+    "basedOn": {
+      "const": "data/quality/hydraulic-circuit-differential.v1.json"
+    },
+    "purpose": {
+      "type": "string",
+      "minLength": 80
+    },
+    "policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "allExamplesFictional",
+        "independentOemReviewStillRequired",
+        "neverInferConfirmedCauseFromSymptom",
+        "neverAuthorizePressurizedTests",
+        "neverDisableInterlocks",
+        "noUniversalAcceptanceValues",
+        "noRealAssetsOrSerials",
+        "noActualMeasurements",
+        "noFieldTests",
+        "noAutomaticSapMapping",
+        "noOperatingRelease",
+        "noQuantifiedFailureProbability",
+        "noSensitiveDataExport",
+        "privateGates"
+      ],
+      "properties": {
+        "allExamplesFictional": {
+          "const": true
+        },
+        "independentOemReviewStillRequired": {
+          "const": true
+        },
+        "neverInferConfirmedCauseFromSymptom": {
+          "const": true
+        },
+        "neverAuthorizePressurizedTests": {
+          "const": true
+        },
+        "neverDisableInterlocks": {
+          "const": true
+        },
+        "noUniversalAcceptanceValues": {
+          "const": true
+        },
+        "noRealAssetsOrSerials": {
+          "const": true
+        },
+        "noActualMeasurements": {
+          "const": true
+        },
+        "noFieldTests": {
+          "const": true
+        },
+        "noAutomaticSapMapping": {
+          "const": true
+        },
+        "noOperatingRelease": {
+          "const": true
+        },
+        "noQuantifiedFailureProbability": {
+          "const": true
+        },
+        "noSensitiveDataExport": {
+          "const": true
+        },
+        "privateGates": {
+          "const": "NO_GO"
+        }
+      }
+    },
+    "responseSemantics": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "VERIFY_OEM_DISCRIMINANT",
+        "SAFETY_STOP",
+        "RECONCILE_OBSERVABILITY",
+        "PREMATURE_CAUSE",
+        "UNSAFE_TEST",
+        "APPLY_UNRELATED_REFERENCE"
+      ],
+      "properties": {
+        "VERIFY_OEM_DISCRIMINANT": {
+          "type": "string",
+          "minLength": 45
+        },
+        "SAFETY_STOP": {
+          "type": "string",
+          "minLength": 45
+        },
+        "RECONCILE_OBSERVABILITY": {
+          "type": "string",
+          "minLength": 45
+        },
+        "PREMATURE_CAUSE": {
+          "type": "string",
+          "minLength": 45
+        },
+        "UNSAFE_TEST": {
+          "type": "string",
+          "minLength": 45
+        },
+        "APPLY_UNRELATED_REFERENCE": {
+          "type": "string",
+          "minLength": 45
+        }
+      }
+    },
+    "scoring": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "educationalOnly",
+        "rightAnswerPoints",
+        "noNegativePenalty",
+        "neverTreatScoreAsQualification",
+        "noCertificationIssued",
+        "publicExportFormat",
+        "exportProhibited"
+      ],
+      "properties": {
+        "educationalOnly": {
+          "const": true
+        },
+        "rightAnswerPoints": {
+          "const": 1
+        },
+        "noNegativePenalty": {
+          "const": true
+        },
+        "neverTreatScoreAsQualification": {
+          "const": true
+        },
+        "noCertificationIssued": {
+          "const": true
+        },
+        "publicExportFormat": {
+          "const": "aggregate_anonymous_training_attempts"
+        },
+        "exportProhibited": {
+          "const": [
+            "machineSerial",
+            "assetTag",
+            "operatorName",
+            "privateDocuments",
+            "measurements",
+            "reviewerNames"
+          ]
+        }
+      }
+    },
+    "entries": {
+      "type": "array",
+      "minItems": 20,
+      "maxItems": 20,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "scenarioId",
+          "kind",
+          "simulatedContext",
+          "question",
+          "hypothesisIds",
+          "focusHypothesisId",
+          "choices",
+          "expectedChoiceCode",
+          "engineeringExplanation",
+          "sourceIds",
+          "requiredBoundary",
+          "oemSerialVerified",
+          "performedOnMachine",
+          "actualMeasurements",
+          "confirmedRootCause",
+          "operatingRelease",
+          "sapMappingApproved",
+          "privateCorporateGate"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^HY-DRILL-(0[1-9]|1[0-9]|20)$"
+          },
+          "scenarioId": {
+            "type": "string",
+            "pattern": "^HC-DIFF-(0[1-9]|10)$"
+          },
+          "kind": {
+            "enum": [
+              "ambiguous_symptom",
+              "safety_or_observability_countercase"
+            ]
+          },
+          "simulatedContext": {
+            "type": "string",
+            "minLength": 85
+          },
+          "question": {
+            "type": "string",
+            "minLength": 55
+          },
+          "hypothesisIds": {
+            "type": "array",
+            "minItems": 3,
+            "maxItems": 3,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "pattern": "^HC-DIFF-(0[1-9]|10)-[A-Z]+$"
+            }
+          },
+          "focusHypothesisId": {
+            "type": "string",
+            "pattern": "^HC-DIFF-(0[1-9]|10)-[A-Z]+$"
+          },
+          "choices": {
+            "type": "array",
+            "minItems": 3,
+            "maxItems": 3,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "code",
+                "label",
+                "feedback"
+              ],
+              "properties": {
+                "code": {
+                  "enum": [
+                    "VERIFY_OEM_DISCRIMINANT",
+                    "SAFETY_STOP",
+                    "RECONCILE_OBSERVABILITY",
+                    "PREMATURE_CAUSE",
+                    "UNSAFE_TEST",
+                    "APPLY_UNRELATED_REFERENCE"
+                  ]
+                },
+                "label": {
+                  "type": "string",
+                  "minLength": 40
+                },
+                "feedback": {
+                  "type": "string",
+                  "minLength": 55
+                }
+              }
+            }
+          },
+          "expectedChoiceCode": {
+            "enum": [
+              "VERIFY_OEM_DISCRIMINANT",
+              "SAFETY_STOP",
+              "RECONCILE_OBSERVABILITY"
+            ]
+          },
+          "engineeringExplanation": {
+            "type": "string",
+            "minLength": 85
+          },
+          "sourceIds": {
+            "type": "array",
+            "minItems": 2,
+            "uniqueItems": true,
+            "items": {
+              "type": "string"
+            }
+          },
+          "requiredBoundary": {
+            "const": "conceptual_education_no_operational_authority"
+          },
+          "oemSerialVerified": {
+            "const": false
+          },
+          "performedOnMachine": {
+            "const": false
+          },
+          "actualMeasurements": {
+            "const": null
+          },
+          "confirmedRootCause": {
+            "const": null
+          },
+          "operatingRelease": {
+            "const": false
+          },
+          "sapMappingApproved": {
+            "const": false
+          },
+          "privateCorporateGate": {
+            "const": "NO_GO"
+          }
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "kind": {
+                  "const": "ambiguous_symptom"
+                }
+              },
+              "required": [
+                "kind"
+              ]
+            },
+            "then": {
+              "properties": {
+                "expectedChoiceCode": {
+                  "const": "VERIFY_OEM_DISCRIMINANT"
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "kind": {
+                  "const": "safety_or_observability_countercase"
+                }
+              },
+              "required": [
+                "kind"
+              ]
+            },
+            "then": {
+              "properties": {
+                "expectedChoiceCode": {
+                  "enum": [
+                    "SAFETY_STOP",
+                    "RECONCILE_OBSERVABILITY"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}
