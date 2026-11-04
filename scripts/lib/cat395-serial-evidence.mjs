@@ -53,12 +53,12 @@ function assessment(draft,contract){
     !hasText(M.serialNumber,3,80)||!hasNullableText(M.assetTag,2,120)||
     !hasText(M.arrangementReference,2,256)||!expectedVariants.has(M.declaredVariantId))
     mark('MACHINE_IDENTITY_INCOMPLETE');
- const gateIds=Array.isArray(contract?.gates)?contract.gates.map(g=>g.gateId):[];
+ const gateIds=Array.isArray(contract?.gates)?contract.gates.map(g=>g?.gateId):[];
  const validGateIds=gateIds.length===8&&gateIds.every((id,i)=>id==='G395-0'+String(i+1))&&
     contract?.schema==='fmea-mining.cat395-serial-evidence-contract.v1'&&
     contract?.version==='1.3.92'&&contract?.reviewDecision==='NO_OPERATIONAL_APPROVAL_BY_THIS_CONTRACT'&&
     contract?.policy?.privateCorporateGates==='NO_GO'&&
-    contract?.gates?.every(g=>g.status==='PENDING'&&g.automaticallySatisfiable===false);
+    contract?.gates?.every(g=>g?.status==='PENDING'&&g?.automaticallySatisfiable===false);
  if(!validGateIds)mark('INVALID_PUBLIC_CONTRACT');
  const all=Array.isArray(D.gateEvidence)?D.gateEvidence:[];
  if(!Array.isArray(D.gateEvidence)||all.length!==8||
