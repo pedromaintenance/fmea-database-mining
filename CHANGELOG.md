@@ -2,6 +2,14 @@
 
 Este documento registra mudanças **de estrutura, fonte, dados e curadoria**, independentemente das versões do jogo.
 
+## [1.3.95] — 2026-11-04 — Revisão editorial independente do benchmark hidráulico
+
+- Rubrica em cinco dimensões para os 20 exercícios sintéticos da v1.3.94, com oito categorias de problemas e sem validação artificial de especialistas.
+- HTML standalone sem gabarito embutido, importação/exportação de sessão parcial por JSON anônimo, sem comentários livres, login, telemetria ou dados reais de ativo.
+- Template, JSON Schema e validador de feedback; discordâncias de resposta exigem curadoria humana e não alteram automaticamente o benchmark.
+- Auditor com 36 mutações adversariais e checagem de paridade da fonte embutida no HTML, integrado a QA/CI.
+- Preservados 25 bundles PM, dez bloqueios SAP, oito gates privados NO_GO, benchmark v1.3.94 e consumidores externos. Zero revisões humanas autenticadas.
+
 ## [1.3.94] — 2026-11-04 — Benchmark de raciocínio diferencial hidráulico
 
 - **20 casos inteiramente sintéticos** em 10 temas de circuitos; todos referenciam as **30 hipóteses** e fontes anteriores. Dez cenários pedem discriminação OEM, seis exigem contenção de risco e quatro exigem reconciliar condições de observação.

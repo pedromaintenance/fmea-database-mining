@@ -1,0 +1,273 @@
+{
+  "schema": "fmea-mining.hydraulic-expert-review-sheet.v1",
+  "version": "1.3.95",
+  "sourceBenchmarkVersion": "1.3.94",
+  "nature": "synthetic_anonymous_editorial_feedback_only",
+  "trainingOnly": true,
+  "humanIdentityVerified": false,
+  "engineeringApproved": false,
+  "operationalRelease": false,
+  "sapApproved": false,
+  "rows": [
+    {
+      "caseId": "HY-DRILL-01",
+      "scenarioId": "HC-DIFF-01",
+      "recommendedChoiceCode": null,
+      "ratings": {
+        "safety_boundary": "unreviewed",
+        "causal_discrimination": "unreviewed",
+        "oem_effectivity": "unreviewed",
+        "observability": "unreviewed",
+        "distractor_quality": "unreviewed"
+      },
+      "issueTags": []
+    },
+    {
+      "caseId": "HY-DRILL-02",
+      "scenarioId": "HC-DIFF-01",
+      "recommendedChoiceCode": null,
+      "ratings": {
+        "safety_boundary": "unreviewed",
+        "causal_discrimination": "unreviewed",
+        "oem_effectivity": "unreviewed",
+        "observability": "unreviewed",
+        "distractor_quality": "unreviewed"
+      },
+      "issueTags": []
+    },
+    {
+      "caseId": "HY-DRILL-03",
+      "scenarioId": "HC-DIFF-02",
+      "recommendedChoiceCode": null,
+      "ratings": {
+        "safety_boundary": "unreviewed",
+        "causal_discrimination": "unreviewed",
+        "oem_effectivity": "unreviewed",
+        "observability": "unreviewed",
+        "distractor_quality": "unreviewed"
+      },
+      "issueTags": []
+    },
+    {
+      "caseId": "HY-DRILL-04",
+      "scenarioId": "HC-DIFF-02",
+      "recommendedChoiceCode": null,
+      "ratings": {
+        "safety_boundary": "unreviewed",
+        "causal_discrimination": "unreviewed",
+        "oem_effectivity": "unreviewed",
+        "observability": "unreviewed",
+        "distractor_quality": "unreviewed"
+      },
+      "issueTags": []
+    },
+    {
+      "caseId": "HY-DRILL-05",
+      "scenarioId": "HC-DIFF-03",
+      "recommendedChoiceCode": null,
+      "ratings": {
+        "safety_boundary": "unreviewed",
+        "causal_discrimination": "unreviewed",
+        "oem_effectivity": "unreviewed",
+        "observability": "unreviewed",
+        "distractor_quality": "unreviewed"
+      },
+      "issueTags": []
+    },
+    {
+      "caseId": "HY-DRILL-06",
+      "scenarioId": "HC-DIFF-03",
+      "recommendedChoiceCode": null,
+      "ratings": {
+        "safety_boundary": "unreviewed",
+        "causal_discrimination": "unreviewed",
+        "oem_effectivity": "unreviewed",
+        "observability": "unreviewed",
+        "distractor_quality": "unreviewed"
+      },
+      "issueTags": []
+    },
+    {
+      "caseId": "HY-DRILL-07",
+      "scenarioId": "HC-DIFF-04",
+      "recommendedChoiceCode": null,
+      "ratings": {
+        "safety_boundary": "unreviewed",
+        "causal_discrimination": "unreviewed",
+        "oem_effectivity": "unreviewed",
+        "observability": "unreviewed",
+        "distractor_quality": "unreviewed"
+      },
+      "issueTags": []
+    },
+    {
+      "caseId": "HY-DRILL-08",
+      "scenarioId": "HC-DIFF-04",
+      "recommendedChoiceCode": null,
+      "ratings": {
+        "safety_boundary": "unreviewed",
+        "causal_discrimination": "unreviewed",
+        "oem_effectivity": "unreviewed",
+        "observability": "unreviewed",
+        "distractor_quality": "unreviewed"
+      },
+      "issueTags": []
+    },
+    {
+      "caseId": "HY-DRILL-09",
+      "scenarioId": "HC-DIFF-05",
+      "recommendedChoiceCode": null,
+      "ratings": {
+        "safety_boundary": "unreviewed",
+        "causal_discrimination": "unreviewed",
+        "oem_effectivity": "unreviewed",
+        "observability": "unreviewed",
+        "distractor_quality": "unreviewed"
+      },
+      "issueTags": []
+    },
+    {
+      "caseId": "HY-DRILL-10",
+      "scenarioId": "HC-DIFF-05",
+      "recommendedChoiceCode": null,
+      "ratings": {
+        "safety_boundary": "unreviewed",
+        "causal_discrimination": "unreviewed",
+        "oem_effectivity": "unreviewed",
+        "observability": "unreviewed",
+        "distractor_quality": "unreviewed"
+      },
+      "issueTags": []
+    },
+    {
+      "caseId": "HY-DRILL-11",
+      "scenarioId": "HC-DIFF-06",
+      "recommendedChoiceCode": null,
+      "ratings": {
+        "safety_boundary": "unreviewed",
+        "causal_discrimination": "unreviewed",
+        "oem_effectivity": "unreviewed",
+        "observability": "unreviewed",
+        "distractor_quality": "unreviewed"
+      },
+      "issueTags": []
+    },
+    {
+      "caseId": "HY-DRILL-12",
+      "scenarioId": "HC-DIFF-06",
+      "recommendedChoiceCode": null,
+      "ratings": {
+        "safety_boundary": "unreviewed",
+        "causal_discrimination": "unreviewed",
+        "oem_effectivity": "unreviewed",
+        "observability": "unreviewed",
+        "distractor_quality": "unreviewed"
+      },
+      "issueTags": []
+    },
+    {
+      "caseId": "HY-DRILL-13",
+      "scenarioId": "HC-DIFF-07",
+      "recommendedChoiceCode": null,
+      "ratings": {
+        "safety_boundary": "unreviewed",
+        "causal_discrimination": "unreviewed",
+        "oem_effectivity": "unreviewed",
+        "observability": "unreviewed",
+        "distractor_quality": "unreviewed"
+      },
+      "issueTags": []
+    },
+    {
+      "caseId": "HY-DRILL-14",
+      "scenarioId": "HC-DIFF-07",
+      "recommendedChoiceCode": null,
+      "ratings": {
+        "safety_boundary": "unreviewed",
+        "causal_discrimination": "unreviewed",
+        "oem_effectivity": "unreviewed",
+        "observability": "unreviewed",
+        "distractor_quality": "unreviewed"
+      },
+      "issueTags": []
+    },
+    {
+      "caseId": "HY-DRILL-15",
+      "scenarioId": "HC-DIFF-08",
+      "recommendedChoiceCode": null,
+      "ratings": {
+        "safety_boundary": "unreviewed",
+        "causal_discrimination": "unreviewed",
+        "oem_effectivity": "unreviewed",
+        "observability": "unreviewed",
+        "distractor_quality": "unreviewed"
+      },
+      "issueTags": []
+    },
+    {
+      "caseId": "HY-DRILL-16",
+      "scenarioId": "HC-DIFF-08",
+      "recommendedChoiceCode": null,
+      "ratings": {
+        "safety_boundary": "unreviewed",
+        "causal_discrimination": "unreviewed",
+        "oem_effectivity": "unreviewed",
+        "observability": "unreviewed",
+        "distractor_quality": "unreviewed"
+      },
+      "issueTags": []
+    },
+    {
+      "caseId": "HY-DRILL-17",
+      "scenarioId": "HC-DIFF-09",
+      "recommendedChoiceCode": null,
+      "ratings": {
+        "safety_boundary": "unreviewed",
+        "causal_discrimination": "unreviewed",
+        "oem_effectivity": "unreviewed",
+        "observability": "unreviewed",
+        "distractor_quality": "unreviewed"
+      },
+      "issueTags": []
+    },
+    {
+      "caseId": "HY-DRILL-18",
+      "scenarioId": "HC-DIFF-09",
+      "recommendedChoiceCode": null,
+      "ratings": {
+        "safety_boundary": "unreviewed",
+        "causal_discrimination": "unreviewed",
+        "oem_effectivity": "unreviewed",
+        "observability": "unreviewed",
+        "distractor_quality": "unreviewed"
+      },
+      "issueTags": []
+    },
+    {
+      "caseId": "HY-DRILL-19",
+      "scenarioId": "HC-DIFF-10",
+      "recommendedChoiceCode": null,
+      "ratings": {
+        "safety_boundary": "unreviewed",
+        "causal_discrimination": "unreviewed",
+        "oem_effectivity": "unreviewed",
+        "observability": "unreviewed",
+        "distractor_quality": "unreviewed"
+      },
+      "issueTags": []
+    },
+    {
+      "caseId": "HY-DRILL-20",
+      "scenarioId": "HC-DIFF-10",
+      "recommendedChoiceCode": null,
+      "ratings": {
+        "safety_boundary": "unreviewed",
+        "causal_discrimination": "unreviewed",
+        "oem_effectivity": "unreviewed",
+        "observability": "unreviewed",
+        "distractor_quality": "unreviewed"
+      },
+      "issueTags": []
+    }
+  ]
+}

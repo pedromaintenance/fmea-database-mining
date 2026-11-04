@@ -1,8 +1,16 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 04/11/2026 · **Ciclo:** catálogo técnico v1.3.94 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 04/11/2026 · **Ciclo:** catálogo técnico v1.3.95 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
+
+## Revisão editorial independente — ciclo v1.3.95
+
+**Entregue:** [rubrica e protocolo de revisão hidráulica](CICLO_2026-11-04_REVISAO_ESPECIALISTAS_HIDRAULICA.md) e [HTML standalone para revisão sem gabarito visível](revisao-hidraulica-especialistas.html) dos 20 casos da v1.3.94. Cinco dimensões, oito categorias editoriais, JSON anônimo e importação parcial offline, sem campos de texto livre ou dados privados.
+
+**Validação:** pacote público inicialmente `unreviewed`, auditor com 36 ataques, paridade de dados HTML/Node e bloqueio de promoção automática de gabarito ou certificação. Não existe revisão humana autenticada neste ciclo.
+
+**Próxima ação material:** solicitar comentários técnicos de profissionais experientes usando apenas casos fictícios; curar divergências contra a literatura OEM e contraprovas, mantendo SAP, execução e liberação separados.
 
 ## Competência de discriminação hidráulica — ciclo v1.3.94
 
