@@ -1,8 +1,16 @@
 # ROADMAP VIVO — FMEA Database Mining
 
-**Atualizado:** 03/11/2026 · **Ciclo:** catálogo técnico v1.3.93 · **Responsável editorial:** projeto FMEA Database Mining
+**Atualizado:** 04/11/2026 · **Ciclo:** catálogo técnico v1.3.94 · **Responsável editorial:** projeto FMEA Database Mining
 
 > **Este repositório desenvolve somente a base de conhecimento.** O *Você Quebra, Eu Conserto* e outros sistemas são consumidores externos e **não fazem parte do escopo de execução deste roadmap**. Podemos disponibilizar contratos/exportações versionados, mas não alteramos jogos, interfaces, progresso, PWA nem repositórios consumidores por aqui.
+
+## Competência de discriminação hidráulica — ciclo v1.3.94
+
+**Implementado:** [benchmark e treinamento de raciocínio diagnóstico hidráulico](CICLO_2026-11-04_BENCHMARK_RACIOCINIO_HIDRAULICO.md), com **20 exercícios sintéticos e 30 hipóteses ligadas às dez fichas da v1.3.90**. Os objetivos explícitos são evitar a troca prematura de bomba/cilindro/válvula, evitar ensaios inseguros e distinguir falta de evidência de causa comprovada.
+
+**Instrumento novo:** [treinador standalone offline](treino-diagnostico-hidraulico.html), com dados didáticos públicos e exportação anônima, sem backend ou certificação. Auditoria independente testa as 20 decisões, distratores e 24 mutações adversariais, protegendo os limites OEM e de segurança.
+
+**Limite de maturidade:** nada de números de série, valores de teste, FMEAs aprovadas ou observações reais; 25 regras PM e dez bloqueios SAP permanecem, bem como oito gates privados NO_GO. Um treinamento aprovado **não** valida um diagnóstico de campo. O próximo passo útil é submeter perguntas a revisores experientes e buscar um caso técnico real com evidência OEM em fluxo privado e autorizado.
 
 ## Integridade de evidências e red team — ciclo v1.3.93
 
