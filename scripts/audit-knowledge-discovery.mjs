@@ -38,7 +38,7 @@ for(const [p,source,key] of pages){
  check('embedded_'+key,!!match&&JSON.stringify(JSON.parse(match[1]))===JSON.stringify(source));
  check('offline_'+key,!/fetch\s*\(|XMLHttpRequest|localStorage|sessionStorage|sendBeacon|<script\s+src=/i.test(html));
  check('search_'+key,html.includes('id="q"')&&html.includes('id="filter"')&&html.includes("aria-live"));
- const scripts=[...html.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g)].map(m=>m[1]).filter(Boolean);
+ const scripts=[...html.matchAll(/<script>([\s\S]*?)<\/script>/g)].map(m=>m[1]).filter(Boolean);
  try{check('syntax_'+key,scripts.length===1&&!!new vm.Script(scripts[0],{filename:p}))}catch{check('syntax_'+key,false)}
 }
 const landing=read('docs/biblioteca-tecnica.html'),workflow=read('.github/workflows/deploy-library-pages.yml');
