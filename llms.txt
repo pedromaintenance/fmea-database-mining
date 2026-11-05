@@ -22,6 +22,14 @@
 
 The glossary derives verbatim from the older author-controlled ontology and is pending technical review; the source listing is bibliographic, not proof of license or OEM serial applicability. The inventory is a pre-cycle snapshot and not an exhaustive semantic graph.
 
+## Semantic atlas and foundational knowledge (v1.4.2)
+- [Generated semantic dataset atlas](https://pedromaintenance.github.io/fmea-database-mining/mapa-semantico.html)
+- [Semantic atlas JSON](https://pedromaintenance.github.io/fmea-database-mining/semantic-atlas.v1.json)
+- [Technical record JSON: hydraulic inlet restriction](https://pedromaintenance.github.io/fmea-database-mining/technical-record-hydraulic-inlet.v1.json)
+- [Technical record schema](https://github.com/pedromaintenance/fmea-database-mining/blob/main/schemas/technical-knowledge-record.schema.json)
+
+The atlas is a discovery aid, not an engineering endorsement. All subjects and bibliographic links require reading the canonical records; the hydraulic pilot is conceptual and not OEM validated by serial.
+
 ## Technical entry points
 - [Hydraulic circuit differential](https://github.com/pedromaintenance/fmea-database-mining/blob/main/data/quality/hydraulic-circuit-differential.v1.json)
 - [Hydraulic hose differential](https://github.com/pedromaintenance/fmea-database-mining/blob/main/data/quality/hydraulic-hose-differential.v1.json)
