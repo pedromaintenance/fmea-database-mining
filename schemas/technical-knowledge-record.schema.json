@@ -274,21 +274,11 @@
       "properties": {
         "verifiedModels": {
           "type": "array",
-          "minItems": 0,
-          "uniqueItems": true,
-          "items": {
-            "type": "string",
-            "minLength": 1
-          }
+          "maxItems": 0
         },
         "verifiedSerials": {
           "type": "array",
-          "minItems": 0,
-          "uniqueItems": true,
-          "items": {
-            "type": "string",
-            "minLength": 1
-          }
+          "maxItems": 0
         },
         "oemAcceptanceLimits": {
           "type": "null"
