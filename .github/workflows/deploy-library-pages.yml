@@ -6,6 +6,11 @@ on:
     paths:
       - 'docs/biblioteca-tecnica.html'
       - 'data/catalog/knowledge-index.v1.json'
+      - 'data/knowledge/fundamentals/**'
+      - 'docs/mapa-semantico.html'
+      - 'scripts/build-semantic-atlas.mjs'
+      - 'scripts/audit-technical-knowledge-record.mjs'
+      - 'schemas/technical-knowledge-record.schema.json'
       - 'data/catalog/technical-glossary.v1.json'
       - 'data/catalog/source-discovery.v1.json'
       - 'data/catalog/repository-inventory-snapshot.v1.json'
@@ -45,11 +50,16 @@ jobs:
           test -s llms.txt
           node scripts/audit-knowledge-index.mjs
           node scripts/audit-knowledge-discovery.mjs
+          node scripts/build-semantic-atlas.mjs
+          node scripts/audit-technical-knowledge-record.mjs
 
       - name: Prepare static site
         run: |
           mkdir -p _site
           cp docs/biblioteca-tecnica.html _site/index.html
+          cp reports/mapa-semantico.generated.html _site/mapa-semantico.html
+          cp reports/semantic-atlas.generated.json _site/semantic-atlas.v1.json
+          cp data/knowledge/fundamentals/hydraulic-inlet-restriction.v1.json _site/technical-record-hydraulic-inlet.v1.json
           cp docs/biblioteca-tecnica.html _site/biblioteca-tecnica.html
           cp docs/glossario-tecnico.html _site/glossario-tecnico.html
           cp docs/fontes-tecnicas.html _site/fontes-tecnicas.html
