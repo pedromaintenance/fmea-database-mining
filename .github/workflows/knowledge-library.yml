@@ -10,6 +10,13 @@ on:
       - 'docs/ROADMAP_TECNICO_2026_2027.md'
       - 'docs/biblioteca-tecnica.html'
       - 'data/catalog/knowledge-index.v1.json'
+      - 'data/catalog/technical-glossary.v1.json'
+      - 'data/catalog/source-discovery.v1.json'
+      - 'data/catalog/repository-inventory-snapshot.v1.json'
+      - 'docs/glossario-tecnico.html'
+      - 'docs/fontes-tecnicas.html'
+      - 'docs/inventario-acervo.html'
+      - 'scripts/audit-knowledge-discovery.mjs'
       - 'scripts/query-knowledge-index.mjs'
       - 'scripts/audit-knowledge-index.mjs'
       - 'package.json'
@@ -26,5 +33,6 @@ jobs:
         with:
           node-version: '20'
       - run: npm run knowledge:catalog:audit
+      - run: npm run knowledge:discovery:audit
       - run: node --check scripts/query-knowledge-index.mjs
       - run: npm run knowledge:query -- --query cavitacao
