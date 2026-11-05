@@ -14,7 +14,7 @@ function matches(x,s){
  if(s.enum&&!s.enum.includes(x))return false;
  if(s.type==='null')return x===null;
  if(s.type==='string')return typeof x==='string'&&(!s.minLength||x.length>=s.minLength)&&(!s.pattern||new RegExp(s.pattern).test(x));
- if(s.type==='array')return Array.isArray(x)&&(!s.minItems||x.length>=s.minItems)&&(!s.uniqueItems||new Set(x.map(z=>JSON.stringify(z))).size===x.length)&&x.every(v=>matches(v,s.items));
+ if(s.type==='array')return Array.isArray(x)&&(s.minItems===undefined||x.length>=s.minItems)&&(s.maxItems===undefined||x.length<=s.maxItems)&&(!s.uniqueItems||new Set(x.map(z=>JSON.stringify(z))).size===x.length)&&(!s.items||x.every(v=>matches(v,s.items)));
  if(s.type==='object'){
   if(!x||typeof x!=='object'||Array.isArray(x))return false;
   const keys=Object.keys(x);
