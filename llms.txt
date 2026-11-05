@@ -1,0 +1,22 @@
+# FMEA Database Mining — Technical Knowledge Library
+
+> Public, versioned, source-traceable mining maintenance knowledge. This is a discovery index, not an API or certified knowledge base. Canonical data and limits are in the linked files.
+
+## Start
+- [README](https://github.com/pedromaintenance/fmea-database-mining/blob/main/README.md)
+- [Technical library portal](https://github.com/pedromaintenance/fmea-database-mining/blob/main/docs/biblioteca-tecnica.html)
+- [Curated machine index](https://github.com/pedromaintenance/fmea-database-mining/blob/main/data/catalog/knowledge-index.v1.json)
+- [Source references (87 existing entries; independently verify currency)](https://github.com/pedromaintenance/fmea-database-mining/blob/main/data/research/sources.v1.json)
+- [Agent retrieval contract](https://github.com/pedromaintenance/fmea-database-mining/blob/main/docs/AI_RETRIEVAL_CONTRACT.md)
+- [Reusable consultation skill](https://github.com/pedromaintenance/fmea-database-mining/blob/main/skills/consultar-acervo-manutencao/SKILL.md)
+- [Architecture](https://github.com/pedromaintenance/fmea-database-mining/blob/main/docs/KNOWLEDGE_PLATFORM_ARCHITECTURE.md)
+- [Research roadmap](https://github.com/pedromaintenance/fmea-database-mining/blob/main/docs/ROADMAP_TECNICO_2026_2027.md)
+
+## Technical entry points
+- [Hydraulic circuit differential](https://github.com/pedromaintenance/fmea-database-mining/blob/main/data/quality/hydraulic-circuit-differential.v1.json)
+- [Hydraulic hose differential](https://github.com/pedromaintenance/fmea-database-mining/blob/main/data/quality/hydraulic-hose-differential.v1.json)
+- [CAT 395 public variants](https://github.com/pedromaintenance/fmea-database-mining/blob/main/data/quality/cat395-public-variant-preflight.v1.json)
+- [PM review legacy portal](https://github.com/pedromaintenance/fmea-database-mining/blob/main/docs/consulta-fmea.html)
+
+## Read before claiming technical facts
+Public machine-family catalog specs are not OEM Test & Adjust limits. Synthetic reasoning exercises are not real failure events. A reference citation is not serial-specific effectiveness. Missing information is unknown, not zero, normal or safe. No automated SAP change, OEM approval or operational release.
