@@ -1,0 +1,28 @@
+name: Hydraulic editorial triage QA
+on:
+  pull_request:
+    paths:
+      - 'scripts/lib/hydraulic-editorial-triage.mjs'
+      - 'scripts/audit-hydraulic-editorial-triage.mjs'
+      - 'scripts/triage-hydraulic-editorial-reviews.mjs'
+      - 'data/quality/hydraulic-expert-review-sheet.v1.json'
+      - 'data/quality/hydraulic-diagnostic-reasoning-benchmark.v1.json'
+      - 'data/quality/hydraulic-expert-review-protocol.v1.json'
+      - 'docs/triagem-hidraulica-editorial.html'
+      - 'package.json'
+      - '.github/workflows/hydraulic-editorial-triage.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm run pm:hydraulic:peer:review:audit
+      - run: npm run pm:hydraulic:editorial:triage:audit
+      - run: node --check scripts/triage-hydraulic-editorial-reviews.mjs
+      - run: node --check scripts/lib/hydraulic-editorial-triage.mjs
