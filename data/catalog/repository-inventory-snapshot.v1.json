@@ -1,0 +1,3020 @@
+{
+  "schema": "fmea-mining.repository-inventory-snapshot.v1",
+  "version": "1.4.1",
+  "sourceCommit": "73dfc97b98230a8ff92c3db104c5607fe9d26e42",
+  "capturedDate": "2026-11-05",
+  "nature": "repository_file_listing_not_content_quality_or_complete_knowledge_map",
+  "note": "Snapshot of 500 repository files before cycle 1.4.1. Not automatically updated. Generated artifacts and newly added files in this cycle are not included. Counts are paths, not number of technical findings.",
+  "totalFiles": 500,
+  "countsByGroup": {
+    "automation": 4,
+    "root": 8,
+    "dataset": 149,
+    "documentation": 134,
+    "schema": 38,
+    "software": 166,
+    "agent_skill": 1
+  },
+  "files": [
+    {
+      "path": ".github/workflows/deploy-library-pages.yml",
+      "group": "automation",
+      "format": "yml",
+      "bytes": 1470
+    },
+    {
+      "path": ".github/workflows/hydraulic-editorial-triage.yml",
+      "group": "automation",
+      "format": "yml",
+      "bytes": 1147
+    },
+    {
+      "path": ".github/workflows/knowledge-library.yml",
+      "group": "automation",
+      "format": "yml",
+      "bytes": 909
+    },
+    {
+      "path": ".github/workflows/validate.yml",
+      "group": "automation",
+      "format": "yml",
+      "bytes": 17025
+    },
+    {
+      "path": ".gitignore",
+      "group": "root",
+      "format": "gitignore",
+      "bytes": 666
+    },
+    {
+      "path": ".nojekyll",
+      "group": "root",
+      "format": "nojekyll",
+      "bytes": 1
+    },
+    {
+      "path": "AGENTS.md",
+      "group": "root",
+      "format": "md",
+      "bytes": 4098
+    },
+    {
+      "path": "CHANGELOG.md",
+      "group": "root",
+      "format": "md",
+      "bytes": 100126
+    },
+    {
+      "path": "README.md",
+      "group": "root",
+      "format": "md",
+      "bytes": 79898
+    },
+    {
+      "path": "data/cases/README.md",
+      "group": "dataset",
+      "format": "md",
+      "bytes": 355
+    },
+    {
+      "path": "data/cases/legacy-game-scenarios.v0.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 21354
+    },
+    {
+      "path": "data/catalog/failure-db.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 1118951
+    },
+    {
+      "path": "data/catalog/knowledge-index.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 7474
+    },
+    {
+      "path": "data/governance/cat395-serial-evidence-contract.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 10747
+    },
+    {
+      "path": "data/governance/consolidated-blockers.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 14768
+    },
+    {
+      "path": "data/governance/d9-external-handoff.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 5525
+    },
+    {
+      "path": "data/governance/d9-oem-evidence-request.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 13999
+    },
+    {
+      "path": "data/governance/pm-corporate-readiness-closure-policy.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 7831
+    },
+    {
+      "path": "data/governance/pm-evidence-intake-policy.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 4502
+    },
+    {
+      "path": "data/governance/pm-p0-evidence-pilot-blueprints-policy.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 4613
+    },
+    {
+      "path": "data/governance/pm-pilot-readiness-policy.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 7152
+    },
+    {
+      "path": "data/governance/pm-private-deployment-runbook.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 5854
+    },
+    {
+      "path": "data/governance/pm-review-decision-policy.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 6142
+    },
+    {
+      "path": "data/governance/pm-sec01-approval-brief-policy.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 7754
+    },
+    {
+      "path": "data/governance/pm-sec01-decision-request-policy.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 3905
+    },
+    {
+      "path": "data/governance/pm-sec01-governance-handoff-policy.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 10031
+    },
+    {
+      "path": "data/governance/private-result-custody-contract.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 4484
+    },
+    {
+      "path": "data/governance/public-content-release-policy.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 2622
+    },
+    {
+      "path": "data/governance/public-content-releases.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 996
+    },
+    {
+      "path": "data/governance/public-contract.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 2835
+    },
+    {
+      "path": "data/governance/public-export-policy.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 1528
+    },
+    {
+      "path": "data/governance/recurrent-remediation-catalog.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 6806
+    },
+    {
+      "path": "data/governance/restricted-evidence-workflow.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 4591
+    },
+    {
+      "path": "data/governance/restricted-infrastructure-design.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 7731
+    },
+    {
+      "path": "data/governance/snapshots/public-knowledge.content-1.0.0.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 86210
+    },
+    {
+      "path": "data/governance/staging-acceptance-plan.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 12782
+    },
+    {
+      "path": "data/governance/staging-integration-contract.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 11623
+    },
+    {
+      "path": "data/governance/staging-result-exception-workflow.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 3782
+    },
+    {
+      "path": "data/governance/systemic-root-audit.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 72404
+    },
+    {
+      "path": "data/governance/technical-review-register.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 22904
+    },
+    {
+      "path": "data/knowledge/causal-chains.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 95166
+    },
+    {
+      "path": "data/knowledge/causal-effects.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 28764
+    },
+    {
+      "path": "data/knowledge/diagnostic/playbooks.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 41884
+    },
+    {
+      "path": "data/knowledge/electronic/chapters.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 1611
+    },
+    {
+      "path": "data/knowledge/electronic/code-index.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 14895
+    },
+    {
+      "path": "data/knowledge/electronic/diagnostic-records.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 215421
+    },
+    {
+      "path": "data/knowledge/electronic/differential-sets.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 24511
+    },
+    {
+      "path": "data/knowledge/electronic/fmi-index.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 2603
+    },
+    {
+      "path": "data/knowledge/electronic/manuals.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 20666
+    },
+    {
+      "path": "data/knowledge/electronic/simulation-items.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 3273
+    },
+    {
+      "path": "data/knowledge/electronic/source-cases.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 108240
+    },
+    {
+      "path": "data/knowledge/electronic/sources.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 9263
+    },
+    {
+      "path": "data/knowledge/hypotheses-index.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 72978
+    },
+    {
+      "path": "data/knowledge/manifest.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 1031
+    },
+    {
+      "path": "data/knowledge/observations-index.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 95287
+    },
+    {
+      "path": "data/knowledge/oil/archetypes.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 13189
+    },
+    {
+      "path": "data/knowledge/oil/chapters.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 1496
+    },
+    {
+      "path": "data/knowledge/oil/diagnostic-records.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 221474
+    },
+    {
+      "path": "data/knowledge/oil/manuals.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 22344
+    },
+    {
+      "path": "data/knowledge/oil/simulation-assets.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 4515
+    },
+    {
+      "path": "data/knowledge/oil/source-cases.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 145409
+    },
+    {
+      "path": "data/knowledge/pm-prevention/extraction-statistics.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 1924
+    },
+    {
+      "path": "data/knowledge/pm-prevention/manifest.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 410
+    },
+    {
+      "path": "data/knowledge/pm-prevention/seed-rules.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 12813
+    },
+    {
+      "path": "data/knowledge/pm-prevention/source-profiles.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 3812
+    },
+    {
+      "path": "data/knowledge/symptoms-index.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 99791
+    },
+    {
+      "path": "data/manifest.source.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 759
+    },
+    {
+      "path": "data/ontology/causal-levels.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 56038
+    },
+    {
+      "path": "data/ontology/concepts.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 15037
+    },
+    {
+      "path": "data/ontology/condition-action-damage.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 305029
+    },
+    {
+      "path": "data/ontology/playbook-annotations.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 6606
+    },
+    {
+      "path": "data/quality/cat395-public-variant-preflight.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 13058
+    },
+    {
+      "path": "data/quality/causal-gap-triage-regressions.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 2606
+    },
+    {
+      "path": "data/quality/causal-gap-triage.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 4499
+    },
+    {
+      "path": "data/quality/causal-sap-assessment.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 15783
+    },
+    {
+      "path": "data/quality/circular-sap-causality.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 3332
+    },
+    {
+      "path": "data/quality/complementary-discrimination.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 27210
+    },
+    {
+      "path": "data/quality/consolidated-blocker-regressions.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 4870
+    },
+    {
+      "path": "data/quality/contract-compatibility-regressions.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 2445
+    },
+    {
+      "path": "data/quality/d9-handoff-regressions.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 3192
+    },
+    {
+      "path": "data/quality/d9-public-oem-regressions.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 3742
+    },
+    {
+      "path": "data/quality/d9-request-regressions.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 4068
+    },
+    {
+      "path": "data/quality/diagnostic-pathway-expansion.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 19274
+    },
+    {
+      "path": "data/quality/diagnostic-pathways.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 16594
+    },
+    {
+      "path": "data/quality/discrimination-regressions.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 4756
+    },
+    {
+      "path": "data/quality/discriminative-tests.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 23348
+    },
+    {
+      "path": "data/quality/evidence-gate-regressions.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 4253
+    },
+    {
+      "path": "data/quality/evidence-requirements.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 135020
+    },
+    {
+      "path": "data/quality/hydraulic-circuit-differential.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 32108
+    },
+    {
+      "path": "data/quality/hydraulic-diagnostic-reasoning-benchmark.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 43682
+    },
+    {
+      "path": "data/quality/hydraulic-expert-review-protocol.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 3927
+    },
+    {
+      "path": "data/quality/hydraulic-expert-review-sheet.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 7864
+    },
+    {
+      "path": "data/quality/hydraulic-hose-differential.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 18086
+    },
+    {
+      "path": "data/quality/mechanism-refinements-regressions.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 4006
+    },
+    {
+      "path": "data/quality/mechanism-refinements.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 14187
+    },
+    {
+      "path": "data/quality/oem-d9-evidence-intake.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 5026
+    },
+    {
+      "path": "data/quality/oem-pilot-readiness.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 2835
+    },
+    {
+      "path": "data/quality/pathway-expansion-regressions.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 7318
+    },
+    {
+      "path": "data/quality/pathway-regressions.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 4798
+    },
+    {
+      "path": "data/quality/playbook-causal-crosswalk.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 17575
+    },
+    {
+      "path": "data/quality/playbook-deepdives-regressions.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 11543
+    },
+    {
+      "path": "data/quality/playbook-deepdives-remaining-regressions.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 14172
+    },
+    {
+      "path": "data/quality/playbook-deepdives-remaining.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 41726
+    },
+    {
+      "path": "data/quality/playbook-deepdives.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 41923
+    },
+    {
+      "path": "data/quality/pm-brake-disc-boundaries.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 2805
+    },
+    {
+      "path": "data/quality/pm-differential-gear-discrimination.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 1641
+    },
+    {
+      "path": "data/quality/pm-drill-feed-boundaries.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 4810
+    },
+    {
+      "path": "data/quality/pm-drill-filter-boundaries.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 5805
+    },
+    {
+      "path": "data/quality/pm-drill-pressure-boundaries.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 4548
+    },
+    {
+      "path": "data/quality/pm-drill-rotary-boundaries.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 5253
+    },
+    {
+      "path": "data/quality/pm-evidence-maturity-policy.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 4965
+    },
+    {
+      "path": "data/quality/pm-exception-evidence-gates.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 15856
+    },
+    {
+      "path": "data/quality/pm-exception-regressions.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 2015
+    },
+    {
+      "path": "data/quality/pm-exhaust-preflight.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 6314
+    },
+    {
+      "path": "data/quality/pm-final-drive-bearing-discrimination.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 2782
+    },
+    {
+      "path": "data/quality/pm-final-drive-gear-discrimination.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 1699
+    },
+    {
+      "path": "data/quality/pm-functional-reconciliation-policy.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 1783
+    },
+    {
+      "path": "data/quality/pm-functional-review-workpacks-policy.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 3233
+    },
+    {
+      "path": "data/quality/pm-gap-review.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 8197
+    },
+    {
+      "path": "data/quality/pm-hose-abrasion-discrimination.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 1161
+    },
+    {
+      "path": "data/quality/pm-idler-technical-review.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 5908
+    },
+    {
+      "path": "data/quality/pm-implement-cylinder-differentials.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 3875
+    },
+    {
+      "path": "data/quality/pm-inspection-detectability-policy.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 17181
+    },
+    {
+      "path": "data/quality/pm-maturity-matrix.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 50555
+    },
+    {
+      "path": "data/quality/pm-maturity-policy.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 2606
+    },
+    {
+      "path": "data/quality/pm-metrology-provenance-policy.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 10748
+    },
+    {
+      "path": "data/quality/pm-p0-discriminative-evidence-policy.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 13003
+    },
+    {
+      "path": "data/quality/pm-p0-documentary-review.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 11078
+    },
+    {
+      "path": "data/quality/pm-p0-investigation-readiness-policy.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 10778
+    },
+    {
+      "path": "data/quality/pm-p0-investigation-readiness.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 59813
+    },
+    {
+      "path": "data/quality/pm-p0-staged-triage-policy.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 2288
+    },
+    {
+      "path": "data/quality/pm-p0-synthetic-evidence-outcomes-policy.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 7753
+    },
+    {
+      "path": "data/quality/pm-pilot-preflight.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 17850
+    },
+    {
+      "path": "data/quality/pm-review-decision-packet.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 23771
+    },
+    {
+      "path": "data/quality/pm-semantic-crosswalk-policy.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 6673
+    },
+    {
+      "path": "data/quality/pm-semantic-triage-plan.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 5776
+    },
+    {
+      "path": "data/quality/pm-strict-link-regressions.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 5905
+    },
+    {
+      "path": "data/quality/pm-tire-damage-boundaries.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 3939
+    },
+    {
+      "path": "data/quality/pm-tire-wear-boundaries.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 4194
+    },
+    {
+      "path": "data/quality/pm-track-bolt-discrimination.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 3194
+    },
+    {
+      "path": "data/quality/pm-unranked-observability-policy.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 18273
+    },
+    {
+      "path": "data/quality/pm-vpar-evidence-plan.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 4871
+    },
+    {
+      "path": "data/quality/private-result-custody-regressions.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 7305
+    },
+    {
+      "path": "data/quality/proposal-taxonomy-audit.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 10983
+    },
+    {
+      "path": "data/quality/proposal-taxonomy-regressions.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 3327
+    },
+    {
+      "path": "data/quality/proposed-causal-chains.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 11679
+    },
+    {
+      "path": "data/quality/public-content-release-regressions.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 2660
+    },
+    {
+      "path": "data/quality/recurrent-remediation-regressions.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 12240
+    },
+    {
+      "path": "data/quality/restricted-evidence-regressions.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 9749
+    },
+    {
+      "path": "data/quality/restricted-infrastructure-regressions.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 5777
+    },
+    {
+      "path": "data/quality/semantic-regression-fixtures.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 25202
+    },
+    {
+      "path": "data/quality/staging-acceptance-regressions.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 19959
+    },
+    {
+      "path": "data/quality/staging-exception-regressions.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 16019
+    },
+    {
+      "path": "data/quality/staging-integration-regressions.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 12504
+    },
+    {
+      "path": "data/research/d9-public-oem-literature.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 11371
+    },
+    {
+      "path": "data/research/pm-filtration-public-evidence.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 2992
+    },
+    {
+      "path": "data/research/pm-vpar-function-differentials.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 3041
+    },
+    {
+      "path": "data/research/sources.v1.json",
+      "group": "dataset",
+      "format": "json",
+      "bytes": 57422
+    },
+    {
+      "path": "docs/.nojekyll",
+      "group": "documentation",
+      "format": "nojekyll",
+      "bytes": 1
+    },
+    {
+      "path": "docs/AI_RETRIEVAL_CONTRACT.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 3917
+    },
+    {
+      "path": "docs/ARQUITETURA_DO_CONHECIMENTO.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 18373
+    },
+    {
+      "path": "docs/ARQUITETURA_RESTRITA_IMPLANTACAO.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 9216
+    },
+    {
+      "path": "docs/AUDITORIA_PM_ESCOPO_FUNCIONAL.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 6215
+    },
+    {
+      "path": "docs/CICLO_2026-10-20_ARREFECIMENTO_RODANTE.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 7893
+    },
+    {
+      "path": "docs/CICLO_2026-10-20_AUDITORIA_CAUSAL_SAP.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 9557
+    },
+    {
+      "path": "docs/CICLO_2026-10-20_AUDITORIA_SISTEMICA_CONTRATO.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 8521
+    },
+    {
+      "path": "docs/CICLO_2026-10-20_AUDITORIA_TRES_ROTEIROS.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 3144
+    },
+    {
+      "path": "docs/CICLO_2026-10-20_CAUSALIDADE_EXPORTACAO.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 8959
+    },
+    {
+      "path": "docs/CICLO_2026-10-20_DISCRIMINACAO_COMPLEMENTAR.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 9301
+    },
+    {
+      "path": "docs/CICLO_2026-10-20_DISCRIMINACAO_TESTES.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 9877
+    },
+    {
+      "path": "docs/CICLO_2026-10-20_EFEITOS_MOTOR_HIDRAULICA_RODANTE.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 9770
+    },
+    {
+      "path": "docs/CICLO_2026-10-20_EVIDENCIAS_GOVERNANCA.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 8398
+    },
+    {
+      "path": "docs/CICLO_2026-10-20_FIXACOES_TERMOSTATO_BOMBA.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 8273
+    },
+    {
+      "path": "docs/CICLO_2026-10-20_LACUNAS_PM.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 6807
+    },
+    {
+      "path": "docs/CICLO_2026-10-20_MANGUEIRAS_COMANDOS.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 6807
+    },
+    {
+      "path": "docs/CICLO_2026-10-20_PLAYBOOKS_COMPLETOS_PB_FC.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 5104
+    },
+    {
+      "path": "docs/CICLO_2026-10-20_PLAYBOOKS_DIFERENCIAIS.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 6562
+    },
+    {
+      "path": "docs/CICLO_2026-10-20_PM_EXCECOES_D9.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 6543
+    },
+    {
+      "path": "docs/CICLO_2026-10-20_ROTEIROS_CAUSALIDADE.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 9211
+    },
+    {
+      "path": "docs/CICLO_2026-10-20_ROTEIROS_DIFERENCIAIS_II.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 5842
+    },
+    {
+      "path": "docs/CICLO_2026-10-20_SEMANTICA_CONDICAO_ACAO_DANO.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 7397
+    },
+    {
+      "path": "docs/CICLO_2026-10-20_TRIAGEM_LACUNAS_CAUSAIS.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 6864
+    },
+    {
+      "path": "docs/CICLO_2026-10-20_VERSIONAMENTO_CONTEUDO.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 4703
+    },
+    {
+      "path": "docs/CICLO_2026-10-21_ARQUITETURA_CORPORATIVA_RESTRITA.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 3082
+    },
+    {
+      "path": "docs/CICLO_2026-10-21_ATESTACAO_RESULTADOS_STAGING.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 2499
+    },
+    {
+      "path": "docs/CICLO_2026-10-21_AUDITORIA_PM_ESTRITA.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 2274
+    },
+    {
+      "path": "docs/CICLO_2026-10-21_AUDITORIA_TAXONOMICA.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 6729
+    },
+    {
+      "path": "docs/CICLO_2026-10-21_CONTRATO_ADAPTADOR_STAGING.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 2853
+    },
+    {
+      "path": "docs/CICLO_2026-10-21_CROSSWALK_SEMANTICO_PM.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 6253
+    },
+    {
+      "path": "docs/CICLO_2026-10-21_CUSTODIA_EVIDENCIAS.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 3981
+    },
+    {
+      "path": "docs/CICLO_2026-10-21_ENGRENAGENS_COMANDO_FINAL.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 6753
+    },
+    {
+      "path": "docs/CICLO_2026-10-21_FILTRAGEM_CANDIDATOS.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 5426
+    },
+    {
+      "path": "docs/CICLO_2026-10-21_FILTRO_OLEO_MOTOR.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 6249
+    },
+    {
+      "path": "docs/CICLO_2026-10-21_FIXADORES_SAPATAS.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 7849
+    },
+    {
+      "path": "docs/CICLO_2026-10-21_HANDOFF_EXTERNO_D9.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 2561
+    },
+    {
+      "path": "docs/CICLO_2026-10-21_HOMOLOGACAO_STAGING.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 2806
+    },
+    {
+      "path": "docs/CICLO_2026-10-21_HSVV_COMR.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 2882
+    },
+    {
+      "path": "docs/CICLO_2026-10-21_MANGUEIRAS_ABRASAO.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 7400
+    },
+    {
+      "path": "docs/CICLO_2026-10-21_MATRIZ_DE_BLOQUEIOS.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 3152
+    },
+    {
+      "path": "docs/CICLO_2026-10-21_MATRIZ_EVIDENCIAS_VPAR.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 6632
+    },
+    {
+      "path": "docs/CICLO_2026-10-21_ONTOLOGIA_IDLER_ROLLER.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 5534
+    },
+    {
+      "path": "docs/CICLO_2026-10-21_PESQUISA_PUBLICA_OEM_D9.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 2533
+    },
+    {
+      "path": "docs/CICLO_2026-10-21_PROVENIENCIA_VPAR.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 3743
+    },
+    {
+      "path": "docs/CICLO_2026-10-21_REFINAMENTO_MECANISMOS.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 7338
+    },
+    {
+      "path": "docs/CICLO_2026-10-21_REMEDIACAO_RECORRENCIA.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 2644
+    },
+    {
+      "path": "docs/CICLO_2026-10-21_RODA_GUIA_CTS.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 7664
+    },
+    {
+      "path": "docs/CICLO_2026-10-21_SOLICITACAO_OEM_D9.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 2747
+    },
+    {
+      "path": "docs/CICLO_2026-10-21_TRATAMENTO_EXCECOES.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 2525
+    },
+    {
+      "path": "docs/CICLO_2026-10-21_TRIAGEM_SEMANTICA_PM.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 4531
+    },
+    {
+      "path": "docs/CICLO_2026-10-21_VENTILADOR_ARREFECIMENTO.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 6585
+    },
+    {
+      "path": "docs/CICLO_2026-10-22_CILINDROS_IMPLEMENTOS.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 7619
+    },
+    {
+      "path": "docs/CICLO_2026-10-22_DIFERENCIAL_ENGRENAGENS.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 7316
+    },
+    {
+      "path": "docs/CICLO_2026-10-22_ESCAPE_PREAUDITORIA.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 4301
+    },
+    {
+      "path": "docs/CICLO_2026-10-22_FREIOS_DISCO.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 6613
+    },
+    {
+      "path": "docs/CICLO_2026-10-22_ONTOLOGIA_ESCAPE.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 4357
+    },
+    {
+      "path": "docs/CICLO_2026-10-22_ROLAMENTOS_COMANDO_FINAL.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 8591
+    },
+    {
+      "path": "docs/CICLO_2026-10-23_PNEUS_DANOS.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 3496
+    },
+    {
+      "path": "docs/CICLO_2026-10-23_PNEUS_DESGASTE.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 3366
+    },
+    {
+      "path": "docs/CICLO_2026-10-24_CORRENTE_AVANCO.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 4817
+    },
+    {
+      "path": "docs/CICLO_2026-10-24_ESTANQUEIDADE_PNEUMATICA.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 5270
+    },
+    {
+      "path": "docs/CICLO_2026-10-24_FILTRAGEM_COMPRESSOR.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 5929
+    },
+    {
+      "path": "docs/CICLO_2026-10-24_INTAKE_EVIDENCIAS_PM.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 6443
+    },
+    {
+      "path": "docs/CICLO_2026-10-24_MATURIDADE_FMEA.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 5667
+    },
+    {
+      "path": "docs/CICLO_2026-10-24_PREFLIGHT_PILOTO_ATIVO.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 6174
+    },
+    {
+      "path": "docs/CICLO_2026-10-24_ROLAMENTO_CABECA_ROTATIVA.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 5444
+    },
+    {
+      "path": "docs/CICLO_2026-10-24_RUNBOOK_PRIVADO_P0.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 2470
+    },
+    {
+      "path": "docs/CICLO_2026-10-24_TRILHAS_DECISAO_FMEA.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 5855
+    },
+    {
+      "path": "docs/CICLO_2026-10-26_INVESTIGACAO_P0.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 7263
+    },
+    {
+      "path": "docs/CICLO_2026-10-27_BLUEPRINT_PILOTO_EVIDENCIAS_P0.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 6313
+    },
+    {
+      "path": "docs/CICLO_2026-10-27_CENARIOS_SINTETICOS_EVIDENCIAS_P0.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 5462
+    },
+    {
+      "path": "docs/CICLO_2026-10-27_DIAGNOSTICO_DIFERENCIAL_P0.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 5642
+    },
+    {
+      "path": "docs/CICLO_2026-10-27_HANDOFF_CORPORATIVO_SEC01.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 6465
+    },
+    {
+      "path": "docs/CICLO_2026-10-27_OBSERVABILIDADE_REGRAS_SEM_PRIORIDADE.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 5174
+    },
+    {
+      "path": "docs/CICLO_2026-10-27_PACOTES_REVISAO_FUNCIONAL_PM.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 5693
+    },
+    {
+      "path": "docs/CICLO_2026-10-27_PRONTIDAO_HOMOLOGACAO_CORPORATIVA.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 6414
+    },
+    {
+      "path": "docs/CICLO_2026-10-27_RECONCILIACAO_FUNCIONAL_PM.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 5440
+    },
+    {
+      "path": "docs/CICLO_2026-10-27_SEC01_SOLICITACAO_APROVACAO_CORPORATIVA.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 6492
+    },
+    {
+      "path": "docs/CICLO_2026-10-27_SOLICITACAO_DECISAO_SEC01.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 4558
+    },
+    {
+      "path": "docs/CICLO_2026-10-27_TRIAGEM_CHAVES_P0.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 3641
+    },
+    {
+      "path": "docs/CICLO_2026-10-28_COMPARACAO_E_FICHAS_FMEA.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 4446
+    },
+    {
+      "path": "docs/CICLO_2026-10-28_CONSULTA_COMPLETA_25_REGRAS.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 4812
+    },
+    {
+      "path": "docs/CICLO_2026-10-28_CONSULTA_TECNICA_FMEA.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 5099
+    },
+    {
+      "path": "docs/CICLO_2026-10-28_DETECTABILIDADE_INSPECOES_PM.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 5717
+    },
+    {
+      "path": "docs/CICLO_2026-10-28_MAPA_VISUAL_SISTEMAS_MECANISMOS.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 5007
+    },
+    {
+      "path": "docs/CICLO_2026-10-28_MATRIZ_MATURIDADE_EVIDENCIA_PM.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 6105
+    },
+    {
+      "path": "docs/CICLO_2026-10-28_NAVEGACAO_FUNCIONAL_MECANISMOS.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 5296
+    },
+    {
+      "path": "docs/CICLO_2026-10-28_QUALIDADE_METROLOGICA_PROVENIENCIA_PM.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 6558
+    },
+    {
+      "path": "docs/CICLO_2026-10-29_LACUNAS_DOCUMENTAIS_FMEA.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 4205
+    },
+    {
+      "path": "docs/CICLO_2026-10-29_PAUTAS_REVISAO_POR_DISCIPLINA.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 4203
+    },
+    {
+      "path": "docs/CICLO_2026-10-29_PRE_SOLICITACOES_EVIDENCIA_FMEA.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 4557
+    },
+    {
+      "path": "docs/CICLO_2026-10-29_ROTEIROS_INVESTIGACAO_FMEA.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 3589
+    },
+    {
+      "path": "docs/CICLO_2026-11-03_CONTRATO_EVIDENCIAS_CAT395_SERIE.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 7904
+    },
+    {
+      "path": "docs/CICLO_2026-11-03_DIAGNOSTICO_DIFERENCIAL_CIRCUITOS_HIDRAULICOS.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 10302
+    },
+    {
+      "path": "docs/CICLO_2026-11-03_DIAGNOSTICO_DIFERENCIAL_MANGUEIRAS.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 6575
+    },
+    {
+      "path": "docs/CICLO_2026-11-03_HARDENING_EVIDENCIAS_CAT395.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 5532
+    },
+    {
+      "path": "docs/CICLO_2026-11-03_PREFLIGHT_CAT395_VARIANTES_OEM.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 6888
+    },
+    {
+      "path": "docs/CICLO_2026-11-04_BENCHMARK_RACIOCINIO_HIDRAULICO.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 6936
+    },
+    {
+      "path": "docs/CICLO_2026-11-04_REVISAO_ESPECIALISTAS_HIDRAULICA.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 4708
+    },
+    {
+      "path": "docs/CICLO_2026-11-05_STRESS_TRIAGEM_HIDRAULICA.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 4177
+    },
+    {
+      "path": "docs/CICLO_2026-11-05_TRIAGEM_DIVERGENCIAS_REVISAO_HIDRAULICA.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 6439
+    },
+    {
+      "path": "docs/CONTRATO_ADAPTADOR_STAGING.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 5057
+    },
+    {
+      "path": "docs/CURADORIA.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 2585
+    },
+    {
+      "path": "docs/CUSTODIA_RESULTADOS_STAGING.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 5967
+    },
+    {
+      "path": "docs/D9_HANDOFF_ENVIO_OEM.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 5678
+    },
+    {
+      "path": "docs/EXTRACAO_PM_2026.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 3923
+    },
+    {
+      "path": "docs/IMPORTACAO_SIMULADORES.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 3715
+    },
+    {
+      "path": "docs/KNOWLEDGE_PLATFORM_ARCHITECTURE.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 7175
+    },
+    {
+      "path": "docs/LEGADO_DO_JOGO.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 1449
+    },
+    {
+      "path": "docs/MATRIZ_CONSOLIDADA_BLOQUEIOS.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 7285
+    },
+    {
+      "path": "docs/MODELO_DE_DADOS.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 4034
+    },
+    {
+      "path": "docs/PACOTE_REVISAO_DOCUMENTAL_P0.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 5000
+    },
+    {
+      "path": "docs/PESQUISA_PUBLICA_OEM_D9.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 6252
+    },
+    {
+      "path": "docs/PESQUISA_TECNICA.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 6615
+    },
+    {
+      "path": "docs/PROCEDIMENTO_EVIDENCIAS_RESTRITAS.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 6329
+    },
+    {
+      "path": "docs/RELEASE_1.0.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 1620
+    },
+    {
+      "path": "docs/REMEDIACAO_DESVIOS_RECORRENTES.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 6023
+    },
+    {
+      "path": "docs/ROADMAP.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 130598
+    },
+    {
+      "path": "docs/ROADMAP_TECNICO_2026_2027.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 7216
+    },
+    {
+      "path": "docs/RUNBOOK_HOMOLOGACAO_STAGING.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 5662
+    },
+    {
+      "path": "docs/RUNBOOK_IMPLANTACAO_PRIVADA_PM.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 4168
+    },
+    {
+      "path": "docs/SOLICITACAO_TECNICA_OEM_D9.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 6082
+    },
+    {
+      "path": "docs/TRATAMENTO_EXCECOES_STAGING.md",
+      "group": "documentation",
+      "format": "md",
+      "bytes": 5982
+    },
+    {
+      "path": "docs/biblioteca-tecnica.html",
+      "group": "documentation",
+      "format": "html",
+      "bytes": 13192
+    },
+    {
+      "path": "docs/cat395-private-evidence-workbench.html",
+      "group": "documentation",
+      "format": "html",
+      "bytes": 26934
+    },
+    {
+      "path": "docs/consulta-fmea.html",
+      "group": "documentation",
+      "format": "html",
+      "bytes": 232064
+    },
+    {
+      "path": "docs/index.html",
+      "group": "documentation",
+      "format": "html",
+      "bytes": 634
+    },
+    {
+      "path": "docs/pauta-revisao-fmea.html",
+      "group": "documentation",
+      "format": "html",
+      "bytes": 66590
+    },
+    {
+      "path": "docs/pre-solicitacoes-evidencia-fmea.html",
+      "group": "documentation",
+      "format": "html",
+      "bytes": 148599
+    },
+    {
+      "path": "docs/preflight-cat395.html",
+      "group": "documentation",
+      "format": "html",
+      "bytes": 22688
+    },
+    {
+      "path": "docs/revisao-hidraulica-especialistas.html",
+      "group": "documentation",
+      "format": "html",
+      "bytes": 27652
+    },
+    {
+      "path": "docs/treino-diagnostico-hidraulico.html",
+      "group": "documentation",
+      "format": "html",
+      "bytes": 46978
+    },
+    {
+      "path": "docs/triagem-hidraulica-editorial.html",
+      "group": "documentation",
+      "format": "html",
+      "bytes": 8114
+    },
+    {
+      "path": "index.html",
+      "group": "root",
+      "format": "html",
+      "bytes": 662
+    },
+    {
+      "path": "llms.txt",
+      "group": "root",
+      "format": "txt",
+      "bytes": 2239
+    },
+    {
+      "path": "package.json",
+      "group": "root",
+      "format": "json",
+      "bytes": 12733
+    },
+    {
+      "path": "schemas/case.schema.json",
+      "group": "schema",
+      "format": "json",
+      "bytes": 3058
+    },
+    {
+      "path": "schemas/cat395-private-evidence-draft.schema.json",
+      "group": "schema",
+      "format": "json",
+      "bytes": 10127
+    },
+    {
+      "path": "schemas/cat395-public-variant-preflight.schema.json",
+      "group": "schema",
+      "format": "json",
+      "bytes": 12347
+    },
+    {
+      "path": "schemas/causal-effects.schema.json",
+      "group": "schema",
+      "format": "json",
+      "bytes": 3629
+    },
+    {
+      "path": "schemas/causal-gap-triage.schema.json",
+      "group": "schema",
+      "format": "json",
+      "bytes": 2641
+    },
+    {
+      "path": "schemas/causal-levels.schema.json",
+      "group": "schema",
+      "format": "json",
+      "bytes": 5421
+    },
+    {
+      "path": "schemas/complementary-discrimination.schema.json",
+      "group": "schema",
+      "format": "json",
+      "bytes": 4566
+    },
+    {
+      "path": "schemas/condition-action-damage.schema.json",
+      "group": "schema",
+      "format": "json",
+      "bytes": 8579
+    },
+    {
+      "path": "schemas/consolidated-blockers.schema.json",
+      "group": "schema",
+      "format": "json",
+      "bytes": 9598
+    },
+    {
+      "path": "schemas/d9-external-handoff.schema.json",
+      "group": "schema",
+      "format": "json",
+      "bytes": 6914
+    },
+    {
+      "path": "schemas/d9-oem-evidence-request.schema.json",
+      "group": "schema",
+      "format": "json",
+      "bytes": 7995
+    },
+    {
+      "path": "schemas/d9-public-oem-literature.schema.json",
+      "group": "schema",
+      "format": "json",
+      "bytes": 7505
+    },
+    {
+      "path": "schemas/diagnostic-pathway-expansion.schema.json",
+      "group": "schema",
+      "format": "json",
+      "bytes": 5831
+    },
+    {
+      "path": "schemas/diagnostic-pathways.schema.json",
+      "group": "schema",
+      "format": "json",
+      "bytes": 4468
+    },
+    {
+      "path": "schemas/diagnostic-playbook.schema.json",
+      "group": "schema",
+      "format": "json",
+      "bytes": 1926
+    },
+    {
+      "path": "schemas/discriminative-tests.schema.json",
+      "group": "schema",
+      "format": "json",
+      "bytes": 6400
+    },
+    {
+      "path": "schemas/evidence-requirements.schema.json",
+      "group": "schema",
+      "format": "json",
+      "bytes": 4882
+    },
+    {
+      "path": "schemas/hydraulic-circuit-differential.schema.json",
+      "group": "schema",
+      "format": "json",
+      "bytes": 9932
+    },
+    {
+      "path": "schemas/hydraulic-diagnostic-reasoning-benchmark.schema.json",
+      "group": "schema",
+      "format": "json",
+      "bytes": 9443
+    },
+    {
+      "path": "schemas/hydraulic-expert-review-sheet.schema.json",
+      "group": "schema",
+      "format": "json",
+      "bytes": 4958
+    },
+    {
+      "path": "schemas/hydraulic-hose-differential.schema.json",
+      "group": "schema",
+      "format": "json",
+      "bytes": 4504
+    },
+    {
+      "path": "schemas/mechanism-refinements.schema.json",
+      "group": "schema",
+      "format": "json",
+      "bytes": 4614
+    },
+    {
+      "path": "schemas/playbook-causal-crosswalk.schema.json",
+      "group": "schema",
+      "format": "json",
+      "bytes": 3354
+    },
+    {
+      "path": "schemas/playbook-deepdives.schema.json",
+      "group": "schema",
+      "format": "json",
+      "bytes": 6440
+    },
+    {
+      "path": "schemas/pm-evidence-intake-case.schema.json",
+      "group": "schema",
+      "format": "json",
+      "bytes": 6513
+    },
+    {
+      "path": "schemas/private-staging-result-attestation.schema.json",
+      "group": "schema",
+      "format": "json",
+      "bytes": 8931
+    },
+    {
+      "path": "schemas/proposal-taxonomy-audit.schema.json",
+      "group": "schema",
+      "format": "json",
+      "bytes": 6000
+    },
+    {
+      "path": "schemas/proposed-causal-chains.schema.json",
+      "group": "schema",
+      "format": "json",
+      "bytes": 5037
+    },
+    {
+      "path": "schemas/public-content-releases.schema.json",
+      "group": "schema",
+      "format": "json",
+      "bytes": 2827
+    },
+    {
+      "path": "schemas/public-contract.schema.json",
+      "group": "schema",
+      "format": "json",
+      "bytes": 2325
+    },
+    {
+      "path": "schemas/public-knowledge-preview.schema.json",
+      "group": "schema",
+      "format": "json",
+      "bytes": 6864
+    },
+    {
+      "path": "schemas/recurrent-remediation-plan.schema.json",
+      "group": "schema",
+      "format": "json",
+      "bytes": 6543
+    },
+    {
+      "path": "schemas/restricted-evidence-case.schema.json",
+      "group": "schema",
+      "format": "json",
+      "bytes": 4999
+    },
+    {
+      "path": "schemas/restricted-infrastructure-design.schema.json",
+      "group": "schema",
+      "format": "json",
+      "bytes": 4140
+    },
+    {
+      "path": "schemas/staging-acceptance-plan.schema.json",
+      "group": "schema",
+      "format": "json",
+      "bytes": 6696
+    },
+    {
+      "path": "schemas/staging-exception-case.schema.json",
+      "group": "schema",
+      "format": "json",
+      "bytes": 5264
+    },
+    {
+      "path": "schemas/staging-probe-result.schema.json",
+      "group": "schema",
+      "format": "json",
+      "bytes": 2210
+    },
+    {
+      "path": "schemas/systemic-root-audit.schema.json",
+      "group": "schema",
+      "format": "json",
+      "bytes": 5013
+    },
+    {
+      "path": "scripts/audit-cat395-evidence-hardening.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 12489
+    },
+    {
+      "path": "scripts/audit-cat395-public-variant-preflight.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 10265
+    },
+    {
+      "path": "scripts/audit-cat395-serial-evidence-contract.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 12065
+    },
+    {
+      "path": "scripts/audit-causal-sap.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 5693
+    },
+    {
+      "path": "scripts/audit-hydraulic-circuit-differential.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 9157
+    },
+    {
+      "path": "scripts/audit-hydraulic-editorial-triage.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 5356
+    },
+    {
+      "path": "scripts/audit-hydraulic-hose-differential.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 5941
+    },
+    {
+      "path": "scripts/audit-hydraulic-peer-review.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 12556
+    },
+    {
+      "path": "scripts/audit-hydraulic-reasoning-benchmark.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 10591
+    },
+    {
+      "path": "scripts/audit-hydraulic-synthetic-triage-stress.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 7228
+    },
+    {
+      "path": "scripts/audit-knowledge-index.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 3622
+    },
+    {
+      "path": "scripts/audit-pm-brake-disc.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 11037
+    },
+    {
+      "path": "scripts/audit-pm-cooling-fan-ontology.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 5476
+    },
+    {
+      "path": "scripts/audit-pm-corporate-readiness-closure.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 11762
+    },
+    {
+      "path": "scripts/audit-pm-differential-gear.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 10010
+    },
+    {
+      "path": "scripts/audit-pm-discipline-review-agenda.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 5900
+    },
+    {
+      "path": "scripts/audit-pm-drill-feed.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 10245
+    },
+    {
+      "path": "scripts/audit-pm-drill-filter.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 11490
+    },
+    {
+      "path": "scripts/audit-pm-drill-pressure.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 10431
+    },
+    {
+      "path": "scripts/audit-pm-drill-rotary.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 10545
+    },
+    {
+      "path": "scripts/audit-pm-engine-oil-filter.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 9069
+    },
+    {
+      "path": "scripts/audit-pm-evidence-intake.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 11205
+    },
+    {
+      "path": "scripts/audit-pm-evidence-maturity.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 12330
+    },
+    {
+      "path": "scripts/audit-pm-evidence-request-packets.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 7543
+    },
+    {
+      "path": "scripts/audit-pm-exhaust-ontology.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 9901
+    },
+    {
+      "path": "scripts/audit-pm-exhaust-preflight.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 5012
+    },
+    {
+      "path": "scripts/audit-pm-filtration.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 6597
+    },
+    {
+      "path": "scripts/audit-pm-final-drive-bearing.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 6187
+    },
+    {
+      "path": "scripts/audit-pm-final-drive-gear.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 6012
+    },
+    {
+      "path": "scripts/audit-pm-functional-boundaries.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 5280
+    },
+    {
+      "path": "scripts/audit-pm-functional-navigation.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 9152
+    },
+    {
+      "path": "scripts/audit-pm-functional-reconciliation.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 8442
+    },
+    {
+      "path": "scripts/audit-pm-functional-review-workpacks.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 8703
+    },
+    {
+      "path": "scripts/audit-pm-gaps.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 5602
+    },
+    {
+      "path": "scripts/audit-pm-hose-abrasion.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 9470
+    },
+    {
+      "path": "scripts/audit-pm-idler-roller-semantics.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 6283
+    },
+    {
+      "path": "scripts/audit-pm-idler.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 10334
+    },
+    {
+      "path": "scripts/audit-pm-implement-cylinder.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 11098
+    },
+    {
+      "path": "scripts/audit-pm-inspection-detectability.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 9530
+    },
+    {
+      "path": "scripts/audit-pm-investigation-worksheets.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 7151
+    },
+    {
+      "path": "scripts/audit-pm-knowledge-gaps.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 8435
+    },
+    {
+      "path": "scripts/audit-pm-maturity.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 9601
+    },
+    {
+      "path": "scripts/audit-pm-metrology-provenance.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 11800
+    },
+    {
+      "path": "scripts/audit-pm-p0-discriminative-evidence.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 9944
+    },
+    {
+      "path": "scripts/audit-pm-p0-evidence-pilot-blueprints.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 10669
+    },
+    {
+      "path": "scripts/audit-pm-p0-investigation.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 13243
+    },
+    {
+      "path": "scripts/audit-pm-p0-staged-triage.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 6352
+    },
+    {
+      "path": "scripts/audit-pm-p0-synthetic-evidence-outcomes.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 11730
+    },
+    {
+      "path": "scripts/audit-pm-pilot-preflight.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 10897
+    },
+    {
+      "path": "scripts/audit-pm-private-p0.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 10141
+    },
+    {
+      "path": "scripts/audit-pm-review-decision.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 12033
+    },
+    {
+      "path": "scripts/audit-pm-sec01-approval-brief.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 14125
+    },
+    {
+      "path": "scripts/audit-pm-sec01-decision-request.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 13049
+    },
+    {
+      "path": "scripts/audit-pm-sec01-governance-handoff.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 14808
+    },
+    {
+      "path": "scripts/audit-pm-semantic-crosswalk.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 6287
+    },
+    {
+      "path": "scripts/audit-pm-semantic-triage.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 6177
+    },
+    {
+      "path": "scripts/audit-pm-system-mechanism-map.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 10258
+    },
+    {
+      "path": "scripts/audit-pm-system-scope.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 6411
+    },
+    {
+      "path": "scripts/audit-pm-technical-explorer.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 13355
+    },
+    {
+      "path": "scripts/audit-pm-technical-review-workspace.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 8772
+    },
+    {
+      "path": "scripts/audit-pm-tire-damage.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 8314
+    },
+    {
+      "path": "scripts/audit-pm-tire-wear.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 9830
+    },
+    {
+      "path": "scripts/audit-pm-track-bolt.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 5795
+    },
+    {
+      "path": "scripts/audit-pm-unranked-observability.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 7297
+    },
+    {
+      "path": "scripts/audit-pm-vpar-evidence.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 6060
+    },
+    {
+      "path": "scripts/audit-pm-vpar-provenance.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 7767
+    },
+    {
+      "path": "scripts/audit-quality.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 21409
+    },
+    {
+      "path": "scripts/export-diagnostic-preview.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 1421
+    },
+    {
+      "path": "scripts/export-public-knowledge.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 5106
+    },
+    {
+      "path": "scripts/generate-diagnostic-links.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 1707
+    },
+    {
+      "path": "scripts/generate-models.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 2701
+    },
+    {
+      "path": "scripts/generate-pm-links.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 2094
+    },
+    {
+      "path": "scripts/lib/cat395-serial-evidence.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 8954
+    },
+    {
+      "path": "scripts/lib/hydraulic-editorial-triage.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 6038
+    },
+    {
+      "path": "scripts/lib/hydraulic-expert-review.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 4906
+    },
+    {
+      "path": "scripts/lib/hydraulic-reasoning.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 2646
+    },
+    {
+      "path": "scripts/lib/pm-cooling-fan-boundary.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 5978
+    },
+    {
+      "path": "scripts/lib/pm-corporate-readiness-closure.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 14526
+    },
+    {
+      "path": "scripts/lib/pm-discipline-review-agenda.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 8953
+    },
+    {
+      "path": "scripts/lib/pm-engine-oil-filter-scope.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 8113
+    },
+    {
+      "path": "scripts/lib/pm-evidence-intake.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 6102
+    },
+    {
+      "path": "scripts/lib/pm-evidence-maturity.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 14078
+    },
+    {
+      "path": "scripts/lib/pm-evidence-request-packets.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 7569
+    },
+    {
+      "path": "scripts/lib/pm-exception-gates.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 4879
+    },
+    {
+      "path": "scripts/lib/pm-final-drive-bearing-boundary.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 7096
+    },
+    {
+      "path": "scripts/lib/pm-final-drive-gear-boundary.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 6532
+    },
+    {
+      "path": "scripts/lib/pm-functional-boundaries.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 2896
+    },
+    {
+      "path": "scripts/lib/pm-functional-navigation.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 9182
+    },
+    {
+      "path": "scripts/lib/pm-functional-reconciliation.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 9071
+    },
+    {
+      "path": "scripts/lib/pm-functional-review-workpacks.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 11772
+    },
+    {
+      "path": "scripts/lib/pm-idler-roller-boundary.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 7140
+    },
+    {
+      "path": "scripts/lib/pm-idler-scope.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 6233
+    },
+    {
+      "path": "scripts/lib/pm-inspection-detectability.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 10415
+    },
+    {
+      "path": "scripts/lib/pm-investigation-worksheets.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 9617
+    },
+    {
+      "path": "scripts/lib/pm-knowledge-gap-inventory.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 7955
+    },
+    {
+      "path": "scripts/lib/pm-link-integrity.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 6268
+    },
+    {
+      "path": "scripts/lib/pm-maturity-matrix.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 3692
+    },
+    {
+      "path": "scripts/lib/pm-metrology-provenance.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 12895
+    },
+    {
+      "path": "scripts/lib/pm-p0-discriminative-evidence.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 11435
+    },
+    {
+      "path": "scripts/lib/pm-p0-documentary-review.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 5607
+    },
+    {
+      "path": "scripts/lib/pm-p0-evidence-pilot-blueprints.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 13491
+    },
+    {
+      "path": "scripts/lib/pm-p0-investigation.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 7283
+    },
+    {
+      "path": "scripts/lib/pm-p0-staged-triage.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 8851
+    },
+    {
+      "path": "scripts/lib/pm-p0-synthetic-evidence-outcomes.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 12562
+    },
+    {
+      "path": "scripts/lib/pm-pilot-preflight.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 5517
+    },
+    {
+      "path": "scripts/lib/pm-review-decision.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 6974
+    },
+    {
+      "path": "scripts/lib/pm-sec01-approval-brief.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 12463
+    },
+    {
+      "path": "scripts/lib/pm-sec01-decision-request.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 10860
+    },
+    {
+      "path": "scripts/lib/pm-sec01-governance-handoff.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 13445
+    },
+    {
+      "path": "scripts/lib/pm-semantic-crosswalk.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 8439
+    },
+    {
+      "path": "scripts/lib/pm-semantic-triage.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 7952
+    },
+    {
+      "path": "scripts/lib/pm-system-mechanism-map.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 6816
+    },
+    {
+      "path": "scripts/lib/pm-technical-explorer.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 12932
+    },
+    {
+      "path": "scripts/lib/pm-technical-review-workspace.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 9117
+    },
+    {
+      "path": "scripts/lib/pm-track-bolt-semantics.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 6928
+    },
+    {
+      "path": "scripts/lib/pm-unranked-observability.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 9956
+    },
+    {
+      "path": "scripts/lib/pm-vpar-evidence-matrix.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 7147
+    },
+    {
+      "path": "scripts/lib/pm-vpar-provenance.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 6025
+    },
+    {
+      "path": "scripts/lib/private-result-attestation.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 14454
+    },
+    {
+      "path": "scripts/lib/public-content-release.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 5559
+    },
+    {
+      "path": "scripts/lib/recurrent-remediation.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 11610
+    },
+    {
+      "path": "scripts/lib/restricted-evidence-workflow.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 6169
+    },
+    {
+      "path": "scripts/lib/restricted-infrastructure-gates.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 5386
+    },
+    {
+      "path": "scripts/lib/staging-acceptance-gates.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 6142
+    },
+    {
+      "path": "scripts/lib/staging-exception-workflow.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 9076
+    },
+    {
+      "path": "scripts/lib/staging-integration-adapter.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 7855
+    },
+    {
+      "path": "scripts/pm-filtration-scan.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 3076
+    },
+    {
+      "path": "scripts/pm-system-scope.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 1234
+    },
+    {
+      "path": "scripts/query-knowledge-index.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 1470
+    },
+    {
+      "path": "scripts/test-public-content-releases.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 2869
+    },
+    {
+      "path": "scripts/triage-hydraulic-editorial-reviews.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 878
+    },
+    {
+      "path": "scripts/validate-causal-chains.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 4996
+    },
+    {
+      "path": "scripts/validate-causal-effects.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 2888
+    },
+    {
+      "path": "scripts/validate-causal-gap-triage.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 9130
+    },
+    {
+      "path": "scripts/validate-causal-levels.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 4342
+    },
+    {
+      "path": "scripts/validate-complementary-discrimination.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 6808
+    },
+    {
+      "path": "scripts/validate-condition-action-damage.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 7222
+    },
+    {
+      "path": "scripts/validate-consolidated-blockers.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 16084
+    },
+    {
+      "path": "scripts/validate-d9-handoff.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 9159
+    },
+    {
+      "path": "scripts/validate-d9-oem-request.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 10923
+    },
+    {
+      "path": "scripts/validate-d9-public-oem-research.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 11027
+    },
+    {
+      "path": "scripts/validate-diagnostic-pathways.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 5285
+    },
+    {
+      "path": "scripts/validate-diagnostic.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 3528
+    },
+    {
+      "path": "scripts/validate-discriminative-tests.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 6565
+    },
+    {
+      "path": "scripts/validate-evidence-governance.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 7225
+    },
+    {
+      "path": "scripts/validate-knowledge.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 3197
+    },
+    {
+      "path": "scripts/validate-mechanism-refinements.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 9366
+    },
+    {
+      "path": "scripts/validate-ontology.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 3076
+    },
+    {
+      "path": "scripts/validate-pathway-expansion.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 7633
+    },
+    {
+      "path": "scripts/validate-playbook-deepdives-remaining.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 10910
+    },
+    {
+      "path": "scripts/validate-playbook-deepdives.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 8529
+    },
+    {
+      "path": "scripts/validate-pm-exception-gates.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 3963
+    },
+    {
+      "path": "scripts/validate-pm.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 1454
+    },
+    {
+      "path": "scripts/validate-private-result-custody.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 8481
+    },
+    {
+      "path": "scripts/validate-proposal-taxonomy-audit.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 8200
+    },
+    {
+      "path": "scripts/validate-public-compatibility.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 4111
+    },
+    {
+      "path": "scripts/validate-public-content-release.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 4953
+    },
+    {
+      "path": "scripts/validate-public-knowledge.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 4681
+    },
+    {
+      "path": "scripts/validate-recurrent-remediation.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 6608
+    },
+    {
+      "path": "scripts/validate-restricted-evidence.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 6878
+    },
+    {
+      "path": "scripts/validate-restricted-infrastructure.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 9550
+    },
+    {
+      "path": "scripts/validate-staging-acceptance.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 4739
+    },
+    {
+      "path": "scripts/validate-staging-exceptions.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 8350
+    },
+    {
+      "path": "scripts/validate-staging-integration-adapter.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 4975
+    },
+    {
+      "path": "scripts/validate-systemic-root-audit.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 5085
+    },
+    {
+      "path": "scripts/validate.mjs",
+      "group": "software",
+      "format": "mjs",
+      "bytes": 2872
+    },
+    {
+      "path": "skills/consultar-acervo-manutencao/SKILL.md",
+      "group": "agent_skill",
+      "format": "md",
+      "bytes": 2709
+    }
+  ]
+}
