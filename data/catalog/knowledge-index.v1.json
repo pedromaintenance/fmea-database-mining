@@ -1,0 +1,237 @@
+{
+  "schema": "fmea-mining.knowledge-index.v1",
+  "version": "1.4.0",
+  "scope": "selected_existing_public_artifacts_not_complete_inventory",
+  "repository": "pedromaintenance/fmea-database-mining",
+  "nature": "navigation_metadata_not_canonical_technical_evidence",
+  "statuses": {
+    "validatedRealAssetEvidence": 0,
+    "approvedOemSerials": 0,
+    "operationalReleases": 0,
+    "sapMappingsApproved": 0
+  },
+  "items": [
+    {
+      "id": "LIB-SOURCES",
+      "title": "Registro de fontes técnicas",
+      "domain": "Referências e normas",
+      "kind": "bibliografia",
+      "system": "transversal",
+      "evidenceClass": "PUBLIC_REFERENCE",
+      "summary": "Inventário bibliográfico com 87 fontes catalogadas, URLs e limitações. O registro não valida aplicabilidade OEM.",
+      "path": "data/research/sources.v1.json",
+      "keywords": [
+        "normas",
+        "oem",
+        "literatura",
+        "fontes"
+      ]
+    },
+    {
+      "id": "LIB-HYD-CIRCUITS",
+      "title": "Diagnóstico diferencial de circuitos hidráulicos",
+      "domain": "Hidráulica",
+      "kind": "dados técnicos",
+      "system": "hidraulico",
+      "evidenceClass": "CONCEPTUAL",
+      "summary": "10 comportamentos de circuito com 30 mecanismos concorrentes; nenhuma medição real ou validação por série.",
+      "path": "data/quality/hydraulic-circuit-differential.v1.json",
+      "keywords": [
+        "bomba",
+        "válvula",
+        "pressão",
+        "vazão",
+        "cilindro"
+      ]
+    },
+    {
+      "id": "LIB-HYD-HOSES",
+      "title": "Falhas e contraprovas em mangueiras hidráulicas",
+      "domain": "Hidráulica",
+      "kind": "dados técnicos",
+      "system": "hidraulico",
+      "evidenceClass": "CONCEPTUAL",
+      "summary": "Diferenciais conceituais de mangueiras, conexões, abrasão, vazamento e perigos de energia hidráulica.",
+      "path": "data/quality/hydraulic-hose-differential.v1.json",
+      "keywords": [
+        "mangueira",
+        "contaminação",
+        "abrasão",
+        "vazamento"
+      ]
+    },
+    {
+      "id": "LIB-CAT395-VARIANT",
+      "title": "CAT 395 — variantes OEM públicas",
+      "domain": "Equipamentos",
+      "kind": "comparativo OEM",
+      "system": "cat395",
+      "evidenceClass": "PUBLIC_PRODUCT_VARIANT",
+      "summary": "Comparação documental de versões públicas CAT 395. Máximos comerciais não são limites de teste.",
+      "path": "data/quality/cat395-public-variant-preflight.v1.json",
+      "keywords": [
+        "cat",
+        "395",
+        "variante",
+        "pressão"
+      ]
+    },
+    {
+      "id": "LIB-CAT395-GATES",
+      "title": "CAT 395 — contrato de verificação por série",
+      "domain": "Equipamentos",
+      "kind": "governança",
+      "system": "cat395",
+      "evidenceClass": "PRIVATE_EVIDENCE_REQUIRED",
+      "summary": "Oito gates de preparação documental. Não contém série real, ensaio validado ou autorização.",
+      "path": "data/governance/cat395-serial-evidence-contract.v1.json",
+      "keywords": [
+        "cat",
+        "395",
+        "evidência",
+        "oem",
+        "gates"
+      ]
+    },
+    {
+      "id": "LIB-HYD-TRAIN",
+      "title": "Treino de raciocínio diagnóstico hidráulico",
+      "domain": "Treinamento",
+      "kind": "exercícios",
+      "system": "hidraulico",
+      "evidenceClass": "SYNTHETIC",
+      "summary": "20 exercícios fictícios, decisões seguras e hipóteses concorrentes; pontuação apenas didática.",
+      "path": "data/quality/hydraulic-diagnostic-reasoning-benchmark.v1.json",
+      "keywords": [
+        "treino",
+        "benchmark didático",
+        "bomba",
+        "resposta"
+      ]
+    },
+    {
+      "id": "LIB-HYD-REVIEW",
+      "title": "Rubrica de revisão hidráulica",
+      "domain": "Treinamento",
+      "kind": "governança",
+      "system": "hidraulico",
+      "evidenceClass": "SYNTHETIC",
+      "summary": "Protocolo de avaliação editorial anônima, sem parecer autenticado.",
+      "path": "data/quality/hydraulic-expert-review-protocol.v1.json",
+      "keywords": [
+        "revisão",
+        "rubrica",
+        "feedback"
+      ]
+    },
+    {
+      "id": "LIB-PM-25",
+      "title": "25 regras PM — consulta técnica",
+      "domain": "Manutenção",
+      "kind": "guia",
+      "system": "pm",
+      "evidenceClass": "CONCEPTUAL",
+      "summary": "Exposição técnica das regras PM e exceções; não significa homologação de SAP ou análise de risco.",
+      "path": "docs/CICLO_2026-10-28_CONSULTA_COMPLETA_25_REGRAS.md",
+      "keywords": [
+        "pm",
+        "preventiva",
+        "regras",
+        "backlog"
+      ]
+    },
+    {
+      "id": "LIB-PM-FUNCTION",
+      "title": "Reconciliação funcional PM",
+      "domain": "Manutenção",
+      "kind": "guia",
+      "system": "pm",
+      "evidenceClass": "CONCEPTUAL",
+      "summary": "Separação de fronteiras funcionais e combinações de equipamento/sistema/grupo/subgrupo.",
+      "path": "docs/CICLO_2026-10-27_RECONCILIACAO_FUNCIONAL_PM.md",
+      "keywords": [
+        "hierarquia",
+        "sistema",
+        "função",
+        "grupo"
+      ]
+    },
+    {
+      "id": "LIB-EXPLORER",
+      "title": "Consulta FMEA — portal legado",
+      "domain": "Portais",
+      "kind": "interface",
+      "system": "transversal",
+      "evidenceClass": "CONCEPTUAL",
+      "summary": "Ferramenta HTML offline para navegar regras e hipóteses do acervo existente.",
+      "path": "docs/consulta-fmea.html",
+      "keywords": [
+        "busca",
+        "consulta",
+        "sistemas"
+      ]
+    },
+    {
+      "id": "LIB-TRIAGE",
+      "title": "Triagem editorial hidráulica",
+      "domain": "Treinamento",
+      "kind": "interface",
+      "system": "hidraulico",
+      "evidenceClass": "SYNTHETIC",
+      "summary": "Painel de encaminhamento de críticas editoriais; não é diagnóstico de campo.",
+      "path": "docs/triagem-hidraulica-editorial.html",
+      "keywords": [
+        "triagem",
+        "revisão",
+        "segurança"
+      ]
+    },
+    {
+      "id": "LIB-ROADMAP",
+      "title": "Roadmap de pesquisa e expansão",
+      "domain": "Plataforma",
+      "kind": "documentação",
+      "system": "transversal",
+      "evidenceClass": "PENDING_REVIEW",
+      "summary": "Planejamento de expansão de engenharia, interoperabilidade e benchmark industrial.",
+      "path": "docs/ROADMAP_TECNICO_2026_2027.md",
+      "keywords": [
+        "roadmap",
+        "pesquisa",
+        "expansão",
+        "benchmark"
+      ]
+    },
+    {
+      "id": "LIB-ARCH",
+      "title": "Arquitetura do acervo técnico",
+      "domain": "Plataforma",
+      "kind": "documentação",
+      "system": "transversal",
+      "evidenceClass": "PENDING_REVIEW",
+      "summary": "Diretrizes para conhecimento canônico, interfaces humanas, IA e comparação industrial.",
+      "path": "docs/KNOWLEDGE_PLATFORM_ARCHITECTURE.md",
+      "keywords": [
+        "arquitetura",
+        "acervo",
+        "agentes"
+      ]
+    },
+    {
+      "id": "LIB-AI",
+      "title": "Contrato de recuperação para agentes",
+      "domain": "Plataforma",
+      "kind": "documentação",
+      "system": "transversal",
+      "evidenceClass": "PENDING_REVIEW",
+      "summary": "Regras de rastreabilidade, citações, classificação e resposta segura para agentes.",
+      "path": "docs/AI_RETRIEVAL_CONTRACT.md",
+      "keywords": [
+        "ai",
+        "agent",
+        "skill",
+        "rag"
+      ]
+    }
+  ]
+}
