@@ -22,7 +22,7 @@ function matches(x,s){
   if(s.required?.some(k=>!Object.hasOwn(x,k)))return false;
   return keys.every(k=>!s.properties?.[k]||matches(x[k],s.properties[k]));
  }
- return false;
+ return s.type===undefined;
 }
 check('schema_strict',schema.additionalProperties===false&&schema.$schema==='https://json-schema.org/draft/2020-12/schema');
 check('record_valid',matches(record,schema));
