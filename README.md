@@ -4,6 +4,8 @@ Acervo **público, versionado e rastreável** para estudar equipamentos móveis 
 
 > **Status:** fundação da plataforma **v1.4.0**; índice inicial curado, não catálogo completo nem biblioteca homologada para procedimentos de execução. O banco contém hipóteses, taxonomias e referências públicas, **não** FMEAs aprovadas, ocorrências reais confirmadas ou limites OEM efetivos por série.
 
+**Portal público (GitHub Pages):** https://pedromaintenance.github.io/fmea-database-mining/ — entrada direta na Biblioteca Técnica. O repositório mantém a documentação canônica e o histórico de versões.
+
 ## Começar pela biblioteca
 
 - **Para humanos:** [Biblioteca Técnica — portal HTML standalone](docs/biblioteca-tecnica.html) — navegação e pesquisa offline nos 14 itens inicialmente indexados; os arquivos canônicos exigem acesso ao repositório/Internet ou clone local.
