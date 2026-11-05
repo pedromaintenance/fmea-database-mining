@@ -6,6 +6,13 @@ on:
     paths:
       - 'docs/biblioteca-tecnica.html'
       - 'data/catalog/knowledge-index.v1.json'
+      - 'data/catalog/technical-glossary.v1.json'
+      - 'data/catalog/source-discovery.v1.json'
+      - 'data/catalog/repository-inventory-snapshot.v1.json'
+      - 'docs/glossario-tecnico.html'
+      - 'docs/fontes-tecnicas.html'
+      - 'docs/inventario-acervo.html'
+      - 'scripts/audit-knowledge-discovery.mjs'
       - 'llms.txt'
       - 'index.html'
       - 'docs/index.html'
@@ -37,11 +44,19 @@ jobs:
           test -s data/catalog/knowledge-index.v1.json
           test -s llms.txt
           node scripts/audit-knowledge-index.mjs
+          node scripts/audit-knowledge-discovery.mjs
 
       - name: Prepare static site
         run: |
           mkdir -p _site
           cp docs/biblioteca-tecnica.html _site/index.html
+          cp docs/biblioteca-tecnica.html _site/biblioteca-tecnica.html
+          cp docs/glossario-tecnico.html _site/glossario-tecnico.html
+          cp docs/fontes-tecnicas.html _site/fontes-tecnicas.html
+          cp docs/inventario-acervo.html _site/inventario-acervo.html
+          cp data/catalog/technical-glossary.v1.json _site/technical-glossary.v1.json
+          cp data/catalog/source-discovery.v1.json _site/source-discovery.v1.json
+          cp data/catalog/repository-inventory-snapshot.v1.json _site/repository-inventory-snapshot.v1.json
           cp data/catalog/knowledge-index.v1.json _site/knowledge-index.v1.json
           cp llms.txt _site/llms.txt
           touch _site/.nojekyll
