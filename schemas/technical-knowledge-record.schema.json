@@ -1,0 +1,340 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FMEA Mining public conceptual technical knowledge record v1",
+  "description": "A didactic, traceable conceptual technical article. No private machine evidence, OEM-by-serial validation or execution authority.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "recordVersion",
+    "id",
+    "title",
+    "titleEn",
+    "domain",
+    "systemTags",
+    "recordType",
+    "evidenceClass",
+    "reviewStatus",
+    "functionRequired",
+    "physicalMechanism",
+    "symptoms",
+    "functionalEffects",
+    "competingHypotheses",
+    "evidenceToRequest",
+    "confounders",
+    "ontologyLinks",
+    "provenance",
+    "applicability",
+    "safety",
+    "operationalApproval",
+    "sapMappingApproved",
+    "automaticDiagnosisAllowed"
+  ],
+  "properties": {
+    "schema": {
+      "const": "fmea-mining.technical-knowledge-record.v1"
+    },
+    "recordVersion": {
+      "const": "1.4.2"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^TK-[A-Z0-9-]{4,}$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 5
+    },
+    "titleEn": {
+      "type": "string",
+      "minLength": 5
+    },
+    "domain": {
+      "type": "string",
+      "minLength": 1
+    },
+    "systemTags": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "recordType": {
+      "const": "fundamental_technical_knowledge"
+    },
+    "evidenceClass": {
+      "const": "CONCEPTUAL"
+    },
+    "reviewStatus": {
+      "const": "PENDING_REVIEW"
+    },
+    "functionRequired": {
+      "type": "string",
+      "minLength": 5
+    },
+    "physicalMechanism": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "summary",
+        "possibleChain"
+      ],
+      "properties": {
+        "summary": {
+          "type": "string",
+          "minLength": 5
+        },
+        "possibleChain": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 5
+          }
+        }
+      }
+    },
+    "symptoms": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "description",
+          "observedInField"
+        ],
+        "properties": {
+          "description": {
+            "type": "string",
+            "minLength": 5
+          },
+          "observedInField": {
+            "const": false
+          }
+        }
+      }
+    },
+    "functionalEffects": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 5
+      }
+    },
+    "competingHypotheses": {
+      "type": "array",
+      "minItems": 2,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "explanation",
+          "discriminator",
+          "unconfirmed"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "explanation": {
+            "type": "string",
+            "minLength": 5
+          },
+          "discriminator": {
+            "type": "string",
+            "minLength": 5
+          },
+          "unconfirmed": {
+            "const": true
+          }
+        }
+      }
+    },
+    "evidenceToRequest": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "question",
+          "limitOfInference"
+        ],
+        "properties": {
+          "question": {
+            "type": "string",
+            "minLength": 5
+          },
+          "limitOfInference": {
+            "type": "string",
+            "minLength": 5
+          }
+        }
+      }
+    },
+    "confounders": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 5
+      }
+    },
+    "ontologyLinks": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "relationship",
+          "provesThisMechanism"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^ME-[0-9]{2}$"
+          },
+          "relationship": {
+            "enum": [
+              "relevant_concept_only",
+              "alternative_mechanism"
+            ]
+          },
+          "provesThisMechanism": {
+            "const": false
+          }
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "canonicalScenarioPath",
+        "canonicalScenarioId",
+        "sourceIds",
+        "ontologyPath",
+        "sourceRegistryPath",
+        "editorialMode"
+      ],
+      "properties": {
+        "canonicalScenarioPath": {
+          "const": "data/quality/hydraulic-circuit-differential.v1.json"
+        },
+        "canonicalScenarioId": {
+          "const": "HC-DIFF-01"
+        },
+        "sourceIds": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Z0-9][A-Z0-9-]+$"
+          }
+        },
+        "ontologyPath": {
+          "const": "data/ontology/concepts.v1.json"
+        },
+        "sourceRegistryPath": {
+          "const": "data/research/sources.v1.json"
+        },
+        "editorialMode": {
+          "const": "original_synthesis_of_existing_public_catalog_not_new_field_evidence"
+        }
+      }
+    },
+    "applicability": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "verifiedModels",
+        "verifiedSerials",
+        "oemAcceptanceLimits",
+        "fieldObservations",
+        "performedTests",
+        "confirmedRootCauses"
+      ],
+      "properties": {
+        "verifiedModels": {
+          "type": "array",
+          "minItems": 0,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "verifiedSerials": {
+          "type": "array",
+          "minItems": 0,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "oemAcceptanceLimits": {
+          "type": "null"
+        },
+        "fieldObservations": {
+          "const": 0
+        },
+        "performedTests": {
+          "const": 0
+        },
+        "confirmedRootCauses": {
+          "const": 0
+        }
+      }
+    },
+    "safety": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "boundary",
+        "prohibitedActions"
+      ],
+      "properties": {
+        "boundary": {
+          "type": "string",
+          "minLength": 5
+        },
+        "prohibitedActions": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 5
+          }
+        }
+      }
+    },
+    "operationalApproval": {
+      "const": false
+    },
+    "sapMappingApproved": {
+      "const": false
+    },
+    "automaticDiagnosisAllowed": {
+      "const": false
+    }
+  }
+}
