@@ -51,8 +51,9 @@ function declaredRefs(obj){
   seen.add(n);
   if(Array.isArray(n)){for(const x of n)walkNode(x,depth+1);return;}
   for(const [k,v] of Object.entries(n)){
-   if((k==='sourceIds'||k==='sourceCatalogIds'||k==='sourceReferenceIds')&&Array.isArray(v))for(const ref of v)if(typeof ref==='string')refs.add(ref);
-   else if(k==='sourceId'&&typeof v==='string')refs.add(v);
+   if((k==='sourceIds'||k==='sourceCatalogIds'||k==='sourceReferenceIds')&&Array.isArray(v)){
+    for(const ref of v)if(typeof ref==='string')refs.add(ref);
+   }else if(k==='sourceId'&&typeof v==='string')refs.add(v);
    walkNode(v,depth+1);
   }
  }
