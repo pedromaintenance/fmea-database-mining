@@ -1,0 +1,59 @@
+name: Publicar Biblioteca Técnica no GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'docs/biblioteca-tecnica.html'
+      - 'data/catalog/knowledge-index.v1.json'
+      - 'llms.txt'
+      - 'index.html'
+      - 'docs/index.html'
+      - '.github/workflows/deploy-library-pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages-technical-library
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Verify library files
+        run: |
+          test -s docs/biblioteca-tecnica.html
+          test -s data/catalog/knowledge-index.v1.json
+          test -s llms.txt
+          node scripts/audit-knowledge-index.mjs
+
+      - name: Prepare static site
+        run: |
+          mkdir -p _site
+          cp docs/biblioteca-tecnica.html _site/index.html
+          cp data/catalog/knowledge-index.v1.json _site/knowledge-index.v1.json
+          cp llms.txt _site/llms.txt
+          touch _site/.nojekyll
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+      - name: Deploy to Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
