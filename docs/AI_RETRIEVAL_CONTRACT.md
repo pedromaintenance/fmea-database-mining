@@ -10,6 +10,12 @@
 - `data/catalog/source-discovery.v1.json`: 87 referências bibliográficas da base existente; consultar a URL e sua licença antes de utilizar detalhes.
 - `data/catalog/repository-inventory-snapshot.v1.json`: snapshot de 500 arquivos por caminho/formato, anterior a 1.4.1. Não confundir caminho com conceito técnico, presença com validade ou inventário com prova OEM.
 
+## Atlas de datasets e fichas técnicas (v1.4.2)
+- `npm run knowledge:atlas:build` gera `reports/semantic-atlas.generated.json` e `reports/mapa-semantico.generated.html`. O Pages publica o JSON em `/semantic-atlas.v1.json` e o painel em `/mapa-semantico.html`. O gerador é local, não depende de APIs externas.
+- Campos `profile` e `topicHint` são agrupamentos de descoberta, não conhecimento técnico certificado; `topicMethod` sempre sinaliza inferência por nome do arquivo. Os campos de IDs bibliográficos representam **vínculos documentais declarados**, não leitura da fonte original.
+- `schemas/technical-knowledge-record.schema.json` define a ficha fundamental. O primeiro registro `data/knowledge/fundamentals/hydraulic-inlet-restriction.v1.json` é conceitual, derivado de `HC-DIFF-01`, com hipóteses não confirmadas, revisão pendente e nenhum teste real.
+- Respostas de agentes devem citar `path` + ID de registro/hipótese + ID da fonte, **abrindo o arquivo canônico** e declarando expressamente aplicabilidade e lacunas. Não usar hashes, contagens ou perfis como prova física.
+
 ## Pipeline de recuperação
 1. **Descoberta:** `data/catalog/knowledge-index.v1.json` inclui uma seleção inicial de artefatos existentes. Ausência no índice não significa ausência no repositório.
 2. **Recuperação canônica:** abrir `path`; preferir informações estruturadas em `data/quality` e documentos de `docs`. Não transformar o campo de descrição do índice em prova.
