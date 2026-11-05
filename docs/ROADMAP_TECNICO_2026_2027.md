@@ -9,6 +9,8 @@
 - [x] Criar missão e arquitetura como biblioteca.
 - [x] Especificar `AGENTS.md`, skill de consulta e contrato de respostas.
 - [x] Criar catálogo inicial curado e portal offline de navegação.
+- [x] Registrar snapshot estrutural dos 500 arquivos existentes no commit anterior ao ciclo 1.4.1 (caminhos e formatos; ainda sem semântica).
+- [x] Publicar projeção bilíngue de 67 termos da ontologia já existente e índice pesquisável das 87 referências (sem validação adicional).
 - [ ] Fazer inventário **completo** do acervo legado (fontes, normas, sistemas, JSONs, documentos, portais, lacunas); contabilizar duplicações e versionamentos conflitantes.
 - [ ] Mapear direitos/licenças, datas de revisão e vínculos de citação das 87 fontes.
 - [ ] Definir esquema canônico `technical-knowledge-record.v1` com relação explícita entre função → mecanismo → sintoma → evidência → prevenção.
@@ -70,7 +72,7 @@ Prioridades de **pesquisa**, não gravidade/criticidade real do ativo.
 Indicadores são metodologias propostas, não números atuais apurados.
 
 ## Backlog para os próximos ciclos
-1. **Inventário automático de conhecimento** que detecte arquivos órfãos e mapeie fontes→fichas→sistemas.
+1. **Inventário automático e semântico de conhecimento** a partir do snapshot de 500 caminhos: detectar arquivos órfãos e mapeie fontes→fichas→sistemas.
 2. **Dicionário técnico PT/EN** para termos concorrentes de manutenção, incluindo tradução de sintomas sem atribuir causa.
 3. **Esquema de fichas técnicas de fundamentos** em vez de apenas JSONs de diagnóstico.
 4. **Portais temáticos**: Hidráulica, Diesel e Lubrificação, Transmissão, Rodante, Elétrica, Benchmark.

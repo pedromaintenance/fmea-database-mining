@@ -12,6 +12,16 @@
 - [Architecture](https://github.com/pedromaintenance/fmea-database-mining/blob/main/docs/KNOWLEDGE_PLATFORM_ARCHITECTURE.md)
 - [Research roadmap](https://github.com/pedromaintenance/fmea-database-mining/blob/main/docs/ROADMAP_TECNICO_2026_2027.md)
 
+## Additional discovery services (v1.4.1)
+- [Technical glossary PT/EN](https://pedromaintenance.github.io/fmea-database-mining/glossario-tecnico.html)
+- [Source bibliography](https://pedromaintenance.github.io/fmea-database-mining/fontes-tecnicas.html)
+- [Repository file snapshot](https://pedromaintenance.github.io/fmea-database-mining/inventario-acervo.html)
+- [Technical glossary JSON (67 terms)](https://pedromaintenance.github.io/fmea-database-mining/technical-glossary.v1.json)
+- [Source discovery JSON (87 bibliographic items)](https://pedromaintenance.github.io/fmea-database-mining/source-discovery.v1.json)
+- [Repository inventory snapshot JSON (500 paths)](https://pedromaintenance.github.io/fmea-database-mining/repository-inventory-snapshot.v1.json)
+
+The glossary derives verbatim from the older author-controlled ontology and is pending technical review; the source listing is bibliographic, not proof of license or OEM serial applicability. The inventory is a pre-cycle snapshot and not an exhaustive semantic graph.
+
 ## Technical entry points
 - [Hydraulic circuit differential](https://github.com/pedromaintenance/fmea-database-mining/blob/main/data/quality/hydraulic-circuit-differential.v1.json)
 - [Hydraulic hose differential](https://github.com/pedromaintenance/fmea-database-mining/blob/main/data/quality/hydraulic-hose-differential.v1.json)

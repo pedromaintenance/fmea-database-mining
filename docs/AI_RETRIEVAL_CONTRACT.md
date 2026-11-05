@@ -5,6 +5,11 @@
 ## Entradas
 `query` (pergunta), `equipment_family?`, `system?`, `component?`, `source_priority?`, `language?`, `intent` (explicar, comparar, investigar, treinar, planejar). O usuário não deve inserir números de série, resultados de análise de óleo ou outros dados privados no repositório público.
 
+## Entradas auxiliares para descoberta (1.4.1)
+- `data/catalog/technical-glossary.v1.json`: 67 termos PT/EN, preservando IDs e critérios da ontologia v1.3.3. Não inferir que cada termo passou por revisão independente.
+- `data/catalog/source-discovery.v1.json`: 87 referências bibliográficas da base existente; consultar a URL e sua licença antes de utilizar detalhes.
+- `data/catalog/repository-inventory-snapshot.v1.json`: snapshot de 500 arquivos por caminho/formato, anterior a 1.4.1. Não confundir caminho com conceito técnico, presença com validade ou inventário com prova OEM.
+
 ## Pipeline de recuperação
 1. **Descoberta:** `data/catalog/knowledge-index.v1.json` inclui uma seleção inicial de artefatos existentes. Ausência no índice não significa ausência no repositório.
 2. **Recuperação canônica:** abrir `path`; preferir informações estruturadas em `data/quality` e documentos de `docs`. Não transformar o campo de descrição do índice em prova.
