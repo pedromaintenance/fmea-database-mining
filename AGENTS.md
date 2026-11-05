@@ -8,6 +8,9 @@ Priority when requirements conflict: safety/legal constraints > evidence truthfu
 ## Where to read
 - Start: `README.md`, `docs/KNOWLEDGE_PLATFORM_ARCHITECTURE.md`, `docs/ROADMAP_TECNICO_2026_2027.md`.
 - Source registry: `data/research/sources.v1.json`. This is a bibliography, **not proof of machine applicability or validated measurements**.
+- Existing controlled vocabulary: `data/ontology/concepts.v1.json`, discovered through `data/catalog/technical-glossary.v1.json` (67 terms preserved without redefinition).
+- Bibliography discovery: `data/catalog/source-discovery.v1.json` (87 records; links not revalidated in 1.4.1).
+- Full pre-cycle file snapshot: `data/catalog/repository-inventory-snapshot.v1.json` (500 file paths, not semantic inventory or evidence).
 - Public catalog pilot: `data/catalog/knowledge-index.v1.json`; portal: `docs/biblioteca-tecnica.html`.
 - Current machine and diagnostic artifacts: `data/quality/` and `schemas/`.
 - AI consumer contract: `docs/AI_RETRIEVAL_CONTRACT.md`.
@@ -27,7 +30,7 @@ Priority when requirements conflict: safety/legal constraints > evidence truthfu
 
 ## Developer workflow
 - Create a branch; do not overwrite other PRs or change consumers.
-- Run `npm run qa` for the full suite, and `npm run knowledge:catalog:audit` for the library.
+- Run `npm run qa` for the full suite, and both `npm run knowledge:catalog:audit` and `npm run knowledge:discovery:audit` for the library.
 - Maintain a source-specific bibliographic record for every external claim and a documented evidence grade.
 - Generate portal from the indexed corpus; do not manually fork technical claims into uncontrolled copies.
 - Ask for human technical review when evidence is incomplete. Automated passing tests do not equal professional approval.
