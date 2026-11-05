@@ -11,13 +11,15 @@ Priority when requirements conflict: safety/legal constraints > evidence truthfu
 - Existing controlled vocabulary: `data/ontology/concepts.v1.json`, discovered through `data/catalog/technical-glossary.v1.json` (67 terms preserved without redefinition).
 - Bibliography discovery: `data/catalog/source-discovery.v1.json` (87 records; links not revalidated in 1.4.1).
 - Full pre-cycle file snapshot: `data/catalog/repository-inventory-snapshot.v1.json` (500 file paths, not semantic inventory or evidence).
+- Generated semantic atlas: run `npm run knowledge:atlas:build` for `reports/semantic-atlas.generated.json` and `reports/mapa-semantico.generated.html`. Dataset paths, schema/version and explicit links are discovery metadata, **not verified engineering semantics**.
+- Technical knowledge contract: `schemas/technical-knowledge-record.schema.json` and first case `data/knowledge/fundamentals/hydraulic-inlet-restriction.v1.json` (pending review, no field evidence).
 - Public catalog pilot: `data/catalog/knowledge-index.v1.json`; portal: `docs/biblioteca-tecnica.html`.
 - Current machine and diagnostic artifacts: `data/quality/` and `schemas/`.
 - AI consumer contract: `docs/AI_RETRIEVAL_CONTRACT.md`.
 - Reusable consultation skill: `skills/consultar-acervo-manutencao/SKILL.md`.
 
 ## Rules for retrieval, editing and answering
-1. Search the index, follow the canonical source file, and cite exact repository paths and source IDs. Absence of a record means **not cataloged**, never `safe`, `impossible` or `no failure`.
+1. Search the curated index and optionally the generated atlas; follow the canonical source file, and cite exact repository paths and source IDs. Absence of a record means **not cataloged**, never `safe`, `impossible` or `no failure`.
 2. Separate definitions/function, observed symptom, functional failure, damage, mechanism, immediate cause, root cause, effect, diagnostic hypothesis and discriminating evidence.
 3. Label information: public reference, conceptual hypothesis, synthetic exercise, catalog/marketing spec, proposed process, authenticated field result or validated OEM-by-serial evidence. The final two categories must NOT be claimed from public files.
 4. Do not infer OEM applicability from model family alone. Product maximum ≠ test acceptance limit. Zero, null and unknown have different meanings; preserve the source.
@@ -30,7 +32,7 @@ Priority when requirements conflict: safety/legal constraints > evidence truthfu
 
 ## Developer workflow
 - Create a branch; do not overwrite other PRs or change consumers.
-- Run `npm run qa` for the full suite, and both `npm run knowledge:catalog:audit` and `npm run knowledge:discovery:audit` for the library.
+- Run `npm run qa` for the full suite, and `npm run knowledge:atlas:build` followed by `npm run knowledge:technical:audit`, in addition to catalog/discovery audits.
 - Maintain a source-specific bibliographic record for every external claim and a documented evidence grade.
 - Generate portal from the indexed corpus; do not manually fork technical claims into uncontrolled copies.
 - Ask for human technical review when evidence is incomplete. Automated passing tests do not equal professional approval.

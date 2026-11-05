@@ -1,0 +1,74 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mapa semântico do acervo | FMEA Database</title>
+<meta name="description" content="Descoberta dos datasets técnicos públicos por perfil, assunto, schema, fonte e versão. Não substitui evidência original.">
+<style>
+:root{color-scheme:dark;--bg:#0c1b23;--panel:#152b38;--border:#365b6e;--fg:#edf4f5;--muted:#b9cbd4;--accent:#c3942c;--link:#aad8e9}
+*{box-sizing:border-box}body{background:var(--bg);color:var(--fg);font:15px/1.5 system-ui,'Segoe UI',sans-serif;margin:0}
+header{background:linear-gradient(100deg,#22566a,#112632);border-bottom:5px solid var(--accent);padding:25px max(18px,calc((100vw - 1200px)/2))}
+header h1{margin:8px 0;font-size:clamp(28px,4vw,45px)}header p{max-width:900px;color:#dce9ef}
+nav{display:flex;flex-wrap:wrap;gap:15px}a{color:var(--link)}.small{font-size:12px;color:var(--muted)}
+main{max-width:1200px;margin:auto;padding:24px 18px 80px}
+.notice{border:1px solid #896b32;border-radius:9px;background:#352b1b;color:#f8e2b4;padding:13px;margin:10px 0 20px}
+.metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:16px 0}
+.metric{padding:14px;background:var(--panel);border-radius:10px;border:1px solid var(--border)}.metric b{font-size:25px;display:block}
+.controls{display:grid;grid-template-columns:2fr 1fr 1fr;gap:10px;margin:19px 0}
+label{display:block;font-size:12px;color:var(--muted)}input,select{display:block;width:100%;background:#101e27;border:1px solid #587789;border-radius:7px;color:white;padding:12px;font:inherit;margin-top:5px}
+section.list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+article{background:var(--panel);padding:17px;border-radius:10px;border:1px solid var(--border);min-width:0}
+article h3{font-size:17px;margin:6px 0;overflow-wrap:anywhere}.id{font:11px/1.5 ui-monospace,monospace;overflow-wrap:anywhere;color:var(--muted)}
+.meta{display:flex;gap:7px;flex-wrap:wrap}.chip{border:1px solid #4d7a8b;border-radius:30px;padding:2px 8px;font-size:11px}.warn{color:#f4d595}
+p{overflow-wrap:anywhere}button{background:#28627b;color:white;padding:10px 18px;border-radius:6px;border:1px solid #76a1b0;cursor:pointer;margin-top:15px}
+@media(max-width:810px){.controls{grid-template-columns:1fr}.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}section.list{grid-template-columns:1fr}}
+</style></head>
+<body><header><nav><a href="./index.html">Biblioteca</a><a href="./glossario-tecnico.html">Glossário</a><a href="./fontes-tecnicas.html">Referências</a><a href="./inventario-acervo.html">Inventário de arquivos</a></nav>
+<h1>Mapa semântico dos datasets</h1><p>Explore esquemas, versões, natureza declarada, domínios prováveis e vínculos bibliográficos. Metadados gerados a partir dos arquivos públicos da biblioteca.</p></header>
+<main>
+<div class="notice"><strong>O mapa é uma ferramenta de descoberta.</strong> A categorização por tema usa nomes de arquivos, não revisão técnica humana. Ausência de vínculo explícito não demonstra que a ficha é órfã, e uma referência bibliográfica não comprova sua aplicabilidade OEM. Os resultados não autorizam intervenções.</div>
+<p class="small" id="sourceStatus"></p>
+<div class="metrics" id="metrics"></div>
+<div class="controls"><label>Buscar caminho, título, schema, fonte ou versão<input id="q" type="search" placeholder="Ex.: hidráulica, bomba, CAT-HYD, diagnóstico"></label>
+<label>Perfil de arquivo<select id="profile"><option value="">Todos os perfis</option></select></label><label>Tópico sugerido<select id="topic"><option value="">Todos os tópicos</option></select></label></div>
+<p id="count" aria-live="polite" class="small"></p><section class="list" id="results"></section><button type="button" id="more" hidden>Carregar mais</button>
+<footer><p class="small">Fonte do mapa: <a href="https://github.com/pedromaintenance/fmea-database-mining">repositório público versionado</a>. Execute <code>npm run knowledge:atlas:build</code> para gerar uma cópia atualizada ao clonar. Perfis/assuntos indicativos, sem dados privados ou valores OEM de aceitação.</p></footer>
+</main>
+<script id="semantic-data" type="application/json">{"schema":"ATLAS_PLACEHOLDER","ready":false}</script>
+<script>
+(()=>{'use strict';
+ const data=JSON.parse(document.getElementById('semantic-data').textContent);
+ const $=id=>document.getElementById(id),norm=v=>String(v??'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+ function add(parent,tag,value,klass){const n=document.createElement(tag);n.textContent=value;if(klass)n.className=klass;parent.append(n);return n}
+ if(!data.ready){
+  $('sourceStatus').textContent='Esta cópia do repositório é o modelo. Para consultar todos os datasets, abra a página publicada no GitHub Pages ou execute npm run knowledge:atlas:build e abra reports/mapa-semantico.generated.html.';
+  $('count').textContent='Nenhum arquivo carregado neste modelo.';return;
+ }
+ $('sourceStatus').textContent=data.summary.totalFilesDiscovered+' arquivos JSON examinados • metadados estruturados • contrato '+data.version;
+ for(const [label,n] of [['Datasets lidos',data.summary.parsedDatasetCount],['Com sourceIds explícitos',data.summary.filesWithExplicitSourceIds],['Vínculos a revisar',data.summary.filesWithUnresolvedSourceIds],['Duplicações binárias',data.summary.exactDuplicateGroups]]){
+ const box=add($('metrics'),'div',undefined,'metric');add(box,'b',String(n));add(box,'span',label,'small');
+ }
+ for(const [k,v] of [['profile','profile'],['topic','topicHint']]){
+  [...new Set(data.assets.map(x=>x[v]))].sort().forEach(value=>{const o=add($(k),'option',value);o.value=value});
+ }
+ const base='https://github.com/pedromaintenance/fmea-database-mining/blob/main/';
+ let limit=60,filtered=[];
+ function render(){
+  const search=norm($('q').value),profile=$('profile').value,topic=$('topic').value;
+  filtered=data.assets.filter(x=>(!profile||x.profile===profile)&&(!topic||x.topicHint===topic)&&(!search||norm([x.path,x.title,x.schema,x.documentVersion,x.declaredNature,x.declaredStatus,...x.explicitSourceIds].join(' ')).includes(search)));
+  $('results').replaceChildren();
+  for(const x of filtered.slice(0,limit)){
+   const card=add($('results'),'article');
+   const meta=add(card,'div',undefined,'meta');add(meta,'span',x.profile,'chip');add(meta,'span',x.topicHint,'chip');
+   add(card,'h3',x.title);add(card,'div',x.path,'id');
+   add(card,'p','Schema: '+(x.schema||'não declarado')+' • Versão: '+(x.documentVersion||'não declarada'));
+   if(x.declaredNature)add(card,'p','Natureza declarada: '+x.declaredNature,'small');
+   if(x.primaryCollection)add(card,'p','Coleção: '+x.primaryCollection+' ('+x.primaryRecordCount+' entradas)','small');
+   if(x.explicitSourceIds.length)add(card,'p','Referências declaradas: '+x.explicitSourceIds.join(', '),'small');
+   if(x.sourceIdsNotInRegistry.length)add(card,'p','IDs não localizados no registro bibliográfico: '+x.sourceIdsNotInRegistry.join(', '),'small warn');
+   const a=add(card,'a','Abrir dataset canônico');a.href=base+x.path.split('/').map(encodeURIComponent).join('/');a.target='_blank';a.rel='noopener noreferrer';
+  }
+  $('more').hidden=filtered.length<=limit;
+  $('count').textContent=filtered.length+' arquivos correspondentes • '+Math.min(limit,filtered.length)+' visíveis';
+ }
+ for(const id of ['q','profile','topic'])$(id).addEventListener(id==='q'?'input':'change',()=>{limit=60;render()});
+ $('more').addEventListener('click',()=>{limit+=60;render()});render();
+})();
+</script></body></html>

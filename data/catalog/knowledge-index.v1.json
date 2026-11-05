@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.knowledge-index.v1",
-  "version": "1.4.0",
+  "version": "1.4.2",
   "scope": "selected_existing_public_artifacts_not_complete_inventory",
   "repository": "pedromaintenance/fmea-database-mining",
   "nature": "navigation_metadata_not_canonical_technical_evidence",
@@ -231,6 +231,25 @@
         "agent",
         "skill",
         "rag"
+      ]
+    },
+    {
+      "id": "LIB-TK-HYD-INLET",
+      "title": "Alimentação hidráulica: restrição de sucção e ar admitido",
+      "domain": "Hidráulica",
+      "kind": "ficha fundamental",
+      "system": "hidraulico",
+      "evidenceClass": "CONCEPTUAL",
+      "summary": "Primeira ficha técnica estruturada: função, mecanismo de alimentação, três hipóteses concorrentes e evidências discriminantes, com fontes e limites declarados. Não há testes nem validação por série.",
+      "path": "data/knowledge/fundamentals/hydraulic-inlet-restriction.v1.json",
+      "keywords": [
+        "sucção",
+        "admissão de ar",
+        "bomba",
+        "lentidão",
+        "cavitação",
+        "hidrático",
+        "inlet restriction"
       ]
     }
   ]

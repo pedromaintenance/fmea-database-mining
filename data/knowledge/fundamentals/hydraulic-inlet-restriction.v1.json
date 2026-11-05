@@ -1,0 +1,124 @@
+{
+  "schema": "fmea-mining.technical-knowledge-record.v1",
+  "recordVersion": "1.4.2",
+  "id": "TK-HYD-INLET-001",
+  "title": "Restrições de alimentação e admissão de ar na sucção hidráulica",
+  "titleEn": "Hydraulic inlet restriction and air ingestion",
+  "domain": "Hidráulica",
+  "systemTags": [
+    "alimentação de bomba",
+    "circuito hidráulico",
+    "sucção",
+    "desempenho funcional"
+  ],
+  "recordType": "fundamental_technical_knowledge",
+  "evidenceClass": "CONCEPTUAL",
+  "reviewStatus": "PENDING_REVIEW",
+  "functionRequired": "A alimentação do conjunto de bombeamento deve fornecer fluido nas condições requeridas pela arquitetura e operação aplicáveis; sem identificação do circuito, não é possível afirmar uma condição de sucção aceitável.",
+  "physicalMechanism": {
+    "summary": "Restrição na alimentação ou ingresso de ar são mecanismos possíveis de suprimento inadequado. Dependendo da arquitetura e condição, podem contribuir para perda de desempenho e ruído. A ocorrência de cavitação, dano na bomba ou restrição efetiva não pode ser concluída apenas desses sinais.",
+    "possibleChain": [
+      "Uma condição de suprimento desfavorável pode limitar a alimentação de fluido ao conjunto de bombeamento.",
+      "A condição hidráulica resultante pode afetar a capacidade de fornecer vazão nas exigências operacionais do circuito.",
+      "A mesma manifestação funcional pode ter outras origens, incluindo controle de deslocamento, rotação, regulação e variações de carga."
+    ]
+  },
+  "symptoms": [
+    {
+      "description": "Lentidão ou desempenho reduzido em várias funções hidráulicas nas mesmas condições relatadas.",
+      "observedInField": false
+    },
+    {
+      "description": "Ruído citado na investigação de alimentação; isoladamente não confirma cavitação.",
+      "observedInField": false
+    }
+  ],
+  "functionalEffects": [
+    "Redução potencial da resposta funcional em múltiplos ramos quando existe suprimento compartilhado.",
+    "Possível incapacidade de diferenciar fornecimento hidráulico de controle/regulação se não houver dados de observabilidade comparáveis."
+  ],
+  "competingHypotheses": [
+    {
+      "id": "HC-DIFF-01-INLET",
+      "explanation": "Suprimento insuficiente, admissão de ar ou restrição na alimentação; hipótese não demonstrada.",
+      "discriminator": "Conferir arquitetura e evidências documentadas de nível, aeração, condição de fluido, filtros e suprimento no método OEM efetivo.",
+      "unconfirmed": true
+    },
+    {
+      "id": "HC-DIFF-01-DRIVE",
+      "explanation": "Rotação, potência ou comando de deslocamento das bombas incompatível com a condição; efeito funcional pode ser semelhante.",
+      "discriminator": "Comparar registros de rotação, comando e intertravamentos usando condições e critérios OEM aplicáveis.",
+      "unconfirmed": true
+    },
+    {
+      "id": "HC-DIFF-01-REG",
+      "explanation": "Desvio de compensação, regulação ou válvula de alívio; perda de resposta não significa falha de sucção.",
+      "discriminator": "Identificar a regulação efetiva e a evidência comparável da resposta de pressão/vazão sob método autorizado.",
+      "unconfirmed": true
+    }
+  ],
+  "evidenceToRequest": [
+    {
+      "question": "Qual é a topologia OEM efetiva, incluindo número de bombas, alimentação, controles e função de cada ramo?",
+      "limitOfInference": "A arquitetura ilustrativa não confirma a configuração de modelo e série."
+    },
+    {
+      "question": "O histórico de nível do reservatório, fluido, filtros e eventuais sinais de aeração está documentado com origem e condição?",
+      "limitOfInference": "Um registro isolado ou ruído não confirma restrição ou cavitação."
+    },
+    {
+      "question": "Há dados coerentes de rotação, comandos e comportamento de regulação, coletados conforme método OEM autorizado?",
+      "limitOfInference": "Pressão medida em um ponto não equivale automaticamente a vazão disponível no atuador."
+    }
+  ],
+  "confounders": [
+    "Carga aplicada e diferença entre ramos.",
+    "Temperatura e viscosidade na comparação.",
+    "Intertravamentos ou controles eletrônicos.",
+    "Arquitetura com bombas, pilotos ou circuitos prioritários distintos."
+  ],
+  "ontologyLinks": [
+    {
+      "id": "ME-12",
+      "relationship": "relevant_concept_only",
+      "provesThisMechanism": false
+    },
+    {
+      "id": "ME-08",
+      "relationship": "alternative_mechanism",
+      "provesThisMechanism": false
+    }
+  ],
+  "provenance": {
+    "canonicalScenarioPath": "data/quality/hydraulic-circuit-differential.v1.json",
+    "canonicalScenarioId": "HC-DIFF-01",
+    "sourceIds": [
+      "CAT-HYD-TECHNICAL-ANALYSIS",
+      "CAT-HYD-PUMPS-MOTORS",
+      "CAT-HYD-CIRCUIT-INSPECTION"
+    ],
+    "ontologyPath": "data/ontology/concepts.v1.json",
+    "sourceRegistryPath": "data/research/sources.v1.json",
+    "editorialMode": "original_synthesis_of_existing_public_catalog_not_new_field_evidence"
+  },
+  "applicability": {
+    "verifiedModels": [],
+    "verifiedSerials": [],
+    "oemAcceptanceLimits": null,
+    "fieldObservations": 0,
+    "performedTests": 0,
+    "confirmedRootCauses": 0
+  },
+  "safety": {
+    "boundary": "Este verbete serve para estudo e preparação documental de hipóteses. Qualquer inspeção, teste ou trabalho no circuito requer identificação do equipamento, controle de energias e procedimento OEM por configuração/série em ambiente autorizado.",
+    "prohibitedActions": [
+      "Não procurar microvazamentos com mãos/corpo.",
+      "Não abrir linhas pressurizadas nem provocar pressão máxima sem procedimento e autorização.",
+      "Não substituir bombas ou válvulas apenas por lentidão/ruído.",
+      "Não usar parâmetros de uma família/modelo como limite universal."
+    ]
+  },
+  "operationalApproval": false,
+  "sapMappingApproved": false,
+  "automaticDiagnosisAllowed": false
+}

@@ -19,6 +19,11 @@ on:
       - 'scripts/audit-knowledge-discovery.mjs'
       - 'scripts/query-knowledge-index.mjs'
       - 'scripts/audit-knowledge-index.mjs'
+      - 'scripts/build-semantic-atlas.mjs'
+      - 'scripts/audit-technical-knowledge-record.mjs'
+      - 'docs/mapa-semantico.html'
+      - 'data/knowledge/fundamentals/**'
+      - 'schemas/technical-knowledge-record.schema.json'
       - 'package.json'
       - '.github/workflows/knowledge-library.yml'
   workflow_dispatch:
@@ -34,5 +39,7 @@ jobs:
           node-version: '20'
       - run: npm run knowledge:catalog:audit
       - run: npm run knowledge:discovery:audit
+      - run: npm run knowledge:atlas:build
+      - run: npm run knowledge:technical:audit
       - run: node --check scripts/query-knowledge-index.mjs
       - run: npm run knowledge:query -- --query cavitacao
