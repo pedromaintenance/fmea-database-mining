@@ -5,6 +5,7 @@ on:
       - 'scripts/lib/hydraulic-editorial-triage.mjs'
       - 'scripts/audit-hydraulic-editorial-triage.mjs'
       - 'scripts/triage-hydraulic-editorial-reviews.mjs'
+      - 'scripts/audit-hydraulic-synthetic-triage-stress.mjs'
       - 'data/quality/hydraulic-expert-review-sheet.v1.json'
       - 'data/quality/hydraulic-diagnostic-reasoning-benchmark.v1.json'
       - 'data/quality/hydraulic-expert-review-protocol.v1.json'
@@ -24,5 +25,6 @@ jobs:
           node-version: '20'
       - run: npm run pm:hydraulic:peer:review:audit
       - run: npm run pm:hydraulic:editorial:triage:audit
+      - run: npm run pm:hydraulic:triage:stress:audit
       - run: node --check scripts/triage-hydraulic-editorial-reviews.mjs
       - run: node --check scripts/lib/hydraulic-editorial-triage.mjs
