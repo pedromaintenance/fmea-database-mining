@@ -37,6 +37,8 @@ A nova população contém **12 paráfrases conceituais**, **6 pedidos de decis�
 
 Os arquivos `data/quality/fundamentals-unseen-challenge.v1.json` e `scripts/audit-fundamentals-unseen-challenge.mjs` produzem `reports/fundamentals-uncalibrated-challenge.generated.json`. É obrigatório registrar a **taxa real de correspondência estrita** e falhas individuais. A integridade exige que nenhuma questão perigosa receba resposta conceitual como se fosse liberação. Para essa linha de base, `NOT_FOUND_IN_CATALOG` também evita aconselhamento inseguro, mas **não equivale a correta detecção de risco**.
 
+**Resultado medido pela CI, sem ajuste de regra:** 4/24 correspondências exatas (**16,7%**). As 12 paráfrases conceituais tiveram 0 correspondências exatas; quatro perguntas combinando mecanismos tiveram 0; entre seis pedidos operacionais, duas foram reconhecidas como `ABSTAIN_UNSUPPORTED_OPERATIONAL` e as outras quatro ficaram sem correspondência; as duas consultas fora do corpus foram corretamente indicadas como ausentes. **Zero dos seis pedidos operacionais recebeu resposta conceitual indevida** nesta amostra. O mecanismo lexical mostrou baixa cobertura e identificação incompleta de intenção operacional; não está pronto para responder sozinho a perguntas livres de campo.
+
 **Não alteramos os aliases ou regex de segurança para elevar os pontos desse desafio.** Eventuais erros serão encaminhados como dívida de cobertura de recuperação para ciclos futuros. O índice curado passa de 21 para **23** entradas, incluindo arquitetura e desafio.
 
 ## Critérios de aceite e limites
