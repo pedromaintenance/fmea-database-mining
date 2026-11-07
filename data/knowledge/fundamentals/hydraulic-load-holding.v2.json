@@ -1,0 +1,141 @@
+{
+  "schema": "fmea-mining.technical-knowledge-record.v2",
+  "recordVersion": "1.4.6",
+  "recordType": "fundamental_technical_knowledge",
+  "evidenceClass": "CONCEPTUAL",
+  "reviewStatus": "PENDING_REVIEW",
+  "operationalApproval": false,
+  "sapMappingApproved": false,
+  "automaticDiagnosisAllowed": false,
+  "id": "TK-HYD-HOLD-001",
+  "title": "Retenção e controle de carga em circuitos hidráulicos",
+  "titleEn": "Hydraulic load holding and counterbalance control",
+  "domain": "Hidráulica",
+  "systemTags": [
+    "retenção de carga",
+    "válvula contrabalanço",
+    "counterbalance",
+    "descida de carga",
+    "piloto",
+    "segurança funcional"
+  ],
+  "definition": "Circuitos de retenção e contrabalanço podem limitar movimento de uma carga sob gravidade ou esforço externo. Válvula contrabalanço e válvula de retenção pilotada têm princípios diferentes; a configuração real define sua função e seus requisitos de segurança.",
+  "functionRequired": "O sistema de sustentação deve limitar movimentos não comandados e permitir movimento controlado da carga nos modos permitidos pelo projeto, sem depender de uma hipótese de fechamento de válvula.",
+  "physicalMechanism": {
+    "summary": "Em certos circuitos, um contrabalanço modula o escoamento de saída do atuador em função da carga e do sinal piloto para controlar uma carga motriz. Uma válvula de retenção pilotada pode bloquear fluxo até receber sinal. Deriva ou descida não demonstra isoladamente vazamento interno do atuador ou defeito de uma válvula específica.",
+    "possibleChain": [
+      "Uma carga com potencial para acelerar solicita contenção e movimento controlado de acordo com a arquitetura.",
+      "O comando piloto e a pressão associada ao esforço podem abrir/modular uma válvula de controle de carga quando o movimento é autorizado.",
+      "Perda de retenção pode envolver válvula, vedação, linhas, regulagem, geometria, energia armazenada ou mecanismo mecânico externo."
+    ]
+  },
+  "illustrativeSymptoms": [
+    "Deslocamento involuntário ou deriva relatada de implemento, sem localizar a origem da perda de contenção.",
+    "Movimento irregular durante descida ou transferência de carga, sem evidência de qual válvula atua."
+  ],
+  "competingHypotheses": [
+    {
+      "id": "HYP-HOLD-VALVE",
+      "mechanism": "Retenção por válvula não efetiva, fuga interna ou sinal piloto indevido.",
+      "discriminator": "Confirmar diagrama, identificação e condição de comando de retenção por intervenção especializada autorizada.",
+      "unconfirmed": true
+    },
+    {
+      "id": "HYP-HOLD-CYL",
+      "mechanism": "Fuga em atuador ou outra ligação hidráulica gera comportamento semelhante a falha de contrabalanço.",
+      "discriminator": "Separar casos de fuga interna e válvula conforme circuito e procedimento de fabricante.",
+      "unconfirmed": true
+    },
+    {
+      "id": "HYP-HOLD-MECHANICAL",
+      "mechanism": "Movimento ou deformação de suporte, ligação ou carga aparente não corresponde a deriva hidráulica pura.",
+      "discriminator": "Isolar observações mecânicas e geométricas em condição estável e controlada.",
+      "unconfirmed": true
+    }
+  ],
+  "evidenceToRequest": [
+    {
+      "question": "A válvula de retenção/contrabalanço existe neste conjunto e onde ela está no esquema por série?",
+      "limitOfInference": "O catálogo Parker E2 descreve apenas um tipo e não comprova que o circuito real possui esse arranjo."
+    },
+    {
+      "question": "A carga, posição, intertravamento, sustentação mecânica e histórico da deriva estão documentados?",
+      "limitOfInference": "Uma observação isolada de deriva não autoriza ajuste nem desmonte de válvula."
+    },
+    {
+      "question": "A engenharia classificou o risco e autorizou um método seguro que diferencia válvula, cilindro e ligações?",
+      "limitOfInference": "Bloqueios e energia hidráulica aprisionada impedem testes improvisados."
+    }
+  ],
+  "confounders": [
+    "Circuitos com retenção por válvula, freio mecânico ou combinação de funções.",
+    "Dilatação térmica e pressão aprisionada em linhas.",
+    "Fuga interna/externa do atuador e efeito de área diferencial.",
+    "Movimento de estruturas, folgas e cargas motrizes."
+  ],
+  "ontologyLinks": [
+    {
+      "id": "ME-15",
+      "relation": "primary_concept",
+      "mechanismProven": false
+    },
+    {
+      "id": "ME-14",
+      "relation": "competing_concept",
+      "mechanismProven": false
+    },
+    {
+      "id": "ME-12",
+      "relation": "competing_concept",
+      "mechanismProven": false
+    }
+  ],
+  "provenance": {
+    "sourceRegistryPath": "data/research/sources.v1.json",
+    "sourceNotes": [
+      {
+        "sourceId": "PARKER-E2-COUNTERBALANCE",
+        "supports": "Descreve modulação de fluxo por válvula contrabalanço com assistência piloto para controle de carga que tende a acelerar.",
+        "doesNotSupport": "Não define que o equipamento possui Parker E2 nem seus ajustes, portas ou faixas seguras."
+      },
+      {
+        "sourceId": "PARKER-CYL-DRIFT-SERVICE",
+        "supports": "Discute deriva do cilindro e necessidade de separar vazamentos em cilindro, válvulas e ligações ao investigar perda de posição.",
+        "doesNotSupport": "Não autoriza desmontagem, pressurização ou diagnóstico de um ativo específico sem documentação e isolamento."
+      }
+    ],
+    "originAnchors": [
+      {
+        "path": "data/ontology/concepts.v1.json",
+        "recordId": "ME-15",
+        "role": "mechanism_ontology"
+      },
+      {
+        "path": "data/ontology/concepts.v1.json",
+        "recordId": "ME-14",
+        "role": "mechanism_ontology"
+      }
+    ],
+    "originalInterpretation": "original_synthesis_not_manufacturer_endorsement",
+    "newFieldEvidence": false
+  },
+  "applicability": {
+    "scope": "Retenção de carga e sistemas com atuadores hidráulicos em nível conceitual, sem identificação do circuito efetivo.",
+    "verifiedModels": [],
+    "verifiedSerials": [],
+    "oemAcceptanceLimits": null,
+    "fieldObservations": 0,
+    "performedTests": 0,
+    "confirmedRootCauses": 0
+  },
+  "safety": {
+    "boundary": "Movimento de carga é risco grave. Nenhum procedimento desta ficha substitui isolamento de energia, escoramento, bloqueio e autorização técnica de máquina específica.",
+    "prohibitedActions": [
+      "Não remover ou regular válvula de retenção/contrabalanço com carga suspensa ou pressão residual.",
+      "Não testar a deriva colocando pessoas na zona de esmagamento.",
+      "Não usar o artigo Parker E2 para ajuste em outra arquitetura.",
+      "Não liberar equipamento com suspeita de perda de sustentação usando somente o portal."
+    ],
+    "safeNextStep": "Classificar risco e retirar de uso quando a sustentação estiver comprometida; obter esquema e método seguro aprovado antes da investigação."
+  }
+}
