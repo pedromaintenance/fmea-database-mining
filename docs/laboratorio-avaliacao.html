@@ -108,6 +108,7 @@ $('file').addEventListener('change',async ()=>{
  }catch(e){message('Falha ao importar: '+e.message)}finally{$('file').value=''}
 });
 $('freeze').addEventListener('click',()=>{
+ if(!$('redacted').checked){message('Confirme que todas as perguntas e justificativas foram anonimizadas antes de congelar ou exportar.');return}
  const declaration={questionsOutsideDevelopment:$('outside').checked,reviewerNotInEngineDevelopment:$('independent').checked,predictionsHiddenUntilLabelsFrozen:$('blind').checked,redactedPublicSafe:$('redacted').checked,judgementMethod:$('method').value,notes:$('notes').value};
  const batch={schema:'fmea-mining.external-review-batch.v1',version:'1.4.7',nature:'self_attested_external_questions_and_blind_human_labels',engineSha256:payload.engineSha256,corpusSha256:payload.corpusSha256,reviewerDeclaration:declaration,cases:cases.map(x=>({...x,reviewedBeforePrediction:true}))};
  const errors=checkReviewBatch(batch,{engineSha256:payload.engineSha256,corpusSha256:payload.corpusSha256,recordIds:records.map(r=>r.id)});
