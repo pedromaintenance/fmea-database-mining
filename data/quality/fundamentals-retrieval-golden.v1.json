@@ -1,0 +1,449 @@
+{
+  "schema": "fmea-mining.fundamentals-retrieval-golden.v1",
+  "version": "1.4.4",
+  "nature": "manually_authored_closed_corpus_test_questions_not_independent_ai_evaluation",
+  "scope": "six_conceptual_foundational_records_only",
+  "policy": "No operational applicability or root cause assertions; matching a record is a discovery result, not technical correctness or human approval.",
+  "classes": {
+    "conceptualDiscovery": 36,
+    "unsupportedAssetSpecific": 8,
+    "ambiguous": 4,
+    "outsideCorpus": 2
+  },
+  "cases": [
+    {
+      "id": "RQ-001",
+      "question": "O que é cavitação hidráulica?",
+      "expectedStatus": "FOUND_CONCEPTUAL",
+      "expectedIds": [
+        "TK-HYD-CAVITATION-001"
+      ],
+      "intent": "conceptual_discovery"
+    },
+    {
+      "id": "RQ-002",
+      "question": "O que são cavidades de vapor em bomba?",
+      "expectedStatus": "FOUND_CONCEPTUAL",
+      "expectedIds": [
+        "TK-HYD-CAVITATION-001"
+      ],
+      "intent": "conceptual_discovery"
+    },
+    {
+      "id": "RQ-003",
+      "question": "Como distinguir cavitação de ruído mecânico?",
+      "expectedStatus": "FOUND_CONCEPTUAL",
+      "expectedIds": [
+        "TK-HYD-CAVITATION-001"
+      ],
+      "intent": "conceptual_discovery"
+    },
+    {
+      "id": "RQ-004",
+      "question": "Quando ocorre implosão de vapor no fluido?",
+      "expectedStatus": "FOUND_CONCEPTUAL",
+      "expectedIds": [
+        "TK-HYD-CAVITATION-001"
+      ],
+      "intent": "conceptual_discovery"
+    },
+    {
+      "id": "RQ-005",
+      "question": "Pode haver erosão por cavitação?",
+      "expectedStatus": "FOUND_CONCEPTUAL",
+      "expectedIds": [
+        "TK-HYD-CAVITATION-001"
+      ],
+      "intent": "conceptual_discovery"
+    },
+    {
+      "id": "RQ-006",
+      "question": "Quais condições favorecem cavitação na sucção?",
+      "expectedStatus": "FOUND_CONCEPTUAL",
+      "expectedIds": [
+        "TK-HYD-CAVITATION-001"
+      ],
+      "intent": "conceptual_discovery"
+    },
+    {
+      "id": "RQ-007",
+      "question": "O que é aeração em óleo hidráulico?",
+      "expectedStatus": "FOUND_CONCEPTUAL",
+      "expectedIds": [
+        "TK-HYD-AERATION-001"
+      ],
+      "intent": "conceptual_discovery"
+    },
+    {
+      "id": "RQ-008",
+      "question": "Por que espuma aparece no reservatório?",
+      "expectedStatus": "FOUND_CONCEPTUAL",
+      "expectedIds": [
+        "TK-HYD-AERATION-001"
+      ],
+      "intent": "conceptual_discovery"
+    },
+    {
+      "id": "RQ-009",
+      "question": "Como ar livre afeta um circuito hidráulico?",
+      "expectedStatus": "FOUND_CONCEPTUAL",
+      "expectedIds": [
+        "TK-HYD-AERATION-001"
+      ],
+      "intent": "conceptual_discovery"
+    },
+    {
+      "id": "RQ-010",
+      "question": "Que evidência de ar entranhado é relevante?",
+      "expectedStatus": "FOUND_CONCEPTUAL",
+      "expectedIds": [
+        "TK-HYD-AERATION-001"
+      ],
+      "intent": "conceptual_discovery"
+    },
+    {
+      "id": "RQ-011",
+      "question": "Bolhas no óleo indicam aeração?",
+      "expectedStatus": "FOUND_CONCEPTUAL",
+      "expectedIds": [
+        "TK-HYD-AERATION-001"
+      ],
+      "intent": "conceptual_discovery"
+    },
+    {
+      "id": "RQ-012",
+      "question": "Como distinguir ar incorporado de vapor?",
+      "expectedStatus": "FOUND_CONCEPTUAL",
+      "expectedIds": [
+        "TK-HYD-AERATION-001"
+      ],
+      "intent": "conceptual_discovery"
+    },
+    {
+      "id": "RQ-013",
+      "question": "O que é desgaste abrasivo?",
+      "expectedStatus": "FOUND_CONCEPTUAL",
+      "expectedIds": [
+        "TK-TRIB-ABRASION-001"
+      ],
+      "intent": "conceptual_discovery"
+    },
+    {
+      "id": "RQ-014",
+      "question": "Como partículas duras produzem abrasão?",
+      "expectedStatus": "FOUND_CONCEPTUAL",
+      "expectedIds": [
+        "TK-TRIB-ABRASION-001"
+      ],
+      "intent": "conceptual_discovery"
+    },
+    {
+      "id": "RQ-015",
+      "question": "O que são riscos de abrasão em pista?",
+      "expectedStatus": "FOUND_CONCEPTUAL",
+      "expectedIds": [
+        "TK-TRIB-ABRASION-001"
+      ],
+      "intent": "conceptual_discovery"
+    },
+    {
+      "id": "RQ-016",
+      "question": "O que é desgaste de três corpos em rolamentos?",
+      "expectedStatus": "FOUND_CONCEPTUAL",
+      "expectedIds": [
+        "TK-TRIB-ABRASION-001"
+      ],
+      "intent": "conceptual_discovery"
+    },
+    {
+      "id": "RQ-017",
+      "question": "Quais evidências diferenciam abrasivo de adesivo?",
+      "expectedStatus": "FOUND_CONCEPTUAL",
+      "expectedIds": [
+        "TK-TRIB-ABRASION-001"
+      ],
+      "intent": "conceptual_discovery"
+    },
+    {
+      "id": "RQ-018",
+      "question": "Que mecanismos causam sulcos abrasivos?",
+      "expectedStatus": "FOUND_CONCEPTUAL",
+      "expectedIds": [
+        "TK-TRIB-ABRASION-001"
+      ],
+      "intent": "conceptual_discovery"
+    },
+    {
+      "id": "RQ-019",
+      "question": "Como se forma filme lubrificante em rolamentos?",
+      "expectedStatus": "FOUND_CONCEPTUAL",
+      "expectedIds": [
+        "TK-TRIB-FILM-001"
+      ],
+      "intent": "conceptual_discovery"
+    },
+    {
+      "id": "RQ-020",
+      "question": "O que é EHL no contato rolante?",
+      "expectedStatus": "FOUND_CONCEPTUAL",
+      "expectedIds": [
+        "TK-TRIB-FILM-001"
+      ],
+      "intent": "conceptual_discovery"
+    },
+    {
+      "id": "RQ-021",
+      "question": "Por que espessura do filme muda com viscosidade?",
+      "expectedStatus": "FOUND_CONCEPTUAL",
+      "expectedIds": [
+        "TK-TRIB-FILM-001"
+      ],
+      "intent": "conceptual_discovery"
+    },
+    {
+      "id": "RQ-022",
+      "question": "Como filme de óleo separa superfícies?",
+      "expectedStatus": "FOUND_CONCEPTUAL",
+      "expectedIds": [
+        "TK-TRIB-FILM-001"
+      ],
+      "intent": "conceptual_discovery"
+    },
+    {
+      "id": "RQ-023",
+      "question": "Qual o papel da lubrificação mista em rolamentos?",
+      "expectedStatus": "FOUND_CONCEPTUAL",
+      "expectedIds": [
+        "TK-TRIB-FILM-001"
+      ],
+      "intent": "conceptual_discovery"
+    },
+    {
+      "id": "RQ-024",
+      "question": "O que é lubrificação limite?",
+      "expectedStatus": "FOUND_CONCEPTUAL",
+      "expectedIds": [
+        "TK-TRIB-FILM-001"
+      ],
+      "intent": "conceptual_discovery"
+    },
+    {
+      "id": "RQ-025",
+      "question": "O que significa o código ISO 4406?",
+      "expectedStatus": "FOUND_CONCEPTUAL",
+      "expectedIds": [
+        "TK-FLUID-SOLIDS-001"
+      ],
+      "intent": "conceptual_discovery"
+    },
+    {
+      "id": "RQ-026",
+      "question": "Como interpretar contagem de partículas no óleo?",
+      "expectedStatus": "FOUND_CONCEPTUAL",
+      "expectedIds": [
+        "TK-FLUID-SOLIDS-001"
+      ],
+      "intent": "conceptual_discovery"
+    },
+    {
+      "id": "RQ-027",
+      "question": "De onde vem contaminação sólida no fluido?",
+      "expectedStatus": "FOUND_CONCEPTUAL",
+      "expectedIds": [
+        "TK-FLUID-SOLIDS-001"
+      ],
+      "intent": "conceptual_discovery"
+    },
+    {
+      "id": "RQ-028",
+      "question": "Por que a limpeza do óleo deve ser monitorada?",
+      "expectedStatus": "FOUND_CONCEPTUAL",
+      "expectedIds": [
+        "TK-FLUID-SOLIDS-001"
+      ],
+      "intent": "conceptual_discovery"
+    },
+    {
+      "id": "RQ-029",
+      "question": "Como amostragem influencia concentração de partículas?",
+      "expectedStatus": "FOUND_CONCEPTUAL",
+      "expectedIds": [
+        "TK-FLUID-SOLIDS-001"
+      ],
+      "intent": "conceptual_discovery"
+    },
+    {
+      "id": "RQ-030",
+      "question": "Como distinguir partículas externas das geradas pelo sistema?",
+      "expectedStatus": "FOUND_CONCEPTUAL",
+      "expectedIds": [
+        "TK-FLUID-SOLIDS-001"
+      ],
+      "intent": "conceptual_discovery"
+    },
+    {
+      "id": "RQ-031",
+      "question": "O que é fadiga de contato em rolamentos?",
+      "expectedStatus": "FOUND_CONCEPTUAL",
+      "expectedIds": [
+        "TK-BRG-RCF-001"
+      ],
+      "intent": "conceptual_discovery"
+    },
+    {
+      "id": "RQ-032",
+      "question": "Como ocorre spalling em rolamentos?",
+      "expectedStatus": "FOUND_CONCEPTUAL",
+      "expectedIds": [
+        "TK-BRG-RCF-001"
+      ],
+      "intent": "conceptual_discovery"
+    },
+    {
+      "id": "RQ-033",
+      "question": "Diferença entre fadiga superficial e subsuperficial",
+      "expectedStatus": "FOUND_CONCEPTUAL",
+      "expectedIds": [
+        "TK-BRG-RCF-001"
+      ],
+      "intent": "conceptual_discovery"
+    },
+    {
+      "id": "RQ-034",
+      "question": "O que é microtrinca na pista de rolamento?",
+      "expectedStatus": "FOUND_CONCEPTUAL",
+      "expectedIds": [
+        "TK-BRG-RCF-001"
+      ],
+      "intent": "conceptual_discovery"
+    },
+    {
+      "id": "RQ-035",
+      "question": "Como tensões cíclicas promovem descascamento?",
+      "expectedStatus": "FOUND_CONCEPTUAL",
+      "expectedIds": [
+        "TK-BRG-RCF-001"
+      ],
+      "intent": "conceptual_discovery"
+    },
+    {
+      "id": "RQ-036",
+      "question": "O que é microspalling?",
+      "expectedStatus": "FOUND_CONCEPTUAL",
+      "expectedIds": [
+        "TK-BRG-RCF-001"
+      ],
+      "intent": "conceptual_discovery"
+    },
+    {
+      "id": "RQ-037",
+      "question": "Qual pressão exata de sucção devo usar na CAT 395?",
+      "expectedStatus": "ABSTAIN_UNSUPPORTED_OPERATIONAL",
+      "expectedIds": [],
+      "intent": "unsupported_asset_specific_decision"
+    },
+    {
+      "id": "RQ-038",
+      "question": "Quantos bar autorizam liberar a bomba da escavadeira 6030?",
+      "expectedStatus": "ABSTAIN_UNSUPPORTED_OPERATIONAL",
+      "expectedIds": [],
+      "intent": "unsupported_asset_specific_decision"
+    },
+    {
+      "id": "RQ-039",
+      "question": "Qual concentração ISO 4406 é limite universal para toda frota?",
+      "expectedStatus": "ABSTAIN_UNSUPPORTED_OPERATIONAL",
+      "expectedIds": [],
+      "intent": "unsupported_asset_specific_decision"
+    },
+    {
+      "id": "RQ-040",
+      "question": "Qual PN da bomba do 777E devo pedir?",
+      "expectedStatus": "ABSTAIN_UNSUPPORTED_OPERATIONAL",
+      "expectedIds": [],
+      "intent": "unsupported_asset_specific_decision"
+    },
+    {
+      "id": "RQ-041",
+      "question": "Troco o rolamento do caminhão sem inspeção?",
+      "expectedStatus": "ABSTAIN_UNSUPPORTED_OPERATIONAL",
+      "expectedIds": [],
+      "intent": "unsupported_asset_specific_decision"
+    },
+    {
+      "id": "RQ-042",
+      "question": "Confirme a causa raiz do ruído da minha bomba.",
+      "expectedStatus": "ABSTAIN_UNSUPPORTED_OPERATIONAL",
+      "expectedIds": [],
+      "intent": "unsupported_asset_specific_decision"
+    },
+    {
+      "id": "RQ-043",
+      "question": "Autorize liberar equipamento com spalling.",
+      "expectedStatus": "ABSTAIN_UNSUPPORTED_OPERATIONAL",
+      "expectedIds": [],
+      "intent": "unsupported_asset_specific_decision"
+    },
+    {
+      "id": "RQ-044",
+      "question": "Qual prazo de troca obrigatório em horas para rolamento da frota?",
+      "expectedStatus": "ABSTAIN_UNSUPPORTED_OPERATIONAL",
+      "expectedIds": [],
+      "intent": "unsupported_asset_specific_decision"
+    },
+    {
+      "id": "RQ-045",
+      "question": "Qual a diferença entre cavitação e aeração?",
+      "expectedStatus": "MULTIPLE_CONCEPTS",
+      "expectedIds": [
+        "TK-HYD-AERATION-001",
+        "TK-HYD-CAVITATION-001"
+      ],
+      "intent": "ambiguous_mechanisms"
+    },
+    {
+      "id": "RQ-046",
+      "question": "Como comparar desgaste abrasivo e fadiga de contato?",
+      "expectedStatus": "MULTIPLE_CONCEPTS",
+      "expectedIds": [
+        "TK-BRG-RCF-001",
+        "TK-TRIB-ABRASION-001"
+      ],
+      "intent": "ambiguous_mechanisms"
+    },
+    {
+      "id": "RQ-047",
+      "question": "Contaminação sólida compromete filme lubrificante?",
+      "expectedStatus": "MULTIPLE_CONCEPTS",
+      "expectedIds": [
+        "TK-FLUID-SOLIDS-001",
+        "TK-TRIB-FILM-001"
+      ],
+      "intent": "ambiguous_mechanisms"
+    },
+    {
+      "id": "RQ-048",
+      "question": "Filme lubrificante insuficiente causa fadiga de contato?",
+      "expectedStatus": "MULTIPLE_CONCEPTS",
+      "expectedIds": [
+        "TK-BRG-RCF-001",
+        "TK-TRIB-FILM-001"
+      ],
+      "intent": "ambiguous_mechanisms"
+    },
+    {
+      "id": "RQ-049",
+      "question": "Onde ficam os códigos PID SPN FMI do ECM?",
+      "expectedStatus": "NOT_FOUND_IN_CATALOG",
+      "expectedIds": [],
+      "intent": "outside_six_article_scope"
+    },
+    {
+      "id": "RQ-050",
+      "question": "Como configurar rede Modbus TCP para um CLP?",
+      "expectedStatus": "NOT_FOUND_IN_CATALOG",
+      "expectedIds": [],
+      "intent": "outside_six_article_scope"
+    }
+  ]
+}
