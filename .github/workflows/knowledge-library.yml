@@ -8,6 +8,10 @@ on:
       - 'docs/AI_RETRIEVAL_CONTRACT.md'
       - 'docs/KNOWLEDGE_PLATFORM_ARCHITECTURE.md'
       - 'docs/ROADMAP_TECNICO_2026_2027.md'
+      - 'data/quality/fundamentals-retrieval-golden.v1.json'
+      - 'scripts/lib/fundamentals-retrieval.mjs'
+      - 'scripts/query-fundamentals.mjs'
+      - 'scripts/audit-fundamentals-retrieval.mjs'
       - 'docs/biblioteca-tecnica.html'
       - 'schemas/technical-knowledge-record.v2.schema.json'
       - 'scripts/build-fundamentals-portal.mjs'
@@ -50,5 +54,7 @@ jobs:
       - run: npm run knowledge:technical:audit
       - run: npm run knowledge:fundamentals:build
       - run: npm run knowledge:fundamentals:audit
+      - run: npm run knowledge:retrieval:audit
+      - run: npm run knowledge:fundamentals:query -- --query "fadiga de contato"
       - run: node --check scripts/query-knowledge-index.mjs
       - run: npm run knowledge:query -- --query cavitacao
