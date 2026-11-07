@@ -1,0 +1,141 @@
+{
+  "schema": "fmea-mining.technical-knowledge-record.v2",
+  "recordVersion": "1.4.4",
+  "recordType": "fundamental_technical_knowledge",
+  "evidenceClass": "CONCEPTUAL",
+  "reviewStatus": "PENDING_REVIEW",
+  "operationalApproval": false,
+  "sapMappingApproved": false,
+  "automaticDiagnosisAllowed": false,
+  "id": "TK-FLUID-SOLIDS-001",
+  "title": "Contaminação sólida e interpretação de limpeza de fluidos",
+  "titleEn": "Solid contamination and fluid cleanliness interpretation",
+  "domain": "Monitoramento de condição",
+  "systemTags": [
+    "partículas sólidas",
+    "ISO 4406",
+    "fluido hidráulico",
+    "amostragem",
+    "filtração",
+    "contaminação"
+  ],
+  "definition": "Contaminação sólida consiste na presença de partículas no fluido. O código ISO 4406 representa uma classificação de quantidade de partículas, não uma assinatura única da peça que as gerou, da origem do ingresso ou da severidade de dano.",
+  "functionRequired": "O fluido e o circuito devem manter limpeza compatível com os requisitos de confiabilidade dos seus componentes, com amostragem representativa e controle das fontes de partículas.",
+  "physicalMechanism": {
+    "summary": "Partículas podem entrar por ambiente, serviço, abastecimento ou componentes e também resultar de desgaste interno. Dependendo de tamanho, dureza, folgas e contato, podem aumentar abrasão, danificar superfícies e afetar mecanismos de controle. A contagem ISO quantifica uma condição de limpeza e não distingue por si só origem, tipo de desgaste nem componente falhado.",
+    "possibleChain": [
+      "Partículas entram no fluido ou são produzidas internamente, podendo variar em concentração e natureza ao longo do circuito.",
+      "Seu transporte, aprisionamento ou interação com folgas e superfícies pode induzir restrição, abrasão ou indentações.",
+      "A interpretação depende de método de amostragem, tendência, caracterização de partículas, histórico de intervenções e arquitetura do sistema."
+    ]
+  },
+  "illustrativeSymptoms": [
+    "Laudo com código ISO 4406 elevado em relação a condição de referência devidamente documentada, sem identificar origem.",
+    "Partículas observadas em amostra ou elemento filtrante, cuja composição e procedência ainda são desconhecidas."
+  ],
+  "competingHypotheses": [
+    {
+      "id": "HYP-SOLIDS-INGRESS",
+      "mechanism": "Ingresso externo durante operação, intervenção, respiro, vedação, abastecimento ou coleta.",
+      "discriminator": "Verificar histórico de vedação, limpeza de serviço, condição de amostragem e registros de intervenções.",
+      "unconfirmed": true
+    },
+    {
+      "id": "HYP-SOLIDS-WEAR",
+      "mechanism": "Partículas geradas por desgaste interno e transportadas pelo circuito.",
+      "discriminator": "Confrontar composição e morfologia dos detritos com material de componentes candidatos e tendência por compartimento.",
+      "unconfirmed": true
+    },
+    {
+      "id": "HYP-SOLIDS-SAMPLE",
+      "mechanism": "Contaminação de frasco, ponto de coleta, instrumento ou técnica gerou resultado não representativo.",
+      "discriminator": "Verificar repetição de amostra, preparação do frasco, procedimento, ponto e contexto documental antes de atribuir defeito.",
+      "unconfirmed": true
+    }
+  ],
+  "evidenceToRequest": [
+    {
+      "question": "O código de limpeza foi obtido por método e ponto representativos, com data, unidade, frasco e cadeia de amostragem registrados?",
+      "limitOfInference": "ISO 4406 classifica quantidade de partículas e não valida causalidade ou rejeição de um equipamento específico."
+    },
+    {
+      "question": "Há histórico de fluidos, trocas de filtro, abertura de circuito e vedação, além de tendência de exames comparáveis?",
+      "limitOfInference": "Um número isolado pode refletir manutenção, coleta ou transiente sem indicar qual componente se degradou."
+    },
+    {
+      "question": "Partículas tiveram morfologia, composição e tamanho avaliados por método apropriado quando necessário?",
+      "limitOfInference": "Contagem de partículas não prova desgaste abrasivo nem confirma falha de bomba ou rolamento."
+    }
+  ],
+  "confounders": [
+    "Estado e limpeza do frasco e ponto de amostragem.",
+    "Intervalo entre serviço, coleta e operação com carga.",
+    "Mudança de lubrificante e método de contagem.",
+    "Origem externa, detritos internos e filtros em condições diferentes."
+  ],
+  "ontologyLinks": [
+    {
+      "id": "ME-01",
+      "relation": "primary_concept",
+      "mechanismProven": false
+    },
+    {
+      "id": "ME-12",
+      "relation": "competing_concept",
+      "mechanismProven": false
+    },
+    {
+      "id": "ME-13",
+      "relation": "competing_concept",
+      "mechanismProven": false
+    }
+  ],
+  "provenance": {
+    "sourceRegistryPath": "data/research/sources.v1.json",
+    "sourceNotes": [
+      {
+        "sourceId": "ISO-4406-2021",
+        "supports": "A norma define código para representar quantidade de partículas sólidas em fluido hidráulico.",
+        "doesNotSupport": "Não estabelece por si só componente com defeito, origem de partículas ou limite universal para cada frota."
+      },
+      {
+        "sourceId": "PARKER-HYD-FILTRATION-HANDBOOK",
+        "supports": "Orienta conceitos de contaminação, ar e filtragem e seus efeitos potenciais no circuito.",
+        "doesNotSupport": "Não identifica fabricante da partícula ou causa raiz de falha apenas por código de limpeza."
+      },
+      {
+        "sourceId": "SKF-CONTAMINATION-BEARING-LIFE",
+        "supports": "Expõe riscos de partículas duras e indentações sobre superfícies e vida de rolamentos em pesquisa específica.",
+        "doesNotSupport": "Os valores de experimentos não são parâmetros de garantia nem benchmarks de vida para toda operação."
+      }
+    ],
+    "originAnchors": [
+      {
+        "path": "data/ontology/concepts.v1.json",
+        "recordId": "ME-01",
+        "role": "mechanism_ontology"
+      }
+    ],
+    "originalInterpretation": "original_synthesis_not_manufacturer_endorsement",
+    "newFieldEvidence": false
+  },
+  "applicability": {
+    "scope": "Sistemas hidráulicos e contatos mecânicos que utilizam fluido; nenhum limiar de limpeza por série, modelo, componente ou fabricante homologado.",
+    "verifiedModels": [],
+    "verifiedSerials": [],
+    "oemAcceptanceLimits": null,
+    "fieldObservations": 0,
+    "performedTests": 0,
+    "confirmedRootCauses": 0
+  },
+  "safety": {
+    "boundary": "Condição de fluido não é autorização para abrir circuitos pressurizados ou intervir em rolamentos. Amostragem e inspeção exigem procedimento autorizado e controle de energia.",
+    "prohibitedActions": [
+      "Não decretar substituição de bomba ou rolamento apenas por código ISO 4406.",
+      "Não usar limites universais de contaminação para todos os compartimentos.",
+      "Não desmontar elemento pressurizado nem reutilizar filtro destruído na análise.",
+      "Não comparar amostras de metodologias diferentes como se fossem medidas equivalentes."
+    ],
+    "safeNextStep": "Revisar protocolo de coleta, resultados em tendência, requisitos OEM aplicáveis e hipóteses de ingresso versus geração de partículas."
+  }
+}

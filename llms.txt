@@ -38,6 +38,14 @@ The atlas is a discovery aid, not an engineering endorsement. All subjects and b
 
 Cavitation, entrained air and abrasive wear are separate mechanisms. All three new articles are public, conceptual, pending independent review, and lack real field evidence, OEM serial effectivity and operational authority.
 
+## V1.4.4: tribology and bounded retrieval
+- [Fundamental technical library: six articles](https://pedromaintenance.github.io/fmea-database-mining/fundamentos-hidraulica-tribologia.html)
+- [Structured machine-readable articles](https://pedromaintenance.github.io/fmea-database-mining/fundamentos-tecnicos.v1.json)
+- [50-query closed-set routing audit](https://pedromaintenance.github.io/fmea-database-mining/fundamentals-retrieval-baseline.v1.json)
+- [Research scope and methodology](https://github.com/pedromaintenance/fmea-database-mining/blob/main/docs/CICLO_2026-11-07_LUBRIFICACAO_CONTAMINACAO_FADIGA_RETRIEVAL.md)
+
+The 50-question report evaluates only a co-authored lexical router, not an LLM or independent engineering competence. No asset-specific OEM limits, real diagnosis or operating approvals.
+
 ## Technical entry points
 - [Hydraulic circuit differential](https://github.com/pedromaintenance/fmea-database-mining/blob/main/data/quality/hydraulic-circuit-differential.v1.json)
 - [Hydraulic hose differential](https://github.com/pedromaintenance/fmea-database-mining/blob/main/data/quality/hydraulic-hose-differential.v1.json)

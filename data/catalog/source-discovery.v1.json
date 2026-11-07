@@ -1,9 +1,9 @@
 {
   "schema": "fmea-mining.source-discovery.v1",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "nature": "bibliographic_metadata_not_machine_effectivity",
   "canonicalPath": "data/research/sources.v1.json",
-  "sourceRegistryVersion": "1.4.3",
+  "sourceRegistryVersion": "1.4.4",
   "checkedLinksOnThisCycle": false,
   "rights": "somente_titulos_links_e_resumos_originais",
   "sources": [
@@ -905,6 +905,46 @@
       "area": "hydraulic_piston_unit_particulate_contamination_and_suction",
       "role": "oem_general_failure_mechanisms",
       "limitation": "Exemplos técnicos do fabricante sobre limpeza, viscosidade e pressão de sucção. Não certifica as falhas ou pressões de máquinas CAT/Sandvik por série.",
+      "lastReviewed": "2026-11-07"
+    },
+    {
+      "id": "SKF-GREASE-LUBRICATION-MECHANISMS",
+      "organization": "SKF",
+      "title": "Grease lubrication mechanisms in rolling bearing systems",
+      "url": "https://evolution.skf.com/us/grease-lubrication-mechanisms-in-rolling-bearing-systems/",
+      "area": "lubricant_film_elastohydrodynamic_grease_replenishment",
+      "role": "bearing_manufacturer_general_technical_article",
+      "limitation": "Discute separação por filme, óleo base, espessamento e reposição de graxa em rolamentos; não especifica espessura ou limite universal para aplicação de frota.",
+      "lastReviewed": "2026-11-07"
+    },
+    {
+      "id": "SKF-CONTAMINATION-BEARING-LIFE",
+      "organization": "SKF",
+      "title": "Contamination and bearing life",
+      "url": "https://evolution.skf.com/contamination-and-bearing-life/",
+      "area": "solid_particles_rolling_bearing_indentation_surface_damage",
+      "role": "bearing_manufacturer_mechanism_research",
+      "limitation": "Discute experimentos e danos de rolamentos com partículas duras. Não utilizar resultados de ensaios isolados como taxa, prazo ou benchmark de frota de mineração.",
+      "lastReviewed": "2026-11-07"
+    },
+    {
+      "id": "SKF-ISO15243-BEARING-CLASSIFICATION",
+      "organization": "SKF",
+      "title": "How to understand ISO 15243 — Bearing damage analysis",
+      "url": "https://evolution.skf.com/bearing-damage-analysis-iso-15243-is-here-to-help-you/",
+      "area": "bearing_surface_fatigue_subsurface_fatigue_failure_terminology",
+      "role": "bearing_manufacturer_iso15243_explanatory_reference",
+      "limitation": "Explicação pública da SKF, não substitui edição integral da ISO 15243 nem define causa de rolamento em máquina não inspecionada.",
+      "lastReviewed": "2026-11-07"
+    },
+    {
+      "id": "ISO-15243-2017",
+      "organization": "ISO",
+      "title": "ISO 15243:2017 — Rolling bearings — Damage and failures — Terms, characteristics and causes",
+      "url": "https://www.iso.org/standard/59619.html",
+      "area": "rolling_bearing_failure_mode_classification",
+      "role": "standard_public_abstract_and_metadata",
+      "limitation": "Classifica formas de danos em rolamentos, mas o resumo público não substitui o texto integral licenciado, não prova causa em campo e prevê investigações adicionais quando características visuais são insuficientes.",
       "lastReviewed": "2026-11-07"
     }
   ]

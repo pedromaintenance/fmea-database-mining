@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.knowledge-index.v1",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "scope": "selected_existing_public_artifacts_not_complete_inventory",
   "repository": "pedromaintenance/fmea-database-mining",
   "nature": "navigation_metadata_not_canonical_technical_evidence",
@@ -304,6 +304,60 @@
         "lubrificação",
         "abrasion",
         "filtragem"
+      ]
+    },
+    {
+      "id": "LIB-TK-TRIB-FILM",
+      "title": "Formação e insuficiência do filme lubrificante",
+      "domain": "Tribologia",
+      "kind": "ficha fundamental",
+      "system": "tribologia",
+      "evidenceClass": "CONCEPTUAL",
+      "summary": "Conceitos de formação de película EHL, lubrificação mista e insuficiência de separação. Cruza viscosidade, temperatura, contaminação e fadiga com evidências e limites.",
+      "path": "data/knowledge/fundamentals/lubricating-film.v2.json",
+      "keywords": [
+        "filme lubrificante",
+        "película",
+        "EHL",
+        "viscosidade",
+        "lubrificação mista",
+        "lubrificação limite"
+      ]
+    },
+    {
+      "id": "LIB-TK-FLUID-SOLIDS",
+      "title": "Contaminação sólida e interpretação de limpeza de fluidos",
+      "domain": "Monitoramento de condição",
+      "kind": "ficha fundamental",
+      "system": "lubrificacao",
+      "evidenceClass": "CONCEPTUAL",
+      "summary": "Classificação ISO 4406, ingresso versus geração de partículas, limitações de amostragem e efeitos tribológicos; código de limpeza não identifica falha ou componente.",
+      "path": "data/knowledge/fundamentals/solid-contamination.v2.json",
+      "keywords": [
+        "partículas",
+        "ISO 4406",
+        "contaminação sólida",
+        "amostragem",
+        "limpeza de fluidos",
+        "filtração"
+      ]
+    },
+    {
+      "id": "LIB-TK-BRG-RCF",
+      "title": "Fadiga de contato superficial e subsuperficial em rolamentos",
+      "domain": "Tribologia",
+      "kind": "ficha fundamental",
+      "system": "rolamentos",
+      "evidenceClass": "CONCEPTUAL",
+      "summary": "Compara iniciação superficial e subsuperficial, spalling, indentações, filme e tensões cíclicas, com ISO 15243 e fontes SKF. Não classifica rolamento de campo.",
+      "path": "data/knowledge/fundamentals/rolling-contact-fatigue.v2.json",
+      "keywords": [
+        "fadiga de contato",
+        "rolamentos",
+        "spalling",
+        "microtrincas",
+        "subsuperficial",
+        "pitting"
       ]
     }
   ]

@@ -1,0 +1,141 @@
+{
+  "schema": "fmea-mining.technical-knowledge-record.v2",
+  "recordVersion": "1.4.4",
+  "recordType": "fundamental_technical_knowledge",
+  "evidenceClass": "CONCEPTUAL",
+  "reviewStatus": "PENDING_REVIEW",
+  "operationalApproval": false,
+  "sapMappingApproved": false,
+  "automaticDiagnosisAllowed": false,
+  "id": "TK-TRIB-FILM-001",
+  "title": "Formação e insuficiência do filme lubrificante",
+  "titleEn": "Lubricating film formation and inadequate film separation",
+  "domain": "Tribologia",
+  "systemTags": [
+    "filme lubrificante",
+    "contato de rolamento",
+    "EHL",
+    "viscosidade",
+    "lubrificação mista",
+    "lubrificação limite"
+  ],
+  "definition": "A película de lubrificante separa, em maior ou menor grau, superfícies sob movimento relativo. Em rolamentos, a espessura e continuidade dependem do fluido, do suprimento, da velocidade, da carga, da temperatura e da microgeometria; não existe espessura ideal universal entre equipamentos.",
+  "functionRequired": "O contato rolante ou deslizante deve operar com regime de lubrificação e proteção superficial compatíveis com sua configuração, carga e faixa de serviço, sem deduzir a condição apenas pela presença de óleo ou graxa.",
+  "physicalMechanism": {
+    "summary": "Sob condições favoráveis pode formar-se filme hidrodinâmico ou elastohidrodinâmico que separa asperezas. Quando o suprimento ou a viscosidade efetiva não sustenta separação suficiente, contatos mistos e limites podem aumentar atrito, desgaste e risco de fadiga superficial. Um nível de óleo normal não demonstra espessura de filme adequada no contato.",
+    "possibleChain": [
+      "Características reológicas, velocidade, temperatura, carga e acabamento superficial determinam o potencial de formação e reposição de filme.",
+      "Redução de separação entre superfícies pode aumentar a participação de contatos de asperezas, atrito e microdanos.",
+      "Desgaste, fadiga superficial ou aquecimento também podem ser influenciados por contaminação, desalinhamento, vedação e dinâmica operacional."
+    ]
+  },
+  "illustrativeSymptoms": [
+    "Aumento não confirmado de temperatura ou ruído de rolamento sob condição de carga específica.",
+    "Marcas superficiais ou alteração de desempenho relatadas, sem informação suficiente para distinguir desgaste de fadiga."
+  ],
+  "competingHypotheses": [
+    {
+      "id": "HYP-FILM-VISC",
+      "mechanism": "Condição de viscosidade, velocidade, carga ou temperatura reduziu a separação entre superfícies.",
+      "discriminator": "Reconciliar identificação do lubrificante, faixa operacional, temperatura medida autorizada, velocidade e critério OEM do contato.",
+      "unconfirmed": true
+    },
+    {
+      "id": "HYP-FILM-PART",
+      "mechanism": "Partículas e indentações comprometeram a condição de superfície mesmo com lubrificante nominalmente correto.",
+      "discriminator": "Verificar histórico de limpeza, vedação, método de coleta e morfologia de dano por inspeção especializada autorizada.",
+      "unconfirmed": true
+    },
+    {
+      "id": "HYP-FILM-MISALIGN",
+      "mechanism": "Carga localizada, desalinhamento ou montagem resultaram em tensões elevadas e aparência similar.",
+      "discriminator": "Revisar configuração, carga, assentamento e histórico de montagem com documentação aplicável.",
+      "unconfirmed": true
+    }
+  ],
+  "evidenceToRequest": [
+    {
+      "question": "O lubrificante efetivo, sua condição e a temperatura de operação são comprovados por registros com procedência?",
+      "limitOfInference": "Viscosidade de catálogo ou presença de óleo não equivale à viscosidade no contato nem garante filme suficiente."
+    },
+    {
+      "question": "Qual rolamento ou contato, regime de carga e desenho de alimentação de fluido se aplicam a este caso?",
+      "limitOfInference": "Conceitos EHL e de lubrificação mista não fornecem limiares universais de vida ou de aceitação."
+    },
+    {
+      "question": "Existem evidências de contaminação, desalinhamento ou dano que possam competir com a hipótese de filme inadequado?",
+      "limitOfInference": "Sinais isolados não diferenciam falta de filme de fadiga causada por geometria ou contaminantes."
+    }
+  ],
+  "confounders": [
+    "Variação de viscosidade com temperatura e composição do lubrificante.",
+    "Carga, velocidade, regime intermitente e reposição de graxa.",
+    "Geometria e acabamento de superfícies, desalinhamento e vedação.",
+    "Contaminação sólida e perda de material já acumulada."
+  ],
+  "ontologyLinks": [
+    {
+      "id": "ME-13",
+      "relation": "primary_concept",
+      "mechanismProven": false
+    },
+    {
+      "id": "ME-01",
+      "relation": "competing_concept",
+      "mechanismProven": false
+    },
+    {
+      "id": "ME-03",
+      "relation": "competing_concept",
+      "mechanismProven": false
+    }
+  ],
+  "provenance": {
+    "sourceRegistryPath": "data/research/sources.v1.json",
+    "sourceNotes": [
+      {
+        "sourceId": "SKF-GREASE-LUBRICATION-MECHANISMS",
+        "supports": "Explica contribuição do óleo base, camadas de espessante, EHL e reposição de graxa à espessura de filme em rolamentos.",
+        "doesNotSupport": "Não estabelece espessura, periodicidade de lubrificação ou vida de rolamentos de uma máquina de mineração particular."
+      },
+      {
+        "sourceId": "SKF-WEAR-SURFACE-FATIGUE",
+        "supports": "Relaciona lubrificação insuficiente, desgaste de perfil e tensões de contato com fadiga superficial em rolamentos.",
+        "doesNotSupport": "Não comprova filme inadequado em rolamento real apenas por ruído ou temperatura."
+      }
+    ],
+    "originAnchors": [
+      {
+        "path": "data/ontology/concepts.v1.json",
+        "recordId": "ME-13",
+        "role": "mechanism_ontology"
+      },
+      {
+        "path": "data/ontology/concepts.v1.json",
+        "recordId": "ME-03",
+        "role": "mechanism_ontology"
+      }
+    ],
+    "originalInterpretation": "original_synthesis_not_manufacturer_endorsement",
+    "newFieldEvidence": false
+  },
+  "applicability": {
+    "scope": "Princípios de contatos rolantes lubrificados e exemplos de rolamentos; nenhuma geometria, tipo de graxa, equipamento ou série qualificado.",
+    "verifiedModels": [],
+    "verifiedSerials": [],
+    "oemAcceptanceLimits": null,
+    "fieldObservations": 0,
+    "performedTests": 0,
+    "confirmedRootCauses": 0
+  },
+  "safety": {
+    "boundary": "Verbete de pesquisa sem critérios de aceitação. A inspeção e a lubrificação devem obedecer a identificação do componente, proteção das energias e documentação do fabricante efetivo.",
+    "prohibitedActions": [
+      "Não inferir condição de filme somente pelo nível ou aspecto do óleo.",
+      "Não mudar viscosidade, graxa ou intervalo de relubrificação sem critério técnico autorizado.",
+      "Não abrir ou inspecionar contato em operação.",
+      "Não usar coeficientes de vida ou lambda de outra aplicação como limite universal."
+    ],
+    "safeNextStep": "Confrontar desenho e manual OEM da aplicação com histórico de fluido, serviço, carga e evidências de superfície antes de propor ação."
+  }
+}

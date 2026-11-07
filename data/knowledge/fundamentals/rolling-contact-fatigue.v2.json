@@ -1,0 +1,146 @@
+{
+  "schema": "fmea-mining.technical-knowledge-record.v2",
+  "recordVersion": "1.4.4",
+  "recordType": "fundamental_technical_knowledge",
+  "evidenceClass": "CONCEPTUAL",
+  "reviewStatus": "PENDING_REVIEW",
+  "operationalApproval": false,
+  "sapMappingApproved": false,
+  "automaticDiagnosisAllowed": false,
+  "id": "TK-BRG-RCF-001",
+  "title": "Fadiga de contato em rolamentos: origem superficial e subsuperficial",
+  "titleEn": "Rolling contact fatigue: surface- and subsurface-initiated bearing damage",
+  "domain": "Tribologia",
+  "systemTags": [
+    "rolamento",
+    "fadiga de contato",
+    "descascamento",
+    "spalling",
+    "pitting",
+    "indentações"
+  ],
+  "definition": "Fadiga de contato em rolamentos ocorre sob carregamentos cíclicos das regiões de contato. A iniciação pode estar abaixo da superfície ou na superfície; as duas classificações não devem ser confundidas com simples desgaste abrasivo.",
+  "functionRequired": "Pistas e elementos rolantes devem transmitir carga ciclicamente com integridade superficial e subsuperficial suficiente à condição de projeto e serviço.",
+  "physicalMechanism": {
+    "summary": "A repetição de tensões de contato pode desenvolver e propagar microtrincas abaixo da superfície. Alternativamente, perturbações de filme, partículas, indentações ou deslizamento podem induzir trincas superficiais e microdescascamentos. Uma marca de spalling não identifica automaticamente a origem inicial, a carga ou o contaminante responsável.",
+    "possibleChain": [
+      "Ciclos repetidos de tensão, geometria e condição metalúrgica influenciam a formação e evolução de microtrincas.",
+      "Filme inadequado, contaminação e indentações podem intensificar concentrações de tensão superficiais, mas não são causas universais de todo spalling.",
+      "A propagação pode produzir lascamentos visíveis; diagnóstico causal requer padrões de dano, histórico operacional e exame por especialista."
+    ]
+  },
+  "illustrativeSymptoms": [
+    "Descascamento ou micropitting descrito em pista de rolamento, sem confirmação de origem superficial ou subsuperficial.",
+    "Vibração/ruído alterados em histórico de condição, sem prova de classe de fadiga."
+  ],
+  "competingHypotheses": [
+    {
+      "id": "HYP-RCF-SURFACE",
+      "mechanism": "Microtrincas originadas na superfície podem ser favorecidas por contaminação, filme insuficiente e tensões locais.",
+      "discriminator": "Examinar morfologia, região de carga, marcas de indentações e integridade de lubrificação por procedimento especializado.",
+      "unconfirmed": true
+    },
+    {
+      "id": "HYP-RCF-SUBSURFACE",
+      "mechanism": "Origem subsuperficial sob tensões cíclicas e características do material, com progressão ao plano externo.",
+      "discriminator": "Consultar características de iniciação por inspeção e eventual metalografia autorizada, sem inferir apenas pela presença de fragmentos.",
+      "unconfirmed": true
+    },
+    {
+      "id": "HYP-RCF-OTHER",
+      "mechanism": "Desgaste abrasivo/adesivo, corrosão, deformação plástica ou danos de montagem podem simular ou contribuir para marcas.",
+      "discriminator": "Comparar morfologia, procedência do componente, carga, montagem e análise de origem com classificações distintas.",
+      "unconfirmed": true
+    }
+  ],
+  "evidenceToRequest": [
+    {
+      "question": "Há imagens e inspeção de superfície com identificação da pista, elemento e região de carga, método e condição de observação?",
+      "limitOfInference": "Marcas vistas em fotografias isoladas podem não revelar o local de nucleação da trinca."
+    },
+    {
+      "question": "Histórico de carga, alinhamento, lubrificação e contaminação foi documentado de modo comparável e autorizado?",
+      "limitOfInference": "Falha prematura pode coexistir com vários mecanismos, sem identificar a causa por correlação simples."
+    },
+    {
+      "question": "Uma investigação de engenharia recomenda caracterização metalúrgica/morfológica adicional para diferenciar origem?",
+      "limitOfInference": "A análise visual classifica padrões, mas certas causas exigem ensaios adicionais especializados."
+    }
+  ],
+  "confounders": [
+    "Contato rolante com diferentes geometrias e tensões de Hertz.",
+    "Mistura de danos por fadiga, abrasão, deslizamento e corrosão.",
+    "Fase avançada que elimina marcas iniciais.",
+    "Ajuste, carga e desalinhamento não documentados."
+  ],
+  "ontologyLinks": [
+    {
+      "id": "ME-03",
+      "relation": "primary_concept",
+      "mechanismProven": false
+    },
+    {
+      "id": "ME-01",
+      "relation": "competing_concept",
+      "mechanismProven": false
+    },
+    {
+      "id": "ME-13",
+      "relation": "competing_concept",
+      "mechanismProven": false
+    }
+  ],
+  "provenance": {
+    "sourceRegistryPath": "data/research/sources.v1.json",
+    "sourceNotes": [
+      {
+        "sourceId": "ISO-15243-2017",
+        "supports": "Define terminologia e classificação de tipos de danos e falhas em rolamentos em serviço.",
+        "doesNotSupport": "Não dispensa investigações adicionais nem confirma causa raiz em rolamento não inspecionado."
+      },
+      {
+        "sourceId": "SKF-ISO15243-BEARING-CLASSIFICATION",
+        "supports": "Apresenta diferenciação entre fadiga superficial e subsuperficial, com fatores de carga, limpeza e lubrificação.",
+        "doesNotSupport": "Exemplos de aparência não provam origem específica de trinca sem exame adequado."
+      },
+      {
+        "sourceId": "SKF-WEAR-SURFACE-FATIGUE",
+        "supports": "Descreve associação de desgaste, alteração do perfil e fadiga superficial em rolamentos, incluindo contextos industriais.",
+        "doesNotSupport": "Não determina vida remanescente ou condição real de um rolamento de mina com base apenas em sintoma."
+      }
+    ],
+    "originAnchors": [
+      {
+        "path": "data/ontology/concepts.v1.json",
+        "recordId": "ME-03",
+        "role": "mechanism_ontology"
+      },
+      {
+        "path": "data/ontology/concepts.v1.json",
+        "recordId": "ME-01",
+        "role": "mechanism_ontology"
+      }
+    ],
+    "originalInterpretation": "original_synthesis_not_manufacturer_endorsement",
+    "newFieldEvidence": false
+  },
+  "applicability": {
+    "scope": "Rolamentos de elementos rolantes em termos conceituais; nenhuma localização, série, história de carga ou critério de rejeição validado.",
+    "verifiedModels": [],
+    "verifiedSerials": [],
+    "oemAcceptanceLimits": null,
+    "fieldObservations": 0,
+    "performedTests": 0,
+    "confirmedRootCauses": 0
+  },
+  "safety": {
+    "boundary": "Análises morfológicas não devem ser confundidas com autorização de operação de rolamento potencialmente danificado. Exames e desmontagens exigem procedimentos e engenharia competente.",
+    "prohibitedActions": [
+      "Não liberar máquina com suspeita estrutural de falha a partir de uma ficha conceitual.",
+      "Não identificar fadiga como a causa raiz somente pelo ruído ou detrito.",
+      "Não extrapolar L10 ou percentuais de artigo como previsão de vida em frota sem contexto.",
+      "Não usar imagens ilustrativas em substituição a inspeção do componente real."
+    ],
+    "safeNextStep": "Construir dossiê de histórico, evidência de morfologia e classificação ISO 15243, submetendo inferências a revisão técnica independente."
+  }
+}

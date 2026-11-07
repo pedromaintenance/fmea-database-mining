@@ -10,7 +10,10 @@ const original=json('data/quality/hydraulic-circuit-differential.v1.json');
 const paths=[
  'data/knowledge/fundamentals/hydraulic-cavitation.v2.json',
  'data/knowledge/fundamentals/hydraulic-aeration.v2.json',
- 'data/knowledge/fundamentals/particulate-abrasive-wear.v2.json'
+ 'data/knowledge/fundamentals/particulate-abrasive-wear.v2.json',
+ 'data/knowledge/fundamentals/lubricating-film.v2.json',
+ 'data/knowledge/fundamentals/solid-contamination.v2.json',
+ 'data/knowledge/fundamentals/rolling-contact-fatigue.v2.json'
 ];
 const records=paths.map(json),errors=[];let total=0,attacks=0;
 function check(name,test){total++;if(!test)errors.push(name)}
@@ -36,8 +39,8 @@ function anchorExists(a){
  return false; // Fail closed until another canonical anchor parser is deliberately added.
 }
 check('strict_v2_schema',schema.additionalProperties===false&&schema.$schema==='https://json-schema.org/draft/2020-12/schema'&&schema.properties.schema.const==='fmea-mining.technical-knowledge-record.v2');
-check('exact_three_pilots',records.length===3&&new Set(records.map(x=>x.id)).size===3);
-check('bibliography_extended',registry.sources.length===90&&new Set(registry.sources.map(x=>x.id)).size===90);
+check('six_conceptual_pilots',records.length===6&&new Set(records.map(x=>x.id)).size===6&&records.slice(0,3).every(x=>x.recordVersion==='1.4.3')&&records.slice(3).every(x=>x.recordVersion==='1.4.4'));
+check('bibliography_extended',registry.sources.length===94&&new Set(registry.sources.map(x=>x.id)).size===registry.sources.length);
 check('new_manufacturer_sources_linked',["PARKER-P1PD-2019-SVC","PARKER-HYD-FILTRATION-HANDBOOK","BOSCH-REXROTH-PISTON-DAMAGE"].every(x=>sourceIds.has(x)));
 check('independent_ontology_unmodified',ontology.mechanismFamilies.some(x=>x.id==='ME-01')&&ontology.mechanismFamilies.some(x=>x.id==='ME-08'));
 check('hydraulic_legacy_anchor_exists',original.records.some(x=>x.id==='HC-DIFF-01'));
@@ -69,9 +72,10 @@ for(let i=0;i<records.length;i++){
 }
 const byId=new Map(records.map(x=>[x.id,x]));
 check('cav_vs_aeration_not_equivalent',byId.get('TK-HYD-CAVITATION-001').id!==byId.get('TK-HYD-AERATION-001').id&&byId.get('TK-HYD-CAVITATION-001').titleEn!==byId.get('TK-HYD-AERATION-001').titleEn);
+check('new_fundamentals_distinct',byId.get('TK-TRIB-FILM-001').ontologyLinks.some(x=>x.id==='ME-13')&&byId.get('TK-FLUID-SOLIDS-001').domain==='Monitoramento de condição'&&byId.get('TK-BRG-RCF-001').ontologyLinks.some(x=>x.id==='ME-03'));
 check('abrasion_not_hydraulic_cause_assumption',byId.get('TK-TRIB-ABRASION-001').domain==='Tribologia'&&byId.get('TK-TRIB-ABRASION-001').ontologyLinks.some(x=>x.id==='ME-01'));
 const out=json('reports/fundamentals.generated.json'),page=read('reports/fundamentos-hidraulica-tribologia.generated.html'),tmpl=read('docs/fundamentos-hidraulica-tribologia.html');
-check('generated_consistency',out.schema==='fmea-mining.fundamentals-discovery.v1'&&out.version==='1.4.3'&&out.records.length===3&&out.records.every((r,i)=>r.__path===paths[i]&&JSON.stringify({...r,__path:undefined})!==undefined));
+check('generated_consistency',out.schema==='fmea-mining.fundamentals-discovery.v1'&&out.version==='1.4.4'&&out.records.length===6&&out.records.every((r,i)=>r.__path===paths[i]&&JSON.stringify({...r,__path:undefined})!==undefined));
 check('generator_source_refs',out.sources.length===new Set(records.flatMap(x=>x.provenance.sourceNotes.map(n=>n.sourceId))).size&&out.sources.every(x=>sourceIds.has(x.id)));
 check('template_not_fake_data',tmpl.includes('FOUNDATIONS_PLACEHOLDER')&&tmpl.includes('ready":false'));
 const marker=page.match(/<script id="records" type="application\/json">([\s\S]*?)<\/script>/);
@@ -81,7 +85,7 @@ const inline=page.match(/<script>([\s\S]*?)<\/script>/);
 try{check('generated_html_syntax',!!inline&&!!new vm.Script(inline[1]))}catch{check('generated_html_syntax',false)}
 check('no_client_network_storage',!/fetch\s*\(|XMLHttpRequest|localStorage|sessionStorage|sendBeacon|<script\s+src=/i.test(page));
 check('html_output_safe',page.includes("textContent=value")&&!page.includes('innerHTML'));
-const report={schema:'fmea-mining.fundamentals-research-audit.v1',version:'1.4.3',status:errors.length?'FAIL':'PASS',checks:total,adversarialMutations:attacks,technicalRecords:records.length,registeredSources:registry.sources.length,actualFieldCases:0,operationalApprovals:0,errors};
+const report={schema:'fmea-mining.fundamentals-research-audit.v1',version:'1.4.4',status:errors.length?'FAIL':'PASS',checks:total,adversarialMutations:attacks,technicalRecords:records.length,registeredSources:registry.sources.length,actualFieldCases:0,operationalApprovals:0,errors};
 fs.mkdirSync('reports',{recursive:true});
 fs.writeFileSync('reports/fundamentals-research.generated.json',JSON.stringify(report,null,2)+'\n');
 console.log(JSON.stringify(report,null,2));process.exit(errors.length?1:0);

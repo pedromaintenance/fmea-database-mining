@@ -2,15 +2,15 @@
 
 Acervo **público, versionado e rastreável** para estudar equipamentos móveis de mineração, sistemas e componentes, mecanismos físicos de falha, diagnóstico diferencial, inspeção, manutenção, confiabilidade e benchmarks industriais. **FMEA/FMECA é uma das aplicações da biblioteca, não seu limite.**
 
-> **Status:** fundação da plataforma **v1.4.3**; índice inicial curado, não catálogo completo nem biblioteca homologada para procedimentos de execução. O banco contém hipóteses, taxonomias e referências públicas, **não** FMEAs aprovadas, ocorrências reais confirmadas ou limites OEM efetivos por série.
+> **Status:** fundação da plataforma **v1.4.4**; índice inicial curado, não catálogo completo nem biblioteca homologada para procedimentos de execução. O banco contém hipóteses, taxonomias e referências públicas, **não** FMEAs aprovadas, ocorrências reais confirmadas ou limites OEM efetivos por série.
 
 **Portal público (GitHub Pages):** https://pedromaintenance.github.io/fmea-database-mining/ — entrada direta na Biblioteca Técnica. O repositório mantém a documentação canônica e o histórico de versões.
 
 ## Começar pela biblioteca
 
-- **Para humanos:** [Biblioteca Técnica — portal HTML standalone](docs/biblioteca-tecnica.html) — navegação e pesquisa offline nos 18 itens inicialmente indexados; os arquivos canônicos exigem acesso ao repositório/Internet ou clone local.
+- **Para humanos:** [Biblioteca Técnica — portal HTML standalone](docs/biblioteca-tecnica.html) — navegação e pesquisa offline nos 21 itens inicialmente indexados; os arquivos canônicos exigem acesso ao repositório/Internet ou clone local.
 - **Para agentes:** [AGENTS.md](AGENTS.md), [skill de consulta](skills/consultar-acervo-manutencao/SKILL.md), [contrato de recuperação e resposta](docs/AI_RETRIEVAL_CONTRACT.md) e [índice JSON](data/catalog/knowledge-index.v1.json). Uma busca local pode ser feita com `npm run knowledge:query -- --query "bomba"`.
-- **Para pesquisadores:** [Arquitetura de conhecimento](docs/KNOWLEDGE_PLATFORM_ARCHITECTURE.md), [roadmap 2026–2027](docs/ROADMAP_TECNICO_2026_2027.md) e [registro de fontes](data/research/sources.v1.json) (90 entradas bibliográficas catalogadas, com revisão de atualização/licenças pendente).
+- **Para pesquisadores:** [Arquitetura de conhecimento](docs/KNOWLEDGE_PLATFORM_ARCHITECTURE.md), [roadmap 2026–2027](docs/ROADMAP_TECNICO_2026_2027.md) e [registro de fontes](data/research/sources.v1.json) (94 entradas bibliográficas catalogadas; revisão global de atualização/licenças pendente).
 - **Para aplicações:** os consumidores — inclusive [P.O.R.C.A.R.I.A.](https://github.com/pedromaintenance/porcaria-voce-quebra-eu-conserto) — são **independentes**. Esta biblioteca não altera outros projetos, SAP ou operações.
 
 **Nova consulta 1.4.2:** [Mapa semântico dos datasets](https://pedromaintenance.github.io/fmea-database-mining/mapa-semantico.html) (gerado do repositório a cada publicação no Pages) e [primeira ficha fundamental](data/knowledge/fundamentals/hydraulic-inlet-restriction.v1.json). Para agentes: [JSON do atlas](https://pedromaintenance.github.io/fmea-database-mining/semantic-atlas.v1.json) e [contrato da ficha](schemas/technical-knowledge-record.schema.json). O atlas oferece **metadados de descoberta**, não validação técnica do conteúdo.
@@ -18,6 +18,8 @@ Acervo **público, versionado e rastreável** para estudar equipamentos móveis 
 **Novas consultas 1.4.1:** [Glossário PT/EN](docs/glossario-tecnico.html) (67 verbetes recuperados sem reescrita da ontologia), [Bibliografia](docs/fontes-tecnicas.html) (87 fontes do registro), [Inventário de arquivos](docs/inventario-acervo.html) (snapshot de 500 arquivos antes deste ciclo). Os três conjuntos diferem em natureza e NÃO são 654 fichas OEM validadas.
 
 A consulta ao índice **não substitui** a leitura da ficha canônica, a conferência da fonte original e a análise de aplicabilidade OEM. Dados sintéticos não são registros de campo; indicadores sem definição/população não são benchmarks comparáveis.
+
+**Ciclo v1.4.4:** [filme lubrificante, contaminação sólida, fadiga de contato e teste de recuperação](docs/CICLO_2026-11-07_LUBRIFICACAO_CONTAMINACAO_FADIGA_RETRIEVAL.md) ampliou o acervo para **seis fichas fundamentais**, **21 itens curados** e **94 referências**. O [portal de fundamentos](https://pedromaintenance.github.io/fmea-database-mining/fundamentos-hidraulica-tribologia.html) reúne as sínteses; o [relatório de 50 consultas](https://pedromaintenance.github.io/fmea-database-mining/fundamentals-retrieval-baseline.v1.json) é uma **regressão de busca lexical em corpus fechado**, não uma medida de precisão de IA. `npm run knowledge:fundamentals:query -- --query "fadiga de contato"` permite busca local read-only.
 
 **Ciclo v1.4.3:** [pesquisa e fichas de cavitação, aeração e abrasão](docs/CICLO_2026-11-07_FUNDAMENTOS_CAVITACAO_AERACAO_ABRASAO.md) inclui três verbetes fundamentados em fontes Parker, Bosch Rexroth e SKF, um schema v2 extensível, 90 referências bibliográficas, 18 entradas curadas e [portal temático](https://pedromaintenance.github.io/fmea-database-mining/fundamentos-hidraulica-tribologia.html) gerado do JSON canônico. [JSON das fichas](https://pedromaintenance.github.io/fmea-database-mining/fundamentos-tecnicos.v1.json) e [schema v2](schemas/technical-knowledge-record.v2.schema.json). Nenhum caso real ou limite OEM por série foi homologado.
 
