@@ -18,6 +18,11 @@ on:
       - 'scripts/build-functional-architecture.mjs'
       - 'scripts/audit-functional-architecture.mjs'
       - 'scripts/audit-fundamentals-unseen-challenge.mjs'
+      - 'scripts/lib/technical-discovery-v2.mjs'
+      - 'scripts/build-technical-search-v2.mjs'
+      - 'scripts/query-technical-v2.mjs'
+      - 'scripts/audit-technical-search-v2.mjs'
+      - 'docs/consulta-tecnica.html'
       - 'docs/biblioteca-tecnica.html'
       - 'schemas/technical-knowledge-record.v2.schema.json'
       - 'scripts/build-fundamentals-portal.mjs'
@@ -64,6 +69,9 @@ jobs:
       - run: npm run knowledge:functional:build
       - run: npm run knowledge:functional:audit
       - run: npm run knowledge:challenge:audit
+      - run: npm run knowledge:search:v2:build
+      - run: npm run knowledge:search:v2:audit
+      - run: npm run knowledge:search:v2 -- --query "piloto hidráulico não aciona a válvula"
       - run: npm run knowledge:fundamentals:query -- --query "fadiga de contato"
       - run: node --check scripts/query-knowledge-index.mjs
       - run: npm run knowledge:query -- --query cavitacao
