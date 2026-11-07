@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.knowledge-index.v1",
-  "version": "1.4.4",
+  "version": "1.4.5",
   "scope": "selected_existing_public_artifacts_not_complete_inventory",
   "repository": "pedromaintenance/fmea-database-mining",
   "nature": "navigation_metadata_not_canonical_technical_evidence",
@@ -358,6 +358,42 @@
         "microtrincas",
         "subsuperficial",
         "pitting"
+      ]
+    },
+    {
+      "id": "LIB-FUNCTIONAL-ARCHITECTURE",
+      "title": "Mapa funcional: componentes, mecanismos e evidências",
+      "domain": "Arquitetura de sistemas",
+      "kind": "grafo técnico",
+      "system": "hidráulica e rolamentos",
+      "evidenceClass": "CONCEPTUAL",
+      "summary": "Mapeia dois sistemas ilustrativos, funções de 13 componentes, quinze relações condicionais, mecanismos possíveis, perguntas discriminantes e referências bibliográficas; sem máquina ou série validada.",
+      "path": "data/knowledge/functional-architecture.v1.json",
+      "keywords": [
+        "arquitetura funcional",
+        "componentes",
+        "grafo",
+        "mecanismo",
+        "hidráulica",
+        "rolamentos"
+      ]
+    },
+    {
+      "id": "LIB-UNCALIBRATED-RETRIEVAL",
+      "title": "Desafio de recuperação: 24 paráfrases não calibradas",
+      "domain": "Qualidade da informação",
+      "kind": "avaliação de recuperação",
+      "system": "transversal",
+      "evidenceClass": "PENDING_REVIEW",
+      "summary": "Conjunto editorial posterior ao vocabulário congelado de 1.4.4, com paráfrases técnicas, decisões arriscadas, conceitos concorrentes e casos fora do corpus. Mede lacunas, sem alegar avaliação externa de IA.",
+      "path": "data/quality/fundamentals-unseen-challenge.v1.json",
+      "keywords": [
+        "avaliação",
+        "holdout",
+        "perguntas inéditas",
+        "paráfrases",
+        "recusa",
+        "busca"
       ]
     }
   ]
