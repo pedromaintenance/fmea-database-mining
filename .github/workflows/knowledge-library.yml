@@ -12,6 +12,12 @@ on:
       - 'scripts/lib/fundamentals-retrieval.mjs'
       - 'scripts/query-fundamentals.mjs'
       - 'scripts/audit-fundamentals-retrieval.mjs'
+      - 'data/knowledge/functional-architecture.v1.json'
+      - 'data/quality/fundamentals-unseen-challenge.v1.json'
+      - 'docs/arquitetura-funcional.html'
+      - 'scripts/build-functional-architecture.mjs'
+      - 'scripts/audit-functional-architecture.mjs'
+      - 'scripts/audit-fundamentals-unseen-challenge.mjs'
       - 'docs/biblioteca-tecnica.html'
       - 'schemas/technical-knowledge-record.v2.schema.json'
       - 'scripts/build-fundamentals-portal.mjs'
@@ -55,6 +61,9 @@ jobs:
       - run: npm run knowledge:fundamentals:build
       - run: npm run knowledge:fundamentals:audit
       - run: npm run knowledge:retrieval:audit
+      - run: npm run knowledge:functional:build
+      - run: npm run knowledge:functional:audit
+      - run: npm run knowledge:challenge:audit
       - run: npm run knowledge:fundamentals:query -- --query "fadiga de contato"
       - run: node --check scripts/query-knowledge-index.mjs
       - run: npm run knowledge:query -- --query cavitacao
