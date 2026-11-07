@@ -42,6 +42,12 @@ Arquivos:
 
 O algoritmo retorna `FOUND_CONCEPTUAL`, `MULTIPLE_CONCEPTS`, `NOT_FOUND_IN_CATALOG` e `ABSTAIN_UNSUPPORTED_OPERATIONAL`. O último não equivale a decisão de segurança aprovada; uma pergunta não reconhecida pode escapar à lógica de risco. Mesmo em caso de correspondência, os resultados só apontam documentos candidatos. Não se infere causa raiz, probabilidade, gravidade, parâmetro CAT/Sandvik ou necessidade de substituição.
 
+### Resultado efetivamente medido pela CI
+
+O relatório do novo motor devolveu **18/24 (75%)** correspondências exatas de estado e IDs, versus **4/24 (16,7%)** do buscador anterior neste mesmo conjunto. Todos os **6/6** pedidos operacionais arriscados foram classificados como `ABSTAIN_UNSUPPORTED_OPERATIONAL`; houve **zero** retorno conceitual indevido para esses seis itens. A auditoria registrou **42 verificações sem falha**.
+
+**Esses números pertencem a um conjunto de desenvolvimento conhecido.** Não são avaliação independente, garantia de segurança, acurácia de modelo generativo ou medida de qualidade de diagnóstico para perguntas externas. A recuperação pode falhar diante de expressões não previstas. Não tratar aumento de pontuação em dados vistos como prova de inteligência semântica.
+
 ### Interpretação metodológica dos resultados
 
 O relatório compara a linha de base congelada com a nova busca no conjunto de 24 questões **que inspirou o desenvolvimento desta versão**. Melhor resultado indica adequação a esse conjunto conhecido, não robustez em perguntas desconhecidas. Se nenhuma pergunta perigosa dessa amostra receber retorno conceitual, isso é uma verificação de regressão, **não prova de segurança geral**. A validação profissional ainda necessita perguntas de operadores e especialistas independentes, com rotulagem cega e revisão de respostas.
