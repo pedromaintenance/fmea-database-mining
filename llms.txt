@@ -6,7 +6,7 @@
 - [README](https://github.com/pedromaintenance/fmea-database-mining/blob/main/README.md)
 - [Technical library portal](https://github.com/pedromaintenance/fmea-database-mining/blob/main/docs/biblioteca-tecnica.html)
 - [Curated machine index](https://github.com/pedromaintenance/fmea-database-mining/blob/main/data/catalog/knowledge-index.v1.json)
-- [Source references (87 existing entries; independently verify currency)](https://github.com/pedromaintenance/fmea-database-mining/blob/main/data/research/sources.v1.json)
+- [Source references (97 entries in v1.4.6; independently verify currency)](https://github.com/pedromaintenance/fmea-database-mining/blob/main/data/research/sources.v1.json)
 - [Agent retrieval contract](https://github.com/pedromaintenance/fmea-database-mining/blob/main/docs/AI_RETRIEVAL_CONTRACT.md)
 - [Reusable consultation skill](https://github.com/pedromaintenance/fmea-database-mining/blob/main/skills/consultar-acervo-manutencao/SKILL.md)
 - [Architecture](https://github.com/pedromaintenance/fmea-database-mining/blob/main/docs/KNOWLEDGE_PLATFORM_ARCHITECTURE.md)
@@ -53,6 +53,14 @@ The 50-question report evaluates only a co-authored lexical router, not an LLM o
 - [Methodology and lineage](https://github.com/pedromaintenance/fmea-database-mining/blob/main/docs/CICLO_2026-11-07_ARQUITETURA_FUNCIONAL_DESAFIO_RETIDO.md)
 
 Two systems are illustrations only (hydraulic implement circuit and rolling bearing arrangement). All edges are conditional. The 24-question challenge is post-baseline but editorially authored inside the same project, **not** independent blinded human review. No machine-specific diagnosis, OEM pressure test or operational authority.
+
+## V1.4.6: function coverage and technical concept discovery
+- [Public read-only technical query interface](https://pedromaintenance.github.io/fmea-database-mining/consulta-tecnica.html)
+- [Technical discovery bundle: 10 conceptual records](https://pedromaintenance.github.io/fmea-database-mining/technical-search-v2-bundle.v1.json)
+- [Technical search development report](https://pedromaintenance.github.io/fmea-database-mining/technical-search-v2-report.v1.json)
+- [Cycle methodology and safety limitations](https://github.com/pedromaintenance/fmea-database-mining/blob/main/docs/CICLO_2026-11-07_BUSCA_TECNICA_V2_LACUNAS_HIDRAULICAS.md)
+
+This is phrase-based document discovery, not a generative semantic AI. The 24 questions were already examined during development and do not measure independent generalization. Sources and machine effective instructions must be verified before any field decision.
 
 ## Technical entry points
 - [Hydraulic circuit differential](https://github.com/pedromaintenance/fmea-database-mining/blob/main/data/quality/hydraulic-circuit-differential.v1.json)
