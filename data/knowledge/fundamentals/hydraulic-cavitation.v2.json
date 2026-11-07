@@ -1,0 +1,134 @@
+{
+  "recordVersion": "1.4.3",
+  "schema": "fmea-mining.technical-knowledge-record.v2",
+  "recordType": "fundamental_technical_knowledge",
+  "evidenceClass": "CONCEPTUAL",
+  "reviewStatus": "PENDING_REVIEW",
+  "operationalApproval": false,
+  "sapMappingApproved": false,
+  "automaticDiagnosisAllowed": false,
+  "id": "TK-HYD-CAVITATION-001",
+  "title": "Cavitação na alimentação de bombas hidráulicas",
+  "titleEn": "Cavitation at hydraulic pump inlet",
+  "domain": "Hidráulica",
+  "systemTags": [
+    "bomba hidráulica",
+    "sucção",
+    "pressão de entrada",
+    "formação de vapor"
+  ],
+  "definition": "Cavitação é a formação de cavidades de vapor em regiões onde a pressão local do líquido cai suficientemente, seguida de colapso quando as condições de pressão se alteram. Não é sinônimo de ar externo misturado ao óleo.",
+  "functionRequired": "O circuito deve manter suprimento de líquido à bomba nas condições de entrada exigidas pela sua arquitetura e pela condição operacional efetiva.",
+  "physicalMechanism": {
+    "summary": "Uma alimentação com pressão local insuficiente para as condições do fluido pode favorecer cavidades de vapor no fluxo. O seu colapso pode contribuir para erosão e perda de desempenho; sem dados da bomba e condição de ensaio não se demonstra cavitação nem dano.",
+    "possibleChain": [
+      "Viscosidade elevada a frio, resistência excessiva na sucção ou pressão de alimentação desfavorável podem reduzir a margem de suprimento.",
+      "A formação e o colapso de cavidades de vapor podem produzir perturbações de escoamento e dano localizado.",
+      "Ruído, resposta lenta ou desgaste também podem resultar de ar entranhado, problemas de comando, desalinhamento ou desgaste anterior."
+    ]
+  },
+  "illustrativeSymptoms": [
+    "Ruído anormal de bombeamento, especialmente em condições operacionais específicas.",
+    "Resposta reduzida em funções abastecidas pelo circuito em condição repetível, sem comprovação da origem."
+  ],
+  "competingHypotheses": [
+    {
+      "id": "HYP-CAV-LOW-INLET",
+      "mechanism": "Cavitação possível por pressão de entrada inadequada, viscosidade ou restrição geométrica no suprimento.",
+      "discriminator": "Confrontar projeto efetivo, histórico de fluido e condição com requisitos de entrada do fabricante, sem importar números de outra bomba.",
+      "unconfirmed": true
+    },
+    {
+      "id": "HYP-CAV-AERATED-OIL",
+      "mechanism": "Ar livre incorporado ao fluido pode produzir ruído e irregularidade sem ser o mesmo mecanismo de cavitação por vapor.",
+      "discriminator": "Diferenciar sinais documentados de ar no reservatório/linhas e configurações de retorno com o comportamento de pressão de entrada.",
+      "unconfirmed": true
+    },
+    {
+      "id": "HYP-CAV-MECHANICAL",
+      "mechanism": "Problema mecânico de eixo/acoplamento ou grupo rotativo também pode gerar ruído semelhante.",
+      "discriminator": "Conferir histórico de instalação e condição mecânica documentada, sob inspeção autorizada.",
+      "unconfirmed": true
+    }
+  ],
+  "evidenceToRequest": [
+    {
+      "question": "Há identificação da bomba e do limite de pressão de entrada, viscosidade e condição definido no documento efetivo?",
+      "limitOfInference": "A tabela do manual Parker P1/PD não equivale ao requisito de uma bomba de outro fabricante ou modelo."
+    },
+    {
+      "question": "Os dados de histórico de filtro, entrada, temperatura, nível e condição de operação são representativos e rastreáveis?",
+      "limitOfInference": "Ruído e lentidão não provam cavitação nem isolam a causa do suprimento."
+    },
+    {
+      "question": "Existem evidências compatíveis com ar livre no fluido e entrada de gás, para testar a hipótese concorrente?",
+      "limitOfInference": "Aeração pode coexistir com restrição de entrada; observação visual isolada não distingue todos os mecanismos."
+    }
+  ],
+  "confounders": [
+    "Arquitetura de circuito aberto/fechado e pressão de carga diferentes.",
+    "Regime de velocidade e viscosidade dependentes de temperatura.",
+    "Posição do atuador, pressão de carga e comparação entre ramos.",
+    "Ar entranhado, desgaste mecânico e intertravamentos eletrônicos."
+  ],
+  "ontologyLinks": [
+    {
+      "id": "ME-08",
+      "relation": "primary_concept",
+      "mechanismProven": false
+    },
+    {
+      "id": "ME-12",
+      "relation": "competing_concept",
+      "mechanismProven": false
+    }
+  ],
+  "provenance": {
+    "sourceRegistryPath": "data/research/sources.v1.json",
+    "sourceNotes": [
+      {
+        "sourceId": "PARKER-P1PD-2019-SVC",
+        "supports": "O troubleshooting da linha P1/PD separa cavitação, ar no fluido, desalinhamento e problemas mecânicos como alternativas para ruído.",
+        "doesNotSupport": "Não confirma que uma bomba CAT 395/6030 usa esse desenho ou compartilha seus valores e ensaios."
+      },
+      {
+        "sourceId": "BOSCH-REXROTH-PISTON-DAMAGE",
+        "supports": "Discussão do fabricante liga condições de sucção, viscosidade e resistência de linha à proteção da unidade hidráulica.",
+        "doesNotSupport": "Não demonstra cavitação real nem efetividade por série do equipamento em investigação."
+      }
+    ],
+    "originAnchors": [
+      {
+        "path": "data/quality/hydraulic-circuit-differential.v1.json",
+        "recordId": "HC-DIFF-01",
+        "role": "competing_diagnostic_reference"
+      },
+      {
+        "path": "data/ontology/concepts.v1.json",
+        "recordId": "ME-08",
+        "role": "mechanism_ontology"
+      }
+    ],
+    "originalInterpretation": "original_synthesis_not_manufacturer_endorsement",
+    "newFieldEvidence": false
+  },
+  "applicability": {
+    "scope": "Famílias genéricas de bombas hidráulicas de deslocamento; nenhuma bomba, máquina ou série homologada.",
+    "verifiedModels": [],
+    "verifiedSerials": [],
+    "oemAcceptanceLimits": null,
+    "fieldObservations": 0,
+    "performedTests": 0,
+    "confirmedRootCauses": 0
+  },
+  "safety": {
+    "boundary": "Não é procedimento de Test & Adjust. Identificar bomba, série, circuito e instruções OEM aplicáveis antes de autorizar qualquer verificação física ou pressurização.",
+    "prohibitedActions": [
+      "Não abrir linha hidráulica energizada ou com pressão residual.",
+      "Não usar as pressões/viscosidades de outra bomba como valor de aceitação.",
+      "Não substituir bomba somente a partir de ruído ou lentidão.",
+      "Não obstruir sucção ou provocar cavitação deliberadamente."
+    ],
+    "safeNextStep": "Preparar comparação documental de circuito, fluido, entrada e histórico; solicitar revisão técnica de Engenharia antes de ensaio."
+  }
+}
