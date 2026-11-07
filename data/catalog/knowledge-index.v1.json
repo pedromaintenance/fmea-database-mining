@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.knowledge-index.v1",
-  "version": "1.4.5",
+  "version": "1.4.6",
   "scope": "selected_existing_public_artifacts_not_complete_inventory",
   "repository": "pedromaintenance/fmea-database-mining",
   "nature": "navigation_metadata_not_canonical_technical_evidence",
@@ -18,7 +18,7 @@
       "kind": "bibliografia",
       "system": "transversal",
       "evidenceClass": "PUBLIC_REFERENCE",
-      "summary": "Inventário bibliográfico com 87 fontes catalogadas, URLs e limitações. O registro não valida aplicabilidade OEM.",
+      "summary": "Registro bibliográfico versionado com 97 fontes após ciclo 1.4.6 (contagem dinâmica no arquivo canônico); links e limitações não representam aplicação OEM validada.",
       "path": "data/research/sources.v1.json",
       "keywords": [
         "normas",
@@ -394,6 +394,70 @@
         "paráfrases",
         "recusa",
         "busca"
+      ]
+    },
+    {
+      "id": "LIB-TK-HYD-PIL",
+      "title": "Pilotagem hidráulica e comando de válvulas direcionais",
+      "domain": "Hidráulica",
+      "kind": "ficha fundamental",
+      "system": "hidraulico",
+      "evidenceClass": "CONCEPTUAL",
+      "summary": "Pilotagem, válvula direcional, comando, intertravamentos e hipóteses concorrentes; sem pressão por série",
+      "path": "data/knowledge/fundamentals/hydraulic-pilot-control.v2.json",
+      "keywords": [
+        "pilotagem",
+        "circuito piloto",
+        "intertravamento",
+        "solenoide"
+      ]
+    },
+    {
+      "id": "LIB-TK-HYD-HOLD",
+      "title": "Retenção e controle de carga hidráulica",
+      "domain": "Hidráulica",
+      "kind": "ficha fundamental",
+      "system": "hidraulico",
+      "evidenceClass": "CONCEPTUAL",
+      "summary": "Controle de cargas motrizes, contrabalanço versus retenção, deriva e segurança, sem ajuste de válvula por modelo",
+      "path": "data/knowledge/fundamentals/hydraulic-load-holding.v2.json",
+      "keywords": [
+        "retenção de carga",
+        "counterbalance",
+        "contrabalanço",
+        "segurança"
+      ]
+    },
+    {
+      "id": "LIB-TK-HYD-ACT",
+      "title": "Atuadores hidráulicos: força, movimento e deriva",
+      "domain": "Hidráulica",
+      "kind": "ficha fundamental",
+      "system": "hidraulico",
+      "evidenceClass": "CONCEPTUAL",
+      "summary": "Cilindros/motores, fuga interna versus válvula, carga e geometria, sem declarar falha de ativo",
+      "path": "data/knowledge/fundamentals/hydraulic-actuator-drift.v2.json",
+      "keywords": [
+        "cilindro",
+        "deriva",
+        "fuga interna",
+        "atuador"
+      ]
+    },
+    {
+      "id": "LIB-TK-HYD-SENS",
+      "title": "Instrumentação e diagnósticos eletrônicos hidráulicos",
+      "domain": "Hidráulica",
+      "kind": "ficha fundamental",
+      "system": "hidraulico",
+      "evidenceClass": "CONCEPTUAL",
+      "summary": "Sensor, ECM, códigos, interpretação de pressão e falhas elétricas concorrentes, sem efetividade de código por série",
+      "path": "data/knowledge/fundamentals/hydraulic-instrumentation.v2.json",
+      "keywords": [
+        "sensor",
+        "ECM",
+        "código de falha",
+        "intertravamento"
       ]
     }
   ]
