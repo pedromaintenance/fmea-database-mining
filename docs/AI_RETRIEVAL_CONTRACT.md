@@ -35,6 +35,13 @@
 - Relate explicitamente resultados ausentes/ambíguos. Um `NOT_FOUND_IN_CATALOG` significa falta no corpus fechado de seis fichas, não inexistência do conceito no mundo ou no restante do repositório.
 - Resultado do desafio congelado: **4/24 (16,7%)** correspondências exatas. Nenhuma das 12 paráfrases conceituais foi recuperada; somente dois dos seis pedidos operacionais foram classificados explicitamente, e quatro retornaram ausência. Zero respostas conceituais indevidas nesses seis casos não implica prontidão de segurança. **Nunca utilizar o roteador lexical sozinho para decisões operacionais.**
 
+## Recuperação conceitual v2 (1.4.6)
+- `scripts/lib/technical-discovery-v2.mjs` implementa correspondência de expressões e termos de 10 fichas, precedida por regras explícitas de abstenção operacional. Não há embeddings, inferência generativa, API externa ou acesso ao SAP.
+- `npm run knowledge:search:v2 -- --query "pergunta"` retorna fichas candidatas e `sourceIds` sob estados `FOUND_CONCEPTUAL`, `MULTIPLE_CONCEPTS`, `NOT_FOUND_IN_CATALOG` e `ABSTAIN_UNSUPPORTED_OPERATIONAL`.
+- `/consulta-tecnica.html` e `/technical-search-v2-bundle.v1.json` são cópias públicas offline da mesma base conceitual; `/technical-search-v2-report.v1.json` mede apenas 24 perguntas do desafio previamente lido, agora um conjunto de desenvolvimento.
+- A auditoria v2 mediu **18/24 (75%)** correspondências exatas de IDs+estado em perguntas já conhecidas durante desenvolvimento; v1.4.4 retornava 4/24. Os 6 pedidos operacionais arriscados da amostra foram explicitamente recusados. A pontuação não mede perguntas externas nem capacidade de diagnóstico.
+- **Não declarar generalização, acurácia de IA, efetividade OEM, segurança de produção ou causa raiz** com base nos testes. Mesmo abstendo-se de algumas perguntas perigosas, o roteador não substitui profissional e procedimento de bloqueio, medição ou inspeção.
+
 ## Pipeline de recuperação
 1. **Descoberta:** `data/catalog/knowledge-index.v1.json` inclui uma seleção inicial de artefatos existentes. Ausência no índice não significa ausência no repositório.
 2. **Recuperação canônica:** abrir `path`; preferir informações estruturadas em `data/quality` e documentos de `docs`. Não transformar o campo de descrição do índice em prova.

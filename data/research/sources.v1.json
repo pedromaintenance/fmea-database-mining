@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.research.sources.v1",
-  "version": "1.4.5",
+  "version": "1.4.6",
   "status": "literatura_de_referencia_nao_casos_empiricos",
   "rights": "somente_titulos_links_e_resumos_originais",
   "sources": [
@@ -1038,6 +1038,28 @@
       "role": "manufacturer_component_architecture_overview",
       "limitation": "Exemplos de mancais, vedação e monitoramento, não representam toda configuração de rolamentos nem estabelecem limites universais de vibração, temperatura, instalação ou vida útil para equipamentos de mina.",
       "reviewStatus": "fonte_publica_consultada_resumo_original_sem_reproducao_integral",
+      "lastReviewed": "2026-11-07"
+    },
+    {
+      "id": "DANFOSS-DIRECTIONAL-CONTROL",
+      "organization": "Danfoss",
+      "title": "Directional control valves — hydraulically piloted spool valves",
+      "url": "https://powersource.danfoss.com/products/hydraulic-valves/cartridge-valves/directional-control-valves",
+      "area": "pilot_operated_directional_control_valves",
+      "role": "manufacturer_public_technical_explanation",
+      "limitation": "Apresenta diferentes configurações de válvula com comando hidráulico/solenoide. Pressões de pilotagem e portas são específicas da série, não transferíveis a equipamentos CAT/Sandvik.",
+      "reviewStatus": "conteudo_publico_consultado_sintese_original",
+      "lastReviewed": "2026-11-07"
+    },
+    {
+      "id": "PARKER-E2-COUNTERBALANCE",
+      "organization": "Parker Hannifin",
+      "title": "E2 Series Counterbalance Valve — How It Works",
+      "url": "https://discover.parker.com/e2-series-counterbalance-valve",
+      "area": "counterbalance_and_pilot_assisted_load_control",
+      "role": "manufacturer_public_component_operation",
+      "limitation": "Explica contrabalanço, pilotagem e carga que tende a acelerar; não demonstra que o equipamento estudado possui essa válvula nem estabelece ajustes aplicáveis.",
+      "reviewStatus": "conteudo_publico_consultado_sintese_original",
       "lastReviewed": "2026-11-07"
     }
   ]

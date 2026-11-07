@@ -1,0 +1,140 @@
+{
+  "schema": "fmea-mining.technical-knowledge-record.v2",
+  "recordVersion": "1.4.6",
+  "recordType": "fundamental_technical_knowledge",
+  "evidenceClass": "CONCEPTUAL",
+  "reviewStatus": "PENDING_REVIEW",
+  "operationalApproval": false,
+  "sapMappingApproved": false,
+  "automaticDiagnosisAllowed": false,
+  "id": "TK-HYD-PILOT-001",
+  "title": "Pilotagem hidráulica e comando de válvulas direcionais",
+  "titleEn": "Hydraulic pilot signal and directional valve control",
+  "domain": "Hidráulica",
+  "systemTags": [
+    "comando piloto",
+    "pilotagem hidráulica",
+    "válvula direcional",
+    "solenoide",
+    "intertravamento"
+  ],
+  "definition": "A pilotagem hidráulica emprega pressão ou vazão de comando para deslocar ou modular elementos de uma válvula ou dispositivo. Dependendo da arquitetura, pode ser originada por circuito piloto e comandada mecanicamente, hidraulicamente ou eletricamente.",
+  "functionRequired": "O subsistema de comando deve entregar a condição de pilotagem coerente com a solicitação da operação, intertravamentos e arquitetura para que as funções sejam controladas sem movimento indevido.",
+  "physicalMechanism": {
+    "summary": "Sinal piloto insuficiente, bloqueado ou não autorizado pode impedir deslocamento de carretel/elemento regulador sem exigir falha da bomba principal. Também é possível que o comando esteja presente, mas a seção direcional não responda por mecanismo mecânico, elétrico ou hidráulico distinto.",
+    "possibleChain": [
+      "Comando do operador, lógica ou válvula piloto autoriza ou impede sinal de controle segundo a configuração.",
+      "O sinal piloto atua sobre uma válvula ou controle, sob retorno de mola ou outras forças internas, produzindo distribuição desejada.",
+      "Ausência de movimento pode refletir falta de comando, pilotagem inadequada, falha da válvula principal, atuador ou restrição de energia hidráulica."
+    ]
+  },
+  "illustrativeSymptoms": [
+    "Comando de uma ou várias funções sem resposta enquanto outras funções permanecem possíveis.",
+    "Resposta dependente de intertravamento ou condição de pilotagem, sem confirmação de causa."
+  ],
+  "competingHypotheses": [
+    {
+      "id": "HYP-PIL-COMMAND",
+      "mechanism": "Ausência ou inibição do sinal piloto por comando, lógica, alimentação ou intertravamento.",
+      "discriminator": "Confrontar permissivos, desenho elétrico e hidráulico, estado de comando e método de medição OEM do circuito real.",
+      "unconfirmed": true
+    },
+    {
+      "id": "HYP-PIL-SPOOL",
+      "mechanism": "Sinal piloto presente, mas elemento direcional não responde por restrição, atrito ou defeito do comando.",
+      "discriminator": "Diferenciar observabilidade do sinal piloto da resposta da válvula e da vazão real, por método autorizado.",
+      "unconfirmed": true
+    },
+    {
+      "id": "HYP-PIL-SUPPLY",
+      "mechanism": "A função não responde por alimentação da bomba principal ou problema de atuador, independentemente da pilotagem.",
+      "discriminator": "Comparar funções compartilhadas e variáveis do circuito com documentação por configuração.",
+      "unconfirmed": true
+    }
+  ],
+  "evidenceToRequest": [
+    {
+      "question": "Há esquema específico que distingue bomba principal, circuito piloto, alimentação elétrica e comandos?",
+      "limitOfInference": "Arquitetura genérica da Danfoss não comprova pilôto, carretel ou posição de válvula em máquina Caterpillar."
+    },
+    {
+      "question": "Os intertravamentos, estados de comando e sinais medidos foram relacionados ao mesmo instante de ocorrência?",
+      "limitOfInference": "Código eletrônico, pressão piloto e movimento são variáveis distintas; ausência de uma medição não prova mecanismo."
+    },
+    {
+      "question": "Qual teste OEM por série diferencia comando piloto insuficiente de válvula travada ou falta de fluxo?",
+      "limitOfInference": "Não aplicar valores de pressão piloto publicados para famílias diferentes."
+    }
+  ],
+  "confounders": [
+    "Arquiteturas de válvula eletrônica, manual ou hidraulicamente pilotada.",
+    "Intertravamentos, retorno por mola e permissivos de segurança.",
+    "Temperatura, contaminação e comando de deslocamento da bomba.",
+    "Observabilidade dos sinais e referências de medição."
+  ],
+  "ontologyLinks": [
+    {
+      "id": "ME-14",
+      "relation": "primary_concept",
+      "mechanismProven": false
+    },
+    {
+      "id": "ME-12",
+      "relation": "competing_concept",
+      "mechanismProven": false
+    },
+    {
+      "id": "ME-11",
+      "relation": "competing_concept",
+      "mechanismProven": false
+    }
+  ],
+  "provenance": {
+    "sourceRegistryPath": "data/research/sources.v1.json",
+    "sourceNotes": [
+      {
+        "sourceId": "DANFOSS-DIRECTIONAL-CONTROL",
+        "supports": "Descreve válvulas direcionais acionadas por pilotagem hidráulica e configurações com solenoides, com diferentes esquemas e aplicações.",
+        "doesNotSupport": "Não confirma a presença ou a pressão necessária de uma válvula Danfoss em implementos CAT/6030."
+      },
+      {
+        "sourceId": "CAT-HYD-TECHNICAL-ANALYSIS",
+        "supports": "Apresenta testes distintos de pressão principal, alívio piloto e verificação de códigos em equipamentos CAT, dependentes de instruções SIS.",
+        "doesNotSupport": "Não autoriza transferir passos, pontos ou valores do artigo para outra família ou série."
+      }
+    ],
+    "originAnchors": [
+      {
+        "path": "data/ontology/concepts.v1.json",
+        "recordId": "ME-14",
+        "role": "mechanism_ontology"
+      },
+      {
+        "path": "data/ontology/concepts.v1.json",
+        "recordId": "ME-12",
+        "role": "mechanism_ontology"
+      }
+    ],
+    "originalInterpretation": "original_synthesis_not_manufacturer_endorsement",
+    "newFieldEvidence": false
+  },
+  "applicability": {
+    "scope": "Circuitos genéricos de pilotagem e controle direcional; nenhum fabricante/modelo/série identificado como efetivo.",
+    "verifiedModels": [],
+    "verifiedSerials": [],
+    "oemAcceptanceLimits": null,
+    "fieldObservations": 0,
+    "performedTests": 0,
+    "confirmedRootCauses": 0
+  },
+  "safety": {
+    "boundary": "Investigação de pilotagem deve preservar os bloqueios e intertravamentos; não se pode contornar controle de segurança ou manipular válvulas sob pressão sem procedimento OEM.",
+    "prohibitedActions": [
+      "Não burlar solenoides, permissivos ou dispositivos de bloqueio para forçar movimento.",
+      "Não medir ou abrir porta de pressão sem identificar circuito e condições seguras.",
+      "Não imputar falha de bomba principal apenas pela ausência de movimento.",
+      "Não copiar pressão piloto de catálogos genéricos como limite do ativo."
+    ],
+    "safeNextStep": "Identificar arquitetura, estados permissivos e procedimento OEM de Test & Adjust antes de qualquer ensaio autorizado."
+  }
+}

@@ -26,6 +26,8 @@
 
 **Ciclo 1.4.5:** publicado um grafo de função→componente→mecanismo→evidência com 2 sistemas, 13 componentes e 15 conexões condicionais, além de 24 paráfrases novas frente à busca lexical congelada. Esta não é avaliação humana externa e não fornece certificação OEM; 95 referências no catálogo e 23 itens curados. A prioridade seguinte é revisar e ampliar a recuperação sem calibrar no próprio teste.
 
+**Ciclo 1.4.6:** quatro lacunas hidráulicas documentais cobertas com fichas conceituais (piloto, retenção, atuador, sensores); mapa hidráulico continua ilustrativo e não contém nós sem artigo vinculado. Nova busca lexical por conceitos e avaliação de desenvolvimento usando 24 perguntas já conhecidas, sem classificação como benchmark independente. 97 fontes e 27 itens curados. Prioridade seguinte: perguntas coletadas independentemente e avaliação humana de respostas.
+
 ### Horizonte F1 — Fundamentos mecânicos e hidráulicos (1–3 meses)
 **Foco 1:** tribologia, desgaste e lubrificação; viscosidade, contaminação, partículas, falha de rolamento, vedação, filtragem e interpretação SOS.  
 **Foco 2:** hidráulica: bombas de deslocamento, regulação, válvulas, acumuladores, sucção, cavitação, cilindros, mangueiras, drenagem, contrapressão e resfriamento.  

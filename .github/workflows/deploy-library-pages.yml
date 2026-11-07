@@ -14,6 +14,11 @@ on:
       - 'scripts/build-functional-architecture.mjs'
       - 'scripts/audit-functional-architecture.mjs'
       - 'scripts/audit-fundamentals-unseen-challenge.mjs'
+      - 'scripts/lib/technical-discovery-v2.mjs'
+      - 'scripts/build-technical-search-v2.mjs'
+      - 'scripts/query-technical-v2.mjs'
+      - 'scripts/audit-technical-search-v2.mjs'
+      - 'docs/consulta-tecnica.html'
       - 'docs/biblioteca-tecnica.html'
       - 'schemas/technical-knowledge-record.v2.schema.json'
       - 'scripts/build-fundamentals-portal.mjs'
@@ -75,6 +80,8 @@ jobs:
           node scripts/build-functional-architecture.mjs
           node scripts/audit-functional-architecture.mjs
           node scripts/audit-fundamentals-unseen-challenge.mjs
+          node scripts/build-technical-search-v2.mjs
+          node scripts/audit-technical-search-v2.mjs
 
       - name: Prepare static site
         run: |
@@ -86,6 +93,9 @@ jobs:
           cp reports/arquitetura-funcional.generated.html _site/arquitetura-funcional.html
           cp reports/functional-architecture.generated.json _site/arquitetura-funcional.v1.json
           cp reports/fundamentals-uncalibrated-challenge.generated.json _site/fundamentals-uncalibrated-challenge.v1.json
+          cp reports/consulta-tecnica.generated.html _site/consulta-tecnica.html
+          cp reports/technical-search-v2-bundle.generated.json _site/technical-search-v2-bundle.v1.json
+          cp reports/technical-search-v2-report.generated.json _site/technical-search-v2-report.v1.json
           cp schemas/technical-knowledge-record.v2.schema.json _site/technical-knowledge-record.v2.schema.json
           cp reports/mapa-semantico.generated.html _site/mapa-semantico.html
           cp reports/semantic-atlas.generated.json _site/semantic-atlas.v1.json

@@ -11,10 +11,10 @@ const foundation=new Map(graph.fundamentalRecordPaths.map(p=>{const x=json(p);re
 const bibliography=new Set(source.sources.map(x=>x.id));
 const mechanisms=new Set(ontology.mechanismFamilies.map(x=>x.id));
 const errors=[],checks=[];const test=(name,yes)=>{checks.push(name);if(!yes)errors.push(name)};
-test('graph_contract',graph.schema==='fmea-mining.functional-architecture.v1'&&graph.version==='1.4.5');
+test('graph_contract',graph.schema==='fmea-mining.functional-architecture.v1'&&graph.version==='1.4.6');
 test('public_no_authority',graph.nature==='public_conceptual_system_graph_not_machine_configuration'&&graph.claimPolicy.noSerialVerification===true&&graph.claimPolicy.realAssetsObserved===0&&graph.claimPolicy.performedTests===0&&graph.claimPolicy.operationalApprovals===0&&graph.claimPolicy.sapMappingsApproved===0&&graph.claimPolicy.edgesConditional===true);
 test('systems_count',graph.systems.length===2&&new Set(graph.systems.map(s=>s.id)).size===2);
-test('foundation_count',foundation.size===6);
+test('foundation_count',foundation.size===10);
 test('all_articles_conceptual', [...foundation.values()].every(r=>r.evidenceClass==='CONCEPTUAL'&&r.reviewStatus==='PENDING_REVIEW'&&r.operationalApproval===false&&r.sapMappingApproved===false));
 let components=0,edges=0,unlinked=0;const ids=new Set();
 for(const s of graph.systems){
@@ -42,8 +42,9 @@ test('hydraulic_nodes_identical',!!h&&JSON.stringify(h.components.map(x=>x.id))=
 test('hydraulic_edges_identical',!!h&&h.edges.length===old.genericCircuitGraph.edges.length&&h.edges.every((e,i)=>{const o=old.genericCircuitGraph.edges[i];return e.from===o.from&&e.to===o.to&&e.relationship===o.relationship&&e.conditional===o.conditional}));
 test('bearing_origin_synthesis',graph.systems.find(s=>s.id==='SYS-BRG-LUBE')?.origin.status==='original_conceptual_synthesis_not_manufacturer_machine_schematic');
 test('expected_graph_size',components===13&&edges===15);
+test('all_hydraulic_nodes_linked',!!h&&h.components.every(c=>c.knowledgeRecordIds.length>0));
 const view=json('reports/functional-architecture.generated.json');
-test('view_parity',view.ready===true&&JSON.stringify(view.systems)===JSON.stringify(graph.systems)&&view.fundamentals.length===6);
+test('view_parity',view.ready===true&&JSON.stringify(view.systems)===JSON.stringify(graph.systems)&&view.fundamentals.length===10);
 test('sources_in_generated_view',view.sources.length===new Set(graph.systems.flatMap(s=>s.components.flatMap(c=>c.sourceIds))).size);
 const html=read('reports/arquitetura-funcional.generated.html'),template=read('docs/arquitetura-funcional.html');
 test('template_empty',template.includes('FUNCTIONAL_PLACEHOLDER')&&template.includes('"ready":false'));
@@ -54,6 +55,6 @@ try{test('html_js_syntax',!!script&&!!new vm.Script(script[1]))}catch{test('html
 test('no_browser_network_or_persistence',!/fetch\s*\(|XMLHttpRequest|localStorage|sessionStorage|sendBeacon|<script\s+src=/i.test(html));
 test('safe_dom_rendering',html.includes('textContent=value')&&!html.includes('innerHTML'));
 test('no_numeric_oem_thresholds',![...graph.systems].some(s=>s.components.some(c=>/bar\b|psi\b|kpa\b|mbar\b|rpm\b/i.test(c.potentialFunctionalEffect))));
-const report={schema:'fmea-mining.functional-architecture-audit.v1',version:'1.4.5',status:errors.length?'FAIL':'PASS',systems:graph.systems.length,components,conditionalConnections:edges,componentsWithoutFundamentalArticle:unlinked,sourceRegistryCount:source.sources.length,checks:checks.length,operationalApprovals:0,errors};
+const report={schema:'fmea-mining.functional-architecture-audit.v1',version:'1.4.6',status:errors.length?'FAIL':'PASS',systems:graph.systems.length,components,conditionalConnections:edges,componentsWithoutFundamentalArticle:unlinked,sourceRegistryCount:source.sources.length,checks:checks.length,operationalApprovals:0,errors};
 fs.mkdirSync('reports',{recursive:true});fs.writeFileSync('reports/functional-architecture-audit.generated.json',JSON.stringify(report,null,2)+'\n');
 console.log(JSON.stringify(report,null,2));process.exit(errors.length?1:0);
