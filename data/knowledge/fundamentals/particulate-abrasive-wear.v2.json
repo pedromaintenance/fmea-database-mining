@@ -1,0 +1,145 @@
+{
+  "recordVersion": "1.4.3",
+  "schema": "fmea-mining.technical-knowledge-record.v2",
+  "recordType": "fundamental_technical_knowledge",
+  "evidenceClass": "CONCEPTUAL",
+  "reviewStatus": "PENDING_REVIEW",
+  "operationalApproval": false,
+  "sapMappingApproved": false,
+  "automaticDiagnosisAllowed": false,
+  "id": "TK-TRIB-ABRASION-001",
+  "title": "Desgaste abrasivo por partículas em superfícies lubrificadas",
+  "titleEn": "Particulate abrasive wear of lubricated machine contacts",
+  "domain": "Tribologia",
+  "systemTags": [
+    "desgaste abrasivo",
+    "contaminação sólida",
+    "rolamentos",
+    "bombas hidráulicas",
+    "filme lubrificante"
+  ],
+  "definition": "Desgaste abrasivo envolve remoção progressiva de material por partículas ou asperezas que interagem com superfícies em contato. Partículas também podem produzir indentações e facilitar dano por fadiga de contato, fenômeno distinto de abrasão.",
+  "functionRequired": "Superfícies de movimento relativo devem transmitir forças preservando lubrificação e limpeza adequadas às tolerâncias e condições de operação do componente.",
+  "physicalMechanism": {
+    "summary": "Partículas sólidas contaminantes ou detritos internos podem penetrar contatos e remover material por abrasão; em rolamentos, partículas podem gerar indentações e concentrações de tensão associadas à fadiga superficial. Um resultado de contagem de partículas sozinho não estabelece a peça danificada ou a causa de ingresso.",
+    "possibleChain": [
+      "A origem externa ou interna de partículas e a limpeza do fluido influenciam o contato tribológico.",
+      "Partículas, geometria, material, dureza, carga, velocidade e espessura de filme condicionam desgaste e dano por indentação.",
+      "O acúmulo de alterações de superfície pode alterar a resposta do componente, mas a origem específica precisa de observação independente."
+    ]
+  },
+  "illustrativeSymptoms": [
+    "Partículas relatadas no fluido, filtro ou inspeção de material de desgaste, caso a amostragem seja representativa.",
+    "Textura superficial opaca, riscos ou indentações em componente inspecionado; aparência isolada não demonstra a origem."
+  ],
+  "competingHypotheses": [
+    {
+      "id": "HYP-ABR-THIRD-BODY",
+      "mechanism": "Contaminantes sólidos externos ou detritos gerados no sistema podem participar do desgaste abrasivo.",
+      "discriminator": "Reconciliar morfologia, dureza/origem de partícula, local de coleta e estado da vedação/filtragem.",
+      "unconfirmed": true
+    },
+    {
+      "id": "HYP-ABR-BOUNDARY-LUBE",
+      "mechanism": "Filme lubrificante inadequado e contatos com adesão ou escorregamento podem produzir marcas diferentes ou sobrepostas.",
+      "discriminator": "Avaliar seleção/viscosidade/temperatura e condição de lubrificação sem atribuir tudo às partículas.",
+      "unconfirmed": true
+    },
+    {
+      "id": "HYP-ABR-CONTACT-FATIGUE",
+      "mechanism": "Indentações e tensões cíclicas podem conduzir à fadiga superficial e descascamento sem provar abrasão como único mecanismo.",
+      "discriminator": "Distinguir microgeometria, marcas de fadiga, carga, alinhamento e histórico de contaminação.",
+      "unconfirmed": true
+    }
+  ],
+  "evidenceToRequest": [
+    {
+      "question": "Há amostra com data, compartimento, fluido, método e tendência de partículas suficientemente documentados?",
+      "limitOfInference": "Contagem de partículas e código ISO 4406 quantificam limpeza, não a causa raiz de um componente."
+    },
+    {
+      "question": "As superfícies e detritos foram caracterizados por método e cadeia de custódia adequados em ambiente autorizado?",
+      "limitOfInference": "Morfologia visual isolada não define dureza, origem, idade do dano ou regime de lubrificação."
+    },
+    {
+      "question": "A configuração real de vedação, filtragem, respiro e manutenção foi identificada com referência OEM?",
+      "limitOfInference": "Recomendações de um fabricante sobre rolamentos e bombas não validam todas as variantes de mineração."
+    }
+  ],
+  "confounders": [
+    "Composição, dureza e tamanho das partículas versus folgas/filme efetivo.",
+    "Desgaste adesivo, abrasivo e fadiga frequentemente concorrentes.",
+    "Contaminação introduzida durante coleta, manutenção ou preparação do componente.",
+    "Variações de carga, alinhamento, viscosidade e temperatura."
+  ],
+  "ontologyLinks": [
+    {
+      "id": "ME-01",
+      "relation": "primary_concept",
+      "mechanismProven": false
+    },
+    {
+      "id": "ME-02",
+      "relation": "competing_concept",
+      "mechanismProven": false
+    },
+    {
+      "id": "ME-03",
+      "relation": "competing_concept",
+      "mechanismProven": false
+    },
+    {
+      "id": "ME-13",
+      "relation": "competing_concept",
+      "mechanismProven": false
+    }
+  ],
+  "provenance": {
+    "sourceRegistryPath": "data/research/sources.v1.json",
+    "sourceNotes": [
+      {
+        "sourceId": "SKF-WEAR-SURFACE-FATIGUE",
+        "supports": "Descreve relações entre partículas, desgaste, alteração do perfil de pista e possível fadiga superficial em rolamentos.",
+        "doesNotSupport": "Não disponibiliza frequência de falhas desta frota nem comprova abrasão em bomba hidráulica específica."
+      },
+      {
+        "sourceId": "BOSCH-REXROTH-PISTON-DAMAGE",
+        "supports": "Apresenta risco de partículas sólidas em folgas internas de unidade hidráulica e importância da limpeza adequada.",
+        "doesNotSupport": "Não permite extrapolar arquitetura ou limite de limpeza de bomba CAT/Sandvik não identificada."
+      },
+      {
+        "sourceId": "ISO-4406-2021",
+        "supports": "A referência ISO 4406 é pertinente à classificação de nível de partículas sólidas no fluido.",
+        "doesNotSupport": "O código ISO 4406 não identifica componente danificado nem confirma causa raiz."
+      }
+    ],
+    "originAnchors": [
+      {
+        "path": "data/ontology/concepts.v1.json",
+        "recordId": "ME-01",
+        "role": "mechanism_ontology"
+      }
+    ],
+    "originalInterpretation": "original_synthesis_not_manufacturer_endorsement",
+    "newFieldEvidence": false
+  },
+  "applicability": {
+    "scope": "Contatos mecânicos lubrificados em princípio geral, com exemplos em rolamentos e unidades hidráulicas, sem homologação de modelo ou série.",
+    "verifiedModels": [],
+    "verifiedSerials": [],
+    "oemAcceptanceLimits": null,
+    "fieldObservations": 0,
+    "performedTests": 0,
+    "confirmedRootCauses": 0
+  },
+  "safety": {
+    "boundary": "Leitura de análise de fluido e morfologia serve à hipótese e priorização documental. Acesso ao componente, inspeção interna e coleta requerem autorização, controle de energias e procedimento OEM.",
+    "prohibitedActions": [
+      "Não classificar falha de rolamento somente por um código de partículas ou ruído.",
+      "Não utilizar limite universal de ISO 4406 como aceitabilidade de toda a frota.",
+      "Não abrir filtro/compartimento pressurizado nem reinstalar elemento destruído pela inspeção.",
+      "Não confundir partícula de coleta com evidência conclusiva da origem do desgaste."
+    ],
+    "safeNextStep": "Planejar revisão de amostragem, morfologia e documentação da filtragem/vedação antes de propor causa ou intervenção."
+  }
+}
