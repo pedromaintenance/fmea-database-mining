@@ -1017,6 +1017,17 @@
       "limitation": "Explicação pública da SKF, não substitui edição integral da ISO 15243 nem define causa de rolamento em máquina não inspecionada.",
       "reviewStatus": "fonte_publica_consultada_resumo_original_sem_reproducao_integral",
       "lastReviewed": "2026-11-07"
+    },
+    {
+      "id": "ISO-15243-2017",
+      "organization": "ISO",
+      "title": "ISO 15243:2017 — Rolling bearings — Damage and failures — Terms, characteristics and causes",
+      "url": "https://www.iso.org/standard/59619.html",
+      "area": "rolling_bearing_failure_mode_classification",
+      "role": "standard_public_abstract_and_metadata",
+      "limitation": "Classifica formas de danos em rolamentos, mas o resumo público não substitui o texto integral licenciado, não prova causa em campo e prevê investigações adicionais quando características visuais são insuficientes.",
+      "reviewStatus": "metadados_e_resumo_publicos_verificados_sem_reproducao_da_norma",
+      "lastReviewed": "2026-11-07"
     }
   ]
 }
