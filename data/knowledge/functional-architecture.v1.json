@@ -1,0 +1,485 @@
+{
+  "schema": "fmea-mining.functional-architecture.v1",
+  "version": "1.4.5",
+  "nature": "public_conceptual_system_graph_not_machine_configuration",
+  "claimPolicy": {
+    "noSerialVerification": true,
+    "realAssetsObserved": 0,
+    "performedTests": 0,
+    "operationalApprovals": 0,
+    "sapMappingsApproved": 0,
+    "componentsAreIllustrative": true,
+    "edgesConditional": true,
+    "sourceIdsAreBibliographicLinksNotOemEffectivity": true
+  },
+  "sourceRegistryPath": "data/research/sources.v1.json",
+  "ontologyPath": "data/ontology/concepts.v1.json",
+  "fundamentalRecordPaths": [
+    "data/knowledge/fundamentals/hydraulic-cavitation.v2.json",
+    "data/knowledge/fundamentals/hydraulic-aeration.v2.json",
+    "data/knowledge/fundamentals/particulate-abrasive-wear.v2.json",
+    "data/knowledge/fundamentals/lubricating-film.v2.json",
+    "data/knowledge/fundamentals/solid-contamination.v2.json",
+    "data/knowledge/fundamentals/rolling-contact-fatigue.v2.json"
+  ],
+  "systems": [
+    {
+      "id": "SYS-HYD-IMPLEMENT",
+      "name": "Circuito de implementos hidráulicos (topologia ilustrativa)",
+      "nameEn": "Illustrative mobile implement hydraulic circuit",
+      "purpose": "Converter energia mecânica em potência hidráulica, distribuir, controlar e converter o escoamento em movimento de implementos, com retorno e proteção condicionados pelo projeto OEM.",
+      "origin": {
+        "path": "data/quality/hydraulic-circuit-differential.v1.json",
+        "nodeCollection": "genericCircuitGraph.nodes",
+        "edgeCollection": "genericCircuitGraph.edges",
+        "status": "illustrative_not_machine_specific"
+      },
+      "scope": "Esquema genérico hipotético: nenhum modelo, número de série, válvula, porta de teste ou topologia real homologado.",
+      "architectureVerified": false,
+      "verifiedModels": [],
+      "verifiedSerials": [],
+      "components": [
+        {
+          "id": "N-RES",
+          "name": "Reservatório e alimentação",
+          "role": "supply",
+          "requiredFunction": "Armazenar e fornecer fluido nas condições de alimentação requeridas pela topologia efetiva.",
+          "potentialFunctionalEffect": "Suprimento desfavorável pode contribuir para resposta insuficiente ou ar no circuito.",
+          "mechanismConceptIds": [
+            "ME-12",
+            "ME-13"
+          ],
+          "knowledgeRecordIds": [
+            "TK-HYD-CAVITATION-001",
+            "TK-HYD-AERATION-001",
+            "TK-FLUID-SOLIDS-001"
+          ],
+          "evidenceQuestions": [
+            "Há desenho efetivo de reservatório, retorno, respiro e nível?",
+            "O histórico de fluido e entrada de ar é representativo e rastreável?"
+          ],
+          "sourceIds": [
+            "CAT-HYD-CIRCUIT-INSPECTION",
+            "PARKER-HYD-FILTRATION-HANDBOOK"
+          ],
+          "verifiedOnAsset": false,
+          "oemSerialApplicable": null
+        },
+        {
+          "id": "N-PMP",
+          "name": "Bomba e controle de deslocamento",
+          "role": "energy_conversion",
+          "requiredFunction": "Fornecer vazão e condições de pressão segundo regime de acionamento e controle efetivo.",
+          "potentialFunctionalEffect": "Comando, rotação ou alimentação inadequados podem reduzir desempenho sem provar dano de bomba.",
+          "mechanismConceptIds": [
+            "ME-12",
+            "ME-08"
+          ],
+          "knowledgeRecordIds": [
+            "TK-HYD-CAVITATION-001",
+            "TK-HYD-AERATION-001"
+          ],
+          "evidenceQuestions": [
+            "Qual bomba e comando realmente equipam o ativo?",
+            "Há registros de rotação/controle e condições OEM comparáveis?"
+          ],
+          "sourceIds": [
+            "CAT-HYD-PUMPS-MOTORS",
+            "CAT-HYD-TECHNICAL-ANALYSIS"
+          ],
+          "verifiedOnAsset": false,
+          "oemSerialApplicable": null
+        },
+        {
+          "id": "N-PIL",
+          "name": "Comando e alimentação piloto",
+          "role": "control",
+          "requiredFunction": "Produzir comando/pilotagem conforme arquitetura efetiva e intertravamentos.",
+          "potentialFunctionalEffect": "Ausência de pilotagem pode simular falha de válvula ou bomba.",
+          "mechanismConceptIds": [
+            "ME-14"
+          ],
+          "knowledgeRecordIds": [],
+          "evidenceQuestions": [
+            "Qual é a alimentação piloto e condição de intertravamentos documentada?",
+            "O comando mensurado foi obtido por método OEM aplicável?"
+          ],
+          "sourceIds": [
+            "CAT-HYD-CIRCUIT-INSPECTION"
+          ],
+          "verifiedOnAsset": false,
+          "oemSerialApplicable": null
+        },
+        {
+          "id": "N-VLV",
+          "name": "Distribuição e regulação de pressão",
+          "role": "control",
+          "requiredFunction": "Distribuir fluxo, modular função e controlar condições de pressão no circuito efetivo.",
+          "potentialFunctionalEffect": "Restrições, regulação ou comando podem alterar velocidade/força sem identificar componente danificado.",
+          "mechanismConceptIds": [
+            "ME-12",
+            "ME-14"
+          ],
+          "knowledgeRecordIds": [
+            "TK-FLUID-SOLIDS-001"
+          ],
+          "evidenceQuestions": [
+            "O esquema real identifica seções, reguladores, alívios e pilotos?",
+            "Qual observabilidade diferencia regulação de falta de suprimento?"
+          ],
+          "sourceIds": [
+            "CAT-HYD-TECHNICAL-ANALYSIS"
+          ],
+          "verifiedOnAsset": false,
+          "oemSerialApplicable": null
+        },
+        {
+          "id": "N-HLD",
+          "name": "Retenção e sustentação de carga",
+          "role": "load_holding",
+          "requiredFunction": "Evitar movimento não comandado e preservar sustentação de cargas quando a arquitetura inclui essa função.",
+          "potentialFunctionalEffect": "Perda potencial de sustentação é condição de segurança e não pode ser confirmada por derivação genérica.",
+          "mechanismConceptIds": [
+            "ME-15"
+          ],
+          "knowledgeRecordIds": [],
+          "evidenceQuestions": [
+            "Há válvula de retenção/segurança identificada no circuito efetivo?",
+            "Existe procedimento seguro OEM autorizado para distinguir fuga/controle?"
+          ],
+          "sourceIds": [
+            "CAT-HYD-CIRCUIT-INSPECTION"
+          ],
+          "verifiedOnAsset": false,
+          "oemSerialApplicable": null
+        },
+        {
+          "id": "N-ACT",
+          "name": "Atuador: cilindro ou motor",
+          "role": "mechanical_output",
+          "requiredFunction": "Converter energia do fluido em força e movimento exigidos pelo implemento.",
+          "potentialFunctionalEffect": "Lentidão, deriva ou perda de força são efeitos possíveis, com causas hidráulicas e mecânicas concorrentes.",
+          "mechanismConceptIds": [
+            "ME-15",
+            "ME-13"
+          ],
+          "knowledgeRecordIds": [],
+          "evidenceQuestions": [
+            "É conhecido o tipo e geometria do atuador por série?",
+            "Há método aprovado para diferenciar fuga interna, válvula e fricção mecânica?"
+          ],
+          "sourceIds": [
+            "CAT-HYD-TECHNICAL-ANALYSIS",
+            "PARKER-CYL-DRIFT-SERVICE"
+          ],
+          "verifiedOnAsset": false,
+          "oemSerialApplicable": null
+        },
+        {
+          "id": "N-RET",
+          "name": "Retorno, resfriamento e filtragem",
+          "role": "fluid_conditioning",
+          "requiredFunction": "Conduzir e condicionar o fluido de retorno conforme projeto e requisitos de limpeza e calor.",
+          "potentialFunctionalEffect": "Contrapressão, temperatura ou condição de limpeza podem afetar desempenho sem provar filtro obstruído.",
+          "mechanismConceptIds": [
+            "ME-12",
+            "ME-13"
+          ],
+          "knowledgeRecordIds": [
+            "TK-FLUID-SOLIDS-001",
+            "TK-HYD-AERATION-001"
+          ],
+          "evidenceQuestions": [
+            "Há configuração efetiva de filtro, trocador e linha de retorno?",
+            "Quais medições e amostragens são comparáveis na condição definida?"
+          ],
+          "sourceIds": [
+            "CAT-HYD-OIL-CLEANLINESS",
+            "PARKER-HYD-FILTRATION-HANDBOOK"
+          ],
+          "verifiedOnAsset": false,
+          "oemSerialApplicable": null
+        },
+        {
+          "id": "N-SEN",
+          "name": "Instrumentação e eletrônica",
+          "role": "observation_control",
+          "requiredFunction": "Medir/realimentar estados relevantes ao controle conforme sensores e lógica reais.",
+          "potentialFunctionalEffect": "Leitura incorreta ou ausência de observabilidade pode simular ou esconder efeito hidráulico.",
+          "mechanismConceptIds": [
+            "ME-10",
+            "ME-11",
+            "ME-14"
+          ],
+          "knowledgeRecordIds": [],
+          "evidenceQuestions": [
+            "Sensores, pontos e unidades efetivos estão identificados?",
+            "Código eletrônico e dado físico foram correlacionados no mesmo intervalo?"
+          ],
+          "sourceIds": [
+            "CAT-HYD-TECHNICAL-ANALYSIS"
+          ],
+          "verifiedOnAsset": false,
+          "oemSerialApplicable": null
+        }
+      ],
+      "edges": [
+        {
+          "from": "N-RES",
+          "to": "N-PMP",
+          "relationship": "suprimento possível",
+          "conditional": true,
+          "flowConfirmed": false
+        },
+        {
+          "from": "N-PMP",
+          "to": "N-VLV",
+          "relationship": "vazão/pressão condicionadas",
+          "conditional": true,
+          "flowConfirmed": false
+        },
+        {
+          "from": "N-PIL",
+          "to": "N-VLV",
+          "relationship": "comando condicionado",
+          "conditional": true,
+          "flowConfirmed": false
+        },
+        {
+          "from": "N-VLV",
+          "to": "N-HLD",
+          "relationship": "fluxo via proteção possível",
+          "conditional": true,
+          "flowConfirmed": false
+        },
+        {
+          "from": "N-HLD",
+          "to": "N-ACT",
+          "relationship": "controle de carga possível",
+          "conditional": true,
+          "flowConfirmed": false
+        },
+        {
+          "from": "N-VLV",
+          "to": "N-ACT",
+          "relationship": "via de trabalho alternativa",
+          "conditional": true,
+          "flowConfirmed": false
+        },
+        {
+          "from": "N-ACT",
+          "to": "N-RET",
+          "relationship": "retorno possível",
+          "conditional": true,
+          "flowConfirmed": false
+        },
+        {
+          "from": "N-RET",
+          "to": "N-RES",
+          "relationship": "condicionamento do fluido",
+          "conditional": true,
+          "flowConfirmed": false
+        },
+        {
+          "from": "N-SEN",
+          "to": "N-PMP",
+          "relationship": "medição/controle possível",
+          "conditional": true,
+          "flowConfirmed": false
+        },
+        {
+          "from": "N-SEN",
+          "to": "N-VLV",
+          "relationship": "medição/controle possível",
+          "conditional": true,
+          "flowConfirmed": false
+        }
+      ]
+    },
+    {
+      "id": "SYS-BRG-LUBE",
+      "name": "Arranjo genérico de apoio por rolamento lubrificado",
+      "nameEn": "Illustrative lubricated rolling-bearing arrangement",
+      "purpose": "Apoiar eixo, transmitir cargas entre elementos rotativos e estrutura e preservar as condições de contato, lubrificação e proteção contra contaminantes.",
+      "origin": {
+        "path": "data/knowledge/fundamentals/lubricating-film.v2.json",
+        "supportingSources": [
+          "SKF-BEARING-HOUSING-SELECTION",
+          "SKF-GREASE-LUBRICATION-MECHANISMS"
+        ],
+        "status": "original_conceptual_synthesis_not_manufacturer_machine_schematic"
+      },
+      "scope": "Arranjo genérico ilustrativo; rolamento selado, engraxado, lubrificado a óleo, com carga radial/axial e mancais variam. Nem todos componentes aparecem em toda aplicação.",
+      "architectureVerified": false,
+      "verifiedModels": [],
+      "verifiedSerials": [],
+      "components": [
+        {
+          "id": "B-SHAFT",
+          "name": "Eixo e interface de carga",
+          "role": "load_transfer",
+          "requiredFunction": "Transmitir movimento e cargas à interface com os anéis apoiados.",
+          "potentialFunctionalEffect": "Desalinhamento, carga ou ajuste diferente do requerido pode modificar tensões e efeitos vibratórios.",
+          "mechanismConceptIds": [
+            "ME-03",
+            "ME-09"
+          ],
+          "knowledgeRecordIds": [
+            "TK-BRG-RCF-001"
+          ],
+          "evidenceQuestions": [
+            "Qual arranjo de cargas e ajustes é aplicável?",
+            "Existe histórico válido de alinhamento e montagem?"
+          ],
+          "sourceIds": [
+            "SKF-BEARING-HOUSING-SELECTION"
+          ],
+          "verifiedOnAsset": false,
+          "oemSerialApplicable": null
+        },
+        {
+          "id": "B-ROLL",
+          "name": "Contato de rolamento: pistas e elementos rolantes",
+          "role": "rolling_contact",
+          "requiredFunction": "Transmitir cargas cíclicas com geometria e superfícies compatíveis com o projeto.",
+          "potentialFunctionalEffect": "Microtrincas, indentações e spalling podem reduzir integridade, mas não identificam automaticamente o mecanismo iniciador.",
+          "mechanismConceptIds": [
+            "ME-01",
+            "ME-03"
+          ],
+          "knowledgeRecordIds": [
+            "TK-BRG-RCF-001",
+            "TK-TRIB-ABRASION-001"
+          ],
+          "evidenceQuestions": [
+            "As marcas são de fadiga superficial, subsuperficial ou desgaste concorrente?",
+            "A investigação visual é suficiente ou necessita método adicional?"
+          ],
+          "sourceIds": [
+            "SKF-ISO15243-BEARING-CLASSIFICATION",
+            "SKF-WEAR-SURFACE-FATIGUE"
+          ],
+          "verifiedOnAsset": false,
+          "oemSerialApplicable": null
+        },
+        {
+          "id": "B-HOUSING",
+          "name": "Mancal e suporte estrutural",
+          "role": "support",
+          "requiredFunction": "Posicionar e suportar o rolamento e transferir cargas à estrutura.",
+          "potentialFunctionalEffect": "Fixação, rigidez ou posição inadequadas podem produzir efeitos semelhantes aos de dano interno.",
+          "mechanismConceptIds": [
+            "ME-09",
+            "ME-04"
+          ],
+          "knowledgeRecordIds": [
+            "TK-BRG-RCF-001"
+          ],
+          "evidenceQuestions": [
+            "Há desenho do suporte, alojamento e configuração por fabricante?",
+            "Existem dados de geometria e montagem conforme procedimento aplicável?"
+          ],
+          "sourceIds": [
+            "SKF-BEARING-HOUSING-SELECTION"
+          ],
+          "verifiedOnAsset": false,
+          "oemSerialApplicable": null
+        },
+        {
+          "id": "B-LUBE",
+          "name": "Óleo ou graxa e sistema de fornecimento",
+          "role": "lubrication",
+          "requiredFunction": "Formar e repor película lubrificante, proteger superfícies e em certos casos participar do controle térmico.",
+          "potentialFunctionalEffect": "Suprimento ou filme insuficiente pode agravar contato de asperezas sem comprovar causa de spalling.",
+          "mechanismConceptIds": [
+            "ME-13",
+            "ME-06"
+          ],
+          "knowledgeRecordIds": [
+            "TK-TRIB-FILM-001",
+            "TK-FLUID-SOLIDS-001"
+          ],
+          "evidenceQuestions": [
+            "Qual tipo de lubrificante e alimentação real da montagem?",
+            "Temperatura, carga e condição do fluido foram documentadas corretamente?"
+          ],
+          "sourceIds": [
+            "SKF-GREASE-LUBRICATION-MECHANISMS",
+            "SKF-WEAR-SURFACE-FATIGUE"
+          ],
+          "verifiedOnAsset": false,
+          "oemSerialApplicable": null
+        },
+        {
+          "id": "B-SEAL",
+          "name": "Vedações e barreira a contaminantes",
+          "role": "sealing",
+          "requiredFunction": "Conter lubrificante e limitar ingresso de agentes externos, conforme tipo e condição do arranjo.",
+          "potentialFunctionalEffect": "Perda de estanqueidade pode alterar limpeza e reposição do fluido sem provar origem de partículas.",
+          "mechanismConceptIds": [
+            "ME-15",
+            "ME-07"
+          ],
+          "knowledgeRecordIds": [
+            "TK-FLUID-SOLIDS-001",
+            "TK-TRIB-ABRASION-001"
+          ],
+          "evidenceQuestions": [
+            "Vedação integral ou externa foi identificada por variante?",
+            "Há evidência segregada de ingresso externo, contaminação de coleta ou geração interna?"
+          ],
+          "sourceIds": [
+            "SKF-BEARING-HOUSING-SELECTION",
+            "SKF-CONTAMINATION-BEARING-LIFE"
+          ],
+          "verifiedOnAsset": false,
+          "oemSerialApplicable": null
+        }
+      ],
+      "edges": [
+        {
+          "from": "B-SHAFT",
+          "to": "B-ROLL",
+          "relationship": "transferência de carga possível",
+          "conditional": true,
+          "flowConfirmed": false
+        },
+        {
+          "from": "B-ROLL",
+          "to": "B-HOUSING",
+          "relationship": "transferência de carga possível",
+          "conditional": true,
+          "flowConfirmed": false
+        },
+        {
+          "from": "B-LUBE",
+          "to": "B-ROLL",
+          "relationship": "proteção por filme possível",
+          "conditional": true,
+          "flowConfirmed": false
+        },
+        {
+          "from": "B-SEAL",
+          "to": "B-LUBE",
+          "relationship": "retenção e proteção possíveis",
+          "conditional": true,
+          "flowConfirmed": false
+        },
+        {
+          "from": "B-SEAL",
+          "to": "B-ROLL",
+          "relationship": "limitação de ingresso possível",
+          "conditional": true,
+          "flowConfirmed": false
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "Hydraulic node/edge topology is preserved from HC-DIFF pilot and is explicitly conditional; it is not an OEM hydraulic schematic.",
+    "Rolling bearing assembly is an editorial illustrative synthesis, not a manufacturer assembly drawing.",
+    "Source hyperlinks support general claims, never pressure, test point, bearing load, viscosity, clearance or lifetime by serial.",
+    "Components without linked foundational articles are knowledge gaps, not evidence of functional integrity.",
+    "No part number, cause approval, inspection execution or maintenance instruction is generated."
+  ]
+}
