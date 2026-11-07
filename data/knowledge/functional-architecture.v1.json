@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.functional-architecture.v1",
-  "version": "1.4.5",
+  "version": "1.4.6",
   "nature": "public_conceptual_system_graph_not_machine_configuration",
   "claimPolicy": {
     "noSerialVerification": true,
@@ -20,7 +20,11 @@
     "data/knowledge/fundamentals/particulate-abrasive-wear.v2.json",
     "data/knowledge/fundamentals/lubricating-film.v2.json",
     "data/knowledge/fundamentals/solid-contamination.v2.json",
-    "data/knowledge/fundamentals/rolling-contact-fatigue.v2.json"
+    "data/knowledge/fundamentals/rolling-contact-fatigue.v2.json",
+    "data/knowledge/fundamentals/hydraulic-pilot-control.v2.json",
+    "data/knowledge/fundamentals/hydraulic-load-holding.v2.json",
+    "data/knowledge/fundamentals/hydraulic-actuator-drift.v2.json",
+    "data/knowledge/fundamentals/hydraulic-instrumentation.v2.json"
   ],
   "systems": [
     {
@@ -99,13 +103,16 @@
           "mechanismConceptIds": [
             "ME-14"
           ],
-          "knowledgeRecordIds": [],
+          "knowledgeRecordIds": [
+            "TK-HYD-PILOT-001"
+          ],
           "evidenceQuestions": [
             "Qual é a alimentação piloto e condição de intertravamentos documentada?",
             "O comando mensurado foi obtido por método OEM aplicável?"
           ],
           "sourceIds": [
-            "CAT-HYD-CIRCUIT-INSPECTION"
+            "CAT-HYD-CIRCUIT-INSPECTION",
+            "DANFOSS-DIRECTIONAL-CONTROL"
           ],
           "verifiedOnAsset": false,
           "oemSerialApplicable": null
@@ -142,13 +149,16 @@
           "mechanismConceptIds": [
             "ME-15"
           ],
-          "knowledgeRecordIds": [],
+          "knowledgeRecordIds": [
+            "TK-HYD-HOLD-001"
+          ],
           "evidenceQuestions": [
             "Há válvula de retenção/segurança identificada no circuito efetivo?",
             "Existe procedimento seguro OEM autorizado para distinguir fuga/controle?"
           ],
           "sourceIds": [
-            "CAT-HYD-CIRCUIT-INSPECTION"
+            "CAT-HYD-CIRCUIT-INSPECTION",
+            "PARKER-E2-COUNTERBALANCE"
           ],
           "verifiedOnAsset": false,
           "oemSerialApplicable": null
@@ -163,7 +173,9 @@
             "ME-15",
             "ME-13"
           ],
-          "knowledgeRecordIds": [],
+          "knowledgeRecordIds": [
+            "TK-HYD-ACTUATOR-001"
+          ],
           "evidenceQuestions": [
             "É conhecido o tipo e geometria do atuador por série?",
             "Há método aprovado para diferenciar fuga interna, válvula e fricção mecânica?"
@@ -211,7 +223,9 @@
             "ME-11",
             "ME-14"
           ],
-          "knowledgeRecordIds": [],
+          "knowledgeRecordIds": [
+            "TK-HYD-SENSORS-001"
+          ],
           "evidenceQuestions": [
             "Sensores, pontos e unidades efetivos estão identificados?",
             "Código eletrônico e dado físico foram correlacionados no mesmo intervalo?"
@@ -480,6 +494,7 @@
     "Rolling bearing assembly is an editorial illustrative synthesis, not a manufacturer assembly drawing.",
     "Source hyperlinks support general claims, never pressure, test point, bearing load, viscosity, clearance or lifetime by serial.",
     "Components without linked foundational articles are knowledge gaps, not evidence of functional integrity.",
-    "No part number, cause approval, inspection execution or maintenance instruction is generated."
+    "No part number, cause approval, inspection execution or maintenance instruction is generated.",
+    "New hydraulic node-to-article links are documentary associations only, not verification of their actual physical configuration or failure."
   ]
 }
