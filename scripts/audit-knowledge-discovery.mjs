@@ -20,7 +20,7 @@ check('methodological_refs',JSON.stringify(terms.sourceReferenceIds)===JSON.stri
 check('bibliography_version',sources.schema==='fmea-mining.source-discovery.v1'&&sources.canonicalPath==='data/research/sources.v1.json'&&sources.sourceRegistryVersion===registry.version&&sources.checkedLinksOnThisCycle===false);
 const expectedSources=registry.sources.map(x=>({id:x.id,organization:x.organization,title:x.title,url:x.url,area:x.area||null,role:x.role||null,limitation:x.limitation||'',lastReviewed:x.lastReviewed||null}));
 check('exact_bibliography_lineage',JSON.stringify(sources.sources)===JSON.stringify(expectedSources));
-check('87_sources',sources.sources.length===87&&new Set(sources.sources.map(x=>x.id)).size===87);
+check('unique_sources',sources.sources.length===registry.sources.length&&sources.sources.length>=90&&new Set(sources.sources.map(x=>x.id)).size===sources.sources.length);
 check('rights_marker',sources.rights===registry.rights);
 check('inventory_snapshot',inventory.schema==='fmea-mining.repository-inventory-snapshot.v1'&&inventory.version==='1.4.1'&&inventory.totalFiles===500&&inventory.sourceCommit==='73dfc97b98230a8ff92c3db104c5607fe9d26e42');
 check('inventory_unique',new Set(inventory.files.map(x=>x.path)).size===500);
