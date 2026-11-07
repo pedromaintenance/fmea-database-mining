@@ -33,6 +33,7 @@
 - `npm run knowledge:functional:build` cria `reports/functional-architecture.generated.json` e HTML standalone; publicados em `/arquitetura-funcional.v1.json` e `/arquitetura-funcional.html`.
 - `data/quality/fundamentals-unseen-challenge.v1.json` define 24 paráfrases editoriais **novas perante o baseline lexical 1.4.4 congelado**, não novas perante modelos gerais de linguagem. `npm run knowledge:challenge:audit` mede correspondência e abstenção, documentando erros sem ajustar o baseline; relatório público `/fundamentals-uncalibrated-challenge.v1.json`.
 - Relate explicitamente resultados ausentes/ambíguos. Um `NOT_FOUND_IN_CATALOG` significa falta no corpus fechado de seis fichas, não inexistência do conceito no mundo ou no restante do repositório.
+- Resultado do desafio congelado: **4/24 (16,7%)** correspondências exatas. Nenhuma das 12 paráfrases conceituais foi recuperada; somente dois dos seis pedidos operacionais foram classificados explicitamente, e quatro retornaram ausência. Zero respostas conceituais indevidas nesses seis casos não implica prontidão de segurança. **Nunca utilizar o roteador lexical sozinho para decisões operacionais.**
 
 ## Pipeline de recuperação
 1. **Descoberta:** `data/catalog/knowledge-index.v1.json` inclui uma seleção inicial de artefatos existentes. Ausência no índice não significa ausência no repositório.
