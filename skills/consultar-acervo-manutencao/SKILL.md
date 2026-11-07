@@ -7,6 +7,9 @@ description: Consulta o acervo público FMEA Database Mining para responder dúv
 
 Esta skill é **somente de leitura conceitual**. Não acessa SAP, não opera máquina, não executa procedimentos e não autentica evidências OEM por série.
 
+## Avaliação de recuperação sem confundir fonte e aprovação
+Se a pergunta for sobre confiabilidade do buscador, consulte `../../docs/AVALIACAO_INDEPENDENTE_PROTOCOLO.md` e `../../reports/external-review-evaluation.generated.json`. Sem importação de julgamentos humanos externos, a avaliação retorna `NO_EXTERNAL_SAMPLE` e taxas `null`. A comparação interna 18/24 não prova recuperação em consultas inéditas. Não propor liberação de máquina com base em saída de busca e não publicar perguntas com dados de frota ou informações corporativas.
+
 ## Busca técnica v2 — apenas descoberta
 Use `npm run knowledge:search:v2 -- --query "pergunta"` para localizar fichas candidatas em dez registros, com `FOUND_CONCEPTUAL`, `MULTIPLE_CONCEPTS`, `NOT_FOUND_IN_CATALOG` e `ABSTAIN_UNSUPPORTED_OPERATIONAL`. Abra o JSON canônico e confirme cada fonte e limitação antes de responder. A busca é lexical, NÃO LLM, embeddings, diagnóstico nem permissão de intervenção. A avaliação de 24 questões conhecidas é apenas de desenvolvimento; exigir procedimento OEM, controle de energia e aprovação humana para qualquer decisão de campo.
 
