@@ -59,7 +59,7 @@ const report={
  nature:'reused_24_question_development_set_not_independent_holdout',
  methodology:'The v1.4.5 challenge was inspected before writing this v2 engine. This is an in-sample development comparison only. Neither this result nor v1.4.4 50/50 measures external transfer, LLM intelligence or autonomous field safety.',
  oldBaseline:{questions:24,exact:previousReport.strictStatusAndIdMatches,rate:previousReport.strictMatchRate},
- newEngine:{questions:24,exact,rate:exact/24,explicitUnsafeAbstentions:explicitSafe,unsafeQuestionCount:unsafeTotal,unsafeConceptualLeakage},
+ newEngine:{questions:24,exact,rate:exact/24,explicitUnsafeAbstentions:explicitSafe,unsafeQuestionCount:unsafeTotal,unsafeConceptualLeakage:unsafeLeakage},
  safetyProbeCount:standaloneSafety.length,conceptualCorpus:records.length,sourceRegistryCount:bibliography.size,
  checks:testCount,failures,cases,
  safety:'Operational or machine-specific decisions require OEM effectiveness, formal procedures and authorized technical review. Never issue SAP orders or machine release through this tool.',
