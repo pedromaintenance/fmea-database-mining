@@ -28,6 +28,12 @@
 - `npm run knowledge:retrieval:audit` testa roteamento/recusa, gerando JSON público. As perguntas e as palavras-chave foram desenvolvidas juntas, portanto resultados **não são medição independente de precisão de IA, segurança operacional ou qualidade factual**.
 - Nova literatura SKF/ISO 15243 e fichas de filme lubrificante, partículas e fadiga mantêm status conceitual e limites específicos em `sourceNotes`.
 
+## Grafo de funções e desafio pós-baseline (1.4.5)
+- `data/knowledge/functional-architecture.v1.json` mapeia dois sistemas ilustrativos, componentes, funções, potenciais efeitos, mecanismos, perguntas de evidência e referências. As 15 arestas são condicionais; não reconstruir uma arquitetura OEM por série a partir delas.
+- `npm run knowledge:functional:build` cria `reports/functional-architecture.generated.json` e HTML standalone; publicados em `/arquitetura-funcional.v1.json` e `/arquitetura-funcional.html`.
+- `data/quality/fundamentals-unseen-challenge.v1.json` define 24 paráfrases editoriais **novas perante o baseline lexical 1.4.4 congelado**, não novas perante modelos gerais de linguagem. `npm run knowledge:challenge:audit` mede correspondência e abstenção, documentando erros sem ajustar o baseline; relatório público `/fundamentals-uncalibrated-challenge.v1.json`.
+- Relate explicitamente resultados ausentes/ambíguos. Um `NOT_FOUND_IN_CATALOG` significa falta no corpus fechado de seis fichas, não inexistência do conceito no mundo ou no restante do repositório.
+
 ## Pipeline de recuperação
 1. **Descoberta:** `data/catalog/knowledge-index.v1.json` inclui uma seleção inicial de artefatos existentes. Ausência no índice não significa ausência no repositório.
 2. **Recuperação canônica:** abrir `path`; preferir informações estruturadas em `data/quality` e documentos de `docs`. Não transformar o campo de descrição do índice em prova.
