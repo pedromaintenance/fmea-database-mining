@@ -1,0 +1,72 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mapa funcional de sistemas mecânicos | FMEA Database Mining</title><meta name="description" content="Navegue entre funções, componentes, mecanismos, evidências e referências técnicas de hidráulica e rolamentos.">
+<style>
+:root{color-scheme:dark;--bg:#0c1b24;--panel:#142d39;--line:#355568;--fg:#eff6f7;--muted:#c1d0d8;--gold:#d4ae62;--link:#b6e5f6}
+*{box-sizing:border-box}body{background:var(--bg);color:var(--fg);font:15px/1.55 system-ui,"Segoe UI",sans-serif;margin:0}a{color:var(--link)}
+header{padding:28px max(16px,calc((100vw - 1160px)/2));background:linear-gradient(120deg,#234d5e,#10242d);border-bottom:4px solid var(--gold)}
+header h1{font-size:clamp(26px,3.5vw,44px);margin:14px 0 10px}header p{max-width:880px;color:#d5e6ec}
+nav{display:flex;flex-wrap:wrap;gap:14px;font-size:13px}
+main{max-width:1200px;margin:auto;padding:22px 15px 60px}.notice{padding:13px;background:#342a1d;border:1px solid #94733b;color:#f7e3c2;border-radius:10px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:16px 0 25px}.stat{background:#122732;border:1px solid var(--line);border-radius:9px;padding:11px}.stat strong{display:block;font-size:25px}.stat span{font-size:12px;color:var(--muted)}
+.controls{display:grid;grid-template-columns:1fr 1.5fr;gap:12px;margin:16px 0}
+label{font-size:12px;color:var(--muted);display:block}select,input{width:100%;margin-top:5px;background:#0c212b;border:1px solid #66869c;color:#fff;border-radius:8px;padding:11px;font:inherit}
+h2{font-size:23px;margin:18px 0 6px}h3{font-size:17px;margin:13px 0}p{overflow-wrap:anywhere}.sub{color:var(--muted);font-size:13px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+article{padding:18px;border:1px solid var(--line);background:var(--panel);border-radius:11px;min-width:0}
+article h3{margin:6px 0 6px}ul{padding-left:21px;margin:8px 0 13px}li{margin-bottom:5px}.muted{color:var(--muted)}.chip{font-size:11px;border:1px solid #537b8a;color:#d5ebf0;border-radius:16px;padding:2px 8px;display:inline-block;margin:2px 4px 2px 0}
+.empty{color:#ffd89c}.connections{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin:14px 0 25px}
+.connection{padding:10px;border:1px solid #476375;border-radius:7px;background:#112935;font-size:12px}
+small{color:var(--muted)}@media(max-width:780px){.grid,.connections,.controls{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+</style></head><body>
+<header><nav><a href="./index.html">Biblioteca</a><a href="./mapa-semantico.html">Atlas de datasets</a><a href="./fundamentos-hidraulica-tribologia.html">Fundamentos</a><a href="./fontes-tecnicas.html">Referências</a></nav>
+<h1>Funções, componentes e mecanismos</h1>
+<p>Mapas conceituais para seguir a cadeia função exigida → componente → possível perda funcional → mecanismos → perguntas de discriminação → literatura.</p>
+</header><main>
+<div class="notice"><strong>Topologias ilustrativas.</strong> As ligações não representam um diagrama de um equipamento específico. Cada aresta é condicional; mecanismos são hipóteses, sem diagnóstico, ensaio, aprovação SAP ou valor OEM por série. A ausência de fichas fundamentais ligadas é uma lacuna de cobertura.</div>
+<div class="stats" id="stats"></div>
+<div class="controls"><label>Escolher sistema<select id="sys"></select></label><label>Pesquisar componente, efeito, evidência ou referência<input id="q" type="search" placeholder="Ex.: filtragem, vazão, ME-13, válvula, spalling"></label></div>
+<h2 id="systemName">Mapa funcional</h2><p class="sub" id="systemScope"></p>
+<h3>Relações possíveis (condicionais)</h3><div id="connections" class="connections"></div>
+<h3>Componentes e seus diferenciais</h3><p id="count" class="sub" aria-live="polite"></p><div class="grid" id="cards"></div>
+<p class="sub">Arquivos canônicos: <a href="https://github.com/pedromaintenance/fmea-database-mining/blob/main/data/knowledge/functional-architecture.v1.json">grafo funcional</a> · <a href="https://github.com/pedromaintenance/fmea-database-mining/blob/main/data/ontology/concepts.v1.json">ontologia</a> · <a href="https://github.com/pedromaintenance/fmea-database-mining/blob/main/data/research/sources.v1.json">bibliografia</a>.</p>
+</main>
+<script id="graph-data" type="application/json">{"schema":"FUNCTIONAL_PLACEHOLDER","ready":false}</script><script>
+(()=>{'use strict';const d=JSON.parse(document.getElementById('graph-data').textContent),$=id=>document.getElementById(id);
+const norm=v=>String(v??'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+function add(parent,tag,value,klass){const x=document.createElement(tag);if(value!==undefined)x.textContent=value;if(klass)x.className=klass;parent.append(x);return x}
+if(!d.ready){$('systemScope').textContent='Template offline: consulte o GitHub Pages ou execute npm run knowledge:functional:build para gerar reports/arquitetura-funcional.generated.html.';return}
+const resources=new Map(d.fundamentals.map(x=>[x.id,x])),sources=new Map(d.sources.map(x=>[x.id,x]));
+let groups=d.systems;
+for(const item of groups){const x=add($('sys'),'option',item.name);x.value=item.id}
+for(const [n,label] of [[groups.length,'Sistemas ilustrativos'],[groups.reduce((a,s)=>a+s.components.length,0),'Componentes'],[groups.reduce((a,s)=>a+s.edges.length,0),'Conexões condicionais'],[0,'Ativos validados']]){
+const m=add($('stats'),'div',undefined,'stat');add(m,'strong',String(n));add(m,'span',label)}
+const canon='https://github.com/pedromaintenance/fmea-database-mining/blob/main/';
+function render(){
+const system=groups.find(x=>x.id===$('sys').value)||groups[0],q=norm($('q').value);
+$('systemName').textContent=system.name;
+$('systemScope').textContent=system.purpose+' Escopo: '+system.scope;
+$('connections').replaceChildren();$('cards').replaceChildren();
+const nodes=new Map(system.components.map(x=>[x.id,x]));
+for(const edge of system.edges){
+ const el=add($('connections'),'div',undefined,'connection');
+ add(el,'strong',nodes.get(edge.from).name+' → '+nodes.get(edge.to).name);
+ add(el,'div',edge.relationship+' · ligação hipotética, não confirmada','muted');
+}
+const shown=system.components.filter(x=>!q||norm([x.name,x.role,x.requiredFunction,x.potentialFunctionalEffect,...x.evidenceQuestions,...x.mechanismConceptIds,...x.knowledgeRecordIds,...x.sourceIds].join(' ')).includes(q));
+$('count').textContent=shown.length+' de '+system.components.length+' componentes neste sistema';
+for(const c of shown){
+ const card=add($('cards'),'article');add(card,'span',c.role,'chip');add(card,'span',c.id,'chip');
+ add(card,'h3',c.name);add(card,'p',c.requiredFunction);
+ add(card,'h3','Possível perda funcional');add(card,'p',c.potentialFunctionalEffect);
+ add(card,'h3','Conceitos da ontologia');add(card,'p',c.mechanismConceptIds.join(' · '),'muted');
+ add(card,'h3','Perguntas de evidência');const ul=add(card,'ul');for(const e of c.evidenceQuestions)add(ul,'li',e);
+ add(card,'h3','Fichas fundamentais');
+ if(!c.knowledgeRecordIds.length)add(card,'p','Lacuna: ainda não há ficha fundamental diretamente vinculada.','empty');
+ else{const list=add(card,'ul');for(const id of c.knowledgeRecordIds){const li=add(list,'li'),ref=resources.get(id);if(ref){const a=add(li,'a',ref.title);a.href=canon+ref.path;a.target='_blank';a.rel='noopener noreferrer'}else add(li,'span',id+' (não indexado)')}}
+ add(card,'h3','Fontes gerais');const sl=add(card,'ul');for(const id of c.sourceIds){const li=add(sl,'li'),src=sources.get(id);if(src){const a=add(li,'a',src.title+' — '+src.organization);a.href=src.url;a.target='_blank';a.rel='noopener noreferrer'}else add(li,'span',id+' (não indexado)')}
+ add(card,'p','Vínculo editorial conceitual, não causa confirmada nem topologia OEM.','sub');
+}
+if(!shown.length)add($('cards'),'p','Nenhum componente encontrado. Ausência neste mapa não implica ausência no equipamento ou no restante do acervo.');
+}
+$('sys').addEventListener('change',render);$('q').addEventListener('input',render);render();
+})();
+</script></body></html>

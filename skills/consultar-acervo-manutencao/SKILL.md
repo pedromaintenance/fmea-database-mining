@@ -13,12 +13,13 @@ Esta skill é **somente de leitura conceitual**. Não acessa SAP, não opera má
 3. Para saber em qual arquivo está um material ainda não indexado, procure `../../data/catalog/repository-inventory-snapshot.v1.json`; é apenas um snapshot do commit base, não lista atualizada automaticamente.
 4. Para datasets que ainda não entraram no índice curado, consulte `../../reports/semantic-atlas.generated.json` (após executar `npm run knowledge:atlas:build`) ou o JSON publicado em `/semantic-atlas.v1.json`. Classificação de tema pelo nome do arquivo é heurística; `sourceIds` apenas apontam para referências, não demonstram validade.
 5. Se o assunto não estiver indexado, pesquise o repositório (`data/research/sources.v1.json`, `data/quality/`, `docs/`) e declare que a cobertura ainda não está catalogada.
-6. Para busca local de seis verbetes, `npm run knowledge:fundamentals:query -- --query "questão"` retorna correspondências e fontes; `ABSTAIN_UNSUPPORTED_OPERATIONAL` proíbe assumir limite/diagnóstico e `MULTIPLE_CONCEPTS` exige comparar hipóteses. Este baseline lexical de corpus fechado não avalia desempenho de LLM nem abrange todo o repositório.
-7. Para fundamentos de cavitação, aeração e abrasão, consulte `../../data/knowledge/fundamentals/*.v2.json` (schema v2) e `../../data/research/sources.v1.json`. Retorne `sourceNotes[].supports` com a ressalva `doesNotSupport`; nunca deduza aplicabilidade CAT/Sandvik de manual Parker ou conclusões de SKF para toda máquina.
-8. Leia o **arquivo canônico**, não deduza resultados do resumo do índice. Identifique `schema`, `version`, `nature`, `scope`, `policy`, `sourceIds` e os campos de validação aplicáveis.
-9. Diferencie fonte normativa, fabricante, catálogo comercial, hipótese conceitual, exercício sintético e evidência real. Verifique o documento original, sua data, versão e direitos de uso antes de reproduzir.
-10. Cruze pelo menos duas explicações físicas quando um único sintoma admite múltiplas causas; não promova nenhuma a conclusão sem teste apropriado.
-11. Para qualquer teste ou liberação, pare no limite documental: peça número de série e procedimento OEM efetivo em ambiente autorizado, e encaminhe a revisão humana. Não prescreva ensaio sob pressão ou energias sem controle.
+6. Para pesquisa por função de um componente, consultar `../../data/knowledge/functional-architecture.v1.json` (ou o mapa público JSON). Identificar sistema e nó, extrair função, possíveis efeitos, mecanismos e evidências e abrir arquivos canônicos das referências. Todos os vínculos de topologia são condicionais; equipamento/série real exigem consulta OEM. Falta de `knowledgeRecordIds` deve ser relatada como lacuna de acervo, não ausência de falha.
+7. Para busca local de seis verbetes, `npm run knowledge:fundamentals:query -- --query "questão"` retorna correspondências e fontes; `ABSTAIN_UNSUPPORTED_OPERATIONAL` proíbe assumir limite/diagnóstico e `MULTIPLE_CONCEPTS` exige comparar hipóteses. Este baseline lexical de corpus fechado não avalia desempenho de LLM nem abrange todo o repositório.
+8. Para fundamentos de cavitação, aeração e abrasão, consulte `../../data/knowledge/fundamentals/*.v2.json` (schema v2) e `../../data/research/sources.v1.json`. Retorne `sourceNotes[].supports` com a ressalva `doesNotSupport`; nunca deduza aplicabilidade CAT/Sandvik de manual Parker ou conclusões de SKF para toda máquina.
+9. Leia o **arquivo canônico**, não deduza resultados do resumo do índice. Identifique `schema`, `version`, `nature`, `scope`, `policy`, `sourceIds` e os campos de validação aplicáveis.
+10. Diferencie fonte normativa, fabricante, catálogo comercial, hipótese conceitual, exercício sintético e evidência real. Verifique o documento original, sua data, versão e direitos de uso antes de reproduzir.
+11. Cruze pelo menos duas explicações físicas quando um único sintoma admite múltiplas causas; não promova nenhuma a conclusão sem teste apropriado.
+12. Para qualquer teste ou liberação, pare no limite documental: peça número de série e procedimento OEM efetivo em ambiente autorizado, e encaminhe a revisão humana. Não prescreva ensaio sob pressão ou energias sem controle.
 
 ## Resposta de saída recomendada
 - **Função e configuração relevante:** o que o sistema faz e o que está/não está identificado.
@@ -40,3 +41,4 @@ Usar `NOT_FOUND_IN_CATALOG` quando faltar base. Não tratar benchmark didático 
 - `../../schemas/technical-knowledge-record.schema.json`
 - `../../schemas/technical-knowledge-record.v2.schema.json`
 - `../../data/quality/fundamentals-retrieval-golden.v1.json`
+- `../../data/knowledge/functional-architecture.v1.json`

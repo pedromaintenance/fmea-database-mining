@@ -46,6 +46,14 @@ Cavitation, entrained air and abrasive wear are separate mechanisms. All three n
 
 The 50-question report evaluates only a co-authored lexical router, not an LLM or independent engineering competence. No asset-specific OEM limits, real diagnosis or operating approvals.
 
+## Functional architecture + frozen baseline challenge (v1.4.5)
+- [Public functional systems portal](https://pedromaintenance.github.io/fmea-database-mining/arquitetura-funcional.html)
+- [Functional systems graph JSON](https://pedromaintenance.github.io/fmea-database-mining/arquitetura-funcional.v1.json)
+- [Post-baseline paraphrase challenge JSON report](https://pedromaintenance.github.io/fmea-database-mining/fundamentals-uncalibrated-challenge.v1.json)
+- [Methodology and lineage](https://github.com/pedromaintenance/fmea-database-mining/blob/main/docs/CICLO_2026-11-07_ARQUITETURA_FUNCIONAL_DESAFIO_RETIDO.md)
+
+Two systems are illustrations only (hydraulic implement circuit and rolling bearing arrangement). All edges are conditional. The 24-question challenge is post-baseline but editorially authored inside the same project, **not** independent blinded human review. No machine-specific diagnosis, OEM pressure test or operational authority.
+
 ## Technical entry points
 - [Hydraulic circuit differential](https://github.com/pedromaintenance/fmea-database-mining/blob/main/data/quality/hydraulic-circuit-differential.v1.json)
 - [Hydraulic hose differential](https://github.com/pedromaintenance/fmea-database-mining/blob/main/data/quality/hydraulic-hose-differential.v1.json)

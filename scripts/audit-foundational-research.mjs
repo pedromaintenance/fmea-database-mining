@@ -40,7 +40,7 @@ function anchorExists(a){
 }
 check('strict_v2_schema',schema.additionalProperties===false&&schema.$schema==='https://json-schema.org/draft/2020-12/schema'&&schema.properties.schema.const==='fmea-mining.technical-knowledge-record.v2');
 check('six_conceptual_pilots',records.length===6&&new Set(records.map(x=>x.id)).size===6&&records.slice(0,3).every(x=>x.recordVersion==='1.4.3')&&records.slice(3).every(x=>x.recordVersion==='1.4.4'));
-check('bibliography_extended',registry.sources.length===94&&new Set(registry.sources.map(x=>x.id)).size===registry.sources.length);
+check('bibliography_extended',registry.sources.length>=95&&new Set(registry.sources.map(x=>x.id)).size===registry.sources.length);
 check('new_manufacturer_sources_linked',["PARKER-P1PD-2019-SVC","PARKER-HYD-FILTRATION-HANDBOOK","BOSCH-REXROTH-PISTON-DAMAGE"].every(x=>sourceIds.has(x)));
 check('independent_ontology_unmodified',ontology.mechanismFamilies.some(x=>x.id==='ME-01')&&ontology.mechanismFamilies.some(x=>x.id==='ME-08'));
 check('hydraulic_legacy_anchor_exists',original.records.some(x=>x.id==='HC-DIFF-01'));
