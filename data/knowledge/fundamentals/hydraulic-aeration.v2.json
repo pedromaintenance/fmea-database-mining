@@ -1,0 +1,135 @@
+{
+  "recordVersion": "1.4.3",
+  "schema": "fmea-mining.technical-knowledge-record.v2",
+  "recordType": "fundamental_technical_knowledge",
+  "evidenceClass": "CONCEPTUAL",
+  "reviewStatus": "PENDING_REVIEW",
+  "operationalApproval": false,
+  "sapMappingApproved": false,
+  "automaticDiagnosisAllowed": false,
+  "id": "TK-HYD-AERATION-001",
+  "title": "Aeração e ar incorporado ao fluido hidráulico",
+  "titleEn": "Entrained air and aeration in hydraulic fluid",
+  "domain": "Hidráulica",
+  "systemTags": [
+    "óleo hidráulico",
+    "aeração",
+    "reservatório",
+    "bomba",
+    "gás livre"
+  ],
+  "definition": "Aeração é a presença de gás livre incorporado ou entranhado no líquido hidráulico. Ar dissolvido e ar livre não têm o mesmo comportamento; espuma pode ser um indício, mas não determina a origem do gás.",
+  "functionRequired": "O fluido deve transmitir energia e lubrificar os componentes nas propriedades requeridas, com controle adequado de ingresso e separação de ar conforme projeto.",
+  "physicalMechanism": {
+    "summary": "Bolsões de ar livre no óleo introduzem compressibilidade adicional e podem perturbar a resposta hidráulica, favorecer ruído, aquecimento localizado e redução do desempenho útil. Isso não comprova cavitação por vapor, nem determina por si só vazamento externo ou dano de bomba.",
+    "possibleChain": [
+      "Entradas de ar na sucção, retorno turbulento ou configuração desfavorável do reservatório podem incorporar gás livre ao fluido.",
+      "O gás livre pode ser comprimido em regiões de pressão elevada, alterando a resposta e a transmissão de energia.",
+      "Sinais de espuma, ruído e instabilidade requerem distinção de cavitação, defeitos de controle e viscosidade fora da condição específica."
+    ]
+  },
+  "illustrativeSymptoms": [
+    "Espuma ou bolhas aparentes no fluido, quando observáveis por meios seguros e autorizados.",
+    "Ruído, resposta irregular ou condição descrita como sistema 'esponjoso', sem confirmar sua causa."
+  ],
+  "competingHypotheses": [
+    {
+      "id": "HYP-AER-ENTRAINMENT",
+      "mechanism": "Ar livre pode entrar por ligação de sucção ou retornar à alimentação por separação deficiente no reservatório.",
+      "discriminator": "Revisar esquema, integridade documental de conexões, posição do retorno, nível e histórico de espuma/aeração.",
+      "unconfirmed": true
+    },
+    {
+      "id": "HYP-AER-CAVITATION",
+      "mechanism": "Cavidades de vapor causadas por condições locais de pressão podem reproduzir ruído e dano aparente.",
+      "discriminator": "Confrontar requisitos de pressão de entrada/viscosidade com o desenho efetivo, distinguindo gás livre de vapor.",
+      "unconfirmed": true
+    },
+    {
+      "id": "HYP-AER-CONTROL",
+      "mechanism": "Controle de bomba/atuador, cargas variáveis ou intertravamentos podem gerar resposta inconsistente sem gás livre.",
+      "discriminator": "Verificar registros válidos de comandos, regulação e comparação operacional do circuito.",
+      "unconfirmed": true
+    }
+  ],
+  "evidenceToRequest": [
+    {
+      "question": "Há registros confiáveis de bolhas/espuma com condição, horário e procedimento de observação documentados?",
+      "limitOfInference": "Espuma pode ter mecanismos múltiplos e não quantifica fração de gás nem prova vazamento de sucção."
+    },
+    {
+      "question": "O projeto do reservatório, retorno e eventuais entradas de ar está disponível por configuração efetiva?",
+      "limitOfInference": "O manual de filtragem é geral e não substitui uma arquitetura OEM verificada."
+    },
+    {
+      "question": "As evidências distinguem retorno turbulento, ingresso de ar, pressão de entrada inadequada e controle de bomba?",
+      "limitOfInference": "Mesmo uma resposta funcional irregular não confirma o componente culpado."
+    }
+  ],
+  "confounders": [
+    "Ar dissolvido versus livre e diferentes condições de pressão.",
+    "Espumação por composição e condição do fluido.",
+    "Retorno, nível, temperatura e desenho do reservatório.",
+    "Cavitação e defeitos mecânicos com ruído semelhante."
+  ],
+  "ontologyLinks": [
+    {
+      "id": "ME-08",
+      "relation": "competing_concept",
+      "mechanismProven": false
+    },
+    {
+      "id": "ME-12",
+      "relation": "competing_concept",
+      "mechanismProven": false
+    }
+  ],
+  "provenance": {
+    "sourceRegistryPath": "data/research/sources.v1.json",
+    "sourceNotes": [
+      {
+        "sourceId": "PARKER-HYD-FILTRATION-HANDBOOK",
+        "supports": "Diferencia ar dissolvido e entranhado e descreve efeitos de compressibilidade, espuma e transmissão de energia.",
+        "doesNotSupport": "Não identifica fonte exata de ar, proporção de gás ou limite aceitável em um equipamento de mina."
+      },
+      {
+        "sourceId": "PARKER-P1PD-2019-SVC",
+        "supports": "Manual P1/PD lista ar no fluido e cavitação como causas alternativas de ruído, com hipóteses distintas.",
+        "doesNotSupport": "Não autoriza o uso de configuração, medidas ou correções do P1/PD em bombas CAT sem efetividade documental."
+      }
+    ],
+    "originAnchors": [
+      {
+        "path": "data/quality/hydraulic-circuit-differential.v1.json",
+        "recordId": "HC-DIFF-01",
+        "role": "competing_diagnostic_reference"
+      },
+      {
+        "path": "data/ontology/concepts.v1.json",
+        "recordId": "ME-08",
+        "role": "mechanism_ontology"
+      }
+    ],
+    "originalInterpretation": "original_synthesis_not_manufacturer_endorsement",
+    "newFieldEvidence": false
+  },
+  "applicability": {
+    "scope": "Sistemas hidráulicos móveis descritos conceitualmente, sem arquitetura ou combinação óleo/bomba verificada.",
+    "verifiedModels": [],
+    "verifiedSerials": [],
+    "oemAcceptanceLimits": null,
+    "fieldObservations": 0,
+    "performedTests": 0,
+    "confirmedRootCauses": 0
+  },
+  "safety": {
+    "boundary": "Investigações de linhas pressurizadas, retorno e bomba dependem de bloqueio, alívio de energia e procedimentos específicos; este material apenas orienta a pesquisa documental.",
+    "prohibitedActions": [
+      "Não procurar vazamentos de alta pressão com mãos/corpo.",
+      "Não desconectar sucção, retorno ou linha de pressão sem isolamento completo.",
+      "Não generalizar espuma como falha confirmada da bomba.",
+      "Não executar sangria improvisada ou pressão máxima."
+    ],
+    "safeNextStep": "Confirmar primeiro os documentos de circuito, reservatório, óleo e procedimento seguro; definir perguntas para avaliação autorizada."
+  }
+}
