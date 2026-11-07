@@ -1,0 +1,138 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Laboratório de avaliação humana | FMEA Database Mining</title>
+<meta name="description" content="Coleta e avaliação cega de perguntas técnicas, com dados locais e exportação JSON, sem transmissão a servidores.">
+<style>
+:root{color-scheme:dark;--bg:#101e27;--p:#1a313f;--border:#3d596d;--ink:#edf4f6;--muted:#bbcfd9;--link:#acdcee;--gold:#d0a857}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,"Segoe UI",sans-serif}
+header{background:linear-gradient(110deg,#28576a,#112735);padding:30px max(16px,calc((100vw - 1050px)/2));border-bottom:4px solid var(--gold)}
+h1{font-size:clamp(29px,4vw,44px);line-height:1.12;margin:15px 0 8px}a{color:var(--link)}header p{max-width:820px;color:#d9eaf0}
+nav{display:flex;gap:16px;flex-wrap:wrap;font-size:13px}main{max-width:1090px;margin:auto;padding:20px 16px 60px}
+.notice{background:#372e20;border:1px solid #a27d3d;border-radius:9px;padding:14px;color:#f7e2bf;margin:0 0 15px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin:16px 0}.steps div{border:1px solid var(--border);background:#18303d;border-radius:8px;padding:12px;font-size:12px}
+h2{font-size:23px;margin:24px 0 8px}h3{font-size:17px;margin:9px 0}
+label{display:block;font-size:13px;margin:11px 0 4px;color:var(--muted)}textarea,input[type=text],select{width:100%;font:inherit;background:#0e202b;border:1px solid #608293;color:#fff;border-radius:7px;padding:10px}textarea{min-height:70px;resize:vertical}
+button,.file-label{background:#28647d;color:#f3fbff;border:1px solid #75a7ba;border-radius:8px;padding:10px 13px;cursor:pointer;font:inherit;margin:9px 7px 6px 0}
+button.primary{background:var(--gold);color:#0b2029;border-color:var(--gold);font-weight:700}
+button:disabled{opacity:.45;cursor:not-allowed}.inline{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.cards{display:grid;grid-template-columns:1fr;gap:12px}
+.card{background:var(--p);border:1px solid var(--border);border-radius:10px;padding:16px;min-width:0}
+.card h3{overflow-wrap:anywhere}.card .small,small{color:var(--muted);font-size:12px}
+.ids{display:grid;grid-template-columns:repeat(2,1fr);gap:5px 15px;margin:9px 0}.ids label{display:flex;gap:8px;align-items:flex-start;margin:0;color:var(--ink);font-size:12px}
+.checkline{display:flex;gap:9px;align-items:flex-start;margin:10px 0}.checkline input{margin-top:5px}
+.result{border-top:1px solid var(--border);margin-top:14px;padding-top:12px}.row{display:flex;gap:10px;justify-content:space-between;flex-wrap:wrap}
+.metric-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:14px 0}
+.metric{border:1px solid var(--border);border-radius:9px;padding:11px;background:#193140}.metric strong{font-size:24px;display:block}
+footer{margin-top:30px;color:var(--muted);font-size:12px}#message{margin-top:12px;color:#f4d9a5;white-space:pre-wrap}
+@media(max-width:700px){.steps,.metric-grid,.ids{grid-template-columns:1fr}}
+</style></head><body><header><nav><a href="./index.html">Biblioteca</a><a href="./consulta-tecnica.html">Consulta técnica</a><a href="./arquitetura-funcional.html">Arquitetura funcional</a><a href="./fundamentos-hidraulica-tribologia.html">Fundamentos</a></nav>
+<h1>Laboratório de avaliação humana</h1>
+<p>Colete perguntas inéditas, faça a classificação técnica <strong>sem ver a resposta do buscador</strong> e só então congele o gabarito para medir os resultados. Tudo permanece local no navegador.</p></header>
+<main><div class="notice"><strong>Privacidade e segurança:</strong> não informe dados de equipamentos reais, séries, notas SAP, ocorrências restritas, nomes ou laudos internos. O arquivo exportado ficará sob sua responsabilidade; não o publique sem autorização. A ferramenta não envia perguntas, não utiliza nuvem e não grava dados no armazenamento do navegador.</div>
+<div class="steps"><div><strong>1. Perguntas</strong><p>Registre a linguagem usada por pessoas fora da equipe que escreveu as regras.</p></div><div><strong>2. Julgamento cego</strong><p>Classifique cada pergunta e indique quais fichas seriam relevantes.</p></div><div><strong>3. Resultado</strong><p>Congele as avaliações, execute a busca e exporte relatório e gabarito.</p></div></div>
+<p id="bundle-info" class="small">Carregando contrato do acervo...</p>
+<section id="entry"><h2>1. Coletar perguntas</h2><label for="new-question">Pergunta anônima</label><textarea id="new-question" maxlength="1000" placeholder="Descreva uma dúvida real em palavras próprias, sem identificar máquina ou pessoa."></textarea>
+<div class="inline"><button type="button" id="add" class="primary">Adicionar pergunta</button><button type="button" id="draft">Exportar rascunho JSON</button><button type="button" id="load">Importar rascunho</button><input id="file" type="file" accept=".json,application/json" hidden></div>
+<p id="count" class="small">Nenhuma pergunta registrada.</p></section>
+<section><h2>2. Classificar antes de consultar</h2><p class="small">As dez fichas são apresentadas somente por título para permitir julgamento de relevância. Os resultados do algoritmo não serão mostrados antes de você confirmar o congelamento.</p><div id="question-cards" class="cards"></div></section>
+<section><h2>3. Declarações do protocolo</h2><p class="small">São declarações do avaliador, não provas verificadas por esta página. O fluxo pode ser usado para calibração interna, mas não deve ser apresentado como avaliação independente nesse caso.</p>
+<label class="checkline"><input type="checkbox" id="outside"> As perguntas foram formuladas fora da equipe que programou as regras de recuperação.</label>
+<label class="checkline"><input type="checkbox" id="independent"> Quem classificou as perguntas não participou do ajuste das regras do buscador.</label>
+<label class="checkline"><input type="checkbox" id="blind" checked> Os resultados do buscador não foram consultados antes de finalizar os julgamentos.</label>
+<label class="checkline"><input type="checkbox" id="redacted"> Revisei e retirei dados corporativos, pessoais, de frota, números de série e informações restritas.</label>
+<label for="method">Método de julgamento</label><select id="method"><option value="individual_human">Uma pessoa — revisão técnica</option><option value="independent_panel">Painel de especialistas independente</option><option value="internal_calibration">Calibração interna (não independente)</option></select>
+<label for="notes">Observação de método (opcional, sem nomes)</label><textarea id="notes" maxlength="600" rows="2" placeholder="Por exemplo: perguntas coletadas em oficina, rótulos determinados antes da consulta"></textarea>
+<div class="inline"><button type="button" id="freeze" class="primary">Congelar gabarito e avaliar</button><button type="button" id="download-batch" disabled>Exportar gabarito JSON</button><button type="button" id="download-report" disabled>Exportar relatório JSON</button></div>
+<p id="message" aria-live="polite"></p>
+</section><section id="results" hidden><h2>4. Resultado medido</h2><p class="small">Esta pontuação vale apenas para as perguntas fornecidas. Declarações independentes não foram verificadas automaticamente; nenhum resultado prova diagnóstico ou liberação de máquina.</p><div id="metrics" class="metric-grid"></div><div id="case-results" class="cards"></div></section>
+<footer>Base técnica: <a href="./technical-search-v2-bundle.v1.json">dez fichas conceituais</a>. Contrato JSON: <a href="./external-review-batch.v1.schema.json">revisão humana v1</a>. Metodologia: <a href="https://github.com/pedromaintenance/fmea-database-mining/blob/main/docs/AVALIACAO_INDEPENDENTE_PROTOCOLO.md">protocolo e limites</a>.</footer></main>
+<script id="bundle" type="application/json">{"schema":"EXTERNAL_LAB_PLACEHOLDER","ready":false}</script>
+<script>/*SEARCH_CODE_PLACEHOLDER*/
+/*REVIEW_CORE_PLACEHOLDER*/
+(()=>{
+'use strict';
+const $=id=>document.getElementById(id),payload=JSON.parse($('bundle').textContent);
+const records=payload.records||[];
+let cases=[],frozen=null,report=null;
+function el(root,tag,text,cls){const e=document.createElement(tag);if(text!==undefined)e.textContent=text;if(cls)e.className=cls;root.append(e);return e}
+function message(v){$('message').textContent=v}
+if(!payload.ready){$('bundle-info').textContent='Abra a página publicada ou gere reports/laboratorio-avaliacao.generated.html localmente.';$('freeze').disabled=true;return}
+$('bundle-info').textContent=records.length+' fichas conceituais · versão do buscador fixada no pacote · perguntas não enviadas pela internet';
+function draft(){return {schema:'fmea-mining.external-review-draft.v1',version:'1.4.7',nature:'local_unscored_draft',cases}}
+function download(name,object){
+ const blob=new Blob([JSON.stringify(object,null,2)+'\n'],{type:'application/json'});
+ const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;document.body.append(a);a.click();a.remove();URL.revokeObjectURL(url);
+}
+function addCase(question){
+ const q=String(question).trim();if(q.length<12||q.length>1000){message('Pergunta precisa ter de 12 a 1000 caracteres.');return}
+ if(cases.length>=100){message('Limite de 100 perguntas por sessão.');return}
+ if(cases.some(x=>x.question.toLowerCase()===q.toLowerCase())){message('Pergunta duplicada.');return}
+ cases.push({id:'EXT-'+String(cases.length+1).padStart(3,'0'),question:q,expectedStatus:'',expectedIds:[],rationale:'',category:'explanation'});
+ $('new-question').value='';message('Pergunta incluída; atribua seu julgamento antes de congelar.');render()
+}
+function render(){
+ const container=$('question-cards');container.replaceChildren();$('count').textContent=cases.length+' pergunta(s) em rascunho. Nenhuma previsão exibida.';
+ cases.forEach((c,i)=>{
+  const card=el(container,'article',undefined,'card');
+  el(card,'h3',c.id+' — '+c.question);
+  const statusLabel=el(card,'label','Resultado técnico esperado');
+  const select=el(card,'select');
+  const statuses=[['','Escolha o julgamento'],['FOUND_CONCEPTUAL','Uma ficha relevante'],['MULTIPLE_CONCEPTS','Mais de uma ficha relevante'],['ABSTAIN_UNSUPPORTED_OPERATIONAL','Exige recusa de decisão operacional'],['NOT_FOUND_IN_CATALOG','Fora das dez fichas'],['NEEDS_ADJUDICATION','Discordância técnica / ainda indefinido']];
+  for(const [val,title] of statuses){const opt=el(select,'option',title);opt.value=val}select.value=c.expectedStatus;
+  select.addEventListener('change',()=>{c.expectedStatus=select.value;render()});
+  el(card,'label','Classe da pergunta');
+  const category=el(card,'select');for(const val of REVIEW_CATEGORY){const opt=el(category,'option',val);opt.value=val}category.value=c.category;category.addEventListener('change',()=>{c.category=category.value});
+  if(['FOUND_CONCEPTUAL','MULTIPLE_CONCEPTS'].includes(c.expectedStatus)){
+   el(card,'label','Fichas julgadas relevantes (sem ver o algoritmo)');
+   const div=el(card,'div',undefined,'ids');
+   records.forEach(r=>{
+    const label=el(div,'label'),chk=el(label,'input');chk.type='checkbox';chk.checked=c.expectedIds.includes(r.id);chk.addEventListener('change',()=>{if(chk.checked&&!c.expectedIds.includes(r.id))c.expectedIds.push(r.id);else c.expectedIds=c.expectedIds.filter(x=>x!==r.id)});
+    el(label,'span',r.title+' ('+r.id+')')
+   });
+  }else c.expectedIds=[];
+  el(card,'label','Justificativa técnica do julgamento (mínimo 15 caracteres)');
+  const explanation=el(card,'textarea');explanation.maxLength=1500;explanation.value=c.rationale;explanation.addEventListener('input',()=>{c.rationale=explanation.value});
+  if(!frozen){const remove=el(card,'button','Excluir pergunta');remove.type='button';remove.addEventListener('click',()=>{cases.splice(i,1);cases.forEach((x,j)=>x.id='EXT-'+String(j+1).padStart(3,'0'));render()})}
+ });
+}
+$('add').addEventListener('click',()=>addCase($('new-question').value));
+$('draft').addEventListener('click',()=>download('revisao-perguntas-rascunho.json',draft()));
+$('load').addEventListener('click',()=>$('file').click());
+$('file').addEventListener('change',async ()=>{
+ try{
+ const file=$('file').files?.[0];if(!file)return;
+ if(file.size>600000)throw Error('Arquivo maior que 600 KB');
+ const obj=JSON.parse(await file.text());
+ if(obj.schema!=='fmea-mining.external-review-draft.v1'||!Array.isArray(obj.cases)||obj.cases.length>100)throw Error('Formato de rascunho inválido');
+ cases=obj.cases.map((x,i)=>({id:'EXT-'+String(i+1).padStart(3,'0'),question:String(x.question||'').slice(0,1000),expectedStatus:REVIEW_STATUS.includes(x.expectedStatus)?x.expectedStatus:'',expectedIds:Array.isArray(x.expectedIds)?x.expectedIds.filter(id=>records.some(r=>r.id===id)):[],rationale:String(x.rationale||'').slice(0,1500),category:REVIEW_CATEGORY.includes(x.category)?x.category:'other'}));
+ message('Rascunho importado. Confira os julgamentos antes de congelar.');render()
+ }catch(e){message('Falha ao importar: '+e.message)}finally{$('file').value=''}
+});
+$('freeze').addEventListener('click',()=>{
+ const declaration={questionsOutsideDevelopment:$('outside').checked,reviewerNotInEngineDevelopment:$('independent').checked,predictionsHiddenUntilLabelsFrozen:$('blind').checked,redactedPublicSafe:$('redacted').checked,judgementMethod:$('method').value,notes:$('notes').value};
+ const batch={schema:'fmea-mining.external-review-batch.v1',version:'1.4.7',nature:'self_attested_external_questions_and_blind_human_labels',engineSha256:payload.engineSha256,corpusSha256:payload.corpusSha256,reviewerDeclaration:declaration,cases:cases.map(x=>({...x,reviewedBeforePrediction:true}))};
+ const errors=checkReviewBatch(batch,{engineSha256:payload.engineSha256,corpusSha256:payload.corpusSha256,recordIds:records.map(r=>r.id)});
+ if(errors.length){message('Não foi possível congelar. Corrija: '+errors.slice(0,10).join(', '));return}
+ frozen=batch;report=evaluateReviewBatch(batch,records,discoverTechnical,{engineSha256:payload.engineSha256,corpusSha256:payload.corpusSha256});
+ $('freeze').disabled=true;$('add').disabled=true;$('draft').disabled=true;$('load').disabled=true;$('new-question').disabled=true;
+ for(const id of ['outside','independent','blind','redacted','method','notes'])$(id).disabled=true;
+ $('question-cards').replaceChildren();$('count').textContent=cases.length+' pergunta(s), gabarito congelado';
+ $('download-batch').disabled=false;$('download-report').disabled=false;
+ message('Gabarito congelado. Não altere o arquivo depois de examinar as previsões; novas revisões exigem outro lote.');
+ showResults();
+});
+function showResults(){
+ $('results').hidden=false;const t=report.totals,m=report.metrics,grid=$('metrics');grid.replaceChildren();
+ const fields=[['Perguntas',t.submitted],['Avaliadas',t.scored],['Correspondência exata',m?.exactStatusAndIdsRate==null?'N/A':(m.exactStatusAndIdsRate*100).toFixed(1)+'%'],['Recusa operacional explícita',m?.explicitUnsafeAbstentionRate==null?'N/A':(m.explicitUnsafeAbstentionRate*100).toFixed(1)+'%'],['Respostas indevidas a risco',t.unsafeConceptualLeakage],['Pendentes de revisão',t.unresolved]];
+ for(const [title,value] of fields){const box=el(grid,'div',undefined,'metric');el(box,'strong',String(value));el(box,'span',title)}
+ el($('results'),'p','Qualificação: '+report.qualification+' — declarações autoatribuídas, não verificadas.','small');
+ const list=$('case-results');list.replaceChildren();
+ for(const r of report.cases){const box=el(list,'article',undefined,'card');el(box,'h3',r.id+' — '+r.question);
+ el(box,'p','Revisor: '+r.goldStatus+' ('+r.goldIds.join(', ')+')');el(box,'p','Busca: '+r.predictedStatus+' ('+r.predictedIds.join(', ')+')');
+ el(box,'p',r.exactStatusAndIds==null?'Pendente de julgamento':r.exactStatusAndIds?'Concordância exata':'Divergência a revisar',r.exactStatusAndIds?'small':'notice');
+ }
+}
+$('download-batch').addEventListener('click',()=>{if(frozen)download('revisao-humana-gabarito.json',frozen)});
+$('download-report').addEventListener('click',()=>{if(report)download('revisao-humana-relatorio.json',report)});
+render();
+})();
+</script></body></html>
