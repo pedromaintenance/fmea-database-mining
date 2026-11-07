@@ -14,9 +14,7 @@ if(records.length!==10||new Set(records.map(r=>r.id)).size!==10)throw Error('Lab
 const payload={
  schema:'fmea-mining.external-review-lab-bundle.v1',version:'1.4.7',ready:true,
  nature:'offline_review_protocol_without_human_question_data',
- ...fingerprint,records:records.map(r=>({id:r.id,title:r.title,__path:r.__path,provenance:r.provenance,
-  evidenceClass:r.evidenceClass,reviewStatus:r.reviewStatus,operationalApproval:r.operationalApproval,
-  domain:r.domain}))
+ ...fingerprint,records
 };
 const marker='{"schema":"EXTERNAL_LAB_PLACEHOLDER","ready":false}';
 let html=read('docs/laboratorio-avaliacao.html');
