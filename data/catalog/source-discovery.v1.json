@@ -1,9 +1,9 @@
 {
   "schema": "fmea-mining.source-discovery.v1",
-  "version": "1.4.4",
+  "version": "1.4.5",
   "nature": "bibliographic_metadata_not_machine_effectivity",
   "canonicalPath": "data/research/sources.v1.json",
-  "sourceRegistryVersion": "1.4.4",
+  "sourceRegistryVersion": "1.4.5",
   "checkedLinksOnThisCycle": false,
   "rights": "somente_titulos_links_e_resumos_originais",
   "sources": [
@@ -945,6 +945,16 @@
       "area": "rolling_bearing_failure_mode_classification",
       "role": "standard_public_abstract_and_metadata",
       "limitation": "Classifica formas de danos em rolamentos, mas o resumo público não substitui o texto integral licenciado, não prova causa em campo e prevê investigações adicionais quando características visuais são insuficientes.",
+      "lastReviewed": "2026-11-07"
+    },
+    {
+      "id": "SKF-BEARING-HOUSING-SELECTION",
+      "organization": "SKF",
+      "title": "A basic guide to bearing housing selection — Evolution (2016)",
+      "url": "https://evolution.skf.com/en/a-basic-guide-to-bearing-housing-selection/",
+      "area": "rolling_bearing_support_housing_sealing_lubrication_condition_monitoring",
+      "role": "manufacturer_component_architecture_overview",
+      "limitation": "Exemplos de mancais, vedação e monitoramento, não representam toda configuração de rolamentos nem estabelecem limites universais de vibração, temperatura, instalação ou vida útil para equipamentos de mina.",
       "lastReviewed": "2026-11-07"
     }
   ]
