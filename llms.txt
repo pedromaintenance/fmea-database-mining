@@ -62,6 +62,14 @@ Two systems are illustrations only (hydraulic implement circuit and rolling bear
 
 This is phrase-based document discovery, not a generative semantic AI. The 24 questions were already examined during development and do not measure independent generalization. Sources and machine effective instructions must be verified before any field decision.
 
+## External human review protocol (v1.4.7)
+- [Offline human query collection and blind review lab](https://pedromaintenance.github.io/fmea-database-mining/laboratorio-avaliacao.html)
+- [Review batch JSON schema](https://pedromaintenance.github.io/fmea-database-mining/external-review-batch.v1.schema.json)
+- [Public external review status — NO_EXTERNAL_SAMPLE](https://pedromaintenance.github.io/fmea-database-mining/external-review-status.v1.json)
+- [Protocol, privacy and methodology](https://github.com/pedromaintenance/fmea-database-mining/blob/main/docs/AVALIACAO_INDEPENDENTE_PROTOCOLO.md)
+
+No external reviewer or question data has been obtained. All independent benchmark rates are null. Synthetic unit tests cannot establish generalization or OEM validity. Do not transfer private field data into a public library.
+
 ## Technical entry points
 - [Hydraulic circuit differential](https://github.com/pedromaintenance/fmea-database-mining/blob/main/data/quality/hydraulic-circuit-differential.v1.json)
 - [Hydraulic hose differential](https://github.com/pedromaintenance/fmea-database-mining/blob/main/data/quality/hydraulic-hose-differential.v1.json)
