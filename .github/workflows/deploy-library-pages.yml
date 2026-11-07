@@ -5,6 +5,13 @@ on:
     branches: [main]
     paths:
       - 'docs/biblioteca-tecnica.html'
+      - 'schemas/technical-knowledge-record.v2.schema.json'
+      - 'scripts/build-fundamentals-portal.mjs'
+      - 'scripts/audit-foundational-research.mjs'
+      - 'docs/fundamentos-hidraulica-tribologia.html'
+      - 'docs/fontes-tecnicas.html'
+      - 'data/research/sources.v1.json'
+      - 'data/catalog/source-discovery.v1.json'
       - 'data/catalog/knowledge-index.v1.json'
       - 'data/knowledge/fundamentals/**'
       - 'docs/mapa-semantico.html'
@@ -52,11 +59,16 @@ jobs:
           node scripts/audit-knowledge-discovery.mjs
           node scripts/build-semantic-atlas.mjs
           node scripts/audit-technical-knowledge-record.mjs
+          node scripts/build-fundamentals-portal.mjs
+          node scripts/audit-foundational-research.mjs
 
       - name: Prepare static site
         run: |
           mkdir -p _site
           cp docs/biblioteca-tecnica.html _site/index.html
+          cp reports/fundamentos-hidraulica-tribologia.generated.html _site/fundamentos-hidraulica-tribologia.html
+          cp reports/fundamentals.generated.json _site/fundamentos-tecnicos.v1.json
+          cp schemas/technical-knowledge-record.v2.schema.json _site/technical-knowledge-record.v2.schema.json
           cp reports/mapa-semantico.generated.html _site/mapa-semantico.html
           cp reports/semantic-atlas.generated.json _site/semantic-atlas.v1.json
           cp data/knowledge/fundamentals/hydraulic-inlet-restriction.v1.json _site/technical-record-hydraulic-inlet.v1.json
