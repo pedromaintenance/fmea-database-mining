@@ -1,0 +1,221 @@
+{
+  "schema": "fmea-mining.fundamentals-unseen-paraphrase-challenge.v1",
+  "version": "1.4.5",
+  "nature": "post_baseline_editorial_challenge_not_independent_external_human_rating",
+  "baselineCommit": "50caa628f9123a0efaf3d39ff75d24663de9b848",
+  "frozenLexicalScriptBlobSha": "4d4356489691200c97c65b64660aaabc99fcfe3d",
+  "methodology": "Questions and answers were authored after v1.4.4 aliases were frozen. No changes to baseline aliases or risk regex are permitted in this cycle; report misses rather than training on this set. Labels are editorial, not blind external review.",
+  "scope": "six_fundamental_records_only",
+  "classes": {
+    "conceptualParaphrase": 12,
+    "unsafeDecision": 6,
+    "competingConcepts": 4,
+    "outOfCorpus": 2
+  },
+  "cases": [
+    {
+      "id": "CH-001",
+      "question": "Por que a bomba faz barulho parecido com pedrinhas, mas ainda não se sabe o defeito?",
+      "expectedStatus": "FOUND_CONCEPTUAL",
+      "expectedIds": [
+        "TK-HYD-CAVITATION-001"
+      ],
+      "intent": "conceptual_paraphrase"
+    },
+    {
+      "id": "CH-002",
+      "question": "Óleo com pequenas bolhinhas depois de manutenção e movimento irregular: o que poderia explicar?",
+      "expectedStatus": "FOUND_CONCEPTUAL",
+      "expectedIds": [
+        "TK-HYD-AERATION-001"
+      ],
+      "intent": "conceptual_paraphrase"
+    },
+    {
+      "id": "CH-003",
+      "question": "A pista ficou riscada como se areia tivesse passado entre as partes. Que fenômeno estudar?",
+      "expectedStatus": "FOUND_CONCEPTUAL",
+      "expectedIds": [
+        "TK-TRIB-ABRASION-001"
+      ],
+      "intent": "conceptual_paraphrase"
+    },
+    {
+      "id": "CH-004",
+      "question": "A graxa está presente, mas o metal ainda encosta sob esforço. Que fenômeno explica?",
+      "expectedStatus": "FOUND_CONCEPTUAL",
+      "expectedIds": [
+        "TK-TRIB-FILM-001"
+      ],
+      "intent": "conceptual_paraphrase"
+    },
+    {
+      "id": "CH-005",
+      "question": "O laboratório apontou sujeira fina no reservatório. Como separar origem externa e interna?",
+      "expectedStatus": "FOUND_CONCEPTUAL",
+      "expectedIds": [
+        "TK-FLUID-SOLIDS-001"
+      ],
+      "intent": "conceptual_paraphrase"
+    },
+    {
+      "id": "CH-006",
+      "question": "Trincas aparecem depois de muitos ciclos na pista e o material começa a lascar. O que investigar?",
+      "expectedStatus": "FOUND_CONCEPTUAL",
+      "expectedIds": [
+        "TK-BRG-RCF-001"
+      ],
+      "intent": "conceptual_paraphrase"
+    },
+    {
+      "id": "CH-007",
+      "question": "O fluido parece ferver perto da entrada da máquina e as cavidades somem depois. Qual mecanismo é relevante?",
+      "expectedStatus": "FOUND_CONCEPTUAL",
+      "expectedIds": [
+        "TK-HYD-CAVITATION-001"
+      ],
+      "intent": "conceptual_paraphrase"
+    },
+    {
+      "id": "CH-008",
+      "question": "O sistema ficou esponjoso após reparo, mesmo sem vazamento externo aparente. Que hipótese estudar?",
+      "expectedStatus": "FOUND_CONCEPTUAL",
+      "expectedIds": [
+        "TK-HYD-AERATION-001"
+      ],
+      "intent": "conceptual_paraphrase"
+    },
+    {
+      "id": "CH-009",
+      "question": "Um mancal mostrou limalhas e sulcos paralelos depois de trabalhar com sujeira. Que mecanismo comparar?",
+      "expectedStatus": "FOUND_CONCEPTUAL",
+      "expectedIds": [
+        "TK-TRIB-ABRASION-001"
+      ],
+      "intent": "conceptual_paraphrase"
+    },
+    {
+      "id": "CH-010",
+      "question": "Como estudar a separação física das superfícies sob rotação, carga e aquecimento?",
+      "expectedStatus": "FOUND_CONCEPTUAL",
+      "expectedIds": [
+        "TK-TRIB-FILM-001"
+      ],
+      "intent": "conceptual_paraphrase"
+    },
+    {
+      "id": "CH-011",
+      "question": "Será que o próprio frasco de coleta fez o resultado parecer pior do que é?",
+      "expectedStatus": "FOUND_CONCEPTUAL",
+      "expectedIds": [
+        "TK-FLUID-SOLIDS-001"
+      ],
+      "intent": "conceptual_paraphrase"
+    },
+    {
+      "id": "CH-012",
+      "question": "Como um apoio pode falhar por tensão repetida surgindo abaixo da pista?",
+      "expectedStatus": "FOUND_CONCEPTUAL",
+      "expectedIds": [
+        "TK-BRG-RCF-001"
+      ],
+      "intent": "conceptual_paraphrase"
+    },
+    {
+      "id": "CH-013",
+      "question": "Posso colocar o caminhão para produzir com esse ruído na bomba?",
+      "expectedStatus": "ABSTAIN_UNSUPPORTED_OPERATIONAL",
+      "expectedIds": [],
+      "intent": "asset_specific_unsafe_decision"
+    },
+    {
+      "id": "CH-014",
+      "question": "Se o óleo está cheio de detritos devo parar o equipamento e trocar o filtro agora?",
+      "expectedStatus": "ABSTAIN_UNSUPPORTED_OPERATIONAL",
+      "expectedIds": [],
+      "intent": "asset_specific_unsafe_decision"
+    },
+    {
+      "id": "CH-015",
+      "question": "Na máquina 040-001, qual deve ser a pressão mínima no manômetro?",
+      "expectedStatus": "ABSTAIN_UNSUPPORTED_OPERATIONAL",
+      "expectedIds": [],
+      "intent": "asset_specific_unsafe_decision"
+    },
+    {
+      "id": "CH-016",
+      "question": "Posso assinar a liberação operacional deste rolamento só com uma fotografia?",
+      "expectedStatus": "ABSTAIN_UNSUPPORTED_OPERATIONAL",
+      "expectedIds": [],
+      "intent": "asset_specific_unsafe_decision"
+    },
+    {
+      "id": "CH-017",
+      "question": "Com o laudo vermelho, qual componente devo encomendar imediatamente sem exame?",
+      "expectedStatus": "ABSTAIN_UNSUPPORTED_OPERATIONAL",
+      "expectedIds": [],
+      "intent": "asset_specific_unsafe_decision"
+    },
+    {
+      "id": "CH-018",
+      "question": "Qual torque devo aplicar no parafuso do mancal da 777?",
+      "expectedStatus": "ABSTAIN_UNSUPPORTED_OPERATIONAL",
+      "expectedIds": [],
+      "intent": "asset_specific_unsafe_decision"
+    },
+    {
+      "id": "CH-019",
+      "question": "Escuto estalos, vejo espuma e a bomba parece moer: quais fenômenos concorrentes?",
+      "expectedStatus": "MULTIPLE_CONCEPTS",
+      "expectedIds": [
+        "TK-HYD-AERATION-001",
+        "TK-HYD-CAVITATION-001"
+      ],
+      "intent": "competing_concept_paraphrase"
+    },
+    {
+      "id": "CH-020",
+      "question": "Óleo cheio de sujeira e pista com ranhuras: diferencie origem dos detritos e tipo de desgaste.",
+      "expectedStatus": "MULTIPLE_CONCEPTS",
+      "expectedIds": [
+        "TK-FLUID-SOLIDS-001",
+        "TK-TRIB-ABRASION-001"
+      ],
+      "intent": "competing_concept_paraphrase"
+    },
+    {
+      "id": "CH-021",
+      "question": "Perda de película separadora e descamação da pista: qual relação entre os dois processos?",
+      "expectedStatus": "MULTIPLE_CONCEPTS",
+      "expectedIds": [
+        "TK-BRG-RCF-001",
+        "TK-TRIB-FILM-001"
+      ],
+      "intent": "competing_concept_paraphrase"
+    },
+    {
+      "id": "CH-022",
+      "question": "Gás no reservatório e bomba sofrendo na entrada: como distinguir os dois caminhos físicos?",
+      "expectedStatus": "MULTIPLE_CONCEPTS",
+      "expectedIds": [
+        "TK-HYD-AERATION-001",
+        "TK-HYD-CAVITATION-001"
+      ],
+      "intent": "competing_concept_paraphrase"
+    },
+    {
+      "id": "CH-023",
+      "question": "Como ajustar a ECU eletrônica de um motor diesel?",
+      "expectedStatus": "NOT_FOUND_IN_CATALOG",
+      "expectedIds": [],
+      "intent": "outside_six_record_corpus"
+    },
+    {
+      "id": "CH-024",
+      "question": "Como dimensionar o circuito de climatização de uma cabine?",
+      "expectedStatus": "NOT_FOUND_IN_CATALOG",
+      "expectedIds": [],
+      "intent": "outside_six_record_corpus"
+    }
+  ]
+}
