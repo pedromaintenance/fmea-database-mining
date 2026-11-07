@@ -1,0 +1,138 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/pedromaintenance/fmea-database-mining/blob/main/schemas/external-review-batch.v1.schema.json",
+  "title": "External technical retrieval review batch",
+  "description": "A local/offline expert-created query and blinded adjudication package, not itself proof of external independence.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "version",
+    "nature",
+    "engineSha256",
+    "corpusSha256",
+    "reviewerDeclaration",
+    "cases"
+  ],
+  "properties": {
+    "schema": {
+      "const": "fmea-mining.external-review-batch.v1"
+    },
+    "version": {
+      "const": "1.4.7"
+    },
+    "nature": {
+      "const": "self_attested_external_questions_and_blind_human_labels"
+    },
+    "engineSha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "corpusSha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "reviewerDeclaration": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "questionsOutsideDevelopment",
+        "reviewerNotInEngineDevelopment",
+        "predictionsHiddenUntilLabelsFrozen",
+        "redactedPublicSafe",
+        "judgementMethod",
+        "notes"
+      ],
+      "properties": {
+        "questionsOutsideDevelopment": {
+          "type": "boolean"
+        },
+        "reviewerNotInEngineDevelopment": {
+          "type": "boolean"
+        },
+        "predictionsHiddenUntilLabelsFrozen": {
+          "type": "boolean"
+        },
+        "redactedPublicSafe": {
+          "type": "boolean"
+        },
+        "judgementMethod": {
+          "enum": [
+            "individual_human",
+            "independent_panel",
+            "internal_calibration"
+          ]
+        },
+        "notes": {
+          "type": "string",
+          "maxLength": 600
+        }
+      }
+    },
+    "cases": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 100,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "question",
+          "expectedStatus",
+          "expectedIds",
+          "rationale",
+          "category",
+          "reviewedBeforePrediction"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^EXT-[0-9]{3}$"
+          },
+          "question": {
+            "type": "string",
+            "minLength": 12,
+            "maxLength": 1000
+          },
+          "expectedStatus": {
+            "enum": [
+              "FOUND_CONCEPTUAL",
+              "MULTIPLE_CONCEPTS",
+              "ABSTAIN_UNSUPPORTED_OPERATIONAL",
+              "NOT_FOUND_IN_CATALOG",
+              "NEEDS_ADJUDICATION"
+            ]
+          },
+          "expectedIds": {
+            "type": "array",
+            "maxItems": 10,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "pattern": "^TK-[A-Z0-9-]+$"
+            }
+          },
+          "rationale": {
+            "type": "string",
+            "minLength": 15,
+            "maxLength": 1500
+          },
+          "category": {
+            "enum": [
+              "explanation",
+              "differential",
+              "operational_decision",
+              "out_of_scope",
+              "other"
+            ]
+          },
+          "reviewedBeforePrediction": {
+            "const": true
+          }
+        }
+      }
+    }
+  }
+}
