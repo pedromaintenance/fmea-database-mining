@@ -2,7 +2,7 @@
 export const ALIASES=Object.freeze({
   'TK-HYD-CAVITATION-001':['cavitacao','cavidades de vapor','implosao de vapor','erosao por cavitacao','pressao local de vapor'],
   'TK-HYD-AERATION-001':['aeracao','espuma','ar livre','ar entranhado','ar incorporado','bolhas no oleo','compressibilidade do fluido'],
-  'TK-TRIB-ABRASION-001':['abrasao','abrasivo','abrasivos','desgaste de tres corpos','sulcos abrasivos','riscos de abrasao'],
+  'TK-TRIB-ABRASION-001':['desgaste abrasivo','abrasao','abrasivo','abrasivos','desgaste de tres corpos','sulcos abrasivos','riscos de abrasao'],
   'TK-TRIB-FILM-001':['filme lubrificante','filme de oleo','espessura do filme','lubrificacao mista','lubrificacao limite','ehl','separa superficies','pelicula lubrificante'],
   'TK-FLUID-SOLIDS-001':['iso 4406','contagem de particulas','contaminacao solida','limpeza do oleo','amostragem','particulas externas','concentracao de particulas'],
   'TK-BRG-RCF-001':['fadiga de contato','spalling','subsuperficial','microtrinca','tensoes ciclicas','descascamento','microspalling']
