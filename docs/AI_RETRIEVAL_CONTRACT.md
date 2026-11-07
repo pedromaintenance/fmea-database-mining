@@ -22,6 +22,12 @@
 - `npm run knowledge:fundamentals:build` gera `reports/fundamentals.generated.json` e HTML. O Pages publica `/fundamentos-tecnicos.v1.json` e `/fundamentos-hidraulica-tribologia.html` de forma read-only.
 - Perguntas negativas devem produzir recusa de causalidade não sustentada: ruído não comprova cavitação; espuma não comprova bomba danificada; ISO 4406 não identifica causa raiz ou componente.
 
+## Avaliação inicial de roteamento (1.4.4)
+- `data/quality/fundamentals-retrieval-golden.v1.json` contém 50 perguntas curadas (36 conceituais, 8 pedidos de decisão de campo, 4 ambíguas, 2 fora das seis fichas).
+- `npm run knowledge:fundamentals:query -- --query "pergunta"` usa correspondências lexicais estritas; devolve `FOUND_CONCEPTUAL`, `MULTIPLE_CONCEPTS`, `ABSTAIN_UNSUPPORTED_OPERATIONAL` ou `NOT_FOUND_IN_CATALOG`. O último significa ausente do **corpus de seis fundamentos**, não de toda a biblioteca.
+- `npm run knowledge:retrieval:audit` testa roteamento/recusa, gerando JSON público. As perguntas e as palavras-chave foram desenvolvidas juntas, portanto resultados **não são medição independente de precisão de IA, segurança operacional ou qualidade factual**.
+- Nova literatura SKF/ISO 15243 e fichas de filme lubrificante, partículas e fadiga mantêm status conceitual e limites específicos em `sourceNotes`.
+
 ## Pipeline de recuperação
 1. **Descoberta:** `data/catalog/knowledge-index.v1.json` inclui uma seleção inicial de artefatos existentes. Ausência no índice não significa ausência no repositório.
 2. **Recuperação canônica:** abrir `path`; preferir informações estruturadas em `data/quality` e documentos de `docs`. Não transformar o campo de descrição do índice em prova.
