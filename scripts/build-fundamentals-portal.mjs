@@ -9,14 +9,18 @@ const paths=[
  'data/knowledge/fundamentals/particulate-abrasive-wear.v2.json',
  'data/knowledge/fundamentals/lubricating-film.v2.json',
  'data/knowledge/fundamentals/solid-contamination.v2.json',
- 'data/knowledge/fundamentals/rolling-contact-fatigue.v2.json'
+ 'data/knowledge/fundamentals/rolling-contact-fatigue.v2.json',
+ 'data/knowledge/fundamentals/hydraulic-pilot-control.v2.json',
+ 'data/knowledge/fundamentals/hydraulic-load-holding.v2.json',
+ 'data/knowledge/fundamentals/hydraulic-actuator-drift.v2.json',
+ 'data/knowledge/fundamentals/hydraulic-instrumentation.v2.json'
 ];
 const records=paths.map(p=>({...json(p),__path:p}));
 const registry=json('data/research/sources.v1.json');
 const wanted=new Set(records.flatMap(r=>r.provenance.sourceNotes.map(s=>s.sourceId)));
 const sourceList=registry.sources.filter(s=>wanted.has(s.id)).map(({id,title,organization,url,limitation,lastReviewed})=>({id,title,organization,url,limitation,lastReviewed}));
 if(sourceList.length!==wanted.size)throw Error('Unknown source ID for foundations page');
-const bundle={schema:'fmea-mining.fundamentals-discovery.v1',version:'1.4.4',nature:'conceptual_articles_pending_review_not_field_evidence',ready:true,records,sources:sourceList,
+const bundle={schema:'fmea-mining.fundamentals-discovery.v1',version:'1.4.6',nature:'conceptual_articles_pending_review_not_field_evidence',ready:true,records,sources:sourceList,
  restrictions:{noOemSerialVerification:true,realAssetCases:0,actualTests:0,operationalRelease:false,sapMappingApproved:false}};
 const tmpl=read('docs/fundamentos-hidraulica-tribologia.html');
 const marker='{"schema":"FOUNDATIONS_PLACEHOLDER","ready":false}';
