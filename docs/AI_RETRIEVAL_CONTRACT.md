@@ -16,6 +16,12 @@
 - `schemas/technical-knowledge-record.schema.json` define a ficha fundamental. O primeiro registro `data/knowledge/fundamentals/hydraulic-inlet-restriction.v1.json` é conceitual, derivado de `HC-DIFF-01`, com hipóteses não confirmadas, revisão pendente e nenhum teste real.
 - Respostas de agentes devem citar `path` + ID de registro/hipótese + ID da fonte, **abrindo o arquivo canônico** e declarando expressamente aplicabilidade e lacunas. Não usar hashes, contagens ou perfis como prova física.
 
+## Fundamentos técnicos v2 (1.4.3)
+- Fichas em `data/knowledge/fundamentals/*.v2.json`: cavitação, aeração e desgaste abrasivo. Cada síntese tem fonte, papel limitado, hipóteses concorrentes e perguntas para confirmação futura.
+- Contrato estrito `schemas/technical-knowledge-record.v2.schema.json` coexistindo com v1. Agentes devem distinguir `sourceNotes[].supports` de `doesNotSupport` e citar `originAnchors` sem presumir diagnóstico.
+- `npm run knowledge:fundamentals:build` gera `reports/fundamentals.generated.json` e HTML. O Pages publica `/fundamentos-tecnicos.v1.json` e `/fundamentos-hidraulica-tribologia.html` de forma read-only.
+- Perguntas negativas devem produzir recusa de causalidade não sustentada: ruído não comprova cavitação; espuma não comprova bomba danificada; ISO 4406 não identifica causa raiz ou componente.
+
 ## Pipeline de recuperação
 1. **Descoberta:** `data/catalog/knowledge-index.v1.json` inclui uma seleção inicial de artefatos existentes. Ausência no índice não significa ausência no repositório.
 2. **Recuperação canônica:** abrir `path`; preferir informações estruturadas em `data/quality` e documentos de `docs`. Não transformar o campo de descrição do índice em prova.
