@@ -1,0 +1,141 @@
+{
+  "schema": "fmea-mining.technical-knowledge-record.v2",
+  "recordVersion": "1.4.6",
+  "recordType": "fundamental_technical_knowledge",
+  "evidenceClass": "CONCEPTUAL",
+  "reviewStatus": "PENDING_REVIEW",
+  "operationalApproval": false,
+  "sapMappingApproved": false,
+  "automaticDiagnosisAllowed": false,
+  "id": "TK-HYD-ACTUATOR-001",
+  "title": "Atuadores hidráulicos: perda de movimento, força e deriva",
+  "titleEn": "Hydraulic actuators: motion loss, force deficiency and drift",
+  "domain": "Hidráulica",
+  "systemTags": [
+    "cilindro",
+    "motor hidráulico",
+    "atuador",
+    "deriva",
+    "vedação",
+    "fuga interna"
+  ],
+  "definition": "Atuador hidráulico converte potência do fluido em esforço e movimento linear (cilindro) ou rotativo (motor). O desempenho resulta da interação entre geometria, carga, alimentação, perdas internas/externas e comando.",
+  "functionRequired": "O atuador deve produzir o movimento e força/torque requeridos pelo implemento, dentro da condição controlada e segura do projeto.",
+  "physicalMechanism": {
+    "summary": "Fuga interna por vedação, contaminação, dano de superfícies ou folgas pode reduzir força ou manutenção de posição, mas deriva também pode decorrer de válvulas de controle, retenção, conexões ou efeitos de carga e diferença de áreas. Lentidão pode resultar de vazão insuficiente sem avaria interna do atuador.",
+    "possibleChain": [
+      "Comando direciona fluido sob condições de pressão e vazão aos volumes/portas do atuador.",
+      "Diferenças de áreas, cargas e vedação condicionam esforço e velocidade efetivos.",
+      "Deriva, lentidão ou força reduzida requerem hipóteses concorrentes envolvendo comando, suprimento, válvulas, vedações e mecânica externa."
+    ]
+  },
+  "illustrativeSymptoms": [
+    "Cilindro apresenta deriva ou não sustenta posição conforme relato, sem ensaio de localização de fuga.",
+    "Função se move lentamente, perde força ou apresenta aquecimento anormal segundo condição relatada."
+  ],
+  "competingHypotheses": [
+    {
+      "id": "HYP-ACT-BYPASS",
+      "mechanism": "Possível passagem interna pelo pistão ou outra vedação de cilindro.",
+      "discriminator": "Usar inspeção documental do sistema, procedimento OEM seguro de ensaio e evidência própria de fuga.",
+      "unconfirmed": true
+    },
+    {
+      "id": "HYP-ACT-VALVE",
+      "mechanism": "Deriva ou lentidão originada em válvula de comando, retenção ou regulagem, não no atuador.",
+      "discriminator": "Comparar alternativas de fluxo/pressão e comando por esquema real e método autorizado.",
+      "unconfirmed": true
+    },
+    {
+      "id": "HYP-ACT-STRUCT",
+      "mechanism": "Carga, desalinhamento, atrito ou folga mecânica interfere na resposta aparente do atuador.",
+      "discriminator": "Confrontar carga, montagem, geometria e condições mecânicas com critérios do fabricante.",
+      "unconfirmed": true
+    }
+  ],
+  "evidenceToRequest": [
+    {
+      "question": "Qual o tipo de atuador, efeito de áreas e função de carga previstos em seu desenho por série?",
+      "limitOfInference": "Sem geometria e cargas não se pode calcular nem validar força real."
+    },
+    {
+      "question": "O comportamento de deriva foi documentado por condição de carga, posição, temperatura e tempo?",
+      "limitOfInference": "Deriva não demonstra isoladamente fuga no pistão."
+    },
+    {
+      "question": "Existe método OEM seguro que separa válvula, cilindro, suprimento e influência mecânica externa?",
+      "limitOfInference": "Não improvisar desconexão de linha sob pressão ou sustentando carga."
+    }
+  ],
+  "confounders": [
+    "Área anular e área de fundo diferentes em cilindros de haste simples.",
+    "Fuga de válvula, retenção ou mangueira e condição de carga.",
+    "Desalinhamento e folgas em pinos/suportes.",
+    "Variações de viscosidade e temperatura."
+  ],
+  "ontologyLinks": [
+    {
+      "id": "ME-15",
+      "relation": "primary_concept",
+      "mechanismProven": false
+    },
+    {
+      "id": "ME-12",
+      "relation": "competing_concept",
+      "mechanismProven": false
+    },
+    {
+      "id": "ME-13",
+      "relation": "competing_concept",
+      "mechanismProven": false
+    }
+  ],
+  "provenance": {
+    "sourceRegistryPath": "data/research/sources.v1.json",
+    "sourceNotes": [
+      {
+        "sourceId": "PARKER-CYL-DRIFT-SERVICE",
+        "supports": "Apresenta causas concorrentes de deriva, desgaste de vedações e influência de válvula e conexões na avaliação de cilindros.",
+        "doesNotSupport": "É manual para famílias Parker e não valida qualquer limite de vazamento, ensaio ou reparo em cilindro CAT."
+      },
+      {
+        "sourceId": "CAT-HYD-TECHNICAL-ANALYSIS",
+        "supports": "Descreve análise de condições hidráulicas e consulta a critérios de teste da máquina, incluindo pressão e comportamento funcional.",
+        "doesNotSupport": "Não comprova fuga interna em um atuador real nem indica o teste por número de série aqui."
+      }
+    ],
+    "originAnchors": [
+      {
+        "path": "data/ontology/concepts.v1.json",
+        "recordId": "ME-15",
+        "role": "mechanism_ontology"
+      },
+      {
+        "path": "data/ontology/concepts.v1.json",
+        "recordId": "ME-12",
+        "role": "mechanism_ontology"
+      }
+    ],
+    "originalInterpretation": "original_synthesis_not_manufacturer_endorsement",
+    "newFieldEvidence": false
+  },
+  "applicability": {
+    "scope": "Conceitos de cilindros e motores hidráulicos, sem configuração real ou limite OEM verificado.",
+    "verifiedModels": [],
+    "verifiedSerials": [],
+    "oemAcceptanceLimits": null,
+    "fieldObservations": 0,
+    "performedTests": 0,
+    "confirmedRootCauses": 0
+  },
+  "safety": {
+    "boundary": "Não é roteiro de vazamento por desconexão de linhas. Intervenções exigem alívio da energia, controle de carga, travamento mecânico e instruções do fabricante.",
+    "prohibitedActions": [
+      "Não desconectar linhas de cilindro em equipamento energizado.",
+      "Não usar força/deriva para liberar máquina sem avaliação de risco.",
+      "Não diagnosticar pistão apenas pela descida da haste.",
+      "Não adotar limites genéricos de vazamento ou velocidade como OEM."
+    ],
+    "safeNextStep": "Consolidar histórico, esquema e opções de diferencial, segregar condição de segurança e planejar teste autorizado."
+  }
+}
