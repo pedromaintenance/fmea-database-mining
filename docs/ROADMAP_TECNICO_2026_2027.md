@@ -14,13 +14,15 @@
 - [x] Criar atlas **estrutural-semântico heurístico** de datasets JSON com schema, versão, origem, contagem, vínculos explícitos de fontes e duplicação binária (1.4.2); não afirmar revisão semântica humana.
 - [x] Publicar primeiro modelo estrito de ficha fundamental e um verbete hidráulico com revisão pendente (1.4.2).
 - [ ] Fazer inventário **completo** do acervo legado (fontes, normas, sistemas, JSONs, documentos, portais, lacunas); contabilizar duplicações e versionamentos conflitantes.
-- [ ] Mapear direitos/licenças, datas de revisão e vínculos de citação das 90 fontes (das quais três receberam revisão direcionada neste ciclo).
+- [ ] Mapear direitos/licenças, datas de revisão e vínculos de citação das 94 fontes (das quais três receberam revisão direcionada neste ciclo).
 - [ ] Consolidar o schema v2 já implementado e obter revisão técnica humana dos campos função → mecanismo → sintoma → evidência → prevenção.
-- [ ] Criar teste de 50 perguntas de busca e critério de rejeição segura para perguntas sem fonte.
+- [ ] Executar uma **avaliação independente** de 50 perguntas inéditas com fontes externas e revisores humanos; a versão 1.4.4 possui apenas 50 perguntas curadas em conjunto com o buscador, como teste de regressão.
 
 **Aceite proposto:** 100% dos itens do índice com path válido e classe de evidência; 0 publicações privadas por engano; respostas documentadas para lacunas.
 
 **Atualização do ciclo 1.4.3:** iniciadas três fichas fundamentais distintas sobre cavitação, aeração e abrasão com fontes públicas verificadas quanto ao conteúdo selecionado; bibliografia alcançou 90 referências (sem revalidação global de links/licenças), índice curado 18 fichas. Revisão humana técnica ainda pendente.
+
+**Atualização 1.4.4:** três novos fundamentos sobre filme lubrificante, contaminação sólida e fadiga de contato; bibliografia passa a 94 registros, índice curado a 21 e o portal temático a 6 fichas. Primeira regressão fechada de 50 consultas construída; **não** é avaliação cega de agente.
 
 ### Horizonte F1 — Fundamentos mecânicos e hidráulicos (1–3 meses)
 **Foco 1:** tribologia, desgaste e lubrificação; viscosidade, contaminação, partículas, falha de rolamento, vedação, filtragem e interpretação SOS.  
