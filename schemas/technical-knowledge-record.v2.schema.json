@@ -1,0 +1,355 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FMEA Mining technical fundamental knowledge record v2",
+  "description": "Conceptual human-review-pending knowledge, not OEM-by-serial effective evidence. All claims must be traceable to public sources and distinguished from hypotheses.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "recordVersion",
+    "id",
+    "title",
+    "titleEn",
+    "domain",
+    "systemTags",
+    "recordType",
+    "evidenceClass",
+    "reviewStatus",
+    "definition",
+    "functionRequired",
+    "physicalMechanism",
+    "illustrativeSymptoms",
+    "competingHypotheses",
+    "evidenceToRequest",
+    "confounders",
+    "ontologyLinks",
+    "provenance",
+    "applicability",
+    "safety",
+    "operationalApproval",
+    "sapMappingApproved",
+    "automaticDiagnosisAllowed"
+  ],
+  "properties": {
+    "schema": {
+      "const": "fmea-mining.technical-knowledge-record.v2"
+    },
+    "recordVersion": {
+      "const": "1.4.3"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^TK-[A-Z0-9-]{6,}$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 5
+    },
+    "titleEn": {
+      "type": "string",
+      "minLength": 5
+    },
+    "domain": {
+      "type": "string",
+      "minLength": 3
+    },
+    "systemTags": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 2
+      }
+    },
+    "recordType": {
+      "const": "fundamental_technical_knowledge"
+    },
+    "evidenceClass": {
+      "const": "CONCEPTUAL"
+    },
+    "reviewStatus": {
+      "const": "PENDING_REVIEW"
+    },
+    "definition": {
+      "type": "string",
+      "minLength": 25
+    },
+    "functionRequired": {
+      "type": "string",
+      "minLength": 25
+    },
+    "physicalMechanism": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "summary",
+        "possibleChain"
+      ],
+      "properties": {
+        "summary": {
+          "type": "string",
+          "minLength": 40
+        },
+        "possibleChain": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "type": "string",
+            "minLength": 20
+          }
+        }
+      }
+    },
+    "illustrativeSymptoms": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 15
+      }
+    },
+    "competingHypotheses": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "mechanism",
+          "discriminator",
+          "unconfirmed"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^HYP-[A-Z0-9-]+$"
+          },
+          "mechanism": {
+            "type": "string",
+            "minLength": 20
+          },
+          "discriminator": {
+            "type": "string",
+            "minLength": 25
+          },
+          "unconfirmed": {
+            "const": true
+          }
+        }
+      }
+    },
+    "evidenceToRequest": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "question",
+          "limitOfInference"
+        ],
+        "properties": {
+          "question": {
+            "type": "string",
+            "minLength": 20
+          },
+          "limitOfInference": {
+            "type": "string",
+            "minLength": 25
+          }
+        }
+      }
+    },
+    "confounders": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 15
+      }
+    },
+    "ontologyLinks": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "relation",
+          "mechanismProven"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^ME-[0-9]{2}$"
+          },
+          "relation": {
+            "enum": [
+              "primary_concept",
+              "competing_concept"
+            ]
+          },
+          "mechanismProven": {
+            "const": false
+          }
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sourceRegistryPath",
+        "sourceNotes",
+        "originAnchors",
+        "originalInterpretation",
+        "newFieldEvidence"
+      ],
+      "properties": {
+        "sourceRegistryPath": {
+          "const": "data/research/sources.v1.json"
+        },
+        "sourceNotes": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "sourceId",
+              "supports",
+              "doesNotSupport"
+            ],
+            "properties": {
+              "sourceId": {
+                "type": "string",
+                "pattern": "^[A-Z0-9][A-Z0-9-]+$"
+              },
+              "supports": {
+                "type": "string",
+                "minLength": 25
+              },
+              "doesNotSupport": {
+                "type": "string",
+                "minLength": 25
+              }
+            }
+          }
+        },
+        "originAnchors": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "path",
+              "recordId",
+              "role"
+            ],
+            "properties": {
+              "path": {
+                "type": "string",
+                "pattern": "^data/(quality|ontology|knowledge)/[A-Za-z0-9_./-]+\\.json$"
+              },
+              "recordId": {
+                "type": "string",
+                "minLength": 3
+              },
+              "role": {
+                "enum": [
+                  "competing_diagnostic_reference",
+                  "mechanism_ontology",
+                  "existing_knowledge_reference"
+                ]
+              }
+            }
+          }
+        },
+        "originalInterpretation": {
+          "const": "original_synthesis_not_manufacturer_endorsement"
+        },
+        "newFieldEvidence": {
+          "const": false
+        }
+      }
+    },
+    "applicability": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scope",
+        "verifiedModels",
+        "verifiedSerials",
+        "oemAcceptanceLimits",
+        "fieldObservations",
+        "performedTests",
+        "confirmedRootCauses"
+      ],
+      "properties": {
+        "scope": {
+          "type": "string",
+          "minLength": 25
+        },
+        "verifiedModels": {
+          "type": "array",
+          "maxItems": 0
+        },
+        "verifiedSerials": {
+          "type": "array",
+          "maxItems": 0
+        },
+        "oemAcceptanceLimits": {
+          "type": "null"
+        },
+        "fieldObservations": {
+          "const": 0
+        },
+        "performedTests": {
+          "const": 0
+        },
+        "confirmedRootCauses": {
+          "const": 0
+        }
+      }
+    },
+    "safety": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "boundary",
+        "prohibitedActions",
+        "safeNextStep"
+      ],
+      "properties": {
+        "boundary": {
+          "type": "string",
+          "minLength": 40
+        },
+        "prohibitedActions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 20
+          }
+        },
+        "safeNextStep": {
+          "type": "string",
+          "minLength": 25
+        }
+      }
+    },
+    "operationalApproval": {
+      "const": false
+    },
+    "sapMappingApproved": {
+      "const": false
+    },
+    "automaticDiagnosisAllowed": {
+      "const": false
+    }
+  }
+}
