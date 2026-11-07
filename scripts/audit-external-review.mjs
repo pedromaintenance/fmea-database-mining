@@ -23,7 +23,7 @@ assert('schema_declares_no_fake_authority',schema.$schema==='https://json-schema
 assert('public_status_null_metrics',status.status==='NO_EXTERNAL_SAMPLE'&&status.metrics===null&&status.cases.length===0&&status.totals.submitted===0&&status.totals.scored===0);
 assert('bundle_records_bounded',bundle.records.length===10&&bundle.nature==='offline_review_protocol_without_human_question_data'&&bundle.engineSha256===engineSha256&&bundle.corpusSha256===corpusSha256);
 assert('no_network_storage_scripts',!/fetch\s*\(|XMLHttpRequest|localStorage|sessionStorage|sendBeacon|<script\s+src=/i.test(page));
-assert('safe_dom',page.includes('textContent=value')&&!page.includes('innerHTML'));
+assert('safe_dom',page.includes('textContent=text')&&!page.includes('innerHTML'));
 assert('privacy_warning',page.includes('não informe dados de equipamentos reais'));
 const embedded=page.match(/<script id="bundle" type="application\/json">([\s\S]*?)<\/script>/);
 try{assert('embedded_bundle_parity',JSON.stringify(JSON.parse(embedded?.[1]||''))===JSON.stringify(bundle))}catch{assert('embedded_bundle_parity',false)}
