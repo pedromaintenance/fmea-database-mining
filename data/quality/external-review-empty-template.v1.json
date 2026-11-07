@@ -1,0 +1,8 @@
+{
+  "schema": "fmea-mining.external-review-draft.v1",
+  "version": "1.4.7",
+  "nature": "empty_example_not_independent_question_data",
+  "instructions": "Use the public offline review lab to add outside-authored questions and assign blind labels before running retrieval. Do not publish proprietary cases or names.",
+  "cases": [],
+  "containsExternalEvaluation": false
+}
