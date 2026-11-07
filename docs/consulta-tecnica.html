@@ -1,0 +1,70 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Consulta técnica por conceito | FMEA Database Mining</title><meta name="description" content="Buscador read-only de fundamentos mecânicos, com fontes, incertezas e abstenção em pedidos operacionais.">
+<style>
+:root{color-scheme:dark;--bg:#0d202a;--p:#16303e;--border:#3b5d6e;--text:#f0f7f8;--muted:#c5d6db;--gold:#d6ad5a;--link:#a8dcf0}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.55 system-ui,'Segoe UI',sans-serif}
+header{background:linear-gradient(110deg,#255469,#102833);border-bottom:4px solid var(--gold);padding:28px max(15px,calc((100vw - 1040px)/2))}
+h1{font-size:clamp(28px,4vw,46px);margin:13px 0 7px}nav{display:flex;gap:14px;flex-wrap:wrap;font-size:13px}a{color:var(--link)}
+header p{max-width:860px;color:#dbe8eb}main{max-width:1080px;margin:auto;padding:24px 16px 70px}
+.notice{border:1px solid #98783e;background:#332d20;color:#f5dfae;border-radius:10px;padding:14px;margin:0 0 20px}
+label{font-weight:600;display:block;margin-bottom:6px}textarea{display:block;width:100%;min-height:100px;background:#102632;border:1px solid #7091a1;color:white;border-radius:9px;padding:14px;font:inherit;resize:vertical}
+button{background:var(--gold);color:#11242b;font-weight:700;border:0;padding:11px 18px;border-radius:8px;cursor:pointer;margin:11px 0}
+button:focus-visible,textarea:focus-visible{outline:3px solid #acd7ed;outline-offset:2px}
+.suggestion{font-size:13px;color:var(--muted)}.suggestion button{font-size:12px;padding:6px 10px;margin:4px;background:#254b60;color:#e2f3fa;border:1px solid #497e97}
+#status{border-top:1px solid var(--border);padding-top:18px;margin-top:8px;font-weight:650}
+.card{padding:18px;background:var(--p);border:1px solid var(--border);border-radius:12px;margin:13px 0}.card h2{font-size:20px;margin:6px 0}.card p{margin:8px 0}
+.tag{display:inline-block;border:1px solid #527c8b;border-radius:20px;padding:3px 8px;font-size:12px;color:var(--muted);margin-right:4px}
+.warn{color:#f0d8a6}.small{font-size:12px;color:var(--muted)}ul{padding-left:19px}li{margin:8px 0}footer{font-size:12px;color:var(--muted);margin-top:22px}
+</style></head><body>
+<header><nav><a href="./index.html">Biblioteca</a><a href="./arquitetura-funcional.html">Arquitetura funcional</a><a href="./fundamentos-hidraulica-tribologia.html">Fundamentos</a><a href="./fontes-tecnicas.html">Bibliografia</a></nav>
+<h1>Consulta técnica conceitual</h1>
+<p>Descreva um mecanismo, sintoma ou pergunta em linguagem de oficina. O buscador apresenta fichas candidatas e referências públicas, sem afirmar causas nem recomendar a execução de testes.</p></header>
+<main><aside class="notice"><strong>Ferramenta de descoberta, não diagnóstico.</strong> Esta pesquisa usa regras lexicais transparentes e dez fichas conceituais. Ela não identifica configuração OEM, valida limites ou autoriza intervenção. Em decisões de segurança ou operação, sua resposta é insuficiente: procure procedimento específico, Engenharia e responsável autorizado. Não insira dados internos ou pessoais neste site público.</aside>
+<label for="q">Sua pergunta</label><textarea id="q" placeholder="Ex.: O implemento desce lentamente sem comando: é a válvula, o cilindro ou outro mecanismo?"></textarea>
+<button type="button" id="search">Pesquisar fundamentos</button>
+<div class="suggestion">Exemplos: <button type="button" data-q="Qual a diferença entre cavitação e aeração?">Cavitação × aeração</button><button type="button" data-q="O implemento perde sustentação, o que preciso diferenciar?">Retenção de carga</button><button type="button" data-q="Qual pressão mínima devo usar na máquina 040-001?">Decisão sem efetividade</button></div>
+<p class="small" id="meta"></p><section id="status" aria-live="polite">Informe uma pergunta para iniciar.</section><div id="result"></div>
+<footer>O resultado reúne associações lexicais e fontes existentes, não faz chamadas externas, não armazena consultas, não gera diagnóstico e não acessa SAP. Consulte o <a href="./technical-search-v2-report.v1.json">relatório de avaliação de desenvolvimento</a> e a <a href="./fundamentals-uncalibrated-challenge.v1.json">linha de base congelada</a> para entender os limites.</footer></main>
+<script id="data" type="application/json">{"schema":"QUERY_BUNDLE_PLACEHOLDER","ready":false}</script>
+<script>
+/*ENGINE_PLACEHOLDER*/
+(()=>{
+'use strict';
+const $=id=>document.getElementById(id),data=JSON.parse($('data').textContent),root=$('result');
+const sources=new Map((data.sources||[]).map(s=>[s.id,s]));
+const gh='https://github.com/pedromaintenance/fmea-database-mining/blob/main/';
+function add(parent,tag,value,cls){const n=document.createElement(tag);if(value!==undefined)n.textContent=value;if(cls)n.className=cls;parent.append(n);return n}
+function run(){
+root.replaceChildren();
+if(!data.ready){$('status').textContent='Esta é a versão de template. Use a página publicada no Pages ou gere a versão offline com npm run knowledge:search:build.';return}
+const out=discoverTechnical($('q').value,data.records);
+$('meta').textContent='Escopo: 10 fundamentos conceituais • mecanismo: regras lexicais transparentes • fontes versionadas';
+const messages={
+ NOT_FOUND_IN_CATALOG:'Sem correspondência suficiente neste subconjunto. Isso não demonstra ausência do fenômeno no equipamento ou no restante da biblioteca.',
+ ABSTAIN_UNSUPPORTED_OPERATIONAL:'Decisão de campo sem comprovação suficiente: não é possível recomendar liberar, testar, ajustar, substituir ou definir parâmetro OEM por esta ferramenta.',
+ FOUND_CONCEPTUAL:'Ficha de referência candidata. Abra o registro e confirme as fontes; não é causa confirmada.',
+ MULTIPLE_CONCEPTS:'Mecanismos concorrentes possíveis: compare as evidências discriminantes antes de formular uma hipótese.'
+};
+$('status').textContent=messages[out.status]||out.status;
+for(const hit of out.hits){
+const record=data.records.find(x=>x.id===hit.id),card=add(root,'article',undefined,'card');
+add(card,'span',record.domain,'tag');add(card,'span','Conceitual — revisão pendente','tag');add(card,'h2',record.title);
+add(card,'p',record.definition);
+add(card,'p','Função: '+record.functionRequired);
+add(card,'h3','Mecanismo possível');add(card,'p',record.physicalMechanism.summary);
+add(card,'h3','Perguntas que diferenciam hipóteses');const questions=add(card,'ul');
+for(const q of record.evidenceToRequest.slice(0,3))add(questions,'li',q.question+' Limite: '+q.limitOfInference);
+add(card,'h3','Referências e limites');const refs=add(card,'ul');
+for(const note of record.provenance.sourceNotes){
+const li=add(refs,'li'),source=sources.get(note.sourceId);
+if(source){const a=add(li,'a',source.title+' — '+source.organization);a.href=source.url;a.target='_blank';a.rel='noopener noreferrer'}
+else add(li,'span',note.sourceId);
+add(li,'p','Sustenta: '+note.supports,'small');add(li,'p','Não sustenta: '+note.doesNotSupport,'small warn');
+}
+const a=add(card,'a','Abrir ficha canônica ('+record.id+')');a.href=gh+record.__path.split('/').map(encodeURIComponent).join('/');a.target='_blank';a.rel='noopener noreferrer';
+}
+}
+$('search').addEventListener('click',run);$('q').addEventListener('keydown',e=>{if(e.key==='Enter'&&(e.ctrlKey||e.metaKey))run()});
+document.querySelectorAll('button[data-q]').forEach(b=>b.addEventListener('click',()=>{$('q').value=b.getAttribute('data-q');run()}));
+})();
+</script></body></html>
