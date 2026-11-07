@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.research.sources.v1",
-  "version": "1.3.28",
+  "version": "1.4.3",
   "status": "literatura_de_referencia_nao_casos_empiricos",
   "rights": "somente_titulos_links_e_resumos_originais",
   "sources": [
@@ -951,6 +951,39 @@
       "limitation": "Publica 1008 L/min e 32000 kPa para Front Shovel, distintos dos valores máximos de outras 395. Não é evidência de qual tipo/implemento foi instalado em máquina real, nem autoriza transferência de regulagens.",
       "reviewStatus": "fonte_publica_consultada_sem_aprovacao_por_serie",
       "lastReviewed": "2026-11-03"
+    },
+    {
+      "id": "PARKER-P1PD-2019-SVC",
+      "organization": "Parker Hannifin",
+      "title": "P1/PD A-Mod Service Information, Bulletin HY28-2665-02/SVC/EN (July 2019), troubleshooting",
+      "url": "https://www.parker.com/content/dam/Parker-com/Literature/Hydraulic-Pump-Division/P1-PD-18cc-140cc-Service-Manual.pdf",
+      "area": "axial_piston_pump_cavitation_vs_air_in_fluid",
+      "role": "oem_specific_architecture_comparative_troubleshooting",
+      "limitation": "Manual restrito à série Parker P1/PD A-Mod: distingue ar no fluido, cavitação, desalinhamento e defeitos mecânicos. Não transferir valores ou procedimentos a outras bombas/equipamentos.",
+      "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
+      "lastReviewed": "2026-11-07"
+    },
+    {
+      "id": "PARKER-HYD-FILTRATION-HANDBOOK",
+      "organization": "Parker Hannifin",
+      "title": "The Handbook of Hydraulic Filtration — Contamination Types and Sources, Air Contamination",
+      "url": "https://www.parker.com/content/dam/Parker-com/Literature/EMHFF/Miscellaneous/HTM-4.pdf",
+      "area": "air_contamination_and_fluid_compressibility",
+      "role": "manufacturer_general_reference",
+      "limitation": "Princípios gerais de ar dissolvido e livre e seus efeitos, sem especificações por série. Documento técnico de fabricante, não norma de aceitação em mina; não usar percentuais genéricos como benchmark.",
+      "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
+      "lastReviewed": "2026-11-07"
+    },
+    {
+      "id": "BOSCH-REXROTH-PISTON-DAMAGE",
+      "organization": "Bosch Rexroth",
+      "title": "Failures — causes and advices: damaged piston unit",
+      "url": "https://www.boschrexroth.com/en/pl/service-and-support/service/repairs/failures-causes-and-advices/",
+      "area": "hydraulic_piston_unit_particulate_contamination_and_suction",
+      "role": "oem_general_failure_mechanisms",
+      "limitation": "Exemplos técnicos do fabricante sobre limpeza, viscosidade e pressão de sucção. Não certifica as falhas ou pressões de máquinas CAT/Sandvik por série.",
+      "reviewStatus": "fonte_publica_consultada_sem_reproducao_integral",
+      "lastReviewed": "2026-11-07"
     }
   ]
 }

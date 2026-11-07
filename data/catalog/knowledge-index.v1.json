@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.knowledge-index.v1",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "scope": "selected_existing_public_artifacts_not_complete_inventory",
   "repository": "pedromaintenance/fmea-database-mining",
   "nature": "navigation_metadata_not_canonical_technical_evidence",
@@ -250,6 +250,60 @@
         "cavitação",
         "hidrático",
         "inlet restriction"
+      ]
+    },
+    {
+      "id": "LIB-TK-HYD-CAV",
+      "title": "Cavitação na alimentação de bombas hidráulicas",
+      "domain": "Hidráulica",
+      "kind": "ficha fundamental",
+      "system": "hidraulico",
+      "evidenceClass": "CONCEPTUAL",
+      "summary": "Cavidades de vapor por condições locais de pressão: mecanismo físico, hipóteses concorrentes com aeração e problemas mecânicos, contraprovas e fontes Parker/Bosch. Sem testes reais.",
+      "path": "data/knowledge/fundamentals/hydraulic-cavitation.v2.json",
+      "keywords": [
+        "cavitação",
+        "vapor",
+        "sucção",
+        "bomba",
+        "cavitation",
+        "hydraulic inlet"
+      ]
+    },
+    {
+      "id": "LIB-TK-HYD-AER",
+      "title": "Aeração e ar incorporado ao fluido hidráulico",
+      "domain": "Hidráulica",
+      "kind": "ficha fundamental",
+      "system": "hidraulico",
+      "evidenceClass": "CONCEPTUAL",
+      "summary": "Distinção de gás livre e dissolvido, efeitos de compressibilidade e diferenciação de cavitação, com fontes Parker e critérios documentais. Não comprova vazamentos nem dano.",
+      "path": "data/knowledge/fundamentals/hydraulic-aeration.v2.json",
+      "keywords": [
+        "aeração",
+        "ar",
+        "espuma",
+        "óleo",
+        "entrained air",
+        "aeration"
+      ]
+    },
+    {
+      "id": "LIB-TK-TRIB-ABR",
+      "title": "Desgaste abrasivo por partículas em superfícies lubrificadas",
+      "domain": "Tribologia",
+      "kind": "ficha fundamental",
+      "system": "tribologia",
+      "evidenceClass": "CONCEPTUAL",
+      "summary": "Diferencia abrasão, adesão e fadiga de contato; conecta partículas, indentações, lubrificação e evidências com fontes SKF/Bosch e ISO 4406, sem atribuir causa real.",
+      "path": "data/knowledge/fundamentals/particulate-abrasive-wear.v2.json",
+      "keywords": [
+        "desgaste abrasivo",
+        "partículas",
+        "rolamento",
+        "lubrificação",
+        "abrasion",
+        "filtragem"
       ]
     }
   ]

@@ -14,11 +14,13 @@
 - [x] Criar atlas **estrutural-semântico heurístico** de datasets JSON com schema, versão, origem, contagem, vínculos explícitos de fontes e duplicação binária (1.4.2); não afirmar revisão semântica humana.
 - [x] Publicar primeiro modelo estrito de ficha fundamental e um verbete hidráulico com revisão pendente (1.4.2).
 - [ ] Fazer inventário **completo** do acervo legado (fontes, normas, sistemas, JSONs, documentos, portais, lacunas); contabilizar duplicações e versionamentos conflitantes.
-- [ ] Mapear direitos/licenças, datas de revisão e vínculos de citação das 87 fontes.
-- [ ] Definir esquema canônico `technical-knowledge-record.v1` com relação explícita entre função → mecanismo → sintoma → evidência → prevenção.
+- [ ] Mapear direitos/licenças, datas de revisão e vínculos de citação das 90 fontes (das quais três receberam revisão direcionada neste ciclo).
+- [ ] Consolidar o schema v2 já implementado e obter revisão técnica humana dos campos função → mecanismo → sintoma → evidência → prevenção.
 - [ ] Criar teste de 50 perguntas de busca e critério de rejeição segura para perguntas sem fonte.
 
 **Aceite proposto:** 100% dos itens do índice com path válido e classe de evidência; 0 publicações privadas por engano; respostas documentadas para lacunas.
+
+**Atualização do ciclo 1.4.3:** iniciadas três fichas fundamentais distintas sobre cavitação, aeração e abrasão com fontes públicas verificadas quanto ao conteúdo selecionado; bibliografia alcançou 90 referências (sem revalidação global de links/licenças), índice curado 18 fichas. Revisão humana técnica ainda pendente.
 
 ### Horizonte F1 — Fundamentos mecânicos e hidráulicos (1–3 meses)
 **Foco 1:** tribologia, desgaste e lubrificação; viscosidade, contaminação, partículas, falha de rolamento, vedação, filtragem e interpretação SOS.  

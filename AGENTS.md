@@ -12,6 +12,8 @@ Priority when requirements conflict: safety/legal constraints > evidence truthfu
 - Bibliography discovery: `data/catalog/source-discovery.v1.json` (87 records; links not revalidated in 1.4.1).
 - Full pre-cycle file snapshot: `data/catalog/repository-inventory-snapshot.v1.json` (500 file paths, not semantic inventory or evidence).
 - Generated semantic atlas: run `npm run knowledge:atlas:build` for `reports/semantic-atlas.generated.json` and `reports/mapa-semantico.generated.html`. Dataset paths, schema/version and explicit links are discovery metadata, **not verified engineering semantics**.
+- Expanded technical fundamentals v2 (v1.4.3): `schemas/technical-knowledge-record.v2.schema.json`, `data/knowledge/fundamentals/hydraulic-cavitation.v2.json`, `hydraulic-aeration.v2.json`, `particulate-abrasive-wear.v2.json`. SourceNotes distinguish what each source supports versus what it does not prove. V1 remains immutable for old clients.
+- Generated human/machine projection: `npm run knowledge:fundamentals:build` creates `reports/fundamentals.generated.json` and HTML; verify via `npm run knowledge:fundamentals:audit`.
 - Technical knowledge contract: `schemas/technical-knowledge-record.schema.json` and first case `data/knowledge/fundamentals/hydraulic-inlet-restriction.v1.json` (pending review, no field evidence).
 - Public catalog pilot: `data/catalog/knowledge-index.v1.json`; portal: `docs/biblioteca-tecnica.html`.
 - Current machine and diagnostic artifacts: `data/quality/` and `schemas/`.
@@ -32,7 +34,7 @@ Priority when requirements conflict: safety/legal constraints > evidence truthfu
 
 ## Developer workflow
 - Create a branch; do not overwrite other PRs or change consumers.
-- Run `npm run qa` for the full suite, and `npm run knowledge:atlas:build` followed by `npm run knowledge:technical:audit`, in addition to catalog/discovery audits.
+- Run `npm run qa` for the full suite, and `npm run knowledge:atlas:build` followed by `npm run knowledge:technical:audit`, and `npm run knowledge:fundamentals:build && npm run knowledge:fundamentals:audit` in addition to catalog/discovery audits.
 - Maintain a source-specific bibliographic record for every external claim and a documented evidence grade.
 - Generate portal from the indexed corpus; do not manually fork technical claims into uncontrolled copies.
 - Ask for human technical review when evidence is incomplete. Automated passing tests do not equal professional approval.

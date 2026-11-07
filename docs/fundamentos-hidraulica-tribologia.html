@@ -1,0 +1,63 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fundamentos de hidráulica e tribologia | FMEA Database</title>
+<meta name="description" content="Consulta técnica de mecanismos de cavitação, aeração e desgaste abrasivo; hipóteses concorrentes e fontes públicas.">
+<style>
+:root{color-scheme:dark;--bg:#0c1922;--card:#142a38;--line:#355464;--ink:#eff4f5;--muted:#bcd0d8;--gold:#d4aa60;--blue:#a2d6ed;--warn:#efc886}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
+header{padding:35px max(16px,calc((100vw - 1180px)/2));border-bottom:4px solid var(--gold);background:linear-gradient(120deg,#285063,#112634)}
+nav{display:flex;gap:15px;flex-wrap:wrap}a{color:var(--blue)}h1{font-size:clamp(29px,3.6vw,46px);line-height:1.12;margin:15px 0 8px}
+header p{max-width:850px;color:#d7e8ed;margin:0}
+main{max-width:1210px;margin:auto;padding:22px 16px 65px}.notice{background:#332b20;border:1px solid #927446;color:#f7dfb4;border-radius:9px;padding:12px 16px;margin:0 0 18px}
+.metrics{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}.metric{border:1px solid var(--line);background:#12212c;border-radius:9px;padding:9px 14px;min-width:145px}.metric strong{display:block;font-size:22px}.metric span{font-size:11px;color:var(--muted)}
+.controls{display:grid;grid-template-columns:2fr 1fr;gap:12px;margin-bottom:22px}label{font-size:12px;color:var(--muted)}input,select{margin-top:5px;width:100%;border:1px solid #5a7e90;background:#112531;color:#fff;padding:11px;border-radius:7px;font:inherit}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-items:start}article{border:1px solid var(--line);border-radius:12px;padding:19px;background:var(--card);min-width:0}
+article h2{margin:8px 0;font-size:clamp(19px,2vw,26px);line-height:1.3}article h3{margin:20px 0 6px;font-size:15px;color:var(--gold)}article p{margin:4px 0 10px;overflow-wrap:anywhere}ul{padding-left:20px;margin:8px 0 12px}li{margin:6px 0}
+.badges{display:flex;gap:7px;flex-wrap:wrap}.chip{font-size:11px;display:inline-block;padding:3px 9px;border:1px solid #52798c;border-radius:22px;color:#d2e9f2}.chip.warn{border-color:#a48750;color:#f6d898}
+.detail{border-top:1px solid var(--line);padding-top:9px;margin-top:12px}.small{font-size:12px;color:var(--muted)}.source{padding:10px 0;border-bottom:1px solid #2d495b}.source:last-child{border:0}.source p{font-size:12px;color:#c9dce4}code{font:12px ui-monospace,monospace;overflow-wrap:anywhere}
+@media(max-width:880px){.grid{grid-template-columns:1fr}.controls{grid-template-columns:1fr}}
+</style></head><body>
+<header><nav><a href="./index.html">Biblioteca</a><a href="./mapa-semantico.html">Mapa semântico</a><a href="./fontes-tecnicas.html">Bibliografia</a><a href="./glossario-tecnico.html">Glossário PT/EN</a></nav>
+<h1>Fundamentos de hidráulica e tribologia</h1><p>Uma biblioteca de mecanismos e contraprovas: cavitação, aeração e abrasão por partículas, diferenciadas com referências públicas e limites de aplicabilidade.</p></header>
+<main><div class="notice"><strong>Consulta técnica, não parecer de engenharia.</strong> As fichas são sínteses autorais conceituais com revisão independente pendente. Não há diagnóstico real, valor OEM por série, ensaio, alteração SAP ou autorização de manutenção. Consulte o documento técnico original antes de aplicar uma hipótese.</div>
+<div class="metrics" id="metrics"></div>
+<div class="controls"><label>Pesquisar conceito, mecanismo, fonte ou hipótese<input id="q" type="search" placeholder="Ex.: ar, vapor, erosão, partículas, rolamento"></label><label>Sistema<select id="domain"><option value="">Todos</option></select></label></div>
+<p class="small" id="status" aria-live="polite"></p><section id="cards" class="grid"></section>
+<p class="small">Fonte de verdade: registros JSON em <a href="https://github.com/pedromaintenance/fmea-database-mining/tree/main/data/knowledge/fundamentals">data/knowledge/fundamentals</a> e referências catalogadas. Os resumos autorais não reproduzem os manuais OEM.</p></main>
+<script id="records" type="application/json">{"schema":"FOUNDATIONS_PLACEHOLDER","ready":false}</script>
+<script>
+(()=>{'use strict';
+const data=JSON.parse(document.getElementById('records').textContent),el=id=>document.getElementById(id);
+const norm=s=>String(s??'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+function node(root,tag,value,cls){const n=document.createElement(tag);if(value!==undefined)n.textContent=value;if(cls)n.className=cls;root.append(n);return n}
+if(!data.ready){el('status').textContent='Arquivo de template. Abra a versão gerada no GitHub Pages ou execute npm run knowledge:fundamentals:build após clonar.';return}
+const sources=new Map(data.sources.map(x=>[x.id,x])),repo='https://github.com/pedromaintenance/fmea-database-mining/blob/main/';
+const m=el('metrics');for(const [number,name] of [[data.records.length,'Verbetes técnicos'],[new Set(data.records.flatMap(x=>x.provenance.sourceNotes.map(y=>y.sourceId))).size,'Fontes identificadas'],['0','Casos reais/ensaios']]){
+const b=node(m,'div',undefined,'metric');node(b,'strong',String(number));node(b,'span',name)}
+for(const key of [...new Set(data.records.map(x=>x.domain))].sort()){const o=node(el('domain'),'option',key);o.value=key}
+function list(root,items,extract){const ul=node(root,'ul');for(const item of items)node(ul,'li',extract?extract(item):item)}
+function section(root,name,text){node(root,'h3',name);node(root,'p',text)}
+function render(){
+const search=norm(el('q').value),domain=el('domain').value,records=data.records.filter(x=>(!domain||x.domain===domain)&&(!search||norm([x.id,x.title,x.titleEn,x.definition,x.physicalMechanism.summary,x.systemTags.join(' '),...x.competingHypotheses.map(h=>h.mechanism),...x.provenance.sourceNotes.map(s=>s.sourceId)].join(' ')).includes(search)));
+el('cards').replaceChildren();el('status').textContent=records.length+' ficha(s) em consulta • versões e fontes em cada registro';
+for(const r of records){
+const article=node(el('cards'),'article');
+const badge=node(article,'div',undefined,'badges');node(badge,'span',r.domain,'chip');node(badge,'span','Conceitual · revisão pendente','chip warn');
+node(article,'h2',r.title);node(article,'p',r.titleEn,'small');
+section(article,'Definição e função',r.definition+' '+r.functionRequired);
+section(article,'Mecanismo físico',r.physicalMechanism.summary);list(article,r.physicalMechanism.possibleChain);
+node(article,'h3','Sinais ilustrativos, não observados');list(article,r.illustrativeSymptoms);
+node(article,'h3','Hipóteses concorrentes');
+const ul=node(article,'ul');for(const h of r.competingHypotheses){const li=node(ul,'li');node(li,'strong',h.id+' — ');node(li,'span',h.mechanism);node(li,'p','Contraprova documental: '+h.discriminator,'small')}
+node(article,'h3','Perguntas para pesquisa');list(article,r.evidenceToRequest,x=>x.question+' Limite: '+x.limitOfInference);
+section(article,'Segurança',r.safety.boundary);node(article,'p','Próximo passo: '+r.safety.safeNextStep,'small');
+node(article,'h3','Referências e limites');
+for(const s of r.provenance.sourceNotes){
+ const d=node(article,'div',undefined,'source'),ref=sources.get(s.sourceId);
+ const link=node(d,'a',s.sourceId+(ref?' — '+ref.organization:''));link.href=ref?ref.url:'#';link.target='_blank';link.rel='noopener noreferrer';
+ node(d,'p','Sustenta: '+s.supports);node(d,'p','Não sustenta: '+s.doesNotSupport)}
+const a=node(article,'a','Consultar JSON canônico · '+r.id);a.href=repo+r.__path.split('/').map(encodeURIComponent).join('/');a.target='_blank';a.rel='noopener noreferrer';node(article,'p','Aplicabilidade OEM por série: não verificada · Ensaios: 0','small');
+}
+if(!records.length)node(el('cards'),'p','Nenhuma ficha coincide com os filtros. Isso não comprova inexistência do mecanismo.')}
+for(const id of ['q','domain'])el(id).addEventListener(id==='q'?'input':'change',render);render();
+})();
+</script></body></html>
