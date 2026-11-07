@@ -1,0 +1,141 @@
+{
+  "schema": "fmea-mining.technical-knowledge-record.v2",
+  "recordVersion": "1.4.6",
+  "recordType": "fundamental_technical_knowledge",
+  "evidenceClass": "CONCEPTUAL",
+  "reviewStatus": "PENDING_REVIEW",
+  "operationalApproval": false,
+  "sapMappingApproved": false,
+  "automaticDiagnosisAllowed": false,
+  "id": "TK-HYD-SENSORS-001",
+  "title": "Instrumentação e códigos eletrônicos em sistemas hidráulicos",
+  "titleEn": "Hydraulic instrumentation and electronic diagnostics",
+  "domain": "Monitoramento de condição",
+  "systemTags": [
+    "sensor de pressão",
+    "ECM",
+    "diagnóstico",
+    "código de falha",
+    "intertravamento",
+    "calibração"
+  ],
+  "definition": "Medições hidráulicas podem chegar ao monitor/ECM por sensores e sistemas de aquisição sujeitos a alimentação, aterramento, calibração, comunicação e interpretação de software. Código diagnóstico representa condição detectada pela lógica aplicável e não equivale automaticamente a defeito mecânico.",
+  "functionRequired": "Instrumentação e controle devem representar as variáveis relevantes com integridade suficiente para comandar, monitorar e proteger funções segundo configuração e estratégia do fabricante.",
+  "physicalMechanism": {
+    "summary": "Uma condição física fora da faixa, perda de alimentação elétrica, chicote/terra defeituoso, sensor com deriva, comunicação alterada ou configuração de software podem produzir sintomas de instrumentação. É necessário distinguir valor efetivamente medido, comando e limite eletrônico de uma falha hidráulica real.",
+    "possibleChain": [
+      "O sensor converte variável de processo em sinal interpretável pela eletrônica/monitor.",
+      "ECM e lógica correlacionam condição, parâmetros e eventos com regras específicas do equipamento.",
+      "Um alerta pode ocorrer por processo hidráulico alterado ou por cadeia de medição/comunicação comprometida; são hipóteses concorrentes."
+    ]
+  },
+  "illustrativeSymptoms": [
+    "Código de diagnóstico ou evento relacionado a função hidráulica, sem evidência causal confirmada.",
+    "Valor de pressão exibido incompatível com outro registro ou condição relatada, sem comprovação da origem."
+  ],
+  "competingHypotheses": [
+    {
+      "id": "HYP-SEN-PHYSICAL",
+      "mechanism": "Processo hidráulico realmente está fora da condição esperada e o instrumento representa a alteração.",
+      "discriminator": "Confrontar variável física, condição operacional e método de referência OEM autorizado.",
+      "unconfirmed": true
+    },
+    {
+      "id": "HYP-SEN-ELECTRICAL",
+      "mechanism": "Alimentação, aterramento, fiação, conector ou sensor comprometem o sinal.",
+      "discriminator": "Revisar código/descrição/FMI, circuitos elétricos aplicáveis e histórico de recência/recorrência.",
+      "unconfirmed": true
+    },
+    {
+      "id": "HYP-SEN-LOGIC",
+      "mechanism": "Intertravamento, software, configuração, calibração ou condição de comando explica o evento.",
+      "discriminator": "Verificar efetividade de ECM, parâmetros, lógica e evento registrados no mesmo intervalo.",
+      "unconfirmed": true
+    }
+  ],
+  "evidenceToRequest": [
+    {
+      "question": "Qual ativo, ECM, software, catálogo de códigos e série configuram a instrumentação real?",
+      "limitOfInference": "Descrição genérica de código ou nome do sensor não determina causa em outra máquina."
+    },
+    {
+      "question": "Os sinais e códigos foram registrados com unidades, relógio, estado de operação, recência e recorrência?",
+      "limitOfInference": "Sem integridade temporal e de medição não se comprova alteração física do fluido."
+    },
+    {
+      "question": "Existe método aprovado para conferir a variável por referência física e correlacionar com o monitor?",
+      "limitOfInference": "Não inferir que uma pressão apresentada no ECM corresponde a vazão disponível nem realizar teste de pressão não autorizado."
+    }
+  ],
+  "confounders": [
+    "Alimentação elétrica e terras compartilhados com outras funções.",
+    "Versão ECM, software e mapeamento específico de códigos.",
+    "Intertravamentos, lógica de proteção e permissivos.",
+    "Condição intermitente do chicote e ruído de medição."
+  ],
+  "ontologyLinks": [
+    {
+      "id": "ME-11",
+      "relation": "primary_concept",
+      "mechanismProven": false
+    },
+    {
+      "id": "ME-14",
+      "relation": "competing_concept",
+      "mechanismProven": false
+    },
+    {
+      "id": "ME-10",
+      "relation": "competing_concept",
+      "mechanismProven": false
+    }
+  ],
+  "provenance": {
+    "sourceRegistryPath": "data/research/sources.v1.json",
+    "sourceNotes": [
+      {
+        "sourceId": "CAT-HYD-TECHNICAL-ANALYSIS",
+        "supports": "Distingue avaliações de pressão, velocidade, alívio piloto e acesso a códigos/eventos de diagnóstico com consulta ao SIS para critérios válidos.",
+        "doesNotSupport": "O artigo não valida que um FMI específico representa falha mecânica confirmada nem identifica parâmetros de série."
+      },
+      {
+        "sourceId": "CAT-HYD-CIRCUIT-INSPECTION",
+        "supports": "Oferece princípios de inspeção do sistema hidráulico, incluindo observações e verificações por procedimento apropriado.",
+        "doesNotSupport": "Não substitui esquema de elétrica, sensores, pinagem ou efetividade de ECM do equipamento real."
+      }
+    ],
+    "originAnchors": [
+      {
+        "path": "data/ontology/concepts.v1.json",
+        "recordId": "ME-11",
+        "role": "mechanism_ontology"
+      },
+      {
+        "path": "data/ontology/concepts.v1.json",
+        "recordId": "ME-14",
+        "role": "mechanism_ontology"
+      }
+    ],
+    "originalInterpretation": "original_synthesis_not_manufacturer_endorsement",
+    "newFieldEvidence": false
+  },
+  "applicability": {
+    "scope": "Monitoramento e eletrônica de sistemas hidráulicos em termos gerais; sem sensor, ECM, software ou série certificados.",
+    "verifiedModels": [],
+    "verifiedSerials": [],
+    "oemAcceptanceLimits": null,
+    "fieldObservations": 0,
+    "performedTests": 0,
+    "confirmedRootCauses": 0
+  },
+  "safety": {
+    "boundary": "Não executar testes de sensores/pressões, pontes elétricas, ajustes ou comandos fora dos procedimentos OEM e da autorização de segurança de cada equipamento.",
+    "prohibitedActions": [
+      "Não declarar bomba danificada apenas por código eletrônico.",
+      "Não aplicar pinagem/FMI de outra versão de ECM como se fosse do ativo.",
+      "Não contornar intertravamentos para reproduzir evento.",
+      "Não autorizar operação com alerta crítico sem análise de risco e procedimento."
+    ],
+    "safeNextStep": "Consolidar código, evento, linha do tempo e identificação de ECM; solicitar documentação de Test & Adjust e elétrica por série."
+  }
+}
