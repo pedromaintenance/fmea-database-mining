@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.knowledge-index.v1",
-  "version": "1.4.6",
+  "version": "1.4.7",
   "scope": "selected_existing_public_artifacts_not_complete_inventory",
   "repository": "pedromaintenance/fmea-database-mining",
   "nature": "navigation_metadata_not_canonical_technical_evidence",
@@ -458,6 +458,41 @@
         "ECM",
         "código de falha",
         "intertravamento"
+      ]
+    },
+    {
+      "id": "LIB-HUMAN-REVIEW-LAB",
+      "title": "Laboratório offline de avaliação humana do buscador",
+      "domain": "Qualidade da informação",
+      "kind": "ferramenta de avaliação",
+      "system": "transversal",
+      "evidenceClass": "PENDING_REVIEW",
+      "summary": "Interface de coleta e julgamento humano cego para consultas de engenharia, com congelamento do gabarito e exportação local. Nenhuma avaliação externa efetiva foi realizada.",
+      "path": "docs/laboratorio-avaliacao.html",
+      "keywords": [
+        "avaliação cega",
+        "revisão humana",
+        "recuperação técnica",
+        "coleta de perguntas",
+        "qualidade de busca"
+      ]
+    },
+    {
+      "id": "LIB-REVIEW-PROTOCOL",
+      "title": "Protocolo para avaliação independente da recuperação",
+      "domain": "Qualidade da informação",
+      "kind": "protocolo metodológico",
+      "system": "transversal",
+      "evidenceClass": "PENDING_REVIEW",
+      "summary": "Método de avaliação com consultas formuladas fora do desenvolvimento, rótulos humanos, denominadores, métricas de risco, proteção de informações e limite de independência autoatribuída.",
+      "path": "docs/AVALIACAO_INDEPENDENTE_PROTOCOLO.md",
+      "keywords": [
+        "protocolo",
+        "independência",
+        "NIST",
+        "relevância",
+        "julgamentos humanos",
+        "segurança"
       ]
     }
   ]
