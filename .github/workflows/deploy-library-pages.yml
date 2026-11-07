@@ -8,6 +8,12 @@ on:
       - 'scripts/lib/fundamentals-retrieval.mjs'
       - 'scripts/query-fundamentals.mjs'
       - 'scripts/audit-fundamentals-retrieval.mjs'
+      - 'data/knowledge/functional-architecture.v1.json'
+      - 'data/quality/fundamentals-unseen-challenge.v1.json'
+      - 'docs/arquitetura-funcional.html'
+      - 'scripts/build-functional-architecture.mjs'
+      - 'scripts/audit-functional-architecture.mjs'
+      - 'scripts/audit-fundamentals-unseen-challenge.mjs'
       - 'docs/biblioteca-tecnica.html'
       - 'schemas/technical-knowledge-record.v2.schema.json'
       - 'scripts/build-fundamentals-portal.mjs'
@@ -66,6 +72,9 @@ jobs:
           node scripts/build-fundamentals-portal.mjs
           node scripts/audit-foundational-research.mjs
           node scripts/audit-fundamentals-retrieval.mjs
+          node scripts/build-functional-architecture.mjs
+          node scripts/audit-functional-architecture.mjs
+          node scripts/audit-fundamentals-unseen-challenge.mjs
 
       - name: Prepare static site
         run: |
@@ -74,6 +83,9 @@ jobs:
           cp reports/fundamentos-hidraulica-tribologia.generated.html _site/fundamentos-hidraulica-tribologia.html
           cp reports/fundamentals.generated.json _site/fundamentos-tecnicos.v1.json
           cp reports/fundamentals-retrieval-baseline.generated.json _site/fundamentals-retrieval-baseline.v1.json
+          cp reports/arquitetura-funcional.generated.html _site/arquitetura-funcional.html
+          cp reports/functional-architecture.generated.json _site/arquitetura-funcional.v1.json
+          cp reports/fundamentals-uncalibrated-challenge.generated.json _site/fundamentals-uncalibrated-challenge.v1.json
           cp schemas/technical-knowledge-record.v2.schema.json _site/technical-knowledge-record.v2.schema.json
           cp reports/mapa-semantico.generated.html _site/mapa-semantico.html
           cp reports/semantic-atlas.generated.json _site/semantic-atlas.v1.json
