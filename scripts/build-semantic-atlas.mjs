@@ -39,7 +39,7 @@ function profile(p,d){
  if(p.includes('/research/'))return 'bibliographic_registry';
  if(p.includes('/ontology/'))return 'ontology';
  if(p.includes('/governance/'))return 'governance_or_evidence_gate';
- if(d.schema==='fmea-mining.technical-knowledge-record.v1')return 'technical_foundation_draft';
+ if(d.schema==='fmea-mining.technical-knowledge-record.v1'||d.schema==='fmea-mining.technical-knowledge-record.v2')return 'technical_foundation_draft';
  if(p.includes('/quality/'))return 'quality_or_diagnostic_model';
  if(p.includes('/knowledge/'))return 'knowledge_dataset';
  return 'catalog_or_other';
