@@ -7,6 +7,9 @@ description: Consulta o acervo público FMEA Database Mining para responder dúv
 
 Esta skill é **somente de leitura conceitual**. Não acessa SAP, não opera máquina, não executa procedimentos e não autentica evidências OEM por série.
 
+## Busca técnica v2 — apenas descoberta
+Use `npm run knowledge:search:v2 -- --query "pergunta"` para localizar fichas candidatas em dez registros, com `FOUND_CONCEPTUAL`, `MULTIPLE_CONCEPTS`, `NOT_FOUND_IN_CATALOG` e `ABSTAIN_UNSUPPORTED_OPERATIONAL`. Abra o JSON canônico e confirme cada fonte e limitação antes de responder. A busca é lexical, NÃO LLM, embeddings, diagnóstico nem permissão de intervenção. A avaliação de 24 questões conhecidas é apenas de desenvolvimento; exigir procedimento OEM, controle de energia e aprovação humana para qualquer decisão de campo.
+
 ## Descoberta e leitura
 1. Consulte `../../data/catalog/knowledge-index.v1.json` para localizar a ficha por sistema, palavras-chave, tipo de recurso e maturidade. O índice inicial é **curado, não exaustivo**.
 2. Se a pergunta mencionar termos de falha ou sinônimos EN/PT, consulte `../../data/catalog/technical-glossary.v1.json` e retorne o ID da ontologia original, **sem transformar termos em causas confirmadas**. Para busca bibliográfica, use `../../data/catalog/source-discovery.v1.json` e confirme a URL na fonte original.
