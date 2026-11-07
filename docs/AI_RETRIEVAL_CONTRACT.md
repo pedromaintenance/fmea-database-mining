@@ -42,6 +42,13 @@
 - A auditoria v2 mediu **18/24 (75%)** correspondências exatas de IDs+estado em perguntas já conhecidas durante desenvolvimento; v1.4.4 retornava 4/24. Os 6 pedidos operacionais arriscados da amostra foram explicitamente recusados. A pontuação não mede perguntas externas nem capacidade de diagnóstico.
 - **Não declarar generalização, acurácia de IA, efetividade OEM, segurança de produção ou causa raiz** com base nos testes. Mesmo abstendo-se de algumas perguntas perigosas, o roteador não substitui profissional e procedimento de bloqueio, medição ou inspeção.
 
+## Julgamentos humanos externos (protocolo 1.4.7)
+- `docs/laboratorio-avaliacao.html` coleta perguntas anonimizadas e julgamentos de relevância com interface offline, sem mostrar a saída do motor antes do congelamento.
+- `schemas/external-review-batch.v1.schema.json` preserva intenção, IDs relevantes, justificativa humana, classe de risco e hashes SHA-256 do código/corpus. Independência é declaração autoatribuída, não prova técnica.
+- `npm run knowledge:external:evaluate -- --input revisao-humana-gabarito.json --out reports/avaliacao-local.json` calcula taxas com denominadores claros, false abstentions, vazamento conceitual em pedido perigoso e perguntas não adjudicadas. Não enviar dados restritos à internet.
+- O Pages publica apenas `/external-review-status.v1.json` com `NO_EXTERNAL_SAMPLE`, **zero avaliações humanas reais e métricas `null`**. Testes internos de integridade não podem ser apresentados como score de avaliador externo.
+- Comparação anterior 18/24 é desenvolvimento após contato com o conjunto de 24 questões; NÃO há desempenho independente medido até novo lote humano legítimo.
+
 ## Pipeline de recuperação
 1. **Descoberta:** `data/catalog/knowledge-index.v1.json` inclui uma seleção inicial de artefatos existentes. Ausência no índice não significa ausência no repositório.
 2. **Recuperação canônica:** abrir `path`; preferir informações estruturadas em `data/quality` e documentos de `docs`. Não transformar o campo de descrição do índice em prova.

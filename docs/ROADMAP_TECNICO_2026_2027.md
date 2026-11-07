@@ -28,6 +28,8 @@
 
 **Ciclo 1.4.6:** quatro lacunas hidráulicas documentais cobertas com fichas conceituais (piloto, retenção, atuador, sensores); mapa hidráulico continua ilustrativo e não contém nós sem artigo vinculado. Nova busca lexical por conceitos e avaliação de desenvolvimento usando 24 perguntas já conhecidas, sem classificação como benchmark independente. 97 fontes e 27 itens curados. Prioridade seguinte: perguntas coletadas independentemente e avaliação humana de respostas.
 
+**Ciclo 1.4.7:** implementado o laboratório de perguntas anonimizadas e rotulagem humana cega, contrato JSON, avaliação CLI com métricas e abstenções por categoria, auditoria adversarial e publicação de status sem dados. **Zero perguntas externas e zero julgamentos independentes coletados até este ciclo**; próximo passo operacional é solicitar perguntas fora da equipe de desenvolvimento, congelar os rótulos e então avaliar.
+
 ### Horizonte F1 — Fundamentos mecânicos e hidráulicos (1–3 meses)
 **Foco 1:** tribologia, desgaste e lubrificação; viscosidade, contaminação, partículas, falha de rolamento, vedação, filtragem e interpretação SOS.  
 **Foco 2:** hidráulica: bombas de deslocamento, regulação, válvulas, acumuladores, sucção, cavitação, cilindros, mangueiras, drenagem, contrapressão e resfriamento.  

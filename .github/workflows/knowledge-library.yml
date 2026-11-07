@@ -23,6 +23,14 @@ on:
       - 'scripts/query-technical-v2.mjs'
       - 'scripts/audit-technical-search-v2.mjs'
       - 'docs/consulta-tecnica.html'
+      - 'scripts/lib/external-review-core.mjs'
+      - 'scripts/evaluate-external-review.mjs'
+      - 'scripts/build-external-review-lab.mjs'
+      - 'scripts/audit-external-review.mjs'
+      - 'docs/laboratorio-avaliacao.html'
+      - 'docs/AVALIACAO_INDEPENDENTE_PROTOCOLO.md'
+      - 'schemas/external-review-batch.v1.schema.json'
+      - 'data/quality/external-review-empty-template.v1.json'
       - 'docs/biblioteca-tecnica.html'
       - 'schemas/technical-knowledge-record.v2.schema.json'
       - 'scripts/build-fundamentals-portal.mjs'
@@ -71,6 +79,9 @@ jobs:
       - run: npm run knowledge:challenge:audit
       - run: npm run knowledge:search:v2:build
       - run: npm run knowledge:search:v2:audit
+      - run: npm run knowledge:external:build
+      - run: npm run knowledge:external:status
+      - run: npm run knowledge:external:audit
       - run: npm run knowledge:search:v2 -- --query "piloto hidráulico não aciona a válvula"
       - run: npm run knowledge:fundamentals:query -- --query "fadiga de contato"
       - run: node --check scripts/query-knowledge-index.mjs

@@ -19,6 +19,14 @@ on:
       - 'scripts/query-technical-v2.mjs'
       - 'scripts/audit-technical-search-v2.mjs'
       - 'docs/consulta-tecnica.html'
+      - 'scripts/lib/external-review-core.mjs'
+      - 'scripts/evaluate-external-review.mjs'
+      - 'scripts/build-external-review-lab.mjs'
+      - 'scripts/audit-external-review.mjs'
+      - 'docs/laboratorio-avaliacao.html'
+      - 'docs/AVALIACAO_INDEPENDENTE_PROTOCOLO.md'
+      - 'schemas/external-review-batch.v1.schema.json'
+      - 'data/quality/external-review-empty-template.v1.json'
       - 'docs/biblioteca-tecnica.html'
       - 'schemas/technical-knowledge-record.v2.schema.json'
       - 'scripts/build-fundamentals-portal.mjs'
@@ -82,6 +90,9 @@ jobs:
           node scripts/audit-fundamentals-unseen-challenge.mjs
           node scripts/build-technical-search-v2.mjs
           node scripts/audit-technical-search-v2.mjs
+          node scripts/build-external-review-lab.mjs
+          node scripts/evaluate-external-review.mjs
+          node scripts/audit-external-review.mjs
 
       - name: Prepare static site
         run: |
@@ -96,6 +107,10 @@ jobs:
           cp reports/consulta-tecnica.generated.html _site/consulta-tecnica.html
           cp reports/technical-search-v2-bundle.generated.json _site/technical-search-v2-bundle.v1.json
           cp reports/technical-search-v2-report.generated.json _site/technical-search-v2-report.v1.json
+          cp reports/laboratorio-avaliacao.generated.html _site/laboratorio-avaliacao.html
+          cp schemas/external-review-batch.v1.schema.json _site/external-review-batch.v1.schema.json
+          cp data/quality/external-review-empty-template.v1.json _site/external-review-empty-template.v1.json
+          cp reports/external-review-evaluation.generated.json _site/external-review-status.v1.json
           cp schemas/technical-knowledge-record.v2.schema.json _site/technical-knowledge-record.v2.schema.json
           cp reports/mapa-semantico.generated.html _site/mapa-semantico.html
           cp reports/semantic-atlas.generated.json _site/semantic-atlas.v1.json
