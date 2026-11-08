@@ -43,6 +43,12 @@ on:
       - 'scripts/lib/dual-review-core.mjs'
       - 'scripts/reconcile-blind-reviews.mjs'
       - 'scripts/evaluate-external-review.mjs'
+      - 'docs/controle-piloto.html'
+      - 'scripts/lib/pilot-readiness-core.mjs'
+      - 'scripts/build-pilot-gates.mjs'
+      - 'scripts/check-pilot-gates.mjs'
+      - 'scripts/audit-pilot-gates.mjs'
+      - 'docs/CICLO_2026-11-08_CONTROLE_EXECUCAO_PILOTO.md'
       - 'docs/biblioteca-tecnica.html'
       - 'schemas/technical-knowledge-record.v2.schema.json'
       - 'scripts/build-fundamentals-portal.mjs'
@@ -113,6 +119,8 @@ jobs:
           node scripts/reconcile-blind-reviews.mjs
           node scripts/audit-dual-review-workflow.mjs
           node scripts/audit-field-pilot.mjs
+          node scripts/build-pilot-gates.mjs
+          node scripts/audit-pilot-gates.mjs
 
       - name: Prepare static site
         run: |
@@ -138,6 +146,10 @@ jobs:
           cp docs/piloto-oficina.html _site/piloto-oficina.html
           cp data/quality/field-pilot-readiness.v1.json _site/field-pilot-readiness.v1.json
           cp reports/field-pilot-readiness-audit.generated.json _site/field-pilot-audit.v1.json
+          cp reports/controle-piloto.generated.html _site/controle-piloto.html
+          cp reports/pilot-gates-bundle.generated.json _site/pilot-gates-bundle.v1.json
+          cp reports/pilot-gates-public-status.generated.json _site/pilot-gates-public-status.v1.json
+          cp reports/pilot-gates-audit.generated.json _site/pilot-gates-audit.v1.json
           cp schemas/technical-knowledge-record.v2.schema.json _site/technical-knowledge-record.v2.schema.json
           cp reports/mapa-semantico.generated.html _site/mapa-semantico.html
           cp reports/semantic-atlas.generated.json _site/semantic-atlas.v1.json
