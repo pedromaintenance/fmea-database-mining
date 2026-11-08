@@ -29,6 +29,18 @@ if(input){
   const rel=path.relative(privateRoot,path.resolve(p));
   if(!rel||rel.startsWith('..')||path.isAbsolute(rel))
    throw Error(kind+' with real human data must stay under gitignored private/');
+  // Path prefixes and final files must not be symlinks that redirect private
+  // human questions or predictions into public tracked directories.
+  let cursor=privateRoot;
+  for(const segment of ['.',...rel.split(path.sep)]){
+   if(segment!=='.')cursor=path.join(cursor,segment);
+   try{
+    if(fs.lstatSync(cursor).isSymbolicLink())
+     throw Error(kind+' points through a symlink; private evaluation paths must be real');
+   }catch(err){
+    if(err.code!=='ENOENT')throw err;
+   }
+  }
  }
 }
 let result;
