@@ -63,6 +63,11 @@ on:
       - 'docs/CICLO_2026-11-08_FILTRAGEM_HIDRAULICA_DIFERENCIAL.md'
       - 'scripts/build-filter-differential.mjs'
       - 'scripts/audit-filter-differential.mjs'
+      - 'data/knowledge/engine-oil-coolant-differential.v1.json'
+      - 'docs/contaminacao-oleo-arrefecimento.html'
+      - 'docs/CICLO_2026-11-08_CONTAMINACAO_OLEO_ARREFECIMENTO.md'
+      - 'scripts/build-engine-oil-coolant.mjs'
+      - 'scripts/audit-engine-oil-coolant.mjs'
       - 'docs/biblioteca-tecnica.html'
       - 'schemas/technical-knowledge-record.v2.schema.json'
       - 'scripts/build-fundamentals-portal.mjs'
@@ -124,6 +129,8 @@ jobs:
       - run: npm run knowledge:pilot:freeze:audit
       - run: npm run knowledge:filter:differential:build
       - run: npm run knowledge:filter:differential:audit
+      - run: npm run knowledge:engine:crossfluid:build
+      - run: npm run knowledge:engine:crossfluid:audit
       - run: npm run knowledge:pilot:gates
       - run: npm run knowledge:search:v2 -- --query "piloto hidráulico não aciona a válvula"
       - run: npm run knowledge:fundamentals:query -- --query "fadiga de contato"
