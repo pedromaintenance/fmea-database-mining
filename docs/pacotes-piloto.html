@@ -1,0 +1,44 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pacotes offline do piloto congelado | FMEA Database Mining</title><meta name="description" content="Quatro pacotes offline separados por papel para coleta, revisão, adjudicação e avaliação técnica do piloto."/>
+<style>
+:root{color-scheme:dark;--bg:#0d222d;--surface:#1b3845;--border:#4d6c79;--gold:#dcb86b;--ink:#eef5f7;--muted:#c7d8de;--link:#b5e5f3}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 system-ui,'Segoe UI',sans-serif}
+header{background:linear-gradient(115deg,#2c596e,#122932);padding:32px max(16px,calc((100vw - 1040px)/2));border-bottom:4px solid var(--gold)}
+nav{display:flex;flex-wrap:wrap;gap:15px;font-size:13px}a{color:var(--link)}h1{font-size:clamp(28px,4vw,44px);line-height:1.15;margin:13px 0 9px}
+header p{max-width:830px;color:#d9e8ed}
+main{max-width:1080px;margin:auto;padding:25px 16px 66px}.notice{padding:14px;border:1px solid #927947;background:#362e21;border-radius:10px;color:#f7dfb0}
+.list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;margin-top:14px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:19px}
+.card h2{font-size:19px;margin:2px 0 8px}.card p{color:var(--muted);margin:9px 0}
+.tag{display:inline-block;border:1px solid #688999;border-radius:15px;padding:3px 8px;font-size:11px;color:var(--muted)}
+.steps{margin:12px 0;padding-left:23px}.steps li{margin:7px 0}code{overflow-wrap:anywhere}
+footer{color:var(--muted);font-size:12px;margin-top:28px}
+@media(max-width:700px){.list{grid-template-columns:1fr}}
+</style></head><body>
+<header><nav><a href="./index.html">Biblioteca</a><a href="./controle-piloto.html">Controle do piloto</a><a href="./piloto-oficina.html">Kit de oficina</a><a href="./consulta-tecnica.html">Consulta técnica</a></nav>
+<h1>Piloto congelado · Pacotes offline</h1>
+<p>Quatro arquivos separados por função, com os mesmos identificadores de versão do buscador e das dez fichas técnicas. O objetivo é permitir uma avaliação reproduzível sem entregar antecipadamente as previsões aos participantes.</p>
+</header><main>
+<div class="notice"><strong>Não há pesquisa humana concluída.</strong> Os pacotes contêm apenas software, formulários e documentos técnicos públicos. Não incluem perguntas de trabalhadores, pareceres, resultados ou autorização organizacional. A participação depende de consentimento, privacidade, coordenação autorizada e revisão técnica independente.</div>
+<h2>Pacotes por papel</h2>
+<div class="list">
+<article class="card"><span class="tag">Papel 1 · Facilitador</span><h2>Coleta de perguntas</h2><p>Contém somente o formulário digital vazio e a folha imprimível de vinte espaços. Sem índice de conceitos, mecanismo de busca ou previsão.</p><a href="./pilot-collector-1.4.11.tar.gz">Baixar pacote de coleta (.tar.gz)</a></article>
+<article class="card"><span class="tag">Papel 2 · R1 e R2</span><h2>Revisão cega</h2><p>Contém a página de revisão com os títulos e IDs das dez fichas. Não inclui código de pesquisa nem respostas do buscador.</p><a href="./pilot-reviewer-1.4.11.tar.gz">Baixar pacote de revisores (.tar.gz)</a></article>
+<article class="card"><span class="tag">Papel 3 · Adjudicação</span><h2>Resolução de divergências</h2><p>Contém a ferramenta de comparação de R1 e R2 para decidir conflitos antes da pontuação. Não apresenta previsões.</p><a href="./pilot-adjudicator-1.4.11.tar.gz">Baixar pacote de adjudicação (.tar.gz)</a></article>
+<article class="card"><span class="tag">Papel 4 · Avaliação</span><h2>Motor e corpus congelados</h2><p>Contém o buscador, as dez fichas, a interface de consulta e as CLIs locais de reconciliação e pontuação. Entregar <strong>somente após congelar o gabarito</strong>.</p><a href="./pilot-evaluator-1.4.11.tar.gz">Baixar pacote do avaliador (.tar.gz)</a></article>
+</div>
+<h2>Procedimento de utilização</h2>
+<ol class="steps">
+<li>Conferir os onze critérios no <a href="./controle-piloto.html">controle de execução</a> e obter autorização humana real.</li>
+<li>Entregar apenas o pacote de coleta para quem formular as perguntas. Revisar privacidade e guardar o lote em área privada.</li>
+<li>Disponibilizar o pacote de revisão separadamente a R1 e R2. Não compartilhar pareceres entre eles nem consultar o buscador.</li>
+<li>Enviar os dois pareceres e a coleta ao responsável pela adjudicação. Resolver conflitos e congelar o gabarito.</li>
+<li>Somente então usar o pacote avaliador em ambiente local, exportar os resultados privados e examinar as divergências.</li>
+</ol>
+<h2>Reproduzir e conferir</h2>
+<p>O <a href="./pilot-frozen-release-index.v1.json">manifesto público</a> informa os SHA-256 do motor, do corpus e de cada arquivo compactado. Dentro de cada pacote existe um <code>manifest.json</code> com os hashes de seus arquivos e um <code>README.txt</code> explicando o uso.</p>
+<p>Para extrair no Windows (PowerShell), Linux ou macOS, execute <code>tar -xzf pilot-collector-1.4.11.tar.gz</code>, substituindo o nome para os demais papéis. Abra o arquivo <code>index.html</code> da pasta extraída. A geração dos arquivos usa um inventário fechado, sem copiar qualquer pasta <code>private/</code>.</p>
+<p>O travamento técnico está descrito em <a href="./pilot-frozen-baseline.v1.json">pilot-frozen-baseline.v1.json</a>. Se o código da busca, a ordem das fichas ou qualquer dos dez arquivos mudar, o construtor falha: não haverá substituição silenciosa da versão utilizada no piloto.</p>
+<p><a href="./pilot-frozen-package-audit.v1.json">Ver auditoria de integridade</a> · <a href="./pilot-gates-public-status.v1.json">Status público (sem participantes)</a></p>
+<footer>Esta distribuição não constitui validação de segurança, exame de equipamento, estudo com trabalhadores, diagnóstico, nem autorização de intervenção. Os arquivos coletados precisam ser tratados conforme as regras da organização.</footer>
+</main></body></html>
