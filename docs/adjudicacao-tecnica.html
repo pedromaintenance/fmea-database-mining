@@ -1,0 +1,68 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Adjudicação técnica de divergências | FMEA Database</title><style>
+:root{color-scheme:dark;--b:#10232d;--p:#1b3441;--l:#4d6b79;--a:#b2e2f2;--g:#dbb671}*{box-sizing:border-box}body{margin:0;background:var(--b);color:#edf5f7;font:15px/1.53 system-ui,'Segoe UI',sans-serif}header{padding:28px max(16px,calc((100vw - 1000px)/2));background:linear-gradient(110deg,#2d5b6d,#16313e);border-bottom:4px solid var(--g)}h1{font-size:clamp(28px,4vw,44px);margin:12px 0 8px}a{color:var(--a)}nav{display:flex;gap:14px;flex-wrap:wrap}main{max-width:1020px;margin:auto;padding:24px 16px 60px}.notice{background:#383023;border:1px solid #9c8056;color:#f3dfb5;padding:12px 15px;border-radius:9px}.card{border:1px solid var(--l);background:var(--p);padding:18px;border-radius:11px;margin:13px 0}.compare{display:grid;grid-template-columns:1fr 1fr;gap:12px}.review{padding:11px;border:1px solid var(--l);border-radius:7px;overflow-wrap:anywhere}h2{font-size:23px}h3{font-size:17px}input,button,select,textarea{font:inherit}button{border:1px solid #6d9aaf;background:#2a5f74;border-radius:8px;color:#fff;padding:10px 13px;cursor:pointer;margin:7px 6px 7px 0}.primary{background:var(--g);color:#0f2630;font-weight:700;border-color:var(--g)}select,textarea{width:100%;padding:10px;border:1px solid #6b8998;border-radius:7px;background:#102835;color:white}textarea{min-height:80px;resize:vertical}label{display:block;margin:12px 0 6px}.ids{display:grid;grid-template-columns:1fr 1fr;gap:7px}.ids label{display:flex;align-items:flex-start;gap:8px;margin:0;font-size:12px}.ids input{margin-top:4px}.muted{color:#bdd3dc;font-size:12px}#status{color:#e7cd99;white-space:pre-wrap}@media(max-width:720px){.compare,.ids{grid-template-columns:1fr}}</style></head><body><header><nav><a href="./index.html">Biblioteca</a><a href="./coleta-perguntas.html">Coleta</a><a href="./revisao-cega.html">Revisão cega</a></nav><h1>Adjudicar divergências técnicas</h1><p>Compare dois pareceres preparados independentemente e resolva conflitos <strong>antes</strong> de executar o buscador.</p></header>
+<main><div class="notice"><strong>Sem previsões automáticas nesta página.</strong> Reúna a coleta original e os dois pareceres, confirme que os revisores não viram a busca e registre fundamentos técnicos para qualquer decisão divergente. A comparação é local e não valida a identidade dos revisores.</div>
+<h2>1. Selecionar três arquivos privados</h2>
+<label>Coleta original de perguntas <input id="collection" type="file" accept=".json,application/json"></label>
+<label>Parecer R1 <input id="r1" type="file" accept=".json,application/json"></label>
+<label>Parecer R2 <input id="r2" type="file" accept=".json,application/json"></label>
+<button id="compare" type="button">Comparar pareceres</button><p id="overview" class="muted"></p>
+<div id="conflicts"></div>
+<h2>2. Congelar decisões da adjudicação</h2>
+<label><input id="safe" type="checkbox"> Revisei privacidade, confirmei a autoria humana dos pareceres e não consultei o resultado do motor antes de adjudicar (autodeclaração)</label>
+<button id="save" class="primary" type="button" disabled>Exportar decisões privadas JSON</button>
+<p id="status" aria-live="polite"></p><p class="muted">O arquivo é um pacote de decisões, não o gabarito final. Use o comando <code>knowledge:dual:reconcile</code> com coleta, R1, R2 e decisões em <code>private/</code> para validar e gerar o gabarito; só então execute <code>knowledge:external:evaluate</code>.</p>
+</main><script id="titles" type="application/json">{"schema":"REVIEW_TITLES_PLACEHOLDER","ready":false}</script><script>
+(()=>{'use strict';const $=id=>document.getElementById(id),meta=JSON.parse($('titles').textContent),names=meta.records||[];
+const statuses=['FOUND_CONCEPTUAL','MULTIPLE_CONCEPTS','ABSTAIN_UNSUPPORTED_OPERATIONAL','NOT_FOUND_IN_CATALOG','NEEDS_ADJUDICATION'];
+const categories=['explanation','differential','operational_decision','out_of_scope','other'];
+let conflicts=[],decisions=new Map();
+function n(root,tag,text,cls){const el=document.createElement(tag);if(text!==undefined)el.textContent=text;if(cls)el.className=cls;root.append(el);return el}
+function message(s){$('status').textContent=s}
+async function file(id){const f=$(id).files?.[0];if(!f)throw Error('Selecione '+id);if(f.size>400000)throw Error('Arquivo grande '+id);return JSON.parse(await f.text())}
+function equal(a,b){return JSON.stringify([...a].sort())===JSON.stringify([...b].sort())}
+function render(){const root=$('conflicts');root.replaceChildren();
+for(const item of conflicts){const c=decisions.get(item.id),box=n(root,'article',undefined,'card');
+n(box,'h3',item.id+' — '+item.question);
+const compare=n(box,'div',undefined,'compare');
+for(const role of ['r1','r2']){const col=n(compare,'div',undefined,'review');n(col,'strong',role.toUpperCase());const v=item[role];n(col,'p',v.expectedStatus+' ('+v.expectedIds.join(', ')+')');n(col,'p',v.category);n(col,'p',v.rationale,'muted')}
+n(box,'label','Decisão final justificada');const s=n(box,'select');for(const st of [['','Selecione'],...statuses.map(x=>[x,x])]){const o=n(s,'option',st[1]);o.value=st[0]}s.value=c.expectedStatus;
+s.addEventListener('change',()=>{c.expectedStatus=s.value;if(!['FOUND_CONCEPTUAL','MULTIPLE_CONCEPTS'].includes(s.value))c.expectedIds=[];render()});
+n(box,'label','Categoria final');const ct=n(box,'select');for(const v of categories){const o=n(ct,'option',v);o.value=v}ct.value=c.category;ct.addEventListener('change',()=>{c.category=ct.value});
+if(['FOUND_CONCEPTUAL','MULTIPLE_CONCEPTS'].includes(c.expectedStatus)){
+ n(box,'label','Fichas adjudicadas');const div=n(box,'div',undefined,'ids');
+ for(const ref of names){const l=n(div,'label'),chk=n(l,'input');chk.type='checkbox';chk.checked=c.expectedIds.includes(ref.id);chk.addEventListener('change',()=>{if(chk.checked&&!c.expectedIds.includes(ref.id))c.expectedIds.push(ref.id);else c.expectedIds=c.expectedIds.filter(x=>x!==ref.id)});n(l,'span',ref.title+' ('+ref.id+')')}
+}
+n(box,'label','Fundamento do desempate e referências consultadas, sem identificadores');const area=n(box,'textarea');area.maxLength=1500;area.value=c.rationale;area.addEventListener('input',()=>{c.rationale=area.value});
+}}
+$('compare').addEventListener('click',async()=>{try{
+ const a=await file('collection'),r1=await file('r1'),r2=await file('r2');
+ if(a.schema!=='fmea-mining.question-collection.v1'||!Array.isArray(a.cases)||!a.cases.length||r1.schema!=='fmea-mining.blind-review.v1'||r2.schema!=='fmea-mining.blind-review.v1'||r1.role!=='R1'||r2.role!=='R2')throw Error('Arquivos incompatíveis');
+ if(r1.cases.length!==a.cases.length||r2.cases.length!==a.cases.length)throw Error('Perguntas diferentes entre revisores');
+ conflicts=[];decisions.clear();let agrees=0;
+ for(let i=0;i<a.cases.length;i++){
+ const q=a.cases[i],x=r1.cases[i],y=r2.cases[i];
+ if(q.id!==x.id||q.id!==y.id||q.question!==x.question||q.question!==y.question)throw Error('Coleta e pareceres não se correspondem');
+ const same=x.expectedStatus===y.expectedStatus&&equal(x.expectedIds,y.expectedIds)&&x.category===y.category;
+ if(same&&x.expectedStatus!=='NEEDS_ADJUDICATION'){agrees++;continue}
+ conflicts.push({id:q.id,question:q.question,r1:x,r2:y});
+ decisions.set(q.id,{id:q.id,expectedStatus:'',expectedIds:[],rationale:'',category:'other'});
+ }
+ $('overview').textContent=a.cases.length+' perguntas, '+agrees+' acordos completos e '+conflicts.length+' decisões pendentes.';
+ $('save').disabled=false;render();message('Compare as justificativas antes de preencher decisões. Nenhuma previsão foi calculada.');
+}catch(e){message('Erro: '+e.message);$('save').disabled=true}});
+$('save').addEventListener('click',()=>{
+ if(!$('safe').checked)return message('Confirme a declaração de revisão cega e privacidade.');
+ for(const item of conflicts){const c=decisions.get(item.id);
+ if(!statuses.includes(c.expectedStatus))return message(c.id+': escolha resultado final.');
+ if(c.rationale.trim().length<15)return message(c.id+': justifique a decisão.');
+ if(c.expectedStatus==='FOUND_CONCEPTUAL'&&c.expectedIds.length!==1)return message(c.id+': selecione uma ficha.');
+ if(c.expectedStatus==='MULTIPLE_CONCEPTS'&&new Set(c.expectedIds).size<2)return message(c.id+': selecione duas fichas.');
+ if(!['FOUND_CONCEPTUAL','MULTIPLE_CONCEPTS'].includes(c.expectedStatus)&&c.expectedIds.length)return message(c.id+': retire IDs não cabíveis.');
+ }
+ const data={schema:'fmea-mining.adjudication-decisions.v1',version:'1.4.8',predictionsNotViewed:true,decisions:[...decisions.values()]};
+ const blob=new Blob([JSON.stringify(data,null,2)+'\n'],{type:'application/json'}),url=URL.createObjectURL(blob),link=document.createElement('a');link.href=url;link.download='decisoes-adjudicacao-privado.json';document.body.append(link);link.click();link.remove();URL.revokeObjectURL(url);
+ message('Decisões exportadas. Para obter gabarito, execute reconciliação local. Não publique esses dados.');
+});
+if(!meta.ready){message('Esta é a versão de template. Abra o arquivo publicado no Pages.');$('compare').disabled=true}
+})();
+</script></body></html>
