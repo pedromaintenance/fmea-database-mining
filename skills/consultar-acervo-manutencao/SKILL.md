@@ -7,6 +7,9 @@ description: Consulta o acervo público FMEA Database Mining para responder dúv
 
 Esta skill é **somente de leitura conceitual**. Não acessa SAP, não opera máquina, não executa procedimentos e não autentica evidências OEM por série.
 
+## Motores diesel — óleo e arrefecimento (1.4.13)
+Consulte `../../data/knowledge/engine-oil-coolant-differential.v1.json` e `../../docs/contaminacao-oleo-arrefecimento.html` para sete hipóteses não confirmadas e seis contextos. Separar óleo no refrigerante, coolant no óleo e baixa de refrigerante/espuma sem mistura provada. Concorrentes: trocador, junta, fundido, fluido de fonte, analítica, resíduo e vazamento externo. Solicitar desenho por configuração, amostras representativas, histórico e análise específica; **nunca** classificar trocador ou junta como falha confirmada por aparência ou por um marcador isolado. Não prescrever pressão de ensaio ou operar máquina para reproduzir evento sem procedimento OEM e avaliação de risco. Dossiê posterior ao congelamento 1.4.11, excluído do piloto cego.
+
 ## Filtragem hidráulica: pressão diferencial, bypass e indicação (1.4.12)
 Consulte `../../data/knowledge/hydraulic-filter-differential.v1.json` e `../../docs/filtragem-diferencial.html`. Seis hipóteses não confirmadas: elemento carregado, óleo frio/viscoso, vazão/transiente/incompatibilidade, sinalização, bypass sem confirmação e partículas ISO/amostragem. **Aviso não prova bypass aberto; ISO 4406 não prova falha de bomba.** Diferenciar sensores, temperatura, vazão, arquitetura, histórico e literatura OEM efetiva antes de definir qualquer escopo de teste. Não transferir pressão de catálogo ou escolher filtro equivalente sem confirmação. Esta pesquisa é POSTERIOR ao conjunto congelado; não usá-la para contaminar o piloto cego 1.4.11.
 
