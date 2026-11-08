@@ -118,7 +118,7 @@ export function compareBlindReviews(collection,r1,r2,recordIds){
 export function buildAdjudicatedGold(collection,r1,r2,decisions,recordIds,{engineSha256,corpusSha256}){
  const compared=compareBlindReviews(collection,r1,r2,recordIds);
  if(compared.status==='INVALID_REVIEW')return {...compared,gold:null};
- const required=new Set(compared.conflicts.map(x=>x.id));
+ const required=new Set([...compared.conflicts.map(x=>x.id),...compared.agreed.filter(x=>x.r1.status==='NEEDS_ADJUDICATION').map(x=>x.id)]);
  const errors=[];
  if(required.size){
   if(!obj(decisions)||decisions.schema!=='fmea-mining.adjudication-decisions.v1'||decisions.version!=='1.4.8'||decisions.predictionsNotViewed!==true||!Array.isArray(decisions.decisions))errors.push('missing_blind_adjudication_file');
@@ -132,7 +132,7 @@ export function buildAdjudicatedGold(collection,r1,r2,decisions,recordIds,{engin
  }
  for(const id of required)if(!decisionsById.has(id))errors.push('unresolved_'+id);
  if(errors.length)return {...compared,status:'NEEDS_ADJUDICATION',errors,gold:null};
- const agreeById=new Map(compared.agreed.map(x=>[x.id,x]));
+ const agreeById=new Map(compared.agreed.filter(x=>!required.has(x.id)).map(x=>[x.id,x]));
  const cases=collection.cases.map(c=>{
   const agreement=agreeById.get(c.id),decision=decisionsById.get(c.id);
   if(agreement)return {id:c.id,question:c.question,expectedStatus:agreement.r1.status,expectedIds:agreement.r1.ids,
