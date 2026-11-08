@@ -36,6 +36,13 @@ on:
       - 'docs/adjudicacao-tecnica.html'
       - 'docs/AVALIACAO_DUPLA_REVISAO.md'
       - '.gitignore'
+      - 'docs/piloto-oficina.html'
+      - 'docs/PILOTO_QUESTIONARIO_OFICINA.md'
+      - 'data/quality/field-pilot-readiness.v1.json'
+      - 'scripts/audit-field-pilot.mjs'
+      - 'scripts/lib/dual-review-core.mjs'
+      - 'scripts/reconcile-blind-reviews.mjs'
+      - 'scripts/evaluate-external-review.mjs'
       - 'docs/biblioteca-tecnica.html'
       - 'schemas/technical-knowledge-record.v2.schema.json'
       - 'scripts/build-fundamentals-portal.mjs'
@@ -105,6 +112,7 @@ jobs:
           node scripts/build-dual-review-workflow.mjs
           node scripts/reconcile-blind-reviews.mjs
           node scripts/audit-dual-review-workflow.mjs
+          node scripts/audit-field-pilot.mjs
 
       - name: Prepare static site
         run: |
@@ -127,6 +135,9 @@ jobs:
           cp reports/revisao-cega.generated.html _site/revisao-cega.html
           cp reports/adjudicacao-tecnica.generated.html _site/adjudicacao-tecnica.html
           cp reports/dual-review-public-status.generated.json _site/dual-review-status.v1.json
+          cp docs/piloto-oficina.html _site/piloto-oficina.html
+          cp data/quality/field-pilot-readiness.v1.json _site/field-pilot-readiness.v1.json
+          cp reports/field-pilot-readiness-audit.generated.json _site/field-pilot-audit.v1.json
           cp schemas/technical-knowledge-record.v2.schema.json _site/technical-knowledge-record.v2.schema.json
           cp reports/mapa-semantico.generated.html _site/mapa-semantico.html
           cp reports/semantic-atlas.generated.json _site/semantic-atlas.v1.json
