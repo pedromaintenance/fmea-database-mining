@@ -3,6 +3,8 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
+import zlib from 'node:zlib';
+import {spawnSync} from 'node:child_process';
 const read=p=>fs.readFileSync(p);
 const json=p=>JSON.parse(read(p).toString('utf8'));
 const sha256=b=>crypto.createHash('sha256').update(b).digest('hex');
@@ -82,6 +84,10 @@ for(const [role,spec] of Object.entries(roles)){
   realQuestions:0,realReviewers:0,externalAccuracy:null,
   content:content.sort((a,b)=>a.path.localeCompare(b.path,'en'))};
  fs.writeFileSync(path.join(dir,'manifest.json'),JSON.stringify(manifest,null,2)+'\n');
+ // Reproducible GNU tar with normalized ordering, timestamps and ownership.
+ const tar=spawnSync('tar',['--sort=name','--mtime=@0','--owner=0','--group=0','--numeric-owner','--format=ustar','-cf','-','-C',outDir,role],{encoding:null,maxBuffer:20*1024*1024});
+ if(tar.status!==0)throw Error('Cannot assemble frozen archive for '+role+': '+String(tar.stderr));
+ fs.writeFileSync('reports/pilot-'+role+'-1.4.11.tar.gz',zlib.gzipSync(tar.stdout,{mtime:0,level:9}));
 }
 const summary={schema:'fmea-mining.pilot-offline-release-index.v1',version:'1.4.11',
  nature:'frozen_technical_source_and_four_empty_role_packages',
@@ -89,6 +95,8 @@ const summary={schema:'fmea-mining.pilot-offline-release-index.v1',version:'1.4.
  graphGitBlobSha1:lock.graphGitBlobSha1,lockedFiles:lockedHashes,
  packages:Object.keys(roles).map(role=>({role,path:'pilot-'+role+'-1.4.11.tar.gz',
   fileCount:json(path.join(outDir,role,'manifest.json')).content.length,
+  archiveSha256:sha256(read('reports/pilot-'+role+'-1.4.11.tar.gz')),
+  archiveBytes:read('reports/pilot-'+role+'-1.4.11.tar.gz').length,
   containsRetrievalEngine:role==='evaluator',containsRealHumanEvidence:false})),
  realQuestionCount:0,realReviewerCount:0,independentAccuracy:null,
  note:'Lock checks the current engine and ten articles against a known Git commit. No actual review data or independent validation is present.'};
