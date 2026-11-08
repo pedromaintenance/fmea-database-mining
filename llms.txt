@@ -70,6 +70,15 @@ This is phrase-based document discovery, not a generative semantic AI. The 24 qu
 
 No external reviewer or question data has been obtained. All independent benchmark rates are null. Synthetic unit tests cannot establish generalization or OEM validity. Do not transfer private field data into a public library.
 
+## Role-separated dual human review (v1.4.8)
+- [Anonymous offline question collector](https://pedromaintenance.github.io/fmea-database-mining/coleta-perguntas.html)
+- [Blinded technical review R1/R2 — no search engine](https://pedromaintenance.github.io/fmea-database-mining/revisao-cega.html)
+- [Offline human conflict adjudication](https://pedromaintenance.github.io/fmea-database-mining/adjudicacao-tecnica.html)
+- [Public status: NO_REAL_REVIEW_DATA](https://pedromaintenance.github.io/fmea-database-mining/dual-review-status.v1.json)
+- [Complete dual review protocol](https://github.com/pedromaintenance/fmea-database-mining/blob/main/docs/AVALIACAO_DUPLA_REVISAO.md)
+
+No real question batches, external reviewers, human agreement scores or independent accuracy measurements exist in this version. Collection, labels, private adjudication and search evaluation remain separate. Distinct reviewers and independence are only self-attested. No operational authority.
+
 ## Technical entry points
 - [Hydraulic circuit differential](https://github.com/pedromaintenance/fmea-database-mining/blob/main/data/quality/hydraulic-circuit-differential.v1.json)
 - [Hydraulic hose differential](https://github.com/pedromaintenance/fmea-database-mining/blob/main/data/quality/hydraulic-hose-differential.v1.json)

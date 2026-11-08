@@ -30,6 +30,8 @@
 
 **Ciclo 1.4.7:** implementado o laboratório de perguntas anonimizadas e rotulagem humana cega, contrato JSON, avaliação CLI com métricas e abstenções por categoria, auditoria adversarial e publicação de status sem dados. **Zero perguntas externas e zero julgamentos independentes coletados até este ciclo**; próximo passo operacional é solicitar perguntas fora da equipe de desenvolvimento, congelar os rótulos e então avaliar.
 
+**Ciclo 1.4.8:** protocolo de avaliação humana transformado em coleta anônima + duas revisões técnicas independentes por declaração + adjudicação documentada e reconciliação offline. Interfaces publicadas sem motor na etapa de julgamento; perguntas e pareceres ficam em `private/`, ignorado pelo Git. Status externo permanece com zero perguntas/revisores e concordância/precisão não calculadas. Próximo passo real: executar piloto com aproximadamente 20 perguntas espontâneas e dois revisores com critérios técnicos e autorização de privacidade.
+
 ### Horizonte F1 — Fundamentos mecânicos e hidráulicos (1–3 meses)
 **Foco 1:** tribologia, desgaste e lubrificação; viscosidade, contaminação, partículas, falha de rolamento, vedação, filtragem e interpretação SOS.  
 **Foco 2:** hidráulica: bombas de deslocamento, regulação, válvulas, acumuladores, sucção, cavitação, cilindros, mangueiras, drenagem, contrapressão e resfriamento.  

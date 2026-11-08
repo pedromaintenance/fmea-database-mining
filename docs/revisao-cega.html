@@ -1,0 +1,82 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Revisão cega de perguntas técnicas | FMEA Database</title>
+<style>:root{color-scheme:dark;--b:#0e202b;--c:#19333f;--l:#436376;--a:#aee3f3;--g:#d7b064}*{box-sizing:border-box}body{margin:0;background:var(--b);color:#edf6f8;font:15px/1.55 system-ui,"Segoe UI",sans-serif}header{background:linear-gradient(110deg,#2a586d,#132935);border-bottom:4px solid var(--g);padding:29px max(15px,calc((100vw - 1050px)/2))}h1{font-size:clamp(27px,4vw,43px);margin:12px 0}nav{display:flex;gap:15px;flex-wrap:wrap}a{color:var(--a)}main{max-width:1090px;margin:auto;padding:22px 16px 68px}.note{background:#382d1d;border:1px solid #927043;color:#ffe7bd;padding:13px;border-radius:9px}.tools{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}button,select,textarea{font:inherit}button{background:#285d74;color:white;border:1px solid #6a9bad;border-radius:8px;padding:9px 14px;cursor:pointer}button.primary{background:var(--g);color:#132b33;border-color:var(--g);font-weight:700}select,textarea{width:100%;border-radius:7px;background:#102735;border:1px solid #608698;color:#fff;padding:10px}textarea{min-height:67px;resize:vertical}label{display:block;margin:11px 0 5px;font-size:13px}.card{border:1px solid var(--l);background:var(--c);padding:16px;border-radius:10px;margin:13px 0}.ids{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px 12px}.ids label,.checkline{display:flex;gap:9px;align-items:flex-start;margin:6px 0}.ids input,.checkline input{margin-top:5px}#status{color:#f3d8a5;white-space:pre-wrap}small,.small{color:#c2d5dd;font-size:12px}@media(max-width:780px){.ids{grid-template-columns:1fr}}</style></head><body>
+<header><nav><a href="./index.html">Biblioteca</a><a href="./coleta-perguntas.html">Coleta de perguntas</a><a href="./laboratorio-avaliacao.html">Laboratório anterior</a></nav><h1>Revisão técnica sem previsão</h1><p>Importe perguntas coletadas por outras pessoas e atribua relevância técnica. Esta página <strong>não contém o algoritmo de recuperação e não executa consultas</strong>.</p></header>
+<main><div class="note"><strong>Separação de funções:</strong> o revisor R1 não deve consultar as escolhas de R2, e vice-versa. Classifique as perguntas sem executar a busca. Não anote nomes, dados de máquina, números de série, ordens SAP ou informações internas nas justificativas.</div>
+<h2>1. Importar perguntas</h2><div class="tools"><button id="load" type="button">Importar lote de coleta JSON</button><button id="resume" type="button">Retomar revisão privada JSON</button><input id="input" type="file" accept=".json,application/json" hidden></div>
+<label for="role">Identificação de papel (não informe nome)</label><select id="role"><option value="R1">Revisor R1</option><option value="R2">Revisor R2</option></select><p id="count" class="small">Nenhum lote carregado.</p><div id="cases"></div>
+<h2>2. Declarações de revisão</h2>
+<label class="checkline"><input id="independent" type="checkbox"> Não participei do desenvolvimento das regras de busca.</label>
+<label class="checkline"><input id="other" type="checkbox"> Não consultei o parecer do outro revisor.</label>
+<label class="checkline"><input id="hidden" type="checkbox"> Não vi a previsão do buscador antes de registrar meus julgamentos.</label>
+<label class="checkline"><input id="safe" type="checkbox"> Revisei e anonimízei as perguntas e justificativas para armazenamento local.</label>
+<button id="save" type="button" class="primary">Exportar parecer cego JSON</button><p id="status" role="status" aria-live="polite"></p>
+<p class="small">Somente serão aceitas perguntas da coleta original. O arquivo exportado é privado, sem resposta da busca, sem identificação pessoal e pode ser comparado posteriormente pelo script de reconciliação. A página não realiza chamadas externas nem salva dados após o fechamento.</p></main>
+<script id="titles" type="application/json">{"schema":"REVIEW_TITLES_PLACEHOLDER","ready":false}</script>
+<script>
+(()=>{'use strict';
+const $=id=>document.getElementById(id);const bundle=JSON.parse($('titles').textContent);const names=bundle.records||[];
+let collection=null,ratings=[],mode='collection';
+const stat=['FOUND_CONCEPTUAL','MULTIPLE_CONCEPTS','ABSTAIN_UNSUPPORTED_OPERATIONAL','NOT_FOUND_IN_CATALOG','NEEDS_ADJUDICATION'];
+const categories=['explanation','differential','operational_decision','out_of_scope','other'];
+function node(parent,tag,text,cls){const e=document.createElement(tag);if(text!==undefined)e.textContent=text;if(cls)e.className=cls;parent.append(e);return e}
+function msg(s){$('status').textContent=s}
+function uniqueCase(x){return x&&/^EXT-\d{3}$/.test(x.id)&&typeof x.question==='string'&&x.question.length>=12}
+function loadCollection(data){
+ if(data?.schema!=='fmea-mining.question-collection.v1'||data.version!=='1.4.8'||!Array.isArray(data.cases)||!data.cases.length||data.cases.length>100||!data.cases.every(uniqueCase))throw Error('Lote de coleta inválido');
+ collection=data;
+ ratings=data.cases.map(c=>({id:c.id,question:c.question,expectedStatus:'',expectedIds:[],rationale:'',category:'explanation',reviewedBeforePrediction:true}));
+ render();
+}
+function render(){
+ const root=$('cases');root.replaceChildren();
+ $('count').textContent=ratings.length+' pergunta(s). Nenhuma previsão do algoritmo está disponível.';
+ for(const [i,c] of ratings.entries()){
+ const box=node(root,'article',undefined,'card');node(box,'h3',c.id+' — '+c.question);
+ node(box,'label','Classificação do resultado esperado');
+ const s=node(box,'select');for(const status of [['','Selecione'],...stat.map(x=>[x,x])]){const o=node(s,'option',status[1]);o.value=status[0]}s.value=c.expectedStatus;
+ s.addEventListener('change',()=>{c.expectedStatus=s.value;if(!['FOUND_CONCEPTUAL','MULTIPLE_CONCEPTS'].includes(s.value))c.expectedIds=[];render()});
+ node(box,'label','Tipo de pergunta');const cat=node(box,'select');for(const item of categories){const o=node(cat,'option',item);o.value=item}cat.value=c.category;cat.addEventListener('change',()=>{c.category=cat.value});
+ if(['FOUND_CONCEPTUAL','MULTIPLE_CONCEPTS'].includes(c.expectedStatus)){
+  node(box,'label','Fichas relevantes (somente títulos, sem previsões)');
+  const div=node(box,'div',undefined,'ids');
+  for(const r of names){const l=node(div,'label'),check=node(l,'input');check.type='checkbox';check.checked=c.expectedIds.includes(r.id);check.addEventListener('change',()=>{if(check.checked&&!c.expectedIds.includes(r.id))c.expectedIds.push(r.id);else c.expectedIds=c.expectedIds.filter(x=>x!==r.id)});node(l,'span',r.title+' ('+r.id+')')}
+ }
+ node(box,'label','Justificativa técnica do julgamento (mín. 15 caracteres, sem dados identificáveis)');
+ const t=node(box,'textarea');t.maxLength=1500;t.value=c.rationale;t.addEventListener('input',()=>{c.rationale=t.value});
+ }
+}
+function download(object){const blob=new Blob([JSON.stringify(object,null,2)+'\n'],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='parecer-'+$('role').value+'-privado.json';document.body.append(a);a.click();a.remove();URL.revokeObjectURL(url)}
+async function readFile(modeValue){
+ mode=modeValue;$('input').click();
+}
+$('load').addEventListener('click',()=>readFile('collection'));$('resume').addEventListener('click',()=>readFile('resume'));
+$('input').addEventListener('change',async()=>{try{
+ const file=$('input').files?.[0];if(!file)return;if(file.size>300000)throw Error('Limite de 300 KB');
+ const data=JSON.parse(await file.text());
+ if(mode==='collection')loadCollection(data);
+ else{
+  if(data?.schema!=='fmea-mining.blind-review.v1'||!Array.isArray(data.cases))throw Error('Parecer inválido');
+  loadCollection({schema:'fmea-mining.question-collection.v1',version:'1.4.8',nature:'external_unlabelled_questions',publicSafe:true,outsideDevelopmentSelfAttested:false,
+   cases:data.cases.map(x=>({id:x.id,question:x.question}))});
+  ratings=data.cases.map(x=>({...x,expectedIds:Array.isArray(x.expectedIds)?x.expectedIds:[]}));$('role').value=data.role==='R2'?'R2':'R1';render();
+ }
+ msg('Arquivo importado. Confira os pareceres e as declarações antes de exportar.');
+ }catch(e){msg('Erro: '+e.message)}finally{$('input').value=''}});
+$('save').addEventListener('click',()=>{
+ if(!bundle.ready||!collection||!ratings.length)return msg('Importe um lote de perguntas.');
+ if(!$('safe').checked)return msg('Confirme a revisão de privacidade.');
+ for(const c of ratings){
+  if(!stat.includes(c.expectedStatus))return msg(c.id+': selecione a classificação.');
+  if(c.rationale.trim().length<15)return msg(c.id+': descreva a justificativa técnica.');
+  if(c.expectedStatus==='FOUND_CONCEPTUAL'&&c.expectedIds.length!==1)return msg(c.id+': selecione uma ficha.');
+  if(c.expectedStatus==='MULTIPLE_CONCEPTS'&&new Set(c.expectedIds).size<2)return msg(c.id+': selecione ao menos duas fichas.');
+  if(!['FOUND_CONCEPTUAL','MULTIPLE_CONCEPTS'].includes(c.expectedStatus)&&c.expectedIds.length)return msg(c.id+': remova as fichas selecionadas.');
+ }
+ download({schema:'fmea-mining.blind-review.v1',version:'1.4.8',role:$('role').value,
+ declaration:{didNotSeePredictions:$('hidden').checked,independentOfOtherReviewer:$('other').checked,
+ notInEngineDevelopment:$('independent').checked,publicSafe:$('safe').checked},cases:ratings});
+ msg('Parecer exportado para arquivo local. Não compartilhe com outro revisor antes de ambos concluírem.');
+});
+if(!bundle.ready){msg('Página-template. Use a versão publicada no Pages.');$('load').disabled=true}else $('count').textContent='Carregue primeiro o lote de perguntas. '+names.length+' títulos conceituais disponíveis para julgamento.';
+})();
+</script></body></html>
