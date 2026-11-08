@@ -49,6 +49,11 @@ on:
       - 'scripts/check-pilot-gates.mjs'
       - 'scripts/audit-pilot-gates.mjs'
       - 'docs/CICLO_2026-11-08_CONTROLE_EXECUCAO_PILOTO.md'
+      - 'data/quality/pilot-frozen-baseline.v1.json'
+      - 'scripts/build-frozen-pilot-packages.mjs'
+      - 'scripts/audit-frozen-pilot-packages.mjs'
+      - 'docs/pacotes-piloto.html'
+      - 'docs/CICLO_2026-11-08_PACOTES_PILOTO_CONGELADO.md'
       - 'docs/biblioteca-tecnica.html'
       - 'schemas/technical-knowledge-record.v2.schema.json'
       - 'scripts/build-fundamentals-portal.mjs'
@@ -121,6 +126,8 @@ jobs:
           node scripts/audit-field-pilot.mjs
           node scripts/build-pilot-gates.mjs
           node scripts/audit-pilot-gates.mjs
+          node scripts/build-frozen-pilot-packages.mjs
+          node scripts/audit-frozen-pilot-packages.mjs
 
       - name: Prepare static site
         run: |
@@ -150,6 +157,14 @@ jobs:
           cp reports/pilot-gates-bundle.generated.json _site/pilot-gates-bundle.v1.json
           cp reports/pilot-gates-public-status.generated.json _site/pilot-gates-public-status.v1.json
           cp reports/pilot-gates-audit.generated.json _site/pilot-gates-audit.v1.json
+          cp docs/pacotes-piloto.html _site/pacotes-piloto.html
+          cp data/quality/pilot-frozen-baseline.v1.json _site/pilot-frozen-baseline.v1.json
+          cp reports/pilot-frozen-release-index.generated.json _site/pilot-frozen-release-index.v1.json
+          cp reports/pilot-frozen-package-audit.generated.json _site/pilot-frozen-package-audit.v1.json
+          cp reports/pilot-collector-1.4.11.tar.gz _site/pilot-collector-1.4.11.tar.gz
+          cp reports/pilot-reviewer-1.4.11.tar.gz _site/pilot-reviewer-1.4.11.tar.gz
+          cp reports/pilot-adjudicator-1.4.11.tar.gz _site/pilot-adjudicator-1.4.11.tar.gz
+          cp reports/pilot-evaluator-1.4.11.tar.gz _site/pilot-evaluator-1.4.11.tar.gz
           cp schemas/technical-knowledge-record.v2.schema.json _site/technical-knowledge-record.v2.schema.json
           cp reports/mapa-semantico.generated.html _site/mapa-semantico.html
           cp reports/semantic-atlas.generated.json _site/semantic-atlas.v1.json
