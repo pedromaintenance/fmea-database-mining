@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.knowledge-index.v1",
-  "version": "1.4.10",
+  "version": "1.4.11",
   "scope": "selected_existing_public_artifacts_not_complete_inventory",
   "repository": "pedromaintenance/fmea-database-mining",
   "nature": "navigation_metadata_not_canonical_technical_evidence",
@@ -632,6 +632,43 @@
         "controle de versão",
         "responsabilidade humana",
         "auditoria"
+      ]
+    },
+    {
+      "id": "LIB-FROZEN-PILOT-PACKAGES",
+      "title": "Pacotes offline congelados para coleta e revisão",
+      "domain": "Qualidade da informação",
+      "kind": "distribuição técnica offline",
+      "system": "transversal",
+      "evidenceClass": "PENDING_REVIEW",
+      "summary": "Quatro pacotes estáticos separados por papel, com hashes SHA-256, travamento dos arquivos técnicos, sem questões reais nem previsões no pacote de revisão.",
+      "path": "docs/pacotes-piloto.html",
+      "keywords": [
+        "pacote offline",
+        "versão congelada",
+        "coleta",
+        "revisor",
+        "adjudicação",
+        "download",
+        "tar.gz"
+      ]
+    },
+    {
+      "id": "LIB-FROZEN-PILOT-METHOD",
+      "title": "Protocolo de congelamento e reprodutibilidade do piloto",
+      "domain": "Qualidade da informação",
+      "kind": "protocolo metodológico",
+      "system": "transversal",
+      "evidenceClass": "PENDING_REVIEW",
+      "summary": "Versão técnica de referência travada no Git; manifests de fonte e dos quatro pacotes, separação de funções e limites de evidência. Não afirma avaliação externa concluída.",
+      "path": "docs/CICLO_2026-11-08_PACOTES_PILOTO_CONGELADO.md",
+      "keywords": [
+        "linha de base",
+        "reprodutibilidade",
+        "hash",
+        "auditoria",
+        "privacidade",
+        "avaliação externa"
       ]
     }
   ]
