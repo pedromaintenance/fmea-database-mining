@@ -87,6 +87,15 @@ No real question batches, external reviewers, human agreement scores or independ
 
 No participant, reviewer or actual question has been collected. Real blinded assessments must use a new private reconciliation directory. Score CLI input and output containing human questions must stay under gitignored `private/`. These pages are not a live data collection service.
 
+## Field pilot execution gate dashboard (v1.4.10)
+- [Offline 11-gate control dashboard](https://pedromaintenance.github.io/fmea-database-mining/controle-piloto.html)
+- [Public checklist bundle, no participant evidence](https://pedromaintenance.github.io/fmea-database-mining/pilot-gates-bundle.v1.json)
+- [Empty public status — NO_MANUAL_ATTESTATIONS](https://pedromaintenance.github.io/fmea-database-mining/pilot-gates-public-status.v1.json)
+- [Synthetic quality audit of stage and privacy invariants](https://pedromaintenance.github.io/fmea-database-mining/pilot-gates-audit.v1.json)
+- [Pilot governance methodology](https://github.com/pedromaintenance/fmea-database-mining/blob/main/docs/CICLO_2026-11-08_CONTROLE_EXECUCAO_PILOTO.md)
+
+Manual flags are SELF ATTESTATIONS; they do not prove organizational approval or that participants/reviews exist. The tracking page has no incoming data service; real pilot data must remain privately held. No OEM authority or safety release.
+
 ## Technical entry points
 - [Hydraulic circuit differential](https://github.com/pedromaintenance/fmea-database-mining/blob/main/data/quality/hydraulic-circuit-differential.v1.json)
 - [Hydraulic hose differential](https://github.com/pedromaintenance/fmea-database-mining/blob/main/data/quality/hydraulic-hose-differential.v1.json)

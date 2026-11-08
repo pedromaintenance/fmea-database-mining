@@ -34,6 +34,8 @@
 
 **Ciclo 1.4.9:** folha de piloto imprimível, 11 critérios de prontidão e teste end-to-end sintético do fluxo de duas revisões; bloqueio de gabarito não cego, subdiretório privado novo obrigatório para evitar versão obsoleta e pontuação real somente em `private/`. Zero colaboradores/revisores externos efetivamente consultados; é necessário autorização e coleta humana para obter a primeira medida. Próxima ação: piloto real, não outro score com perguntas fabricadas.
 
+**Ciclo 1.4.10:** consolidado o controle offline dos onze gates do piloto em cinco fases, com responsáveis, declarações humanas exportáveis, verificação de hashes do buscador/corpus, bloqueio de sequência inconsistente e status público vazio. O projeto não afirma resultados externos nem gera autorização por checklist; próximo passo ainda é a **coleta autorizada de perguntas reais**, sem otimizar a busca sobre dados fabricados.
+
 ### Horizonte F1 — Fundamentos mecânicos e hidráulicos (1–3 meses)
 **Foco 1:** tribologia, desgaste e lubrificação; viscosidade, contaminação, partículas, falha de rolamento, vedação, filtragem e interpretação SOS.  
 **Foco 2:** hidráulica: bombas de deslocamento, regulação, válvulas, acumuladores, sucção, cavitação, cilindros, mangueiras, drenagem, contrapressão e resfriamento.  

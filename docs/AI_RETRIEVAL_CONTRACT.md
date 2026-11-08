@@ -63,6 +63,12 @@
 - `npm run knowledge:pilot:audit` executa regressão E2E **sintética**, incluindo tentativa de escrever em `reports/`, revisar sem cegamento e sobrescrever gabarito; não mede trabalhadores.
 - Ainda não há perguntas reais externas, pareceres humanos ou métricas independentes; `external-review-status.v1.json` permanece `NO_EXTERNAL_SAMPLE`.
 
+## Controle de prontidão humano e limites de autoridade (1.4.10)
+- O [painel de execução](controle-piloto.html) incorpora onze gates de `data/quality/field-pilot-readiness.v1.json`, com os responsáveis, hashes SHA-256 da versão do motor/corpus e cinco transições condicionadas.
+- `scripts/lib/pilot-readiness-core.mjs` identifica omissões, conflitos de sequência e divergências de versão. Mesmo o estado `PUBLIC_SUMMARY_SELF_ATTESTED` **não é autorização institucional certificada**. Nenhum gate é marcado automaticamente.
+- `npm run knowledge:pilot:gates -- --input private/controle.json --out private/resultado.json` só produz relatório privado sobre flags locais; não avalia participantes ou faz busca. O Pages publica exclusivamente `/pilot-gates-public-status.v1.json` com status vazio, sem dados humanos.
+- A ordem permanece: autorização organizacional → coleta espontânea → anonimização → R1/R2 cegos → adjudicação → pontuação local → interpretação e comunicação autorizada. Não alterar o motor ou corpus entre coleta e avaliação sem declarar quebra de comparabilidade.
+
 ## Pipeline de recuperação
 1. **Descoberta:** `data/catalog/knowledge-index.v1.json` inclui uma seleção inicial de artefatos existentes. Ausência no índice não significa ausência no repositório.
 2. **Recuperação canônica:** abrir `path`; preferir informações estruturadas em `data/quality` e documentos de `docs`. Não transformar o campo de descrição do índice em prova.

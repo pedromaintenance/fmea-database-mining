@@ -7,6 +7,9 @@ description: Consulta o acervo público FMEA Database Mining para responder dúv
 
 Esta skill é **somente de leitura conceitual**. Não acessa SAP, não opera máquina, não executa procedimentos e não autentica evidências OEM por série.
 
+## Controle de execução do piloto — 1.4.10
+Use `../../docs/controle-piloto.html` e `../../data/quality/field-pilot-readiness.v1.json` para conferir as 11 etapas humanas. `npm run knowledge:pilot:gates -- --input private/controle.json --out private/resultado.json` avalia somente flags autodeclaradas e hashes de versão, sem afirmar autorização empresarial. `INCONSISTENT_SEQUENCE` bloqueia progresso; `SELF_ATTESTED` indica declarações, não verificação independente. Não inventar aprovação, trabalhador participante, perguntas externas ou métricas. Consulte o procedimento `../../docs/CICLO_2026-11-08_CONTROLE_EXECUCAO_PILOTO.md` antes de usar dados reais.
+
 ## Aplicação do primeiro piloto (versão 1.4.9)
 Para rodar avaliação com trabalhadores, consultar `../../docs/PILOTO_QUESTIONARIO_OFICINA.md`. Não simular perguntas ou respostas humanas. Usar formulário público vazio; dados reais somente em `private/`. Não executar busca antes da adjudicação de R1/R2. O reconciliador exige **pasta privada de saída inédita** e bloqueia protocolos não cegos. A avaliação CLI só aceita entrada/saída privadas quando há dados humanos. As 11 condições de prontidão incluem autorização e anonimização manuais, não verificáveis apenas por código.
 
