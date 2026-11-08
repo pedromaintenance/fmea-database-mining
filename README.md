@@ -2,7 +2,7 @@
 
 Acervo **público, versionado e rastreável** para estudar equipamentos móveis de mineração, sistemas e componentes, mecanismos físicos de falha, diagnóstico diferencial, inspeção, manutenção, confiabilidade e benchmarks industriais. **FMEA/FMECA é uma das aplicações da biblioteca, não seu limite.**
 
-> **Status:** fundação da plataforma **v1.4.8**; índice inicial curado, não catálogo completo nem biblioteca homologada para procedimentos de execução. O banco contém hipóteses, taxonomias e referências públicas, **não** FMEAs aprovadas, ocorrências reais confirmadas ou limites OEM efetivos por série.
+> **Status:** fundação da plataforma **v1.4.9**; índice inicial curado, não catálogo completo nem biblioteca homologada para procedimentos de execução. O banco contém hipóteses, taxonomias e referências públicas, **não** FMEAs aprovadas, ocorrências reais confirmadas ou limites OEM efetivos por série.
 
 **Portal público (GitHub Pages):** https://pedromaintenance.github.io/fmea-database-mining/ — entrada direta na Biblioteca Técnica. O repositório mantém a documentação canônica e o histórico de versões.
 
@@ -18,6 +18,8 @@ Acervo **público, versionado e rastreável** para estudar equipamentos móveis 
 **Novas consultas 1.4.1:** [Glossário PT/EN](docs/glossario-tecnico.html) (67 verbetes recuperados sem reescrita da ontologia), [Bibliografia](docs/fontes-tecnicas.html) (87 fontes do registro), [Inventário de arquivos](docs/inventario-acervo.html) (snapshot de 500 arquivos antes deste ciclo). Os três conjuntos diferem em natureza e NÃO são 654 fichas OEM validadas.
 
 A consulta ao índice **não substitui** a leitura da ficha canônica, a conferência da fonte original e a análise de aplicabilidade OEM. Dados sintéticos não são registros de campo; indicadores sem definição/população não são benchmarks comparáveis.
+
+**Ciclo v1.4.9:** [kit de campo e 11 gates de prontidão](docs/PILOTO_QUESTIONARIO_OFICINA.md). O [formulário imprimível](https://pedromaintenance.github.io/fmea-database-mining/piloto-oficina.html) permite iniciar a coleta de 20 perguntas espontâneas e anônimas. Corrigidos três riscos de custódia: gabarito não cego não pode ser gerado; `knowledge:dual:reconcile` requer **subdiretório privado novo** para impedir gabarito obsoleto; `knowledge:external:evaluate -- --input ...` exige entrada **e saída** em `private/`. Nova auditoria end-to-end só usa exemplos sintéticos descartáveis. **Participantes e perguntas externas reais seguem em zero**; nenhuma acurácia ou concordância externa foi medida. Catálogo: **35 itens**; bibliografia: **97**.
 
 **Ciclo v1.4.8:** [coleta externa, revisão dupla cega e adjudicação](docs/AVALIACAO_DUPLA_REVISAO.md). Três interfaces offline: [perguntas](https://pedromaintenance.github.io/fmea-database-mining/coleta-perguntas.html), [revisores R1/R2](https://pedromaintenance.github.io/fmea-database-mining/revisao-cega.html), [adjudicação](https://pedromaintenance.github.io/fmea-database-mining/adjudicacao-tecnica.html). Reconciliação local `npm run knowledge:dual:reconcile` calcula concordância e kappa, exige resolução de conflitos antes de gerar `gold.private.json` e armazena dados humanos apenas em `private/` ignorado pelo Git. **Ainda não foram coletadas perguntas externas nem pareceres humanos reais**: [status público nulo](https://pedromaintenance.github.io/fmea-database-mining/dual-review-status.v1.json). O algoritmo de busca permanece congelado. Catálogo curado: **33** recursos; bibliografia: **97** entradas.
 
