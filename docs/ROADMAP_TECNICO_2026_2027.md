@@ -38,6 +38,8 @@
 
 **Ciclo 1.4.11:** travamento efetivo do motor lexical v2 e dos dez registros (IDs de blob Git da referência v1.4.10), geração reprodutível de quatro pacotes offline separados por papel, manifests SHA-256 e auditoria de extração/isolamento. Nenhuma pergunta real ou revisão independente foi realizada. Prioridade futura: obter autorização e pessoas reais antes de modificar o algoritmo, mantendo o baseline congelado.
 
+**Ciclo 1.4.12:** retorno ao aprofundamento técnico: dossiê original de **6 mecanismos concorrentes** e **6 situações** em filtros hidráulicos, usando fontes públicas Donaldson/HYDAC; bibliografia 100, catálogo 41. Não há limites OEM, testes ou casos reais. Mantido o baseline congelado de dez artigos e motor v2, preservando comparabilidade do piloto. Próximo passo: revisão técnica humana do dossiê e efetividade documental OEM em um filtro identificado, antes de extrapolar a recomendações operacionais.
+
 ### Horizonte F1 — Fundamentos mecânicos e hidráulicos (1–3 meses)
 **Foco 1:** tribologia, desgaste e lubrificação; viscosidade, contaminação, partículas, falha de rolamento, vedação, filtragem e interpretação SOS.  
 **Foco 2:** hidráulica: bombas de deslocamento, regulação, válvulas, acumuladores, sucção, cavitação, cilindros, mangueiras, drenagem, contrapressão e resfriamento.  
