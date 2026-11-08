@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.research.sources.v1",
-  "version": "1.4.12",
+  "version": "1.4.13",
   "status": "literatura_de_referencia_nao_casos_empiricos",
   "rights": "somente_titulos_links_e_resumos_originais",
   "sources": [
@@ -1093,6 +1093,61 @@
       "role": "manufacturer_public_filter_reference_and_product_design",
       "limitation": "As descrições de filtros HYDAC não estabelecem presença de bypass, pressão diferencial, intercambialidade ou instruções de troca para componentes de outra marca ou série.",
       "reviewStatus": "fonte_publica_consultada_sintese_original_sem_reproducao",
+      "lastReviewed": "2026-11-08"
+    },
+    {
+      "id": "PERKINS-FLUID-SAMPLING-OIL-COOLANT",
+      "organization": "Perkins Engines",
+      "title": "Fluid sampling — oil, coolant and fuel condition assessment",
+      "url": "https://www.perkins.com/en_GB/campaigns/powernews/global-focus/perkins-fluid-sampling.html",
+      "area": "diesel_engine_lubrication_coolant_sampling_and_condition",
+      "role": "manufacturer_public_condition_assessment",
+      "limitation": "Identifica informações gerais de amostras de óleo e arrefecimento, não identifica peça com falha, sinal de ingresso ou método e limite OEM de uma máquina específica.",
+      "reviewStatus": "fonte_publica_consultada_sintese_original_sem_reproducao",
+      "lastReviewed": "2026-11-08"
+    },
+    {
+      "id": "DONALDSON-COOLANT-FILTRATION-FAQ",
+      "organization": "Donaldson",
+      "title": "Engine Liquid Filtration Product Guide — coolant contamination, loss and testing FAQ",
+      "url": "https://ecatalog.donaldson.com/view/477967314/62/",
+      "area": "coolant_contamination_refrigeration_loss_gaskets_blocks_oil_coolers",
+      "role": "manufacturer_public_coolant_technical_reference",
+      "limitation": "Relaciona causas alternativas para perdas e contaminação do arrefecimento sem confirmar mecanismo individual nem estabelecer receita de manutenção por ativo. Recomenda seguir OEM.",
+      "reviewStatus": "fonte_publica_consultada_sintese_original_sem_reproducao",
+      "lastReviewed": "2026-11-08"
+    },
+    {
+      "id": "CAT-ENGINE-OIL-COOLER-CORE",
+      "organization": "Caterpillar",
+      "title": "Cat® Engine Oil Cooler Core — heat exchange function and design overview",
+      "url": "https://parts.cat.com/en/catcorp/567-1565",
+      "area": "engine_oil_cooler_heat_transfer_function_not_effectivity",
+      "role": "manufacturer_public_component_function_description",
+      "limitation": "A descrição de um produto confirma a função de trocador de óleo, não sua compatibilidade com outro motor, presença em máquina determinada, origem de vazamento ou necessidade de substituição.",
+      "reviewStatus": "fonte_publica_consultada_sintese_original_sem_reproducao",
+      "lastReviewed": "2026-11-08"
+    },
+    {
+      "id": "PERKINS-ENGINE-CARE-COOLANT-SEALS",
+      "organization": "Perkins Engines",
+      "title": "Protecting your agricultural engine: essential tips and tricks",
+      "url": "https://www.perkins.com/en_GB/products/sectors/agriculture/protecting-your-agricultural-engine-essential-tips-and-tricks.html",
+      "area": "engine_oil_coolant_mixing_possible_gasket_failure",
+      "role": "manufacturer_public_engine_health_guidance",
+      "limitation": "Cita indícios de mistura e possibilidade de falha da junta do cabeçote; é conteúdo geral de cuidados e não teste ou diagnóstico conclusivo de uma junta.",
+      "reviewStatus": "fonte_publica_consultada_sintese_original_sem_reproducao",
+      "lastReviewed": "2026-11-08"
+    },
+    {
+      "id": "NORIA-GLYCOL-OIL-ANALYSIS-INTERFERENCES",
+      "organization": "Noria / Machinery Lubrication",
+      "title": "Oil Analysis Tests to Detect Glycol Contamination",
+      "url": "https://www.machinerylubrication.com/Read/30478/oil-analysis-tests",
+      "area": "lubricating_oil_glycol_sodium_potassium_ftIR_interference",
+      "role": "specialist_lab_analysis_interpretive_reference_not_oem",
+      "limitation": "Discute métodos de detecção de glicol e interferências; não fornece valor universal de condenação de óleo, nem substitui interpretação laboratorial e caracterização química do fluido instalado.",
+      "reviewStatus": "referencia_analitica_publica_consultada_sintese_original",
       "lastReviewed": "2026-11-08"
     }
   ]

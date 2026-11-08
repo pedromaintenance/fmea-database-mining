@@ -40,6 +40,8 @@
 
 **Ciclo 1.4.12:** retorno ao aprofundamento técnico: dossiê original de **6 mecanismos concorrentes** e **6 situações** em filtros hidráulicos, usando fontes públicas Donaldson/HYDAC; bibliografia 100, catálogo 41. Não há limites OEM, testes ou casos reais. Mantido o baseline congelado de dez artigos e motor v2, preservando comparabilidade do piloto. Próximo passo: revisão técnica humana do dossiê e efetividade documental OEM em um filtro identificado, antes de extrapolar a recomendações operacionais.
 
+**Ciclo 1.4.13:** novo dossiê sobre interface entre óleo e arrefecimento de motores diesel, com 7 mecanismos concorrentes, 6 contextos e 5 fontes (Caterpillar, Perkins, Donaldson, Noria). Biblioteca alcança 105 referências e 43 recursos curados. Todos os modos de falha permanecem conceituais; série, teste e autorização OEM reais são zero. O baseline 1.4.11 continua congelado. Próxima ação: revisão técnica por engenheiro diesel e documentação específica de circuitos reais, antes de qualquer teste ou OS.
+
 ### Horizonte F1 — Fundamentos mecânicos e hidráulicos (1–3 meses)
 **Foco 1:** tribologia, desgaste e lubrificação; viscosidade, contaminação, partículas, falha de rolamento, vedação, filtragem e interpretação SOS.  
 **Foco 2:** hidráulica: bombas de deslocamento, regulação, válvulas, acumuladores, sucção, cavitação, cilindros, mangueiras, drenagem, contrapressão e resfriamento.  

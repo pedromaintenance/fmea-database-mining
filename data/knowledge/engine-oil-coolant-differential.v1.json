@@ -1,0 +1,381 @@
+{
+  "schema": "fmea-mining.engine-oil-coolant-differential.v1",
+  "version": "1.4.13",
+  "nature": "conceptual_maintenance_engineering_differential_not_asset_diagnosis",
+  "title": "Contaminação cruzada óleo lubrificante e líquido de arrefecimento em motores diesel",
+  "functionRequired": "O sistema de lubrificação deve preservar a função do lubrificante e o sistema de arrefecimento deve conservar a capacidade de transferência térmica, com isolamento das interfaces do projeto. O fluido e a pressão de cada circuito devem atender à documentação OEM efetiva, sem intercâmbio anormal de fluidos.",
+  "scope": "Motores diesel e interfaces genéricas entre galerias de óleo, refrigerante e trocador; não é desenho OEM de um motor ou sistema de mina específico.",
+  "status": {
+    "evidenceClass": "CONCEPTUAL",
+    "reviewStatus": "PENDING_REVIEW",
+    "peerReviewedByHuman": false,
+    "operationalApproval": false,
+    "sapMappingApproved": false,
+    "automaticDiagnosisAllowed": false,
+    "verifiedModels": [],
+    "verifiedSerials": [],
+    "performedTests": 0,
+    "fieldObservations": 0,
+    "confirmedRootCauses": 0,
+    "oemAcceptanceLimits": null
+  },
+  "directionalModel": {
+    "oilIntoCoolant": {
+      "symbol": "OIL_IN_COOLANT",
+      "observation": "Aspecto oleoso em amostra de refrigerante ou resíduo no reservatório; não confirma por si só a procedência do óleo.",
+      "caveat": "O sentido do fluxo por uma interface defeituosa depende dos diferenciais locais de pressão e condições de operação/parada. Não adotar regra universal nem deduzir caminho de vazamento apenas pelo aspecto."
+    },
+    "coolantIntoOil": {
+      "symbol": "COOLANT_IN_OIL",
+      "observation": "Água, indícios químicos de refrigerante ou glicol no óleo de lubrificação, com possibilidade de deterioração de suas propriedades.",
+      "caveat": "Um resultado isolado de glicol, sódio ou potássio não confirma automaticamente o fluido contaminante: formulação, coleta, base e interferências importam."
+    },
+    "unresolved": {
+      "symbol": "UNRESOLVED",
+      "observation": "Baixa de refrigerante, espuma, aspecto anormal ou leituras discordantes sem evidência de contaminação cruzada.",
+      "caveat": "Fenômenos de arrefecimento, vazamentos externos, emulsão aparente e erro de coleta são concorrentes; não usar 'junta queimada' como atalho."
+    }
+  },
+  "hypotheses": [
+    {
+      "id": "EC-COOLER-CORE",
+      "title": "Interface interna do trocador de calor óleo/refrigerante",
+      "mechanism": "Perda de estanqueidade entre os lados do trocador pode permitir comunicação de fluidos, caso a configuração real possua essa interface.",
+      "observableEvidence": [
+        "Há contaminação confirmada e um trocador com contato entre circuitos na arquitetura documentada."
+      ],
+      "discriminatingQuestions": [
+        "Existe trocador óleo/refrigerante e qual circuito se conecta a cada lado?",
+        "Há registro de tendência e evidência independente da perda de estanqueidade, por procedimento OEM autorizado?"
+      ],
+      "notEstablishedBy": [
+        "Aspecto oleoso isolado",
+        "Descrição genérica de peça CAT",
+        "Troca do trocador como prova retrospectiva automática"
+      ],
+      "sourceIds": [
+        "CAT-ENGINE-OIL-COOLER-CORE",
+        "DONALDSON-COOLANT-FILTRATION-FAQ"
+      ],
+      "certainty": "UNCONFIRMED",
+      "performedTests": 0
+    },
+    {
+      "id": "EC-HEAD-GASKET",
+      "title": "Perda de estanqueidade em junta entre cabeçote e bloco",
+      "mechanism": "Degradação ou falha de vedação pode conectar passagens, dependendo da geometria específica; sintomas podem concorrer com defeitos em trocador.",
+      "observableEvidence": [
+        "Arquitetura e evidência de falha de vedação relacionadas a ambos os circuitos."
+      ],
+      "discriminatingQuestions": [
+        "Qual desenho do motor mostra óleo, arrefecimento e regiões de vedação na junta?",
+        "Há sinais correlacionados além do aspecto do fluido, com procedimento OEM de investigação aprovado?"
+      ],
+      "notEstablishedBy": [
+        "Assumir falha de junta pelo reservatório oleoso",
+        "Transferir sintomas de outro motor"
+      ],
+      "sourceIds": [
+        "PERKINS-ENGINE-CARE-COOLANT-SEALS",
+        "DONALDSON-COOLANT-FILTRATION-FAQ"
+      ],
+      "certainty": "UNCONFIRMED",
+      "performedTests": 0
+    },
+    {
+      "id": "EC-CASTING",
+      "title": "Fissura, porosidade ou deformação em cabeçote/bloco",
+      "mechanism": "Uma descontinuidade estrutural em componente com galerias adjacentes pode permitir comunicação ou perda de refrigerante, conforme desenho e condições.",
+      "observableEvidence": [
+        "Evidência específica de integridade de cabeçote/bloco, após excluir alternativas menos invasivas."
+      ],
+      "discriminatingQuestions": [
+        "Os percursos de óleo e refrigerante são adjacentes na geometria verificada?",
+        "Qual evidência de defeito de integridade material diferencia fissura de vedação e trocador?"
+      ],
+      "notEstablishedBy": [
+        "Atribuir trinca sem inspeção",
+        "Desmontar por presunção"
+      ],
+      "sourceIds": [
+        "DONALDSON-COOLANT-FILTRATION-FAQ",
+        "PERKINS-FLUID-SAMPLING-OIL-COOLANT"
+      ],
+      "certainty": "UNCONFIRMED",
+      "performedTests": 0
+    },
+    {
+      "id": "EC-BULK-CONTAMINATION",
+      "title": "Contaminação externa em abastecimento, armazenamento ou intervenção",
+      "mechanism": "Fluido errado, recipiente contaminado ou mistura introduzida durante serviço pode reproduzir aparência de comunicação interna sem defeito de interface.",
+      "observableEvidence": [
+        "Início após intervenção ou reabastecimento e comparação com fluido da origem."
+      ],
+      "discriminatingQuestions": [
+        "Há amostra retida da origem do refrigerante e cadeia de abastecimento?",
+        "Qual foi a sequência de manutenção, complementos e limpeza anterior ao aparecimento do sintoma?"
+      ],
+      "notEstablishedBy": [
+        "Presumir vazamento interno quando há contaminação do abastecimento",
+        "Equiparar aspecto oleoso a óleo do cárter sem caracterização"
+      ],
+      "sourceIds": [
+        "DONALDSON-COOLANT-FILTRATION-FAQ",
+        "PERKINS-FLUID-SAMPLING-OIL-COOLANT"
+      ],
+      "certainty": "UNCONFIRMED",
+      "performedTests": 0
+    },
+    {
+      "id": "EC-ANALYTICAL-INTERFERENCE",
+      "title": "Resultado laboratorial inconclusivo ou interferência da formulação",
+      "mechanism": "Marcadores químicos ou ensaio de glicol podem ser confundidos por formulação/aditivos, fundo histórico, amostragem ou método, especialmente quando só um indicador está alterado.",
+      "observableEvidence": [
+        "Indício químico isolado, inconsistência de resultados ou troca recente de produto."
+      ],
+      "discriminatingQuestions": [
+        "Qual produto e composição de base dos fluidos utilizados, novo e em serviço?",
+        "Há concordância entre métodos, histórico e uma amostra representativa colhida com procedimento correto?"
+      ],
+      "notEstablishedBy": [
+        "Declarar glicol ou junta apenas por sódio/potássio",
+        "Tratar resultado negativo isolado como ausência comprovada"
+      ],
+      "sourceIds": [
+        "NORIA-GLYCOL-OIL-ANALYSIS-INTERFERENCES",
+        "PERKINS-FLUID-SAMPLING-OIL-COOLANT"
+      ],
+      "certainty": "UNCONFIRMED",
+      "performedTests": 0
+    },
+    {
+      "id": "EC-RESIDUAL",
+      "title": "Contaminação residual de ocorrência anterior ou limpeza incompleta",
+      "mechanism": "Resíduo no circuito e histórico de fluido anterior podem persistir depois de um serviço; sua presença posterior não confirma defeito ativo sem tendência e verificação adequada. Inferência de engenharia, não validação específica de fabricante.",
+      "observableEvidence": [
+        "Há reparo documentado anterior e observação residual sem tendência comprovada de novo ingresso."
+      ],
+      "discriminatingQuestions": [
+        "A condição já existia antes do reparo e o histórico de limpeza está documentado?",
+        "O resultado mudou em coletas comparáveis após a intervenção, sem novos ingressos?"
+      ],
+      "notEstablishedBy": [
+        "Concluir que trocador substituído voltou a falhar por resíduo isolado",
+        "Considerar resíduo como autorização para operar"
+      ],
+      "sourceIds": [
+        "PERKINS-FLUID-SAMPLING-OIL-COOLANT",
+        "DONALDSON-COOLANT-FILTRATION-FAQ"
+      ],
+      "certainty": "UNCONFIRMED",
+      "performedTests": 0
+    },
+    {
+      "id": "EC-NONCROSS-LOSS",
+      "title": "Perda de refrigerante ou alteração de aparência sem comunicação óleo–arrefecimento",
+      "mechanism": "Vazamentos externos, espuma, ar aprisionado, evaporação e condições físico-químicas do refrigerante podem explicar certos sinais sem troca entre galerias.",
+      "observableEvidence": [
+        "Apenas perda de fluido, espuma ou aparência anormal com testes de contaminação não conclusivos."
+      ],
+      "discriminatingQuestions": [
+        "A contaminação foi efetivamente caracterizada nos dois fluidos ou há apenas perda de volume/aspecto?",
+        "Há histórico de vazamentos, condição de recuperação, mangueiras, bomba de água e aditivos?"
+      ],
+      "notEstablishedBy": [
+        "Tratar todo vazamento de coolant como junta",
+        "Deduzir óleo do motor apenas por espuma"
+      ],
+      "sourceIds": [
+        "DONALDSON-COOLANT-FILTRATION-FAQ",
+        "PERKINS-FLUID-SAMPLING-OIL-COOLANT"
+      ],
+      "certainty": "UNCONFIRMED",
+      "performedTests": 0
+    }
+  ],
+  "examples": [
+    {
+      "id": "EC-S1",
+      "title": "Película oleosa no reservatório",
+      "orientation": "OIL_IN_COOLANT",
+      "observation": "O refrigerante apresenta película suspeita; ainda não há identificação da substância.",
+      "candidateIds": [
+        "EC-COOLER-CORE",
+        "EC-HEAD-GASKET",
+        "EC-BULK-CONTAMINATION",
+        "EC-RESIDUAL"
+      ],
+      "missingEvidence": [
+        "Amostra representativa e comparação com o produto de base",
+        "Histórico de serviço e reposição de fluidos",
+        "Esquema do trocador e interfaces efetivas"
+      ],
+      "invalidInference": "Película = defeito confirmado no trocador ou junta. Não extrapolar."
+    },
+    {
+      "id": "EC-S2",
+      "title": "Laudo de óleo com indício de glicol",
+      "orientation": "COOLANT_IN_OIL",
+      "observation": "Resultado isolado sugere entrada de refrigerante no óleo, sem confirmação de método.",
+      "candidateIds": [
+        "EC-ANALYTICAL-INTERFERENCE",
+        "EC-COOLER-CORE",
+        "EC-HEAD-GASKET",
+        "EC-CASTING"
+      ],
+      "missingEvidence": [
+        "Método de detecção e suas interferências",
+        "Formulação do óleo novo e do refrigerante",
+        "Histórico e confirmação laboratorial compatíveis com o contexto"
+      ],
+      "invalidInference": "Sódio ou glicol isolado = junta danificada. Não estabelecer causa raiz."
+    },
+    {
+      "id": "EC-S3",
+      "title": "Refrigerante baixando sem contaminação comprovada",
+      "orientation": "UNRESOLVED",
+      "observation": "Há perda observada de volume, mas os dois circuitos não apresentam contaminação confirmada.",
+      "candidateIds": [
+        "EC-NONCROSS-LOSS",
+        "EC-HEAD-GASKET",
+        "EC-CASTING"
+      ],
+      "missingEvidence": [
+        "Histórico de temperatura/volume e registros de vazamento externo",
+        "Características do circuito de recuperação",
+        "Resultados de amostras e literatura OEM"
+      ],
+      "invalidInference": "Baixa de refrigerante prova comunicação com a lubrificação."
+    },
+    {
+      "id": "EC-S4",
+      "title": "Contaminação reaparece após intervenção",
+      "orientation": "OIL_IN_COOLANT",
+      "observation": "Uma aparência oleosa persiste após reparo, sem tendência temporal rastreada.",
+      "candidateIds": [
+        "EC-RESIDUAL",
+        "EC-COOLER-CORE",
+        "EC-BULK-CONTAMINATION",
+        "EC-HEAD-GASKET"
+      ],
+      "missingEvidence": [
+        "Evidência do defeito original e do reparo realizado",
+        "Registros de limpeza, circulação e comparabilidade entre amostras",
+        "Tendência de novo ingresso versus resíduo"
+      ],
+      "invalidInference": "Resíduo persistente prova que a peça nova falhou; também não comprova que está seguro operar."
+    },
+    {
+      "id": "EC-S5",
+      "title": "Ambos os fluidos com sinais suspeitos",
+      "orientation": "UNRESOLVED",
+      "observation": "Há marcas no refrigerante e alterações em óleo; direção e origem permanecem indefinidas.",
+      "candidateIds": [
+        "EC-COOLER-CORE",
+        "EC-HEAD-GASKET",
+        "EC-CASTING",
+        "EC-ANALYTICAL-INTERFERENCE",
+        "EC-BULK-CONTAMINATION"
+      ],
+      "missingEvidence": [
+        "Identidade de contaminantes e tendências por compartimento",
+        "Condições de pressão relativas sem ensaios improvisados",
+        "Projeto de interfaces e documentação de risco por máquina"
+      ],
+      "invalidInference": "Dois resultados anormais identificam sozinhos a interface defeituosa ou o sentido do fluxo."
+    },
+    {
+      "id": "EC-S6",
+      "title": "Espuma e temperatura anormal no sistema de arrefecimento",
+      "orientation": "UNRESOLVED",
+      "observation": "Há espuma e condição térmica reportada, mas a presença de óleo no refrigerante não foi demonstrada.",
+      "candidateIds": [
+        "EC-NONCROSS-LOSS",
+        "EC-BULK-CONTAMINATION",
+        "EC-HEAD-GASKET"
+      ],
+      "missingEvidence": [
+        "Formulação e histórico de aditivos",
+        "Fluxo/nível e integridade de componentes de arrefecimento",
+        "Confirmação química independente de óleo no refrigerante"
+      ],
+      "invalidInference": "Espuma ou alta temperatura comprova queima de junta."
+    }
+  ],
+  "engineeringChain": [
+    {
+      "kind": "SYMPTOM",
+      "meaning": "Película, variação de nível, espuma ou resultado laboratorial; observação ainda não é mecanismo."
+    },
+    {
+      "kind": "IMMEDIATE_PHENOMENON",
+      "meaning": "Fluido fora do circuito, ingresso químico ou perda de volume; depende de confirmação."
+    },
+    {
+      "kind": "POSSIBLE_MECHANISM",
+      "meaning": "Interface com perda de estanqueidade, contaminação de fonte ou erro de observação são alternativas concorrentes."
+    },
+    {
+      "kind": "ROOT_CAUSE",
+      "meaning": "Exige causa física, condição originadora e evidências coerentes da configuração real; permanece desconhecida neste dossiê."
+    },
+    {
+      "kind": "ACTION_GATE",
+      "meaning": "Responsável técnico e procedimento por configuração definem isolação, amostragem, testes seguros, reparo e liberação; não o acervo."
+    }
+  ],
+  "sources": [
+    {
+      "sourceId": "CAT-ENGINE-OIL-COOLER-CORE",
+      "supports": "Função de transferência térmica do trocador de óleo, podendo envolver fluido refrigerante em projeto determinado.",
+      "doesNotSupport": "Defeito real ou aplicabilidade do part number a qualquer máquina específica."
+    },
+    {
+      "sourceId": "DONALDSON-COOLANT-FILTRATION-FAQ",
+      "supports": "Perda de coolant e causas alternativas como juntas, fissuras, radiadores, bombas, conexões, trocadores; implicações de fluido e manutenção.",
+      "doesNotSupport": "Ranking de causas para um caso, limiares de rejeição ou prova de contaminação cruzada."
+    },
+    {
+      "sourceId": "PERKINS-ENGINE-CARE-COOLANT-SEALS",
+      "supports": "Mistura aparente de fluidos como possível indício em falha de vedação de cabeçote.",
+      "doesNotSupport": "Confirmação de junta ou mecanismo em ativo de outro fabricante."
+    },
+    {
+      "sourceId": "PERKINS-FLUID-SAMPLING-OIL-COOLANT",
+      "supports": "Distinção de avaliações de óleo, refrigerante e combustível, incluindo características físico-químicas da amostra.",
+      "doesNotSupport": "Diagnóstico conclusivo de origem sem interpretação e procedimento específico."
+    },
+    {
+      "sourceId": "NORIA-GLYCOL-OIL-ANALYSIS-INTERFERENCES",
+      "supports": "Métodos de detecção de glicol e limitações de interpretação de marcadores elementares e FTIR.",
+      "doesNotSupport": "Limite universal ou classificação automática de amostra como falha do trocador/junta."
+    }
+  ],
+  "safety": {
+    "riskOfContinuedUse": "Contaminação real pode comprometer lubrificação e arrefecimento, com risco de dano progressivo. A situação exige avaliação competente e procedimento de segurança do ativo, sem presumir operação permitida.",
+    "notAuthorized": [
+      "Abrir circuito quente ou pressurizado",
+      "Executar teste de pressurização, pressurizar trocador ou remover componente sem procedimento OEM",
+      "Manter motor em operação para reproduzir sintoma sem avaliação de risco",
+      "Substituir trocador ou junta por mera aparência",
+      "Liberar máquina com base no dossiê"
+    ],
+    "safePlanningNextStep": "Delimitar o sintoma e o compartimento, garantir preservação de evidências e comunicar engenharia/PCM para recuperar documentação OEM, decidir contenção e planejar inspeção autorizada."
+  },
+  "applicability": {
+    "models": [],
+    "serials": [],
+    "coolerPartNumbers": [],
+    "actualSampleResults": [],
+    "pressureThresholds": null,
+    "performedTests": 0,
+    "confirmedFailures": 0
+  },
+  "baseline": {
+    "lockedPilotVersion": "1.4.11",
+    "frozenEngineChanged": false,
+    "frozenFundamentalRecordsChanged": false,
+    "postFreezeAdditionalKnowledge": true,
+    "eligibleAsBlindPilotMaterial": false
+  }
+}

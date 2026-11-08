@@ -113,6 +113,14 @@ Collector and reviewers must NOT receive the evaluator engine before gold labels
 
 An indicator is not proof of actual bypass opening; particle count does not identify which component failed. No machine-specific approval, thresholds or tests exist. This annex is POST-v1.4.11 and NOT in the frozen 10-record retrieval benchmark.
 
+## Engine oil and coolant cross-contamination — technical differential (v1.4.13)
+- [Standalone engine oil/coolant differential explorer](https://pedromaintenance.github.io/fmea-database-mining/contaminacao-oleo-arrefecimento.html)
+- [7 unconfirmed hypotheses and 6 scenarios in JSON](https://pedromaintenance.github.io/fmea-database-mining/engine-oil-coolant.v1.json)
+- [Source trace and no-authority audit](https://pedromaintenance.github.io/fmea-database-mining/engine-oil-coolant-audit.v1.json)
+- [Full engine and PCM scope report](https://github.com/pedromaintenance/fmea-database-mining/blob/main/docs/CICLO_2026-11-08_CONTAMINACAO_OLEO_ARREFECIMENTO.md)
+
+Oil in coolant and coolant in oil must be distinguished. An oil sheen, coolant loss or a single additive/glycol marker does not identify a failed cooler or head gasket. No tests, machine serials, OEM limits or operational release. This is POST-FROZEN PILOT knowledge and NOT part of the v1.4.11 ten-record retrieval benchmark.
+
 ## Technical entry points
 - [Hydraulic circuit differential](https://github.com/pedromaintenance/fmea-database-mining/blob/main/data/quality/hydraulic-circuit-differential.v1.json)
 - [Hydraulic hose differential](https://github.com/pedromaintenance/fmea-database-mining/blob/main/data/quality/hydraulic-hose-differential.v1.json)
