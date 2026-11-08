@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.knowledge-index.v1",
-  "version": "1.4.12",
+  "version": "1.4.13",
   "scope": "selected_existing_public_artifacts_not_complete_inventory",
   "repository": "pedromaintenance/fmea-database-mining",
   "nature": "navigation_metadata_not_canonical_technical_evidence",
@@ -707,6 +707,44 @@
         "Donaldson",
         "PCM",
         "manutenção"
+      ]
+    },
+    {
+      "id": "LIB-ENGINE-COOLANT-OIL-DIFFERENTIAL",
+      "title": "Motor diesel — diferenciação entre óleo no refrigerante e refrigerante no óleo",
+      "domain": "Motores diesel",
+      "kind": "explorador técnico conceitual",
+      "system": "lubrificação e arrefecimento de motor",
+      "evidenceClass": "CONCEPTUAL",
+      "summary": "Sete hipóteses de interação ou contaminação entre óleo e refrigerante, seis situações de campo ilustrativas, perguntas discriminantes e fontes de fabricantes. Não identifica causa real.",
+      "path": "docs/contaminacao-oleo-arrefecimento.html",
+      "keywords": [
+        "óleo no refrigerante",
+        "glicol no óleo",
+        "óleo no arrefecimento",
+        "trocador de calor",
+        "junta de cabeçote",
+        "contaminação cruzada",
+        "motor diesel"
+      ]
+    },
+    {
+      "id": "LIB-ENGINE-COOLANT-OIL-METHOD",
+      "title": "Estudo de engenharia sobre contaminação cruzada no motor",
+      "domain": "Motores diesel",
+      "kind": "relatório técnico e delimitação de escopo",
+      "system": "lubrificação e arrefecimento de motor",
+      "evidenceClass": "CONCEPTUAL",
+      "summary": "Relação entre sintomas, interface física, alternativas de amostragem, responsabilidade PCM e limites de manutenção, com referências Cat, Perkins, Donaldson e Noria.",
+      "path": "docs/CICLO_2026-11-08_CONTAMINACAO_OLEO_ARREFECIMENTO.md",
+      "keywords": [
+        "PCM",
+        "motores diesel",
+        "análise de óleo",
+        "refrigerante",
+        "investigação",
+        "inspeção",
+        "causa raiz"
       ]
     }
   ]
