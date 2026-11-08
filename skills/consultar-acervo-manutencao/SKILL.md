@@ -7,6 +7,9 @@ description: Consulta o acervo público FMEA Database Mining para responder dúv
 
 Esta skill é **somente de leitura conceitual**. Não acessa SAP, não opera máquina, não executa procedimentos e não autentica evidências OEM por série.
 
+## Aplicação do primeiro piloto (versão 1.4.9)
+Para rodar avaliação com trabalhadores, consultar `../../docs/PILOTO_QUESTIONARIO_OFICINA.md`. Não simular perguntas ou respostas humanas. Usar formulário público vazio; dados reais somente em `private/`. Não executar busca antes da adjudicação de R1/R2. O reconciliador exige **pasta privada de saída inédita** e bloqueia protocolos não cegos. A avaliação CLI só aceita entrada/saída privadas quando há dados humanos. As 11 condições de prontidão incluem autorização e anonimização manuais, não verificáveis apenas por código.
+
 ## Protocolo de perguntas externas — dupla revisão cega
 Se solicitar qualidade externa de recuperação, consultar `../../docs/AVALIACAO_DUPLA_REVISAO.md`: coleta sem rótulo, parecer R1, parecer R2, desempate cego, reconciliação local em `private/`, gabarito congelado, depois avaliação. Não criar perguntas ou pareceres fictícios, não afirmar que R1/R2 são pessoas distintas sem evidência; o status público tem **0 avaliações humanas** até coleta efetiva. A classe de risco operacional exige revisão prioritária por engenheiro e OEM.
 
