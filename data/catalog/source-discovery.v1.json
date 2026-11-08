@@ -1,9 +1,9 @@
 {
   "schema": "fmea-mining.source-discovery.v1",
-  "version": "1.4.6",
+  "version": "1.4.12",
   "nature": "bibliographic_metadata_not_machine_effectivity",
   "canonicalPath": "data/research/sources.v1.json",
-  "sourceRegistryVersion": "1.4.6",
+  "sourceRegistryVersion": "1.4.12",
   "checkedLinksOnThisCycle": false,
   "rights": "somente_titulos_links_e_resumos_originais",
   "sources": [
@@ -976,6 +976,36 @@
       "role": "manufacturer_public_component_operation",
       "limitation": "Explica contrabalanço, pilotagem e carga que tende a acelerar; não demonstra que o equipamento estudado possui essa válvula nem estabelece ajustes aplicáveis.",
       "lastReviewed": "2026-11-07"
+    },
+    {
+      "id": "DONALDSON-HYD-FILTER-REPLACEMENT",
+      "organization": "Donaldson",
+      "title": "How to Replace Hydraulic Filters Correctly: Types, Ratings & Tips",
+      "url": "https://www.donaldson.com/en/resources/technical-articles/replacing-hydraulic-filters/",
+      "area": "hydraulic_filtration_media_bypass_risk_cold_start",
+      "role": "manufacturer_public_technical_explanation",
+      "limitation": "Explica diferenças de localização, eficiência, bypass e risco de fluxo não filtrado; não comprova a arquitetura real, o elemento instalado, o ajuste de bypass nem a condição do filtro em qualquer máquina de mina.",
+      "lastReviewed": "2026-11-08"
+    },
+    {
+      "id": "HYDAC-DP-CLOGGING-INDICATOR",
+      "organization": "HYDAC",
+      "title": "Differential Pressure Clogging Indicator — Purpose, Operation and Application Guidelines",
+      "url": "https://catalog.hydac.com/item/clogging-indicators-differential/vd--high-pressure-type-bm--visual-manual-reset/303165",
+      "area": "differential_pressure_indicator_filter_observation_and_pressure_type",
+      "role": "manufacturer_public_product_page_and_technical_explanation",
+      "limitation": "O texto técnico inclui características de um produto HYDAC específico; nenhum valor numérico ou código de componente é extrapolável à frota. Indicação de restrição não comprova abertura de bypass nem causa raiz.",
+      "lastReviewed": "2026-11-08"
+    },
+    {
+      "id": "HYDAC-HYDRAULIC-FILTER-FAQ",
+      "organization": "HYDAC",
+      "title": "Filter FAQs — Bypass Location, Cold-Start Viscosity and Filter Selection",
+      "url": "https://betterfit-us.hydac.com/contact-us/faqs/filter-faqs/",
+      "area": "filter_housing_compatibility_pressure_drop_cold_start",
+      "role": "manufacturer_public_filter_reference_and_product_design",
+      "limitation": "As descrições de filtros HYDAC não estabelecem presença de bypass, pressão diferencial, intercambialidade ou instruções de troca para componentes de outra marca ou série.",
+      "lastReviewed": "2026-11-08"
     }
   ]
 }
