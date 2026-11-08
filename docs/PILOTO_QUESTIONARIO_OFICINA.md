@@ -1,3 +1,5 @@
+> **Atualização 1.4.10:** agora há um [controle standalone dos onze gates](controle-piloto.html), com exportação/importação de declarações privadas, verificação de hashes e bloqueio de sequência incoerente. Consulte [o relatório do ciclo](CICLO_2026-11-08_CONTROLE_EXECUCAO_PILOTO.md). O controle não constitui autorização organizacional, comprovação de identidade, registro de participantes ou liberação operacional. Nenhum avaliador humano participou até esta versão.
+
 # Ciclo 1.4.9 — Preparação do piloto de perguntas de manutenção
 
 **08/11/2026 · Pacote de aplicação real pronto; participantes ainda não recrutados · Nenhuma avaliação externa realizada**
