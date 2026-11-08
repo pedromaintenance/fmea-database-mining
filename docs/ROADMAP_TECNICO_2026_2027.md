@@ -36,6 +36,8 @@
 
 **Ciclo 1.4.10:** consolidado o controle offline dos onze gates do piloto em cinco fases, com responsáveis, declarações humanas exportáveis, verificação de hashes do buscador/corpus, bloqueio de sequência inconsistente e status público vazio. O projeto não afirma resultados externos nem gera autorização por checklist; próximo passo ainda é a **coleta autorizada de perguntas reais**, sem otimizar a busca sobre dados fabricados.
 
+**Ciclo 1.4.11:** travamento efetivo do motor lexical v2 e dos dez registros (IDs de blob Git da referência v1.4.10), geração reprodutível de quatro pacotes offline separados por papel, manifests SHA-256 e auditoria de extração/isolamento. Nenhuma pergunta real ou revisão independente foi realizada. Prioridade futura: obter autorização e pessoas reais antes de modificar o algoritmo, mantendo o baseline congelado.
+
 ### Horizonte F1 — Fundamentos mecânicos e hidráulicos (1–3 meses)
 **Foco 1:** tribologia, desgaste e lubrificação; viscosidade, contaminação, partículas, falha de rolamento, vedação, filtragem e interpretação SOS.  
 **Foco 2:** hidráulica: bombas de deslocamento, regulação, válvulas, acumuladores, sucção, cavitação, cilindros, mangueiras, drenagem, contrapressão e resfriamento.  
