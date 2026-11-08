@@ -7,6 +7,9 @@ description: Consulta o acervo público FMEA Database Mining para responder dúv
 
 Esta skill é **somente de leitura conceitual**. Não acessa SAP, não opera máquina, não executa procedimentos e não autentica evidências OEM por série.
 
+## Congelamento do piloto e avaliações offline (1.4.11)
+Para distribuir o piloto, utilizar `../../docs/pacotes-piloto.html` e `../../data/quality/pilot-frozen-baseline.v1.json`. A linha de base de busca lexical v2 e as dez fichas está congelada pelos blobs do Git; nunca alterá-la para elevar acerto em perguntas coletadas. Entregar somente o pacote `collector` na coleta, `reviewer` aos julgadores, `adjudicator` no desempate e `evaluator` depois de congelar o gabarito. Verificar manifestos SHA-256, confinar arquivos humanos a `private/` e consultar `../../docs/CICLO_2026-11-08_PACOTES_PILOTO_CONGELADO.md`. Estado externo: nenhum julgamento real.
+
 ## Controle de execução do piloto — 1.4.10
 Use `../../docs/controle-piloto.html` e `../../data/quality/field-pilot-readiness.v1.json` para conferir as 11 etapas humanas. `npm run knowledge:pilot:gates -- --input private/controle.json --out private/resultado.json` avalia somente flags autodeclaradas e hashes de versão, sem afirmar autorização empresarial. `INCONSISTENT_SEQUENCE` bloqueia progresso; `SELF_ATTESTED` indica declarações, não verificação independente. Não inventar aprovação, trabalhador participante, perguntas externas ou métricas. Consulte o procedimento `../../docs/CICLO_2026-11-08_CONTROLE_EXECUCAO_PILOTO.md` antes de usar dados reais.
 
