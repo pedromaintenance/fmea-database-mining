@@ -27,7 +27,7 @@ const script=kit.match(/<script>([\s\S]*?)<\/script>/);
 try{check('kit_javascript',!!script&&!!new vm.Script(script[1]))}catch{check('kit_javascript',false)}
 check('kit_20_blank_lines',kit.includes('for(let i=1;i<=20;i++)')&&kit.includes("createElement('div')"));
 check('kit_no_persistent_tracking',!/fetch\s*\(|XMLHttpRequest|localStorage|sessionStorage|sendBeacon|<script\s+src=/i.test(kit));
-check('kit_explains_voluntary',kit.includes('voluntária')&&kit.includes('não precisa se identificar')===false&&kit.includes('20'));
+check('kit_explains_voluntary',kit.includes('voluntária')&&kit.includes('não é necessário se identificar')&&kit.includes('20'));
 check('kit_no_names_or_asset_values',!kit.includes('040-')&&!kit.includes('KYD00'));
 const evaluator=read('scripts/evaluate-external-review.mjs');
 const reconciliation=read('scripts/reconcile-blind-reviews.mjs');
@@ -78,6 +78,11 @@ try{
  const publicLeak=path.join(work,'..','..','reports','_qa_human_score_should_not_exist.json');
  const unsafe=call('scripts/evaluate-external-review.mjs',['--input',gold,'--out',publicLeak]);mutations++;
  check('reject_public_score_output',unsafe.status!==0&&!fs.existsSync(publicLeak));
+ const symlinkTarget=path.join(cwd,'reports','_qa_human_score_symlink_should_not_exist.json');
+ const symlinkPath=path.join(work,'score-symlink.json');
+ fs.symlinkSync(symlinkTarget,symlinkPath);
+ const linkRun=call('scripts/evaluate-external-review.mjs',['--input',gold,'--out',symlinkPath]);mutations++;
+ check('reject_symlink_score_escape',linkRun.status!==0&&!fs.existsSync(symlinkTarget));
  const invalid=structuredClone(r1);invalid.declaration.didNotSeePredictions=false;const wrong=file('r1-not-blind.json',invalid);
  const badOut=path.join(work,'bad_nonblind');
  const bad=call('scripts/reconcile-blind-reviews.mjs',['--collection',inputs.collection,'--r1',wrong,'--r2',inputs.r2,'--decisions',inputs.decision,'--out-dir',badOut]);mutations++;
