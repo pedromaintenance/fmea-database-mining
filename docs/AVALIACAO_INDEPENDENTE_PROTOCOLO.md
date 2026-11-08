@@ -1,3 +1,5 @@
+> **Atualização 1.4.8:** o protocolo passou a oferecer três etapas com papéis separados: [coleta](coleta-perguntas.html), [revisão cega R1/R2](revisao-cega.html) e [adjudicação](adjudicacao-tecnica.html), além de reconciliação local com gabarito privado. Consulte [o procedimento de dupla revisão](AVALIACAO_DUPLA_REVISAO.md). A interface da versão 1.4.7 permanece disponível para compatibilidade, mas avaliações com duplo parecer devem seguir o novo fluxo. Ainda não há perguntas ou revisores humanos reais.
+
 # Ciclo 1.4.7 — Laboratório de avaliação técnica com julgamento humano
 
 **Data: 07/11/2026 | Natureza: protocolo e infraestrutura de coleta | Status da avaliação externa: NÃO INICIADA**
