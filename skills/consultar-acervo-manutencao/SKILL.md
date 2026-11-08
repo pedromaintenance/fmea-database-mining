@@ -7,6 +7,9 @@ description: Consulta o acervo público FMEA Database Mining para responder dúv
 
 Esta skill é **somente de leitura conceitual**. Não acessa SAP, não opera máquina, não executa procedimentos e não autentica evidências OEM por série.
 
+## Protocolo de perguntas externas — dupla revisão cega
+Se solicitar qualidade externa de recuperação, consultar `../../docs/AVALIACAO_DUPLA_REVISAO.md`: coleta sem rótulo, parecer R1, parecer R2, desempate cego, reconciliação local em `private/`, gabarito congelado, depois avaliação. Não criar perguntas ou pareceres fictícios, não afirmar que R1/R2 são pessoas distintas sem evidência; o status público tem **0 avaliações humanas** até coleta efetiva. A classe de risco operacional exige revisão prioritária por engenheiro e OEM.
+
 ## Avaliação de recuperação sem confundir fonte e aprovação
 Se a pergunta for sobre confiabilidade do buscador, consulte `../../docs/AVALIACAO_INDEPENDENTE_PROTOCOLO.md` e `../../reports/external-review-evaluation.generated.json`. Sem importação de julgamentos humanos externos, a avaliação retorna `NO_EXTERNAL_SAMPLE` e taxas `null`. A comparação interna 18/24 não prova recuperação em consultas inéditas. Não propor liberação de máquina com base em saída de busca e não publicar perguntas com dados de frota ou informações corporativas.
 
