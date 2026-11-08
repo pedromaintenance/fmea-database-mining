@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.knowledge-index.v1",
-  "version": "1.4.11",
+  "version": "1.4.12",
   "scope": "selected_existing_public_artifacts_not_complete_inventory",
   "repository": "pedromaintenance/fmea-database-mining",
   "nature": "navigation_metadata_not_canonical_technical_evidence",
@@ -669,6 +669,44 @@
         "auditoria",
         "privacidade",
         "avaliação externa"
+      ]
+    },
+    {
+      "id": "LIB-HYD-FILTER-DIFFERENTIAL",
+      "title": "Filtragem hidráulica — diferencial de pressão, indicador e bypass",
+      "domain": "Hidráulica",
+      "kind": "ferramenta de comparação conceitual",
+      "system": "filtração hidráulica",
+      "evidenceClass": "CONCEPTUAL",
+      "summary": "Seis hipóteses de restrição/indicação de filtro e seis contextos de investigação com contraprovas e fontes Donaldson/HYDAC. Não conclui bypass, saturação nem liberação de equipamento.",
+      "path": "docs/filtragem-diferencial.html",
+      "keywords": [
+        "filtragem hidráulica",
+        "bypass",
+        "pressão diferencial",
+        "indicador de restrição",
+        "óleo frio",
+        "viscosidade",
+        "contaminação"
+      ]
+    },
+    {
+      "id": "LIB-HYD-FILTER-DIFFERENTIAL-REPORT",
+      "title": "Estudo técnico de filtragem diferencial e limites de interpretação",
+      "domain": "Hidráulica",
+      "kind": "relatório de investigação bibliográfica",
+      "system": "filtração hidráulica",
+      "evidenceClass": "CONCEPTUAL",
+      "summary": "Diferencia ΔP, sinal de restrição e estado de bypass, apresenta escopo ilustrativo de investigação para PCM e preserva o piloto congelado de dez registros.",
+      "path": "docs/CICLO_2026-11-08_FILTRAGEM_HIDRAULICA_DIFERENCIAL.md",
+      "keywords": [
+        "filtro hidráulico",
+        "diagnóstico diferencial",
+        "Parker",
+        "HYDAC",
+        "Donaldson",
+        "PCM",
+        "manutenção"
       ]
     }
   ]

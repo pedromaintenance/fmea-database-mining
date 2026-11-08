@@ -105,6 +105,14 @@ Manual flags are SELF ATTESTATIONS; they do not prove organizational approval or
 
 Collector and reviewers must NOT receive the evaluator engine before gold labels are frozen. Source lock is against v1.4.10 Git blobs. All archives contain only public code and empty forms; no real human judgments or independent validation scores exist. Do not infer OEM operational approval from successful QA.
 
+## Hydraulic filter differential and bypass mechanics (v1.4.12)
+- [Read-only conceptual differential explorer](https://pedromaintenance.github.io/fmea-database-mining/filtragem-diferencial.html)
+- [Six hypotheses and six cases JSON](https://pedromaintenance.github.io/fmea-database-mining/filter-differential.v1.json)
+- [Source trace and safety audit](https://pedromaintenance.github.io/fmea-database-mining/filter-differential-audit.v1.json)
+- [Methodology and OEM boundaries](https://github.com/pedromaintenance/fmea-database-mining/blob/main/docs/CICLO_2026-11-08_FILTRAGEM_HIDRAULICA_DIFERENCIAL.md)
+
+An indicator is not proof of actual bypass opening; particle count does not identify which component failed. No machine-specific approval, thresholds or tests exist. This annex is POST-v1.4.11 and NOT in the frozen 10-record retrieval benchmark.
+
 ## Technical entry points
 - [Hydraulic circuit differential](https://github.com/pedromaintenance/fmea-database-mining/blob/main/data/quality/hydraulic-circuit-differential.v1.json)
 - [Hydraulic hose differential](https://github.com/pedromaintenance/fmea-database-mining/blob/main/data/quality/hydraulic-hose-differential.v1.json)

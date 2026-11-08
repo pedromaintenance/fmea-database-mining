@@ -1,0 +1,298 @@
+{
+  "schema": "fmea-mining.hydraulic-filter-differential.v1",
+  "version": "1.4.12",
+  "nature": "conceptual_differential_not_machine_specific_test_or_diagnosis",
+  "title": "Filtragem hidráulica: diferencial de pressão, indicador e bypass",
+  "scope": "Filtro hidráulico, cabeçote, elemento e indicador nas arquiteturas genéricas de sucção, pressão ou retorno; sem identificar marca, modelo, série, topologia, estágio de bypass ou condição real da frota.",
+  "status": {
+    "evidenceClass": "CONCEPTUAL",
+    "reviewStatus": "PENDING_REVIEW",
+    "humanTechnicalPeerReview": false,
+    "operationalApproval": false,
+    "sapMappingApproved": false,
+    "automaticDiagnosisAllowed": false,
+    "verifiedModels": [],
+    "verifiedSerials": [],
+    "fieldObservations": 0,
+    "performedTests": 0,
+    "confirmedRootCauses": 0,
+    "oemAcceptanceLimits": null
+  },
+  "functionRequired": "O conjunto filtrante deve restringir a passagem de contaminantes respeitando as condições de fluxo, viscosidade, pressão admissível e os dispositivos específicos do circuito. O indicador apresenta uma condição vinculada à instalação e ao seu princípio de medição, não um diagnóstico completo.",
+  "physicalModel": {
+    "differentialPressure": "A diferença entre pressão a montante e a jusante (ΔP) depende da resistência do meio filtrante, do carregamento de partículas e da condição de escoamento. A mesma indicação pode surgir por causas distintas.",
+    "indicationVsBypass": "Uma sinalização de restrição não prova que o bypass abriu. E uma configuração sem bypass tem consequências possíveis distintas de uma arquitetura com bypass.",
+    "contaminationVsFailure": "Um ISO 4406 alterado não comprova filtro em bypass, falha de bomba nem origem das partículas sem amostragem e evidências correlacionadas.",
+    "danger": "Linha pressurizada, fluido quente, carga suspensa e energia hidráulica armazenada são perigosas. Este conteúdo não prescreve abrir linha, medir em porta, forçar válvula, operar com bypass ou liberar máquina."
+  },
+  "relatedCanonicalRecords": [
+    {
+      "path": "data/knowledge/fundamentals/solid-contamination.v2.json",
+      "id": "TK-FLUID-SOLIDS-001",
+      "relation": "condition_assessment_cannot_prove_bypass"
+    },
+    {
+      "path": "data/knowledge/fundamentals/hydraulic-inlet-restriction.v1.json",
+      "id": "TK-HYD-INLET-001",
+      "relation": "pump_supply_is_distinct_filter_location"
+    },
+    {
+      "path": "data/knowledge/fundamentals/hydraulic-instrumentation.v2.json",
+      "id": "TK-HYD-SENSORS-001",
+      "relation": "signal_chain_may_compete_with_physical_restriction"
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "HF-MEDIA-LOADED",
+      "label": "Acúmulo de contaminantes no meio filtrante",
+      "mechanism": "A retenção progressiva de partículas pode aumentar a resistência ao escoamento e a diferença de pressão através do elemento.",
+      "favors": [
+        "Indicação de ΔP persistente em condição comparável de temperatura e fluxo, acompanhada de histórico coerente de carregamento."
+      ],
+      "against": [
+        "Indicação apenas no frio que desaparece em condições comparáveis sem outra evidência de carga de sujeira."
+      ],
+      "evidenceQuestions": [
+        "Há tendência de ΔP, temperatura, fluxo e histórico de serviço do elemento sob condições comparáveis?",
+        "O elemento e a classe de eficiência estão identificados por código OEM efetivo?"
+      ],
+      "sourceIds": [
+        "DONALDSON-HYD-FILTER-REPLACEMENT",
+        "HYDAC-DP-CLOGGING-INDICATOR"
+      ],
+      "certainty": "UNCONFIRMED"
+    },
+    {
+      "id": "HF-VISCOSITY",
+      "label": "Viscosidade elevada em condição fria",
+      "mechanism": "Fluido mais viscoso pode aumentar transitoriamente a resistência do conjunto, mesmo com elemento que não esteja saturado.",
+      "favors": [
+        "Alarme restrito à partida fria com mudança consistente após estabilização térmica documentada."
+      ],
+      "against": [
+        "ΔP anormal persistente em temperatura e regime representativos, sem relação térmica identificável."
+      ],
+      "evidenceQuestions": [
+        "O aviso ocorre somente a frio ou também em regime estabilizado?",
+        "Há registro de temperatura e condição do óleo no mesmo instante da indicação?"
+      ],
+      "sourceIds": [
+        "HYDAC-HYDRAULIC-FILTER-FAQ",
+        "DONALDSON-HYD-FILTER-REPLACEMENT"
+      ],
+      "certainty": "UNCONFIRMED"
+    },
+    {
+      "id": "HF-FLOW-SURGE",
+      "label": "Pico de vazão e configuração do filtro",
+      "mechanism": "Mudanças de vazão, passagem pelo cabeçote ou elemento subdimensionado/incompatível podem afetar a queda de pressão sem distinguir sozinho saturação.",
+      "favors": [
+        "Aviso associado a transientes de fluxo, a mudanças de elemento ou a uma condição específica de operação."
+      ],
+      "against": [
+        "Ausência de correlação com carga/fluxo, especialmente quando há evidência independente de saturação."
+      ],
+      "evidenceQuestions": [
+        "Qual é a posição do filtro no circuito e qual condição de vazão foi associada ao aviso?",
+        "Existe confirmação da part number, eficiência do elemento e cabeçote para a configuração OEM?"
+      ],
+      "sourceIds": [
+        "HYDAC-HYDRAULIC-FILTER-FAQ",
+        "DONALDSON-HYD-FILTER-REPLACEMENT"
+      ],
+      "certainty": "UNCONFIRMED"
+    },
+    {
+      "id": "HF-INDICATOR",
+      "label": "Indicação, medição e transmissão incorreta",
+      "mechanism": "O sinal pode ser lido erroneamente por distinção entre indicador estático e diferencial, estado do dispositivo, reset mecânico ou cadeia elétrica de sinalização.",
+      "favors": [
+        "Divergência entre sinal visual/elétrico e evidência independente da condição de pressão em procedimento autorizado."
+      ],
+      "against": [
+        "Indicação confirmada por método comparável e coerente com regime do filtro."
+      ],
+      "evidenceQuestions": [
+        "O dispositivo mede ΔP, pressão estática ou variável indireta e qual é sua forma de reset?",
+        "Há evidência de integridade da cadeia sensor–chicote–controlador e do ponto real de indicação?"
+      ],
+      "sourceIds": [
+        "HYDAC-DP-CLOGGING-INDICATOR",
+        "HYDAC-HYDRAULIC-FILTER-FAQ"
+      ],
+      "certainty": "UNCONFIRMED"
+    },
+    {
+      "id": "HF-BYPASS-STATE",
+      "label": "Estado de bypass não confirmado",
+      "mechanism": "A abertura da válvula de bypass depende da construção e do diferencial efetivo; um aviso de restrição, um óleo sujo ou um alarme elétrico não bastam para confirmar que houve fluxo não filtrado.",
+      "favors": [
+        "Documentação efetiva confirma a presença do bypass e uma evidência específica identifica seu estado sob condições comparáveis."
+      ],
+      "against": [
+        "Filtro sem bypass no arranjo identificado ou ausência de evidência do estado da válvula."
+      ],
+      "evidenceQuestions": [
+        "O conjunto possui bypass? Ele fica no elemento ou no cabeçote da configuração real?",
+        "Há evidência segura e autorizada do estado do bypass que não seja apenas a luz de alerta?"
+      ],
+      "sourceIds": [
+        "DONALDSON-HYD-FILTER-REPLACEMENT",
+        "HYDAC-HYDRAULIC-FILTER-FAQ",
+        "HYDAC-DP-CLOGGING-INDICATOR"
+      ],
+      "certainty": "UNCONFIRMED"
+    },
+    {
+      "id": "HF-SAMPLING-CONFOUND",
+      "label": "Contaminação observada sem causalidade de bypass",
+      "mechanism": "Amostra de fluido com partículas pode ter relação com ingresso externo, desgaste interno ou técnica de amostragem; não demonstra a operação da válvula de bypass.",
+      "favors": [
+        "Mudança de contagem ISO 4406 sem dados simultâneos de ΔP, indicador, configuração e estado do filtro."
+      ],
+      "against": [
+        "Evidências independentes e rastreáveis sobre mecanismo de ingresso e função filtrante, além da contagem de partículas."
+      ],
+      "evidenceQuestions": [
+        "A coleta foi representativa, com ponto, temperatura, método e histórico registrados?",
+        "Há série comparável, histórico de abastecimento, serviço e inspeção do elemento?"
+      ],
+      "sourceIds": [
+        "DONALDSON-HYD-FILTER-REPLACEMENT",
+        "HYDAC-DP-CLOGGING-INDICATOR"
+      ],
+      "certainty": "UNCONFIRMED"
+    }
+  ],
+  "presentations": [
+    {
+      "id": "CASE-COLD",
+      "title": "Indicador aciona somente na partida fria",
+      "observation": "Aviso aparece no início da operação e desaparece após mudança da condição térmica.",
+      "candidateHypothesisIds": [
+        "HF-VISCOSITY",
+        "HF-MEDIA-LOADED",
+        "HF-FLOW-SURGE",
+        "HF-INDICATOR"
+      ],
+      "requiredContext": [
+        "temperatura e viscosidade registradas",
+        "tipo e ponto de indicação",
+        "condição de vazão e serviço do elemento"
+      ],
+      "invalidConclusion": "É falso concluir que o elemento está bom ou ruim sem evidência; aquecimento isolado não libera a operação."
+    },
+    {
+      "id": "CASE-PERSISTENT",
+      "title": "Restrição persiste em condição operacional comparável",
+      "observation": "Indicador permanece em alerta com fluxo e temperatura aparentemente estáveis.",
+      "candidateHypothesisIds": [
+        "HF-MEDIA-LOADED",
+        "HF-FLOW-SURGE",
+        "HF-INDICATOR",
+        "HF-BYPASS-STATE"
+      ],
+      "requiredContext": [
+        "condição real de fluxo e temperatura",
+        "configuração de filtro e bypass",
+        "histórico e documentação do indicador"
+      ],
+      "invalidConclusion": "Persistência não confirma bypass aberto nem autoriza troca sem identificação correta do elemento."
+    },
+    {
+      "id": "CASE-POST-SERVICE",
+      "title": "Alarme após substituição de filtro",
+      "observation": "Sinal surge ou permanece depois de serviço, sem identificação de causa.",
+      "candidateHypothesisIds": [
+        "HF-FLOW-SURGE",
+        "HF-INDICATOR",
+        "HF-VISCOSITY",
+        "HF-MEDIA-LOADED"
+      ],
+      "requiredContext": [
+        "código, classe, vedação e projeto do elemento efetivamente instalado",
+        "condição de aviso antes/depois e temperatura",
+        "documentação da montagem e histórico"
+      ],
+      "invalidConclusion": "Não assumir que o indicador está defeituoso nem substituir por filtro de classe diferente para apagar o aviso."
+    },
+    {
+      "id": "CASE-ISO",
+      "title": "Código de limpeza ISO 4406 elevado",
+      "observation": "Laudo aponta partículas em fluido, mas sem evidência equivalente de bypass.",
+      "candidateHypothesisIds": [
+        "HF-SAMPLING-CONFOUND",
+        "HF-MEDIA-LOADED",
+        "HF-BYPASS-STATE"
+      ],
+      "requiredContext": [
+        "ponto e método de coleta",
+        "histórico de contaminação e intervenção",
+        "sinais de restrição e estado do filtro"
+      ],
+      "invalidConclusion": "Não concluir bypass ou falha de bomba apenas por ISO 4406."
+    },
+    {
+      "id": "CASE-ALERT",
+      "title": "Alerta visual e elétrico divergentes",
+      "observation": "Uma indicação parece existir enquanto outra não confirma a condição.",
+      "candidateHypothesisIds": [
+        "HF-INDICATOR",
+        "HF-MEDIA-LOADED",
+        "HF-VISCOSITY"
+      ],
+      "requiredContext": [
+        "tipo de indicador e função de reset",
+        "cadeia elétrica de transmissão",
+        "condição de fluxo e temperatura"
+      ],
+      "invalidConclusion": "Uma lâmpada sozinha não descreve a condição real da filtragem."
+    },
+    {
+      "id": "CASE-UNKNOWN",
+      "title": "Filtro de sucção, retorno ou pressão não identificado",
+      "observation": "Há aviso sem diagrama/código do conjunto filtrante.",
+      "candidateHypothesisIds": [
+        "HF-INDICATOR",
+        "HF-FLOW-SURGE",
+        "HF-BYPASS-STATE"
+      ],
+      "requiredContext": [
+        "localização e função do filtro",
+        "modelo exato de cabeçote/elemento",
+        "presença e posição do bypass"
+      ],
+      "invalidConclusion": "Não aplicar valores de catálogos de outra família nem iniciar teste em circuito desconhecido."
+    }
+  ],
+  "provenance": {
+    "sourceRegistryPath": "data/research/sources.v1.json",
+    "sourceNotes": [
+      {
+        "sourceId": "DONALDSON-HYD-FILTER-REPLACEMENT",
+        "supports": "Classifica locais/funções de filtros, explica compromisso entre eficiência e fluxo e possibilidade de bypass em condições frias, picos de pressão ou obstrução.",
+        "doesNotSupport": "Não confirma bypass, pressão diferencial, classe de eficiência ou causa raiz em ativo específico."
+      },
+      {
+        "sourceId": "HYDAC-DP-CLOGGING-INDICATOR",
+        "supports": "Distingue medição diferencial/estática, alertas de saturação, sinais visuais e elétricos e relações de projeto entre indicador e bypass.",
+        "doesNotSupport": "Limiares e parâmetros dos exemplos HYDAC não são transferíveis à frota; alerta não prova posição do bypass."
+      },
+      {
+        "sourceId": "HYDAC-HYDRAULIC-FILTER-FAQ",
+        "supports": "Explica dependência de vazão, viscosidade, alojamento do bypass e dimensionamento do filtro em partidas frias.",
+        "doesNotSupport": "Descrição de projeto HYDAC não comprova elemento, válvula ou especificação em equipamentos CAT ou de outros OEMs."
+      }
+    ],
+    "originalInterpretation": "analytical_synthesis_not_manufacturer_endorsement",
+    "newFieldEvidence": false
+  },
+  "safety": {
+    "boundary": "Não abrir circuito pressurizado, desabilitar alertas, contornar bypass, operar máquina com suspeita de perda de filtragem, definir limite ou substituir elemento por equivalência presumida. Verificar documentação e método OEM por configuração e avaliação de risco por responsável habilitado.",
+    "permittedOutput": "Perguntas para investigação documental e alternativas conceituais sem ranking ou conclusão de causa raiz.",
+    "noNumericThresholds": true,
+    "noAssetDiagnosis": true,
+    "noOperationalRelease": true
+  }
+}

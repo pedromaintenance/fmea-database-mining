@@ -75,6 +75,12 @@
 - `npm run knowledge:pilot:freeze:audit` extrai arquivos, audita manifests/hashes, isolamento de funções, links offline e retorno `NO_EXTERNAL_SAMPLE` ao iniciar o avaliador vazio. São testes sintéticos de software, **não validação independente**.
 - O público recebe `/pilot-frozen-release-index.v1.json` com SHA-256 dos pacotes e dos arquivos técnicos. Dados humanos reais continuam em `private/`; não fazem parte dos arquivos públicos.
 
+## Novo anexo hidráulico fora da base congelada (1.4.12)
+- `data/knowledge/hydraulic-filter-differential.v1.json` documenta seis hipóteses e seis situações sobre filtro, pressão diferencial e bypass. O dossiê tem fontes primárias, evidências discriminantes e limites; continua CONCEITUAL e PENDENTE DE REVISÃO.
+- `docs/filtragem-diferencial.html` e `reports/filter-differential.generated.json` são consulta pública read-only. Não há diagnóstico de ativo, lista de PN, limite de pressão nem autorização operacional.
+- O motor `technical-discovery-v2.mjs` e as dez fichas do `pilot-frozen-baseline.v1.json` **não recebem este dossiê**. Não mencionar como parte do corpus avaliado do piloto 1.4.11; registrar como pesquisa posterior.
+- **Alerta de indicador não confirma bypass aberto.** ΔP, carregamento do elemento, viscosidade, vazão, sensores e partículas devem ser separados conforme documentação específica.
+
 ## Pipeline de recuperação
 1. **Descoberta:** `data/catalog/knowledge-index.v1.json` inclui uma seleção inicial de artefatos existentes. Ausência no índice não significa ausência no repositório.
 2. **Recuperação canônica:** abrir `path`; preferir informações estruturadas em `data/quality` e documentos de `docs`. Não transformar o campo de descrição do índice em prova.
