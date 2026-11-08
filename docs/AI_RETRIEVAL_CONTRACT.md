@@ -81,6 +81,12 @@
 - O motor `technical-discovery-v2.mjs` e as dez fichas do `pilot-frozen-baseline.v1.json` **não recebem este dossiê**. Não mencionar como parte do corpus avaliado do piloto 1.4.11; registrar como pesquisa posterior.
 - **Alerta de indicador não confirma bypass aberto.** ΔP, carregamento do elemento, viscosidade, vazão, sensores e partículas devem ser separados conforme documentação específica.
 
+## Material diesel posterior ao congelamento — óleo/refrigerante (1.4.13)
+- `data/knowledge/engine-oil-coolant-differential.v1.json`: sete hipóteses CONCEPTUAL/PENDING_REVIEW, seis situações e 5 fontes. A ausência de dados de motor, série, testes e documentação OEM impede inferir causa raiz ou liberação.
+- `docs/contaminacao-oleo-arrefecimento.html` e `reports/engine-oil-coolant.generated.json` oferecem leitura comparativa offline, sem executar testes nem determinar ações de campo.
+- Óleo no refrigerante, refrigerante no óleo e espuma/perda de coolant são fenômenos distintos. Indício químico pode ter interferência. O sentido do fluxo não é universal sem dados de pressão e arquitetura.
+- Motor e dez fichas do piloto `pilot-frozen-baseline.v1.json` permanecem idênticos; **não contaminar avaliação cega com esta pesquisa posterior**.
+
 ## Pipeline de recuperação
 1. **Descoberta:** `data/catalog/knowledge-index.v1.json` inclui uma seleção inicial de artefatos existentes. Ausência no índice não significa ausência no repositório.
 2. **Recuperação canônica:** abrir `path`; preferir informações estruturadas em `data/quality` e documentos de `docs`. Não transformar o campo de descrição do índice em prova.
