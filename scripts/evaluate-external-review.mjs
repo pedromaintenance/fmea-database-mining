@@ -21,6 +21,16 @@ const at=process.argv.indexOf('--input'),outAt=process.argv.indexOf('--out');
 const input=at>=0?process.argv[at+1]:null;
 const out=outAt>=0?process.argv[outAt+1]:'reports/external-review-evaluation.generated.json';
 if((at>=0&&!input)||(outAt>=0&&!out))throw Error('--input and --out each require a file path');
+if(input){
+ // External human judgments and predictions belong only in private/, not
+ // public reports or a git-tracked path. No special-case bypass for old scripts.
+ const privateRoot=path.resolve('private');
+ for(const [kind,p] of [['--input',input],['--out',out]]){
+  const rel=path.relative(privateRoot,path.resolve(p));
+  if(!rel||rel.startsWith('..')||path.isAbsolute(rel))
+   throw Error(kind+' with real human data must stay under gitignored private/');
+ }
+}
 let result;
 if(!input){
  result={schema:'fmea-mining.external-review-report.v1',version:'1.4.7',status:'NO_EXTERNAL_SAMPLE',
