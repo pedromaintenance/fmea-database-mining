@@ -7,6 +7,9 @@ description: Consulta o acervo público FMEA Database Mining para responder dúv
 
 Esta skill é **somente de leitura conceitual**. Não acessa SAP, não opera máquina, não executa procedimentos e não autentica evidências OEM por série.
 
+## Filtragem hidráulica: pressão diferencial, bypass e indicação (1.4.12)
+Consulte `../../data/knowledge/hydraulic-filter-differential.v1.json` e `../../docs/filtragem-diferencial.html`. Seis hipóteses não confirmadas: elemento carregado, óleo frio/viscoso, vazão/transiente/incompatibilidade, sinalização, bypass sem confirmação e partículas ISO/amostragem. **Aviso não prova bypass aberto; ISO 4406 não prova falha de bomba.** Diferenciar sensores, temperatura, vazão, arquitetura, histórico e literatura OEM efetiva antes de definir qualquer escopo de teste. Não transferir pressão de catálogo ou escolher filtro equivalente sem confirmação. Esta pesquisa é POSTERIOR ao conjunto congelado; não usá-la para contaminar o piloto cego 1.4.11.
+
 ## Congelamento do piloto e avaliações offline (1.4.11)
 Para distribuir o piloto, utilizar `../../docs/pacotes-piloto.html` e `../../data/quality/pilot-frozen-baseline.v1.json`. A linha de base de busca lexical v2 e as dez fichas está congelada pelos blobs do Git; nunca alterá-la para elevar acerto em perguntas coletadas. Entregar somente o pacote `collector` na coleta, `reviewer` aos julgadores, `adjudicator` no desempate e `evaluator` depois de congelar o gabarito. Verificar manifestos SHA-256, confinar arquivos humanos a `private/` e consultar `../../docs/CICLO_2026-11-08_PACOTES_PILOTO_CONGELADO.md`. Estado externo: nenhum julgamento real.
 
