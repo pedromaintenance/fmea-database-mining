@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.knowledge-index.v1",
-  "version": "1.4.7",
+  "version": "1.4.8",
   "scope": "selected_existing_public_artifacts_not_complete_inventory",
   "repository": "pedromaintenance/fmea-database-mining",
   "nature": "navigation_metadata_not_canonical_technical_evidence",
@@ -493,6 +493,74 @@
         "relevância",
         "julgamentos humanos",
         "segurança"
+      ]
+    },
+    {
+      "id": "LIB-QUESTION-COLLECTOR",
+      "title": "Coleta de perguntas espontâneas de manutenção",
+      "domain": "Qualidade da informação",
+      "kind": "instrumento de coleta",
+      "system": "transversal",
+      "evidenceClass": "PENDING_REVIEW",
+      "summary": "Interface offline, sem índice de conceitos nem previsões, para receber perguntas anonimizadas, exportar lotes privados e preservar independência prática da coleta.",
+      "path": "docs/coleta-perguntas.html",
+      "keywords": [
+        "perguntas independentes",
+        "coleta",
+        "oficina",
+        "anônimo",
+        "avaliação externa"
+      ]
+    },
+    {
+      "id": "LIB-BLIND-REVIEWER",
+      "title": "Revisão cega técnica por dois avaliadores",
+      "domain": "Qualidade da informação",
+      "kind": "instrumento de revisão",
+      "system": "transversal",
+      "evidenceClass": "PENDING_REVIEW",
+      "summary": "Interface offline para revisores R1/R2 com julgamento de relevância, IDs técnicos, justificativas e declarações, sem algoritmo de busca ou previsões visíveis.",
+      "path": "docs/revisao-cega.html",
+      "keywords": [
+        "revisor",
+        "R1",
+        "R2",
+        "relevância",
+        "avaliação cega"
+      ]
+    },
+    {
+      "id": "LIB-ADJUDICATION",
+      "title": "Adjudicação de divergências de relevância técnica",
+      "domain": "Qualidade da informação",
+      "kind": "instrumento de adjudicação",
+      "system": "transversal",
+      "evidenceClass": "PENDING_REVIEW",
+      "summary": "Compara pareceres privados de dois avaliadores e exige justificativa técnica do desempate antes de congelar o gabarito, sem calcular a resposta do buscador.",
+      "path": "docs/adjudicacao-tecnica.html",
+      "keywords": [
+        "adjudicação",
+        "discordância",
+        "julgamento",
+        "gabarito",
+        "revisão humana"
+      ]
+    },
+    {
+      "id": "LIB-DUAL-REVIEW-PROTOCOL",
+      "title": "Protocolo de coleta e dupla revisão independente",
+      "domain": "Qualidade da informação",
+      "kind": "protocolo metodológico",
+      "system": "transversal",
+      "evidenceClass": "PENDING_REVIEW",
+      "summary": "Descreve três papéis, concordância e kappa, privacidade, reconciliação CLI, gabarito local, limitações de autodeclaração e ausência de avaliações humanas reais.",
+      "path": "docs/AVALIACAO_DUPLA_REVISAO.md",
+      "keywords": [
+        "protocolo",
+        "kappa",
+        "dois avaliadores",
+        "reconciliação",
+        "privacidade"
       ]
     }
   ]
