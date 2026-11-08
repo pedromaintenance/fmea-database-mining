@@ -118,6 +118,16 @@ export function compareBlindReviews(collection,r1,r2,recordIds){
 export function buildAdjudicatedGold(collection,r1,r2,decisions,recordIds,{engineSha256,corpusSha256}){
  const compared=compareBlindReviews(collection,r1,r2,recordIds);
  if(compared.status==='INVALID_REVIEW')return {...compared,gold:null};
+ // A human score cannot be called blinded if anyone viewed predictions,
+ // exchanged opinions with the other reviewer, or failed a privacy review.
+ // Participation in engine development may remain false in an INTERNAL
+ // calibration, but cannot silently promote a non-blinded review to a gold set.
+ if(collection.publicSafe!==true||[r1,r2].some(r=>
+   r.declaration.didNotSeePredictions!==true||
+   r.declaration.independentOfOtherReviewer!==true||
+   r.declaration.publicSafe!==true
+ ))return {...compared,status:'INVALID_PROTOCOL_DECLARATIONS',
+   errors:['blind_independence_or_privacy_attestation_required'],gold:null};
  const required=new Set([...compared.conflicts.map(x=>x.id),...compared.agreed.filter(x=>x.r1.status==='NEEDS_ADJUDICATION').map(x=>x.id)]);
  const errors=[];
  if(required.size){
