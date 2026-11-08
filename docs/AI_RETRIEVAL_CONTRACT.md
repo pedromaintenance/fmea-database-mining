@@ -49,6 +49,13 @@
 - O Pages publica apenas `/external-review-status.v1.json` com `NO_EXTERNAL_SAMPLE`, **zero avaliações humanas reais e métricas `null`**. Testes internos de integridade não podem ser apresentados como score de avaliador externo.
 - Comparação anterior 18/24 é desenvolvimento após contato com o conjunto de 24 questões; NÃO há desempenho independente medido até novo lote humano legítimo.
 
+## Separação de papéis e acordo entre revisores (1.4.8)
+- `docs/coleta-perguntas.html`: coleta anônima sem índice técnico ou previsão; `docs/revisao-cega.html`: R1/R2 classificam sem motor; `docs/adjudicacao-tecnica.html`: resolve discordâncias antes da busca.
+- `scripts/lib/dual-review-core.mjs` valida textos de coleta e correspondência idêntica entre arquivos; mede concordância exata de estados/IDs/categoria e kappa para estado (quando definido); sinais de independência são autodeclarações sem verificação de identidade.
+- `npm run knowledge:dual:reconcile -- --collection private/questions.json --r1 private/r1.json --r2 private/r2.json --decisions private/decisions.json --out-dir private/reconciliation` produz o gabarito de dez conceitos somente após adjudicação. O buscador NÃO é executado por esse processo.
+- Avaliar somente depois: `npm run knowledge:external:evaluate -- --input private/reconciliation/gold.private.json --out private/reconciliation/score.private.json`. Não dar commit, publicar nem enviar perguntas corporativas a sistemas públicos. `private/` está no .gitignore.
+- No Pages, `dual-review-status.v1.json` informa **0 perguntas externas e concordâncias `null`**. Simulações de CI não substituem profissionais reais nem homologação OEM.
+
 ## Pipeline de recuperação
 1. **Descoberta:** `data/catalog/knowledge-index.v1.json` inclui uma seleção inicial de artefatos existentes. Ausência no índice não significa ausência no repositório.
 2. **Recuperação canônica:** abrir `path`; preferir informações estruturadas em `data/quality` e documentos de `docs`. Não transformar o campo de descrição do índice em prova.
