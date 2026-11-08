@@ -2,7 +2,7 @@
 
 Acervo **público, versionado e rastreável** para estudar equipamentos móveis de mineração, sistemas e componentes, mecanismos físicos de falha, diagnóstico diferencial, inspeção, manutenção, confiabilidade e benchmarks industriais. **FMEA/FMECA é uma das aplicações da biblioteca, não seu limite.**
 
-> **Status:** fundação da plataforma **v1.4.10**; índice inicial curado, não catálogo completo nem biblioteca homologada para procedimentos de execução. O banco contém hipóteses, taxonomias e referências públicas, **não** FMEAs aprovadas, ocorrências reais confirmadas ou limites OEM efetivos por série.
+> **Status:** fundação da plataforma **v1.4.11**; índice inicial curado, não catálogo completo nem biblioteca homologada para procedimentos de execução. O banco contém hipóteses, taxonomias e referências públicas, **não** FMEAs aprovadas, ocorrências reais confirmadas ou limites OEM efetivos por série.
 
 **Portal público (GitHub Pages):** https://pedromaintenance.github.io/fmea-database-mining/ — entrada direta na Biblioteca Técnica. O repositório mantém a documentação canônica e o histórico de versões.
 
@@ -18,6 +18,8 @@ Acervo **público, versionado e rastreável** para estudar equipamentos móveis 
 **Novas consultas 1.4.1:** [Glossário PT/EN](docs/glossario-tecnico.html) (67 verbetes recuperados sem reescrita da ontologia), [Bibliografia](docs/fontes-tecnicas.html) (87 fontes do registro), [Inventário de arquivos](docs/inventario-acervo.html) (snapshot de 500 arquivos antes deste ciclo). Os três conjuntos diferem em natureza e NÃO são 654 fichas OEM validadas.
 
 A consulta ao índice **não substitui** a leitura da ficha canônica, a conferência da fonte original e a análise de aplicabilidade OEM. Dados sintéticos não são registros de campo; indicadores sem definição/população não são benchmarks comparáveis.
+
+**Ciclo v1.4.11:** [quatro pacotes offline do piloto congelado](https://pedromaintenance.github.io/fmea-database-mining/pacotes-piloto.html), separados por papel: coleta sem catálogo, revisão R1/R2 sem motor, adjudicação sem previsões e avaliação somente após congelar o gabarito. [Protocolo de reprodutibilidade](docs/CICLO_2026-11-08_PACOTES_PILOTO_CONGELADO.md). O mecanismo v2, o grafo e dez fichas foram **travados pelos blobs Git do commit v1.4.10** e recebem hashes SHA-256; tentativas de alterá-los bloqueiam a montagem. Cada pacote tem manifesto de arquivos e checksum do tar.gz. **Nenhum participante ou parecer real foi coletado; métricas independentes permanecem indisponíveis.** Catálogo curado: **39** recursos; fontes: **97**.
 
 **Ciclo v1.4.10:** [painel offline de controle de execução](https://pedromaintenance.github.io/fmea-database-mining/controle-piloto.html), com os **11 gates de prontidão** em cinco fases condicionais, sinalização de inconsistências e exportação/importação de JSON com hashes da busca e corpus. [Procedimento e limitações](docs/CICLO_2026-11-08_CONTROLE_EXECUCAO_PILOTO.md). CLI `npm run knowledge:pilot:gates -- --input private/controle.json --out private/resultado.json`. As marcações são **autodeclarações**, jamais prova de autorização ou homologação OEM. [Status público](https://pedromaintenance.github.io/fmea-database-mining/pilot-gates-public-status.v1.json): zero participantes e taxas externas indisponíveis. Catálogo: **37** itens; bibliografia: **97**.
 

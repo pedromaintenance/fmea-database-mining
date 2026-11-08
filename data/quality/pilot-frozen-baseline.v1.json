@@ -1,0 +1,80 @@
+{
+  "schema": "fmea-mining.frozen-pilot-baseline.v1",
+  "version": "1.4.11",
+  "nature": "public_source_integrity_lock_not_proof_of_field_protocol_execution",
+  "baselineCommit": "f8deaf9328dbad7e99d76ed265cbfd2dab944dae",
+  "graphPath": "data/knowledge/functional-architecture.v1.json",
+  "graphGitBlobSha1": "213dc5c279b54a6b01e5444e8ef11b1ae1ef629e",
+  "lockedFiles": [
+    {
+      "path": "scripts/lib/technical-discovery-v2.mjs",
+      "gitBlobSha1": "7733f44d775bf182462acd202f76c2b6a8fef495"
+    },
+    {
+      "path": "data/knowledge/fundamentals/hydraulic-cavitation.v2.json",
+      "gitBlobSha1": "073e9f290cce520791ffd69c72a0bdcf3b43c030"
+    },
+    {
+      "path": "data/knowledge/fundamentals/hydraulic-aeration.v2.json",
+      "gitBlobSha1": "126e336c45921965169f807b21b9b0b39927c429"
+    },
+    {
+      "path": "data/knowledge/fundamentals/particulate-abrasive-wear.v2.json",
+      "gitBlobSha1": "0af5bde9e545051841dd4b4fd0527a26d4926fa2"
+    },
+    {
+      "path": "data/knowledge/fundamentals/lubricating-film.v2.json",
+      "gitBlobSha1": "94a608e32e09dc2c1fc77143721249a57f0931a7"
+    },
+    {
+      "path": "data/knowledge/fundamentals/solid-contamination.v2.json",
+      "gitBlobSha1": "d5948e0f8fa009d1c6dd790dd82ec7bc48cb385d"
+    },
+    {
+      "path": "data/knowledge/fundamentals/rolling-contact-fatigue.v2.json",
+      "gitBlobSha1": "776e4dec84ec568b64061700802b55dca1d9c438"
+    },
+    {
+      "path": "data/knowledge/fundamentals/hydraulic-pilot-control.v2.json",
+      "gitBlobSha1": "a9b4a1a22d486ff60c571873cfbb7c2e3e954b79"
+    },
+    {
+      "path": "data/knowledge/fundamentals/hydraulic-load-holding.v2.json",
+      "gitBlobSha1": "e66ec9085a6c8d0a4bb1e5eb828debc5c7c3f540"
+    },
+    {
+      "path": "data/knowledge/fundamentals/hydraulic-actuator-drift.v2.json",
+      "gitBlobSha1": "e2fa3598fb726c3428ffe23b9496fcfe4e7126b3"
+    },
+    {
+      "path": "data/knowledge/fundamentals/hydraulic-instrumentation.v2.json",
+      "gitBlobSha1": "1b4607138693a1696f8f287a04917f83f6869e22"
+    }
+  ],
+  "frozenEnginePath": "scripts/lib/technical-discovery-v2.mjs",
+  "recordCount": 10,
+  "changePolicy": "If a locked file changes, the baseline build MUST fail. A deliberate new baseline needs a distinct version and explicit reporting; do not silently retune this pilot.",
+  "participants": 0,
+  "realQuestions": 0,
+  "realReviewers": 0,
+  "externalMetrics": null,
+  "roles": [
+    {
+      "id": "collector",
+      "label": "Coleta sem corpus, sem modelos e sem resposta automática"
+    },
+    {
+      "id": "reviewer",
+      "label": "R1/R2 só com títulos e IDs públicos, sem algoritmo ou previsões"
+    },
+    {
+      "id": "adjudicator",
+      "label": "Adjudicação técnica cega sem motor de busca"
+    },
+    {
+      "id": "evaluator",
+      "label": "Motor lexical, corpus e avaliadores locais somente após congelar o gabarito"
+    }
+  ],
+  "privacy": "Public packages contain no real questions, labels, personnel information, company asset evidence or private/ files."
+}

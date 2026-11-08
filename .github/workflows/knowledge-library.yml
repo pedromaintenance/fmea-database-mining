@@ -53,6 +53,11 @@ on:
       - 'scripts/check-pilot-gates.mjs'
       - 'scripts/audit-pilot-gates.mjs'
       - 'docs/CICLO_2026-11-08_CONTROLE_EXECUCAO_PILOTO.md'
+      - 'data/quality/pilot-frozen-baseline.v1.json'
+      - 'scripts/build-frozen-pilot-packages.mjs'
+      - 'scripts/audit-frozen-pilot-packages.mjs'
+      - 'docs/pacotes-piloto.html'
+      - 'docs/CICLO_2026-11-08_PACOTES_PILOTO_CONGELADO.md'
       - 'docs/biblioteca-tecnica.html'
       - 'schemas/technical-knowledge-record.v2.schema.json'
       - 'scripts/build-fundamentals-portal.mjs'
@@ -110,6 +115,8 @@ jobs:
       - run: npm run knowledge:pilot:audit
       - run: npm run knowledge:pilot:build
       - run: npm run knowledge:pilot:gates:audit
+      - run: npm run knowledge:pilot:freeze:build
+      - run: npm run knowledge:pilot:freeze:audit
       - run: npm run knowledge:pilot:gates
       - run: npm run knowledge:search:v2 -- --query "piloto hidráulico não aciona a válvula"
       - run: npm run knowledge:fundamentals:query -- --query "fadiga de contato"
