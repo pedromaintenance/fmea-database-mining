@@ -2,7 +2,7 @@
 
 Acervo **público, versionado e rastreável** para estudar equipamentos móveis de mineração, sistemas e componentes, mecanismos físicos de falha, diagnóstico diferencial, inspeção, manutenção, confiabilidade e benchmarks industriais. **FMEA/FMECA é uma das aplicações da biblioteca, não seu limite.**
 
-> **Status:** fundação da plataforma **v1.4.11**; índice inicial curado, não catálogo completo nem biblioteca homologada para procedimentos de execução. O banco contém hipóteses, taxonomias e referências públicas, **não** FMEAs aprovadas, ocorrências reais confirmadas ou limites OEM efetivos por série.
+> **Status:** fundação da plataforma **v1.4.12**; índice inicial curado, não catálogo completo nem biblioteca homologada para procedimentos de execução. O banco contém hipóteses, taxonomias e referências públicas, **não** FMEAs aprovadas, ocorrências reais confirmadas ou limites OEM efetivos por série.
 
 **Portal público (GitHub Pages):** https://pedromaintenance.github.io/fmea-database-mining/ — entrada direta na Biblioteca Técnica. O repositório mantém a documentação canônica e o histórico de versões.
 
@@ -18,6 +18,8 @@ Acervo **público, versionado e rastreável** para estudar equipamentos móveis 
 **Novas consultas 1.4.1:** [Glossário PT/EN](docs/glossario-tecnico.html) (67 verbetes recuperados sem reescrita da ontologia), [Bibliografia](docs/fontes-tecnicas.html) (87 fontes do registro), [Inventário de arquivos](docs/inventario-acervo.html) (snapshot de 500 arquivos antes deste ciclo). Os três conjuntos diferem em natureza e NÃO são 654 fichas OEM validadas.
 
 A consulta ao índice **não substitui** a leitura da ficha canônica, a conferência da fonte original e a análise de aplicabilidade OEM. Dados sintéticos não são registros de campo; indicadores sem definição/população não são benchmarks comparáveis.
+
+**Ciclo v1.4.12 — conhecimento mecânico:** [filtragem hidráulica, diferencial de pressão e bypass](https://pedromaintenance.github.io/fmea-database-mining/filtragem-diferencial.html). Novo dossiê com **6 hipóteses concorrentes** e **6 situações de investigação**, distinguindo saturação, óleo frio, transiente de vazão, indicador, estado de bypass e ISO 4406/amostragem. [Relatório técnico](docs/CICLO_2026-11-08_FILTRAGEM_HIDRAULICA_DIFERENCIAL.md) baseado em fontes primárias Donaldson/HYDAC, elevando a bibliografia a **100**. Catálogo com **41 recursos curados**. **Nenhum diagnóstico, teste, limite OEM, ordem SAP ou aprovação de ativo** foi criado. O motor e os dez fundamentos usados no piloto congelado **permanecem inalterados**.
 
 **Ciclo v1.4.11:** [quatro pacotes offline do piloto congelado](https://pedromaintenance.github.io/fmea-database-mining/pacotes-piloto.html), separados por papel: coleta sem catálogo, revisão R1/R2 sem motor, adjudicação sem previsões e avaliação somente após congelar o gabarito. [Protocolo de reprodutibilidade](docs/CICLO_2026-11-08_PACOTES_PILOTO_CONGELADO.md). O mecanismo v2, o grafo e dez fichas foram **travados pelos blobs Git do commit v1.4.10** e recebem hashes SHA-256; tentativas de alterá-los bloqueiam a montagem. Cada pacote tem manifesto de arquivos e checksum do tar.gz. **Nenhum participante ou parecer real foi coletado; métricas independentes permanecem indisponíveis.** Catálogo curado: **39** recursos; fontes: **97**.
 
