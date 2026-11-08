@@ -23,8 +23,17 @@ if(args.includes('--help')){
 }
 const col=find('--collection'),p1=find('--r1'),p2=find('--r2'),dec=find('--decisions'),out=find('--out-dir');
 if(!col||!p1||!p2||!out)throw Error('Provide --collection, --r1, --r2, and --out-dir');
-const relative=path.relative(process.cwd(),path.resolve(out)).replace(/\\/g,'/');
-if(!(relative==='private'||relative.startsWith('private/'))||relative.includes('..'))throw Error('For confidentiality, --out-dir must be within the gitignored private/ directory');
+const privateRoot=path.resolve('private');
+const target=path.resolve(out);
+const relative=path.relative(privateRoot,target);
+if(!relative||relative.startsWith('..')||path.isAbsolute(relative))throw Error('For confidentiality, --out-dir must be a NEW subdirectory under gitignored private/');
+if(fs.existsSync(target))throw Error('Output directory already exists; use a new directory per run to prevent stale gold scores and accidental overwrites.');
+// Reject symlinks along the path; private/ must be a real directory, not a public redirect.
+let walk=privateRoot;
+for(const segment of ['.',...relative.split(path.sep)]){
+ if(segment!=='.')walk=path.join(walk,segment);
+ if(fs.existsSync(walk)&&fs.lstatSync(walk).isSymbolicLink())throw Error('Symlinked private output path is not permitted');
+}
 const graph=rj('data/knowledge/functional-architecture.v1.json');
 const records=graph.fundamentalRecordPaths.map(p=>({...rj(p),__path:p}));
 const sha=data=>crypto.createHash('sha256').update(data).digest('hex');
@@ -32,20 +41,22 @@ const hashes={engineSha256:sha(fs.readFileSync('scripts/lib/technical-discovery-
 const c=rj(col),r1=rj(p1),r2=rj(p2);
 const summary=compareBlindReviews(c,r1,r2,records.map(x=>x.id));
 const result=buildAdjudicatedGold(c,r1,r2,dec?rj(dec):null,records.map(x=>x.id),hashes);
-fs.mkdirSync(out,{recursive:true});
+if(['INVALID_REVIEW','INVALID_ADJUDICATION','INVALID_PROTOCOL_DECLARATIONS'].includes(result.status))
+ throw Error('No gold generated: '+result.status+'; '+result.errors.join(','));
+fs.mkdirSync(target,{recursive:true});
 const clean={schema:'fmea-mining.dual-review-reconciliation.v1',version:'1.4.8',
  status:result.status,summary:summary.summary,
  unresolvedIds:[...new Set([...summary.conflicts.map(x=>x.id),...summary.agreed.filter(x=>x.r1.status==='NEEDS_ADJUDICATION').map(x=>x.id)])],
  errors:result.errors,independenceExternallyVerified:false,
  note:'Local human adjudication only. Nothing has been sent to a server, and predictions have not been queried.'};
-fs.writeFileSync(path.join(out,'reconciliation.private.json'),JSON.stringify(clean,null,2)+'\n');
+fs.writeFileSync(path.join(target,'reconciliation.private.json'),JSON.stringify(clean,null,2)+'\n');
 if(result.gold){
  const errors=checkReviewBatch(result.gold,{...hashes,recordIds:records.map(x=>x.id)});
  if(errors.length)throw Error('Generated gold violates existing review contract: '+errors.join(','));
- fs.writeFileSync(path.join(out,'gold.private.json'),JSON.stringify(result.gold,null,2)+'\n');
+ fs.writeFileSync(path.join(target,'gold.private.json'),JSON.stringify(result.gold,null,2)+'\n');
 }
 if(clean.unresolvedIds.length){
- fs.writeFileSync(path.join(out,'adjudication-conflicts.private.json'),JSON.stringify({schema:'fmea-mining.adjudication-review-queue.v1',version:'1.4.8',
+ fs.writeFileSync(path.join(target,'adjudication-conflicts.private.json'),JSON.stringify({schema:'fmea-mining.adjudication-review-queue.v1',version:'1.4.8',
   conflicts:summary.conflicts,agreedUnresolved:summary.agreed.filter(x=>x.r1.status==='NEEDS_ADJUDICATION')},null,2)+'\n');
 }
 console.log(JSON.stringify({status:clean.status,questions:summary.summary?.questions??0,
@@ -53,4 +64,4 @@ console.log(JSON.stringify({status:clean.status,questions:summary.summary?.quest
  disagreementCount:clean.unresolvedIds.length,independenceExternallyVerified:false,
  goldReady:!!result.gold,outDir:out,
  next:result.gold?'Run npm run knowledge:external:evaluate -- --input '+path.join(out,'gold.private.json')+' --out '+path.join(out,'score.private.json'):'Resolve conflicting labels in a separate, blinded adjudication file.'},null,2));
-if(result.status==='INVALID_REVIEW'||result.status==='INVALID_ADJUDICATION')process.exitCode=1;
+// Unresolved conflicts are a normal HOLD state. No stale gold file exists because output dirs are new.

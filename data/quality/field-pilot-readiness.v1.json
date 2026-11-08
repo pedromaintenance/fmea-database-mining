@@ -1,0 +1,124 @@
+{
+  "schema": "fmea-mining.field-pilot-readiness.v1",
+  "version": "1.4.9",
+  "nature": "operational_checklist_not_evidence_of_real_participant_responses",
+  "intendedInitialQuestions": 20,
+  "statisticalCertification": false,
+  "environment": "local_offline_no_restricted_company_data",
+  "referenceDocuments": [
+    "docs/AVALIACAO_DUPLA_REVISAO.md",
+    "docs/PILOTO_QUESTIONARIO_OFICINA.md",
+    "docs/coleta-perguntas.html",
+    "docs/revisao-cega.html",
+    "docs/adjudicacao-tecnica.html"
+  ],
+  "prerequisites": [
+    {
+      "id": "G01",
+      "stage": "authorization",
+      "ownerRole": "pilot_coordinator",
+      "criterion": "Uso interno das perguntas e participação voluntária autorizados pela liderança competente, sem dados de equipamentos ou incidentes reais",
+      "required": true,
+      "automated": false
+    },
+    {
+      "id": "G02",
+      "stage": "collection",
+      "ownerRole": "facilitator",
+      "criterion": "Questões espontâneas, escritas sem exposição ao vocabulário, motores ou saídas de busca",
+      "required": true,
+      "automated": false
+    },
+    {
+      "id": "G03",
+      "stage": "privacy",
+      "ownerRole": "facilitator",
+      "criterion": "Anonimização humana revisada; não inserir nome, contato, série, tag, número SAP, laudo ou informação corporativa restrita",
+      "required": true,
+      "automated": false
+    },
+    {
+      "id": "G04",
+      "stage": "freeze",
+      "ownerRole": "technical_owner",
+      "criterion": "Versão e SHA-256 do mecanismo de busca e dez fichas congelados antes da classificação",
+      "required": true,
+      "automated": true
+    },
+    {
+      "id": "G05",
+      "stage": "review",
+      "ownerRole": "reviewer_R1",
+      "criterion": "Primeiro parecer com IDs de fichas, classe e justificativa antes de visualizar previsões ou R2",
+      "required": true,
+      "automated": false
+    },
+    {
+      "id": "G06",
+      "stage": "review",
+      "ownerRole": "reviewer_R2",
+      "criterion": "Segundo parecer técnico independente de R1, sem resultados do buscador",
+      "required": true,
+      "automated": false
+    },
+    {
+      "id": "G07",
+      "stage": "adjudication",
+      "ownerRole": "adjudicator",
+      "criterion": "Divergências e marcações não resolvidas documentadas, sem consulta às previsões da busca",
+      "required": true,
+      "automated": true
+    },
+    {
+      "id": "G08",
+      "stage": "custody",
+      "ownerRole": "technical_owner",
+      "criterion": "Arquivos de perguntas/pareceres/gabarito/resultados permanecem em private/ e não são versionados ou publicados",
+      "required": true,
+      "automated": true
+    },
+    {
+      "id": "G09",
+      "stage": "evaluation",
+      "ownerRole": "technical_owner",
+      "criterion": "Métricas calculadas após congelar gabarito, com recusa explícita, falsos positivos e contagem por classe",
+      "required": true,
+      "automated": true
+    },
+    {
+      "id": "G10",
+      "stage": "interpretation",
+      "ownerRole": "engineering_reviewer",
+      "criterion": "Relatório explica amostragem não probabilística, tamanho de amostra, limitações de kappa e ausência de validação OEM/operacional",
+      "required": true,
+      "automated": false
+    },
+    {
+      "id": "G11",
+      "stage": "publication",
+      "ownerRole": "pilot_coordinator",
+      "criterion": "Publicar somente resumo agregado autorizado e desidentificado, nunca perguntas ou pareceres originais sem consentimento e autorização específica",
+      "required": true,
+      "automated": false
+    }
+  ],
+  "permittedPublicState": {
+    "realQuestionBatches": 0,
+    "realQuestions": 0,
+    "realReviewers": 0,
+    "externalAccuracy": null,
+    "agreement": null
+  },
+  "traceability": {
+    "code": "scripts/lib/technical-discovery-v2.mjs",
+    "corpus": "data/knowledge/functional-architecture.v1.json",
+    "scoring": "scripts/evaluate-external-review.mjs",
+    "blindReconciliation": "scripts/reconcile-blind-reviews.mjs"
+  },
+  "explicitNonClaims": [
+    "20 questions do not yield a statistically representative sample",
+    "synthetic CI reviewer roles are not people",
+    "a source pointer is not a manufacturer-approved diagnosis",
+    "a correct safety abstention does not authorize field release"
+  ]
+}

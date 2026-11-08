@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.knowledge-index.v1",
-  "version": "1.4.8",
+  "version": "1.4.9",
   "scope": "selected_existing_public_artifacts_not_complete_inventory",
   "repository": "pedromaintenance/fmea-database-mining",
   "nature": "navigation_metadata_not_canonical_technical_evidence",
@@ -561,6 +561,42 @@
         "dois avaliadores",
         "reconciliação",
         "privacidade"
+      ]
+    },
+    {
+      "id": "LIB-FIELD-PILOT-KIT",
+      "title": "Kit imprimível do piloto de perguntas de oficina",
+      "domain": "Qualidade da informação",
+      "kind": "instrumento de campo",
+      "system": "transversal",
+      "evidenceClass": "PENDING_REVIEW",
+      "summary": "Folha offline imprimível com convite voluntário, proteção de dados, checklist de execução e 20 linhas vazias para perguntas espontâneas. Não contém respostas ou casos reais.",
+      "path": "docs/piloto-oficina.html",
+      "keywords": [
+        "piloto",
+        "oficina",
+        "questionário",
+        "perguntas",
+        "imprimir",
+        "coleta anônima"
+      ]
+    },
+    {
+      "id": "LIB-FIELD-PILOT-READINESS",
+      "title": "Protocolo e gates de prontidão do primeiro piloto",
+      "domain": "Qualidade da informação",
+      "kind": "protocolo de aplicação",
+      "system": "transversal",
+      "evidenceClass": "PENDING_REVIEW",
+      "summary": "Onze condições de prontidão para coleta, privacidade, dupla revisão, adjudicação e avaliação local. Diferencia verificações de código de autorizações humanas e impede afirmar resultados inexistentes.",
+      "path": "docs/PILOTO_QUESTIONARIO_OFICINA.md",
+      "keywords": [
+        "prontidão",
+        "gates",
+        "dupla revisão",
+        "privacidade",
+        "avaliação humana",
+        "piloto 20 perguntas"
       ]
     }
   ]

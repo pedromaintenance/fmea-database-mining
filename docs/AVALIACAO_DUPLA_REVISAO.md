@@ -1,3 +1,5 @@
+> **Atualização 1.4.9:** o primeiro piloto agora dispõe do [kit imprimível](piloto-oficina.html), dos [11 gates de prontidão](../data/quality/field-pilot-readiness.v1.json) e de um [procedimento de campo](PILOTO_QUESTIONARIO_OFICINA.md). A CLI de reconciliação exige um `--out-dir` **novo** dentro de `private/`; a CLI de pontuação, ao receber `--input` humano, recusa entrada ou saída fora de `private/`. Pareceres não cegos ou sem revisão de privacidade não produzem gabarito. Sem coleta humana executada até esta versão.
+
 # Ciclo 1.4.8 — Coleta independente, dupla revisão cega e adjudicação
 
 **07/11/2026 · Público: instrumentos vazios e metodologia · Privado: perguntas, pareceres e resultados locais**

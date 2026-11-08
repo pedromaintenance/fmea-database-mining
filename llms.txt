@@ -79,6 +79,14 @@ No external reviewer or question data has been obtained. All independent benchma
 
 No real question batches, external reviewers, human agreement scores or independent accuracy measurements exist in this version. Collection, labels, private adjudication and search evaluation remain separate. Distinct reviewers and independence are only self-attested. No operational authority.
 
+## Field pilot readiness and local-data custody (v1.4.9)
+- [Printable 20-question blank pilot kit](https://pedromaintenance.github.io/fmea-database-mining/piloto-oficina.html)
+- [Eleven field-pilot readiness gates (machine-readable)](https://pedromaintenance.github.io/fmea-database-mining/field-pilot-readiness.v1.json)
+- [Privacy/integrity audit (synthetic, NOT human)](https://pedromaintenance.github.io/fmea-database-mining/field-pilot-audit.v1.json)
+- [Complete field operations and security procedure](https://github.com/pedromaintenance/fmea-database-mining/blob/main/docs/PILOTO_QUESTIONARIO_OFICINA.md)
+
+No participant, reviewer or actual question has been collected. Real blinded assessments must use a new private reconciliation directory. Score CLI input and output containing human questions must stay under gitignored `private/`. These pages are not a live data collection service.
+
 ## Technical entry points
 - [Hydraulic circuit differential](https://github.com/pedromaintenance/fmea-database-mining/blob/main/data/quality/hydraulic-circuit-differential.v1.json)
 - [Hydraulic hose differential](https://github.com/pedromaintenance/fmea-database-mining/blob/main/data/quality/hydraulic-hose-differential.v1.json)

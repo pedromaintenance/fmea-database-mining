@@ -32,6 +32,8 @@
 
 **Ciclo 1.4.8:** protocolo de avaliação humana transformado em coleta anônima + duas revisões técnicas independentes por declaração + adjudicação documentada e reconciliação offline. Interfaces publicadas sem motor na etapa de julgamento; perguntas e pareceres ficam em `private/`, ignorado pelo Git. Status externo permanece com zero perguntas/revisores e concordância/precisão não calculadas. Próximo passo real: executar piloto com aproximadamente 20 perguntas espontâneas e dois revisores com critérios técnicos e autorização de privacidade.
 
+**Ciclo 1.4.9:** folha de piloto imprimível, 11 critérios de prontidão e teste end-to-end sintético do fluxo de duas revisões; bloqueio de gabarito não cego, subdiretório privado novo obrigatório para evitar versão obsoleta e pontuação real somente em `private/`. Zero colaboradores/revisores externos efetivamente consultados; é necessário autorização e coleta humana para obter a primeira medida. Próxima ação: piloto real, não outro score com perguntas fabricadas.
+
 ### Horizonte F1 — Fundamentos mecânicos e hidráulicos (1–3 meses)
 **Foco 1:** tribologia, desgaste e lubrificação; viscosidade, contaminação, partículas, falha de rolamento, vedação, filtragem e interpretação SOS.  
 **Foco 2:** hidráulica: bombas de deslocamento, regulação, válvulas, acumuladores, sucção, cavitação, cilindros, mangueiras, drenagem, contrapressão e resfriamento.  
