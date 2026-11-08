@@ -69,6 +69,12 @@
 - `npm run knowledge:pilot:gates -- --input private/controle.json --out private/resultado.json` só produz relatório privado sobre flags locais; não avalia participantes ou faz busca. O Pages publica exclusivamente `/pilot-gates-public-status.v1.json` com status vazio, sem dados humanos.
 - A ordem permanece: autorização organizacional → coleta espontânea → anonimização → R1/R2 cegos → adjudicação → pontuação local → interpretação e comunicação autorizada. Não alterar o motor ou corpus entre coleta e avaliação sem declarar quebra de comparabilidade.
 
+## Pacotes offline e baseline de recuperação imutável (1.4.11)
+- `data/quality/pilot-frozen-baseline.v1.json` fixa os blobs Git de **um motor lexical + dez fichas** e a seleção ordenada do grafo, no commit de referência v1.4.10. `npm run knowledge:pilot:freeze:build` recusa qualquer mudança de conteúdo; criar **outro baseline** para alterações deliberadas.
+- Quatro pacotes `.tar.gz` publicados: coleta **sem catálogo**, revisão **com títulos/IDs, sem motor**, adjudicação **sem motor**, avaliação **com corpus e scripts** somente depois de congelar julgamento.
+- `npm run knowledge:pilot:freeze:audit` extrai arquivos, audita manifests/hashes, isolamento de funções, links offline e retorno `NO_EXTERNAL_SAMPLE` ao iniciar o avaliador vazio. São testes sintéticos de software, **não validação independente**.
+- O público recebe `/pilot-frozen-release-index.v1.json` com SHA-256 dos pacotes e dos arquivos técnicos. Dados humanos reais continuam em `private/`; não fazem parte dos arquivos públicos.
+
 ## Pipeline de recuperação
 1. **Descoberta:** `data/catalog/knowledge-index.v1.json` inclui uma seleção inicial de artefatos existentes. Ausência no índice não significa ausência no repositório.
 2. **Recuperação canônica:** abrir `path`; preferir informações estruturadas em `data/quality` e documentos de `docs`. Não transformar o campo de descrição do índice em prova.
