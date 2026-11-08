@@ -18,7 +18,7 @@ function add(root,tag,value,cls){const n=document.createElement(tag);if(value!==
 function render(){const root=$('cards');root.replaceChildren();$('total').textContent=cases.length+' pergunta(s)'+(cases.length<20?' — meta inicial 20':' — meta inicial atingida');
  cases.forEach((c,i)=>{const box=add(root,'article',undefined,'card');add(box,'strong',c.id);const t=add(box,'textarea');t.value=c.question;t.maxLength=1000;t.addEventListener('change',()=>{c.question=t.value.trim()});const b=add(box,'button','Excluir');b.type='button';b.addEventListener('click',()=>{cases.splice(i,1);renumber();render()})});
 }
-function renumber(){cases.forEach((c,i)=>c.id='EXT-'+String(i+1).padStart(3,'0')}
+function renumber(){cases.forEach((c,i)=>c.id='EXT-'+String(i+1).padStart(3,'0'))}
 function validate(){
  if(!cases.length)return 'Adicione pelo menos uma pergunta.';
  if(cases.length>100)return 'Máximo 100 perguntas.';
