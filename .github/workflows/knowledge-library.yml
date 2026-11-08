@@ -40,6 +40,13 @@ on:
       - 'docs/adjudicacao-tecnica.html'
       - 'docs/AVALIACAO_DUPLA_REVISAO.md'
       - '.gitignore'
+      - 'docs/piloto-oficina.html'
+      - 'docs/PILOTO_QUESTIONARIO_OFICINA.md'
+      - 'data/quality/field-pilot-readiness.v1.json'
+      - 'scripts/audit-field-pilot.mjs'
+      - 'scripts/lib/dual-review-core.mjs'
+      - 'scripts/reconcile-blind-reviews.mjs'
+      - 'scripts/evaluate-external-review.mjs'
       - 'docs/biblioteca-tecnica.html'
       - 'schemas/technical-knowledge-record.v2.schema.json'
       - 'scripts/build-fundamentals-portal.mjs'
@@ -94,6 +101,7 @@ jobs:
       - run: npm run knowledge:dual:build
       - run: npm run knowledge:dual:status
       - run: npm run knowledge:dual:audit
+      - run: npm run knowledge:pilot:audit
       - run: npm run knowledge:search:v2 -- --query "piloto hidráulico não aciona a válvula"
       - run: npm run knowledge:fundamentals:query -- --query "fadiga de contato"
       - run: node --check scripts/query-knowledge-index.mjs
