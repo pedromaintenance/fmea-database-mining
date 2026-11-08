@@ -41,7 +41,7 @@ ck('registry_105_sources',registry.sources.length===105&&new Set(registry.source
 const expected=registry.sources.map(x=>({id:x.id,organization:x.organization,title:x.title,url:x.url,area:x.area||null,role:x.role||null,limitation:x.limitation||'',lastReviewed:x.lastReviewed||null}));
 ck('discovery_registry_exact',JSON.stringify(discovery.sources)===JSON.stringify(expected)&&discovery.sourceRegistryVersion===registry.version&&discovery.checkedLinksOnThisCycle===false);
 ck('html_no_network_or_storage',!/fetch\s*\(|XMLHttpRequest|localStorage|sessionStorage|sendBeacon|<script\s+src=/i.test(html));
-ck('html_no_unsafe_dom',!template.includes('innerHTML')&&template.includes('textContent=value'));
+ck('html_no_unsafe_dom',!template.includes('innerHTML')&&template.includes('n.textContent=value'));
 const embedded=html.match(/<script id="dossier" type="application\/json">([\s\S]*?)<\/script>/);
 try{ck('browser_data_parity',JSON.stringify(JSON.parse(embedded?.[1]||''))===JSON.stringify(published))}catch{ck('browser_data_parity',false)}
 const script=html.match(/<script>([\s\S]*?)<\/script>/)?.[1];
