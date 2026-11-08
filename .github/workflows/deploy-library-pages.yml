@@ -54,6 +54,11 @@ on:
       - 'scripts/audit-frozen-pilot-packages.mjs'
       - 'docs/pacotes-piloto.html'
       - 'docs/CICLO_2026-11-08_PACOTES_PILOTO_CONGELADO.md'
+      - 'data/knowledge/hydraulic-filter-differential.v1.json'
+      - 'docs/filtragem-diferencial.html'
+      - 'docs/CICLO_2026-11-08_FILTRAGEM_HIDRAULICA_DIFERENCIAL.md'
+      - 'scripts/build-filter-differential.mjs'
+      - 'scripts/audit-filter-differential.mjs'
       - 'docs/biblioteca-tecnica.html'
       - 'schemas/technical-knowledge-record.v2.schema.json'
       - 'scripts/build-fundamentals-portal.mjs'
@@ -128,6 +133,8 @@ jobs:
           node scripts/audit-pilot-gates.mjs
           node scripts/build-frozen-pilot-packages.mjs
           node scripts/audit-frozen-pilot-packages.mjs
+          node scripts/build-filter-differential.mjs
+          node scripts/audit-filter-differential.mjs
 
       - name: Prepare static site
         run: |
@@ -161,6 +168,9 @@ jobs:
           cp data/quality/pilot-frozen-baseline.v1.json _site/pilot-frozen-baseline.v1.json
           cp reports/pilot-frozen-release-index.generated.json _site/pilot-frozen-release-index.v1.json
           cp reports/pilot-frozen-package-audit.generated.json _site/pilot-frozen-package-audit.v1.json
+          cp reports/filtragem-diferencial.generated.html _site/filtragem-diferencial.html
+          cp reports/filter-differential.generated.json _site/filter-differential.v1.json
+          cp reports/filter-differential-audit.generated.json _site/filter-differential-audit.v1.json
           cp reports/pilot-collector-1.4.11.tar.gz _site/pilot-collector-1.4.11.tar.gz
           cp reports/pilot-reviewer-1.4.11.tar.gz _site/pilot-reviewer-1.4.11.tar.gz
           cp reports/pilot-adjudicator-1.4.11.tar.gz _site/pilot-adjudicator-1.4.11.tar.gz
