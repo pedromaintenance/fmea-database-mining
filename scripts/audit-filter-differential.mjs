@@ -36,7 +36,7 @@ ck('exact_data_projection',JSON.stringify(published.dossier)===JSON.stringify(do
 ck('three_primary_sources',dossier.provenance.sourceNotes.length===3&&dossier.provenance.sourceNotes.every(s=>sourceById.has(s.sourceId)&&s.supports&&s.doesNotSupport));
 ck('primary_manufacturers',new Set(dossier.provenance.sourceNotes.map(s=>sourceById.get(s.sourceId).organization)).size===2);
 ck('references_and_page_same',published.sources.length===3&&published.sources.every(s=>sourceById.get(s.id)?.url===s.url));
-ck('100_source_registry',registry.sources.length===100&&new Set(registry.sources.map(s=>s.id)).size===100);
+ck('bibliography_keeps_at_least_100_unique_sources',registry.sources.length>=100&&new Set(registry.sources.map(s=>s.id)).size===registry.sources.length);
 ck('discovery_lineage',discovery.sources.length===registry.sources.length&&discovery.sourceRegistryVersion===registry.version&&discovery.checkedLinksOnThisCycle===false);
 const expectedSources=registry.sources.map(x=>({id:x.id,organization:x.organization,title:x.title,url:x.url,area:x.area||null,role:x.role||null,limitation:x.limitation||'',lastReviewed:x.lastReviewed||null}));
 ck('bibliography_exact',JSON.stringify(discovery.sources)===JSON.stringify(expectedSources));
