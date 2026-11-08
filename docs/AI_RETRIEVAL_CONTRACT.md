@@ -56,6 +56,13 @@
 - Avaliar somente depois: `npm run knowledge:external:evaluate -- --input private/reconciliation/gold.private.json --out private/reconciliation/score.private.json`. Não dar commit, publicar nem enviar perguntas corporativas a sistemas públicos. `private/` está no .gitignore.
 - No Pages, `dual-review-status.v1.json` informa **0 perguntas externas e concordâncias `null`**. Simulações de CI não substituem profissionais reais nem homologação OEM.
 
+## Custódia e gates do piloto de campo (1.4.9)
+- `docs/piloto-oficina.html`: formulário público **vazio** para 20 perguntas espontâneas; `data/quality/field-pilot-readiness.v1.json` descreve onze gates, alguns exclusivamente humanos.
+- `scripts/lib/dual-review-core.mjs` exige declarações de análise cega, independência de opinião entre R1/R2 e privacidade para produzir gabarito. Participação em desenvolvimento permite apenas calibração interna, sem alegar amostragem externa.
+- `scripts/reconcile-blind-reviews.mjs` recusa diretório de saída preexistente ou fora de `private/`, evitando reaproveitar gabarito antigo. `scripts/evaluate-external-review.mjs` exige que `--input` e `--out` fiquem em `private/` se houver avaliação humana.
+- `npm run knowledge:pilot:audit` executa regressão E2E **sintética**, incluindo tentativa de escrever em `reports/`, revisar sem cegamento e sobrescrever gabarito; não mede trabalhadores.
+- Ainda não há perguntas reais externas, pareceres humanos ou métricas independentes; `external-review-status.v1.json` permanece `NO_EXTERNAL_SAMPLE`.
+
 ## Pipeline de recuperação
 1. **Descoberta:** `data/catalog/knowledge-index.v1.json` inclui uma seleção inicial de artefatos existentes. Ausência no índice não significa ausência no repositório.
 2. **Recuperação canônica:** abrir `path`; preferir informações estruturadas em `data/quality` e documentos de `docs`. Não transformar o campo de descrição do índice em prova.
