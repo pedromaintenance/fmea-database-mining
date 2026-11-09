@@ -64,6 +64,12 @@ on:
       - 'docs/CICLO_2026-11-08_CONTAMINACAO_OLEO_ARREFECIMENTO.md'
       - 'scripts/build-engine-oil-coolant.mjs'
       - 'scripts/audit-engine-oil-coolant.mjs'
+      - 'data/quality/engine-crossfluid-evidence-matrix.v1.json'
+      - 'scripts/lib/engine-crossfluid-evidence.mjs'
+      - 'docs/matriz-evidencias-oleo-arrefecimento.html'
+      - 'scripts/build-engine-crossfluid-evidence.mjs'
+      - 'scripts/audit-engine-crossfluid-evidence.mjs'
+      - 'docs/CICLO_2026-11-08_MATRIZ_EVIDENCIAS_OLEO_ARREFECIMENTO.md'
       - 'docs/biblioteca-tecnica.html'
       - 'schemas/technical-knowledge-record.v2.schema.json'
       - 'scripts/build-fundamentals-portal.mjs'
@@ -142,6 +148,8 @@ jobs:
           node scripts/audit-filter-differential.mjs
           node scripts/build-engine-oil-coolant.mjs
           node scripts/audit-engine-oil-coolant.mjs
+          node scripts/build-engine-crossfluid-evidence.mjs
+          node scripts/audit-engine-crossfluid-evidence.mjs
 
       - name: Prepare static site
         run: |
@@ -181,6 +189,9 @@ jobs:
           cp reports/contaminacao-oleo-arrefecimento.generated.html _site/contaminacao-oleo-arrefecimento.html
           cp reports/engine-oil-coolant.generated.json _site/engine-oil-coolant.v1.json
           cp reports/engine-oil-coolant-audit.generated.json _site/engine-oil-coolant-audit.v1.json
+          cp reports/matriz-evidencias-oleo-arrefecimento.generated.html _site/matriz-evidencias-oleo-arrefecimento.html
+          cp reports/engine-crossfluid-evidence.generated.json _site/engine-crossfluid-evidence.v1.json
+          cp reports/engine-crossfluid-evidence-audit.generated.json _site/engine-crossfluid-evidence-audit.v1.json
           cp reports/pilot-collector-1.4.11.tar.gz _site/pilot-collector-1.4.11.tar.gz
           cp reports/pilot-reviewer-1.4.11.tar.gz _site/pilot-reviewer-1.4.11.tar.gz
           cp reports/pilot-adjudicator-1.4.11.tar.gz _site/pilot-adjudicator-1.4.11.tar.gz

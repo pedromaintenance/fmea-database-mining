@@ -2,7 +2,7 @@
 
 Acervo **público, versionado e rastreável** para estudar equipamentos móveis de mineração, sistemas e componentes, mecanismos físicos de falha, diagnóstico diferencial, inspeção, manutenção, confiabilidade e benchmarks industriais. **FMEA/FMECA é uma das aplicações da biblioteca, não seu limite.**
 
-> **Status:** fundação da plataforma **v1.4.13**; índice inicial curado, não catálogo completo nem biblioteca homologada para procedimentos de execução. O banco contém hipóteses, taxonomias e referências públicas, **não** FMEAs aprovadas, ocorrências reais confirmadas ou limites OEM efetivos por série.
+> **Status:** fundação da plataforma **v1.4.14**; índice inicial curado, não catálogo completo nem biblioteca homologada para procedimentos de execução. O banco contém hipóteses, taxonomias e referências públicas, **não** FMEAs aprovadas, ocorrências reais confirmadas ou limites OEM efetivos por série.
 
 **Portal público (GitHub Pages):** https://pedromaintenance.github.io/fmea-database-mining/ — entrada direta na Biblioteca Técnica. O repositório mantém a documentação canônica e o histórico de versões.
 
@@ -18,6 +18,8 @@ Acervo **público, versionado e rastreável** para estudar equipamentos móveis 
 **Novas consultas 1.4.1:** [Glossário PT/EN](docs/glossario-tecnico.html) (67 verbetes recuperados sem reescrita da ontologia), [Bibliografia](docs/fontes-tecnicas.html) (87 fontes do registro), [Inventário de arquivos](docs/inventario-acervo.html) (snapshot de 500 arquivos antes deste ciclo). Os três conjuntos diferem em natureza e NÃO são 654 fichas OEM validadas.
 
 A consulta ao índice **não substitui** a leitura da ficha canônica, a conferência da fonte original e a análise de aplicabilidade OEM. Dados sintéticos não são registros de campo; indicadores sem definição/população não são benchmarks comparáveis.
+
+**Ciclo v1.4.14 — evidências para motores diesel:** [matriz documental óleo × arrefecimento](https://pedromaintenance.github.io/fmea-database-mining/matriz-evidencias-oleo-arrefecimento.html), com **14 classes de documentos para sete hipóteses**, controle local de lacunas, solicitação pronta para Engenharia/PCM e checklist JSON sem informações da frota. [Procedimento de engenharia](docs/CICLO_2026-11-08_MATRIZ_EVIDENCIAS_OLEO_ARREFECIMENTO.md). A ferramenta diferencia mera presença autodeclarada, qualidade da evidência e autorização OEM — **jamais confirma causa raiz, teste, SAP ou liberação**. Bibliografia: **107 fontes**; índice: **45 recursos curados**. O motor e dez fichas congelados do piloto 1.4.11 não foram alterados.
 
 **Ciclo v1.4.13 — mecânica diesel:** [contaminação cruzada entre óleo e arrefecimento](https://pedromaintenance.github.io/fmea-database-mining/contaminacao-oleo-arrefecimento.html). Novo dossiê com **7 hipóteses concorrentes** e **6 situações conceituais**, diferenciando óleo no refrigerante, refrigerante no óleo, trocador, junta, fundido, contaminação de abastecimento, interferência laboratorial e resíduo pós-serviço. [Relatório técnico](docs/CICLO_2026-11-08_CONTAMINACAO_OLEO_ARREFECIMENTO.md), baseado em Caterpillar, Donaldson, Perkins e Noria; **105 referências** e **43 recursos curados**. Não há diagnóstico por ativo, teste, limite OEM, PN validado ou aprovação SAP. **Buscador e dez fundamentos congelados do piloto 1.4.11 não foram alterados**.
 

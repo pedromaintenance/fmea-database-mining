@@ -68,6 +68,12 @@ on:
       - 'docs/CICLO_2026-11-08_CONTAMINACAO_OLEO_ARREFECIMENTO.md'
       - 'scripts/build-engine-oil-coolant.mjs'
       - 'scripts/audit-engine-oil-coolant.mjs'
+      - 'data/quality/engine-crossfluid-evidence-matrix.v1.json'
+      - 'scripts/lib/engine-crossfluid-evidence.mjs'
+      - 'docs/matriz-evidencias-oleo-arrefecimento.html'
+      - 'scripts/build-engine-crossfluid-evidence.mjs'
+      - 'scripts/audit-engine-crossfluid-evidence.mjs'
+      - 'docs/CICLO_2026-11-08_MATRIZ_EVIDENCIAS_OLEO_ARREFECIMENTO.md'
       - 'docs/biblioteca-tecnica.html'
       - 'schemas/technical-knowledge-record.v2.schema.json'
       - 'scripts/build-fundamentals-portal.mjs'
@@ -131,6 +137,8 @@ jobs:
       - run: npm run knowledge:filter:differential:audit
       - run: npm run knowledge:engine:crossfluid:build
       - run: npm run knowledge:engine:crossfluid:audit
+      - run: npm run knowledge:engine:crossfluid:evidence:build
+      - run: npm run knowledge:engine:crossfluid:evidence:audit
       - run: npm run knowledge:pilot:gates
       - run: npm run knowledge:search:v2 -- --query "piloto hidráulico não aciona a válvula"
       - run: npm run knowledge:fundamentals:query -- --query "fadiga de contato"

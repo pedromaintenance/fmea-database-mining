@@ -1,0 +1,94 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Matriz de evidências óleo × arrefecimento | FMEA Database Mining</title>
+<meta name="description" content="Matriz de evidências documentais para hipóteses de contaminação cruzada em motores diesel, com solicitações para Engenharia e PCM, sem dados de ativos ou aprovação automática.">
+<style>
+:root{color-scheme:dark;--bg:#0c202b;--p:#183540;--line:#4a6d7d;--gold:#dbb873;--link:#b5e5f3;--text:#eff7f7;--muted:#bed2dc;--warn:#ffdeb3}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.55 system-ui,'Segoe UI',sans-serif}
+header{background:linear-gradient(118deg,#2d576b,#102934);border-bottom:4px solid var(--gold);padding:27px max(16px,calc((100vw - 1050px)/2))}
+header p{max-width:850px;color:#d9e6ed}h1{font-size:clamp(28px,4vw,42px);margin:12px 0;line-height:1.15}nav{display:flex;gap:14px;flex-wrap:wrap;font-size:13px}a{color:var(--link)}
+main{max-width:1090px;margin:auto;padding:22px 16px 70px}.notice{background:#392e21;border:1px solid #a38a5b;color:#fce5c2;padding:14px;border-radius:9px}
+.summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:19px 0}.stat{background:var(--p);border:1px solid var(--line);border-radius:10px;padding:14px}.stat strong{font-size:25px;display:block}.stat small{color:var(--muted)}
+label{display:block;margin:16px 0 7px}select{font:inherit;width:100%;background:#173743;color:#fff;border:1px solid #7092a0;border-radius:9px;padding:11px}.gate{background:var(--p);border:1px solid var(--line);border-radius:10px;padding:15px;margin:10px 0;display:grid;grid-template-columns:25px 1fr;gap:12px}.gate input{margin-top:6px;accent-color:var(--gold);width:17px;height:17px}.gate label{margin:0;cursor:pointer}.gate strong{display:block}.gate p{font-size:13px;color:var(--muted);margin:6px 0}.gate small{font-size:11px;color:#a8c6d1}
+.badge{font-size:12px;color:var(--gold);font-weight:650}.actions{margin:18px 0}button{font:inherit;color:#fff;background:#2a637a;border:1px solid #81a5b2;border-radius:9px;padding:10px 13px;cursor:pointer;margin:5px 8px 5px 0}button.primary{background:var(--gold);border-color:var(--gold);color:#142b32;font-weight:700}
+.card{background:var(--p);border:1px solid var(--line);border-radius:10px;padding:15px;margin:14px 0}
+.card ul{margin:7px 0;padding-left:22px}.card li{margin:7px 0}
+h2{font-size:22px;margin:25px 0 11px}h3{font-size:18px;margin:7px 0}
+pre{font:12px/1.45 ui-monospace,monospace;overflow-wrap:anywhere;white-space:pre-wrap;background:#091c24;padding:15px;border:1px solid var(--line);border-radius:9px;max-height:330px;overflow:auto}
+#message{white-space:pre-wrap;color:var(--warn)}footer{color:var(--muted);font-size:12px;margin-top:24px}
+@media(max-width:700px){.summary{grid-template-columns:1fr}}
+</style></head><body>
+<header><nav><a href="./index.html">Biblioteca técnica</a><a href="./contaminacao-oleo-arrefecimento.html">Hipóteses mecânicas</a><a href="./fontes-tecnicas.html">Referências</a><a href="./pacotes-piloto.html">Piloto congelado</a></nav>
+<h1>Matriz de evidências para investigação de óleo × arrefecimento</h1>
+<p>Selecione uma hipótese, examine os documentos necessários e gere um pedido de evidências para Engenharia e PCM. Nenhum documento de equipamento é enviado ao site.</p>
+</header><main>
+<div class="notice"><strong>Checklist de presença documental, não aprovação.</strong> Marcar um item significa somente uma declaração local de que a evidência estaria disponível num sistema corporativo autorizado. A ferramenta não lê laudos, verifica assinatura, confere modelo/série, valida procedimento OEM nem determina falha ou condição segura. Não insira dados de pessoas, ativos, ordens SAP ou medições reais.</div>
+<h2>1. Hipótese sob investigação</h2>
+<label for="hypothesis">Selecione o mecanismo conceitual para organizar a documentação</label>
+<select id="hypothesis"></select>
+<div class="summary"><div class="stat"><strong id="done">0 / 0</strong><small>Requisitos marcados (autodeclaração)</small></div><div class="stat"><strong id="missing">0</strong><small>Solicitações ainda pendentes</small></div><div class="stat"><strong id="status">Pendente</strong><small>Estado apenas documental</small></div></div>
+<div class="card"><h3>Limite da hipótese</h3><p id="boundary"></p></div>
+<h2>2. Requisitos comuns e discriminantes</h2>
+<p>As perguntas documentais são formuladas sem valores, tags, notas ou limites. Presença de arquivo não equivale à qualidade ou validade do conteúdo.</p><div id="requirements"></div>
+<h2>3. Solicitação técnica gerada</h2><p class="muted">O modelo abaixo inclui somente os IDs e títulos públicos das evidências não marcadas. Não registra casos, séries ou diagnósticos.</p>
+<pre id="request"></pre>
+<div class="actions">
+<button id="requestDownload" class="primary" type="button">Exportar solicitação .txt</button>
+<button id="save" type="button">Salvar checklist privado JSON</button>
+<button id="load" type="button">Importar checklist anterior</button>
+<button id="clear" type="button">Limpar marcações desta sessão</button>
+<input type="file" accept=".json,application/json" id="file" hidden>
+</div><p id="message" role="status" aria-live="polite"></p>
+<section class="card"><h2>Fonte, revisão e limites operacionais</h2><div id="sources"></div>
+<p>Para realizar uma investigação real, é necessário confirmar efetividade OEM, integridade dos documentos, qualidade das amostras e revisão humana independente em ambiente corporativo, fora deste repositório.</p></section>
+<footer>FMEA Database Mining · Matriz 1.4.14 · Sete mecanismos da versão 1.4.13 · Zero evidências reais, causas confirmadas ou aprovações. O conjunto de dez fichas e o motor do piloto 1.4.11 permanecem congelados.</footer>
+</main>
+<script id="matrix-bundle" type="application/json">{"schema":"MATRIX_PLACEHOLDER","ready":false}</script>
+<script>
+/*MATRIX_CORE_PLACEHOLDER*/
+(()=>{
+'use strict';
+const $=id=>document.getElementById(id),bundle=JSON.parse($('matrix-bundle').textContent);
+if(!bundle.ready){$('message').textContent='Template. Abra a página publicada ou execute o construtor local.';return}
+let state=emptyCrossfluidChecklist(bundle);
+const create=(r,tag,text,cls)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(cls)n.className=cls;r.append(n);return n};
+function exportFile(name,content,mime){const blob=new Blob([content],{type:mime}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;document.body.append(a);a.click();a.remove();URL.revokeObjectURL(url)}
+const h=$('hypothesis');
+for(const item of bundle.matrix.hypothesisGates){const info=bundle.dossier.hypotheses.find(x=>x.id===item.hypothesisId);
+ const o=create(h,'option',item.hypothesisId+' · '+(info?.title||''));o.value=item.hypothesisId;
+}
+function render(){
+ const assessment=assessCrossfluidEvidence(state,bundle);
+ h.value=state.selectedHypothesisId;
+ $('done').textContent=assessment.completed+' / '+assessment.total;
+ $('missing').textContent=String(assessment.missing.length);
+ $('status').textContent=assessment.missing.length?'Documentos pendentes':'Apenas autodeclarado';
+ $('boundary').textContent=assessment.interpretationBoundary;
+ const wrap=$('requirements');wrap.replaceChildren();
+ const evidenceById=new Map(bundle.matrix.evidence.map(x=>[x.id,x]));
+ for(const id of assessment.required){
+  const item=evidenceById.get(id);if(!item)continue;
+  const box=create(wrap,'article',undefined,'gate');const cb=create(box,'input');cb.type='checkbox';cb.checked=state.available[id];cb.id='flag-'+id;
+  const label=create(box,'label');label.htmlFor=cb.id;create(label,'span',id+' · '+item.kind,'badge');
+  create(label,'strong',item.title);create(label,'p',item.request);create(label,'p','Cuidado: '+item.warning);
+  create(label,'small','Fontes de referência: '+item.sourceIds.join(', ')+' · Documentos reais somente em meio corporativo restrito');
+  cb.addEventListener('change',()=>{state.available[id]=cb.checked;render()});
+ }
+ $('request').textContent=buildCrossfluidRequest(state,bundle);
+}
+h.addEventListener('change',v=>{state.selectedHypothesisId=h.value;render()});
+$('save').addEventListener('click',()=>exportFile('checklist-crossfluid-privado.json',JSON.stringify(state,null,2)+'\n','application/json'));
+$('requestDownload').addEventListener('click',()=>exportFile('solicitacao-documental-crossfluid.txt',buildCrossfluidRequest(state,bundle),'text/plain'));
+$('load').addEventListener('click',()=>$('file').click());
+$('file').addEventListener('change',async()=>{
+ try{const f=$('file').files?.[0];if(!f)return;if(f.size>20000)throw Error('Arquivo maior que 20 KB');
+ const candidate=JSON.parse(await f.text()),errors=validateCrossfluidChecklist(candidate,bundle);
+ if(errors.length)throw Error('Arquivo incompatível: '+errors.join(', '));
+ state=candidate;render();$('message').textContent='Checklist retomado. Confirme cada marcação com o responsável; importação não é autenticação de evidência.';
+ }catch(e){$('message').textContent='Importação rejeitada: '+e.message}finally{$('file').value=''}
+});
+$('clear').addEventListener('click',()=>{state=emptyCrossfluidChecklist(bundle);render();$('message').textContent='Marcações limpas; nenhuma evidência foi armazenada.'});
+const sr=$('sources');
+for(const s of bundle.sources){const p=create(sr,'p');const a=create(p,'a',s.organization+' — '+s.title);a.href=s.url;a.target='_blank';a.rel='noopener noreferrer';create(p,'small',' Limite: '+s.limitation)}
+render();
+})();
+</script></body></html>

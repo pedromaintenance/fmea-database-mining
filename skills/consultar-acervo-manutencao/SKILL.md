@@ -7,6 +7,9 @@ description: Consulta o acervo público FMEA Database Mining para responder dúv
 
 Esta skill é **somente de leitura conceitual**. Não acessa SAP, não opera máquina, não executa procedimentos e não autentica evidências OEM por série.
 
+## Pré-análise documental de óleo e arrefecimento — 1.4.14
+Use `../../data/quality/engine-crossfluid-evidence-matrix.v1.json` e `../../docs/matriz-evidencias-oleo-arrefecimento.html` para conferir 14 requisitos de documentação e escolher entre as sete hipóteses, sem medir ou diagnosticar equipamento. Marcação significa somente **autodeclaração de que um documento existe**, não valida efetividade ou laudo; nunca aprovar ensaio, troca, causa raiz, notas ou ordens SAP. Recuperar identificação OEM, desenhos, história, laudos de óleo/coolant, cadeia de suprimento e contraprovas em sistema corporativo autorizado. O estudo é posterior ao piloto congelado de 1.4.11.
+
 ## Motores diesel — óleo e arrefecimento (1.4.13)
 Consulte `../../data/knowledge/engine-oil-coolant-differential.v1.json` e `../../docs/contaminacao-oleo-arrefecimento.html` para sete hipóteses não confirmadas e seis contextos. Separar óleo no refrigerante, coolant no óleo e baixa de refrigerante/espuma sem mistura provada. Concorrentes: trocador, junta, fundido, fluido de fonte, analítica, resíduo e vazamento externo. Solicitar desenho por configuração, amostras representativas, histórico e análise específica; **nunca** classificar trocador ou junta como falha confirmada por aparência ou por um marcador isolado. Não prescrever pressão de ensaio ou operar máquina para reproduzir evento sem procedimento OEM e avaliação de risco. Dossiê posterior ao congelamento 1.4.11, excluído do piloto cego.
 

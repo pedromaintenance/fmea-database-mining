@@ -37,7 +37,7 @@ ck('status_applicability_empty',dossier.applicability.models.length===0&&dossier
 ck('five_source_notes',dossier.sources.length===5&&new Set(dossier.sources.map(x=>x.sourceId)).size===5&&dossier.sources.every(x=>sourceMap.has(x.sourceId)&&x.supports.length>20&&x.doesNotSupport.length>20));
 ck('public_projection_matches',JSON.stringify(published.dossier)===JSON.stringify(dossier)&&published.realAssets===0&&published.performedFieldTests===0&&published.verifiedOemLimits===0);
 ck('public_sources_parity',published.sources.length===5&&published.sources.every(x=>sourceMap.get(x.id)?.url===x.url));
-ck('registry_105_sources',registry.sources.length===105&&new Set(registry.sources.map(x=>x.id)).size===105);
+ck('registry_preserves_at_least_105_unique_sources',registry.sources.length>=105&&new Set(registry.sources.map(x=>x.id)).size===registry.sources.length);
 const expected=registry.sources.map(x=>({id:x.id,organization:x.organization,title:x.title,url:x.url,area:x.area||null,role:x.role||null,limitation:x.limitation||'',lastReviewed:x.lastReviewed||null}));
 ck('discovery_registry_exact',JSON.stringify(discovery.sources)===JSON.stringify(expected)&&discovery.sourceRegistryVersion===registry.version&&discovery.checkedLinksOnThisCycle===false);
 ck('html_no_network_or_storage',!/fetch\s*\(|XMLHttpRequest|localStorage|sessionStorage|sendBeacon|<script\s+src=/i.test(html));

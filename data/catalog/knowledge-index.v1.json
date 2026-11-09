@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.knowledge-index.v1",
-  "version": "1.4.13",
+  "version": "1.4.14",
   "scope": "selected_existing_public_artifacts_not_complete_inventory",
   "repository": "pedromaintenance/fmea-database-mining",
   "nature": "navigation_metadata_not_canonical_technical_evidence",
@@ -745,6 +745,42 @@
         "investigação",
         "inspeção",
         "causa raiz"
+      ]
+    },
+    {
+      "id": "LIB-ENGINE-CROSSFLUID-EVIDENCE",
+      "title": "Matriz documental de evidências óleo × arrefecimento",
+      "domain": "Motores diesel",
+      "kind": "ferramenta de requisição documental",
+      "system": "lubrificação e arrefecimento de motor",
+      "evidenceClass": "CONCEPTUAL",
+      "summary": "Quatorze requisitos documentais por sete hipóteses com inventário de lacunas, pedido para Engenharia/PCM e checklist apenas autodeclarado; sem dados de máquinas ou aprovação operacional.",
+      "path": "docs/matriz-evidencias-oleo-arrefecimento.html",
+      "keywords": [
+        "evidência OEM",
+        "óleo no coolant",
+        "trocador de calor",
+        "laudo de óleo",
+        "cadeia causal",
+        "requisitos",
+        "PCM"
+      ]
+    },
+    {
+      "id": "LIB-ENGINE-CROSSFLUID-MATRIX-REPORT",
+      "title": "Método de investigação documental óleo e arrefecimento",
+      "domain": "Motores diesel",
+      "kind": "procedimento conceitual de engenharia",
+      "system": "lubrificação e arrefecimento de motor",
+      "evidenceClass": "CONCEPTUAL",
+      "summary": "Matriz de presença e qualidade de evidência, diferenças entre sete mecanismos, limites de inferência e fluxo de documentação antes de qualquer teste ou decisão.",
+      "path": "docs/CICLO_2026-11-08_MATRIZ_EVIDENCIAS_OLEO_ARREFECIMENTO.md",
+      "keywords": [
+        "matriz de evidências",
+        "efetividade OEM",
+        "documentação de motor",
+        "análise de óleo",
+        "revisão técnica"
       ]
     }
   ]
