@@ -121,6 +121,14 @@ An indicator is not proof of actual bypass opening; particle count does not iden
 
 Oil in coolant and coolant in oil must be distinguished. An oil sheen, coolant loss or a single additive/glycol marker does not identify a failed cooler or head gasket. No tests, machine serials, OEM limits or operational release. This is POST-FROZEN PILOT knowledge and NOT part of the v1.4.11 ten-record retrieval benchmark.
 
+## Diesel oil / coolant documentary evidence gates (v1.4.14)
+- [Read-only offline 14-requirement evidence matrix for PCM](https://pedromaintenance.github.io/fmea-database-mining/matriz-evidencias-oleo-arrefecimento.html)
+- [Machine-readable 7-hypothesis evidence gates and citations](https://pedromaintenance.github.io/fmea-database-mining/engine-crossfluid-evidence.v1.json)
+- [Source and privacy QA audit](https://pedromaintenance.github.io/fmea-database-mining/engine-crossfluid-evidence-audit.v1.json)
+- [Methodology and field evidence boundaries](https://github.com/pedromaintenance/fmea-database-mining/blob/main/docs/CICLO_2026-11-08_MATRIZ_EVIDENCIAS_OLEO_ARREFECIMENTO.md)
+
+Presence flags are SELF ATTESTED and do not mean the OEM documents or lab tests were authenticated. Never diagnose, order repairs, write SAP changes or release equipment. This source is POST v1.4.11 frozen pilot corpus. Real serials, evidence and restricted documentation must remain in corporate-controlled systems.
+
 ## Technical entry points
 - [Hydraulic circuit differential](https://github.com/pedromaintenance/fmea-database-mining/blob/main/data/quality/hydraulic-circuit-differential.v1.json)
 - [Hydraulic hose differential](https://github.com/pedromaintenance/fmea-database-mining/blob/main/data/quality/hydraulic-hose-differential.v1.json)
