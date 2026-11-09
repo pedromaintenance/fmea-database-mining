@@ -7,6 +7,9 @@ description: Consulta o acervo público FMEA Database Mining para responder dúv
 
 Esta skill é **somente de leitura conceitual**. Não acessa SAP, não opera máquina, não executa procedimentos e não autentica evidências OEM por série.
 
+## Motor diesel: diferencial térmico e arrefecimento (1.4.15)
+Use `../../data/knowledge/engine-cooling-thermal-differential.v1.json` e `../../docs/diagnostico-arrefecimento-motor.html` para comparar dez hipóteses não confirmadas em oito manifestações. Distinguir carga térmica, transporte por coolant, troca ao ambiente, termostato/bypass e sensores. **Alarme quente não comprova bomba, radiador ou termostato com falha; ventilador girando não prova vazão; remover termostato pode desviar o coolant do radiador.** Exigir OMM/SIS/diagrama OEM por configuração antes de procedimentos. Não prescrever abertura quente, ensaio de pressurização, teste forçado de ventilador, troca de fluido não especificado ou liberação de operação. Novo dossiê pós-congelamento, fora da avaliação cega 1.4.11.
+
 ## Pré-análise documental de óleo e arrefecimento — 1.4.14
 Use `../../data/quality/engine-crossfluid-evidence-matrix.v1.json` e `../../docs/matriz-evidencias-oleo-arrefecimento.html` para conferir 14 requisitos de documentação e escolher entre as sete hipóteses, sem medir ou diagnosticar equipamento. Marcação significa somente **autodeclaração de que um documento existe**, não valida efetividade ou laudo; nunca aprovar ensaio, troca, causa raiz, notas ou ordens SAP. Recuperar identificação OEM, desenhos, história, laudos de óleo/coolant, cadeia de suprimento e contraprovas em sistema corporativo autorizado. O estudo é posterior ao piloto congelado de 1.4.11.
 

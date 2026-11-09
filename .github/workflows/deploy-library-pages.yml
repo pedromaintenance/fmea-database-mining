@@ -70,6 +70,12 @@ on:
       - 'scripts/build-engine-crossfluid-evidence.mjs'
       - 'scripts/audit-engine-crossfluid-evidence.mjs'
       - 'docs/CICLO_2026-11-08_MATRIZ_EVIDENCIAS_OLEO_ARREFECIMENTO.md'
+      - 'data/knowledge/engine-cooling-thermal-differential.v1.json'
+      - 'docs/diagnostico-arrefecimento-motor.html'
+      - 'docs/CICLO_2026-11-08_DIAGNOSTICO_ARREFECIMENTO_MOTOR.md'
+      - 'scripts/lib/engine-cooling-thermal-contract.mjs'
+      - 'scripts/build-engine-cooling-thermal.mjs'
+      - 'scripts/audit-engine-cooling-thermal.mjs'
       - 'docs/biblioteca-tecnica.html'
       - 'schemas/technical-knowledge-record.v2.schema.json'
       - 'scripts/build-fundamentals-portal.mjs'
@@ -150,6 +156,8 @@ jobs:
           node scripts/audit-engine-oil-coolant.mjs
           node scripts/build-engine-crossfluid-evidence.mjs
           node scripts/audit-engine-crossfluid-evidence.mjs
+          node scripts/build-engine-cooling-thermal.mjs
+          node scripts/audit-engine-cooling-thermal.mjs
 
       - name: Prepare static site
         run: |
@@ -192,6 +200,9 @@ jobs:
           cp reports/matriz-evidencias-oleo-arrefecimento.generated.html _site/matriz-evidencias-oleo-arrefecimento.html
           cp reports/engine-crossfluid-evidence.generated.json _site/engine-crossfluid-evidence.v1.json
           cp reports/engine-crossfluid-evidence-audit.generated.json _site/engine-crossfluid-evidence-audit.v1.json
+          cp reports/diagnostico-arrefecimento-motor.generated.html _site/diagnostico-arrefecimento-motor.html
+          cp reports/engine-cooling-thermal.generated.json _site/engine-cooling-thermal.v1.json
+          cp reports/engine-cooling-thermal-audit.generated.json _site/engine-cooling-thermal-audit.v1.json
           cp reports/pilot-collector-1.4.11.tar.gz _site/pilot-collector-1.4.11.tar.gz
           cp reports/pilot-reviewer-1.4.11.tar.gz _site/pilot-reviewer-1.4.11.tar.gz
           cp reports/pilot-adjudicator-1.4.11.tar.gz _site/pilot-adjudicator-1.4.11.tar.gz

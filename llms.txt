@@ -129,6 +129,14 @@ Oil in coolant and coolant in oil must be distinguished. An oil sheen, coolant l
 
 Presence flags are SELF ATTESTED and do not mean the OEM documents or lab tests were authenticated. Never diagnose, order repairs, write SAP changes or release equipment. This source is POST v1.4.11 frozen pilot corpus. Real serials, evidence and restricted documentation must remain in corporate-controlled systems.
 
+## Diesel engine overheating and cooling heat rejection (v1.4.15)
+- [Standalone thermal mechanism explorer](https://pedromaintenance.github.io/fmea-database-mining/diagnostico-arrefecimento-motor.html)
+- [Machine-readable 10 mechanisms, 8 scenarios and 7 Cat/Perkins sources](https://pedromaintenance.github.io/fmea-database-mining/engine-cooling-thermal.v1.json)
+- [Safety and provenance validation report](https://pedromaintenance.github.io/fmea-database-mining/engine-cooling-thermal-audit.v1.json)
+- [Engineering source and PCM research report](https://github.com/pedromaintenance/fmea-database-mining/blob/main/docs/CICLO_2026-11-08_DIAGNOSTICO_ARREFECIMENTO_MOTOR.md)
+
+Do not equate high indicated temperature to a failed pump, fan or thermostat; the radiator, bypass and instrumentation are competing hypotheses. No real motor, OEM limits, executed tests, SAP action or operational authorization. Research is POST v1.4.11 frozen pilot and must not be incorporated in blind-test answers.
+
 ## Technical entry points
 - [Hydraulic circuit differential](https://github.com/pedromaintenance/fmea-database-mining/blob/main/data/quality/hydraulic-circuit-differential.v1.json)
 - [Hydraulic hose differential](https://github.com/pedromaintenance/fmea-database-mining/blob/main/data/quality/hydraulic-hose-differential.v1.json)

@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.knowledge-index.v1",
-  "version": "1.4.14",
+  "version": "1.4.15",
   "scope": "selected_existing_public_artifacts_not_complete_inventory",
   "repository": "pedromaintenance/fmea-database-mining",
   "nature": "navigation_metadata_not_canonical_technical_evidence",
@@ -781,6 +781,45 @@
         "documentação de motor",
         "análise de óleo",
         "revisão técnica"
+      ]
+    },
+    {
+      "id": "LIB-ENGINE-COOLING-THERMAL",
+      "title": "Motores diesel — sobreaquecimento e rejeição de calor",
+      "domain": "Motores diesel",
+      "kind": "explorador técnico conceitual",
+      "system": "arrefecimento e rejeição de calor",
+      "evidenceClass": "CONCEPTUAL",
+      "summary": "Dez hipóteses e oito contextos: radiador, ventilador, bomba, termostato/bypass, nível de coolant, ar aprisionado, química, instrumentação e regime de carga. Sem diagnóstico de equipamento.",
+      "path": "docs/diagnostico-arrefecimento-motor.html",
+      "keywords": [
+        "sobreaquecimento",
+        "radiador",
+        "bomba d'água",
+        "termostato",
+        "bypass",
+        "ventilador",
+        "motor diesel",
+        "arrefecimento"
+      ]
+    },
+    {
+      "id": "LIB-ENGINE-COOLING-THERMAL-REPORT",
+      "title": "Estudo de engenharia — diagnóstico diferencial térmico",
+      "domain": "Motores diesel",
+      "kind": "relatório técnico e delimitação de investigação",
+      "system": "arrefecimento e rejeição de calor",
+      "evidenceClass": "CONCEPTUAL",
+      "summary": "Mecanismos concorrentes de fluxo de ar, circulação de refrigerante, regulação térmica e sensores, fontes Cat/Perkins, limites OEM e escopo ilustrativo para PCM.",
+      "path": "docs/CICLO_2026-11-08_DIAGNOSTICO_ARREFECIMENTO_MOTOR.md",
+      "keywords": [
+        "rejeição de calor",
+        "fluxo de coolant",
+        "fluxo de ar",
+        "sistema de arrefecimento",
+        "análise de falhas",
+        "PCM",
+        "risco térmico"
       ]
     }
   ]

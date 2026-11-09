@@ -2,7 +2,7 @@
 
 Acervo **público, versionado e rastreável** para estudar equipamentos móveis de mineração, sistemas e componentes, mecanismos físicos de falha, diagnóstico diferencial, inspeção, manutenção, confiabilidade e benchmarks industriais. **FMEA/FMECA é uma das aplicações da biblioteca, não seu limite.**
 
-> **Status:** fundação da plataforma **v1.4.14**; índice inicial curado, não catálogo completo nem biblioteca homologada para procedimentos de execução. O banco contém hipóteses, taxonomias e referências públicas, **não** FMEAs aprovadas, ocorrências reais confirmadas ou limites OEM efetivos por série.
+> **Status:** fundação da plataforma **v1.4.15**; índice inicial curado, não catálogo completo nem biblioteca homologada para procedimentos de execução. O banco contém hipóteses, taxonomias e referências públicas, **não** FMEAs aprovadas, ocorrências reais confirmadas ou limites OEM efetivos por série.
 
 **Portal público (GitHub Pages):** https://pedromaintenance.github.io/fmea-database-mining/ — entrada direta na Biblioteca Técnica. O repositório mantém a documentação canônica e o histórico de versões.
 
@@ -18,6 +18,8 @@ Acervo **público, versionado e rastreável** para estudar equipamentos móveis 
 **Novas consultas 1.4.1:** [Glossário PT/EN](docs/glossario-tecnico.html) (67 verbetes recuperados sem reescrita da ontologia), [Bibliografia](docs/fontes-tecnicas.html) (87 fontes do registro), [Inventário de arquivos](docs/inventario-acervo.html) (snapshot de 500 arquivos antes deste ciclo). Os três conjuntos diferem em natureza e NÃO são 654 fichas OEM validadas.
 
 A consulta ao índice **não substitui** a leitura da ficha canônica, a conferência da fonte original e a análise de aplicabilidade OEM. Dados sintéticos não são registros de campo; indicadores sem definição/população não são benchmarks comparáveis.
+
+**Ciclo v1.4.15 — arrefecimento de motores diesel:** [explorador técnico de sobreaquecimento e rejeição de calor](https://pedromaintenance.github.io/fmea-database-mining/diagnostico-arrefecimento-motor.html). Novo dossiê original com **10 hipóteses concorrentes e 8 manifestações**: lado do ar/radiador, obstrução interna, ventilador, termostato/bypass, bomba, perda de coolant, ar aprisionado, sensores, carga térmica e formulação de fluido. [Relatório de engenharia](docs/CICLO_2026-11-08_DIAGNOSTICO_ARREFECIMENTO_MOTOR.md), sustentado por **7 fontes Cat/Perkins**; bibliografia **114**, catálogo curado **47**. Contrato de segurança reutilizado na geração e em testes adversariais, sem teste de máquina, limite OEM, OS SAP ou liberação. Motor e dez fichas congelados do piloto 1.4.11 mantidos.
 
 **Ciclo v1.4.14 — evidências para motores diesel:** [matriz documental óleo × arrefecimento](https://pedromaintenance.github.io/fmea-database-mining/matriz-evidencias-oleo-arrefecimento.html), com **14 classes de documentos para sete hipóteses**, controle local de lacunas, solicitação pronta para Engenharia/PCM e checklist JSON sem informações da frota. [Procedimento de engenharia](docs/CICLO_2026-11-08_MATRIZ_EVIDENCIAS_OLEO_ARREFECIMENTO.md). A ferramenta diferencia mera presença autodeclarada, qualidade da evidência e autorização OEM — **jamais confirma causa raiz, teste, SAP ou liberação**. Bibliografia: **107 fontes**; índice: **45 recursos curados**. O motor e dez fichas congelados do piloto 1.4.11 não foram alterados.
 

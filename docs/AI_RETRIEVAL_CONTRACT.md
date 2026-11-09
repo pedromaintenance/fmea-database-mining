@@ -93,6 +93,12 @@
 - `docs/matriz-evidencias-oleo-arrefecimento.html` cria solicitação de Engenharia/PCM, exporta somente IDs, booleans e hashes; não possui campo de série, nota, laudo ou envio a backend.
 - Requer revisão documental humana autorizada da efetividade OEM e da amostra. Não atribuir causalidade por marcador isolado e não modificar o corpus congelado do piloto 1.4.11.
 
+## Arrefecimento diesel e limites de diagnóstico (1.4.15)
+- O novo anexo `data/knowledge/engine-cooling-thermal-differential.v1.json` contém **10 mecanismos concorrentes, 8 cenários e 7 fontes primárias**, sem motor/serial, ensaio físico, limite OEM ou causa confirmada. Está FORA do corpus congelado do piloto 1.4.11.
+- `scripts/lib/engine-cooling-thermal-contract.mjs` valida cardinalidade, IDs e vínculos das fontes, contraprovas, status UNCONFIRMED, ausência de aprovação SAP/OEM e lock do piloto; usado no builder e em mutações de QA.
+- `docs/diagnostico-arrefecimento-motor.html` é exploração read-only e sem backend. Um alarme térmico não determina bombeamento, ventilação ou termostato. A geometria do bypass e a capacidade térmica só podem ser transferidas com efetividade OEM.
+- Não recomendar retirar termostato, abrir coolant quente, operar para reproduzir sobreaquecimento, limpar com pressão sem procedimento ou fazer teste de pressão/vazão por analogia.
+
 ## Pipeline de recuperação
 1. **Descoberta:** `data/catalog/knowledge-index.v1.json` inclui uma seleção inicial de artefatos existentes. Ausência no índice não significa ausência no repositório.
 2. **Recuperação canônica:** abrir `path`; preferir informações estruturadas em `data/quality` e documentos de `docs`. Não transformar o campo de descrição do índice em prova.
