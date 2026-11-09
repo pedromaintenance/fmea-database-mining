@@ -1,9 +1,9 @@
 {
   "schema": "fmea-mining.source-discovery.v1",
-  "version": "1.4.13",
+  "version": "1.4.14",
   "nature": "bibliographic_metadata_not_machine_effectivity",
   "canonicalPath": "data/research/sources.v1.json",
-  "sourceRegistryVersion": "1.4.13",
+  "sourceRegistryVersion": "1.4.14",
   "checkedLinksOnThisCycle": false,
   "rights": "somente_titulos_links_e_resumos_originais",
   "sources": [
@@ -1055,6 +1055,26 @@
       "area": "lubricating_oil_glycol_sodium_potassium_ftIR_interference",
       "role": "specialist_lab_analysis_interpretive_reference_not_oem",
       "limitation": "Discute métodos de detecção de glicol e interferências; não fornece valor universal de condenação de óleo, nem substitui interpretação laboratorial e caracterização química do fluido instalado.",
+      "lastReviewed": "2026-11-08"
+    },
+    {
+      "id": "CAT-SOS-FLUID-SAMPLE-READING",
+      "organization": "Caterpillar",
+      "title": "How to Take a Sample & Read Results — Cat S•O•S Services",
+      "url": "https://www.cat.com/en_US/support/maintenance/sos-services/take-sample.html",
+      "area": "engine_oil_coolant_laboratory_sample_interpretation_baselines_and_markers",
+      "role": "OEM_public_fluid_analysis_guidance",
+      "limitation": "Sódio é indicador potencial, não prova isolada de ingresso de refrigerante; os ensaios e recomendações não estabelecem falha de junta, trocador nem procedimento de intervenção por série.",
+      "lastReviewed": "2026-11-08"
+    },
+    {
+      "id": "PERKINS-OIL-SAMPLING-TRENDS",
+      "organization": "Perkins Engines",
+      "title": "Oil sampling — tests, lab trends and common diagnostic interpretations",
+      "url": "https://www.perkins.com/en_GB/aftermarket/maintenance/perkins-fluid-sampling/oil-sampling.html",
+      "area": "diesel_engine_oil_trend_sampling_glycol_water_sodium_potassium",
+      "role": "OEM_public_oil_sampling_guidance",
+      "limitation": "A importância de amostras repetidas, horas e compartimento é orientação geral; não validar valores específicos, limites nem diagnósticos para motores de outras famílias.",
       "lastReviewed": "2026-11-08"
     }
   ]
