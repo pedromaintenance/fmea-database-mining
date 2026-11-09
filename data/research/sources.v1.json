@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.research.sources.v1",
-  "version": "1.4.14",
+  "version": "1.4.15",
   "status": "literatura_de_referencia_nao_casos_empiricos",
   "rights": "somente_titulos_links_e_resumos_originais",
   "sources": [
@@ -1170,6 +1170,83 @@
       "role": "OEM_public_oil_sampling_guidance",
       "limitation": "A importância de amostras repetidas, horas e compartimento é orientação geral; não validar valores específicos, limites nem diagnósticos para motores de outras famílias.",
       "reviewStatus": "fonte_publica_consultada_2026_11_08_interpretacao_original",
+      "lastReviewed": "2026-11-08"
+    },
+    {
+      "id": "CAT-COOLING-THERMOSTAT-BYPASS",
+      "organization": "Caterpillar",
+      "title": "Opção de Autoatendimento Cat — substituição do termostato e funcionamento do bypass",
+      "url": "https://www.cat.com/pt_BR/support/maintenance/self-service-options/thermostat.html",
+      "area": "coolant_thermostat_flow_bypass_overheat_and_overcool",
+      "role": "manufacturer_public_functional_thermostat_explanation",
+      "limitation": "A advertência de não retirar o termostato e o caminho de bypass refere-se aos projetos Caterpillar descritos; não comprova arranjo, faixa térmica, part number ou teste do motor específico.",
+      "reviewStatus": "fonte_publica_consultada_2026_11_08_sintese_original",
+      "lastReviewed": "2026-11-08"
+    },
+    {
+      "id": "CAT-COOLING-RADIATOR-MAINTENANCE",
+      "organization": "Caterpillar",
+      "title": "Opção de Autoatendimento Cat — radiador, aletas e contaminantes",
+      "url": "https://www.cat.com/pt_BR/support/maintenance/self-service-options/radiator.html",
+      "area": "radiator_airside_blockage_coolant_contamination_leaks",
+      "role": "manufacturer_public_radiator_function_and_maintenance",
+      "limitation": "Recomenda inspeções e prevenção de contaminação, mas não certifica que um radiador da frota esteja obstruído e não fornece procedimento de limpeza seguro por ativo.",
+      "reviewStatus": "fonte_publica_consultada_2026_11_08_sintese_original",
+      "lastReviewed": "2026-11-08"
+    },
+    {
+      "id": "CAT-COOLING-WATER-PUMP",
+      "organization": "Caterpillar",
+      "title": "Self-Service Cat Water Pump Replacement — function and overheating indicators",
+      "url": "https://www.cat.com/en_US/support/maintenance/self-service-options/water-pump.html",
+      "area": "engine_coolant_circulation_water_pump_suspected_failure",
+      "role": "manufacturer_public_coolant_pump_function",
+      "limitation": "Circulação de refrigerante é função da bomba; sinais de temperatura ou vazamento não confirmam falha do rotor, selo, acionamento ou vazão em equipamento de série indeterminada.",
+      "reviewStatus": "fonte_publica_consultada_2026_11_08_sintese_original",
+      "lastReviewed": "2026-11-08"
+    },
+    {
+      "id": "CAT-ENGINE-THERMAL-INSPECTION",
+      "organization": "Caterpillar",
+      "title": "Cat Truck Engine Repair Tips: Stop Summer Heat Damage",
+      "url": "https://www.cat.com/en_US/articles/IRF-Resource-Center/truck-engine-repair-tips-stop-heat-damage-irf.html",
+      "area": "fan_hub_slip_thermostat_water_pump_hoses_radiator_core_temperature",
+      "role": "manufacturer_public_multi_mechanism_inspection_guidance",
+      "limitation": "Apresenta possibilidades e inspeções genéricas de caminhões; não comprova mecanismos nem autoriza teste de pressão, limpeza ou funcionamento de ventilador em máquina de mineração sem procedimento OEM.",
+      "reviewStatus": "fonte_publica_consultada_2026_11_08_sintese_original",
+      "lastReviewed": "2026-11-08"
+    },
+    {
+      "id": "CAT-ENGINE-HEAT-PREVENTION",
+      "organization": "Caterpillar",
+      "title": "Keep Cool & Prevent Cat Truck Engine Failures This Summer",
+      "url": "https://www.cat.com/en_US/articles/cat-truck-engine-articles/prevent-cat-truck-engine-failures-this-summer.html",
+      "area": "radiator_fins_shroud_belts_thermostat_hose_coolant",
+      "role": "manufacturer_public_airflow_coolant_and_shroud_guidance",
+      "limitation": "Recomendações para caminhões não estabelecem a geometria ou acionamento específico de ventilador da frota e não permitem retirada de shroud, reposição não especificada ou interpretação automática de temperaturas.",
+      "reviewStatus": "fonte_publica_consultada_2026_11_08_sintese_original",
+      "lastReviewed": "2026-11-08"
+    },
+    {
+      "id": "PERKINS-ENGINE-COOLING-ARCHITECTURE",
+      "organization": "Perkins Engines",
+      "title": "Cooling systems — radiator, fan, thermostat and water pump",
+      "url": "https://www.perkins.com/en_GB/aftermarket/maintenance/product-offering/cooling-systems.html",
+      "area": "heat_rejection_system_airflow_coolant_flow_component_integration",
+      "role": "manufacturer_public_cooling_architecture",
+      "limitation": "Explica funções complementares e possibilidade de sistema projetado pelo OEM da máquina; não comprova que determinada configuração possui os mesmos componentes nem um critério de aceitação.",
+      "reviewStatus": "fonte_publica_consultada_2026_11_08_sintese_original",
+      "lastReviewed": "2026-11-08"
+    },
+    {
+      "id": "PERKINS-ENGINE-THERMOSTAT-FLOW",
+      "organization": "Perkins Engines",
+      "title": "Thermostats help keep you cool",
+      "url": "https://www.perkins.com/en_GB/aftermarket/maintenance/product-offering/cooling-systems/thermostats.html",
+      "area": "thermostat_bypass_temperature_regulation_overcool_and_overheat",
+      "role": "manufacturer_public_thermostat_operation_and_noninterchangeability",
+      "limitation": "A geometria e o comportamento do bypass descritos para Perkins não substituem o desenho OEM do motor em análise, nem permitem seleção de termostato por similaridade.",
+      "reviewStatus": "fonte_publica_consultada_2026_11_08_sintese_original",
       "lastReviewed": "2026-11-08"
     }
   ]
