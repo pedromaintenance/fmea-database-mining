@@ -42,6 +42,8 @@
 
 **Ciclo 1.4.13:** novo dossiê sobre interface entre óleo e arrefecimento de motores diesel, com 7 mecanismos concorrentes, 6 contextos e 5 fontes (Caterpillar, Perkins, Donaldson, Noria). Biblioteca alcança 105 referências e 43 recursos curados. Todos os modos de falha permanecem conceituais; série, teste e autorização OEM reais são zero. O baseline 1.4.11 continua congelado. Próxima ação: revisão técnica por engenheiro diesel e documentação específica de circuitos reais, antes de qualquer teste ou OS.
 
+**Ciclo 1.4.14:** matriz de evidências documental para sete mecanismos de contaminação cruzada em motores diesel. 14 requisitos, checklist offline autodeclarado, solicitações de documentação para PCM e revisão técnica sem conclusão automática. Fontes Cat S.O.S e Perkins oil sampling sustentam limites da amostragem. 107 referências e 45 recursos curados. O piloto permanece imutável, sem participantes humanos reais. Próximo passo: aplicação restrita por equipe autorizada com um motor efetivamente identificado e revisão independente da evidência, fora do GitHub.
+
 ### Horizonte F1 — Fundamentos mecânicos e hidráulicos (1–3 meses)
 **Foco 1:** tribologia, desgaste e lubrificação; viscosidade, contaminação, partículas, falha de rolamento, vedação, filtragem e interpretação SOS.  
 **Foco 2:** hidráulica: bombas de deslocamento, regulação, válvulas, acumuladores, sucção, cavitação, cilindros, mangueiras, drenagem, contrapressão e resfriamento.  
