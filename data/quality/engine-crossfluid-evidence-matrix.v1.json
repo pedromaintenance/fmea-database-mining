@@ -1,0 +1,342 @@
+{
+  "schema": "fmea-mining.engine-crossfluid-evidence-matrix.v1",
+  "version": "1.4.14",
+  "nature": "documentary_evidence_request_matrix_not_machine_diagnosis",
+  "parentDossier": "data/knowledge/engine-oil-coolant-differential.v1.json",
+  "frozenPilot": "data/quality/pilot-frozen-baseline.v1.json",
+  "scope": "Motor diesel não identificado: documentação e qualidade das evidências para diferenciar sete hipóteses sem procedimento por série.",
+  "reviewStatus": "PENDING_REVIEW",
+  "evidenceClass": "CONCEPTUAL",
+  "realAssets": 0,
+  "realOemEffectivitiesVerified": 0,
+  "realFieldStudies": 0,
+  "rootCausesConfirmed": 0,
+  "operationalApprovals": 0,
+  "sapActions": 0,
+  "controlledArtifacts": {
+    "realDocumentsBelongIn": "corporate_private_system_outside_public_git",
+    "requireIdentityAuth": true,
+    "automaticVerificationAvailable": false,
+    "authorityToTestOrRelease": false
+  },
+  "sources": [
+    "CAT-SOS-FLUID-SAMPLE-READING",
+    "PERKINS-OIL-SAMPLING-TRENDS",
+    "CAT-ENGINE-OIL-COOLER-CORE",
+    "DONALDSON-COOLANT-FILTRATION-FAQ",
+    "NORIA-GLYCOL-OIL-ANALYSIS-INTERFERENCES",
+    "PERKINS-ENGINE-CARE-COOLANT-SEALS",
+    "PERKINS-FLUID-SAMPLING-OIL-COOLANT"
+  ],
+  "evidence": [
+    {
+      "id": "DOC-ASSET",
+      "title": "Identificação e efetividade OEM",
+      "kind": "Documento OEM / cadastro restrito",
+      "request": "A equipe responsável identificou modelo, número de série e configurações pertinentes, mantidos somente em meio corporativo autorizado.",
+      "warning": "A ficha pública não contém série, PN nem relatório restrito.",
+      "sourceIds": [
+        "CAT-SOS-FLUID-SAMPLE-READING"
+      ],
+      "privacy": "PRIVATE_REFS_ONLY_NO_ASSET_DATA_IN_PUBLIC_REPO"
+    },
+    {
+      "id": "DOC-SYSTEM",
+      "title": "Arquitetura de óleo e arrefecimento",
+      "kind": "Diagrama OEM por configuração",
+      "request": "Recuperar percurso das galerias e interfaces do trocador, junta, bloco e cabeçote, conforme documentação efetiva.",
+      "warning": "A existência de uma interface em motor genérico não prova que esteja presente no ativo.",
+      "sourceIds": [
+        "CAT-ENGINE-OIL-COOLER-CORE"
+      ],
+      "privacy": "PRIVATE_REFS_ONLY_NO_ASSET_DATA_IN_PUBLIC_REPO"
+    },
+    {
+      "id": "DOC-SAFE",
+      "title": "Procedimento OEM de segurança e investigação",
+      "kind": "Procedimento de fabricante",
+      "request": "A equipe confirmou o procedimento e as condições de segurança apropriados ao motor, sem transcrever limites ou passos restritos.",
+      "warning": "Nenhuma marcação nesta matriz autoriza executar teste, abrir circuito ou liberar equipamento.",
+      "sourceIds": [
+        "CAT-ENGINE-OIL-COOLER-CORE"
+      ],
+      "privacy": "PRIVATE_REFS_ONLY_NO_ASSET_DATA_IN_PUBLIC_REPO"
+    },
+    {
+      "id": "OBS-TIMELINE",
+      "title": "Cronologia e condição de ocorrência",
+      "kind": "Registro de observação restrito",
+      "request": "Registrar quando surgiram sinais, condição de operação e parada, histórico de intervenção e trajetória entre coletas comparáveis.",
+      "warning": "Coincidência temporal não prova causalidade.",
+      "sourceIds": [
+        "CAT-SOS-FLUID-SAMPLE-READING",
+        "PERKINS-OIL-SAMPLING-TRENDS"
+      ],
+      "privacy": "PRIVATE_REFS_ONLY_NO_ASSET_DATA_IN_PUBLIC_REPO"
+    },
+    {
+      "id": "DOC-FLUIDS",
+      "title": "Fluidos efetivamente utilizados",
+      "kind": "Registro de suprimento / especificação OEM",
+      "request": "Distinguir produto, formulação e lote do óleo, do coolant e dos complementos, preservando documentação em meio privado.",
+      "warning": "Perfil químico diferente pode refletir produto ou aditivo, não necessariamente mistura.",
+      "sourceIds": [
+        "PERKINS-OIL-SAMPLING-TRENDS"
+      ],
+      "privacy": "PRIVATE_REFS_ONLY_NO_ASSET_DATA_IN_PUBLIC_REPO"
+    },
+    {
+      "id": "LAB-OIL",
+      "title": "Laudo representativo do óleo",
+      "kind": "Laudo laboratorial privado",
+      "request": "Solicitar resultados por compartimento com método, condição, horímetro/intervalo e qualidade da amostra, sem copiá-los ao repositório.",
+      "warning": "Sódio ou potássio isolados não confirmam líquido de arrefecimento.",
+      "sourceIds": [
+        "CAT-SOS-FLUID-SAMPLE-READING",
+        "PERKINS-OIL-SAMPLING-TRENDS"
+      ],
+      "privacy": "PRIVATE_REFS_ONLY_NO_ASSET_DATA_IN_PUBLIC_REPO"
+    },
+    {
+      "id": "LAB-COOLANT",
+      "title": "Laudo representativo do refrigerante",
+      "kind": "Laudo laboratorial privado",
+      "request": "Solicitar análise compatível de coolant e informações de aditivos, condição, contaminação e proveniência da coleta.",
+      "warning": "Cor, espuma ou película não identifica de forma exclusiva óleo do motor.",
+      "sourceIds": [
+        "CAT-SOS-FLUID-SAMPLE-READING"
+      ],
+      "privacy": "PRIVATE_REFS_ONLY_NO_ASSET_DATA_IN_PUBLIC_REPO"
+    },
+    {
+      "id": "LAB-REVIEW",
+      "title": "Interpretação independente dos ensaios",
+      "kind": "Parecer técnico laboratorial",
+      "request": "Confrontar técnicas, interferências, baseline e série histórica por alguém competente antes de atribuir ingresso ou vazamento.",
+      "warning": "Ensaio isolado não determina componente defeituoso.",
+      "sourceIds": [
+        "PERKINS-OIL-SAMPLING-TRENDS",
+        "NORIA-GLYCOL-OIL-ANALYSIS-INTERFERENCES"
+      ],
+      "privacy": "PRIVATE_REFS_ONLY_NO_ASSET_DATA_IN_PUBLIC_REPO"
+    },
+    {
+      "id": "DOC-COOLER",
+      "title": "Configuração real do trocador",
+      "kind": "Catálogo e diagrama OEM por série",
+      "request": "Documentar se há trocador óleo–refrigerante, sua localização, interfaces e aplicação efetiva à configuração.",
+      "warning": "Não usar código de peça de catálogo genérico como PN do ativo.",
+      "sourceIds": [
+        "CAT-ENGINE-OIL-COOLER-CORE"
+      ],
+      "privacy": "PRIVATE_REFS_ONLY_NO_ASSET_DATA_IN_PUBLIC_REPO"
+    },
+    {
+      "id": "DOC-SEALS",
+      "title": "Juntas, passagens e fundidos aplicáveis",
+      "kind": "Desenho / material OEM por série",
+      "request": "Localizar de forma documental galerias, juntas, regiões de vedação, bloco e cabeçote na geometria real.",
+      "warning": "A topologia não comprova trinca nem junta danificada.",
+      "sourceIds": [
+        "PERKINS-ENGINE-CARE-COOLANT-SEALS"
+      ],
+      "privacy": "PRIVATE_REFS_ONLY_NO_ASSET_DATA_IN_PUBLIC_REPO"
+    },
+    {
+      "id": "OBS-EXTERNAL",
+      "title": "Evidência de perdas externas",
+      "kind": "Registro de inspeção previamente autorizado",
+      "request": "Solicitar registros documentados de perdas externas e componentes de arrefecimento, sem instruir ensaios físicos neste recurso.",
+      "warning": "Baixa de nível não prova contaminação cruzada.",
+      "sourceIds": [
+        "DONALDSON-COOLANT-FILTRATION-FAQ"
+      ],
+      "privacy": "PRIVATE_REFS_ONLY_NO_ASSET_DATA_IN_PUBLIC_REPO"
+    },
+    {
+      "id": "DOC-SUPPLY",
+      "title": "Rastreabilidade de abastecimento e serviço",
+      "kind": "Histórico de materiais e execução",
+      "request": "Confrontar histórico de manutenção, reposição e fluidos de origem com o início dos sintomas.",
+      "warning": "Material contaminado pode simular defeito interno.",
+      "sourceIds": [
+        "PERKINS-FLUID-SAMPLING-OIL-COOLANT"
+      ],
+      "privacy": "PRIVATE_REFS_ONLY_NO_ASSET_DATA_IN_PUBLIC_REPO"
+    },
+    {
+      "id": "DOC-POSTREPAIR",
+      "title": "Referência após reparo e limpeza",
+      "kind": "Histórico restrito de manutenção",
+      "request": "Distinguir registro de limpeza, fluido anterior e sequência de amostras após reparo para avaliar resíduo versus novo ingresso.",
+      "warning": "Resíduo isolado não comprova defeito ativo nem autoriza operação.",
+      "sourceIds": [
+        "PERKINS-OIL-SAMPLING-TRENDS"
+      ],
+      "privacy": "PRIVATE_REFS_ONLY_NO_ASSET_DATA_IN_PUBLIC_REPO"
+    },
+    {
+      "id": "REV-ALTERNATIVES",
+      "title": "Parecer independente de hipóteses concorrentes",
+      "kind": "Parecer formal de engenharia",
+      "request": "Registrar que um revisor técnico considerou contraprovas e mecanismos alternativos, com documentação OEM e qualidade de evidência.",
+      "warning": "O parecer não substitui aprovação executiva nem comprova causa raiz por si só.",
+      "sourceIds": [
+        "CAT-SOS-FLUID-SAMPLE-READING",
+        "PERKINS-OIL-SAMPLING-TRENDS"
+      ],
+      "privacy": "PRIVATE_REFS_ONLY_NO_ASSET_DATA_IN_PUBLIC_REPO"
+    }
+  ],
+  "commonRequired": [
+    "DOC-ASSET",
+    "DOC-SYSTEM",
+    "DOC-SAFE",
+    "OBS-TIMELINE",
+    "REV-ALTERNATIVES"
+  ],
+  "hypothesisGates": [
+    {
+      "hypothesisId": "EC-COOLER-CORE",
+      "commonRequired": [
+        "DOC-ASSET",
+        "DOC-SYSTEM",
+        "DOC-SAFE",
+        "OBS-TIMELINE",
+        "REV-ALTERNATIVES"
+      ],
+      "specificRequired": [
+        "DOC-COOLER",
+        "LAB-OIL",
+        "LAB-COOLANT",
+        "LAB-REVIEW",
+        "DOC-FLUIDS"
+      ],
+      "interpretationBoundary": "A hipótese do trocador depende de confirmação da interface real, interpretação de fluidos e evidências independentes, não de uma película.",
+      "unverifiedUntilOem": true,
+      "automaticPromotion": false
+    },
+    {
+      "hypothesisId": "EC-HEAD-GASKET",
+      "commonRequired": [
+        "DOC-ASSET",
+        "DOC-SYSTEM",
+        "DOC-SAFE",
+        "OBS-TIMELINE",
+        "REV-ALTERNATIVES"
+      ],
+      "specificRequired": [
+        "DOC-SEALS",
+        "LAB-OIL",
+        "LAB-COOLANT",
+        "LAB-REVIEW"
+      ],
+      "interpretationBoundary": "A hipótese da junta depende da geometria OEM e de discriminação em relação ao trocador e a outras vias, não apenas de uma alteração térmica.",
+      "unverifiedUntilOem": true,
+      "automaticPromotion": false
+    },
+    {
+      "hypothesisId": "EC-CASTING",
+      "commonRequired": [
+        "DOC-ASSET",
+        "DOC-SYSTEM",
+        "DOC-SAFE",
+        "OBS-TIMELINE",
+        "REV-ALTERNATIVES"
+      ],
+      "specificRequired": [
+        "DOC-SEALS",
+        "LAB-OIL",
+        "LAB-COOLANT",
+        "LAB-REVIEW"
+      ],
+      "interpretationBoundary": "Uma fissura de bloco/cabeçote não é confirmada por laudo de fluido sem documentação e comprovação técnica específica.",
+      "unverifiedUntilOem": true,
+      "automaticPromotion": false
+    },
+    {
+      "hypothesisId": "EC-BULK-CONTAMINATION",
+      "commonRequired": [
+        "DOC-ASSET",
+        "DOC-SYSTEM",
+        "DOC-SAFE",
+        "OBS-TIMELINE",
+        "REV-ALTERNATIVES"
+      ],
+      "specificRequired": [
+        "DOC-SUPPLY",
+        "DOC-FLUIDS",
+        "LAB-OIL",
+        "LAB-COOLANT"
+      ],
+      "interpretationBoundary": "A origem externa deve ser confrontada com lotes, complementos, intervenções e evidência analítica rastreável.",
+      "unverifiedUntilOem": true,
+      "automaticPromotion": false
+    },
+    {
+      "hypothesisId": "EC-ANALYTICAL-INTERFERENCE",
+      "commonRequired": [
+        "DOC-ASSET",
+        "DOC-SYSTEM",
+        "DOC-SAFE",
+        "OBS-TIMELINE",
+        "REV-ALTERNATIVES"
+      ],
+      "specificRequired": [
+        "DOC-FLUIDS",
+        "LAB-OIL",
+        "LAB-REVIEW"
+      ],
+      "interpretationBoundary": "Uma leitura de glicol, sódio ou potássio exige contexto de formulação, amostragem e método; não classifica automaticamente falha interna.",
+      "unverifiedUntilOem": true,
+      "automaticPromotion": false
+    },
+    {
+      "hypothesisId": "EC-RESIDUAL",
+      "commonRequired": [
+        "DOC-ASSET",
+        "DOC-SYSTEM",
+        "DOC-SAFE",
+        "OBS-TIMELINE",
+        "REV-ALTERNATIVES"
+      ],
+      "specificRequired": [
+        "DOC-POSTREPAIR",
+        "DOC-FLUIDS",
+        "LAB-OIL",
+        "LAB-COOLANT"
+      ],
+      "interpretationBoundary": "Após reparo, distinguir resíduo, limpeza incompleta e novo ingresso requer sequência comparável e origem técnica documentada.",
+      "unverifiedUntilOem": true,
+      "automaticPromotion": false
+    },
+    {
+      "hypothesisId": "EC-NONCROSS-LOSS",
+      "commonRequired": [
+        "DOC-ASSET",
+        "DOC-SYSTEM",
+        "DOC-SAFE",
+        "OBS-TIMELINE",
+        "REV-ALTERNATIVES"
+      ],
+      "specificRequired": [
+        "OBS-EXTERNAL",
+        "LAB-COOLANT",
+        "DOC-FLUIDS"
+      ],
+      "interpretationBoundary": "Volume baixo ou espuma requer diferenciação de perda externa/química do fluido antes de presumir passagem para o óleo.",
+      "unverifiedUntilOem": true,
+      "automaticPromotion": false
+    }
+  ],
+  "outcomes": {
+    "missing": "DOCUMENTS_NOT_YET_SELF_ATTESTED",
+    "present": "DOCUMENT_SET_SELF_ATTESTED_FOR_HUMAN_REVIEW_ONLY",
+    "invalid": "INVALID_CHECKLIST_INPUT",
+    "never": "No diagnosis, no test authorization, no CAT/SAP action, no serial verification, no permit to operate."
+  },
+  "governanceRelation": {
+    "reference": "data/governance/pm-evidence-intake-policy.v1.json",
+    "difference": "The PM evidence-intake policy controls synthetic PM rule changes; this matrix requests documentary evidence for a conceptual diesel differential and does not promote or alter that PM workflow."
+  }
+}
