@@ -542,6 +542,6 @@
     "registry": "data/research/sources.v1.json",
     "sourceType": "primary_manufacturer_public_pages",
     "originalSynthesis": true,
-    "notPeerReviewed": false
+    "notPeerReviewed": true
   }
 }
