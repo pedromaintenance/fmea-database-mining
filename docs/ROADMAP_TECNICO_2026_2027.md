@@ -44,6 +44,8 @@
 
 **Ciclo 1.4.14:** matriz de evidências documental para sete mecanismos de contaminação cruzada em motores diesel. 14 requisitos, checklist offline autodeclarado, solicitações de documentação para PCM e revisão técnica sem conclusão automática. Fontes Cat S.O.S e Perkins oil sampling sustentam limites da amostragem. 107 referências e 45 recursos curados. O piloto permanece imutável, sem participantes humanos reais. Próximo passo: aplicação restrita por equipe autorizada com um motor efetivamente identificado e revisão independente da evidência, fora do GitHub.
 
+**Ciclo 1.4.15:** dossiê de engenharia sobre rejeição de calor e sobreaquecimento diesel: 10 hipóteses, 8 cenários, 7 fontes OEM Cat/Perkins, contrato fail-closed de autoridade e auditoria adversarial. Bibliografia 114, índice 47; zero testes, séries ou causas confirmadas. Motor e dez fichas congelados do piloto independentes. Próximo passo: revisão por especialista em térmica/arrefecimento e confronto com esquema OEM específico antes de teste/intervenção.
+
 ### Horizonte F1 — Fundamentos mecânicos e hidráulicos (1–3 meses)
 **Foco 1:** tribologia, desgaste e lubrificação; viscosidade, contaminação, partículas, falha de rolamento, vedação, filtragem e interpretação SOS.  
 **Foco 2:** hidráulica: bombas de deslocamento, regulação, válvulas, acumuladores, sucção, cavitação, cilindros, mangueiras, drenagem, contrapressão e resfriamento.  
