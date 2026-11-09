@@ -1,0 +1,547 @@
+{
+  "schema": "fmea-mining.engine-cooling-thermal-differential.v1",
+  "version": "1.4.15",
+  "nature": "conceptual_competing_mechanisms_not_model_specific_diagnosis",
+  "title": "Sobreaquecimento e sobrerresfriamento de motores diesel: circuitos de coolant, fluxo de ar e controle térmico",
+  "purpose": "Distinguir geração/rejeição de calor, caminho de refrigerante, circulação, ventilação e indicação antes de atribuir o sintoma a bomba, termostato ou radiador.",
+  "requiredFunction": "Manter o motor dentro da condição térmica definida pelo OEM, transferindo calor do conjunto motor ao fluido e do fluido ao ambiente, com circulação e controle de fluxo/ventilação conforme a instalação efetiva.",
+  "scope": "Sistemas genéricos de motor diesel com arrefecimento líquido e eventual radiador, ventilador, bomba e termostato; arranjos remotos ou trocadores líquido-líquido exigem mapeamento específico.",
+  "status": {
+    "evidenceClass": "CONCEPTUAL",
+    "reviewStatus": "PENDING_REVIEW",
+    "reviewedByHuman": false,
+    "operationalApproval": false,
+    "automaticDiagnosisAllowed": false,
+    "sapMappingApproved": false,
+    "verifiedModels": [],
+    "verifiedSerials": [],
+    "fieldObservations": 0,
+    "performedTests": 0,
+    "confirmedRootCauses": 0,
+    "oemLimits": null
+  },
+  "conceptualHeatBalance": {
+    "equation": "Calor gerado pelo motor = calor removido pelos circuitos e pelo ambiente + variação de energia térmica armazenada (balanço conceitual, não modelo numérico da máquina).",
+    "caution": "Temperatura elevada não determina qual parcela falhou. Carga, ambiente, configuração, velocidade de fluxo, condição de medição e tempo afetam a interpretação.",
+    "paths": [
+      {
+        "id": "PATH-ENGINE",
+        "label": "Calor gerado",
+        "function": "Origem térmica relacionada à operação e à carga do motor."
+      },
+      {
+        "id": "PATH-COOLANT",
+        "label": "Transporte por fluido",
+        "function": "Bomba, passagens, válvulas, nível e mistura condicionam a circulação do coolant."
+      },
+      {
+        "id": "PATH-REJECTION",
+        "label": "Troca ao ambiente",
+        "function": "Radiador/permutador, ventilador, aletas, shroud e condições do ar condicionam a rejeição de calor."
+      },
+      {
+        "id": "PATH-CONTROL",
+        "label": "Regulação e observação",
+        "function": "Termostato, bypass, lógica do ventilador, sensores e indicadores não são todos a mesma função."
+      }
+    ]
+  },
+  "hypotheses": [
+    {
+      "id": "CL-AIR-FINS",
+      "title": "Obstrução do lado do ar / shroud",
+      "mechanism": "Acúmulo de sujeira nas aletas, bloqueio na passagem de ar ou defeito de direcionamento pode reduzir a transferência de calor mesmo com circulação de coolant presente.",
+      "sourceIds": [
+        "CAT-COOLING-RADIATOR-MAINTENANCE",
+        "CAT-ENGINE-HEAT-PREVENTION",
+        "PERKINS-ENGINE-COOLING-ARCHITECTURE"
+      ],
+      "discriminatingQuestions": [
+        "Há registro de contaminação das aletas, condição do pacote de radiadores e guias de ar/shroud?",
+        "Existe relação com carga, velocidade de deslocamento ou condições de ventilação?",
+        "A arquitetura usa radiador e ventilador nesse local?"
+      ],
+      "competingInterpretations": [
+        "Dado de temperatura sozinho não confirma sujeira nas aletas.",
+        "Não confundir falha do ventilador com bloqueio do núcleo."
+      ],
+      "certainty": "UNCONFIRMED",
+      "fieldTests": 0
+    },
+    {
+      "id": "CL-HEAT-CORE",
+      "title": "Resistência térmica ou hidráulica do trocador/radiador",
+      "mechanism": "Depósitos internos, corrosão, deterioração do fluido ou restrição nas passagens podem diminuir a capacidade de rejeitar calor.",
+      "sourceIds": [
+        "CAT-COOLING-RADIATOR-MAINTENANCE",
+        "CAT-ENGINE-HEAT-PREVENTION",
+        "PERKINS-ENGINE-COOLING-ARCHITECTURE"
+      ],
+      "discriminatingQuestions": [
+        "Há histórico de qualidade e formulação do refrigerante e de manutenção do trocador?",
+        "O projeto do sistema e a posição de radiadores/permutadores estão documentados?",
+        "Há evidência autorizada que diferencie obstrução interna de restrição do ar?"
+      ],
+      "competingInterpretations": [
+        "Aspecto do coolant isolado não prova obstrução.",
+        "Evitar atribuir radiador entupido sem evidência de condição e método OEM."
+      ],
+      "certainty": "UNCONFIRMED",
+      "fieldTests": 0
+    },
+    {
+      "id": "CL-FAN-DRIVE",
+      "title": "Ventilação insuficiente por acionamento ou comando",
+      "mechanism": "O ventilador pode não entregar o fluxo esperado por acionamento, acoplamento, comando, proteção ou configuração inadequada.",
+      "sourceIds": [
+        "CAT-ENGINE-THERMAL-INSPECTION",
+        "CAT-ENGINE-HEAT-PREVENTION",
+        "PERKINS-ENGINE-COOLING-ARCHITECTURE"
+      ],
+      "discriminatingQuestions": [
+        "A máquina usa ventilador mecânico, viscoso, hidráulico ou elétrico?",
+        "Existe observação segura e documentada de estado do comando/acionamento em condição do aviso?",
+        "A mudança do sintoma depende de baixa velocidade, alta carga ou ambiente?"
+      ],
+      "competingInterpretations": [
+        "Ver ventoinha girando não demonstra vazão adequada.",
+        "Não desativar intertravamentos ou proteções para investigar."
+      ],
+      "certainty": "UNCONFIRMED",
+      "fieldTests": 0
+    },
+    {
+      "id": "CL-THERMOSTAT",
+      "title": "Termostato inadequado ou bypass mal compreendido",
+      "mechanism": "Regulador preso, parcialmente aberto ou ausente pode alterar a distribuição de coolant entre radiador e recirculação; o efeito depende da geometria OEM.",
+      "sourceIds": [
+        "CAT-COOLING-THERMOSTAT-BYPASS",
+        "PERKINS-ENGINE-THERMOSTAT-FLOW",
+        "CAT-ENGINE-THERMAL-INSPECTION"
+      ],
+      "discriminatingQuestions": [
+        "Qual é a geometria documentada do regulador e do bypass do motor identificado?",
+        "A anomalia é aquecimento, sobrerresfriamento ou oscilação?",
+        "Há histórico de troca, ausência ou incompatibilidade de termostato?"
+      ],
+      "competingInterpretations": [
+        "Retirar o termostato não é método genérico seguro.",
+        "Termostato aberto não garante fluxo adequado se houver recirculação pelo bypass."
+      ],
+      "certainty": "UNCONFIRMED",
+      "fieldTests": 0
+    },
+    {
+      "id": "CL-WATER-PUMP",
+      "title": "Circulação insuficiente pela bomba ou seu acionamento",
+      "mechanism": "Desgaste, falha de acionamento ou perda de função da bomba pode reduzir o fluxo do refrigerante pelo sistema real.",
+      "sourceIds": [
+        "CAT-COOLING-WATER-PUMP",
+        "CAT-ENGINE-THERMAL-INSPECTION",
+        "PERKINS-ENGINE-COOLING-ARCHITECTURE"
+      ],
+      "discriminatingQuestions": [
+        "Há esquema OEM do acionamento e localização da bomba?",
+        "Existe evidência de vazamento, condição de acionamento ou outro indício que diferencie bomba de restrição no circuito?",
+        "O alerta é consistente com outros indícios de troca térmica?"
+      ],
+      "competingInterpretations": [
+        "Temperatura elevada não confirma rotor, cavitação ou falha de bomba.",
+        "Não realizar medição improvisada de vazão/pressão."
+      ],
+      "certainty": "UNCONFIRMED",
+      "fieldTests": 0
+    },
+    {
+      "id": "CL-LOW-LEVEL-LEAK",
+      "title": "Volume de refrigerante, estanqueidade e perda externa",
+      "mechanism": "Perda de coolant ou condição insuficiente de fluido pode comprometer circulação, troca térmica e, em certas configurações, a confiabilidade da própria indicação.",
+      "sourceIds": [
+        "CAT-COOLING-RADIATOR-MAINTENANCE",
+        "CAT-ENGINE-THERMAL-INSPECTION",
+        "CAT-COOLING-WATER-PUMP"
+      ],
+      "discriminatingQuestions": [
+        "O nível, sistema de recuperação e histórico de complementos foram observados conforme procedimento seguro?",
+        "Há histórico de perda externa por mangueiras, conexões, tampa, radiador ou bomba?",
+        "O equipamento foi inspecionado e contém fluido adequado para avaliação de indicadores?"
+      ],
+      "competingInterpretations": [
+        "Um nível baixo não identifica a fonte de vazamento.",
+        "Não abrir tampa quente/pressurizada nem completar com produto não especificado."
+      ],
+      "certainty": "UNCONFIRMED",
+      "fieldTests": 0
+    },
+    {
+      "id": "CL-AIRLOCK",
+      "title": "Ar aprisionado ou desaeração insuficiente após serviço",
+      "mechanism": "Após serviço ou reposição, ar retido pode alterar a circulação ou a leitura de temperatura dependendo do circuito e dos pontos de ventilação.",
+      "sourceIds": [
+        "PERKINS-ENGINE-COOLING-ARCHITECTURE",
+        "CAT-ENGINE-HEAT-PREVENTION"
+      ],
+      "discriminatingQuestions": [
+        "A ocorrência surgiu após drenagem, troca ou reposição do refrigerante?",
+        "O procedimento OEM da configuração inclui requisitos de enchimento e desaeração?",
+        "Há histórico de alteração de nível e indícios consistentes de circulação?"
+      ],
+      "competingInterpretations": [
+        "Ar aprisionado é hipótese de engenharia, não prova de falha em ativo.",
+        "Não prescrever sangria manual sem método OEM."
+      ],
+      "certainty": "UNCONFIRMED",
+      "fieldTests": 0
+    },
+    {
+      "id": "CL-SENSOR-SIGNAL",
+      "title": "Indicação de temperatura não corroborada",
+      "mechanism": "Sensor, chicote, alimentação, controlador ou referência podem produzir valor/alarme divergente da condição térmica real.",
+      "sourceIds": [
+        "CAT-COOLING-THERMOSTAT-BYPASS",
+        "CAT-ENGINE-THERMAL-INSPECTION",
+        "CAT-ENGINE-HEAT-PREVENTION"
+      ],
+      "discriminatingQuestions": [
+        "Qual sensor/indicador e sua localização OEM foram usados para a observação?",
+        "Existe evidência independente e autorizada que corrobore a tendência térmica?",
+        "Há códigos de comunicação, inconsistência de instrumento ou comparação de histórico?"
+      ],
+      "competingInterpretations": [
+        "Não ignorar alarme por suspeitar do sensor.",
+        "Não concluir falha do sensor sem prova."
+      ],
+      "certainty": "UNCONFIRMED",
+      "fieldTests": 0
+    },
+    {
+      "id": "CL-LOAD-AMBIENT",
+      "title": "Carga térmica e ambiente incompatíveis com a condição observada",
+      "mechanism": "Aumento de carga, temperatura do ar ou redução de ventilação pode elevar a demanda de rejeição de calor sem demonstrar defeito em componente isolado.",
+      "sourceIds": [
+        "CAT-ENGINE-THERMAL-INSPECTION",
+        "CAT-ENGINE-HEAT-PREVENTION",
+        "PERKINS-ENGINE-COOLING-ARCHITECTURE"
+      ],
+      "discriminatingQuestions": [
+        "Qual regime de trabalho, carga, deslocamento, ambiente e tempo de estabilização foram registrados?",
+        "O arranjo térmico e seu dimensionamento correspondem à aplicação OEM?",
+        "A mudança ocorre em condições repetíveis sem outros mecanismos observados?"
+      ],
+      "competingInterpretations": [
+        "Condição de alta carga não exime investigar anomalias reais.",
+        "Não converter exemplos de caminhões rodoviários em limite de desempenho da mina."
+      ],
+      "certainty": "UNCONFIRMED",
+      "fieldTests": 0
+    },
+    {
+      "id": "CL-COOLANT-CHEMISTRY",
+      "title": "Mistura/qualidade inadequada do fluido",
+      "mechanism": "Concentração, compatibilidade química e contaminantes influenciam corrosão, formação de depósitos e transferência térmica.",
+      "sourceIds": [
+        "CAT-COOLING-RADIATOR-MAINTENANCE",
+        "CAT-ENGINE-HEAT-PREVENTION",
+        "PERKINS-ENGINE-COOLING-ARCHITECTURE"
+      ],
+      "discriminatingQuestions": [
+        "Quais refrigerantes, aditivos e água foram efetivamente usados e quando?",
+        "O perfil químico e os laudos permitem caracterizar corrosão, depósitos ou incompatibilidade?",
+        "A amostra é representativa e tem histórico comparável?"
+      ],
+      "competingInterpretations": [
+        "Mudança de formulação ou aparência não comprova falha térmica.",
+        "Não recomendar drenagem/mistura sem especificação OEM aplicável."
+      ],
+      "certainty": "UNCONFIRMED",
+      "fieldTests": 0
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "CL-S1",
+      "title": "Temperatura aumenta em carga elevada",
+      "observation": "A temperatura reportada cresce com carga, sem identificação do mecanismo de perda de capacidade térmica.",
+      "hypothesisIds": [
+        "CL-LOAD-AMBIENT",
+        "CL-FAN-DRIVE",
+        "CL-AIR-FINS",
+        "CL-HEAT-CORE",
+        "CL-WATER-PUMP"
+      ],
+      "missingEvidence": [
+        "Regime operacional, ambiente e tendência com tempo",
+        "Arquitetura de rejeição de calor e condição de ventilação",
+        "Evidência documentada de fluxo e operação dos componentes segundo OEM"
+      ],
+      "invalidConclusion": "A carga elevada não prova defeito de bomba, ventilador ou radiador."
+    },
+    {
+      "id": "CL-S2",
+      "title": "Aviso após intervenção no sistema de arrefecimento",
+      "observation": "A indicação de temperatura mudou depois de serviço/abastecimento do circuito.",
+      "hypothesisIds": [
+        "CL-AIRLOCK",
+        "CL-LOW-LEVEL-LEAK",
+        "CL-THERMOSTAT",
+        "CL-COOLANT-CHEMISTRY",
+        "CL-SENSOR-SIGNAL"
+      ],
+      "missingEvidence": [
+        "Escopo do serviço, peças e fluido utilizados",
+        "Procedimento OEM de enchimento, desaeração e configuração",
+        "Tendência anterior/posterior e integridade de sinal"
+      ],
+      "invalidConclusion": "Ocorreu depois da intervenção não significa que seja culpa de uma peça substituída."
+    },
+    {
+      "id": "CL-S3",
+      "title": "Aquecimento em baixa velocidade ou ventilação reduzida",
+      "observation": "A anomalia aparece especialmente quando o fluxo de ar natural parece limitado.",
+      "hypothesisIds": [
+        "CL-FAN-DRIVE",
+        "CL-AIR-FINS",
+        "CL-LOAD-AMBIENT",
+        "CL-HEAT-CORE"
+      ],
+      "missingEvidence": [
+        "Tipo de ventilador, controlador e shroud",
+        "Estado do pacote de trocadores e ventilação da instalação",
+        "Carga e condições ambientais comparáveis"
+      ],
+      "invalidConclusion": "Ventoinha visivelmente girando não comprova vazão adequada nem exclui obstrução."
+    },
+    {
+      "id": "CL-S4",
+      "title": "Operação sem termostato ou com peça não identificada",
+      "observation": "Há informação de remoção, substituição desconhecida ou inadequação do regulador.",
+      "hypothesisIds": [
+        "CL-THERMOSTAT",
+        "CL-WATER-PUMP",
+        "CL-LOAD-AMBIENT"
+      ],
+      "missingEvidence": [
+        "Desenho do bypass, termostato e caminhos efetivos",
+        "Especificação da peça e histórico documental",
+        "Registros das condições antes/depois da alteração"
+      ],
+      "invalidConclusion": "Operar sem termostato é diagnóstico válido ou garante maior fluxo ao radiador."
+    },
+    {
+      "id": "CL-S5",
+      "title": "Nível de refrigerante reduzindo ou vazamento externo",
+      "observation": "Existe relato de perda de fluido, com ou sem elevação de temperatura.",
+      "hypothesisIds": [
+        "CL-LOW-LEVEL-LEAK",
+        "CL-COOLANT-CHEMISTRY",
+        "CL-AIRLOCK",
+        "CL-SENSOR-SIGNAL"
+      ],
+      "missingEvidence": [
+        "Histórico de nível em condição segura e sistema de recuperação",
+        "Registro de origem da perda e documentação OEM",
+        "Amostra/fluido, tendência e confiabilidade da indicação"
+      ],
+      "invalidConclusion": "Baixa de nível demonstra a localização do vazamento ou prova mistura com óleo."
+    },
+    {
+      "id": "CL-S6",
+      "title": "Temperatura exibida não coincide com outras observações",
+      "observation": "O indicador mostra anomalia térmica com histórico ou observações que parecem divergentes.",
+      "hypothesisIds": [
+        "CL-SENSOR-SIGNAL",
+        "CL-LOW-LEVEL-LEAK",
+        "CL-THERMOSTAT",
+        "CL-LOAD-AMBIENT"
+      ],
+      "missingEvidence": [
+        "Tipo/localização da instrumentação e registro de DTC",
+        "Documentação de limiares OEM e sinais relacionados",
+        "Corroboração independente dentro de método autorizado"
+      ],
+      "invalidConclusion": "A divergência permite ignorar o alarme ou desligar sensores para operar."
+    },
+    {
+      "id": "CL-S7",
+      "title": "Temperatura baixa ou oscilante",
+      "observation": "O motor pode não alcançar regime térmico esperado ou alternar leituras, sem valores e condições validados.",
+      "hypothesisIds": [
+        "CL-THERMOSTAT",
+        "CL-SENSOR-SIGNAL",
+        "CL-LOAD-AMBIENT",
+        "CL-FAN-DRIVE"
+      ],
+      "missingEvidence": [
+        "Regime OEM requerido, carga e tempo de aquecimento",
+        "Desenho e part number do termostato e bypass",
+        "Histórico da leitura e integridade dos sensores"
+      ],
+      "invalidConclusion": "Termostato aberto, ventilador ruim ou sensor avariado pode ser confirmado apenas pela indicação."
+    },
+    {
+      "id": "CL-S8",
+      "title": "Refrigerante com aparência alterada e suspeita de baixa troca térmica",
+      "observation": "A condição do fluido ou do radiador suscita preocupação, mas a localização de uma restrição não está determinada.",
+      "hypothesisIds": [
+        "CL-COOLANT-CHEMISTRY",
+        "CL-HEAT-CORE",
+        "CL-AIR-FINS",
+        "CL-LOW-LEVEL-LEAK"
+      ],
+      "missingEvidence": [
+        "Laudos de coolant, formulação real e histórico",
+        "Evidência de lado do ar versus lado do fluido",
+        "Método OEM da configuração e restrições de limpeza"
+      ],
+      "invalidConclusion": "Amostra alterada prova que o radiador está obstruído ou justifica limpeza com pressão elevada."
+    }
+  ],
+  "documentRequirements": [
+    {
+      "id": "DOC-OEM-EFFECTIVITY",
+      "purpose": "Identificação do arranjo térmico por motor, série e configuração",
+      "evidenceType": "OEM_CONFIGURATION_PRIVATE",
+      "owner": "Engenharia",
+      "notEstablished": "Não confirma qualquer peça ou defeito."
+    },
+    {
+      "id": "DOC-COOLING-TOPOLOGY",
+      "purpose": "Fluxo de coolant, caminhos de bypass e disposição física da rejeição de calor",
+      "evidenceType": "OEM_SCHEMATIC_PRIVATE",
+      "owner": "Engenharia Mecânica",
+      "notEstablished": "Não autoriza ensaio."
+    },
+    {
+      "id": "DOC-FAN-CONTROL",
+      "purpose": "Tipo de ventilador, acionamento, controlador, proteções e intertravamentos",
+      "evidenceType": "OEM_DIAGRAM_PRIVATE",
+      "owner": "Mecânica/Elétrica",
+      "notEstablished": "Não valida estado do ventilador por presunção."
+    },
+    {
+      "id": "OBS-TEMPERATURE-TREND",
+      "purpose": "Registros temporais de indicação, regime operacional, carga e ambiente",
+      "evidenceType": "OPERATIONAL_OBSERVATION_PRIVATE",
+      "owner": "Monitoramento de condição",
+      "notEstablished": "Não prova calibração do sensor."
+    },
+    {
+      "id": "OBS-COOLANT-INVENTORY",
+      "purpose": "Histórico de nível, reposição, perdas e intervenções",
+      "evidenceType": "MAINTENANCE_HISTORY_PRIVATE",
+      "owner": "PCM/Manutenção",
+      "notEstablished": "Não identifica a origem de vazamento."
+    },
+    {
+      "id": "LAB-COOLANT-QUALITY",
+      "purpose": "Identificação do refrigerante, qualidade da amostragem, histórico e aditivos",
+      "evidenceType": "LAB_RESULT_PRIVATE",
+      "owner": "Lubrificação/Laboratório",
+      "notEstablished": "Não confirma restrição de radiador por si só."
+    },
+    {
+      "id": "DOC-SAFE-METHOD",
+      "purpose": "Métodos OEM e gestão de risco para investigações futuras",
+      "evidenceType": "OEM_PROCEDURE_PRIVATE",
+      "owner": "Engenharia/SSMA",
+      "notEstablished": "Não dá liberação automática para abrir sistema quente/pressurizado."
+    }
+  ],
+  "crossLinks": [
+    {
+      "path": "data/knowledge/engine-oil-coolant-differential.v1.json",
+      "relation": "coolant_loss_and_cross_contamination_are_distinct_mechanisms"
+    },
+    {
+      "path": "data/quality/engine-crossfluid-evidence-matrix.v1.json",
+      "relation": "lab_sample_and_OEM_effectivity_quality_during_investigation"
+    }
+  ],
+  "primarySourceNotes": [
+    {
+      "sourceId": "CAT-COOLING-THERMOSTAT-BYPASS",
+      "supports": "Descrição do fluxo de bypass em projeto Cat e advertência contra operação sem termostato.",
+      "doesNotSupport": "Não demonstra funcionamento nem peça efetiva de motor da mina."
+    },
+    {
+      "sourceId": "CAT-COOLING-RADIATOR-MAINTENANCE",
+      "supports": "Funções e riscos de radiador, limpeza de aletas, contaminação de coolant, vazamentos e documentação OEM.",
+      "doesNotSupport": "Não confirma obstrução e não fornece procedimento de limpeza por máquina."
+    },
+    {
+      "sourceId": "CAT-COOLING-WATER-PUMP",
+      "supports": "Função da bomba e sintomas genéricos.",
+      "doesNotSupport": "Não valida falha interna, vazão ou part number."
+    },
+    {
+      "sourceId": "CAT-ENGINE-THERMAL-INSPECTION",
+      "supports": "Mecanismos alternativos: ventilador, termostato, bomba, mangueiras e trocadores.",
+      "doesNotSupport": "Não quantifica ocorrência ou ranking em caminhões de mina."
+    },
+    {
+      "sourceId": "CAT-ENGINE-HEAT-PREVENTION",
+      "supports": "Lado do ar do radiador, shroud, correias e coolant como condicionantes térmicos.",
+      "doesNotSupport": "Não fornece valores transferíveis ou método de intervenção na frota."
+    },
+    {
+      "sourceId": "PERKINS-ENGINE-COOLING-ARCHITECTURE",
+      "supports": "Arquitetura cooperativa do arrefecimento e possibilidade de projeto pelo fabricante da máquina.",
+      "doesNotSupport": "Não identifica configuração de motor real."
+    },
+    {
+      "sourceId": "PERKINS-ENGINE-THERMOSTAT-FLOW",
+      "supports": "Regulação de coolant e bypass, risco de peça não efetiva.",
+      "doesNotSupport": "Não equivale à geometria de qualquer outro motor."
+    }
+  ],
+  "causalLevels": [
+    {
+      "label": "SYMPTOM",
+      "meaning": "Alarme, temperatura reportada, vapor, coolant baixo ou sobrerresfriamento."
+    },
+    {
+      "label": "REQUIREMENT",
+      "meaning": "Temperatura do motor dentro da faixa OEM e capacidade de rejeição de calor no arranjo efetivo."
+    },
+    {
+      "label": "MECHANISM",
+      "meaning": "Falha em transporte por fluido, troca ao ar, regulação, observação ou demanda térmica concorrente."
+    },
+    {
+      "label": "ROOT_CAUSE",
+      "meaning": "Condição originadora requer testes autorizados e evidência independente; permanece desconhecida."
+    },
+    {
+      "label": "EXECUTION",
+      "meaning": "Somente decisão humana competente baseada em efetividade OEM, segurança e dados do ativo."
+    }
+  ],
+  "safety": {
+    "highRisk": "Superaquecimento real pode acelerar dano a juntas, cabeçote, óleo e rolamentos. Perda de fluido pode comprometer a confiabilidade da medição de temperatura, dependendo da instalação. Avaliar risco e contenção segundo OEM, não operar para testar hipóteses.",
+    "doNot": [
+      "Não abrir tampa nem linha com sistema quente ou pressurizado.",
+      "Não remover ou operar sem termostato como paliativo universal.",
+      "Não remover shroud/guarda, bloquear ventilador, bypass ou intertravamentos.",
+      "Não usar água ou fluido fora da especificação OEM nem limpar radiador com alta pressão por orientação genérica.",
+      "Não executar teste de pressão, fluxo, vazão ou funcionamento do ventilador sem procedimento seguro por configuração.",
+      "Não liberar equipamento, abrir OS automática ou substituir peças sem avaliação de engenharia competente."
+    ],
+    "allowed": "Solicitar evidências documentais e comparar hipóteses sem concluir falha de componente.",
+    "noNumericOemLimits": true,
+    "noApprovedProcedures": true,
+    "noFieldTests": true,
+    "noAutomaticSapAction": true
+  },
+  "frozenPilot": {
+    "baselineVersion": "1.4.11",
+    "newAnnexIsPostFreeze": true,
+    "includedInFrozenSearch": false,
+    "modifiedLockedTechnicalFiles": false
+  },
+  "provenance": {
+    "registry": "data/research/sources.v1.json",
+    "sourceType": "primary_manufacturer_public_pages",
+    "originalSynthesis": true,
+    "notPeerReviewed": false
+  }
+}
