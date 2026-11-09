@@ -3,9 +3,12 @@
  * offline. Does not modify any of the 10 frozen retrieval records. */
 import fs from 'node:fs';
 import vm from 'node:vm';
+import {validateThermalDossier} from './lib/engine-cooling-thermal-contract.mjs';
 const read=p=>fs.readFileSync(p,'utf8'),json=p=>JSON.parse(read(p));
 const dossier=json('data/knowledge/engine-cooling-thermal-differential.v1.json');
 const registry=json('data/research/sources.v1.json');
+const invalid=validateThermalDossier(dossier,registry);
+if(invalid.length)throw Error('Thermal knowledge refused: '+invalid.join(', '));
 const ids=new Set(dossier.primarySourceNotes.map(s=>s.sourceId));
 const sources=registry.sources.filter(s=>ids.has(s.id))
  .map(({id,organization,title,url,limitation,role,lastReviewed})=>({id,organization,title,url,limitation,role,lastReviewed}));
