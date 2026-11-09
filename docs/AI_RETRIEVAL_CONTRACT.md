@@ -87,6 +87,12 @@
 - Óleo no refrigerante, refrigerante no óleo e espuma/perda de coolant são fenômenos distintos. Indício químico pode ter interferência. O sentido do fluxo não é universal sem dados de pressão e arquitetura.
 - Motor e dez fichas do piloto `pilot-frozen-baseline.v1.json` permanecem idênticos; **não contaminar avaliação cega com esta pesquisa posterior**.
 
+## Matriz de evidências documentais diesel (1.4.14)
+- `data/quality/engine-crossfluid-evidence-matrix.v1.json` aponta 14 classes de documentos e a pertinência para cada hipótese do dossiê 1.4.13. Não há modelos/séries, medições ou relatórios reais.
+- `scripts/lib/engine-crossfluid-evidence.mjs` é um contrato de flags booleanas e fingerprints: reporta faltas documentais e **DOCUMENT_SET_SELF_ATTESTED_FOR_HUMAN_REVIEW_ONLY** quando todos os itens foram marcados, sempre com `humanEvidenceVerified:false`, `rootCauseConfirmed:false`, `operationalApproval:false`, `sapActionAuthorized:false`.
+- `docs/matriz-evidencias-oleo-arrefecimento.html` cria solicitação de Engenharia/PCM, exporta somente IDs, booleans e hashes; não possui campo de série, nota, laudo ou envio a backend.
+- Requer revisão documental humana autorizada da efetividade OEM e da amostra. Não atribuir causalidade por marcador isolado e não modificar o corpus congelado do piloto 1.4.11.
+
 ## Pipeline de recuperação
 1. **Descoberta:** `data/catalog/knowledge-index.v1.json` inclui uma seleção inicial de artefatos existentes. Ausência no índice não significa ausência no repositório.
 2. **Recuperação canônica:** abrir `path`; preferir informações estruturadas em `data/quality` e documentos de `docs`. Não transformar o campo de descrição do índice em prova.
