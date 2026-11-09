@@ -5,7 +5,7 @@ const root=process.cwd(),read=p=>fs.readFileSync(path.join(root,p),'utf8');
 const data=JSON.parse(read('data/catalog/knowledge-index.v1.json'));
 const html=read('docs/biblioteca-tecnica.html');
 const errors=[],ck=(condition,message)=>{if(!condition)errors.push(message);};
-ck(data.schema==='fmea-mining.knowledge-index.v1'&&data.version==='1.4.14','index_version');
+ck(data.schema==='fmea-mining.knowledge-index.v1'&&data.version==='1.4.15','index_version');
 ck(data.nature==='navigation_metadata_not_canonical_technical_evidence'&&data.scope==='selected_existing_public_artifacts_not_complete_inventory','index_scope');
 ck(data.statuses.validatedRealAssetEvidence===0&&data.statuses.approvedOemSerials===0&&data.statuses.operationalReleases===0&&data.statuses.sapMappingsApproved===0,'no_fake_approvals');
 ck(data.repository==='pedromaintenance/fmea-database-mining','repository_identity');
