@@ -1,0 +1,92 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Motor diesel — superaquecimento e rejeição de calor | FMEA Database Mining</title>
+<meta name="description" content="Investigação conceitual de sobreaquecimento de motores diesel: fluxo de refrigerante, termostato, radiador, ventilador, bomba e sensores; dez hipóteses com fontes de fabricantes.">
+<style>
+:root{color-scheme:dark;--bg:#0b202a;--panel:#193642;--line:#4b6a77;--ink:#ecf5f7;--muted:#bed1d8;--gold:#dcb878;--link:#b6e3f2}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 system-ui,'Segoe UI',sans-serif}
+header{background:linear-gradient(112deg,#2f596a,#102632);border-bottom:4px solid var(--gold);padding:29px max(16px,calc((100vw - 1080px)/2))}
+nav{display:flex;flex-wrap:wrap;gap:15px;font-size:13px}a{color:var(--link)}h1{font-size:clamp(27px,4vw,45px);line-height:1.16;margin:14px 0 10px}header p{color:#d5e7eb;max-width:890px}
+main{max-width:1110px;margin:auto;padding:22px 16px 70px}h2{font-size:23px;margin:25px 0 12px}h3{font-size:18px;margin:7px 0}
+.notice{background:#382e21;border:1px solid #ab8859;color:#f8e3c1;padding:15px;border-radius:10px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.chain{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;margin:17px 0}
+.card,.stage{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px}
+.stage{min-height:125px}.stage strong{display:block;color:var(--gold);font-size:14px}.stage p{color:var(--muted);font-size:13px;margin:7px 0}
+.muted,small{color:var(--muted);font-size:12px}.id{font:700 12px/1.45 ui-monospace,monospace;color:var(--gold)}
+.options{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+button{font:inherit;padding:10px 13px;background:#27576b;color:#fff;border:1px solid #628899;border-radius:9px;cursor:pointer}
+button[aria-pressed="true"]{background:var(--gold);color:#102630;border-color:var(--gold);font-weight:700}
+button:focus-visible{outline:3px solid #fff;outline-offset:2px}
+.card{margin:10px 0}.card p{margin:9px 0}.card ul{padding-left:22px}.card li{margin:7px 0}
+.danger{color:#f6d1aa}.source-card a{font-weight:650}.source-card p{font-size:13px}
+footer{color:var(--muted);font-size:12px;margin-top:26px}
+@media(max-width:780px){.grid{grid-template-columns:1fr}.chain{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:450px){.chain{grid-template-columns:1fr}}
+</style></head><body>
+<header><nav><a href="./index.html">Biblioteca</a><a href="./contaminacao-oleo-arrefecimento.html">Óleo × refrigerante</a><a href="./matriz-evidencias-oleo-arrefecimento.html">Matriz documental</a><a href="./fontes-tecnicas.html">Fontes</a></nav>
+<h1>Sobreaquecimento: onde a rejeição de calor pode falhar?</h1>
+<p>Dez mecanismos concorrentes, oito situações de observação e perguntas de engenharia para separar circulação de coolant, regulação térmica, radiador, ar, ventilação, fluido e instrumentação — sem diagnosticar ativo.</p>
+</header><main>
+<div class="notice"><strong>Alto risco de uso indevido.</strong> É um comparador bibliográfico, não um procedimento de inspeção. Não abrir sistema quente ou pressurizado, não retirar termostato para operar, não interferir em ventilador/guardas nem forçar testes de pressão/fluxo. Qualquer decisão depende de literatura OEM efetiva, avaliação de risco e responsável técnico competente.</div>
+<h2>Funções materiais que precisam ser diferenciadas</h2>
+<div class="chain" id="chain"></div>
+<section class="card"><strong>Princípio de engenharia</strong><p id="balance"></p><p class="muted" id="balance-note"></p></section>
+<h2>Selecione a manifestação observada</h2>
+<p class="muted">A escolha não classifica causa raiz; apenas apresenta explicações concorrentes e documentos que poderiam discriminá-las.</p>
+<div id="scenarios" class="options" role="group" aria-label="Situações térmicas"></div>
+<section id="chosen" class="card" aria-live="polite"></section>
+<h2>Hipóteses pertinentes ao contexto</h2><div class="grid" id="hypotheses"></div>
+<h2>Fontes primárias e limites de aplicação</h2><div class="grid" id="sources"></div>
+<h2>Implicações para PCM e Segurança</h2><section class="card" id="safety"></section>
+<section class="card"><h3>Relação com o estudo de contaminação cruzada</h3>
+<p>Aquecimento e perda de coolant podem coexistir com alterações de óleo, mas **sobreaquecimento isolado não comprova entrada de refrigerante no óleo**. Ver também o <a href="./contaminacao-oleo-arrefecimento.html">dossiê de óleo × refrigerante</a>, separado da investigação térmica.</p>
+<p>Este dossiê é posterior ao congelamento do piloto 1.4.11: nenhuma das dez fichas do buscador congelado foi alterada ou ampliada com essas hipóteses.</p></section>
+<footer>FMEA Database Mining · Estudo conceitual 1.4.15, ainda pendente de revisão humana · Zero motores/serials comprovados · Zero medições, ensaios, pressões, part numbers ou liberações OEM · Nenhuma decisão SAP foi automatizada.</footer>
+</main>
+<script id="thermal-data" type="application/json">{"schema":"THERMAL_DATA_PLACEHOLDER","ready":false}</script>
+<script>
+(()=>{
+'use strict';
+const $=x=>document.getElementById(x),b=JSON.parse($('thermal-data').textContent);
+const add=(root,tag,value,cls)=>{
+ const el=document.createElement(tag);if(value!==undefined)el.textContent=value;if(cls)el.className=cls;root.append(el);return el;
+};
+const bullets=(root,title,items)=>{add(root,'h3',title);const ul=add(root,'ul');for(const x of items)add(ul,'li',x)};
+const line=(root,label,value)=>{const p=add(root,'p');add(p,'strong',label+': ');add(p,'span',value)};
+if(!b.ready){$('chosen').textContent='Acesse a versão publicada ou execute o construtor local.';return}
+const d=b.dossier,sources=new Map(b.sources.map(x=>[x.id,x]));
+$('balance').textContent=d.conceptualHeatBalance.equation;
+$('balance-note').textContent=d.conceptualHeatBalance.caution;
+for(const step of d.conceptualHeatBalance.paths){
+ const s=add($('chain'),'article',undefined,'stage');add(s,'strong',step.label);add(s,'p',step.function);
+}
+function selectOne(scenario){
+ for(const button of $('scenarios').querySelectorAll('button'))button.setAttribute('aria-pressed',String(button.dataset.item===scenario.id));
+ const r=$('chosen');r.replaceChildren();
+ add(r,'span',scenario.id,'id');add(r,'h3',scenario.title);line(r,'Observação conceitual',scenario.observation);
+ bullets(r,'Evidência que falta',scenario.missingEvidence);
+ const p=add(r,'p',undefined,'danger');add(p,'strong','Não concluir: ');add(p,'span',scenario.invalidConclusion);
+ const root=$('hypotheses');root.replaceChildren();
+ for(const id of scenario.hypothesisIds){
+  const h=d.hypotheses.find(x=>x.id===id);if(!h)continue;
+  const c=add(root,'article',undefined,'card');add(c,'span',h.id+' · NÃO CONFIRMADO','id');
+  add(c,'h3',h.title);add(c,'p',h.mechanism);
+  bullets(c,'Perguntas discriminantes',h.discriminatingQuestions);
+  bullets(c,'O que não sustenta a hipótese',h.competingInterpretations);
+  const refs=add(c,'p',undefined,'muted');add(refs,'strong','Fontes: ');
+  for(const sourceId of h.sourceIds){const source=sources.get(sourceId);if(!source)continue;
+   const a=add(refs,'a',source.organization);a.href=source.url;a.target='_blank';a.rel='noopener noreferrer';refs.append(' · ');
+  }
+ }
+}
+for(const x of d.scenarios){const bt=add($('scenarios'),'button',x.title);bt.type='button';bt.dataset.item=x.id;bt.setAttribute('aria-pressed','false');bt.addEventListener('click',()=>selectOne(x))}
+for(const s of b.sources){const c=add($('sources'),'article',undefined,'card source-card');
+ const a=add(c,'a',s.title);a.href=s.url;a.rel='noopener noreferrer';a.target='_blank';line(c,'Fabricante',s.organization);
+ line(c,'Limitação',s.limitation);
+}
+line($('safety'),'Risco potencial de continuar operando',d.safety.highRisk);
+bullets($('safety'),'Atividades não autorizadas pelo dossiê',d.safety.doNot);
+line($('safety'),'Uso permitido',d.safety.allowed);
+selectOne(d.scenarios[0]);
+})();
+</script></body></html>
