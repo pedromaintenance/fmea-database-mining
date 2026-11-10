@@ -11,6 +11,8 @@ A ferramenta [Adjudicação editorial diesel](adjudicacao-diesel-editorial.html)
 O usuário escolhe um motivo técnico de lista fechada e, quando necessário, um ID documental previamente associado à alternativa. **Sem campo de texto livre:** não há nome, dado privado, número de série, leitura de campo, indicação de equipamento ou documento OEM restrito.
 
 ### Integridade de proveniência
+
+A ordem dos pareceres é parte do identificador da sessão: inverter A e B resulta em outro hash, mesmo que a comparação causal seja simétrica. Isso protege contra reaplicação acidental de uma proposta a um par distinto, mas **não autentica pessoas, assinaturas, competência profissional ou independência**.
 - SHA-256 do dossiê de origem 1.4.16, calculado no build;
 - SHA-256 do **par ordenado dos dois pareceres** para vincular uma proposta à dupla exata;
 - Importação de proposta bloqueada se qualquer digest, ID, ordem, estado de triagem ou campo de autoridade divergir.
