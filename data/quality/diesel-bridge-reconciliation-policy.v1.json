@@ -1,0 +1,66 @@
+{
+  "schema": "fmea-mining.diesel-bridge-reconciliation-policy.v1",
+  "version": "1.4.18",
+  "date": "2026-11-10",
+  "sourceVersion": "1.4.17",
+  "parentDossierVersion": "1.4.16",
+  "purpose": "Confrontar dois arquivos de opiniao editorial anonima sem atribuir independência, competência, certeza causal nem autorização técnica.",
+  "statuses": {
+    "NO_REVIEW_EVIDENCE": "Nenhuma resposta classificada com conteúdo: não interpretar arquivos vazios como pareceres reais.",
+    "INVALID_INPUT_REJECTED": "Pelo menos uma entrada é inválida, contém campos extras, divergência de versão ou hash: não comparar.",
+    "POSSIBLE_DUPLICATE_SUBMISSIONS": "As respostas estruturadas são idênticas. Não contar concordância como evidência de duas pessoas distintas.",
+    "EDITORIAL_TRIAGE_REQUIRES_HUMAN_ADJUDICATION": "Comparação local concluída. Todos os encaminhamentos exigem curadoria humana independente."
+  },
+  "rowOutcomes": [
+    {
+      "code": "SAFETY_CONCERN",
+      "reason": "Uma nota crítica em qualquer dimensão ou tag unsafe_operational_implication de qualquer entrada domina todos os outros resultados."
+    },
+    {
+      "code": "INCOMPLETE",
+      "reason": "Falta classificação ou uma das cinco dimensões em pelo menos uma entrada."
+    },
+    {
+      "code": "RELATION_DISAGREEMENT",
+      "reason": "Classificações de relação causal divergentes requerem adjudicação."
+    },
+    {
+      "code": "RUBRIC_DISAGREEMENT",
+      "reason": "Notas diferentes em pelo menos uma dimensão requerem adjudicação."
+    },
+    {
+      "code": "UNDETERMINED_OR_EDITORIAL_CONCERN",
+      "reason": "Ao menos uma categoria UNDETERMINED, tag editorial ou nota needs_revision requer análise manual."
+    },
+    {
+      "code": "CONCORDANT_NOT_APPROVED",
+      "reason": "Duas entradas estruturadas concordam em relação e rubrica adequada; concordância não equivale à revisão autenticada."
+    }
+  ],
+  "rules": {
+    "twoFilesOnly": true,
+    "noReviewerIdentity": true,
+    "fullRowIdAndVersionValidation": true,
+    "identicalResponsesBlockIndependenceInference": true,
+    "partialRowsAreNotAgreements": true,
+    "safetyPrecedesIncompleteAndConcordance": true,
+    "manualAdjudicationAlways": true,
+    "noAutoChangeToDossier": true,
+    "noApprovalStatuses": true,
+    "noPublicHumanReviewMetrics": true,
+    "inputRemainsLocal": true,
+    "publicBundleHasNoReviewData": true,
+    "privateOnlyCliInputsAndOutputs": true,
+    "frozenPilotUnchanged": true
+  },
+  "publicStatus": {
+    "actualReviewFilesReceived": 0,
+    "verifiedIndependentReviewers": 0,
+    "realTechnicalAdjudications": 0,
+    "approvedOEMSerials": 0,
+    "confirmedRootCauses": 0,
+    "operationalReleases": 0,
+    "sapWrites": 0
+  },
+  "separateFromFrozenPilot": "1.4.11"
+}
