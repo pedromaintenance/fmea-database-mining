@@ -1,0 +1,461 @@
+{
+  "schema": "fmea-mining.engine-thermal-crossfluid-bridge.v1",
+  "version": "1.4.16",
+  "nature": "source_traced_editorial_comparison_of_two_independent_dossiers_not_an_integrated_approved_diagnosis",
+  "title": "Motor diesel: coexistência de anomalias térmicas e suspeitas de contaminação óleo–arrefecimento",
+  "purpose": "Testar hipóteses concorrentes e a força de vínculos possíveis entre duas famílias de sintomas sem confundir simultaneidade com causalidade.",
+  "parentStudies": [
+    {
+      "path": "data/knowledge/engine-oil-coolant-differential.v1.json",
+      "version": "1.4.13",
+      "prefix": "EC-",
+      "role": "fluid_cross_contamination"
+    },
+    {
+      "path": "data/knowledge/engine-cooling-thermal-differential.v1.json",
+      "version": "1.4.15",
+      "prefix": "CL-",
+      "role": "thermal_regulation_and_heat_rejection"
+    }
+  ],
+  "evidenceMatrix": "data/quality/engine-crossfluid-evidence-matrix.v1.json",
+  "sourceRegistry": "data/research/sources.v1.json",
+  "epistemicRule": "A evidência OEM citada fundamenta mecanismos separadamente; as associações entre mecanismos são uma síntese editorial não validada pelo fabricante nem observada em ativo.",
+  "relationVocabulary": {
+    "INDEPENDENT": "Sintomas podem coexistir por mecanismos distintos, sem nexo causal estabelecido.",
+    "SHARED_CONTEXT": "Um histórico de intervenção ou condição pode ser comum aos sintomas; antecedência e simultaneidade não provam a causa.",
+    "POSSIBLE_COUPLING": "Uma interação física pode ser plausível na arquitetura específica, mas exige demonstração por série e provas independentes.",
+    "MEASUREMENT_ARTIFACT": "Uma leitura ou amostra pode estar comprometida; suspeita não autoriza ignorar alarmes."
+  },
+  "status": {
+    "evidenceClass": "CONCEPTUAL",
+    "reviewStatus": "PENDING_REVIEW",
+    "humanReviewCompleted": false,
+    "assetCount": 0,
+    "verifiedSerials": [],
+    "oemTestLimits": null,
+    "fieldTests": 0,
+    "confirmedCauses": 0,
+    "automaticDiagnosis": false,
+    "operationalApproval": false,
+    "sapWrites": 0
+  },
+  "scenarios": [
+    {
+      "id": "BR-S01",
+      "title": "Temperatura elevada e película aparentemente oleosa no refrigerante",
+      "observations": [
+        "Alarme ou tendência térmica fora do comportamento esperado.",
+        "Película ou aspecto oleoso percebido no reservatório, sem análise confirmatória."
+      ],
+      "alternatives": [
+        {
+          "id": "BR-S01-A",
+          "label": "Dois problemas independentes",
+          "relation": "INDEPENDENT",
+          "hypothesisIds": [
+            "CL-FAN-DRIVE",
+            "EC-RESIDUAL"
+          ],
+          "evidenceRefs": [
+            "CL:DOC-FAN-CONTROL",
+            "EC:DOC-POSTREPAIR"
+          ],
+          "why": "Deficiência de ventilação pode explicar calor, enquanto resíduo anterior pode explicar a aparência do fluido.",
+          "counterEvidence": "Evidência comparável de ventilação normal ou rastreio de óleo novo mudaria cada hipótese separadamente.",
+          "invalidConclusion": "Película prova trocador rompido e superaquecimento causado pela mesma falha.",
+          "certainty": "UNCONFIRMED"
+        },
+        {
+          "id": "BR-S01-B",
+          "label": "Interação possível em trocador",
+          "relation": "POSSIBLE_COUPLING",
+          "hypothesisIds": [
+            "CL-HEAT-CORE",
+            "EC-COOLER-CORE"
+          ],
+          "evidenceRefs": [
+            "CL:DOC-COOLING-TOPOLOGY",
+            "EC:DOC-COOLER",
+            "EC:LAB-COOLANT"
+          ],
+          "why": "Uma arquitetura com trocador óleo/refrigerante admite investigar perda de estanqueidade e comprometimento da troca térmica como fenômenos distintos.",
+          "counterEvidence": "A integridade documentada da interface e ausência de contaminação confirmada enfraqueceriam a relação proposta.",
+          "invalidConclusion": "A simples presença de trocador demonstra falha simultânea de vedação e desempenho.",
+          "certainty": "UNCONFIRMED"
+        },
+        {
+          "id": "BR-S01-C",
+          "label": "Carga térmica e aparência residual",
+          "relation": "INDEPENDENT",
+          "hypothesisIds": [
+            "CL-LOAD-AMBIENT",
+            "EC-ANALYTICAL-INTERFERENCE"
+          ],
+          "evidenceRefs": [
+            "CL:OBS-TEMPERATURE-TREND",
+            "EC:LAB-REVIEW"
+          ],
+          "why": "Regime e qualidade de observação podem explicar discrepâncias sem defeito único.",
+          "counterEvidence": "Tendência em condições comparáveis e laudos representativos são necessários para separar os fenômenos.",
+          "invalidConclusion": "Sinais discordantes autorizam ignorar o alarme.",
+          "certainty": "UNCONFIRMED"
+        }
+      ],
+      "distinction": "Confirmar existência e natureza de cada observação antes de investigar um nexo causal.",
+      "fieldObservations": 0,
+      "operationalDecision": "NO_AUTOMATIC_DECISION"
+    },
+    {
+      "id": "BR-S02",
+      "title": "Queda de nível do refrigerante e sinal laboratorial de glicol no óleo",
+      "observations": [
+        "Perda ou complementação de coolant foi relatada.",
+        "Laudo de óleo indicou suspeita de glicol ou marcadores compatíveis."
+      ],
+      "alternatives": [
+        {
+          "id": "BR-S02-A",
+          "label": "Perda externa e interpretação laboratorial concorrente",
+          "relation": "INDEPENDENT",
+          "hypothesisIds": [
+            "CL-LOW-LEVEL-LEAK",
+            "EC-ANALYTICAL-INTERFERENCE"
+          ],
+          "evidenceRefs": [
+            "CL:OBS-COOLANT-INVENTORY",
+            "EC:LAB-OIL",
+            "EC:LAB-REVIEW"
+          ],
+          "why": "Uma perda externa pode coexistir com indicador analítico inespecífico ou amostra não representativa.",
+          "counterEvidence": "Laudos por método e tendência, mais histórico de perdas e inspeção autorizada, podem enfraquecer uma das trilhas.",
+          "invalidConclusion": "Sódio, potássio ou glicol isolado determina a peça que vazou.",
+          "certainty": "UNCONFIRMED"
+        },
+        {
+          "id": "BR-S02-B",
+          "label": "Comunicação interna de fluidos a verificar",
+          "relation": "POSSIBLE_COUPLING",
+          "hypothesisIds": [
+            "CL-LOW-LEVEL-LEAK",
+            "EC-COOLER-CORE"
+          ],
+          "evidenceRefs": [
+            "EC:DOC-SYSTEM",
+            "EC:DOC-COOLER",
+            "EC:LAB-OIL"
+          ],
+          "why": "Perda de fluido e indício de ingresso no óleo podem ser compatíveis com interface defeituosa se ela existir e o sentido for demonstrado.",
+          "counterEvidence": "Topologia OEM, amostragem independente e avaliação autorizada de estanqueidade seriam necessários.",
+          "invalidConclusion": "Queda do nível por si só confirma vazamento interno no cooler.",
+          "certainty": "UNCONFIRMED"
+        },
+        {
+          "id": "BR-S02-C",
+          "label": "Outra interface interna e transporte térmico",
+          "relation": "POSSIBLE_COUPLING",
+          "hypothesisIds": [
+            "CL-LOW-LEVEL-LEAK",
+            "EC-HEAD-GASKET"
+          ],
+          "evidenceRefs": [
+            "EC:DOC-SEALS",
+            "EC:LAB-COOLANT",
+            "CL:DOC-OEM-EFFECTIVITY"
+          ],
+          "why": "Uma interface junta/bloco não pode ser descartada por preferência pelo trocador sem geometria do motor.",
+          "counterEvidence": "Evidência específica da junta e uma contraprova do trocador distinguiriam alternativas.",
+          "invalidConclusion": "Toda perda de coolant com indicador químico é junta queimada.",
+          "certainty": "UNCONFIRMED"
+        }
+      ],
+      "distinction": "Separar perda de inventário, identificação de fluido e origem do ingresso.",
+      "fieldObservations": 0,
+      "operationalDecision": "NO_AUTOMATIC_DECISION"
+    },
+    {
+      "id": "BR-S03",
+      "title": "Anomalia térmica logo após intervenção no sistema de arrefecimento",
+      "observations": [
+        "A tendência térmica mudou após serviço, sem causa confirmada.",
+        "Houve abertura, abastecimento ou intervenção em parte do circuito."
+      ],
+      "alternatives": [
+        {
+          "id": "BR-S03-A",
+          "label": "Ar aprisionado e resíduo anterior",
+          "relation": "SHARED_CONTEXT",
+          "hypothesisIds": [
+            "CL-AIRLOCK",
+            "EC-RESIDUAL"
+          ],
+          "evidenceRefs": [
+            "CL:DOC-COOLING-TOPOLOGY",
+            "EC:DOC-POSTREPAIR"
+          ],
+          "why": "Histórico de serviço pode criar alterações térmicas e permanência de resíduos por mecanismos diferentes.",
+          "counterEvidence": "Verificação da sequência de enchimento OEM e histórico da limpeza discriminam sem realizar sangria improvisada.",
+          "invalidConclusion": "Serviço recente prova ar no circuito e óleo no coolant.",
+          "certainty": "UNCONFIRMED"
+        },
+        {
+          "id": "BR-S03-B",
+          "label": "Qualidade do fluido e contaminação em manuseio",
+          "relation": "SHARED_CONTEXT",
+          "hypothesisIds": [
+            "CL-COOLANT-CHEMISTRY",
+            "EC-BULK-CONTAMINATION"
+          ],
+          "evidenceRefs": [
+            "EC:DOC-FLUIDS",
+            "EC:DOC-SUPPLY",
+            "CL:LAB-COOLANT-QUALITY"
+          ],
+          "why": "Produto ou recipiente inadequado pode ser contexto comum, mas não define o dano físico.",
+          "counterEvidence": "Rastreio do lote, formulação e controle de coleta da amostra podem refutar o manuseio como causa.",
+          "invalidConclusion": "Mudança de cor prova trocador danificado.",
+          "certainty": "UNCONFIRMED"
+        },
+        {
+          "id": "BR-S03-C",
+          "label": "Intervenção no cooler e circuito de fluxo",
+          "relation": "POSSIBLE_COUPLING",
+          "hypothesisIds": [
+            "CL-WATER-PUMP",
+            "EC-COOLER-CORE"
+          ],
+          "evidenceRefs": [
+            "EC:DOC-COOLER",
+            "CL:DOC-COOLING-TOPOLOGY",
+            "EC:OBS-TIMELINE"
+          ],
+          "why": "Investigar se a intervenção afetou o caminho do fluido e se existe perda de estanqueidade real, sem presumir relação.",
+          "counterEvidence": "Documentos de montagem e laudos anteriores e posteriores podem afastar o suposto nexo.",
+          "invalidConclusion": "Substituir o cooler confirma retrospectivamente sua falha.",
+          "certainty": "UNCONFIRMED"
+        }
+      ],
+      "distinction": "Cronologia não substitui prova do mecanismo predominante.",
+      "fieldObservations": 0,
+      "operationalDecision": "NO_AUTOMATIC_DECISION"
+    },
+    {
+      "id": "BR-S04",
+      "title": "Refrigerante escurecido, espuma e alegação de perda de troca térmica",
+      "observations": [
+        "Aparência do coolant foi classificada como anormal.",
+        "Há suspeita de desempenho térmico inferior, sem comparação controlada."
+      ],
+      "alternatives": [
+        {
+          "id": "BR-S04-A",
+          "label": "Formulação ou degradação e contaminação externa",
+          "relation": "SHARED_CONTEXT",
+          "hypothesisIds": [
+            "CL-COOLANT-CHEMISTRY",
+            "EC-BULK-CONTAMINATION"
+          ],
+          "evidenceRefs": [
+            "EC:DOC-FLUIDS",
+            "CL:LAB-COOLANT-QUALITY",
+            "EC:DOC-SUPPLY"
+          ],
+          "why": "Química e manuseio podem explicar aparência sem comunicação óleo–coolant.",
+          "counterEvidence": "Referência de formulação, amostra limpa e histórico de aditivos ajudam a separar alteração química de óleo ingressado.",
+          "invalidConclusion": "Espuma ou cor identifica exclusivamente óleo lubrificante.",
+          "certainty": "UNCONFIRMED"
+        },
+        {
+          "id": "BR-S04-B",
+          "label": "Perda de troca e interface estanque",
+          "relation": "POSSIBLE_COUPLING",
+          "hypothesisIds": [
+            "CL-HEAT-CORE",
+            "EC-COOLER-CORE"
+          ],
+          "evidenceRefs": [
+            "CL:DOC-COOLING-TOPOLOGY",
+            "EC:DOC-COOLER",
+            "EC:LAB-COOLANT"
+          ],
+          "why": "Depósitos ou obstrução e falha da interface são mecanismos distintos, mesmo quando coexistem.",
+          "counterEvidence": "Evidência de deposição e confirmação independente de óleo no fluido seriam necessárias.",
+          "invalidConclusion": "Refrigerante escuro comprova radiador obstruído.",
+          "certainty": "UNCONFIRMED"
+        },
+        {
+          "id": "BR-S04-C",
+          "label": "Sensor discordante e resíduo pós-serviço",
+          "relation": "MEASUREMENT_ARTIFACT",
+          "hypothesisIds": [
+            "CL-SENSOR-SIGNAL",
+            "EC-RESIDUAL"
+          ],
+          "evidenceRefs": [
+            "CL:OBS-TEMPERATURE-TREND",
+            "EC:DOC-POSTREPAIR"
+          ],
+          "why": "Suspeitas de indicador e resíduo podem produzir coincidências aparentes sem explicar a condição física.",
+          "counterEvidence": "Corroboração independente de temperatura e histórico de limpeza devem ser confrontados.",
+          "invalidConclusion": "Suspeita do sensor autoriza operar sem observar o alarme.",
+          "certainty": "UNCONFIRMED"
+        }
+      ],
+      "distinction": "Distinguir qualidade da amostra, transporte de calor e efetividade da leitura.",
+      "fieldObservations": 0,
+      "operationalDecision": "NO_AUTOMATIC_DECISION"
+    },
+    {
+      "id": "BR-S05",
+      "title": "Temperaturas de óleo e refrigerante divergentes sob carga",
+      "observations": [
+        "Leituras de temperaturas diferem ou evoluem em direções distintas.",
+        "Não há verificação da localização e confiabilidade dos sensores."
+      ],
+      "alternatives": [
+        {
+          "id": "BR-S05-A",
+          "label": "Carga e eventual troca térmica do óleo",
+          "relation": "POSSIBLE_COUPLING",
+          "hypothesisIds": [
+            "CL-LOAD-AMBIENT",
+            "EC-COOLER-CORE"
+          ],
+          "evidenceRefs": [
+            "CL:OBS-TEMPERATURE-TREND",
+            "EC:DOC-COOLER",
+            "CL:DOC-OEM-EFFECTIVITY"
+          ],
+          "why": "O perfil de carga e a presença de trocador podem orientar perguntas, mas a diferença de leitura não comprova vedação rompida.",
+          "counterEvidence": "Confirmação da arquitetura e curvas em condições comparáveis, quando autorizadas, discriminam demanda de rejeição de falha.",
+          "invalidConclusion": "Diferença entre temperaturas prova mistura de fluidos.",
+          "certainty": "UNCONFIRMED"
+        },
+        {
+          "id": "BR-S05-B",
+          "label": "Rejeição de ar e contaminação antiga",
+          "relation": "INDEPENDENT",
+          "hypothesisIds": [
+            "CL-AIR-FINS",
+            "EC-RESIDUAL"
+          ],
+          "evidenceRefs": [
+            "CL:DOC-COOLING-TOPOLOGY",
+            "EC:DOC-POSTREPAIR"
+          ],
+          "why": "Obstrução do lado do ar pode coexistir com histórico prévio de resíduo sem vínculo atual.",
+          "counterEvidence": "Condição do lado do ar e histórico de tratamento do fluido podem invalidar uma das suposições.",
+          "invalidConclusion": "Resíduo do refrigerante confirma perda de vazão de óleo.",
+          "certainty": "UNCONFIRMED"
+        },
+        {
+          "id": "BR-S05-C",
+          "label": "Leitura térmica e interferência analítica",
+          "relation": "MEASUREMENT_ARTIFACT",
+          "hypothesisIds": [
+            "CL-SENSOR-SIGNAL",
+            "EC-ANALYTICAL-INTERFERENCE"
+          ],
+          "evidenceRefs": [
+            "CL:OBS-TEMPERATURE-TREND",
+            "EC:LAB-REVIEW"
+          ],
+          "why": "Proveniência de sensor e laboratório exige checagens diferentes; nenhuma das duas suspeitas é licença para operar.",
+          "counterEvidence": "Metrologia e métodos documentados corroboram ou refutam cada observação.",
+          "invalidConclusion": "Dois indicadores discordantes significam que ambos estão errados.",
+          "certainty": "UNCONFIRMED"
+        }
+      ],
+      "distinction": "Antes de deduzir fluxo de calor, verificar grandeza, posição, horário e confiabilidade das leituras.",
+      "fieldObservations": 0,
+      "operationalDecision": "NO_AUTOMATIC_DECISION"
+    },
+    {
+      "id": "BR-S06",
+      "title": "Termostato ausente ou não identificado e suspeita paralela de óleo no coolant",
+      "observations": [
+        "Histórico menciona retirada ou substituição de regulador térmico.",
+        "Existe suspeita independente de contaminação entre fluidos."
+      ],
+      "alternatives": [
+        {
+          "id": "BR-S06-A",
+          "label": "Bypass e resíduo são questões distintas",
+          "relation": "INDEPENDENT",
+          "hypothesisIds": [
+            "CL-THERMOSTAT",
+            "EC-RESIDUAL"
+          ],
+          "evidenceRefs": [
+            "CL:DOC-COOLING-TOPOLOGY",
+            "EC:DOC-POSTREPAIR"
+          ],
+          "why": "Alguns arranjos dependem do regulador para direcionar fluxo ao radiador; uma película histórica é outro problema.",
+          "counterEvidence": "A arquitetura específica e evidência de contaminação nova são necessárias para diferenciar os sinais.",
+          "invalidConclusion": "Remover termostato é paliativo universal seguro.",
+          "certainty": "UNCONFIRMED"
+        },
+        {
+          "id": "BR-S06-B",
+          "label": "Fluxo térmico e interface óleo/refrigerante",
+          "relation": "INDEPENDENT",
+          "hypothesisIds": [
+            "CL-THERMOSTAT",
+            "EC-COOLER-CORE"
+          ],
+          "evidenceRefs": [
+            "CL:DOC-OEM-EFFECTIVITY",
+            "EC:DOC-COOLER"
+          ],
+          "why": "Mesmo que haja anomalia de bypass, ela não demonstra vazamento interno no trocador.",
+          "counterEvidence": "Estanqueidade e roteamento do coolant exigem provas separadas e procedimentos OEM autorizados.",
+          "invalidConclusion": "Falha do termostato confirma falha do trocador.",
+          "certainty": "UNCONFIRMED"
+        },
+        {
+          "id": "BR-S06-C",
+          "label": "Leitura não corroborada e entrada de contaminante",
+          "relation": "MEASUREMENT_ARTIFACT",
+          "hypothesisIds": [
+            "CL-SENSOR-SIGNAL",
+            "EC-BULK-CONTAMINATION"
+          ],
+          "evidenceRefs": [
+            "CL:OBS-TEMPERATURE-TREND",
+            "EC:DOC-SUPPLY"
+          ],
+          "why": "Confiabilidade do sinal e proveniência do abastecimento precisam ser avaliadas independentemente.",
+          "counterEvidence": "Registros de sensor, produto e coleta discriminam sem liberar operação.",
+          "invalidConclusion": "Suspeita de leitura incorreta autoriza ignorar aquecimento.",
+          "certainty": "UNCONFIRMED"
+        }
+      ],
+      "distinction": "Não operar sem regulador quando o OEM o exige, e nunca deduzir estanqueidade pela temperatura.",
+      "fieldObservations": 0,
+      "operationalDecision": "NO_AUTOMATIC_DECISION"
+    }
+  ],
+  "safety": {
+    "humanGate": "Somente responsável habilitado pode avaliar investigação específica após obter manuais OEM por série, autorizacão corporativa e análise de risco.",
+    "never": [
+      "Não abrir circuito quente ou pressurizado.",
+      "Não remover termostato ou alterar bypass para continuar operação.",
+      "Não forçar ventilador, eliminar guarda, inibir alarme ou energizar circuito para teste informal.",
+      "Não interpretar esta comparação como autorização de ensaio, troca de componente, liberação operacional ou ordem SAP.",
+      "Não publicar laudos, séries, diagnósticos, diagramas licenciados ou dados de pessoas no repositório público."
+    ],
+    "allowed": "Consulta bibliográfica, organização de hipóteses, perguntas discriminantes e solicitações documentais não operacionais."
+  },
+  "frozenPilot": {
+    "version": "1.4.11",
+    "includedInFrozenRetrieval": false,
+    "modifiesFrozenRecords": false,
+    "requiresIndependentExternalEvaluation": true
+  },
+  "provenance": {
+    "primaryReferencesSource": "Existing versioned OEM and technical source IDs from the two parent dossiers",
+    "crossStudyRelations": "EDITORIAL_INFERENCE_NOT_OEM_CONFIRMED",
+    "peerReview": "NOT_PERFORMED",
+    "sourceCountAdded": 0
+  }
+}

@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.knowledge-index.v1",
-  "version": "1.4.15",
+  "version": "1.4.16",
   "scope": "selected_existing_public_artifacts_not_complete_inventory",
   "repository": "pedromaintenance/fmea-database-mining",
   "nature": "navigation_metadata_not_canonical_technical_evidence",
@@ -820,6 +820,42 @@
         "análise de falhas",
         "PCM",
         "risco térmico"
+      ]
+    },
+    {
+      "id": "LIB-ENGINE-DIESEL-BRIDGE",
+      "title": "Diesel — diagnóstico combinado térmico e fluido",
+      "domain": "Motores diesel",
+      "kind": "matriz diferencial",
+      "system": "motor_diesel",
+      "evidenceClass": "CONCEPTUAL",
+      "summary": "Seis contextos fictícios e 18 interpretações com vínculos conceituais, contraprovas e fontes; nenhum nexo causal OEM ou ativo confirmado.",
+      "path": "data/knowledge/engine-thermal-crossfluid-bridge.v1.json",
+      "keywords": [
+        "contaminação",
+        "sobreaquecimento",
+        "trocador",
+        "glicol",
+        "termostato",
+        "causalidade"
+      ]
+    },
+    {
+      "id": "LIB-ENGINE-DIESEL-BRIDGE-REPORT",
+      "title": "Relatório técnico do diagnóstico combinado diesel",
+      "domain": "Motores diesel",
+      "kind": "relatório de engenharia",
+      "system": "motor_diesel",
+      "evidenceClass": "CONCEPTUAL",
+      "summary": "Explica fronteiras de inferência, classes de evidência, métodos seguros e auditoria adversarial do estudo combinado de motor.",
+      "path": "docs/CICLO_2026-11-10_DIAGNOSTICO_COMBINADO_DIESEL.md",
+      "keywords": [
+        "óleo",
+        "refrigerante",
+        "convergência",
+        "contraprova",
+        "PCM",
+        "segurança"
       ]
     }
   ]
