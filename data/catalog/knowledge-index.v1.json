@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.knowledge-index.v1",
-  "version": "1.4.16",
+  "version": "1.4.17",
   "scope": "selected_existing_public_artifacts_not_complete_inventory",
   "repository": "pedromaintenance/fmea-database-mining",
   "nature": "navigation_metadata_not_canonical_technical_evidence",
@@ -856,6 +856,41 @@
         "contraprova",
         "PCM",
         "segurança"
+      ]
+    },
+    {
+      "id": "LIB-DIESEL-BRIDGE-PEER-REVIEW",
+      "title": "Revisão independente do diagnóstico combinado diesel",
+      "domain": "Motores diesel",
+      "kind": "formulário de revisão editorial",
+      "system": "motor_diesel",
+      "evidenceClass": "PENDING_REVIEW",
+      "summary": "Interface offline para especialistas examinarem 18 interpretações com classificação causal independente, cinco critérios e exportação JSON anônima. Nenhuma avaliação real recebida.",
+      "path": "docs/revisao-diesel-especialistas.html",
+      "keywords": [
+        "revisão independente",
+        "contraprova",
+        "causalidade",
+        "arrefecimento",
+        "diesel",
+        "crítica técnica"
+      ]
+    },
+    {
+      "id": "LIB-DIESEL-BRIDGE-REVIEW-METHOD",
+      "title": "Método de revisão independente de relações diesel",
+      "domain": "Motores diesel",
+      "kind": "protocolo de avaliação",
+      "system": "motor_diesel",
+      "evidenceClass": "PENDING_REVIEW",
+      "summary": "Regra de cegamento editorial limitado, rubrica de cinco dimensões, proteção de dados, integridade de versões e curadoria manual sem aprovação OEM ou SAP.",
+      "path": "docs/CICLO_2026-11-10_REVISAO_INDEPENDENTE_DIESEL.md",
+      "keywords": [
+        "protocolo",
+        "integridade",
+        "parecer",
+        "divergência",
+        "especialista"
       ]
     }
   ]

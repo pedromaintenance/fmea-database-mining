@@ -1,0 +1,230 @@
+{
+  "schema": "fmea-mining.diesel-bridge-review-sheet.v1",
+  "version": "1.4.17",
+  "bridgeVersion": "1.4.16",
+  "sourceSha256": null,
+  "nature": "anonymous_editorial_opinion_not_authenticated_expert_review",
+  "reviewerIdentityVerified": false,
+  "humanReviewCertified": false,
+  "engineeringApproval": false,
+  "operationRelease": false,
+  "sapApproval": false,
+  "rows": [
+    {
+      "alternativeId": "BR-S01-A",
+      "relationSuggestion": null,
+      "ratings": {
+        "mechanismCoherence": "unreviewed",
+        "causalBoundary": "unreviewed",
+        "oemApplicability": "unreviewed",
+        "evidenceDiscrimination": "unreviewed",
+        "operationalSafety": "unreviewed"
+      },
+      "issueTags": []
+    },
+    {
+      "alternativeId": "BR-S01-B",
+      "relationSuggestion": null,
+      "ratings": {
+        "mechanismCoherence": "unreviewed",
+        "causalBoundary": "unreviewed",
+        "oemApplicability": "unreviewed",
+        "evidenceDiscrimination": "unreviewed",
+        "operationalSafety": "unreviewed"
+      },
+      "issueTags": []
+    },
+    {
+      "alternativeId": "BR-S01-C",
+      "relationSuggestion": null,
+      "ratings": {
+        "mechanismCoherence": "unreviewed",
+        "causalBoundary": "unreviewed",
+        "oemApplicability": "unreviewed",
+        "evidenceDiscrimination": "unreviewed",
+        "operationalSafety": "unreviewed"
+      },
+      "issueTags": []
+    },
+    {
+      "alternativeId": "BR-S02-A",
+      "relationSuggestion": null,
+      "ratings": {
+        "mechanismCoherence": "unreviewed",
+        "causalBoundary": "unreviewed",
+        "oemApplicability": "unreviewed",
+        "evidenceDiscrimination": "unreviewed",
+        "operationalSafety": "unreviewed"
+      },
+      "issueTags": []
+    },
+    {
+      "alternativeId": "BR-S02-B",
+      "relationSuggestion": null,
+      "ratings": {
+        "mechanismCoherence": "unreviewed",
+        "causalBoundary": "unreviewed",
+        "oemApplicability": "unreviewed",
+        "evidenceDiscrimination": "unreviewed",
+        "operationalSafety": "unreviewed"
+      },
+      "issueTags": []
+    },
+    {
+      "alternativeId": "BR-S02-C",
+      "relationSuggestion": null,
+      "ratings": {
+        "mechanismCoherence": "unreviewed",
+        "causalBoundary": "unreviewed",
+        "oemApplicability": "unreviewed",
+        "evidenceDiscrimination": "unreviewed",
+        "operationalSafety": "unreviewed"
+      },
+      "issueTags": []
+    },
+    {
+      "alternativeId": "BR-S03-A",
+      "relationSuggestion": null,
+      "ratings": {
+        "mechanismCoherence": "unreviewed",
+        "causalBoundary": "unreviewed",
+        "oemApplicability": "unreviewed",
+        "evidenceDiscrimination": "unreviewed",
+        "operationalSafety": "unreviewed"
+      },
+      "issueTags": []
+    },
+    {
+      "alternativeId": "BR-S03-B",
+      "relationSuggestion": null,
+      "ratings": {
+        "mechanismCoherence": "unreviewed",
+        "causalBoundary": "unreviewed",
+        "oemApplicability": "unreviewed",
+        "evidenceDiscrimination": "unreviewed",
+        "operationalSafety": "unreviewed"
+      },
+      "issueTags": []
+    },
+    {
+      "alternativeId": "BR-S03-C",
+      "relationSuggestion": null,
+      "ratings": {
+        "mechanismCoherence": "unreviewed",
+        "causalBoundary": "unreviewed",
+        "oemApplicability": "unreviewed",
+        "evidenceDiscrimination": "unreviewed",
+        "operationalSafety": "unreviewed"
+      },
+      "issueTags": []
+    },
+    {
+      "alternativeId": "BR-S04-A",
+      "relationSuggestion": null,
+      "ratings": {
+        "mechanismCoherence": "unreviewed",
+        "causalBoundary": "unreviewed",
+        "oemApplicability": "unreviewed",
+        "evidenceDiscrimination": "unreviewed",
+        "operationalSafety": "unreviewed"
+      },
+      "issueTags": []
+    },
+    {
+      "alternativeId": "BR-S04-B",
+      "relationSuggestion": null,
+      "ratings": {
+        "mechanismCoherence": "unreviewed",
+        "causalBoundary": "unreviewed",
+        "oemApplicability": "unreviewed",
+        "evidenceDiscrimination": "unreviewed",
+        "operationalSafety": "unreviewed"
+      },
+      "issueTags": []
+    },
+    {
+      "alternativeId": "BR-S04-C",
+      "relationSuggestion": null,
+      "ratings": {
+        "mechanismCoherence": "unreviewed",
+        "causalBoundary": "unreviewed",
+        "oemApplicability": "unreviewed",
+        "evidenceDiscrimination": "unreviewed",
+        "operationalSafety": "unreviewed"
+      },
+      "issueTags": []
+    },
+    {
+      "alternativeId": "BR-S05-A",
+      "relationSuggestion": null,
+      "ratings": {
+        "mechanismCoherence": "unreviewed",
+        "causalBoundary": "unreviewed",
+        "oemApplicability": "unreviewed",
+        "evidenceDiscrimination": "unreviewed",
+        "operationalSafety": "unreviewed"
+      },
+      "issueTags": []
+    },
+    {
+      "alternativeId": "BR-S05-B",
+      "relationSuggestion": null,
+      "ratings": {
+        "mechanismCoherence": "unreviewed",
+        "causalBoundary": "unreviewed",
+        "oemApplicability": "unreviewed",
+        "evidenceDiscrimination": "unreviewed",
+        "operationalSafety": "unreviewed"
+      },
+      "issueTags": []
+    },
+    {
+      "alternativeId": "BR-S05-C",
+      "relationSuggestion": null,
+      "ratings": {
+        "mechanismCoherence": "unreviewed",
+        "causalBoundary": "unreviewed",
+        "oemApplicability": "unreviewed",
+        "evidenceDiscrimination": "unreviewed",
+        "operationalSafety": "unreviewed"
+      },
+      "issueTags": []
+    },
+    {
+      "alternativeId": "BR-S06-A",
+      "relationSuggestion": null,
+      "ratings": {
+        "mechanismCoherence": "unreviewed",
+        "causalBoundary": "unreviewed",
+        "oemApplicability": "unreviewed",
+        "evidenceDiscrimination": "unreviewed",
+        "operationalSafety": "unreviewed"
+      },
+      "issueTags": []
+    },
+    {
+      "alternativeId": "BR-S06-B",
+      "relationSuggestion": null,
+      "ratings": {
+        "mechanismCoherence": "unreviewed",
+        "causalBoundary": "unreviewed",
+        "oemApplicability": "unreviewed",
+        "evidenceDiscrimination": "unreviewed",
+        "operationalSafety": "unreviewed"
+      },
+      "issueTags": []
+    },
+    {
+      "alternativeId": "BR-S06-C",
+      "relationSuggestion": null,
+      "ratings": {
+        "mechanismCoherence": "unreviewed",
+        "causalBoundary": "unreviewed",
+        "oemApplicability": "unreviewed",
+        "evidenceDiscrimination": "unreviewed",
+        "operationalSafety": "unreviewed"
+      },
+      "issueTags": []
+    }
+  ]
+}
