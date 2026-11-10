@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.knowledge-index.v1",
-  "version": "1.4.17",
+  "version": "1.4.18",
   "scope": "selected_existing_public_artifacts_not_complete_inventory",
   "repository": "pedromaintenance/fmea-database-mining",
   "nature": "navigation_metadata_not_canonical_technical_evidence",
@@ -891,6 +891,42 @@
         "parecer",
         "divergência",
         "especialista"
+      ]
+    },
+    {
+      "id": "LIB-DIESEL-RECONCILIATION",
+      "title": "Conciliação offline de pareceres editoriais diesel",
+      "domain": "Motores diesel",
+      "kind": "instrumento de triagem",
+      "system": "motor_diesel",
+      "evidenceClass": "PENDING_REVIEW",
+      "summary": "Compara localmente dois JSONs anônimos das 18 interpretações; segurança prevalece, divergências exigem curadoria e nenhum parecer é autenticado ou publicado.",
+      "path": "docs/conciliacao-pareceres-diesel.html",
+      "keywords": [
+        "conciliar",
+        "pareceres",
+        "segurança",
+        "divergência",
+        "diesel",
+        "revisão humana"
+      ]
+    },
+    {
+      "id": "LIB-DIESEL-RECONCILIATION-METHOD",
+      "title": "Procedimento de conciliação e custódia privada diesel",
+      "domain": "Motores diesel",
+      "kind": "protocolo de engenharia",
+      "system": "motor_diesel",
+      "evidenceClass": "PENDING_REVIEW",
+      "summary": "Descreve seis estados editoriais, impressão de evidência privada, hash de origem, revisão manual e proibição de homologação automática.",
+      "path": "docs/CICLO_2026-11-10_CONCILIACAO_PARECERES_DIESEL.md",
+      "keywords": [
+        "adjudicação",
+        "custódia",
+        "evidências",
+        "metodologia",
+        "confiabilidade",
+        "PCM"
       ]
     }
   ]
