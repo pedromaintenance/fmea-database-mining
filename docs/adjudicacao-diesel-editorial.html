@@ -1,0 +1,135 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Adjudicação editorial diesel | FMEA Database Mining</title>
+<style>
+:root{color-scheme:dark;--bg:#0b1d27;--panel:#1a3948;--line:#56778a;--txt:#eff5f7;--muted:#c4d7df;--gold:#e1c183}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--txt);font:15px/1.55 system-ui,"Segoe UI",sans-serif}
+header{background:linear-gradient(115deg,#265469,#112631);border-bottom:4px solid #c3942c;padding:28px max(16px,calc((100vw - 1100px)/2))}
+h1{font-size:clamp(27px,4vw,42px);line-height:1.15;margin:16px 0 8px}nav{display:flex;gap:16px;flex-wrap:wrap}a{color:#b6e0f2}
+main{max-width:1120px;margin:auto;padding:22px 16px 80px}.panel{border:1px solid var(--line);border-radius:10px;padding:17px;background:var(--panel);margin:15px 0}
+.warning{border:1px solid #ad8b56;background:#3c3020;color:#ffe6c0;padding:15px;border-radius:9px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.row{margin:12px 0}
+input[type=file],button,select{font:inherit;color:white;border:1px solid #809dad;border-radius:8px;padding:10px;background:#285269;max-width:100%}
+select,input[type=file]{width:100%}button{cursor:pointer}button:disabled{opacity:.45;cursor:not-allowed}
+label{display:block}.buttons{display:flex;flex-wrap:wrap;gap:10px}.muted{color:var(--muted)}.code{color:var(--gold);font:700 12px monospace}
+button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+@media(max-width:760px){.grid{grid-template-columns:1fr}}
+</style></head><body>
+<header><nav><a href="./index.html">Biblioteca</a><a href="./revisao-diesel-especialistas.html">Avaliação individual</a><a href="./conciliacao-pareceres-diesel.html">Comparador</a></nav>
+<h1>Adjudicação editorial de interpretações diesel</h1>
+<p>Fila de revisões humanas propostas, com prioridade para risco de segurança e rastreabilidade documental.</p></header>
+<main>
+<div class="warning"><strong>Não é aprovação técnica.</strong> O formulário não confirma identidade de revisores, não homologa OEM e não altera uma ficha FMEA, ordens SAP ou liberação de máquinas. Pareceres reais devem ser tratados em ambiente privado; nenhum arquivo é enviado para a Internet.</div>
+<section class="panel"><h2>1. Selecionar dois pareceres</h2>
+<div class="grid"><label>Parecer A<input id="left" type="file" accept=".json,application/json"></label>
+<label>Parecer B<input id="right" type="file" accept=".json,application/json"></label></div>
+<div class="buttons"><button id="load" type="button">Validar e montar fila</button><button id="clear" type="button">Limpar sessão</button></div>
+<p id="status" role="status"></p></section>
+<section class="panel"><h2>2. Propostas de adjudicação</h2>
+<label>Interpretação priorizada<select id="item" disabled></select></label><div id="description"></div>
+<div class="grid">
+<label>Tratativa editorial<select id="decision" disabled></select></label>
+<label>Motivo da tratativa<select id="reason" disabled></select></label>
+</div><label>Documento que fundamentaria a revisão<select id="evidence" disabled></select></label>
+<p id="progress" class="muted" aria-live="polite"></p></section>
+<section class="panel"><h2>3. Salvar sessão privada</h2>
+<p>É permitido exportar a proposta parcial com 18 IDs e códigos fechados, sem respostas originais, nomes ou comentários. Para importar, reabra os dois mesmos pareceres e confira os hashes.</p>
+<div class="buttons"><button id="export" type="button" disabled>Exportar proposta JSON</button>
+<label>Importar proposta<input id="resume" type="file" accept=".json,application/json" disabled></label></div>
+<p class="muted">Esta interface só compila propostas. Toda decisão material exige engenharia, documentos aplicáveis e autorização organizacional.</p></section>
+<footer class="muted">FMEA Database Mining · v1.4.19 · zero decisões humanas autenticadas · zero liberações OEM/SAP · piloto 1.4.11 inalterado.</footer></main>
+<script id="adjudication-data" type="application/json">{"schema":"ADJUDICATION_PLACEHOLDER","ready":false}</script>
+<script>
+/*REVIEW_CORE*/
+/*RECONCILE_CORE*/
+/*ADJUDICATION_CORE*/
+(()=>{
+'use strict';
+const $=id=>document.getElementById(id),data=JSON.parse($('adjudication-data').textContent);
+const append=(root,tag,value)=>{const e=document.createElement(tag);if(value!==undefined)e.textContent=value;root.append(e);return e};
+let comparison=null,draft=null,pairSha=null;
+const priority=['SAFETY_CONCERN','INCOMPLETE','RELATION_DISAGREEMENT','RUBRIC_DISAGREEMENT','UNDETERMINED_OR_EDITORIAL_CONCERN','CONCORDANT_NOT_APPROVED'];
+const allAlts=data.bridge.scenarios.flatMap(s=>s.alternatives);
+function option(select,value,caption){const e=append(select,'option',caption);e.value=value}
+function status(msg){$('status').textContent=msg}
+async function fileData(id){
+ const f=$(id).files?.[0];if(!f)throw Error('Selecione dois arquivos.');
+ if(f.size>200000)throw Error('Arquivo grande demais.');return JSON.parse(await f.text());
+}
+async function shaOfPair(a,b){
+ if(!globalThis.crypto?.subtle)throw Error('SHA-256 exige contexto seguro (HTTPS).');
+ const bytes=new TextEncoder().encode(JSON.stringify([a,b]));
+ const result=await globalThis.crypto.subtle.digest('SHA-256',bytes);
+ return Array.from(new Uint8Array(result),x=>x.toString(16).padStart(2,'0')).join('');
+}
+function row(){return draft?.rows.find(x=>x.alternativeId===$('item').value)}
+function progress(){
+ const result=summarizeAdjudicationDraft(draft,comparison,data.bridge,data.sourceSha256,pairSha);
+ $('progress').textContent=result.status==='INVALID'?'Proposta incompleta/inválida: '+result.errors.join(', '):
+  result.proposals+' propostas registradas; '+result.pending+' pendentes. Nenhuma alteração aplicada.';
+}
+function show(){
+ if(!draft)return;
+ const ref=comparison.rows.find(x=>x.alternativeId===$('item').value),r=row(),alt=allAlts.find(x=>x.id===r.alternativeId);
+ $('description').replaceChildren();const c=$('description');
+ append(c,'p',r.alternativeId+' · '+ref.state);
+ append(c,'h3',alt.label);append(c,'p',alt.why);
+ append(c,'p','Classificação original do autor (revelada após pareceres): '+alt.relation);
+ append(c,'p','Parecer A: '+(ref.leftRelation||'pendente')+' · Parecer B: '+(ref.rightRelation||'pendente'));
+ if(ref.flags.length)append(c,'p','Alertas: '+ref.flags.join(', '));
+ if(ref.state==='SAFETY_CONCERN')append(c,'p','SEGURANÇA PRIORITÁRIA: retenção da hipótese bloqueada.');
+ $('decision').replaceChildren();for(const d of allowedAdjudicationChoices(comparison,ref))option($('decision'),d,d);
+ $('decision').value=r.decision;
+ $('reason').replaceChildren();option($('reason'),'','Nenhum');for(const reason of data.policy.reasons)option($('reason'),reason,reason);
+ $('reason').value=r.reason||'';
+ $('evidence').replaceChildren();option($('evidence'),'','Nenhum');
+ for(const e of alt.evidenceRefs)option($('evidence'),e,e);
+ $('evidence').value=r.evidenceRef||'';
+ progress();
+}
+function unlock(enabled){for(const id of ['item','decision','reason','evidence','export','resume'])$(id).disabled=!enabled}
+function reset(){comparison=null;draft=null;pairSha=null;unlock(false);
+ $('item').replaceChildren();$('description').replaceChildren();$('progress').textContent='';
+ for(const id of ['left','right','resume'])$(id).value='';status('Sessão limpa.')}
+$('load').addEventListener('click',async()=>{
+ unlock(false);comparison=null;draft=null;pairSha=null;$('description').replaceChildren();
+ try{
+  const left=await fileData('left'),right=await fileData('right');
+  const rec=reconcileDieselBridgeReviews(left,right,data.ids,data.sourceSha256);
+  if(rec.status==='INVALID_INPUT_REJECTED')throw Error('Parecer inválido: '+[...rec.errors.left,...rec.errors.right].join(', '));
+  const pair=await shaOfPair(left,right);
+  const proposed=makeAdjudicationDraft(rec,data.bridge,data.sourceSha256,pair);
+  const errors=validateAdjudicationDraft(proposed,rec,data.bridge,data.sourceSha256,pair);
+  if(errors.length)throw Error('Fila rejeitada: '+errors.join(', '));
+  comparison=rec;draft=proposed;pairSha=pair;
+  $('item').replaceChildren();for(const r of [...rec.rows].sort((a,b)=>priority.indexOf(a.state)-priority.indexOf(b.state)))
+   option($('item'),r.alternativeId,r.state+' · '+r.alternativeId);
+  unlock(true);show();status('Fila validada. As propostas não têm aprovação automática.');
+ }catch(e){status('Importação recusada: '+e.message)}
+});
+$('item').addEventListener('change',show);
+$('decision').addEventListener('change',()=>{row().decision=$('decision').value;row().reason=null;row().evidenceRef=null;show()});
+$('reason').addEventListener('change',()=>{row().reason=$('reason').value||null;progress()});
+$('evidence').addEventListener('change',()=>{row().evidenceRef=$('evidence').value||null;progress()});
+$('export').addEventListener('click',()=>{
+ if(!draft)return;
+ const errors=validateAdjudicationDraft(draft,comparison,data.bridge,data.sourceSha256,pairSha);
+ if(errors.length){status('Exportação recusada: '+errors.join(', '));return}
+ const blob=new Blob([JSON.stringify(draft,null,2)+'\n'],{type:'application/json'});
+ const url=URL.createObjectURL(blob),link=document.createElement('a');link.href=url;link.download='proposta-diesel-privada.json';document.body.append(link);link.click();link.remove();URL.revokeObjectURL(url);
+ status('Proposta exportada localmente. Não publique no GitHub.');
+});
+$('resume').addEventListener('change',async()=>{
+ if(!draft)return;
+ try{
+  const file=$('resume').files?.[0];if(!file||file.size>200000)throw Error('Arquivo ausente ou muito grande');
+  const candidate=JSON.parse(await file.text());
+  const issues=validateAdjudicationDraft(candidate,comparison,data.bridge,data.sourceSha256,pairSha);
+  if(issues.length)throw Error(issues.join(', '));
+  draft=candidate;show();status('Proposta importada e validada por versão e par de arquivos.');
+ }catch(e){status('Retomada recusada: '+e.message)}
+ $('resume').value='';
+});
+$('clear').addEventListener('click',reset);
+status('Ainda não há dados para adjudicar.');
+})();
+</script></body></html>

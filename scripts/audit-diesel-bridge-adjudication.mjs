@@ -1,0 +1,70 @@
+#!/usr/bin/env node
+/** In-memory synthetic-only quality and mutation tests of an unauthorised editorial instrument. */
+import fs from 'node:fs';import crypto from 'node:crypto';import vm from 'node:vm';
+import {createEmptyDieselReview} from './lib/diesel-bridge-review-core.mjs';
+import {reconcileDieselBridgeReviews} from './lib/diesel-bridge-reconciliation-core.mjs';
+import {makeAdjudicationDraft,validateAdjudicationDraft,summarizeAdjudicationDraft,allowedAdjudicationChoices,ADJUDICATION_CHOICES,ADJUDICATION_REASONS} from './lib/diesel-bridge-adjudication-core.mjs';
+const raw=p=>fs.readFileSync(p),read=p=>raw(p).toString('utf8'),json=p=>JSON.parse(read(p));
+const bp='data/knowledge/engine-thermal-crossfluid-bridge.v1.json',bridge=json(bp),policy=json('data/quality/diesel-bridge-adjudication-policy.v1.json');
+const bundle=json('reports/diesel-bridge-adjudication-public.generated.json'),html=read('reports/adjudicacao-diesel-editorial.generated.html');
+const lock=json('data/quality/pilot-frozen-baseline.v1.json');
+const ids=bridge.scenarios.flatMap(s=>s.alternatives.map(a=>a.id));
+const sha=crypto.createHash('sha256').update(raw(bp)).digest('hex');
+const blobSha=b=>crypto.createHash('sha1').update(Buffer.concat([Buffer.from('blob '+b.length+'\0'),b])).digest('hex');
+const blank=()=>createEmptyDieselReview(ids,sha);
+const full=()=>{const x=blank();for(const row of x.rows){row.relationSuggestion='INDEPENDENT';for(const key of Object.keys(row.ratings))row.ratings[key]='adequate'}return x};
+const context=(left,right)=>{const comparison=reconcileDieselBridgeReviews(left,right,ids,sha),pair=crypto.createHash('sha256').update(JSON.stringify([left,right])).digest('hex');return {comparison,pair,draft:makeAdjudicationDraft(comparison,bridge,sha,pair)}};
+let checks=0,mutations=0;const errors=[],ck=(name,ok)=>{checks++;if(!ok)errors.push(name)};
+ck('versions',bridge.version==='1.4.16'&&policy.version==='1.4.19'&&bundle.version==='1.4.19');
+ck('policy_choice_parity',JSON.stringify(policy.choices)===JSON.stringify(ADJUDICATION_CHOICES)&&JSON.stringify(policy.reasons)===JSON.stringify(ADJUDICATION_REASONS));
+ck('zero_real_claims',bundle.actualReviewFiles===0&&bundle.authenticatedAdjudications===0&&bundle.appliedEdits===0&&bundle.operationalReleases===0);
+ck('bundle_source_hash',bundle.sourceSha256===sha&&JSON.stringify(bundle.ids)===JSON.stringify(ids));
+ck('public_projection_no_review_data',!('rows' in bundle)&&!('pairSha256' in bundle)&&bundle.bridge.scenarios.flatMap(x=>x.alternatives).length===18);
+ck('pilot_hashes',lock.lockedFiles.length===11&&lock.lockedFiles.every(x=>blobSha(raw(x.path))===x.gitBlobSha1));
+ck('pilot_graph_hash',blobSha(raw(lock.graphPath))===lock.graphGitBlobSha1);
+ck('offline_no_html_injection',!/fetch\s*\(|XMLHttpRequest|localStorage|sessionStorage|sendBeacon|innerHTML|<script\s+src=/i.test(html));
+ck('no_free_text',!/<textarea\b|contenteditable/i.test(html));
+ck('safe_dom',read('docs/adjudicacao-diesel-editorial.html').includes('e.textContent=value'));
+try{const j=html.match(/<script id="adjudication-data" type="application\/json">([\s\S]*?)<\/script>/)?.[1];ck('html_embedded_parity',JSON.stringify(JSON.parse(j))===JSON.stringify(bundle))}catch{ck('html_embedded_parity',false)}
+try{ck('browser_js_compiles',!!new vm.Script(html.match(/<script>([\s\S]*?)<\/script>/)?.[1]||''))}catch{ck('browser_js_compiles',false)}
+const x=context(blank(),blank());ck('empty_never_proposes',x.comparison.status==='NO_REVIEW_EVIDENCE'&&allowedAdjudicationChoices(x.comparison,x.comparison.rows[0]).length===1);
+const a=full(),b=full();b.rows[1].relationSuggestion='SHARED_CONTEXT';const c=context(a,b);
+ck('normal_draft_valid',validateAdjudicationDraft(c.draft,c.comparison,bridge,sha,c.pair).length===0);
+const ok=structuredClone(c.draft);ok.rows[1].decision='REQUEST_OEM_EVIDENCE';ok.rows[1].reason='OEM_APPLICABILITY';ok.rows[1].evidenceRef=bridge.scenarios[0].alternatives[1].evidenceRefs[0];
+ck('valid_proposal',validateAdjudicationDraft(ok,c.comparison,bridge,sha,c.pair).length===0);
+ck('proposal_never_approval',summarizeAdjudicationDraft(ok,c.comparison,bridge,sha,c.pair).approvedMachines===0);
+const dup=context(a,a);ck('identical_not_reviewed_independently',dup.comparison.status==='POSSIBLE_DUPLICATE_SUBMISSIONS'&&allowedAdjudicationChoices(dup.comparison,dup.comparison.rows[0]).length===2);
+const high=full(),other=full();other.rows[0].issueTags=['unsafe_operational_implication'];const safety=context(high,other);
+ck('safety_never_retain',safety.comparison.rows[0].state==='SAFETY_CONCERN'&&!allowedAdjudicationChoices(safety.comparison,safety.comparison.rows[0]).includes('KEEP_UNVALIDATED'));
+const partial=context(full(),blank());ck('incomplete_never_retain',partial.comparison.rows[0].state==='INCOMPLETE'&&!allowedAdjudicationChoices(partial.comparison,partial.comparison.rows[0]).includes('KEEP_UNVALIDATED'));
+function bad(name,fn,cx=c){const d=structuredClone(cx.draft);fn(d);mutations++;ck('reject_'+name,validateAdjudicationDraft(d,cx.comparison,bridge,sha,cx.pair).length>0)}
+bad('false_approval',d=>d.approved=true);
+bad('false_identity',d=>d.authenticatedAdjudication=true);
+bad('false_independence',d=>d.independenceVerified=true);
+bad('false_sap',d=>d.sapChanged=true);
+bad('false_release',d=>d.assetReleased=true);
+bad('extra_private_name',d=>d.reviewerName='PRIVATE');
+bad('extra_comment',d=>d.rows[0].comments='PRIVATE');
+bad('extra_serial',d=>d.rows[0].serial='PRIVATE');
+bad('wrong_source_hash',d=>d.sourceSha256='f'.repeat(64));
+bad('wrong_pair_hash',d=>d.pairSha256='f'.repeat(64));
+bad('wrong_schema',d=>d.schema='FAKE');
+bad('wrong_version',d=>d.version='1.4.20');
+bad('missing_row',d=>d.rows.pop());
+bad('duplicate_id',d=>d.rows[1].alternativeId=d.rows[0].alternativeId);
+bad('changed_triage',d=>d.rows[0].triageState='SAFETY_CONCERN');
+bad('invalid_decision',d=>d.rows[0].decision='OPERATIONAL_APPROVED');
+bad('missing_reason',d=>d.rows[0].decision='REQUEST_MORE_REVIEWS');
+bad('invalid_reason',d=>{d.rows[0].decision='REQUEST_MORE_REVIEWS';d.rows[0].reason='CERTIFIED'});
+bad('missing_doc_anchor',d=>{d.rows[0].decision='REQUEST_OEM_EVIDENCE';d.rows[0].reason='OEM_APPLICABILITY'});
+bad('wrong_doc_anchor',d=>{d.rows[0].decision='REQUEST_OEM_EVIDENCE';d.rows[0].reason='OEM_APPLICABILITY';d.rows[0].evidenceRef='CL:INVALID'});
+bad('reason_while_pending',d=>d.rows[0].reason='SAFETY');
+bad('evidence_while_pending',d=>d.rows[0].evidenceRef='EC:DOC-SYSTEM');
+bad('no_reviewer_cannot_propose',d=>{d.rows[0].decision='REQUEST_MORE_REVIEWS';d.rows[0].reason='REVIEW_INDEPENDENCE'},x);
+bad('duplicate_cannot_keep',d=>{d.rows[0].decision='KEEP_UNVALIDATED';d.rows[0].reason='MECHANISM';d.rows[0].evidenceRef=bridge.scenarios[0].alternatives[0].evidenceRefs[0]},dup);
+bad('safety_cannot_keep',d=>{d.rows[0].decision='KEEP_UNVALIDATED';d.rows[0].reason='MECHANISM';d.rows[0].evidenceRef=bridge.scenarios[0].alternatives[0].evidenceRefs[0]},safety);
+bad('incomplete_cannot_keep',d=>{d.rows[0].decision='KEEP_UNVALIDATED';d.rows[0].reason='MECHANISM';d.rows[0].evidenceRef=bridge.scenarios[0].alternatives[0].evidenceRefs[0]},partial);
+const report={schema:'fmea-mining.diesel-bridge-adjudication-audit.v1',version:'1.4.19',status:errors.length?'FAIL':'PASS',
+checks,adversarialMutations:mutations,syntheticTestsOnly:true,realHumanReviews:0,authenticatedAdjudications:0,approvedEngineeringChanges:0,unchangedFrozenFiles:11,errors};
+fs.mkdirSync('reports',{recursive:true});fs.writeFileSync('reports/diesel-bridge-adjudication-audit.generated.json',JSON.stringify(report,null,2)+'\n');
+console.log(JSON.stringify(report,null,2));process.exit(errors.length?1:0);

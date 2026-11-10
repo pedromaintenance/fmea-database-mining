@@ -1,6 +1,6 @@
 {
   "schema": "fmea-mining.knowledge-index.v1",
-  "version": "1.4.18",
+  "version": "1.4.19",
   "scope": "selected_existing_public_artifacts_not_complete_inventory",
   "repository": "pedromaintenance/fmea-database-mining",
   "nature": "navigation_metadata_not_canonical_technical_evidence",
@@ -927,6 +927,41 @@
         "metodologia",
         "confiabilidade",
         "PCM"
+      ]
+    },
+    {
+      "id": "LIB-DIESEL-ADJUDICATION",
+      "title": "Adjudicação editorial de hipóteses diesel",
+      "domain": "Motores diesel",
+      "kind": "instrumento editorial",
+      "system": "motor_diesel",
+      "evidenceClass": "PENDING_REVIEW",
+      "summary": "Ferramenta offline que confronta dois pareceres válidos, ordena riscos de segurança e exporta propostas estruturadas sem confirmação de especialista ou ação de manutenção.",
+      "path": "docs/adjudicacao-diesel-editorial.html",
+      "keywords": [
+        "adjudicação",
+        "segurança",
+        "diesel",
+        "pareceres",
+        "evidência",
+        "concordância"
+      ]
+    },
+    {
+      "id": "LIB-DIESEL-ADJUDICATION-METHOD",
+      "title": "Método de adjudicação editorial de motores diesel",
+      "domain": "Motores diesel",
+      "kind": "protocolo de revisão",
+      "system": "motor_diesel",
+      "evidenceClass": "PENDING_REVIEW",
+      "summary": "Delimitação de responsabilidade, evidências, decisões possíveis, proteção de dados e autenticação pendente na revisão conceitual do motor diesel.",
+      "path": "docs/CICLO_2026-11-10_ADJUDICACAO_EDITORIAL_DIESEL.md",
+      "keywords": [
+        "metodologia",
+        "curadoria",
+        "documentação",
+        "causalidade",
+        "auditoria"
       ]
     }
   ]

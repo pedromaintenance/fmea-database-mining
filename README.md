@@ -2,13 +2,13 @@
 
 Acervo **público, versionado e rastreável** para estudar equipamentos móveis de mineração, sistemas e componentes, mecanismos físicos de falha, diagnóstico diferencial, inspeção, manutenção, confiabilidade e benchmarks industriais. **FMEA/FMECA é uma das aplicações da biblioteca, não seu limite.**
 
-> **Status:** fundação da plataforma **v1.4.18**; índice inicial curado, não catálogo completo nem biblioteca homologada para procedimentos de execução. O banco contém hipóteses, taxonomias e referências públicas, **não** FMEAs aprovadas, ocorrências reais confirmadas ou limites OEM efetivos por série.
+> **Status:** fundação da plataforma **v1.4.19**; índice inicial curado, não catálogo completo nem biblioteca homologada para procedimentos de execução. O banco contém hipóteses, taxonomias e referências públicas, **não** FMEAs aprovadas, ocorrências reais confirmadas ou limites OEM efetivos por série.
 
 **Portal público (GitHub Pages):** https://pedromaintenance.github.io/fmea-database-mining/ — entrada direta na Biblioteca Técnica. O repositório mantém a documentação canônica e o histórico de versões.
 
 ## Começar pela biblioteca
 
-- **Para humanos:** [Biblioteca Técnica — portal HTML standalone](docs/biblioteca-tecnica.html) — navegação e pesquisa offline nos 53 recursos selecionados; os arquivos canônicos exigem acesso ao repositório/Internet ou clone local.
+- **Para humanos:** [Biblioteca Técnica — portal HTML standalone](docs/biblioteca-tecnica.html) — navegação e pesquisa offline nos 55 recursos selecionados; os arquivos canônicos exigem acesso ao repositório/Internet ou clone local.
 - **Para agentes:** [AGENTS.md](AGENTS.md), [skill de consulta](skills/consultar-acervo-manutencao/SKILL.md), [contrato de recuperação e resposta](docs/AI_RETRIEVAL_CONTRACT.md) e [índice JSON](data/catalog/knowledge-index.v1.json). Uma busca local pode ser feita com `npm run knowledge:query -- --query "bomba"`.
 - **Para pesquisadores:** [Arquitetura de conhecimento](docs/KNOWLEDGE_PLATFORM_ARCHITECTURE.md), [roadmap 2026–2027](docs/ROADMAP_TECNICO_2026_2027.md) e [registro de fontes](data/research/sources.v1.json) (114 entradas bibliográficas catalogadas; revisão global de atualização/licenças pendente).
 - **Para aplicações:** os consumidores — inclusive [P.O.R.C.A.R.I.A.](https://github.com/pedromaintenance/porcaria-voce-quebra-eu-conserto) — são **independentes**. Esta biblioteca não altera outros projetos, SAP ou operações.
@@ -18,6 +18,8 @@ Acervo **público, versionado e rastreável** para estudar equipamentos móveis 
 **Novas consultas 1.4.1:** [Glossário PT/EN](docs/glossario-tecnico.html) (67 verbetes recuperados sem reescrita da ontologia), [Bibliografia](docs/fontes-tecnicas.html) (87 fontes do registro), [Inventário de arquivos](docs/inventario-acervo.html) (snapshot de 500 arquivos antes deste ciclo). Os três conjuntos diferem em natureza e NÃO são 654 fichas OEM validadas.
 
 A consulta ao índice **não substitui** a leitura da ficha canônica, a conferência da fonte original e a análise de aplicabilidade OEM. Dados sintéticos não são registros de campo; indicadores sem definição/população não são benchmarks comparáveis.
+
+**Ciclo v1.4.19 — adjudicação editorial diesel:** [fila local de revisão](https://pedromaintenance.github.io/fmea-database-mining/adjudicacao-diesel-editorial.html), com priorização de segurança, duas verificações SHA-256, decisões editoriais fechadas e exportação parcial. [Protocolo](docs/CICLO_2026-11-10_ADJUDICACAO_EDITORIAL_DIESEL.md). **55 itens curados**, 114 referências, zero avaliações reais/autenticadas e nenhuma mudança SAP/OEM ou no piloto congelado 1.4.11.
 
 **Ciclo v1.4.18 — conciliação de pareceres diesel:** [comparador offline](https://pedromaintenance.github.io/fmea-database-mining/conciliacao-pareceres-diesel.html) recebe **dois JSONs locais** do formulário v1.4.17 e marca divergências, pendências e riscos críticos com **precedência de segurança**. [Procedimento e CLI privado](docs/CICLO_2026-11-10_CONCILIACAO_PARECERES_DIESEL.md). Respostas idênticas não demonstram revisores independentes; sem arquivos humanos recebidos, aprovação OEM/SAP ou alteração do piloto 1.4.11. Bibliografia **114**, catálogo **53**.
 

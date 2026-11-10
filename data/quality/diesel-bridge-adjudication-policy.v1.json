@@ -1,0 +1,79 @@
+{
+  "schema": "fmea-mining.diesel-bridge-adjudication-policy.v1",
+  "version": "1.4.19",
+  "scope": "preparation_of_manual_editorial_decisions_not_technical_approval",
+  "sourceDossierVersion": "1.4.16",
+  "sourceReviewVersion": "1.4.17",
+  "sourceComparisonVersion": "1.4.18",
+  "choices": [
+    "PENDING",
+    "REQUEST_MORE_REVIEWS",
+    "REQUEST_OEM_EVIDENCE",
+    "REWRITE_INTERPRETATION",
+    "WITHDRAW_ASSOCIATION",
+    "KEEP_UNVALIDATED"
+  ],
+  "reasons": [
+    "SAFETY",
+    "OEM_APPLICABILITY",
+    "MECHANISM",
+    "CAUSAL_BOUNDARY",
+    "OBSERVABILITY",
+    "SAMPLING",
+    "WEAK_COUNTERPROOF",
+    "REVIEW_INDEPENDENCE"
+  ],
+  "allowance": {
+    "NO_REVIEW_EVIDENCE": [
+      "PENDING"
+    ],
+    "POSSIBLE_DUPLICATE_SUBMISSIONS": [
+      "PENDING",
+      "REQUEST_MORE_REVIEWS"
+    ],
+    "SAFETY_CONCERN": [
+      "PENDING",
+      "REQUEST_MORE_REVIEWS",
+      "REQUEST_OEM_EVIDENCE",
+      "REWRITE_INTERPRETATION",
+      "WITHDRAW_ASSOCIATION"
+    ],
+    "INCOMPLETE": [
+      "PENDING",
+      "REQUEST_MORE_REVIEWS",
+      "REQUEST_OEM_EVIDENCE"
+    ],
+    "OTHER": [
+      "PENDING",
+      "REQUEST_MORE_REVIEWS",
+      "REQUEST_OEM_EVIDENCE",
+      "REWRITE_INTERPRETATION",
+      "WITHDRAW_ASSOCIATION",
+      "KEEP_UNVALIDATED"
+    ]
+  },
+  "rules": {
+    "inputsMustPassV1417Contract": true,
+    "recomputeComparisonFromInputs": true,
+    "twoSHA256DigestsRequired": true,
+    "neverApproveSafetyConcern": true,
+    "neverAutoApplyEdits": true,
+    "rejectPrivateFields": true,
+    "noUserIdentities": true,
+    "noPublicReviews": true,
+    "noMachineRelease": true,
+    "noSAPAction": true,
+    "doesNotProveIndependentReviewers": true,
+    "offlineOnly": true,
+    "frozenPilotUntouched": true
+  },
+  "publicStatus": {
+    "humanReviewFilesReceived": 0,
+    "authenticatedReviewers": 0,
+    "authenticatedAdjudications": 0,
+    "validatedRootCauses": 0,
+    "operationalApprovals": 0,
+    "sapChanges": 0
+  },
+  "frozenPilotVersion": "1.4.11"
+}

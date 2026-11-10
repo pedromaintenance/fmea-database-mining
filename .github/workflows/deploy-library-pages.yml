@@ -97,6 +97,12 @@ on:
       - 'scripts/audit-diesel-bridge-reconciliation.mjs'
       - 'scripts/reconcile-diesel-bridge-reviews.mjs'
       - 'docs/CICLO_2026-11-10_CONCILIACAO_PARECERES_DIESEL.md'
+      - 'data/quality/diesel-bridge-adjudication-policy.v1.json'
+      - 'scripts/lib/diesel-bridge-adjudication-core.mjs'
+      - 'scripts/build-diesel-bridge-adjudication.mjs'
+      - 'scripts/audit-diesel-bridge-adjudication.mjs'
+      - 'docs/adjudicacao-diesel-editorial.html'
+      - 'docs/CICLO_2026-11-10_ADJUDICACAO_EDITORIAL_DIESEL.md'
       - 'docs/biblioteca-tecnica.html'
       - 'schemas/technical-knowledge-record.v2.schema.json'
       - 'scripts/build-fundamentals-portal.mjs'
@@ -185,6 +191,8 @@ jobs:
           node scripts/audit-diesel-bridge-review.mjs
           node scripts/build-diesel-bridge-reconciliation.mjs
           node scripts/audit-diesel-bridge-reconciliation.mjs
+          node scripts/build-diesel-bridge-adjudication.mjs
+          node scripts/audit-diesel-bridge-adjudication.mjs
 
       - name: Prepare static site
         run: |
@@ -239,6 +247,9 @@ jobs:
           cp reports/conciliacao-pareceres-diesel.generated.html _site/conciliacao-pareceres-diesel.html
           cp reports/diesel-bridge-reconciliation-public.generated.json _site/diesel-bridge-reconciliation-public.v1.json
           cp reports/diesel-bridge-reconciliation-audit.generated.json _site/diesel-bridge-reconciliation-audit.v1.json
+          cp reports/adjudicacao-diesel-editorial.generated.html _site/adjudicacao-diesel-editorial.html
+          cp reports/diesel-bridge-adjudication-public.generated.json _site/diesel-bridge-adjudication-public.v1.json
+          cp reports/diesel-bridge-adjudication-audit.generated.json _site/diesel-bridge-adjudication-audit.v1.json
           cp schemas/diesel-bridge-review-sheet.schema.json _site/diesel-bridge-review-sheet.schema.json
           cp reports/pilot-collector-1.4.11.tar.gz _site/pilot-collector-1.4.11.tar.gz
           cp reports/pilot-reviewer-1.4.11.tar.gz _site/pilot-reviewer-1.4.11.tar.gz
