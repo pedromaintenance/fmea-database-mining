@@ -1,0 +1,134 @@
+{
+  "schema": "fmea-mining.diesel-bridge-expert-review-protocol.v1",
+  "version": "1.4.17",
+  "date": "2026-11-10",
+  "sourceDossier": "data/knowledge/engine-thermal-crossfluid-bridge.v1.json",
+  "sourceVersion": "1.4.16",
+  "purpose": "Recolher avaliações independentes e estruturadas das 18 interpretações conceituais sem revelar a categoria causal editorial proposta.",
+  "nature": "anonymous_self_reported_editorial_review_instrument_not_a_verified_peer_review",
+  "reviewedAlternativeCount": 18,
+  "reviewedScenarioCount": 6,
+  "dimensions": [
+    {
+      "id": "mechanismCoherence",
+      "label": "Coerência mecânica",
+      "question": "A interpretação descreve mecanismos fisicamente plausíveis sem afirmar mais do que a premissa permite?"
+    },
+    {
+      "id": "causalBoundary",
+      "label": "Limite causal",
+      "question": "Simultaneidade, correlação, causa imediata e causa raiz permanecem diferenciadas?"
+    },
+    {
+      "id": "oemApplicability",
+      "label": "Aplicabilidade OEM",
+      "question": "É explícita a necessidade de identificar motor, configuração, interfaces e procedimento por série?"
+    },
+    {
+      "id": "evidenceDiscrimination",
+      "label": "Poder discriminante das evidências",
+      "question": "As evidências e contraprovas propostas realmente ajudam a separar hipóteses concorrentes?"
+    },
+    {
+      "id": "operationalSafety",
+      "label": "Segurança da interpretação",
+      "question": "O texto evita sugerir ensaio inseguro, troca prematura, ignorar alarme ou liberar máquina?"
+    }
+  ],
+  "relations": [
+    {
+      "code": "INDEPENDENT",
+      "label": "Fenômenos independentes"
+    },
+    {
+      "code": "SHARED_CONTEXT",
+      "label": "Contexto comum, sem nexo comprovado"
+    },
+    {
+      "code": "POSSIBLE_COUPLING",
+      "label": "Acoplamento físico condicional"
+    },
+    {
+      "code": "MEASUREMENT_ARTIFACT",
+      "label": "Incerteza de instrumento ou amostra"
+    },
+    {
+      "code": "UNDETERMINED",
+      "label": "Classificação não determinável"
+    }
+  ],
+  "ratings": [
+    "unreviewed",
+    "adequate",
+    "needs_revision",
+    "critical_issue"
+  ],
+  "issueTags": [
+    {
+      "code": "premature_causal_link",
+      "label": "Nexo causal prematuro"
+    },
+    {
+      "code": "unsupported_oem_effectivity",
+      "label": "Geometria ou efetividade OEM presumida"
+    },
+    {
+      "code": "mechanical_inconsistency",
+      "label": "Mecanismo fisicamente inconsistente"
+    },
+    {
+      "code": "weak_counterevidence",
+      "label": "Contraprova insuficiente"
+    },
+    {
+      "code": "sampling_provenance_gap",
+      "label": "Qualidade de amostra não abordada"
+    },
+    {
+      "code": "instrumentation_ambiguity",
+      "label": "Metrologia/sensor ambíguo"
+    },
+    {
+      "code": "unsafe_operational_implication",
+      "label": "Implica ação insegura ou liberação"
+    },
+    {
+      "code": "other_editorial_issue",
+      "label": "Outra divergência editorial"
+    }
+  ],
+  "reviewRules": {
+    "originalRelationHiddenFromInterface": true,
+    "originalInvalidConclusionHiddenFromInterface": true,
+    "reviewerIdentityNotCollected": true,
+    "noFreeTextOrPrivateFields": true,
+    "partialExportAllowed": true,
+    "allRowsPresentInEveryExport": true,
+    "bridgeDigestRequired": true,
+    "manualAdjudicationRequired": true,
+    "noAutomaticContentPromotion": true,
+    "noExpertIdentityAuthentication": true,
+    "noSAPOrFieldAuthority": true,
+    "noCertifiedExternalReviewClaim": true,
+    "noFrozenPilotModification": true
+  },
+  "prohibitedFields": [
+    "reviewerName",
+    "email",
+    "employeeId",
+    "assetTag",
+    "serialNumber",
+    "measurements",
+    "oemDocument",
+    "comments",
+    "timestamp",
+    "workOrder",
+    "sapFunctionalLocation",
+    "signature"
+  ],
+  "publicHumanReviewsReceived": 0,
+  "expertIdentityVerified": false,
+  "operationalApprovals": 0,
+  "sapChanges": 0,
+  "frozenPilot": "1.4.11"
+}

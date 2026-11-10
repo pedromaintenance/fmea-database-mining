@@ -1,0 +1,178 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Diesel bridge external editorial review — strict anonymous export",
+  "description": "Local structured opinion, not authenticated peer review, not operation or SAP authority. Full ID/order and SHA validated by shared code.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "version",
+    "bridgeVersion",
+    "sourceSha256",
+    "nature",
+    "reviewerIdentityVerified",
+    "humanReviewCertified",
+    "engineeringApproval",
+    "operationRelease",
+    "sapApproval",
+    "rows"
+  ],
+  "properties": {
+    "schema": {
+      "const": "fmea-mining.diesel-bridge-review-sheet.v1"
+    },
+    "version": {
+      "const": "1.4.17"
+    },
+    "bridgeVersion": {
+      "const": "1.4.16"
+    },
+    "sourceSha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "nature": {
+      "const": "anonymous_editorial_opinion_not_authenticated_expert_review"
+    },
+    "reviewerIdentityVerified": {
+      "const": false
+    },
+    "humanReviewCertified": {
+      "const": false
+    },
+    "engineeringApproval": {
+      "const": false
+    },
+    "operationRelease": {
+      "const": false
+    },
+    "sapApproval": {
+      "const": false
+    },
+    "rows": {
+      "type": "array",
+      "minItems": 18,
+      "maxItems": 18,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "alternativeId",
+          "relationSuggestion",
+          "ratings",
+          "issueTags"
+        ],
+        "properties": {
+          "alternativeId": {
+            "enum": [
+              "BR-S01-A",
+              "BR-S01-B",
+              "BR-S01-C",
+              "BR-S02-A",
+              "BR-S02-B",
+              "BR-S02-C",
+              "BR-S03-A",
+              "BR-S03-B",
+              "BR-S03-C",
+              "BR-S04-A",
+              "BR-S04-B",
+              "BR-S04-C",
+              "BR-S05-A",
+              "BR-S05-B",
+              "BR-S05-C",
+              "BR-S06-A",
+              "BR-S06-B",
+              "BR-S06-C"
+            ]
+          },
+          "relationSuggestion": {
+            "anyOf": [
+              {
+                "type": "null"
+              },
+              {
+                "enum": [
+                  "INDEPENDENT",
+                  "SHARED_CONTEXT",
+                  "POSSIBLE_COUPLING",
+                  "MEASUREMENT_ARTIFACT",
+                  "UNDETERMINED"
+                ]
+              }
+            ]
+          },
+          "ratings": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "mechanismCoherence",
+              "causalBoundary",
+              "oemApplicability",
+              "evidenceDiscrimination",
+              "operationalSafety"
+            ],
+            "properties": {
+              "mechanismCoherence": {
+                "enum": [
+                  "unreviewed",
+                  "adequate",
+                  "needs_revision",
+                  "critical_issue"
+                ]
+              },
+              "causalBoundary": {
+                "enum": [
+                  "unreviewed",
+                  "adequate",
+                  "needs_revision",
+                  "critical_issue"
+                ]
+              },
+              "oemApplicability": {
+                "enum": [
+                  "unreviewed",
+                  "adequate",
+                  "needs_revision",
+                  "critical_issue"
+                ]
+              },
+              "evidenceDiscrimination": {
+                "enum": [
+                  "unreviewed",
+                  "adequate",
+                  "needs_revision",
+                  "critical_issue"
+                ]
+              },
+              "operationalSafety": {
+                "enum": [
+                  "unreviewed",
+                  "adequate",
+                  "needs_revision",
+                  "critical_issue"
+                ]
+              }
+            }
+          },
+          "issueTags": {
+            "type": "array",
+            "uniqueItems": true,
+            "maxItems": 8,
+            "items": {
+              "enum": [
+                "premature_causal_link",
+                "unsupported_oem_effectivity",
+                "mechanical_inconsistency",
+                "weak_counterevidence",
+                "sampling_provenance_gap",
+                "instrumentation_ambiguity",
+                "unsafe_operational_implication",
+                "other_editorial_issue"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

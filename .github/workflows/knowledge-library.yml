@@ -80,6 +80,14 @@ on:
       - 'scripts/lib/engine-cooling-thermal-contract.mjs'
       - 'scripts/build-engine-cooling-thermal.mjs'
       - 'scripts/audit-engine-cooling-thermal.mjs'
+      - 'data/quality/diesel-bridge-expert-review-protocol.v1.json'
+      - 'data/quality/diesel-bridge-review-empty.v1.json'
+      - 'schemas/diesel-bridge-review-sheet.schema.json'
+      - 'scripts/lib/diesel-bridge-review-core.mjs'
+      - 'docs/revisao-diesel-especialistas.html'
+      - 'scripts/build-diesel-bridge-review.mjs'
+      - 'scripts/audit-diesel-bridge-review.mjs'
+      - 'docs/CICLO_2026-11-10_REVISAO_INDEPENDENTE_DIESEL.md'
       - 'docs/biblioteca-tecnica.html'
       - 'data/knowledge/engine-thermal-crossfluid-bridge.v1.json'
       - 'docs/diagnostico-combinado-motor.html'
@@ -155,6 +163,8 @@ jobs:
       - run: npm run knowledge:engine:thermal:audit
       - run: npm run knowledge:engine:coupled:build
       - run: npm run knowledge:engine:coupled:audit
+      - run: npm run knowledge:engine:bridge:review:build
+      - run: npm run knowledge:engine:bridge:review:audit
       - run: npm run knowledge:pilot:gates
       - run: npm run knowledge:search:v2 -- --query "piloto hidráulico não aciona a válvula"
       - run: npm run knowledge:fundamentals:query -- --query "fadiga de contato"
